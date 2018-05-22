@@ -1,13 +1,12 @@
 ---
 ms.date: 04/11/2018
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Service collecteur DSC
-ms.openlocfilehash: 075487be68de82074750e5344a24d6d4c2f2bec5
-ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
+ms.openlocfilehash: 057da50843e79ae31eef4fea1fa58e882a9d1ace
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Service collecteur Desired State Configuration
 

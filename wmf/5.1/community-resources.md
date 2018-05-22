@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Ressources de la communauté
-ms.openlocfilehash: 7ee696e348e9f4d2455e0c02685cb60c97d8474d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="community-resources"></a>Ressources de la communauté #
 > Remarque : Ces informations sont préliminaires et susceptibles d’être modifiées.

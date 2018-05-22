@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Création d’une ressource DSC en C#
-ms.openlocfilehash: 112b2ae3eb7ecbccc4ae04cd71e06ea43f5e9249
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e8d3561f197950137877fc902063e43cbfc258ad
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Création d’une ressource DSC en C#
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Compatibilité de WMF 5.1 avec les systèmes d’exploitation
-ms.openlocfilehash: a20c8a15e1d05253d99f25b5b8ae8e5d7f816089
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f0037dbc3b172fc98f5f8044a794e49f7727a05c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>Compatibilité de WMF 5.1 avec les systèmes d’exploitation #
 

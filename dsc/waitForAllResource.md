@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC WaitForAll
-ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-waitforall-resource"></a>Ressource DSC WaitForAll
 

@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,security
 title: Vue d’ensemble de Just Enough Administration
-ms.openlocfilehash: fd5b97b7a483908f10cec6460d4e803740f064a8
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
 

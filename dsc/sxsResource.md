@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Utilisation de ressources avec plusieurs versions
-ms.openlocfilehash: 9e5b989be3f33fb9151f76cecb6d5f700b1e36c9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6400d6506106657ba28fa1f9c83d9f8ee1c93ba3
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-resources-with-multiple-versions"></a>Utilisation de ressources avec plusieurs versions
 

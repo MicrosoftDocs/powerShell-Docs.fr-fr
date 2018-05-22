@@ -1,13 +1,12 @@
 ---
 ms.date: 10/31/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Sécurisation du fichier MOF
-ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
-ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
+ms.openlocfilehash: d6f213e497838192ca6ce8d537cc291ee3811e79
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="securing-the-mof-file"></a>Sécurisation du fichier MOF
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Éléments avec des éditions PowerShell compatibles
-ms.openlocfilehash: dd2c67417994e960845f7cef09320a0f688a0212
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: f661c2cd076acb9c11394ba0b752ebd154965ff4
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="items-with-compatible-powershell-editions"></a>Éléments avec des éditions PowerShell compatibles
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Contacter les administrateurs de la galerie
-ms.openlocfilehash: 6d243f032fc48b4a3aba6455bbeee954572f0738
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 6673b1a8e92312f343d6f809b4a708c400ef20f2
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="contact-gallery-administrators"></a>Contacter les administrateurs de la galerie
 

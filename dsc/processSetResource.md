@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Ressources ProcessSet dans DSC
-ms.openlocfilehash: d3c7383da5fd10580612527465ab621004ee7269
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>Ressource WindowsProcess dans DSC
 

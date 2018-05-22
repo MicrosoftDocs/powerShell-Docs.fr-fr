@@ -1,14 +1,13 @@
 ---
 ms.date: 03/27/2018
 contributor: JKeithB
-ms.topic: conceptual
 keywords: galerie,powershell,psgallery,RGPD
 title: Conformité RGPD de PowerShell Gallery
-ms.openlocfilehash: 0a9e76325a2a5cf8f509e1a6317c8ed88d133f1d
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Conformité RGPD de PowerShell Gallery
 
@@ -41,7 +40,7 @@ Les informations ci-dessous indiquent comment obtenir tous les éléments que vo
 
 Les sections suivantes décrivent comment PowerShell Gallery prend en charge les demandes DSR (Data Subject Request), en expliquant comment exporter des informations stockées dans PowerShell Gallery et comment demander la suppression de ces informations.
 
-### <a name="email"></a>E-mail
+### <a name="email"></a>Courrier électronique
 
 La correspondance par e-mail peut inclure les éléments suivants :
 

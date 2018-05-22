@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 43b26426a76b6503a83e35ae0c02a0af69902ed6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 188ede0c558210a746ad0f6c6cef6f571b280878
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="declare-base-class"></a>Déclarer une classe de base
 Vous pouvez déclarer une classe Windows PowerShell comme type de base pour une autre classe Windows PowerShell.

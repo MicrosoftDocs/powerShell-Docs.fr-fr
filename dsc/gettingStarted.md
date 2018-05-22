@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Prise en main de la configuration de l’état souhaité (DSC) Windows PowerShell
-ms.openlocfilehash: b5aff5008db5a5e45b77d8094b0e48ad98dc63fa
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a449382c979e680ea311c887c86cb675ba6162b7
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Prise en main de la configuration de l’état souhaité (DSC) Windows PowerShell #
 

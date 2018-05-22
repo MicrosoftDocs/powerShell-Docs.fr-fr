@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,security
 title: Conditions préalables pour JEA
-ms.openlocfilehash: 92a74d89a0e982e9f45e69d92b261756de33c038
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="prerequisites"></a>Conditions préalables
 

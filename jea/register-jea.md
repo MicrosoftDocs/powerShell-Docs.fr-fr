@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: 7b0a3f0bac26bf62989fecdf60388bbebd6fa756
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 

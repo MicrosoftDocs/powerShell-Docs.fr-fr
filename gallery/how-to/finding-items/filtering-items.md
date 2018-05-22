@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Filtrage des résultats de la recherche
-ms.openlocfilehash: 5a7ea8207619318efd8195ee3d1c8f8ab51209da
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: eafbc993a37eaee7413102ef9d669a6b07d6ff6e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="filtering-search-results"></a>Filtrage des résultats de la recherche
 

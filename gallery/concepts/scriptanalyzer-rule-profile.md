@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Profil de règle ScriptAnalyzer pour la galerie
-ms.openlocfilehash: 22b95f0901fe95d5ad79df0e23e675ab52313fee
-ms.sourcegitcommit: f8a37df92db22b9368469fb07378399b2ab90cea
+ms.openlocfilehash: 54100f7a530cbc769e4a0e2dbff18dbc5de88fa6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>Profil de règle ScriptAnalyzer pour la galerie
 

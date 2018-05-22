@@ -1,14 +1,13 @@
 ---
 ms.date: 10/17/2017
 contributor: keithb
-ms.topic: reference
-keywords: gallery,powershell,applet de commande,psget
+keywords: gallery,powershell,cmdlet,psget
 title: Préversions des scripts
-ms.openlocfilehash: 2c7e1cbc352f8dc39fef9cd968b2f0c1964c30b3
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="prerelease-versions-of-scripts"></a>Préversions des scripts
 

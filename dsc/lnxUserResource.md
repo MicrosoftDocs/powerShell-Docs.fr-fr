@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxUser dans DSC pour Linux
-ms.openlocfilehash: 222bd2191cf5c5f0a90ba947275ffde47d22ec86
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ca77bcd1f23a78ddb9e2ac988e4aadfec504bbbe
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Ressource nxUser dans DSC pour Linux
 

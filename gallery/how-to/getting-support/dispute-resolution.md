@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Règlement des litiges
-ms.openlocfilehash: 49f19273b0df2ee5668e02a2b667c1f5f4e5dae5
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 2a291773ae9391e417e14c4ec0b75379e0bf4640
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dispute-resolution"></a>Règlement des litiges
 

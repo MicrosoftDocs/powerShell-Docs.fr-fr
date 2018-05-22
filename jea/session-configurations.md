@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,security
 title: Configuration de session JEA
-ms.openlocfilehash: 317a549ed20b5800d5bafdabd266e93ba7cd321c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="jea-session-configurations"></a>Configuration de session JEA
 
@@ -168,7 +166,7 @@ RoleDefinitions = @{
 Si un utilisateur appartient à plusieurs groupes de la définition des rôles, il a accès aux rôles de chacun d’entre eux.
 Si deux rôles accordent l’accès aux mêmes applets de commande, l’ensemble de paramètres le plus permissif est accordé à l’utilisateur.
 
-Quand vous spécifiez des utilisateurs ou des groupes locaux dans le champ des définitions de rôle, veillez à utiliser le nom de l’ordinateur (et non *localhost* ou *.*) avant la barre oblique inverse.
+Quand vous spécifiez des utilisateurs ou des groupes locaux dans le champ des définitions de rôle, veillez à utiliser le nom de l’ordinateur (et non *localhost* ou  *.*) avant la barre oblique inverse.
 Pour vérifier le nom de l’ordinateur, inspectez la variable `$env:computername`.
 
 ```powershell

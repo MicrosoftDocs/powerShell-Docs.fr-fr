@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations du moteur PowerShell dans WMF 5.1
-ms.openlocfilehash: 3c69c4e13f64683f743eb78b0c9e177ff5b3a771
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 98095904157a675bbe84616b1d9cbb22689cd059
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 #<a name="powershell-engine-improvements"></a>Améliorations du moteur PowerShell
 

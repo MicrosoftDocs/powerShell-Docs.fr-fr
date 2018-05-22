@@ -1,13 +1,12 @@
 ---
 ms.date: 04/11/2018
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Configuration d’un serveur collecteur SMB DSC
-ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuration d’un serveur collecteur SMB DSC
 

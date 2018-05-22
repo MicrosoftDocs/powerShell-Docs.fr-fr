@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Utilisation des données de configuration
-ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 

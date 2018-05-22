@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 description: Fournit un mécanisme permettant de gérer des groupes locaux sur le nœud cible.
 title: Ressources GroupSet dans DSC
-ms.openlocfilehash: 4f8fc21806fdb4eb06e0d915d5b6ca229357a210
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-groupset-resource"></a>Ressources GroupSet dans DSC
 

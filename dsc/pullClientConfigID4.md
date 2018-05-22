@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Configuration d’un client collecteur à l’aide de l’ID de configuration dans PowerShell 4.0
-ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f9bea92f1a2dce94792d72e03bef884d2729f3c0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Configuration d’un client collecteur à l’aide de l’ID de configuration dans PowerShell 4.0
 

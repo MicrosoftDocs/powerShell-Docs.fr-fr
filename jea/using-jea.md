@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,sécurité
 title: Utilisation de JEA
-ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 891e4be4c3fadceeff5ede7ac5cab04a5f80e5c1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-jea"></a>Utilisation de JEA
 

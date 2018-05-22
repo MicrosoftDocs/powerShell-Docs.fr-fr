@@ -1,14 +1,13 @@
 ---
 ms.date: 09/26/2017
 contributor: keithb
-ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Préversions de module
-ms.openlocfilehash: e663a42092556ef1c43a7cf236616bf420171af6
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="prerelease-module-versions"></a>Préversions de module
 

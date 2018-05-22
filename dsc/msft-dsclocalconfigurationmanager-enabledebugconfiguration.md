@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Méthode EnableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 9fe41fa806a6abff1d36dadd0c041a5cf0e78caf
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e2a978f9d16abaed959be022229db4da5fd65bd
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode EnableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
 

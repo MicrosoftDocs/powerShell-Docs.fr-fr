@@ -154,14 +154,20 @@
     - name: Nouveautés
       href: ''
       items:
-        - name: Nouveautés de PowerShell
-          href: whats-new/what-s-new-with-powershell.md
-        - name: "Nouveautés de Windows PowerShell\_5.0"
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: "Nouveautés de PowerShell\_5.0 ISE"
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: "Nouveautés de PowerShell\_Core 6.0"
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Modifications avec rupture dans PowerShell Core 6.0
+              href: whats-new/breaking-changes-ps6.md
+            - name: Problèmes connus dans PowerShell Core 6.0
+              href: whats-new/known-issues-ps6.md
+        - name: Nouveautés de PowerShell 5.0
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: "Nouveautés de Windows PowerShell\_5.0"
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: "Nouveautés de PowerShell\_5.0 ISE"
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Cycle de vie de support de PowerShell Core
       href: PowerShell-Core-Support.md
     - name: En savoir plus

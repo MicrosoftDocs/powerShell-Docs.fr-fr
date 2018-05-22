@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Ressources DSC Windows PowerShell intégrées
-ms.openlocfilehash: aac7786d5621f12bc50f95c516e1c964c1f7cbf6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b55a21adaff5622ca987d659cafe016ef2b888a0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>Ressources DSC Windows PowerShell intégrées
 

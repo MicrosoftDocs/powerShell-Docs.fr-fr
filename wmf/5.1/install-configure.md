@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,configuration
 contributor: keithb
 title: Installer et configurer WMF 5.1
-ms.openlocfilehash: e747487873c7c15c2bea3fca7136630ab2b572f7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="install-and-configure-wmf-51"></a>Installer et configurer WMF 5.1 #
 

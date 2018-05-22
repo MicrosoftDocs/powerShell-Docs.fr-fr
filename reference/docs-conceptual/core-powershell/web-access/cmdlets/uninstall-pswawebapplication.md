@@ -1,16 +1,13 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: powershell,applet de commande
 ms.date: 12/12/2016
-title: uninstall pswawebapplication
-ms.technology: powershell
-ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: Uninstall-PswaWebApplication
+ms.openlocfilehash: b2a3e4d584fd04ee49e1e6408dba39fd8bc555dc
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 

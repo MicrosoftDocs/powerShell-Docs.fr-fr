@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: gallery,powershell,applet de commande,psgallery
 title: Fonctionnalité FileList dans la galerie
-ms.openlocfilehash: d4d78d4eab89b0e3d48d18ed815d8f77327cc81d
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 83273cfca0627cb9906ca6474092f9be9a120e4d
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Fonctionnalité FileList dans la galerie
 

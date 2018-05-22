@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Utilisation d’un serveur de rapports DSC
-ms.openlocfilehash: 49e022d3c3c1e117eac4cb3c874ca8dcfe628237
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-a-dsc-report-server"></a>Utilisation d’un serveur de rapports DSC
 

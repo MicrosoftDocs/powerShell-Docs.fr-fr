@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 676d25f945e5a2176ed1d6108f703b21581bd036
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b8c3cbc056bb085e8319637571e7a2ce5cd77685
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>L’applet de commande Set-DscLocalConfigurationManager prend en charge le paramètre -force
 

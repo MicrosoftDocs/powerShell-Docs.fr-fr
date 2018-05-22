@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Spécification de dépendances entre nœuds
-ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c1802d6baa1f2b3449603e0374a83e213abf598e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="specifying-cross-node-dependencies"></a>Spécification de dépendances entre nœuds
 

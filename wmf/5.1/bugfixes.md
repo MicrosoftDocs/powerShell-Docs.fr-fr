@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Résolutions de bogues dans WMF 5.1
-ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1e46d6d0419b3497450e6eaddbaa47456b004691
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Résolutions de bogues dans WMF 5.1#
 

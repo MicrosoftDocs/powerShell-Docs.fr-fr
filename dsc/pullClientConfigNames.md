@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Configuration d’un client collecteur à l’aide du nom de configuration
-ms.openlocfilehash: 7c8f204cc646e52ad5e953d6c7ad9e4e906d8a5b
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: d71376d84b9d4b0e74fdccab4b9249b2ca4263cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>Configuration d’un client collecteur à l’aide du nom de configuration
 

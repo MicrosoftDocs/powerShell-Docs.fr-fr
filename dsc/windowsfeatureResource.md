@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Ressource WindowsFeature dans DSC
-ms.openlocfilehash: e22f40d5a30b470bc322bd7fa3a065e6806d5cd5
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ece77043d3a4131150b934a19ee8b92dd75c48f0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-windowsfeature-resource"></a>Ressource WindowsFeature dans DSC
 

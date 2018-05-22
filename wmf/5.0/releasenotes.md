@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 91169a92d2d4c20ddb6e509183423ad428bc68b9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: eb3be6ef8a0fb8e611178206cbc817ac34b40f3e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Présentation des Notes de publication de Windows Management Framework (WMF) 5.0 RTM
 

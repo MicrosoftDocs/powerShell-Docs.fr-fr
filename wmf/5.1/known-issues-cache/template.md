@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
+ms.topic: conceptual
 title: exemple de modèle d’un problème ou limitation connu
-ms.openlocfilehash: cecf31127aaa1942471877a2056230ab592bd095
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 453d4e40b906ebcab7314f04e138ded271338846
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 >Remarque : fournir un titre descriptif proposé et une brève description
 
