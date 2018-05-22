@@ -1,25 +1,23 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 3f2d03311f71ec9298b61c125326ad1cd8783173
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 61a914cc05c4ca9592196c925e232224d193f9d8
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="format-hex"></a><span data-ttu-id="41f07-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="41f07-102">Format-Hex</span></span>
-<span data-ttu-id="41f07-103">**Format-Hex** permet d’afficher du texte ou des données binaires au format hexadécimal ; voir [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="41f07-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
+# <a name="format-hex"></a><span data-ttu-id="3f069-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="3f069-102">Format-Hex</span></span>
+<span data-ttu-id="3f069-103">**Format-Hex** permet d’afficher du texte ou des données binaires au format hexadécimal ; voir [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="3f069-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="41f07-104">Exemple 1</span><span class="sxs-lookup"><span data-stu-id="41f07-104">Example 1</span></span>
-<span data-ttu-id="41f07-105">Afficher le contenu d’une chaîne au format hexadécimal.</span><span class="sxs-lookup"><span data-stu-id="41f07-105">View the contents of a string in hexadecimal format.</span></span>
+## <a name="example-1"></a><span data-ttu-id="3f069-104">Exemple 1</span><span class="sxs-lookup"><span data-stu-id="3f069-104">Example 1</span></span>
+<span data-ttu-id="3f069-105">Afficher le contenu d’une chaîne au format hexadécimal.</span><span class="sxs-lookup"><span data-stu-id="3f069-105">View the contents of a string in hexadecimal format.</span></span>
 
 ```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-<span data-ttu-id="41f07-106">Sorties</span><span class="sxs-lookup"><span data-stu-id="41f07-106">Outputs</span></span>
+<span data-ttu-id="3f069-106">Sorties</span><span class="sxs-lookup"><span data-stu-id="3f069-106">Outputs</span></span>
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

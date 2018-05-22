@@ -1,17 +1,15 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 2c007321789ae22b4a2e048d2d64162b065f9a75
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 116f79a95126d0a1c579a95ec99eb5d8b75cc1e0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="declare-implemented-interface"></a><span data-ttu-id="55bba-102">Déclarer une interface implémentée</span><span class="sxs-lookup"><span data-stu-id="55bba-102">Declare Implemented Interface</span></span>
+# <a name="declare-implemented-interface"></a><span data-ttu-id="825ed-102">Déclarer une interface implémentée</span><span class="sxs-lookup"><span data-stu-id="825ed-102">Declare Implemented Interface</span></span>
 
-<span data-ttu-id="55bba-103">Vous pouvez déclarer des interfaces implémentées après les types de base, ou immédiatement après un signe deux-points (:), si aucun type de base n’est spécifié.</span><span class="sxs-lookup"><span data-stu-id="55bba-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="55bba-104">Séparez tous les noms de types par des virgules.</span><span class="sxs-lookup"><span data-stu-id="55bba-104">Separate all type names by using commas.</span></span> <span data-ttu-id="55bba-105">Cela ressemble beaucoup à la syntaxe C#.</span><span class="sxs-lookup"><span data-stu-id="55bba-105">It’s very similar to C# syntax.</span></span>
+<span data-ttu-id="825ed-103">Vous pouvez déclarer des interfaces implémentées après les types de base, ou immédiatement après un signe deux-points (:), si aucun type de base n’est spécifié.</span><span class="sxs-lookup"><span data-stu-id="825ed-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="825ed-104">Séparez tous les noms de types par des virgules.</span><span class="sxs-lookup"><span data-stu-id="825ed-104">Separate all type names by using commas.</span></span> <span data-ttu-id="825ed-105">Cela ressemble beaucoup à la syntaxe C#.</span><span class="sxs-lookup"><span data-stu-id="825ed-105">It’s very similar to C# syntax.</span></span>
 
 ```powershell
 class MyComparable : system.IComparable

@@ -1,33 +1,32 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Séparation des données de configuration et d’environnement
-ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 3c7f1ba93b4438b3eb440dc1f2349eff0606ac0a
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="99844-103">Séparation des données de configuration et d’environnement</span><span class="sxs-lookup"><span data-stu-id="99844-103">Separating configuration and environment data</span></span>
+# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="331f0-103">Séparation des données de configuration et d’environnement</span><span class="sxs-lookup"><span data-stu-id="331f0-103">Separating configuration and environment data</span></span>
 
-><span data-ttu-id="99844-104">S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="99844-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="331f0-104">S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="331f0-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="99844-105">Il peut être utile de séparer les données utilisées dans une configuration DSC de la configuration elle-même en s’aidant des données de configuration.</span><span class="sxs-lookup"><span data-stu-id="99844-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
-<span data-ttu-id="99844-106">Pour y parvenir, vous pouvez utiliser une seule et même configuration pour plusieurs environnements.</span><span class="sxs-lookup"><span data-stu-id="99844-106">By doing this, you can use a single configuration for multiple environments.</span></span>
+<span data-ttu-id="331f0-105">Il peut être utile de séparer les données utilisées dans une configuration DSC de la configuration elle-même en s’aidant des données de configuration.</span><span class="sxs-lookup"><span data-stu-id="331f0-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
+<span data-ttu-id="331f0-106">Pour y parvenir, vous pouvez utiliser une seule et même configuration pour plusieurs environnements.</span><span class="sxs-lookup"><span data-stu-id="331f0-106">By doing this, you can use a single configuration for multiple environments.</span></span>
 
-<span data-ttu-id="99844-107">Par exemple, si vous développez une application, vous pouvez utiliser une seule configuration pour les environnements de développement et de production et utiliser les données de configuration pour spécifier les données de chaque environnement.</span><span class="sxs-lookup"><span data-stu-id="99844-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="331f0-107">Par exemple, si vous développez une application, vous pouvez utiliser une seule configuration pour les environnements de développement et de production et utiliser les données de configuration pour spécifier les données de chaque environnement.</span><span class="sxs-lookup"><span data-stu-id="331f0-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-## <a name="what-is-configuration-data"></a><span data-ttu-id="99844-108">Définition des données de configuration</span><span class="sxs-lookup"><span data-stu-id="99844-108">What is configuration data?</span></span>
+## <a name="what-is-configuration-data"></a><span data-ttu-id="331f0-108">Définition des données de configuration</span><span class="sxs-lookup"><span data-stu-id="331f0-108">What is configuration data?</span></span>
 
-<span data-ttu-id="99844-109">Les données de configuration sont des données définies dans une table de hachage. Elles sont ensuite transférées à une configuration DSC au moment de la compilation de cette configuration.</span><span class="sxs-lookup"><span data-stu-id="99844-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
+<span data-ttu-id="331f0-109">Les données de configuration sont des données définies dans une table de hachage. Elles sont ensuite transférées à une configuration DSC au moment de la compilation de cette configuration.</span><span class="sxs-lookup"><span data-stu-id="331f0-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
 
-<span data-ttu-id="99844-110">Pour une description détaillée de la table de hachage **ConfigurationData**, voir [Utilisation des données de configuration](configData.md).</span><span class="sxs-lookup"><span data-stu-id="99844-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
+<span data-ttu-id="331f0-110">Pour une description détaillée de la table de hachage **ConfigurationData**, voir [Utilisation des données de configuration](configData.md).</span><span class="sxs-lookup"><span data-stu-id="331f0-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
 
-## <a name="a-simple-example"></a><span data-ttu-id="99844-111">Un exemple simple</span><span class="sxs-lookup"><span data-stu-id="99844-111">A simple example</span></span>
+## <a name="a-simple-example"></a><span data-ttu-id="331f0-111">Un exemple simple</span><span class="sxs-lookup"><span data-stu-id="331f0-111">A simple example</span></span>
 
-<span data-ttu-id="99844-112">Examinons un exemple très simple pour voir comment cela fonctionne.</span><span class="sxs-lookup"><span data-stu-id="99844-112">Let's look at a very simple example to see how this works.</span></span>
-<span data-ttu-id="99844-113">Nous allons créer une configuration unique qui garantit la présence d’**IIS** sur certains nœuds et la présence d’**Hyper-V** sur d’autres :</span><span class="sxs-lookup"><span data-stu-id="99844-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span>
+<span data-ttu-id="331f0-112">Examinons un exemple très simple pour voir comment cela fonctionne.</span><span class="sxs-lookup"><span data-stu-id="331f0-112">Let's look at a very simple example to see how this works.</span></span>
+<span data-ttu-id="331f0-113">Nous allons créer une configuration unique qui garantit la présence d’**IIS** sur certains nœuds et la présence d’**Hyper-V** sur d’autres :</span><span class="sxs-lookup"><span data-stu-id="331f0-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span>
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -68,9 +67,9 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-<span data-ttu-id="99844-114">La dernière ligne de ce script compile la configuration en transférant `$MyData` en tant que valeur du paramètre **ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="99844-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="331f0-114">La dernière ligne de ce script compile la configuration en transférant `$MyData` en tant que valeur du paramètre **ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="331f0-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="99844-115">Cela conduit à la création de deux fichiers MOF :</span><span class="sxs-lookup"><span data-stu-id="99844-115">The result is that two MOF files are created:</span></span>
+<span data-ttu-id="331f0-115">Cela conduit à la création de deux fichiers MOF :</span><span class="sxs-lookup"><span data-stu-id="331f0-115">The result is that two MOF files are created:</span></span>
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
@@ -82,15 +81,15 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-<span data-ttu-id="99844-116">`$MyData` spécifie deux nœuds différents, chacun avec son propre `NodeName` et `Role`.</span><span class="sxs-lookup"><span data-stu-id="99844-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="99844-117">La configuration crée les blocs **Nœud** de façon dynamique en prenant la collection de nœuds qu’elle obtient à partir de `$MyData` (en particulier, `$AllNodes`) et filtre cette collection sur la propriété `Role`.</span><span class="sxs-lookup"><span data-stu-id="99844-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
+<span data-ttu-id="331f0-116">`$MyData` spécifie deux nœuds différents, chacun avec son propre `NodeName` et `Role`.</span><span class="sxs-lookup"><span data-stu-id="331f0-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="331f0-117">La configuration crée les blocs **Nœud** de façon dynamique en prenant la collection de nœuds qu’elle obtient à partir de `$MyData` (en particulier, `$AllNodes`) et filtre cette collection sur la propriété `Role`.</span><span class="sxs-lookup"><span data-stu-id="331f0-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="99844-118">Utilisation des données de configuration pour définir les environnements de développement et de production</span><span class="sxs-lookup"><span data-stu-id="99844-118">Using configuration data to define development and production environments</span></span>
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="331f0-118">Utilisation des données de configuration pour définir les environnements de développement et de production</span><span class="sxs-lookup"><span data-stu-id="331f0-118">Using configuration data to define development and production environments</span></span>
 
-<span data-ttu-id="99844-119">Examinons un exemple complet qui utilise une configuration unique pour configurer les environnements de développement et de production d’un site web.</span><span class="sxs-lookup"><span data-stu-id="99844-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="99844-120">Dans l’environnement de développement, IIS et SQL Server sont installés sur un même nœud.</span><span class="sxs-lookup"><span data-stu-id="99844-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="99844-121">Dans l’environnement de production, IIS et SQL Server sont installés sur des nœuds séparés.</span><span class="sxs-lookup"><span data-stu-id="99844-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="99844-122">Nous allons utiliser un fichier de données de configuration .psd1 pour spécifier les données des deux environnements.</span><span class="sxs-lookup"><span data-stu-id="99844-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
+<span data-ttu-id="331f0-119">Examinons un exemple complet qui utilise une configuration unique pour configurer les environnements de développement et de production d’un site web.</span><span class="sxs-lookup"><span data-stu-id="331f0-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="331f0-120">Dans l’environnement de développement, IIS et SQL Server sont installés sur un même nœud.</span><span class="sxs-lookup"><span data-stu-id="331f0-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="331f0-121">Dans l’environnement de production, IIS et SQL Server sont installés sur des nœuds séparés.</span><span class="sxs-lookup"><span data-stu-id="331f0-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="331f0-122">Nous allons utiliser un fichier de données de configuration .psd1 pour spécifier les données des deux environnements.</span><span class="sxs-lookup"><span data-stu-id="331f0-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
 
- ### <a name="configuration-data-file"></a><span data-ttu-id="99844-123">Fichier de données de configuration</span><span class="sxs-lookup"><span data-stu-id="99844-123">Configuration data file</span></span>
+ ### <a name="configuration-data-file"></a><span data-ttu-id="331f0-123">Fichier de données de configuration</span><span class="sxs-lookup"><span data-stu-id="331f0-123">Configuration data file</span></span>
 
-<span data-ttu-id="99844-124">Nous définissons les données de l’environnement de développement et de production dans un fichier nommé `DevProdEnvData.psd1` comme suit :</span><span class="sxs-lookup"><span data-stu-id="99844-124">We'll define the development and production environment data in a file named `DevProdEnvData.psd1` as follows:</span></span>
+<span data-ttu-id="331f0-124">Nous définissons les données de l’environnement de développement et de production dans un fichier nommé `DevProdEnvData.psd1` comme suit :</span><span class="sxs-lookup"><span data-stu-id="331f0-124">We'll define the development and production environment data in a file named `DevProdEnvData.psd1` as follows:</span></span>
 
 ```powershell
 @{
@@ -127,17 +126,17 @@ Mode                LastWriteTime         Length Name
 }
 ```
 
-### <a name="configuration-script-file"></a><span data-ttu-id="99844-125">Fichier de script de configuration</span><span class="sxs-lookup"><span data-stu-id="99844-125">Configuration script file</span></span>
+### <a name="configuration-script-file"></a><span data-ttu-id="331f0-125">Fichier de script de configuration</span><span class="sxs-lookup"><span data-stu-id="331f0-125">Configuration script file</span></span>
 
-<span data-ttu-id="99844-126">À présent, dans la configuration (qui est définie dans un fichier `.ps1`), nous allons filtrer les nœuds indiqués dans `DevProdEnvData.psd1` selon leur rôle (`MSSQL`, `Dev` ou les deux), puis les configurer en conséquence.</span><span class="sxs-lookup"><span data-stu-id="99844-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span>
-<span data-ttu-id="99844-127">Dans l’environnement de développement, SQL Server et IIS se trouvent sur le même nœud, tandis que dans l’environnement de production, ils se trouvent sur deux nœuds différents.</span><span class="sxs-lookup"><span data-stu-id="99844-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span>
-<span data-ttu-id="99844-128">Le contenu du site est également différent, comme spécifié par les propriétés `SiteContents`.</span><span class="sxs-lookup"><span data-stu-id="99844-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
+<span data-ttu-id="331f0-126">À présent, dans la configuration (qui est définie dans un fichier `.ps1`), nous allons filtrer les nœuds indiqués dans `DevProdEnvData.psd1` selon leur rôle (`MSSQL`, `Dev` ou les deux), puis les configurer en conséquence.</span><span class="sxs-lookup"><span data-stu-id="331f0-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span>
+<span data-ttu-id="331f0-127">Dans l’environnement de développement, SQL Server et IIS se trouvent sur le même nœud, tandis que dans l’environnement de production, ils se trouvent sur deux nœuds différents.</span><span class="sxs-lookup"><span data-stu-id="331f0-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span>
+<span data-ttu-id="331f0-128">Le contenu du site est également différent, comme spécifié par les propriétés `SiteContents`.</span><span class="sxs-lookup"><span data-stu-id="331f0-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
 
-<span data-ttu-id="99844-129">À la fin du script de configuration, nous appelons la configuration (nous la compilons dans un document MOF), en passant `DevProdEnvData.psd1` comme paramètre `$ConfigurationData`.</span><span class="sxs-lookup"><span data-stu-id="99844-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
+<span data-ttu-id="331f0-129">À la fin du script de configuration, nous appelons la configuration (nous la compilons dans un document MOF), en passant `DevProdEnvData.psd1` comme paramètre `$ConfigurationData`.</span><span class="sxs-lookup"><span data-stu-id="331f0-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
 
-><span data-ttu-id="99844-130">**Remarque :** Cette configuration exige l’installation des modules `xSqlPs` et `xWebAdministration` sur le nœud cible.</span><span class="sxs-lookup"><span data-stu-id="99844-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
+><span data-ttu-id="331f0-130">**Remarque :** Cette configuration exige l’installation des modules `xSqlPs` et `xWebAdministration` sur le nœud cible.</span><span class="sxs-lookup"><span data-stu-id="331f0-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
 
-<span data-ttu-id="99844-131">Nous allons définir la configuration dans un fichier nommé `MyWebApp.ps1` :</span><span class="sxs-lookup"><span data-stu-id="99844-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
+<span data-ttu-id="331f0-131">Nous allons définir la configuration dans un fichier nommé `MyWebApp.ps1` :</span><span class="sxs-lookup"><span data-stu-id="331f0-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
 
 ```powershell
 Configuration MyWebApp
@@ -229,7 +228,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-<span data-ttu-id="99844-132">Lorsque vous exécutez cette configuration, trois fichiers MOF sont créés (un pour chaque entrée nommée du tableau **AllNodes**) :</span><span class="sxs-lookup"><span data-stu-id="99844-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
+<span data-ttu-id="331f0-132">Lorsque vous exécutez cette configuration, trois fichiers MOF sont créés (un pour chaque entrée nommée du tableau **AllNodes**) :</span><span class="sxs-lookup"><span data-stu-id="331f0-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -242,21 +241,21 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a><span data-ttu-id="99844-133">Utilisation des données n’appartenant pas à un nœud</span><span class="sxs-lookup"><span data-stu-id="99844-133">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="331f0-133">Utilisation des données n’appartenant pas à un nœud</span><span class="sxs-lookup"><span data-stu-id="331f0-133">Using non-node data</span></span>
 
-<span data-ttu-id="99844-134">Vous pouvez ajouter des clés supplémentaires à la table de hachage **ConfigurationData** pour les données qui ne sont pas spécifiques à un nœud.</span><span class="sxs-lookup"><span data-stu-id="99844-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
-<span data-ttu-id="99844-135">La configuration suivante vérifie la présence de deux sites web.</span><span class="sxs-lookup"><span data-stu-id="99844-135">The following configuration ensures the presence of two websites.</span></span>
-<span data-ttu-id="99844-136">Les données de chaque site web sont définies dans le tableau **AllNodes**.</span><span class="sxs-lookup"><span data-stu-id="99844-136">Data for each website are defined in the **AllNodes** array.</span></span>
-<span data-ttu-id="99844-137">Le fichier `Config.xml` étant utilisé pour les deux sites web, nous le définissons dans une clé supplémentaire appelée `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="99844-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
-<span data-ttu-id="99844-138">Notez que vous pouvez avoir autant de clés supplémentaires que vous le souhaitez et les nommer comme bon vous semble.</span><span class="sxs-lookup"><span data-stu-id="99844-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
-<span data-ttu-id="99844-139">`NonNodeData` n’est pas un terme réservé. Il correspond simplement au nom que nous avons décidé de donner à cette clé supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="99844-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
+<span data-ttu-id="331f0-134">Vous pouvez ajouter des clés supplémentaires à la table de hachage **ConfigurationData** pour les données qui ne sont pas spécifiques à un nœud.</span><span class="sxs-lookup"><span data-stu-id="331f0-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
+<span data-ttu-id="331f0-135">La configuration suivante vérifie la présence de deux sites web.</span><span class="sxs-lookup"><span data-stu-id="331f0-135">The following configuration ensures the presence of two websites.</span></span>
+<span data-ttu-id="331f0-136">Les données de chaque site web sont définies dans le tableau **AllNodes**.</span><span class="sxs-lookup"><span data-stu-id="331f0-136">Data for each website are defined in the **AllNodes** array.</span></span>
+<span data-ttu-id="331f0-137">Le fichier `Config.xml` étant utilisé pour les deux sites web, nous le définissons dans une clé supplémentaire appelée `NonNodeData`.</span><span class="sxs-lookup"><span data-stu-id="331f0-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
+<span data-ttu-id="331f0-138">Notez que vous pouvez avoir autant de clés supplémentaires que vous le souhaitez et les nommer comme bon vous semble.</span><span class="sxs-lookup"><span data-stu-id="331f0-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
+<span data-ttu-id="331f0-139">`NonNodeData` n’est pas un terme réservé. Il correspond simplement au nom que nous avons décidé de donner à cette clé supplémentaire.</span><span class="sxs-lookup"><span data-stu-id="331f0-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
 
-<span data-ttu-id="99844-140">Accédez aux clés supplémentaires en utilisant la variable spéciale **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="99844-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
-<span data-ttu-id="99844-141">Dans cet exemple, `ConfigFileContents` est accessible avec la ligne :</span><span class="sxs-lookup"><span data-stu-id="99844-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
+<span data-ttu-id="331f0-140">Accédez aux clés supplémentaires en utilisant la variable spéciale **$ConfigurationData**.</span><span class="sxs-lookup"><span data-stu-id="331f0-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
+<span data-ttu-id="331f0-141">Dans cet exemple, `ConfigFileContents` est accessible avec la ligne :</span><span class="sxs-lookup"><span data-stu-id="331f0-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- <span data-ttu-id="99844-142">dans le bloc de ressources `File`.</span><span class="sxs-lookup"><span data-stu-id="99844-142">in the `File` resource block.</span></span>
+ <span data-ttu-id="331f0-142">dans le bloc de ressources `File`.</span><span class="sxs-lookup"><span data-stu-id="331f0-142">in the `File` resource block.</span></span>
 
 
 ```powershell
@@ -312,7 +311,7 @@ configuration WebsiteConfig
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="99844-143">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="99844-143">See Also</span></span>
-- [<span data-ttu-id="99844-144">Utilisation des données de configuration</span><span class="sxs-lookup"><span data-stu-id="99844-144">Using configuration data</span></span>](configData.md)
-- [<span data-ttu-id="99844-145">Options relatives aux informations d’identification dans les données de configuration</span><span class="sxs-lookup"><span data-stu-id="99844-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="99844-146">Configurations DSC</span><span class="sxs-lookup"><span data-stu-id="99844-146">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="331f0-143">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="331f0-143">See Also</span></span>
+- [<span data-ttu-id="331f0-144">Utilisation des données de configuration</span><span class="sxs-lookup"><span data-stu-id="331f0-144">Using configuration data</span></span>](configData.md)
+- [<span data-ttu-id="331f0-145">Options relatives aux informations d’identification dans les données de configuration</span><span class="sxs-lookup"><span data-stu-id="331f0-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="331f0-146">Configurations DSC</span><span class="sxs-lookup"><span data-stu-id="331f0-146">DSC Configurations</span></span>](configurations.md)

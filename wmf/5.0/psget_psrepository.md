@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 269f4112704067f291728e4c1d745d68ec6ccd6f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="register-a-powershell-repository"></a><span data-ttu-id="e62fd-102">Inscrire un dépôt PowerShell</span><span class="sxs-lookup"><span data-stu-id="e62fd-102">Register a PowerShell Repository</span></span>
-<span data-ttu-id="e62fd-103">Vous pouvez configurer PowerShellGet pour qu’il opère sur des dépôts internes.</span><span class="sxs-lookup"><span data-stu-id="e62fd-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="e62fd-104">Vous devez pour cela utiliser les ajouts suivants :</span><span class="sxs-lookup"><span data-stu-id="e62fd-104">This is done by using the following additions:</span></span>
-- <span data-ttu-id="e62fd-105">Register-PSRepository : inscrit un dépôt pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="e62fd-105">Register-PSRepository: Registers a repository for the current user.</span></span>
-- <span data-ttu-id="e62fd-106">Unregister-PSRepository : supprime un dépôt inscrit pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="e62fd-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
-- <span data-ttu-id="e62fd-107">Set-PSRepository : définir des valeurs pour un dépôt inscrit.</span><span class="sxs-lookup"><span data-stu-id="e62fd-107">Set-PSRepository: Set values for a registered repository.</span></span>
-- <span data-ttu-id="e62fd-108">Get-PSRepository : obtenir tous les dépôts inscrits pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="e62fd-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
+# <a name="register-a-powershell-repository"></a><span data-ttu-id="322c4-102">Inscrire un dépôt PowerShell</span><span class="sxs-lookup"><span data-stu-id="322c4-102">Register a PowerShell Repository</span></span>
+<span data-ttu-id="322c4-103">Vous pouvez configurer PowerShellGet pour qu’il opère sur des dépôts internes.</span><span class="sxs-lookup"><span data-stu-id="322c4-103">You can configure PowerShellGet to operate against internal repositories.</span></span> <span data-ttu-id="322c4-104">Vous devez pour cela utiliser les ajouts suivants :</span><span class="sxs-lookup"><span data-stu-id="322c4-104">This is done by using the following additions:</span></span>
+- <span data-ttu-id="322c4-105">Register-PSRepository : inscrit un dépôt pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="322c4-105">Register-PSRepository: Registers a repository for the current user.</span></span>
+- <span data-ttu-id="322c4-106">Unregister-PSRepository : supprime un dépôt inscrit pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="322c4-106">Unregister-PSRepository: Removes a registered repository for the current user.</span></span>
+- <span data-ttu-id="322c4-107">Set-PSRepository : définir des valeurs pour un dépôt inscrit.</span><span class="sxs-lookup"><span data-stu-id="322c4-107">Set-PSRepository: Set values for a registered repository.</span></span>
+- <span data-ttu-id="322c4-108">Get-PSRepository : obtenir tous les dépôts inscrits pour l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="322c4-108">Get-PSRepository: Get all registered repositories for the current user.</span></span>
 
-<span data-ttu-id="e62fd-109">Après avoir inscrit un dépôt, vous pouvez utiliser Find-Module et Install-Module pour l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="e62fd-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+<span data-ttu-id="322c4-109">Après avoir inscrit un dépôt, vous pouvez utiliser Find-Module et Install-Module pour l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="322c4-109">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 \#Register a default repository
