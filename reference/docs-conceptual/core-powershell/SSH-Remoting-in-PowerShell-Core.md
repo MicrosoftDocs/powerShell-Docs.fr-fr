@@ -34,7 +34,7 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
 
 ## <a name="setup-on-windows-machine"></a>Configuration sur un ordinateur Windows
 
-1. Installer la dernière version de [PowerShell Core pour Windows]
+1. Installez la dernière version de [PowerShell Core pour Windows]
     - Vous pouvez savoir si elle dispose de la prise en charge de l’accès distant SSH en examinant les ensembles de paramètres pour New-PSSession
 
     ```powershell
