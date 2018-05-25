@@ -1,14 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-ms.topic: conceptual
-keywords: gallery, powershell, applet de commande, psgallery, psget
-title: PowerShell Gallery
-ms.openlocfilehash: cffb2f0182ffe9072f9fbbc7f4cdfcf28de276db
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
+ and --- ms.date:  12/06/2017 contributor:  JKeithB keywords:  gallery,powershell,applet de commande,psgallery,psget title: PowerShell Gallery
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Gallery
 
@@ -28,9 +18,9 @@ Pour plus d’informations sur l’utilisation des commandes PowerShellGet avec 
 
 ## <a name="supported-operating-systems"></a>Systèmes d’exploitation pris en charge
 
-Le module **PowerShellGet** nécessite **PowerShell 3.0 ou ultérieur**.
+Le module **PowerShellGet** exige **Windows PowerShell 3.0 ou une version plus récente**, ou **PowerShell Core 6.0 ou une version plus récente**.
 
-Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitation suivants :
+Une version adaptée de **Windows PowerShell** est disponible pour ces systèmes d’exploitation :
 
 - Windows 10
 - Windows 8.1 Professionnel
@@ -41,6 +31,10 @@ Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitat
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** nécessite également .NET Framework 4.5 ou ultérieur. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+
+**PowerShell Core** prend en charge de nombreux systèmes d’exploitation. Voir [cet article](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/) pour en connaître la liste complète.
+
+De nombreux modules hébergés dans la galerie prendront en charge différents systèmes d’exploitation en imposant des exigences supplémentaires. Pour plus d’informations, voir la documentation des modules.
 
 ## <a name="got-a-question-have-feedback"></a>Vous avez une question ? Vous avez des commentaires ?
 

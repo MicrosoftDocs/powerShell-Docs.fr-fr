@@ -1,13 +1,12 @@
 ---
 ms.date: 10/11/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: d5a2584b23abd8eb0f1359bc452d16c7380dbaac
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 924abe12aa865989e83c975b599b3b65ddd45655
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
