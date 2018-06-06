@@ -42,7 +42,7 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installez la dernière version de [OpenSSH Win32] depuis GitHub en utilisant les instructions [d’installation]
+1. Installez la dernière version de [OpenSSH Win32] depuis GitHub en utilisant les instructions [Installation]
 1. Ouvrez le fichier sshd_config à l’emplacement où vous avez installé OpenSSH Win32
     - Vérifiez que l’authentification par mot de passe est activée
 
@@ -75,7 +75,7 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Configuration sur un ordinateur Linux (Ubuntu 14.04)
 
 1. Installez la dernière version [PowerShell pour Linux] à partir de GitHub
-1. Installez [Ubuntu SSH] si nécessaire
+1. Installez [SSH Ubuntu] si nécessaire
 
     ```bash
     sudo apt install openssh-client
@@ -243,7 +243,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 [PowerShell Core pour Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [OpenSSH Win32]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[d’installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell pour Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
-[Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
+[SSH Ubuntu]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
 [PowerShell pour MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
