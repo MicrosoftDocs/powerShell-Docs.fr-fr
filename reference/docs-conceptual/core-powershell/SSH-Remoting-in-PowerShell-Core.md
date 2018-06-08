@@ -131,7 +131,7 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
     - Ajoutez une entrée de sous-système PowerShell
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Vous pouvez éventuellement activer l’authentification par clé
