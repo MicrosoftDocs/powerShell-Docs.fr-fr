@@ -2,11 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483149"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell
 
@@ -81,7 +82,7 @@ Le moyen le plus simple de configurer votre ordinateur pour autoriser la gestion
 
     En général, les informations d’identification que vous passez par le biais de la passerelle Accès Web Windows PowerShell sont identiques à celles reconnues par l’ordinateur distant que vous souhaitez gérer. Toutefois, si vous souhaitez utiliser des informations d’identification différentes pour gérer l’ordinateur spécifié à l’étape 2, développez la section **Paramètres de connexion facultatifs** et spécifiez les autres informations d’identification. Sinon, passez à l’étape 6.
 
-1. Si l’administrateur Accès Web Windows PowerShell a créé une configuration de session personnalisée pour les utilisateurs d’Accès Web Windows PowerShell, tapez le nom de cette configuration se session dans le champ **Nom de la configuration**. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Si l’administrateur Accès Web Windows PowerShell a créé une configuration de session personnalisée pour les utilisateurs d’Accès Web Windows PowerShell, tapez le nom de cette configuration se session dans le champ **Nom de la configuration**. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Conservez le **Type d’authentification** **Par défaut**, sauf indication contraire de l’administrateur Accès Web Windows PowerShell.
 

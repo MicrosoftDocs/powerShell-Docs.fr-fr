@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251481"
 ---
 # <a name="script-tracing-and-logging"></a>Traçage et journalisation de script
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-Comme avec tous les systèmes de journalisation qui ont une mémoire tampon de rétention limitée (tels que les journaux ETW), une attaque possible contre cette infrastructure consiste à submerger le journal de faux événements pour masquer les preuves antérieures. Pour vous protéger contre ce genre d’attaque, veillez à configurer une forme de collecte de journal des événements (par exemple, transferts d’événements Windows, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) pour déplacer les journaux des événements hors de l’ordinateur dès que possible.
+Comme avec tous les systèmes de journalisation qui ont une mémoire tampon de rétention limitée (tels que les journaux ETW), une attaque possible contre cette infrastructure consiste à submerger le journal de faux événements pour masquer les preuves antérieures. Pour vous protéger contre ce genre d’attaque, veillez à configurer une forme de collecte de journal des événements (par exemple, transferts d’événements Windows, [Spotting the Adversary with Windows Event Log Monitoring](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm)) pour déplacer les journaux des événements hors de l’ordinateur dès que possible.

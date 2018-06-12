@@ -2,11 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483132"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
@@ -112,7 +113,7 @@ Si l’utilisateur ne fournit pas d’autres informations d’identification, le
 Les règles d’autorisation peuvent servir à accorder aux utilisateurs un accès à une configuration de session particulière.
 Vous pouvez créer des _instances d’exécution restreintes_ ou des configurations de session pour Accès Web Windows PowerShell, puis autoriser des utilisateurs spécifiques à se connecter uniquement à des configurations de session spécifiques quand ils se connectent à Accès Web Windows PowerShell.
 Vous pouvez utiliser des listes de contrôle d’accès pour identifier les utilisateurs qui ont accès à des points de terminaison spécifiques, et pour restreindre davantage l’accès à un point de terminaison pour un ensemble donné d’utilisateurs en appliquant les règles d’autorisation décrites dans cette section.
-Pour plus d’informations sur les instances d’exécution restreintes, consultez [Creating a constrained runspace](https://msdn.microsoft.com/en-us/library/dn614668).
+Pour plus d’informations sur les instances d’exécution restreintes, consultez [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Configuration des règles d’autorisation
 
@@ -122,7 +123,7 @@ La seconde procédure décrit comment supprimer une règle d’autorisation dont
 
 Si vous prévoyez d’utiliser des configurations de session personnalisée pour autoriser des utilisateurs spécifiques à travailler uniquement dans des instances d’exécution restreintes dans Accès Web Windows PowerShell, créez vos configurations de session personnalisée avant d’ajouter des règles d’autorisation qui y font référence.
 Vous ne pouvez pas utiliser les applets de commande d’Accès Web Windows PowerShell pour créer des configurations de sessions personnalisées.
-Pour plus d’informations sur la création de configurations de session personnalisée, consultez [About Session Configuration Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Pour plus d’informations sur la création de configurations de session personnalisée, consultez [About Session Configuration Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Les applets de commande d’Accès Web Windows PowerShell ne prennent en charge qu’un seul caractère générique, l’astérisque ( \* ).
 Les caractères génériques dans les chaînes ne sont pas pris en charge. Utilisez un seul astérisque par propriété (utilisateurs, ordinateurs ou configurations de sessions).
@@ -142,7 +143,7 @@ Les caractères génériques dans les chaînes ne sont pas pris en charge. Utili
 2. **Étape facultative** Pour restreindre l’accès utilisateur à l’aide de configurations de session :
 
     Vérifiez que les configurations de session que vous voulez utiliser dans vos règles existent déjà.
-Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Cette règle d’autorisation accorde à un utilisateur spécifique l’accès à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de script et d’applet de commande. Tapez ce qui suit, puis appuyez sur **Entrée**.
 
@@ -253,6 +254,6 @@ Si le serveur de passerelle exécute Windows Server 2012 R2, Accès Web Window
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Installer et utiliser Accès Web Windows PowerShell](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Installer et utiliser Accès Web Windows PowerShell](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Applets de commande d’Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md)
