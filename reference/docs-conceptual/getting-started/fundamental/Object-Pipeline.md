@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948208"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="08853-103">Pipeline d’objet</span><span class="sxs-lookup"><span data-stu-id="08853-103">Object Pipeline</span></span>
 <span data-ttu-id="08853-104">Les pipelines agissent comme une série de segments de canal connectés.</span><span class="sxs-lookup"><span data-stu-id="08853-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="08853-105">Les éléments se déplaçant dans pipeline passent par chaque segment.</span><span class="sxs-lookup"><span data-stu-id="08853-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="08853-106">Pour créer un pipeline dans Windows PowerShell, vous interconnectez des commandes à l’aide que l’opérateur barre verticale « | » (pipe).</span><span class="sxs-lookup"><span data-stu-id="08853-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="08853-107">La sortie de chaque commande est utilisée en tant qu’entrée pour la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="08853-107">The output of each command is used as input to the next command.</span></span>

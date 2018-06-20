@@ -8,6 +8,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677312"
 ---
 # <a name="collecting-information-about-computers"></a><span data-ttu-id="fed06-103">Collecte d’informations sur les ordinateurs</span><span class="sxs-lookup"><span data-stu-id="fed06-103">Collecting Information About Computers</span></span>
 

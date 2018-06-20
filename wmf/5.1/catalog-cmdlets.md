@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189065"
 ---
 # <a name="catalog-cmdlets"></a><span data-ttu-id="7288b-103">Applets de commande de catalogue</span><span class="sxs-lookup"><span data-stu-id="7288b-103">Catalog Cmdlets</span></span>
 

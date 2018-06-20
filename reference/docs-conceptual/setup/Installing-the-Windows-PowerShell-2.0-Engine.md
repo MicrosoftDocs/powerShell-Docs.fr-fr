@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952339"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a><span data-ttu-id="50d4b-103">Installation du moteur Windows PowerShell 2.0</span><span class="sxs-lookup"><span data-stu-id="50d4b-103">Installing the Windows PowerShell 2.0 Engine</span></span>
 <span data-ttu-id="50d4b-104">Cette rubrique explique comment installer le moteur Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="50d4b-104">This topic explains how to install the Windows PowerShell 2.0 Engine.</span></span>

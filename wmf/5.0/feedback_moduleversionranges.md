@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225689"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="76355-102">Prise en charge des modules pour la déclaration des plages de versions (1.\*, etc.)</span><span class="sxs-lookup"><span data-stu-id="76355-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
 <span data-ttu-id="76355-103">Combiné avec **-MinimumVersion**, **-MaximumVersion** permet désormais à l’utilisateur d’obtenir/importer un module dans une plage spécifique.</span><span class="sxs-lookup"><span data-stu-id="76355-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="76355-104">Le paramètre prend également en charge **.**\*.</span><span class="sxs-lookup"><span data-stu-id="76355-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="76355-105">L’exemple suivant illustre son fonctionnement :</span><span class="sxs-lookup"><span data-stu-id="76355-105">The following example shows how it works:</span></span>

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218431"
 ---
 # <a name="side-by-side-module-versioning-support-for-dsc-resources"></a><span data-ttu-id="80f4d-102">Prise en charge du contrôle de version de modules côte à côte pour les ressources DSC</span><span class="sxs-lookup"><span data-stu-id="80f4d-102">Side-By-Side Module Versioning Support for DSC Resources</span></span>
 

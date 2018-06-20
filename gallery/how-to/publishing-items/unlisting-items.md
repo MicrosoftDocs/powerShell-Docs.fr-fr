@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187530"
 ---
 # <a name="unlisting-items"></a><span data-ttu-id="6a73b-103">Retrait d’éléments de la liste</span><span class="sxs-lookup"><span data-stu-id="6a73b-103">Unlisting items</span></span>
 

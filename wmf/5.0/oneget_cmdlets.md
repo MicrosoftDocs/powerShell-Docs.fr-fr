@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221950"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="f8302-102">Applets de commande PackageManagement</span><span class="sxs-lookup"><span data-stu-id="f8302-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="f8302-103">Il s’agit du noyau de PackageManagement pour prendre en charge la découverte, l’installation et l’inventaire des logiciels.</span><span class="sxs-lookup"><span data-stu-id="f8302-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="f8302-104">Essayez les applets de commande pour effectuer ces opérations :</span><span class="sxs-lookup"><span data-stu-id="f8302-104">Try out the cmdlets for these operations:</span></span>

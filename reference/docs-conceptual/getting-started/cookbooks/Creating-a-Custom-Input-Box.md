@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954753"
 ---
 # <a name="creating-a-custom-input-box"></a><span data-ttu-id="90e81-103">Création d'une zone d'entrée personnalisée</span><span class="sxs-lookup"><span data-stu-id="90e81-103">Creating a Custom Input Box</span></span>
 

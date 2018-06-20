@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190092"
 ---
 # <a name="jea-session-configurations"></a><span data-ttu-id="93270-103">Configuration de session JEA</span><span class="sxs-lookup"><span data-stu-id="93270-103">JEA Session Configurations</span></span>
 

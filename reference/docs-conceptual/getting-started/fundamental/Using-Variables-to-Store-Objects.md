@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953325"
 ---
 # <a name="using-variables-to-store-objects"></a><span data-ttu-id="3cddb-103">Utilisation de variables pour stocker des objets</span><span class="sxs-lookup"><span data-stu-id="3cddb-103">Using Variables to Store Objects</span></span>
 <span data-ttu-id="3cddb-104">PowerShell fonctionne avec des objets.</span><span class="sxs-lookup"><span data-stu-id="3cddb-104">PowerShell works with objects.</span></span> <span data-ttu-id="3cddb-105">PowerShell permet de créer des variables (essentiellement des objets nommés) pour conserver les sorties en vue d’une utilisation ultérieure.</span><span class="sxs-lookup"><span data-stu-id="3cddb-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="3cddb-106">Si vous êtes habitué à utiliser des variables dans d’autres interpréteurs de commandes, n’oubliez pas que les variables PowerShell sont des objets, et non du texte.</span><span class="sxs-lookup"><span data-stu-id="3cddb-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>

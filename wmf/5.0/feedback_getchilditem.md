@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221899"
 ---
 # <a name="get-childitem-has--depth-parameter"></a><span data-ttu-id="29b27-102">Get-ChildItem a un paramètre -Depth</span><span class="sxs-lookup"><span data-stu-id="29b27-102">Get-ChildItem has -Depth parameter</span></span>
 <span data-ttu-id="29b27-103">**Get-ChildItem** a maintenant un paramètre **–Depth** que vous pouvez utiliser avec **– Recurse** pour limiter la récursivité :</span><span class="sxs-lookup"><span data-stu-id="29b27-103">**Get-ChildItem** now has a **–Depth** parameter you use with **–Recurse** to limit the recursion:</span></span>

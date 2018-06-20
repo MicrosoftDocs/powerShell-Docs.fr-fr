@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225723"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a><span data-ttu-id="8cac0-102">Création de types personnalisés à l’aide de classes PowerShell</span><span class="sxs-lookup"><span data-stu-id="8cac0-102">Creating Custom Types using PowerShell Classes</span></span>
 

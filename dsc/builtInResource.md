@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218278"
 ---
 # <a name="built-in-windows-powershell-desired-state-configuration-resources"></a><span data-ttu-id="e691e-103">Ressources DSC Windows PowerShell intégrées</span><span class="sxs-lookup"><span data-stu-id="e691e-103">Built-In Windows PowerShell Desired State Configuration Resources</span></span>
 

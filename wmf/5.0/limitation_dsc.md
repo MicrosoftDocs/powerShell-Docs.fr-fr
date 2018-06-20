@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190058"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a><span data-ttu-id="77d7c-102">Problèmes connus liés à la Configuration d’état souhaité (DSC)</span><span class="sxs-lookup"><span data-stu-id="77d7c-102">Desired State Configuration (DSC) Known Issues and Limitations</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189701"
 ---
 # <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="a9742-103">Exécution de DSC avec les informations d’identification de l’utilisateur</span><span class="sxs-lookup"><span data-stu-id="a9742-103">Running DSC with user credentials</span></span>
 

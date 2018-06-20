@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222117"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="0a581-103">Création d’une ressource DSC en C#</span><span class="sxs-lookup"><span data-stu-id="0a581-103">Authoring a DSC resource in C#</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953920"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a><span data-ttu-id="49fe2-103">Installer et utiliser Accès Web Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="49fe2-103">Install and Use Windows PowerShell Web Access</span></span>
 

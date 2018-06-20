@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225706"
 ---
 # <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a><span data-ttu-id="8b624-102">Configurer le gestionnaire de configuration local DSC avec le nouvel attribut de métaconfiguration</span><span class="sxs-lookup"><span data-stu-id="8b624-102">Configure DSC LCM with new meta-configuration attribute</span></span>
 

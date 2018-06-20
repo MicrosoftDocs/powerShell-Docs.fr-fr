@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951696"
 ---
 # <a name="working-with-registry-keys"></a><span data-ttu-id="c5558-103">Utilisation de clés de Registre</span><span class="sxs-lookup"><span data-stu-id="c5558-103">Working with Registry Keys</span></span>
 
@@ -35,7 +36,7 @@ SKC  VC Name                           Property
 
 <span data-ttu-id="c5558-111">Il s’agit des clés de niveau supérieur visibles sous HKEY_CURRENT_USER dans l’Éditeur du Registre (Regedit.exe).</span><span class="sxs-lookup"><span data-stu-id="c5558-111">These are the top-level keys visible under HKEY_CURRENT_USER in the Registry Editor (Regedit.exe).</span></span>
 
-<span data-ttu-id="c5558-112">Vous pouvez également définir ce chemin du Registre en spécifiant le nom du fournisseur de Registre, suivi de « **::** ».</span><span class="sxs-lookup"><span data-stu-id="c5558-112">You can also specify this registry path by specifying the registry provider's name, followed by "**::**".</span></span> <span data-ttu-id="c5558-113">Le nom complet du fournisseur de Registre est **Microsoft.PowerShell.Core\\Registry**, mais il peut être abrégé en **Registry**.</span><span class="sxs-lookup"><span data-stu-id="c5558-113">The registry provider's full name is **Microsoft.PowerShell.Core\\Registry**, but this can be shortened to just **Registry**.</span></span> <span data-ttu-id="c5558-114">Toutes les commandes suivantes répertorient le contenu directement sous HKCU :</span><span class="sxs-lookup"><span data-stu-id="c5558-114">Any of the following commands will list the contents directly under HKCU:</span></span>
+<span data-ttu-id="c5558-112">Vous pouvez également définir ce chemin du Registre en spécifiant le nom du fournisseur de Registre, suivi de «  **::**  ».</span><span class="sxs-lookup"><span data-stu-id="c5558-112">You can also specify this registry path by specifying the registry provider's name, followed by "**::**".</span></span> <span data-ttu-id="c5558-113">Le nom complet du fournisseur de Registre est **Microsoft.PowerShell.Core\\Registry**, mais il peut être abrégé en **Registry**.</span><span class="sxs-lookup"><span data-stu-id="c5558-113">The registry provider's full name is **Microsoft.PowerShell.Core\\Registry**, but this can be shortened to just **Registry**.</span></span> <span data-ttu-id="c5558-114">Toutes les commandes suivantes répertorient le contenu directement sous HKCU :</span><span class="sxs-lookup"><span data-stu-id="c5558-114">Any of the following commands will list the contents directly under HKCU:</span></span>
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER

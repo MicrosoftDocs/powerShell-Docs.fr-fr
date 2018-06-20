@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953053"
 ---
 # <a name="the-iseaddontoolcollection-object"></a><span data-ttu-id="a0286-103">Objet ISEAddOnToolCollection</span><span class="sxs-lookup"><span data-stu-id="a0286-103">The ISEAddOnToolCollection Object</span></span>
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 04/09/2018
 
 <span data-ttu-id="a0286-113">**ControlType** : type. Spécifie le contrôle qui est ajouté.</span><span class="sxs-lookup"><span data-stu-id="a0286-113">**ControlType** -Type Specifies the control that is added.</span></span>
 
-<span data-ttu-id="a0286-114">**\[IsVisible\]** : valeur booléenne facultative. Si la valeur définie est **$true**, l’outil complémentaire est immédiatement visible dans le volet d’outils associé.</span><span class="sxs-lookup"><span data-stu-id="a0286-114">**\[IsVisible\]** - optional Boolean If set to **$true**, the add-on tool is immediately visible in the associated tool pane.</span></span>
+<span data-ttu-id="a0286-114">**\[IsVisible\]**  : valeur booléenne facultative. Si la valeur définie est **$true**, l’outil complémentaire est immédiatement visible dans le volet d’outils associé.</span><span class="sxs-lookup"><span data-stu-id="a0286-114">**\[IsVisible\]** - optional Boolean If set to **$true**, the add-on tool is immediately visible in the associated tool pane.</span></span>
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

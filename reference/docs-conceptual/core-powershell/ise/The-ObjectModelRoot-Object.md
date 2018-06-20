@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954600"
 ---
 # <a name="the-objectmodelroot-object"></a><span data-ttu-id="f403a-103">Objet ObjectModelRoot</span><span class="sxs-lookup"><span data-stu-id="f403a-103">The ObjectModelRoot Object</span></span>
 

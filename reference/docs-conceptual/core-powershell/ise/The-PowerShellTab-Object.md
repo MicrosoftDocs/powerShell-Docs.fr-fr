@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952509"
 ---
 # <a name="the-powershelltab-object"></a><span data-ttu-id="fead7-103">Objet PowerShellTab</span><span class="sxs-lookup"><span data-stu-id="fead7-103">The PowerShellTab Object</span></span>
 
@@ -43,7 +44,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 
 <span data-ttu-id="fead7-119">**Script** \- System.Management.Automation.ScriptBlock ou chaîne. Bloc de script à utiliser.</span><span class="sxs-lookup"><span data-stu-id="fead7-119">**Script** - System.Management.Automation.ScriptBlock or String The script block to run.</span></span>
 
-<span data-ttu-id="fead7-120">**\[useNewScope\]** : valeur booléenne facultative qui a la valeur **$true** par défaut. Si la valeur est **$true**, une nouvelle étendue est créée pour y exécuter la commande.</span><span class="sxs-lookup"><span data-stu-id="fead7-120">**\[useNewScope\]** -  Optional Boolean that defaults to **$true** If set to **$true**, then a new scope is created within which to run the command.</span></span> <span data-ttu-id="fead7-121">Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.</span><span class="sxs-lookup"><span data-stu-id="fead7-121">It does not modify the runtime environment of the PowerShell tab that is specified by the command.</span></span>
+<span data-ttu-id="fead7-120">**\[useNewScope\]**  : valeur booléenne facultative qui a la valeur **$true** par défaut. Si la valeur est **$true**, une nouvelle étendue est créée pour y exécuter la commande.</span><span class="sxs-lookup"><span data-stu-id="fead7-120">**\[useNewScope\]** -  Optional Boolean that defaults to **$true** If set to **$true**, then a new scope is created within which to run the command.</span></span> <span data-ttu-id="fead7-121">Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.</span><span class="sxs-lookup"><span data-stu-id="fead7-121">It does not modify the runtime environment of the PowerShell tab that is specified by the command.</span></span>
 
 <span data-ttu-id="fead7-122">**\[millisecondsTimeout\]** - Entier facultatif qui a la valeur **500** par défaut.</span><span class="sxs-lookup"><span data-stu-id="fead7-122">**\[millisecondsTimeout\]** -  Optional integer that defaults to **500**.</span></span>
 <span data-ttu-id="fead7-123">Si la commande ne se termine pas dans le délai spécifié, la commande génère une exception **TimeoutException** avec le message « Le délai de l’opération a expiré. »</span><span class="sxs-lookup"><span data-stu-id="fead7-123">If the command does not finish within the specified time, then the command generates a **TimeoutException** with the message "The operation has timed out."</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952305"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="9367d-103">Utilisation des fichiers, dossiers et clés de Registre</span><span class="sxs-lookup"><span data-stu-id="9367d-103">Working With Files, Folders and Registry Keys</span></span>
 
@@ -92,7 +93,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 <span data-ttu-id="9367d-134">Voici quelques exemples qui illustrent l'utilisation des caractères génériques.</span><span class="sxs-lookup"><span data-stu-id="9367d-134">Here are some examples of how wildcard specification works.</span></span>
 
-<span data-ttu-id="9367d-135">Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe **.log** et exactement cinq caractères dans le nom de base, entrez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="9367d-135">To find all files in the Windows directory with the suffix **.log** and exactly five characters in the base name, enter the following command:</span></span>
+<span data-ttu-id="9367d-135">Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe  **.log** et exactement cinq caractères dans le nom de base, entrez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="9367d-135">To find all files in the Windows directory with the suffix **.log** and exactly five characters in the base name, enter the following command:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -127,7 +128,7 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 <span data-ttu-id="9367d-141">Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier System32. Tout ce dont vous souvenez, c'est que le nom de la DLL commence par la lettre « W » et qu'il contient le nombre « 32 ».</span><span class="sxs-lookup"><span data-stu-id="9367d-141">For example, suppose you are trying to find the Windows Time Service DLL in the System32 folder, and all you can remember about the DLL name is that it begins with "W" and has "32" in it.</span></span>
 
-<span data-ttu-id="9367d-142">Une expression telle que **w\&#42;32\&#42;.dll** permet de trouver toutes les DLL qui répondent aux conditions, mais peut également retourner les DLL de compatibilité avec Windows 95 et Windows 16 bits qui comprennent « 95 » ou « 16 » dans leur nom.</span><span class="sxs-lookup"><span data-stu-id="9367d-142">An expression like **w\&#42;32\&#42;.dll** will find all DLLs that satisfy the conditions, but it may also return the Windows 95 and 16-bit Windows compatibility DLLs that include "95" or "16" in their names.</span></span> <span data-ttu-id="9367d-143">Pour omettre les fichiers contenant l’un de ces nombres dans leur nom, utilisez le paramètre **Exclude** selon le modèle **\&#42;\[9516]\&#42;** :</span><span class="sxs-lookup"><span data-stu-id="9367d-143">You can omit files that have any of these numbers in their names by using the **Exclude** parameter with the pattern **\&#42;\[9516]\&#42;**:</span></span>
+<span data-ttu-id="9367d-142">Une expression telle que **w\&#42;32\&#42;.dll** permet de trouver toutes les DLL qui répondent aux conditions, mais peut également retourner les DLL de compatibilité avec Windows 95 et Windows 16 bits qui comprennent « 95 » ou « 16 » dans leur nom.</span><span class="sxs-lookup"><span data-stu-id="9367d-142">An expression like **w\&#42;32\&#42;.dll** will find all DLLs that satisfy the conditions, but it may also return the Windows 95 and 16-bit Windows compatibility DLLs that include "95" or "16" in their names.</span></span> <span data-ttu-id="9367d-143">Pour omettre les fichiers contenant l’un de ces nombres dans leur nom, utilisez le paramètre **Exclude** selon le modèle **\&#42;\[9516]\&#42;**  :</span><span class="sxs-lookup"><span data-stu-id="9367d-143">You can omit files that have any of these numbers in their names by using the **Exclude** parameter with the pattern **\&#42;\[9516]\&#42;**:</span></span>
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

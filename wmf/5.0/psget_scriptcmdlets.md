@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189548"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="cf712-102">Applets de commande PowerShellGet pour la gestion des scripts</span><span class="sxs-lookup"><span data-stu-id="cf712-102">PowerShellGet Cmdlets for Script Management</span></span>
 

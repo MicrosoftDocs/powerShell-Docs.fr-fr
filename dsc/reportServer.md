@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188545"
 ---
 # <a name="using-a-dsc-report-server"></a><span data-ttu-id="a2e5e-103">Utilisation d’un serveur de rapports DSC</span><span class="sxs-lookup"><span data-stu-id="a2e5e-103">Using a DSC report server</span></span>
 

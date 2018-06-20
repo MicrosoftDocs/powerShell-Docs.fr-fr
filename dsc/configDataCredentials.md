@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190041"
 ---
 # <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="0befd-103">Options relatives aux informations d’identification dans les données de configuration</span><span class="sxs-lookup"><span data-stu-id="0befd-103">Credentials Options in Configuration Data</span></span>
 ><span data-ttu-id="0befd-104">S’applique à : Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="0befd-104">Applies To: Windows PowerShell 5.0</span></span>

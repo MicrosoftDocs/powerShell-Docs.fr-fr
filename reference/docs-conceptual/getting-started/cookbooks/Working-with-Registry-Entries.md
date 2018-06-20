@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952373"
 ---
 # <a name="working-with-registry-entries"></a><span data-ttu-id="2e36f-103">Utilisation des entrées de Registre</span><span class="sxs-lookup"><span data-stu-id="2e36f-103">Working with Registry Entries</span></span>
 
@@ -52,7 +53,7 @@ PF_AccessoriesName  : Accessories
 
 <span data-ttu-id="2e36f-112">Les propriétés liées à Windows PowerShell pour la clé possèdent toutes le préfixe « PS », comme **PSPath**, **PSParentPath**, **PSChildName** et **PSProvider**.</span><span class="sxs-lookup"><span data-stu-id="2e36f-112">The Windows PowerShell-related properties for the key are all prefixed with "PS", such as **PSPath**, **PSParentPath**, **PSChildName**, and **PSProvider**.</span></span>
 
-<span data-ttu-id="2e36f-113">Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation « **.** ».</span><span class="sxs-lookup"><span data-stu-id="2e36f-113">You can use the "**.**" notation for referring to the current location.</span></span> <span data-ttu-id="2e36f-114">Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser l’applet de commande **Set-Location** :</span><span class="sxs-lookup"><span data-stu-id="2e36f-114">You can use **Set-Location** to change to the **CurrentVersion** registry container first:</span></span>
+<span data-ttu-id="2e36f-113">Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation «  **.**  ».</span><span class="sxs-lookup"><span data-stu-id="2e36f-113">You can use the "**.**" notation for referring to the current location.</span></span> <span data-ttu-id="2e36f-114">Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser l’applet de commande **Set-Location** :</span><span class="sxs-lookup"><span data-stu-id="2e36f-114">You can use **Set-Location** to change to the **CurrentVersion** registry container first:</span></span>
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -64,7 +65,7 @@ Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Curre
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-<span data-ttu-id="2e36f-116">Vous pouvez ensuite utiliser la notation « **.** » pour l’emplacement actuel pour répertorier les propriétés sans spécifier de chemin d’accès complet :</span><span class="sxs-lookup"><span data-stu-id="2e36f-116">You can then use the "**.**" notation for the current location to list the properties without specifying a full path:</span></span>
+<span data-ttu-id="2e36f-116">Vous pouvez ensuite utiliser la notation «  **.**  » pour l’emplacement actuel pour répertorier les propriétés sans spécifier de chemin d’accès complet :</span><span class="sxs-lookup"><span data-stu-id="2e36f-116">You can then use the "**.**" notation for the current location to list the properties without specifying a full path:</span></span>
 
 ```
 PS> Get-ItemProperty -Path .

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950044"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="b6d19-103">Comment créer un onglet PowerShell dans Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="b6d19-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
 

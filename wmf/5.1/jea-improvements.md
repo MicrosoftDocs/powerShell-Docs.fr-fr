@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222415"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a><span data-ttu-id="eae12-103">Améliorations de Just Enough Administration (JEA)</span><span class="sxs-lookup"><span data-stu-id="eae12-103">Improvements to Just Enough Administration (JEA)</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951322"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a><span data-ttu-id="4f236-103">Objectif du modèle objet de script Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="4f236-103">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>
 

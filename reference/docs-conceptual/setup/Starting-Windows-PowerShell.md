@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953121"
 ---
 # <a name="starting-windows-powershell"></a><span data-ttu-id="4ba2e-103">Démarrage de Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="4ba2e-103">Starting Windows PowerShell</span></span>
 <span data-ttu-id="4ba2e-104">PowerShell est une DLL de moteur de script qui est incorporée dans plusieurs hôtes.</span><span class="sxs-lookup"><span data-stu-id="4ba2e-104">PowerShell is a scripting engine dll which is embedded into multiple hosts.</span></span>  <span data-ttu-id="4ba2e-105">L’hôte le plus courant que vous démarrerez sont la ligne de commande interactive PowerShell.exe et l’environnement d’écriture de scripts interactif PowerShell_ISE.exe.</span><span class="sxs-lookup"><span data-stu-id="4ba2e-105">The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.</span></span>

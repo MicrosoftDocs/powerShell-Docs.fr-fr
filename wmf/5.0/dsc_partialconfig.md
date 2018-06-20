@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189395"
 ---
 # <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a><span data-ttu-id="7a871-102">Configurer un nœud avec plusieurs fragments de configuration (configurations partielles)</span><span class="sxs-lookup"><span data-stu-id="7a871-102">Configure Node with multiple configuration fragments (partial configurations)</span></span>
 
