@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221950"
 ---
 # <a name="packagemanagement-cmdlets"></a>Applets de commande PackageManagement
 Il s’agit du noyau de PackageManagement pour prendre en charge la découverte, l’installation et l’inventaire des logiciels. Essayez les applets de commande pour effectuer ces opérations :

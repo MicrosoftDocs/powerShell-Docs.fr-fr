@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222334"
 ---
 # <a name="mof-documents-are-encrypted-by-default"></a>Les documents MOF sont chiffrés par défaut
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951067"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Compréhension du pipeline Windows PowerShell
 Le piping fonctionne pratiquement partout dans Windows PowerShell. Même si vous voyez du texte à l’écran, Windows PowerShell ne canalise pas de texte entre des commandes. Au lieu de cela, il canalise des objets.
@@ -50,7 +51,7 @@ Path
 C:\
 ```
 
-Si le texte figure dans un pipeline Windows PowerShell, l’émission d’une commande telle que **Get-Location | Out-Host** a pour effet de transmettre de **Get-Location** à **Out-Host** un jeu de caractères dans l’ordre de leur affichage à l’écran. En d’autres termes, si vous deviez ignorer les informations d’en-tête, **Out-Host** recevrait d’abord le caractère « **C »**, puis le caractère « **: »**, puis le caractère '**\\'**. Il se pourrait que l’applet de commande **Out-Host** ne puisse pas déterminer quelle signification associer à la sortie de caractères par l’applet de commande **Get-Location**.
+Si le texte figure dans un pipeline Windows PowerShell, l’émission d’une commande telle que **Get-Location | Out-Host** a pour effet de transmettre de **Get-Location** à **Out-Host** un jeu de caractères dans l’ordre de leur affichage à l’écran. En d’autres termes, si vous deviez ignorer les informations d’en-tête, **Out-Host** recevrait d’abord le caractère « **C »**, puis le caractère «  **: »**, puis le caractère '**\\'**. Il se pourrait que l’applet de commande **Out-Host** ne puisse pas déterminer quelle signification associer à la sortie de caractères par l’applet de commande **Get-Location**.
 
 Au lieu d’utiliser du texte pour vous permettre aux commandes dans un pipeline de communiquer, Windows PowerShell utilise des objets. Du point de vue d’un utilisateur, les objets empaquètent des informations connexes sous une forme facilitant la manipulation des informations en tant qu’unité, et l’extraction des éléments spécifiques dont vous avez besoin.
 

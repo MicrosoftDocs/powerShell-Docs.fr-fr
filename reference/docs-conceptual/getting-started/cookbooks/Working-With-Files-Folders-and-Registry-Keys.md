@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952305"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Utilisation des fichiers, dossiers et clés de Registre
 
@@ -92,7 +93,7 @@ La mise en correspondance des caractères génériques étant gérée par le mot
 
 Voici quelques exemples qui illustrent l'utilisation des caractères génériques.
 
-Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe **.log** et exactement cinq caractères dans le nom de base, entrez la commande suivante :
+Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe  **.log** et exactement cinq caractères dans le nom de base, entrez la commande suivante :
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -127,7 +128,7 @@ Vous pouvez exclure des éléments spécifiques à l’aide du paramètre **Excl
 
 Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier System32. Tout ce dont vous souvenez, c'est que le nom de la DLL commence par la lettre « W » et qu'il contient le nombre « 32 ».
 
-Une expression telle que **w\&#42;32\&#42;.dll** permet de trouver toutes les DLL qui répondent aux conditions, mais peut également retourner les DLL de compatibilité avec Windows 95 et Windows 16 bits qui comprennent « 95 » ou « 16 » dans leur nom. Pour omettre les fichiers contenant l’un de ces nombres dans leur nom, utilisez le paramètre **Exclude** selon le modèle **\&#42;\[9516]\&#42;** :
+Une expression telle que **w\&#42;32\&#42;.dll** permet de trouver toutes les DLL qui répondent aux conditions, mais peut également retourner les DLL de compatibilité avec Windows 95 et Windows 16 bits qui comprennent « 95 » ou « 16 » dans leur nom. Pour omettre les fichiers contenant l’un de ces nombres dans leur nom, utilisez le paramètre **Exclude** selon le modèle **\&#42;\[9516]\&#42;**  :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

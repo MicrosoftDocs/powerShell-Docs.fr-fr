@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190041"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Options relatives aux informations d’identification dans les données de configuration
 >S’applique à : Windows PowerShell 5.0

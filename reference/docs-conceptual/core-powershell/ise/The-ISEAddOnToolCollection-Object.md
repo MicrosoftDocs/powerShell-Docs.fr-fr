@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953053"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Objet ISEAddOnToolCollection
 
@@ -25,7 +26,7 @@ Ajoute un nouvel outil complémentaire à la collection. Elle retourne l’outil
 
 **ControlType** : type. Spécifie le contrôle qui est ajouté.
 
-**\[IsVisible\]** : valeur booléenne facultative. Si la valeur définie est **$true**, l’outil complémentaire est immédiatement visible dans le volet d’outils associé.
+**\[IsVisible\]**  : valeur booléenne facultative. Si la valeur définie est **$true**, l’outil complémentaire est immédiatement visible dans le volet d’outils associé.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

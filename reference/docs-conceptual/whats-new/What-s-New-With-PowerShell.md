@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677244"
 ---
 # <a name="whats-new-with-powershell-50"></a>Nouveautés de PowerShell 5.0
 Windows PowerShell® 5.0 intègre plusieurs nouvelles fonctionnalités importantes qui, en plus d’étendre et de simplifier son utilisation, vous permettent de contrôler et de gérer des environnements Windows plus aisément et de façon plus poussée.  Les principales améliorations sont dans les domaines de la configuration d’état souhaité, de la sécurité, des performances, de l’accès distant et des améliorations apportées au langage.

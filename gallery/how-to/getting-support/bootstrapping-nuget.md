@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221797"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Amorcer le fournisseur NuGet et NuGet.exe
 

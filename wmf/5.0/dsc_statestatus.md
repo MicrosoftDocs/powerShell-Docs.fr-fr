@@ -6,6 +6,7 @@ ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34482911"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>État unifié et cohérent et représentation de l’état
 

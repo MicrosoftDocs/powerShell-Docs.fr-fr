@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950741"
 ---
 # <a name="viewing-object-structure-get-member"></a>Affichage de structure d’objet (Get-Member)
 

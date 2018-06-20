@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952509"
 ---
 # <a name="the-powershelltab-object"></a>Objet PowerShellTab
 
@@ -43,7 +44,7 @@ Exécute le script spécifié dans l’onglet PowerShell.
 
 **Script** \- System.Management.Automation.ScriptBlock ou chaîne. Bloc de script à utiliser.
 
-**\[useNewScope\]** : valeur booléenne facultative qui a la valeur **$true** par défaut. Si la valeur est **$true**, une nouvelle étendue est créée pour y exécuter la commande. Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.
+**\[useNewScope\]**  : valeur booléenne facultative qui a la valeur **$true** par défaut. Si la valeur est **$true**, une nouvelle étendue est créée pour y exécuter la commande. Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.
 
 **\[millisecondsTimeout\]** - Entier facultatif qui a la valeur **500** par défaut.
 Si la commande ne se termine pas dans le délai spécifié, la commande génère une exception **TimeoutException** avec le message « Le délai de l’opération a expiré. »

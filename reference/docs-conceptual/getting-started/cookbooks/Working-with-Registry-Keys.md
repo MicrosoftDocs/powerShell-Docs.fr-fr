@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951696"
 ---
 # <a name="working-with-registry-keys"></a>Utilisation de clés de Registre
 
@@ -35,7 +36,7 @@ SKC  VC Name                           Property
 
 Il s’agit des clés de niveau supérieur visibles sous HKEY_CURRENT_USER dans l’Éditeur du Registre (Regedit.exe).
 
-Vous pouvez également définir ce chemin du Registre en spécifiant le nom du fournisseur de Registre, suivi de « **::** ». Le nom complet du fournisseur de Registre est **Microsoft.PowerShell.Core\\Registry**, mais il peut être abrégé en **Registry**. Toutes les commandes suivantes répertorient le contenu directement sous HKCU :
+Vous pouvez également définir ce chemin du Registre en spécifiant le nom du fournisseur de Registre, suivi de «  **::**  ». Le nom complet du fournisseur de Registre est **Microsoft.PowerShell.Core\\Registry**, mais il peut être abrégé en **Registry**. Toutes les commandes suivantes répertorient le contenu directement sous HKCU :
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER

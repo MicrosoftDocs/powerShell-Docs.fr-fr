@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225689"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Prise en charge des modules pour la déclaration des plages de versions (1.*, etc.)
 Combiné avec **-MinimumVersion**, **-MaximumVersion** permet désormais à l’utilisateur d’obtenir/importer un module dans une plage spécifique. Le paramètre prend également en charge **.**\*. L’exemple suivant illustre son fonctionnement :

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952373"
 ---
 # <a name="working-with-registry-entries"></a>Utilisation des entrées de Registre
 
@@ -52,7 +53,7 @@ PF_AccessoriesName  : Accessories
 
 Les propriétés liées à Windows PowerShell pour la clé possèdent toutes le préfixe « PS », comme **PSPath**, **PSParentPath**, **PSChildName** et **PSProvider**.
 
-Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation « **.** ». Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser l’applet de commande **Set-Location** :
+Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation «  **.**  ». Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser l’applet de commande **Set-Location** :
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -64,7 +65,7 @@ Vous pouvez également utiliser le PSDrive HKLM intégré avec l’applet de com
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-Vous pouvez ensuite utiliser la notation « **.** » pour l’emplacement actuel pour répertorier les propriétés sans spécifier de chemin d’accès complet :
+Vous pouvez ensuite utiliser la notation «  **.**  » pour l’emplacement actuel pour répertorier les propriétés sans spécifier de chemin d’accès complet :
 
 ```
 PS> Get-ItemProperty -Path .

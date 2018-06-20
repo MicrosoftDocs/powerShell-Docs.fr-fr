@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221899"
 ---
 # <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem a un paramètre -Depth
 **Get-ChildItem** a maintenant un paramètre **–Depth** que vous pouvez utiliser avec **– Recurse** pour limiter la récursivité :

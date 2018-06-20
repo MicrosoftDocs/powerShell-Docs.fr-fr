@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950530"
 ---
 # <a name="windows-powershell-basics"></a>Concepts de base de Windows PowerShell
 Les interfaces graphiques utilisateur utilisent des concepts de base bien connus de la plupart des utilisateurs d’ordinateur. Les utilisateurs s’appuient sur leur connaissance de ces interfaces pour accomplir des tâches. Les systèmes d’exploitation présentent aux utilisateurs une représentation graphique des éléments qui peuvent être parcourus, généralement avec des menus déroulants pour accéder à des fonctionnalités spécifiques, et des menus contextuels pour accéder à des fonctionnalités spécifique du contexte.

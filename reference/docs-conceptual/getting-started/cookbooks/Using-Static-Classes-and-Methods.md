@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951849"
 ---
 # <a name="using-static-classes-and-methods"></a>Utilisation de classes et méthodes statiques
 Certaines classes de .NET Framework ne peuvent pas être créées à l’aide de l’applet de commande **New-Object**. Par exemple, si vous essayez de créer un objet **System.Environment** ou **System.Math** avec l’applet de commande **New-Object**, vous obtenez les messages d’erreur suivants :
@@ -43,7 +44,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Comme mentionné précédemment, Windows PowerShell ajoute automatiquement « **System.** » aux noms de type lorsque vous utilisez l’applet de commande **New-Object**. La même chose se produisant en cas d’utilisation d’un nom de type entre crochets, vous pouvez spécifier **\[System.Environment]** en tant que **\[Environment]**.
+> Comme mentionné précédemment, Windows PowerShell ajoute automatiquement « **System.**  » aux noms de type lorsque vous utilisez l’applet de commande **New-Object**. La même chose se produisant en cas d’utilisation d’un nom de type entre crochets, vous pouvez spécifier **\[System.Environment]** en tant que **\[Environment]**.
 
 La classe **System.Environment** contient des informations générales sur l’environnement de travail pour le processus actuel, c’est-à-dire powershell.exe lorsque vous travaillez dans Windows PowerShell.
 

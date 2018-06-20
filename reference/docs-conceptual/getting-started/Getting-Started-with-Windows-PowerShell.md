@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949483"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Prise en main de Windows PowerShell
 Windows PowerShell est un interpréteur de ligne de commande Windows spécialement conçu pour les administrateurs système. Windows PowerShell inclut une invite interactive et un environnement de script utilisables indépendamment ou conjointement.

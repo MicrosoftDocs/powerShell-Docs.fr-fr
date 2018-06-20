@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186804"
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode GetConfigurationResultOutput de la classe MSFT_DSCLocalConfigurationManager
 

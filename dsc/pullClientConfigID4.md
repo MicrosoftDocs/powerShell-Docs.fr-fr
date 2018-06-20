@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187764"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Configuration d’un client collecteur à l’aide de l’ID de configuration dans PowerShell 4.0
 
