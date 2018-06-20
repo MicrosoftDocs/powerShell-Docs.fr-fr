@@ -41,7 +41,7 @@ PowerShell Core est officiellement pris en charge sur les plateformes suivantes 
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25, 26
+* Fedora 27, 28
 * macOS 10.12+
 
 Notre communauté a également proposé des packages pour les plateformes suivantes, mais ils ne sont pas officiellement pris en charge :
@@ -88,5 +88,5 @@ Add-WindowsPSModulePath
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[licence MIT]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[Licence MIT]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
