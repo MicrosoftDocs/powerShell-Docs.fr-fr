@@ -68,7 +68,7 @@
           href: serviceResource.md
         - name: Ressource ServiceSet
           href: serviceSetResource.md
-        - name: Ressource User
+        - name: Ressource utilisateur
           href: userResource.md
         - name: Ressource WaitForAll
           href: waitForAllResource.md
@@ -161,6 +161,8 @@
           href: lnxGroupResource.md
         - name: Ressource nxPackage
           href: lnxPackageResource.md
+        - name: Ressource nxScript
+          href: lnxScriptResource.md
         - name: Ressource nxService
           href: lnxServiceResource.md
         - name: Ressource nxSshAuthorizedKeys
