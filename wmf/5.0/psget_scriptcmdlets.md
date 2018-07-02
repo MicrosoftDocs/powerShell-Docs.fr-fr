@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: be53ebbfceefdbaabb76ccefa84aaa7746fee1f4
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
+ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189548"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36271175"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>Applets de commande PowerShellGet pour la gestion des scripts
 
@@ -329,11 +329,11 @@ Version Name Type Repository Description
 .RELEASENOTES
 Script-WithDependencies2 release notes
 \#&gt;
-**\#Requires -Module RequiredModule1**
-**\#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}**
-**\#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}**
-**\#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}**
-**\#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}**
+**\#Requires -Modules RequiredModule1**
+**\#Requires -Modules @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}**
+**\#Requires -Modules @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}**
+**\#Requires -Modules @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}**
+**\#Requires -Modules @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}**
 &lt;\#
 .DESCRIPTION
 Description for the Script-WithDependencies2 script
@@ -532,12 +532,12 @@ Feature 3
 Feature 4
 Feature 5
 \#&gt;
-\#Requires -Module RequiredModule1
-\#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
-\#Requires -Module @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
-\#Requires -Module @{ModuleVersion = '0.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '1.\*'}
-\#Requires -Module @{MaximumVersion = '1.\*'; ModuleName = 'RequiredModule5'}
-\#Requires -Module ExternalModule1
+\#Requires -Modules RequiredModule1
+\#Requires -Modules @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
+\#Requires -Modules @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
+\#Requires -Modules @{ModuleVersion = '0.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '1.\*'}
+\#Requires -Modules @{MaximumVersion = '1.\*'; ModuleName = 'RequiredModule5'}
+\#Requires -Modules ExternalModule1
 &lt;\#
 .DESCRIPTION
 my new script file
