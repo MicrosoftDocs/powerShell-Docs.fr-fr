@@ -36,8 +36,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter l’interpréteur de commandes PowerShell, puis le redémarrer pour terminer la mise à niveau
-> et actualiser les valeurs indiquées dans $PSVersionTable.
+> Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter et redémarrer l’interpréteur de commandes PowerShell pour terminer la mise à niveau et actualiser les valeurs indiquées dans $PSVersionTable.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -89,16 +88,16 @@ Si vous avez installé PowerShell par téléchargement direct, PowerShell doit �
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Pour supprimer les chemins PowerShell supplémentaires, consultez la section sur les [chemins][] dans ce document et supprimez les chemins souhaités avec `sudo rm`.
+Pour supprimer les chemins PowerShell supplémentaires, consultez la section sur les [chemin d’accès][] dans ce document et supprimez les chemins souhaités avec `sudo rm`.
 
 > [!NOTE]
 > Cela est inutile si vous avez installé PowerShell avec Homebrew.
 
-[chemins]:#paths
+[chemin d’accès]:#paths
 
 ## <a name="paths"></a>Chemins d’accès
 
-* `$PSHOME` est `/opt/microsoft/powershell/6.0.0/`
+* `$PSHOME` est `/usr/local/microsoft/powershell/6.0.2/`
 * Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`
 * Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`
 * Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`
@@ -112,7 +111,7 @@ Donc, les profils spécifiques à l’hôte par défaut existent dans `Microsoft
 PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur macOS.
 
 Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`.
-Par conséquent, `$PSHOME` est `/usr/local/microsoft/powershell/6.0.0/`, et le lien symbolique est placé sur `/usr/local/bin/pwsh`.
+Par conséquent, `$PSHOME` est `/usr/local/microsoft/powershell/6.0.2/`, et le lien symbolique est placé sur `/usr/local/bin/pwsh`.
 
 [versions]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

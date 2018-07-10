@@ -42,7 +42,7 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installez la dernière version de [OpenSSH Win32] depuis GitHub en utilisant les instructions d’[Installation]
+1. Installez la dernière version de [OpenSSH Win32] depuis GitHub en utilisant les instructions d’[installation]
 1. Ouvrez le fichier sshd_config à l’emplacement où vous avez installé OpenSSH Win32
     - Vérifiez que l’authentification par mot de passe est activée
 
@@ -54,6 +54,22 @@ De plus, vous devez activer l’authentification par mot de passe et éventuelle
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    OpenSSH pour Windows présente un bogue qui empêche les espaces de fonctionner dans les chemins exécutables du sous-système.
+    Consultez [ce problème sur GitHub pour plus d’informations](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+    
+    Une solution consiste à créer un lien symbolique vers le répertoire d’installation de Powershell sans espaces :
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    puis de l’entrer dans le sous-système :
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - Vous pouvez éventuellement activer l’authentification par clé

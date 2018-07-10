@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation des données de configuration
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189684"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940376"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 
->S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 À l’aide du paramètre DSC intégré **ConfigurationData**, vous pouvez définir les données qui peuvent être utilisées dans une configuration.
 Cela vous permet de créer une configuration unique utilisée pour plusieurs nœuds ou différents environnements.
@@ -28,7 +28,8 @@ Pour plus d’informations sur la compilation de configurations, voir [Configura
 Le paramètre **ConfigurationData** est une table de hachage qui doit contenir au moins une clé nommée **AllNodes**.
 Il peut également avoir une ou plusieurs autres clés.
 
->**Remarque :** les exemples de cette rubrique utilisent une seule clé supplémentaire (autres que la clé nommée **AllNodes**), `NonNodeData`, mais vous pouvez inclure n’importe quel nombre de clés supplémentaires et les nommer comme vous le souhaitez.
+> [!NOTE]
+> Les exemples de cette rubrique utilisent une seule clé supplémentaire (autres que la clé nommée **AllNodes**) appelée `NonNodeData`, mais vous pouvez inclure n’importe quel nombre de clés supplémentaires et les nommer comme vous le souhaitez.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC fournit trois variables spéciales qui peuvent être utilisées dans un scri
 
 - **$AllNodes** fait référence à l’ensemble de la collection de nœuds définis dans **ConfigurationData**. Vous pouvez filtrer la collection **AllNodes** à l’aide de **.Where()** et **.ForEach()**.
 - **Node** fait référence à une entrée particulière dans la collection **AllNodes** une fois qu’elle a été filtrée à l’aide de **.Where()** ou **.ForEach()**.
+  - Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 - **ConfigurationData** fait référence à la table de hachage entière qui est passée comme paramètre lors de la compilation d’une configuration.
 
 ## <a name="using-non-node-data"></a>Utilisation des données n’appartenant pas à un nœud
@@ -199,5 +201,6 @@ Toutefois, vous pouvez définir n’importe quel nombre de clés supplémentaire
 Pour obtenir un exemple d’utilisation des données n’appartenant pas à un nœud, consultez [Séparation des données de configuration et d’environnement](separatingEnvData.md).
 
 ## <a name="see-also"></a>Voir aussi
+
 - [Options relatives aux informations d’identification dans les données de configuration](configDataCredentials.md)
 - [Configurations DSC](configurations.md)
