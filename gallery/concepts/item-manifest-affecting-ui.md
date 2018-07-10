@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048294"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893475"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -16,8 +16,8 @@ Cette rubrique fournit aux éditeurs des informations récapitulatives sur la fa
 Ce contenu est organisé selon l’endroit où apparaît la modification, en commençant par la section centrale, puis la zone de navigation à gauche. Une sélection présente les balises les plus importantes ainsi que certaines balises couramment utilisées.
 Deux rubriques fournissent des exemples de manifeste :
 
-- Pour les modules, voir [Mettre à jour le manifeste du module](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
-- Pour les scripts, voir [Créer un fichier de script avec des métadonnées](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+- Pour les modules, voir [Mettre à jour le manifeste du module](/powershell/module/powershellget/Update-ModuleManifest)
+- Pour les scripts, voir [Créer un fichier de script avec des métadonnées](/powershell/module/powershellget/New-ScriptFileInfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Éléments des fonctionnalités PowerShell Gallery contrôlés par le manifeste
 
@@ -27,11 +27,11 @@ Chaque élément précise s’il peut être contrôlé par le manifeste de type 
 | Élément de l'interface utilisateur | Description | Module | Script |
 | --- | --- | --- | --- |
 | **Titre** | Nom de l’élément publié dans Gallery  | Non | Non |
-| **Version** | La version affichée représente la chaîne de version dans les métadonnées, ainsi qu’une préversion si elle est spécifiée. La partie principale de la version dans un manifeste Module est ModuleVersion. Pour un script, elle est identifiée par .VERSION. Si une chaîne de préversion est spécifiée, elle est ajoutée à la partie ModuleVersion pour les modules, ou identifiée par .VERSION pour les scripts. Il existe une documentation pour spécifier les chaînes de préversion dans les [modules](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule) et les [scripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) | Oui | Oui |
+| **Version** | La version affichée représente la chaîne de version dans les métadonnées, ainsi qu’une préversion si elle est spécifiée. La partie principale de la version dans un manifeste Module est ModuleVersion. Pour un script, elle est identifiée par .VERSION. Si une chaîne de préversion est spécifiée, elle est ajoutée à la partie ModuleVersion pour les modules, ou identifiée par .VERSION pour les scripts. Il existe une documentation pour spécifier les chaînes de préversion dans les [modules](/powershell/gallery/concepts/module-prerelease-support) et les [scripts](/powershell/gallery/concepts/script-prerelease-support) | Oui | Oui |
 | **Description** | Description dans le manifeste du module. Dans un manifeste de fichier de script, elle est identifiée par .DESCRIPTION | Oui | Oui |
-| **Exiger l’acceptation de la licence** | Un module peut obliger l’utilisateur à accepter une licence en modifiant le manifeste du module avec RequireLicenseAcceptance = $true, en fournissant une valeur LicenseURI, et en plaçant un fichier license.txt à la racine du dossier du module. Des informations supplémentaires sont disponibles dans la rubrique [Exiger l’acceptation de la licence](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance). | Oui | Non |
+| **Exiger l’acceptation de la licence** | Un module peut obliger l’utilisateur à accepter une licence en modifiant le manifeste du module avec RequireLicenseAcceptance = $true, en fournissant une valeur LicenseURI, et en plaçant un fichier license.txt à la racine du dossier du module. Des informations supplémentaires sont disponibles dans la rubrique [Exiger l’acceptation de la licence](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance). | Oui | Non |
 | **Notes de publication** | Pour les modules, ces informations sont extraites de la section ReleaseNotes, sous PSData\PrivateData. Dans les manifestes de script, il s’agit de l’élément .RELEASENOTES. | Oui | Oui |
-| **Propriétaires** | Les propriétaires représentent la liste des utilisateurs de PowerShell Gallery autorisés à mettre à jour un élément. La liste des propriétaires n’est pas incluse dans le manifeste de l’élément. Une documentation supplémentaire explique comment [gérer les propriétaires de l’élément](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Non | Non |
+| **Propriétaires** | Les propriétaires représentent la liste des utilisateurs de PowerShell Gallery autorisés à mettre à jour un élément. La liste des propriétaires n’est pas incluse dans le manifeste de l’élément. Une documentation supplémentaire explique comment [gérer les propriétaires de l’élément](/powershell/gallery/how-to/publishing-items/managing-item-owners). | Non | Non |
 | **Auteur** | Cette information est incluse dans le manifeste du module sous la forme Auteur et dans un manifeste de script sous la forme .AUTHOR. Le champ Auteur est souvent utilisé pour spécifier une société ou organisation associée à un élément. | Oui | Oui |
 | **Copyright** | Il s’agit du champ Copyright dans le manifeste du module, et identifié par .COPYRIGHT dans un manifeste de script. | Oui | Oui |
 | **FileList** | La liste des fichiers est extraite du package lors de sa publication dans PowerShell Gallery. Elle n’est pas contrôlable par les informations du manifeste. Remarque : un fichier .nuspec supplémentaire est répertorié avec chaque élément dans PowerShell Gallery, mais n’est pas présent après l’installation de l’élément sur un système. Il s’agit du manifeste du package Nuget pour l’élément, et il peut être ignoré. | Non | Non |
@@ -41,7 +41,7 @@ Chaque élément précise s’il peut être contrôlé par le manifeste de type 
 | **Ressources DSC** | Pour les modules qui seront utilisés dans PowerShell version 5.0 et ultérieures, ces informations sont fournies dans le manifeste à l’aide de DscResourcesToExport. Si le module sera utilisé dans PowerShell 4, DSCResourcesToExport ne doit pas être utilisé car il ne s’agit pas d’une clé de manifeste prise en charge. (DSC n’était pas disponible avant PowerShell 4.) | Oui | Non |
 | **Flux de travail** | Les flux de travail sont publiés dans PowerShell Gallery en tant que scripts et identifiés en tant que flux de travail dans le code (voir [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) pour obtenir un exemple). Ces informations ne sont pas contrôlées par le manifeste. | Non | Non |
 | **Fonctionnalités de rôle** | Ces informations apparaissent lorsque le module publié dans PowerShell Gallery contient un ou plusieurs fichiers de capacité (.psrc) de rôle, utilisés par JEA. Consultez la documentation de JEA pour plus d’informations sur les [capacités de rôle](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities). | Oui | Non |
-| **Éditions de PowerShell** | Ces informations sont spécifiées dans un manifeste de module ou de script. Pour les modules conçus pour être utilisés avec PowerShell 5.0 et versions antérieures, elles sont contrôlées à l’aide de balises. Pour un système de type bureau (Desktop), utilisez la balise PSEdition_Desktop, et pour un système de base (Core), utilisez la balise PSEdition_Core. Pour les modules qui seront utilisés uniquement dans PowerShell 5.1 et versions ultérieures, une clé CompatiblePSEditions est disponible dans le manifeste du principal. Pour plus d’informations, reportez-vous à la fonctionnalité PS Edition dans la [documentation PowerShell Get](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Oui | Oui |
+| **Éditions de PowerShell** | Ces informations sont spécifiées dans un manifeste de module ou de script. Pour les modules conçus pour être utilisés avec PowerShell 5.0 et versions antérieures, elles sont contrôlées à l’aide de balises. Pour un système de type bureau (Desktop), utilisez la balise PSEdition_Desktop, et pour un système de base (Core), utilisez la balise PSEdition_Core. Pour les modules qui seront utilisés uniquement dans PowerShell 5.1 et versions ultérieures, une clé CompatiblePSEditions est disponible dans le manifeste du principal. Pour plus d’informations, reportez-vous à la fonctionnalité PS Edition dans la [documentation PowerShell Get](/powershell/gallery/concepts/module-psedition-support). | Oui | Oui |
 | **Dépendances** | Les dépendances représentent les modules de PowerShell Gallery qui sont déclarés dans le module en tant que RequiredModules ou dans le manifeste de script en tant que #Requires – Module (nom). | Oui | Oui |
 | **Version minimale de PowerShell** | Cette information peut être spécifiée dans un manifeste de module en tant que PowerShellVersion | Oui | Non |
 | **Historique des versions** | L’historique des versions reflète les mises à jour apportées à un module dans PowerShell Gallery. Si une version d’un élément est masquée à l’aide de la fonctionnalité de suppression, elle n’apparaît pas dans l’historique des versions, sauf pour les propriétaires de l’élément. | Non | Non |
@@ -83,7 +83,6 @@ Idéalement, beaucoup d’éléments sont retournés et leurs descriptions corre
 Pour référence, voici quelques-unes des balises les plus couramment utilisées en date 14/12/2017.
 Dans certains cas, d’autres options similaires mais moins recommandées sont proposées en regard de la balise.
 Il est conseillé d’utiliser la balise préférée car elle génère moins de bruit et offre aux consommateurs de meilleurs résultats.
-
 
 | **Balise préférée** | **Alternatives et remarques** |
 | --- | --- |

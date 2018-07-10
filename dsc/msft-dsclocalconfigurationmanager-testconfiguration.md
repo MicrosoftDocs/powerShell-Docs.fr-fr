@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Méthode TestConfiguration de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219009"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893924"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode TestConfiguration de la classe MSFT_DSCLocalConfigurationManager
 
 Envoie le document de configuration au nœud géré et vérifie la configuration actuelle par rapport au document.
 
-<a name="syntax"></a>Syntaxe
-------
+## <a name="syntax"></a>Syntaxe
 
 ```mof
 uint32 TestConfiguration(
@@ -25,8 +24,7 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Paramètres
-----------
+## <a name="parameters"></a>Paramètres
 
 *configurationData* \[in\] Les données d’environnement pour la configuration.
 
@@ -37,7 +35,6 @@ uint32 TestConfiguration(
 *ResourcesNotInDesiredState* \[out\] En retour, contient une instance incorporée de la classe **MSFT_ResourceNotInDesiredState** qui spécifie les ressources qui ne sont pas dans l’état souhaité.
 
 ## <a name="return-value"></a>Valeur renvoyée
-------------
 
 Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 
@@ -46,13 +43,11 @@ Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 Il s’agit d’une méthode statique.
 
 ## <a name="requirements"></a>Spécifications
-------------
->**MOF :** DscCore.mof
 
->**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF :** DscCore.mof
 
+**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

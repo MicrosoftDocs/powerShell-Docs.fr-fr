@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Méthode PerformRequiredConfigurationChecks de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: c3fdaa23875815b1cf5cbf0b6e21c633e00664aa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186692"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893227"
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode PerformRequiredConfigurationChecks de la classe MSFT_DSCLocalConfigurationManager
 
 Commence une vérification de cohérence à l’aide du Planificateur de tâches.
 
-<a name="syntax"></a>Syntaxe
-------
+## <a name="syntax"></a>Syntaxe
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -22,8 +21,7 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a name="parameters"></a>Paramètres
-----------
+## <a name="parameters"></a>Paramètres
 
 *Flags* \[in\] Masque de bits qui spécifie le type de vérification de cohérence à exécuter. Les valeurs suivantes sont valides et peuvent être combinées à l’aide d’une opération **OR** au niveau du bit :
 
@@ -35,7 +33,6 @@ uint32 PerformRequiredConfigurationChecks(
 |**8** | Envoyez l’état au serveur de rapports. |
 
 ## <a name="return-value"></a>Valeur renvoyée
-------------
 
 Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 
@@ -44,13 +41,11 @@ Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 Il s’agit d’une méthode statique.
 
 ## <a name="requirements"></a>Spécifications
-------------
->**MOF :** DscCore.mof
 
->**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF :** DscCore.mof
 
+**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

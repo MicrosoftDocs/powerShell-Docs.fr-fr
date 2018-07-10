@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Méthode SendConfigurationApplyAsync de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: acd8f380f1c49eb008563398c2c3de3fce5477f9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b028079cf826719967858f50e357b441ba8f9d79
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186675"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893891"
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode SendConfigurationApplyAsync de la classe MSFT_DSCLocalConfigurationManager
 
 Envoie le document de configuration de façon asynchrone au nœud géré et utilise l’agent de configuration pour appliquer la configuration.
 
-<a name="syntax"></a>Syntaxe
-------
+## <a name="syntax"></a>Syntaxe
 
 ```mof
 uint32 SendConfigurationApplyAsync(
@@ -24,8 +23,7 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a name="parameters"></a>Paramètres
-----------
+## <a name="parameters"></a>Paramètres
 
 *ConfigurationData* \[in\] Les données d’environnement pour la configuration.
 
@@ -34,7 +32,6 @@ uint32 SendConfigurationApplyAsync(
 *jobId* \[in\] ID du travail pour lequel envoyer la configuration.
 
 ## <a name="return-value"></a>Valeur renvoyée
-------------
 
 Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 
@@ -43,13 +40,11 @@ Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 Il s’agit d’une méthode statique.
 
 ## <a name="requirements"></a>Spécifications
-------------
->**MOF :** DscCore.mof
 
->**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF :** DscCore.mof
 
+**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
