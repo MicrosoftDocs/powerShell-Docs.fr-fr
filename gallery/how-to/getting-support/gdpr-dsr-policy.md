@@ -3,12 +3,12 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: galerie,powershell,psgallery,RGPD
 title: Conformité RGPD de PowerShell Gallery
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189752"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893244"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Conformité RGPD de PowerShell Gallery
 
@@ -25,9 +25,9 @@ Le RGPD s’applique indépendamment de l’endroit où vous vous trouvez.
 
 PowerShell Gallery stocke les informations suivantes, susceptibles de provenir d’utilisateurs et donc de contenir des données personnelles :
 
-* Compte PowerShell Gallery
-* Éléments publiés sur PowerShell Gallery
-* Correspondance par e-mail avec l’équipe PowerShell Gallery
+- Compte PowerShell Gallery
+- Éléments publiés sur PowerShell Gallery
+- Correspondance par e-mail avec l’équipe PowerShell Gallery
 
 La plupart des utilisateurs ne créent pas de compte PowerShell Gallery.
 Un compte n’est pas obligatoire, sauf si vous vous apprêtez à publier un élément ou à utiliser la fonctionnalité « Contactez le propriétaire » dans PowerShell Gallery.
@@ -45,15 +45,15 @@ Les sections suivantes décrivent comment PowerShell Gallery prend en charge les
 
 La correspondance par e-mail peut inclure les éléments suivants :
 
-* E-mail envoyé aux propriétaires d’éléments de PowerShell Gallery si les examens d’analyse du code ont détecté un problème avec un élément qu’ils ont publié sur PowerShell Gallery
-* E-mail envoyé par quelqu’un à l’équipe PowerShell Gallery en utilisant l’adresse e-mail de la page « Contactez-nous » (cgadmin@microsoft.com)
-* Utilisateurs inscrits qui utilisent la fonctionnalité « Contactez le propriétaire » de PowerShell Gallery pour envoyer un e-mail au propriétaire d’un élément de PowerShell Gallery
+- E-mail envoyé aux propriétaires d’éléments de PowerShell Gallery si les examens d’analyse du code ont détecté un problème avec un élément qu’ils ont publié sur PowerShell Gallery
+- E-mail envoyé par quelqu’un à l’équipe PowerShell Gallery en utilisant l’adresse e-mail de la page « Contactez-nous » [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
+- Utilisateurs inscrits qui utilisent la fonctionnalité « Contactez le propriétaire » de PowerShell Gallery pour envoyer un e-mail au propriétaire d’un élément de PowerShell Gallery
 
 Les e-mails envoyés par ou à PowerShell Gallery suivent une politique de conservation de 90 jours, ce qui permet d’effectuer d’éventuelles investigations sur la sécurité si du code malveillant devait être découvert dans PowerShell Gallery.
 Conformément à cette politique, les e-mails sont supprimés après 90 jours.
 
 Vous pouvez demander des copies de tous les e-mails envoyés à ou depuis votre adresse e-mail et PowerShell Gallery au cours des 90 jours qui ont précédé.
-Pour demander cette correspondance, envoyez un e-mail à cgadmin@microsoft.com, avec le titre : « Demande DSR des e-mails relatifs à ce compte ».
+Pour demander cette correspondance, envoyez un e-mail à [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), avec le titre : « Demande DSR des e-mails relatifs à ce compte ».
 Dans le corps du message, indiquez quelles informations vous demandez (par exemple : « Merci d’envoyer tous les e-mails envoyés ou reçus à cette adresse e-mail. »). Tous les e-mails impliquant votre adresse e-mail dans les 90 jours de la demande seront envoyés dans un délai de 7 jours ouvrés.
 
 ### <a name="powershell-gallery-account-information"></a>Informations du compte PowerShell Gallery
@@ -78,13 +78,13 @@ Ce script exporte une copie de chaque version de chaque élément placé dans Po
 Vous pouvez télécharger le script avec la commande PowerShell suivante :
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 Vous pouvez ensuite exécuter le script avec les commandes PowerShell suivantes :
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -95,9 +95,9 @@ Vous serez invité à spécifier l’auteur et un dossier sur votre système où
 Pour supprimer votre compte PowerShell Gallery ou tout élément dont vous êtes propriétaire dans PowerShell Gallery, envoyez un e-mail à cgadmin@microsoft.com avec le titre : « Demande RGPD pour des éléments relatifs à ce compte ».
 Dans le corps du message, indiquez les informations que vous voulez faire supprimer. Par exemple :
 
-* Veuillez supprimer la version x.y.z de mon élément « nom de l’élément »
-* Veuillez supprimer toutes les versions de mon élément « nom de l’élément »
-* Veuillez supprimer mon compte PowerShell Gallery
+- Veuillez supprimer la version x.y.z de mon élément « nom de l’élément »
+- Veuillez supprimer toutes les versions de mon élément « nom de l’élément »
+- Veuillez supprimer mon compte PowerShell Gallery
 
 Les administrateurs de PowerShell Gallery répondent dans un délai de 7 jours ouvrés.
 Les éléments spécifiés sont supprimés dans les 30 jours suivant l’envoi de la demande.

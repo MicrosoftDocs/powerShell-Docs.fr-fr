@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 contributor: ryanpu
 title: Améliorations de Just Enough Administration (JEA)
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222415"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892716"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Améliorations de Just Enough Administration (JEA)
 
@@ -18,7 +18,7 @@ ms.locfileid: "34222415"
 Vous pouvez maintenant copier les fichiers à distance vers/depuis un point de terminaison JEA et être assuré que l’utilisateur connecté ne peut copier absolument *aucun* fichier sur votre système.
 Ceci est possible en configurant votre fichier PSSC pour monter un lecteur utilisateur pour la connexion des utilisateurs.
 Le lecteur utilisateur est un nouveau PSDrive qui est unique pour chaque utilisateur qui se connecte et persiste à travers les sessions.
-Quand Copy-Item est utilisée pour copier des fichiers vers ou depuis une session JEA, elle est contrainte d’autoriser l’accès seulement au lecteur utilisateur.
+Quand `Copy-Item` est utilisée pour copier des fichiers vers ou à partir d’une session JEA, elle est contrainte d’autoriser l’accès seulement au lecteur utilisateur.
 Les tentatives de copie de fichiers vers n’importe quel autre PSDrive échouent.
 
 Pour configurer le lecteur utilisateur dans votre fichier de configuration de session JEA, utilisez les nouveaux champs suivants :
@@ -30,7 +30,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 Le dossier servant de base au lecteur utilisateur est créé dans `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-Pour utiliser le lecteur utilisateur et copier des fichiers vers/depuis un point de terminaison JEA configuré pour exposer le lecteur utilisateur, utilisez les paramètres `-ToSession` et `-FromSession` sur Copy-Item.
+Pour utiliser le lecteur utilisateur et copier des fichiers vers/à partir d’un point de terminaison JEA configuré pour exposer le lecteur utilisateur, utilisez les paramètres `-ToSession` et `-FromSession` sur `Copy-Item`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -64,7 +64,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **Remarque :** Les comptes de service gérés par un groupe n’offrent pas l’isolement ou l’étendue limitée des comptes virtuels.
+> [!NOTE]
+> Les comptes de service gérés par un groupe n’offrent pas l’isolement ou l’étendue limitée des comptes virtuels.
 > Chaque utilisateur qui se connecte partage la même identité gMSA, qui peut avoir des autorisations pour toute votre entreprise.
 > Soyez très prudent quand vous choisissez d’utiliser un compte gMSA, et préférez toujours quand c’est possible les comptes virtuels qui sont limités à l’ordinateur local.
 
@@ -91,5 +92,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Résolu : Les comptes virtuels sont maintenant pris en charge sur Windows Server 2008 R2
+
 Dans WMF 5.1, vous pouvez maintenant utiliser des comptes virtuels sur Windows Server 2008 R2, ce qui permet des configurations cohérentes et la parité des fonctionnalités entre Windows Server 2008 R2 et Windows Server 2016.
 Les comptes virtuels restent non pris en charge quand JEA est utilisé sur Windows 7.

@@ -2,18 +2,18 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC PackageManagement
-ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753785"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892499"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Ressource DSC PackageManagement
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
+S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
-La ressource **PackageManagement** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages de gestion des packages sur un nœud cible. Cette ressource nécessite le module **PackageManagement** qui est disponible sur le site http://PowerShellGallery.com.
+La ressource **PackageManagement** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages de gestion des packages sur un nœud cible. Cette ressource nécessite le module **PackageManagement** qui est disponible sur le site [http://PowerShellGallery.com](http://PowerShellGallery.com).
 
 > [!IMPORTANT]
 > Le module **PackageManagement** doit être au moins de version 1.1.7.0 pour que les informations de propriétés suivantes soient correctes.

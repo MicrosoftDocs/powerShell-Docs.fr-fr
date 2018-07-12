@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Modules exigeant l’acceptation de la licence
-ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048286"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893108"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules exigeant l’acceptation de la licence
 
@@ -35,29 +35,26 @@ Les modules demandant aux utilisateurs d’accepter une licence doivent répondr
     - **Update-Module :** le module sera mis à jour.
   - Si la licence a été refusée.
     - L’opération sera annulée.
-- Vérifie toutes les applets de commande pour les métadonnées (requireLicenseAcceptance et version du Format) qui indiquent que l’acceptation d’une licence est nécessaire
-  - Si la version de format est antérieure à 2.0, l’opération échouera et l’utilisateur sera invité à mettre à jour le client.
-  - Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur LicenseAcceptance sera ignoré.
+    - Vérifie toutes les applets de commande pour les métadonnées (requireLicenseAcceptance et version du Format) qui indiquent que l’acceptation d’une licence est nécessaire
+    - Si la version de format est antérieure à 2.0, l’opération échouera et l’utilisateur sera invité à mettre à jour le client.
+    - Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur LicenseAcceptance sera ignoré.
 
+## <a name="module-dependencies"></a>Dépendances du module
 
- ## <a name="module-dependencies"></a>Dépendances du module
 - Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) sera requis.
 - Si la version du module est déjà répertoriée dans le catalogue local comme étant installée sur le système, nous contournerons la vérification de la licence.
 - Au cours de l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant requiert une licence et que l’acceptation de la licence n’a pas lieu, l’opération échouera et suivra le processus normal d’échec de l’installation/l’enregistrement/la mise à jour de l’élément.
 
- ## <a name="impact-on--force"></a>Impact sur Force
+## <a name="impact-on--force"></a>Impact sur Force
 
-La spécification de Force n’est pas suffisante pour accepter une licence. AcceptLicense est requis pour autoriser l’installation. Si Force est spécifié, RequiredLicenseAcceptance défini sur True et qu’AcceptLicense n’est PAS spécifié, l’opération échouera.
+La spécification de `–Force` n’est PAS suffisante pour accepter une licence. `–AcceptLicense` est obligatoire pour autoriser l’installation. Si `–Force` est spécifié, que RequiredLicenseAcceptance a la valeur True et qu’`–AcceptLicense` n’est PAS spécifié, l’opération échouera.
 
 ## <a name="examples"></a>EXEMPLES
 
 ### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Exemple 1 : mise à jour du manifeste de module pour exiger l’acceptation de la licence
 
-```PowerShell
-PS> Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance
-
-PrivateData = @{
-
+```powershell
+Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
     PSData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
@@ -70,9 +67,11 @@ Cette commande met à jour le fichier de manifeste et définit l’indicateur Re
 
 ### <a name="example-2-install-module-requiring-license-acceptance"></a>Exemple 2 : installation d’un module nécessitant l’acceptation de la licence
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -85,23 +84,25 @@ copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
-
 ```
 
 Cette commande affiche la licence du fichier license.txt et invite l’utilisateur à l’accepter.
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 3 : installation d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
 Le module est installé sans invitation à accepter la licence.
 
 ### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Exemple 4 : installation d’un module nécessitant l’acceptation de la licence avec -Force
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```
+
+```output
 PackageManagement\Install-Package : License Acceptance is required for module 'ModuleRequireLicenseAcceptance'. Please specify '-AcceptLicense' to perform this operation.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm1:1837 char:21
 + ...          $null = PackageManagement\Install-Package @PSBoundParameters
@@ -116,9 +117,11 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
 
 Le module 'ModuleWithDependency' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur est invité à accepter la licence.
 
-```PowerShell
-PS> Install-Module -Name ModuleWithDependency
+```powershell
+Install-Module -Name ModuleWithDependency
+```
 
+```output
 License Acceptance
 MIT License 2.0
 Copyright (c) 2016 PowerShell Team
@@ -136,24 +139,27 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 Le module 'ModuleWithDependency' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur n’est pas invité à accepter la licence, puisqu’AcceptLicense est spécifié.
 
-```PowerShell
-PS>  Install-Module -Name ModuleWithDependency -AcceptLicense
+```powershell
+Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
 ### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Exemple 7 : installation d’un module nécessitant l’acceptation de la licence sur un client antérieure à PSGetFormatVersion 2.0
 
-```PowerShell
-PS C:\windows\system32> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
-
 ```
 
 ### <a name="example-8-save-module-requiring-license-acceptance"></a>Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -172,17 +178,19 @@ Cette commande affiche la licence du fichier license.txt et invite l’utilisate
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 9 : enregistrement d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 ```
 
 Le module est enregistré sans invitation à accepter la licence.
 
 ### <a name="example-10-update-module-requiring-license-acceptance"></a>Exemple 10 : mise à jour d’un module nécessitant l’acceptation de la licence
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -201,16 +209,16 @@ Cette commande affiche la licence du fichier license.txt et invite l’utilisate
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 11 : mise à jour d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
 Le module est mis à jour sans invitation à accepter la licence.
 
 ## <a name="more-details"></a>Plus d’informations
 
-### <a name="require-license-acceptance-for-scriptsscript-license-acceptancemd"></a>[Exiger l’acceptation de la licence pour les scripts](./script-license-acceptance.md)
+[Exiger l’acceptation de la licence pour les scripts](./script-license-acceptance.md)
 
-### <a name="require-license-acceptance-support-on-powershellgalleryhow-toworking-with-itemsitems-that-require-license-acceptancemd"></a>[Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationhow-toworking-with-itemsdeploy-to-azure-automationmd"></a>[Exiger l’acceptation de la licence lors du déploiement sur Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Exiger l’acceptation de la licence lors du déploiement sur Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)

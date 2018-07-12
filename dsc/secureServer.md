@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: 1efc016df6882fa962f59dfd3e53eaa6d6b0c121
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 04ad6940f443bc23d5e2347952b2d173aceac408
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190296"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893448"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
->S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
@@ -27,27 +27,32 @@ Publié | Avril 2015
 ## <a name="abstract"></a>Résumé
 
 Ce document a pour but de fournir des conseils officiels à toute personne planifiant l’implémentation d’un serveur collecteur Windows PowerShell DSC (Desired State Configuration). Un serveur collecteur est un service simple dont le déploiement ne devrait prendre que quelques minutes. Bien que ce document propose des procédures techniques pouvant être utilisées dans un déploiement, il est surtout une référence de bonnes pratiques et de points à prendre en compte avant d’effectuer un déploiement.
-Les lecteurs doivent avoir une connaissance de base de DSC et des termes utilisés pour décrire les composants inclus dans un déploiement DSC. Pour plus d’informations, consultez la rubrique [Vue d’ensemble de la fonctionnalité Desired State Configuration de Windows PowerShell](https://technet.microsoft.com/library/dn249912.aspx).
+Les lecteurs doivent avoir une connaissance de base de DSC et des termes utilisés pour décrire les composants inclus dans un déploiement DSC. Pour plus d’informations, consultez la rubrique [Vue d’ensemble de la fonctionnalité Desired State Configuration de Windows PowerShell](/powershell/dsc/overview).
 Étant donné que DSC est supposé évoluer à la cadence du cloud, la technologie sous-jacente qui inclut le serveur collecteur devrait également évoluer et introduire de nouvelles fonctionnalités. L’annexe de ce document comprend un tableau de versions qui fournit des références aux versions précédentes et aux solutions novatrices pour encourager les conceptions innovantes.
 
 Les deux principales sections de ce document sont les suivantes :
 
- - Planification de la configuration
- - Guide d’installation
+- Planification de la configuration
+- Guide d’installation
 
 ### <a name="versions-of-the-windows-management-framework"></a>Versions de Windows Management Framework
+
 Les informations contenues dans ce document s’appliquent à Windows Management Framework 5.0. Même si WMF 5.0 n’est pas nécessaire au déploiement et au fonctionnement d’un serveur collecteur, elle est la version ciblée par ce document.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration
-DSC (Desired State Configuration) est une plateforme de gestion qui permet de déployer et de gérer les données de configuration à l’aide d’une syntaxe nommée MOF (Managed Object Format) pour décrire le modèle CIM (Common Information Model). Un projet open source, OMI (Open Management Infrastructure), existe pour pousser le développement de ces normes sur les plateformes comme les systèmes d’exploitation Linux et de matériel réseau. Pour plus d’informations, consultez la [page DMTF proposant des liens vers les spécifications MOF](http://dmtf.org/standards/cim) et la page relative aux [documents et la source OMI](https://collaboration.opengroup.org/omi/documents.php).
+
+DSC (Desired State Configuration) est une plateforme de gestion qui permet de déployer et de gérer les données de configuration à l’aide d’une syntaxe nommée MOF (Managed Object Format) pour décrire le modèle CIM (Common Information Model). Un projet open source, OMI (Open Management Infrastructure), existe pour pousser le développement de ces normes sur les plateformes comme les systèmes d’exploitation Linux et de matériel réseau. Pour plus d’informations, consultez la [page DMTF proposant des liens vers les spécifications MOF](https://www.dmtf.org/standards/cim) et la page relative aux [documents et la source OMI](https://collaboration.opengroup.org/omi/documents.php).
 
 Windows PowerShell fournit un ensemble d’extensions de langage pour DSC que vous pouvez utiliser pour créer et gérer des configurations déclaratives.
 
 ### <a name="pull-server-role"></a>Rôle serveur collecteur
+
 Un serveur collecteur fournit un service centralisé pour stocker des configurations qui seront accessibles aux nœuds cibles.
 
 Vous pouvez déployer le rôle serveur collecteur comme instance de serveur web ou partage de fichiers SMB. La fonctionnalité de serveur web inclut une interface OData et peut éventuellement inclure des fonctionnalités permettant aux nœuds cibles d’envoyer une confirmation de réussite ou d’échec quand les configurations sont appliquées. Cette fonctionnalité est utile dans les environnements comportant un grand nombre de nœuds cibles.
-Après avoir configuré un nœud cible (également appelé « client ») pour pointer vers le serveur collecteur, téléchargez et appliquez les données de configuration les plus récentes et tous les scripts nécessaires. Vous pouvez effectuer ces opérations en un seul déploiement ou comme une tâche récurrente qui considère aussi le serveur collecteur comme important pour gérer les changements au besoin. Pour plus d’informations, consultez [Serveurs collecteurs Windows PowerShell DSC](https://technet.microsoft.com/library/dn249913.aspx) et [Modes de configuration d’émission et de collecte](https://technet.microsoft.com/library/dn249913.aspx).
+Après avoir configuré un nœud cible (également appelé « client ») pour pointer vers le serveur collecteur, téléchargez et appliquez les données de configuration les plus récentes et tous les scripts nécessaires. Vous pouvez effectuer ces opérations en un seul déploiement ou comme une tâche récurrente qui considère aussi le serveur collecteur comme important pour gérer les changements au besoin. Pour plus d’informations, consultez [Serveurs collecteurs Windows PowerShell DSC](/powershell/dsc/pullServer) et
+
+[Modes de configuration d’émission et de collecte](/powershell/dsc/pullServer).
 
 ## <a name="configuration-planning"></a>Planification de la configuration
 
@@ -64,20 +69,20 @@ Outre l’installation du contenu le plus récent à partir de Windows Update, d
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 inclut une fonctionnalité appelée « Service DSC ». Service DSC fournit les fonctionnalités de serveur collecteur, notamment les fichiers binaires qui prennent en charge le point de terminaison OData.
-WMF est inclus dans Windows Server et est mis à jour en continu entre les versions de Windows Server. Les [nouvelles versions de WMF 5.0](http://aka.ms/wmf5latest) peuvent inclure des mises à jour de la fonctionnalité Service DSC. C’est pourquoi il est recommandé de télécharger la dernière version de WMF et de consulter les notes de publication afin de déterminer si la version inclut une mise à jour de la fonctionnalité Service DSC. Vous devez également examiner la section des notes de publication qui indique si l’état de conception d’un scénario ou d’une mise à jour est répertorié comme stable ou expérimental.
+WMF est inclus dans Windows Server et est mis à jour en continu entre les versions de Windows Server. Les [nouvelles versions de WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) peuvent inclure des mises à jour de la fonctionnalité Service DSC. C’est pourquoi il est recommandé de télécharger la dernière version de WMF et de consulter les notes de publication afin de déterminer si la version inclut une mise à jour de la fonctionnalité Service DSC. Vous devez également examiner la section des notes de publication qui indique si l’état de conception d’un scénario ou d’une mise à jour est répertorié comme stable ou expérimental.
 Pour avoir un cycle de versions en continu, des fonctionnalités peuvent être déclarées stables, ce qui signifie qu’elles sont prêtes à être utilisées dans un environnement de production, même si WMF est publié en préversion.
 Autres fonctionnalités qui ont déjà été mises à jour par des versions de WMF (voir les Notes de publication de WMF pour plus d’informations) :
 
- - Windows PowerShell Environnement d’écriture de scripts intégré (ISE) de Windows PowerShell
- - Services web Windows PowerShell (Extension IIS Management OData)
- - Windows PowerShell Desired State Configuration (DSC)
- - WinRM (Windows Remote Management) WMI (Windows Management Instrumentation)
+- Windows PowerShell Environnement d’écriture de scripts intégré (ISE) de Windows PowerShell
+- Services web Windows PowerShell (Extension IIS Management OData)
+- Windows PowerShell Desired State Configuration (DSC)
+- WinRM (Windows Remote Management) WMI (Windows Management Instrumentation)
 
 ### <a name="dsc-resource"></a>Ressource DSC
 
 Un déploiement de serveur collecteur peut être simplifié en configurant le service à l’aide d’un script de configuration DSC. Ce document présente des scripts de configuration qui peuvent être utilisés pour déployer un nœud de serveur prêt pour la production. Pour utiliser des scripts de configuration, un module DSC est obligatoire mais il n’est pas inclus dans Windows Server. Ce module obligatoire, appelé **xPSDesiredStateConfiguration**, inclut la ressource DSC **xDscWebService**. Vous pouvez télécharger le module xPSDesiredStateConfiguration [ici](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
 
-Utilisez l’applet de commande **Install-Module** à partir du module **PowerShellGet**.
+Utilisez l’applet de commande `Install-Module` à partir du module **PowerShellGet**.
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -132,7 +137,7 @@ Scénario |Bonne pratique
 Environnement de test |Reproduisez l’environnement de production planifié, si possible. Un nom d’hôte de serveur convient aux configurations simples. Si DNS n’est pas disponible, une adresse IP peut être utilisée à la place d’un nom d’hôte.|
 Déploiement à nœud unique |Créez un enregistrement DNS CNAME qui pointe vers le nom d’hôte du serveur.|
 
-Pour plus d’informations, consultez [Configuration du tourniquet (round robin) DNS dans Windows Server](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
+Pour plus d’informations, consultez [Configuration du tourniquet (round robin) DNS dans Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Tâche de planification|
 ---|
@@ -165,6 +170,7 @@ SMB fournit une option pour les environnements où la stratégie indique qu’un
 Dans les deux cas, n’oubliez pas d’évaluer les exigences de signature et de chiffrement du trafic. HTTPS, la signature SMB et les stratégies IPSEC sont toutes des options qui méritent d’être examinées.
 
 #### <a name="load-balancing"></a>Équilibrage de charge
+
 Les clients qui interagissent avec le service web adressent une demande d’informations qui sont retournées dans une réponse unique. Aucune demande séquentielle n’est nécessaire. La plateforme d’équilibrage de charge n’a donc pas besoin de garantir la conservation des sessions sur un serveur unique à un moment donné.
 
 Tâche de planification|
@@ -184,6 +190,7 @@ Dans le cadre de la planification de la configuration, vous devez réfléchir au
 Cette section sera prochainement développée et incluse dans un Guide des opérations du serveur collecteur DSC.  Ce guide décrira le processus de gestion des configurations et des modules avec l’automatisation jour après jour.
 
 #### <a name="dsc-modules"></a>Modules DSC
+
 Les clients qui demandent une configuration doivent disposer des modules DSC obligatoires. Le serveur collecteur dispose d’une fonctionnalité qui permet d’automatiser la distribution sur demande des modules DSC aux clients. Si vous déployez un serveur collecteur pour la première fois, peut-être dans le cadre d’un laboratoire ou à des fins de démonstration de concept, vous allez probablement dépendre des modules DSC qui sont disponibles à partir de dépôts publics tels que PowerShell Gallery ou des dépôts GitHub PowerShell.org pour les modules DSC.
 
 Il est essentiel de se rappeler que même pour les sources en ligne approuvées telles que PowerShell Gallery, tout module téléchargé à partir d’un dépôt public doit être vérifié par quelqu’un disposant d’une expérience PowerShell et d’une connaissance de l’environnement dans lequel les modules seront utilisés avant de les utiliser en production. Profitez de l’exécution de cette tâche pour rechercher dans le module tout contenu pouvant être supprimé, telle que la documentation et les exemples de script. Vous réduisez ainsi la bande passante réseau par client lors de leur première demande, quand les modules sont téléchargés sur le réseau à partir du serveur vers le client.
@@ -191,7 +198,7 @@ Il est essentiel de se rappeler que même pour les sources en ligne approuvées 
 Chaque module doit être empaqueté dans un format spécifique, un fichier ZIP nommé NomModule_Version.zip, qui comprend le contenu du module. Une fois le fichier copié sur le serveur, un fichier de somme de contrôle doit être créé. Quand les clients se connectent au serveur, la somme de contrôle est utilisée pour vérifier que le contenu du module DSC n’a pas changé depuis sa publication.
 
 ```powershell
-New-DscCheckSum -ConfigurationPath .\ -OutPath .\
+New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Tâche de planification|
@@ -214,10 +221,10 @@ Chaque document est nommé avec un GUID unique. Quand les clients sont configur�
 
 Il convient d’apporter une attention supplémentaire à la planification des GUID de configuration lors de l’examen détaillé du déploiement d’un serveur collecteur. Il n’existe aucune exigence spécifique concernant la façon de gérer les GUID, et il est probable que le processus sera propre à chaque environnement. Le processus peut aller du simple au complexe : un fichier CSV stocké de manière centralisée, une table SQL simple, une base de données de gestion des configurations (CMDB) ou une solution complexe nécessitant l’intégration à un autre outil ou une autre solution logicielle. Il existe deux approches générales :
 
- - **Affectation de GUID par serveur** : fournit un moyen de garantir que chaque configuration de serveur est contrôlée individuellement. Cette approche fournit un niveau de précision autour des mises à jour et peut fonctionner correctement dans les environnements comportant peu de serveurs.
- - **Affectation de GUID par rôle serveur** : tous les serveurs qui exécutent la même fonction, tels que les serveurs web, utilisent le même GUID pour référencer les données de configuration nécessaires.  Sachez que si de nombreux serveurs partagent le même GUID, tous sont mis à jour simultanément quand la configuration change.
+- **Affectation de GUID par serveur** : fournit un moyen de garantir que chaque configuration de serveur est contrôlée individuellement. Cette approche fournit un niveau de précision autour des mises à jour et peut fonctionner correctement dans les environnements comportant peu de serveurs.
+- **Affectation de GUID par rôle serveur** : tous les serveurs qui exécutent la même fonction, tels que les serveurs web, utilisent le même GUID pour référencer les données de configuration nécessaires.  Sachez que si de nombreux serveurs partagent le même GUID, tous sont mis à jour simultanément quand la configuration change.
 
-Le GUID doit être considéré comme une donnée sensible, car il peut être exploité par une personne ayant des intentions malveillantes pour recueillir des informations sur la façon dont les serveurs sont déployés et configurés dans votre environnement. Pour plus d’informations, consultez [Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](http://blogs.msdn.com/b/powershell/archive/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode.aspx).
+  Le GUID doit être considéré comme une donnée sensible, car il peut être exploité par une personne ayant des intentions malveillantes pour recueillir des informations sur la façon dont les serveurs sont déployés et configurés dans votre environnement. Pour plus d’informations, consultez [Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/).
 
 Tâche de planification|
 ---|
@@ -243,7 +250,6 @@ $PSVersionTable.PSVersion
 Si possible, effectuez une mise à niveau avec la version la plus récente de Windows Management Framework.
 Téléchargez ensuite le module `xPsDesiredStateConfiguration` à l’aide de la commande suivante.
 
-
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
@@ -251,14 +257,13 @@ Install-Module xPSDesiredStateConfiguration
 La commande vous demande votre approbation avant de télécharger le module.
 
 ### <a name="installation-and-configuration-scripts"></a>Installation et configuration de scripts
--
 
 La meilleure méthode pour déployer un serveur collecteur DSC consiste à utiliser un script de configuration DSC. Ce document présente les scripts, notamment les paramètres de base permettant de configurer uniquement le service web DSC et les paramètres avancés permettant de configurer de bout en bout Windows Server comprenant un service web DSC.
 
 Remarque : Actuellement, le module DSC `xPSDesiredStateConfiguation` exige que le serveur utilise les paramètres régionaux en-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Configuration de base pour Windows Server 2012
--------------------------------------------
+
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
 
@@ -355,6 +360,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ServerDisabledByDefault
         {
             Ensure = 'Present'
@@ -363,6 +369,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientEnabled
         {
             Ensure = 'Present'
@@ -371,6 +378,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientDisabledByDefault
         {
             Ensure = 'Present'
@@ -379,6 +387,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry SSL2ServerDisabled
         {
             Ensure = 'Present'
@@ -449,6 +458,7 @@ Configuration PullServer {
         }
     }
 }
+
 $configData = @{
     AllNodes = @(
         @{
@@ -467,6 +477,7 @@ $configData = @{
             }
         )
     }
+
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
@@ -474,16 +485,18 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-
 ### <a name="verify-pull-server-functionality"></a>Vérifier les fonctionnalités du serveur collecteur
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
 function Verify-DSCPullServer ($fqdn) {
-    ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
+    ([xml](Invoke-WebRequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN'
 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
+```
+
+```output
 Expected Result:
 Action
 Module
@@ -511,28 +524,28 @@ Configuration PullClient {
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
 }
+
 PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
-
 
 ## <a name="additional-references-snippets-and-examples"></a>Références, extraits de code et exemples supplémentaires
 
 Cet exemple montre comment démarrer manuellement une connexion au client (nécessitant WMF5) pour les tests.
 
 ```powershell
-Update-DSCConfiguration –Wait -Verbose
+Update-DscConfiguration –Wait -Verbose
 ```
 
 L’applet de commande [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) est utilisée pour ajouter un enregistrement CNAME de type à une zone DNS.
 
-La fonction PowerShell permettant de [créer une somme de contrôle et de publier un document MOF DSC sur un serveur collecteur SMB](http://bit.ly/1E46BhI) génère automatiquement la somme de contrôle exigée, puis copie les fichiers de configuration MOF et de somme de contrôle sur le serveur collecteur SMB.
+La fonction PowerShell permettant de [créer une somme de contrôle et de publier un document MOF DSC sur un serveur collecteur SMB](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) génère automatiquement la somme de contrôle exigée, puis copie les fichiers de configuration MOF et de somme de contrôle sur le serveur collecteur SMB.
 
 ## <a name="appendix---understanding-odata-service-data-file-types"></a>Annexe - Présentation des types de fichiers de données du service ODATA
 
 Un fichier de données est stocké pour créer des informations pendant le déploiement d’un serveur collecteur qui inclut le service web OData. Le type de fichier dépend du système d’exploitation, comme décrit ci-dessous.
 
- - **Windows Server 2012** Le type de fichier est toujours .mdb
- - **Windows Server 2012 R2** Le type de fichier est .edb par défaut, sauf si le type .mdb est spécifié dans la configuration
+- **Windows Server 2012** Le type de fichier est toujours .mdb
+- **Windows Server 2012 R2** Le type de fichier est .edb par défaut, sauf si le type .mdb est spécifié dans la configuration
 
 Dans l’[exemple de script avancé](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) d’installation un serveur collecteur, vous trouverez également un exemple de la façon de contrôler automatiquement les paramètres du fichier web.config pour empêcher tout risque d’erreur provoquée par le type de fichier.

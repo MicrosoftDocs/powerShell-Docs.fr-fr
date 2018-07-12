@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 description: Fournit un mécanisme permettant de gérer des groupes locaux sur le nœud cible.
 title: Ressources GroupSet dans DSC
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222351"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892424"
 ---
 # <a name="dsc-groupset-resource"></a>Ressources GroupSet dans DSC
 
@@ -18,7 +18,8 @@ La ressource **GroupSet** dans la configuration d’état souhaité (DSC) Window
 
 Utilisez cette ressource quand vous souhaitez ajouter ou supprimer la même liste de membres dans plusieurs groupes, supprimer plusieurs groupes, ou ajouter plusieurs groupes avec la même liste de membres.
 
-##<a name="syntax"></a>Syntaxe##
+## <a name="syntax"></a>Syntaxe
+
 ```
 Group [string] #ResourceName
 {
@@ -43,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format *domaine*\\*nom d’utilisateur*. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur.|
 | DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID __ResourceName__ et le type __ResourceType__, utilisez la syntaxe suivante pour cette propriété : DependsOn = "[ResourceType]ResourceName"|
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1-ensuring-groups-are-present"></a>Exemple 1 : S’assurer que les groupes sont présents
 
 L’exemple suivant montre comment s’assurer que les deux groupes « myGroup » et « myOtherGroup » sont présents.
 
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Remarque :** Cet exemple utilise des informations d’identification en texte clair par souci de simplicité. Pour plus d’informations sur la façon de chiffrer des informations d’identification dans le fichier MOF de configuration, consultez [Sécurisation du fichier MOF](secureMOF.md).
+> [!NOTE] 
+> Cet exemple utilise des informations d’identification en texte clair par souci de simplicité. Pour plus d’informations sur la façon de chiffrer des informations d’identification dans le fichier MOF de configuration, consultez [Sécurisation du fichier MOF](secureMOF.md).

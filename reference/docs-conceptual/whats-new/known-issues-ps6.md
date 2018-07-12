@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Problèmes connus de PowerShell 6.0
-ms.openlocfilehash: 6ad1bcaf1de06f204b57eb8ce23b3053ba4a5b38
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309604"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893686"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problèmes connus de PowerShell 6.0
 
@@ -55,7 +55,7 @@ Accédez à [#954](https://github.com/PowerShell/PowerShell/issues/954) pour nou
 
 PowerShell sous Linux/macOS utilise .NET Core, qui est un sous-ensemble de la version complète de .NET Framework sous Microsoft Windows. C’est un point important, car PowerShell offre un accès direct aux méthodes, types de frameworks, etc. sous-jacents. Par conséquent, les scripts qui s’exécutent sous Windows risquent de ne pas fonctionner sur les plateformes autres que Windows en raison des différences d’infrastructure. Pour plus d’informations sur .NET Core Framework, voir <https://dotnetfoundation.org/net-core>.
 
-Avec l’arrivée de [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 réintègrera la plupart des types et méthodes traditionnels présents dans la version complète de .NET Framework. PowerShell Core pourra donc charger de nombreux modules Windows PowerShell traditionnels sans modification. Vous pouvez suivre [ici](https://github.com/PowerShell/PowerShell/projects/4) nos travaux liés à .NET Standard 2.0.
+Avec l’arrivée de [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/), .NET Core 2.0 réintègrera la plupart des types et méthodes traditionnels présents dans la version complète du .NET Framework. PowerShell Core pourra donc charger de nombreux modules Windows PowerShell traditionnels sans modification. Vous pouvez suivre [ici](https://github.com/PowerShell/PowerShell/projects/4) nos travaux liés à .NET Standard 2.0.
 
 ### <a name="redirection-issues"></a>Problèmes de redirection
 
@@ -64,14 +64,17 @@ La redirection d’entrée n’est pas prise en charge dans PowerShell, quelle q
 
 Utilisez `Get-Content` pour écrire le contenu d’un fichier dans le pipeline.
 
-La sortie redirigée contiendra la marque d’ordre d’octet (BOM) Unicode lorsque l’encodage UTF-8 par défaut sera utilisé. Cet indicateur pose problème avec les utilitaires qui ne l’attendent pas ou en cas d’ajout à un fichier. Utilisez `-Encoding Ascii` pour écrire du texte ASCII (non Unicode, donc sans marque d’ordre d’octet). (Remarque : Accédez à [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) pour nous donner votre avis sur la façon d’améliorer l’expérience d’encodage de PowerShell Core sur toutes les plateformes. Nous travaillons actuellement à prendre en charge UTF-8 sans marque d’ordre d’octet et éventuellement à modifier les encodages par défaut pour diverses applets de commande sur différentes plateformes.)
+La sortie redirigée contiendra la marque d’ordre d’octet (BOM) Unicode lorsque l’encodage UTF-8 par défaut sera utilisé. Cet indicateur pose problème avec les utilitaires qui ne l’attendent pas ou en cas d’ajout à un fichier. Utilisez `-Encoding Ascii` pour écrire du texte ASCII (non Unicode, donc sans marque d’ordre d’octet).
+
+> [!Note]
+> Accédez à [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) pour nous donner votre avis sur la façon d’améliorer l’expérience d’encodage de PowerShell Core sur toutes les plateformes. Nous travaillons actuellement à prendre en charge UTF-8 sans marque d’ordre d’octet et éventuellement à modifier les encodages par défaut pour diverses applets de commande sur différentes plateformes.
 
 ### <a name="job-control"></a>Contrôle des tâches
 
 Le contrôle des tâches n’est pas pris en charge du tout dans PowerShell sous Linux/macOS.
 Les commandes `fg` et `bg` ne sont pas disponibles.
 
-Pour l’instant, vous pouvez utiliser les [travaux PowerShell](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs) qui fonctionnent sur toutes les plateformes.
+Pour l’instant, vous pouvez utiliser les [travaux PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs) qui fonctionnent sur toutes les plateformes.
 
 ### <a name="remoting-support"></a>Prise en charge de la communication à distance
 
@@ -87,7 +90,7 @@ La possibilité de créer des points de terminaison de communication à distance
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` et PowerShell
 
-PowerShell exécute la plupart des commandes en mémoire (par exemple, Python ou Ruby). De ce fait, il n’est pas possible d’utiliser sudo directement avec les modules intégrés de PowerShell. (Vous pouvez, bien entendu, exécuter `powershell` à partir de sudo.) S’il vous faut exécuter une applet de commande PowerShell dans PowerShell avec sudo, par exemple, `sudo Set-Date 8/18/2016`, faites `sudo powershell Set-Date 8/18/2016`. De même, vous ne pouvez pas exécuter directement un module intégré de PowerShell. Vous devrez passer par `exec powershell item_to_exec`.
+PowerShell exécute la plupart des commandes en mémoire (par exemple, Python ou Ruby). De ce fait, il n’est pas possible d’utiliser sudo directement avec les modules intégrés de PowerShell. (Vous pouvez, bien entendu, exécuter `powershell` à partir de sudo.) S’il vous faut exécuter une applet de commande PowerShell dans PowerShell avec sudo, par exemple, `sudo `Set-Date` 8/18/2016`, exécutez `sudo powershell `Set-Date` 8/18/2016`. De même, vous ne pouvez pas exécuter directement un module intégré de PowerShell. Vous devrez passer par `exec powershell item_to_exec`.
 
 Ce problème fait actuellement l’objet d’un suivi dans le ticket #3232.
 
@@ -99,45 +102,13 @@ De nombreuses commandes (applets de commande) normalement disponibles dans Power
 
 Le tableau suivant répertorie les commandes dont on sait qu’elles ne fonctionnent pas dans PowerShell sous Linux/macOS.
 
-<table>
-<th>Commandes</th><th>État de fonctionnement</th><th>Remarques</th>
-<tr>
-<td>Get-Service, New-Service, Restart-Service, Resume-Service, Set-Service, Start-Service, Stop-Service, Suspend-Service
-<td>Non disponible.
-<td>Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.
-</tr>
-<tr>
-<td>Get-Acl, Set-Acl
-<td>Non disponible.
-<td>Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature, Set-AuthenticodeSignature
-<td>Non disponible.
-<td>Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.
-</tr>
-<tr>
-<td>Wait-Process
-<td>Disponible, mais ne fonctionne pas correctement. <td>Par exemple, `Start-Process gvim -PassThru | Wait-Process` ne fonctionne pas ; il ne parvient pas à attendre le processus.
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration, Unregister-PSSessionConfiguration, Get-PSSessionConfiguration
-<td>Disponible, mais ne fonctionne pas.
-<td>Écrit un message erreur d'indiquant que les commandes ne fonctionnent pas. Ces problèmes devraientt être corrigés dans une version ultérieure.
-</tr>
-<tr>
-<td>Get-Event, New-Event, Register-EngineEvent, Register-WmiEvent, Remove-Event, Unregister-Event
-<td>Disponible, mais aucune source d’événement n’est disponible.
-<td>Les commandes de gestion des événements de PowerShell sont présentes, mais la plupart des sources d’événements utilisées avec les commandes (par exemple, System.Timers.Timer) ne sont pas disponibles sous Linux, ce qui rend les commandes inutiles dans la version alpha.
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>Disponible, mais ne fonctionne pas.
-<td>Retourne un message indiquant que la prise en charge n’est pas assurée sur cette plateforme. La stratégie d’exécution est une « ceinture de sécurité » orientée utilisateur qui permet d’empêcher l’utilisateur de commettre des erreurs coûteuses. Il ne s’agit pas d’une limite de sécurité.
-</tr>
-<tr>
-<td>New-PSSessionOption, New-PSTransportOption
-<td>Disponible, mais New-PSSession ne fonctionne pas.
-<td>Le bon fonctionnement de New-PSSessionOption et de New-PSTransportOption n’a pas été vérifié à présent que New-PSSession fonctionne.
-</tr>
-</table>
+|Commandes |État de fonctionnement | Remarques|
+|---------|------------------|------|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Get-Acl`, `Set-Acl`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Wait-Process`|Disponible, mais ne fonctionne pas correctement. |Par exemple, « Start-Process gvim -PassThru | Wait-Process » ne fonctionne pas ; il ne parvient pas à attendre le processus.|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Disponible, mais ne fonctionne pas.|Écrit un message erreur d'indiquant que les commandes ne fonctionnent pas. Ces problèmes devraientt être corrigés dans une version ultérieure.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Disponible, mais aucune source d’événement n’est disponible.|Les commandes de gestion des événements de PowerShell sont présentes, mais la plupart des sources d’événements utilisées avec les commandes (par exemple, System.Timers.Timer) ne sont pas disponibles sous Linux, ce qui rend les commandes inutiles dans la version alpha.|
+|`Set-ExecutionPolicy`|Disponible, mais ne fonctionne pas.|Retourne un message indiquant que la prise en charge n’est pas assurée sur cette plateforme. La stratégie d’exécution est une « ceinture de sécurité » orientée utilisateur qui permet d’empêcher l’utilisateur de commettre des erreurs coûteuses. Il ne s’agit pas d’une limite de sécurité.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Disponible, mais `New-PSSession` ne fonctionne pas.|Il n’a pas été vérifié que `New-PSSessionOption` et `New-PSTransportOption` fonctionnaient, maintenant que `New-PSSession` fonctionne.|
