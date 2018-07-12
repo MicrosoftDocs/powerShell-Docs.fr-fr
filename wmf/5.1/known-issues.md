@@ -3,47 +3,52 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Problèmes connus dans WMF 5.1
-ms.openlocfilehash: d53031bea978087c68fcb22989c7cd2e2cf2d9fa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219451"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892135"
 ---
-# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="5ca93-103">Problèmes connus dans WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="5ca93-103">Known Issues in WMF 5.1</span></span> #
+# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="547c9-103">Problèmes connus dans WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="547c9-103">Known Issues in WMF 5.1</span></span>
 
-> <span data-ttu-id="5ca93-104">Remarque : ces informations sont susceptibles d’être modifiées.</span><span class="sxs-lookup"><span data-stu-id="5ca93-104">Note: This information is subject to change.</span></span>
+> [!Note]
+> <span data-ttu-id="547c9-104">Ces informations sont susceptibles d’être modifiées.</span><span class="sxs-lookup"><span data-stu-id="547c9-104">This information is subject to change.</span></span>
 
-## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="5ca93-105">Démarrage de raccourci PowerShell en tant qu’administrateur</span><span class="sxs-lookup"><span data-stu-id="5ca93-105">Starting PowerShell shortcut as Administrator</span></span>
-<span data-ttu-id="5ca93-106">Lors de l’installation de WMF, si vous essayez de démarrer PowerShell en tant qu’administrateur à partir du raccourci, vous pouvez obtenir un message « Erreur non spécifiée ».</span><span class="sxs-lookup"><span data-stu-id="5ca93-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
-<span data-ttu-id="5ca93-107">Rouvrez le raccourci comme non-administrateur. Le raccourci fonctionne désormais même comme administrateur.</span><span class="sxs-lookup"><span data-stu-id="5ca93-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
+## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="547c9-105">Démarrage de raccourci PowerShell en tant qu’administrateur</span><span class="sxs-lookup"><span data-stu-id="547c9-105">Starting PowerShell shortcut as Administrator</span></span>
 
-## <a name="pester"></a><span data-ttu-id="5ca93-108">Pester</span><span class="sxs-lookup"><span data-stu-id="5ca93-108">Pester</span></span>
-<span data-ttu-id="5ca93-109">Dans cette version, vous devez savoir qu’il existe deux problèmes quand vous utilisez Pester sur Nano Server :</span><span class="sxs-lookup"><span data-stu-id="5ca93-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
+<span data-ttu-id="547c9-106">Lors de l’installation de WMF, si vous essayez de démarrer PowerShell en tant qu’administrateur à partir du raccourci, vous pouvez obtenir un message « Erreur non spécifiée ».</span><span class="sxs-lookup"><span data-stu-id="547c9-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
+<span data-ttu-id="547c9-107">Rouvrez le raccourci comme non-administrateur. Le raccourci fonctionne désormais même comme administrateur.</span><span class="sxs-lookup"><span data-stu-id="547c9-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
 
-* <span data-ttu-id="5ca93-110">L’exécution des tests directement sur Pester peut entraîner des échecs en raison des différences entre la version CLR complète et la version CLR de base.</span><span class="sxs-lookup"><span data-stu-id="5ca93-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="5ca93-111">En particulier, la méthode Validate n’est pas disponible sur le type XmlDocument.</span><span class="sxs-lookup"><span data-stu-id="5ca93-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="5ca93-112">Six tests qui tentent de valider le schéma des journaux de sortie NUnit échouent systématiquement.</span><span class="sxs-lookup"><span data-stu-id="5ca93-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
-* <span data-ttu-id="5ca93-113">Un test de couverture du code échoue, car la ressource DSC *WindowsFeature* n’existe pas dans Nano Server.</span><span class="sxs-lookup"><span data-stu-id="5ca93-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="5ca93-114">Toutefois, ces échecs sont généralement sans conséquence et peuvent être ignorés.</span><span class="sxs-lookup"><span data-stu-id="5ca93-114">However, these failures are generally benign and can safely be ignored.</span></span>
+## <a name="pester"></a><span data-ttu-id="547c9-108">Pester</span><span class="sxs-lookup"><span data-stu-id="547c9-108">Pester</span></span>
 
-## <a name="operation-validation"></a><span data-ttu-id="5ca93-115">Validation de l’opération</span><span class="sxs-lookup"><span data-stu-id="5ca93-115">Operation Validation</span></span>
+<span data-ttu-id="547c9-109">Dans cette version, vous devez savoir qu’il existe deux problèmes quand vous utilisez Pester sur Nano Server :</span><span class="sxs-lookup"><span data-stu-id="547c9-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
 
-* <span data-ttu-id="5ca93-116">Update-Help échoue pour le module Microsoft.PowerShell.Operation.Validation en raison d’un URI d’aide qui ne fonctionne pas</span><span class="sxs-lookup"><span data-stu-id="5ca93-116">Update-Help fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+- <span data-ttu-id="547c9-110">L’exécution des tests directement sur Pester peut entraîner des échecs en raison des différences entre la version CLR complète et la version CLR de base.</span><span class="sxs-lookup"><span data-stu-id="547c9-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="547c9-111">En particulier, la méthode Validate n’est pas disponible sur le type XmlDocument.</span><span class="sxs-lookup"><span data-stu-id="547c9-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="547c9-112">Six tests qui tentent de valider le schéma des journaux de sortie NUnit échouent systématiquement.</span><span class="sxs-lookup"><span data-stu-id="547c9-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
+- <span data-ttu-id="547c9-113">Un test de couverture du code échoue, car la ressource DSC *WindowsFeature* n’existe pas dans Nano Server.</span><span class="sxs-lookup"><span data-stu-id="547c9-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="547c9-114">Toutefois, ces échecs sont généralement sans conséquence et peuvent être ignorés.</span><span class="sxs-lookup"><span data-stu-id="547c9-114">However, these failures are generally benign and can safely be ignored.</span></span>
 
-## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="5ca93-117">DSC après la désinstallation de WMF</span><span class="sxs-lookup"><span data-stu-id="5ca93-117">DSC after uninstall WMF</span></span>
-* <span data-ttu-id="5ca93-118">La désinstallation de WMF ne supprime pas les documents MOF DSC du dossier de configuration.</span><span class="sxs-lookup"><span data-stu-id="5ca93-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="5ca93-119">DSC ne fonctionne pas correctement si les documents MOF contiennent des propriétés récentes qui ne sont pas disponibles sur les anciens systèmes.</span><span class="sxs-lookup"><span data-stu-id="5ca93-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="5ca93-120">Dans ce cas, exécutez le script suivant à partir de la console PowerShell avec élévation de privilèges pour nettoyer les états DSC.</span><span class="sxs-lookup"><span data-stu-id="5ca93-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
- ```powershell
+## <a name="operation-validation"></a><span data-ttu-id="547c9-115">Validation de l’opération</span><span class="sxs-lookup"><span data-stu-id="547c9-115">Operation Validation</span></span>
+
+- <span data-ttu-id="547c9-116">`Update-Help` échoue pour le module Microsoft.PowerShell.Operation.Validation en raison d’un URI d’aide qui ne fonctionne pas</span><span class="sxs-lookup"><span data-stu-id="547c9-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+
+## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="547c9-117">DSC après la désinstallation de WMF</span><span class="sxs-lookup"><span data-stu-id="547c9-117">DSC after uninstall WMF</span></span>
+
+- <span data-ttu-id="547c9-118">La désinstallation de WMF ne supprime pas les documents MOF DSC du dossier de configuration.</span><span class="sxs-lookup"><span data-stu-id="547c9-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="547c9-119">DSC ne fonctionne pas correctement si les documents MOF contiennent des propriétés récentes qui ne sont pas disponibles sur les anciens systèmes.</span><span class="sxs-lookup"><span data-stu-id="547c9-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="547c9-120">Dans ce cas, exécutez le script suivant à partir de la console PowerShell avec élévation de privilèges pour nettoyer les états DSC.</span><span class="sxs-lookup"><span data-stu-id="547c9-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
+
+  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
             "$env:windir\system32\configuration\*.mof.checksum",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof",
             "$env:windir\system32\configuration\PartialConfiguration\*.mof.checksum"
            )
-
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```
+  ```
 
-## <a name="jea-virtual-accounts"></a><span data-ttu-id="5ca93-121">Comptes virtuels JEA</span><span class="sxs-lookup"><span data-stu-id="5ca93-121">JEA Virtual Accounts</span></span>
-<span data-ttu-id="5ca93-122">Si des configurations de session et des points de terminaison JEA sont configurés pour utiliser des comptes virtuels dans WMF 5.0, il n’en est pas de même après la mise à niveau vers WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="5ca93-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
-<span data-ttu-id="5ca93-123">Les commandes exécutées dans des sessions JEA s’exécutent alors sous l’identité de l’utilisateur connecté et non sous un compte d’administrateur temporaire, ce qui peut empêcher l’utilisateur d’exécuter des commandes nécessitant des privilèges élevés.</span><span class="sxs-lookup"><span data-stu-id="5ca93-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
-<span data-ttu-id="5ca93-124">Pour restaurer les comptes virtuels, vous devez désinscrire et réinscrire toute configuration de session utilisant des comptes virtuels.</span><span class="sxs-lookup"><span data-stu-id="5ca93-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
+## <a name="jea-virtual-accounts"></a><span data-ttu-id="547c9-121">Comptes virtuels JEA</span><span class="sxs-lookup"><span data-stu-id="547c9-121">JEA Virtual Accounts</span></span>
+
+<span data-ttu-id="547c9-122">Si des configurations de session et des points de terminaison JEA sont configurés pour utiliser des comptes virtuels dans WMF 5.0, il n’en est pas de même après la mise à niveau vers WMF 5.1.</span><span class="sxs-lookup"><span data-stu-id="547c9-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
+<span data-ttu-id="547c9-123">Les commandes exécutées dans des sessions JEA s’exécutent alors sous l’identité de l’utilisateur connecté et non sous un compte d’administrateur temporaire, ce qui peut empêcher l’utilisateur d’exécuter des commandes nécessitant des privilèges élevés.</span><span class="sxs-lookup"><span data-stu-id="547c9-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
+<span data-ttu-id="547c9-124">Pour restaurer les comptes virtuels, vous devez désinscrire et réinscrire toute configuration de session utilisant des comptes virtuels.</span><span class="sxs-lookup"><span data-stu-id="547c9-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
 
 ```powershell
 # Find the JEA endpoint by its name
