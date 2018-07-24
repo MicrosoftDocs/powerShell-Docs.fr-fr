@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893754"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094260"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
@@ -142,7 +142,7 @@ Vous pouvez terminer la configuration de l’application web Accès Web Windows 
    - EnabledProtocols: http
    - PhysicalPath : `%*windir*%/Web/PowerShellWebAccess/wwwroot`
 
-     **Exemple** : `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
+     **Example** : `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
      Dans cet exemple, le site web obtenu pour Accès Web Windows PowerShell est `https://<server_name>/myWebApp`.
 
@@ -329,29 +329,29 @@ Les instructions données dans cette section concernent l’installation de l’
 
    - Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)**. Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
 
-2. Dans le volet de l’arborescence du Gestionnaire des services Internet, développez le nœud du serveur sur lequel Accès Web Windows PowerShell est installé jusqu’à ce que le dossier **Sites** apparaisse. Sélectionnez le dossier **Sites**.
+1. Dans le volet de l’arborescence du Gestionnaire des services Internet, développez le nœud du serveur sur lequel Accès Web Windows PowerShell est installé jusqu’à ce que le dossier **Sites** apparaisse. Sélectionnez le dossier **Sites**.
 
-3. Dans le volet **Actions**, cliquez sur **Ajouter un site Web**.
+1. Dans le volet **Actions**, cliquez sur **Ajouter un site Web**.
 
-4. Tapez le nom du site web, comme **Accès Web Windows PowerShell**.
+1. Tapez le nom du site web, comme **Accès Web Windows PowerShell**.
 
-5. Un pool d’applications est créé automatiquement pour le nouveau site web. Pour utiliser un autre pool d’applications, cliquez sur **Sélectionner** pour sélectionner un pool d’applications à associer au nouveau site web. Sélectionnez l’autre pool d’applications dans la boîte de dialogue **Sélectionner un pool d’applications**, puis cliquez sur **OK**.
+1. Un pool d’applications est créé automatiquement pour le nouveau site web. Pour utiliser un autre pool d’applications, cliquez sur **Sélectionner** pour sélectionner un pool d’applications à associer au nouveau site web. Sélectionnez l’autre pool d’applications dans la boîte de dialogue **Sélectionner un pool d’applications**, puis cliquez sur **OK**.
 
-6. Dans la zone de texte **Chemin d’accès physique**, accédez à %*windir*%/Web/PowerShellWebAccess/wwwroot.
+1. Dans la zone de texte **Chemin d’accès physique**, accédez à %*windir*%/Web/PowerShellWebAccess/wwwroot.
 
-7. Dans le champ **Type** de la zone **Liaison**, sélectionnez **https**.
+1. Dans le champ **Type** de la zone **Liaison**, sélectionnez **https**.
 
-8. Assignez au site web un numéro de port qui n’est pas déjà utilisé par un autre site ou une autre application. Pour localiser les ports ouverts, vous pouvez exécuter la commande **netstat** dans une fenêtre d’invite de commandes. Le numéro de port par défaut est 443.
+1. Assignez au site web un numéro de port qui n’est pas déjà utilisé par un autre site ou une autre application. Pour localiser les ports ouverts, vous pouvez exécuter la commande **netstat** dans une fenêtre d’invite de commandes. Le numéro de port par défaut est 443.
 
    Modifiez le port par défaut si un autre site web utilise déjà le port 443 ou si vous avez d’autres raisons d’ordre sécuritaire. Si un autre site web qui s’exécute sur votre serveur de passerelle utilise votre port sélectionné, un avertissement s’affiche quand vous cliquez sur **OK** dans la boîte de dialogue **Ajouter un site Web**. Vous devez utiliser un port inutilisé pour exécuter Accès Web Windows PowerShell.
 
-9. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **www.contoso.com**. Cliquez sur **OK**.
+1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **www.contoso.com**. Cliquez sur **OK**.
 
-10. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
+1. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
 
-11. Cliquez sur **OK** pour fermer la boîte de dialogue **Ajouter un site Web**.
+1. Cliquez sur **OK** pour fermer la boîte de dialogue **Ajouter un site Web**.
 
-12. Dans une session Windows PowerShell qui a été ouverte avec des droits d’utilisateur élevés (Exécuter en tant qu’administrateur), exécutez le script suivant dans lequel *application_pool_name* représente le nom du pool d’applications que vous avez créé à l’étape 4, afin de donner les droits d’accès au pool d’applications dans le fichier d’autorisations.
+1. Dans une session Windows PowerShell qui a été ouverte avec des droits d’utilisateur élevés (Exécuter en tant qu’administrateur), exécutez le script suivant dans lequel _application_pool_name_ représente le nom du pool d’applications que vous avez créé à l’étape 4, afin de donner les droits d’accès au pool d’applications dans le fichier d’autorisations.
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -365,11 +365,11 @@ Les instructions données dans cette section concernent l’installation de l’
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. Avec le nouveau site Web sélectionné dans le volet de l’arborescence du Gestionnaire des services Internet, cliquez sur **Démarrer** dans le volet **Actions** pour démarrer le site Web.
+1. Avec le nouveau site Web sélectionné dans le volet de l’arborescence du Gestionnaire des services Internet, cliquez sur **Démarrer** dans le volet **Actions** pour démarrer le site Web.
 
-14. Ouvrez une session de navigateur sur un périphérique client. Pour plus d’informations sur les navigateurs et périphériques pris en charge, voir [Prise en charge de navigateurs et de périphériques client](#browser-and-client-device-support) dans ce document.
+1. Ouvrez une session de navigateur sur un périphérique client. Pour plus d’informations sur les navigateurs et périphériques pris en charge, voir [Prise en charge de navigateurs et de périphériques client](#browser-and-client-device-support) dans ce document.
 
-15. Ouvrez le site web Accès Web Windows PowerShell.
+1. Ouvrez le site web Accès Web Windows PowerShell.
 
     Étant donné que le site web racine pointe vers le dossier Accès Web Windows PowerShell, le navigateur doit afficher la page de connexion d’Accès Web Windows PowerShell quand vous ouvrez **https://\<*nom_serveur_de_passerelle*\>**. Il n’est pas nécessaire d’ajouter **/pswa** à l’URL.
 
@@ -392,11 +392,11 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
 
    - Dans l’écran d’**accueil** de Windows, cliquez avec le bouton droit sur **Windows PowerShell**, puis cliquez sur **Exécuter en tant qu’administrateur**.
 
-2. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session :
+1. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session :
 
    Vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
-3. Tapez ce qui suit, puis appuyez sur **Entrée**.
+1. Tapez ce qui suit, puis appuyez sur **Entrée**.
 
    Add-PswaAuthorizationRule -UserName <domaine\utilisateur | ordinateur\utilisateur> -ComputerName <nom_ordinateur> -ConfigurationName <nom_configuration_session>
 
@@ -406,7 +406,7 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
 
    Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. Vérifiez que la règle a été créée en exécutant l’applet de commande `Get-PswaAuthorizationRule` ou `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
+1. Vérifiez que la règle a été créée en exécutant l’applet de commande `Get-PswaAuthorizationRule` ou `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
    Par exemple, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
@@ -420,9 +420,9 @@ Pour un environnement de production sécurisé, utilisez toujours un certificat 
 
 1. Dans le volet de l’arborescence du Gestionnaire des services Internet, sélectionnez le serveur sur lequel Accès Web Windows PowerShell est installé.
 
-2. Dans le volet de contenu, double-cliquez sur **Certificats de serveur**.
+1. Dans le volet de contenu, double-cliquez sur **Certificats de serveur**.
 
-3. Dans le volet **Actions**, effectuez l’une des opérations suivantes. Pour plus d’informations sur la configuration des certificats de serveur dans IIS, consultez [Configuration des certificats de serveur dans IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
+1. Dans le volet **Actions**, effectuez l’une des opérations suivantes. Pour plus d’informations sur la configuration des certificats de serveur dans IIS, consultez [Configuration des certificats de serveur dans IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Cliquez sur **Importer** pour importer un certificat existant valide depuis un emplacement sur votre réseau.
 
@@ -432,11 +432,11 @@ Pour un environnement de production sécurisé, utilisez toujours un certificat 
 
    - Cliquez sur **Créer un certificat auto-signé** pour créer un certificat que vous pouvez utiliser immédiatement, puis faire signer ultérieurement par une autorité de certification si besoin. Spécifiez un nom convivial pour le certificat auto-signé, comme **Accès Web Windows PowerShell**. Cette option est considérée comme non sécurisée et recommandée uniquement dans un environnement de test privé.
 
-4. Après avoir créé ou obtenu un certificat, sélectionnez le site web auquel il est appliqué (par exemple, le **Site Web par défaut**) dans le volet de l’arborescence du Gestionnaire des services Internet, puis cliquez sur **Liaisons** dans le volet **Actions**.
+1. Après avoir créé ou obtenu un certificat, sélectionnez le site web auquel il est appliqué (par exemple, le **Site Web par défaut**) dans le volet de l’arborescence du Gestionnaire des services Internet, puis cliquez sur **Liaisons** dans le volet **Actions**.
 
-5. Dans la boîte de dialogue **Ajouter la liaison de site**, ajoutez une liaison **https** pour le site, si aucune n’est déjà affichée. Si vous n’utilisez pas de certificat auto-signé, spécifiez le nom d’hôte de l’étape 3 de cette procédure. Si vous utilisez un certificat auto-signé, vous pouvez ignorer cette étape.
+1. Dans la boîte de dialogue **Ajouter la liaison de site**, ajoutez une liaison **https** pour le site, si aucune n’est déjà affichée. Si vous n’utilisez pas de certificat auto-signé, spécifiez le nom d’hôte de l’étape 3 de cette procédure. Si vous utilisez un certificat auto-signé, vous pouvez ignorer cette étape.
 
-6. Sélectionnez le certificat que vous avez obtenu ou créé à l’étape 3 de cette procédure, puis cliquez sur **OK**.
+1. Sélectionnez le certificat que vous avez obtenu ou créé à l’étape 3 de cette procédure, puis cliquez sur **OK**.
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>Utilisation de la console Web Windows PowerShell
 

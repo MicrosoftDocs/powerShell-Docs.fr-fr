@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893720"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094243"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
@@ -163,9 +163,8 @@ Voici quelques exemples de ce scénario.
 
 - Un administrateur a configuré un environnement de test privé et souhaite autoriser tous les utilisateurs réseau approuvés à accéder à tous les ordinateurs du réseau auxquels ils ont normalement accès, avec un accès à toutes les configurations de sessions auxquelles ils ont normalement accès. S’agissant d’un environnement de test privé, l’administrateur crée une règle d’autorisation non sécurisée. - L’administrateur exécute l’applet de commande `Add-PswaAuthorizationRule * * *`, qui utilise le caractère générique **\*** pour représenter tous les utilisateurs, tous les ordinateurs et toutes les configurations. - Cette règle est l’équivalent de la commande suivante : `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Cette règle n’est pas recommandée dans un environnement sécurisé ; elle contourne la couche de sécurité de la règle d’autorisation fournie par Accès Web Windows PowerShell.
+  > [!NOTE]
+  > Cette règle n’est pas recommandée dans un environnement sécurisé ; elle contourne la couche de sécurité de la règle d’autorisation fournie par Accès Web Windows PowerShell.
 
 - Un administrateur doit autoriser les utilisateurs à se connecter aux ordinateurs cibles dans un environnement qui inclut à la fois des groupes de travail et des domaines, où les ordinateurs des groupes de travail sont de temps en temps utilisés pour se connecter aux ordinateurs cibles dans les domaines et où les ordinateurs des domaines sont de temps en temps utilisés pour se connecter aux ordinateurs cibles dans les groupes de travail. L’administrateur possède un serveur de passerelle, *PswaServer*, dans un groupe de travail et l’ordinateur cible *srv1.contoso.com* se trouve dans un domaine. L’utilisateur *Chris* est un utilisateur local autorisé à la fois sur le serveur de passerelle du groupe de travail et l’ordinateur cible. Son nom d’utilisateur sur le serveur du groupe de travail est *chrisLocal* et son nom d’utilisateur sur l’ordinateur cible est *contoso\\chris*. Pour autoriser l’accès à srv1.contoso.com à Chris, l’administrateur ajoute la règle suivante.
 
@@ -180,10 +179,9 @@ Dans le scénario précédent, Accès Web Windows PowerShell établit une connex
 
 1. Authentification sur le serveur de passerelle du groupe de travail en ajoutant un nom d’utilisateur au format *nom_serveur*\\*nom_utilisateur* à la règle d’autorisation
 
-2. Authentification sur l’ordinateur cible en utilisant les informations d’identification supplémentaires fournies dans la page de connexion, dans la zone **Paramètres de connexion facultatifs**
+1. Authentification sur l’ordinateur cible en utilisant les informations d’identification supplémentaires fournies dans la page de connexion, dans la zone **Paramètres de connexion facultatifs**
 
    > [!NOTE]
-   >
    > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, consultez [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx").
    > Pour plus d’informations sur la façon d’ajouter les ordinateurs d’un groupe de travail à une liste d’hôtes approuvés, consultez [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
 
