@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892567"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093879"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>État unifié et cohérent et représentation de l’état
 
@@ -15,11 +15,11 @@ Une série d’améliorations ont été apportées dans cette version pour l’�
 La représentation de l’état du gestionnaire de configuration local et du statut de l’opération DSC a été revisitée et unifiée conformément aux règles suivantes :
 
 1. La ressource NotProcessed n’affecte pas l’état du gestionnaire de configuration local et le statut DSC.
-2. Le gestionnaire de configuration local cesse de traiter les ressources dès qu’il en rencontre une qui demande un redémarrage.
-3. Une ressource qui demande un redémarrage n’est pas à l’état souhaité tant que le redémarrage n’a pas eu lieu.
-4. Après avoir rencontré une ressource qui échoue, le gestionnaire de configuration local continue à traiter les ressources tant qu’elles ne sont pas dépendantes de celle qui a échoué.
-5. Le statut global retourné par l’applet de commande `Get-DscConfigurationStatus` est le surensemble du statut de toutes les ressources.
-6. L’état PendingReboot est un surensemble de l’état PendingConfiguration.
+1. Le gestionnaire de configuration local cesse de traiter les ressources dès qu’il en rencontre une qui demande un redémarrage.
+1. Une ressource qui demande un redémarrage n’est pas à l’état souhaité tant que le redémarrage n’a pas eu lieu.
+1. Après avoir rencontré une ressource qui échoue, le gestionnaire de configuration local continue à traiter les ressources tant qu’elles ne sont pas dépendantes de celle qui a échoué.
+1. Le statut global retourné par l’applet de commande `Get-DscConfigurationStatus` est le surensemble du statut de toutes les ressources.
+1. L’état PendingReboot est un surensemble de l’état PendingConfiguration.
 
    Le tableau ci-dessous illustre les propriétés d’état et de statut résultantes dans quelques scénarios classiques.
 

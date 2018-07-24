@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Préversions de module
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189837"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093777"
 ---
 # <a name="prerelease-module-versions"></a>Préversions de module
 
@@ -108,7 +108,6 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
 L’installation côte à côte de versions d’un module qui diffèrent uniquement par la préversion spécifiée n’est pas prise en charge. Quand vous installez un module à l’aide de PowerShellGet, différentes versions du même module sont installées côte à côte en créant un nom de dossier qui utilise la valeur ModuleVersion. La valeur ModuleVersion, sans la chaîne de préversion, est utilisée comme nom du dossier. Si un utilisateur installe MyModule version 2.5.0-alpha, le module est installé dans le dossier MyModule\2.5.0. Si l’utilisateur installe ensuite la version 2.5.0-bêta, cette version __remplace__ le contenu du dossier MyModule\2.5.0. L’avantage de cette approche est qu’il est inutile de désinstaller la préversion après l’installation de la version prête pour la production. L’exemple ci-dessous correspond à ce que vous devez obtenir :

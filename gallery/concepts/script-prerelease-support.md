@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Préversions des scripts
-ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188562"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093846"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Préversions des scripts
 
@@ -38,7 +38,6 @@ Voici à quoi ressemble un exemple de section d’un manifeste de script avec un
 ...
 
 #>
-
 ```
 
 Pour utiliser un suffixe de préversion, la chaîne de version doit remplir les conditions suivantes :

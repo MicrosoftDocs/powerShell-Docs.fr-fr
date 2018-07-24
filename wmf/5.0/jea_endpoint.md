@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188426"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093716"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Création et connexion à un point de terminaison JEA
 Pour créer un point de terminaison JEA, vous devez créer et inscrire un fichier de configuration de session PowerShell spécialement configuré, que vous pouvez générer avec l’applet de commande **New-PSSessionConfigurationFile**.
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 Pour pouvoir être utilisées par une configuration de session JEA, les capacités de rôle doivent être enregistrées en tant que modules PowerShell valides dans un répertoire nommé « RoleCapabilities ». Un module peut avoir plusieurs fichiers de capacités de rôle, si vous le souhaitez.
 
 Pour commencer à configurer les applets de commande, les fonctions, les alias et les scripts auxquels un utilisateur peut accéder lors de la connexion à une session JEA, ajoutez vos propres règles dans le fichier de capacité de rôle après les modèles commentés. Pour étudier de manière approfondie comment configurer des capacités de rôle, consultez le [guide d’expérience](http://aka.ms/JEA) complet.
@@ -141,9 +141,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Se connecter à un point de terminaison JEA
+
 La connexion à un point de terminaison JEA s’effectue comme pour tout autre point de terminaison PowerShell.  Il suffit de donner votre nom de point de terminaison JEA comme paramètre « ConfigurationName » pour **New-PSSession**, **Invoke-Command** ou **Enter-PSSession**.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 Une fois connecté à la session JEA, vous êtes limité à l’exécution des commandes figurant dans la liste approuvée dans les capacités de rôle auxquelles vous avez accès. Si vous essayez d’exécuter une commande non autorisée pour votre rôle, une erreur se produit.

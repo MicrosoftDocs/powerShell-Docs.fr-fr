@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Amorcer NuGet
-ms.openlocfilehash: a935b6862f3912a4b419ca00b4d4dd5aab9c20fc
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892699"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094015"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Amorcer le fournisseur NuGet et NuGet.exe
 
@@ -75,7 +75,6 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetExe,Publish-Module
-
 ```
 
 ```powershell
@@ -107,7 +106,6 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [Publish-Module], InvalidOperationException
     + FullyQualifiedErrorId : CouldNotInstallNuGetBinaries,Publish-Module
-
 ```
 
 ```powershell

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource WindowsProcess dans DSC
-ms.openlocfilehash: 72668136a3a51c17c52f762c6f94bec3ed4597b0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c4e6d8377c3dcbf4f1db87a603d5483b8caafb8
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187025"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093733"
 ---
 # <a name="dsc-windowsprocess-resource"></a>Ressource WindowsProcess dans DSC
 
@@ -33,13 +33,14 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Propriétés
+
 |  Propriété  |  Description   |
 |---|---|
 | Arguments| Indique une chaîne d’arguments à passer au processus en l’état. Si vous devez passer plusieurs arguments, placez-les dans cette chaîne.|
 | Path| Chemin de l’exécutable du processus. S’il s’agit du nom de fichier de l’exécutable (et non du chemin qualifié complet), la ressource DSC recherche la variable d’environnement **Path** (`$env:Path`) pour rechercher le fichier exécutable. Si la valeur de cette propriété est un chemin qualifié complet, DSC n’utilise pas la variable d’environnement **Path** pour rechercher le fichier et génère une erreur si le chemin n’existe pas. Les chemins relatifs ne sont pas autorisés.|
 | Credential| Indique les informations d’identification pour démarrer le processus.|
 | Ensure| Indique si le processus existe. Définissez cette propriété sur « Present » pour vous assurer que le package existe. Sinon, donnez-lui la valeur « Absent ». La valeur par défaut est « Present ».|
-| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource __ResourceName__ de type __ResourceType__, la syntaxe pour utiliser cette propriété est « DependsOn = "[ResourceType]ResourceName" ».|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType**, la syntaxe pour utiliser cette propriété est « DependsOn = "[ResourceType]ResourceName" ».|
 | StandardErrorPath| Indique le chemin du répertoire dans lequel écrire l’erreur standard. Tout fichier existant est remplacé.|
 | StandardInputPath| Indique l’emplacement d’entrée standard.|
 | StandardOutputPath| Indique l’emplacement où écrire la sortie standard. Tout fichier existant est remplacé.|

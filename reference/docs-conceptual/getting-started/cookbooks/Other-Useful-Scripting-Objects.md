@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Autres objets de script utiles
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 58acfd05ff1ae1d9aa5f3a3576b8fb320ba4abbd
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893278"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093903"
 ---
 # <a name="other-useful-scripting-objects"></a>Autres objets de script utiles
 
@@ -40,12 +40,13 @@ Il s’agit d’un objet de dictionnaire qui gère un mappage sensible au contex
 $psLocalHelp | Format-List
 ```
 
-### <a name="pslocalhelp-sample-output"></a>Exemple de sortie $psLocalHelp
+```output
+Key   : Add-Computer
+Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
-|||
-|-|-|
-|Clé : Add-Computer|Valeur : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
-|Clé : Add-Content|Valeur : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
+Key   : Add-Content
+Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm
+```
 
 Le script suivant ajoute une entrée à la liste.
 
@@ -61,12 +62,13 @@ Il s’agit d’un objet de dictionnaire qui gère un mappage sensible au contex
 $psOnlineHelp | Format-List
 ```
 
-## <a name="psonilnehelp-sample-output"></a>Exemple de sortie $psOnlineHelp
+```output
+Key   : Add-Computer
+Value : http://go.microsoft.com/fwlink/p/?LinkID=135194
 
-|||
-|-|-|
-|Clé : Add-Computer|Valeur : http://go.microsoft.com/fwlink/p/?LinkID=135194|
-|Clé : Add-Content|Valeur : http://go.microsoft.com/fwlink/p/?LinkID=113278|
+Key   : Add-Content
+Value : http://go.microsoft.com/fwlink/p/?LinkID=113278
+```
 
 Le script suivant ajoute une entrée à la liste.
 

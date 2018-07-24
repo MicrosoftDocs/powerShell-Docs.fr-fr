@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Options relatives aux informations d’identification dans les données de configuration
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190041"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093675"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Options relatives aux informations d’identification dans les données de configuration
 >S’applique à : Windows PowerShell 5.0
@@ -273,8 +273,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` n’est pas équivalent à un astérisque et un nom de nœud doit être fourni obligatoirement.
 
 **Microsoft recommande d’éviter les mots de passe en texte brut en raison de l’important risque de sécurité qu’ils présentent.**
-
-L’utilisation du service Azure Automation DSC constitue une exception, uniquement parce que les données sont toujours stockées chiffrées (en transit, au repos dans le service et au repos sur le nœud).
 
 ## <a name="domain-credentials"></a>Informations d’identification de domaine
 

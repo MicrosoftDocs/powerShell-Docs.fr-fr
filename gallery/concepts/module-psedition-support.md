@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Modules avec des éditions PowerShell compatibles
-ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 2b11d833e7abc50f26b1581f678b9509a098c2c5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892319"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093522"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules avec des éditions PowerShell compatibles
 
@@ -169,7 +169,6 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
 }
-
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Option 2 : Utiliser la variable $PSEdition dans le fichier PSD1 pour charger les DLL appropriées et les modules imbriqués/obligatoires
@@ -252,13 +251,11 @@ Mode                LastWriteTime         Length Name
 Les modules sans les étiquettes PSEdition_Desktop et PSEdition_Core sont considérés comme fonctionnant correctement sur les éditions de PowerShell Desktop.
 
 ```powershell
-
 # Find modules supported on PowerShell Desktop edition
 Find-Module -Tag PSEdition_Desktop
 
 # Find modules supported on PowerShell Core editions
 Find-Module -Tag PSEdition_Core
-
 ```
 
 ## <a name="more-details"></a>Plus d’informations

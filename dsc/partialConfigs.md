@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configurations partielles du service de configuration d’état souhaité PowerShell
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892999"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093930"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configurations partielles du service de configuration d’état souhaité PowerShell
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>Attribution de noms et placement des documents de configuration sur le serveur collecteur (ConfigurationID)
 
-Les documents de configuration partielle doivent être placés dans le dossier spécifié comme **ConfigurationPath** dans le fichier `web.config` pour le serveur collecteur (généralement `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Les documents de configuration doivent être nommés comme suit : *ConfigurationName*, *ConfigurationID8`.mof`, où *ConfigurationName* est le nom de la configuration partielle et *ConfigurationID* est l’ID de configuration défini dans le gestionnaire de configuration local sur le nœud cible. Dans notre exemple, les documents de configuration doivent être nommés comme suit :
+Les documents de configuration partielle doivent être placés dans le dossier spécifié comme **ConfigurationPath** dans le fichier `web.config` pour le serveur collecteur (généralement `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Les documents de configuration doivent être nommés comme suit : _ConfigurationName_, *ConfigurationID8`.mof`, où _ConfigurationName_ est le nom de la configuration partielle et _ConfigurationID_ est l’ID de configuration défini dans le gestionnaire de configuration local sur le nœud cible. Dans notre exemple, les documents de configuration doivent être nommés comme suit :
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>Exemple de configuration partielle SharePointConfig
