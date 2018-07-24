@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Résolution des problèmes liés à DSC
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190007"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094066"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC
 
@@ -24,10 +24,10 @@ La Configuration de l’état souhaité (DSC) Windows PowerShell dépend de WinR
 L’applet de commande, [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) obtient des informations sur l’état de configuration à partir d’un nœud cible.
 Un objet enrichi est retourné. Il comprend des informations générales indiquant si l’exécution de la configuration a réussi ou échoué. Vous pouvez explorer l’objet pour obtenir des détails sur l’exécution de la configuration, notamment :
 
-* Toutes les ressources qui ont échoué
-* Toute ressource ayant demandé un redémarrage
-* Les paramètres de métaconfiguration au moment de l’exécution de la configuration
-* Etc.
+- Toutes les ressources qui ont échoué
+- Toute ressource ayant demandé un redémarrage
+- Les paramètres de métaconfiguration au moment de l’exécution de la configuration
+- Etc.
 
 Le jeu de paramètres suivant retourne les informations d’état pour la dernière exécution de configuration :
 
@@ -118,8 +118,8 @@ Consistency engine was run successfully.
 
 Les événements DSC sont enregistrés dans une structure particulière qui permet à l’utilisateur de regrouper les événements d’une seule tâche DSC. La structure est la suivante :
 
-**ID de tâche : <Guid>**
-**<Event Message>**
+**ID de travail : \<Guid\>**
+**\<Event Message\>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Collecte des événements d’une seule opération DSC
 
@@ -281,7 +281,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 Vous pouvez également spécifier que vous voulez uniquement les résultats des opérations les plus récentes à l’aide du paramètre `Newest` :
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>Voir aussi
 
 ### <a name="reference"></a>Référence
-* [Ressource Log dans DSC](logResource.md)
+
+- [Ressource Log dans DSC](logResource.md)
 
 ### <a name="concepts"></a>Concepts
-* [Création de ressources personnalisées de configuration d’état souhaité Windows PowerShell](authoringResource.md)
+
+- [Création de ressources personnalisées de configuration d’état souhaité Windows PowerShell](authoringResource.md)
 
 ### <a name="other-resources"></a>Autres ressources
-* [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)

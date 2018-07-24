@@ -4,12 +4,12 @@ keywords: powershell,applet de commande
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a5e55611ac59ff5bfecee59ba2b7d7669d08f840
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893737"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094226"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -191,8 +191,10 @@ Cette applet de commande retourne l’objet de règle d’autorisation.
 
 ### <a name="example-1"></a>EXEMPLE 1
 
-Cet exemple accorde l’accès à la configuration de session *PSWAEndpoint*, une instance d’exécution restreinte, sur *srv2* pour les utilisateurs du groupe *SMAdmins*.\
-**Remarque** : Le nom d’ordinateur doit être un nom de domaine complet. Les administrateurs définissent une configuration de session restreinte ou une instance d’exécution, qui est un ensemble limité d’applets de commande et de tâches que les utilisateurs finaux peuvent exécuter. La définition d’une instance d’exécution restreinte peut empêcher les utilisateurs d’accéder à d’autres ordinateurs qui ne sont pas dans l’instance d’exécution Windows PowerShell® autorisée, offrant ainsi une connexion plus sécurisée. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) ou [Installer et utiliser Accès Web Windows PowerShell](../install-and-use-windows-powershell-web-access.md).
+Cet exemple accorde l’accès à la configuration de session _PSWAEndpoint_, une instance d’exécution restreinte, sur _srv2_ pour les utilisateurs du groupe _SMAdmins_.
+
+> [!NOTE]
+> Le nom d’ordinateur doit être un nom de domaine complet. Les administrateurs définissent une configuration de session restreinte ou une instance d’exécution, qui est un ensemble limité d’applets de commande et de tâches que les utilisateurs finaux peuvent exécuter. La définition d’une instance d’exécution restreinte peut empêcher les utilisateurs d’accéder à d’autres ordinateurs qui ne sont pas dans l’instance d’exécution Windows PowerShell® autorisée, offrant ainsi une connexion plus sécurisée. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) ou [Installer et utiliser Accès Web Windows PowerShell](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
@@ -240,8 +242,10 @@ Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1
 ### <a name="example-6"></a>EXEMPLE 6
 
 Cet exemple autorise tous les utilisateurs à accéder à tous les points de terminaison sur tous les ordinateurs.
-Ceci désactive en fait les règles d’autorisation.\
-**Remarque** : L’utilisation du caractère générique `*` n’est pas recommandée pour les déploiements où la sécurité est sensible : son utilisation doit être envisagée seulement pour les environnements de test ou dans les déploiements où la sécurité peut être moins stricte.
+Ceci désactive en fait les règles d’autorisation.
+
+> [!NOTE]
+> L’utilisation du caractère générique `*` n’est pas recommandée pour les déploiements où la sécurité est sensible : son utilisation doit être envisagée seulement pour les environnements de test ou dans les déploiements où la sécurité peut être moins stricte.
 
 ````PowerShell
 Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *

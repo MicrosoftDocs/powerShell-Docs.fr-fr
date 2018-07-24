@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des services
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951196"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094168"
 ---
 # <a name="managing-services"></a>Gestion des services
 
-Il existe huit principales applets de commande Service, conçues pour un vaste éventail de tâches de service. Nous examinons ici uniquement le listage et la modification de l’état en cours d’exécution des services, mais vous pouvez obtenir une liste des applets de commande Service à l’aide de l’applet de commande **Get-Help \&#42;-Service**. Vous pouvez également trouver des informations sur chaque applet de commande Service à l’aide de la commande **Get-Help<NomAppletDeCommande>**, par exemple, **Get-Help New-Service**.
+Il existe huit principales applets de commande Service, conçues pour un vaste éventail de tâches de service. Nous examinons ici uniquement le listage et la modification de l’état d’exécution des services, mais vous pouvez obtenir une liste des applets de commande Service à l’aide de l’applet de commande **Get-Help \*-Service**. Vous pouvez également trouver des informations sur chaque applet de commande Service à l’aide de la commande **Get-Help\<Nom-Applet-De-Commande\>**, par exemple, **Get-Help New-Service**.
 
 ## <a name="getting-services"></a>Obtention de services
 
