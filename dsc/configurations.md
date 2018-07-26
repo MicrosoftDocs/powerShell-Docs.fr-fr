@@ -2,36 +2,34 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configurations DSC
-ms.openlocfilehash: d98bf0e85c12103d9b1eeded155bab1af364bd4c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 171068acb51f44e31c81e63f6640222ef71bee38
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188443"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093692"
 ---
 # <a name="dsc-configurations"></a>Configurations DSC
 
->S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Les configurations DSC sont des scripts PowerShell qui définissent un type spécial de fonction.
 Pour définir une configuration, utilisez le mot clé PowerShell **Configuration**.
 
 ```powershell
 Configuration MyDscConfiguration {
-
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration
-
 ```
 
 Enregistrez le script comme fichier .ps1.
@@ -48,23 +46,21 @@ Dans un bloc **Configuration**, vous pouvez faire tout ce qu’il est possible d
 
 ```powershell
 Configuration MyDscConfiguration {
-
     param(
-        [string[]]$ComputerName="localhost"
+        [string[]]$ComputerName='localhost'
     )
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration -ComputerName $ComputerName
-
 ```
 
 Dans cet exemple, vous spécifiez le nom du nœud en le passant comme paramètre **ComputerName** quand vous compilez la configuration. Par défaut, le nom est « localhost ».
@@ -75,19 +71,21 @@ Avant de pouvoir promulguer une configuration, vous devez la compiler dans un do
 Pour cela, appelez la configuration comme pour une fonction PowerShell.
 La dernière ligne de l’exemple, qui contient uniquement le nom de la configuration, appelle la configuration.
 
->**Remarque** : Pour appeler une configuration, la fonction doit se trouver dans la portée globale (comme pour toutes les fonctions PowerShell).
->Vous avez le choix entre « dot sourcer » le script, exécuter le script de configuration avec la touche F5 ou cliquer sur le bouton **Exécuter le script** dans l’environnement ISE.
->Pour « dot sourcer » le script, exécutez la commande `. .\myConfig.ps1`, où `myConfig.ps1` correspond au nom du fichier de script qui contient votre configuration.
+> [!NOTE]
+> Pour appeler une configuration, la fonction doit se trouver dans la portée globale (comme pour toutes les fonctions PowerShell).
+> Vous avez le choix entre « dot sourcer » le script, exécuter le script de configuration avec la touche F5 ou cliquer sur le bouton **Exécuter le script** dans l’environnement ISE.
+> Pour « dot sourcer » le script, exécutez la commande `. .\myConfig.ps1`, où `myConfig.ps1` correspond au nom du fichier de script qui contient votre configuration.
 
 Quand vous appelez la configuration, elle :
 
 - Résout toutes les variables.
 - Crée un dossier dans le répertoire actif portant le même nom que la configuration.
 - Crée un fichier nommé _nom_nœud_.mof dans le nouveau répertoire, où _nom_nœud_ correspond au nom du nœud cible de la configuration.
-    S’il existe plusieurs nœuds, un fichier MOF est créé pour chaque nœud.
+  S’il existe plusieurs nœuds, un fichier MOF est créé pour chaque nœud.
 
->**Remarque** : Le fichier MOF contient toutes les informations de configuration du nœud cible. Il est donc important de le sécuriser.
->Pour plus d’informations, consultez [Sécurisation du fichier MOF](secureMOF.md).
+> [!NOTE]
+> Le fichier MOF contient toutes les informations de configuration du nœud cible. Il est donc important de le sécuriser.
+> Pour plus d’informations, consultez [Sécurisation du fichier MOF](secureMOF.md).
 
 Après la compilation de la première configuration, vous obtenez la structure de dossiers suivante :
 
@@ -127,19 +125,18 @@ Par exemple, une configuration peut spécifier qu’une instance de la ressource
 Configuration DependsOnExample {
     Node Test-PC1 {
         Group GroupExample {
-            Ensure = "Present"
-            GroupName = "TestGroup"
+            Ensure = 'Present'
+            GroupName = 'TestGroup'
         }
 
         User UserExample {
-            Ensure = "Present"
-            UserName = "TestUser"
-            FullName = "TestUser"
-            DependsOn = "[Group]GroupExample"
+            Ensure = 'Present'
+            UserName = 'TestUser'
+            FullName = 'TestUser'
+            DependsOn = '[Group]GroupExample'
         }
     }
 }
-
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>Utilisation de nouvelles ressources dans la configuration
@@ -151,10 +148,12 @@ Une nouvelle applet de commande, [Get-DscResource](https://technet.microsoft.com
 Une fois ces modules placés dans `$env:PSModulePath` et correctement reconnus par [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), ils doivent encore être chargés dans votre configuration.
 **Import-DscResource** est un mot clé dynamique qui peut être reconnu uniquement au sein d’un bloc **Configuration** (ce n’est donc pas une applet de commande).
 **Import-DscResource** accepte deux paramètres :
+
 - **ModuleName** est recommandé pour l’utilisation d’**Import-DscResource**. Il accepte le nom du module qui contient les ressources à importer (ainsi qu’un tableau de chaînes comprenant des noms de modules).
 - **Name** correspond au nom de la ressource à importer. Il ne s’agit pas du nom convivial retourné comme « Name » par [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx), mais du nom de classe utilisé lors de la définition du schéma de la ressource (retourné comme **ResourceType** par [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)).
 
 ## <a name="see-also"></a>Voir aussi
-* [Présentation de la configuration de l’état souhaité de Windows PowerShell](overview.md)
-* [Ressources DSC](resources.md)
-* [Configuration du Gestionnaire de configuration local](metaConfig.md)
+
+- [Présentation de la configuration de l’état souhaité de Windows PowerShell](overview.md)
+- [Ressources DSC](resources.md)
+- [Configuration du Gestionnaire de configuration local](metaConfig.md)

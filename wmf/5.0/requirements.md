@@ -1,12 +1,12 @@
 ---
 ms.date: 05/22/2018
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 3c1c591f8fbfff3bfeae8398548f2839dbb121f8
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: ee06e228991422d23a27453343860f0bfe45aec6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482894"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093954"
 ---
 # <a name="installation-instructions"></a>Instructions d’installation
 

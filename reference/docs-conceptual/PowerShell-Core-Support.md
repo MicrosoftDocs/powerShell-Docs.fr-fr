@@ -31,24 +31,47 @@ Au final, PowerShell Core devrait suivre l’approche de « maintenance à long 
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 
-PowerShell Core est officiellement pris en charge sur les plateformes suivantes :
+Consultez le tableau suivant pour voir quelle plateforme est officiellement prise en charge par la version de PowerShell Core que vous utilisez.
 
-* Windows 7, 8.1 et 10
-* Windows Server 2008 R2, 2012 R2, 2016
-* [Canal semi-annuel Windows Server][semi-annual]
-* Ubuntu 14.04, 16.04 et 17.04
-* Debian 8.7+ et 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27, 28
-* macOS 10.12+
+Notre communauté a également proposé des packages pour certaines plateformes, mais ils ne sont pas officiellement pris en charge.
+Ces packages sont marqués `Community` dans la table.
 
-Notre communauté a également proposé des packages pour les plateformes suivantes, mais ils ne sont pas officiellement pris en charge :
+Les plateformes répertoriées en tant que `Experimental` ne sont pas officiellement prises en charge, mais sont disponibles pour l’expérimentation et les commentaires.
 
-* Arch Linux
-* Kali Linux
-* AppImage (fonctionne sur plusieurs plateformes Linux)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7, 8.1 et 10                            | Prise en charge   | Prise en charge   |
+| Windows Server 2008 R2, 2012 R2, 2016             | Prise en charge   | Prise en charge   |
+| [Canal semi-annuel Windows Server][semi-annual] | Prise en charge   | Prise en charge   |
+| Ubuntu 14.04 et 16.04                           | Prise en charge   | Prise en charge   |
+| Ubuntu 17.10 et 18.04                           |             | Prise en charge   |
+| Debian 8.7+ et 9                                | Prise en charge   | Prise en charge   |
+| CentOS 7                                          | Prise en charge   | Prise en charge   |
+| Red Hat Enterprise Linux 7                        | Prise en charge   | Prise en charge   |
+| OpenSUSE 42.2                                     | Prise en charge   | Prise en charge   |
+| Fedora 27                                         | Prise en charge   | Prise en charge   |
+| Fedora 28                                         |             | Prise en charge   |
+| macOS 10.12+                                      | Prise en charge   | Prise en charge   |
+| Arch                                              | Communauté   | Communauté   |
+| Raspbian                                          | Expérimental| Communauté   |
+| Kali                                              | Communauté   | Communauté   |
+| AppImage (fonctionne sur plusieurs plateformes Linux)     | Communauté   | Communauté   |
+
+## <a name="platform-which-are-out-of-support"></a>Plateformes qui ne sont plus prises en charge
+
+Lorsqu’une version de plateforme atteint la fin de vie comme défini par le propriétaire de la plateforme, PowerShell Core cesse également de prendre en charge cette version de la plateforme. Les packages précédemment publiés resteront à la disposition des clients ayant besoin d’y accéder, mais il n’y aura plus ni prise en charge formelle ni mise à jour d’aucune sorte.
+
+Par conséquent, la prise en charge des versions suivantes a été interrompue par les propriétaires de distribution et n’est plus assurée.
+
+| Système d’exploitation       | Version | Fin de vie                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [Décembre 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [Août 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| OpenSUSE | 42.2    | [Janvier 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| OpenSUSE | 42.1    | [Mai 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [Janvier 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [Juillet 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>Remarques sur les licences
 

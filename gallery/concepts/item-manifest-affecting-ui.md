@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893475"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093971"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -84,65 +84,67 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 Dans certains cas, d’autres options similaires mais moins recommandées sont proposées en regard de la balise.
 Il est conseillé d’utiliser la balise préférée car elle génère moins de bruit et offre aux consommateurs de meilleurs résultats.
 
-| **Balise préférée** | **Alternatives et remarques** |
+| Balise préférée | Alternatives et remarques |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | La balise DesiredStateConfiguration est déconseillée car trop longue |
-| **ResourceManager** | La balise ARM sert à décrire un groupe de processeurs et ne doit pas être utilisée pour Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD n’est pas actuellement utilisé  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Sécurité** | La balise Defense est moins précise |
-| **Database** | La balise Databases (pluriel) est moins précise |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | La balise Deploy est moins utilisée |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | La balise Testing est moins précise |
-| **VersionControl** | La balise Version est moins précise, bien que plus utilisée  |
-| **Journalisation** | Il est recommandé d’utiliser l’action de journalisation |
-| **Log** | Il est recommandé d’utiliser le document Journal |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | La balise Networking est similaire, mais moins souvent utilisée |
-| **SharePoint** |  |
-| **Création de rapports** | La création de rapports est une action, le rapport est un document |
-| **Report** | Le rapport est un document |
-| **WinRM** |  |
-| **Analyse** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | La graphie Office est préférable. O365 est moins couramment utilisé, bien que plus court | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | HyperV est moins utilisé en tant que balise |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Utilisé principalement pour les modules AzureRM |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | La balise DesiredStateConfiguration est déconseillée car trop longue |
+| ResourceManager | La balise ARM sert à décrire un groupe de processeurs et ne doit pas être utilisée pour Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatisation |  |
+| REST |  |
+| ActiveDirectory | AD n’est pas actuellement utilisé  |
+| SQLServer |  |
+| DBA |  |
+| Sécurité | La balise Defense est moins précise |
+| Base de données | La balise Databases (pluriel) est moins précise |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| Déploiement | La balise Deploy est moins utilisée |
+| Cloud |  |
+| GIT |  |
+| Test | La balise Testing est moins précise |
+| VersionControl | La balise Version est moins précise, bien que plus utilisée  |
+| Journalisation | Il est recommandé d’utiliser l’action de journalisation |
+| Log | Il est recommandé d’utiliser le document Journal |
+| Secours |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Stockage |  |
+| GitHub |  |
+| Json |  |
+| Exchange |  |
+| Réseau | La balise Networking est similaire, mais moins souvent utilisée |
+| SharePoint |  |
+| Création de rapports | La création de rapports est une action, le rapport est un document |
+| Rapport | Le rapport est un document |
+| WinRM |  |
+| Analyse |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Couleur |  |
+| DNS |  |
+| Office365 | La graphie Office est préférable. O365 est moins couramment utilisé, bien que plus court |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | HyperV est moins utilisé en tant que balise |
+| Configuration |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| Pare-feu |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Utilisé principalement pour les modules AzureRM |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |
