@@ -4,22 +4,18 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 contributor: ryanpu
 title: Améliorations de Just Enough Administration (JEA)
-ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 66cbacb78f8a365e9c8556c7c56b3c3525de7395
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093617"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267863"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Améliorations de Just Enough Administration (JEA)
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Copie de fichiers contrainte vers/depuis des points de terminaison JEA
 
-Vous pouvez maintenant copier les fichiers à distance vers/depuis un point de terminaison JEA et être assuré que l’utilisateur connecté ne peut copier absolument *aucun* fichier sur votre système.
-Ceci est possible en configurant votre fichier PSSC pour monter un lecteur utilisateur pour la connexion des utilisateurs.
-Le lecteur utilisateur est un nouveau PSDrive qui est unique pour chaque utilisateur qui se connecte et persiste à travers les sessions.
-Quand `Copy-Item` est utilisée pour copier des fichiers vers ou à partir d’une session JEA, elle est contrainte d’autoriser l’accès seulement au lecteur utilisateur.
-Les tentatives de copie de fichiers vers n’importe quel autre PSDrive échouent.
+Vous pouvez maintenant copier les fichiers à distance vers/depuis un point de terminaison JEA et être assuré que l’utilisateur connecté ne peut copier absolument *aucun* fichier sur votre système. Ceci est possible en configurant votre fichier PSSC pour monter un lecteur utilisateur pour la connexion des utilisateurs. Le lecteur utilisateur est un nouveau PSDrive qui est unique pour chaque utilisateur qui se connecte et persiste à travers les sessions. Quand `Copy-Item` est utilisée pour copier des fichiers vers ou à partir d’une session JEA, elle est contrainte d’autoriser l’accès seulement au lecteur utilisateur. Les tentatives de copie de fichiers vers n’importe quel autre PSDrive échouent.
 
 Pour configurer le lecteur utilisateur dans votre fichier de configuration de session JEA, utilisez les nouveaux champs suivants :
 
@@ -37,7 +33,8 @@ Pour utiliser le lecteur utilisateur et copier des fichiers vers/à partir d’u
 $jeasession = New-PSSession -ComputerName 'srv01' -ConfigurationName 'UserDemo'
 
 # Copy a file in the local folder to the remote machine.
-# Note: you cannot specify the file name or subfolder on the remote machine. You must exactly type "User:"
+# Note: you cannot specify the file name or subfolder on the remote machine.
+# You must exactly type "User:"
 Copy-Item -Path .\SampleFile.txt -Destination User: -ToSession $jeasession
 
 # Copy the file back from the remote machine to your local machine
@@ -48,9 +45,7 @@ Vous pouvez ensuite écrire des fonctions personnalisées pour traiter les donn�
 
 ## <a name="support-for-group-managed-service-accounts"></a>Prise en charge des comptes de service géré par un groupe
 
-Dans certains cas, une tâche que l’utilisateur doit effectuer dans une session JEA doit accéder à des ressources en dehors de l’ordinateur local.
-Quand une session JEA est configurée pour utiliser un compte virtuel, toute tentative pour atteindre ces ressources apparaît comme provenant de l’identité de l’ordinateur local, et non pas du compte virtuel ou de l’utilisateur connecté.
-Dans TP5, nous avons activé la prise en charge de l’exécution de JEA dans le contexte d’un [compte de service administré par un groupe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), facilitant ainsi l’accès aux ressources réseau à l’aide d’une identité de domaine.
+Dans certains cas, une tâche que l’utilisateur doit effectuer dans une session JEA doit accéder à des ressources en dehors de l’ordinateur local. Quand une session JEA est configurée pour utiliser un compte virtuel, toute tentative pour atteindre ces ressources apparaît comme provenant de l’identité de l’ordinateur local, et non pas du compte virtuel ou de l’utilisateur connecté. Dans TP5, nous avons activé la prise en charge de l’exécution de JEA dans le contexte d’un [compte de service administré par un groupe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)), facilitant ainsi l’accès aux ressources réseau à l’aide d’une identité de domaine.
 
 Pour configurer une session JEA pour qu’elle s’exécute sous un compte gMSA, utilisez la nouvelle clé suivante dans votre fichier PSSC :
 
@@ -66,18 +61,13 @@ RunAsVirtualAccount = $false
 
 > [!NOTE]
 > Les comptes de service gérés par un groupe n’offrent pas l’isolement ou l’étendue limitée des comptes virtuels.
-> Chaque utilisateur qui se connecte partage la même identité gMSA, qui peut avoir des autorisations pour toute votre entreprise.
-> Soyez très prudent quand vous choisissez d’utiliser un compte gMSA, et préférez toujours quand c’est possible les comptes virtuels qui sont limités à l’ordinateur local.
+> Chaque utilisateur qui se connecte partage la même identité gMSA, qui peut avoir des autorisations pour toute votre entreprise. Soyez très prudent quand vous choisissez d’utiliser un compte gMSA, et préférez toujours quand c’est possible les comptes virtuels qui sont limités à l’ordinateur local.
 
 ## <a name="conditional-access-policies"></a>Stratégies d’accès conditionnel
 
-JEA est une bonne solution pour limiter ce qu’une personne peut faire quand elle est connectée à un système pour le gérer, mais que se passe-t-il si vous voulez également limiter *les moments* où une personne peut utiliser JEA ?
-Nous avons ajouté des options de configuration dans les fichiers de configuration de session (.pssc) pour vous permettre de spécifier les groupes de sécurité auxquels l’utilisateur doit appartenir pour pouvoir établir une session JEA.
-Ceci peut s’avérer particulièrement utile si vous avez un système juste-à-temps (JIT) dans votre environnement et que vous voulez que vos utilisateurs élèvent leurs privilèges avant d’accéder à un point de terminaison JEA avec des privilèges élevés.
+JEA est une bonne solution pour limiter ce qu’une personne peut faire quand elle est connectée à un système pour le gérer, mais que se passe-t-il si vous voulez également limiter *les moments* où une personne peut utiliser JEA ? Nous avons ajouté des options de configuration dans les fichiers de configuration de session (.pssc) pour vous permettre de spécifier les groupes de sécurité auxquels l’utilisateur doit appartenir pour pouvoir établir une session JEA. Ceci peut s’avérer particulièrement utile si vous avez un système juste-à-temps (JIT) dans votre environnement et que vous voulez que vos utilisateurs élèvent leurs privilèges avant d’accéder à un point de terminaison JEA avec des privilèges élevés.
 
-Le nouveau champ *RequiredGroups* du fichier PSSC vous permet de spécifier la logique pour déterminer si l’utilisateur peut se connecter à JEA.
-Cela consiste à spécifier une table de hachage (éventuellement imbriquée) qui utilise les clés « And » et « Or » pour créer vos règles.
-Voici quelques exemples montrant comment tirer parti de ce champ :
+Le nouveau champ *RequiredGroups* du fichier PSSC vous permet de spécifier la logique pour déterminer si l’utilisateur peut se connecter à JEA. Cela consiste à spécifier une table de hachage (éventuellement imbriquée) qui utilise les clés « And » et « Or » pour créer vos règles. Voici quelques exemples montrant comment tirer parti de ce champ :
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -93,5 +83,4 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Résolu : Les comptes virtuels sont maintenant pris en charge sur Windows Server 2008 R2
 
-Dans WMF 5.1, vous pouvez maintenant utiliser des comptes virtuels sur Windows Server 2008 R2, ce qui permet des configurations cohérentes et la parité des fonctionnalités entre Windows Server 2008 R2 et Windows Server 2016.
-Les comptes virtuels restent non pris en charge quand JEA est utilisé sur Windows 7.
+Dans WMF 5.1, vous pouvez maintenant utiliser des comptes virtuels sur Windows Server 2008 R2, ce qui permet des configurations cohérentes et la parité des fonctionnalités entre Windows Server 2008 R2 et Windows Server 2016. Les comptes virtuels restent non pris en charge quand JEA est utilisé sur Windows 7.

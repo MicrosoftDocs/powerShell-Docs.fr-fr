@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: powershell,applet de commande
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189599"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268297"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Configure l’application web Accès Web Windows PowerShell® dans IIS.
+Configure l’application web Accès Web Windows PowerShell dans IIS.
 
 ## <a name="syntax"></a>SYNTAXE
 
@@ -25,7 +25,8 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>DESCRIPTION
 
-L’applet de commande **Install-PswaWebApplication** configure l’application web Accès Web Windows PowerShell. Cette applet de commande installe l’application web, l’associe à un site web et crée éventuellement un certificat de test SSL à l’aide du paramètre **useTestCertificate**. Pour des raisons de sécurité, les administrateurs web ne doivent pas utiliser un certificat de test pour les environnements de production.
+L’applet de commande **Install-PswaWebApplication** configure l’application web Accès Web Windows PowerShell.
+Cette applet de commande installe l’application web, l’associe à un site web et crée éventuellement un certificat de test SSL à l’aide du paramètre **useTestCertificate**. Pour des raisons de sécurité, les administrateurs web ne doivent pas utiliser un certificat de test pour les environnements de production.
 
 ## <a name="parameters"></a>PARAMÈTRES
 
@@ -42,7 +43,7 @@ Spécifie qu’un certificat de test est créé. Si ce paramètre est défini su
 | Accepter l’entrée de pipeline ?               | false                                |
 | Accepter les caractères génériques ?          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;Chaîne&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 Spécifie le nom de votre application web. Il constitue la dernière partie de l’URL d’Accès Web Windows PowerShell.
 
@@ -55,7 +56,7 @@ Spécifie le nom de votre application web. Il constitue la dernière partie de l
 | Accepter l’entrée de pipeline ?               | false                                |
 | Accepter les caractères génériques ?          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;Chaîne&gt;
+### <a name="-websitename"></a>-WebSiteName
 
 Spécifie le nom du site web du serveur Web IIS sur lequel installer cette application web Accès Web Windows PowerShell.
 
@@ -95,8 +96,7 @@ L’applet de commande n’est pas exécutée.
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-Cette applet de commande prend en charge les paramètres courants : -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer et -OutVariable.
-Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
+Cette applet de commande prend en charge les paramètres courants : -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer et -OutVariable. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216).
 
 ## <a name="inputs"></a>ENTRÉES
 
