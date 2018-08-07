@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Package dans DSC
-ms.openlocfilehash: 3046ba7d57776a996a0b917348a0e863db6cd0c8
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093801"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268668"
 ---
 # <a name="dsc-package-resource"></a>Ressource Package dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource **Package** dans DSC Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages, tels que les packages Windows Installer et setup.exe, sur un nœud cible.
 
@@ -34,8 +34,8 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Propriétés
 
-|  Propriété  |  Description   |
-|---|---|
+| Propriété | Description |
+| --- | --- |
 | Name| Indique le nom du package pour lequel vous souhaitez garantir un état spécifique.|
 | Path| Indique le chemin où se trouve le package.|
 | ProductId| Indique l’ID de produit qui identifie le package de manière unique.|
@@ -43,7 +43,7 @@ Package [string] #ResourceName
 | Credential| Informations d’identification permettant l’accès au package sur une source distante. Cette propriété n’est pas utilisée pour installer le package. Le package est toujours installé sur le système local.|
 | Ensure| Indique si le package est installé. Définissez cette propriété sur « Absent » pour vous assurer que le package n’est pas installé (ou désinstallé, si le package n’est pas installé). Définissez cette propriété sur « Present » (valeur par défaut) pour vous assurer que le package est installé.|
 | LogPath| Indique le chemin complet où vous souhaitez que le fournisseur enregistre un fichier journal pour installer ou désinstaller le package.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : DependsOn = "[ResourceType]ResourceName"|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType**, la syntaxe pour utiliser cette propriété est `DependsOn = "[ResourceType]ResourceName"`.|
 | ReturnCode| Indique le code de retour attendu. Si le code de retour réel ne correspond pas à la valeur attendue indiquée ici, la configuration retourne une erreur.|
 
 ## <a name="example"></a>Exemple

@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>Installation de PowerShell Core sous Linux
 
-Prend en charge [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] et [Arch Linux][arch].
+Prend en charge [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.10][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.3][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] et [Arch Linux][arch].
 
 Pour les distributions Linux qui ne sont pas officiellement prises en charge, vous pouvez essayer d’utiliser [AppImage PowerShell][lai].
 Vous pouvez également essayer de déployer des fichiers binaires PowerShell directement à l’aide de [l’archive `tar.gz`][tar] Linux, mais vous devez configurer les dépendances nécessaires selon le système d’exploitation dans une procédure distincte.
@@ -11,11 +11,12 @@ Une fois que le package est installé, exécutez `pwsh` à partir d’un termina
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u17]: #ubuntu-1710
+[u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -205,7 +206,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur, vous devez par la suite simplement utiliser `sudo apt-get upgrade powershell` pour le mettre à jour.
@@ -225,7 +226,7 @@ sudo apt-get install -f
 > La commande `dpkg -i` échoue avec les dépendances unmet.
 > La commande suivante, `apt-get install -f`, résout ces problèmes et termine la configuration du package PowerShell.
 
-### <a name="uninstallation---ubuntu-1710"></a>Désinstallation - Ubuntu 17.10
+### <a name="uninstallation---ubuntu-1804"></a>Désinstallation - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -416,7 +417,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-422"></a>OpenSUSE 42.2
+## <a name="opensuse-423"></a>OpenSUSE 42.3
 
 Lors de l’installation de PowerShell Core, `zypper` peut signaler l’erreur suivante :
 
@@ -434,7 +435,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 
 Ensuite, choisissez la solution `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` quand vous installez le package PowerShell.
 
-### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installation via un dépôt de packages (par défaut) - OpenSUSE 42.2
+### <a name="installation-via-package-repository-preferred---opensuse-423"></a>Installation via un dépôt de packages (par défaut) - OpenSUSE 42.3
 
 PowerShell Core pour Linux est publié dans des dépôts Microsoft officiels pour faciliter l’installation (et les mises à jour).
 
@@ -442,8 +443,8 @@ PowerShell Core pour Linux est publié dans des dépôts Microsoft officiels pou
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
@@ -455,7 +456,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>Installation par téléchargement direct - OpenSUSE 42.2
+### <a name="installation-via-direct-download---opensuse-423"></a>Installation par téléchargement direct - OpenSUSE 42.3
 
 Téléchargez le package RPM `powershell-6.0.2-1.rhel.7.x86_64.rpm` à partir de la page de [versions][] sur l’ordinateur OpenSUSE.
 
@@ -471,7 +472,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---opensuse-422"></a>Désinstallation - OpenSUSE 42.2
+### <a name="uninstallation---opensuse-423"></a>Désinstallation - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -676,7 +677,7 @@ Le graphique suivant montre les dépendances .NET Core 2.0 prises en charge offi
 | Ubuntu 18.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-libs, libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind, libcurl, openssl-libs, libicu |
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Pour déployer les fichiers binaires PowerShell sur les distributions Linux qui ne sont pas officiellement prises en charge, vous devez installer les dépendances nécessaires pour le système d’exploitation cible dans une procédure distincte.

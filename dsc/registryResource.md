@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Registry dans DSC
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093583"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267719"
 ---
 # <a name="dsc-registry-resource"></a>Ressource Registry dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource **Registry** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer les clés et les valeurs de Registre sur un nœud cible.
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Propriétés
 
-|  Propriété  |  Description   |
-|---|---|
+| Propriété | Description |
+| --- | --- |
 | Clé| Indique le chemin de la clé de Registre pour laquelle vous voulez garantir un état spécifique. Ce chemin doit inclure la ruche.|
 | ValueName| Indique le nom de la valeur de Registre. Pour ajouter ou supprimer une clé de Registre, spécifiez cette propriété comme une chaîne vide sans définir ValueType ou ValueData. Pour modifier ou supprimer la valeur par défaut d’une clé de Registre, spécifiez cette propriété comme une chaîne vide tout en définissant ValueType ou ValueData.|
 | Ensure| Indique si la clé et la valeur existent. Pour vous assurer qu’elles existent, définissez cette propriété sur « Present ». Pour vous assurer qu’elles n’existent pas, définissez la propriété sur « Absent ». La valeur par défaut est « Present ».|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> La modification d’un paramètre de Registre dans la ruche **HKEY\_CURRENT\_USER** implique que la configuration s’exécute avec les informations d’identification de l’utilisateur, plutôt qu’en tant que système. Vous pouvez utiliser la propriété **PsDscRunAsCredential** pour spécifier les informations d’identification de l’utilisateur pour la configuration. Pour obtenir un exemple, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](runAsUser.md).
+> Le changement d’un paramètre de Registre dans la ruche `HKEY\CURRENT\USER` nécessite l’exécution de la configuration à l’aide des informations d’identification de l’utilisateur, et non celles du système. Vous pouvez utiliser la propriété **PsDscRunAsCredential** pour spécifier les informations d’identification de l’utilisateur pour la configuration. Pour obtenir un exemple, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](runAsUser.md).

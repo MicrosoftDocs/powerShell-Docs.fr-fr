@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC PackageManagement
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892499"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268090"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Ressource DSC PackageManagement
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Propriétés
 
-|  Propriété  |  Description   |
-|---|---|
+| Propriété | Description |
+| --- | --- |
 | Name| Spécifie le nom du package à installer ou à désinstaller.|
 | AdditionalParameters| Table de hachage spécifique du fournisseur, contenant les paramètres passés à `Get-Package -AdditionalArguments`. Par exemple, pour le fournisseur NuGet, vous pouvez passer des paramètres supplémentaires tels que DestinationPath.|
 | Ensure| Détermine si le package doit être installé ou désinstallé.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Paramètres supplémentaires
 
 Le tableau suivant répertorie les options de la propriété AdditionalParameters.
-|  Paramètre  | Description   |
-|---|---|
+
+| Paramètre | Description |
+| --- | --- |
 | DestinationPath| Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Spécifie un emplacement de fichier où vous souhaitez installer le package.|
-| InstallationPolicy| Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Détermine si vous faites confiance à la source du package. Valeurs disponibles : « Untrusted », « Trusted ».|
+| InstallationPolicy| Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Détermine si vous faites confiance à la source du package. Valeurs possibles : `Untrusted` ou `Trusted`.|
 
 ## <a name="example"></a>Exemple
 

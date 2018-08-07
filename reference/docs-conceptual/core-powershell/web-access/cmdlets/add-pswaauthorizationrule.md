@@ -4,18 +4,18 @@ keywords: powershell,applet de commande
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094226"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268263"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Ajoute une nouvelle règle d’autorisation à l’ensemble de règles d’autorisation d’Accès Web Windows PowerShell®.
+Ajoute une nouvelle règle d’autorisation à l’ensemble de règles d’autorisation d’Accès Web Windows PowerShell.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,16 +45,15 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 ## <a name="description"></a>DESCRIPTION
 
-L’applet de commande **Add-PswaAuthorizationRule** ajoute une nouvelle règle d’autorisation à l’ensemble de règles d’autorisation d’Accès Web Windows PowerShell®.
+L’applet de commande **Add-PswaAuthorizationRule** ajoute une nouvelle règle d’autorisation à l’ensemble de règles d’autorisation d’Accès Web Windows PowerShell(r).
 
 Vous devez spécifier les utilisateurs, les ordinateurs et les points de terminaison Windows PowerShell pour cette règle. Vous pouvez spécifier des utilisateurs et des ordinateurs en les désignant par des comptes d’utilisateur et des noms d’ordinateur individuels, ou en spécifiant des groupes.
 
-Pour un ordinateur qui est joint à un domaine Active Directory, l’applet de commande utilise l’identificateur de sécurité (SID) de l’ordinateur pour créer la règle.
-Ceci vous permet d’utiliser un nom court, un nom de domaine complet ou une adresse IP pour le champ **Nom de l’ordinateur** dans la page de connexion.
+Pour un ordinateur qui est joint à un domaine Active Directory, l’applet de commande utilise l’identificateur de sécurité (SID) de l’ordinateur pour créer la règle. Ceci vous permet d’utiliser un nom court, un nom de domaine complet ou une adresse IP pour le champ **Nom de l’ordinateur** dans la page de connexion.
 
 Pour un ordinateur qui n’est pas joint à un domaine Active Directory, l’applet de commande crée la règle en utilisant le nom d’ordinateur fourni par l’administrateur. Pour se connecter à cette machine, l’utilisateur final doit fournir le nom d’ordinateur tel qu’il apparaît dans la règle.
 
-S’il existe plusieurs ordinateurs portant le même nom sur le réseau, la résolution du nom court peut aboutir à la désignation de plusieurs ordinateurs. Cela peut entraîner une ambiguïté lors de l’établissement d’une connexion. Par exemple, si une règle existe pour l’ordinateur de groupe de travail nommé «*Serveur1*» et qu’un nouvel ordinateur nommé *server1.contoso.com* est joint au réseau, la validation effectuée en utilisant les règles d’autorisation réussit et Accès Web Windows PowerShell tente d’établir une connexion à l’ordinateur nommé « *Serveur1* ». Il n’est pas garanti que la connexion soit établie avec l’ordinateur de groupe de travail spécifié : la tentative a pu être faite sur le groupe de travail ou sur l’ordinateur du domaine nommé « *Serveur1* ». Pour éviter l’ambiguïté, il est recommandé d’utiliser le nom de domaine complet pour l’ordinateur de destination chaque fois que c’est possible pour créer une règle d’autorisation.
+S’il existe plusieurs ordinateurs portant le même nom sur le réseau, la résolution du nom court peut aboutir à la désignation de plusieurs ordinateurs. Cela peut entraîner une ambiguïté lors de l’établissement d’une connexion. Par exemple, s’il existe une règle pour l’ordinateur de groupe de travail nommé « *Serveur1* », et si un nouvel ordinateur nommé *serveur1.contoso.com* est joint au réseau, la validation à l’aide des règles d’autorisation s’effectue correctement. La fonctionnalité Accès Web Windows PowerShell tente d’établir une connexion à l’ordinateur nommé « *Serveur1* ». Il n’est pas garanti que la connexion soit établie avec l’ordinateur de groupe de travail spécifié : la tentative a pu être faite sur le groupe de travail ou sur l’ordinateur du domaine nommé « *Serveur1* ». Pour éviter l’ambiguïté, il est recommandé d’utiliser le nom de domaine complet pour l’ordinateur de destination chaque fois que c’est possible pour créer une règle d’autorisation.
 
 Les règles d’autorisation évaluent les informations d’identification de connexion principales des utilisateurs d’Accès Web Windows PowerShell, et non pas les informations d’identification alternatives (le deuxième ensemble d’informations d’identification qui se trouve dans la section **Paramètres de connexion facultatifs** de la page de connexion). Pour obtenir un exemple, consultez l’exemple 6.
 
@@ -66,12 +65,12 @@ Spécifie le nom d’un groupe d’ordinateurs dans les Services de domaine Acti
 
 |||
 |-|-|
-| Alias                              | none                                 |
-| Obligatoire ?                            | true                                 |
-| Position ?                            | nommé                                |
-| Valeur par défaut                        | none                                 |
-| Accepter l’entrée de pipeline ?               | True (ByPropertyName)                |
-| Accepter les caractères génériques ?          | false                                |
+| Alias                     | none                  |
+| Obligatoire ?                   | true                  |
+| Position ?                   | nommé                 |
+| Valeur par défaut               | none                  |
+| Accepter l’entrée de pipeline ?      | True (ByPropertyName) |
+| Accepter les caractères génériques ? | false                 |
 
 ### <a name="-computername-string"></a>-ComputerName \<Chaîne\>
 
@@ -79,12 +78,12 @@ Spécifie le nom de l’ordinateur auquel cette règle accorde l’accès.
 
 |||
 |-|-|
-| Alias                              | none                                 |
-| Obligatoire ?                            | true                                 |
-| Position ?                            | nommé                                |
-| Valeur par défaut                        | none                                 |
-| Accepter l’entrée de pipeline ?               | True (ByPropertyName)                |
-| Accepter les caractères génériques ?          | false                                |
+| Alias                     | none                  |
+| Obligatoire ?                   | true                  |
+| Position ?                   | nommé                 |
+| Valeur par défaut               | none                  |
+| Accepter l’entrée de pipeline ?      | True (ByPropertyName) |
+| Accepter les caractères génériques ? | false                 |
 
 ### <a name="-configurationname-string"></a>-ConfigurationName \<Chaîne\>
 
@@ -92,12 +91,12 @@ Spécifie le nom de la configuration de session Windows PowerShell, également a
 
 |||
 |-|-|
-| Alias                              | none                                 |
-| Obligatoire ?                            | true                                 |
-| Position ?                            | nommé                                |
-| Valeur par défaut                        | none                                 |
-| Accepter l’entrée de pipeline ?               | True (ByPropertyName)                |
-| Accepter les caractères génériques ?          | false                                |
+| Alias                     | none                  |
+| Obligatoire ?                   | true                  |
+| Position ?                   | nommé                 |
+| Valeur par défaut               | none                  |
+| Accepter l’entrée de pipeline ?      | True (ByPropertyName) |
+| Accepter les caractères génériques ? | false                 |
 
 ### <a name="-credential--pscredential"></a>-Credential  \<PSCredential\>
 
@@ -105,17 +104,16 @@ Spécifie un objet **PSCredential** pour un compte d’utilisateur que vous voul
 
 |||
 |-|-|
-| Alias                              | none                                 |
-| Obligatoire ?                            | false                                |
-| Position ?                            | nommé                                |
-| Valeur par défaut                        | none                                 |
-| Accepter l’entrée de pipeline ?               | false                                |
-| Accepter les caractères génériques ?          | false                                |
+| Alias                     | none  |
+| Obligatoire ?                   | false |
+| Position ?                   | nommé |
+| Valeur par défaut               | none  |
+| Accepter l’entrée de pipeline ?      | false |
+| Accepter les caractères génériques ? | false |
 
 ### <a name="-force"></a>-Force
 
-Force l’exécution de la commande sans demander la confirmation de l’utilisateur.\
-En outre, elle vous demande également confirmation quand vous entrez un nom d’ordinateur court ou simple (par exemple un nom qui n’est pas un nom de domaine ou qui n’est pas complet). La confirmation est demandée pour des raisons de sécurité, pour vous permettre d’utiliser le nom simple pour ajouter un ordinateur seulement si l’ordinateur est dans un groupe de travail.
+Force l’exécution de la commande sans demander la confirmation de l’utilisateur. En outre, elle vous demande également confirmation quand vous entrez un nom d’ordinateur court ou simple (par exemple un nom qui n’est pas un nom de domaine ou qui n’est pas complet). La confirmation est demandée pour des raisons de sécurité, pour vous permettre d’utiliser le nom simple pour ajouter un ordinateur seulement si l’ordinateur est dans un groupe de travail.
 
 |||
 |-|-|
@@ -154,8 +152,7 @@ Spécifie le nom d’un ou plusieurs groupes d’utilisateurs dans les services 
 
 ### <a name="-username-string"></a>-UserName \<Chaîne\[\]\>
 
-Spécifie un ou plusieurs ordinateurs auxquels cette règle accorde l’accès. Le nom d’utilisateur peut être un compte d’utilisateur local sur l’ordinateur de passerelle ou un utilisateur dans AD DS.
-Le format est `domain\user` ou `computer\user`.
+Spécifie un ou plusieurs ordinateurs auxquels cette règle accorde l’accès. Le nom d’utilisateur peut être un compte d’utilisateur local sur l’ordinateur de passerelle ou un utilisateur dans AD DS. Le format est `domain\user` ou `computer\user`.
 
 |||
 |-|-|
@@ -168,7 +165,9 @@ Le format est `domain\user` ou `computer\user`.
 
 ###  <a name="commonparameters"></a>\<CommonParameters\>
 
-Cette applet de commande prend en charge les paramètres courants : -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer et -OutVariable.
+Cette applet de commande prend en charge les paramètres communs :
+
+-Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer et -OutVariable.
 Pour plus d’informations, consultez [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>ENTRÉES
@@ -194,18 +193,18 @@ Cette applet de commande retourne l’objet de règle d’autorisation.
 Cet exemple accorde l’accès à la configuration de session _PSWAEndpoint_, une instance d’exécution restreinte, sur _srv2_ pour les utilisateurs du groupe _SMAdmins_.
 
 > [!NOTE]
-> Le nom d’ordinateur doit être un nom de domaine complet. Les administrateurs définissent une configuration de session restreinte ou une instance d’exécution, qui est un ensemble limité d’applets de commande et de tâches que les utilisateurs finaux peuvent exécuter. La définition d’une instance d’exécution restreinte peut empêcher les utilisateurs d’accéder à d’autres ordinateurs qui ne sont pas dans l’instance d’exécution Windows PowerShell® autorisée, offrant ainsi une connexion plus sécurisée. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) ou [Installer et utiliser Accès Web Windows PowerShell](../install-and-use-windows-powershell-web-access.md).
+> Le nom d’ordinateur doit être un nom de domaine complet. Les administrateurs définissent une configuration de session restreinte ou une instance d’exécution, qui est un ensemble limité d’applets de commande et de tâches que les utilisateurs finaux peuvent exécuter. La définition d’un espace d’exécution restreint peut empêcher les utilisateurs d’accéder à d’autres ordinateurs non situés dans l’espace d’exécution Windows PowerShell(r) autorisé, ce qui permet d’obtenir une connexion plus sécurisée. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations) ou [Installer et utiliser Accès Web Windows PowerShell](../install-and-use-windows-powershell-web-access.md).
 
-```PowerShell
+```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
-### <a name="example-2"></a>EXAMPLE 2
+### <a name="example-2"></a>EXEMPLE 2
 
 Cet exemple accorde l’accès à la configuration de session Windows PowerShell par défaut, `Microsoft.PowerShell`, sur *srv2* pour les utilisateurs nommés `contoso\user1`, `contoso\user2` et `contoso\user3`. Cette applet de commande crée trois règles (une par personne).
 
-```PowerShell
-Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
+```powershell
+Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-3"></a>EXEMPLE 3
@@ -213,18 +212,18 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 Cet exemple montre comment entrer les valeurs des noms d’utilisateur via le pipeline.
 
 ```powershell
-"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
+"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-4"></a>EXEMPLE 4
 
 Cet exemple montre comment tous les paramètres prennent des valeurs du pipeline par nom de propriété.
 
-````PowerShell
+````powershell
 $o = New-Object -TypeName PSObject |
     Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
     Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
-    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" -PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
@@ -236,19 +235,18 @@ Cet exemple ajoute une règle pour autoriser l’utilisateur local nommé `PswaS
 Cet exemple illustre un scénario dans lequel la passerelle est dans un groupe de travail et où l’ordinateur de destination est dans un domaine. La règle d’autorisation s’applique aux utilisateurs locaux sur la passerelle. Dans la page de connexion d’Accès Web Windows PowerShell, pour réussir à s’authentifier, l’utilisateur doit fournir un deuxième ensemble d’informations d’identification dans la zone **Paramètres de connexion facultatifs**. Le serveur de passerelle utilise l’ensemble supplémentaire d’informations d’identification pour authentifier l’utilisateur sur l’ordinateur de destination, un serveur nommé *srv1.contoso.com*.
 
 ````powershell
-Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
 ### <a name="example-6"></a>EXEMPLE 6
 
-Cet exemple autorise tous les utilisateurs à accéder à tous les points de terminaison sur tous les ordinateurs.
-Ceci désactive en fait les règles d’autorisation.
+Cet exemple autorise tous les utilisateurs à accéder à tous les points de terminaison sur tous les ordinateurs. Ceci désactive en fait les règles d’autorisation.
 
 > [!NOTE]
 > L’utilisation du caractère générique `*` n’est pas recommandée pour les déploiements où la sécurité est sensible : son utilisation doit être envisagée seulement pour les environnements de test ou dans les déploiements où la sécurité peut être moins stricte.
 
-````PowerShell
-Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````powershell
+Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
 ## <a name="see-also"></a>Voir aussi

@@ -48,7 +48,7 @@ Les plateformes répertoriées en tant que `Experimental` ne sont pas officielle
 | Debian 8.7+ et 9                                | Prise en charge   | Prise en charge   |
 | CentOS 7                                          | Prise en charge   | Prise en charge   |
 | Red Hat Enterprise Linux 7                        | Prise en charge   | Prise en charge   |
-| OpenSUSE 42.2                                     | Prise en charge   | Prise en charge   |
+| OpenSUSE 42.3                                     | Prise en charge   | Prise en charge   |
 | Fedora 27                                         | Prise en charge   | Prise en charge   |
 | Fedora 28                                         |             | Prise en charge   |
 | macOS 10.12+                                      | Prise en charge   | Prise en charge   |

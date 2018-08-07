@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des services
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094168"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268073"
 ---
 # <a name="managing-services"></a>Gestion des services
 
-Il existe huit principales applets de commande Service, conçues pour un vaste éventail de tâches de service. Nous examinons ici uniquement le listage et la modification de l’état d’exécution des services, mais vous pouvez obtenir une liste des applets de commande Service à l’aide de l’applet de commande **Get-Help \*-Service**. Vous pouvez également trouver des informations sur chaque applet de commande Service à l’aide de la commande **Get-Help\<Nom-Applet-De-Commande\>**, par exemple, **Get-Help New-Service**.
+Il existe huit principales applets de commande Service, conçues pour un vaste éventail de tâches de service. Nous allons uniquement examiner la liste et le changement de l’état en cours d’exécution des services. Toutefois, vous pouvez obtenir une liste d’applets de commande Service à l’aide de `Get-Help \*-Service`. Vous pouvez également trouver des informations sur chaque applet de commande Service à l’aide de`Get-Help <Cmdlet-Name>`, par exemple `Get-Help New-Service`.
 
 ## <a name="getting-services"></a>Obtention de services
 
-Vous pouvez obtenir les services sur un ordinateur local ou distant à l’aide de l’applet de commande **Get-Service**. Comme avec la commande **Get-Process**, l’utilisation de la commande **Get-Service** sans paramètre a pour effet de retourner tous les services. Vous pouvez filtrer par nom, même en utilisant un astérisque comme caractère générique :
+Vous pouvez obtenir les services sur un ordinateur local ou distant à l’aide de l’applet de commande `Get-Service`. Comme avec `Get-Process`, l’utilisation de la commande `Get-Service` sans paramètres retourne tous les services. Vous pouvez filtrer par nom, même en utilisant un astérisque comme caractère générique :
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 Comme il n’est pas toujours évident d’identifier le nom réel d’un service, il se peut que vous deviez rechercher des services par nom d’affichage. À cette fin, vous pouvez utiliser un nom spécifique, des caractères génériques ou une liste de noms d’affichage :
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Ces paramètres affichent simplement les valeurs des propriétés DependentServi
 
 La commande suivante obtient les services que le service LanmanWorkstation requiert.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 La commande suivante obtient les services qui requièrent le service LanmanWorkstation.
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Arrêt, démarrage, interruption et redémarrage de services
+
 Les applets de commande Service ont toutes la même forme générale. Les services peuvent être spécifiés par un nom commun ou nom d’affichage, et prennent des listes et des caractères génériques pour valeurs. Pour arrêter le spouleur d’impression, utilisez ce qui suit :
 
 ```powershell
@@ -112,9 +113,9 @@ Pour interrompre le spouleur d’impression, utilisez ce qui suit :
 Suspend-Service -Name spooler
 ```
 
-L’applet de commande **Restart-Service** fonctionne de la même manière que les autres applets de commande Service, mais nous allons présenter quelques exemples plus complexes pour celle-ci. Dans le cas d’utilisation le plus simple, vous spécifiez le nom du service :
+L’applet de commande `Restart-Service` fonctionne de la même manière que les autres applets de commande Service. Toutefois, nous allons présenter quelques exemples plus complexes. Dans le cas d’utilisation le plus simple, vous spécifiez le nom du service :
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ Vous pouvez remarquer que vous obtenez un message d’avertissement répété su
 
 Si vous souhaitez redémarrer plusieurs services, vous pouvez obtenir la liste des services, filtrer ceux-ci, puis effectuer le redémarrage :
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>Définition des propriétés d’un service
 
-L’applet de commande de Set-Service modifie les propriétés d’un service sur un ordinateur local ou distant. Étant donné que l’état d’un service est une propriété, vous pouvez utiliser cette applet de commande pour démarrer, arrêter et suspendre un service. L’applet de commande Set-Service dispose également d’un paramètre StartupType qui permet de modifier le type de démarrage du service.
+L’applet de commande `Set-Service` change les propriétés d’un service sur un ordinateur local ou distant. Étant donné que l’état d’un service est une propriété, vous pouvez utiliser cette applet de commande pour démarrer, arrêter et suspendre un service.
+L’applet de commande Set-Service dispose également d’un paramètre StartupType qui permet de modifier le type de démarrage du service.
 
-Pour utiliser l’applet de commande Set-Service sur Windows Vista et des versions ultérieures de Windows, ouvrez Windows PowerShell avec l’option Exécuter en tant qu’administrateur.
+Pour utiliser `Set-Service` sur Windows Vista et les versions ultérieures de Windows, ouvrez Windows PowerShell avec l’option Exécuter en tant qu’administrateur.
 
 Pour plus d’informations, voir [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Log dans DSC
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093474"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268430"
 ---
 # <a name="dsc-log-resource"></a>Ressource Log dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource __Log__ dans DSC (Desired State Configuration) Windows PowerShell fournit un mécanisme permettant d’écrire des messages dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.
 
@@ -26,14 +26,14 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> Par défaut, seuls les journaux des opérations relatifs à DSC sont activés. Pour que le journal d’analyse soit disponible ou visible, il doit être activé. Pour plus d’informations, consultez [Où se trouvent les journaux des événements DSC ?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
+> Par défaut, seuls les journaux des opérations relatifs à DSC sont activés. Pour que le journal d’analyse soit disponible ou visible, il doit être activé. Pour plus d’informations, consultez [Où se trouvent les journaux des événements DSC ?](troubleshooting.md#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Propriétés
 
-|  Propriété  |  Description   |
-|---|---|
+| Propriété | Description |
+| --- | --- |
 | Message| Indique le message à écrire dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant l’écriture de ce message dans le journal. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource __ResourceName__ de type __ResourceType__, la syntaxe pour utiliser cette propriété est `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant l’écriture de ce message dans le journal. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType**, la syntaxe pour utiliser cette propriété est `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Exemple
 
