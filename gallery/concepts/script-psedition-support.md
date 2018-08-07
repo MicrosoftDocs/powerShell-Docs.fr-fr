@@ -1,23 +1,24 @@
 ---
 ms.date: 06/12/2017
 contributor: manikb
-keywords: gallery,powershell,cmdlet,psget
+keywords: gallery,powershell,applet de commande,psget
 title: Écrire des scripts avec des éditions de PowerShell compatibles
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093658"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267811"
 ---
-# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="d0413-103">Écrire des scripts avec des éditions de PowerShell compatibles</span><span class="sxs-lookup"><span data-stu-id="d0413-103">Script with compatible PowerShell editions</span></span>
+# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="37f61-103">Écrire des scripts avec des éditions de PowerShell compatibles</span><span class="sxs-lookup"><span data-stu-id="37f61-103">Script with compatible PowerShell editions</span></span>
 
-<span data-ttu-id="d0413-104">À compter de la version 5.1, PowerShell est disponible dans différentes éditions qui indiquent la compatibilité de la plateforme et les différents ensembles de fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="d0413-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
+<span data-ttu-id="37f61-104">À compter de la version 5.1, PowerShell est disponible dans différentes éditions qui indiquent la compatibilité de la plateforme et les différents ensembles de fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="37f61-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
 
-- <span data-ttu-id="d0413-105">**Desktop Edition :** basée sur le .NET Framework, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions complètes de Windows telles que Server Core et Windows Desktop.</span><span class="sxs-lookup"><span data-stu-id="d0413-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
-- <span data-ttu-id="d0413-106">**Core Edition :** basée sur .NET Core, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions réduites de Windows telles que Nano Server et Windows IoT.</span><span class="sxs-lookup"><span data-stu-id="d0413-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
+- <span data-ttu-id="37f61-105">**Desktop Edition :** basée sur le .NET Framework, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions complètes de Windows telles que Server Core et Windows Desktop.</span><span class="sxs-lookup"><span data-stu-id="37f61-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
 
-<span data-ttu-id="d0413-107">La version de PowerShell en cours d’exécution figure dans la propriété PSEdition de $PSVersionTable.</span><span class="sxs-lookup"><span data-stu-id="d0413-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
+- <span data-ttu-id="37f61-106">**Core Edition :** basée sur .NET Core, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions réduites de Windows telles que Nano Server et Windows IoT.</span><span class="sxs-lookup"><span data-stu-id="37f61-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
+
+<span data-ttu-id="37f61-107">La version de PowerShell en cours d’exécution figure dans la propriété PSEdition de $PSVersionTable.</span><span class="sxs-lookup"><span data-stu-id="37f61-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
 
 ```powershell
 $PSVersionTable
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-<span data-ttu-id="d0413-108">Les auteurs de scripts peuvent empêcher l’exécution d’un script, sauf s’il est exécuté sur une édition compatible de PowerShell avec le paramètre PSEdition sur une instruction #requires.</span><span class="sxs-lookup"><span data-stu-id="d0413-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a #requires statement.</span></span>
+<span data-ttu-id="37f61-108">Les auteurs de scripts peuvent empêcher l’exécution d’un script, sauf s’il est exécuté dans une édition compatible de PowerShell avec le paramètre PSEdition sur une instruction `#requires`.</span><span class="sxs-lookup"><span data-stu-id="37f61-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a `#requires` statement.</span></span>
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
@@ -52,8 +53,8 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-<span data-ttu-id="d0413-109">Les utilisateurs de PowerShell Gallery peuvent trouver la liste des scripts pris en charge sur une édition spécifique de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="d0413-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
-<span data-ttu-id="d0413-110">Les scripts sans les balises PSEdition_Desktop et PSEditon_Core sont considérés comme fonctionnant correctement sur les éditions PowerShell Desktop.</span><span class="sxs-lookup"><span data-stu-id="d0413-110">Scripts without PSEdition_Desktop and PSEditon_Core are considered to work fine on PowerShell Desktop editions.</span></span>
+<span data-ttu-id="37f61-109">Les utilisateurs de PowerShell Gallery peuvent trouver la liste des scripts pris en charge sur une édition spécifique de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="37f61-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
+<span data-ttu-id="37f61-110">Les scripts sans les balises PSEdition_Desktop et PSEditon_Core sont considérés comme fonctionnant correctement sur les éditions PowerShell Desktop.</span><span class="sxs-lookup"><span data-stu-id="37f61-110">Scripts without PSEdition_Desktop and PSEditon_Core are considered to work fine on PowerShell Desktop editions.</span></span>
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
@@ -63,7 +64,7 @@ Find-Script -Tag PSEditon_Desktop
 Find-Script -Tag PSEditon_Core
 ```
 
-## <a name="more-details"></a><span data-ttu-id="d0413-111">Plus d’informations</span><span class="sxs-lookup"><span data-stu-id="d0413-111">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="37f61-111">Plus d’informations</span><span class="sxs-lookup"><span data-stu-id="37f61-111">More details</span></span>
 
-- [<span data-ttu-id="d0413-112">Modules avec des éditions PS</span><span class="sxs-lookup"><span data-stu-id="d0413-112">Modules with PSEditions</span></span>](module-psedition-support.md)
-- [<span data-ttu-id="d0413-113">Prise en charge des éditions PS sur PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="d0413-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-items/searching-by-psedition.md)
+- [<span data-ttu-id="37f61-112">Modules avec des éditions PS</span><span class="sxs-lookup"><span data-stu-id="37f61-112">Modules with PSEditions</span></span>](module-psedition-support.md)
+- [<span data-ttu-id="37f61-113">Prise en charge des éditions PS sur PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="37f61-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-items/searching-by-psedition.md)
