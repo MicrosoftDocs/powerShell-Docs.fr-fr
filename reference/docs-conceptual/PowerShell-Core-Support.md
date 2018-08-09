@@ -1,3 +1,14 @@
+---
+title: Cycle de vie de support de PowerShell Core
+description: Politiques régissant le support de PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587157"
+---
 # <a name="powershell-core-support-lifecycle"></a>Cycle de vie de support de PowerShell Core
 
 PowerShell Core est un ensemble d’outils et de composants distinct livré, installé et configuré séparément de Windows PowerShell.
@@ -44,7 +55,8 @@ Les plateformes répertoriées en tant que `Experimental` ne sont pas officielle
 | Windows Server 2008 R2, 2012 R2, 2016             | Prise en charge   | Prise en charge   |
 | [Canal semi-annuel Windows Server][semi-annual] | Prise en charge   | Prise en charge   |
 | Ubuntu 14.04 et 16.04                           | Prise en charge   | Prise en charge   |
-| Ubuntu 17.10 et 18.04                           |             | Prise en charge   |
+| Ubuntu 18.04                                      |             | Prise en charge   |
+| Ubuntu 18.10 (via Snap Package)                   |             | Communauté   |
 | Debian 8.7+ et 9                                | Prise en charge   | Prise en charge   |
 | CentOS 7                                          | Prise en charge   | Prise en charge   |
 | Red Hat Enterprise Linux 7                        | Prise en charge   | Prise en charge   |
@@ -56,6 +68,10 @@ Les plateformes répertoriées en tant que `Experimental` ne sont pas officielle
 | Raspbian                                          | Expérimental| Communauté   |
 | Kali                                              | Communauté   | Communauté   |
 | AppImage (fonctionne sur plusieurs plateformes Linux)     | Communauté   | Communauté   |
+| [Snap Package](https://snapcraft.io/powershell)   | Voir la remarque    | Voir la remarque    |
+
+> [!NOTE]
+> Snap Package va rester expérimental pendant un temps.  Après, nous sommes sûrs que Snap n’introduira pas de nouveaux problèmes de support. Le support suivra la distribution sur laquelle vous exécutez le package.
 
 ## <a name="platform-which-are-out-of-support"></a>Plateformes qui ne sont plus prises en charge
 
@@ -65,13 +81,14 @@ Par conséquent, la prise en charge des versions suivantes a été interrompue p
 
 | Système d’exploitation       | Version | Fin de vie                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [Décembre 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [Août 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| OpenSUSE | 42.2    | [Janvier 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [Décembre 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [Mai 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Janvier 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| OpenSUSE | 42.2    | [Janvier 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Juillet 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Janvier 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Juillet 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Remarques sur les licences
 

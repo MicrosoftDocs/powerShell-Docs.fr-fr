@@ -1,3 +1,14 @@
+---
+title: Nouveautés de PowerShell Core 6.0
+description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
+ms.date: 08/06/2018
+ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587242"
+---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
 [PowerShell Core 6.0][github] est une nouvelle édition de PowerShell qui est multiplateforme (Windows, macOS et Linux), open source et conçue pour des environnements hétérogènes et le cloud hybride.

@@ -1,3 +1,14 @@
+---
+title: Installation de PowerShell Core sur ARM
+description: Installation de PowerShell Core sur les systèmes ARM
+ms.date: 08/06/2018
+ms.openlocfilehash: 1f41df9120461da55e35dfe4c2ec4ddefbc5b36e
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587361"
+---
 # <a name="powershell-core-on-arm"></a>PowerShell Core sur ARM
 
 Aujourd'hui, PowerShell Core fonctionne sur certains appareils ARM, notamment Windows 10 ARM32/ARM64 et Raspbian.
