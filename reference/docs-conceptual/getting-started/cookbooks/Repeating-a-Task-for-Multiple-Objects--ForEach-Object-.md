@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Répétition d’une tâche pour plusieurs objets ForEach Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954277"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587259"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Répétition d’une tâche pour plusieurs objets (ForEach-Object)
 
-L’applet de commande **ForEach-Object** utilise des blocs de script et le descripteur $_ pour l’objet de pipeline actuel, afin de vous permettre d’exécuter une commande sur chaque objet figurant dans le pipeline. Vous pouvez l’utiliser pour effectuer des tâches complexes.
+La cmdlet **ForEach-Object** utilise des blocs de script et le descripteur `$_` pour l’objet de pipeline actuel, afin de vous permettre d’exécuter une commande sur chaque objet figurant dans le pipeline. Vous pouvez l’utiliser pour effectuer des tâches complexes.
 
 Une situation où elle peut être utile est la manipulation de données pour les rendre plus exploitables. Par exemple, la classe Win32_LogicalDisk de WMI permet de retourner des informations d’espace libre sur chaque disque local. Toutefois, les données retournées sont exprimées en octets, ce qui rend leur lecture difficile :
 
