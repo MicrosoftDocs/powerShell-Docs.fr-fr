@@ -1,14 +1,14 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell,applet de commande
 title: Aide sur la ligne de commande PowerShell.exe
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 60b6a7e310821a4092b0972b7abbdae0e2d5f738
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952577"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133101"
 ---
 # <a name="powershellexe-command-line-help"></a>Aide sur la ligne de commande PowerShell.exe
 
@@ -49,12 +49,9 @@ Définit la stratégie d’exécution par défaut pour la session actuelle et l�
 
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 
-Exécute le script spécifié dans l’étendue locale (avec « dot-sourcing »), afin que les fonctions et variables créées par le script soient disponibles dans la session active. Entrez le chemin d’accès au fichier de script et les paramètres éventuels. **File** doit être le dernier paramètre de la commande, car tous les caractères tapés après le nom de paramètre **File** sont interprétés comme étant le chemin d’accès au fichier de script, suivi des paramètres de script et de leurs valeurs.
+Exécute le script spécifié dans l’étendue locale (avec « dot-sourcing »), afin que les fonctions et variables créées par le script soient disponibles dans la session active. Entrez le chemin d’accès au fichier de script et les paramètres éventuels. **File** doit être le dernier paramètre dans la commande. Toutes les valeurs saisies après le paramètre **-File** sont interprétées comme les paramètres et le chemin d’accès au fichier de script passés à ce script.
 
-Vous pouvez inclure les paramètres d’un script et des valeurs de paramètre dans la valeur du paramètre **File**. Par exemple : `-File .\Get-Script.ps1 -Domain Central` Notez que les paramètres passés au script sont passés comme chaînes littérales (après l’interprétation de l’interpréteur de commandes actuel).
-Par exemple, si vous êtes dans cmd.exe et que vous souhaitez passer une valeur de variable d’environnement, vous utilisez la syntaxe de cmd.exe : `powershell -File .\test.ps1 -Sample %windir%` Si vous deviez utiliser la syntaxe de PowerShell, votre script recevrait le littéral « $env:windir » dans cet exemple, et non la valeur de cette variable d’environnement : `powershell -File .\test.ps1 -Sample $env:windir`
-
-En règle générale, les paramètres de commutateur d’un script sont inclus ou omis. Par exemple, la commande suivante utilise le paramètre **All** du fichier de script Get-Script.ps1 : `-File .\Get-Script.ps1 -All`
+Les paramètres passés au script sont passés comme chaînes littérales (après l’interprétation de l’interpréteur de commandes actuel). Par exemple, si vous êtes dans cmd.exe et que vous souhaitez passer une valeur de variable d’environnement, vous utilisez la syntaxe de cmd.exe : `powershell -File .\test.ps1 -Sample %windir%` Dans cet exemple, votre script reçoit la chaîne littérale `$env:windir`, et non la valeur de cette variable d’environnement : `powershell -File .\test.ps1 -Sample $env:windir`
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -98,7 +95,7 @@ Démarre la version spécifiée de PowerShell. La version que vous spécifiez do
 
 Si PowerShell 3.0 n’est pas installé, la seule valeur valide est « 2.0 ». Les autres valeurs sont ignorées.
 
-Pour plus d’informations, consultez « [Installation de Windows PowerShell](../../setup/installing-windows-powershell.md) ».
+Pour plus d’informations, voir [Installation de Windows PowerShell](../../setup/installing-windows-powershell.md).
 
 ### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
@@ -106,8 +103,8 @@ Définit le style de fenêtre pour la session. Les valeurs valides sont Normal, 
 
 ### <a name="-command"></a>-Command
 
-Exécute les commandes spécifiées (et les paramètres éventuels) comme si elles étaient tapées à l’invite de commandes PowerShell, puis quitte, sauf si le paramètre NoExit est spécifié.
-Pour l’essentiel, tout le texte qui suit `-Command` est envoyé sous la forme d’une ligne de commande PowerShell (ce qui diffère de la façon dont `-File` gère les paramètres envoyés à un script).
+Exécute les commandes spécifiées (et les paramètres éventuels) comme si elles étaient tapées à l’invite de commandes PowerShell. Après l’exécution, PowerShell s’arrête, sauf si le paramètre `-NoExit` est précisé.
+Tout texte qui suit `-Command` est envoyé en tant qu’une seule ligne de commande à PowerShell. Cela diffère de la façon dont `-File` gère les paramètres envoyés à un script.
 
 La valeur de Command peut être « - », une chaîne ou un bloc de script. Si la valeur de Command est « - », le texte de commande est lu à partir de l’entrée standard.
 
@@ -121,11 +118,11 @@ Pour écrire une chaîne exécutant une commande PowerShell, utilisez le format 
 "& {<command>}"
 ```
 
-où les guillemets indiquent une chaîne et l’opérateur d’appel (&) déclenche l’exécution de la commande.
+Les guillemets indiquent une chaîne et l’opérateur d’appel (&) déclenche l’exécution de la commande.
 
 ### <a name="-help---"></a>-Help, -?, /?
 
-Affiche ce message. Si vous tapez une commande PowerShell.exe dans PowerShell, faites précéder les paramètres de commande d’un trait d’union (-), et non d’une barre oblique (/). Vous pouvez utiliser un trait d’union ou une barre oblique dans Cmd.exe.
+Illustre la syntaxe de powershell.exe. Si vous tapez une commande PowerShell.exe dans PowerShell, faites précéder les paramètres de commande d’un trait d’union (-), et non d’une barre oblique (/). Vous pouvez utiliser un trait d’union ou une barre oblique dans Cmd.exe.
 
 > [!NOTE]
 > Remarque sur la résolution de problèmes : dans PowerShell 2.0, le démarrage de certains programmes dans la console Windows PowerShell échoue en signalant un LastExitCode de 0xc0000142.

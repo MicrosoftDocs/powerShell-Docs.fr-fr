@@ -1,32 +1,30 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell,applet de commande
 title: Présentation de Windows PowerShell ISE
-ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d27a0eb594d7271121cee59f38d096995cc98648
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952900"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133151"
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Présentation de Windows PowerShell ISE
 
-Windows PowerShell Integrated Scripting Environment (ISE) est une application hôte pour Windows PowerShell. Dans Windows PowerShell ISE, vous pouvez exécuter des commandes et écrire, tester et déboguer des scripts dans une seule et même interface utilisateur graphique Windows. Celle-ci prend en charge des fonctions d’édition multiligne, la saisie semi-automatique par tabulation, la coloration de la syntaxe, l’exécution sélective, l’aide contextuelle et les langues s’écrivant de droite à gauche. Des éléments de menu et des raccourcis clavier vous permettent d’effectuer une grande partie des tâches accessibles à partir de la console Windows PowerShell. Par exemple, pour définir un point d’arrêt de ligne dans un script que vous déboguez dans Windows PowerShell ISE, cliquez avec le bouton droit sur la ligne de code, puis cliquez sur **Basculer le point d’arrêt**.
+Windows PowerShell Integrated Scripting Environment (ISE) est une application hôte pour Windows PowerShell. Dans Windows PowerShell ISE, vous pouvez exécuter des commandes et écrire, tester et déboguer des scripts dans une seule interface utilisateur graphique Windows. L’interface fournit l’édition multiligne, la saisie semi-automatique par tabulation, la coloration syntaxique, l’exécution sélective, l’aide contextuelle et la prise en charge pour les langues s’écrivant de droite à gauche. Les éléments de menu et les raccourcis clavier sont mappés une grande partie des tâches accessibles à partir de la console Windows PowerShell. Par exemple, lorsque vous déboguez un script dans Windows PowerShell ISE, vous pouvez cliquer avec le bouton droit sur une ligne de code pour définir un point d’arrêt.
 
 Essayez ces fonctionnalités dans Windows PowerShell ISE.
 
 - Édition multiligne : pour insérer une ligne vide sous la ligne actuelle dans le volet Commande, appuyez sur Maj+Entrée.
 - Exécution sélective : pour exécuter une partie d’un script, sélectionnez le texte à exécuter, puis cliquez sur le bouton **Exécuter le script**. Ou bien, appuyez sur F5.
-- Aide contextuelle : tapez **Invoke-Item**, puis appuyez sur F1. Le fichier d’aide s’ouvre à la rubrique d’aide de l’applet de commande **Invoke-Item**.
+- Aide contextuelle : tapez **Invoke-Item**, puis appuyez sur F1. Le fichier d’aide s’ouvre à l’article de la cmdlet **Invoke-Item**.
 
-Windows PowerShell ISE permet de personnaliser certains aspects de son apparence. Il possède également son propre profil Windows PowerShell dans lequel vous pouvez stocker les fonctions, alias, variables et commandes que vous utilisez dans Windows PowerShell ISE.
+Windows PowerShell ISE permet de personnaliser certains aspects de son apparence. Il possède également son propre script de profil Windows PowerShell.
 
 ## <a name="to-start-the-windows-powershell-ise"></a>Pour démarrer Windows PowerShell ISE
 
-Effectuez l'une des opérations suivantes :
-
-- Cliquez sur **Démarrer**, pointez sur **Tous les programmes**, sur **Windows PowerShell V2**, puis cliquez sur **Windows PowerShell ISE**.
-- Dans l’interface Cmd.exe de la console Windows PowerShell ou dans la zone Exécuter, tapez **powershell_ise.exe**.
+Cliquez sur **Démarrer**, sélectionnez **Windows PowerShell**, puis cliquez sur **Windows PowerShell ISE**.
+Vous pouvez aussi taper `powershell_ise.exe` dans n’importe quel interpréteur de commandes ou dans la zone Exécuter.
 
 ## <a name="to-get-help-in-the-windows-powershell-ise"></a>Pour obtenir de l'aide dans Windows PowerShell ISE
 
