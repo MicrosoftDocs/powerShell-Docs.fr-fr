@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des processus avec les applets de commande Process
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-ms.openlocfilehash: d6d7daa810dce2d476566e4d30f03cc95bf730e6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 741a3464bce6284c4933384398c4e9ddcca2572c
+ms.sourcegitcommit: 417b5a40cde51029de9ed8e005732978d92c9057
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952492"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46013139"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Gestion des processus avec les applets de commande Process
 
@@ -97,7 +97,7 @@ PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
         @{Label="PM(K)";Expression={[int]($_.PM/1024)}},
         @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
         @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
-        @{Label="CPU(s)";Expression={if ($_.CPU -ne $() {$_.CPU.ToString("N")}}},
+        @{Label="CPU(s)";Expression={if ($_.CPU -ne $()){$_.CPU.ToString("N")}}},
         Id, ProcessName, MachineName -auto
 
 Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
