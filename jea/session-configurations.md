@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Configuration de session JEA
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190092"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522952"
 ---
 # <a name="jea-session-configurations"></a>Configuration de session JEA
 
@@ -221,7 +221,7 @@ Pour obtenir la liste complète des propriétés prises en charge dans le fichie
 
 ## <a name="testing-a-session-configuration-file"></a>Tester un fichier de configuration de session
 
-Vous pouvez tester une configuration de session avec l’applet de commande [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile).
+Vous pouvez tester une configuration de session avec l’applet de commande [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile).
 Il est fortement recommandé de tester votre fichier de configuration de session, si vous avez modifié le fichier pssc manuellement à l’aide d’un éditeur de texte, pour vérifier que la syntaxe est correcte.
 Si le fichier de configuration de session ne passe pas ce test, son enregistrement sur le système ne réussira pas.
 

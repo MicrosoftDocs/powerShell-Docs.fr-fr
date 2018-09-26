@@ -1,38 +1,38 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29b11e8b11f27fc5be60ea8c5cd56138326b3998
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190602"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522820"
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>Applets de commande PowerShellGet pour la gestion des modules
 
 - [Find-DscResource](https://technet.microsoft.com/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/library/dn807167.aspx)
 - [Find-Script](https://technet.microsoft.com/library/mt654001.aspx)
-- [Get-InstalledModule](https://technet.microsoft.com/en-us/library/mt653990.aspx)
-- [Get-InstalledScript](https://technet.microsoft.com/en-us/library/mt653994.aspx)
-- [Get-PSRepository](https://technet.microsoft.com/en-us/library/dn807170.aspx)
-- [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx)
-- [Install-Script](https://technet.microsoft.com/en-us/library/mt653998.aspx)
-- [New-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653995.aspx)
-- [Publish-Module](https://technet.microsoft.com/en-us/library/dn807163.aspx)
-- [Publish-Script](https://technet.microsoft.com/en-us/library/mt654003.aspx)
-- [Register-PSRepository](https://technet.microsoft.com/en-us/library/dn807168.aspx)
-- [Save-Module](https://technet.microsoft.com/en-us/library/mt653992.aspx)
-- [Save-Script](https://technet.microsoft.com/en-us/library/mt654004.aspx)
-- [Set-PSRepository](https://technet.microsoft.com/en-us/library/dn807165.aspx)
-- [Test-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt654005.aspx)
-- [Uninstall-Module](https://technet.microsoft.com/en-us/library/mt653996.aspx)
-- [Uninstall-Script](https://technet.microsoft.com/en-us/library/mt653989.aspx)
-- [Update-Module](https://technet.microsoft.com/en-us/library/dn807166.aspx)
-- [Update-ModuleManifest](https://technet.microsoft.com/en-us/library/mt654002.aspx)
-- [Update-Script](https://technet.microsoft.com/en-us/library/mt653997.aspx)
-- [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
-- [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
+- [Get-InstalledModule](https://technet.microsoft.com/library/mt653990.aspx)
+- [Get-InstalledScript](https://technet.microsoft.com/library/mt653994.aspx)
+- [Get-PSRepository](https://technet.microsoft.com/library/dn807170.aspx)
+- [Install-Module](https://technet.microsoft.com/library/dn807162.aspx)
+- [Install-Script](https://technet.microsoft.com/library/mt653998.aspx)
+- [New-ScriptFileInfo](https://technet.microsoft.com/library/mt653995.aspx)
+- [Publish-Module](https://technet.microsoft.com/library/dn807163.aspx)
+- [Publish-Script](https://technet.microsoft.com/library/mt654003.aspx)
+- [Register-PSRepository](https://technet.microsoft.com/library/dn807168.aspx)
+- [Save-Module](https://technet.microsoft.com/library/mt653992.aspx)
+- [Save-Script](https://technet.microsoft.com/library/mt654004.aspx)
+- [Set-PSRepository](https://technet.microsoft.com/library/dn807165.aspx)
+- [Test-ScriptFileInfo](https://technet.microsoft.com/library/mt654005.aspx)
+- [Uninstall-Module](https://technet.microsoft.com/library/mt653996.aspx)
+- [Uninstall-Script](https://technet.microsoft.com/library/mt653989.aspx)
+- [Update-Module](https://technet.microsoft.com/library/dn807166.aspx)
+- [Update-ModuleManifest](https://technet.microsoft.com/library/mt654002.aspx)
+- [Update-Script](https://technet.microsoft.com/library/mt653997.aspx)
+- [Update-ScriptFileInfo](https://technet.microsoft.com/library/mt653991.aspx)
+- [Unregister-PSRepository](https://technet.microsoft.com/library/dn807161.aspx)
 
 ## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Prise en charge de l’installation des dépendances de modules, applets de commande Get-InstalledModule et Uninstall-Module
 - Ajout de la population de dépendances de modules dans l’applet de commande Publish-Module. Les listes RequiredModules et NestedModules de PSModuleInfo sont utilisées lors de la préparation de la liste des dépendances d’un module à publier.

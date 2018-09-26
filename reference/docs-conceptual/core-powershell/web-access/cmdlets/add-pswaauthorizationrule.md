@@ -4,12 +4,12 @@ keywords: powershell,applet de commande
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: fe2b71dcfa870ba3f92484ae3fd3c45b3107a1bc
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268263"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523075"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -199,7 +199,7 @@ Cet exemple accorde l’accès à la configuration de session _PSWAEndpoint_, un
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
-### <a name="example-2"></a>EXEMPLE 2
+### <a name="example-2"></a>EXAMPLE 2
 
 Cet exemple accorde l’accès à la configuration de session Windows PowerShell par défaut, `Microsoft.PowerShell`, sur *srv2* pour les utilisateurs nommés `contoso\user1`, `contoso\user2` et `contoso\user3`. Cette applet de commande crée trois règles (une par personne).
 
@@ -251,13 +251,13 @@ Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 
 ## <a name="see-also"></a>Voir aussi
 
-[Get-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592891(v=wps.630).aspx)
+[Get-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592891(v=wps.630).aspx)
 
-[Remove-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592893(v=wps.630).aspx)
+[Remove-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592893(v=wps.630).aspx)
 
-[Test-PswaAuthorizationRule](https://technet.microsoft.com/en-us/library/jj592892(v=wps.630).aspx)
+[Test-PswaAuthorizationRule](https://technet.microsoft.com/library/jj592892(v=wps.630).aspx)
 
-[Install-PswaWebApplication](https://technet.microsoft.com/en-us/library/jj592894(v=wps.630).aspx)
+[Install-PswaWebApplication](https://technet.microsoft.com/library/jj592894(v=wps.630).aspx)
 
 [Add-Member](http://go.microsoft.com/fwlink/p/?LinkId=113280)
 

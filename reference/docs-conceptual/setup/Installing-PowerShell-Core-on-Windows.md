@@ -1,15 +1,15 @@
 ---
-title: Installation de PowerShell Core sur Windows
+title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 84c158b97519194888cf031c57a2a4634120c456
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 595f12efd060406264a1a4efb9d54035da06ffe3
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587116"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557176"
 ---
-# <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sur Windows
+# <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
 ## <a name="msi"></a>MSI
 
@@ -56,7 +56,7 @@ Windows IoT est déjà équipé de Windows PowerShell que nous utiliserons pour 
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. Connectez-vous à l’appareil et développez l’archive
@@ -64,13 +64,13 @@ Windows IoT est déjà équipé de Windows PowerShell que nous utiliserons pour 
    ```powershell
    Enter-PSSession $s
    cd u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
+   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
    ```
 
 4. Configurez la communication à distance avec PowerShell Core 6
 
    ```powershell
-   cd .\PowerShell-6.0.2-win-arm32
+   cd .\PowerShell-6.1.0-win-arm32
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ Windows IoT est déjà équipé de Windows PowerShell que nous utiliserons pour 
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
    ```
 
 ## <a name="deploying-on-nano-server"></a>Déploiement sur Nano Server

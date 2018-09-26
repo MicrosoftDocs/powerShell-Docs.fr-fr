@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Capacités de rôle JEA
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190534"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522937"
 ---
 # <a name="jea-role-capabilities"></a>Capacités de rôle JEA
 
@@ -181,9 +181,9 @@ Les fonctions définies dans les fichiers de capacités de rôle sont toujours s
 
 Select-Object est une applet de commande contrainte par défaut dans toutes les sessions JEA qui ne vous permet pas de sélectionner des propriétés arbitraires sur les objets.
 Pour utiliser Select-Object sans contraintes dans les fonctions, vous devez demander explicitement l’implémentation complète en spécifiant le FQMN.
-Une applet de commande contrainte dans une session JEA présente le même comportement lorsqu’elle est appelée à partir d’une fonction, conformément à la [précédence des commandes](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence) de PowerShell.
+Une applet de commande contrainte dans une session JEA présente le même comportement lorsqu’elle est appelée à partir d’une fonction, conformément à la [précédence des commandes](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence) de PowerShell.
 
-Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus facile de les placer dans un [Module de script PowerShell](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx).
+Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus facile de les placer dans un [Module de script PowerShell](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Vous pouvez ensuite rendre ces fonctions visibles dans la session JEA à l’aide du champ VisibleFunctions, comme avec des modules intégrés et tiers.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Placer les capacités de rôle dans un module
@@ -207,7 +207,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-Consultez la page [Comprendre un module PowerShell](https://msdn.microsoft.com/en-us/library/dd878324.aspx) pour plus d’informations sur les modules PowerShell, les manifestes de modules et la variable d’environnement PSModulePath.
+Consultez la page [Comprendre un module PowerShell](https://msdn.microsoft.com/library/dd878324.aspx) pour plus d’informations sur les modules PowerShell, les manifestes de modules et la variable d’environnement PSModulePath.
 
 ## <a name="updating-role-capabilities"></a>Mettre à jour les capacités de rôle
 

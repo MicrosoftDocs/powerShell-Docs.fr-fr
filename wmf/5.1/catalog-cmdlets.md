@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Applets de commande de catalogue
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189065"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522886"
 ---
 # <a name="catalog-cmdlets"></a>Applets de commande de catalogue
 
-Nous avons ajouté deux nouvelles applets de commande au module [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) pour générer et valider des fichiers catalogue Windows.
+Nous avons ajouté deux nouvelles applets de commande au module [Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) pour générer et valider des fichiers catalogue Windows.
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -49,5 +49,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 Cette applet de commande compare les hachages de tous les fichiers et leurs chemins relatifs qui figurent dans le fichier catalogue à ceux enregistrés sur le disque. Si elle détecte une incompatibilité entre les hachages de fichier et les chemins, elle retourne le statut `ValidationFailed`.
-Les utilisateurs peuvent récupérer toutes ces informations à l’aide de l’indicateur `Detailed`. Le statut de signature du catalogue est affiché dans le champ `Signature`, ce qui revient à appeler l’applet de commande [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) sur le fichier catalogue.
+Les utilisateurs peuvent récupérer toutes ces informations à l’aide de l’indicateur `Detailed`. Le statut de signature du catalogue est affiché dans le champ `Signature`, ce qui revient à appeler l’applet de commande [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) sur le fichier catalogue.
 Les utilisateurs peuvent également ignorer des fichiers pendant la validation à l’aide du paramètre `FilesToSkip`.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188511"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522849"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 
@@ -57,7 +57,7 @@ Vous pouvez supprimer le fichier de configuration de session à tout moment. Il 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuration sur plusieurs machines avec DSC
 
-Si vous déployez JEA sur plusieurs machines, le modèle de déploiement le plus simple consiste à utiliser la ressource JEA [Configuration d’état souhaité](https://msdn.microsoft.com/en-us/powershell/dsc/overview) pour déployer JEA rapidement et de manière cohérente sur chaque machine.
+Si vous déployez JEA sur plusieurs machines, le modèle de déploiement le plus simple consiste à utiliser la ressource JEA [Configuration d’état souhaité](https://msdn.microsoft.com/powershell/dsc/overview) pour déployer JEA rapidement et de manière cohérente sur chaque machine.
 
 Pour déployer JEA avec DSC, vous devez garantir que les conditions préalables suivantes sont remplies :
 - Une ou plusieurs fonctionnalités de rôles ont été créées et ajoutées à un module PowerShell valide.
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-Cette configuration peut ensuite être appliquée à un système en [appelant directement le Gestionnaire de configuration Local](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) ou en mettant à jour la [configuration du serveur collecteur](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver).
+Cette configuration peut ensuite être appliquée à un système en [appelant directement le Gestionnaire de configuration Local](https://msdn.microsoft.com/powershell/dsc/metaconfig) ou en mettant à jour la [configuration du serveur collecteur](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 La ressource DSC vous permet également de remplacer le point de terminaison de communication à distance Microsoft.PowerShell par défaut.
 Si vous procédez ainsi, la ressource inscrit automatiquement un point de terminaison de sauvegarde sans contrainte nommé « Microsoft.PowerShell.Restricted » qui a la valeur par défaut des listes de contrôle d’accès WinRM (permettant aux groupes Utilisateurs de gestion à distance et Administrateurs locaux d’y accéder).

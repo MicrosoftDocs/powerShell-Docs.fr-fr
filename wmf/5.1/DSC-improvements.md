@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309540"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523020"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -154,7 +154,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Utilisation de PsDscRunAsCredential avec des ressources composites DSC
 
-Nous avons ajouté la prise en charge de l’utilisation de [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) avec des ressources [composites](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) DSC.
+Nous avons ajouté la prise en charge de l’utilisation de [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) avec des ressources [composites](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite) DSC.
 
 Vous pouvez maintenant spécifier une valeur pour PsDscRunAsCredential lors de l’utilisation des ressources composites dans des configurations.
 Le cas échéant, toutes les ressources sont exécutées dans une ressource composite en tant qu’utilisateur RunAs.
@@ -162,7 +162,7 @@ Si une ressource composite appelle une autre ressource composite, toutes ses res
 Les informations d’identification RunAs sont propagées à tout niveau de la hiérarchie des ressources composites.
 Si une ressource à l’intérieur d’une ressource composite spécifie sa propre valeur pour PsDscRunAsCredential, une erreur de fusion se produit pendant la compilation de la configuration.
 
-Cet exemple illustre son utilisation avec la ressource composite [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) incluse dans le module PSDesiredStateConfiguration.
+Cet exemple illustre son utilisation avec la ressource composite [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) incluse dans le module PSDesiredStateConfiguration.
 
 ```powershell
 Configuration InstallWindowsFeature
