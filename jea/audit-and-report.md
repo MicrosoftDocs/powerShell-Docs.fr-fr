@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Audit et création de rapports sur JEA
-ms.openlocfilehash: e68206cd6fe94c51507f42ae2c3e6702f6fd4e0f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188850"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851218"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Audit et création de rapports sur JEA
 
@@ -149,5 +149,4 @@ Les détails de cet objet sont indiqués ci-dessous. Ils imitent étroitement ce
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Audit des actions de l’utilisateur dans une session JEA](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team*, billet de blog sur la sécurité](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

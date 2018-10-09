@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 595f12efd060406264a1a4efb9d54035da06ffe3
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557176"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850977"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
@@ -63,14 +63,14 @@ Windows IoT est déjà équipé de Windows PowerShell que nous utiliserons pour 
 
    ```powershell
    Enter-PSSession $s
-   cd u:\users\administrator\downloads
+   Set-Location u:\users\administrator\downloads
    Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
    ```
 
 4. Configurez la communication à distance avec PowerShell Core 6
 
    ```powershell
-   cd .\PowerShell-6.1.0-win-arm32
+   Set-Location .\PowerShell-6.1.0-win-arm32
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
