@@ -16,7 +16,7 @@ Avec JEA, vous pouvez :
 
 - **Réduire le nombre d’administrateurs sur vos ordinateurs** en exploitant des comptes virtuels ou des comptes de service administrés de groupe qui exécutent des actions privilégiées au nom d’utilisateurs normaux.
 - **Limiter les opérations réalisables par les utilisateurs** en spécifiant les applets de commande, fonctions et commandes externes qu’ils peuvent exécuter.
-- **Comprenez mieux ce que font vos utilisateurs** avec des transcriptions et des journaux qui vous montrent exactement quelles commandes un utilisateur a exécutées pendant sa session.
+- **Mieux comprendre ce que font vos utilisateurs** avec des transcriptions et des journaux qui vous montrent exactement quelles commandes un utilisateur a exécutées pendant sa session.
 
 **Pourquoi est-ce important ?**
 
