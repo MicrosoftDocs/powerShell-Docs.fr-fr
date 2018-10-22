@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Obtention d’informations d’aide détaillées
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134032"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851270"
 ---
 # <a name="getting-detailed-help-information"></a>Obtention d’informations d’aide détaillées
 
@@ -149,7 +149,7 @@ Afficher les articles d’aide en ligne est l’une des meilleures façons d’o
 Pour obtenir l’aide en ligne, utilisez le paramètre **Online** de la cmdlet `Get-Help`. Tous les articles d’aide fournis avec PowerShell, y compris les articles d’aide sur le fournisseur et les articles d’aide conceptuelle (À propos), sont disponibles en ligne dans la documentation [PowerShell](/powershell/scripting/powershell-scripting).
 
 > [!NOTE]
-> Vous ne pouvez pas utiliser le paramètre **Online** avec des articles d’aide conceptuelle (about_*) ou des articles d’aide sur le fournisseur.
+> Vous ne pouvez pas utiliser le paramètre **Online** avec des articles d’aide conceptuelle (about_\*) ou des articles d’aide du fournisseur.
 > L’aide en ligne est facultative, donc elle ne fonctionne pas pour chaque cmdlet, fonction ou script.
 
 Par exemple, pour obtenir la version en ligne de l’article d’aide sur la cmdlet `Get-ChildItem`, tapez :
