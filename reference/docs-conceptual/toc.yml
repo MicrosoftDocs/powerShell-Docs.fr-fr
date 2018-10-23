@@ -58,7 +58,7 @@ items:
         href: setup/winrmsecurity.md
       - name: Deuxième tentative de communication à distance PS
         href: setup/ps-remoting-second-hop.md
-  - name: Composants
+  - name: Composants.
     href: ''
     items:
     - name: Console
@@ -149,6 +149,8 @@ items:
   - name: Nouveautés
     href: ''
     items:
+    - name: Nouveautés de PowerShell Core 6.1
+      href: whats-new/what-s-new-in-powershell-core-61.md
     - name: Nouveautés de PowerShell Core 6.0
       href: whats-new/what-s-new-in-powershell-core-60.md
       items:
@@ -239,9 +241,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: a3f5f4ba7de337ed1f2f2653625c355f68cfde2b
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133204"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557141"
