@@ -32,7 +32,8 @@
         ]
       }
     ],
-    "template": "op.html",
-    "dest": "wmf"
-  }
+        "template": "op.html",
+        "dest": "wmf",
+        "markdownEngineName": "markdig"
+    }
 }
