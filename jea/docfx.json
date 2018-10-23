@@ -32,7 +32,8 @@
         ]
       }
     ],
-    "template": "op.html",
-    "dest": "jea"
-  }
+        "template": "op.html",
+        "dest": "dsc",
+        "markdownEngineName": "markdig"
+    }
 }
