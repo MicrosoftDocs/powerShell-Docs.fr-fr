@@ -33,7 +33,8 @@
         ]
       }
     ],
-    "template": "op.html",
-    "dest": "gallery"
-  }
+        "template": "op.html",
+        "dest": "gallery",
+        "markdownEngineName": "markdig"
+    }
 }
