@@ -34,7 +34,8 @@
         ]
       }
     ],
-    "template": "op.html",
-    "dest": "dsc"
-  }
+        "template": "op.html",
+        "dest": "dsc",
+        "markdownEngineName": "markdig"
+    }
 }
