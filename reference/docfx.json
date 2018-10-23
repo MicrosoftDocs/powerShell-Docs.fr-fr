@@ -243,7 +243,8 @@
       "bilingual_type": "hover over"
     },
     "fileMetadata": {},
-    "template": [],
-    "dest": "pscore-reference"
-  }
+        "template": [],
+        "dest": "pscore-reference",
+        "markdownEngineName": "markdig"
+    }
 }
