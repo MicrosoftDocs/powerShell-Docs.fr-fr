@@ -1,3 +1,4 @@
+items:
 - name: Vue d’ensemble
   href: readme.md
 - name: Installation de PowerShellGet
@@ -6,79 +7,93 @@
   href: getting-started.md
 - name: Guides pratiques
   items:
-    - name: Recherche d’éléments dans la galerie
-      items:
-        - name: Recherche d’éléments
-          href: how-to/finding-items/search-syntax.md
-        - name: Recherche par édition PowerShell
-          href: how-to/finding-items/searching-by-psedition.md
-        - name: Filtrage des résultats de la recherche
-          href: how-to/finding-items/filtering-items.md
-    - name: Publication dans la galerie
-      items:
-        - name: Création et publication d’éléments
-          href: how-to/publishing-items/publishing-an-item.md
-        - name: Création d’un compte PowerShellGallery
-          href: how-to/publishing-items/creating-an-account.md
-        - name: Retrait d’éléments de la liste
-          href: how-to/publishing-items/unlisting-items.md
-        - name: Suppression d’éléments
-          href: how-to/publishing-items/deleting-items.md
-        - name: Gestion des propriétaires d’éléments
-          href: how-to/publishing-items/managing-item-owners.md
-    - name: Utilisation des éléments
-      items:
-        - name: Vue de liste de fichiers
-          href: how-to/working-with-items/filelist-view.md
-        - name: Déployer sur Azure Automation
-          href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: Éléments nécessitant l’acceptation de la licence
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
-        - name: Établissement d’un contact avec les propriétaires d’éléments
-          href: how-to/working-with-items/contacting-item-owners.md
-        - name: Envoi de commentaires via des médias sociaux ou des commentaires
-          href: how-to/working-with-items/social-media-feedback.md
+  - name: Recherche d’éléments dans la galerie
+    items:
+    - name: Recherche d’éléments
+      href: how-to/finding-items/search-syntax.md
+    - name: Recherche par édition PowerShell
+      href: how-to/finding-items/searching-by-psedition.md
+    - name: Filtrage des résultats de la recherche
+      href: how-to/finding-items/filtering-items.md
+  - name: Publication dans la galerie
+    items:
+    - name: Création et publication d’éléments
+      href: how-to/publishing-items/publishing-an-item.md
+    - name: Création d’un compte PowerShellGallery
+      href: how-to/publishing-items/creating-an-account.md
+    - name: Retrait d’éléments de la liste
+      href: how-to/publishing-items/unlisting-items.md
+    - name: Suppression d’éléments
+      href: how-to/publishing-items/deleting-items.md
+    - name: Gestion des propriétaires d’éléments
+      href: how-to/publishing-items/managing-item-owners.md
+  - name: Utilisation des éléments
+    items:
+    - name: Vue de liste de fichiers
+      href: how-to/working-with-items/filelist-view.md
+    - name: Déployer sur Azure Automation
+      href: how-to/working-with-items/deploy-to-azure-automation.md
+    - name: Téléchargement manuel de package
+      href: how-to/working-with-items/manual-download.md
+    - name: Éléments nécessitant l’acceptation de la licence
+      href: how-to/working-with-items/items-that-require-license-acceptance.md
+    - name: Établissement d’un contact avec les propriétaires d’éléments
+      href: how-to/working-with-items/contacting-item-owners.md
+    - name: Envoi de commentaires via des médias sociaux ou des commentaires
+      href: how-to/working-with-items/social-media-feedback.md
+  - name: Gestion du profil de compte
+    items:
+    - name: Paramètres de compte PowerShell Gallery
+      href: how-to/managing-profile/managing-account.md
+    - name: Gestion des clés API
+      href: how-to/managing-profile/creating-apikeys.md
 - name: Concepts
   items:
-    - name: Instructions et bonnes pratiques de publication
-      href: concepts/publishing-guidelines.md
-    - name: Manifeste de l’élément et interface utilisateur de la galerie
-      href: concepts/item-manifest-affecting-ui.md
-    - name: Exiger des éditions PowerShell spécifiques
-      items:
-        - name: Écriture de scripts avec prise en charge des éditions PowerShell
-          href: concepts/script-psedition-support.md
-        - name: Écriture de modules avec prise en charge des éditions PowerShell
-          href: concepts/module-psedition-support.md
-    - name: Exiger l’acceptation de la licence
-      items:
-        - name: Exiger l’acceptation de la licence pour les scripts
-          href: concepts/script-license-acceptance.md
-        - name: Exiger l’acceptation de la licence pour les modules
-          href: concepts/module-license-acceptance.md
-    - name: Définition des éléments en tant que version préliminaire
-      items:
-        - name: Définition d’un module en tant que version préliminaire
-          href: concepts/module-prerelease-support.md
-        - name: Définition d’un script en tant que version préliminaire
-          href: concepts/script-prerelease-support.md
-    - name: Profil de règle PSScriptAnalyzer
-      href: concepts/scriptanalyzer-rule-profile.md
+  - name: Instructions et bonnes pratiques de publication
+    href: concepts/publishing-guidelines.md
+  - name: Manifeste de l’élément et interface utilisateur de la galerie
+    href: concepts/item-manifest-affecting-ui.md
+  - name: Exiger des éditions PowerShell spécifiques
+    items:
+    - name: Écriture de scripts avec prise en charge des éditions PowerShell
+      href: concepts/script-psedition-support.md
+    - name: Écriture de modules avec prise en charge des éditions PowerShell
+      href: concepts/module-psedition-support.md
+  - name: Exiger l’acceptation de la licence
+    items:
+    - name: Exiger l’acceptation de la licence pour les scripts
+      href: concepts/script-license-acceptance.md
+    - name: Exiger l’acceptation de la licence pour les modules
+      href: concepts/module-license-acceptance.md
+  - name: Définition des éléments en tant que version préliminaire
+    items:
+    - name: Définition d’un module en tant que version préliminaire
+      href: concepts/module-prerelease-support.md
+    - name: Définition d’un script en tant que version préliminaire
+      href: concepts/script-prerelease-support.md
+  - name: Profil de règle PSScriptAnalyzer
+    href: concepts/scriptanalyzer-rule-profile.md
 - name: Obtenir de l'aide
   items:
-    - name: Signaler un abus
-      href: how-to/getting-support/report-abuse.md
-    - name: Règlement des litiges
-      href: how-to/getting-support/dispute-resolution.md
-    - name: Établissement d’un contact avec les administrateurs
-      href: how-to/getting-support/contacting-administrators.md
-    - name: Résolution des problèmes
-      href: how-to/getting-support/troubleshooting-cmdlets.md
-    - name: Démarrage du fournisseur NuGet et de NuGet.exe
-      href: how-to/getting-support/bootstrapping-nuget.md
-    - name: "Conformité\_RGPD"
-      href: how-to/getting-support/gdpr-dsr-policy.md
+  - name: Signaler un abus
+    href: how-to/getting-support/report-abuse.md
+  - name: Règlement des litiges
+    href: how-to/getting-support/dispute-resolution.md
+  - name: Établissement d’un contact avec les administrateurs
+    href: how-to/getting-support/contacting-administrators.md
+  - name: Résolution des problèmes
+    href: how-to/getting-support/troubleshooting-cmdlets.md
+  - name: Démarrage du fournisseur NuGet et de NuGet.exe
+    href: how-to/getting-support/bootstrapping-nuget.md
+  - name: Conformité RGPD
+    href: how-to/getting-support/gdpr-dsr-policy.md
 - name: FAQ sur la galerie
   href: faqs.md
 - name: Applets de commande PowerShellGet
-  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
+  href: https://docs.microsoft.com/powershell/module/powershellget/
+ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522920"
