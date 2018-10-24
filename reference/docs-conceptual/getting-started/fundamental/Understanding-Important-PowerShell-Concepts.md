@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,applet de commande
 title: Présentation des concepts importants de PowerShell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353192"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850995"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Présentation des concepts importants de PowerShell
 
@@ -23,7 +23,7 @@ Si vous avez utilisé des outils de traitement de texte pour traiter des donnée
 
 ## <a name="the-command-family-is-extensible"></a>La famille de commandes est extensible
 
-Des interfaces telles que **Cmd.exe** n’offrent aucun moyen d’étendre directement le jeu de commandes intégré. Vous pouvez créer des outils en ligne de commande externes qui s’exécutent dans **cmd.exe**. Mais ces outils externes ne proposent pas de services comme l’intégration de l’aide. **cmd.exe**ne sait pas automatiquement que ces outils externes sont des commandes valides.
+Les interfaces telles que **cmd.exe** n’offrent aucun moyen d’étendre directement le jeu de commandes intégré. Vous pouvez créer des outils en ligne de commande externes qui s’exécutent dans **cmd.exe**. Mais ces outils externes ne proposent pas de services comme l’intégration de l’aide. **cmd.exe** ne sait pas automatiquement que ces outils externes sont des commandes valides.
 
 Les commandes natives dans PowerShell sont appelées *cmdlets* (prononcé applets de commande). Vous pouvez créer vos propres modules et fonctions de cmdlets à l’aide de codes ou de scripts compilés. Les modules peuvent ajouter des cmdlets et des fournisseurs à l’interpréteur de commandes. PowerShell prend également en charge des scripts analogues à ceux de l’interpréteur de commande UNIX et aux fichiers de traitement **cmd.exe**.
 

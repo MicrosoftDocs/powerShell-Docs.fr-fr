@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Changement de l’état de l’ordinateur
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 4b5b4adb349dd8036117c364ed2ebb1ffaf8c88f
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267883"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851081"
 ---
 # <a name="changing-computer-state"></a>Changement de l’état de l’ordinateur
 
@@ -52,14 +52,20 @@ L’arrêt et le redémarrage d’ordinateurs sont généralement des tâches de
 
 Vous pouvez également exécuter des opérations d’arrêt et de redémarrage directement depuis Windows PowerShell.
 
-Pour arrêter l’ordinateur, utilisez la commande stop-computer
+Pour arrêter l’ordinateur, utilisez la commande Stop-Computer
 
 ```powershell
-stop-computer
+Stop-Computer
 ```
 
-Pour redémarrer le système d’exploitation, utilisez la commande restart-computer
+Pour redémarrer le système d’exploitation, utilisez la commande Restart-Computer
 
 ```powershell
-restart-computer
+Restart-Computer
+```
+
+Pour forcer un redémarrage immédiat de l’ordinateur, utilisez le paramètre -Force.
+
+```powershell
+Restart-Computer -Force
 ```

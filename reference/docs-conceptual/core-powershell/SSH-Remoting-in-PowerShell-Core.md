@@ -2,12 +2,12 @@
 title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133156"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851235"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
@@ -35,7 +35,7 @@ Pour Linux, installez SSH (y compris le serveur sshd) approprié pour votre plat
 
 ## <a name="set-up-on-windows-machine"></a>Configuration sur un ordinateur Windows
 
-1. Installez la dernière version de [PowerShell Core pour Windows]
+1. Installez la dernière version de [PowerShell Core pour Windows](../setup/installing-powershell-core-on-windows.md#msi)
 
    - Vous pouvez savoir si elle dispose de la prise en charge de l’accès distant SSH en examinant les ensembles de paramètres pour `New-PSSession`
 
@@ -47,7 +47,7 @@ Pour Linux, installez SSH (y compris le serveur sshd) approprié pour votre plat
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Installez la dernière version de [OpenSSH Win32] depuis GitHub en utilisant les instructions [d’installation]
+2. Installez la dernière version de [OpenSSH Win32](https://github.com/PowerShell/Win32-OpenSSH/releases) depuis GitHub en utilisant les instructions d’[installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 3. Ouvrez le fichier sshd_config à l’emplacement où vous avez installé OpenSSH Win32
 
    - Vérifiez que l’authentification par mot de passe est activée
@@ -91,8 +91,8 @@ Pour Linux, installez SSH (y compris le serveur sshd) approprié pour votre plat
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Configuration sur un ordinateur Linux (Ubuntu 14.04)
 
-1. Installez la dernière version [PowerShell Core pour Linux] à partir de GitHub
-2. Installez [Ubuntu SSH] si nécessaire
+1. Installez la dernière version [PowerShell Core pour Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) à partir de GitHub
+2. Installez [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) si nécessaire
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ Pour Linux, installez SSH (y compris le serveur sshd) approprié pour votre plat
 
 ## <a name="set-up-on-macos-machine"></a>Configuration sur un ordinateur MacOS
 
-1. Installez la dernière version de [PowerShell Core pour MacOS]
+1. Installez la dernière version de [PowerShell Core pour MacOS](../setup/installing-powershell-core-on-macos.md)
 
    - Vérifiez que l’accès distant SSH est activé en suivant ces étapes :
      - Ouvrez `System Preferences`
@@ -167,6 +167,14 @@ Pour Linux, installez SSH (y compris le serveur sshd) approprié pour votre plat
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>Authentification
+
+L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même.
+Cela signifie que les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell.
+Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique, doublée d’un mot de passe à usage unique pour une sécurité renforcée.
+La configuration de l’authentification multifacteur sort du cadre de cette documentation.
+Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
 
 ## <a name="powershell-remoting-example"></a>Exemple d’accès distant PowerShell
 
@@ -308,7 +316,5 @@ La commande sudo ne fonctionne pas dans une session distante sur un ordinateur L
 [PowerShell Core pour MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [OpenSSH Win32](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[Installation](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

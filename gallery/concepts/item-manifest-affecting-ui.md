@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268175"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532968"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste d’élément qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -44,6 +44,8 @@ Le tableau ci-dessous présente les éléments de l’interface utilisateur Powe
 | **Historique des versions** | L’historique des versions reflète les mises à jour apportées à un module dans PowerShell Gallery. Si une version d’un élément est masquée à l’aide de la fonctionnalité de suppression, elle n’apparaît pas dans l’historique des versions, sauf pour les propriétaires de l’élément. | Non | Non |
 | **Site du projet** | Le site du projet est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur ProjectURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .PROJECTURI. | Oui | Oui |
 | **Licence** | Le lien de la licence est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur LicenseURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .LICENSEURI. Il est important de noter que si une licence n’est pas fournie via LicenseURI ou dans un module, les conditions d’utilisation de PowerShell Gallery précisent les conditions d’utilisation de l’élément. Pour plus d’informations, consultez les conditions d’utilisation. | Oui | Oui |
+| **Icône** | Il est possible de spécifier une icône pour tout élément figurant dans PowerShell Gallery en fournissant l’indicateur IconURI dans le manifeste de script ou dans la section Privatedata-PSData du manifeste de module. IconURI doit pointer vers une image de 32 x 32 avec un arrière-plan transparent. L’URI **doit** être une URL d’image directe et **ne doit pas** accéder à une page web contenant l’image ou à un fichier du package PowerShell Gallery. | Oui | Oui |
+
 
 ## <a name="editing-item-details"></a>Modification des détails de l'élément
 

@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Création d’un compte PowerShell Gallery
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219563"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522824"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>Création d’un compte PowerShell Gallery
+# <a name="creating-a-powershell-gallery-account"></a>Création d’un compte PowerShell Gallery
 
-Un compte PowerShell Gallery doit être créé avant de publier quoi que ce soit dessus.
-Les comptes PowerShell Gallery doivent être liés à un compte de messagerie compatible Azure Active Directory ou un compte de messagerie Microsoft (avec un domaine outlook.com, hotmail.com, etc.)
+Vous devez créer un compte PowerShell Gallery avant de publier quoi que ce soit dans PowerShell Gallery.
+Les comptes PowerShell Gallery doivent être liés à un compte de connexion à extension messagerie. Ce compte peut être un compte Azure Active Directory ou un ID Microsoft, comme un compte de messagerie outlook.com ou hotmail.com.
 
-Pour créer un compte PowerShell Gallery, accédez à https://PowerShellGallery.com et cliquez sur « S’inscrire » (voir l’image ci-dessous).
+Pour créer un compte PowerShell Gallery, accédez à [https://PowerShellGallery.com](https://PowerShellGallery.com) et cliquez sur **Se connecter** (voir l’illustration suivante).
 
-![Créer un nouveau compte](../../Images/CreatingAccount-Register.png)
+![Créer un nouveau compte](../../Images/CreateAccount-Register.png)
 
-Sur la page suivante, sélectionnez « Compte professionnel ou scolaire » pour utiliser un compte Azure Active Directory et connectez-vous avec votre compte.
-Pour utiliser un compte Microsoft, par exemple avec un domaine Hotmail.com ou Outlook.com, choisissez « Compte personnel », puis connectez-vous.
+Pour utiliser un compte Azure Active Directory, sélectionnez **Compte professionnel ou scolaire**, puis connectez-vous avec votre compte. Pour utiliser un ID Microsoft, choisissez **Compte personnel** et connectez-vous.
 
-Une fois que vous êtes connecté, il vous est demandé de créer un nom d’utilisateur pour PowerShell Gallery.
-Passez en revue les liens des conditions d’utilisation et de la politique de confidentialité, saisissez un nom d’utilisateur, puis cliquez sur S’inscrire.
+Vous êtes ensuite invité à créer un nom d’utilisateur pour PowerShell Gallery. Examinez les conditions d’utilisation et la politique de confidentialité, entrez un nom d’utilisateur, puis cliquez sur **S’inscrire**.
 
-Remarque : Ce nom de compte ne peut pas être modifié une fois qu’il est créé.
-Consultez [Gestion des propriétaires d’éléments](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) pour plus d’informations à ce sujet.
+> [!NOTE]
+> Le nom de compte ne peut pas être modifié une fois qu’il est créé. Pour plus d’informations, consultez [Gestion des propriétaires d’éléments](managing-item-owners.md).
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Pratiques recommandées pour les comptes PowerShell Gallery
 
-Il est important que le compte de messagerie utilisé avec votre compte PowerShell Gallery soit surveillé activement.
-Toutes les communications avec les propriétaires des éléments PowerShell Gallery passent par l’adresse de messagerie associée à votre compte PowerShell Gallery.
-Si nous ne pouvons pas contacter un propriétaire d’élément, il peut être demandé à l’équipe des opérations de supprimer un élément dans certaines circonstances.
+Il est important de superviser activement le compte de messagerie utilisé avec votre compte PowerShell Gallery. Toutes les communications avec les propriétaires d’éléments PowerShell Gallery se font via cette adresse e-mail. Si l’équipe des opérations PowerShell Gallery ne peut pas contacter le propriétaire d’un élément, il se peut qu’il soit supprimé.
 
-Les organisations qui publient sur PowerShell Gallery créent souvent un compte unique à cet effet sur Outlook.com, ou un autre domaine de compte Microsoft.
-Dans de nombreux cas, ce compte n’est pas surveillé régulièrement.
-Dans ce cas, il est recommandé d’utiliser le transfert d’Outlook pour envoyer un courrier électronique à une autre adresse, appartenant généralement à l’organisation, qui est surveillée par les propriétaires de l’élément.
+Les organisations qui publient dans PowerShell Gallery créent souvent un compte externe unique à cet effet. Nous vous recommandons d’utiliser la fonctionnalité de transfert de courrier pour transférer les notifications à une adresse au sein de votre organisation.
 
-S’il existe plusieurs propriétaires associés un élément, toutes les communications provenant de PowerShell Gallery seront transmises à tous les propriétaires.
-Consultez [Gestion des propriétaires d’éléments](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners) pour plus d’informations sur l’ajout de propriétaires à un élément.
+Quand plusieurs propriétaires sont associés à un élément, toutes les notifications PowerShell Gallery sont envoyées à l’ensemble des propriétaires. Pour plus d’informations, consultez [Gestion des propriétaires d’éléments](managing-item-owners.md).

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268413"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48851322"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
@@ -327,7 +327,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
    Modifiez le port par défaut si un autre site web utilise déjà le port 443 ou si vous avez d’autres raisons d’ordre sécuritaire. Si un autre site web qui s’exécute sur votre serveur de passerelle utilise votre port sélectionné, un avertissement s’affiche quand vous cliquez sur **OK** dans la boîte de dialogue **Ajouter un site Web**. Vous devez utiliser un port inutilisé pour exécuter Accès Web Windows PowerShell.
 
-1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **www.contoso.com**. Cliquez sur **OK**.
+1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **`www.contoso.com`**. Cliquez sur **OK**.
 
 1. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
 
@@ -406,7 +406,7 @@ Pour un environnement de production sécurisé, utilisez toujours un certificat 
    - Cliquez sur **Importer** pour importer un certificat existant valide depuis un emplacement sur votre réseau.
    - Cliquez sur **Créer une demande de certificat** pour demander un certificat auprès d’une autorité de certification comme [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/) ou [GeoTrust](https://www.geotrust.com/). Le nom courant du certificat doit correspondre à l’en-tête d’hôte dans la demande.
 
-     Par exemple, si le navigateur client demande http://www.contoso.com/, le nom commun doit également être http://www.contoso.com/. Il s’agit de l’option recommandée la plus sécurisée pour fournir un certificat à la passerelle Accès Web Windows PowerShell.
+     Par exemple, si le navigateur client demande `http://www.contoso.com/`, le nom commun doit également être `http://www.contoso.com/`. Il s’agit de l’option recommandée la plus sécurisée pour fournir un certificat à la passerelle Accès Web Windows PowerShell.
 
    - Cliquez sur **Créer un certificat auto-signé** pour créer un certificat que vous pouvez utiliser immédiatement, puis faire signer ultérieurement par une autorité de certification si besoin. Spécifiez un nom convivial pour le certificat auto-signé, comme **Accès Web Windows PowerShell**. Cette option est considérée comme non sécurisée et recommandée uniquement dans un environnement de test privé.
 

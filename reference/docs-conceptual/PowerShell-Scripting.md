@@ -2,16 +2,16 @@
 ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Scripts PowerShell
-ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133991"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851184"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell est un interpréteur de ligne de commande et langage de script qui repose sur le .NET Framework.
+PowerShell est un interpréteur de ligne de commande et langage de script qui repose sur la technologie.NET.
 PowerShell permet aux administrateurs système et aux utilisateurs avancés d’automatiser rapidement les tâches qui administrent les systèmes d’exploitation (Linux, macOS et Windows) et les processus.
 
 Les commandes PowerShell vous permettent de gérer les ordinateurs à partir de la ligne de commande. Les fournisseurs PowerShell vous permettent d’accéder à des magasins de données, par exemple le Registre et le magasin de certificats, aussi facilement que si vous accédiez au système de fichiers. PowerShell inclut un analyseur d’expression avancé et un langage de script entièrement développé.

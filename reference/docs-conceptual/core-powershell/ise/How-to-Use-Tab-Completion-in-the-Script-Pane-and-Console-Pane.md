@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
-ms.openlocfilehash: e1f8146b6113a82fd3d857c98550ec2e459715a4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954923"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851133"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande
 
@@ -23,7 +23,7 @@ Dans le volet Commande ou Script, tapez quelques caractères d’une commande, p
 
 ## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>Pour compléter automatiquement une entrée de paramètre d’applet de commande
 
-Dans le volet Commande ou Script, tapez une applet de commande suivie d’un tiret (ou trait-d’union), puis appuyez sur la touche TAB.
+Dans le volet Commande ou Script, tapez une applet de commande suivie d’un tiret, puis appuyez sur la touche de tabulation.
 
 Par exemple, tapez `Get-Process -` puis appuyez sur la touche TAB plusieurs fois pour afficher successivement chacun des paramètres de l’applet de commande.
 

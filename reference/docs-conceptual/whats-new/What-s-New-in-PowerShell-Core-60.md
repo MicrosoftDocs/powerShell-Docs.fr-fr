@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587242"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289240"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -80,7 +80,7 @@ Un certain nombre de modifications ont été apportées à macOS et Linux pour p
   - Le chemin d’enregistrement de l’historique se trouve dans `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - Le chemin du module utilisateur se trouve dans `~/.local/share/powershell/Modules`
 - Prise en charge des noms de fichier et de dossier qui contiennent le caractère deux-points sous Unix. (#4959)
-- Prise en charge des noms de script ou des chemins complets qui contiennent des virgules. (#4136) (merci à @TimCurwick !)
+- Prise en charge des noms de script ou des chemins complets qui contiennent des virgules. (#4136) (merci à [@TimCurwick](https://github.com/TimCurwick) !)
 - Détection de l’utilisation de `-LiteralPath` afin de supprimer le développement des caractères génériques pour les applets de commande de navigation. (#5038)
 - Mise à jour de `Get-ChildItem` pour fonctionner de manière plus similaire aux commandes natives *nix `ls -R` et Windows `DIR /S`.
   `Get-ChildItem` retourne désormais les liens symboliques rencontrés lors d’une recherche récursive et n’effectue aucune recherche dans les répertoires ciblés par ces liens. (#3780)
@@ -118,7 +118,7 @@ Autres modifications apportées à `pwsh(.exe)` par rapport à `powershell.exe` 
   Toutefois, cette modification nécessite que vous indiquiez explicitement `-c` ou `-Command` quand vous essayez d’exécuter des commandes telles que `pwsh.exe -Command Get-Command`. (#4019)
 - PowerShell Core accepte le commutateur `-i` (ou `-Interactive`) pour indiquer un shell interactif. (#3558) Cela permet d’utiliser PowerShell comme shell par défaut sur les plateformes Unix.
 - Paramètres `-importsystemmodules` et `-psconsoleFile` supprimés de `pwsh.exe`. (#4995)
-- Modification de `pwsh -version` et de l’aide intégrée pour `pwsh.exe` afin de s’aligner sur les autres outils natifs. (#4958 et #4931) (merci @iSazonov)
+- Modification de `pwsh -version` et de l’aide intégrée pour `pwsh.exe` afin de s’aligner sur les autres outils natifs. (#4958 & #4931) (merci [@iSazonov](https://github.com/iSazonov))
 - Messages d’erreur d’arguments non valides pour `-File` et `-Command`, et codes de sortie conformes aux normes Unix (#4573)
 - Ajout du paramètre `-WindowStyle` sur Windows. (#4573) De même, les mises à jour des installations basées sur le package sur des plateformes non-Windows sont des mises à jour sur place.
 
@@ -214,21 +214,21 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 
 ## <a name="semantic-versioning"></a>Gestion sémantique de version
 
-- `SemanticVersion` est devenu compatible avec `SemVer 2.0`. (#5037) (merci @iSazonov !)
-- Remplacement de la valeur `ModuleVersion` par défaut dans `New-ModuleManifest` par `0.0.1` pour s’aligner sur SemVer. (#4842) (merci @LDSpits)
-- Ajout de `semver` comme accélérateur de type pour `System.Management.Automation.SemanticVersion`. (#4142) (merci à @oising !)
+- `SemanticVersion` est devenu compatible avec `SemVer 2.0`. (#5037) (merci [@iSazonov](https://github.com/iSazonov) !)
+- Remplacement de la valeur `ModuleVersion` par défaut dans `New-ModuleManifest` par `0.0.1` pour s’aligner sur SemVer. (#4842) (merci [@LDSpits](https://github.com/LDSpits))
+- Ajout de `semver` comme accélérateur de type pour `System.Management.Automation.SemanticVersion`. (#4142) (merci à [@oising](https://github.com/oising) !)
 - Activation de la comparaison entre une instance `SemanticVersion` et une instance `Version` qui est construite uniquement avec les valeurs de version `Major` et `Minor`.
 
 ## <a name="language-updates"></a>Mises à jour du langage
 
-- Implémentation de l’analyse de la séquence d’échappement Unicode afin que les utilisateurs puissent utiliser des caractères Unicode comme arguments, chaînes ou noms de variables. (#3958) (merci à @rkeithhill !)
+- Implémentation de l’analyse de la séquence d’échappement Unicode afin que les utilisateurs puissent utiliser des caractères Unicode comme arguments, chaînes ou noms de variables. (#3958) (merci à [@rkeithhill](https://github.com/rkeithhill) !)
 - Ajout d’un nouveau caractère d’échappement pour Échap :`` `e``
-- Ajout de la prise en charge de la conversion des enums en chaîne (#4318) (merci @KirkMunro)
+- Ajout de la prise en charge de la conversion des enums en chaîne (#4318) (merci [@KirkMunro](https://github.com/KirkMunro))
 - Correction du cast d’un seul tableau d’éléments en une collection générique. (#3170)
-- Ajout d’une surcharge de plage de caractères à l’opérateur `..` de sorte que `'a'..'z'` retourne les caractères 'a' à 'z'. (#5026) (merci @IISResetMe !)
+- Ajout d’une surcharge de plage de caractères à l’opérateur `..` de sorte que `'a'..'z'` retourne les caractères 'a' à 'z'. (#5026) (merci [@IISResetMe](https://github.com/IISResetMe) !)
 - Correction d’une attribution de variable pour ne pas écraser des variables en lecture seule
 - Transmission des variables locales de variables automatiques à 'DottedScopes' lors de l’exécution des applets de commande de script dans l’étendue actuelle (#4709)
-- Activation de l’utilisation de l’option « Singleline, Multiline » dans l’opérateur de fractionnement (#4721) (merci @iSazonov)
+- Activation de l’utilisation de l’option « Singleline, Multiline » dans l’opérateur de fractionnement (#4721) (merci [@iSazonov](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Mises à jour du moteur
 
@@ -240,12 +240,12 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
   - `Platform` : valeur retournée par `[System.Environment]::OSVersion.Platform` qui est égale à `Win32NT` sur Windows, `Unix` sur macOS et `Unix` sur Linux.
 - Suppression de la propriété `BuildVersion` de `$PSVersionTable`.
   Cette propriété était fortement liée à la version de build Windows.
-  Au lieu de cela, nous vous recommandons d’utiliser `GitCommitId` pour récupérer la version de build exacte de PowerShell Core. (#3877) (merci à @iSazonov !)
+  Au lieu de cela, nous vous recommandons d’utiliser `GitCommitId` pour récupérer la version de build exacte de PowerShell Core. (#3877) (merci à [@iSazonov](https://github.com/iSazonov) !)
 - Suppression de la propriété `ClrVersion` de `$PSVersionTable`.
   Cette propriété n’est pas pertinente pour .NET Core et y a été conservée uniquement pour des raisons d’héritage spécifiques qui ne s’appliquent pas à PowerShell.
 - Ajout de trois nouvelles variables automatiques pour déterminer si PowerShell est exécuté dans un système d’exploitation particulier : `$IsWindows`, `$IsMacOs` et `$IsLinux`.
 - Ajout de `GitCommitId` à la bannière PowerShell Core.
-  Maintenant, vous n’êtes pas obligé d’exécuter `$PSVersionTable` dès que vous démarrez PowerShell pour obtenir la version ! (#3916) (merci à @iSazonov !)
+  Maintenant, vous n’êtes pas obligé d’exécuter `$PSVersionTable` dès que vous démarrez PowerShell pour obtenir la version ! (#3916) (merci à [@iSazonov](https://github.com/iSazonov) !)
 - Ajout d’un fichier de configuration JSON appelé `powershell.config.json` dans `$PSHome` pour stocker des paramètres requis avant l’heure de démarrage (par exemple, `ExecutionPolicy`).
 - Pas de blocage du pipeline lors de l’exécution des fichiers EXE Windows
 - Activation de l’énumération des collections COM. (#4553)
@@ -255,93 +255,93 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 ### <a name="new-cmdlets"></a>Nouvelles applets de commande
 
 - Ajout de `Get-Uptime` à `Microsoft.PowerShell.Utility`.
-- Ajout de la commande `Remove-Alias`. (#5143) (merci @PowershellNinja !)
-- Ajout de `Remove-Service` au module de gestion. (#4858) (merci @joandrsn !)
+- Ajout de la commande `Remove-Alias`. (#5143) (merci [@PowershellNinja](https://github.com/PowershellNinja) !)
+- Ajout de `Remove-Service` au module de gestion. (#4858) (merci [@joandrsn](https://github.com/joandrsn) !)
 
 ### <a name="web-cmdlets"></a>Applets de commande web
 
-- Ajout de la prise en charge de l’authentification par certificat pour les applets de commande web. (#4646) (merci @markekraus)
-- Ajout de la prise en charge des en-têtes de contenu aux applets de commande web. (#4494 et #4640) (merci @markekraus)
-- Ajout de la prise en charge de plusieurs en-têtes de liens aux applets de commande web. (#5265) (merci @markekraus !)
+- Ajout de la prise en charge de l’authentification par certificat pour les applets de commande web. (#4646) (merci [@markekraus](https://github.com/markekraus))
+- Ajout de la prise en charge des en-têtes de contenu aux applets de commande web. (#4494 & #4640) (merci [@markekraus](https://github.com/markekraus))
+- Ajout de la prise en charge de plusieurs en-têtes de liens aux applets de commande web. (#5265) (merci [@markekraus](https://github.com/markekraus) !)
 - Prise en charge de la pagination des en-têtes de liens dans les applets de commande web (#3828)
   - Pour `Invoke-WebRequest`, quand la réponse inclut un en-tête de lien, nous créons une propriété RelationLink sous forme d’un dictionnaire qui représente les URL et les attributs `rel`, puis vérifions que les URL sont absolues pour que le développeur puisse les utiliser plus facilement.
   - Pour `Invoke-RestMethod`, quand la réponse inclut un en-tête de lien, nous présentons un commutateur `-FollowRelLink` pour suivre automatiquement les liens `next` `rel` jusqu’à ce qu’ils n’existent plus ou que nous ayons atteint la valeur du paramètre `-MaximumFollowRelLink` facultative.
-- Ajout du paramètre `-CustomMethod` aux applets de commande web pour autoriser les verbes de méthode non standard. (#3142) (merci à @Lee303 !)
-- Ajout de la prise en charge de `SslProtocol` aux applets de commande web. (#5329) (merci @markekraus !)
-- Ajout de la prise en charge de Multipart aux applets de commande web. (#4782) (merci @markekraus)
-- Ajout de `-NoProxy` aux applets de commande web afin qu’elles ignorent le paramètre de proxy à l’échelle du système. (#3447) (merci à @TheFlyingCorpse !)
-- L’agent utilisateur des applets de commande web signale désormais la plateforme du système d’exploitation (#4937) (merci @LDSpits)
+- Ajout du paramètre `-CustomMethod` aux applets de commande web pour autoriser les verbes de méthode non standard. (#3142) (merci à [@Lee303](https://github.com/Lee303) !)
+- Ajout de la prise en charge de `SslProtocol` aux applets de commande web. (#5329) (merci [@markekraus](https://github.com/markekraus) !)
+- Ajout de la prise en charge de Multipart aux applets de commande web. (#4782) (merci [@markekraus](https://github.com/markekraus))
+- Ajout de `-NoProxy` aux applets de commande web afin qu’elles ignorent le paramètre de proxy à l’échelle du système. (#3447) (merci à [@TheFlyingCorpse](https://github.com/TheFlyingCorpse) !)
+- L’agent utilisateur des applets de commande web signale désormais la plateforme du système d’exploitation (#4937) (merci [@LDSpits](https://github.com/LDSpits))
 - Ajout du commutateur `-SkipHeaderValidation` aux applets de commande web pour prendre en charge l’ajout d’en-têtes sans valider la valeur d’en-tête. (#4085)
 - Autorisation aux applets de commande web de ne pas valider le certificat HTTPS du serveur si nécessaire.
-- Ajout de paramètres d’authentification aux applets de commande web. (#5052) (merci @markekraus)
+- Ajout de paramètres d’authentification aux applets de commande web. (#5052) (merci [@markekraus](https://github.com/markekraus))
   - Ajout de `-Authentication` qui offre trois options : Basic, OAuth et Bearer.
   - Ajout de `-Token` pour obtenir le jeton du porteur pour les options OAuth et Bearer.
   - Ajout de `-AllowUnencryptedAuthentication` pour contourner l’authentification qui est fournie pour n’importe quel schéma de transport autre que HTTPS.
-- Ajout de `-ResponseHeadersVariable` à `Invoke-RestMethod` pour activer la capture des en-têtes de réponse. (#4888) (merci @markekraus)
+- Ajout de `-ResponseHeadersVariable` à `Invoke-RestMethod` pour activer la capture des en-têtes de réponse. (#4888) (merci [@markekraus](https://github.com/markekraus))
 - Correction des applets de commande web pour inclure la réponse HTTP dans l’exception quand le code d’état de réponse n’indique pas une réussite. (#3201)
-- Remplacement des applets de commande web `UserAgent` `WindowsPowerShell` par `PowerShell`. (#4914) (merci @markekraus)
+- Remplacement des applets de commande web `UserAgent` `WindowsPowerShell` par `PowerShell`. (#4914) (merci [@markekraus](https://github.com/markekraus))
 - Ajout d’une détection `ContentType` explicite à `Invoke-RestMethod` (#4692)
-- Correction des applets de commande web `-SkipHeaderValidation` pour utiliser des en-têtes d’agent utilisateur non standard. (#4479 et #4512) (merci @markekraus)
+- Correction des applets de commande web `-SkipHeaderValidation` pour utiliser des en-têtes d’agent utilisateur non standard. (#4479 & #4512) (merci [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>Applets de commande JSON
 
-- Ajout de `-AsHashtable` à `ConvertFrom-Json` pour retourner `Hashtable` à la place. (#5043) (merci @bergmeister !)
+- Ajout de `-AsHashtable` à `ConvertFrom-Json` pour retourner `Hashtable` à la place. (#5043) (merci [@bergmeister](https://github.com/bergmeister) !)
 - Utilisation d’un formateur amélioré avec une sortie `ConvertTo-Json`. (#2787) (merci à @kittholland !)
 - Ajout de la prise en charge de sérialisation `Jobject` à `ConvertTo-Json`. (#5141)
 - Correction de `ConvertFrom-Json` pour désérialiser un tableau de chaînes provenant du pipeline qui créent ensemble une chaîne JSON complète.
   Cela résout certains cas où les nouvelles lignes pourraient arrêter l’analyse JSON. (#3823)
 - Suppression de la propriété `AliasProperty "Count"` définie pour `System.Array`.
-  Cette opération supprime la propriété `Count` superflue sur certaines sorties `ConvertFrom-Json`. (#3231) (merci à @PetSerAl !)
+  Cette opération supprime la propriété `Count` superflue sur certaines sorties `ConvertFrom-Json`. (#3231) (merci à [@PetSerAl](https://github.com/PetSerAl) !)
 
 ### <a name="csv-cmdlets"></a>Applets de commande CSV
 
-- Ajout de la prise en charge de `PSTypeName` pour `Import-Csv` et `ConvertFrom-Csv`. (#5389) (merci @markekraus !)
-- `Import-Csv` doit prendre en charge `CR`, `LF` et `CRLF` comme séparateurs de ligne. (#5363) (merci @iSazonov !)
-- `-NoTypeInformation` doit être la valeur par défaut sur `Export-Csv` et `ConvertTo-Csv`. (#5164) (merci @markekraus)
+- Ajout de la prise en charge de `PSTypeName` pour `Import-Csv` et `ConvertFrom-Csv`. (#5389) (merci [@markekraus](https://github.com/markekraus) !)
+- `Import-Csv` doit prendre en charge `CR`, `LF` et `CRLF` comme séparateurs de ligne. (#5363) (merci [@iSazonov](https://github.com/iSazonov) !)
+- `-NoTypeInformation` doit être la valeur par défaut sur `Export-Csv` et `ConvertTo-Csv`. (#5164) (merci [@markekraus](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Applets de commande de service
 
-- Ajout des propriétés `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName` et `StartupType` aux objets `ServiceController` retournés par `Get-Service`. (#4907) (merci @joandrsn)
-- Ajout de fonctionnalités pour définir les informations d’identification sur la commande `Set-Service`. (#4844) (merci @joandrsn)
+- Ajout des propriétés `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName` et `StartupType` aux objets `ServiceController` retournés par `Get-Service`. (#4907) (merci [@joandrsn](https://github.com/joandrsn))
+- Ajout de fonctionnalités pour définir les informations d’identification sur la commande `Set-Service`. (#4844) (merci [@joandrsn](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Autres applets de commande
 
 - Ajout d’un paramètre à `Get-ChildItem` appelé `-FollowSymlink` qui traverse les liens symboliques à la demande, avec des recherches de boucles de liens. (#4020)
-- Mise à jour de `Add-Type` pour prendre en charge `CSharpVersion7`. (#3933) (merci à @iSazonov)
+- Mise à jour de `Add-Type` pour prendre en charge `CSharpVersion7`. (#3933) (merci à [@iSazonov](https://github.com/iSazonov))
 - Suppression du module `Microsoft.PowerShell.LocalAccounts` en raison de l’utilisation des API non prises en charge jusqu’à ce qu’une meilleure solution soit trouvée. (#4302)
 - Suppression des applets de commande `*-Counter` dans `Microsoft.PowerShell.Diagnostics` en raison de l’utilisation des API non prises en charge jusqu’à ce qu’une meilleure solution soit trouvée. (#4303)
 - Ajout de la prise en charge de `Invoke-Item -Path <folder>`. (#4262)
-- Ajout des commutateurs `-Extension` et `-LeafBase` à `Split-Path` afin que vous puissiez fractionner les chemins entre l’extension de nom de fichier et le reste du nom de fichier. (#2721) (merci à @powercode !)
+- Ajout des commutateurs `-Extension` et `-LeafBase` à `Split-Path` afin que vous puissiez fractionner les chemins entre l’extension de nom de fichier et le reste du nom de fichier. (#2721) (merci à [@powercode](https://github.com/powercode) !)
 - Ajout des paramètres `-Top` et `-Bottom` à `Sort-Object` pour un tri N haut/bas
-- Exposition du processus parent d’un processus en ajoutant `CodeProperty "Parent"` à `System.Diagnostics.Process`. (#2850) (merci à @powercode !)
+- Exposition du processus parent d’un processus en ajoutant `CodeProperty "Parent"` à `System.Diagnostics.Process`. (#2850) (merci à [@powercode](https://github.com/powercode) !)
 - Utilisation de Mo au lieu de Ko pour les colonnes de mémoire de `Get-Process`
-- Ajout du commutateur `-NoNewLine` pour `Out-String`. (#5056) (merci @raghav710)
+- Ajout du commutateur `-NoNewLine` pour `Out-String`. (#5056) (merci [@raghav710](https://github.com/raghav710))
 - L’applet de commande `Move-Item` honore les paramètres `-Include`, `-Exclude` et `-Filter`. (#3878)
 - Autorisation d’utiliser `*` dans le chemin du Registre pour `Remove-Item`. (#4866)
 - Ajout de `-Title` à `Get-Credential` et unification de l’expérience des invites sur plusieurs plateformes.
 - Ajout du paramètre `-TimeOut` à `Test-Connection`. (#2492)
 - Les applets de commande `Get-AuthenticodeSignature` peuvent désormais obtenir un horodatage de signature de fichier. (#4061)
 - Suppression du commutateur `-ShowWindow` non pris en charge de `Get-Help`. (#4903)
-- Correction de `Get-Content -Delimiter` pour ne pas inclure le séparateur dans les éléments de tableau retournés (#3706) (merci @mklement0)
-- Ajout des paramètres `Meta`, `Charset` et `Transitional` à `ConvertTo-HTML` (#4184) (merci @ergo3114)
+- Correction de `Get-Content -Delimiter` pour ne pas inclure le séparateur dans les éléments de tableau retournés (#3706) (merci [@mklement0](https://github.com/mklement0))
+- Ajout des paramètres `Meta`, `Charset` et `Transitional` à `ConvertTo-HTML` (#4184) (merci [@ergo3114](https://github.com/ergo3114))
 - Ajout des propriétés `WindowsUBR` et `WindowsVersion` au résultat `Get-ComputerInfo`
 - Ajout du paramètre `-Group` à `Get-Verb`
-- Ajout de la prise en charge de `ShouldProcess` à `New-FileCatalog` et `Test-FileCatalog` (correctifs `-WhatIf` et `-Confirm`). (#3074) (merci à @iSazonov !)
-- Ajout du commutateur `-WhatIf` à l’applet de commande `Start-Process` (#4735) (merci @sarithsutha)
+- Ajout de la prise en charge de `ShouldProcess` à `New-FileCatalog` et `Test-FileCatalog` (correctifs `-WhatIf` et `-Confirm`). (#3074) (merci à [@iSazonov](https://github.com/iSazonov) !)
+- Ajout du commutateur `-WhatIf` à l’applet de commande `Start-Process` (#4735) (merci [@sarithsutha](https://github.com/sarithsutha))
 - Ajout de `ValidateNotNullOrEmpty` à de nombreux paramètres existants.
 
 ## <a name="tab-completion"></a>Saisie semi-automatique via la touche Tab
 
-- Inférence de type améliorée dans la saisie semi-automatique via la touche Tab en fonction des valeurs de variables d’exécution. (#2744) (merci à @powercode !) Cela permet la saisie semi-automatique via la touche Tab dans des situations comme :
+- Inférence de type améliorée dans la saisie semi-automatique via la touche Tab en fonction des valeurs de variables d’exécution. (#2744) (merci à [@powercode](https://github.com/powercode) !) Cela permet la saisie semi-automatique via la touche Tab dans des situations comme :
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Ajout de la saisie semi-automatique via la touche Tab de table de hachage pour `-Property` de `Select-Object`. (#3625) (merci à @powercode !)
-- Activation de la saisie semi-automatique d’argument pour `-ExcludeProperty` et `-ExpandProperty` de `Select-Object`. (#3443) (merci à @iSazonov !)
-- Correction d’un bogue dans la saisie semi-automatique via la touche Tab pour que `native.exe --<tab>` puisse appeler l’intégralité du code natif. (#3633) (merci à @powercode !)
+- Ajout de la saisie semi-automatique via la touche Tab de table de hachage pour `-Property` de `Select-Object`. (#3625) (merci à [@powercode](https://github.com/powercode))
+- Activation de la saisie semi-automatique d’argument pour `-ExcludeProperty` et `-ExpandProperty` de `Select-Object`. (#3443) (merci à [@iSazonov](https://github.com/iSazonov) !)
+- Correction d’un bogue dans la saisie semi-automatique via la touche Tab pour que `native.exe --<tab>` puisse appeler l’intégralité du code natif. (#3633) (merci à [@powercode](https://github.com/powercode) !)
 
 ## <a name="breaking-changes"></a>Modifications avec rupture
 
@@ -373,14 +373,14 @@ Pour obtenir une liste complète des correctifs et modifications, consultez notr
   - la plateforme du système d’exploitation (`$PSVersionTable.OSDescription`)
   - la version exacte de PowerShell (`$PSVersionTable.GitCommitId`)
 
-Si vous souhaitez désactiver cette télémétrie, supprimez simplement `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` ou créez une variable d’environnement `POWERSHELL_TELEMETRY_OPTOUT` avec l’une des valeurs suivantes : `true`, `1` ou `yes`.
-La suppression de ce fichier ou la création de la variable permet d’ignorer toutes les données de télémétrie avant même la première exécution de PowerShell.
+Si vous souhaitez désactiver cette télémétrie, créez simplement une variable d’environnement `POWERSHELL_TELEMETRY_OPTOUT` avec l’une des valeurs suivantes : `true`, `1` ou `yes`.
+La création de la variable permet d’ignorer toutes les données de télémétrie avant même la première exécution de PowerShell.
 Nous prévoyons également d’exposer ces données de télémétrie et les analyses recueillies de la télémétrie dans le [tableau de bord de la communauté][community-dashboard].
 Vous trouverez plus d’informations sur la façon dont nous utilisons ces données dans ce [billet de blog][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
