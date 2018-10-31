@@ -181,14 +181,10 @@ items:
     href: getting-started/cookbooks/changing-computer-state.md
   - name: Collecte d’informations sur les ordinateurs
     href: getting-started/cookbooks/collecting-information-about-computers.md
-  - name: Création d’objets .NET et COM - New-Object
-    href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
   - name: Création d’une zone d’entrée personnalisée
     href: getting-started/cookbooks/creating-a-custom-input-box.md
   - name: Création d'un sélecteur de dates graphique
     href: getting-started/cookbooks/creating-a-graphical-date-picker.md
-  - name: Obtention d’objets WMI - Get-WmiObject
-    href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
   - name: Gestion de l’emplacement actuel
     href: getting-started/cookbooks/managing-current-location.md
   - name: Gestion des processus avec les applets de commande Process
@@ -207,20 +203,10 @@ items:
     href: getting-started/cookbooks/performing-networking-tasks.md
   - name: Redirection de données à l’aide d’applets de commande Out
     href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
-  - name: Suppression d’objets du pipeline - Where-Object
-    href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
-  - name: Répétition d’une tâche pour plusieurs objets - ForEach-Object
-    href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
   - name: Sélection d’éléments dans une zone de liste
     href: getting-started/cookbooks/selecting-items-from-a-list-box.md
-  - name: Sélection de parties d’objets - Select-Object
-    href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
-  - name: Tri d’objets
-    href: getting-started/cookbooks/sorting-objects.md
   - name: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
     href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
-  - name: Utilisation de classes et de méthodes statiques
-    href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Affichage de structure d’objets - Get-Member
     href: getting-started/cookbooks/viewing-object-structure--get-member-.md
   - name: Utilisation de fichiers et de dossiers
@@ -229,6 +215,21 @@ items:
     href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
   - name: Utilisation d’objets
     href: getting-started/cookbooks/working-with-objects.md
+    items:
+    - name: Obtention d’objets WMI - Get-WmiObject
+      href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+    - name: Création d’objets .NET et COM - New-Object
+      href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+    - name: Suppression d’objets du pipeline - Where-Object
+      href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+    - name: Sélection de parties d’objets - Select-Object
+      href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+    - name: Tri d’objets
+      href: getting-started/cookbooks/sorting-objects.md
+    - name: Répétition d’une tâche pour plusieurs objets - ForEach-Object
+      href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+    - name: Utilisation de classes et de méthodes statiques
+      href: getting-started/cookbooks/using-static-classes-and-methods.md
   - name: Utilisation d’imprimantes
     href: getting-started/cookbooks/working-with-printers.md
   - name: Utilisation d’entrées de Registre
@@ -241,9 +242,9 @@ items:
     href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
   - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
     href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 426f1336debdcd8b74b9e1954cebe49bfa7c82ea
-ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
+ms.openlocfilehash: e1cc2802354cbb58a8d4cc19903a62339aa333b5
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557141"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225741"
