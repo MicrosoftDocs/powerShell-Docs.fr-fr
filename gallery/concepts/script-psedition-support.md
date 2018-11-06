@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Écrire des scripts avec des éditions de PowerShell compatibles
-ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587208"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002409"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Écrire des scripts avec des éditions de PowerShell compatibles
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>Plus d’informations
 
 - [Modules avec des éditions PS](module-psedition-support.md)
-- [Prise en charge des éditions PS sur PowerShellGallery](../how-to/finding-items/searching-by-psedition.md)
+- [Prise en charge des éditions PS sur PowerShellGallery](../how-to/finding-packages/searching-by-psedition.md)
