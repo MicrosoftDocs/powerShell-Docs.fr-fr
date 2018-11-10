@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Paramètres de compte PowerShell Gallery
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523135"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002784"
 ---
 # <a name="powershell-gallery-account-settings"></a>Paramètres de compte PowerShell Gallery
 
@@ -21,7 +21,7 @@ PowerShell Gallery présente les paramètres de compte suivants :
 - Le compte d’utilisateur associé à votre compte PowerShell Gallery
 - L’image associée à votre compte PowerShell Gallery
 
-## <a name="email-address"></a>Adresse e-mail
+## <a name="email-address"></a>Adresse de messagerie
 
 L’adresse e-mail est la destination des notifications de PowerShell Gallery. Elle ne doit pas nécessairement correspondre au compte de connexion. Vous pouvez utiliser n’importe quel compte de messagerie auquel vous avez accès. PowerShell Gallery ne communique jamais directement votre adresse e-mail à d’autres utilisateurs.
 
@@ -34,12 +34,12 @@ Quand vous entrez une nouvelle adresse e-mail, PowerShell Gallery envoie un mess
 PowerShell Gallery propose les options de notification suivantes :
 
 - Les utilisateurs peuvent me contacter via PowerShell Gallery
-- M’avertir quand un élément est envoyé (push) à PowerShell Gallery
+- M’avertir quand un package est envoyé (push) sur PowerShell Gallery avec mon compte
 
 ![Changement d’adresse e-mail](../../Images/PSGallery_AccountEmailOptions.png)
 
 Comme indiqué dans la page, les notifications critiques de PowerShell Gallery ne peuvent pas être désactivées.
-Ces notifications sont les suivantes :
+Ces améliorations sont notamment les suivantes :
 
 - Notifications de sécurité
 - Notifications de gestion de compte des administrateurs PowerShell Gallery

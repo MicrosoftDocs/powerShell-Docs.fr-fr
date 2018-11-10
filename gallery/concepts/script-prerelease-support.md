@@ -1,23 +1,23 @@
 ---
 ms.date: 10/17/2017
 contributor: keithb
-keywords: gallery,powershell,applet de commande,psget
+keywords: gallery,powershell,cmdlet,psget
 title: Préversions des scripts
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268464"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002733"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Préversions des scripts
 
-À compter de la version 1.6.0, PowerShellGet et PowerShell Gallery prennent en charge l’identification des versions supérieures à 1.0.0 comme des préversions. Avant cette fonctionnalité, les éléments en préversion devaient avoir un numéro de version commençant par 0. L’objectif de ces fonctionnalités est de fournir une meilleure prise en charge de la convention de gestion des versions [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sans perdre la compatibilité descendante avec les versions 3 et supérieures de PowerShell, ou les versions existantes de PowerShellGet. Cette rubrique étudie les fonctionnalités propres aux scripts. Les fonctionnalités équivalentes des modules sont décrites dans la rubrique [Préversions de module](module-prerelease-support.md). À l’aide de ces fonctionnalités, les éditeurs peuvent identifier un script avec une version 2.5.0-alpha et publier plus tard une version 2.5.0 prête pour la production qui remplace la préversion.
+À compter de la version 1.6.0, PowerShellGet et PowerShell Gallery prennent en charge l’identification des versions supérieures à 1.0.0 comme des préversions. Avant cette fonctionnalité, les packages en préversion devaient avoir un numéro de version commençant par 0. L’objectif de ces fonctionnalités est de fournir une meilleure prise en charge de la convention de gestion des versions [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sans perdre la compatibilité descendante avec les versions 3 et supérieures de PowerShell, ou les versions existantes de PowerShellGet. Cette rubrique étudie les fonctionnalités propres aux scripts. Les fonctionnalités équivalentes des modules sont décrites dans la rubrique [Préversions de module](module-prerelease-support.md). À l’aide de ces fonctionnalités, les éditeurs peuvent identifier un script avec une version 2.5.0-alpha et publier plus tard une version 2.5.0 prête pour la production qui remplace la préversion.
 
 Voici des exemples de fonctionnalités de script en préversion, à un niveau supérieur :
 
-- Ajout d’un suffixe PrereleaseString à la chaîne de version dans le manifeste de script. Quand le script est publié dans PowerShell Gallery, ces données sont extraites du manifeste et utilisées pour identifier les éléments en préversion.
-- L’acquisition d’éléments en préversion nécessite d’ajouter l’indicateur -AllowPrerelease aux commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script. Si l’indicateur n’est pas spécifié, les éléments en préversion ne sont pas affichés.
+- Ajout d’un suffixe PrereleaseString à la chaîne de version dans le manifeste de script. Quand le script est publié dans PowerShell Gallery, ces données sont extraites du manifeste et utilisées pour identifier les packages en préversion.
+- L’acquisition de packages en préversion nécessite d’ajouter l’indicateur -AllowPrerelease aux commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script. Sans cet indicateur, les packages en préversion ne s’affichent pas.
 - Les versions de script affichées par Find-Script, Get-InstalledScript et celles qui se trouvent dans PowerShell Gallery sont affichées avec le suffixe PrereleaseString, par exemple 2.5.0-alpha.
 
 Les détails des fonctionnalités sont présentés ci-dessous.
@@ -54,9 +54,9 @@ L’ordre de tri change quand vous utilisez une préversion, ce qui est importan
 
 Quand vous publiez dans PowerShell Gallery, par défaut, la version du script qui est publié doit être supérieure à n’importe quelle version déjà publiée qui se trouve dans PowerShell Gallery. Un éditeur peut mettre à jour la version 2.5.0-alpha vers 2.5.0-bêta ou 2.5.0 (sans suffixe de préversion).
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Recherche et acquisition des éléments en préversion à l’aide des commandes PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Rechercher et acquérir des packages en préversion avec les commandes PowerShellGet
 
-Le traitement d’éléments en préversion à l’aide des commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script nécessite l’ajout de l’indicateur -AllowPrerelease. Si -AllowPrerelease est spécifié, les éléments en préversion présents sont inclus. Si l’indicateur -AllowPrerelease n’est pas spécifié, les éléments en préversion ne sont pas affichés.
+Le traitement de packages en préversion à l’aide des commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script nécessite l’ajout de l’indicateur -AllowPrerelease. Si -AllowPrerelease est spécifié, les packages en préversion présents sont inclus. Si l’indicateur -AllowPrerelease n’est pas spécifié, les packages en préversion ne s’affichent pas.
 
 Les seules exceptions dans les commandes de script PowerShellGet sont Get-InstalledScript et certains cas avec Uninstall-Script.
 

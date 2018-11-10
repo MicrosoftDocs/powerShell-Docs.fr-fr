@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522849"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002904"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 
 > S’applique à : Windows PowerShell 5.0
 
-La dernière étape avant de pouvoir utiliser JEA une fois les [fonctionnalités de rôles](role-capabilities.md) et le [fichier de configuration de session](session-configurations.md) créés consiste à inscrire le point de terminaison JEA.
-Ce processus applique les informations de configuration de session au système et rend le point de terminaison disponible pour une utilisation par des utilisateurs et des moteurs d’automatisation (Automation).
+Une fois les [fonctionnalités de rôles](role-capabilities.md) et le [fichier de configuration de session](session-configurations.md) créés, la dernière étape à suivre pour pouvoir utiliser JEA consiste à inscrire le point de terminaison JEA.
+Cette inscription auprès du système a pour effet de mettre le point de terminaison à la disposition des utilisateurs et des moteurs d’automatisation.
 
 ## <a name="single-machine-configuration"></a>Configuration d’une machine unique
 
@@ -26,7 +26,7 @@ Avant de commencer, assurez-vous que les conditions préalables suivantes sont r
 - L’utilisateur qui inscrit la configuration JEA dispose de droits d’administrateur sur les systèmes.
 
 Vous devez également sélectionner un nom pour votre point de terminaison JEA.
-Le nom du point de terminaison JEA est nécessaire lorsque les utilisateurs souhaitent se connecter au système à l’aide de JEA.
+Le nom du point de terminaison JEA est requis lorsque les utilisateurs souhaitent se connecter au système avec JEA.
 Vous pouvez utiliser l’applet de commande [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) pour vérifier les noms des points de terminaison qui existent sur le système.
 Les points de terminaison qui commencent par « microsoft » sont généralement livrés avec Windows.
 Le point de terminaison « microsoft.powershell » est le point de terminaison par défaut utilisé lors de la connexion à un point de terminaison PowerShell distant.
@@ -48,26 +48,26 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 ```
 
 > [!WARNING]
-> La commande ci-dessus redémarre le service WinRM sur le système.
-> Cela arrête toutes les sessions de communication à distance PowerShell, ainsi que toute configuration DSC en cours.
+> La commande ci-dessus redémarre le service WinRM sur le système,
+> ce qui arrête toutes les sessions de communication à distance PowerShell, ainsi que les éventuelles configurations DSC en cours.
 > Il est recommandé de mettre toute machine de production hors connexion avant d’exécuter la commande pour éviter d’interrompre les opérations métier.
 
-Si l’inscription a réussi, vous êtes prêt à [utiliser JEA](using-jea.md).
-Vous pouvez supprimer le fichier de configuration de session à tout moment. Il n’est pas utilisé après l’inscription.
+Si l’inscription a réussi, vous pouvez maintenant [utiliser JEA](using-jea.md).
+Vous pouvez à tout moment supprimer le fichier de configuration de session ; il n’est plus utilisé après l’inscription du point de terminaison.
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuration sur plusieurs machines avec DSC
 
 Si vous déployez JEA sur plusieurs machines, le modèle de déploiement le plus simple consiste à utiliser la ressource JEA [Configuration d’état souhaité](https://msdn.microsoft.com/powershell/dsc/overview) pour déployer JEA rapidement et de manière cohérente sur chaque machine.
 
-Pour déployer JEA avec DSC, vous devez garantir que les conditions préalables suivantes sont remplies :
+Voici les prérequis à respecter pour pouvoir déployer JEA avec DSC :
 - Une ou plusieurs fonctionnalités de rôles ont été créées et ajoutées à un module PowerShell valide.
 - Le module PowerShell contenant les rôles est stocké sur un partage de fichiers (en lecture seule) accessible depuis chaque machine.
 - Les paramètres de la configuration de session ont été déterminés. Il est inutile de créer un fichier de configuration de session si la ressource DSC JEA est utilisée.
-- Vous disposez des informations d’identification qui vous permettent d’effectuer des actions administratives sur chaque machine, ou d’avoir accès à un serveur collecteur DSC utilisé pour gérer les machines.
+- Vous disposez d’identifiants qui vous permettent d’effectuer des actions administratives sur chaque machine, ou d’avoir accès à un serveur Pull DSC utilisé pour gérer les machines.
 - Vous avez téléchargé la [ressource DSC JEA](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)
 
 Sur une machine cible (ou le serveur collecteur, si vous en utilisez un), créez une configuration DSC pour votre point de terminaison JEA.
-Dans cette configuration, vous utilisez la ressource DSC JustEnoughAdministration pour définir le fichier de configuration de session et la ressource Fichier à copier sur les fonctionnalités de rôle à partir du partage de fichiers.
+Dans cette configuration, la ressource DSC JustEnoughAdministration permet de définir le fichier de configuration de session et la ressource Fichier à copier sur les fonctionnalités de rôle à partir du partage de fichiers.
 
 Les propriétés suivantes sont configurables à l’aide de la ressource DSC :
 - Définitions de rôle
@@ -113,12 +113,12 @@ Configuration JEAMaintenance
 Cette configuration peut ensuite être appliquée à un système en [appelant directement le Gestionnaire de configuration Local](https://msdn.microsoft.com/powershell/dsc/metaconfig) ou en mettant à jour la [configuration du serveur collecteur](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 La ressource DSC vous permet également de remplacer le point de terminaison de communication à distance Microsoft.PowerShell par défaut.
-Si vous procédez ainsi, la ressource inscrit automatiquement un point de terminaison de sauvegarde sans contrainte nommé « Microsoft.PowerShell.Restricted » qui a la valeur par défaut des listes de contrôle d’accès WinRM (permettant aux groupes Utilisateurs de gestion à distance et Administrateurs locaux d’y accéder).
+Si vous procédez ainsi, la ressource inscrit automatiquement un point de terminaison de sauvegarde sans contrainte nommé « Microsoft.PowerShell.Restricted » qui a la liste ACL WinRM par défaut (permettant aux membres du groupe Utilisateurs de gestion à distance et du groupe Administrateurs local d’y accéder).
 
 ## <a name="unregistering-jea-configurations"></a>Désinscription de configurations JEA
 
 Pour supprimer un point de terminaison JEA sur un système, utilisez l’applet de commande [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration).
-La désinscription d’un point de terminaison JEA empêche les nouveaux utilisateurs de créer de nouvelles sessions JEA sur le système.
+Le fait de désinscrire un point de terminaison JEA empêche les nouveaux utilisateurs de créer des sessions JEA sur le système.
 Elle permet également de mettre à jour une configuration JEA en réinscrivant un fichier de configuration de session mis à jour à l’aide du même nom de point de terminaison.
 
 ```powershell
@@ -127,8 +127,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> La désinscription d’un point de terminaison JEA entraîne le redémarrage du service WinRM.
-> Elle interrompt la plupart des opérations de gestion à distance en cours, notamment les autres sessions PowerShell, les appels WMI et certains outils de gestion.
+> Le fait de désinscrire un point de terminaison JEA entraîne le redémarrage du service WinRM,
+> ce qui interrompt la plupart des opérations de gestion à distance en cours, notamment les autres sessions PowerShell, les appels WMI et certains outils de gestion.
 > Ne désinscrivez des points de terminaison PowerShell que pendant les fenêtres de maintenance planifiée.
 
 ## <a name="next-steps"></a>Étapes suivantes

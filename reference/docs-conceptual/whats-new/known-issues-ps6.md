@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Problèmes connus de PowerShell 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267998"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450994"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problèmes connus de PowerShell 6.0
 
@@ -90,9 +90,9 @@ La possibilité de créer des points de terminaison de communication à distance
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` et PowerShell
 
-PowerShell exécute la plupart des commandes en mémoire (par exemple, Python ou Ruby). De ce fait, il n’est pas possible d’utiliser sudo directement avec les modules intégrés de PowerShell. (Vous pouvez, bien entendu, exécuter `powershell` à partir de sudo.) S’il vous faut exécuter une applet de commande PowerShell dans PowerShell avec sudo, par exemple, `sudo `Set-Date` 8/18/2016`, exécutez `sudo powershell `Set-Date` 8/18/2016`. De même, vous ne pouvez pas exécuter directement un module intégré de PowerShell. Vous devrez passer par `exec powershell item_to_exec`.
+PowerShell exécute la plupart des commandes en mémoire (par exemple, Python ou Ruby). De ce fait, il n’est pas possible d’utiliser sudo directement avec les modules intégrés de PowerShell. (Vous pouvez, bien entendu, exécuter `pwsh` à partir de sudo.) S’il vous faut exécuter une applet de commande PowerShell dans PowerShell avec sudo, par exemple, `sudo Set-Date 8/18/2016`, faites `sudo pwsh Set-Date 8/18/2016`. De même, vous ne pouvez pas exécuter directement un module intégré de PowerShell. Vous devrez passer par `exec pwsh item_to_exec`.
 
-Ce problème fait actuellement l’objet d’un suivi dans le ticket #3232.
+Ce problème fait actuellement l’objet d’un suivi dans le ticket [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Applets de commande manquantes
 

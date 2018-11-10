@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483183"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225809"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 Windows PowerShell 5.0 intègre plusieurs nouvelles fonctionnalités importantes qui, en plus d’étendre et de simplifier son utilisation, vous permettent de contrôler et de gérer des environnements Windows plus facilement et plus complètement.
@@ -163,7 +163,7 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 
 - L’applet de commande Get-ChildItem dispose également d’un nouveau paramètre, -Depth, que vous pouvez utiliser avec le paramètre -Recurse pour limiter la récursivité. Par exemple, la commande Get-ChildItem -Recurse -Depth 2 retourne des résultats à partir du dossier actif, de tous les dossiers enfants de ce dossier et de tous les sous-dossiers des dossiers enfants.
 
-- L’applet de commande Copy-Item permet maintenant de copier des fichiers ou dossiers d’une session Windows PowerShell vers une autre. Vous pouvez ainsi copier des fichiers vers des sessions connectées à des ordinateurs distants (notamment les ordinateurs exécutant [Windows Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), qui n’ont donc pas d’autre interface). Pour copier des fichiers, spécifiez des ID PSSession comme valeurs pour les nouveaux paramètres -FromSession et -ToSession, en ajoutant -Path et -Destination pour spécifier respectivement le chemin d’origine et la destination. Par exemple, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+- L’applet de commande Copy-Item permet maintenant de copier des fichiers ou dossiers d’une session Windows PowerShell vers une autre. Vous pouvez ainsi copier des fichiers vers des sessions connectées à des ordinateurs distants (notamment les ordinateurs exécutant [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), qui n’ont donc pas d’autre interface). Pour copier des fichiers, spécifiez des ID PSSession comme valeurs pour les nouveaux paramètres -FromSession et -ToSession, en ajoutant -Path et -Destination pour spécifier respectivement le chemin d’origine et la destination. Par exemple, Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
 - La transcription Windows PowerShell a été améliorée pour s’appliquer non seulement à l’hôte de la console (**powershell.exe**), mais aussi à toutes les applications d’hébergement telles que Windows PowerShell ISE. Vous pouvez configurer des options de transcription (notamment la transcription à l’échelle du système) en activant le paramètre de stratégie de groupe **Activer la transcription PowerShell** accessible dans Modèles d’administration/Composants Windows/Windows PowerShell.
 
@@ -511,7 +511,7 @@ Pour Windows PowerShell 3.0, l’environnement d’écriture de scripts intégr�
 Windows PowerShell repose sur le Common Language Runtime 4.0. Les auteurs d’applets de commande, de scripts et de flux de travail peuvent utiliser les nouvelles classes Microsoft .NET Framework 4 de Windows PowerShell. Ils peuvent ainsi bénéficier de fonctionnalités comme la compatibilité et le déploiement d’applications, Managed Extensibility Framework, l’informatique parallèle, la mise en réseau, Windows Communication Foundation et Windows Workflow Foundation.
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Prise en charge de l'environnement de préinstallation Windows
-Windows PowerShell 3.0 est un composant facultatif de l'environnement de préinstallation Windows (WinPE) 4.0 pour Windows 8. Windows PE est un système d’exploitation minimal qui permet de démarrer un ordinateur sans système d’exploitation, et qui le prépare en vue de l’installation de Windows. Windows PE permet de partitionner et formater des disques durs, de copier des images de disque sur un ordinateur et d’initier l’installation de Windows à partir d’un partage réseau. Windows PowerShell 3.0 peut être utilisé sur Windows PE pour gérer des scénarios de déploiement, de diagnostic et de récupération.
+Windows PowerShell 3.0 est un composant facultatif de l'environnement de préinstallation Windows (WinPE) 4.0 pour Windows 8. Windows PE est un système d'exploitation minimal qui permet de démarrer un ordinateur sans système d'exploitation et qui le prépare en vue de l'installation de Windows. Windows PE peut être utilisé pour partitionner et formater des disques durs, copier des images de disque sur un ordinateur et initier l'installation de Windows à partir d'un partage réseau. Windows PowerShell 3.0 peut être utilisé sur Windows PE pour gérer des scénarios de déploiement, de diagnostic et de récupération.
 
 ### <a name="disconnected-sessions"></a>Sessions déconnectées
 À compter de Windows PowerShell 3.0, les sessions persistantes gérées par l'utilisateur (« PSSessions ») que vous créez à l'aide de l'applet de commande New-PSSession sont enregistrées sur l'ordinateur distant. Elles ne dépendent donc plus de la session dans laquelle elles ont été créées.
@@ -582,7 +582,7 @@ Dans les versions précédentes de Windows PowerShell, le contrôle à ce niveau
 
 Pour créer un fichier de configuration de session, utilisez l’applet de commande [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866). Pour appliquer le fichier de configuration de session à une configuration de session, utilisez l’applet de commande [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) ou [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea).
 
-Pour plus d’informations, voir [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) et [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Pour plus d’informations, voir [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) et [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Travaux planifiés et intégration du Planificateur de tâches
 Vous pouvez désormais planifier des travaux Windows PowerShell en arrière-plan, puis les gérer dans Windows PowerShell et dans le Planificateur de tâches.
@@ -656,7 +656,7 @@ Pour déclencher l’importation automatique des modules, utilisez l’applet de
 
 Pour activer, désactiver et configurer l’importation automatique de modules, utilisez la variable de préférence **$PSModuleAutoLoadingPreference**.
 
-Pour plus d’informations, voir [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) et les rubriques d’aide relatives aux applets de commande [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) et [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
+Pour plus d’informations, voir [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) et les rubriques d’aide relatives aux applets de commande [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) et [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
 
 ### <a name="module-experience-improvements"></a>Améliorations apportées aux fonctionnalités des modules
 À partir de Windows PowerShell 3.0, les modules prennent en charge des fonctionnalités avancées, notamment les nouvelles fonctionnalités suivantes.

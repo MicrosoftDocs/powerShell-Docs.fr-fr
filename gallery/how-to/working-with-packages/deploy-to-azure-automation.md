@@ -1,0 +1,39 @@
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: gallery,powershell,applet de commande,psgallery
+title: Déployer sur Azure Automation
+ms.openlocfilehash: dc382b1cf3ceaa787f54c555d01e6bd9ba70e680
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50003698"
+---
+# <a name="deploy-to-azure-automation"></a>Déployer sur Azure Automation
+
+Le bouton Déployer sur Azure Automation de la page de détails du package a pour effet de déployer le package de PowerShell Gallery sur Azure Automation.
+
+![Bouton Déployer sur Azure Automation](../../Images/DeployToAzureAutomationButton.png)
+
+Quand vous cliquez dessus, vous êtes redirigé vers le portail de gestion Azure où vous vous connectez à l’aide des informations d’identification de compte Azure.
+Si le package comporte des dépendances, elles sont toutes déployées sur Azure Automation par la même occasion.
+
+> [!WARNING]
+> Si le même package et la même version existent déjà dans le compte Automation, un nouveau déploiement à partir de PowerShell Gallery a pour effet de remplacer le package dans le compte.
+
+Si vous déployez un module, il apparaît dans la section Modules d’Azure Automation.  Si vous déployez un script, il apparaît dans la section Runbooks d’Azure Automation.
+
+Pour désactiver le bouton Déployer sur Azure Automation, ajoutez la balise AzureAutomationNotSupported aux métadonnées du package.
+
+## <a name="require-license-acceptance-on-deploy-to-azure-automation"></a>Exiger l’acceptation de la licence lors du déploiement sur Azure Automation
+
+Si le module en cours de déploiement sur Azure Automation exige l’acceptation de la licence, l’avertissement suivant s’affiche sur l’interface utilisateur du portail : « Ce module exige l’acceptation de la licence. En cliquant sur OK, vous acceptez les termes du contrat de licence. »
+
+![Le déploiement sur Azure Automation nécessite l’acceptation de la licence.](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+
+## <a name="more-details"></a>Plus d’informations
+
+- [Exiger l’acceptation de la licence dans PowerShellGet](../../concepts/module-license-acceptance.md)
+- [Exiger l’acceptation de la licence dans PowerShell Gallery](packages-that-require-license-acceptance.md)
+- [Site web Azure Automation](http://azure.microsoft.com/services/automation/)

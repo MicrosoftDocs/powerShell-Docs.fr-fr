@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: ce5afc2f90f78433b64bf5b41946fc7506c43504
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219648"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998518"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Le mot clé Import-DscResource prend en charge le paramètre -ModuleVersion
 

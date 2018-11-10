@@ -3,18 +3,18 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: galerie,powershell,psgallery,RGPD
 title: Conformité RGPD de PowerShell Gallery
-ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893244"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002648"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Conformité RGPD de PowerShell Gallery
 
 ## <a name="overview"></a>Vue d’ensemble
 
-En mai 2018, un règlement européen sur la confidentialité, le Règlement général sur la protection des données (RGPD), entre en vigueur.
+En mai 2018, un règlement européen sur la confidentialité, le Règlement général sur la protection des données (RGPD), est entré en vigueur.
 Le RGPD impose de nouvelles règles aux entreprises, aux organismes publics, aux associations à but non lucratif et autres organisations qui proposent des biens et des services à des personnes de l’Union européenne, ou qui collectent et analysent des données relatives aux résidents de l’Union européenne.
 Le RGPD s’applique indépendamment de l’endroit où vous vous trouvez.
 
@@ -26,16 +26,16 @@ Le RGPD s’applique indépendamment de l’endroit où vous vous trouvez.
 PowerShell Gallery stocke les informations suivantes, susceptibles de provenir d’utilisateurs et donc de contenir des données personnelles :
 
 - Compte PowerShell Gallery
-- Éléments publiés sur PowerShell Gallery
+- Packages publiés sur PowerShell Gallery
 - Correspondance par e-mail avec l’équipe PowerShell Gallery
 
 La plupart des utilisateurs ne créent pas de compte PowerShell Gallery.
-Un compte n’est pas obligatoire, sauf si vous vous apprêtez à publier un élément ou à utiliser la fonctionnalité « Contactez le propriétaire » dans PowerShell Gallery.
+Un compte n’est pas obligatoire, sauf si vous vous apprêtez à publier un package ou à utiliser la fonctionnalité « Contactez le propriétaire » dans PowerShell Gallery.
 À part la correspondance par e-mail à l’initiative de l’utilisateur, PowerShell Gallery ne stocke pas de données personnelles identifiables pour les utilisateurs qui n’ont pas créé de compte.
 
-Les utilisateurs qui créent un compte PowerShell Gallery peuvent publier des éléments sur PowerShell Gallery.
-Ces éléments sont supposés être du code PowerShell, mais ils peuvent contenir d’autres informations, notamment des informations personnelles.
-Les informations ci-dessous indiquent comment obtenir tous les éléments que vous avez publiés sur PowerShell Gallery.
+Les utilisateurs qui créent un compte PowerShell Gallery peuvent publier des packages sur PowerShell Gallery.
+Ces packages sont supposés être du code PowerShell, mais ils peuvent contenir d’autres informations, notamment des informations personnelles.
+Les informations ci-dessous indiquent comment obtenir tous les packages que vous avez publiés sur PowerShell Gallery.
 
 ## <a name="dsr-export-of-powershell-gallery-data"></a>Exportation DSR des données PowerShell Gallery
 
@@ -45,9 +45,9 @@ Les sections suivantes décrivent comment PowerShell Gallery prend en charge les
 
 La correspondance par e-mail peut inclure les éléments suivants :
 
-- E-mail envoyé aux propriétaires d’éléments de PowerShell Gallery si les examens d’analyse du code ont détecté un problème avec un élément qu’ils ont publié sur PowerShell Gallery
+- E-mail envoyé aux propriétaires de packages de PowerShell Gallery si les examens d’analyse du code ont détecté un problème avec un package qu’ils ont publié sur PowerShell Gallery
 - E-mail envoyé par quelqu’un à l’équipe PowerShell Gallery en utilisant l’adresse e-mail de la page « Contactez-nous » [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)
-- Utilisateurs inscrits qui utilisent la fonctionnalité « Contactez le propriétaire » de PowerShell Gallery pour envoyer un e-mail au propriétaire d’un élément de PowerShell Gallery
+- Utilisateurs inscrits qui utilisent la fonctionnalité « Contactez le propriétaire » de PowerShell Gallery pour envoyer un e-mail au propriétaire d’un package de PowerShell Gallery
 
 Les e-mails envoyés par ou à PowerShell Gallery suivent une politique de conservation de 90 jours, ce qui permet d’effectuer d’éventuelles investigations sur la sécurité si du code malveillant devait être découvert dans PowerShell Gallery.
 Conformément à cette politique, les e-mails sont supprimés après 90 jours.
@@ -65,13 +65,13 @@ Si vous avez créé un compte PowerShell Gallery, vous pouvez trouver toutes les
 
 Si vous avez créé plusieurs comptes dans PowerShell Gallery, vous devez répéter ces étapes pour chaque compte.
 
-### <a name="items-in-the-powershell-gallery"></a>Éléments dans PowerShell Gallery
+### <a name="packages-in-the-powershell-gallery"></a>Packages dans PowerShell Gallery
 
-Pour faciliter l’exportation des éléments publiés sur PowerShell Gallery, nous avons publié le script « GetPSGalleryItemsForAuthor » sur PowerShell Gallery.
-Ce script exporte une copie de chaque version de chaque élément placé dans PowerShell Gallery ; il est basé sur les informations relatives à l’auteur qui sont stockées dans l’élément.
+Pour faciliter l’exportation des packages publiés sur PowerShell Gallery, nous avons publié le script « GetPSGalleryItemsForAuthor » sur PowerShell Gallery.
+Ce script exporte une copie de chaque version de chaque package placé dans PowerShell Gallery ; il est basé sur les informations relatives à l’auteur qui sont stockées dans le package.
 
 > [!NOTE]
-> L’auteur est stocké dans le manifeste de l’élément quand vous publiez votre élément.
+> L’auteur est stocké dans le manifeste du package quand vous publiez votre package.
 > Il n’est pas garanti que l’auteur représente la même identité que le compte que vous utilisez dans PowerShell Gallery.
 > Si vous utilisez une autre valeur dans le champ Auteur, vous devez fournir cette valeur lors de l’utilisation de ce script.
 
@@ -88,16 +88,16 @@ Vous pouvez ensuite exécuter le script avec les commandes PowerShell suivantes 
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-Vous serez invité à spécifier l’auteur et un dossier sur votre système où les éléments doivent être enregistrés.
+Vous serez invité à spécifier l’auteur et un dossier sur votre système où les packages doivent être enregistrés.
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Suppression des données personnelles de PowerShell Gallery
 
-Pour supprimer votre compte PowerShell Gallery ou tout élément dont vous êtes propriétaire dans PowerShell Gallery, envoyez un e-mail à cgadmin@microsoft.com avec le titre : « Demande RGPD pour des éléments relatifs à ce compte ».
+Pour supprimer votre compte PowerShell Gallery ou tout package dont vous êtes propriétaire dans PowerShell Gallery, envoyez un e-mail à cgadmin@microsoft.com avec le titre : « Demande RGPD pour des éléments relatifs à ce compte ».
 Dans le corps du message, indiquez les informations que vous voulez faire supprimer. Par exemple :
 
-- Veuillez supprimer la version x.y.z de mon élément « nom de l’élément »
-- Veuillez supprimer toutes les versions de mon élément « nom de l’élément »
+- Veuillez supprimer la version x.y.z de mon package « nom du package »
+- Veuillez supprimer toutes les versions de mon package « nom du package »
 - Veuillez supprimer mon compte PowerShell Gallery
 
 Les administrateurs de PowerShell Gallery répondent dans un délai de 7 jours ouvrés.
-Les éléments spécifiés sont supprimés dans les 30 jours suivant l’envoi de la demande.
+Les packages spécifiés sont supprimés dans les 30 jours suivant l’envoi de la demande.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC WaitForAny
-ms.openlocfilehash: c9700c908f8601db85f9c922445969a34b59d453
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39100f0fc52092c54bbecab55e3ef3dfabb4c70e
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186709"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226047"
 ---
 # <a name="dsc-waitforany-resource"></a>Ressource DSC WaitForAny
 
@@ -15,7 +15,7 @@ ms.locfileid: "34186709"
 
 La ressource de configuration d’état souhaité (DSC) **WaitForSome** peut être utilisée dans un bloc de nœud dans une [configuration DSC](configurations.md) pour spécifier les dépendances sur les configurations sur d’autres nœuds.
 
-La ressource réussit si la ressource spécifiée par la propriété **ResourceName** est dans l’état souhaité sur un des nœuds cible définis dans la propriété **NodeName**.
+La ressource réussit si la ressource spécifiée par la propriété **ResourceName** est dans l’état souhaité sur tous les nœuds cibles définis dans la propriété **NodeName**.
 
 
 ## <a name="syntax"></a>Syntaxe

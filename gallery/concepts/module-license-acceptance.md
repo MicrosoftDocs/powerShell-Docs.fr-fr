@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Modules exigeant l’acceptation de la licence
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893108"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002665"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules exigeant l’acceptation de la licence
 
 ## <a name="synopsis"></a>SYNOPSIS
 
-Les services juridiques de certains éditeurs de modules exigent que les clients acceptent explicitement la licence avant d’installer leur module à partir de PowerShell Gallery. Si un utilisateur installe, met à jour ou enregistre un module à l’aide de PowerShellGet, directement ou en dépendance avec un autre élément, et que ce module oblige l’utilisateur à accepter une licence, l’utilisateur doit indiquer qu’il accepte la licence, faute de quoi l’opération échoue.
+Les services juridiques de certains éditeurs de modules exigent que les clients acceptent explicitement la licence avant d’installer leur module à partir de PowerShell Gallery. Si un utilisateur installe, met à jour ou enregistre un module avec PowerShellGet, directement ou dans une relation de dépendance avec un autre package, et que ce module exige que l’utilisateur accepte une licence, l’utilisateur doit indiquer qu’il accepte la licence, faute de quoi l’opération échoue.
 
 ## <a name="publish-requirements-for-modules"></a>Publier la configuration requise pour les modules
 
@@ -43,7 +43,7 @@ Les modules demandant aux utilisateurs d’accepter une licence doivent répondr
 
 - Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) sera requis.
 - Si la version du module est déjà répertoriée dans le catalogue local comme étant installée sur le système, nous contournerons la vérification de la licence.
-- Au cours de l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant requiert une licence et que l’acceptation de la licence n’a pas lieu, l’opération échouera et suivra le processus normal d’échec de l’installation/l’enregistrement/la mise à jour de l’élément.
+- Si, au cours de l’opération d’installation/d’enregistrement/de mise à jour, un module dépendant exige une licence et que l’acceptation de cette licence n’a pas lieu, l’opération échoue et suit les processus normaux d’échec de l’installation/l’enregistrement/la mise à jour du package.
 
 ## <a name="impact-on--force"></a>Impact sur Force
 
@@ -219,6 +219,6 @@ Le module est mis à jour sans invitation à accepter la licence.
 
 [Exiger l’acceptation de la licence pour les scripts](./script-license-acceptance.md)
 
-[Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Exiger l’acceptation de la licence lors du déploiement sur Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Exiger l’acceptation de la licence lors du déploiement sur Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

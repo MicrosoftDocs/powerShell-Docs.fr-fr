@@ -1,23 +1,23 @@
 ---
 ms.date: 09/26/2017
 contributor: keithb
-keywords: gallery,powershell,applet de commande,psget
+keywords: gallery,powershell,cmdlet,psget
 title: Préversions de module
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268617"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002767"
 ---
 # <a name="prerelease-module-versions"></a>Préversions de module
 
-À compter de la version 1.6.0, PowerShellGet et PowerShell Gallery prennent en charge l’identification des versions supérieures à 1.0.0 comme des préversions. Avant cette fonctionnalité, les éléments en préversion devaient avoir un numéro de version commençant par 0. L’objectif de ces fonctionnalités est de fournir une meilleure prise en charge de la convention de gestion des versions [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sans perdre la compatibilité descendante avec les versions 3 et supérieures de PowerShell, ou les versions existantes de PowerShellGet. Cette rubrique étudie les fonctionnalités propres aux modules. Les fonctionnalités équivalentes des scripts sont décrites dans la rubrique [Préversions de script](script-prerelease-support.md). À l’aide de ces fonctionnalités, les éditeurs peuvent identifier un module ou un script avec une version 2.5.0-alpha et publier plus tard une version 2.5.0 prête pour la production qui remplace la préversion.
+À compter de la version 1.6.0, PowerShellGet et PowerShell Gallery prennent en charge l’identification des versions supérieures à 1.0.0 comme des préversions. Avant cette fonctionnalité, les packages en préversion devaient avoir un numéro de version commençant par 0. L’objectif de ces fonctionnalités est de fournir une meilleure prise en charge de la convention de gestion des versions [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) sans perdre la compatibilité descendante avec les versions 3 et supérieures de PowerShell, ou les versions existantes de PowerShellGet. Cette rubrique étudie les fonctionnalités propres aux modules. Les fonctionnalités équivalentes des scripts sont décrites dans la rubrique [Préversions de script](script-prerelease-support.md). À l’aide de ces fonctionnalités, les éditeurs peuvent identifier un module ou un script avec une version 2.5.0-alpha et publier plus tard une version 2.5.0 prête pour la production qui remplace la préversion.
 
 Voici globalement en quoi consistent les fonctionnalités de module en préversion :
 
-- L’ajout d’une chaîne de préversion à la section PSData du manifeste du module identifie le module comme une préversion. Quand le module est publié dans PowerShell Gallery, ces données sont extraites du manifeste et utilisées pour identifier les éléments en préversion.
-- L’acquisition d’éléments de préversion nécessite l’ajout d’un indicateur aux `-AllowPrerelease`commandes PowerShellGet `Find-Module`, `Install-Module`, `Update-Module` et `Save-Module`. Si l’indicateur n’est pas spécifié, les éléments en préversion ne sont pas affichés.
+- L’ajout d’une chaîne de préversion à la section PSData du manifeste du module identifie le module comme une préversion. Lors de la publication du module sur PowerShell Gallery, ces données sont extraites du manifeste et utilisées pour identifier les packages en préversion.
+- Il est nécessaire d’ajouter l’indicateur `-AllowPrerelease` aux commandes PowerShellGet `Find-Module`, `Install-Module`, `Update-Module` et `Save-Module` pour pouvoir acquérir des packages en préversion. Sans cet indicateur, les packages en préversion ne s’affichent pas.
 - Les versions de module affichées par `Find-Module` et `Get-InstalledModule`, ainsi que celles qui se trouvent dans PowerShell Gallery, sont affichées sous forme de chaîne unique suivie de la chaîne de préversion, par exemple 2.5.0-alpha.
 
 Les détails des fonctionnalités sont présentés ci-dessous.
@@ -51,7 +51,7 @@ Les exigences détaillées de la chaîne de préversion sont les suivantes :
 
 - Une chaîne de préversion peut être spécifiée uniquement quand la valeur ModuleVersion comprend 3 segments : Majeure.Mineure.Build. Ce format est compatible avec SemVer v1.0.0.
 - Un trait d’union sépare le numéro de build et la chaîne de préversion. Un trait d’union peut être inclus dans la chaîne de préversion uniquement en première position.
-- La chaîne de préversion peut contenir uniquement des caractères alphanumériques ASCII [0-9A-Za-z-]. Il est recommandé de commencer la chaîne de préversion par un caractère alphabétique, pour qu’elle soit plus facile à identifier comme préversion pendant l’analyse d’une liste d’éléments.
+- La chaîne de préversion peut contenir uniquement des caractères alphanumériques ASCII [0-9A-Za-z-]. Il est recommandé de commencer la chaîne de préversion par un caractère alphabétique, pour qu’elle soit plus facile à identifier comme préversion au moment d’analyser une liste de packages.
 - Seules les chaînes de préversion SemVer v1.0.0 sont prises en charge pour l’instant. La chaîne de préversion **ne doit pas** contenir de point ou le signe + [.+], lesquels sont autorisé dans SemVer 2.0.
 - Exemples de chaînes de préversion prises en charge : -alpha, -alpha1, -BETA, -update20171020
 
@@ -61,9 +61,9 @@ L’ordre de tri change quand vous utilisez une préversion, ce qui est importan
 
 Quand vous publiez dans PowerShell Gallery, par défaut, la version du module qui est publié doit avoir une version supérieure à n’importe quelle version déjà publiée qui se trouve dans PowerShell Gallery.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Recherche et acquisition des éléments en préversion à l’aide des commandes PowerShellGet
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Rechercher et acquérir des packages en préversion avec les commandes PowerShellGet
 
-Le traitement d’éléments en préversion à l’aide des commandes PowerShellGet Find-Module, Install-Module, Update-Module et Save-Module nécessite l’ajout de l’indicateur -AllowPrerelease. Si -AllowPrerelease est spécifié, les éléments en préversion présents sont inclus. Si l’indicateur -AllowPrerelease n’est pas spécifié, les éléments en préversion ne sont pas affichés.
+Pour pouvoir gérer des packages en préversion avec les commandes PowerShellGet Find-Module, Install-Module, Update-Module et Save-Module, il est nécessaire d’ajouter l’indicateur -AllowPrerelease. Si l’indicateur -AllowPrerelease est spécifié, les packages en préversion présents sont inclus. S’il n’est pas spécifié, les packages en préversion ne s’affichent pas.
 
 Les seules exceptions dans les commandes de module PowerShellGet sont Get-InstalledModule et certains cas avec Uninstall-Module.
 

@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134098"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225792"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
@@ -124,12 +124,11 @@ Par exemple, vous pouvez ajouter des configurations pour :
 - Lancer une session interactive dans le débogueur
 - Attacher le débogueur à un processus hôte PowerShell
 
-  Suivez ces étapes pour créer votre fichier de configuration de débogage :
+Suivez ces étapes pour créer votre fichier de configuration de débogage :
 
   1. Ouvrez la vue **Déboguer** en appuyant sur **Ctrl+Maj+D** (**Cmd+Maj+D** sur Mac).
   2. Appuyez sur l’icône d’engrenage **Configurer** dans la barre d’outils.
-  3. Visual Studio Code vous invite à **Sélectionner un environnement**.
-  Choisissez **PowerShell**.
+  3. Visual Studio Code vous invite à **Sélectionner un environnement**. Choisissez **PowerShell**.
 
   Dans ce cas, Visual Studio Code crée un répertoire et un fichier «.vscode\launch.json » à la racine du dossier de votre espace de travail.
   C’est là que votre configuration de débogage est stockée. Si vos fichiers sont dans un dépôt Git, vous souhaitez généralement valider le fichier launch.json.
@@ -171,9 +170,7 @@ Par exemple, vous pouvez ajouter des configurations pour :
 
   Une fois établie la configuration de débogage, vous pouvez choisir la configuration à utiliser pendant une session de débogage en la sélectionnant dans la liste déroulante des configurations de débogage de la barre d’outils de la vue **Déboguer**.
 
-  Quelques blogs peuvent être utiles pour vous aider à prendre en main l’extension PowerShell pour Visual Studio Code
-
-Visual Studio Code :
+Quelques blogs peuvent être utiles pour bien démarrer avec l’extension PowerShell pour Visual Studio Code :
 
 - [Extension PowerShell][ps-extension]
 - [Écrire et déboguer des scripts PowerShell dans Visual Studio Code][debug]
