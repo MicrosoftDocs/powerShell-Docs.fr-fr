@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: Guides pratiques
   items:
-  - name: Recherche d’éléments dans la galerie
+  - name: Recherche de packages dans la galerie
     items:
-    - name: Recherche d’éléments
+    - name: Recherche de packages
       href: how-to/finding-packages/search-syntax.md
     - name: Recherche par édition PowerShell
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: Publication dans la galerie
     items:
-    - name: Création et publication d’éléments
+    - name: Création et publication de packages
       href: how-to/publishing-packages/publishing-a-package.md
     - name: Création d’un compte PowerShellGallery
       href: how-to/publishing-packages/creating-an-account.md
-    - name: Retrait d’éléments de la liste
+    - name: Retirer des packages de la liste
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: Suppression d’éléments
+    - name: Supprimer des packages
       href: how-to/publishing-packages/deleting-packages.md
-    - name: Gestion des propriétaires d’éléments
+    - name: Gestion des propriétaires de packages
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: Utilisation des éléments
+  - name: Utilisation de packages
     items:
     - name: Vue de liste de fichiers
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Téléchargement manuel de package
       href: how-to/working-with-packages/manual-download.md
-    - name: Éléments nécessitant l’acceptation de la licence
+    - name: Packages nécessitant l’acceptation de la licence
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Établissement d’un contact avec les propriétaires d’éléments
+    - name: Contacter les propriétaires de packages
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: Envoi de commentaires via des médias sociaux ou des commentaires
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: Gestion des clés API
       href: how-to/managing-profile/creating-apikeys.md
+  - name: Utilisation des référentiels PowerShellGet locaux
+    href: how-to/working-with-local-psrepositories.md
 - name: Concepts
   items:
   - name: Instructions et bonnes pratiques de publication
     href: concepts/publishing-guidelines.md
-  - name: Manifeste de l’élément et interface utilisateur de la galerie
+  - name: Manifeste de packages et interface utilisateur de la galerie
     href: concepts/package-manifest-affecting-ui.md
   - name: Exiger des éditions PowerShell spécifiques
     items:
@@ -65,11 +67,11 @@ items:
       href: concepts/script-license-acceptance.md
     - name: Exiger l’acceptation de la licence pour les modules
       href: concepts/module-license-acceptance.md
-  - name: Définition des éléments en tant que version préliminaire
+  - name: Définition de packages en tant que préversion
     items:
-    - name: Définition d’un module en tant que version préliminaire
+    - name: Définition d’un module en tant que préversion
       href: concepts/module-prerelease-support.md
-    - name: Définition d’un script en tant que version préliminaire
+    - name: Définition d’un script en tant que préversion
       href: concepts/script-prerelease-support.md
   - name: Profil de règle PSScriptAnalyzer
     href: concepts/scriptanalyzer-rule-profile.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: Applets de commande PowerShellGet
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002323"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619124"
