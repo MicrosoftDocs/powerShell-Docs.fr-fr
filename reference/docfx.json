@@ -229,7 +229,7 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/powershell/bread-pscore/toc.json",
-      "uhfHeaderId": "MSDocsHeader-Powershell", 
+      "uhfHeaderId": "MSDocsHeader-Powershell",
       "apiPlatform": "powershell",
       "ms.devlang": "powershell",
       "ROBOTS": "INDEX, FOLLOW",
@@ -242,7 +242,8 @@
       "ms.author": "jpjofre"
     },
     "fileMetadata": {},
-    "template": [],
-    "dest": "pscore-reference"
-  }
+        "template": [],
+        "dest": "pscore-reference",
+        "markdownEngineName": "markdig"
+    }
 }
