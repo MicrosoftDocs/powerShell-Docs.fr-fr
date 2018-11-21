@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation des données de configuration
-ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: HT
+ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36940376"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619175"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 
@@ -185,12 +185,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>Utilisation de variables ConfigurationData dans une configuration
 
-DSC fournit trois variables spéciales qui peuvent être utilisées dans un script de configuration : **$AllNodes**, **$Node** et **$ConfigurationData**.
+DSC fournit les variables spéciales suivantes qui peuvent être utilisées dans un script de configuration :
 
 - **$AllNodes** fait référence à l’ensemble de la collection de nœuds définis dans **ConfigurationData**. Vous pouvez filtrer la collection **AllNodes** à l’aide de **.Where()** et **.ForEach()**.
+- **ConfigurationData** fait référence à la table de hachage entière qui est passée comme paramètre lors de la compilation d’une configuration.
+- **MyTypeName** contient le [configuration](configurations.md) nom de la variable est utilisée dans. Par exemple, dans la configuration `MyDscConfiguration`, le `$MyTypeName` a la valeur de `MyDscConfiguration`.
 - **Node** fait référence à une entrée particulière dans la collection **AllNodes** une fois qu’elle a été filtrée à l’aide de **.Where()** ou **.ForEach()**.
   - Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
-- **ConfigurationData** fait référence à la table de hachage entière qui est passée comme paramètre lors de la compilation d’une configuration.
 
 ## <a name="using-non-node-data"></a>Utilisation des données n’appartenant pas à un nœud
 
