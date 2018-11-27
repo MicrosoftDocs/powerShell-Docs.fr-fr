@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Sélection d'éléments dans une zone de liste
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 6ff6bff8f6ce4e9236d7877c4cca24a10932cbe0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951679"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320820"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Sélection d'éléments dans une zone de liste
 
@@ -130,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de liste, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
+Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de liste, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -172,13 +172,13 @@ Enfin, le code à l’intérieur du bloc **If** indique à Windows comment trait
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt’s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Astuce Windows PowerShell de la semaine : sélection d’éléments dans une zone de liste](http://technet.microsoft.com/library/ff730949.aspx)
+- [Astuce Windows PowerShell de la semaine : sélection d’éléments dans une zone de liste](https://technet.microsoft.com/library/ff730949.aspx)

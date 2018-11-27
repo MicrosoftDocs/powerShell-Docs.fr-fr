@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: guide de workflows
-ms.openlocfilehash: 7c4cbcb03bf5abaeba65563156acd588f7671d93
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482792"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320378"
 ---
 # <a name="psworkflow-module"></a>Module PSWorkflow
 
@@ -15,7 +15,7 @@ Cette section contient les rubriques d’aide relatives au module **PSWorkflow**
 
 ## <a name="help-topics"></a>Rubriques d'aide
 
-[Applets de commande Workflow](http://go.microsoft.com/fwlink/?LinkID=245865)
+[Applets de commande Workflow](https://go.microsoft.com/fwlink/?LinkID=245865)
 
 [about_Workflows](https://technet.microsoft.com/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
-ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483149"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320650"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell
 
@@ -169,7 +169,7 @@ Alt+F7 | Effacer la liste de l’historique de commandes
 
     Vous pouvez rencontrer la limitation relative au double-saut (connexion à un second ordinateur à partir de la première connexion) si vous tentez de créer ou de travailler sur une nouvelle session à l’aide d’Accès Web Windows PowerShell. Accès Web Windows PowerShell utilise une instance d’exécution à distance et, actuellement, **PowerShell.exe** ne prend pas en charge l’établissement d’une connexion à distance vers un second ordinateur à partir d’une instance d’exécution à distance. Si vous essayez de vous connecter à un second ordinateur distant à partir d’une connexion existante, par exemple à l’aide de l’applet de commande **Enter-PSSession**, vous pouvez recevoir différents messages d’erreur, comme « Impossible d’obtenir les ressources réseau ».
 
-    Pour éviter les erreurs de double-saut, votre administrateur doit configurer l’authentification CredSSP dans l’environnement réseau de votre organisation. Pour plus d’informations sur la configuration de l’authentification CredSSP, consultez [CredSSP pour l’accès à distance de second saut](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) sur le site web de Microsoft. Vous pouvez également fournir des informations d’identification explicites quand vous voulez gérer un second ordinateur distant ; il est peu probable que des informations d’identification implicites autorisent le second saut.
+    Pour éviter les erreurs de double-saut, votre administrateur doit configurer l’authentification CredSSP dans l’environnement réseau de votre organisation. Pour plus d’informations sur la configuration de l’authentification CredSSP, consultez [CredSSP pour l’accès à distance de second saut](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) sur le site web de Microsoft. Vous pouvez également fournir des informations d’identification explicites quand vous voulez gérer un second ordinateur distant ; il est peu probable que des informations d’identification implicites autorisent le second saut.
 
 - Communication à distance
 
@@ -224,12 +224,12 @@ Alt+F7 | Effacer la liste de l’historique de commandes
 
         Vous pouvez modifier la hauteur de la console d’une manière similaire.
 
-        D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](http://blogs.msdn.com/b/powershell/).
+        D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](https://blogs.msdn.com/b/powershell/).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur les applets de commande Windows PowerShell](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Windows PowerShell sur Microsoft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [Référentiel du Centre de scripts TechNet](http://gallery.technet.microsoft.com/scriptcenter)
+- [Référentiel du Centre de scripts TechNet](https://gallery.technet.microsoft.com/scriptcenter)
 - [Centre de scripts - Blog « Hey, Scripting Guy! »](https://technet.microsoft.com/scriptcenter)
-- [Blog de l’équipe Windows PowerShell](http://blogs.msdn.com/b/powershell/)
+- [Blog de l’équipe Windows PowerShell](https://blogs.msdn.com/b/powershell/)

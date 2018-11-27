@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: En savoir plus sur PowerShell
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289206"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320412"
 ---
 # <a name="more-powershell-learning"></a>En savoir plus sur PowerShell
 
@@ -33,23 +33,23 @@ Outre l’aide disponible à la ligne de commande, les ressources suivantes cont
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Notions fondamentales de Windows PowerShell pour la série consacrée aux administrateurs actifs
 
-- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Fournisseur exclusif ? Not Hardly—A Look at Windows PowerShell Providers Part 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [The Main Event—Windows PowerShell Does Event Logs Part 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Fournisseur exclusif ? Not Hardly—A Look at Windows PowerShell Providers Part 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [The Main Event—Windows PowerShell Does Event Logs Part 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Découvrez-le avant qu’il ne soit trop tard
 
-- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell : Découvrez-le avant qu’il ne soit trop tard - Partie 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>Ressources pour les développeurs Windows PowerShell
 
 Les ressources suivantes sont conçues pour aider les développeurs à créer leurs propres modules, fonctions, applets de commande, fournisseurs et applications hôtes dans Windows PowerShell.
 
-- [Kit de développement logiciel (SDK) Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89595). Fournit des informations de référence.
-- [Guide de programmation pour Windows PowerShell](http://go.microsoft.com/fwlink/p/?LinkID=89596). Fournit des didacticiels. Contient aussi des informations sur les concepts fondamentaux de Windows PowerShell.
+- [Kit de développement logiciel (SDK) Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkID=89595). Fournit des informations de référence.
+- [Guide de programmation pour Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkID=89596). Fournit des didacticiels. Contient aussi des informations sur les concepts fondamentaux de Windows PowerShell.

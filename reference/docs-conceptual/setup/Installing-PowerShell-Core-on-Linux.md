@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous Linux
 description: Informations sur l’installation de PowerShell Core sur diverses distributions Linux
 ms.date: 08/06/2018
-ms.openlocfilehash: a20384c768113ed2313591cfa8c29eeadd94f80f
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: afb11f053517af592fe42754d543f9f4a9966c5b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225996"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321109"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installation de PowerShell Core sous Linux
 
@@ -27,7 +27,7 @@ Une fois que le package est installé, exécutez `pwsh` à partir d’un termina
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-423
+[opensuse]: #opensuse
 [fedora]: #fedora
 [arch]: #arch-linux
 [snap]: #snap-package

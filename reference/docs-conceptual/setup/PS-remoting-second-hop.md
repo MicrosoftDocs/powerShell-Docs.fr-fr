@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Effectuer le deuxième saut dans la communication à distance PowerShell
-ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483013"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320701"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Effectuer le deuxième saut dans la communication à distance PowerShell
 
@@ -24,7 +24,7 @@ Il existe plusieurs moyens de résoudre ce problème. Dans cette rubrique, nous 
 
 Vous pouvez utiliser le [protocole CredSSP (Credential Security Support Provider)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) pour l’authentification. Le protocole CredSSP mettant en cache les informations d’identification sur le serveur distant (_ServerB_), son utilisation vous expose à des risques de vol de ces informations. Si l’ordinateur distant est compromis, la personne malveillante a accès aux informations d’identification de l’utilisateur. CredSSP est désactivé par défaut sur les ordinateurs clients et serveurs. Vous devez activer CredSSP uniquement dans les environnements les plus approuvés, Par exemple un administrateur de domaine qui se connecte à un contrôleur de domaine, car le contrôleur de domaine est hautement approuvé.
 
-Pour plus d’informations sur les questions de sécurité lors de l’utilisation de CredSSP pour la communication à distance PowerShell, voir [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
+Pour plus d’informations sur les questions de sécurité lors de l’utilisation de CredSSP pour la communication à distance PowerShell, voir [Accidental Sabotage: Beware of CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
 Pour plus d’informations sur les risques de vol des informations d’identification, voir [Atténuation des attaques PtH (Pass-The-Hash) et autres risques de vol des informations d’identification](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
@@ -210,9 +210,9 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Informations sur la délégation Kerberos contrainte basée sur les ressources
 
 - [Nouveautés de l’authentification Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
-- [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [Comprendre la délégation Kerberos contrainte pour les déploiements de proxy d’applications Azure Active Directory avec l’authentification Windows intégrée](http://aka.ms/kcdpaper)
+- [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [Comprendre la délégation Kerberos contrainte pour les déploiements de proxy d’applications Azure Active Directory avec l’authentification Windows intégrée](https://aka.ms/kcdpaper)
 - [[MS-ADA2] : Attributs de schéma Active Directory M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU] : extensions du protocole Kerberos : protocole de service pour l’utilisateur et de délégation contrainte 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [Délégation Kerberos contrainte basée sur les ressources](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)

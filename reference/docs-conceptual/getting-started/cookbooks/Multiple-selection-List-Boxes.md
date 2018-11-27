@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Zones de liste à sélection multiple
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: 81708fd5d7204fb7d136e9d8e808303f4d3f4c30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954889"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320973"
 ---
 # <a name="multiple-selection-list-boxes"></a>Zones de liste à sélection multiple
 
@@ -128,7 +128,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
+Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt’s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Astuce Windows PowerShell de la semaine : Zones de liste à sélection multiple et bien plus encore](http://technet.microsoft.com/library/ff730950.aspx)
+- [Astuce Windows PowerShell de la semaine : Zones de liste à sélection multiple et bien plus encore](https://technet.microsoft.com/library/ff730950.aspx)

@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Démarrage de Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: b56ddc2f577225646729b99f3a2abcb8cc60d307
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953121"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320531"
 ---
 # <a name="starting-windows-powershell"></a>Démarrage de Windows PowerShell
 PowerShell est une DLL de moteur de script qui est incorporée dans plusieurs hôtes.  L’hôte le plus courant que vous démarrerez sont la ligne de commande interactive PowerShell.exe et l’environnement d’écriture de scripts interactif PowerShell_ISE.exe.
 
-Pour démarrer Windows PowerShell® sur Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 et Windows 8, voir [Tâches de gestion courantes et navigation](http://technet.microsoft.com/library/hh831491.aspx).
+Pour démarrer Windows PowerShell® sur Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 et Windows 8, voir [Tâches de gestion courantes et navigation](https://technet.microsoft.com/library/hh831491.aspx).
 
 ## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>Comment démarrer Windows PowerShell sur des versions antérieures de Windows
 
@@ -106,7 +106,7 @@ Pour démarrer une version 32 bits de Windows PowerShell, procédez de l’une 
 #### <a name="in-windows-81"></a>Dans Windows® 8.1
 
 - Dans l’écran **Démarrer**, tapez **Windows PowerShell (x86)**. Cliquez sur la vignette **Windows PowerShell x86**.
-- Si vous exécutez les [Outils d’Administration de serveur distant](http://go.microsoft.com/fwlink/?LinkID=304145) pour Windows 8.1, vous pouvez également ouvrir Windows PowerShell x86 à partir du menu **Outils du Gestionnaire de serveur**.
+- Si vous exécutez les [Outils d’Administration de serveur distant](https://go.microsoft.com/fwlink/?LinkID=304145) pour Windows 8.1, vous pouvez également ouvrir Windows PowerShell x86 à partir du menu **Outils du Gestionnaire de serveur**.
   Sélectionnez **Windows PowerShell (x86)**.
 - Sur le Bureau, déplacez le curseur vers l’angle supérieur droit, cliquez sur **Recherche**, tapez **PowerShell x86**, puis cliquez sur **Windows PowerShell (x86)**.
 - Via la ligne de commande, entrez : `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
@@ -114,6 +114,6 @@ Pour démarrer une version 32 bits de Windows PowerShell, procédez de l’une 
 #### <a name="in-windows-8"></a>Dans Windows® 8
 
 - Dans l’écran **Démarrer**, déplacez le curseur vers l’angle supérieur droit, cliquez sur **Paramètres**, **Vignettes**, puis positionnez le curseur **Afficher les outils d’administration** sur Oui. Ensuite, tapez **PowerShell** puis cliquez sur **Windows PowerShell (x86)**.
-- Si vous exécutez les [Outils d’Administration de serveur distant](http://www.microsoft.com/download/details.aspx?id=28972) pour Windows 8, vous pouvez également ouvrir Windows PowerShell x86 à partir du menu **Outils du Gestionnaire de serveur**. Sélectionnez **Windows PowerShell (x86)**.
+- Si vous exécutez les [Outils d’Administration de serveur distant](https://www.microsoft.com/download/details.aspx?id=28972) pour Windows 8, vous pouvez également ouvrir Windows PowerShell x86 à partir du menu **Outils du Gestionnaire de serveur**. Sélectionnez **Windows PowerShell (x86)**.
 - Dans l’écran **Démarrer** ou sur le Bureau, tapez **PowerShell (x86)**, puis cliquez sur **Windows PowerShell (x86)**.
 - Via la ligne de commande, entrez : `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

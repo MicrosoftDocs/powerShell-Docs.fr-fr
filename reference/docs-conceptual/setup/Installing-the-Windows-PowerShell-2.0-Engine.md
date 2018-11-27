@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Installation du moteur Windows PowerShell 2.0
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: fb5ed1a5508ddca6925e9281a53caf5e6701870f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952339"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320497"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installation du moteur Windows PowerShell 2.0
 Cette rubrique explique comment installer le moteur Windows PowerShell 2.0.
@@ -70,7 +70,7 @@ Procédez comme suit pour ajouter le moteur Windows PowerShell 2.0 et les fonct
 Pour plus d’informations sur le démarrage du moteur Windows PowerShell 2.0, consultez [Démarrage du moteur Windows PowerShell 2.0](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## <a name="on-earlier-systems"></a>Sur les systèmes antérieurs
-Le package [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) qui installe Windows PowerShell 4.0 sur Windows 7, Windows Server 2008 R2 et Windows Server 2012 inclut le moteur Windows PowerShell 2.0. Le moteur Windows PowerShell 2.0 est activé et prêt à l’usage, si nécessaire, sans autre installation, paramétrage ou configuration.
+Le package [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) qui installe Windows PowerShell 4.0 sur Windows 7, Windows Server 2008 R2 et Windows Server 2012 inclut le moteur Windows PowerShell 2.0. Le moteur Windows PowerShell 2.0 est activé et prêt à l’usage, si nécessaire, sans autre installation, paramétrage ou configuration.
 
 Le package Windows Management Framework 3.0 qui installe Windows PowerShell 3.0 sur Windows 7, Windows Server 2008 R2 et Windows Server 2008 inclut le moteur Windows PowerShell 2.0. Le moteur Windows PowerShell 2.0 est activé et prêt à l’usage, si nécessaire, sans autre installation, paramétrage ou configuration.
 

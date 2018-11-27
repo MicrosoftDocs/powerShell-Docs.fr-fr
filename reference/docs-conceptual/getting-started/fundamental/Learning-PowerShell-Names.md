@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,applet de commande
 title: Apprentissage des noms PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851253"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320480"
 ---
 # <a name="learning-powershell-names"></a>Apprentissage des noms PowerShell
 
-L’apprentissage des noms de commandes et des paramètres prend beaucoup de temps avec la plupart des interfaces de ligne de commande. Le problème est qu’il y a peu de modèles. La mémorisation est le seul moyen d’assimiler les commandes et les paramètres utilisés régulièrement.
+L’apprentissage des noms de commandes et des paramètres prend beaucoup de temps avec la plupart des interfaces de ligne de commande. Le problème est qu’il y a peu de modèles. Mémorisation des commandes sont le seul moyen pour en savoir plus les commandes et paramètres que vous devez utiliser régulièrement.
 
 Face à une nouvelle commande ou à un nouveau paramètre, on ne peut pas toujours utiliser ce qu’on connaît déjà. Il faut trouver son nom et le retenir. En règle générale, les interfaces de ligne de commande commencent par un petit éventail d’outils et évoluent par ajouts successifs. On comprend facilement pourquoi il n’existe aucune structure standard.
 En effet, chaque commande constitue un outil distinct. PowerShell présente une meilleure façon de gérer les noms de commandes.

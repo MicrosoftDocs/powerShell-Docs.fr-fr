@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés de PowerShell 5.0 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953580"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320582"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Nouveauté dans Windows PowerShell ISE
 Cette rubrique décrit les fonctionnalités nouvelles et mises à jour qui ont été introduites dans les versions de l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell.
@@ -63,7 +63,7 @@ Pour utiliser des extraits de code dans Windows PowerShell 3.0 ou version ulté
 ### <a name="add-on-tools"></a>Outils complémentaires
 **Ajout dans PowerShell 3.0**
 
-Windows PowerShell ISE prend désormais en charge des outils complémentaires qui sont des contrôles Windows Presentation Foundation (WPF) ajoutés à l’aide du modèle d’objet. Les outils complémentaires peuvent être affichés dans un volet vertical ou horizontal dans la console. Plusieurs outils complémentaires dans un volet sont affichés sous la forme d’un contrôle à onglets. Vous pouvez également ajouter ou supprimer des outils complémentaires produits par des éditeurs non-Microsoft. Pour plus d’informations sur la manière d’importer ou de supprimer des outils complémentaires, voir [Opérations Windows PowerShell ISE](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE prend désormais en charge des outils complémentaires qui sont des contrôles Windows Presentation Foundation (WPF) ajoutés à l’aide du modèle d’objet. Les outils complémentaires peuvent être affichés dans un volet vertical ou horizontal dans la console. Plusieurs outils complémentaires dans un volet sont affichés sous la forme d’un contrôle à onglets. Vous pouvez également ajouter ou supprimer des outils complémentaires produits par des éditeurs non-Microsoft. Pour plus d’informations sur la manière d’importer ou de supprimer des outils complémentaires, voir [Opérations Windows PowerShell ISE](https://technet.microsoft.com/library/cc732148.aspx).
 
 **Quels avantages cette modification procure-t-elle ?**
 
@@ -224,5 +224,5 @@ L’applet de commande Show-Command est une nouveauté dans Windows PowerShell I
 Pour plus d’informations sur l’utilisation de Windows PowerShell ISE dans Windows PowerShell, consultez les liens suivants.
 
 - [Exploration de l’environnement d’écriture de scripts intégré de Windows PowerShell](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [ISE sur le Wiki TechNet](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Centre de scripts](http://technet.microsoft.com/scriptcenter/default)
+- [ISE sur le Wiki TechNet](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Centre de scripts](https://technet.microsoft.com/scriptcenter/default)

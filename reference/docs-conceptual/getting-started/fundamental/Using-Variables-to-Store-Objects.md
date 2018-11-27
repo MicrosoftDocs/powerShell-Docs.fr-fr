@@ -3,17 +3,17 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Utilisation de variables pour stocker des objets
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
-ms.translationtype: HT
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353216"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320956"
 ---
 # <a name="using-variables-to-store-objects"></a>Utilisation de variables pour stocker des objets
 
 PowerShell fonctionne avec des objets. PowerShell vous permet de créer des objets nommés reconnus comme des variables.
-Les noms des variables peuvent inclure le trait de soulignement et tout caractère alphanumérique. Lorsqu’elle est utilisée dans PowerShell, une variable est toujours spécifiée à l’aide du caractère \$ suivi par le nom de la variable.
+Les noms de variables peuvent inclure le caractère de soulignement et des caractères alphanumériques. Lorsqu’elle est utilisée dans PowerShell, une variable est toujours spécifiée à l’aide du caractère \$ suivi par le nom de la variable.
 
 ## <a name="creating-a-variable"></a>Création d’une variable
 

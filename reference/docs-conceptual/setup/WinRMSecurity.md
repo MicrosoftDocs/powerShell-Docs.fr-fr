@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: WinRMSecurity
-ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482945"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320548"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell
 
@@ -15,7 +15,7 @@ La communication à distance PowerShell est la méthode recommandée pour gérer
 
 ## <a name="what-is-powershell-remoting"></a>Présentation de la communication à distance PowerShell
 
-La communication à distance Powershell utilise la [Gestion à distance de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), l’implémentation par Microsoft du protocole [Gestion des services Web (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf), pour permettre aux utilisateurs d’exécuter des commandes PowerShell sur des ordinateurs distants. Pour plus d’informations sur l’utilisation de la communication à distance PowerShell, voir [Exécution de commandes à distance](https://technet.microsoft.com/library/dd819505.aspx).
+La communication à distance Powershell utilise la [Gestion à distance de Windows (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), l’implémentation par Microsoft du protocole [Gestion des services Web (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf), pour permettre aux utilisateurs d’exécuter des commandes PowerShell sur des ordinateurs distants. Pour plus d’informations sur l’utilisation de la communication à distance PowerShell, voir [Exécution de commandes à distance](https://technet.microsoft.com/library/dd819505.aspx).
 
 La communication à distance PowerShell n’est pas identique à l’utilisation du paramètre **ComputerName** d’une applet de commande pour l’exécuter sur un ordinateur distant, qui utilise l’appel de procédure distante (RPC) en tant que protocole sous-jacent.
 

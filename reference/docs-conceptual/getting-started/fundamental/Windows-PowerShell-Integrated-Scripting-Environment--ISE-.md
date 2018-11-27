@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Environnement d’écriture de scripts intégré de Windows PowerShell ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952067"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320514"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Environnement d'écriture de scripts intégré de Windows PowerShell
 
@@ -62,7 +62,7 @@ L’environnement ISE a été introduit avec PowerShell v2.0.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Configuration requise pour l’exécution de Windows PowerShell ISE
 
-L’environnement ISE est disponible sur tout ordinateur Windows pouvant exécuter Windows PowerShell v2.0 ou version ultérieure. Chaque version de Windows et de Windows Server inclut une version de Windows PowerShell ISE, mais vous pouvez procéder à une mise à niveau vers la version la plus récente disponible en installant WMF (Windows Management Framework). Pour plus d’informations, consultez la documentation de [WMF](/powershell/wmf/readme).
+L’environnement ISE est disponible sur tout ordinateur Windows pouvant exécuter Windows PowerShell v2.0 ou version ultérieure. Chaque version de Windows et de Windows Server inclut une version de Windows PowerShell ISE, mais vous pouvez procéder à une mise à niveau vers la version la plus récente disponible en installant WMF (Windows Management Framework). Pour plus d’informations, consultez la documentation de [WMF](/powershell/wmf).
 
 > [!NOTE]
 > Étant donné que Windows PowerShell ISE nécessite une interface graphique utilisateur, vous ne pouvez pas l’exécuter sur l’option d’installation minimale de Windows Server.

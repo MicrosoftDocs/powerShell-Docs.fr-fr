@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851322"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320684"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
@@ -25,7 +25,7 @@ Après avoir installé et configuré correctement la passerelle, les utilisateur
 
 L’installation et la configuration d’Accès Web Windows PowerShell forment un processus en trois étapes :
 
-1. [Installer Accès Web Windows PowerShell](#install-windows-powershell-web-access)
+1. [Installer Accès Web Windows PowerShell](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configurer la passerelle](#configure-the-gateway)
 1. [Configurer une règle d’autorisation restrictive](#configure-a-restrictive-authorization-rule)
 
@@ -58,8 +58,8 @@ D’autres navigateurs acceptant les cookies, exécutant JavaScript et exécutan
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Navigateurs ou appareils mobiles testés de façon minimale
 
-- Windows Phone 7 et 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 et 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari pour système d’exploitation iPhone 5.0.1
 - Apple Safari pour système d’exploitation iPad 2 5.0.1
 
@@ -75,7 +75,7 @@ Pour utiliser la console web Accès Web Windows PowerShell, les navigateurs doiv
 
 Vous pouvez installer la passerelle Accès Web Windows PowerShell sur un serveur qui exécute Windows Server 2012 R2 ou Windows Server 2012 en utilisant des applets de commande Windows PowerShell, ou l’Assistant Ajout de rôles et de fonctionnalités qui s’ouvre à partir du Gestionnaire de serveur. Pour une installation et une configuration rapides, utilisez les applets de commande Windows PowerShell, comme décrit dans cette section.
 
-1. [Installer Accès Web Windows PowerShell](#install-Windows-powershell-web-access)
+1. [Installer Accès Web Windows PowerShell](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [Configurer la passerelle](#configure-the-gateway)
 1. [Configurer une règle d’autorisation restrictive](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>Configurer une règle d’autorisation restrictive
 
-Une fois Accès Web Windows PowerShell installé et la passerelle configurée, les utilisateurs peuvent ouvrir la page de connexion dans un navigateur, mais ils ne peuvent pas se connecter tant que l’administrateur d’Accès Web Windows PowerShell ne leur a pas octroyé explicitement un accès. Le contrôle d’accès d’Accès Web Windows PowerShell est géré à l’aide de l’ensemble d’applets de commande Windows PowerShell décrit dans le tableau suivant. Il n’existe aucune interface utilisateur graphique équivalente pour ajouter ou gérer les règles d’autorisation. Pour plus d’informations sur les applets de commande Accès Web Windows PowerShell, consultez les rubriques de référence des applets de commande, [Applets de commande Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md).
+Une fois Accès Web Windows PowerShell installé et la passerelle configurée, les utilisateurs peuvent ouvrir la page de connexion dans un navigateur, mais ils ne peuvent pas se connecter tant que l’administrateur d’Accès Web Windows PowerShell ne leur a pas octroyé explicitement un accès. Le contrôle d’accès d’Accès Web Windows PowerShell est géré à l’aide de l’ensemble d’applets de commande Windows PowerShell décrit dans le tableau suivant. Il n’existe aucune interface utilisateur graphique équivalente pour ajouter ou gérer les règles d’autorisation. Pour plus d’informations sur les applets de commande Accès Web Windows PowerShell, consultez les rubriques de référence des applets de commande, [Applets de commande Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Pour plus de détails sur les règles d’autorisation et la sécurité d’Accès Web Windows PowerShell, consultez [Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -360,7 +360,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>Configuration d’une règle d’autorisation restrictive
 
-Une fois Accès Web Windows PowerShell installé et la passerelle configurée, les utilisateurs peuvent ouvrir la page de connexion dans un navigateur, mais ils ne peuvent pas se connecter tant que l’administrateur d’Accès Web Windows PowerShell ne leur a pas octroyé explicitement un accès. Le contrôle d’accès d’Accès Web Windows PowerShell est géré à l’aide de l’ensemble d’applets de commande Windows PowerShell décrit dans le tableau suivant. Il n’existe aucune interface utilisateur graphique équivalente pour ajouter ou gérer les règles d’autorisation. Pour plus d’informations sur les applets de commande Accès Web Windows PowerShell, consultez les rubriques de référence des applets de commande, [Applets de commande Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md).
+Une fois Accès Web Windows PowerShell installé et la passerelle configurée, les utilisateurs peuvent ouvrir la page de connexion dans un navigateur, mais ils ne peuvent pas se connecter tant que l’administrateur d’Accès Web Windows PowerShell ne leur a pas octroyé explicitement un accès. Le contrôle d’accès d’Accès Web Windows PowerShell est géré à l’aide de l’ensemble d’applets de commande Windows PowerShell décrit dans le tableau suivant. Il n’existe aucune interface utilisateur graphique équivalente pour ajouter ou gérer les règles d’autorisation. Pour plus d’informations sur les applets de commande Accès Web Windows PowerShell, consultez les rubriques de référence des applets de commande, [Applets de commande Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Pour plus de détails sur les règles d’autorisation et la sécurité d’Accès Web Windows PowerShell, consultez [Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell](authorization-rules-and-security-features-of-windows-powershell-web-access.md).
 
@@ -404,7 +404,7 @@ Pour un environnement de production sécurisé, utilisez toujours un certificat 
 1. Dans le volet **Actions**, effectuez l’une des opérations suivantes. Pour plus d’informations sur la configuration des certificats de serveur dans IIS, consultez [Configuration des certificats de serveur dans IIS 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).
 
    - Cliquez sur **Importer** pour importer un certificat existant valide depuis un emplacement sur votre réseau.
-   - Cliquez sur **Créer une demande de certificat** pour demander un certificat auprès d’une autorité de certification comme [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/) ou [GeoTrust](https://www.geotrust.com/). Le nom courant du certificat doit correspondre à l’en-tête d’hôte dans la demande.
+   - Cliquez sur **Créer une demande de certificat** pour demander un certificat auprès d’une autorité de certification comme [VeriSign](https://www.verisign.com/), [Thawte](https://www.thawte.com/) ou [GeoTrust](https://www.geotrust.com/). Le nom courant du certificat doit correspondre à l’en-tête d’hôte dans la demande.
 
      Par exemple, si le navigateur client demande `http://www.contoso.com/`, le nom commun doit également être `http://www.contoso.com/`. Il s’agit de l’option recommandée la plus sécurisée pour fournir un certificat à la passerelle Accès Web Windows PowerShell.
 

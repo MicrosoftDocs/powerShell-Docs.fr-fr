@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850977"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320889"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
@@ -99,7 +99,7 @@ Dans les deux cas, vous avez besoin du package de la version ZIP Windows 10 x64 
 1. Utilisez votre utilitaire zip favori pour décompresser le package dans un répertoire au sein de l’image Nano Server montée.
 2. Démontez l’image et démarrez-la.
 3. Connectez-vous à l’instance de boîte de réception de Windows PowerShell.
-4. Suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+4. Suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
 ### <a name="online-deployment-of-powershell-core"></a>Déploiement en ligne de PowerShell Core
 
