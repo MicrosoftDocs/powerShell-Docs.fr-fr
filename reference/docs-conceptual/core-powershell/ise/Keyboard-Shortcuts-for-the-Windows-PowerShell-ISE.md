@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Raccourcis clavier pour Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953818"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320803"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
-Pour effectuer des actions dans l’environnement d’écriture de scripts intégré de Windows PowerShell®, utilisez les raccourcis clavier suivants. Windows PowerShell ISE est intégré aux systèmes d’exploitation Windows Server et Windows Client, mais peut également être installé sur certains systèmes d’exploitation Windows plus anciens comme composant du [package de téléchargement de Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881).
+Pour effectuer des actions dans l’environnement d’écriture de scripts intégré de Windows PowerShell®, utilisez les raccourcis clavier suivants. Windows PowerShell ISE est intégré aux systèmes d’exploitation Windows Server et Windows Client, mais peut également être installé sur certains systèmes d’exploitation Windows plus anciens comme composant du [package de téléchargement de Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Raccourcis clavier pour l’édition de texte
 
@@ -120,4 +120,4 @@ Pour démarrer la console Windows PowerShell (PowerShell.exe) ou pour quitter Wi
 
 ## <a name="see-also"></a>Voir aussi
 
-- [PowerShell Magazine : Liste complète des raccourcis clavier pour Windows PowerShell ISE](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell Magazine : Liste complète des raccourcis clavier pour Windows PowerShell ISE](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
-ms.translationtype: HT
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133110"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321076"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
@@ -20,19 +20,19 @@ La fonctionnalité Accès Web Windows PowerShell dans Windows Server 2012 R2 et 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Configuration des règles d’autorisation et de la sécurité du site
 
 Une fois Accès Web Windows PowerShell installé et la passerelle configurée, les utilisateurs peuvent ouvrir la page de connexion dans un navigateur, mais ils ne peuvent pas se connecter tant que l’administrateur d’Accès Web Windows PowerShell ne leur a pas octroyé explicitement un accès. Le contrôle d’accès d’« Accès Web Windows PowerShell » est géré à l’aide de l’ensemble des applets de commande Windows PowerShell décrit dans le tableau suivant. Il n’existe aucune interface utilisateur graphique équivalente pour ajouter ou gérer les règles d’autorisation.
-Consultez [Applets de commande d’Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md).
+Consultez [Applets de commande d’Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Les administrateurs peuvent définir `{0-n}` règles d’authentification pour Accès Web Windows PowerShell. La sécurité par défaut est restrictive plutôt que permissive ; les règles à authentification zéro signifient qu’aucun utilisateur n’a accès à quoi que ce soit.
 
-[Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) et [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) dans Windows Server 2012 R2 incluent un paramètre Credential qui permet d’ajouter et de tester les règles d’autorisation d’Accès Web Windows PowerShell depuis un ordinateur distant ou une session Accès Web Windows PowerShell active. Comme avec d’autres applets de commande Windows PowerShell disposant d’un paramètre Credential, vous pouvez définir un objet PSCredential comme valeur du paramètre. Pour créer un objet PSCredential qui contient les informations d’identification que vous souhaitez transmettre à un ordinateur distant, exécutez l’applet de commande [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential).
+[Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) et [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) dans Windows Server 2012 R2 incluent un paramètre Credential qui permet d’ajouter et de tester les règles d’autorisation d’Accès Web Windows PowerShell depuis un ordinateur distant ou une session Accès Web Windows PowerShell active. Comme avec d’autres applets de commande Windows PowerShell disposant d’un paramètre Credential, vous pouvez définir un objet PSCredential comme valeur du paramètre. Pour créer un objet PSCredential qui contient les informations d’identification que vous souhaitez transmettre à un ordinateur distant, exécutez l’applet de commande [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential).
 
-Les règles d’authentification Accès Web Windows PowerShell sont des règles de liste verte. Chaque règle est une définition d’une connexion autorisée entre des utilisateurs, des ordinateurs cibles et des [configurations de session](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) Windows PowerShell particulières (également appelées points de terminaison ou _instances d’exécution_) sur des ordinateurs cibles spécifiés.
+Les règles d’authentification Accès Web Windows PowerShell sont des règles de liste verte. Chaque règle est une définition d’une connexion autorisée entre des utilisateurs, des ordinateurs cibles et des [configurations de session](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) Windows PowerShell particulières (également appelées points de terminaison ou _instances d’exécution_) sur des ordinateurs cibles spécifiés.
 Pour obtenir une explication sur **les instances d’exécution**, consultez [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Il suffit qu’une règle soit satisfaite pour qu’un utilisateur obtienne l’accès. Si un utilisateur se voit accorder l’accès à un seul ordinateur avec accès linguistique complet ou avec accès uniquement aux applets de commande de gestion à distance Windows PowerShell, depuis la console web, il peut se connecter à d’autres ordinateurs qui sont connectés au premier ordinateur cible. La façon la plus sûre de configurer Accès Web Windows PowerShell consiste à autoriser les utilisateurs à accéder uniquement à des configurations de session contrainte pour les autoriser à accomplir des tâches spécifiques qu’ils ont normalement besoin d’effectuer à distance.
 
-Les applets de commande référencées dans [Applets de commande d’Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md) permettent de créer un ensemble de règles d’accès qui sont utilisées pour autoriser un utilisateur sur la passerelle Accès Web Windows PowerShell. Ces règles diffèrent des listes de contrôle d’accès sur l’ordinateur de destination et constituent une couche de sécurité supplémentaire pour l’accès par le Web. La section suivante fournit davantage de détails sur la sécurité.
+Les applets de commande référencées dans [Applets de commande d’Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) permettent de créer un ensemble de règles d’accès qui sont utilisées pour autoriser un utilisateur sur la passerelle Accès Web Windows PowerShell. Ces règles diffèrent des listes de contrôle d’accès sur l’ordinateur de destination et constituent une couche de sécurité supplémentaire pour l’accès par le Web. La section suivante fournit davantage de détails sur la sécurité.
 
 Si des utilisateurs ne parviennent pas à traverser l’une des couches de sécurité précédentes, ils reçoivent un message générique « Accès refusé » dans leur fenêtre de navigateur. Bien que les détails sur la sécurité soient consignés sur le serveur passerelle, aucune information n’est fournie aux utilisateurs finals quant au nombre de couches de sécurité qu’ils ont traversées ou quant à la couche au niveau de laquelle l’échec d’authentification ou de connexion a échoué.
 
@@ -181,8 +181,8 @@ Dans le scénario précédent, Accès Web Windows PowerShell établit une connex
 2. Authentification sur l’ordinateur cible en utilisant les informations d’identification supplémentaires fournies dans la page de connexion, dans la zone **Paramètres de connexion facultatifs**
 
    > [!NOTE]
-   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, consultez [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx).
-   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, consultez [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
+   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, voir [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx).
+   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, voir [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Utilisation d’un seul jeu de règles d’autorisation pour plusieurs sites
 
@@ -229,4 +229,4 @@ Si le serveur de passerelle exécute Windows Server 2012 R2, Accès Web Window
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Applets de commande d’Accès Web Windows PowerShell](cmdlets/web-access-cmdlets.md)
+[Applets de commande d’Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
