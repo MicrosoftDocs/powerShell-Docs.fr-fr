@@ -1,6 +1,6 @@
 items:
 - name: Vue d’ensemble
-  href: readme.md
+  href: overview.md
 - name: Installation de PowerShellGet
   href: installing-psget.md
 - name: Prise en main
@@ -69,9 +69,9 @@ items:
       href: concepts/module-license-acceptance.md
   - name: Définition de packages en tant que préversion
     items:
-    - name: Définition d’un module en tant que préversion
+    - name: Définition d’un module en tant que version préliminaire
       href: concepts/module-prerelease-support.md
-    - name: Définition d’un script en tant que préversion
+    - name: Définition d’un script en tant que version préliminaire
       href: concepts/script-prerelease-support.md
   - name: Profil de règle PSScriptAnalyzer
     href: concepts/scriptanalyzer-rule-profile.md
@@ -93,9 +93,9 @@ items:
   href: faqs.md
 - name: Applets de commande PowerShellGet
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.openlocfilehash: 3b414bb44e3f278457277791cf3b1a3d767ecb68
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619124"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576870"
