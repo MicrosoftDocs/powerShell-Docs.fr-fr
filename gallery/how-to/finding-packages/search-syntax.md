@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Syntaxe de recherche PowerShell Gallery
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003702"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742854"
 ---
 # <a name="gallery-search-syntax"></a>Syntaxe de recherche PowerShell Gallery
 
-PowerShell Gallery offre une zone de recherche de texte où vous pouvez utiliser des mots, des expressions et des mots clés pour limiter les résultats de la recherche.
+Vous pouvez rechercher l’à l’aide de PowerShell Gallery le [site web de PowerShell Gallery](https://www.powershellgallery.com/).
+Site web PowerShell Gallery offre un searchbox de texte où vous pouvez utiliser des mots, expressions et des mots pour affiner les résultats de recherche.
 
 ## <a name="search-by-keywords"></a>Recherche par mots clés
 
     dsc azure sql
 
-La recherche fera de son mieux pour trouver des documents pertinents contenant les 3 mots clés et retourner les documents correspondants.
+Recherche tente de trouver des documents pertinents contenant toutes les 3 mots clés et retourner les documents correspondants.
 
 ## <a name="search-using-phrases-and-keywords"></a>Recherche à l’aide d’expressions et de mots clés
 
@@ -37,10 +38,9 @@ Actuellement, les champs sur lesquels la recherche peut porter sont « Id », 
 
 ## <a name="examples"></a>Exemples
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-recherche des packages avec « PSReadline » ou « AzureRM.Profile » dans leur champ ID, respectivement.
+    ID:PSReadline
+    
+recherche les packages avec un ID contenant « PSReadline ».
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ Le filtre Id étant une correspondance avec la sous-chaîne, si vous recherchez 
 
     Id:"azure"
 
-Vous obtiendrez des résultats comme « AzureRM.Profile » et « Azure.Storage ».
+Cela fournit des résultats qui incluent AzureRM.Profile » et « Azure.Storage ».
 
-Vous pouvez également rechercher plusieurs mots clés dans un champ unique. Vous pouvez aussi combiner et associer des champs.
+Vous pouvez également rechercher plusieurs mots clés dans un champ unique. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-Vous pouvez effectuer des recherches d’expressions :
+Et vous pouvez effectuer des recherches d’expressions à l’aide de guillemets doubles :
 
     id:"azure.storage"
 
-
 Pour rechercher tous les packages avec la balise DSC.
 
-    Tags:"DSC"
+    Tags:DSC
 
 Pour rechercher tous les packages avec la fonction spécifiée.
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 Pour rechercher tous les packages avec l’applet de commande spécifiée.
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 Pour rechercher tous les packages avec le nom de ressource DSC spécifié.
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 Pour rechercher tous les packages avec la version PowerShell spécifiée
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Enfin, si vous utilisez un champ non pris en charge, tel que « commandes », nous l’ignorons simplement et effectuons une recherche dans tous les champs. Par conséquent, la requête suivante
 

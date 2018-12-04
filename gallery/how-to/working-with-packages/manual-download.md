@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery
 title: Téléchargement manuel de package
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003701"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742820"
 ---
 # <a name="manual-package-download"></a>Téléchargement manuel de package
 
-Powershell Gallery permet de télécharger un package directement à partir du site web, sans utiliser les applets de commande PowerShellGet. Le package est téléchargé sous forme de fichier de package NuGet (.nupkg), qui peut être copié facilement dans un référentiel interne.
+Powershell Gallery permet de télécharger un package directement à partir du site web, sans utiliser les applets de commande PowerShellGet. Vous pouvez télécharger n’importe quel package comme un fichier de package (fichier .nupkg) de NuGet, vous pouvez ensuite copier vers un référentiel interne.
 
 > [!NOTE]
 > Le téléchargement manuel de package n’est **pas** censé se substituer à l’applet de commande Install-Module.
@@ -45,7 +45,7 @@ L’approche la plus simple consiste à supprimer les éléments spécifiques Nu
 1. Extrayez le contenu du package NuGet dans un dossier local.
 2. Supprimez les éléments spécifiques NuGet du dossier.
 3. Renommez le dossier. Le nom de dossier par défaut est généralement `<name>.<version>`. La version peut inclure « -prerelease » si le module est marqué comme étant une version préliminaire. Renommez le dossier en conservant uniquement le nom du module. Par exemple, « azurerm.storage.5.0.4-preview » devient « azurerm.storage ».
-4. Copiez le dossier dans votre chemin PSModulePath.
+4. Copiez le dossier dans l’un des dossiers dans le `$env:PSModulePath value`. `$env:PSModulePath` est un ensemble de délimitée par des points-virgules de chemins d’accès dans lequel PowerShell doit se présenter pour les modules.
 
 > [!IMPORTANT]
 > Le téléchargement manuel n’inclut pas les dépendances nécessaires au module. Si le package a des dépendances, elles doivent être installées sur le système pour permettre à ce module de fonctionner correctement. PowerShell Gallery affiche toutes les dépendances nécessaires au package.
