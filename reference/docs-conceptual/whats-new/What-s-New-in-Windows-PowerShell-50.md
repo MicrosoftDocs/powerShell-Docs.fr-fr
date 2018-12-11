@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320718"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978893"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 Windows PowerShell 5.0 intègre plusieurs nouvelles fonctionnalités importantes qui, en plus d’étendre et de simplifier son utilisation, vous permettent de contrôler et de gérer des environnements Windows plus facilement et plus complètement.
@@ -38,9 +38,9 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
   - [Nouveau-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) : prend maintenant en charge les chemins d’accès UNC.
 
 - Nouvelles applets de commande dans le module [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx) : effectue une vérification du serveur collecteur à la demande.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx) : arrête une configuration en cours d’exécution.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx) : permet de supprimer des documents de configuration dans différentes phases (en attente, précédente ou actuelle).
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)  Effectue une vérification du serveur collecteur de la demande.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)  Arrête une configuration qui est déjà en cours d’exécution.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)  Vous permet de supprimer des documents de configuration dans les différentes phases (en attente, précédentes ou actuelles).
 
 - Rehaussement du langage
   - DependsOn prend maintenant en charge des ressources composites.
@@ -64,10 +64,10 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 
 - Améliorations apportées à l’extensibilité
   - La ressource LocalConfigurationManager a une nouvelle propriété, **ActionAfterReboot**.
-    - ContinueConfiguration (valeur par défaut) : reprend automatiquement une configuration après le redémarrage d’un nœud cible.
-    - StopConfiguration : ne reprend pas automatiquement une configuration après le redémarrage d’un nœud.
+    - ContinueConfiguration (valeur par défaut) : Reprend automatiquement une configuration après le redémarrage d’un nœud cible.
+    - StopConfiguration Ne reprend pas automatiquement une configuration après le redémarrage d’un nœud.
   - Une série de tests de cohérence peut maintenant se produire plus souvent qu’une opération d’extraction, ou inversement.
-  - Prise en charge du contrôle de version : la configuration d’état souhaité peut maintenant reconnaître un document généré sur un client plus récent (intégrée à [WMF 5.0](https://aka.ms/wmf5download)).
+  - Prise en charge le contrôle de version :  DSC peut désormais reconnaître un document qui a été généré sur un client plus récent (inclus avec [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Améliorations apportées à la prévention des erreurs
   - La version de module est maintenant appliquée avant une configuration.
@@ -132,9 +132,9 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 - Un nouvel état, AtBreakpoint, a été ajouté pour les travaux Windows PowerShell. L’état AtBreakpoint s’applique quand un travail exécute un script incluant une série de points d’arrêt, au moment où le script atteint un point d’arrêt. Quand un travail est interrompu à un point d’arrêt de débogage, vous devez déboguer le travail en exécutant l’applet de commande Debug-Job.
 - Windows PowerShell 5.0 prend en charge plusieurs versions d’un module Windows PowerShell à l’intérieur du même dossier dans $PSModulePath. Une propriété, RequiredVersion, a été ajoutée à la classe ModuleSpecification pour vous aider à obtenir la version souhaitée d’un module. Cette propriété ne peut pas être utilisée en même temps que la propriété ModuleVersion. La propriété RequiredVersion est maintenant prise en charge. Elle est incluse dans la valeur du paramètre FullyQualifiedName des applets de commande Get-Module, Import-Module et Remove-Module.
 - Vous pouvez maintenant effectuer une validation de la version du module en exécutant l’applet de commande Test-ModuleManifest.
-- Les résultats de l’applet de commande Get-Command affichent maintenant une colonne Version suite à l’ajout d’une nouvelle propriété, Version, à la classe CommandInfo. L’applet de commande Get-Command affiche les commandes de plusieurs versions du même module. La propriété Version fait également partie des classes dérivées de CmdletInfo:CmdletInfo et d’ApplicationInfo.
+- Les résultats de l’applet de commande Get-Command affichent maintenant une colonne Version suite à l’ajout d’une nouvelle propriété, Version, à la classe CommandInfo. L’applet de commande Get-Command affiche les commandes de plusieurs versions du même module. La propriété Version fait également partie des classes dérivées de CmdletInfo : CmdletInfo et ApplicationInfo.
 - L’applet de commande Get-Command dispose d’un nouveau paramètre, -ShowCommandInfo, qui retourne les informations de ShowCommand en tant que PSObjects. Cette fonctionnalité est particulièrement utile quand l’applet de commande Show-Command est exécutée dans Windows PowerShell ISE à l’aide de la communication à distance Windows PowerShell. Le paramètre -ShowCommandInfo remplace la fonction Get-SerializedCommand existante du module Microsoft.PowerShell.Utility, mais le script Get-SerializedCommand est toujours disponible pour prendre en charge les scripts de bas niveau.
-- Une nouvelle applet de commande, Get-ItemPropertyValue, permet d’obtenir la valeur d’une propriété sans utiliser de notation par points. Par exemple, dans les versions plus anciennes de Windows PowerShell, vous pouvez exécuter la commande suivante pour obtenir la valeur de la propriété de base de l’application de la clé de Registre PowerShellEngine : **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. À partir de Windows PowerShell 5.0, vous pouvez exécuter **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
+- Une nouvelle applet de commande, Get-ItemPropertyValue, permet d’obtenir la valeur d’une propriété sans utiliser de notation par points. Par exemple, dans les versions plus anciennes de Windows PowerShell, vous pouvez exécuter la commande suivante pour obtenir la valeur de la propriété de Base de l’Application de la clé de Registre PowerShellEngine : **(Get-ItemProperty-Path HKLM :\\logiciel\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase). ApplicationBase**. À partir de Windows PowerShell 5.0, vous pouvez exécuter **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**.
 - La console Windows PowerShell utilise à présent une coloration de la syntaxe, tout comme dans Windows PowerShell ISE.
 - Un nouveau module, NetworkSwitch, contient des applets de commande permettant d’appliquer un commutateur, un réseau local virtuel (VLAN) et une configuration de port de commutateur réseau de couche 2 de base à des commutateurs réseau certifiés par le logo Windows PowerShell 2012 R2.
 - Le paramètre FullyQualifiedName a été ajouté aux applets de commande Import-Module et Remove-Module pour prendre en charge le stockage de plusieurs versions d’un même module.
@@ -410,7 +410,7 @@ http://go.microsoft.com/fwlink/?LinkID=223923
 
 Il est aussi possible d’inclure une valeur **HelpUri** dans le premier lien associé d’un fichier d’aide d’applet de commande en XML ou la directive .Link de l’aide basée sur les commentaires dans une fonction.
 
-Pour plus d’informations sur la prise en charge de l’aide en ligne, voir [Supporting Online Help](https://go.microsoft.com/fwlink/?LinkId=242132) (en anglais) dans MSDN.
+Pour plus d’informations sur la prise en charge de l’aide en ligne, consultez [Supporting Online Help](/powershell/developer/module/supporting-online-help) dans le Microsoft Docs.
 
 ### <a name="cim-integration"></a>Intégration de CIM
 
@@ -481,7 +481,7 @@ De nouvelles applets de commande ont été ajoutées à l'installation de Window
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Améliorations apportées aux applets de commande Core existantes et ProvidersWindows PowerShell 3.0 inclut de nouvelles fonctionnalités pour les applets de commande existantes, y compris la syntaxe simplifiée, de nouveaux paramètres pour les applets de commande suivantes : applets de commande Computer, CSV, applets de commande, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, les applets de commande Security, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member et WMI.
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>Améliorations apportées aux applets de commande Core existantes et ProvidersWindows PowerShell 3.0 inclut de nouvelles fonctionnalités pour les applets de commande existantes, y compris la syntaxe simplifiée, de nouveaux paramètres pour les applets de commande suivantes : Computer, CSV, Get-ChildItem, Get-Command, Get-Content, Get-History, Measure-Object, Security, Select-Object, Select-String, Split-Path, Start-Process, Tee-Object, Test-Connection, Add-Member et WMI.
 
 Les fournisseurs Windows PowerShell ont également bénéficié d'améliorations considérables. Citons notamment la prise en charge du fournisseur Certificate pour la gestion des certificats SSL (Secure Socket Layer) dans le cadre de l'hébergement web, la prise en charge des informations d'identification, les lecteurs réseau persistants et d'autres flux de données dans les lecteurs du système de fichiers.
 
