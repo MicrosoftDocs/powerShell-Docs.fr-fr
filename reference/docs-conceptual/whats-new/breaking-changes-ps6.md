@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: 60ce7a1676403bb08b57bf852ba725acde86a30c
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
-ms.translationtype: HT
+ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309605"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655444"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
 
@@ -271,3 +271,4 @@ L’API .NET sous-jacente des cmdlets web a été remplacée par `System.Net.Htt
 - Les paramètres `System.Net.ServicePointManager` ne sont plus respectés.
 - Aucune authentification par certificat n’est actuellement disponible sur macOS.
 - L’utilisation de `-Credential` sur un URI `http://` génère une erreur. Utilisez un URI `https://` ou fournissez le paramètre `-AllowUnencryptedAuthentication` pour supprimer l’erreur.
+- `-MaximumRedirection` génère désormais une erreur avec fin lors de tentatives de redirection dépassent la limite fournie au lieu de renvoyer les résultats de la dernière redirection.

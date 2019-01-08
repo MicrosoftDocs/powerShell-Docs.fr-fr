@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: 63f5055dff6de404343f80be81a1c786147c0e33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225826"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655343"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -51,9 +51,9 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 
 La page de modification du package dans PowerShell Gallery permet aux éditeurs de modifier certains des champs affichés pour un package, en particulier :
 
-- Titre
+- Title
 - Description
-- Table des matières
+- Résumé
 - URL de l'icône
 - URL de la page d’accueil du projet
 - Auteurs
@@ -110,7 +110,7 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 | GitHub |  |
 | Json |  |
 | Exchange |  |
-| Réseau | La balise Networking est similaire, mais moins souvent utilisée |
+| Network (Réseau) | La balise Networking est similaire, mais moins souvent utilisée |
 | SharePoint |  |
 | Création de rapports | La création de rapports est une action, le rapport est un document |
 | Rapport | Le rapport est un document |
@@ -137,5 +137,5 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 | AzureRm | Utilisé principalement pour les modules AzureRM |
 | Zip |  |
 | MSI |  |
-| Mac |  |
+| MacOS |  |
 | PoshBot |  |

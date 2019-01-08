@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
-ms.translationtype: HT
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235403"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655393"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -33,6 +33,7 @@ Les packages qui suivent ces recommandations ont beaucoup plus de chances d’ê
 - Répondre aux commentaires
 - Fournir des modules plutôt que des scripts
 - Fournir des liens vers un site de projet
+- Baliser votre package avec les plateformes et PSEdition(s) compatibles 
 - Inclure des tests incluant vos modules
 - Inclure et/ou lier les termes du contrat de licence
 - Signer votre code
@@ -92,8 +93,8 @@ Il est important de répondre aux utilisateurs qui apportent des commentaires co
 
 PowerShell Gallery propose deux méthodes pour fournir des commentaires :
 
-- Contacter le propriétaire : les utilisateurs peuvent ainsi envoyer un e-mail au(x) propriétaire(s) du package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
-- Commentaires : un champ Commentaire est proposé en bas de la page du package.
+- Contacter le propriétaire : Cela permet à un utilisateur d’envoyer un e-mail aux propriétaires de package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
+- Commentaires En bas du package de page est un champ de commentaire.
   L’avantage de ce système est que les autres utilisateurs peuvent voir les commentaires et les réponses, ce qui réduit le nombre de fois où ils doivent répondre à une même question.
   Il est fortement recommandé aux propriétaires de packages de suivre les commentaires de chaque package.
 Consultez la rubrique [Envoi de commentaires via des médias sociaux ou des commentaires](../how-to/working-with-packages/social-media-feedback.md) pour plus d’informations sur la procédure à suivre.
@@ -134,6 +135,16 @@ L’ajout d’un lien s’effectue en incluant ProjectURI dans la section PSData
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Lorsqu’un ProjectURI est indiqué, PowerShell Gallery inclut un lien vers le Site de projets sur le côté gauche de la page du package.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Baliser votre package avec les plateformes et PSEdition(s) compatibles 
+
+Utiliser les balises suivantes pour montrer aux utilisateurs qui fonctionnent bien avec leur environnement de packages :
+
+- PSEdition_Desktop : Packages qui sont compatibles avec Windows PowerShell 
+- PSEdition_Core : Packages qui sont compatibles avec Powershell Core 
+- Windows Packages qui sont compatibles avec le système d’exploitation Windows
+- Linux Packages qui sont compatibles avec les systèmes d’exploitation Linux 
+- macOS Packages qui sont compatibles avec le système d’exploitation Mac
 
 ## <a name="include-tests"></a>Inclure des tests
 

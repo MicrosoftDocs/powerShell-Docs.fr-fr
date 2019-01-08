@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Configuration de session JEA
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522952"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655461"
 ---
 # <a name="jea-session-configurations"></a>Configuration de session JEA
 
-> S’applique à : Windows PowerShell 5.0
+> S'applique à : Windows PowerShell 5.0
 
 Un point de terminaison JEA est enregistré sur un système en créant et en enregistrant un fichier de configuration de session PowerShell de manière spécifique.
 Les configurations de session déterminent *qui* peut utiliser le point de terminaison JEA, et à quel(s) rôle(s) ils ont accès.
@@ -80,6 +80,8 @@ Lorsqu’un ou plusieurs groupes de sécurité sont spécifiés, le compte virtu
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Les comptes virtuels sont accordées temporairement de l’ouverture de session tant que service dans la stratégie de sécurité du serveur local.  Si un de le VirtualAccountGroups spécifié a déjà reçu ce droit dans la stratégie, le compte virtuel individuel est ne sont plus ajouté et supprimé de la stratégie.  Cela peut être utile dans les scénarios tels que les contrôleurs de domaine où les révisions de la stratégie de sécurité de contrôleur de domaine sont étroitement auditées.  Cela est uniquement disponible dans Windows Server 2016 avec le novembre 2018 ou correctif cumulatif plus récent et Windows Server 2019 avec le janvier 2019 ou correctif cumulatif plus récent.
 
 #### <a name="group-managed-service-account"></a>Compte de service administré de groupe
 
