@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 title: Packages avec le système d’exploitation ou des éditions PowerShell compatibles
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747702"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678429"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Packages avec des systèmes d’exploitation ou des éditions PowerShell compatibles
 
@@ -54,9 +54,9 @@ Find-Module -Tag PSEdition_Core, Linux
 
 Dans la mesure où PowerShell Core est disponible pour Windows, Linux et MacOS, les packages dans la galerie peuvent être conçues pour n’importe quelle combinaison de ces systèmes d’exploitation. Dans la galerie d’interface utilisateur utiliser les balises de recherches suivantes pour rechercher des packages marqués par le système d’exploitation :
 
-- Balises : « Windows »
-- Balises : « Linux »
-- Balises : « MacOS » 
+- Balises : « Windows »
+- Balises : « Linux »
+- Balises : « MacOS » 
 
 Vous pouvez spécifier ces balises sur `Find-Module` (et autres applets de commande dans le module PowerShellGet), comme suit :
 
@@ -69,11 +69,11 @@ Find-Module -Tag Linux
 
 Vous pouvez rechercher un package qui a plusieurs les compatibilités en utilisant la syntaxe : 
 
-Balises « Compatibility1 » « Compatibility2 » 
+Balises : « Compatibility1 » « Compatibility2 » 
 
 Par exemple, si vous recherchez un package avec PowerShell Core compatibilité qui s’exécute sur des ordinateurs à la fois mon Windows et Linux, utilisez les balises de recherche :
 
-Balises « PSEdition_Core » « Windows », « Linux » 
+Balises : « PSEdition_Core » « Windows », « Linux » 
 
 Pour effectuer une recherche à l’aide de PowerShell, vous pouvez utiliser la `Find-Module` (et les autres applets de commande dans le module PowerShellGet), comme suit :
 
