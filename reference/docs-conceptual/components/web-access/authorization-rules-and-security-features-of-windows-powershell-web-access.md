@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401588"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678561"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013
+Mise à jour : 24 juin 2013
 
-S'applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 La fonctionnalité Accès Web Windows PowerShell dans Windows Server 2012 R2 et Windows Server 2012 a un modèle de sécurité restrictif. Les utilisateurs doivent recevoir explicitement une autorisation d’accès avant de pouvoir se connecter à la passerelle Accès Web Windows PowerShell et utiliser la console web Windows PowerShell.
 
@@ -158,7 +158,7 @@ Chaque session Windows PowerShell utilise une configuration de session ; si auc
 
 - L’administrateur a créé un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis souhaite en restreindre l’accès à des utilisateurs spécifiques. L’administrateur crée un groupe d’utilisateurs appelé **Level1Support**, puis définit la règle suivante : **Level1Support,\*,PswaEndpoint**. La règle accorde à tous les utilisateurs inclus dans le groupe **Level1Support** un accès à tous les ordinateurs dotés de la configuration **PswaEndpoint**. De même, l’accès peut être limité à un ensemble d’ordinateurs spécifique.
 
-- Certains administrateurs accordent à certains utilisateurs un accès privilégié. Par exemple, un administrateur crée deux groupes d’utilisateurs, **Admins** et **BasicSupport**. Il crée également un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis définit les deux règles suivantes : **Admins,\*,\*** et **BasicSupport,\*,PswaEndpoint**. La première règle octroie à tous les utilisateurs du groupe **Admin** un accès à tous les ordinateurs, et la seconde règle octroie à tous les utilisateurs du groupe **BasicSupport** un accès aux seuls ordinateurs dotés de **PswaEndpoint**.
+- Certains administrateurs accordent à certains utilisateurs un accès privilégié. Par exemple, un administrateur crée deux groupes d’utilisateurs, **Admins** et **BasicSupport**. Il crée également un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis définit les deux règles suivantes : **Admins,\*,\*** et **BasicSupport,\*,PswaEndpoint**. La première règle octroie à tous les utilisateurs du groupe **Admin** un accès à tous les ordinateurs, et la seconde règle octroie à tous les utilisateurs du groupe **BasicSupport** un accès aux seuls ordinateurs dotés de **PswaEndpoint**.
 
 - Un administrateur a configuré un environnement de test privé et souhaite autoriser tous les utilisateurs réseau approuvés à accéder à tous les ordinateurs du réseau auxquels ils ont normalement accès, avec un accès à toutes les configurations de sessions auxquelles ils ont normalement accès. S’agissant d’un environnement de test privé, l’administrateur crée une règle d’autorisation non sécurisée. - L’administrateur exécute l’applet de commande `Add-PswaAuthorizationRule * * *`, qui utilise le caractère générique **\*** pour représenter tous les utilisateurs, tous les ordinateurs et toutes les configurations. - Cette règle est l’équivalent de la commande suivante : `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
@@ -186,13 +186,13 @@ Dans le scénario précédent, Accès Web Windows PowerShell établit une connex
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Utilisation d’un seul jeu de règles d’autorisation pour plusieurs sites
 
-Les règles d’autorisation sont stockées dans un fichier XML. Par défaut, le nom de chemin du fichier XML est `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Les règles d’autorisation sont stockées dans un fichier XML. Par défaut, le nom de chemin du fichier XML est `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Le chemin du fichier XML des règles d’autorisation est stocké dans le fichier **powwa.config**, qui se trouve dans `%windir%\Web\PowershellWebAccess\data`. L’administrateur peut modifier la référence au chemin par défaut dans **powwa.config** pour satisfaire des préférences ou exigences. Autoriser l’administrateur à modifier l’emplacement du fichier permet à plusieurs passerelles Accès Web Windows PowerShell d’utiliser les mêmes règles d’autorisation, si une telle configuration est souhaitée.
+Le chemin du fichier XML des règles d’autorisation est stocké dans le fichier **powwa.config**, qui se trouve dans `$env:windir\Web\PowershellWebAccess\data`. L’administrateur peut modifier la référence au chemin par défaut dans **powwa.config** pour satisfaire des préférences ou exigences. Autoriser l’administrateur à modifier l’emplacement du fichier permet à plusieurs passerelles Accès Web Windows PowerShell d’utiliser les mêmes règles d’autorisation, si une telle configuration est souhaitée.
 
 ## <a name="session-management"></a>Gestion des sessions
 
-Par défaut, Accès Web Windows PowerShell limite un utilisateur à trois sessions simultanées. Vous pouvez modifier le fichier **web.config** de l’application web dans le Gestionnaire des services Internet afin de prendre en charge un nombre différent de sessions par utilisateur. Le chemin du fichier **web.config** est `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Par défaut, Accès Web Windows PowerShell limite un utilisateur à trois sessions simultanées. Vous pouvez modifier le fichier **web.config** de l’application web dans le Gestionnaire des services Internet afin de prendre en charge un nombre différent de sessions par utilisateur. Le chemin du fichier **web.config** est `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 Par défaut, le serveur Web IIS est configuré pour redémarrer le pool d’applications si des paramètres sont modifiés. Par exemple, le pool d’applications est redémarré si des modifications sont apportées au fichier **web.config**. >Dans la mesure où la fonctionnalité **Accès Web Windows PowerShell** utilise les états de session en mémoire, >les utilisateurs connectés à des sessions **Accès Web Windows PowerShell** perdent leurs sessions, une fois que le pool d’applications a redémarré.
 

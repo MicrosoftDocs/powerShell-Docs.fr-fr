@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: c3ced2376c7d99477c40ae078dcecd775538b350
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401509"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678653"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
-> S'applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 Le Gestionnaire de configuration local est le moteur de la fonctionnalité DSC (Desired State Configuration).
 Le LCM s’exécute sur chaque nœud cible pour analyser et appliquer les configurations transmises au nœud.
@@ -72,15 +72,15 @@ Un bloc **Settings** définit les propriétés suivantes.
 
 |  Propriété  |  Type  |  Description   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| string| Spécifie le comportement après un redémarrage survenant pendant l’application d’une configuration. Les valeurs possibles sont __ContinueConfiguration__ et __StopConfiguration__. <ul><li> Avec la valeur __ContinueConfiguration__, l’application de la configuration actuelle se poursuit après le redémarrage de l’ordinateur. Il s’agit de la valeur par défaut</li><li>__StopConfiguration__ La configuration actuelle après le redémarrage de l’ordinateur s’arrête.</li></ul>|
+| ActionAfterReboot| string| Spécifie le comportement après un redémarrage survenant pendant l’application d’une configuration. Les valeurs possibles sont __ContinueConfiguration__ et __StopConfiguration__. <ul><li> Avec la valeur __ContinueConfiguration__, l’application de la configuration actuelle se poursuit après le redémarrage de l’ordinateur. Il s’agit de la valeur par défaut</li><li>Avec la valeur __StopConfiguration__, l’application de la configuration actuelle s’arrête après le redémarrage de l’ordinateur.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__ si de nouvelles configurations téléchargées dans le service d’extraction sont autorisées à remplacer les anciennes sur le nœud cible. Autrement, définissez-la sur $FALSE.|
 | CertificateID| string| Empreinte d’un certificat utilisée pour sécuriser les informations d’identification transmise dans une configuration. Pour plus d’informations, consultez [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)? (Sécuriser les informations d’identification dans DSC Windows PowerShell). <br> __Remarque :__ ceci est géré automatiquement si vous utilisez le service d’extraction Azure Automation DSC.|
 | ConfigurationDownloadManagers| CimInstance[]| Obsolète. Utilisez les blocs __ConfigurationRepositoryWeb__ et __ConfigurationRepositoryShare__ pour définir les points de terminaison du service d’extraction de configuration.|
-| ConfigurationID| string| Pour la rétrocompatibilité avec des versions plus anciennes du service d’extraction. Un GUID qui identifie le fichier de configuration à obtenir d’un service d’extraction. Le nœud extrait les configurations du service d’extraction si le nom du fichier de configuration MOF est ConfigurationID.mof.<br> __Remarque :__ Si vous définissez cette propriété, l’enregistrement du nœud auprès d’un service d’extraction avec __RegistrationKey__ ne fonctionne pas. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
-| ConfigurationMode| string | Spécifie de quelle façon le LCM applique réellement la configuration aux nœuds cibles. Les valeurs possibles sont __"ApplyOnly"__,__"ApplyAndMonitor"__ et __"ApplyAndAutoCorrect"__. <ul><li>La valeur __ApplyOnly__ indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si une nouvelle configuration est transmise au nœud cible ou est extraite d’un service. Après l’application initiale d’une nouvelle configuration, DSC ne vérifie pas si le nœud cible est encore dans l’état précédemment configuré. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyOnly__ ne prenne effet. </li><li> __ApplyAndMonitor__ : Il s'agit de la valeur par défaut. indique au LCM d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, signale l’écart dans les journaux. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyAndMonitor__ ne prenne effet.</li><li>La valeur __ApplyAndAutoCorrect__ indique à DSC d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, il signale l’écart dans les journaux, puis il réapplique la configuration actuelle.</li></ul>|
+| ConfigurationID| string| Pour la rétrocompatibilité avec des versions plus anciennes du service d’extraction. Un GUID qui identifie le fichier de configuration à obtenir d’un service d’extraction. Le nœud extrait les configurations du service d’extraction si le nom du fichier de configuration MOF est ConfigurationID.mof.<br> __Remarque__ : si vous définissez cette propriété, l’enregistrement du nœud auprès d’un service d’extraction avec __RegistrationKey__ ne fonctionne pas. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
+| ConfigurationMode| string | Spécifie de quelle façon le LCM applique réellement la configuration aux nœuds cibles. Les valeurs possibles sont __"ApplyOnly"__,__"ApplyAndMonitor"__ et __"ApplyAndAutoCorrect"__. <ul><li>La valeur __ApplyOnly__ indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si une nouvelle configuration est transmise au nœud cible ou est extraite d’un service. Après l’application initiale d’une nouvelle configuration, DSC ne vérifie pas si le nœud cible est encore dans l’état précédemment configuré. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyOnly__ ne prenne effet. </li><li> La valeur __ApplyAndMonitor__ est la valeur par défaut. indique au LCM d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, signale l’écart dans les journaux. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyAndMonitor__ ne prenne effet.</li><li>La valeur __ApplyAndAutoCorrect__ indique à DSC d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, il signale l’écart dans les journaux, puis il réapplique la configuration actuelle.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Fréquence, en minutes, à laquelle la configuration actuelle est vérifiée et appliquée. Cette propriété est ignorée si la propriété ConfigurationMode est définie sur ApplyOnly. La valeur par défaut est 15.|
 | DebugMode| string| Les valeurs possibles sont __None__, __ForceModuleImport__ et __All__. <ul><li>Définissez cette propriété sur __None__ pour utiliser les ressources mises en cache. Il s’agit de la valeur par défaut qui doit être utilisée dans les scénarios de production.</li><li>Définissez cette propriété sur __ForceModuleImport__ pour forcer le gestionnaire de configuration local à recharger tous les modules de ressources DSC, même ceux ayant déjà été chargés et mis en cache. Ce comportement diminue les performances de DSC, car chaque module utilisé est systématiquement rechargé. En général, vous utilisez cette valeur lors du débogage d’une ressource.</li><li>Dans cette version, __All__ est équivalent à __ForceModuleImport__</li></ul> |
-| RebootNodeIfNeeded| bool| Définissez cette propriété sur __$true__ pour redémarrer automatiquement le nœud après l’application d’une configuration nécessitant un redémarrage. Sinon, vous devez redémarrer manuellement le nœud. La valeur par défaut est __$false__. Pour utiliser ce paramètre lorsqu’une condition de redémarrage est imposée par autre chose que DSC (par exemple Windows Installer), combinez ce paramètre avec le module [xPendingReboot](https://github.com/powershell/xpendingreboot).|
+| RebootNodeIfNeeded| bool| Affectez la valeur `$true` à permettent aux ressources de redémarrer le nœud à l’aide de la `$global:DSCMachineStatus` indicateur. Sinon, vous devez redémarrer manuellement le nœud. La valeur par défaut est `$false`. Pour utiliser ce paramètre lorsqu’une condition de redémarrage est imposée par autre chose que DSC (par exemple Windows Installer), combinez ce paramètre avec le module [xPendingReboot](https://github.com/powershell/xpendingreboot).|
 | RefreshMode| string| Spécifie de quelle façon le LCM obtient les configurations. Les valeurs possibles sont __Disabled__, __Push__ et __Pull__. <ul><li>La valeur __Disabled__ désactive les configurations DSC pour ce nœud.</li><li> La valeur __Push__ lance les configurations en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Chaque configuration est immédiatement appliquée au nœud. Il s'agit de la valeur par défaut.</li><li>__Pull__ : le nœud est configuré pour vérifier régulièrement les configurations disponibles sur un service d’extraction ou un chemin SMB. Si cette propriété a la valeur __Pull__, vous devez spécifier un chemin HTTP (service) ou SMB (partage) dans un bloc __ConfigurationRepositoryWeb__ ou __ConfigurationRepositoryShare__.</li></ul>|
 | RefreshFrequencyMins| Uint32| L’intervalle de temps, en minutes, auquel le LCM contrôle un service d’extraction pour obtenir des configurations mises à jour. Cette valeur est ignorée si le LCM n’est pas configuré en mode d’extraction. La valeur par défaut est 30.|
 | ReportManagers| CimInstance[]| Obsolète. Utilisez des blocs __ReportServerWeb__ pour définir un point de terminaison permettant d’envoyer les données de rapport à un service d’extraction.|
@@ -88,12 +88,23 @@ Un bloc **Settings** définit les propriétés suivantes.
 | PartialConfigurations| CimInstance| Non implémentée. Ne pas utiliser.|
 | StatusRetentionTimeInDays | UInt32| Nombre de jours pendant lesquels le LCM conserve l’état de la configuration actuelle.|
 
+> [!NOTE]
+> Le démarrage du Gestionnaire de configuration local les **ConfigurationModeFrequencyMins** cycle basé sur :
+>
+> - Une nouvelle métaconfiguration est appliquée à l’aide de `Set-DscLocalConfigurationManager`
+> - Un redémarrage de l’ordinateur
+>
+> Pour toute condition où le processus du minuteur rencontre un incident, qui est détecté dans les 30 secondes et le cycle est redémarré.
+> Une opération simultanée pourrait retarder le cycle de démarrage, si la durée de cette opération dépasse la fréquence du cycle configurée, la minuterie suivante ne démarre pas.
+>
+> Exemple, la métaconfiguration est configuré à une fréquence d’extraction de 15 minutes et une opération d’extraction se trouve à T1.  Le nœud ne termine pas le travail pour 16 minutes.  Le premier cycle de 15 minutes est ignoré, et tirer suivant va se produire à T1 + 15 + 15.
+
 ## <a name="pull-service"></a>Service d’extraction
 
 La configuration du LCM permet de définir les types de services d’extraction suivants :
 
 - **Serveur de configuration** : référentiel pour les configurations DSC. Définissez les serveurs de configuration à l’aide des blocs **ConfigurationRepositoryWeb** (pour les serveurs web) et **ConfigurationRepositoryShare** (pour les serveurs SMB).
-- **Serveur de ressources**: Un référentiel pour les ressources DSC, packagées comme modules PowerShell. Définissez les serveurs de ressources à l’aide des blocs **ResourceRepositoryWeb** (pour les serveurs web) et **ResourceRepositoryShare** (pour les serveurs SMB).
+- **Serveur de ressources** : référentiel pour les ressources DSC, packagées comme modules PowerShell. Définissez les serveurs de ressources à l’aide des blocs **ResourceRepositoryWeb** (pour les serveurs web) et **ResourceRepositoryShare** (pour les serveurs SMB).
 - **Serveur de rapports** : service vers lequel DSC envoie les données de rapports. Définissez les serveurs de rapports à l’aide des blocs **ReportServerWeb**. Un serveur de rapports doit être un service web.
 
 Pour plus d’informations sur le service collecteur, consultez [Service collecteur Desired State Configuration](../pull-server/pullServer.md).
@@ -111,7 +122,7 @@ Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 |RegistrationKey|string|Un GUID sous lequel le nœud est enregistré auprès du service d’extraction. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|L’URL du service de configuration.|
 
-Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Pour définir un serveur de configuration SMB, créez un bloc **ConfigurationRepositoryShare**.
 Un bloc **ConfigurationRepositoryShare** définit les propriétés suivantes.
@@ -133,7 +144,7 @@ Un bloc **ResourceRepositoryWeb** définit les propriétés suivantes.
 |RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
 |ServerURL|string|URL du serveur de configuration.|
 
-Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Pour définir un serveur de ressources SMB, créez un bloc **ResourceRepositoryShare**.
 Un bloc **ResourceRepositoryShare** définit les propriétés suivantes.
@@ -156,7 +167,7 @@ Un bloc **ReportServerWeb** définit les propriétés suivantes.
 |RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
 |ServerURL|string|URL du serveur de configuration.|
 
-Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Configurations partielles
 
@@ -170,7 +181,7 @@ Un bloc **PartialConfiguration** définit les propriétés suivantes.
 |DependsOn|string{}|Liste des noms des autres configurations à exécuter avant l’application de cette configuration partielle.|
 |Description|string|Texte qui décrit la configuration partielle.|
 |ExclusiveResources|string[]|Tableau des ressources exclusives de cette configuration partielle.|
-|RefreshMode|string|Spécifie de quelle façon le gestionnaire de configuration local obtient cette configuration partielle. Les valeurs possibles sont __Disabled__, __Push__ et __Pull__. <ul><li>La valeur __Disabled__ désactive cette configuration partielle.</li><li> __Push__ : la configuration partielle est transmise au nœud en appelant l’applet de commande [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration). Une fois que toutes les configurations partielles pour le nœud ont été obtenues d’un service en mode push ou pull, la configuration peut être démarrée en appelant `Start-DscConfiguration –UseExisting`. Il s'agit de la valeur par défaut.</li><li>La valeur __Pull__ configure le nœud pour vérifier régulièrement si la configuration partielle est disponible sur un service d’extraction. Si cette propriété a la valeur __Pull__, vous devez spécifier un service d’extraction dans une propriété __ConfigurationSource__. Pour plus d’informations sur le service d’extraction Azure Automation, consultez [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Spécifie de quelle façon le gestionnaire de configuration local obtient cette configuration partielle. Les valeurs possibles sont __Disabled__, __Push__ et __Pull__. <ul><li>La valeur __Disabled__ désactive cette configuration partielle.</li><li> __Push__ : la configuration partielle est transmise au nœud en appelant l’applet de commande [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration). Une fois que toutes les configurations partielles pour le nœud ont été obtenues d’un service en mode push ou pull, la configuration peut être démarrée en appelant `Start-DscConfiguration –UseExisting`. Il s'agit de la valeur par défaut.</li><li>La valeur __Pull__ configure le nœud pour vérifier régulièrement si la configuration partielle est disponible sur un service d’extraction. Si cette propriété a la valeur __Pull__, vous devez spécifier un service d’extraction dans une propriété __ConfigurationSource__. Pour plus d’informations sur le service d’extraction Azure Automation, consultez [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|Tableau des noms des serveurs de ressources à partir desquels télécharger les ressources nécessaires pour cette configuration partielle. Ces noms doivent être ceux des points de terminaison du service définis précédemment dans les blocs **ResourceRepositoryWeb** et **ResourceRepositoryShare**.|
 
 __Remarque :__ les configurations partielles sont prises en charge avec Azure Automation DSC, mais une seule configuration peut être extraite du compte Automation de chaque nœud.
@@ -180,7 +191,7 @@ __Remarque :__ les configurations partielles sont prises en charge avec Azure A
 ### <a name="concepts"></a>Concepts
 [Vue d’ensemble de la configuration d'état souhaité](../overview/overview.md)
 
-[Bien démarrer avec Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
+[Bien démarrer avec Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Autres ressources
 

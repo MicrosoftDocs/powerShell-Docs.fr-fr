@@ -3,30 +3,30 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation du Concepteur de ressources
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401420"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678629"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md).
 Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory.
 Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
 
->**Remarque** : **Install-Module** est inclus dans le **PowerShellGet** module, qui est inclus dans PowerShell 5.0. Vous pouvez télécharger le module **PowerShellGet** pour PowerShell 3.0 et 4.0 ici : [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+>**Remarque** : **Install-Module** est inclus dans le module **PowerShellGet** de PowerShell 5.0. Vous pouvez télécharger le module **PowerShellGet** pour PowerShell 3.0 et 4.0 ici : [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 
 ## <a name="creating-resource-properties"></a>Création de propriétés de ressource
 La première chose à faire est de décider des propriétés que doit exposer la ressource. Pour cet exemple, nous allons définir un utilisateur Active Directory avec les propriétés suivantes.
 
 Nom du paramètre  Description
-* .**nom**utilisateur Propriété de clé qui identifie de façon unique un utilisateur.
-* Ensure Spécifie si le compte d’utilisateur doit être présent ou Absent. Ce paramètre a seulement deux valeurs possibles.
-* **DomainCredential**: Le mot de passe de domaine pour l’utilisateur.
-* Password Le mot de passe pour l’utilisateur permettre une configuration modifier le mot de passe utilisateur si nécessaire.
+* **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
+* **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
+* **DomainCredential** : mot de passe de l’utilisateur.
+* **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
 
 Pour créer les propriétés, nous utilisons l’applet de commande **New-xDscResourceProperty**. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.
 

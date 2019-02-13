@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Nouveaux scénarios et fonctionnalités dans WMF 5.1
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090361"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678728"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nouveaux scénarios et fonctionnalités dans WMF 5.1
 

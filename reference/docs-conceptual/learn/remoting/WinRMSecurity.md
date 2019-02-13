@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401419"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679245"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell
 
@@ -23,8 +23,8 @@ La communication à distance PowerShell n’est pas identique à l’utilisation
 
 La communication à distance PowerShell et WinRM écoutent sur les ports suivants :
 
-- HTTP : 5985
-- HTTPS : 5986
+- HTTP : 5985
+- HTTPS : 5986
 
 Par défaut, la communication à distance PowerShell autorise uniquement les connexions des membres du groupe de l’administrateur. Les sessions étant lancées dans le contexte de l’utilisateur, tous les contrôles d’accès au système d’exploitation appliqués à des utilisateurs et des groupes continuent de leur être appliqués pendant la connexion via la communication à distance PowerShell.
 
