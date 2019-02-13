@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Création et publication d’un élément
 ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012532"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677815"
 ---
 # <a name="creating-and-publishing-an-item"></a>Création et publication d’un élément
 
@@ -32,18 +32,18 @@ Consultez [Création d’un compte PowerShell Gallery](/powershell/gallery/how-t
 
 Une fois que vous avez créé un compte, vous pouvez obtenir la clé d’API nécessaire pour publier un élément. Une fois que vous vous connectez avec le compte, votre nom d’utilisateur s’affichera en haut des pages de PowerShell Gallery au lieu du Registre. Cliquer sur votre nom d’utilisateur vous redirigera vers la page Mon compte, où vous trouverez la clé d’API.
 
-Remarque : La clé d’API doit être traitée de façon aussi sécurisée que votre connexion et le mot de passe.
+Remarque : La clé d’API doivent être traitée de façon aussi sécurisée que votre connexion et le mot de passe.
 Avec cette clé, vous,ou toute autre personne pouvez mettre à jour n’importe quel élément que vous possédez dans PowerShell Gallery.
 Nous vous recommandons de mettre à jour la clé régulièrement, ce que vous pouvez faire à l’aide de la fonction Réinitialiser la clé sur la page Mon compte.
 
 ## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>Métadonnées requises pour les articles publiés sur PowerShell Gallery
 
 PowerShell Gallery fournit des informations aux utilisateurs de la galerie tirées des champs de métadonnées qui sont inclus dans le manifeste de module ou du script. Créer ou modifier des éléments pour la publication dans PowerShell Gallery a un petit ensemble de d’exigences pour les informations fournies dans le manifeste de l’élément.
-Nous vous encourageons vivement à consulter la section de métadonnées d’élément des [instructions de publication](../../concepts/publishing-guidelines.md) pour apprendre à fournir les meilleures informations aux utilisateurs avec vos éléments.
+Nous vous encourageons vivement de consulter la section de métadonnées d’élément des [instructions de publication](../../concepts/publishing-guidelines.md) pour apprendre à fournir les meilleures informations aux utilisateurs avec vos éléments.
 
 Les applets de commande [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) et [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) créent le modèle de manifeste pour vous, avec des espaces réservés pour tous les éléments du manifeste.
 
-Les deux manifestes ont deux sections qui sont importantes pour la publication, la zone données de clé primaire et PSData de PrivateData. Les données de clé primaire dans un manifeste de module PowerShell sont tout en dehors de la section PrivateData. Le jeu de clés primaires est lié à la version de PowerShell en cours d’utilisation et la non-définition n’est donc pas prise en charge. PrivateData prend en charge l’ajout de nouvelles clés, aussi les éléments spécifiques à PowerShell Gallery se trouvent dans PSData.
+Les deux manifestes ont deux sections qui sont importantes pour la publication, la zone données de clé primaire et PSData de PrivateData. Les données de clé primaire dans un manifeste de module PowerShell sont tout en dehors de la section PrivateData. Le jeu de clés primaires est lié à la version de PowerShell en cours d’utilisation et la non-définition n’est donc pas pris en charge. PrivateData prend en charge l’ajout de nouvelles clés, aussi les éléments spécifiques à PowerShell Gallery se trouvent dans PSData.
 
 
 Les éléments de manifeste les plus importants à remplir pour les éléments à publier dans PowerShell Gallery sont les suivants :

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978893"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679388"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 Windows PowerShell 5.0 intègre plusieurs nouvelles fonctionnalités importantes qui, en plus d’étendre et de simplifier son utilisation, vous permettent de contrôler et de gérer des environnements Windows plus facilement et plus complètement.
@@ -140,7 +140,8 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 - Le paramètre FullyQualifiedName a été ajouté aux applets de commande Import-Module et Remove-Module pour prendre en charge le stockage de plusieurs versions d’un même module.
 - Les applets de commande Save-Help, Update-Help, Import-PSSession, Export-PSSession et Get-Command disposent d’un nouveau paramètre, FullyQualifiedModule, de type ModuleSpecification. Ajoutez ce paramètre pour spécifier un module par son nom complet.
 - La valeur de **$PSVersionTable.PSVersion** a été mise à jour. Il s’agit maintenant de 5.0.
-
+- WMF 5.0 (PowerShell 5.0) inclut le **Pester** module.  Pester est une unité d’infrastructure de test pour PowerShell. Il fournit quelques mots clés simple à l’emploi qui vous permettent de créer des tests pour vos scripts. 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Nouvelles fonctionnalités dans la configuration d’état souhaité de Windows PowerShell
 
 - Le rehaussement du langage Windows PowerShell permet de définir des ressources de configuration d’état souhaité (DSC) Windows PowerShell à l’aide de classes. Import-DscResource est maintenant un vrai mot clé dynamique. Windows PowerShell analyse le module racine du module spécifié, en recherchant des classes contenant l’attribut DscResource. Vous pouvez maintenant utiliser des classes pour définir des ressources DSC, dans lesquelles un fichier MOF ou un sous-dossier DSCResource dans le dossier du module ne sont pas requis. Un fichier de module Windows PowerShell peut contenir plusieurs classes de ressources DSC.
@@ -177,7 +178,7 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nouvelles fonctionnalités dans Windows PowerShell ISE
 
-- Vous pouvez maintenant modifier des scripts et fichiers Windows PowerShell distants dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers à modifier, puis en exécutant **PSEdit <path and file name on the remote computer>**. Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
+- Vous pouvez maintenant modifier des scripts Windows PowerShell à distance et les fichiers dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers que vous souhaitez modifier, puis en exécutant **PSEdit \<chemin d’accès et nom de fichier sur l’ordinateur distant\>**. Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
 - L’applet de commande Start-Transcript est maintenant prise en charge dans Windows PowerShell ISE.
 - Vous pouvez maintenant déboguer des scripts à distance dans Windows PowerShell ISE.
 - Une nouvelle option de menu, **Interrompre tout** (Ctrl+B) arrête le débogueur pour les scripts s’exécutant tant en local qu’à distance.
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 intègre les nouvelles fonctionnalités suivantes.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell Workflow
 
-Grâce au workflow Windows PowerShell, vous bénéficiez de toute la puissance de Windows Workflow Foundation dans Windows PowerShell. Vous pouvez écrire des workflows en XAML ou dans le langage Windows PowerShell, et les exécuter de la même façon qu’une applet de commande. L’applet de commande [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) obtient les commandes de workflow et l’applet de commande [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) obtient de l’aide sur les workflows.
+Grâce au workflow Windows PowerShell, vous bénéficiez de toute la puissance de Windows Workflow Foundation dans Windows PowerShell. Vous pouvez écrire des workflows en XAML ou dans le langage Windows PowerShell, et les exécuter de la même façon qu’une applet de commande. Le [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) applet de commande Obtient les commandes de workflow et le [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) applet de commande Obtient l’aide des flux de travail.
 
 Les workflows sont des séquences d'activités de gestion de plusieurs ordinateurs. Ces séquences sont longues, reproductibles, fréquentes, parallèles et redémarrables ; elles peuvent aussi être interrompues et suspendues. Il est possible de reprendre des workflows suite à une interruption accidentelle ou intentionnelle, une indisponibilité du réseau, un redémarrage de Windows ou une panne de courant.
 

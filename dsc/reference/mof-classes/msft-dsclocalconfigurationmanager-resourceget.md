@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Méthode ResourceGet de la classe MSFT_DSCLocalConfigurationManager
 ms.openlocfilehash: 1b74adf2327af2e0f9416f1d00eac4e3b75e9013
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047269"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679005"
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode ResourceGet de la classe MSFT_DSCLocalConfigurationManager
 
@@ -44,9 +44,9 @@ Il s’agit d’une méthode statique.
 
 ## <a name="requirements"></a>Spécifications
 
-MOF** DscCore.mof
+**MOF :** DscCore.mof
 
-**Espace de noms : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

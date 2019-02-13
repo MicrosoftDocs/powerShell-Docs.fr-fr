@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: powershell,applet de commande
 title: Écriture de modules portables
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747719"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679209"
 ---
 # <a name="portable-modules"></a>Modules portables
 

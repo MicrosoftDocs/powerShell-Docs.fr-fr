@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.1
 description: Nouvelles fonctionnalités et modifications de PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851305"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679070"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nouveautés de PowerShell Core 6.1
 
@@ -37,7 +37,7 @@ Le Pack de compatibilité Windows permet à PowerShell Core d’utiliser **plus 
 
 ## <a name="support-for-application-whitelisting"></a>Prise en charge de la mise en liste verte des applications
 
-Tout comme Windows PowerShell 5.1, PowerShell Core 6.1 prend en charge la mise en liste verte des applications pour [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) et [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
+Tout comme Windows PowerShell 5.1, PowerShell Core 6.1 prend en charge la mise en liste verte des applications pour [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) et [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control).
 La mise en liste verte des applications permet de contrôler précisément quels fichiers binaires peuvent être exécutés avec le [mode de langage limité](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/) de PowerShell.
 
 ## <a name="performance-improvements"></a>Améliorations apportées aux performances

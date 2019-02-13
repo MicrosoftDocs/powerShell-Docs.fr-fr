@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Écriture de l’aide pour les configurations DSC
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401683"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679479"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Écriture de l’aide pour les configurations DSC
 
->S'applique à : Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 5.0
 
 Vous pouvez utiliser l’aide basée sur les commentaires dans les configurations DSC. Les utilisateurs peuvent accéder à l’aide en appelant le **Configuration** avec `-?`, ou à l’aide de la [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) applet de commande. Placez votre commentaire aide ci-dessus directement le `Configuration` mot clé.
 Vous pouvez placer le paramètre aide inline avec votre bloc de commentaire, juste au-dessus de la déclaration de paramètre, ou les deux, comme dans l’exemple ci-dessous.

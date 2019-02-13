@@ -3,11 +3,11 @@ title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289240"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678384"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -274,7 +274,7 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 - Ajout du commutateur `-SkipHeaderValidation` aux applets de commande web pour prendre en charge l’ajout d’en-têtes sans valider la valeur d’en-tête. (#4085)
 - Autorisation aux applets de commande web de ne pas valider le certificat HTTPS du serveur si nécessaire.
 - Ajout de paramètres d’authentification aux applets de commande web. (#5052) (merci [@markekraus](https://github.com/markekraus))
-  - Ajout de `-Authentication` qui offre trois options : Basic, OAuth et Bearer.
+  - Ajouter `-Authentication` qui offre trois options : Basic, OAuth et Bearer.
   - Ajout de `-Token` pour obtenir le jeton du porteur pour les options OAuth et Bearer.
   - Ajout de `-AllowUnencryptedAuthentication` pour contourner l’authentification qui est fournie pour n’importe quel schéma de transport autre que HTTPS.
 - Ajout de `-ResponseHeadersVariable` à `Invoke-RestMethod` pour activer la capture des en-têtes de réponse. (#4888) (merci [@markekraus](https://github.com/markekraus))

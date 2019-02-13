@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configurer un Client collecteur à l’aide des ID de Configuration dans PowerShell 5.0 et versions ultérieures
 ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401600"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678405"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Configurer un Client collecteur à l’aide des ID de Configuration dans PowerShell 5.0 et versions ultérieures
 
-> S'applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
@@ -21,7 +21,7 @@ Avant de configurer un client collecteur, vous devez configurer un serveur colle
 - [Configurer un serveur Pull SMB DSC](pullServerSmb.md)
 - [Configurer un serveur Pull HTTP DSC](pullServer.md)
 
-Chaque nœud cible peut être configuré pour télécharger les configurations, ressources et même signaler son état. Les sections suivantes vous montrent comment configurer un client collecteur avec un partage SMB ou un serveur d’extraction DSC HTTP. Lorsque Gestionnaire de configuration local du nœud est actualisé, il vous recontacte pour l’emplacement configuré pour télécharger toutes les configurations sont affectées. Si toutes les ressources requises n’existent pas sur le nœud, il télécharge automatiquement les à partir de l’emplacement configuré. Si le nœud est configuré avec un [serveur de rapports](reportServer.md), il sera ensuite l’état de l’opération.
+Chaque nœud cible peut être configuré pour télécharger les configurations, ressources et même signaler son état. Les sections suivantes vous montrent comment configurer un client collecteur avec un partage SMB ou un serveur d’extraction DSC HTTP. Lorsque Gestionnaire de configuration local du nœud est actualisé, il vous recontacte pour l’emplacement configuré pour télécharger toutes les configurations sont affectées. Si toutes les ressources requises n’existent pas sur le nœud, il les télécharge automatiquement à partir de l’emplacement configuré. Si le nœud est configuré avec un [serveur de rapports](reportServer.md), il sera ensuite l’état de l’opération.
 
 > **Remarque** : Cette rubrique s’applique à PowerShell 5.0. Pour des informations sur la configuration d’un client collecteur dans PowerShell 4.0, consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration dans PowerShell 4.0](pullClientConfigID4.md)
 
@@ -112,7 +112,7 @@ Dans le script, le **ConfigurationRepositoryShare** bloc définit le serveur col
 
 ## <a name="set-up-a-pull-client-to-download-resources"></a>Configurer un Client collecteur pour télécharger des ressources
 
-Si vous spécifiez uniquement le **ConfigurationRepositoryWeb** ou **ConfigurationRepositoryShare** bloquer dans votre configuration du LCM (comme dans les exemples précédents), le client d’extraction extraira les ressources du même emplacement il récupère sa configuration. Vous pouvez également spécifier des emplacements distincts pour les ressources. Pour spécifier un emplacement de ressources comme un serveur distinct, utilisez le **ResourceRepositoryWeb** bloc. Pour spécifier un emplacement de ressources comme un partage SMB, utilisez le **ResourceRepositoryShare** bloc.
+Si vous spécifiez uniquement le **ConfigurationRepositoryWeb** ou **ConfigurationRepositoryShare** bloquer dans votre configuration du LCM (comme dans les exemples précédents), le client d’extraction extraira les ressources de la même emplacement il récupère sa configuration. Vous pouvez également spécifier des emplacements distincts pour les ressources. Pour spécifier un emplacement de ressources comme un serveur distinct, utilisez le **ResourceRepositoryWeb** bloc. Pour spécifier un emplacement de ressources comme un partage SMB, utilisez le **ResourceRepositoryShare** bloc.
 
 > [!NOTE]
 > Vous pouvez combiner **ConfigurationRepositoryWeb** avec **ResourceRepositoryShare** ou **ConfigurationRepositoryShare** avec **ResourceRepositoryWeb** . Exemples de ce ne sont pas affichés ci-dessous.

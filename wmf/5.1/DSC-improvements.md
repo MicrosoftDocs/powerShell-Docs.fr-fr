@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523020"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677575"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -206,12 +206,12 @@ Cette fonctionnalité empêche les nœuds d’exécuter des configurations ou de
 ### <a name="how-to-sign-configuration-and-module"></a>Comment signer des configurations et modules
 
 ***
-* Fichiers de configuration (.MOF) : l’applet de commande PowerShell existante [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) est étendue pour prendre en charge la signature des fichiers MOF.
-* Modules : la signature de modules s’effectue en signant le catalogue de module correspondant en procédant comme suit :
-    1. Créer un fichier catalogue : un fichier catalogue contient une collection de hachages de chiffrement ou d’empreintes numériques.
+* Fichiers de configuration (. Fichiers MOF) : L’applet de commande PowerShell existante [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) est étendu pour prendre en charge la signature des fichiers MOF.
+* Modules Signature de modules s’effectue en signant le catalogue de module correspondant en procédant comme suit :
+    1. Créer un fichier catalogue : Un fichier catalogue contient une collection de hachages de chiffrement ou les empreintes numériques.
        Chaque empreinte correspond à un fichier qui est inclus dans le module.
        La nouvelle applet de commande [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) a été ajoutée pour permettre aux utilisateurs de créer un fichier catalogue pour leur module.
-    2. Signer le fichier catalogue : utilisez [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) pour signer le fichier catalogue.
+    2. Signer le fichier catalogue : Utilisez [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) pour signer le fichier de catalogue.
     3. Placer le fichier catalogue dans le dossier de module.
 Par convention, le fichier catalogue de module doit être placé sous le dossier de module portant le même nom que le module.
 
