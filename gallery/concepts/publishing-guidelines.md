@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655393"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265567"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -93,8 +93,8 @@ Il est important de répondre aux utilisateurs qui apportent des commentaires co
 
 PowerShell Gallery propose deux méthodes pour fournir des commentaires :
 
-- Contacter le propriétaire : Cela permet à un utilisateur d’envoyer un e-mail aux propriétaires de package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
-- Commentaires En bas du package de page est un champ de commentaire.
+- Contacter le propriétaire : les utilisateurs peuvent ainsi envoyer un e-mail au(x) propriétaire(s) du package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
+- Commentaires : un champ Commentaire est proposé en bas de la page du package.
   L’avantage de ce système est que les autres utilisateurs peuvent voir les commentaires et les réponses, ce qui réduit le nombre de fois où ils doivent répondre à une même question.
   Il est fortement recommandé aux propriétaires de packages de suivre les commentaires de chaque package.
 Consultez la rubrique [Envoi de commentaires via des médias sociaux ou des commentaires](../how-to/working-with-packages/social-media-feedback.md) pour plus d’informations sur la procédure à suivre.
@@ -140,11 +140,11 @@ Lorsqu’un ProjectURI est indiqué, PowerShell Gallery inclut un lien vers le S
 
 Utiliser les balises suivantes pour montrer aux utilisateurs qui fonctionnent bien avec leur environnement de packages :
 
-- PSEdition_Desktop : Packages qui sont compatibles avec Windows PowerShell 
-- PSEdition_Core : Packages qui sont compatibles avec Powershell Core 
-- Windows Packages qui sont compatibles avec le système d’exploitation Windows
-- Linux Packages qui sont compatibles avec les systèmes d’exploitation Linux 
-- macOS Packages qui sont compatibles avec le système d’exploitation Mac
+- PSEdition_Desktop : Les Packages qui sont compatibles avec Windows PowerShell 
+- PSEdition_Core : Les Packages qui sont compatibles avec Powershell Core 
+- Windows : Les Packages qui sont compatibles avec le système d’exploitation Windows
+- Linux : Les Packages qui sont compatibles avec les systèmes d’exploitation Linux 
+- MacOS : Les Packages qui sont compatibles avec le système d’exploitation Mac
 
 ## <a name="include-tests"></a>Inclure des tests
 
@@ -203,7 +203,7 @@ La version de votre package doit être incluse dans les données de manifeste.
 - La version doit être structurée sous forme de 3 blocs numériques séparés par des points, par exemple 0.1.1 ou 4.11.192
 - Les versions commençant par « 0 » indiquent que le package n’est pas encore prêt pour la mise en production ; le premier numéro doit commencer par « 0 » uniquement s’il s’agit du seul numéro utilisé
 - Les modifications dans le premier numéro (1.9.9999 à 2.0.0) indiquent des modifications majeures et importantes entre les versions
-- Les modifications dans le second numéro (1.01 à 1.02) indiquent des modifications au niveau des fonctionnalités, par exemple l’ajout de nouvelles applets de commande à un module
+- Les modifications du second numéro (1.1 à 1.2) indiquent une évolution des fonctionnalités, par exemple, l’ajout de nouvelles cmdlets à un module
 - Les modifications dans le troisième numéro indiquent des modifications mineures, par exemple de nouveaux paramètres, des exemples mis à jour ou de nouveaux tests
 - Pour répertorier les versions, PowerShell trie les versions sous forme de chaînes, par conséquent 1.01.0 sera considéré comme étant supérieur à 1.001.0
 
