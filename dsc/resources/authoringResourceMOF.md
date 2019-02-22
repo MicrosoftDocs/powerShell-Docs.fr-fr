@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Écriture d’une ressource DSC personnalisée avec MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401192"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678927"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Écriture d’une ressource DSC personnalisée avec MOF
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Le redémarrage du nœud
+
+Si les actions effectuées votre `Set-TargetResource` fonction nécessite un redémarrage, vous pouvez utiliser un indicateur global pour indiquer le LCM pour redémarrer le nœud. Ce redémarrage se produit directement après le `Set-TargetResource` fonction se termine.
+
+À l’intérieur de votre `Set-TargetResource` de fonction, ajoutez la ligne suivante de code.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+Dans l’ordre pour le LCM redémarrer le nœud, le **RebootNodeIfNeeded** indicateur doit être définie sur `$true`. Le **ActionAfterReboot** doit également être défini sur **ContinueConfiguration**, qui est la valeur par défaut. Pour plus d’informations sur la configuration du LCM, consultez [configuration du Gestionnaire de Configuration Local](../managing-nodes/metaConfig.md), ou [configuration du Gestionnaire de Configuration Local (v4)](../managing-nodes/metaConfig4.md).
