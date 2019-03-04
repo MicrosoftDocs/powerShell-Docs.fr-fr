@@ -63,7 +63,7 @@ items:
       href: learn/remoting/ps-remoting-second-hop.md
   - name: Glossaire
     href: learn/windows-powershell-glossary.md
-- name: Composants.
+- name: Composants
   href: ''
   items:
   - name: Console
@@ -139,6 +139,8 @@ items:
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
       href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+    - name: Présentation de l’encodage de fichier dans VSCode et PowerShell
+      href: components/vscode/understanding-file-encoding.md
   - name: Accès web
     href: ''
     items:
@@ -248,9 +250,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: 934498dd6e2e2158d1ef2a83dbf38e3a2f51dfd0
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.openlocfilehash: ee25bc078f3c6bea91cb0cdaf89e27f20cee2842
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747736"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251334"
