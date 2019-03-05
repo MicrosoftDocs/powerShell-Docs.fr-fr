@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401203"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251385"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
@@ -64,6 +64,24 @@ Pour l’enregistrer, cliquez sur **Fichier->Enregistrer**, puis indiquez un nom
 Pour fermer le fichier, cliquez sur « x » en regard du nom de fichier.
 Pour quitter Visual Studio Code, cliquez sur **Fichier->Quitter**.
 
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>L’installation de l’Extension PowerShell sur les systèmes restreints
+
+Certains systèmes sont configurés de manière qui nécessite toutes les signatures de code à vérifier et nécessite donc PowerShell Editor Services doivent être manuellement approuvées pour s’exécuter sur le système.
+Une mise à jour de la stratégie de groupe qui modifie la stratégie d’exécution est une cause probable si vous avez installé l’extension PowerShell mais qui atteignent une erreur telle que :
+
+```
+Language server startup failed.
+```
+
+Pour approuver manuellement PowerShell Editor Services et, par conséquent, l’extension PowerShell pour VSCode ouvrent un invite et exécution de PowerShell :
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+Vous êtes invité avec « Voulez-vous exécuter des logiciels à partir de ce serveur de publication non approuvé ? »
+Type `R` pour exécuter le fichier. Ensuite, ouvrez Visual Studio Code et vérifiez que l’extension PowerShell fonctionne correctement. Si vous rencontrez des problèmes de mise en route, faites-le nous savoir sur [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Utilisation d’une version installée spécifique de PowerShell
 
 Si vous voulez utiliser une installation spécifique de PowerShell avec Visual Studio Code, vous devez ajouter une nouvelle variable à votre fichier de paramètres utilisateur.
@@ -98,17 +116,28 @@ Nous recommandons les paramètres de configuration suivants pour Visual Studio C
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+Si vous ne souhaitez pas ces paramètres affectent tous les types de fichiers, VSCode autorise également les configurations de langage. Créer un paramètre de langue spécifique en plaçant des paramètres dans un `[<language-name>]` champ. Par exemple :
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+Pour plus d’informations sur le fichier de codage dans VS Code, consultez [comprendre l’encodage du fichier](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Débogage avec Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Débogage sans espace de travail
 
-À compter de Visual Studio Code version 1.9, vous pouvez déboguer des scripts PowerShell sans avoir à ouvrir le dossier contenant le script PowerShell.
-Ouvrez simplement le fichier de script PowerShell avec **Fichier->Ouvrir un fichier...**, définissez un point d’arrêt sur une ligne (appuyez sur F9), puis appuyez sur F5 pour démarrer le débogage.
-Vous voyez apparaître le volet Actions de débogage, qui vous permet de vous arrêter dans le débogueur, d’effectuer un pas à pas détaillé, de reprendre et d’arrêter le débogage.
+À compter de Visual Studio Code version 1.9, vous pouvez déboguer des scripts PowerShell sans avoir à ouvrir le dossier contenant le script PowerShell. Ouvrez le fichier de script PowerShell avec **fichier -> Ouvrir un fichier...** , définissez un point d’arrêt sur une ligne (appuyez sur F9) et appuyez sur F5 pour démarrer le débogage. Vous voyez apparaître le volet Actions de débogage, qui vous permet de vous arrêter dans le débogueur, d’effectuer un pas à pas détaillé, de reprendre et d’arrêter le débogage.
 
 ### <a name="workspace-debugging"></a>Débogage d’espace de travail
 
@@ -165,7 +194,7 @@ Suivez ces étapes pour créer votre fichier de configuration de débogage :
 
   Ceci représente les scénarios de débogage courants.
   Cependant, quand vous ouvrez ce fichier dans l’éditeur, vous voyez un bouton **Ajouter une configuration**.
-  Vous pouvez appuyer sur ce bouton pour ajouter d’autres configurations de débogage PowerShell. Est une configuration très pratique pour ajouter **PowerShell : Lancer le Script**.
+  Vous pouvez appuyer sur ce bouton pour ajouter d’autres configurations de débogage PowerShell. **PowerShell : Lancer un script** est une configuration très pratique que vous pouvez ajouter.
   Avec cette configuration, vous pouvez spécifier un fichier spécifique avec des arguments facultatifs, qui doit être lancé quand vous appuyez sur F5, quel que soit le fichier actif dans l’éditeur.
 
   Une fois établie la configuration de débogage, vous pouvez choisir la configuration à utiliser pendant une session de débogage en la sélectionnant dans la liste déroulante des configurations de débogage de la barre d’outils de la vue **Déboguer**.
