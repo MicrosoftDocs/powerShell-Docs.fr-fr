@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863165"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430031"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
 
@@ -25,7 +25,6 @@ Cette rubrique décrit comment créer un fournisseur Windows PowerShell qui peut
 Les fournisseurs peuvent travailler sur des magasins de données à plusieurs niveaux sont appelés fournisseurs de conteneur Windows PowerShell. Toutefois, n’oubliez pas qu’un fournisseur de conteneur de Windows PowerShell peut être utilisé uniquement s’il existe un conteneur (aucun conteneurs imbriqués) avec les éléments qu’il contient. S’il existe des conteneurs imbriqués, vous devez implémenter un fournisseur de navigation de Windows PowerShell. Pour plus d’informations sur l’implémentation de fournisseur de navigation de Windows PowerShell, consultez [création d’un fournisseur de Navigation de Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider04.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider04.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Les fichiers source téléchargé sont disponibles dans le  **\<exemples PowerShell >** directory.
@@ -418,7 +417,6 @@ Pour l’exemple de code complet, consultez [exemple de Code AccessDbProviderSam
 ## <a name="building-the-windows-powershell-provider"></a>Construction du fournisseur PowerShell de Windows
 
 Consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Test du fournisseur PowerShell de Windows
 
@@ -537,8 +535,6 @@ Lorsque votre fournisseur de Windows PowerShell a été enregistré avec Windows
 [Implémentation d’un fournisseur d’éléments de PowerShell Windows](./creating-a-windows-powershell-item-provider.md)
 
 [Implémentation d’un fournisseur de PowerShell de Windows de Navigation](./creating-a-windows-powershell-navigation-provider.md)
-
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

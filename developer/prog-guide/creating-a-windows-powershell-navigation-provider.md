@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856955"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430028"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Création d’un fournisseur de navigation Windows PowerShell
 
 Cette rubrique décrit comment créer un fournisseur de navigation de Windows PowerShell qui peut naviguer le magasin de données. Ce type de fournisseur prend en charge les commandes récursives, les conteneurs imbriqués et les chemins d’accès relatifs.
 
 > [!NOTE]
-> Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider05.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider05.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Les fichiers source téléchargé sont disponibles dans le  **\<exemples PowerShell >** directory.
@@ -186,11 +185,9 @@ Pour l’exemple de code complet, consultez [exemple de Code AccessDbProviderSam
 ## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
 
 Il est possible pour un fournisseur pour ajouter des membres à des objets existants ou définir de nouveaux objets. Pour plus d’informations, consultez[étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Il est possible pour un fournisseur pour ajouter des membres à des objets existants ou définir de nouveaux objets. Pour plus d’informations, consultez[étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Construction du fournisseur Windows PowerShell
 
-Pour plus d’informations, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Pour plus d’informations, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Test du fournisseur Windows PowerShell
@@ -323,11 +320,7 @@ Lorsque votre fournisseur de Windows PowerShell a été enregistré avec Windows
 
 [Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implémenter un fournisseur de conteneur Windows PowerShell](./creating-a-windows-powershell-container-provider.md)
-
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862405"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429667"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Guide pratique pour créer un fournisseur Windows PowerShell
 
@@ -33,7 +33,6 @@ Windows PowerShell propose plusieurs fournisseurs (par exemple, le fournisseur F
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>L’accès aux données stockées à l’aide de chemins d’accès de Windows PowerShell
 
-Les fournisseurs Windows PowerShell sont accessibles à l’exécution de Windows PowerShell et aux commandes par programmation via l’utilisation de chemins d’accès Windows PowerShell. La plupart du temps, ces chemins d’accès sont utilisés pour accéder directement aux données via le fournisseur. Toutefois, certains chemins d’accès peuvent être résolues en interne au fournisseur de chemins d’accès qui permettent une applet de commande à utiliser les interfaces de programmation d’applications (API) non - Windows PowerShell pour accéder aux données. Pour plus d’informations sur le fonctionnement des fournisseurs Windows PowerShell dans Windows PowerShell, consultez [Windows PowerShell fonctionnement](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 Les fournisseurs Windows PowerShell sont accessibles à l’exécution de Windows PowerShell et aux commandes par programmation via l’utilisation de chemins d’accès Windows PowerShell. La plupart du temps, ces chemins d’accès sont utilisés pour accéder directement aux données via le fournisseur. Toutefois, certains chemins d’accès peuvent être résolues en interne au fournisseur de chemins d’accès qui permettent une applet de commande à utiliser les interfaces de programmation d’applications (API) non - Windows PowerShell pour accéder aux données. Pour plus d’informations sur le fonctionnement des fournisseurs Windows PowerShell dans Windows PowerShell, consultez [Windows PowerShell fonctionnement](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>Exposer les applets de commande fournisseur à l’aide de Windows PowerShell de lecteurs
@@ -64,8 +63,6 @@ Le tableau suivant répertorie les rubriques qui contiennent des exemples de cod
 |[Création d’un fournisseur de propriété PowerShell Windows](./creating-a-windows-powershell-property-provider.md)|Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler les propriétés des éléments dans un magasin de données.|
 
 ## <a name="see-also"></a>Voir aussi
-
-[Fonctionnement de Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Fonctionnement de Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

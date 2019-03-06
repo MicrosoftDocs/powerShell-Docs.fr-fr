@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855305"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429973"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Création d’un fournisseur de contenu Windows PowerShell
 
 Cette rubrique décrit comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler le contenu des éléments dans un magasin de données. Par conséquent, un fournisseur qui permet de manipuler le contenu d’éléments est appelé un fournisseur de contenu Windows PowerShell.
 
 > [!NOTE]
-> Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider06.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 > Vous pouvez télécharger le C# le fichier source (AccessDBSampleProvider06.cs) pour ce fournisseur en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Les fichiers source téléchargé sont disponibles dans le  **\<exemples PowerShell >** directory.
@@ -233,11 +232,9 @@ Pour l’exemple de code complet, consultez [exemple de Code AccessDbProviderSam
 ## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
 
 Lorsque vous écrivez un fournisseur, il peut être nécessaire d’ajouter des membres à des objets existants ou définir de nouveaux objets. Dans ce cas, vous devez créer un fichier de Types que Windows PowerShell peut utiliser pour identifier les membres de l’objet et un fichier de Format qui définit comment l’objet est affiché. Pour plus d’informations, consultez [étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Lorsque vous écrivez un fournisseur, il peut être nécessaire d’ajouter des membres à des objets existants ou définir de nouveaux objets. Dans ce cas, vous devez créer un fichier de Types que Windows PowerShell peut utiliser pour identifier les membres de l’objet et un fichier de Format qui définit comment l’objet est affiché. Pour plus d’informations, consultez [étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Construction du fournisseur PowerShell de Windows
 
-Consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Test du fournisseur PowerShell de Windows
@@ -285,11 +282,7 @@ Country   : USA
 
 [Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implémenter un fournisseur de Navigation Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md)
-
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
