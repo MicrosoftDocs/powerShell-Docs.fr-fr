@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VSCode et PowerShell
 description: Configurer l’encodage du fichier dans VSCode et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: HT
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251471"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429803"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Présentation de l’encodage de fichier dans VSCode et PowerShell
 
@@ -68,7 +68,7 @@ Portée de main [référence](https://www.i18nqa.com/debug/utf8-debug.html) rép
 L’extension PowerShell interagit avec des scripts dans une de plusieurs façons :
 
 1. Lorsque les scripts sont modifiés dans VSCode, le contenu est envoyé par VSCode à l’extension. Le [protocole de serveur de langage][] impose que ce contenu est transféré en UTF-8. Par conséquent, il n’est pas possible pour l’extension obtenir l’encodage incorrect.
-2. Lorsque les scripts sont exécutées directement dans la Console intégrée, ils sont lus à partir du fichier par PowerShell directement. Encodage de Tf PowerShell diffère de VSCode, quelque chose peut mal se passer ici.
+2. Lorsque les scripts sont exécutées directement dans la Console intégrée, ils sont lus à partir du fichier par PowerShell directement. Si l’encodage de PowerShell est différent de VSCode, choses se passent mal ici.
 3. Lorsqu’un script qui est ouvert dans VSCode fait référence à un autre script qui n’est pas ouvert dans VSCode, l’extension revient au chargement de contenu de ce script à partir du système de fichiers. L’extension PowerShell par défaut de l’encodage UTF-8, mais utilise [marque d’ordre d’octet][], ou BOM, détection permet de sélectionner l’encodage correct.
 
 Le problème se produit lorsqu’en supposant que l’encodage des formats de sans BOM (comme [UTF-8][] sans BOM et [Windows-1252][]).
@@ -100,7 +100,7 @@ Nomenclatures sont facultatives et leur adoption n’est pas aussi populaire dan
 
 De VSCode encodage par défaut est UTF-8 sans BOM.
 
-Pour définir [VSCode du codage][], accédez aux paramètres VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) et définissez le `"files.encoding"` paramètre :
+Pour définir [Encodage de VSCode][], accédez aux paramètres VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) et définissez le `"files.encoding"` paramètre :
 
 ```json
 "files.encoding": "utf8bom"
@@ -112,7 +112,7 @@ Certaines valeurs possibles sont :
 - `utf8bom`: [UTF-8] avec BOM
 - `utf16le`: Little endian [UTF-16]
 - `utf16be`: Big endian [UTF-16]
-- `windows1252`: [Windows-1252]
+- `windows1252` : [Windows-1252]
 
 Vous devez obtenir une liste déroulante pour cela dans la vue de l’interface graphique utilisateur, ou d’afficher des saisies semi-automatiques pour celui-ci dans le JSON.
 
@@ -192,7 +192,7 @@ Il n’est pas possible de forcer PowerShell à utiliser un codage d’entrée s
 
 ### <a name="existing-scripts"></a>Scripts existants
 
-Scripts déjà sur le système de fichiers peut-être à ré-encoder à votre nouvel encodage choisi. Dans la barre en bas de VSCode, vous verrez l’étiquette UTF-8. Cliquez dessus pour ouvrir la barre d’action et sélectionnez **enregistrer avec encodage**. Vous pouvez maintenant choisir un nouvel encodage pour ce fichier. Consultez [VSCode du codage][] pour obtenir des instructions complètes.
+Scripts déjà sur le système de fichiers peut-être à ré-encoder à votre nouvel encodage choisi. Dans la barre en bas de VSCode, vous verrez l’étiquette UTF-8. Cliquez dessus pour ouvrir la barre d’action et sélectionnez **enregistrer avec encodage**. Vous pouvez maintenant choisir un nouvel encodage pour ce fichier. Consultez [Encodage de VSCode][] pour obtenir des instructions complètes.
 
 Si vous avez besoin de ré-encoder plusieurs fichiers, vous pouvez utiliser le script suivant :
 
@@ -272,4 +272,4 @@ Il existe quelques autres billets intéressantes sur l’encodage et la configur
 [marque d’ordre d’octet]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Protocole de serveur de langage]: https://microsoft.github.io/language-server-protocol/
-[VSCode du codage]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[Encodage de VSCode]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support

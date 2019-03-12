@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell, applet de commande, télécharger, installer, installation, programme d’installation, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installation de Windows PowerShell
-ms.openlocfilehash: 37f28c2af5a11af26d9110cc6c5f7612124be557
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MTE95
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887614"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429871"
 ---
 # <a name="installing-windows-powershell"></a>Installation de Windows PowerShell
 
@@ -17,7 +17,7 @@ Si vous envisagez d’utiliser PowerShell 6 et versions ultérieures, vous devez
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Recherche de PowerShell dans Windows 10, 8.1, 8.0 et 7
 
-Il est parfois difficile de localiser la console ou l’environnement d'écriture de scripts intégré (ISE) de PowerShell dans Windows, car ils ne se trouvent pas au même emplacement d’une version de Windows à l’autre.
+Il est parfois difficile de localiser la console ou l’environnement d’écriture de scripts intégré (ISE) de PowerShell dans Windows, car ils ne se trouvent pas au même emplacement d’une version de Windows à l’autre.
 
 Les tableaux suivants devraient vous aider à trouver PowerShell dans votre version de Windows.
 Toutes les versions listées ici sont les versions d’origine telles qu’elles ont été publiées, sans aucune mise à jour.
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft
 
 Si vous recherchez **Azure PowerShell**, vous pouvez commencer par [Vue d’ensemble d’Azure PowerShell](/powershell/azure/overview).
 
-Sinon, vous voudrez peut-être [Installer et configurer Azure PowerShell](/powershell/azure/install-azurerm-ps)
+Sinon, vous voudrez peut-être [Installer et configurer Azure PowerShell](/powershell/azure/install-az-ps)
 
 ## <a name="see-also"></a>Voir aussi
 
