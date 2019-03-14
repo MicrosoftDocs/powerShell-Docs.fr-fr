@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: 2bf2447eba07b74f8cc14c9820fc1c1774370b2f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854005"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794967"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Instructions dont le suivi est fortement recommandé pour le développement
 
@@ -107,7 +107,6 @@ Si votre paramètre doit faire la distinction entre les 3 valeurs : $true, $fal
 
 #### <a name="support-arrays-for-parameters"></a>Prise en charge des tableaux de paramètres
 
-Souvent, les utilisateurs doivent effectuer la même opération par rapport à plusieurs arguments. Pour ces utilisateurs, une applet de commande doit accepter un tableau en tant que paramètre d’entrée afin qu’un utilisateur peut passer les arguments dans le paramètre comme une variable Windows PowerShell. Par exemple, le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) applet de commande utilise un tableau pour les chaînes qui identifient les noms des processus à récupérer.
 Souvent, les utilisateurs doivent effectuer la même opération par rapport à plusieurs arguments. Pour ces utilisateurs, une applet de commande doit accepter un tableau en tant que paramètre d’entrée afin qu’un utilisateur peut passer les arguments dans le paramètre comme une variable Windows PowerShell. Par exemple, le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) applet de commande utilise un tableau pour les chaînes qui identifient les noms des processus à récupérer.
 
 #### <a name="support-the-passthru-parameter"></a>Prend en charge le paramètre PassThru

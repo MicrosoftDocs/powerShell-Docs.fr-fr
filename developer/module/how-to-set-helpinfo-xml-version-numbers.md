@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
-ms.openlocfilehash: 4929a5b1c9f73bb12b6df975e03fc529db3565ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d69e8a734aa96ff9b7911815fb43b81103548b59
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863315"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794346"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>Guide pratique pour définir les numéros de version XML HelpInfo
 
@@ -21,7 +21,6 @@ Cette rubrique explique comment définir et augmenter les numéros de version da
 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>Guide pratique pour définir les numéros de version XML HelpInfo
 
-Les numéros de version dans un fichier XML HelpInfo sont essentielles au fonctionnement de l’aide actualisable. Le [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) et [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applets de commande téléchargement de nouveaux fichiers d’aide uniquement lorsque le numéro de version pour une culture d’interface utilisateur dans le fichier XML HelpInfo distant est supérieur au nombre de version pour cette culture d’interface utilisateur dans le local HelpInfo XML, ou il n’existe aucun fichier XML HelpInfo local.
 Les numéros de version dans un fichier XML HelpInfo sont essentielles au fonctionnement de l’aide actualisable. Le [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) et [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applets de commande téléchargement de nouveaux fichiers d’aide uniquement lorsque le numéro de version pour une culture d’interface utilisateur dans le fichier XML HelpInfo distant est supérieur au nombre de version pour cette culture d’interface utilisateur dans le local HelpInfo XML, ou il n’existe aucun fichier XML HelpInfo local.
 
 Le fichier XML HelpInfo utilise le numéro de version de 4 parties qui est défini dans le **System.Version** classe du Microsoft .NET Framework. Le format est `N1.N2.N3.N4`. Les auteurs de modules peuvent utiliser n’importe quelle version de numérotation est autorisé par le **System.Version** classe. Aide actualisable exige uniquement que le numéro de version pour une augmentation de culture d’interface utilisateur lors du chargée d’une nouvelle version du fichier CAB pour cette culture d’interface utilisateur à l’emplacement spécifié par le **HelpContentURI** élément dans le fichier XML HelpInfo.

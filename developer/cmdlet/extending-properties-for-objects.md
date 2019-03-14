@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854525"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795434"
 ---
 # <a name="extending-properties-for-objects"></a>Extension des propriétés pour les objets
 
@@ -101,7 +101,6 @@ Dans l’exemple suivant, le `VersionInfo` propriété est ajoutée à la [Syste
 
 ## <a name="property-sets"></a>Jeux de propriétés
 
-Un jeu de propriétés définit un groupe de propriétés étendues qui peuvent être référencés par le nom de l’ensemble. Par exemple, le `Property` paramètre de la [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) applet de commande peut spécifier une propriété spécifique définie pour être affichée. Lorsqu’un jeu de propriétés est spécifié, uniquement les propriétés qui appartiennent au jeu sont affichées.
 Un jeu de propriétés définit un groupe de propriétés étendues qui peuvent être référencés par le nom de l’ensemble. Par exemple, le `Property` paramètre de la [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) applet de commande peut spécifier une propriété spécifique définie pour être affichée. Lorsqu’un jeu de propriétés est spécifié, uniquement les propriétés qui appartiennent au jeu sont affichées.
 
 Il n’existe aucune restriction sur le nombre de jeux de propriétés qui peuvent être définis pour un objet. Toutefois, les jeux de propriétés utilisées pour définir les propriétés d’affichage par défaut d’un objet doivent être spécifiés dans le jeu de membres PSStandardMembers. Dans le fichier de types Types.ps1xml, les noms de jeu de propriétés par défaut incluent DefaultDisplayProperty, DefaultDisplayPropertySet et DefaultKeyPropertySet. Les jeux de propriétés supplémentaires que vous ajoutez au jeu de membres PSStandardMembers est ignorés.

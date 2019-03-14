@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854265"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794635"
 ---
 # <a name="windows-powershell-formatting-files"></a>Fichiers de mise en forme Windows PowerShell
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml définit l’affichage des divers objets .NET tels que
 FileSystem.Format.ps1xml définit l’affichage des objets de système de fichiers tels que les objets fichier et répertoire.
 
 Définit Help.Format.ps1xml les différentes vues utilisées par le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) applet de commande, tels que les vues exemple intégral et paramètres détaillés.
-Définit les différentes vues utilisées par le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) applet de commande, tels que les vues exemple intégral et paramètres détaillés.
 
 PowerShellCore.Format.ps1xml définit l’affichage des objets générés par Windows PowerShell core applets de commande tels que les objets retournés par le [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) et [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) applets de commande.
-Définit l’affichage des objets générés par Windows PowerShell core applets de commande tels que les objets retournés par le [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) et [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) applets de commande.
 
 PowerShellTrace.Format.ps1xml définit l’affichage des objets de trace telles que celles générées par le [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) applet de commande.
-Définit l’affichage des objets de trace telles que celles générées par le [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) applet de commande.
 
 Registry.Format.ps1xml définit l’affichage des objets de Registre tels que les objets de clé et d’entrée.
 

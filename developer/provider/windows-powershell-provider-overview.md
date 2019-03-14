@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 31ee7222c35e82ee58d6d56f710792dbc5cb24d7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858625"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795621"
 ---
 # <a name="windows-powershell-provider-overview"></a>Vue d’ensemble du fournisseur Windows PowerShell
 
-Un fournisseur Windows PowerShell permet de n’importe quel magasin de données d’être exposée comme un système de fichiers comme s’il s’agissait d’un lecteur monté. Par exemple, le fournisseur de Registre intégré vous permet de naviguer le Registre comme vous rechercheriez le `c` lecteur de votre ordinateur. Un fournisseur peut également remplacer le `Item` applets de commande (par exemple, `Get-Item`, `Set-Item`, etc.) telles que les données dans votre magasin de données peuvent être traitées comme des fichiers et répertoires sont traités lors de la navigation d’un système de fichiers. Pour plus d’informations sur les fournisseurs et les lecteurs et les fournisseurs intégrés dans Windows PowerShell, consultez [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 Un fournisseur Windows PowerShell permet de n’importe quel magasin de données d’être exposée comme un système de fichiers comme s’il s’agissait d’un lecteur monté. Par exemple, le fournisseur de Registre intégré vous permet de naviguer le Registre comme vous rechercheriez le `c` lecteur de votre ordinateur. Un fournisseur peut également remplacer le `Item` applets de commande (par exemple, `Get-Item`, `Set-Item`, etc.) telles que les données dans votre magasin de données peuvent être traitées comme des fichiers et répertoires sont traités lors de la navigation d’un système de fichiers. Pour plus d’informations sur les fournisseurs et les lecteurs et les fournisseurs intégrés dans Windows PowerShell, consultez [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
 ## <a name="providers-and-drives"></a>Fournisseurs et lecteurs

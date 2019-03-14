@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
 caps.latest.revision: 6
-ms.openlocfilehash: abdd6e915b768b8ac688b6fc8c3194723961765e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1513d340cdadc5cb7622e791cc3c163ff39dfe1d
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863395"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795400"
 ---
 # <a name="credential-attribute-declaration"></a>Déclaration de l’attribut Credential
 
-L’attribut d’informations d’identification est un attribut facultatif qui peut être utilisé avec les paramètres d’informations d’identification de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Lorsque cet attribut est ajouté à une déclaration de paramètre, Windows PowerShell convertit l’entrée de chaîne dans un [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet. Par exemple, le [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) applet de commande utilise cet attribut pour que Windows PowerShell génère le [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet qui est retourné par l’applet de commande.
 L’attribut d’informations d’identification est un attribut facultatif qui peut être utilisé avec les paramètres d’informations d’identification de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Lorsque cet attribut est ajouté à une déclaration de paramètre, Windows PowerShell convertit l’entrée de chaîne dans un [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet. Par exemple, le [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) applet de commande utilise cet attribut pour que Windows PowerShell génère le [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet qui est retourné par l’applet de commande.
 
 ## <a name="syntax"></a>Syntaxe

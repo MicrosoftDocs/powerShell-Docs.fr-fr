@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
-ms.openlocfilehash: 3d9edb9d2af8ab15764d97256f49f674255e7ee7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 63bcdc6b273b47f8eb743928d2eaa5ef91470df5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863795"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794414"
 ---
 # <a name="host05-sample"></a>Exemple Host05
 
-Cet exemple montre comment créer une application hôte console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console. Cette application hôte prend aussi en charge les appels à des ordinateurs distants à l’aide des applets de commande [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) et [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession).
 Cet exemple montre comment créer une application hôte console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console. Cette application hôte prend aussi en charge les appels à des ordinateurs distants à l’aide des applets de commande [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) et [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession).
 
 ## <a name="requirements"></a>Spécifications
@@ -44,7 +43,6 @@ Cet exemple montre comment créer une application hôte console interactive qui 
 
 - Implémentez le [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.
 
-- Implémentez le [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface pour prendre en charge la communication à distance interactive à l’aide de la [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) et [ Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) applets de commande.
 - Implémentez le [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface pour prendre en charge la communication à distance interactive à l’aide de la [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) et [ Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) applets de commande.
 
 ## <a name="example"></a>Exemple

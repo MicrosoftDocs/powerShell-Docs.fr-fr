@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: dfaaa19fd3d4eb65a3fd335fb984a69874688f27
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861485"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794941"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Méthodes de traitement des entrées des applets de commande
 
@@ -43,7 +43,6 @@ Pour obtenir un exemple plus détaillé de l’utilisation de la [System.Managem
 ## <a name="input-processing-tasks"></a>Tâches de traitement d’entrée
 
 Applets de commande peut remplacer le [System.Management.Automation.Cmdlet.Processrecord%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) méthode pour traiter l’entrée qui est envoyée à l’applet de commande. Lorsque Windows PowerShell traite un pipeline de commande, Windows PowerShell appelle cette méthode pour chaque enregistrement d’entrée qui est traité par l’applet de commande. Pour plus d’informations sur la façon dont Windows PowerShell appelle le pipeline de commande, consultez [cycle de vie du traitement d’applet de commande](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
-Applets de commande peut remplacer le [System.Management.Automation.Cmdlet.Processrecord%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) méthode pour traiter l’entrée qui est envoyée à l’applet de commande. Lorsque Windows PowerShell traite un pipeline de commande, Windows PowerShell appelle cette méthode pour chaque enregistrement d’entrée qui est traité par l’applet de commande. Pour plus d’informations sur la façon dont Windows PowerShell appelle le pipeline de commande, consultez [cycle de vie du traitement d’applet de commande](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 Le code suivant illustre une implémentation de la [System.Management.Automation.Cmdlet.Processrecord%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) (méthode).
 
@@ -64,7 +63,6 @@ Pour obtenir un exemple plus détaillé de l’utilisation de la [System.Managem
 
 Applets de commande doit remplacer le [System.Management.Automation.Cmdlet.Endprocessing%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) méthode pour ajouter toutes les opérations post-traitement qui sont valides pour tous les enregistrements qui ont été traités par l’applet de commande. Par exemple, votre applet de commande peut avoir nettoyer les variables d’objet après la fin de l’installation de traitement.
 
-Lorsque Windows PowerShell traite un pipeline de commande, Windows PowerShell appelle cette méthode une fois pour chaque instance de l’applet de commande dans le pipeline. Toutefois, il est important de se rappeler que le runtime Windows PowerShell n’appelle pas le [System.Management.Automation.Cmdlet.Endprocessing%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) méthode si l’applet de commande est annulée à mi-chemin via son traitement d’entrée ou si un arrêt de l’erreur se produit dans n’importe quelle partie de l’applet de commande. Pour cette raison, une applet de commande qui requiert un nettoyage de l’objet doit implémenter l’ensemble [System.Idisposable](/dotnet/api/System.IDisposable) modèle, y compris un finaliseur, afin que le runtime peut appeler à la fois le [ System.Management.Automation.Cmdlet.Endprocessing%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) et [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) méthodes à la fin du traitement. Pour plus d’informations sur la façon dont Windows PowerShell appelle le pipeline de commande, consultez [cycle de vie du traitement d’applet de commande](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 Lorsque Windows PowerShell traite un pipeline de commande, Windows PowerShell appelle cette méthode une fois pour chaque instance de l’applet de commande dans le pipeline. Toutefois, il est important de se rappeler que le runtime Windows PowerShell n’appelle pas le [System.Management.Automation.Cmdlet.Endprocessing%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) méthode si l’applet de commande est annulée à mi-chemin via son traitement d’entrée ou si un arrêt de l’erreur se produit dans n’importe quelle partie de l’applet de commande. Pour cette raison, une applet de commande qui requiert un nettoyage de l’objet doit implémenter l’ensemble [System.Idisposable](/dotnet/api/System.IDisposable) modèle, y compris un finaliseur, afin que le runtime peut appeler à la fois le [ System.Management.Automation.Cmdlet.Endprocessing%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) et [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) méthodes à la fin du traitement. Pour plus d’informations sur la façon dont Windows PowerShell appelle le pipeline de commande, consultez [cycle de vie du traitement d’applet de commande](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 Le code suivant illustre une implémentation de la [System.Management.Automation.Cmdlet.Processrecord%2A ? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) (méthode).

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860875"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794380"
 ---
 # <a name="how-updatable-help-works"></a>Fonctionnement de l’aide actualisable
 
@@ -21,7 +21,6 @@ Cette rubrique explique comment un processus de l’aide actualisable le fichier
 
 ## <a name="the-update-help-process"></a>Le processus de mise à jour-Help
 
-Le tableau suivant répertorie les actions de la [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applet de commande lorsqu’un utilisateur exécute une commande pour mettre à jour les fichiers d’aide pour un module dans une culture d’interface utilisateur particulier.
 Le tableau suivant répertorie les actions de la [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applet de commande lorsqu’un utilisateur exécute une commande pour mettre à jour les fichiers d’aide pour un module dans une culture d’interface utilisateur particulier.
 
 1. `Update-Help` Obtient le fichier XML HelpInfo à distance à partir de l’emplacement spécifié par la valeur de la **HelpInfoURI** de clé dans le manifeste de module et valide le fichier par rapport au schéma. (Pour afficher le schéma, consultez [HelpInfo XML Schema](./helpinfo-xml-schema.md).) Puis `Update-Help` recherche un fichier XML HelpInfo local pour le module dans le répertoire de module sur l’ordinateur de l’utilisateur.
@@ -36,7 +35,6 @@ Le tableau suivant répertorie les actions de la [Update-Help](/powershell/modul
 
 ## <a name="the-save-help-process"></a>Le processus de Save-Help
 
-Le tableau suivant répertorie les actions de la [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) et [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applets de commande lorsqu’un utilisateur exécute des commandes pour mettre à jour les fichiers d’aide dans un partage de fichiers, puis utiliser ces fichiers pour mettre à jour les fichiers d’aide sur la ordinateur de l’utilisateur.
 Le tableau suivant répertorie les actions de la [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) et [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applets de commande lorsqu’un utilisateur exécute des commandes pour mettre à jour les fichiers d’aide dans un partage de fichiers, puis utiliser ces fichiers pour mettre à jour les fichiers d’aide sur la ordinateur de l’utilisateur.
 
 Le `Save-Help` applet de commande effectue les actions suivantes en réponse à une commande pour enregistrer les fichiers d’aide pour un module dans un partage de fichiers spécifié par le **DestinationPath** paramètre.

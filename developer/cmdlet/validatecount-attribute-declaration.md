@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: 1a7b5ea340fe5212d003c97a9017278d6c631355
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4e0be34b6f7a56dcf02a4381de4d2a5d08db14df
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859155"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794436"
 ---
 # <a name="validatecount-attribute-declaration"></a>Déclaration de l’attribut ValidateCount
 
@@ -52,8 +52,6 @@ L’attribut ValidateCount Spécifie le nombre minimal et maximal d’arguments 
 ## <a name="see-also"></a>Voir aussi
 
 [System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount)
-
-[Comment déclarer des règles de Validation d’entrée](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
 
 [Comment déclarer des règles de Validation d’entrée](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
 

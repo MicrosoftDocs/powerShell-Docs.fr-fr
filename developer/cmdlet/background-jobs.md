@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857165"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794703"
 ---
 # <a name="background-jobs"></a>Travaux en arrière-plan
 
@@ -21,7 +21,6 @@ Applets de commande peut exécuter leur action en interne ou un PowerShell Windo
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Tâches en arrière-plan, les travaux d’enfant et le référentiel de tâches
 
-L’objet de travail qui est retourné par les applets de commande qui prennent en charge les tâches en arrière-plan définit la tâche. (Le [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) applet de commande renvoie également un objet de traitement.) Le nom de la tâche, un identificateur qui est utilisé pour spécifier le travail, les informations d’état et les tâches enfant sont inclus dans cette définition. La tâche n’effectue aucun du travail. Chaque tâche en arrière-plan a au moins une tâche enfant, car la tâche enfant effectue le travail réel. Lorsque vous exécutez une applet de commande afin que le travail est effectué en tant que tâche en arrière-plan, l’applet de commande doit ajouter le travail et les tâches enfant à un référentiel commun, appelé le *référentiel de tâches*.
 L’objet de travail qui est retourné par les applets de commande qui prennent en charge les tâches en arrière-plan définit la tâche. (Le [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) applet de commande renvoie également un objet de traitement.) Le nom de la tâche, un identificateur qui est utilisé pour spécifier le travail, les informations d’état et les tâches enfant sont inclus dans cette définition. La tâche n’effectue aucun du travail. Chaque tâche en arrière-plan a au moins une tâche enfant, car la tâche enfant effectue le travail réel. Lorsque vous exécutez une applet de commande afin que le travail est effectué en tant que tâche en arrière-plan, l’applet de commande doit ajouter le travail et les tâches enfant à un référentiel commun, appelé le *référentiel de tâches*.
 
 Pour plus d’informations sur la gestion des tâches en arrière-plan sur la ligne de commande, consultez les rubriques suivantes :

@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856665"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795349"
 ---
 # <a name="naming-help-files"></a>Nommage des fichiers d’aide
 
-Cette rubrique explique comment nommer un fichier d’aide basé sur XML afin que le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet peut le trouver. Les exigences relatives aux noms diffèrent pour chaque type de commande.
 Cette rubrique explique comment nommer un fichier d’aide basé sur XML afin que le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet peut le trouver. Les exigences relatives aux noms diffèrent pour chaque type de commande.
 
 ## <a name="cmdlet-help-files"></a>Fichiers d’aide de l’applet de commande
@@ -30,7 +29,6 @@ Le fichier d’aide pour un C# applet de commande doit être nommé pour l’ass
 
 Le format de nom d’assembly est requis, même lorsque l’assembly est un module imbriqué.
 
-Par exemple, le [Get-WinEvent ; PSITPro5_Diagnostic ; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) applet de commande est défini dans l’assembly Microsoft.PowerShell.Diagnostics.dll. Le `Get-Help` applet de commande recherche d’une rubrique d’aide pour le `Get-WinEvent` applet de commande uniquement dans le fichier Microsoft.PowerShell.Diagnostics.dll-help.xml dans le répertoire de module.
 Par exemple, le [Get-WinEvent ; PSITPro5_Diagnostic ; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) applet de commande est défini dans l’assembly Microsoft.PowerShell.Diagnostics.dll. Le `Get-Help` applet de commande recherche d’une rubrique d’aide pour le `Get-WinEvent` applet de commande uniquement dans le fichier Microsoft.PowerShell.Diagnostics.dll-help.xml dans le répertoire de module.
 
 ## <a name="provider-help-files"></a>Fichiers d’aide du fournisseur
@@ -47,7 +45,6 @@ Par exemple, le fournisseur de certificats est défini dans l’assembly Microso
 
 ## <a name="function-help-files"></a>Fichiers d’aide (fonction)
 
-Fonctions peuvent être décrites à l’aide de [aide basée sur le commentaire](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) ou documentés dans un fichier d’aide XML. Lorsque la fonction est documentée dans un fichier XML, la fonction doit avoir un `.ExternalHelp` commenter le mot clé qui associe la fonction avec le fichier XML. Sinon, le `Get-Help` applet de commande ne peut pas trouver le fichier d’aide.
 Fonctions peuvent être décrites à l’aide de [aide basée sur le commentaire](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) ou documentés dans un fichier d’aide XML. Lorsque la fonction est documentée dans un fichier XML, la fonction doit avoir un `.ExternalHelp` commenter le mot clé qui associe la fonction avec le fichier XML. Sinon, le `Get-Help` applet de commande ne peut pas trouver le fichier d’aide.
 
 Il n’existe aucune exigence technique pour le nom d’un fichier d’aide (fonction). Toutefois, une bonne pratique consiste à nommer le fichier d’aide pour le module de script dans lequel la fonction est définie. Par exemple, la fonction suivante est définie dans le fichier MyModule.psm1.

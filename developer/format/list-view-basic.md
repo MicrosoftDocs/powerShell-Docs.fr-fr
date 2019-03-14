@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
 caps.latest.revision: 7
-ms.openlocfilehash: 1c683693c331ccfaf7355a0dd51801ed6fd39b3b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3c94d8e98f179286112a417230fce659dc0b614c
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853305"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794159"
 ---
 # <a name="list-view-basic"></a>Vue de liste (De base)
 
-Cet exemple montre comment implémenter un affichage de liste de base qui affiche le [System.Serviceprocess.Servicecontroller ? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objets retournés par le [Get-Service](/powershell/module/microsoft.powershell.management/get-service) applet de commande. Pour plus d’informations sur les composants d’une vue liste, consultez [création d’une vue liste](./creating-a-list-view.md).
 Cet exemple montre comment implémenter un affichage de liste de base qui affiche le [System.Serviceprocess.Servicecontroller ? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objets retournés par le [Get-Service](/powershell/module/microsoft.powershell.management/get-service) applet de commande. Pour plus d’informations sur les composants d’une vue liste, consultez [création d’une vue liste](./creating-a-list-view.md).
 
 ### <a name="to-load-this-formatting-file"></a>Pour charger ce fichier de mise en forme

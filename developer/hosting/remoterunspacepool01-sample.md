@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
-ms.openlocfilehash: 980fbff49a3481d92c2ca8483772b1704462c499
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 03284495fbd6d6cfaed639604e87bc70c7023b6c
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857595"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795039"
 ---
 # <a name="remoterunspacepool01-sample"></a>Exemple RemoteRunspacePool01
 
@@ -31,7 +31,6 @@ Cet exemple montre comment construire un pool d’instance d’exécution à dis
 
 - Création d’une instance d’exécution à distance qui utilise le [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objet pour établir la connexion à distance.
 
-- En cours d’exécution le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et [Get-Service](/powershell/module/microsoft.powershell.management/get-service) applets de commande simultanément en utilisant le pool de l’instance d’exécution à distance.
 - En cours d’exécution le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et [Get-Service](/powershell/module/microsoft.powershell.management/get-service) applets de commande simultanément en utilisant le pool de l’instance d’exécution à distance.
 
 - Fermeture du pool d’instance d’exécution distante pour libérer la connexion à distance.
