@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856705"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058185"
 ---
 # <a name="writing-an-item-provider"></a>Écriture d’un fournisseur d’éléments
 
@@ -46,7 +46,7 @@ Déclarer au fournisseur de dériver à partir de la [System.Management.Automati
 
 ### <a name="implementing-getitem"></a>Implémentation GetItem
 
-Le [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) est appelée par le moteur PowerShell lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Get-Item](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) applet de commande sur votre fournisseur. La méthode retourne l’élément dans le chemin spécifié. Dans l’exemple de base de données Access, la méthode vérifie si l’élément est le lecteur lui-même, une table dans la base de données ou d’une ligne dans la base de données. La méthode envoie l’élément du moteur PowerShell en appelant le [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) (méthode).
+Le [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) est appelée par le moteur PowerShell lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Get-Item](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item) applet de commande sur votre fournisseur. La méthode retourne l’élément dans le chemin spécifié. Dans l’exemple de base de données Access, la méthode vérifie si l’élément est le lecteur lui-même, une table dans la base de données ou d’une ligne dans la base de données. La méthode envoie l’élément du moteur PowerShell en appelant le [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) (méthode).
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>Implémentation SetItem
 
-Le [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) méthode est appelée par le moteur PowerShell appelle lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Set-Item](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) applet de commande . Il définit la valeur de l’élément dans le chemin spécifié.
+Le [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) méthode est appelée par le moteur PowerShell appelle lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Set-Item](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item) applet de commande . Il définit la valeur de l’élément dans le chemin spécifié.
 
 Dans l’exemple de base de données Access, il est judicieux pour définir la valeur d’un élément uniquement si cet élément est une ligne, donc la méthode lève [l’exception NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx) lorsque l’élément n’est pas une ligne.
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>Implémentation ItemExists
 
-Le [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) méthode est appelée par le moteur PowerShell lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) applet de commande. La méthode détermine s’il existe un élément dans le chemin spécifié. Si l’élément existe, la méthode transmet au moteur PowerShell en appelant [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
+Le [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) méthode est appelée par le moteur PowerShell lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Test-Path](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path) applet de commande. La méthode détermine s’il existe un élément dans le chemin spécifié. Si l’élément existe, la méthode transmet au moteur PowerShell en appelant [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject).
 
 ```csharp
 protected override bool ItemExists(string path)

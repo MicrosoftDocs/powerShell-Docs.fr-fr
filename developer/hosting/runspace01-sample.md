@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
-ms.openlocfilehash: c33044fde4456513b5b07b998cc8db389b318e8e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855715"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057907"
 ---
 # <a name="runspace01-sample"></a>Exemple Runspace01
 
@@ -31,7 +31,7 @@ Cet exemple montre comment utiliser le [System.Management.Automation.Powershell]
 
 - Exécuter la commande de façon synchrone.
 
-- À l’aide de [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objets pour extraire les propriétés d’objets retournés par la commande.
+- À l’aide de [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objets pour extraire les propriétés d’objets retournés par la commande.
 
 ## <a name="example"></a>Exemple
 

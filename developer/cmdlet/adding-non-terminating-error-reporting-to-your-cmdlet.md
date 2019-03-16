@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862005"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056054"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
 
-Applets de commande peut signaler des erreurs sans fin d’exécution en appelant le [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode) et continuer à opérer sur l’objet d’entrée actuel ou sur entrant autre pipeline d’objets. Cette section explique comment créer une applet de commande qui signale les erreurs sans fin d’exécution à partir de ses méthodes de traitement d’entrée.
+Applets de commande peut signaler des erreurs sans fin d’exécution en appelant le [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode) et continuer à opérer sur l’objet d’entrée actuel ou sur entrant autre pipeline d’objets. Cette section explique comment créer une applet de commande qui signale les erreurs sans fin d’exécution à partir de ses méthodes de traitement d’entrée.
 
-Pour les erreurs sans fin d’exécution (ainsi que des erreurs avec fin d’exécution), l’applet de commande doit passer un [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) objet identifiant l’erreur. Chaque enregistrement d’erreur est identifiée par une chaîne unique appelée le « identificateur d’erreur ». En plus de l’identificateur de la catégorie de chaque erreur est spécifiée par les constantes définies par un [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) énumération. L’utilisateur peut afficher les erreurs en fonction de leur catégorie en définissant le `$ErrorView` variable « CategoryView ».
+Pour les erreurs sans fin d’exécution (ainsi que des erreurs avec fin d’exécution), l’applet de commande doit passer un [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) objet identifiant l’erreur. Chaque enregistrement d’erreur est identifiée par une chaîne unique appelée le « identificateur d’erreur ». En plus de l’identificateur de la catégorie de chaque erreur est spécifiée par les constantes définies par un [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) énumération. L’utilisateur peut afficher les erreurs en fonction de leur catégorie en définissant le `$ErrorView` variable « CategoryView ».
 
 Pour plus d’informations sur les enregistrements d’erreur, consultez [enregistrements d’erreur Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Toutes les applets de commande doivent substituer au moins un de l’entrée de 
 > [!NOTE]
 > Votre applet de commande doit gérer chaque enregistrement de manière indépendante que possible.
 
-Se substitue à cette applet de commande Get-Process le [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour gérer la `Name` paramètre pour l’entrée fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Détails de ce remplacement sont fournis dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
+Se substitue à cette applet de commande Get-Process le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour gérer la `Name` paramètre pour l’entrée fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Détails de ce remplacement sont fournis dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Points à retenir lors du signalement des erreurs
 
-Le [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) que l’applet de commande passe lors de l’écriture d’une erreur nécessite une exception à la base de l’objet. Suivez les instructions de .NET lors de la détermination de l’exception à utiliser. En fait, si l’erreur est sémantiquement identique à une exception existante, l’applet de commande doit utiliser ou dériver de cette exception. Sinon, elle doit dériver une nouvelle exception ou la hiérarchie des exceptions directement à partir de la [System.Exception](/dotnet/api/System.Exception) classe.
+Le [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) que l’applet de commande passe lors de l’écriture d’une erreur nécessite une exception à la base de l’objet. Suivez les instructions de .NET lors de la détermination de l’exception à utiliser. En fait, si l’erreur est sémantiquement identique à une exception existante, l’applet de commande doit utiliser ou dériver de cette exception. Sinon, elle doit dériver une nouvelle exception ou la hiérarchie des exceptions directement à partir de la [System.Exception](/dotnet/api/System.Exception) classe.
 
 Gardez l’esprit ce qui suit lors de la création d’identificateurs d’erreur (accédés via la propriété FullyQualifiedErrorId de la classe ErrorRecord).
 
@@ -135,7 +135,7 @@ Exceptions non gérées ne sont pas interceptées par Windows PowerShell dans le
 
 ## <a name="reporting-nonterminating-errors"></a>Rapports d’erreurs sans fin d’exécution
 
-L’un des méthodes de traitement d’entrée peut signaler une erreur sans fin d’exécution pour le flux de sortie à l’aide de la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode). Voici un exemple de code à partir de cette applet de commande Get-Process qui illustre l’appel de [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) à partir de dans la substitution de la [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Dans ce cas, l’appel est effectué si l’applet de commande ne peut pas trouver un processus pour un identificateur de processus spécifié.
+L’un des méthodes de traitement d’entrée peut signaler une erreur sans fin d’exécution pour le flux de sortie à l’aide de la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode). Voici un exemple de code à partir de cette applet de commande Get-Process qui illustre l’appel de [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) à partir de dans la substitution de la [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Dans ce cas, l’appel est effectué si l’applet de commande ne peut pas trouver un processus pour un identificateur de processus spécifié.
 
 ```csharp
 protected override void ProcessRecord()

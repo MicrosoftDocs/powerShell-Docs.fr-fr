@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855885"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055901"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Guide pratique pour appeler une applet de commande à partir d’une applet de commande
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> Vous pouvez appeler uniquement ces applets de commande qui dérivent directement de la [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe. Vous ne pouvez pas appeler une applet de commande qui dérive de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe.
+> Vous pouvez appeler uniquement ces applets de commande qui dérivent directement de la [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe. Vous ne pouvez pas appeler une applet de commande qui dérive de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe.
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Pour appeler une applet de commande à partir d’une applet de commande
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. Dans la méthode de l’applet de commande de traitement d’entrée, créez une nouvelle instance de l’applet de commande à appeler. Dans cet exemple, un objet de type [Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) est créé en même temps que la chaîne qui contient les arguments qui sont utilisés lorsque l’applet de commande est appelée.
+2. Dans la méthode de l’applet de commande de traitement d’entrée, créez une nouvelle instance de l’applet de commande à appeler. Dans cet exemple, un objet de type [Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) est créé en même temps que la chaîne qui contient les arguments qui sont utilisés lorsque l’applet de commande est appelée.
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, le `Get-Process` applet de commande est appelée depuis le [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) méthode d’applet de commande.
+Dans cet exemple, le `Get-Process` applet de commande est appelée depuis le [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) méthode d’applet de commande.
 
 ```csharp
 using System;

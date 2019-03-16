@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856965"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057601"
 ---
 # <a name="updatable-help-overview"></a>Vue d’ensemble de l’aide actualisable
 
@@ -31,7 +31,9 @@ Aide actualisable est entièrement pris en charge par tous les modules Windows P
 
 Aide actualisable inclut les fonctionnalités suivantes.
 
-- Le [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applet de commande, qui détermine si les utilisateurs ont l’aide les plus récents des fichiers pour un module et, dans le cas contraire, télécharge les fichiers d’aide plus récents à partir d’Internet, les décompresse et les installe dans les sous-répertoires de module approprié sur le ordinateur de l’utilisateur. Les utilisateurs peuvent utiliser le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applet de commande pour afficher les rubriques d’aide qui vient d’être installé immédiatement. Il est inutile de redémarrer Windows PowerShell.
+- Le [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) applet de commande, qui détermine si les utilisateurs ont l’aide les plus récents des fichiers pour un module et, dans le cas contraire, télécharge les fichiers d’aide plus récents à partir d’Internet, les décompresse et les installe dans les sous-répertoires de module approprié sur le ordinateur de l’utilisateur.
+  Les utilisateurs peuvent utiliser le [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) applet de commande pour afficher les rubriques d’aide qui vient d’être installé immédiatement.
+  Ils n’avez pas besoin de redémarrer PowerShell.
 
 - Le [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) applet de commande, qui télécharge l’aide la plus récente des fichiers à partir d’Internet et les enregistre dans un répertoire de système de fichiers. Les utilisateurs peuvent utiliser le `Update-Help` applet de commande pour obtenir les fichiers d’aide à partir du répertoire de système de fichier et de décompresser et de les installer dans les sous-répertoires de module sur l’ordinateur de l’utilisateur. Le `Save-Help` applet de commande est conçue pour les utilisateurs qui ont une limitée ou sans accès à Internet et pour les entreprises qui préfèrent limiter l’accès à Internet.
 

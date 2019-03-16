@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858405"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057958"
 ---
 # <a name="provider-types"></a>Types de fournisseur
 
@@ -65,7 +65,7 @@ Fournisseurs prenant en charge de conteneur autorisent l’utilisateur gérer le
 
 Le [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) classe définit les méthodes suivantes pour l’implémentation des applets de commande fournisseur spécifique. Dans la plupart des cas, pour prendre en charge une applet de commande fournisseur vous devez remplacer la méthode qui appelle par le moteur Windows PowerShell pour appeler l’applet de commande, telles que la `CopyItem` méthode pour le `Copy-Item` applet de commande et si vous le souhaitez, vous pouvez remplacer une deuxième méthode, telles que `CopyItemDynamicParameters`, pour l’ajout des paramètres dynamiques à l’applet de commande.
 
-- Le [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) et [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) les méthodes définissent comment votre fournisseur prend en charge la `Copy-Item` applet de commande fournisseur. Cette applet de commande permet à l’utilisateur à copier un élément d’un emplacement vers un autre.
+- Le [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) et [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) les méthodes définissent comment votre fournisseur prend en charge la `Copy-Item` applet de commande fournisseur. Cette applet de commande permet à l’utilisateur à copier un élément d’un emplacement vers un autre.
 
 - Le [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) et [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) méthodes définissent comment votre fournisseur prend en charge la `Get-ChildItem` applet de commande fournisseur. Cette applet de commande permet à l’utilisateur récupérer les éléments enfants de l’élément parent.
 

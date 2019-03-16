@@ -11,12 +11,12 @@ helpviewer_keywords:
 - session state [PowerShell]
 ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
 caps.latest.revision: 8
-ms.openlocfilehash: 5d4effb508c9f2544832dad557671520cb0a7ac7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa207130bbb120750780bb0aa9b32150a32daaa2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862985"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059539"
 ---
 # <a name="windows-powershell-session-state"></a>État de session Windows PowerShell
 
@@ -46,11 +46,11 @@ Données d’état de session sont stockées par l’instance actuelle du moteur
 
 ## <a name="accessing-session-state-data-within-cmdlets"></a>L’accès aux données d’état de Session dans les applets de commande
 
-Applets de commande peuvent accéder aux données de l’état de session soit indirectement par le biais du [System.Management.Automation.Pscmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) propriété de la classe de l’applet de commande ou directement via le [ System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) classe. Le [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) classe fournit des propriétés qui peuvent être utilisées pour examiner les différents types de données d’état de session.
+Applets de commande peuvent accéder aux données de l’état de session soit indirectement par le biais du [System.Management.Automation.PSCmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) propriété de la classe de l’applet de commande ou directement via le [ System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) classe. Le [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) classe fournit des propriétés qui peuvent être utilisées pour examiner les différents types de données d’état de session.
 
 ## <a name="see-also"></a>Voir aussi
 
-[System.Management.Automation.Pscmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
+[System.Management.Automation.PSCmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
 
 [System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState)
 

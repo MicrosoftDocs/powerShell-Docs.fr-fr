@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863335"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057159"
 ---
 # <a name="events01-sample"></a>Exemple Events01
 
-Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique. Cet exemple dérive le [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
+Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique. Cet exemple dérive le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Guide pratique pour générer l’exemple à l’aide de Visual Studio.
 
@@ -78,7 +78,7 @@ Cet exemple requiert Windows PowerShell 2.0.
 
 Cet exemple montre ce qui suit.
 
-- Comment écrire une applet de commande d’inscription d’événement. Dérive de l’applet de commande le [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe, qui fournit la prise en charge pour les paramètres communs à Register-* événement applets de commande. Applets de commande qui sont dérivés de [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.
+- Comment écrire une applet de commande d’inscription d’événement. Dérive de l’applet de commande le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe, qui fournit la prise en charge pour les paramètres communs à Register-* événement applets de commande. Applets de commande qui sont dérivés de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.
 
 ## <a name="example"></a>Exemple
 

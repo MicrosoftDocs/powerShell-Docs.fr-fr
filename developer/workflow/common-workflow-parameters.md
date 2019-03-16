@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856135"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054796"
 ---
 # <a name="common-workflow-parameters"></a>Paramètres de workflow courants
 
@@ -26,7 +26,7 @@ Les paramètres communs de flux de travail sont regroupées en plusieurs catégo
 |Name|Type|Description|Peut être spécifié par l’utilisateur final au moment de l’exécution ?|Peut être spécifié par l’auteur de workflow lors de la création ?|Peut être spécifié par l’auteur de workflow à l’instanciation ?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|Une liste de noms d’ordinateurs pour lequel lancer les travaux.|Oui|Oui|Oui|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Les informations d’identification de l’authentification à utiliser pour vous connecter à des ordinateurs spécifiés par le paramètre PSComputerName. Ce paramètre est valide uniquement si PSComputerName est spécifié.|Oui|Oui|Oui|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Les informations d’identification de l’authentification à utiliser pour vous connecter à des ordinateurs spécifiés par le paramètre PSComputerName. Ce paramètre est valide uniquement si PSComputerName est spécifié.|Oui|Oui|Oui|
 |PSPort|UInt32|Le port à utiliser pour exécuter le workflow.|Oui|Oui|Oui|
 |PSUseSSL|Booléen|Utiliser le protocole de couche de Sockets sécurisée (SSL) pour établir une connexion sécurisée à l’ordinateur distant pour exécuter le workflow.|Oui|Oui|Oui|
 |PSConfigurationName|String|La configuration de session utilisée pour exécuter le flux de travail.|Oui|Oui|Oui|

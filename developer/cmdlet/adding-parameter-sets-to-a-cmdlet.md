@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859265"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054983"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
 
@@ -179,7 +179,7 @@ Bien qu’il doit y avoir un paramètre unique pour chaque jeu de paramètres, l
 
 ## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement des entrées
 
-Chaque applet de commande doit remplacer une méthode de traitement des entrées, ce sera souvent le [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Dans cette applet de commande, le [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode est remplacée afin que l’applet de commande peut traiter n’importe quel nombre de processus. Il contient une instruction Select qui appelle une autre méthode basée sur le jeu de paramètres, l’utilisateur a spécifié.
+Chaque applet de commande doit remplacer une méthode de traitement des entrées, ce sera souvent le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Dans cette applet de commande, le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode est remplacée afin que l’applet de commande peut traiter n’importe quel nombre de processus. Il contient une instruction Select qui appelle une autre méthode basée sur le jeu de paramètres, l’utilisateur a spécifié.
 
 ```csharp
 protected override void ProcessRecord()

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858355"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058230"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Paramètres dynamiques des applets de commande de fournisseur
 
@@ -73,7 +73,7 @@ Voici une liste des paramètres statiques qui peut être utilisé pour ajouter d
 
 `Copy-Item` applet de commande, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path`, `Destination`, et `Recurse` paramètres de le `Copy-Item` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) (méthode).
 
-Applet de commande Get-ChildItems, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path` et `Recures` paramètres de le `Get-ChildItem` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) et [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) méthodes.
+Applet de commande Get-ChildItems, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path` et `Recurse` paramètres de le `Get-ChildItem` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) et [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) méthodes.
 
 `Get-Content` applet de commande, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path` paramètre de la `Get-Content` applet de commande en implémentant le [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) (méthode).
 
@@ -89,7 +89,7 @@ Applet de commande Get-ChildItems, vous pouvez définir des paramètres dynamiqu
 
 `New-ItemProperty` applet de commande, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path`, `Name`, `PropertyType`, et `Value` paramètres de le `New-ItemProperty` applet de commande en implémentant le [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) (méthode).
 
-`New-PSDrive` applet de commande, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le [à savoir System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objet retourné par la `New-PSDrive` applet de commande en implémentant le [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) (méthode).
+`New-PSDrive` applet de commande, vous pouvez définir des paramètres dynamiques qui sont déclenchées par le [à savoir System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) objet retourné par la `New-PSDrive` applet de commande en implémentant le [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) (méthode).
 
 `Remove-Item` Vous pouvez définir des paramètres dynamiques qui sont déclenchées par le `Path` et `Recurse` paramètres de le `Remove-Item` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) (méthode).
 

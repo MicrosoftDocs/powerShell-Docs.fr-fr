@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854545"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056564"
 ---
 # <a name="advisory-development-guidelines"></a>Instructions dont le suivi est conseillé pour le développement
 
@@ -61,7 +61,7 @@ Par exemple, le [Remove-Item](/powershell/module/microsoft.powershell.management
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Gérer les informations d’identification via Windows PowerShell (AD03)
 
-Une applet de commande doit définir un `Credential` paramètre pour représenter les informations d’identification. Ce paramètre doit être de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) et doit être défini à l’aide d’une déclaration d’attribut d’informations d’identification. Cette prise en charge invite automatiquement l’utilisateur pour le nom d’utilisateur, le mot de passe ou les deux lorsqu’une information d’identification complète n’est pas fournie directement. Pour plus d’informations sur l’attribut d’informations d’identification, consultez [déclaration d’attribut d’informations d’identification](./credential-attribute-declaration.md).
+Une applet de commande doit définir un `Credential` paramètre pour représenter les informations d’identification. Ce paramètre doit être de type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) et doit être défini à l’aide d’une déclaration d’attribut d’informations d’identification. Cette prise en charge invite automatiquement l’utilisateur pour le nom d’utilisateur, le mot de passe ou les deux lorsqu’une information d’identification complète n’est pas fournie directement. Pour plus d’informations sur l’attribut d’informations d’identification, consultez [déclaration d’attribut d’informations d’identification](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Prend en charge les paramètres d’encodage (AD04)
 
@@ -89,17 +89,17 @@ Lorsque vous nommez la classe .NET Framework qui implémente une applet de comma
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Si aucune entrée de Pipeline ne substituer la méthode BeginProcessing (AC02)
 
-Si votre applet de commande n’accepte pas d’entrée provenant du pipeline, le traitement doit être implémenté dans le [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode). Utilisation de cette méthode permet de conserver l’ordre entre les applets de commande Windows PowerShell. La première applet de commande dans le pipeline retourne toujours ses objets avant les autres applets de commande dans le pipeline chance de démarrer leur traitement.
+Si votre applet de commande n’accepte pas d’entrée provenant du pipeline, le traitement doit être implémenté dans le [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode). Utilisation de cette méthode permet de conserver l’ordre entre les applets de commande Windows PowerShell. La première applet de commande dans le pipeline retourne toujours ses objets avant les autres applets de commande dans le pipeline chance de démarrer leur traitement.
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Pour gérer les demandes d’arrêt substituent la méthode StopProcessing (AC03)
 
-Remplacer le [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) méthode afin que votre applet de commande peut gérer le signal d’arrêt. Certaines applets de commande prennent beaucoup de temps pour terminer leur opération, et ils permettent de beaucoup de temps passer entre les appels à l’exécution de Windows PowerShell, telles que lorsque l’applet de commande bloque le thread dans les appels RPC longue. Cela inclut les applets de commande qui effectuent des appels à la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode), à la [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode) et à d’autres commentaires mécanismes qui peuvent prendre beaucoup de temps. Dans ce cas l’utilisateur devra peut-être envoyer un signal d’arrêt à ces applets de commande.
+Remplacer le [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) méthode afin que votre applet de commande peut gérer le signal d’arrêt. Certaines applets de commande prennent beaucoup de temps pour terminer leur opération, et ils permettent de beaucoup de temps passer entre les appels à l’exécution de Windows PowerShell, telles que lorsque l’applet de commande bloque le thread dans les appels RPC longue. Cela inclut les applets de commande qui effectuent des appels à la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode), à la [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) (méthode) et à d’autres commentaires mécanismes qui peuvent prendre beaucoup de temps. Dans ce cas l’utilisateur devra peut-être envoyer un signal d’arrêt à ces applets de commande.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Implémenter l’Interface IDisposable (AC04)
 
-Si votre applet de commande possède des objets qui ne sont pas supprimés de (écrit dans le pipeline) par le [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), votre applet de commande peut nécessiter la suppression d’objets supplémentaires. Par exemple, si votre applet de commande ouvre un handle de fichier dans son [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode) et conserve le handle ouvrir pour une utilisation par le [System.Management.Automation.Cmdlet.Processrecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), ce handle doit être fermé à la fin du traitement.
+Si votre applet de commande possède des objets qui ne sont pas supprimés de (écrit dans le pipeline) par le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), votre applet de commande peut nécessiter la suppression d’objets supplémentaires. Par exemple, si votre applet de commande ouvre un handle de fichier dans son [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode) et conserve le handle ouvrir pour une utilisation par le [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), ce handle doit être fermé à la fin du traitement.
 
-Le runtime Windows PowerShell n’appelle pas toujours le [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) (méthode). Par exemple, le [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthode ne peut pas être appelée si l’applet de commande est annulée à mi-chemin via son fonctionnement, ou si un arrêt de l’erreur se produit dans n’importe quelle partie de l’applet de commande. Par conséquent, la classe .NET Framework pour une applet de commande qui requiert un nettoyage de l’objet doit implémenter l’ensemble [System.Idisposable](/dotnet/api/System.IDisposable) modèle d’interface, y compris le finaliseur, afin que le runtime Windows PowerShell peut appeler à la fois le [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) méthodes à la fin du traitement.
+Le runtime Windows PowerShell n’appelle pas toujours le [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) (méthode). Par exemple, le [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthode ne peut pas être appelée si l’applet de commande est annulée à mi-chemin via son fonctionnement, ou si un arrêt de l’erreur se produit dans n’importe quelle partie de l’applet de commande. Par conséquent, la classe .NET Framework pour une applet de commande qui requiert un nettoyage de l’objet doit implémenter l’ensemble [System.IDisposable](/dotnet/api/System.IDisposable) modèle d’interface, y compris le finaliseur, afin que le runtime Windows PowerShell peut appeler à la fois le [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) méthodes à la fin du traitement.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Utiliser des Types de paramètres de sérialisation conviviale (AC05)
 
@@ -117,7 +117,7 @@ Types rehydratable intégrés :
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

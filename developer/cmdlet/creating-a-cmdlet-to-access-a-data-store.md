@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859385"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059522"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
 
-Cette section décrit comment créer une applet de commande qui accède aux données stockées par le biais d’un fournisseur Windows PowerShell. Ce type de l’applet de commande utilise l’infrastructure de fournisseur Windows PowerShell du runtime Windows PowerShell et, par conséquent, la classe d’applet de commande doit dériver de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe de base.
+Cette section décrit comment créer une applet de commande qui accède aux données stockées par le biais d’un fournisseur Windows PowerShell. Ce type de l’applet de commande utilise l’infrastructure de fournisseur Windows PowerShell du runtime Windows PowerShell et, par conséquent, la classe d’applet de commande doit dériver de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe de base.
 
 L’applet de commande Select-Str décrite ici permettre rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiées explicitement par l’intermédiaire du `Path` paramètre de l’applet de commande ou implicitement via la `Script` paramètre.
 
@@ -45,7 +45,7 @@ Rubriques de cette section sont les suivantes :
 
 La première étape de création de l’applet de commande est toujours l’applet de commande d’affectation de noms et déclaration de la classe .NET qui implémente l’applet de commande. Cette applet de commande détecte certaines chaînes, par conséquent, le nom du verbe choisi ici est « Select », défini par le [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) classe. Le nom de substantif « Str » est utilisé, car l’applet de commande agit sur les chaînes. Dans la déclaration ci-dessous, notez que le nom du verbe et substantif applet de commande sont répercutées dans le nom de la classe de l’applet de commande. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [les noms de verbe applet de commande](./approved-verbs-for-windows-powershell-commands.md).
 
-La classe .NET pour cette applet de commande doit dériver de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe de base, car il fournit la prise en charge requis par le runtime de Windows PowerShell pour exposer le fournisseur Windows PowerShell infrastructure. Notez que cette applet de commande rend également utiliser des classes d’expressions régulières du .NET Framework, tel que [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+La classe .NET pour cette applet de commande doit dériver de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe de base, car il fournit la prise en charge requis par le runtime de Windows PowerShell pour exposer le fournisseur Windows PowerShell infrastructure. Notez que cette applet de commande rend également utiliser des classes d’expressions régulières du .NET Framework, tel que [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
 Le code suivant est la définition de classe pour cette applet de commande Select-Str.
 
@@ -117,7 +117,7 @@ Lorsque ce paramètre est spécifié, l’applet de commande utilise le jeu de p
 
 Cette applet de commande définit les paramètres de prise en charge suivants qui peuvent être utilisées pour modifier les fonctionnalités de recherche de l’applet de commande.
 
-Le `Script` paramètre spécifie un bloc de script qui peut être utilisé pour fournir un mécanisme de recherche de substitution pour l’applet de commande. Le script doit contenir les modèles utilisés pour la correspondance et retourner un [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objet. Notez que ce paramètre est également le paramètre unique qui identifie le `ScriptParameterSet` jeu de paramètres. Lorsque le runtime Windows PowerShell voit ce paramètre, il utilise uniquement les paramètres qui appartiennent à la `ScriptParameterSet` jeu de paramètres.
+Le `Script` paramètre spécifie un bloc de script qui peut être utilisé pour fournir un mécanisme de recherche de substitution pour l’applet de commande. Le script doit contenir les modèles utilisés pour la correspondance et retourner un [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objet. Notez que ce paramètre est également le paramètre unique qui identifie le `ScriptParameterSet` jeu de paramètres. Lorsque le runtime Windows PowerShell voit ce paramètre, il utilise uniquement les paramètres qui appartiennent à la `ScriptParameterSet` jeu de paramètres.
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Déclarer des jeux de paramètres
 
-Cette applet de commande utilise deux jeux de paramètres (`ScriptParameterSet` et `PatternParameterSet`, c'est-à-dire thedefault) en tant que les noms des deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet` est le jeu de paramètres par défaut et est utilisé lorsque le `Pattern` est précisé. `ScriptParameterSet` est utilisé lorsque l’utilisateur spécifie un mécanisme de recherche de substitution par le biais du `Script` paramètre. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres pour une applet de commande](./adding-parameter-sets-to-a-cmdlet.md).
+Cette applet de commande utilise deux jeux de paramètres (`ScriptParameterSet` et `PatternParameterSet`, qui est la valeur par défaut) en tant que les noms des deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet` est le jeu de paramètres par défaut et est utilisé lorsque le `Pattern` est précisé. `ScriptParameterSet` est utilisé lorsque l’utilisateur spécifie un mécanisme de recherche de substitution par le biais du `Script` paramètre. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres pour une applet de commande](./adding-parameter-sets-to-a-cmdlet.md).
 
 ## <a name="overriding-input-processing-methods"></a>Substitution de méthodes de traitement d’entrée
 
-Applets de commande doit remplacer une ou plusieurs de l’entrée de traitement des méthodes pour la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe. Pour plus d’informations sur les méthodes de traitement d’entrée, consultez [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
+Applets de commande doit remplacer une ou plusieurs de l’entrée de traitement des méthodes pour la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe. Pour plus d’informations sur les méthodes de traitement d’entrée, consultez [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
 
-Cette applet de commande remplace le [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) méthode pour créer un tableau de compilée des expressions régulières au démarrage. Cela améliore les performances lors des recherches qui n’utilisent pas de correspondances simples.
+Cette applet de commande remplace le [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) méthode pour créer un tableau de compilée des expressions régulières au démarrage. Cela améliore les performances lors des recherches qui n’utilisent pas de correspondances simples.
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Cette applet de commande remplace également la [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour traiter les sélections de chaîne effectués par l’utilisateur sur la ligne de commande. Il écrit les résultats de la sélection de la chaîne sous la forme d’un objet personnalisé en appelant une privée **Chaîne_correspondante** (méthode).
+Cette applet de commande remplace également la [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour traiter les sélections de chaîne effectués par l’utilisateur sur la ligne de commande. Il écrit les résultats de la sélection de la chaîne sous la forme d’un objet personnalisé en appelant une privée **Chaîne_correspondante** (méthode).
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>L’accès au contenu
 
-Votre applet de commande doit ouvrir le fournisseur indiqué par le chemin d’accès Windows PowerShell afin qu’il peut accéder aux données. Le [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objet pour l’instance d’exécution est utilisée pour l’accès au fournisseur, tandis que le [System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) propriété de la applet de commande est utilisée pour ouvrir le fournisseur. Accès au contenu est fourni par extraction de la [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) ouvert de l’objet pour le fournisseur.
+Votre applet de commande doit ouvrir le fournisseur indiqué par le chemin d’accès Windows PowerShell afin qu’il peut accéder aux données. Le [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) objet pour l’instance d’exécution est utilisée pour l’accès au fournisseur, tandis que le [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) propriété de la applet de commande est utilisée pour ouvrir le fournisseur. Accès au contenu est fourni par extraction de la [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) ouvert de l’objet pour le fournisseur.
 
 Cette applet de commande Select-Str exemple utilise le [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) propriété pour exposer le contenu à analyser. Elle peut ensuite appeler la [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) méthode, en passant le chemin d’accès Windows PowerShell requis.
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863365"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058043"
 ---
 # <a name="cmdlet-samples"></a>Exemples d’applets de commande
 
@@ -39,7 +39,7 @@ Cette section décrit l’exemple de code qui est fourni dans le Kit de dévelop
 
 [Exemple de StopProcessSample04](./stopprocesssample04-sample.md) cet exemple montre comment écrire une applet de commande qui déclare les jeux de paramètres, spécifie le paramètre par défaut définie et peut accepter un objet d’entrée.
 
-[Exemple de Events01](./events01-sample.md) cet exemple montre comment créer une applet de commande qui permet à l’utilisateur à s’inscrire pour les événements déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Avec cette applet de commande les utilisateurs peuvent, par exemple, inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique. Cet exemple dérive le [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
+[Exemple de Events01](./events01-sample.md) cet exemple montre comment créer une applet de commande qui permet à l’utilisateur à s’inscrire pour les événements déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Avec cette applet de commande les utilisateurs peuvent, par exemple, inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique. Cet exemple dérive le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
 
 ## <a name="see-also"></a>Voir aussi
 

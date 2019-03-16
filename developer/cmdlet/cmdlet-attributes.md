@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853915"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055170"
 ---
 # <a name="cmdlet-attributes"></a>Attributs des applets de commande
 
@@ -32,7 +32,7 @@ Windows PowerShell définit plusieurs attributs que vous pouvez utiliser pour aj
 
 [Déclaration d’attribut cmdlet](./cmdlet-attribute-declaration.md) explique comment définir une classe .NET Framework en tant qu’une applet de commande.
 
-[Informations d’identification de la déclaration d’attribut](./credential-attribute-declaration.md) décrit comment ajouter la prise en charge pour la conversion d’entrée de chaîne dans un [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet.
+[Informations d’identification de la déclaration d’attribut](./credential-attribute-declaration.md) décrit comment ajouter la prise en charge pour la conversion d’entrée de chaîne dans un [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) objet.
 
 [L’attribut OutputType déclaration](./outputtype-attribute-declaration.md) explique comment spécifier les types .NET Framework retournés par l’applet de commande.
 

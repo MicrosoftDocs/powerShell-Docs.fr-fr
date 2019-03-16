@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854445"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055085"
 ---
 # <a name="cmdlet-class-declaration"></a>Déclaration de classe d’applets de commande
 
 Une classe Microsoft .NET Framework est déclarée comme une applet de commande en spécifiant le **applet de commande** attribut en tant que métadonnées pour la classe. (Le **applet de commande** attribut est le seul attribut requis pour toutes les applets de commande). Lorsque vous spécifiez le **applet de commande** attribut, vous devez spécifier la paire verbe-substantif qui identifie l’applet de commande à l’utilisateur. Et bien, vous devez décrire les fonctionnalités de Windows PowerShell qui prend en charge de l’applet de commande. Pour plus d’informations sur la syntaxe de déclaration est utilisée pour spécifier le **applet de commande** d’attribut, consultez [déclaration d’attribut applet de commande](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> Le **applet de commande** attribut est défini par le [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) classe. Les propriétés de cette classe correspondent aux paramètres de déclaration qui sont utilisés lorsque vous déclarez l’attribut.
+> Le **applet de commande** attribut est défini par le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) classe. Les propriétés de cette classe correspondent aux paramètres de déclaration qui sont utilisés lorsque vous déclarez l’attribut.
 
 ## <a name="nouns"></a>Noms
 
@@ -57,7 +57,7 @@ Lorsque vous nommez des applets de commande, utilisez Pascal casse. Par exemple,
 
 ## <a name="see-also"></a>Voir aussi
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [Déclaration CmdletAttribute](./cmdlet-attribute-declaration.md)
 

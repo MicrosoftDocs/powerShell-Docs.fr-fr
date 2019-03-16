@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795434"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057295"
 ---
 # <a name="extending-properties-for-objects"></a>Extension des propriétés pour les objets
 
@@ -83,7 +83,7 @@ Dans l’exemple suivant, le `Status` propriété (dont la valeur est toujours �
 
 Une propriété de script définit une propriété dont la valeur est la sortie d’un script.
 
-Dans l’exemple suivant, le `VersionInfo` propriété est ajoutée à la [System.IO.Fileinfo ? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) type. Le [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) élément définit la propriété étendue comme une propriété de script. Le [nom](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) élément spécifie le nom de la propriété étendue. Et, le [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) élément spécifie le script qui génère la valeur de propriété. (Vous pouvez également ajouter le [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) élément aux membres de la [jeux de membres](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) élément.)
+Dans l’exemple suivant, le `VersionInfo` propriété est ajoutée à la [System.IO.FileInfo ? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) type. Le [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) élément définit la propriété étendue comme une propriété de script. Le [nom](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) élément spécifie le nom de la propriété étendue. Et, le [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) élément spécifie le script qui génère la valeur de propriété. (Vous pouvez également ajouter le [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) élément aux membres de la [jeux de membres](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) élément.)
 
 ```xml
 <Type>

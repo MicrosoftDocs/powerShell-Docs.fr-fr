@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861415"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059471"
 ---
 # <a name="confirmation-messages"></a>Messages de confirmation
 
-Voici les messages de confirmation différents qui peuvent être affichées selon les variantes de la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthodes qui sont appelées.
+Voici les messages de confirmation différents qui peuvent être affichées selon les variantes de la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System.Management.Automation.Cmdlet.ShouldContinue ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthodes qui sont appelées.
 
 > [!IMPORTANT]
 > Pour l’exemple de code qui montre comment demander des confirmations, consultez [comment des Confirmations de demande](./how-to-request-confirmations.md).
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Si l’utilisateur sélectionne **Oui** ou **Oui pour tout** à la confirmation de la demande (comme indiqué dans l’exemple suivant), un appel à la [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthode est effectuée, ce qui entraîne un deuxième message de confirmation s’affiche.
+Si l’utilisateur sélectionne **Oui** ou **Oui pour tout** à la confirmation de la demande (comme indiqué dans l’exemple suivant), un appel à la [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)méthode est effectuée, ce qui entraîne un deuxième message de confirmation s’affiche.
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Si l’utilisateur sélectionne **Oui** ou **Oui pour tout** le message précédent, un appel à la [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthode est effectué, ce qui conduit un deuxième message de confirmation s’affiche.
+Si l’utilisateur sélectionne **Oui** ou **Oui pour tout** le message précédent, un appel à la [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthode est effectué, ce qui conduit un deuxième message de confirmation s’affiche.
 
 ```output
 Confirm

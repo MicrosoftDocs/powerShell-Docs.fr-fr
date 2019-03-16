@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794967"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057720"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Instructions dont le suivi est fortement recommandé pour le développement
 
@@ -101,7 +101,7 @@ Quand le même paramètre est utilisé par plusieurs applets de commande, utilis
 
 #### <a name="parameters-that-take-true-and-false"></a>Paramètres qui acceptent True et False
 
-Si votre paramètre accepte uniquement `true` et `false`, définissez le paramètre en tant que type [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre à être `false`. Ne définissez pas les paramètres booléens.
+Si votre paramètre accepte uniquement `true` et `false`, définissez le paramètre en tant que type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre à être `false`. Ne définissez pas les paramètres booléens.
 
 Si votre paramètre doit faire la distinction entre les 3 valeurs : $true, $false et « non spécifiée », puis définir un paramètre de type Nullable\<bool >.  La nécessité d’un 3e, valeur « non spécifiée » se produit généralement lorsque l’applet de commande peut modifier la propriété booléenne d’un objet. Dans ce cas « non spécifiée » signifie de ne pas modifier la valeur actuelle de la propriété.
 
@@ -111,7 +111,7 @@ Souvent, les utilisateurs doivent effectuer la même opération par rapport à p
 
 #### <a name="support-the-passthru-parameter"></a>Prend en charge le paramètre PassThru
 
-Par défaut, nombreuses applets de commande qui modifient le système, telles que la [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) applet de commande, agir en tant que « récepteurs » pour les objets et ne retournent pas un résultat. Ces cmdlet doit implémenter le `PassThru` paramètre pour forcer l’applet de commande pour retourner un objet. Lorsque le `PassThru` paramètre est spécifié, l’applet de commande retourne un objet à l’aide d’un appel à la [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode). Par exemple, la commande suivante arrête le processus Calc et transmet le processus résultant au pipeline.
+Par défaut, nombreuses applets de commande qui modifient le système, telles que la [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) applet de commande, agir en tant que « récepteurs » pour les objets et ne retournent pas un résultat. Ces cmdlet doit implémenter le `PassThru` paramètre pour forcer l’applet de commande pour retourner un objet. Lorsque le `PassThru` paramètre est spécifié, l’applet de commande retourne un objet à l’aide d’un appel à la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode). Par exemple, la commande suivante arrête le processus Calc et transmet le processus résultant au pipeline.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Le runtime de Windows PowerShell autorise un utilisateur de spécifier comment g
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Prise en charge des WriteWarning, WriteVerbose, WriteDebug méthodes
 
-Une applet de commande doit appeler le [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) méthode lors de l’applet de commande est sur le point d’effectuer une opération qui peut avoir un résultat inattendu. Par exemple, une applet de commande doit appeler cette méthode si l’applet de commande est sur le point de remplacer un fichier en lecture seule.
+Une applet de commande doit appeler le [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) méthode lors de l’applet de commande est sur le point d’effectuer une opération qui peut avoir un résultat inattendu. Par exemple, une applet de commande doit appeler cette méthode si l’applet de commande est sur le point de remplacer un fichier en lecture seule.
 
-Une applet de commande doit appeler le [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) méthode lorsque l’utilisateur requiert certains détails sur ce que fait l’applet de commande. Par exemple, une applet de commande doit appeler ces informations si l’auteur de l’applet de commande pense qu’il existe des scénarios qui peuvent nécessiter plus d’informations sur ce que fait l’applet de commande.
+Une applet de commande doit appeler le [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) méthode lorsque l’utilisateur requiert certains détails sur ce que fait l’applet de commande. Par exemple, une applet de commande doit appeler ces informations si l’auteur de l’applet de commande pense qu’il existe des scénarios qui peuvent nécessiter plus d’informations sur ce que fait l’applet de commande.
 
-L’applet de commande doit appeler le [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) méthode lorsqu’un ingénieur du support produit ou le développeur doit comprendre ce qui a endommagé l’opération de l’applet de commande. Il n’est pas nécessaire pour l’applet de commande pour appeler le [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) méthode dans le même code qui appelle le [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) méthode, car le `Debug` paramètre présente deux ensembles d’informations.
+L’applet de commande doit appeler le [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) méthode lorsqu’un ingénieur du support produit ou le développeur doit comprendre ce qui a endommagé l’opération de l’applet de commande. Il n’est pas nécessaire pour l’applet de commande pour appeler le [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) méthode dans le même code qui appelle le [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) (méthode) Étant donné que le `Debug` paramètre présente deux ensembles d’informations.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>WriteProgress prise en charge pour les opérations qui prennent beaucoup de temps
 
-Opérations de l’applet de commande qui prennent beaucoup de temps et qui ne peut pas s’exécuter en arrière-plan doit prendre en charge les cours de création de rapports via des appels périodiques à la [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) (méthode).
+Opérations de l’applet de commande qui prennent beaucoup de temps et qui ne peut pas s’exécuter en arrière-plan doit prendre en charge les cours de création de rapports via des appels périodiques à la [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) (méthode).
 
 #### <a name="use-the-host-interfaces"></a>Utiliser les Interfaces de l’hôte
 
-Parfois, une applet de commande doit communiquer directement avec l’utilisateur au lieu d’à l’aide de divers écrivant ou doivent les méthodes prises en charge par le [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe. Dans ce cas, l’applet de commande doit dériver de la [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe et d’utiliser le [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propriété. Cette propriété prend en charge différents niveaux de type de communication, y compris les types PromptForChoice, une invite et WriteLine/ReadLine. Niveau au plus spécifique, il fournit également les méthodes pour lire et écrire des clés individuelles et faire face aux mémoires tampons.
+Parfois, une applet de commande doit communiquer directement avec l’utilisateur au lieu d’à l’aide de divers écrivant ou doivent les méthodes prises en charge par le [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe. Dans ce cas, l’applet de commande doit dériver de la [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) classe et d’utiliser le [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propriété. Cette propriété prend en charge différents niveaux de type de communication, y compris les types PromptForChoice, une invite et WriteLine/ReadLine. Niveau au plus spécifique, il fournit également les méthodes pour lire et écrire des clés individuelles et faire face aux mémoires tampons.
 
-Sauf si une applet de commande est spécifiquement conçu pour générer une interface utilisateur graphique (GUI), il ne doit pas contourner l’hôte à l’aide de la [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propriété. Est un exemple d’une applet de commande qui est conçu pour générer une interface utilisateur graphique la [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) applet de commande.
+Sauf si une applet de commande est spécifiquement conçu pour générer une interface utilisateur graphique (GUI), il ne doit pas contourner l’hôte à l’aide de la [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) propriété. Est un exemple d’une applet de commande qui est conçu pour générer une interface utilisateur graphique la [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) applet de commande.
 
 > [!NOTE]
 > Applets de commande ne doivent pas utiliser le [System.Console](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Si votre applet de commande permet à l’utilisateur spécifier un fichier ou u
 
 Si les données que l’applet de commande lit ou écrit doit être un fichier, l’applet de commande doit accepter l’entrée de chemin d’accès Windows PowerShell, et l’applet de commande doit utiliser le [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) propriété à traduire le Windows Chemins d’accès PowerShell en chemins d’accès qui reconnaît le système de fichiers. Les mécanismes spécifiques incluent les méthodes suivantes :
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Si les données que l’applet de commande lit ou écrit sont uniquement un ensemble de chaînes au lieu d’un fichier, l’applet de commande doit utiliser les informations de fournisseur de contenu (`Content` membre) pour lire et écrire. Ces informations sont obtenues à partir de la [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) propriété. Ces mécanismes offrent d’autres magasins de données de participer à la lecture et l’écriture des données.
+Si les données que l’applet de commande lit ou écrit sont uniquement un ensemble de chaînes au lieu d’un fichier, l’applet de commande doit utiliser les informations de fournisseur de contenu (`Content` membre) pour lire et écrire. Ces informations sont obtenues à partir de la [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) propriété. Ces mécanismes offrent d’autres magasins de données de participer à la lecture et l’écriture des données.
 
 #### <a name="support-wildcard-characters"></a>Prise en charge des caractères génériques
 
@@ -206,11 +206,11 @@ Si vous créez un objet pour une applet de commande, assurez-vous que ses membre
 
 Objets .NET Framework qui sont retournés par les applets de commande fréquemment manque certains membres importants ou pratiques qui sont requises par le développeur de scripts ou l’utilisateur. Ces membres manquants peuvent être particulièrement importantes pour l’affichage et la création des noms le membre approprié afin que l’objet peut être correctement transmis au pipeline. Créer un fichier Types.ps1xml personnalisé pour documenter ces membres requis. Lorsque vous créez ce fichier, nous vous recommandons de la convention d’affectation de noms suivante : *< Your_Product_Name >*. Types.ps1xml.
 
-Par exemple, vous pouvez ajouter un `Mode` script de propriété pour le [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) type pour afficher les attributs d’un fichier plus clairement. En outre, vous pouvez ajouter un `Count` propriété d’alias vers la [System.Array](/dotnet/api/System.Array) type pour autoriser l’utilisation cohérente de ce nom de propriété (au lieu de `Length`).
+Par exemple, vous pouvez ajouter un `Mode` script de propriété pour le [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) type pour afficher les attributs d’un fichier plus clairement. En outre, vous pouvez ajouter un `Count` propriété d’alias vers la [System.Array](/dotnet/api/System.Array) type pour autoriser l’utilisation cohérente de ce nom de propriété (au lieu de `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implémentez l’Interface IComparable
 
-Implémentez un [System.Icomparable](/dotnet/api/System.IComparable) interface sur tous les objets de sortie. Ainsi, les objets de sortie être facilement transmis à diverses applets de commande de tri et l’analyse.
+Implémentez un [System.IComparable](/dotnet/api/System.IComparable) interface sur tous les objets de sortie. Ainsi, les objets de sortie être facilement transmis à diverses applets de commande de tri et l’analyse.
 
 ##### <a name="update-display-information"></a>Mettre à jour les informations d’affichage
 
@@ -230,11 +230,11 @@ Un paramètre accepte une entrée du pipeline si la **paramètre** attribut incl
 
 #### <a name="support-the-processrecord-method"></a>Prend en charge la méthode ProcessRecord
 
-Pour accepter tous les enregistrements à partir de l’applet de commande précédent dans le pipeline, votre applet de commande doit implémenter le [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Windows PowerShell appelle cette méthode plusieurs fois, une fois pour chaque enregistrement qui est envoyé à votre applet de commande.
+Pour accepter tous les enregistrements à partir de l’applet de commande précédent dans le pipeline, votre applet de commande doit implémenter le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode). Windows PowerShell appelle cette méthode plusieurs fois, une fois pour chaque enregistrement qui est envoyé à votre applet de commande.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Écrire des enregistrements uniques dans le Pipeline (SC03)
 
-Quand une applet de commande retourne des objets, l’applet de commande doit écrire les objets immédiatement qu’ils sont générés. L’applet de commande ne devriez pas les conserver afin de les mettre en mémoire tampon dans un tableau combiné. Les applets de commande qui reçoivent les objets en tant qu’entrée sera ensuite en mesure de traiter, afficher, ou traiter et afficher les objets de sortie sans délai. Objets d’une applet de commande qui génère une sortie à la fois doit appeler le [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode). Une applet de commande qui génère des objets de sortie par lots (par exemple, car une API sous-jacente retourne un tableau d’objets de sortie) doit appeler la [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) défini avec son deuxième paramètre (méthode) à `true`.
+Quand une applet de commande retourne des objets, l’applet de commande doit écrire les objets immédiatement qu’ils sont générés. L’applet de commande ne devriez pas les conserver afin de les mettre en mémoire tampon dans un tableau combiné. Les applets de commande qui reçoivent les objets en tant qu’entrée sera ensuite en mesure de traiter, afficher, ou traiter et afficher les objets de sortie sans délai. Objets d’une applet de commande qui génère une sortie à la fois doit appeler le [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) (méthode). Une applet de commande qui génère des objets de sortie par lots (par exemple, car une API sous-jacente retourne un tableau d’objets de sortie) doit appeler la [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) défini avec son deuxième paramètre (méthode) à `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Rendre les applets de commande non-respect de la casse et de la casse (SC04)
 

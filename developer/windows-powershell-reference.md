@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862105"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055493"
 ---
 # <a name="windows-powershell-reference"></a>Informations de référence sur Windows PowerShell
 
@@ -47,10 +47,10 @@ Outre le Kit de développement Windows PowerShell, les ressources suivantes four
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) cet espace de noms contient les classes, les énumérations et les interfaces requises pour implémenter un fournisseur Windows PowerShell. En particulier, le [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) est la classe de base à partir de quels PowerShell Windows toutes les classes de fournisseur doivent être dérivées.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) cet espace de noms contient les classes pour les applets de commande et les fournisseurs implémentés par Windows PowerShell. De même, il est recommandé de créer un *YourName*. Espace de noms pour ces applets de commande que vous implémentez des commandes.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) cet espace de noms contient les classes pour les applets de commande et les fournisseurs implémentés par Windows PowerShell. De même, il est recommandé de créer un *YourName*. Espace de noms pour ces applets de commande que vous implémentez des commandes.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) cet espace de noms contient les classes, les énumérations et les interfaces que l’applet de commande utilise pour définir l’interaction entre l’utilisateur et Windows PowerShell.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) cet espace de noms contient les classes de base utilisées par d’autres classes de l’espace de noms. Par exemple, le [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) est la classe de base pour le [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) classe.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) cet espace de noms contient les classes de base utilisées par d’autres classes de l’espace de noms. Par exemple, le [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) est la classe de base pour le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) classe.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) cet espace de noms contient les classes, les énumérations et les interfaces utilisées pour créer une instance d’exécution Windows PowerShell. Dans ce contexte, l’instance d’exécution Windows PowerShell est le contexte dans lequel un ou plusieurs pipelines de Windows PowerShell appellent les applets de commande. Autrement dit, les applets de commande fonctionnent dans le contexte d’une instance d’exécution Windows PowerShell. Pour plus d’informations aboutWindows une instances d’exécution de PowerShell, consultez [Windows PowerShell Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

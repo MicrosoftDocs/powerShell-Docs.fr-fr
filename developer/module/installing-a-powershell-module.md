@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862165"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059777"
 ---
 # <a name="installing-a-powershell-module"></a>Installation d’un module PowerShell
 
@@ -160,7 +160,7 @@ Pour activer les fonctionnalités de découverte de module Windows PowerShell re
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Une fois ces étapes terminées, le **ListAvailable** paramètre de la [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) applet de commande Obtient les deux modules de Fabrikam. Pour importer un module particulier, utilisez le `MiminumVersion` ou `RequiredVersion` paramètres de le [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) applet de commande.
+Une fois ces étapes terminées, le **ListAvailable** paramètre de la [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) applet de commande Obtient les deux modules de Fabrikam. Pour importer un module particulier, utilisez le `MinimumVersion` ou `RequiredVersion` paramètres de le [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) applet de commande.
 
 Si les deux modules sont importés dans la même session, et les modules contiennent des applets de commande avec les mêmes noms, les applets de commande sont importés en dernier sont efficaces dans la session.
 

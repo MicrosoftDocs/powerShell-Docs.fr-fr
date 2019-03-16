@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863645"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059658"
 ---
 # <a name="common-parameter-names"></a>Noms de paramètres courants
 
@@ -30,7 +30,7 @@ Les paramètres suivants sont ajoutés à toutes les applets de commande et est 
 
 Type de données : SwitchParameter
 
-Ce paramètre spécifie si le débogage au niveau du programmeur messages qui peuvent être affichés à la ligne de commande. Ces messages sont destinés à la résolution des problèmes de l’opération de l’applet de commande et sont générés par les appels à la [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) (méthode). Les messages de débogage est inutile à localiser.
+Ce paramètre spécifie si le débogage au niveau du programmeur messages qui peuvent être affichés à la ligne de commande. Ces messages sont destinés à la résolution des problèmes de l’opération de l’applet de commande et sont générés par les appels à la [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) (méthode). Les messages de débogage est inutile à localiser.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (alias : ea)
 
@@ -60,7 +60,7 @@ Ce paramètre définit le nombre d’objets à stocker dans la mémoire tampon d
 
 Type de données : SwitchParameter
 
-Ce paramètre spécifie si l’applet de commande écrit les messages d’explicatifs qui peuvent être affichés à la ligne de commande. Ces messages sont conçues pour fournir une aide supplémentaire à l’utilisateur et sont générés par les appels à la [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) (méthode).
+Ce paramètre spécifie si l’applet de commande écrit les messages d’explicatifs qui peuvent être affichés à la ligne de commande. Ces messages sont conçues pour fournir une aide supplémentaire à l’utilisateur et sont générés par les appels à la [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) (méthode).
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (alias : wa)
 

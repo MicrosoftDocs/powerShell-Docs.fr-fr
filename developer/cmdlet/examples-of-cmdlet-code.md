@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863125"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056258"
 ---
 # <a name="examples-of-cmdlet-code"></a>Exemples de code d’applet de commande
 
@@ -38,7 +38,7 @@ Cette section contient des exemples de code d’applet de commande que vous pouv
 
 [Comment substituer les méthodes de traitement de l’entrée](./how-to-override-input-processing-methods.md) ces exemples montrent la structure de base utilisée pour substituer les méthodes BeginProcessing, ProcessRecord et EndProcessing.
 
-[Comment la prise en charge les appels de ShouldProcess](./how-to-request-confirmations.md) cet exemple montre comment la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)méthodes doivent être appelées dans une applet de commande.
+[Comment la prise en charge les appels de ShouldProcess](./how-to-request-confirmations.md) cet exemple montre comment la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthodes doivent être appelées à partir une applet de commande.
 
 [Comment la prise en charge des Transactions](./how-to-support-transactions.md) cet exemple montre comment indiquer que l’applet de commande prend en charge les transactions et l’implémentation de l’action qui est effectuée lorsque l’applet de commande est utilisée dans une transaction.
 

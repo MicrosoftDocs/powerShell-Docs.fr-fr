@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861495"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057363"
 ---
 # <a name="creating-a-table-view"></a>Création d’une vue de table
 
@@ -95,7 +95,7 @@ Les éléments XML suivants sont utilisés pour définir une vue de liste :
 
 2. Le [TableColumnHeader](./tablecolumnheader-element-format.md) élément définit ce qui est affiché en haut d’une colonne de la table. Spécifiez ces éléments dans l’ordre que vous souhaitez les en-têtes affichés.
 
-   Il n’existe aucune limite le nombre de ces élément que vous pouvez utiliser, mais le nombre de [TableColumnHeader](./tablecolumnheader-element-format.md) éléments dans votre affichage de la table doivent égal au nombre de [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) éléments que vous utilisez.
+   Il n’existe aucune limite le nombre de ces élément que vous pouvez utiliser, mais le nombre de [TableColumnHeader](./tablecolumnheader-element-format.md) éléments dans votre affichage de la table doivent égal au nombre de [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) éléments que vous utilisez.
 
 3. Le [étiquette](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) élément spécifie le texte qui s’affiche. Cet élément est facultatif.
 
@@ -136,7 +136,7 @@ Les éléments XML suivants peuvent être utilisés pour fournir des définition
 
 - Le [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) élément spécifie les objets qui sont affichés par une définition spécifique. Cet élément est facultatif et est nécessaire uniquement lorsque vous définissez plusieurs [TableRowEntry](./listentry-element-for-listcontrol-format.md) éléments qui affichent des objets différents.
 
-- Le [encapsuler](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) élément spécifie que le texte qui dépasse la largeur de colonne s’affiche sur la ligne suivante. Par défaut, le texte qui dépasse de la largeur de colonne est tronqué.
+- Le [encapsuler](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) élément spécifie que le texte qui dépasse la largeur de colonne s’affiche sur la ligne suivante. Par défaut, le texte qui dépasse de la largeur de colonne est tronqué.
 
 - Le [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) élément définit les propriétés ou les scripts dont les valeurs sont affichées dans la ligne.
 

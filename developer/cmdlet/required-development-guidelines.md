@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860715"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056513"
 ---
 # <a name="required-development-guidelines"></a>Instructions dont le suivi est impératif pour le développement
 
@@ -107,7 +107,7 @@ Lorsque vous nommez des applets de commande, n’utilisez pas un des caractères
 |%|Signe de pourcentage|
 |+|Signe plus|
 |=|Signe égal|
-|~|tilda|
+|~|tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Les noms de paramètres qui ne peut pas être utilisés (RD03)
 
@@ -122,9 +122,9 @@ Pour effectuer ces appels de l’applet de commande doit spécifier qu’il pren
 > [!NOTE]
 > Si l’attribut de l’applet de commande de la classe de l’applet de commande indique que l’applet de commande prend en charge les appels à la [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (méthode) et l’applet de commande ne peut pas effectuer l’appel à la [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (méthode), l’utilisateur peut modifier le système de manière inattendue.
 
-Utilisez le [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) méthode pour la modification de n’importe quel système. Une préférence utilisateur et le `Whatif` contrôle des paramètres de la [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (méthode). En revanche, le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) appel effectue une vérification supplémentaire pour les modifications potentiellement dangereuses. Cette méthode n’est pas contrôlée par les préférences utilisateur ou le `Whatif` paramètre. Si votre applet de commande appelle le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) (méthode), il doit avoir un `Force` paramètre qui ignore les appels à ces deux méthodes, et qui exécute l’opération. Ceci est important, car elle permet à votre applet de commande à utiliser dans les hôtes et les scripts non interactifs.
+Utilisez le [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) méthode pour la modification de n’importe quel système. Une préférence utilisateur et le `WhatIf` contrôle des paramètres de la [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (méthode). En revanche, le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) appel effectue une vérification supplémentaire pour les modifications potentiellement dangereuses. Cette méthode n’est pas contrôlée par les préférences utilisateur ou le `WhatIf` paramètre. Si votre applet de commande appelle le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) (méthode), il doit avoir un `Force` paramètre qui ignore les appels à ces deux méthodes, et qui exécute l’opération. Ceci est important, car elle permet à votre applet de commande à utiliser dans les hôtes et les scripts non interactifs.
 
-Si vos applets de commande prend en charge ces appels, l’utilisateur peut déterminer si l’action doit réellement être effectuée. Par exemple, le [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) applet de commande appelle le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthode avant d’arrêter un ensemble de processus essentiels, y compris le système, Winlogon, et Processus de Spoolsrv.
+Si vos applets de commande prend en charge ces appels, l’utilisateur peut déterminer si l’action doit réellement être effectuée. Par exemple, le [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) applet de commande appelle le [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthode avant d’arrêter un ensemble de processus essentiels, y compris le système, Winlogon, et Processus de Svspool.
 
 Pour plus d’informations sur la prise en charge de ces méthodes, consultez [demande une Confirmation](./requesting-confirmation-from-cmdlets.md).
 
@@ -212,7 +212,7 @@ Créer un module Windows PowerShell pour empaqueter et déployer vos applets de 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Instructions vous êtes vivement invité du développement](./strongly-encouraged-development-guidelines.md)
+[Directives de développement vous êtes vivement invité](./strongly-encouraged-development-guidelines.md)
 
 [Directives de développement de Conseil](./advisory-development-guidelines.md)
 

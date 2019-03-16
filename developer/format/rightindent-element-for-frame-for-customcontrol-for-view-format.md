@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
-ms.openlocfilehash: 85c165475bd67c378557c12820e450fbf8cb186e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860395"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058791"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>RightIndent, élément pour Frame pour CustomControl pour View (Format)
 
 Spécifie le nombre de caractères les données s’éloigne de la marge de droite. Cet élément est utilisé lors de la définition d’une vue de contrôle personnalisé.
 
-Élément (Format) élément ViewDefinitions (Format) vue élément (Format) élément CustomControl (Format) CustomEntries élément de configuration pour CustomControl pour élément d’affichage (Format) de CustomEntry pour CustomEntries pour l’élément d’affichage (Format) de CustomItem pour CustomEntry d’élément de Frame CutomControlView (Format) pour CustomItem pour CustomControl pour l’élément d’affichage (Format) de RightIndent
+Élément (Format) élément ViewDefinitions (Format) vue élément (Format) élément CustomControl (Format) CustomEntries élément de configuration pour CustomControl pour élément d’affichage (Format) de CustomEntry pour CustomEntries pour l’élément d’affichage (Format) de CustomItem pour CustomEntry d’élément de Frame CustomControlView (Format) pour CustomItem pour CustomControl pour l’élément d’affichage (Format) de RightIndent
 
 ## <a name="syntax"></a>Syntaxe
 

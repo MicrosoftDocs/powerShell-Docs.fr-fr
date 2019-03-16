@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859865"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059573"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Types de paramètres des applets de commande
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Paramètres de commutateur
 
-Windows PowerShell fournit un [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) type qui vous permet de définir un paramètre dont la valeur est automatiquement définie sur `false` si le paramètre n’est pas spécifié lors de l’applet de commande appelée. Si possible, utilisez les paramètres de commutateur à la place des paramètres booléens.
+Windows PowerShell fournit un [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) type qui vous permet de définir un paramètre dont la valeur est automatiquement définie sur `false` si le paramètre n’est pas spécifié lors de l’applet de commande appelée. Si possible, utilisez les paramètres de commutateur à la place des paramètres booléens.
 
 Prenez l’exemple suivant. Par défaut, plusieurs applets de commande Windows PowerShell ne passent pas un objet de sortie dans le pipeline. Toutefois, ces applets de commande ont un `PassThru` changez le paramètre qui remplace le comportement par défaut. Si le `PassThru` est précisé lors de ces applets de commande sont appelées, l’applet de commande retourne un objet de sortie au pipeline.
 
-Si vous devez avoir la valeur par défaut le paramètre `true` lorsque le paramètre n’est pas spécifié dans l’appel, envisagez d’inverser le sens du paramètre. Pour exemple, au lieu de définir l’attribut de paramètre à une valeur booléenne de `true`, déclarez la propriété comme le [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) tapez, puis définissez la valeur par défaut du paramètre à `false`.
+Si vous devez avoir la valeur par défaut le paramètre `true` lorsque le paramètre n’est pas spécifié dans l’appel, envisagez d’inverser le sens du paramètre. Pour exemple, au lieu de définir l’attribut de paramètre à une valeur booléenne de `true`, déclarez la propriété comme le [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) tapez, puis définissez la valeur par défaut du paramètre à `false`.
 
-Pour définir un paramètre de commutateur, déclarez la propriété comme le [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) tapez, comme indiqué dans l’exemple suivant.
+Pour définir un paramètre de commutateur, déclarez la propriété comme le [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) tapez, comme indiqué dans l’exemple suivant.
 
 ```csharp
 [Parameter(Position = 1)]

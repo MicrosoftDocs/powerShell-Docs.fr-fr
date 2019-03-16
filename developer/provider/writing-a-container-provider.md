@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858305"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056462"
 ---
 # <a name="writing-a-container-provider"></a>Écriture d’un fournisseur de conteneur
 
@@ -44,7 +44,7 @@ Déclarer au fournisseur de dériver à partir de la [System.Management.Automati
 
 ### <a name="implementing-getchilditems"></a>Implémentation GetChildItems
 
-Le moteur PowerShell appelle le [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) méthode lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) l’applet de commande. Cette méthode obtient les éléments qui sont les enfants de l’élément dans le chemin spécifié.
+Le moteur PowerShell appelle le [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) l’applet de commande. Cette méthode obtient les éléments qui sont les enfants de l’élément dans le chemin spécifié.
 
 Dans l’exemple de base de données Access, le comportement de la [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) méthode varie selon le type de l’élément spécifié. Si l’élément est le lecteur, puis les enfants sont des tables, et la méthode retourne l’ensemble de tables à partir de la base de données. Si l’élément spécifié est une table, les enfants sont les lignes de la table. Si l’élément est une ligne, puis il n’a aucun enfant, et la méthode retourne uniquement cette ligne. Tous les éléments enfants sont envoyés vers le moteur PowerShell par le [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) (méthode).
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implémentation NewItem
 
-Le [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) méthode crée un nouvel élément du type spécifié dans le chemin spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) applet de commande.
+Le [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) méthode crée un nouvel élément du type spécifié dans le chemin spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) applet de commande.
 
 Dans cet exemple, la méthode implémente une logique pour déterminer que le chemin d’accès et le type correspondent. Autrement dit, qu’une table peut être créée directement sous le lecteur (il s’agit de la base de données), et qu’une ligne peut être créée sous une table. Si le chemin d’accès spécifié et le type d’élément ne correspondent pas de cette façon, la méthode lève une exception.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implémentation de CopyItem
 
-Le [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) copie l’élément spécifié dans le chemin d’accès spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) applet de commande. Cette méthode peut également être récursive, copie tous les éléments enfants en plus de l’élément lui-même.
+Le [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) copie l’élément spécifié dans le chemin d’accès spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) applet de commande. Cette méthode peut également être récursive, copie tous les éléments enfants en plus de l’élément lui-même.
 
 Similaire à la [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) (méthode), cette méthode exécute une logique pour vous assurer que l’élément spécifié est du type correct pour le chemin d’accès dans lequel il est copié. Par exemple, si le chemin d’accès de destination est une table, l’élément à copier doit être une ligne.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implémentation RemoveItem
 
-Le [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) méthode supprime l’élément dans le chemin spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.Powershell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) applet de commande.
+Le [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) méthode supprime l’élément dans le chemin spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) applet de commande.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
 caps.latest.revision: 8
-ms.openlocfilehash: e4abbb14b31406b845d9b6af6b6372338fb0d926
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856235"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059556"
 ---
 # <a name="users-requesting-confirmation"></a>Utilisateurs demandant une confirmation
 
 Lorsque vous spécifiez une valeur de `true` pour le `SupportsShouldProcess` paramètre de la déclaration d’attribut applet de commande, les utilisateurs peuvent spécifier le `Confirm` paramètre à l’invite de commandes.
 
-Dans l’environnement par défaut, les utilisateurs peuvent spécifier le `Confirm` paramètre ou `"-Confirm:$true` afin que la confirmation est demandée lors de la [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) méthode est appelée. Cela contourne [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) des demandes de confirmation, même pour les opérations à fort impact.
+Dans l’environnement par défaut, les utilisateurs peuvent spécifier le `Confirm` paramètre ou `"-Confirm:$true` afin que la confirmation est demandée lors de la [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) méthode est appelée. Cela contourne [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) des demandes de confirmation, même pour les opérations à fort impact.
 
-Si `Confirm` n’est pas spécifié, le [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) appel demande confirmation si la `$ConfirmPreference` variable de préférence est supérieure ou égale à la `ConfirmImpact` définition de la applet de commande ou le fournisseur. Le paramètre par défaut de `$ConfirmPreference` est élevé. Par conséquent, dans l’environnement par défaut, seuls les applets de commande et les fournisseurs qui spécifient une action à fort impact demandent confirmation.
+Si `Confirm` n’est pas spécifié, le [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) appel demande confirmation si la `$ConfirmPreference` variable de préférence est supérieure ou égale à la `ConfirmImpact` définition de la applet de commande ou le fournisseur. Le paramètre par défaut de `$ConfirmPreference` est élevé. Par conséquent, dans l’environnement par défaut, seuls les applets de commande et les fournisseurs qui spécifient une action à fort impact demandent confirmation.
 
-Si `Confirm` a la valeur false ou si `"-Confirm:$false` est spécifié, le [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) appel demande confirmation à l’utilisateur et le `$ConfirmPreference` variable d’environnement est ignoré.
+Si `Confirm` a la valeur false ou si `"-Confirm:$false` est spécifié, le [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) appel demande confirmation à l’utilisateur et le `$ConfirmPreference` variable d’environnement est ignoré.
 
 ## <a name="remarks"></a>Remarques
 

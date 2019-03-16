@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853465"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055425"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Création d’un workflow avec des activités Windows PowerShell
 
@@ -33,9 +33,9 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 2. Créer un argument nommé `ComputerName` avec un type d’argument de `String[]`. Cet argument représente les noms des ordinateurs à vérifier et à joindre.
 
-3. Créer un argument nommé `DomainCred` de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Cet argument représente les informations d’identification de domaine d’un compte de domaine qui est autorisé à joindre un ordinateur au domaine.
+3. Créer un argument nommé `DomainCred` de type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Cet argument représente les informations d’identification de domaine d’un compte de domaine qui est autorisé à joindre un ordinateur au domaine.
 
-4. Créer un argument nommé `MachineCred` de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Cet argument représente les informations d’identification d’un administrateur sur les ordinateurs à vérifier et à joindre.
+4. Créer un argument nommé `MachineCred` de type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Cet argument représente les informations d’identification d’un administrateur sur les ordinateurs à vérifier et à joindre.
 
 5. Ajouter un **ParallelForEach** activité à l’intérieur du **séquence** activité. Entrez `comp` et `ComputerName` dans les zones de texte afin que la boucle effectue une itération dans les éléments de la `ComputerName` tableau.
 

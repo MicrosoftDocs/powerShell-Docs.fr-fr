@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860115"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057040"
 ---
 # <a name="provider-cmdlet-parameters"></a>Paramètres des applets de commande de fournisseur
 
@@ -29,9 +29,9 @@ Paramètres statiques sont définis par Windows PowerShell. Un grand ensemble de
 
 `Clear-ItemProperty` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path` et `Name` paramètres de le `Clear-ItemProperty` applet de commande en implémentant le [ System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) (méthode).
 
-`Copy-Item` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path`, `Destination`, et `Recurse` paramètres de le `Copy-Item` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) (méthode).
+`Copy-Item` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path`, `Destination`, et `Recurse` paramètres de le `Copy-Item` applet de commande en implémentant le [ System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) (méthode).
 
-Applet de commande Get-ChildItems vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path` et `Recures` paramètres de le `Get-ChildItem` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) et [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) méthodes.
+Applet de commande Get-ChildItems vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path` et `Recurse` paramètres de le `Get-ChildItem` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) et [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) méthodes.
 
 `Get-Content` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path` paramètre de la `Get-Content` applet de commande en implémentant la [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) (méthode).
 
@@ -45,7 +45,7 @@ Applet de commande Get-ChildItems vous pouvez définir la façon dont votre four
 
 `New-Item` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path`, `ItemType`, et `Value` paramètres de le `New-Item` applet de commande en implémentant le [ System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) (méthode).
 
-`New-ItemProperty` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path`, `Name`, `PropertyType`, et `Value` paramètres de le `New-ItemProperty` applet de commande en implémentant le [ Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) (méthode).
+`New-ItemProperty` applet de commande vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path`, `Name`, `PropertyType`, et `Value` paramètres de le `New-ItemProperty` applet de commande en implémentant le [ Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) (méthode).
 
 `Remove-Item` Vous pouvez définir la façon dont votre fournisseur utilisera les valeurs passées à la `Path` et `Recurse` paramètres de le `Remove-Item` applet de commande en implémentant la [System.Management.Automation.Provider.Containercmdletprovider.Removeitem* ](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) (méthode).
 

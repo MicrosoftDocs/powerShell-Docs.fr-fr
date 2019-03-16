@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: dbb6f7c4cbefeaaaec0747511f50192bcf08c20c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862655"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058077"
 ---
 # <a name="comment-based-help-keywords"></a>Mots clés de l’aide basée sur les commentaires
 
@@ -23,7 +23,7 @@ Cette rubrique répertorie et décrit les mots clés dans l’aide en fonction d
 
 Valide en fonction du commentaire des mots clés sont les suivantes : Ils sont répertoriés dans l’ordre dans lequel ils apparaissent généralement dans une rubrique d’aide, ainsi que leur utilisation prévue. Ces mots clés peuvent apparaître dans n’importe quel ordre dans l’aide de commentaire, et ils ne respectent pas la casse.
 
-Notez que le `.ExternalHelp` mot clé est prioritaire sur tous les autres en fonction des commentaires des mots clés. Lorsque `.ExternalHelp` est présent, le [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande n’affiche pas de commentaire-aide, même lorsqu’il ne trouve pas un fichier d’aide qui correspond à la valeur du mot clé.
+Notez que le `.ExternalHelp` mot clé est prioritaire sur tous les autres en fonction des commentaires des mots clés. Lorsque `.ExternalHelp` est présent, le [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande n’affiche pas de commentaire-aide, même lorsqu’il ne trouve pas un fichier d’aide qui correspond à la valeur du mot clé.
 
 `.Synopsis` Une brève description de la fonction ou d’un script. Ce mot clé peut être utilisé qu’une seule fois dans chaque rubrique.
 
@@ -61,9 +61,9 @@ Le `.Link` contenu de mot clé peut également inclure un identificateur URI (Un
 
 `.ExternalHelp` `<XML Help File>` Spécifie le chemin d’accès et/ou le nom d’un fichier d’aide basé sur XML pour le script ou la fonction.
 
-Le `.ExternalHelp` mot clé indique le [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande pour obtenir de l’aide du script ou une fonction dans un fichier XML. Le **. ExternalHelp** mot clé est requis lors de l’utilisation d’un fichier d’aide basé sur XML pour une fonction ou un script. Sans cela, `Get-Help` ne trouvera pas un fichier d’aide pour la fonction ou d’un script.
+Le `.ExternalHelp` mot clé indique le [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande pour obtenir de l’aide du script ou une fonction dans un fichier XML. Le **. ExternalHelp** mot clé est requis lors de l’utilisation d’un fichier d’aide basé sur XML pour une fonction ou un script. Sans cela, `Get-Help` ne trouvera pas un fichier d’aide pour la fonction ou d’un script.
 
-Le `.ExternalHelp` mot clé est prioritaire sur tous les autres en fonction des commentaires des mots clés. Lorsque `.ExternalHelp` est présent, le [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande n’affiche pas de commentaire-aide, même lorsqu’il ne trouve pas un fichier d’aide qui correspond à la valeur du mot clé.
+Le `.ExternalHelp` mot clé est prioritaire sur tous les autres en fonction des commentaires des mots clés. Lorsque `.ExternalHelp` est présent, le [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) applet de commande n’affiche pas de commentaire-aide, même lorsqu’il ne trouve pas un fichier d’aide qui correspond à la valeur du mot clé.
 
 Lorsque la fonction est exportée par un module de script, la valeur de `.ExternalHelp` doit être un nom de fichier sans un chemin d’accès. `Get-Help` recherche le fichier dans un sous-répertoire spécifique aux paramètres régionaux du répertoire du module. Aucune n’est requise pour le nom de fichier, mais une bonne pratique consiste à utiliser le format de nom de fichier suivant : `<ScriptModule>.psm1-help.xml`.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
 caps.latest.revision: 7
-ms.openlocfilehash: c156b2d6a7e7d3fcbd1679d2d61c94f31be0f76a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3205286fbbc823d21e29a328b3ba9c4c1459d9ff
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854725"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056955"
 ---
 # <a name="runspace07-sample"></a>Exemple Runspace07
 
@@ -35,11 +35,11 @@ Cet exemple montre ce qui suit.
 
 - Exécuter les applets de commande de façon synchrone.
 
-- Extraction des propriétés à partir de la [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objets retournés par la commande.
+- Extraction des propriétés à partir de la [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objets retournés par la commande.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple crée une instance d’exécution qui utilisé par un [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objet s’exécute le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) applets de commande.
+Cet exemple crée une instance d’exécution qui utilisé par un [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objet s’exécute le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et [Measure-Object](/powershell/module/microsoft.powershell.utility/measure-object) applets de commande.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

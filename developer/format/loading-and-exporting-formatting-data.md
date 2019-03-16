@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794193"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054184"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Chargement et exportation de données de mise en forme
 
@@ -27,7 +27,7 @@ Fichiers de mise en forme peuvent être chargées dans la session active à l’
 
 - Vous pouvez créer un manifeste de module qui fait référence à votre fichier de mise en forme. Modules permettent de vous mise en forme de fichiers pour la distribution du package. Utilisez le [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) applet de commande pour créer le manifeste et le [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) applet de commande pour charger le module dans la session active. Pour plus d’informations sur les modules, consultez [écrire un PowerShell Module de Windows](../module/writing-a-windows-powershell-module.md).
 
-- Vous pouvez créer un composant logiciel enfichable qui fait référence à votre fichier de mise en forme. Utilisez le [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) à référencer vos fichiers de mise en forme. Il est vivement recommandé d’utiliser des modules aux applets de commande de package et la mise en forme associée et des fichiers de types pour la distribution. Pour plus d’informations sur les modules, consultez [écrire un PowerShell Module de Windows](../module/writing-a-windows-powershell-module.md).
+- Vous pouvez créer un composant logiciel enfichable qui fait référence à votre fichier de mise en forme. Utilisez le [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) à référencer vos fichiers de mise en forme. Il est vivement recommandé d’utiliser des modules aux applets de commande de package et la mise en forme associée et des fichiers de types pour la distribution. Pour plus d’informations sur les modules, consultez [écrire un PowerShell Module de Windows](../module/writing-a-windows-powershell-module.md).
 
 - Si vous appelez des commandes par programmation, vous pouvez ajouter une entrée de fichier de mise en forme à l’état de session initiale de l’instance d’exécution où les commandes sont exécutées. Pour plus d’informations sur le type .NET utilisé pour ajouter le fichier de mise en forme, consultez la [System.Management.Automation.Runspaces.Sessionstateformatentry ? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) classe.
 

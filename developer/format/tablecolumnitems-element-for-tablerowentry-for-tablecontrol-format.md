@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859445"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056904"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableColumnItems, élément pour TableRowEntry pour TableControl (Format)
 
@@ -47,7 +47,7 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableRowEntry pour TableRowEntries pour la table (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Définit les données qui s’affiche dans une ligne de la table.|
+|[Élément TableRowEntry pour TableRowEntries pour la table (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Définit les données qui s’affiche dans une ligne de la table.|
 
 ## <a name="remarks"></a>Remarques
 
@@ -80,6 +80,6 @@ L’exemple suivant montre un `TableColumnItems` élément qui définit trois pr
 
 [Élément TableColumnItem (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[Élément TableRowEntry (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[Élément TableRowEntry (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Écriture d’un fichier de mise en forme de PowerShell](./writing-a-powershell-formatting-file.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251300"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057127"
 ---
 # <a name="security-parameters"></a>Paramètres de sécurité
 
@@ -29,7 +29,7 @@ Le tableau suivant répertorie les noms recommandés pour les paramètres utilis
 |**CertStoreLocation**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier l’emplacement du magasin de certificats. L’emplacement est généralement un chemin d’accès de fichier.|
 |**CertSubjectName**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier l’émetteur d’un certificat ou pour que l’utilisateur peut spécifier une sous-chaîne.|
 |**CertUsage**<br>Type de données : String|Implémentez ce paramètre pour spécifier l’utilisation de la clé ou de l’utilisation améliorée de la clé. La clé peut être représentée comme un masque de bits, un peu, un identificateur d’objet (OID), ou une chaîne.|
-|**Informations d’identification**<br>Type de données : [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implémentez ce paramètre afin que l’applet de commande vous invite automatiquement l’utilisateur un nom d’utilisateur ou mot de passe. Une invite pour les deux s’affiche si une information d’identification complète n’est pas fournie directement.|
+|**Informations d’identification**<br>Type de données : [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implémentez ce paramètre afin que l’applet de commande vous invite automatiquement l’utilisateur un nom d’utilisateur ou mot de passe. Une invite pour les deux s’affiche si une information d’identification complète n’est pas fournie directement.|
 |**CSPName**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier le nom du fournisseur de services de certificat (CSP).|
 |**CSPType**<br>Type de données : Entier|Implémentez ce paramètre afin que l’utilisateur peut spécifier le type de fournisseur de services cryptographiques.|
 |**Groupe**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier une collection d’entités de sécurité pour l’accès. Pour plus d’informations, consultez la description de la **Principal** paramètre.|

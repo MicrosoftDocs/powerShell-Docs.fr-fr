@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
-ms.openlocfilehash: 59832ed8a4fad3b07a171946bff28fb3e1dbe442
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f020f023f9a379ff8a610edb7d5dcfe207170394
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854655"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055544"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
@@ -40,7 +40,7 @@ Cet exemple montre les éléments suivants :
 
 - En remplaçant le [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) méthode pour modifier le comportement de la `Get-Content` applet de commande, permettant à l’utilisateur récupérer le contenu d’un élément. (Cet exemple n’affiche pas comment ajouter des paramètres dynamiques à la `Get-Content` applet de commande.).
 
-- En remplaçant le [Microsoft.Powershell.Commands.Filesystemprovider.Getcontentwriter*](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) méthode pour modifier le comportement de la `Set-Content` applet de commande, permettant à l’utilisateur à mettre à jour le contenu d’un élément. (Cet exemple n’affiche pas comment ajouter des paramètres dynamiques à la `Set-Content` applet de commande.)
+- En remplaçant le [Microsoft.PowerShell.Commands.Filesystemprovider.Getcontentwriter*](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter) méthode pour modifier le comportement de la `Set-Content` applet de commande, permettant à l’utilisateur à mettre à jour le contenu d’un élément. (Cet exemple n’affiche pas comment ajouter des paramètres dynamiques à la `Set-Content` applet de commande.)
 
 ## <a name="example"></a>Exemple
 

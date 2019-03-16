@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
 caps.latest.revision: 6
-ms.openlocfilehash: 1513d340cdadc5cb7622e791cc3c163ff39dfe1d
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795400"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059250"
 ---
 # <a name="credential-attribute-declaration"></a>Déclaration de l’attribut Credential
 
-L’attribut d’informations d’identification est un attribut facultatif qui peut être utilisé avec les paramètres d’informations d’identification de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Lorsque cet attribut est ajouté à une déclaration de paramètre, Windows PowerShell convertit l’entrée de chaîne dans un [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet. Par exemple, le [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) applet de commande utilise cet attribut pour que Windows PowerShell génère le [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet qui est retourné par l’applet de commande.
+L’attribut d’informations d’identification est un attribut facultatif qui peut être utilisé avec les paramètres d’informations d’identification de type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Lorsque cet attribut est ajouté à une déclaration de paramètre, Windows PowerShell convertit l’entrée de chaîne dans un [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) objet. Par exemple, le [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential) applet de commande utilise cet attribut pour que Windows PowerShell génère le [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) objet qui est retourné par l’applet de commande.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,9 +27,9 @@ L’attribut d’informations d’identification est un attribut facultatif qui 
 
 ## <a name="remarks"></a>Remarques
 
-- En général, cet attribut est utilisé par les paramètres de type [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Quand un [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) objet est passé au paramètre, Windows PowerShell n’a aucun effet.
+- En général, cet attribut est utilisé par les paramètres de type [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) afin qu’une chaîne peut également être passée en tant qu’argument au paramètre. Quand un [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) objet est passé au paramètre, Windows PowerShell n’a aucun effet.
 
-- Lorsque vous créez le [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) de l’objet, Windows PowerShell utilise l’hôte actuel pour afficher les messages appropriés à l’utilisateur. Par exemple, la valeur par défaut hôte affiche une invite pour le nom d’utilisateur et mot de passe lorsque cet attribut est utilisé. Toutefois, si un hôte personnalisé est utilisé qui définit une autre invite ensuite cette invite s’affiche.
+- Lorsque vous créez le [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) de l’objet, Windows PowerShell utilise l’hôte actuel pour afficher les messages appropriés à l’utilisateur. Par exemple, la valeur par défaut hôte affiche une invite pour le nom d’utilisateur et mot de passe lorsque cet attribut est utilisé. Toutefois, si un hôte personnalisé est utilisé qui définit une autre invite ensuite cette invite s’affiche.
 
 - Cet attribut est utilisé avec l’attribut de paramètre. Pour plus d’informations sur cet attribut, consultez [déclaration d’attribut de paramètre](./parameter-attribute-declaration.md).
 
