@@ -8,52 +8,52 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863335"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057159"
 ---
-# <a name="events01-sample"></a><span data-ttu-id="e5358-102">Exemple Events01</span><span class="sxs-lookup"><span data-stu-id="e5358-102">Events01 Sample</span></span>
+# <a name="events01-sample"></a><span data-ttu-id="26003-102">Exemple Events01</span><span class="sxs-lookup"><span data-stu-id="26003-102">Events01 Sample</span></span>
 
-<span data-ttu-id="e5358-103">Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="e5358-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="e5358-104">Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique.</span><span class="sxs-lookup"><span data-stu-id="e5358-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="e5358-105">Cet exemple dérive le [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.</span><span class="sxs-lookup"><span data-stu-id="e5358-105">This sample derives from the [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
+<span data-ttu-id="26003-103">Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span><span class="sxs-lookup"><span data-stu-id="26003-103">This sample shows how to create a cmdlet that allows the user to register for events that are raised by [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher).</span></span> <span data-ttu-id="26003-104">Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique.</span><span class="sxs-lookup"><span data-stu-id="26003-104">With this cmdlet, users can register an action to execute when a file is created under a specific directory.</span></span> <span data-ttu-id="26003-105">Cet exemple dérive le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.</span><span class="sxs-lookup"><span data-stu-id="26003-105">This sample derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) base class.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="e5358-106">Guide pratique pour générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="e5358-106">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="26003-106">Guide pratique pour générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="26003-106">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="e5358-107">Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier Events01.</span><span class="sxs-lookup"><span data-stu-id="e5358-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="e5358-108">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span><span class="sxs-lookup"><span data-stu-id="e5358-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
+1. <span data-ttu-id="26003-107">Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier Events01.</span><span class="sxs-lookup"><span data-stu-id="26003-107">With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder.</span></span> <span data-ttu-id="26003-108">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span><span class="sxs-lookup"><span data-stu-id="26003-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.</span></span>
 
-2. <span data-ttu-id="e5358-109">Double-cliquez sur l’icône pour le fichier solution (.sln).</span><span class="sxs-lookup"><span data-stu-id="e5358-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="e5358-110">L’exemple de projet s’ouvre dans Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="e5358-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="26003-109">Double-cliquez sur l’icône pour le fichier solution (.sln).</span><span class="sxs-lookup"><span data-stu-id="26003-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="26003-110">L’exemple de projet s’ouvre dans Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="26003-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="e5358-111">Dans le **Build** menu, sélectionnez **générer la Solution**.</span><span class="sxs-lookup"><span data-stu-id="e5358-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="26003-111">Dans le **Build** menu, sélectionnez **générer la Solution**.</span><span class="sxs-lookup"><span data-stu-id="26003-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="e5358-112">La bibliothèque de l’exemple est générée dans les dossiers \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="e5358-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="26003-112">La bibliothèque de l’exemple est générée dans les dossiers \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="26003-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="e5358-113">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="e5358-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="26003-113">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="26003-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="e5358-114">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="e5358-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="26003-114">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="26003-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/events01`
 
-2. <span data-ttu-id="e5358-115">Copiez le fichier de bibliothèque pour l’exemple dans le dossier de module.</span><span class="sxs-lookup"><span data-stu-id="e5358-115">Copy the library file for the sample to the module folder.</span></span>
+2. <span data-ttu-id="26003-115">Copiez le fichier de bibliothèque pour l’exemple dans le dossier de module.</span><span class="sxs-lookup"><span data-stu-id="26003-115">Copy the library file for the sample to the module folder.</span></span>
 
-3. <span data-ttu-id="e5358-116">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="e5358-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="26003-116">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="26003-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="e5358-117">Exécutez la commande suivante pour charger l’applet de commande dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="e5358-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
+4. <span data-ttu-id="26003-117">Exécutez la commande suivante pour charger l’applet de commande dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="26003-117">Run the following command to load the cmdlet into Windows PowerShell:</span></span>
 
     ```powershell
     import-module events01
     ```
 
-5. <span data-ttu-id="e5358-118">Utilisez l’applet de commande Register-FileSystemEvent pour inscrire une action qui écrit un message quand un fichier est créé sous le répertoire TEMP.</span><span class="sxs-lookup"><span data-stu-id="e5358-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
+5. <span data-ttu-id="26003-118">Utilisez l’applet de commande Register-FileSystemEvent pour inscrire une action qui écrit un message quand un fichier est créé sous le répertoire TEMP.</span><span class="sxs-lookup"><span data-stu-id="26003-118">Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a file is created under the TEMP directory.</span></span>
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. <span data-ttu-id="e5358-119">Créez un fichier sous le répertoire TEMP et notez que l’action est exécutée (le message est affiché).</span><span class="sxs-lookup"><span data-stu-id="e5358-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
+6. <span data-ttu-id="26003-119">Créez un fichier sous le répertoire TEMP et notez que l’action est exécutée (le message est affiché).</span><span class="sxs-lookup"><span data-stu-id="26003-119">Create a file under the TEMP directory and note that the action is executed (the message is displayed).</span></span>
 
-<span data-ttu-id="e5358-120">Il s’agit d’un exemple de sortie qui résulte en suivant ces étapes.</span><span class="sxs-lookup"><span data-stu-id="e5358-120">This is a sample output that results by following these steps.</span></span>
+<span data-ttu-id="26003-120">Il s’agit d’un exemple de sortie qui résulte en suivant ces étapes.</span><span class="sxs-lookup"><span data-stu-id="26003-120">This is a sample output that results by following these steps.</span></span>
 
 ```output
 Id              Name            State      HasMoreData     Location             Command
@@ -70,19 +70,19 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a><span data-ttu-id="e5358-121">Spécifications</span><span class="sxs-lookup"><span data-stu-id="e5358-121">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="26003-121">Spécifications</span><span class="sxs-lookup"><span data-stu-id="26003-121">Requirements</span></span>
 
-<span data-ttu-id="e5358-122">Cet exemple requiert Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="e5358-122">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="26003-122">Cet exemple requiert Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="26003-122">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="e5358-123">Montre</span><span class="sxs-lookup"><span data-stu-id="e5358-123">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="26003-123">Montre</span><span class="sxs-lookup"><span data-stu-id="26003-123">Demonstrates</span></span>
 
-<span data-ttu-id="e5358-124">Cet exemple montre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="e5358-124">This sample demonstrates the following.</span></span>
+<span data-ttu-id="26003-124">Cet exemple montre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="26003-124">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="e5358-125">Comment écrire une applet de commande d’inscription d’événement.</span><span class="sxs-lookup"><span data-stu-id="e5358-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="e5358-126">Dérive de l’applet de commande le [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe, qui fournit la prise en charge pour les paramètres communs à Register-\* événement applets de commande.</span><span class="sxs-lookup"><span data-stu-id="e5358-126">The cmdlet derives from the [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="e5358-127">Applets de commande qui sont dérivés de [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.</span><span class="sxs-lookup"><span data-stu-id="e5358-127">Cmdlets that are derived from [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
+- <span data-ttu-id="26003-125">Comment écrire une applet de commande d’inscription d’événement.</span><span class="sxs-lookup"><span data-stu-id="26003-125">How to write a cmdlet for event registration.</span></span> <span data-ttu-id="26003-126">Dérive de l’applet de commande le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe, qui fournit la prise en charge pour les paramètres communs à Register-\* événement applets de commande.</span><span class="sxs-lookup"><span data-stu-id="26003-126">The cmdlet derives from the [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) class, which provides support for parameters common to the Register-\*Event cmdlets.</span></span> <span data-ttu-id="26003-127">Applets de commande qui sont dérivés de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.</span><span class="sxs-lookup"><span data-stu-id="26003-127">Cmdlets that are derived from [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) need only to define their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName` abstract methods.</span></span>
 
-## <a name="example"></a><span data-ttu-id="e5358-128">Exemple</span><span class="sxs-lookup"><span data-stu-id="e5358-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="26003-128">Exemple</span><span class="sxs-lookup"><span data-stu-id="26003-128">Example</span></span>
 
-<span data-ttu-id="e5358-129">Cet exemple montre comment s’inscrire aux événements déclenchés par [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="e5358-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
+<span data-ttu-id="26003-129">Cet exemple montre comment s’inscrire aux événements déclenchés par [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span><span class="sxs-lookup"><span data-stu-id="26003-129">This sample shows how to register for events raised by [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).</span></span>
 
 ```csharp
 namespace Sample
@@ -181,6 +181,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e5358-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e5358-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26003-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26003-130">See Also</span></span>
 
-[<span data-ttu-id="e5358-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="e5358-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="26003-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="26003-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
