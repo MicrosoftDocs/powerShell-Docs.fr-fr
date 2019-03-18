@@ -31,7 +31,7 @@ items:
         items:
         - name: Vue d’ensemble de l’aide actualisable
           href: ./module/updatable-help-overview.md
-        - name: 'Création d’aide actualisable : pas à pas'
+        - name: 'Création d’une aide actualisable : procédure pas à pas'
           href: ./module/updatable-help-authoring-step-by-step.md
         - name: Fonctionnement de l’aide actualisable
           href: ./module/how-updatable-help-works.md
@@ -815,7 +815,7 @@ items:
       - name: TableRowEntries, élément pour TableControl (Format)
         href: ./format/tablerowentries-element-for-tablecontrol-format.md
       - name: TableRowEntry, élément pour TableRowEntries pour TableControl (Format)
-        href: ./format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md
+        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
       - name: Text, élément pour CustomItem pour Controls pour Configuration (Format)
         href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
       - name: Text, élément pour CustomItem pour Controls pour View (Format)
@@ -879,7 +879,7 @@ items:
       - name: Width, élément pour TableColumnHeader pour TableControl (Format)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
       - name: Wrap, élément pour TableRowEntry pour TableControl (Format)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: WrapTables, élément (Format)
         href: ./format/wraptables-element-format.md
   - name: Écriture de rubriques d’aide basée sur les commentaires
@@ -1006,8 +1006,6 @@ items:
       href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
     - name: Création d’un workflow avec des activités Windows PowerShell
       href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: Extension du contrôleur d’activité de workflow Windows PowerShell
-      href: ./workflow/extending-the-windows-powershell-workflow-activity-controller.md
     - name: Importation et appel d’un workflow Windows PowerShell
       href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
     - name: Planification de travaux avec l’API Windows PowerShell
@@ -1143,9 +1141,9 @@ items:
     items:
     - name: Nouveautés
       href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: d95ae41e37ade171609500f0dd2627712aa6dae9
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.openlocfilehash: 1ccdff0cabb81cbd68ecbfbdae69672463f9c4e8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451098"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056615"
