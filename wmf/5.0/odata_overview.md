@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219546"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794487"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Générer des applets de commande PowerShell basées sur un point de terminaison OData
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Générer des applets de commande Windows PowerShell basées sur un point de terminaison OData
---------------------------------------------------------------
+
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Générer des applets de commande Windows PowerShell basées sur un point de terminaison OData
 
 **Export-ODataEndpointProxy** est une applet de commande qui génère un ensemble d’applets de commande Windows PowerShell basé sur les fonctionnalités exposées par un point de terminaison OData donné.
 
 L’exemple suivant montre comment utiliser cette nouvelle applet de commande :
-
-\# Cas d’usage de base d’Export-ODataEndpointProxy
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -50,8 +48,8 @@ Certaines parties des principaux cas d’usage de cette fonctionnalité sont tou
 -   Associations
 -   Transfert de flux
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Générer des applets de commande Windows PowerShell basées sur un point de terminaison OData avec ODataUtils
-------------------------------------------------------------------------------
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Générer des applets de commande Windows PowerShell basées sur un point de terminaison OData avec ODataUtils
+
 Le module ODataUtils permet de générer des applets de commande Windows PowerShell à partir de points de terminaison REST qui prennent en charge OData. Le module Windows PowerShell Microsoft.PowerShell.ODataUtils offre les améliorations incrémentielles suivantes.
 -   Informations supplémentaires sur les canaux du point de terminaison côté serveur vers le côté client.
 -   Prise en charge de la pagination côté client
@@ -59,6 +57,7 @@ Le module ODataUtils permet de générer des applets de commande Windows PowerSh
 -   Prise en charge des en-têtes de demande web
 
 Les applets de commande du proxy générées par l’applet de commande Export-ODataEndPointProxy fournissent des informations supplémentaires (non mentionnées dans les métadonnées utilisées lors de la génération du proxy côté client) à partir du point de terminaison OData côté serveur sur le flux d’informations (une nouvelle fonctionnalité de Windows PowerShell 5.0). Voici un exemple qui montre comment obtenir ces informations.
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -81,6 +80,7 @@ $additionalInfo['odata.count']
 ```
 
 Vous pouvez obtenir les enregistrements à partir du côté serveur par lots grâce à la prise en charge de la pagination côté client. C’est utile quand vous devez obtenir une grande quantité de données à partir du serveur par le biais du réseau.
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -94,6 +94,7 @@ $skipCount += $batchSize
 ```
 
 Les applets de commande du proxy générées prennent en charge le paramètre –Select, que vous pouvez utiliser comme filtre pour recevoir uniquement les propriétés d’enregistrements dont le client a besoin. Cela réduit la quantité de données transférées sur le réseau, car le filtrage s’effectue sur le serveur.
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
@@ -101,6 +102,7 @@ Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
 L’applet de commande Export-ODataEndpointProxy et les applets de commande du proxy qu’elle génère prennent désormais en charge le paramètre Headers (fournissez des valeurs sous forme de table de hachage), que vous pouvez utiliser pour transmettre toute information supplémentaire attendue par le point de terminaison OData côté serveur. Dans l’exemple suivant, vous pouvez transmettre une clé d’abonnement par le biais de Headers pour les services qui attendent une clé d’abonnement pour l’authentification.
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

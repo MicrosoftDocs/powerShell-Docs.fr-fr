@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Résolutions de bogues dans WMF 5.1
-ms.openlocfilehash: 1e46d6d0419b3497450e6eaddbaa47456b004691
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222188"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795366"
 ---
-# <a name="bug-fixes-in-wmf-51"></a>Résolutions de bogues dans WMF 5.1#
+# <a name="bug-fixes-in-wmf-51"></a>Résolutions de bogues dans WMF 5.1
 
-## <a name="bug-fixes"></a>Résolutions de bogues ##
+## <a name="bug-fixes"></a>Résolutions de bogues
 
 Les bogues importants suivants sont résolus dans WMF 5.1 :
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>La détection automatique de module respecte entièrement `$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>La détection automatique de module respecte entièrement `$env:PSModulePath`
 
 La détection automatique de module (chargement automatique des modules sans Import-Module explicite lors de l’appel d’une commande) a été introduite dans WMF 3.
 Lors de l’introduction, PowerShell vérifiait la présence des commandes dans `$PSHome\Modules` avant d’utiliser `$env:PSModulePath`.
@@ -24,43 +24,43 @@ Lors de l’introduction, PowerShell vérifiait la présence des commandes dans 
 WMF 5.1 modifie ce comportement pour honorer `$env:PSModulePath` complètement.
 Ainsi, un module créé par l’utilisateur qui définit des commandes fournies par PowerShell (par exemple, `Get-ChildItem`) peut être chargé automatiquement et remplacer correctement la commande intégrée.
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>La redirection de fichiers ne code plus en dur `-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>La redirection de fichiers ne code plus en dur `-Encoding Unicode`
 
 Dans toutes les versions précédentes de PowerShell, il était impossible de contrôler l’encodage de fichier utilisé par l’opérateur de redirection de fichier, par exemple `Get-ChildItem > out.txt`, car PowerShell ajoutait `-Encoding Unicode`.
 
 À compter de WMF 5.1, vous pouvez modifier l’encodage de fichier de la redirection en définissant `$PSDefaultParameterValues` :
 
-```
+```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Correction d’une régression dans l’accès aux membres de `System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>Correction d’une régression dans l’accès aux membres de `System.Reflection.TypeInfo`
 
 Une régression introduite dans WMF 5.0 interrompait l’accès aux membres de `System.Reflection.RuntimeType`, par exemple `[int].ImplementedInterfaces`.
 Ce bogue a été résolu dans WMF 5.1.
 
 
-### <a name="fixed-some-issues-with-com-objects"></a>Résolution de certains problèmes liés aux objets COM ###
+### <a name="fixed-some-issues-with-com-objects"></a>Résolution de certains problèmes liés aux objets COM
 
 WMF 5.0 a introduit un nouveau binder COM pour appeler des méthodes sur des objets COM et accéder aux propriétés des objets COM.
 Ce nouveau binder a amélioré les performances de manière significative, mais il a également introduit des bogues qui ont été résolus dans WMF 5.1.
 
-#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Les conversions d’arguments n’étaient pas toujours effectuées correctement ####
+#### <a name="argument-conversions-were-not-always-performed-correctly"></a>Les conversions d’arguments n’étaient pas toujours effectuées correctement
 
 Dans l’exemple suivant :
 
-```
+```powershell
 $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
 La méthode SendKeys attend une chaîne, mais PowerShell n’a pas converti le caractère en chaîne, ce qui diffère la conversion en IDispatch::Invoke, qui utilise VariantChangeType pour effectuer la conversion. Dans cet exemple, cela provoque l’envoi des clés « 1 », « 7 » et « 3 » au lieu de la clé Volume.Mute attendue.
 
-#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Les objets COM énumérables ne sont pas toujours gérés correctement ####
+#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>Les objets COM énumérables ne sont pas toujours gérés correctement
 
 PowerShell énumère normalement la plupart des objets énumérables, mais une régression introduite dans WMF 5.0 empêchait l’énumération des objets COM qui implémentent IEnumerable.  Par exemple :
 
-```
+```powershell
 function Get-COMDictionary
 {
     $d = New-Object -ComObject Scripting.Dictionary
@@ -76,13 +76,13 @@ Dans l’exemple ci-dessus, WMF 5.0 écrivait incorrectement le Scripting.Dicti
 
 Cette modification résout également le [problème 1752224 sur Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224).
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` n’était pas autorisé à l’intérieur des classes ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` n’était pas autorisé à l’intérieur des classes
 
 WMF 5.0 a introduit des classes avec la validation des littéraux de type utilisée dans les classes.
 `[ordered]` ressemble à un littéral de type, mais n’est pas un vrai type .NET.
 WMF 5.0 signalait de façon erronée une erreur sur `[ordered]` à l’intérieur d’une classe :
 
-```
+```powershell
 class CThing
 {
     [object] foo($i)
@@ -93,7 +93,7 @@ class CThing
 ```
 
 
-### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>L’aide sur les rubriques de procédures avec plusieurs versions ne fonctionne pas ###
+### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>L’aide sur les rubriques de procédures avec plusieurs versions ne fonctionne pas
 
 Avant WMF 5.1, si plusieurs versions d’un module étaient installées et que toutes partageaient une rubrique d’aide, par exemple about_PSReadline, `help about_PSReadline` retournait plusieurs rubriques sans aucun moyen évident d’afficher l’aide réelle.
 
