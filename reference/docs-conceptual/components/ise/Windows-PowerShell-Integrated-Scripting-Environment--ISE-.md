@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Environnement d’écriture de scripts intégré de Windows PowerShell ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401155"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054711"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Environnement d'écriture de scripts intégré de Windows PowerShell
 
@@ -34,7 +34,7 @@ Le **Gestionnaire de démarrage et enregistrement automatique** enregistre autom
 
 La **liste Utilisé(s) récemment** fait désormais partie du menu Ouvrir le fichier. Elle facilite l’accès aux fichiers que vous utilisez le plus souvent.
 
-**Volet Console fusionné**. Les versions précédentes de l’environnement ISE comportaient des volets Commande et Sortie distincts. Ceux-ci sont désormais regroupés dans un seul volet qui reflète plus fidèlement ce que vous voyez dans la console Windows Powershell.
+**Volet Console fusionné**. Les versions précédentes de l’environnement ISE comportaient des volets Commande et Sortie distincts. Ceux-ci sont désormais regroupés dans un seul volet qui reflète plus fidèlement ce que vous voyez dans la console Windows PowerShell.
 
 **Commutateurs de ligne de commande**. Plusieurs nouveaux commutateurs de ligne de commande vous de mieux contrôler le fonctionnement de l’environnement ISE. -NoProfile démarre l’environnement ISE sans exécuter de script de profilage. -Help ouvre une fenêtre d’aide avec l’environnement ISE. -mta démarre l’environnement ISE en « mode de multithread cloisonné ». Le mode par défaut est monothread.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Configuration de session JEA
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655461"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056586"
 ---
 # <a name="jea-session-configurations"></a>Configuration de session JEA
 
@@ -80,8 +80,9 @@ Lorsqu’un ou plusieurs groupes de sécurité sont spécifiés, le compte virtu
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> Les comptes virtuels sont accordées temporairement de l’ouverture de session tant que service dans la stratégie de sécurité du serveur local.  Si un de le VirtualAccountGroups spécifié a déjà reçu ce droit dans la stratégie, le compte virtuel individuel est ne sont plus ajouté et supprimé de la stratégie.  Cela peut être utile dans les scénarios tels que les contrôleurs de domaine où les révisions de la stratégie de sécurité de contrôleur de domaine sont étroitement auditées.  Cela est uniquement disponible dans Windows Server 2016 avec le novembre 2018 ou correctif cumulatif plus récent et Windows Server 2019 avec le janvier 2019 ou correctif cumulatif plus récent.
+> Le droit « Se connecter en tant que service » est accordé temporairement aux comptes virtuels dans la stratégie de sécurité du serveur local.  Si l’un des VirtualAccountGroups spécifiés dans la stratégie a déjà reçu ce droit, le compte virtuel en question ne sera plus ajouté et supprimé de la stratégie.  Cela peut être utile dans les scénarios tels que ceux où les révisions de la stratégie de sécurité de contrôleur de domaine sont étroitement auditées.  Cette fonctionnalité est disponible uniquement dans Windows Server 2016 avec le correctif cumulatif de novembre 2018 ou plus récent, et Windows Server 2019 avec le correctif cumulatif de janvier 2019 ou plus récent.
 
 #### <a name="group-managed-service-account"></a>Compte de service administré de groupe
 
@@ -104,7 +105,6 @@ Les comptes gMSA ne doivent être utilisés que lorsque l’accès aux ressource
 
 > [!NOTE]
 > Les comptes de service gérés par un groupe sont disponibles uniquement dans Windows PowerShell 5.1 et les versions plus récentes, et sur les ordinateurs joints à un domaine.
-
 
 #### <a name="more-information-about-run-as-users"></a>Informations complémentaires sur les utilisateurs « Exécuter en tant que »
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Ordre de recherche des capacités de rôle
+
 Comme l’indique l’exemple ci-dessus, les capacités de rôle sont référencées par le nom plat (nom du fichier sans l’extension) du fichier de capacités de rôle.
 Si plusieurs capacités de rôle sont disponibles sur le système avec le même nom plat, PowerShell utilise son ordre de recherche implicite pour sélectionner le fichier effectif de capacités de rôle.
 Il ne donnera **pas** accès à tous les fichiers de capacités de rôle portant le même nom.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Les règles d’accès conditionnel sont disponibles uniquement dans Windows PowerShell 5.1 et les versions ultérieures.
 
 ### <a name="other-properties"></a>Autres propriétés
+
 Les fichiers de configuration de session peuvent également faire les mêmes choses qu’un fichier de capacités de rôle, sauf donner accès aux utilisateurs connectés à des commandes différentes.
 Si vous souhaitez autoriser tous les utilisateurs à accéder à des applets de commande, fonctions ou fournisseurs spécifiques, vous pouvez le faire directement dans le fichier de configuration de session.
 Pour obtenir la liste complète des propriétés prises en charge dans le fichier de configuration de session, exécutez `Get-Help New-PSSessionConfigurationFile -Full`.

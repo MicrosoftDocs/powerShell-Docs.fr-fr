@@ -4,16 +4,17 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 contributor: jianyunt, quoctruong
 title: Améliorations apportées à la gestion des packages dans WMF 5.1
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679215"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794278"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Améliorations apportées à la gestion des packages dans WMF 5.1#
+# <a name="improvements-to-package-management-in-wmf-51"></a>Améliorations apportées à la gestion des packages dans WMF 5.1
 
-## <a name="improvements-in-packagemanagement"></a>Améliorations apportées à PackageManagement ##
+## <a name="improvements-in-packagemanagement"></a>Améliorations apportées à PackageManagement
+
 Voici les corrections apportées dans WMF 5.1 :
 
 ### <a name="version-alias"></a>Alias de version
@@ -30,7 +31,7 @@ Cela se produit, car le paramètre `-Version` est un alias du paramètre `-Minim
 
 Dans certains cas, quand une ancienne version du fournisseur NuGet est installée sur votre ordinateur, celle-ci est parfois chargée en premier dans la session PowerShell (il s’agit de la condition de concurrence dans PackageManagement). Toutefois, le fonctionnement de PowerShellGet nécessite la dernière version du fournisseur NuGet. Ainsi, PowerShellGet demande à PackageManagement de redémarrer le fournisseur NuGet. Cela entraîne l’affichage de plusieurs invites de démarrage du fournisseur NuGet.
 
-**Solution** : Dans WMF 5.1, PackageManagement charge la dernière version du fournisseur NuGet pour éviter plusieurs invites de démarrage du fournisseur NuGet.
+**Solution** : Dans WMF 5.1, PackageManagement charge la dernière version du fournisseur NuGet pour éviter l’affichage de plusieurs invites de démarrage du fournisseur NuGet.
 
 Vous pouvez également contourner ce problème en supprimant manuellement l’ancienne version du fournisseur NuGet (NuGet-Anycpu.exe), si elle existe, dans $env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.
 
@@ -41,7 +42,7 @@ Vous pouvez également contourner ce problème en supprimant manuellement l’an
 
 **Scénario** : Dans WMF 5.0, PackageManagement ne prenait pas en charge les ordinateurs ayant uniquement un accès à l’intranet (et non à Internet).
 
-**Solution** : Dans WMF 5.1, vous pouvez suivre ces étapes pour permettre aux ordinateurs Intranet d’utiliser PackageManagement :
+**Solution** : Dans WMF 5.1, effectuez les étapes suivantes pour permettre aux ordinateurs connectés à l’intranet d’utiliser PackageManagement :
 
 1. Téléchargez le fournisseur NuGet sur un autre ordinateur disposant d’une connexion Internet à l’aide de la commande `Install-PackageProvider -Name NuGet`.
 
@@ -61,6 +62,7 @@ Dans WMF 5.1, PackageManagement prend en charge la recherche et l’installatio
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Prise en charge de l’utilisation de PackageManagement derrière un proxy
 
 Dans WMF 5.1, PackageManagement accepte désormais les nouveaux paramètres de proxy `-ProxyCredential` et `-Proxy`. À l’aide de ces paramètres, vous pouvez spécifier l’URL et les informations d’identification de proxy aux applets de commande PackageManagement. Par défaut, les paramètres proxy du système sont utilisés. Par exemple :

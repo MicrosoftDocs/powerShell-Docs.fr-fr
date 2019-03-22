@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655444"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795689"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
 
@@ -65,6 +65,10 @@ En raison de l’utilisation des API non prises en charge, `Microsoft.PowerShell
 ### <a name="-counter-cmdlets"></a>Applets de commande `*-Counter`
 
 En raison de l’utilisation des API non prises en charge, `*-Counter` a été supprimé de PowerShell jusqu’à ce qu’une meilleure solution soit trouvée.
+
+### <a name="-eventlog-cmdlets"></a>Applets de commande `*-EventLog`
+
+En raison de l’utilisation des API non prises en charge, `*-EventLog` a été supprimé de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée. `Get-WinEvent` et `Create-WinEvent` sont disponibles pour obtenir et créer des événements sur Windows.
 
 ## <a name="enginelanguage-changes"></a>Modifications apportées au moteur/langage
 
@@ -179,9 +183,9 @@ Modifier les codes de sortie de `pwsh.exe` pour se conformer aux conventions Uni
 
 En raison d’API non prises en charge, le module `LocalAccounts` et les cmdlets `Counter` dans le module `Diagnostics` ont été supprimés jusqu’à ce qu’une meilleure solution soit trouvée.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>L’exécution du script powershell avec un paramètre bool ne fonctionne pas [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>L’exécution du script PowerShell avec un paramètre bool ne fonctionne pas [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Auparavant, l’utilisation de powershell.exe (désormais `pwsh.exe`) pour exécuter un script PowerShell à l’aide de `-File` ne fournissait aucun moyen de transmettre $true/$false comme valeurs de paramètre. La prise en charge de $true/$false comme valeurs analysées des paramètres a été ajoutée. Les valeurs de commutateur sont également prises en charge, car la syntaxe actuellement documentée ne fonctionne pas.
+Auparavant, l’utilisation de **powershell.exe** (désormais **pwsh.exe**) pour exécuter un script PowerShell à l’aide de `-File` ne fournissait aucun moyen de transmettre `$true`/`$false` comme valeurs de paramètre. La prise en charge de `$true`/`$false` comme valeurs analysées des paramètres a été ajoutée. Les valeurs de commutateur sont également prises en charge, car la syntaxe actuellement documentée ne fonctionne pas.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Suppression de la propriété `ClrVersion` de `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Autoriser shebang à utiliser PowerShell sur les plateformes non Windows. Cela s
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implémenter l’analyse d’échappement Unicode [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` ou `` `u{####} `` est converti en caractère Unicode correspondant. Pour générer un `` `u `` littéral, appliquer l’échappement au guillemet inversé : ``` ``u ```.
+`` `u####`` ou `` `u{####}`` est converti en caractère Unicode correspondant. Pour générer un `` `u`` littéral, appliquer l’échappement au guillemet inversé : ``` ``u```.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Modifier l’encodage `New-ModuleManifest` sur `UTF8NoBOM` pour les plateformes non Windows [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -271,4 +275,4 @@ L’API .NET sous-jacente des cmdlets web a été remplacée par `System.Net.Htt
 - Les paramètres `System.Net.ServicePointManager` ne sont plus respectés.
 - Aucune authentification par certificat n’est actuellement disponible sur macOS.
 - L’utilisation de `-Credential` sur un URI `http://` génère une erreur. Utilisez un URI `https://` ou fournissez le paramètre `-AllowUnencryptedAuthentication` pour supprimer l’erreur.
-- `-MaximumRedirection` génère désormais une erreur avec fin lors de tentatives de redirection dépassent la limite fournie au lieu de renvoyer les résultats de la dernière redirection.
+- `-MaximumRedirection` génère désormais une erreur avec fin d’exécution quand les tentatives de redirection dépassent la limite fournie au lieu de retourner les résultats de la dernière redirection.

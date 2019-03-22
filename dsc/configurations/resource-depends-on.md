@@ -2,21 +2,21 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Dépendances de ressources utilisant DependsOn
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401383"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055697"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Dépendances de ressources utilisant DependsOn
 
-Lorsque vous écrivez [Configurations](configurations.md), vous ajoutez [blocs de ressources](../resources/resources.md) pour configurer les aspects d’un nœud cible. Lorsque vous continuez à ajouter des blocs de ressources, vos Configurations peuvent augmenter très volumineux et difficiles à gérer. Une telle demande est l’ordre appliqué de blocs de vos ressources. En général, les ressources sont appliquées dans l’ordre qu’ils sont définis dans la Configuration. Que votre Configuration augmente plus volumineux et complexes, vous pouvez utiliser le `DependsOn` clé pour modifier l’ordre appliqué de vos ressources en spécifiant une ressource dépend d’une autre ressource.
+Quand vous écrivez des [configurations](configurations.md), vous ajoutez des [blocs de ressources](../resources/resources.md) pour configurer les aspects d’un nœud cible. À mesure que vous continuez à ajouter des blocs de ressources, vos configurations peuvent devenir très volumineuses et difficiles à gérer. L’une des difficultés concerne l’ordre appliqué à vos blocs de vos ressources. En général, les ressources sont appliquées dans l’ordre dans lequel elles sont définies dans la configuration. À mesure que votre configuration augmente en taille et en complexité, vous pouvez utiliser la clé `DependsOn` pour changer l’ordre appliqué de vos ressources en spécifiant qu’une ressource dépend d’une autre ressource.
 
-Le `DependsOn` clé peut être utilisée dans un bloc de ressources. Elle est définie avec le même mécanisme de clé/valeur en tant que d’autres clés de ressources. Le `DependsOn` clé attend un tableau de chaînes avec la syntaxe suivante.
+Vous pouvez utiliser la clé `DependsOn` dans n’importe quel bloc de ressources. Elle est définie avec le même mécanisme clé/valeur que d’autres clés de ressources. La clé `DependsOn` attend un tableau de chaînes avec la syntaxe suivante.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
 L’exemple suivant configure une règle de pare-feu après l’activation et la configuration du profil public.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-Lorsque vous appliquez la Configuration, le profil de pare-feu toujours être configuré que tout d’abord, quel que soit l’ordre dans lequel les blocs de ressources sont définies. Si vous appliquez la Configuration, prenez soin de noter vos nœuds cible existant de Configuration afin de pouvoir récupérer si vous le souhaitez.
+Quand vous appliquez la configuration, le profil de pare-feu est toujours configuré en premier, quel que soit l’ordre dans lequel les blocs de ressources sont définis. Si vous appliquez la configuration, veillez à prendre note de la configuration existante de vos nœuds cibles afin de pouvoir y revenir si vous le souhaitez.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-Cela garantit également que, si le **FirewallProfile** ressource échoue pour une raison quelconque, le **pare-feu** bloc ne s’exécuteront pas même si elle a été définie tout d’abord. Le `DependsOn` clé offre davantage de flexibilité dans le regroupement des blocs de ressources et de s’assurer que les dépendances sont résolues avant l’exécution d’une ressource.
+Cela garantit également que, si la ressource **FirewallProfile** échoue pour une raison quelconque, le bloc **Firewall** ne sera pas exécuté bien qu’il ait été défini en premier. La clé `DependsOn` offre davantage de flexibilité en ce qui concerne le regroupement des blocs de ressources, et davantage de garanties en ce qui concerne la résolution des dépendances avant l’exécution d’une ressource.
 
-Dans les Configurations plus complexes, vous pouvez également utiliser [Cross la dépendance de nœud](crossNodeDependencies.md) pour permettre un contrôle encore plus précis (par exemple, en vous assurant un contrôleur de domaine est configuré avant de rejoindre un client au domaine).
+Dans les configurations plus complexes, vous pouvez également utiliser [la dépendance entre nœuds](crossNodeDependencies.md) afin de bénéficier d’un contrôle encore plus précis (par exemple pour vous assurer qu’un contrôleur de domaine est configuré avant de joindre un client au domaine).
 
 ## <a name="cleaning-up"></a>Nettoyage
 
-Si vous avez appliqué la Configuration ci-dessus, vous pouvez inverser les clés pour annuler toutes les modifications. Dans l’exemple ci-dessus, en définissant le **activé** clé false désactive la règle de pare-feu et le profil. Vous devez modifier l’exemple que nécessaire pour obtenir l’état configuré précédente du nœud de votre cible.
+Si vous avez appliqué la configuration ci-dessus, vous pouvez inverser les clés pour annuler toutes les modifications. Dans l’exemple ci-dessus, l’affectation de la valeur false à la clé **Enabled** désactive la règle de pare-feu et le profil. Vous devez modifier l’exemple afin qu’il corresponde au précédent état configuré de votre nœud cible.
 
 ```powershell
         Firewall Firewall

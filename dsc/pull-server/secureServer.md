@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401744"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057703"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
-S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
-Résumé : Ce document est conçu pour inclure les processus et l’extensibilité pour aider les ingénieurs qui préparent la solution. Les informations qu’il contient indiquent les bonnes pratiques identifiées par les clients puis validées par l’équipe du produit qui garantit que les recommandations sont innovantes et considérées comme stables.
+Résumé : Ce document vise à fournir une procédure et une extensibilité pour aider les ingénieurs qui préparent la solution. Les informations qu’il contient indiquent les bonnes pratiques identifiées par les clients puis validées par l’équipe du produit qui garantit que les recommandations sont innovantes et considérées comme stables.
 
 | |Informations sur le document|
 |:---|:---|
@@ -64,7 +64,7 @@ Pour déployer un serveur collecteur, la fonctionnalité Service DSC de Windows
 
 ### <a name="software-downloads"></a>Téléchargements de logiciels
 
-Outre l’installation de contenu le plus récent à partir de la mise à jour de Windows, il existe deux téléchargements sont considérés comme bonne pratique consiste à déployer un serveur de collecteur DSC : La dernière version de Windows Management Framework et un module DSC pour automatiser la configuration des serveurs collecteurs.
+En plus de l’installation de contenu le plus récent à partir de Windows Update, il existe deux téléchargements qu’il est préférable d’utiliser pour déployer un serveur collecteur DSC : La dernière version de Windows Management Framework et un module DSC pour automatiser le provisionnement des serveurs collecteurs.
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Avez-vous accès aux fichiers d’installation de Windows Server qui contiennent
 
 Les déploiements de serveurs collecteurs sont pris en charge sur les serveurs physiques et virtuels. La configuration requise du serveur collecteur s’aligne sur celle de Windows Server 2012 R2.
 
-UC : 1,4 processeur GHz 64 bits mémoire : Espace disque de 512 Mo 32 Go réseau : Carte Gigabit Ethernet
+UC : 1,4 GHz 64 bits Mémoire : 512 Mo Espace disque : 32 Go Réseau : carte Gigabit Ethernet
 
 Tâche de planification|
 ---|
@@ -260,7 +260,7 @@ La commande vous demande votre approbation avant de télécharger le module.
 
 La meilleure méthode pour déployer un serveur collecteur DSC consiste à utiliser un script de configuration DSC. Ce document présente les scripts, notamment les paramètres de base permettant de configurer uniquement le service web DSC et les paramètres avancés permettant de configurer de bout en bout Windows Server comprenant un service web DSC.
 
-Remarque :  Actuellement le `xPSDesiredStateConfiguation` module de DSC nécessite le serveur comme paramètres régionaux EN-US.
+Remarque :  Actuellement, le module DSC `xPSDesiredStateConfiguration` exige que le serveur utilise les paramètres régionaux en-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Configuration de base pour Windows Server 2012
 

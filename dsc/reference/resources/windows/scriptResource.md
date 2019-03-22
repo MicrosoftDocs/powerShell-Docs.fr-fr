@@ -2,16 +2,16 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,configuration,setup
 title: Ressource Script dans DSC
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047397"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054745"
 ---
 # <a name="dsc-script-resource"></a>Ressource Script dans DSC
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Script** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour exécuter des blocs de script Windows PowerShell sur des nœuds cibles. La ressource **Script** utilise les propriétés `GetScript`, `SetScript` et `TestScript` qui contiennent des blocs de script que vous définissez pour effectuer les opérations d’état DSC correspondantes.
 
@@ -61,7 +61,7 @@ La cmdlet [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration
 
 ## <a name="examples"></a>Exemples
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire du texte d’exemple à l’aide d’une ressource de Script
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire un exemple de texte à l’aide d’une ressource Script
 
 Cet exemple teste l’existence de `C:\TempFolder\TestFile.txt` sur chaque nœud. S’il n’existe pas, il le crée à l’aide de `SetScript`. `GetScript` retourne le contenu du fichier et sa valeur de retour n’est pas utilisée.
 
@@ -86,7 +86,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource de Script
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource Script
 
 Cet exemple récupère les informations de la version *conforme* à partir d’un fichier texte sur l’ordinateur de création et stocke ces informations dans la variable `$version`. Lors de la génération du fichier MOF du nœud, DSC remplace les variables `$using:version` dans chaque bloc de script par la valeur de la variable `$version`. Lors de l’exécution, la version *conforme* est stockée dans un fichier texte sur chaque nœud, puis comparée et mise à jour lors des exécutions suivantes.
 

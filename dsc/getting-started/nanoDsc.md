@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation de DSC sur Nano Server
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401437"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054660"
 ---
 # <a name="using-dsc-on-nano-server"></a>Utilisation de DSC sur Nano Server
 
@@ -38,7 +38,7 @@ Modes par envoi et par extraction
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -50,7 +50,7 @@ Modes par envoi et par extraction
 
 - Compilation de configurations (voir [Configurations DSC](../configurations/configurations.md))
 
-  **Problème #1629** Chiffrement de mot de passe (voir [sécurisation du fichier MOF](../pull-server/secureMOF.md)) pendant la configuration de compilation ne fonctionne pas.
+  **Problème :** Le chiffrement de mot de passe (voir [Sécurisation du fichier MOF](../pull-server/secureMOF.md)) pendant la compilation de la configuration ne fonctionne pas.
 
 - Compilation de métaconfigurations (voir [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md))
 
@@ -60,7 +60,7 @@ Modes par envoi et par extraction
 
 - Débogage des ressources DSC (voir [Débogage des ressources DSC](../troubleshooting/debugResource.md))
 
-  **Problème #1629** Ne fonctionne pas si une ressource utilise PsDscRunAsCredential (voir [en cours d’exécution de DSC avec les informations d’identification utilisateur](../configurations/runAsUser.md))
+  **Problème :** Ne fonctionne pas si une ressource utilise PsDscRunAsCredential (voir [Exécution de DSC avec les informations d’identification de l’utilisateur](../configurations/runAsUser.md))
 
 - [Spécification de dépendances entre nœuds](../configurations/crossNodeDependencies.md)
 
@@ -97,12 +97,12 @@ Modes par envoi et par extraction
 - **Groupe**
 - **GroupSet**
 
-  **Problème #1629** Ressources ci-dessus échouent si l’instance spécifique est appelée deux fois (en cours d’exécution la même configuration deux fois)
+  **Problème :** Les ressources ci-dessus échouent si une instance spécifique est appelée deux fois (exécution de la même configuration deux fois)
 
 - **Service**
 - **ServiceSet**
 
-  **Problème #1629** Fonctionne uniquement pour démarrage/arrêt de service (état). Échoue si vous essayez de modifier d’autres attributs de service, comme StartupType, les informations d’identification, la description, etc. L’erreur levée est semblable à :
+  **Problème :** Fonctionne uniquement pour le démarrage/l’arrêt du service (état). Échoue si vous essayez de modifier d’autres attributs de service, comme StartupType, les informations d’identification, la description, etc. L’erreur levée est semblable à :
 
   *Impossible de trouver le type [management.managementobject] : vérifiez que l’assembly contenant ce type est chargé.*
 

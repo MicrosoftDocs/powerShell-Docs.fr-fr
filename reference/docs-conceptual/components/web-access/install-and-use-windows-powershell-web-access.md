@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401635"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056717"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
-Mise à jour : 5 novembre 2013 (modifiée : Août 23, 2017
+Mise à jour : 5 novembre 2013 (modifié le 23 août 2017)
 
-S'applique à : Windows Server 2012 R2, Windows Server 2012
+S'applique à : Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="introduction"></a>Introduction
 
@@ -136,7 +136,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
    - Path: /pswa
    - ApplicationPool : pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath : `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **Example** : `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
    - Path: /pswa
    - ApplicationPool : pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath : `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes.
 
@@ -178,7 +178,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
 7. Dans la boîte de dialogue **Ajouter la liaison de site**, dans le champ **Type**, sélectionnez **https**.
 
 8. Dans le champ **Certificat SSL**, sélectionnez votre certificat signé dans le menu déroulant.
-   Cliquez sur **OK**. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
+   Cliquez sur **OK**. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
    L’application web d’Accès Web Windows PowerShell est à présent configurée pour utiliser votre certificat SSL signé.
 
@@ -271,9 +271,9 @@ Les instructions données dans cette section concernent l’installation de l’
 
 7. Dans le champ **Pool d’applications**, sélectionnez le pool d’applications que vous avez créé à l’étape 3.
 
-8. Dans le champ **Chemin d’accès physique**, naviguez jusqu’à l’emplacement de l’application. Vous pouvez utiliser l’emplacement par défaut, `%windir%/Web/PowerShellWebAccess/wwwroot`. Cliquez sur **OK**.
+8. Dans le champ **Chemin d’accès physique**, naviguez jusqu’à l’emplacement de l’application. Vous pouvez utiliser l’emplacement par défaut, `$env:windir/Web/PowerShellWebAccess/wwwroot`. Cliquez sur **OK**.
 
-9. Suivez les étapes de la procédure [Pour configurer un certificat SSL dans le Gestionnaire IIS](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
+9. Suivez les étapes de la procédure [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
 10. ![](images/SecurityNote.jpeg) Étape de sécurité facultative :
 
@@ -318,7 +318,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
 1. Un pool d’applications est créé automatiquement pour le nouveau site web. Pour utiliser un autre pool d’applications, cliquez sur **Sélectionner** pour sélectionner un pool d’applications à associer au nouveau site web. Sélectionnez l’autre pool d’applications dans la boîte de dialogue **Sélectionner un pool d’applications**, puis cliquez sur **OK**.
 
-1. Dans la zone de texte **Chemin d’accès physique**, accédez à %*windir*%/Web/PowerShellWebAccess/wwwroot.
+1. Dans la zone de texte **Chemin d’accès physique**, accédez à %windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. Dans le champ **Type** de la zone **Liaison**, sélectionnez **https**.
 
@@ -329,7 +329,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
 1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **`www.contoso.com`**. Cliquez sur **OK**.
 
-1. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-Manager) dans cette rubrique.
+1. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
 1. Cliquez sur **OK** pour fermer la boîte de dialogue **Ajouter un site Web**.
 

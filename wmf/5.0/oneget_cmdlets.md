@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 2f05fe96ec792a31fabf3aff0f9e18b40178316c
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 042e9a30068d32dc5860255bdec960371121d866
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893186"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795094"
 ---
 # <a name="packagemanagement-cmdlets"></a>Applets de commande PackageManagement
 
@@ -130,7 +130,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-## <a name="-install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[ Applet de commande Install-Package](/powershell/module/PackageManagement/Install-Package)
+## <a name="install-package-cmdletpowershellmodulepackagemanagementinstall-package"></a>[Applet de commande Install-Package](/powershell/module/PackageManagement/Install-Package)
 
 Cette applet de commande permet d’installer des packages logiciels dans les sources de packages disponibles à l’aide des fournisseurs de packages chargés.
 

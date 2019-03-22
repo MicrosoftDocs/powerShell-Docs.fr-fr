@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002904"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059437"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 
-> S’applique à : Windows PowerShell 5.0
+> S'applique à : Windows PowerShell 5.0
 
 Une fois les [fonctionnalités de rôles](role-capabilities.md) et le [fichier de configuration de session](session-configurations.md) créés, la dernière étape à suivre pour pouvoir utiliser JEA consiste à inscrire le point de terminaison JEA.
 Cette inscription auprès du système a pour effet de mettre le point de terminaison à la disposition des utilisateurs et des moteurs d’automatisation.
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 Cette configuration peut ensuite être appliquée à un système en [appelant directement le Gestionnaire de configuration Local](https://msdn.microsoft.com/powershell/dsc/metaconfig) ou en mettant à jour la [configuration du serveur collecteur](https://msdn.microsoft.com/powershell/dsc/pullserver).
 
 La ressource DSC vous permet également de remplacer le point de terminaison de communication à distance Microsoft.PowerShell par défaut.
-Si vous procédez ainsi, la ressource inscrit automatiquement un point de terminaison de sauvegarde sans contrainte nommé « Microsoft.PowerShell.Restricted » qui a la liste ACL WinRM par défaut (permettant aux membres du groupe Utilisateurs de gestion à distance et du groupe Administrateurs local d’y accéder).
+Si vous procédez ainsi, la ressource inscrit automatiquement un point de terminaison de sauvegarde sans contrainte nommé « Microsoft.PowerShell.Restricted » qui a la liste ACL WinRM par défaut (permettant aux membres du groupe Utilisateurs de gestion à distance et du groupe Administrateurs local d’y accéder).
 
 ## <a name="unregistering-jea-configurations"></a>Désinscription de configurations JEA
 

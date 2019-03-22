@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Écriture d’une ressource DSC personnalisée avec MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678927"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059726"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Écriture d’une ressource DSC personnalisée avec MOF
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Dans cette rubrique, nous allons définir le schéma d’une ressource DSC Windows PowerShell personnalisée dans un fichier MOF et implémenter cette ressource dans un fichier de script Windows PowerShell. Cette ressource personnalisée permet de créer et de gérer un site web.
 
@@ -69,7 +69,8 @@ Notez les éléments suivants concernant le code ci-dessus :
 
 Le script de la ressource implémente la logique de la ressource. Dans ce module, vous devez inclure les trois fonctions **Get-TargetResource**, **Set-TargetResource** et **Test-TargetResource**. Les trois fonctions doivent accepter un jeu de paramètres identique à l’ensemble de propriétés définies dans le schéma MOF que vous avez créé pour votre ressource. Dans ce document, nous appelons cet ensemble de propriétés « propriétés de ressource ». Stockez ces trois fonctions dans un fichier appelé <ResourceName>.psm1. Dans l’exemple suivant, les fonctions sont stockées dans un fichier appelé Demo_IISWebsite.psm1.
 
-> **Remarque** : Quand vous exécutez le même script de configuration plusieurs fois sur votre ressource, vous ne devez pas obtenir d’erreur et la ressource doit avoir le même état que lorsque le script n’est exécuté qu’une seule fois. Pour cela, assurez-vous que vos fonctions **Get-TargetResource** et **TargetResource-Test** ne modifient pas la ressource, et que le fait d’appeler la fonction **Set-TargetResource** plusieurs fois de suite avec les mêmes valeurs de paramètres équivaut toujours à un appel unique.
+> [!NOTE]
+> Quand vous exécutez le même script de configuration plusieurs fois sur votre ressource, vous ne devez pas obtenir d’erreur et la ressource doit avoir le même état que lorsque le script n’est exécuté qu’une seule fois. Pour cela, assurez-vous que vos fonctions **Get-TargetResource** et **TargetResource-Test** ne modifient pas la ressource, et que le fait d’appeler la fonction **Set-TargetResource** plusieurs fois de suite avec les mêmes valeurs de paramètres équivaut toujours à un appel unique.
 
 Dans l’implémentation de la fonction **Get-TargetResource**, utilisez les valeurs de propriétés de ressource de clé qui sont fournies comme paramètres pour vérifier l’état de l’instance de la ressource spécifiée. Cette fonction doit retourner une table de hachage comprenant toutes les propriétés de ressource comme clés, ainsi que les valeurs réelles de ces propriétés comme valeurs correspondantes. Le code suivant montre un exemple.
 
@@ -276,7 +277,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>Prise en charge de PsDscRunAsCredential
 
->**Remarque :** **PsDscRunAsCredential** est pris en charge dans PowerShell 5.0 et versions ultérieures.
+>**Remarque :** **PsDscRunAsCredential** est pris en charge dans PowerShell 5.0 et versions ultérieures.
 
 La propriété **PsDscRunAsCredential** peut être utilisée dans le bloc de ressources [Configurations DSC](../configurations/configurations.md) pour spécifier que la ressource doit être exécutée sous un jeu d’informations d’identification spécifié.
 Pour plus d’informations, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](../configurations/runAsUser.md).
@@ -291,15 +292,15 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="rebooting-the-node"></a>Le redémarrage du nœud
+## <a name="rebooting-the-node"></a>Redémarrage du nœud
 
-Si les actions effectuées votre `Set-TargetResource` fonction nécessite un redémarrage, vous pouvez utiliser un indicateur global pour indiquer le LCM pour redémarrer le nœud. Ce redémarrage se produit directement après le `Set-TargetResource` fonction se termine.
+Si les actions effectuées dans votre fonction `Set-TargetResource` nécessitent un redémarrage, vous pouvez utiliser un indicateur global pour signaler au Gestionnaire de configuration local qu’il faut redémarrer le nœud. Ce redémarrage se produit juste après l’exécution de la fonction `Set-TargetResource`.
 
-À l’intérieur de votre `Set-TargetResource` de fonction, ajoutez la ligne suivante de code.
+À l’intérieur de votre fonction `Set-TargetResource`, ajoutez la ligne de code suivante.
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-Dans l’ordre pour le LCM redémarrer le nœud, le **RebootNodeIfNeeded** indicateur doit être définie sur `$true`. Le **ActionAfterReboot** doit également être défini sur **ContinueConfiguration**, qui est la valeur par défaut. Pour plus d’informations sur la configuration du LCM, consultez [configuration du Gestionnaire de Configuration Local](../managing-nodes/metaConfig.md), ou [configuration du Gestionnaire de Configuration Local (v4)](../managing-nodes/metaConfig4.md).
+Pour que le Gestionnaire de configuration local redémarre le nœud, il faut que l’indicateur **RebootNodeIfNeeded** ait la valeur `$true`. Le paramètre **ActionAfterReboot** doit également être défini sur **ContinueConfiguration**, qui est la valeur par défaut. Pour plus d’informations sur la configuration du Gestionnaire de configuration local, consultez [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md) ou [Configuration du Gestionnaire de configuration local (v4)](../managing-nodes/metaConfig4.md).

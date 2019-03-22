@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Envoi de feedback via les médias sociaux ou les commentaires
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003694"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055000"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Envoi de feedback via les médias sociaux ou les commentaires
 
-Powershell Gallery prend en charge les deux approches pour les utilisateurs qui souhaitent fournir des commentaires publics sur un package :
+PowerShell Gallery prend en charge les deux approches pour les utilisateurs qui souhaitent fournir des commentaires publics sur un package :
 
 - Utiliser les liens sur le côté gauche pour « partager » un package sur les réseaux sociaux Facebook, LinkedIn et Twitter ;
 - utiliser la fonctionnalité Commenter pour publier des commentaires sur un package et permettre aux auteurs de suivre les commentaires sur les packages qu’ils publient.
@@ -26,8 +26,7 @@ Les utilisateurs doivent se connecter au site qu'ils ont choisi afin de partager
 
 Les utilisateurs sont invités à procéder ainsi s’ils souhaitent recommander un package à d’autres personnes.
 PowerShell Gallery vérifie chaque réseau social à la recherche de « partages » du package et un affiche le nombre de fois que le package a été partagé sur chacun des réseaux sociaux.
-Étant donné que cela n'indique que le nombre de fois où un élément a été partagé, cela sera interprété comme si d’autres utilisateurs cliquaient sur « J’aime » pour le package.
-
+Étant donné que cela n’indique que le nombre de fois où un élément a été partagé, cela sera interprété comme si d’autres utilisateurs cliquaient sur « J’aime » pour le package.
 
 ## <a name="comments"></a>Commentaires
 

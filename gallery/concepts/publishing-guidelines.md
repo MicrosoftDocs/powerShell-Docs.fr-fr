@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265567"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056496"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -33,7 +33,7 @@ Les packages qui suivent ces recommandations ont beaucoup plus de chances d’ê
 - Répondre aux commentaires
 - Fournir des modules plutôt que des scripts
 - Fournir des liens vers un site de projet
-- Baliser votre package avec les plateformes et PSEdition(s) compatibles 
+- Baliser votre package avec les plateformes et PSEdition(s) compatibles
 - Inclure des tests incluant vos modules
 - Inclure et/ou lier les termes du contrat de licence
 - Signer votre code
@@ -93,7 +93,7 @@ Il est important de répondre aux utilisateurs qui apportent des commentaires co
 
 PowerShell Gallery propose deux méthodes pour fournir des commentaires :
 
-- Contacter le propriétaire : les utilisateurs peuvent ainsi envoyer un e-mail au(x) propriétaire(s) du package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
+- Contacter le propriétaire : les utilisateurs peuvent ainsi envoyer un e-mail au(x) propriétaire(s) du package. Il est important pour ces derniers de surveiller le compte de messagerie utilisé avec les packages PowerShell Gallery et de répondre aux problèmes soulevés. L’un des inconvénients de cette méthode est que seul l’utilisateur et propriétaire verra la communication et il risque donc de répondre plusieurs fois à la même question.
 - Commentaires : un champ Commentaire est proposé en bas de la page du package.
   L’avantage de ce système est que les autres utilisateurs peuvent voir les commentaires et les réponses, ce qui réduit le nombre de fois où ils doivent répondre à une même question.
   Il est fortement recommandé aux propriétaires de packages de suivre les commentaires de chaque package.
@@ -136,15 +136,15 @@ L’ajout d’un lien s’effectue en incluant ProjectURI dans la section PSData
 
 Lorsqu’un ProjectURI est indiqué, PowerShell Gallery inclut un lien vers le Site de projets sur le côté gauche de la page du package.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Baliser votre package avec les plateformes et PSEdition(s) compatibles 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Baliser votre package avec les plateformes et PSEdition(s) compatibles
 
-Utiliser les balises suivantes pour montrer aux utilisateurs qui fonctionnent bien avec leur environnement de packages :
+Utilisez les balises suivantes pour montrer aux utilisateurs quels packages fonctionneront correctement avec leur environnement :
 
-- PSEdition_Desktop : Les Packages qui sont compatibles avec Windows PowerShell 
-- PSEdition_Core : Les Packages qui sont compatibles avec Powershell Core 
-- Windows : Les Packages qui sont compatibles avec le système d’exploitation Windows
-- Linux : Les Packages qui sont compatibles avec les systèmes d’exploitation Linux 
-- MacOS : Les Packages qui sont compatibles avec le système d’exploitation Mac
+- PSEdition_Desktop : packages compatibles avec Windows PowerShell
+- PSEdition_Core : packages compatibles avec PowerShell Core
+- Windows : packages compatibles avec le système d’exploitation Windows
+- Linux : packages compatibles avec les systèmes d’exploitation Linux
+- MacOS : packages compatibles avec le système d’exploitation Mac
 
 ## <a name="include-tests"></a>Inclure des tests
 
@@ -197,7 +197,7 @@ La signature du catalogue complète mais ne remplace pas la signature des fichie
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>Suivre les instructions SemVer pour la gestion de versions
 
-[SemVer](http://semver.org/) est une convention publique qui explique comment structurer et modifier une version pour faciliter l’interprétation des modifications.
+[SemVer](http://semver.org/) est une convention publique qui explique comment structurer et changer une version pour faciliter l’interprétation des modifications.
 La version de votre package doit être incluse dans les données de manifeste.
 
 - La version doit être structurée sous forme de 3 blocs numériques séparés par des points, par exemple 0.1.1 ou 4.11.192
@@ -251,4 +251,3 @@ L’approche la plus efficace que nous ayons trouvée pour les packages publiés
 - Décider de signer ou non le code de votre package
 - Lorsque vous estimez que le projet est prêt à être utilisé dans un environnement de production, publiez une version 1.0.0 version dans PowerShell Gallery
 - Continuer à recueillir des commentaires et effectuer une itération sur votre code en fonction des entrées utilisateur
-

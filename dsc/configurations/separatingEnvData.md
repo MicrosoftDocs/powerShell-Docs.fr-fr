@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Séparation des données de configuration et d’environnement
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401293"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794924"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Séparation des données de configuration et d’environnement
 
->S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+>S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Il peut être utile de séparer les données utilisées dans une configuration DSC de la configuration elle-même en s’aidant des données de configuration.
 Pour y parvenir, vous pouvez utiliser une seule et même configuration pour plusieurs environnements.
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Examinons un exemple complet qui utilise une configuration unique pour configurer les environnements de développement et de production d’un site web. Dans l’environnement de développement, IIS et SQL Server sont installés sur un même nœud. Dans l’environnement de production, IIS et SQL Server sont installés sur des nœuds séparés. Nous allons utiliser un fichier de données de configuration .psd1 pour spécifier les données des deux environnements.
 
- ### <a name="configuration-data-file"></a>Fichier de données de configuration
+### <a name="configuration-data-file"></a>Fichier de données de configuration
 
 Nous définissons les données de l’environnement de développement et de production dans un fichier nommé `DevProdEnvData.psd1` comme suit :
 
@@ -135,7 +135,7 @@ Le contenu du site est également différent, comme spécifié par les propriét
 
 À la fin du script de configuration, nous appelons la configuration (nous la compilons dans un document MOF), en passant `DevProdEnvData.psd1` comme paramètre `$ConfigurationData`.
 
->**Remarque :** Cette configuration nécessite les modules `xSqlPs` et `xWebAdministration` doit être installé sur le nœud cible.
+>**Remarque :** Cette configuration exige l’installation des modules `xSqlPs` et `xWebAdministration` sur le nœud cible.
 
 Nous allons définir la configuration dans un fichier nommé `MyWebApp.ps1` :
 

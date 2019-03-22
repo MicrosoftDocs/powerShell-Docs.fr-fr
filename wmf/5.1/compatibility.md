@@ -3,16 +3,17 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Compatibilité de WMF 5.1 avec les systèmes d’exploitation
-ms.openlocfilehash: f0037dbc3b172fc98f5f8044a794e49f7727a05c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f4d7d1403c1f397bf6720485d7a7302543c2010f
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187508"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794959"
 ---
-# <a name="wmf-51-operating-system-compatibility"></a>Compatibilité de WMF 5.1 avec les systèmes d’exploitation #
+# <a name="wmf-51-operating-system-compatibility"></a>Compatibilité de WMF 5.1 avec les systèmes d’exploitation
 
-> Remarque : Ces informations sont préliminaires et susceptibles d’être modifiées.
+> [!NOTE]
+> Ces informations sont provisoires et sujettes à modification.
 
 | Version du système d'exploitation | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
@@ -29,11 +30,9 @@ ms.locfileid: "34187508"
 | Windows Server 2003| | | |  | Oui |
 | Windows XP | | | |  | Oui |
 
-
-À propos de « Fourni par défaut » : les fonctionnalités de WMF 5.0 ont été incluses dans la version RTM d’origine de Windows 10.
+À propos de « Fourni par défaut* » : les fonctionnalités de WMF 5.0 ont été incluses dans la version RTM d’origine de Windows 10.
 Les fonctionnalités de WMF 5.1 ont été incluses dans Windows Server 2016 et Windows 10 Anniversary Edition.
 WMF 5.1 n’est pas applicable pour ces versions de système d’exploitation, les mises à jour étant fournies par le biais de Windows Update.
-
 
 Il est important de noter que WMF n’est pas fourni avec Windows.
 WMF est un package de mise à niveau fournissant un ensemble de fonctionnalités Windows pour les versions Windows précédemment publiées.

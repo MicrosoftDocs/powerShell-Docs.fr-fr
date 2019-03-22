@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Capacités de rôle JEA
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522937"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055051"
 ---
 # <a name="jea-role-capabilities"></a>Capacités de rôle JEA
 
-> S’applique à : Windows PowerShell 5.0
+> S'applique à : Windows PowerShell 5.0
 
 Lorsque vous créez un point de terminaison JEA, vous devez définir une ou plusieurs « capacités de rôle », qui décrivent *ce que* quelqu’un peut faire dans une session JEA.
 Une capacité de rôle est un fichier de données PowerShell avec l’extension .psrc qui liste toutes les applets de commande, toutes les fonctions, tous les fournisseurs et tous les programmes externes devant être accessibles aux utilisateurs qui se connectent.
@@ -58,7 +58,7 @@ La documentation d’aide PowerShell contient plusieurs exemples de configuratio
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>Autoriser les fonctions et les applets de commande PowerShell
 
-Pour autoriser les utilisateurs à exécuter des fonctions ou des applets de commande PowerShell, ajoutez le nom de l’applet de commande ou de la fonction au champ VisbibleCmdlets ou VisibleFunctions.
+Pour autoriser les utilisateurs à exécuter des fonctions ou des applets de commande PowerShell, ajoutez le nom de l’applet de commande ou de la fonction au champ VisibleFunctions ou VisibleFunctions.
 Si vous ne savez pas si une commande est une applet de commande ou une fonction, vous pouvez exécuter `Get-Command <name>` et vérifier la propriété « CommandType » dans la sortie.
 
 ```powershell
@@ -101,7 +101,6 @@ Exemple                                                                         
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Permet à l’utilisateur d’exécuter `My-Func` avec le paramètre `Param1`. Seules les valeurs « Value1 » et « Value2 » peuvent être transmises au paramètre.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Permet à l’utilisateur d’exécuter `My-Func` avec le paramètre `Param1`. Toutes les valeurs commençant par « contoso » peuvent être transmises au paramètre.
 
-
 > [!WARNING]
 > Les meilleures pratiques de sécurité déconseillent d’utiliser des caractères génériques pour définir des fonctions ou des applets de commande visibles.
 > Au contraire, listez explicitement chaque commande approuvée de façon qu’aucune autre commande partageant le même schéma d’affectation de noms ne soit autorisée par inadvertance.
@@ -129,7 +128,7 @@ Il est possible pour cela d’utiliser `net share`.
 Toutefois, autoriser net.exe est très dangereux, car l’administrateur pourrait tout aussi facilement utiliser la commande pour obtenir des privilèges Administrateur avec `net group Administrators unprivilegedjeauser /add`.
 Il est préférable d’autoriser [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx), qui donne le même résultat mais a une portée bien plus limitée.
 
-Lorsque vous mettez des commandes externes à la disposition des utilisateurs dans une session JEA, spécifiez toujours le chemin d’accès complet à l’exécutable pour éviter qu’un programme portant le même nom (et potentiellement malveillant), placé ailleurs sur le système, ne soit exécuté à la place.
+Quand vous mettez des commandes externes à la disposition des utilisateurs dans une session JEA, spécifiez toujours le chemin complet de l’exécutable pour éviter qu’un programme portant le même nom (et potentiellement malveillant), placé ailleurs sur le système, ne soit exécuté à la place.
 
 ### <a name="allowing-access-to-powershell-providers"></a>Autoriser l’accès aux fournisseurs PowerShell
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > N’oubliez pas d’ajouter le nom de vos fonctions personnalisées au champ **VisibleFunctions** pour qu’elles puissent être exécutées par les utilisateurs JEA.
 
-
 Le corps (bloc de script) des fonctions personnalisées s’exécute dans le mode de langage par défaut du système et n’est pas soumis aux contraintes de langage de JEA.
 Cela signifie que les fonctions peuvent accéder au système de fichiers et au registre, puis exécuter des commandes qui n’étaient pas visibles dans le fichier de capacités de rôle.
 Prenez soin d’éviter d’autoriser l’exécution de code arbitraire lorsque vous utilisez les paramètres et d’éviter d’injecter directement l’entrée utilisateur dans des applets de commande comme `Invoke-Expression`.
@@ -211,14 +209,12 @@ Consultez la page [Comprendre un module PowerShell](https://msdn.microsoft.com/l
 
 ## <a name="updating-role-capabilities"></a>Mettre à jour les capacités de rôle
 
-
 Vous pouvez mettre à jour un fichier de capacités de rôle à tout moment en enregistrant simplement les modifications dans le fichier de capacités de rôle.
 Les nouvelles sessions JEA lancées après la mise à jour de la capacité du rôle reflèteront les fonctionnalités modifiées.
 
 C’est pourquoi il est très important de contrôler l’accès au dossier de capacités de rôle.
 Seuls les administrateurs de confiance doivent pouvoir modifier les fichiers de capacités de rôle.
 Si un utilisateur non fiable peut modifier les fichiers de capacités de rôle, il peut facilement s’accorder l’accès aux applets de commande qui lui permettront d’élever ses privilèges.
-
 
 Les administrateurs qui souhaitent verrouiller l’accès aux capacités de rôle doivent vérifier que le système local a un accès en lecture aux fichiers de capacités de rôle et aux modules qui les contiennent.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

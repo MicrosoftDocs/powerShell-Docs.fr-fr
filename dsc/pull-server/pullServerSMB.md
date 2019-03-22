@@ -2,16 +2,16 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuration d’un serveur collecteur SMB DSC
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401209"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057754"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuration d’un serveur collecteur SMB DSC
 
-S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-La configuration crée le répertoire `C:\DscSmbShare`, s’il n’existe pas déjà et utilise ensuite ce répertoire comme partage de fichiers SMB. **FullAccess** doit être accordée à tous les comptes devant écrire ou supprimer le partage de fichiers. **ReadAccess** doit être accordée à tous les nœuds client obtenant des configurations et/ou les ressources DSC à partir du partage.
+La configuration crée le répertoire `C:\DscSmbShare`, s’il n’existe pas, et utilise ensuite ce répertoire comme partage de fichiers SMB. L’autorisation **FullAccess** doit être accordée à tous les comptes qui doivent écrire dans le partage de fichiers ou en supprimer un élément. L’autorisation **ReadAccess** doit être accordée à tous les nœuds clients qui obtiennent des configurations et/ou des ressources DSC à partir du partage.
 
 > [!NOTE]
-> DSC s’exécute sous le compte système par défaut, l’ordinateur lui-même doit avoir accès au partage.
+> DSC s’exécutant sous le compte système par défaut, l’ordinateur doit avoir accès au partage.
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Donner accès au système de fichiers pour le client collecteur
 
-L’autorisation **ReadAccess** accordée à un nœud client permet à ce dernier d’accéder au partage SMB, mais pas aux fichiers et dossiers dans ce partage. Vous devez accorder explicitement l’accès des nœuds pour le dossier de partage SMB et les sous-dossiers. Vous pouvez le faire avec DSC à l’aide de la ressource **cNtfsPermissionEntry**, qui est contenue dans le module [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0). La configuration suivante ajoute un bloc **cNtfsPermissionEntry** qui accorde un accès ReadAndExecute au client collecteur :
+L’autorisation **ReadAccess** accordée à un nœud client permet à ce dernier d’accéder au partage SMB, mais pas aux fichiers et dossiers dans ce partage. Vous devez accorder explicitement aux nœuds clients l’accès au dossier et aux sous-dossiers du partage SMB. Vous pouvez le faire avec DSC à l’aide de la ressource **cNtfsPermissionEntry**, qui est contenue dans le module [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0). La configuration suivante ajoute un bloc **cNtfsPermissionEntry** qui accorde un accès ReadAndExecute au client collecteur :
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Les fichiers MOF de configuration doivent être nommés *ConfigurationID*.mof, o
 > [!NOTE]
 > Vous devez utiliser les ID de configuration si vous utilisez un serveur collecteur SMB. Les noms de configuration ne sont pas pris en charge pour SMB.
 
-Chaque module de ressources doit être compressé et nommé selon le modèle suivant : `{Module Name}_{Module Version}.zip` Par exemple, un module xWebAdminstration avec une version de module 3.1.2.0 est nommé « xWebAdministration_3.2.1.0.zip ». Chaque version d’un module doit être contenue dans un seul fichier zip. Des versions distinctes d’un module dans un fichier zip ne sont pas pris en charge. Avant de créer le package des modules de ressources DSC pour une utilisation avec le serveur collecteur, vous devez apporter une petite modification à la structure de répertoire.
+Chaque module de ressources doit être compressé et nommé selon le modèle suivant : `{Module Name}_{Module Version}.zip` Par exemple, un module xWebAdminstration avec une version de module 3.1.2.0 est nommé « xWebAdministration_3.2.1.0.zip ». Chaque version d’un module doit être contenue dans un seul fichier zip. Les versions distinctes d’un module dans un fichier zip ne sont pas prises en charge. Avant de créer le package des modules de ressources DSC à utiliser avec le serveur collecteur, vous devez apporter une petite modification à la structure de répertoires.
 
 Le format par défaut des modules contenant des ressources DSC dans WMF 5.0 est `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
 
@@ -207,7 +207,7 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>Accusés de réception
 
-Spécial Merci aux personnes suivantes :
+Un remerciement particulier aux personnes suivantes :
 
 - Mike F. Robbins, dont les billets sur l’utilisation de SMB pour DSC ont permis de documenter le contenu de cette rubrique. Son blog : [Mike F Robbins](http://mikefrobbins.com/).
 - Serge Nikalaichyk, qui a créé le module **cNtfsAccessControl**. La source de ce module se trouve dans [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
