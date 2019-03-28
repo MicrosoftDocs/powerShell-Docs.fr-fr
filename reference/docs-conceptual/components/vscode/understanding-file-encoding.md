@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VSCode et PowerShell
 description: Configuration de l’encodage de fichier dans VSCode et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795112"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320402"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Présentation de l’encodage de fichier dans VSCode et PowerShell
 
@@ -215,7 +215,7 @@ Notez que cela ne serait pas conservé d’un démarrage à un autre.
 ### <a name="source-control-software"></a>Logiciels de contrôle de code source
 
 Certains outils de contrôle de code source, tels que GIT, ignorent les encodages. GIT ne fait que suivre les octets.
-D’autres, tels que TFS ou Mercurial, sont susceptibles de ne pas le faire. Même certains outils GIT s’appuient sur le décodage du texte.
+Ce n’est pas forcément le cas de tous, comme Azure DevOps ou Mercurial. Même certains outils GIT s’appuient sur le décodage du texte.
 
 Quand c’est le cas, veillez à :
 
