@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860045"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920388"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programmeur&#39;s Guide
 
@@ -57,7 +57,7 @@ Si vous exposez un magasin de données que vous devez accéder à l’utilisateu
 
 Windows PowerShell inclut la valeur par défaut hôte application powershell.exe, qui est une application console qui interagit avec l’utilisateur et héberge le runtime de Windows PowerShell à l’aide d’une fenêtre de console.
 
-Rarement vous devez écrire votre propre application hôte pour Windows PowerShell, bien que la personnalisation est prise en charge. Un cas dans lesquels vous devrez peut-être votre propre application est lorsque vous avez besoin d’une interface utilisateur graphique est plus riche que l’interface fournie par l’application d’hôte par défaut. Vous pourriez également une application personnalisée lorsque vous basez votre GUI sur la ligne de commande. Pour plus d’informations, consultez[comment créer une Application hôte de Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Rarement vous devez écrire votre propre application hôte pour Windows PowerShell, bien que la personnalisation est prise en charge. Un cas dans lesquels vous devrez peut-être votre propre application est lorsque vous avez besoin d’une interface utilisateur graphique est plus riche que l’interface fournie par l’application d’hôte par défaut. Vous pourriez également une application personnalisée lorsque vous basez votre GUI sur la ligne de commande. Pour plus d’informations, consultez [comment créer une Application hôte de Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Service d’exécution Windows PowerShell
 
@@ -99,10 +99,10 @@ Pour plus d’informations sur le démarrage à utiliser l’interpréteur de co
 
 |Rubrique|Définition|
 |-----------|----------------|
-|[Comment créer un fournisseur PowerShell de Windows](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment générer un fournisseur Windows PowerShell pour Windows PowerShell.|
+|[Guide pratique pour créer un fournisseur Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment générer un fournisseur Windows PowerShell pour Windows PowerShell.|
 |[Comment créer une Application hôte PowerShell de Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Cette section décrit comment écrire une application hôte qui manipule une instance d’exécution et comment écrire une application hôte qui implémente son propre hôte personnalisé.|
-|[Comment créer un composant logiciel enfichable PowerShell Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire tous les fournisseurs et applets de commande dans un assembly et la création d’un composant logiciel enfichable personnalisé.|
-|[Comment créer un interpréteur de commandes de Console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
+|[Guide pratique pour créer un composant logiciel enfichable Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire tous les fournisseurs et applets de commande dans un assembly et la création d’un composant logiciel enfichable personnalisé.|
+|[Guide pratique pour créer un shell de console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
 |[Concepts de Windows PowerShell](./windows-powershell-concepts.md)|Cette section contient des informations conceptuelles qui vous aideront à comprendre Windows PowerShell à partir du point de vue d’un développeur.|
 
 ## <a name="see-also"></a>Voir aussi
