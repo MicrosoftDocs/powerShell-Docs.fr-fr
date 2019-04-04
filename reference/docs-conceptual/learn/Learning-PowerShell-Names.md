@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,applet de commande
 title: Apprentissage des noms de commande PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012464"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623719"
 ---
 # <a name="learning-powershell-command-names"></a>Apprentissage des noms de commande PowerShell
 
-L’apprentissage des noms de commandes et des paramètres prend beaucoup de temps avec la plupart des interfaces de ligne de commande. Le problème est qu’il y a peu de modèles. Mémorisation des commandes sont le seul moyen pour en savoir plus les commandes et paramètres que vous devez utiliser régulièrement.
+L’apprentissage des noms de commandes et des paramètres prend beaucoup de temps avec la plupart des interfaces de ligne de commande. Le problème est qu’il y a peu de modèles. La mémorisation est le seul moyen d’assimiler les commandes et paramètres utilisés régulièrement.
 
 Face à une nouvelle commande ou à un nouveau paramètre, on ne peut pas toujours utiliser ce qu’on connaît déjà. Il faut trouver son nom et le retenir. En règle générale, les interfaces de ligne de commande commencent par un petit éventail d’outils et évoluent par ajouts successifs. On comprend facilement pourquoi il n’existe aucune structure standard.
 En effet, chaque commande constitue un outil distinct. PowerShell présente une meilleure façon de gérer les noms de commandes.
@@ -25,7 +25,7 @@ Par ailleurs, ces commandes ont des spécifications de paramètres irrégulière
 Pour lister les tâches en cours d’exécution sur DC01, vous utiliserez le paramètre **/S** et le nom de l’ordinateur sans les barres obliques inverses. Par exemple, `tasklist /S DC01`.
 
 > [!NOTE]
-> Avant PowerShell v6, `sc` était un alias de la cmdlet `Set-Content`. Pour exécuter la commande **sc.exe**, il faut inclure l’extension de fichier.
+> Avant PowerShell v6, `sc` était un alias de la cmdlet `Set-Content`. Par conséquent, pour exécuter la commande **sc.exe** dans une version de PowerShell antérieure à v6, vous devez inclure le nom de fichier complet **sc.exe** , y compris l’extension de fichier **exe**.
 
 Les services et les processus sont des exemples d’éléments administrables d’un ordinateur qui ont des cycles de vie bien définis. On peut les démarrer, les arrêter ou obtenir la liste de tous ceux qui sont en cours d’exécution. Malgré les différences techniques importantes qui les séparent, les actions effectuées sur les services et sur les processus sont conceptuellement identiques. En outre, les choix de personnalisation d’une action par des paramètres peuvent également être similaires sur le plan conceptuel.
 

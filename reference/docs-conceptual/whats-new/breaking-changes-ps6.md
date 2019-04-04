@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795689"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623923"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
 
@@ -61,6 +61,15 @@ Au lieu de cela, nous vous recommandons d’utiliser les cmdlets CIM (également
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 En raison de l’utilisation des API non prises en charge, `Microsoft.PowerShell.LocalAccounts` a été supprimé de PowerShell jusqu’à ce qu’une meilleure solution soit trouvée.
+
+### <a name="-computer-cmdlets"></a>Applets de commande `*-Computer`
+
+En raison de l’utilisation d’API non prises en charge, les applets de commande suivantes ont été supprimées de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée.
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-Computer
 
 ### <a name="-counter-cmdlets"></a>Applets de commande `*-Counter`
 

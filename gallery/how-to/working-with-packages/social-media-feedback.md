@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Envoi de feedback via les médias sociaux ou les commentaires
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055000"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623889"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Envoi de feedback via les médias sociaux ou les commentaires
 
@@ -29,6 +29,10 @@ PowerShell Gallery vérifie chaque réseau social à la recherche de « partage
 Étant donné que cela n’indique que le nombre de fois où un élément a été partagé, cela sera interprété comme si d’autres utilisateurs cliquaient sur « J’aime » pour le package.
 
 ## <a name="comments"></a>Commentaires
+
+> [!IMPORTANT]
+> Le système de gestion des commentaires Livefyre est fourni par un fournisseur tiers et n’est plus pris en charge.
+> Le système Livefyre ne sera plus disponible sur PowerShell Gallery à compter du 01/05/2019. 
 
 PowerShell Gallery utilise le service LiveFyre pour permettre aux utilisateurs de commenter sur les packages.
 Les utilisateurs qui ont des recommandations ou des commentaires peuvent utiliser cette fonctionnalité pour fournir des commentaires qui sont visibles par toute personne qui consulte la page du package.

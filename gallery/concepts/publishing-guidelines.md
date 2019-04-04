@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056496"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623906"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -145,6 +145,9 @@ Utilisez les balises suivantes pour montrer aux utilisateurs quels packages fonc
 - Windows : packages compatibles avec le système d’exploitation Windows
 - Linux : packages compatibles avec les systèmes d’exploitation Linux
 - MacOS : packages compatibles avec le système d’exploitation Mac
+
+Si votre package est balisé avec la ou les plateformes compatibles, il sera inclus dans les filtres de recherche de la galerie dans le volet gauche des résultats de recherche. Si vous hébergez votre package sur GitHub, lorsque vous le balisez, vous pouvez également profiter de nos [protections de compatibilité PowerShell Gallery](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![protection de compatibilité](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## <a name="include-tests"></a>Inclure des tests
 

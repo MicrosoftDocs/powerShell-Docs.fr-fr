@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,applet de commande
 title: Présentation des pipelines PowerShell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401216"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623957"
 ---
 # <a name="understanding-pipelines"></a>Présentation des pipelines
 
@@ -63,6 +63,18 @@ La pagination réduit également l’utilisation du processeur, car le traitemen
 
 Vous pouvez voir la différence dans le Gestionnaire des tâches de Windows pour surveiller l’utilisation du processeur et de la mémoire par PowerShell. Exécutez la commande suivante : `Get-ChildItem C:\Windows -Recurse`. Comparez l’utilisation du processeur et de la mémoire avec cette commande : `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> Tous les hôtes PowerShell ne prennent pas en charge le paramètre **Pagination**. Par exemple, lorsque vous tentez d’utiliser le paramètre **Pagination** dans PowerShell ISE, vous voyez l’erreur suivante :
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>Objets dans le pipeline
 
 Lorsque vous exécutez une cmdlet dans PowerShell, vous voyez une sortie texte, car il est de nécessaire de représenter les objets sous forme de texte dans une fenêtre de console. La sortie texte peut ne pas afficher toutes les propriétés de l’objet en cours de sortie.
@@ -82,7 +94,7 @@ La sortie texte est un résumé des informations, non une représentation compl�
 Lorsque vous dirigez la sortie vers la cmdlet `Get-Member`, vous obtenez des informations sur l’objet retourné par `Get-Location`.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output
