@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Redirection de données à l’aide d’applets de commande Out
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401305"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293297"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Redirection de données à l’aide d’applets de commande Out-*
 
@@ -68,7 +68,7 @@ Cela s’applique à toutes les applets de commande **Out**. Une applet de comma
 > [!NOTE]
 > Toutes les applets de commande **Out** restituent la sortie en tant que texte, en utilisant la mise en forme applicable à la fenêtre de console, y compris les limites de longueur de ligne.
 
-#### <a name="paging-console-output-out-host"></a>Pagination de la sortie de la console (Out-Host)
+## <a name="paging-console-output-out-host"></a>Pagination de la sortie de la console (Out-Host)
 
 Par défaut, Windows PowerShell envoie les données à la fenêtre hôte, ce qui est exactement ce que fait l’applet de commande Out-Host. La principale utilisation de l’applet de commande Out-Host est la pagination des données, que nous avons abordée précédemment. Par exemple, la commande suivante utilise l’applet de commande Out-Host pour paginer la sortie de l’applet de commande Get-Command :
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Ignorance de la sortie (Out-Null)
+## <a name="discarding-output-out-null"></a>Ignorance de la sortie (Out-Null)
 
 L’applet de commande **Out-Null** est conçue pour ignorer toute entrée qu’elle reçoit. Cela est utile pour ignorer des données superflues que vous recevez suite à l’exécution d’une commande. Lorsque vous tapez la commande suivante, celle-ci ne retourne rien :
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Impression de données (Out-Printer)
+## <a name="printing-data-out-printer"></a>Impression de données (Out-Printer)
 
 L’applet de commande **Out-Printer** permet d’imprimer des données. Si vous ne fournissez pas de nom d’imprimante, l’applet de commande **Out-Printer** utilise votre imprimante par défaut. Vous pouvez utiliser n’importe quelle imprimante Windows en spécifiant son nom d’affichage. Vous n’avez pas besoin de mappage de port d’imprimante ou même d’une imprimante physique réelle. Par exemple, si les outils de Microsoft Office Document Imaging sont installés, vous pouvez envoyer les données vers un fichier image en tapant ce qui suit :
 
@@ -119,7 +119,7 @@ L’applet de commande **Out-Printer** permet d’imprimer des données. Si vous
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Enregistrement de données (Out-File)
+## <a name="saving-data-out-file"></a>Enregistrement de données (Out-File)
 
 Vous pouvez envoyer une sortie vers un fichier plutôt que vers la fenêtre de console en utilisant l’applet de commande **Out-File**. La ligne de commande suivante envoie une liste de processus au fichier **C:\\temp\\processlist.txt** :
 

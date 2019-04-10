@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation des fichiers, dossiers et clés de Registre
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401977"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293093"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Utilisation des fichiers, dossiers et clés de Registre
 
 Windows PowerShell utilise le substantif **Item** pour faire référence aux éléments figurant sur un lecteur Windows PowerShell. En relation avec le fournisseur FileSystem de Windows PowerShell, le terme **Item** peut désigner un fichier, un dossier ou le lecteur Windows PowerShell. Nous allons examiner en détail comment répertorier et utiliser ces éléments, ces tâches étant essentielles dans la plupart des environnements d'administration.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Énumération des fichiers, des dossiers et des clés de Registre (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Énumération des fichiers, des dossiers et des clés de Registre (Get-ChildItem)
 
 L’obtention d’une collection d’éléments à partir d’un emplacement particulier étant une tâche très courante, l’applet de commande **Get-ChildItem** est conçue pour retourner tous les éléments figurant dans un conteneur tel qu’un dossier.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Vous pouvez combiner ces paramètres pour personnaliser davantage les sorties.
 
-#### <a name="listing-all-contained-items--recurse"></a>Affichage de la liste de tous les éléments contenus (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Affichage de la liste de tous les éléments contenus (-Recurse)
 
 Pour afficher à la fois les éléments d’un dossier Windows et ceux contenus dans ses sous-dossiers, utilisez le paramètre **Recurse** de l’applet de commande **Get-ChildItem**. La liste affiche tous les éléments contenus dans le dossier Windows et ses sous-dossiers. Par exemple :
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Filtrage des éléments par nom (-Name)
+### <a name="filtering-items-by-name--name"></a>Filtrage des éléments par nom (-Name)
 
 Pour afficher uniquement les noms des éléments, utilisez le paramètre **Name** de l’applet de commande **Get-Childitem** :
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Affichage forcé de la liste des éléments cachés (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Affichage forcé de la liste des éléments cachés (-Force)
 
 Les éléments normalement invisibles dans l’Explorateur de fichiers ou dans Cmd.exe n’apparaissent pas dans la sortie d’une commande **Get-ChildItem**. Pour afficher les éléments masqués, utilisez le paramètre **Force** de l’applet de commande **Get-ChildItem**. Par exemple :
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Ce paramètre est nommé Force, car il permet de remplacer de force le comportement normal de la commande **Get-ChildItem**. Force est un paramètre couramment employé qui force une action dont l'exécution n'est généralement pas assurée par une applet de commande. Notez toutefois qu'il n'exécute aucune action susceptible de compromettre la sécurité du système.
 
-#### <a name="matching-item-names-with-wildcards"></a>Recherche de noms d'éléments avec des caractères génériques
+### <a name="matching-item-names-with-wildcards"></a>Recherche de noms d'éléments avec des caractères génériques
 
 La commande **Get-ChildItem** accepte les caractères génériques dans le chemin d’accès des éléments à répertorier.
 
@@ -122,7 +122,7 @@ Pour rechercher tous les fichiers dont le nom commence par **x** ou **z**, tap
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Exclusion d'éléments (-Exclude)
+### <a name="excluding-items--exclude"></a>Exclusion d'éléments (-Exclude)
 
 Vous pouvez exclure des éléments spécifiques à l’aide du paramètre **Exclude** de l’applet de commande Get-ChildItem. Vous pouvez ainsi effectuer des opérations de filtrage complexes à l'aide d'une seule instruction.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Combinaison de paramètres Get-ChildItem
+### <a name="mixing-get-childitem-parameters"></a>Combinaison de paramètres Get-ChildItem
 
 Vous pouvez utiliser plusieurs paramètres de l’applet de commande **Get-ChildItem** dans la même commande. Avant de combiner des paramètres, assurez-vous de bien comprendre à quoi correspondent les caractères génériques. Par exemple, la commande suivante ne retourne aucun résultat :
 

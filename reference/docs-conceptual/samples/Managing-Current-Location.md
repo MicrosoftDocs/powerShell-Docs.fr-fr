@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion de l'emplacement actuel
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401768"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293178"
 ---
 # <a name="managing-current-location"></a>Gestion de l'emplacement actuel
 
@@ -16,7 +16,7 @@ Quand vous parcourez des systèmes de dossiers dans l'Explorateur de fichiers, v
 
 Windows PowerShell utilise le substantif **Location** pour faire référence au répertoire de travail, et implémente une famille d’applets de commande pour vous permettre d’examiner et de manipuler votre emplacement.
 
-### <a name="getting-your-current-location-get-location"></a>Obtention de votre emplacement actuel (Get-Location)
+## <a name="getting-your-current-location-get-location"></a>Obtention de votre emplacement actuel (Get-Location)
 
 Pour déterminer le chemin d’accès à l’emplacement de votre répertoire actif, entrez la commande **Get-Location** :
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > L’applet de commande Get-Location est similaire à la commande **pwd** dans l’interpréteur de commandes BASH. L’applet de commande Set-Location est similaire à la commande **cd** dans Cmd.exe.
 
-### <a name="setting-your-current-location-set-location"></a>Définition de votre emplacement actuel (Set-Location)
+## <a name="setting-your-current-location-set-location"></a>Définition de votre emplacement actuel (Set-Location)
 
 La commande **Get-Location** s’utilise avec la commande **Set-Location**. La commande **Set-Location** permet de spécifier l’emplacement de votre répertoire actif.
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Enregistrement et rappel des emplacements récents (Push-Location et Pop-Location)
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Enregistrement et rappel des emplacements récents (Push-Location et Pop-Location)
 
 Quand vous passez d'un emplacement à un autre, il est utile de faire le suivi des emplacements visités et d'être en mesure de retourner à l'emplacement précédent. L’applet de commande **Push-Location** dans Windows PowerShell crée un historique chronologique (ou « pile ») des chemins d’accès aux répertoires visités. Pour revenir en arrière dans l’historique des chemins d’accès aux répertoires, utilisez l’applet de commande complémentaire, **Pop-Location**.
 

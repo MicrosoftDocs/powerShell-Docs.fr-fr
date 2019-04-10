@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de clés de Registre
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402060"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293188"
 ---
 # <a name="working-with-registry-keys"></a>Utilisation de clés de Registre
 
 Étant donné que les clés de Registre sont des éléments sur des lecteurs Windows PowerShell, leur utilisation est très similaire à l’utilisation de fichiers et dossiers. Une différence importante est que chaque élément sur un lecteur Windows PowerShell basé sur un Registre est un conteneur, tout comme un dossier sur un lecteur du système de fichiers. En revanche, les entrées de Registre et les valeurs qui leur sont associées sont des propriétés des éléments, pas des éléments distincts.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Affichage de la liste de toutes les sous-clés d’une clé de Registre
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Affichage de la liste de toutes les sous-clés d’une clé de Registre
 
 Vous pouvez afficher tous les éléments figurant directement à l’intérieur d’une clé de Registre à l’aide de l’applet de commande **Get-ChildItem**. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche les éléments figurant directement dans le lecteur Windows PowerShell HKCU:, qui correspond à la ruche du Registre HKEY_CURRENT_USER :
 
@@ -58,7 +58,7 @@ L’applet de commande **Get-ChildItem** peut exécuter des fonctionnalités de 
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Copie de clés
+## <a name="copying-keys"></a>Copie de clés
 
 La copie s’effectue à l’aide de l’applet de commande **Copy-Item**. La commande suivante copie HKLM:\\SOFTWARE\\Microsoft\\Window\\\CurrentVersion et toutes ses propriétés dans HKCU:\\, en créant une nouvelle clé nommée « CurrentVersion » :
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Vous pouvez toujours utiliser d’autres outils déjà disponibles pour effectuer des copies du système de fichiers. Les outils d’édition du Registre (dont reg.exe, regini.exe et regedit.exe) et les objets COM qui prennent en charge l’édition du Registre (par exemple, WScript.Shell et la classe StdRegProv de WM) peuvent être utilisés à partir de Windows PowerShell.
 
-### <a name="creating-keys"></a>Création de clés
+## <a name="creating-keys"></a>Création de clés
 
 Créer des clés dans le Registre est plus simple que créer un élément dans un système de fichiers. Étant donné que toutes les clés de Registre sont des conteneurs, il est inutile spécifier le type d’élément. Vous devez simplement fournir un chemin d’accès explicite, par exemple :
 
@@ -88,7 +88,7 @@ Pour spécifier une clé, vous pouvez également utiliser un chemin d’accès b
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Suppression de clés
+## <a name="deleting-keys"></a>Suppression de clés
 
 La suppression d’éléments est essentiellement identique pour tous les fournisseurs. Les commandes suivantes suppriment des éléments en mode silencieux :
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Suppression de toutes les clés sous une clé spécifique
+## <a name="removing-all-keys-under-a-specific-key"></a>Suppression de toutes les clés sous une clé spécifique
 
 Vous pouvez supprimer des élément contenus à l’aide de l’applet de commande **Remove-Item**, mais vous devez confirmer la suppression si les éléments contiennent autre chose. Par exemple, si nous tentons de supprimer la sous-clé HKCU:\\CurrentVersion que nous avons créée, nous voyons ceci :
 

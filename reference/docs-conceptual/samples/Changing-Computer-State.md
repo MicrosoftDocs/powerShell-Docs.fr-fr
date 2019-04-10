@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Changement de l’état de l’ordinateur
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401839"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293059"
 ---
 # <a name="changing-computer-state"></a>Changement de l’état de l’ordinateur
 
 Pour réinitialiser un ordinateur dans Windows PowerShell, utilisez un outil en ligne de commande standard ou une classe WMI. Même si vous utilisez Windows PowerShell uniquement pour exécuter l’outil, apprendre à modifier l’état d’alimentation d’un ordinateur dans Windows PowerShell permet de comprendre certains aspects importants de l’utilisation d’outils externes dans Windows PowerShell.
 
-### <a name="locking-a-computer"></a>Verrouillage d’un ordinateur
+## <a name="locking-a-computer"></a>Verrouillage d’un ordinateur
 
 La seule façon de verrouiller un ordinateur directement avec les outils disponibles standards consiste à appeler la fonction **LockWorkstation()** dans **user32.dll**:
 
@@ -28,7 +28,7 @@ Lorsque vous verrouillez une station de travail alors que l’option Changement 
 
 Pour arrêter des sessions particulières sur un serveur Terminal Server, utilisez l’outil en ligne de commande **tsshutdn.exe**.
 
-### <a name="logging-off-the-current-session"></a>Déconnexion de la session en cours
+## <a name="logging-off-the-current-session"></a>Déconnexion de la session en cours
 
 Pour vous déconnecter d’une session sur le système local, vous pouvez utiliser différentes techniques. La solution la plus simple consiste à utiliser l’outil en ligne de commande Bureau à distance/Services Terminal Server, **logoff.exe** (pour plus d’informations, à l’invite Windows PowerShell, tapez **logoff /?**). Pour fermer la session active, tapez **logoff** sans argument.
 
@@ -46,7 +46,7 @@ Une troisième option consiste à utiliser WMI. La classe Win32_OperatingSystem 
 
 Pour plus d’informations et pour découvrir d’autres fonctionnalités de la méthode Win32Shutdown, voir « Méthode Win32Shutdown de la classe Win32_OperatingSystem » dans MSDN.
 
-### <a name="shutting-down-or-restarting-a-computer"></a>Arrêt ou redémarrage d’un ordinateur
+## <a name="shutting-down-or-restarting-a-computer"></a>Arrêt ou redémarrage d’un ordinateur
 
 L’arrêt et le redémarrage d’ordinateurs sont généralement des tâches de même type. Les outils permettant d’arrêter un ordinateur permettent généralement aussi de le redémarrer, et inversement. Deux options simples permettent de redémarrer un ordinateur à partir de Windows PowerShell. Utilisez Tsshutdn.exe ou Shutdown.exe avec des arguments appropriés. Vous pouvez obtenir des informations d’utilisation détaillées à partir de **tsshutdn.exe /?** ou de **shutdown.exe /?**.
 

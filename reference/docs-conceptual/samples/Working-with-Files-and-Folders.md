@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de fichiers et dossiers
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401276"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293212"
 ---
 # <a name="working-with-files-and-folders"></a>Utilisation de fichiers et dossiers
 
 La navigation dans des lecteurs Windows PowerShell et la manipulation des éléments qu’ils contiennent sont similaires à la manipulation de fichiers et dossiers sur des lecteurs de disques physiques Windows. Cette section explique comment effectuer certaines tâches de manipulation de fichiers et dossiers à l’aide de PowerShell.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Affichage de la liste de tous les fichiers et dossiers figurant dans un dossier
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Affichage de la liste de tous les fichiers et dossiers figurant dans un dossier
 
 Vous pouvez obtenir tous les éléments figurant directement dans un dossier à l’aide de l’applet de commande **Get-ChildItem**. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche le contenu direct du lecteur C de Windows PowerShell (qui est le même que le lecteur physique C de Windows) :
 
@@ -36,7 +36,7 @@ La commande suivante recherche dans le dossier Program Files tous les exécutabl
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Copie de fichiers et dossiers
+## <a name="copying-files-and-folders"></a>Copie de fichiers et dossiers
 
 La copie s’effectue à l’aide de l’applet de commande **Copy-Item**. La commande suivante sauvegarde C:\\boot.ini dans C:\\boot.bak :
 
@@ -70,7 +70,7 @@ Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du sys
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Création de fichiers et dossiers
+## <a name="creating-files-and-folders"></a>Création de fichiers et dossiers
 
 La création de nouveaux éléments fonctionne de la même manière sur tous les fournisseurs Windows PowerShell. Si un fournisseur Windows PowerShell a plus d’un type d’élément (par exemple, le fournisseur FileSystem de Windows PowerShell fait la distinction entre les répertoires et les fichiers), vous devez spécifier le type d’élément.
 
@@ -86,7 +86,7 @@ Cette commande crée un fichier vide C:\\temp\\New Folder\\file.txt
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Suppression de tous les fichiers et dossiers figurant dans un dossier
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Suppression de tous les fichiers et dossiers figurant dans un dossier
 
 Vous pouvez supprimer des élément contenus à l’aide de l’applet de commande **Remove-Item**, mais vous devez confirmer la suppression si les éléments contiennent autre chose. Par exemple, si vous tentez de supprimer le dossier C:\\temp\\DeleteMe contenant d’autres éléments, Windows PowerShell vous invite à confirmer la suppression :
 
@@ -107,7 +107,7 @@ Si vous ne souhaitez pas être invité à confirmer la suppression de chaque él
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mappage d’un dossier local en tant que lecteur Windows accessible
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mappage d’un dossier local en tant que lecteur Windows accessible
 
 Vous pouvez également mapper un dossier local à l’aide de la commande **subst**. La commande suivante crée un lecteur local P:, dans la racine du répertoire Program Files local :
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 Comme les lecteurs réseau, les lecteurs mappés à l’intérieur de Windows PowerShell avec la commande **subst** sont immédiatement visibles pour l’interpréteur de commandes Windows PowerShell.
 
-### <a name="reading-a-text-file-into-an-array"></a>Lecture d’un fichier texte dans un tableau
+## <a name="reading-a-text-file-into-an-array"></a>Lecture d’un fichier texte dans un tableau
 
 L’un des formats de stockage courants pour les données de texte est celui d’un fichier contenant des lignes séparées traitées en tant qu’éléments de données distincts. L’applet de commande **Get-Content** permet de lire un fichier entier en une seule étape, comme illustré ici :
 

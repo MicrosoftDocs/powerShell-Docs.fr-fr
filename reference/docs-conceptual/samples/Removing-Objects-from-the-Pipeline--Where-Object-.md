@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Suppression d’objets du pipeline Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401959"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293144"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Suppression d’objets du pipeline (Where-Object)
 
@@ -16,7 +16,7 @@ Dans Windows PowerShell, vous générez et transmettez souvent à un pipeline pl
 
 Windows PowerShell inclut une applet de commande `Where-Object` qui permet de tester chaque objet dans le pipeline et de le transmettre dans le pipeline uniquement s’il répond à une condition de test particulière. Les objets qui ne passent pas le test sont supprimés du pipeline. Vous fournissez la condition de test comme valeur du paramètre `Where-Object` **FilterScript**.
 
-### <a name="performing-simple-tests-with-where-object"></a>Exécution de tests simples avec l’applet de commande Where-objet
+## <a name="performing-simple-tests-with-where-object"></a>Exécution de tests simples avec l’applet de commande Where-objet
 
 La valeur de **FilterScript** est un *bloc de script* (une ou plusieurs commandes Windows PowerShell entourées d’accolades {}) qui prend la valeur true ou false. Un tel bloc de script peut être très simple, mais sa création nécessite de connaître un autre concept de Windows PowerShell, à savoir l’opérateur de comparaison. Un opérateur de comparaison compare les éléments figurant de part et d’autre de celui-ci. Un opérateur de comparaison commence par un caractère « - » suivi d’un nom. Les opérateurs de comparaison de base fonctionnent sur pratiquement tout type d’objet. Certains opérateurs de comparaison plus avancés fonctionnent uniquement sur du texte ou des tableaux.
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>Filtrage basé sur les propriétés de l’objet
+## <a name="filtering-based-on-object-properties"></a>Filtrage basé sur les propriétés de l’objet
 
 Comme `$_` fait référence à l’objet de pipeline actif, nous pouvons accéder à ses propriétés pour nos tests.
 
