@@ -2,18 +2,18 @@
 title: Installation de PowerShell Core sous macOS
 description: Informations sur l’installation de PowerShell Core sur macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401432"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293399"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installation de PowerShell Core sous macOS
 
 PowerShell Core prend en charge macOS 10.12 et versions ultérieures.
 Tous les packages sont disponibles dans notre page de [versions][] GitHub.
-Une fois le package est installé, exécutez `pwsh` à partir d’un terminal.
+Une fois le package installé, exécutez `pwsh` à partir d’un terminal.
 
 ## <a name="about-brew"></a>À propos de Brew
 
@@ -36,7 +36,7 @@ Enfin, vérifiez que votre installation fonctionne correctement :
 pwsh
 ```
 
-Quand de nouvelles versions de PowerShell sont publiées, mettre à jour les formules de Homebrew et mettez à niveau PowerShell :
+Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :
 
 ```sh
 brew update
@@ -44,7 +44,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh), mais l’interpréteur de commandes PowerShell doit être s’est arrêté puis redémarré pour terminer la mise à niveau et actualiser les valeurs indiquées dans `$PSVersionTable`.
+> Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter et redémarrer l’interpréteur de commandes PowerShell pour terminer la mise à niveau et actualiser les valeurs indiquées dans `$PSVersionTable`.
 
 [brew]: http://brew.sh/
 
@@ -52,8 +52,8 @@ brew cask upgrade powershell
 
 Pour plus d'informations sur Brew, voir [À propos de Brew](#about-brew).
 
-Une fois que vous avez installé Homebrew, vous pouvez installer PowerShell.
-Tout d’abord, installez le [Cask-Versions] [ cask-versions] package qui vous permet d’installer d’autres versions des packages de cask :
+Une fois Homebrew installé, vous pouvez installer PowerShell.
+Tout d’abord, installez le package [Cask-Versions][cask-versions], ce qui va vous permettre d’installer d’autres versions de packages cask :
 
 ```sh
 brew tap homebrew/cask-versions
@@ -71,7 +71,7 @@ Enfin, vérifiez que votre installation fonctionne correctement :
 pwsh-preview
 ```
 
-Quand de nouvelles versions de PowerShell sont publiées, mettre à jour les formules de Homebrew et mettez à niveau PowerShell :
+Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :
 
 ```sh
 brew update
@@ -84,13 +84,14 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installation par téléchargement direct
 
-Téléchargez le package PKG `powershell-6.1.0-osx-x64.pkg`
+Téléchargez le package PKG
+`powershell-6.2.0-osx-x64.pkg`
 de la page [versions][] sur votre ordinateur macOS.
 
 Vous pouvez double-cliquer sur le fichier et suivre les invites ou l’installer à partir du terminal :
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Installez [OpenSSL](#install-openssl). OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.
@@ -103,19 +104,19 @@ Les archives `tar.gz` binaires PowerShell sont fournies pour la plateforme macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Installez [OpenSSL](#install-openssl). OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.
@@ -136,17 +137,17 @@ OpenSSL est nécessaire pour les opérations de CIM et de communication à dista
 
 Pour plus d'informations sur Brew, voir [À propos de Brew](#about-brew).
 
-Pour installer OpenSSL, exécutez `brew install openssl`.
+Exécutez `brew install openssl` pour installer OpenSSL.
 
 #### <a name="install-openssl-via-macports"></a>Installer OpenSSL avec MacPorts
 
-1. Installer le [outils de ligne de commande XCode](#install-xcode-command-line-tools).
+1. Installez les [outils en ligne de commande XCode](#install-xcode-command-line-tools).
 1. Installez MacPorts.
-   Si vous avez besoin d’instructions, reportez-vous à la [guide d’installation](https://guide.macports.org/chunked/installing.macports.html).
+   Pour connaître les instructions à suivre, reportez-vous au [guide d’installation](https://guide.macports.org/chunked/installing.macports.html).
 1. Mettez à jour MacPorts en exécutant `sudo port selfupdate`.
 1. Mettez à niveau les packages MacPorts en exécutant `sudo port upgrade outdated`.
 1. Installez OpenSSL en exécutant `sudo port install openssl`.
-1. Lier les bibliothèques pour les rendre disponibles à PowerShell :
+1. Liez les bibliothèques pour les mettre à la disposition de PowerShell :
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
@@ -155,7 +156,7 @@ sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 
 ## <a name="uninstalling-powershell-core"></a>Désinstallation de PowerShell Core
 
-Si vous avez installé PowerShell avec Homebrew, utilisez la commande suivante pour désinstaller :
+Si vous avez installé PowerShell avec Homebrew, utilisez la commande suivante pour le désinstaller :
 
 ```sh
 brew cask uninstall powershell
@@ -167,14 +168,14 @@ Si vous avez installé PowerShell par téléchargement direct, PowerShell doit �
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Pour supprimer les chemins PowerShell supplémentaires, reportez-vous à la [chemins](#paths) section de ce document et de supprimer les chemins d’accès à l’aide de `sudo rm`.
+Pour supprimer les chemins d’accès PowerShell supplémentaires, reportez-vous à la section sur les [chemins d’accès](#paths) dans ce document et supprimez les chemins d’accès avec `sudo rm`.
 
 > [!NOTE]
 > Cela est inutile si vous avez installé PowerShell avec Homebrew.
 
 ## <a name="paths"></a>Chemins d’accès
 
-* `$PSHOME` est `/usr/local/microsoft/powershell/6.1.0/`
+* `$PSHOME` est `/usr/local/microsoft/powershell/6.2.0/`
 * Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`
 * Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`
 * Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`
@@ -183,12 +184,12 @@ Pour supprimer les chemins PowerShell supplémentaires, reportez-vous à la [che
 * L’historique PSReadline est enregistré dans `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Les profils respectent la configuration par hôte de PowerShell.
-Pour le profil de spécifique à l’hôte par défaut existe à `Microsoft.PowerShell_profile.ps1` dans les mêmes emplacements.
+Donc, le profil spécifique à l’hôte par défaut existe dans `Microsoft.PowerShell_profile.ps1` aux mêmes emplacements.
 
 PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur macOS.
 
 Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`.
-Par conséquent, `$PSHOME` est `/usr/local/microsoft/powershell/6.1.0/`, et le lien symbolique est placé au niveau `/usr/local/bin/pwsh`.
+`$PSHOME` est donc `/usr/local/microsoft/powershell/6.2.0/` ; le lien symbolique se trouve à l’emplacement `/usr/local/bin/pwsh`.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

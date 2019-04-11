@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Manipulation d'éléments de manière directe
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678174"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293263"
 ---
 # <a name="manipulating-items-directly"></a>Manipulation d'éléments de manière directe
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Création d'éléments (New-Item)
+## <a name="creating-new-items-new-item"></a>Création d'éléments (New-Item)
 
 Pour créer un élément dans le système de fichiers, utilisez l’applet de commande **New-Item**. Indiquez le chemin d’accès à l’élément dans le paramètre **Path**, et la valeur « File » ou « Directory » dans le paramètre **ItemType**.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Quand vous tapez un chemin d’accès au Registre, veillez à inclure le signe deux-points (**:**) dans les noms de lecteur Windows PowerShell (HKLM: et HKCU:). Sans les deux-points, Windows PowerShell ne reconnaît pas le nom du lecteur dans le chemin d'accès.
 
-### <a name="why-registry-values-are-not-items"></a>Pourquoi les valeurs de Registre ne sont pas des éléments
+## <a name="why-registry-values-are-not-items"></a>Pourquoi les valeurs de Registre ne sont pas des éléments
 
 Quand vous utilisez l’applet de commande **Get-ChildItem** pour rechercher les éléments dans une clé de Registre, ni les entrées de Registre ni leurs valeurs n’apparaissent.
 
@@ -93,9 +93,9 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run**. Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse (**\\**), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
+Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run**. Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse (**\\**), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
 
-### <a name="renaming-existing-items-rename-item"></a>Affectation d'un nouveau nom à des éléments existants (Rename-Item)
+## <a name="renaming-existing-items-rename-item"></a>Affectation d'un nouveau nom à des éléments existants (Rename-Item)
 
 Pour modifier le nom d’un fichier ou d’un dossier, utilisez l’applet de commande **Rename-Item**. La commande suivante remplace le nom du fichier **file1.txt** par **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Déplacement d'éléments (Move-Item)
+## <a name="moving-items-move-item"></a>Déplacement d'éléments (Move-Item)
 
 Pour déplacer un fichier ou un dossier, utilisez l’applet de commande **Move-Item**.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Copie d'éléments (Copy-Item)
+## <a name="copying-items-copy-item"></a>Copie d'éléments (Copy-Item)
 
 Si vous avez déjà effectué des opérations de copie dans d’autres interpréteurs de commandes, le comportement de l’applet de commande **Copy-Item** dans Windows PowerShell peut vous sembler inhabituel. Quand vous copiez un élément d'un emplacement vers un autre, Copy-Item ne copie pas par défaut son contenu.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Suppression d'éléments (Remove-Item)
+## <a name="deleting-items-remove-item"></a>Suppression d'éléments (Remove-Item)
 
 Pour supprimer des fichiers et des dossiers, utilisez l’applet de commande **Remove-Item**. Les applets de commande Windows PowerShell telles que **Remove-Item**, qui effectuent des modifications importantes et irréversibles, affichent souvent une invite de confirmation quand vous entrez leurs commandes. Par exemple, si vous essayez de supprimer le dossier **New.Directory** qui contient des fichiers, vous êtes invité à confirmer la commande :
 
@@ -188,7 +188,7 @@ specified. If you continue, all children will be removed with the item. Are you
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Exécution d'éléments (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>Exécution d'éléments (Invoke-Item)
 
 Windows PowerShell utilise l’applet de commande **Invoke-Item** pour effectuer une action par défaut pour un fichier ou un dossier. Cette action par défaut est déterminée par le gestionnaire d'application par défaut dans le Registre. Vous obtenez le même résultat qu'en double-cliquant sur l'élément dans l'Explorateur de fichiers.
 

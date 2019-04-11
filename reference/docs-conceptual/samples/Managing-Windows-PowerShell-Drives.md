@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des lecteurs Windows PowerShell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401917"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293246"
 ---
 # <a name="managing-windows-powershell-drives"></a>Gestion des lecteurs Windows PowerShell
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Ajout de nouveaux lecteurs Windows PowerShell (New-PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Ajout de nouveaux lecteurs Windows PowerShell (New-PSDrive)
 
 Vous pouvez ajouter vos propres lecteurs Windows PowerShell à l’aide de la commande **New-PSDrive**. Pour obtenir la syntaxe de l’applet de commande **New-PSDrive**, entrez la commande **Get-Command** avec le paramètre **Syntax** :
 
@@ -146,7 +146,7 @@ cvkey:\
 
 L'applet de commande New-PsDrive ajoute le nouveau lecteur uniquement à la session Windows PowerShell active. Si vous fermez la fenêtre Windows PowerShell, le nouveau lecteur est perdu. Pour enregistrer un lecteur Windows PowerShell, utilisez l’applet de commande Export-Console pour exporter la session Windows PowerShell active, puis utilisez le paramètre **PSConsoleFile** de PowerShell.exe pour l’importer. Vous pouvez aussi ajouter le nouveau lecteur à votre profil Windows PowerShell.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Suppression de lecteurs Windows PowerShell (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Suppression de lecteurs Windows PowerShell (Remove-PSDrive)
 
 Pour supprimer des lecteurs de Windows PowerShell, utilisez l’applet de commande **Remove-PSDrive**. L’applet de commande **Remove-PSDrive** est facile à utiliser. Pour supprimer un lecteur Windows PowerShell, vous devez simplement spécifier son nom.
 
@@ -156,7 +156,7 @@ Par exemple, si vous avez ajouté le lecteur Windows PowerShell **Office :** qui
 Remove-PSDrive -Name Office
 ```
 
-Pour supprimer la **cvkey :** Windows PowerShell de lecteur, également illustré dans le **New-PSDrive** rubrique, utilisez la commande suivante :
+Pour supprimer le lecteur Windows PowerShell **cvkey:** qui apparaît aussi dans la rubrique **New-PSDrive**, utilisez la commande suivante :
 
 ```powershell
 Remove-PSDrive -Name cvkey
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Ajout et suppression de lecteurs en dehors de Windows PowerShell
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Ajout et suppression de lecteurs en dehors de Windows PowerShell
 
 Windows PowerShell détecte les lecteurs du système de fichiers qui sont ajoutés ou supprimés dans Windows, y compris les lecteurs réseau mappés, les lecteurs USB attachés, ainsi que les lecteurs supprimés à l’aide de la commande **net use** ou des méthodes **WScript.NetworkMapNetworkDrive** et **RemoveNetworkDrive** à partir d’un script WSH (Windows Script Host).

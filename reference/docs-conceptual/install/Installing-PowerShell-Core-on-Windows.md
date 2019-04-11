@@ -2,43 +2,57 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748956"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293008"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
-## <a name="msi"></a>MSI
+Il existe plusieurs façons d’installer PowerShell Core dans Windows.
 
-Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2, et versions ultérieures), téléchargez le package MSI à partir de notre page de [versions][] GitHub.  Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer.  Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
+## <a name="prerequisites"></a>Conditions préalables
 
-Le fichier MSI ressemble à ceci : `PowerShell-<version>-win-<os-arch>.msi`
+Pour permettre la communication à distance PowerShell via WSMan, les conditions préalables suivantes doivent être remplies :
+
+- Installer le [runtime C universel](https://www.microsoft.com/download/details.aspx?id=50410) sur les versions de Windows antérieures à Windows 10. Il est disponible par téléchargement direct ou sur Windows Update. Il est déjà installé sur les systèmes pris en charge où tous les correctifs sont installés (dont les packages facultatifs).
+- Installer WMF (Windows Management Framework) 4.0 ou une version ultérieure sur Windows 7 et Windows Server 2008 R2.
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installation du package MSI
+
+Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2 et les versions ultérieures), téléchargez le package MSI sur notre page de [versions][] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
+
+Le fichier MSI se présente ainsi : `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Une fois téléchargé, double-cliquez sur le programme d’installation et suivez les invites.
 
-Un raccourci est placé dans le menu Démarrer lors de l’installation.
+Le programme d’installation crée un raccourci dans le menu Démarrer de Windows.
 
 - Par défaut, le package est installé dans `$env:ProgramFiles\PowerShell\<version>`
 - Vous pouvez lancer PowerShell via le menu Démarrer ou `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="administrative-install-from-the-command-line"></a>Installation administrative à partir de la ligne de commande
 
-Pour permettre la communication à distance PowerShell via WSMan, les conditions préalables suivantes doivent être remplies :
+Les packages MSI peuvent être installés à partir de la ligne de commande. Cela permet aux administrateurs de déployer des packages sans l’intervention de l’utilisateur. Le package MSI pour PowerShell inclut les propriétés suivantes pour contrôler les options d’installation :
 
-- Installer le [runtime C universel](https://www.microsoft.com/download/details.aspx?id=50410) sur les versions de Windows antérieures à Windows 10.
-  Il est disponible par téléchargement direct ou sur Windows Update.
-  Il est déjà installé sur les systèmes pris en charge où tous les correctifs sont installés (dont les packages facultatifs).
-- Installer WMF (Windows Management Framework) 4.0 ou une version ultérieure sur Windows 7 et Windows Server 2008 R2.
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** : cette propriété contrôle l’option permettant d’ajouter l’élément **Ouvrir PowerShell** au menu contextuel dans l’Explorateur Windows.
+- **ENABLE_PSREMOTING** : cette propriété contrôle l’option permettant d’activer la communication à distance PowerShell pendant l’installation.
+- **REGISTER_MANIFEST** : cette propriété contrôle l’option permettant d’enregistrer le manifeste de journalisation des événements Windows.
 
-## <a name="zip"></a>ZIP
+Les exemples suivants montrent comment installer PowerShell Core sans assistance avec toutes les options d’installation activées.
 
-Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés.
-Notez que, lors de l’utilisation de l’archive ZIP, les conditions préalables ne sont pas vérifiées comme pour le package MSI.
-Ainsi, pour que la communication à distance via WSMan puisse fonctionner correctement sur les versions de Windows antérieures à Windows 10, vous devez vérifier que ces [conditions préalables](#prerequisites) sont remplies.
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+Pour obtenir une liste complète des options de ligne de commande pour Msiexec.exe, consultez [Options de ligne de commande](/windows/desktop/Msi/command-line-options).
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Installation du package ZIP
+
+Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Notez que, lors de l’utilisation de l’archive ZIP, les conditions préalables ne sont pas vérifiées comme pour le package MSI. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [conditions préalables](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Déploiement sur Windows IoT
 
@@ -132,28 +146,12 @@ La procédure suivante vous guide tout au long du déploiement de PowerShell Cor
 
 - Si vous voulez une communication à distance via WSMan, suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>Instructions pour créer un point de terminaison de communication à distance
+## <a name="how-to-create-a-remoting-endpoint"></a>Comment créer un point de terminaison de communication à distance
 
-PowerShell Core prend en charge le protocole de communication à distance PowerShell sur WSMan et SSH.
-Pour plus d’informations, voir :
+PowerShell Core prend en charge le protocole de communication à distance PowerShell sur WSMan et SSH. Pour plus d’informations, voir :
 
-- [Communication à distance SSH dans PowerShell Core][ssh-remoting]
+- [Accès distant SSH dans PowerShell Core] [ssh-remoting]
 - [Communication à distance WSMan dans PowerShell Core][wsman-remoting]
 
-## <a name="artifact-installation-instructions"></a>Instructions d’installation des artefacts
-
-Nous publions une archive avec des bits CoreCLR sur chaque build CI avec [AppVeyor][].
-
-Pour installer PowerShell Core à partir de l’artefact CoreCLR :
-
-1. Téléchargez le package ZIP à partir de l’onglet des **artefacts** de la build spécifique.
-2. Débloquez le fichier ZIP : cliquez avec le bouton droit dans l’Explorateur de fichiers -> Propriétés -> cochez la case Débloquer -> Appliquer
-3. Extrayez le fichier zip dans le répertoire `bin`
-4. `./bin/pwsh.exe`
-
 <!-- [download-center]: TODO -->
-
-[versions]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[versions] : https://github.com/PowerShell/PowerShell/releases [ssh-remoting] : ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting] : ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor] : https://ci.appveyor.com/project/PowerShell/powershell

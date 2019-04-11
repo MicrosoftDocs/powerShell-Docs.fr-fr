@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.1
 description: Nouvelles fonctionnalités et modifications de PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679070"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293314"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nouveautés de PowerShell Core 6.1
 
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | Durée (s)   | 12,170                 | 8,493               | 7,08                |
 | Accélération (en %) | Non applicable                    | 30,2 %               | 16,6 %               |
 
-L’exécution de l’opération `Import-Csv` a été considérablement accélérée après une régression de Windows PowerShell.
+`Import-Csv` a été considérablement accélérée après une régression de Windows PowerShell.
 L’exemple suivant utilise un fichier CSV de test contenant 26 616 lignes et six colonnes :
 
 ```powershell
@@ -207,7 +207,7 @@ Si aucun `pwsh.exe` n’est disponible, PowerShell Direct utilise à nouveau `po
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>À présent, `Enable-PSRemoting` crée des points de terminaison de communication à distance distincts pour chaque préversion
 
-À présent, `Enable-PSRemoting` crée deux configurations de session de communication à distance :
+`Enable-PSRemoting` crée deux configurations de session de communication à distance :
 
 - Une pour la version principale de PowerShell. Par exemple, `PowerShell.6`. Pour les mises à jour de la version secondaire, ce point de terminaison peut correspondre à la configuration de session PowerShell 6 qui est appliquée à l’échelle du système
 - Une configuration de session spécifique à une version, par exemple : `PowerShell.6.1.0`
@@ -305,7 +305,7 @@ Grâce à [@iSazonov](https://github.com/iSazonov), l’applet de commande [`Tes
 ### <a name="update-help-as-non-admin"></a>`Update-Help` en tant que non administrateur
 
 À la demande générale, il n’est plus obligatoire d’exécuter `Update-Help` en tant qu’administrateur.
-Par défaut, `Update-Help` enregistre l’aide dans un dossier de portée utilisateur.
+`Update-Help` enregistre l’aide dans un dossier de portée utilisateur.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Nouvelles méthodes et propriétés de `PSCustomObject`
 
@@ -434,11 +434,11 @@ Grâce à [@mcbobke](https://github.com/mcbobke), les utilisateurs sont désorma
 
 Dans Windows PowerShell, nous avons inclus les accélérateurs de type suivants afin de faciliter l’utilisation des différents types :
 
-- `[adsi]` : `System.DirectoryServices.DirectoryEntry`
-- `[adsisearcher]` : `System.DirectoryServices.DirectorySearcher`
-- `[wmi]` : `System.Management.ManagementObject`
-- `[wmiclass]` : `System.Management.ManagementClass`
-- `[wmisearcher]` : `System.Management.ManagementObjectSearcher`
+- `[adsi]`: `System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
+- `[wmi]`: `System.Management.ManagementObject`
+- `[wmiclass]`: `System.Management.ManagementClass`
+- `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
 Ces accélérateurs de type n’étaient pas inclus dans PowerShell 6. Ils sont désormais disponibles dans PowerShell 6.1 pour Windows.
 
@@ -516,3 +516,10 @@ Visual Basic était rarement utilisé avec `Add-Type`. Nous avons supprimé cett
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Nettoyage des utilisations de `CommandTypes.Workflow` et `WorkflowInfoCleaned`
 
 Pour plus d’informations sur ces modifications, consultez [Demande de tirage #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Group-Object trie désormais les groupes
+
+Dans le cadre de l’amélioration des performances, `Group-Object` renvoie désormais une liste triée des groupes.
+Bien que vous ne deviez pas vous fier à l’ordre, vous pouvez être désactivé à cause de cette modification si vous souhaitiez le premier groupe. Nous avons décidé que l’amélioration des performances valait cette modification dans la mesure où l’impact de la dépendance sur le comportement précédent est faible.
+
+Pour plus d’informations sur cette modification, consultez le [Problème #7409](https://github.com/PowerShell/PowerShell/issues/7409).
