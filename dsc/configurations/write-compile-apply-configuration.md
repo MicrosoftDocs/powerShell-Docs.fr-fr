@@ -2,14 +2,14 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,installation
 title: Écrire, compiler et appliquer une configuration
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795417"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506816"
 ---
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>Écrire, compiler et appliquer une configuration
 
@@ -65,8 +65,8 @@ Pour plus d’informations, consultez [about_Scripts](/powershell/module/microso
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 Cela génère la sortie suivante :
@@ -90,7 +90,7 @@ Le LCM est chargé d’appeler les ressources DSC pour appliquer la configuratio
 Utilisez le code ci-dessous pour exécuter l’applet de commande `Start-DSCConfiguration`. Spécifiez le chemin du répertoire où est stocké votre fichier « localhost.mof » au paramètre `-Path`. L’applet de commande `Start-DSCConfiguration` recherche dans le répertoire spécifié pour tout fichier « \<nom_ordinateur\>.mof ». L’applet de commande `Start-DSCConfiguration` tente d’appliquer chaque fichier « .mof » trouvé au nom d’ordinateur spécifié par le nom de fichier (« localhost », « server01 », « dc-02 », etc.).
 
 > [!NOTE]
-> Si le paramètre `-Wait` n’est pas spécifié, `Start-DSCConfiguration` crée une tâche en arrière-plan pour exécuter l’opération. Le fait de spécifier le paramètre `-Verbose` vous permet de regarder la sortie **détaillée** de l’opération. `-Wait` et `-Verbose` sont tous deux des paramètres facultatifs.
+> Si le paramètre `-Wait` n’est pas spécifié, `Start-DSCConfiguration` crée une tâche en arrière-plan pour exécuter l’opération. Le fait de spécifier le paramètre `-Verbose` vous permet de regarder la sortie **détaillée** de l’opération. `-Wait`, et `-Verbose` sont tous deux des paramètres facultatifs.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920388"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programmeur&#39;s Guide
@@ -99,10 +99,10 @@ Pour plus d’informations sur le démarrage à utiliser l’interpréteur de co
 
 |Rubrique|Définition|
 |-----------|----------------|
-|[Guide pratique pour créer un fournisseur Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment générer un fournisseur Windows PowerShell pour Windows PowerShell.|
+|[Comment créer un fournisseur PowerShell de Windows](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment générer un fournisseur Windows PowerShell pour Windows PowerShell.|
 |[Comment créer une Application hôte PowerShell de Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Cette section décrit comment écrire une application hôte qui manipule une instance d’exécution et comment écrire une application hôte qui implémente son propre hôte personnalisé.|
-|[Guide pratique pour créer un composant logiciel enfichable Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire tous les fournisseurs et applets de commande dans un assembly et la création d’un composant logiciel enfichable personnalisé.|
-|[Guide pratique pour créer un shell de console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
+|[Comment créer un composant logiciel enfichable PowerShell Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire tous les fournisseurs et applets de commande dans un assembly et la création d’un composant logiciel enfichable personnalisé.|
+|[Comment créer un interpréteur de commandes de Console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
 |[Concepts de Windows PowerShell](./windows-powershell-concepts.md)|Cette section contient des informations conceptuelles qui vous aideront à comprendre Windows PowerShell à partir du point de vue d’un développeur.|
 
 ## <a name="see-also"></a>Voir aussi
