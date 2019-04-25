@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxSshAuthorizedKeys dans DSC pour Linux
 ms.openlocfilehash: d4cdb727a94a5e89e8401769f24977d49bcf4929
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077691"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Ressource nxSshAuthorizedKeys dans DSC pour Linux
 
@@ -35,7 +35,7 @@ nxAuthorizedKeys <string> #ResourceName
 | Ensure| Spécifie si la clé est définie. Définissez cette propriété sur « Absent » pour vous assurer que la clé n’existe pas dans le fichier de clés autorisées de l’utilisateur. Définissez cette propriété sur « Present » pour vous assurer que la clé est définie dans le fichier de clés autorisées de l’utilisateur.|
 | Username| Nom de l’utilisateur pour lequel gérer les clés SSH autorisées. Si aucun nom n’est défini, l’utilisateur par défaut est l’utilisateur « racine ».|
 | Key| Contenu de la clé. Cette propriété doit être spécifiée si **Ensure** est défini sur « Present ».|
-| DependsOn | Indique que la configuration d’une autre ressource doit être effectuée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Exemple
 

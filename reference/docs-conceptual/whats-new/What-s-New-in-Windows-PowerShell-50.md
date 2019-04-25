@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59363528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085947"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 
@@ -23,10 +23,10 @@ Pour installer Windows PowerShell 5.0 sur Windows Server 2012 R2, Windows 8.
 
 ## <a name="in-this-topic"></a>Dans cette rubrique
 
-- [Mises à jour de la DSC de Windows PowerShell 4.0 dans la base de connaissances 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
-- [Nouvelles fonctionnalités dans Windows PowerShell 5.0](#new-features-in-windows-powershell-50)
-- [Nouvelles fonctionnalités dans Windows PowerShell 4.0](#new-features-in-windows-powershell-40)
-- [Nouvelles fonctionnalités dans Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
+- [Mises à jour de la DSC de Windows PowerShell 4.0 dans KB 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [Nouvelles fonctionnalités de Windows PowerShell 5.0](#new-features-in-windows-powershell-50)
+- [Nouvelles fonctionnalités de Windows PowerShell 4.0](#new-features-in-windows-powershell-40)
+- [Nouvelles fonctionnalités de Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Mises à jour de Windows PowerShell 4.0 dans le correctif cumulatif de novembre 2014 (KB 3000850)
 
@@ -92,10 +92,10 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 ## <a name="new-features-in-windows-powershell-50"></a>Nouvelles fonctionnalités dans Windows PowerShell 5.0
 
 - [Nouvelles fonctionnalités de Windows PowerShell](#new-features-in-windows-powershell)
-- [Nouvelles fonctionnalités dans la configuration d’état souhaité de Windows PowerShell](#new-features-in-windows-powershell-desired-state-configuration)
+- [Nouvelles fonctionnalités de la DSC (Configuration de l’état souhaité) de Windows PowerShell](#new-features-in-windows-powershell-desired-state-configuration)
 - [Nouvelles fonctionnalités dans Windows PowerShell ISE](#new-features-in-windows-powershell-ise)
-- [Nouvelles fonctionnalités dans Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
-- [Correctifs de bogues notables dans Windows PowerShell 5.0](#notable-bug-fixes-in-windows-powershell-50)
+- [Nouvelles fonctionnalités des services web Windows PowerShell](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Correctifs de bogues importants dans Windows PowerShell 5.0](#notable-bug-fixes-in-windows-powershell-50)
 
 ### <a name="new-features-in-windows-powershell"></a>Nouvelles fonctionnalités de Windows PowerShell
 
@@ -127,7 +127,7 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 - Une nouvelle applet de commande, New-TemporaryFile, permet de créer un fichier temporaire dans le cadre d’un script. Par défaut, le fichier temporaire est créé dans ```C:\Users\<user name>\AppData\Local\Temp```.
 - Les applets de commande Out-File, Add-Content et Set-Content disposent maintenant d’un nouveau paramètre, -NoNewline, qui omet toute nouvelle ligne après la sortie.
 - L’applet de commande New-Guid tire parti de la classe Guid du .NET Framework pour générer un GUID utile quand vous écrivez des scripts ou des ressources DSC.
-- Étant donné que les informations sur la version d’un fichier peuvent être trompeuses, en particulier après correction de celui-ci, de nouvelles propriétés de script, FileVersionRaw et ProductVersionRaw, sont disponibles pour les objets FileInfo. Par exemple, vous pouvez exécuter la commande suivante pour afficher les valeurs de ces propriétés pour PowerShell.exe, où $pid contient l’ID de processus d’une session active de Windows PowerShell :  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Étant donné que les informations sur la version d’un fichier peuvent être trompeuses, en particulier après correction de celui-ci, de nouvelles propriétés de script, FileVersionRaw et ProductVersionRaw, sont disponibles pour les objets FileInfo. Par exemple, vous pouvez exécuter la commande suivante pour afficher les valeurs de ces propriétés pour powerShell.exe, où $pid contient l’ID de processus d’une session active de Windows PowerShell :  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - Les nouvelles applets de commande Enter-PSHostProcess et Exit-PSHostProcess permettent de déboguer des scripts Windows PowerShell dans des processus distincts du processus en cours d’exécution sur la console Windows PowerShell. Exécutez Enter-PSHostProcess pour entrer dans ou associer à un ID de processus spécifique, puis exécutez Get-Runspace pour retourner les instances d’exécution actives au sein du processus. Exécutez Exit-PSHostProcess pour dissocier du processus quand vous avez fini de déboguer le script au sein du processus.
 - Une nouvelle applet de commande, Wait-Debugger, a été ajoutée au module [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx). L’applet de commande Wait-Debugger permet d’arrêter l’exécution d’un script dans le débogueur avant d’exécuter l’instruction suivante du script.
 - Le débogueur Windows PowerShell Workflow prend maintenant en charge l’exécution par commande ou via la touche Tab, et vous pouvez déboguer des fonctions de workflow imbriquées. Vous pouvez maintenant appuyer sur **Ctrl+Pause** pour activer le débogueur dans un script en cours d’exécution, dans des sessions tant locales que distantes, et dans un script de workflow.
@@ -202,10 +202,10 @@ Windows PowerShell 4.0 offre une compatibilité descendante. Les applets de com
 Windows PowerShell 4.0 est installé par défaut sur Windows 8.1 et Windows Server 2012 R2. Pour installer Windows PowerShell 4.0 sur Windows 7 avec SP1, ou Windows Server 2008 R2, téléchargez et installez [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855). Avant d'installer Windows Management Framework 4.0, veillez à prendre connaissance des détails du téléchargement et à vérifier la configuration système requise.
 
 - [Nouvelles fonctionnalités de Windows PowerShell](#new-features-in-windows-powershell-1)
-- [Nouvelles fonctionnalités de l'environnement d'écriture de scripts intégré (ISE) de Windows PowerShell](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
+- [Nouvelles fonctionnalités de l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
 - [Nouvelles fonctionnalités de Windows PowerShell Workflow](#new-features-in-windows-powershell-workflow)
-- [Nouvelles fonctionnalités de Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services)
-- [Nouvelles fonctionnalités de Windows PowerShell Web Access](#new-features-in-windows-powershell-web-access)
+- [Nouvelles fonctionnalités des services web Windows PowerShell](#new-features-in-windows-powershell-web-services)
+- [Nouvelles fonctionnalités d’Accès web Windows PowerShell](#new-features-in-windows-powershell-web-access)
 - [Correctifs de bogues importants dans Windows PowerShell 4.0](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0 intègre les nouvelles fonctionnalités suivantes.
@@ -290,32 +290,32 @@ Windows PowerShell 4.0 intègre les nouvelles fonctionnalités suivantes.
 Windows PowerShell 3.0 intègre les nouvelles fonctionnalités suivantes.
 
 - [Windows PowerShell Workflow](#windows-powershell-workflow)
-- [Windows PowerShell Web Access](#windows-powershell-web-access)
+- [Accès Web Windows PowerShell](#windows-powershell-web-access)
 - [Nouvelles fonctionnalités de Windows PowerShell ISE](#new-windows-powershell-ise-features)
-- [Prise en charge de Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
-- [Prise en charge de l'environnement de préinstallation Windows](#support-for-windows-preinstallation-environment)
+- [Prise en charge du Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
+- [Prise en charge de l’environnement de préinstallation Windows (WinPE)](#support-for-windows-preinstallation-environment)
 - [Sessions déconnectées](#disconnected-sessions)
-- [Connectivité fiable des sessions](#robust-session-connectivity)
-- [Système d'aide actualisable](#updatable-help-system)
+- [Connectivité robuste des sessions](#robust-session-connectivity)
+- [Système d’aide actualisable](#updatable-help-system)
 - [Aide en ligne améliorée](#enhanced-online-help)
 - [Intégration de CIM](#cim-integration)
 - [Fichiers de configuration de session](#session-configuration-files)
 - [Travaux planifiés et intégration du Planificateur de tâches](#scheduled-jobs-and-task-scheduler-integration)
 - [Améliorations apportées au langage Windows PowerShell](#windows-powershell-language-enhancements)
-- [Nouvelles applets de commande Core](#new-core-cmdlets)
-- [Améliorations apportées aux applets de commande et aux fournisseurs Core existants](#improvements-to-existing-core-cmdlets-and-providers)
+- [Nouvelles applets de commande principales](#new-core-cmdlets)
+- [Améliorations apportées aux applets de commande principales et aux fournisseurs existants](#improvements-to-existing-core-cmdlets-and-providers)
 - [Importation et découverte des modules à distance](#remote-module-import-and-discovery)
-- [Saisie semi-automatique par tabulation améliorée](#enhanced-tab-completion)
+- [Amélioration de la saisie semi-automatique via la touche Tab](#enhanced-tab-completion)
 - [Chargement automatique des modules](#module-auto-loading)
-- [Améliorations apportées aux fonctionnalités des modules](#module-experience-improvements)
+- [Améliorations de l’expérience des modules](#module-experience-improvements)
 - [Découverte des commandes simplifiée](#simplified-command-discovery)
 - [Prise en charge améliorée de la journalisation, du diagnostic et de la stratégie de groupe](#improved-logging-diagnostics-and-group-policy-support)
-- [Améliorations apportées à la mise en forme et à la sortie](#formatting-and-output-improvements)
-- [Améliorations apportées aux fonctionnalités de l'hôte de console](#enhanced-console-host-experience)
-- [Nouvelles API Cmdlet et Hosting](#new-cmdlet-and-hosting-apis)
+- [Améliorations apportées à la mise en forme et aux sorties](#formatting-and-output-improvements)
+- [Amélioration de l’expérience de l’hôte de la console](#enhanced-console-host-experience)
+- [Nouvelles API d’applet de commande et d’hébergement](#new-cmdlet-and-hosting-apis)
 - [Améliorations des performances](#performance-improvements)
-- [Prise en charge de RunAs et de SharedHost](#runas-and-shared-host-support)
-- [Améliorations apportées à la gestion des caractères spéciaux](#special-character-handling-improvements)
+- [Prise en charge de RunAs et des hôtes partagés](#runas-and-shared-host-support)
+- [Améliorations de la gestion des caractères spéciaux](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell Workflow
 
@@ -332,8 +332,8 @@ Les avantages de Windows PowerShell Workflow sont les suivants :
 - **Gestion de plusieurs ordinateurs.** Exécution simultanée de tâches en tant que workflows sur des centaines de nœuds gérés. Windows PowerShell Workflow inclut une bibliothèque intégrée de paramètres de gestion communs, tels que **PSComputerName**, qui prennent en charge les scénarios de gestion de plusieurs ordinateurs.
 - **Exécution en une seule tâche de processus complexes.** Vous pouvez combiner des scripts associés dans un seul workflow pour implémenter un scénario complet de bout en bout.
 - **Persistance.** Un flux de travail est enregistré à des points de contrôle spécifiques définis par son auteur, ce qui permet de reprendre le flux de travail à partir de la dernière tâche persistante (ou point de contrôle) au lieu de redémarrer le flux de travail depuis le début.
-- **Fiabilité.** Récupération après défaillance automatisée. Les workflows survivent aux redémarrages planifiés et non planifiés. Vous pouvez suspendre l'exécution d'un workflow, puis le reprendre à partir du dernier point de persistance. Les auteurs de workflows peuvent désigner des activités spécifiques à réexécuter en cas de défaillance sur un ou plusieurs nœuds gérés.
-- **Possibilité de déconnexion, de reconnexion et d'exécution dans des sessions déconnectées.** Les utilisateurs peuvent se connecter au serveur de workflow et s'en déconnecter, mais le workflow s'exécute en continu. Vous pouvez fermer la session sur l'ordinateur client ou redémarrer ce dernier, et surveiller l'exécution du workflow à partir d'un autre ordinateur sans l’interrompre.
+- **Robustesse.** Récupération après défaillance automatisée. Les workflows survivent aux redémarrages planifiés et non planifiés. Vous pouvez suspendre l'exécution d'un workflow, puis le reprendre à partir du dernier point de persistance. Les auteurs de workflows peuvent désigner des activités spécifiques à réexécuter en cas de défaillance sur un ou plusieurs nœuds gérés.
+- **Possibilité de déconnexion, de reconnexion et d’exécution dans des sessions déconnectées.** Les utilisateurs peuvent se connecter au serveur de workflow et s'en déconnecter, mais le workflow s'exécute en continu. Vous pouvez fermer la session sur l'ordinateur client ou redémarrer ce dernier, et surveiller l'exécution du workflow à partir d'un autre ordinateur sans l’interrompre.
 - **Planification.** Les tâches de workflow peuvent être planifiées comme une applet de commande ou un script Windows PowerShell.
 - **Limitation des workflows et des connexions.** Vous pouvez limiter l'exécution des workflows et les connexions aux nœuds, ce qui permet de prendre en charge des scénarios évolutifs et à haute disponibilité.
 

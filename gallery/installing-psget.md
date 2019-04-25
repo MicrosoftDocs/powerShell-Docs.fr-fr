@@ -4,11 +4,11 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Installation de PowerShellGet
 ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075271"
 ---
 # <a name="installing-powershellget"></a>Installation de PowerShellGet
 

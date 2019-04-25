@@ -4,11 +4,11 @@ contributor: Farehar
 keywords: gallery,powershell,psgallery
 title: Exiger l’acceptation de la licence
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076191"
 ---
 # <a name="require-license-acceptance"></a>Exiger l’acceptation de la licence
 

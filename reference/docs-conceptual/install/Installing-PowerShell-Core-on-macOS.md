@@ -3,11 +3,11 @@ title: Installation de PowerShell Core sous macOS
 description: Informations sur l’installation de PowerShell Core sur macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086457"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installation de PowerShell Core sous macOS
 
@@ -84,8 +84,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installation par téléchargement direct
 
-Téléchargez le package PKG
-`powershell-6.2.0-osx-x64.pkg`
+Téléchargez le package PKG `powershell-6.2.0-osx-x64.pkg`
 de la page [versions][] sur votre ordinateur macOS.
 
 Vous pouvez double-cliquer sur le fichier et suivre les invites ou l’installer à partir du terminal :

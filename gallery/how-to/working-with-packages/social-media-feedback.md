@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Envoi de feedback via les médias sociaux ou les commentaires
 ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623889"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076070"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Envoi de feedback via les médias sociaux ou les commentaires
 

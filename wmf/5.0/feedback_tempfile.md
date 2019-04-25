@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 08f431c27cd0ee769518b5246af2fa95aa499d54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: aa2e9540af8b3d4c5de5e00377a84e0e5edd6e4a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34217989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057846"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
 Parfois, dans vos scripts, vous devez créer un fichier temporaire. Avec l’applet de commande **New-TemporaryFile**, cette opération est très simple :

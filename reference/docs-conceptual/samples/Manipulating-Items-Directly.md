@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Manipulation d'éléments de manière directe
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
 ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293263"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086219"
 ---
 # <a name="manipulating-items-directly"></a>Manipulation d'éléments de manière directe
 

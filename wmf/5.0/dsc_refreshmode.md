@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: fb9dda75abc2726f6e48cdf3cad4d8990df1cefa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c6eef03b6cac5a0bf37016b8aaec18f296c2625e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058758"
 ---
 # <a name="additional-value-for-refreshmode-property"></a>Valeur supplémentaire pour la propriété RefreshMode
 

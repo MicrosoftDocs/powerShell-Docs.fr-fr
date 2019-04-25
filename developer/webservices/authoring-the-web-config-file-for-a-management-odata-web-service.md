@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856715"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080711"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Création du fichier Web.config pour un service web Management OData
 

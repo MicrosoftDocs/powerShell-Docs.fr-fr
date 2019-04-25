@@ -2,7 +2,7 @@
   href: overview.md
 - name: Déployer JEA
   items:
-    - name: Prérequis
+    - name: Conditions préalables
       href: prerequisites.md
     - name: Capacités de rôle
       href: role-capabilities.md

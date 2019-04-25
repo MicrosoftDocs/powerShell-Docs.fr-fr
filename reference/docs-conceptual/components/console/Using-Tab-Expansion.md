@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Utilisation du développement par tabulation
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402090"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086933"
 ---
 # <a name="using-tab-expansion"></a>Utilisation du développement par tabulation
 

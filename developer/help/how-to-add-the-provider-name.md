@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c0e1c40b-d2fd-41c3-a5f9-7584ea6bf50b
 caps.latest.revision: 4
 ms.openlocfilehash: fec90170571ae66cf75241c48a45b560d4ead2de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855385"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083286"
 ---
 # <a name="how-to-add-the-provider-name"></a>Guide pratique pour ajouter le nom du fournisseur
 
@@ -23,7 +23,7 @@ ms.locfileid: "56855385"
 
 ### <a name="procedure-title"></a>Titre de la procédure
 
-## <a name="section-heading"></a>En-tête de la section
+## <a name="section-heading"></a>Titre de section
 
  Insérez le corps de la section ici.
 
@@ -37,8 +37,8 @@ ms.locfileid: "56855385"
 
  Commentaires facultatifs.
 
-## <a name="compiling-the-code"></a>Compilation du code
+## <a name="compiling-the-code"></a>Compilation du Code
 
-## <a name="robust-programming"></a>Programmation robuste
+## <a name="robust-programming"></a>Programmation fiable
 
-## <a name="net-framework-security"></a>Sécurité du .NET Framework
+## <a name="net-framework-security"></a>Sécurité du .NET framework

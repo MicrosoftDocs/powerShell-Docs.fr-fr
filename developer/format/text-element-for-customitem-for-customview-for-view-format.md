@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
 caps.latest.revision: 9
 ms.openlocfilehash: 00ff3a357cfef0b250bb55dd3a206d69d5d42609
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076121"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>Text, élément pour CustomItem pour CustomView pour View (Format)
 

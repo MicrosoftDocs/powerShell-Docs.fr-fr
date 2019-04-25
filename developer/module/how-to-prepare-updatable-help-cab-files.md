@@ -11,11 +11,11 @@ applies_to:
 ms.assetid: a8f48736-c9fa-4e07-bd18-dd813e11f774
 caps.latest.revision: 6
 ms.openlocfilehash: fb5189e2e77b90ddaf61386246a6f001369bfda4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082343"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>Guide pratique pour préparer les fichiers CAB d’aide actualisable
 

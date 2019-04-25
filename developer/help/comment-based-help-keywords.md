@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
 ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083533"
 ---
 # <a name="comment-based-help-keywords"></a>Mots clés de l’aide basée sur les commentaires
 

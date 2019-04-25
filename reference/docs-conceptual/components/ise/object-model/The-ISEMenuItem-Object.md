@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Objet ISEMenuItem
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 ms.openlocfilehash: 556f88117c07100b1734c8ffd8956dce6efe6fb1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059047"
 ---
 # <a name="the-isemenuitem-object"></a>Objet ISEMenuItem
 
@@ -45,7 +45,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a>Shortcut
+### <a name="shortcut"></a>Raccourci
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
