@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Objet ISESnippetCollection
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
 ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402040"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086667"
 ---
 # <a name="the-isesnippetcollection-object"></a>Objet ISESnippetCollection
 

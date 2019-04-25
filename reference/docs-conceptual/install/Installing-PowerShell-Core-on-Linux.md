@@ -3,11 +3,11 @@ title: Installation de PowerShell Core sous Linux
 description: Informations sur l’installation de PowerShell Core sur diverses distributions Linux
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293331"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086559"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installation de PowerShell Core sous Linux
 
@@ -75,8 +75,7 @@ Dès lors, il vous suffit d’utiliser `sudo apt-get upgrade powershell` pour me
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>Installation par téléchargement direct - Ubuntu 14.04
 
-Téléchargez le package Debian
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+Téléchargez le package Debian `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
 à partir de la page de [versions][] sur l’ordinateur Ubuntu.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -124,8 +123,7 @@ Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur,
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>Installation par téléchargement direct - Ubuntu 16.04
 
-Téléchargez le package Debian
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+Téléchargez le package Debian `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
 à partir de la page de [versions][] sur l’ordinateur Ubuntu.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -176,8 +174,7 @@ Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur,
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>Installation par téléchargement direct - Ubuntu 18.04
 
-Téléchargez le package Debian
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+Téléchargez le package Debian `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
 à partir de la page de [versions][] sur l’ordinateur Ubuntu.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -266,8 +263,7 @@ Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur,
 
 ### <a name="installation-via-direct-download---debian-9"></a>Installation par téléchargement direct - Debian 9
 
-Téléchargez le package Debian
-`powershell_6.2.0-1.debian.9_amd64.deb`
+Téléchargez le package Debian `powershell_6.2.0-1.debian.9_amd64.deb`
 à partir de la page de [versions][] sur l’ordinateur Debian.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -307,8 +303,7 @@ Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur,
 
 ### <a name="installation-via-direct-download---centos-7"></a>Installation par téléchargement direct - CentOS 7
 
-À l’aide de [CentOS 7][], téléchargez le package RPM
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+À l’aide de [CentOS 7][], téléchargez le package RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 à partir de la page de [versions][] sur l’ordinateur CentOS.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -352,8 +347,7 @@ Après avoir inscrit le dépôt Microsoft une fois en tant que superutilisateur,
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>Installation par téléchargement direct - Red Hat Enterprise Linux (RHEL) 7
 
-Téléchargez le package RPM
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Téléchargez le package RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 à partir de la page de [versions][] sur l’ordinateur Red Hat Enterprise Linux.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installation par téléchargement direct – Fedora 27, Fedora 28
 
-Téléchargez le package RPM
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+Téléchargez le package RPM `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 à partir de la page de [versions][] sur l’ordinateur Fedora.
 
 Exécutez ensuite le code suivant dans le terminal :
@@ -511,7 +504,7 @@ Pour plus d’informations sur l’installation de packages à partir du dépôt
 
 ### <a name="getting-snapd"></a>Obtention de snapd
 
-`snapd` est obligatoire pour exécuter des instantanés.
+`snapd` est obligatoire pour exécuter des snaps.
 Utilisez [ces instructions](https://docs.snapcraft.io/core/install) pour vérifier que vous avez bien installé `snapd`.
 
 ### <a name="installation-via-snap"></a>Installation via Snap

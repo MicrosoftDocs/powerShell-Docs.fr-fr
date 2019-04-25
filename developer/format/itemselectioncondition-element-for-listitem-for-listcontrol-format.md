@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
 caps.latest.revision: 10
 ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861865"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065442"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ItemSelectionCondition, élément pour ListItem pour ListControl (Format)
 

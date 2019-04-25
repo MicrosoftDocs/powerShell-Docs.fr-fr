@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082292"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Guide pratique pour écrire un manifeste de module PowerShell
 
@@ -80,7 +80,7 @@ Le tableau suivant décrit les éléments que vous pouvez avoir dans un manifest
 |DotNetFrameworkVersion<br /><br /> Type : chaîne|' '|Version minimale du Microsoft .NET Framework requise par ce module.<br /><br /> Exemple : `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Type : chaîne|' '|Version minimale du common language runtime (CLR) requis par ce module.<br /><br /> Exemple : `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Type : chaîne|' '|Architecture de processeur (aucun, X86, Amd64) requis par ce module. Les valeurs valides sont x86, AMD64, IA64 et None (valeur inconnue ou non spécifiée).<br /><br /> Exemple : `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Type : [chaîne []]|@()|Modules qui doivent être importés dans l’environnement global avant d’importer ce module. Cette opération charge tous les modules, sauf si elles ont déjà été chargés. (Par exemple, certains modules peuvent déjà être chargés par un autre module.). Il est également possible de spécifier une version spécifique à charger à l’aide de `RequiredVersion` plutôt que `ModuleVersion`. Lorsque vous utilisez `ModuleVersion` il chargera la version la plus récente disponible avec un minimum de la version spécifiée.<br /><br /> Exemple : `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Exemple : `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Type : [chaîne []]|@()|Modules qui doivent être importés dans l’environnement global avant d’importer ce module. Cette opération charge tous les modules, sauf si elles ont déjà été chargés. (Par exemple, certains modules peuvent déjà être chargés par un autre module.). Il est également possible de spécifier une version spécifique à charger à l’aide de `RequiredVersion` plutôt que `ModuleVersion`. Lorsque vous utilisez `ModuleVersion` il chargera la version la plus récente disponible avec un minimum de la version spécifiée.<br /><br /> Exemple : `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Exemple : `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type : [chaîne []]|@()|Assemblys qui doivent être chargés avant d’importer ce module.<br /><br /> Notez que contrairement à RequiredModules, PowerShell chargera le RequiredAssemblies s’ils ne sont pas déjà chargés.|
 |ScriptsToProcess<br /><br /> Type : [chaîne []]|@()|Fichiers de script (.ps1) qui sont exécutés dans l’état de session de l’appelant quand le module est importé. Cela peut être la session globale état ou, pour les modules imbriqués, l’état de session d’un autre module. Vous pouvez utiliser ces scripts pour préparer un environnement, tout comme vous pouvez utiliser un script de connexion.<br /><br /> Ces scripts sont exécutés avant qu’un des modules répertoriés dans le manifeste sont chargé.|
 |TypesToProcess<br /><br /> Type : [objet []]|@()|Type de fichiers (.ps1xml) à charger lors de l’importation de ce module.|

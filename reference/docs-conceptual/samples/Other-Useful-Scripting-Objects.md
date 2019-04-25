@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Autres objets de script utiles
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 ms.openlocfilehash: ff494f375c0d43d83b2a067dbe4f2ab35a90d564
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086202"
 ---
 # <a name="other-useful-scripting-objects"></a>Autres objets de script utiles
 

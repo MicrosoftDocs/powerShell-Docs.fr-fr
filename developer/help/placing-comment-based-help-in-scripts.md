@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
 ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860765"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083227"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Mise en place de l’aide basée sur les commentaires dans les scripts
 

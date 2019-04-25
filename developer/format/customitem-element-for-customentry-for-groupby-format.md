@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f7c517aa-24f5-41ae-b82d-cb0fac81a245
 caps.latest.revision: 7
 ms.openlocfilehash: 2d821f5e3bc8d0f81ef8a8a040c6f9bcb1658bee
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856925"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066394"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>CustomItem, élément pour CustomEntry pour GroupBy (Format)
 

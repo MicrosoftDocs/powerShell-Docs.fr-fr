@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Paramètres de compte PowerShell Gallery
 ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084470"
 ---
 # <a name="powershell-gallery-account-settings"></a>Paramètres de compte PowerShell Gallery
 
@@ -39,7 +39,7 @@ PowerShell Gallery propose les options de notification suivantes :
 ![Changement d’adresse e-mail](../../Images/PSGallery_AccountEmailOptions.png)
 
 Comme indiqué dans la page, les notifications critiques de PowerShell Gallery ne peuvent pas être désactivées.
-Ces améliorations sont notamment les suivantes :
+Ces paramètres sont les suivants :
 
 - Notifications de sécurité
 - Notifications de gestion de compte des administrateurs PowerShell Gallery

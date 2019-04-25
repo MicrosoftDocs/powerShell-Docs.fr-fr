@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
 ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058791"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064847"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>RightIndent, élément pour Frame pour CustomControl pour View (Format)
 

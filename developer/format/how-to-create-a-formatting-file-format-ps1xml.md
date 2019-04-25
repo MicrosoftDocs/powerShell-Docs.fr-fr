@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
 ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065495"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>Guide pratique pour créer un fichier de mise en forme (.format.ps1xml)
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3e064048-2b94-4365-bdb7-f1ee7c0a7fd7
 caps.latest.revision: 6
 ms.openlocfilehash: cecc6c26ccaece06462ddd74b53534137fcf3037
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082325"
 ---
 # <a name="how-to-test-updatable-help"></a>Guide pratique pour tester l’aide actualisable
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 9486fdbaeca66c83551564c76ce47482f77c36b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 424e0b7a4d62fc35e5040a7e425950e887021d7e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34225604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085879"
 ---
 # <a name="call-base-class-constructor"></a>Appeler un constructeur de classe de base
 

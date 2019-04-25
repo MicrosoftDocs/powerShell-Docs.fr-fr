@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Conditions préalables pour JEA
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084842"
 ---
 # <a name="prerequisites"></a>Conditions préalables
 
-> S’applique à : Windows PowerShell 5.0
+> S'applique à : Windows PowerShell 5.0
 
 Just Enough Administration est une fonctionnalité incluse dans Windows PowerShell 5.0 et versions ultérieures.
 Cette rubrique décrit les conditions préalables à satisfaire pour pouvoir commencer à utiliser JEA.

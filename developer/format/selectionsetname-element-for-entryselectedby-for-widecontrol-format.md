@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
 caps.latest.revision: 10
 ms.openlocfilehash: 6b6a4a4647412d11d947f1dc4ea12d1e05ff536e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856795"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064018"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>SelectionSetName, élément pour EntrySelectedBy pour WideControl (Format)
 

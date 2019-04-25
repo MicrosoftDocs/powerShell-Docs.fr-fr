@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
 caps.latest.revision: 7
 ms.openlocfilehash: 0f965f4ee1ef92a6a538b52b4348c04366cabf66
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082462"
 ---
 # <a name="helpinfo-xml-schema"></a>Schéma XML HelpInfo
 

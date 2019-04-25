@@ -3,11 +3,11 @@ title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 08/14/2018
 ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056530"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086389"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
