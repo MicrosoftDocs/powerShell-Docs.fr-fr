@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Démarrage de Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058350"
 ---
 # <a name="starting-windows-powershell"></a>Démarrage de Windows PowerShell
 PowerShell est une DLL de moteur de script qui est incorporée dans plusieurs hôtes.  L’hôte le plus courant que vous démarrerez sont la ligne de commande interactive PowerShell.exe et l’environnement d’écriture de scripts interactif PowerShell_ISE.exe.

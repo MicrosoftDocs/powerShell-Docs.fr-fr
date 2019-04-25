@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080354"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>Planification des travaux avec l’API PowerShell
 

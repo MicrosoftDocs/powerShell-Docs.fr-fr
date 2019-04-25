@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083380"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
 

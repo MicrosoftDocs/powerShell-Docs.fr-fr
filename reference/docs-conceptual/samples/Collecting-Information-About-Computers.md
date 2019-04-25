@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Collecte d’informations sur les ordinateurs
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058333"
 ---
 # <a name="collecting-information-about-computers"></a>Collecte d’informations sur les ordinateurs
 

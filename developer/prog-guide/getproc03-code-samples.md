@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8ad39c7d-2f64-49d1-9be0-d2295e4302b3
 caps.latest.revision: 5
 ms.openlocfilehash: 833ff1c37ee025e9cd9d2760bc63695534dd69ff
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081612"
 ---
 # <a name="getproc03-code-samples"></a>Exemples de code GetProc03
 
@@ -26,7 +26,7 @@ Voici les exemples de code pour l’applet de commande GetProc03 exemple. Il s�
 
 Pour l’exemple de code complet, consultez les rubriques suivantes.
 
-|Langue|Rubrique|
+|Language|Rubrique|
 |--------------|-----------|
 |C#|[GetProc03 (C#) exemple de Code](./getproc03-csharp-sample-code.md)|
 |VB.NET|[GetProc03 exemple de Code (VB.NET)](./getproc03-vb-net-sample-code.md)|

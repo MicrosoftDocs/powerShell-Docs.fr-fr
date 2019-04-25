@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Objet PowerShellTabCollection
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: d9088b26de35360b8258d3f15924b3010a986d15
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401876"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086610"
 ---
 # <a name="the-powershelltabcollection-object"></a>Objet PowerShellTabCollection
 

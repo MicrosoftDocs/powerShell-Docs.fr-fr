@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
-ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
+ms.openlocfilehash: 28cd186ab3a08a0da4ff81f5a21514f239770d13
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2018
-ms.locfileid: "35251481"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058078"
 ---
 # <a name="script-tracing-and-logging"></a>Traçage et journalisation de script
 
@@ -49,16 +49,16 @@ Voici un exemple qui illustre comment cette fonctionnalité peut aider à contre
 ## Malware
 function SuperDecrypt
 {
-    param($script)
-    $bytes = [Convert]::FromBase64String($script)
+    param($script)
+    $bytes = [Convert]::FromBase64String($script)
 
-    ## XOR “encryption”
-    $xorKey = 0x42
-    for($counter = 0; $counter -lt $bytes.Length; $counter++)
-    {
-        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
-    }
-    [System.Text.Encoding]::Unicode.GetString($bytes)
+    ## XOR “encryption”
+    $xorKey = 0x42
+    for($counter = 0; $counter -lt $bytes.Length; $counter++)
+    {
+        $bytes[$counter] = $bytes[$counter] -bxor $xorKey
+    }
+    [System.Text.Encoding]::Unicode.GetString($bytes)
 }
 
 $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="

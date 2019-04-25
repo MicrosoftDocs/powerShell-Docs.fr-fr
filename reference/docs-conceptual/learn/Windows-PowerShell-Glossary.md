@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Glossaire Windows PowerShell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401947"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057336"
 ---
 # <a name="windows-powershell-glossary"></a>Glossaire Windows PowerShell
 

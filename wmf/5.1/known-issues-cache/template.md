@@ -4,11 +4,11 @@ keywords: wmf,powershell,configuration
 ms.topic: conceptual
 title: exemple de modèle d’un problème ou limitation connu
 ms.openlocfilehash: 8c1004e16f78913174af2e519e451f6fd9f30ff7
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794488"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055545"
 ---
  >Remarque : fournir un titre descriptif proposé et une brève description
 

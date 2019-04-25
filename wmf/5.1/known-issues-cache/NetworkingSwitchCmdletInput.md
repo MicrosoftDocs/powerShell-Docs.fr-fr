@@ -5,11 +5,11 @@ ms.topic: conceptual
 contributor: vaibch
 title: Échec des applets de commande du Gestionnaire de commutateur réseau
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893152"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084978"
 ---
 # <a name="network-switch-manager-cmdlets-failure"></a>Échec des applets de commande du Gestionnaire de commutateur réseau
 

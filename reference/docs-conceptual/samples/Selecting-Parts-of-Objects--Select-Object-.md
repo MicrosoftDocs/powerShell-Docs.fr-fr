@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Sélection de parties d’objets Select Object
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
 ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402036"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057890"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>Sélection de parties d’objets (Select-Object)
 

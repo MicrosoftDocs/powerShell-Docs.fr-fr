@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
 ms.openlocfilehash: 6d47fbc6b41d87cb830683ea412826275083b8a3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081765"
 ---
 # <a name="getproc01-code-samples"></a>Exemples de code GetProc01
 
@@ -21,7 +21,7 @@ Voici les exemples de code pour l’applet de commande GetProc01 exemple. Il s�
 
 Pour l’exemple de code complet, consultez les rubriques suivantes.
 
-|Langue|Rubrique|
+|Language|Rubrique|
 |--------------|-----------|
 |C#|[GetProc01 (C#) exemple de Code](./getproc01-csharp-sample-code.md)|
 |VB.NET|[GetProc01 exemple de Code (VB.NET)](./getproc01-vb-net-sample-code.md)|
