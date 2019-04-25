@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Retirer des packages de la liste
 ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084111"
 ---
 # <a name="unlisting-packages"></a>Retirer des packages de la liste
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Package dans DSC
 ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047285"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077192"
 ---
 # <a name="dsc-package-resource"></a>Ressource Package dans DSC
 
-S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource **Package** dans DSC Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages, tels que les packages Windows Installer et setup.exe, sur un nœud cible.
 

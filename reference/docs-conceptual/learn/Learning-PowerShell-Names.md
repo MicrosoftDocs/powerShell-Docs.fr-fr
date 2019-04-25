@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Apprentissage des noms de commande PowerShell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623719"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086423"
 ---
 # <a name="learning-powershell-command-names"></a>Apprentissage des noms de commande PowerShell
 

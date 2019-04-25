@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation de DSC sur Nano Server
 ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079725"
 ---
 # <a name="using-dsc-on-nano-server"></a>Utilisation de DSC sur Nano Server
 
-> S'applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 **DSC sur Nano Server** est un package facultatif dans le dossier `NanoServer\Packages` du support Windows Server 2016. Le package peut être installé lorsque vous créez un disque dur virtuel pour Nano Server en spécifiant **Microsoft-NanoServer-DSC-Package** comme valeur du paramètre **Packages** de la fonction **New-NanoServerImage**. Par exemple, si vous créez un disque dur virtuel pour une machine virtuelle, la commande ressemble à ceci :
 

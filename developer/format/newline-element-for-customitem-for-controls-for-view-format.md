@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7620d561-2d20-46ee-a295-8144b6d9f699
 caps.latest.revision: 6
 ms.openlocfilehash: c1da8c8715d2474a16e0ac47033bbe211624c678
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862705"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065034"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-view-format"></a>NewLine, élément pour CustomItem pour Controls pour View (Format)
 

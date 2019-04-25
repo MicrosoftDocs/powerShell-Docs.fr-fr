@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxGroup dans DSC pour Linux
 ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047426"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077856"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Ressource nxGroup dans DSC pour Linux
 
@@ -37,7 +37,7 @@ nxGroup <string> #ResourceName
 | MembersToInclude| Spécifie les utilisateurs qui doivent faire partie du groupe.|
 | MembersToExclude| Spécifie les utilisateurs qui ne doivent pas faire partie du groupe.|
 | PreferredGroupID| Définit l’ID de groupe à la valeur fournie, si possible. Si l’ID de groupe est déjà utilisé, l’ID de groupe disponible suivant est utilisé.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être effectuée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Exemple
 

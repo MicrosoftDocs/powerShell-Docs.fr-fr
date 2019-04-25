@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b4191157-bf01-4831-b221-6f8cc581cd53
 caps.latest.revision: 6
 ms.openlocfilehash: 0cbefbb48427b56d4ae2a5ae27c7726dcfad7b84
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064711"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-controls-for-view-format"></a>ScriptBlock, élément pour ItemSelectionCondition pour Controls pour View (Format)
 

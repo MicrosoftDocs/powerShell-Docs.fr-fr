@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079691"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxPackage dans DSC pour Linux
 ms.openlocfilehash: 64bb89a95bd6cbaea4e74b8a9979de52428fef3f
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077869"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>Ressource nxPackage dans DSC pour Linux
 
@@ -41,7 +41,7 @@ nxPackage <string> #ResourceName
 | PackageGroup| Si sa valeur est **$true**, **Name** doit correspondre au nom d’un groupe de package à utiliser avec **PackageManager**. **PackageGroup** n’est pas valide si **FilePath** est spécifié.|
 | Arguments| Chaîne d’arguments transmise telle quelle au package.|
 | ReturnCode| Code de retour attendu. Si le code de retour réel ne correspond pas à la valeur attendue indiquée ici, la configuration retourne une erreur.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être effectuée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Exemple
 

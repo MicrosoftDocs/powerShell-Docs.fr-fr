@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
 ms.openlocfilehash: 5e8d1df6b423bfd2cd6b0a64a8875dea9c3fb4ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083465"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des exemples à une rubrique d’aide d’applet de commande
 

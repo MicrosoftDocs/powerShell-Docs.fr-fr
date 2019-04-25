@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063936"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableColumnItem, élément pour TableColumnItems pour TableControl (Format)
 

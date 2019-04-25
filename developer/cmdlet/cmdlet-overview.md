@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056666"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068468"
 ---
 # <a name="cmdlet-overview"></a>Vue d’ensemble des applets de commande
 
@@ -94,7 +94,7 @@ Pour plus d’informations sur ces méthodes, consultez [méthodes de traitement
 
 Windows PowerShell définit plusieurs attributs de .NET Framework qui sont utilisées pour gérer des applets de commande et pour spécifier des fonctionnalités communes, qui est fournie par Windows PowerShell et qui peut être requis par l’applet de commande. Par exemple, les attributs sont utilisés pour désigner une classe comme une applet de commande pour spécifier les paramètres de l’applet de commande et pour demander la validation d’entrée afin que les développeurs de l’applet de commande n’ont pas à implémenter cette fonctionnalité dans leur code de l’applet de commande. Pour plus d’informations sur les attributs, consultez [Windows PowerShell attributs](./cmdlet-attributes.md).
 
-## <a name="cmdlet-names"></a>Noms des applets de commande
+## <a name="cmdlet-names"></a>Noms d’applet de commande
 
 Windows PowerShell utilise une paire de nom de type verbe-substantif aux applets de commande de nom. Par exemple, le `Get-Command` applet de commande inclus dans Windows PowerShell est utilisé pour obtenir toutes les applets de commande qui sont inscrits dans l’interface de commande. Le verbe identifie l’action qui exécute l’applet de commande, et le substantif identifie la ressource sur laquelle l’applet de commande effectue son action.
 

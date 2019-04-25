@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Écriture d’une ressource de DSC d’instance unique (recommandation)
 ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401810"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076563"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Écriture d’une ressource de DSC d’instance unique (recommandation)
 
@@ -48,7 +48,7 @@ Configuration SetTimeZone
 
 Cela est dû à la manière dont les clés de ressources DSC fonctionnent. Une ressource doit avoir au moins une propriété de clé. Une instance de ressource est considérée comme unique si la combinaison des valeurs de toutes ses propriétés de clé est unique. Dans l’implémentation précédente, la ressource [xTimeZone](https://github.com/PowerShell/xTimeZone) n’avait qu’une seule propriété (**fuseau horaire**), qui devait nécessairement être une clé. Pour cette raison, une configuration telle que celle ci-dessus était compilée et exécutée sans avertissement. Chacun des blocs de ressources **xTimeZone** est considéré comme unique. Cela entraînerait l’application de la configuration au nœud à plusieurs reprises, en effectuant un cycle dans le fuseau horaire dans les deux sens.
 
-Pour s’assurer qu’une configuration ne peut définir le fuseau horaire d’un nœud cible qu’une seule fois, la ressource a été mise à jour pour ajouter une deuxième propriété, **IsSingleInstance**, qui est devenue la propriété de clé.
+Pour s’assurer qu’une configuration ne puisse définir le fuseau horaire d’un nœud cible qu’une seule fois, la ressource a été mise à jour pour ajouter une deuxième propriété, **IsSingleInstance**, qui est devenue la propriété de clé.
 La propriété **IsSingleInstance** a été limitée à une valeur unique, « Yes », à l’aide de **ValueMap**. L’ancien schéma MOF de la ressource était :
 
 ```powershell

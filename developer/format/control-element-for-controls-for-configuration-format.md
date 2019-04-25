@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
 caps.latest.revision: 13
 ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858885"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066787"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Control, élément pour Controls pour Configuration (Format)
 
