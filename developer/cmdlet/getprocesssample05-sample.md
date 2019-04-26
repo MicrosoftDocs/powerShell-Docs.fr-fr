@@ -9,71 +9,71 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055975"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068009"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="60fde-102">Exemple GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="60fde-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="af7b6-102">Exemple GetProcessSample05</span><span class="sxs-lookup"><span data-stu-id="af7b6-102">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="60fde-103">Cet exemple montre une version complète de l’applet de commande Get-Process.</span><span class="sxs-lookup"><span data-stu-id="60fde-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="af7b6-103">Cet exemple montre une version complète de l’applet de commande Get-Process.</span><span class="sxs-lookup"><span data-stu-id="af7b6-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="60fde-104">Guide pratique pour générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="60fde-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="af7b6-104">Guide pratique pour générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="af7b6-104">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="60fde-105">Ouvrez l’Explorateur Windows et accédez au répertoire GetProcessSample05 sous le répertoire d’exemples.</span><span class="sxs-lookup"><span data-stu-id="60fde-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="af7b6-105">Ouvrez l’Explorateur Windows et accédez au répertoire GetProcessSample05 sous le répertoire d’exemples.</span><span class="sxs-lookup"><span data-stu-id="af7b6-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="60fde-106">Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="60fde-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="60fde-107">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="60fde-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="af7b6-106">Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="af7b6-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="af7b6-107">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span><span class="sxs-lookup"><span data-stu-id="af7b6-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="60fde-108">Double-cliquez sur l’icône pour le fichier solution (.sln).</span><span class="sxs-lookup"><span data-stu-id="60fde-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="60fde-109">L’exemple de projet s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="60fde-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="af7b6-108">Double-cliquez sur l’icône pour le fichier solution (.sln).</span><span class="sxs-lookup"><span data-stu-id="af7b6-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="af7b6-109">L’exemple de projet s’ouvre dans Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="af7b6-109">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="60fde-110">Dans le **Build** menu, sélectionnez **générer la Solution**.</span><span class="sxs-lookup"><span data-stu-id="60fde-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="af7b6-110">Dans le **Build** menu, sélectionnez **générer la Solution**.</span><span class="sxs-lookup"><span data-stu-id="af7b6-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="60fde-111">La bibliothèque de l’exemple est générée dans les répertoires de \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="60fde-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="af7b6-111">La bibliothèque de l’exemple est générée dans les répertoires de \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="af7b6-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="60fde-112">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="60fde-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="af7b6-112">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="af7b6-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="60fde-113">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="60fde-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="af7b6-113">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="af7b6-113">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="60fde-114">Copiez l’exemple d’assembly dans le dossier de module.</span><span class="sxs-lookup"><span data-stu-id="60fde-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="af7b6-114">Copiez l’exemple d’assembly dans le dossier de module.</span><span class="sxs-lookup"><span data-stu-id="af7b6-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="60fde-115">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="60fde-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="af7b6-115">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="af7b6-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="60fde-116">Exécutez la commande suivante pour charger l’assembly dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="60fde-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="af7b6-116">Exécutez la commande suivante pour charger l’assembly dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="af7b6-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="60fde-117">Exécutez la commande suivante pour exécuter l’applet de commande :</span><span class="sxs-lookup"><span data-stu-id="60fde-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="af7b6-117">Exécutez la commande suivante pour exécuter l’applet de commande :</span><span class="sxs-lookup"><span data-stu-id="af7b6-117">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="60fde-118">Spécifications</span><span class="sxs-lookup"><span data-stu-id="60fde-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="af7b6-118">Spécifications</span><span class="sxs-lookup"><span data-stu-id="af7b6-118">Requirements</span></span>
 
-<span data-ttu-id="60fde-119">Cet exemple requiert Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="60fde-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="af7b6-119">Cet exemple requiert Windows PowerShell 2.0.</span><span class="sxs-lookup"><span data-stu-id="af7b6-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="60fde-120">Montre</span><span class="sxs-lookup"><span data-stu-id="60fde-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="af7b6-120">Montre</span><span class="sxs-lookup"><span data-stu-id="af7b6-120">Demonstrates</span></span>
 
-<span data-ttu-id="60fde-121">Cet exemple montre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="60fde-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="af7b6-121">Cet exemple montre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="af7b6-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="60fde-122">Déclaration de la classe d’applet de commande à l’aide de l’attribut de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="60fde-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="af7b6-122">Déclaration de la classe d’applet de commande à l’aide de l’attribut de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="af7b6-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="60fde-123">Déclaration d’un paramètre de l’applet de commande à l’aide de l’attribut de paramètre.</span><span class="sxs-lookup"><span data-stu-id="60fde-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="af7b6-123">Déclaration d’un paramètre de l’applet de commande à l’aide de l’attribut de paramètre.</span><span class="sxs-lookup"><span data-stu-id="af7b6-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="60fde-124">Déterminant les positions des paramètres.</span><span class="sxs-lookup"><span data-stu-id="60fde-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="af7b6-124">Déterminant les positions des paramètres.</span><span class="sxs-lookup"><span data-stu-id="af7b6-124">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="60fde-125">En spécifiant que les paramètres peuvent prendre d’entrée du pipeline.</span><span class="sxs-lookup"><span data-stu-id="60fde-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="60fde-126">L’entrée peut provenir d’un objet ou une valeur d’une propriété d’un objet dont le nom propriété est le même que le nom du paramètre.</span><span class="sxs-lookup"><span data-stu-id="60fde-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="af7b6-125">En spécifiant que les paramètres peuvent prendre d’entrée du pipeline.</span><span class="sxs-lookup"><span data-stu-id="af7b6-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="af7b6-126">L’entrée peut provenir d’un objet ou une valeur d’une propriété d’un objet dont le nom propriété est le même que le nom du paramètre.</span><span class="sxs-lookup"><span data-stu-id="af7b6-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="60fde-127">Déclaration d’un attribut de validation pour le paramètre d’entrée.</span><span class="sxs-lookup"><span data-stu-id="60fde-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="af7b6-127">Déclaration d’un attribut de validation pour le paramètre d’entrée.</span><span class="sxs-lookup"><span data-stu-id="af7b6-127">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="60fde-128">Gestion des erreurs et exceptions.</span><span class="sxs-lookup"><span data-stu-id="60fde-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="af7b6-128">Gestion des erreurs et exceptions.</span><span class="sxs-lookup"><span data-stu-id="af7b6-128">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="60fde-129">Écriture de messages de débogage.</span><span class="sxs-lookup"><span data-stu-id="60fde-129">Writing debug messages.</span></span>
+- <span data-ttu-id="af7b6-129">Écriture de messages de débogage.</span><span class="sxs-lookup"><span data-stu-id="af7b6-129">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="60fde-130">Exemple</span><span class="sxs-lookup"><span data-stu-id="60fde-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="af7b6-130">Exemple</span><span class="sxs-lookup"><span data-stu-id="af7b6-130">Example</span></span>
 
-<span data-ttu-id="60fde-131">Cet exemple montre comment créer une applet de commande qui affiche la liste des processus spécifiés.</span><span class="sxs-lookup"><span data-stu-id="60fde-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="af7b6-131">Cet exemple montre comment créer une applet de commande qui affiche la liste des processus spécifiés.</span><span class="sxs-lookup"><span data-stu-id="af7b6-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -479,6 +479,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="60fde-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="60fde-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="af7b6-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="af7b6-132">See Also</span></span>
 
-[<span data-ttu-id="60fde-133">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="60fde-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="af7b6-133">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="af7b6-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
