@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VSCode et PowerShell
 description: Configuration de l’encodage de fichier dans VSCode et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320402"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058435"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Présentation de l’encodage de fichier dans VSCode et PowerShell
 
@@ -102,7 +102,7 @@ Les marques d’ordre d’octet sont facultatives, et leur adoption n’est pas 
 
 L’encodage par défaut de VSCode est UTF-8 sans marque d’ordre d’octet.
 
-Pour définir l’[encodage de VSCode][], accédez aux paramètres VSCode (<kbd>Ctrl<kbd>+</kbd>,</kbd>) et définissez le paramètre `"files.encoding"` :
+Pour définir l’[encodage de VSCode][], accédez aux paramètres VSCode (<kbd>Ctrl</kbd>+<kbd>,</kbd>) et définissez le paramètre `"files.encoding"` :
 
 ```json
 "files.encoding": "utf8bom"
