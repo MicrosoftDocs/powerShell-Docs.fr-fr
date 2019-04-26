@@ -4,21 +4,21 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Nouveaux scénarios et fonctionnalités dans WMF 5.1
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678728"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085428"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>Nouveaux scénarios et fonctionnalités dans WMF 5.1
 
-> Remarque : Ces informations sont préliminaires et susceptibles d’être modifiées.
+> Remarque : Ces informations sont provisoires et sujettes à modification.
 
 ## <a name="powershell-editions"></a>Éditions de PowerShell
 
-À compter de la version 5.1, PowerShell est disponible dans plusieurs éditions, dont les ensembles de fonctionnalités et la compatibilité de plateforme diffèrent.
+À compter de la version 5.1, PowerShell est disponible dans différentes éditions qui indiquent la compatibilité de la plateforme et les différents ensembles de fonctionnalités.
 
-- **Desktop Edition :** basée sur le .NET Framework, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions complètes de Windows telles que Server Core et Windows Desktop.
+- **Édition Desktop :** repose sur le .NET Framework et offre une compatibilité avec les scripts et les modules ciblant les versions de PowerShell exécutées sur les éditions complètes de Windows, telles que Server Core et Bureau Windows.
 - **Core Edition :** basée sur .NET Core, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions réduites de Windows telles que Nano Server et Windows IoT.
 
 **En savoir plus sur l’utilisation des éditions de PowerShell**

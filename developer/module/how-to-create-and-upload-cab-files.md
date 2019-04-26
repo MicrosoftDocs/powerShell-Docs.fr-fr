@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
 ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082377"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>Guide pratique pour créer et charger des fichiers CAB
 

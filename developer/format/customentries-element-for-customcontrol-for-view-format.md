@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
 caps.latest.revision: 11
 ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066513"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>CustomEntries, élément pour CustomControl pour View (Format)
 

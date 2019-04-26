@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Écriture d’une ressource DSC personnalisée avec MOF
 ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076733"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Écriture d’une ressource DSC personnalisée avec MOF
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Dans cette rubrique, nous allons définir le schéma d’une ressource DSC Windows PowerShell personnalisée dans un fichier MOF et implémenter cette ressource dans un fichier de script Windows PowerShell. Cette ressource personnalisée permet de créer et de gérer un site web.
 

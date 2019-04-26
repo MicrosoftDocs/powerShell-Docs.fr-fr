@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
 caps.latest.revision: 7
 ms.openlocfilehash: 3c94d8e98f179286112a417230fce659dc0b614c
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794159"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065306"
 ---
 # <a name="list-view-basic"></a>Vue de liste (De base)
 

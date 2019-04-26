@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857965"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083499"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
 
 Cette rubrique inclut un exemple qui montrent comment utiliser l’aide basée sur un commentaire pour les scripts et fonctions.
 
-## <a name="example-1-comment-based-help-for-a-function"></a>Exemple 1 : Aide relative à une fonction en fonction du commentaire
+## <a name="example-1-comment-based-help-for-a-function"></a>Exemple 1 : Aide relative à une fonction en fonction du commentaire
 
  L’exemple de fonction suivant inclut l’aide basée sur le commentaire.
 
@@ -141,7 +141,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>Exemple 2 : Aide basée sur un Script
+## <a name="example-2-comment-based-help-for-a-script"></a>Exemple 2 : Aide basée sur un Script
 
 L’exemple de fonction suivant inclut l’aide basée sur le commentaire.
 
@@ -255,7 +255,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
             RELATED LINKS
 ```
 
-## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Exemple 3 : Descriptions de paramètre dans une instruction Param
+## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Exemple 3 : Descriptions de paramètre dans une instruction Param
 
 Cet exemple montre comment insérer parameterdescriptions dans la `Param` instruction d’une fonction ou un script. Ce format est particulièrement utile lorsque les descriptions de paramètre sont brèves.
 

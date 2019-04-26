@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065272"
 ---
 # <a name="list-view-labels"></a>Vue de liste (Étiquettes)
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressources WindowsFeatureSet dans DSC
 ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076784"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>Ressources WindowsFeatureSet dans DSC
 
-> S'applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 La ressource **WindowsFeatureSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour garantir que des rôles et des fonctionnalités sont ajoutés ou supprimés sur un nœud cible.
 Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la ressource [WindowsFeature](windowsfeatureResource.md) pour chaque fonctionnalité spécifiée dans la propriété `Name`.

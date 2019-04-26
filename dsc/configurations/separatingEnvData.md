@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Séparation des données de configuration et d’environnement
 ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080031"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Séparation des données de configuration et d’environnement
 
->S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Il peut être utile de séparer les données utilisées dans une configuration DSC de la configuration elle-même en s’aidant des données de configuration.
 Pour y parvenir, vous pouvez utiliser une seule et même configuration pour plusieurs environnements.

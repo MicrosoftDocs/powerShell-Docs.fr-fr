@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
-ms.openlocfilehash: 779c39b590c05b944c61f53155cf2e602a7cfc4e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cb26e816b2bd95280ec3a426dbf60629c7668077
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189395"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085369"
 ---
 # <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Configurer un nœud avec plusieurs fragments de configuration (configurations partielles)
 

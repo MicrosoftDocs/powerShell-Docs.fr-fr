@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
 caps.latest.revision: 7
 ms.openlocfilehash: c4b13518ad6452a39ca49e897e1d3e353818d332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860755"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081031"
 ---
 # <a name="windows-powershell-concepts"></a>Concepts de Windows PowerShell
 

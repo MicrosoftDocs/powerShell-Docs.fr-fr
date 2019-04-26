@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6e4e0cf6-19e0-44b8-8b40-d6f6075276cf
 caps.latest.revision: 5
 ms.openlocfilehash: 489d8bcdabe904d6a3d2bc6cdb9d7e23d09cbef2
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075186"
 ---
 # <a name="activity-parameters"></a>Paramètres d’activité
 
@@ -31,8 +31,8 @@ Le tableau suivant répertorie les noms recommandés pour les paramètres de l�
 |**Create**<br>Type de données : SwitchParameter|Implémentez ce paramètre pour indiquer qu’une ressource est créée si celle-ci n’existe pas lorsque le paramètre est spécifié.|
 |**Supprimer**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que les ressources sont supprimés lors de l’applet de commande a terminé son opération lorsque le paramètre est spécifié.|
 |**Aspirer**<br>Type de données : SwitchParameter|Implémentez ce paramètre pour indiquer que les éléments de travail en attente sont traitées avant que l’applet de commande traite des nouvelles données lorsque le paramètre est spécifié. Si le paramètre n’est pas spécifié, les éléments de travail sont traités immédiatement.|
-|**effacement**<br>Type de données : Ent32|Implémentez ce paramètre afin que l’utilisateur peut spécifier le nombre de fois où qu'une ressource est effacée avant sa suppression.|
-|**ErrorLevel**<br>Type de données : Ent32|Implémentez ce paramètre afin que l’utilisateur peut spécifier le niveau d’erreur à signaler.|
+|**effacement**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur peut spécifier le nombre de fois où qu'une ressource est effacée avant sa suppression.|
+|**ErrorLevel**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur peut spécifier le niveau d’erreur à signaler.|
 |**Exclude**<br>Type de données : String[]|Implémentez ce paramètre afin que l’utilisateur peut exclure quelque chose à partir d’une activité. Pour plus d’informations sur l’utilisation des filtres d’entrée, consultez [les paramètres de filtre d’entrée](input-filter-parameters.md).|
 |**Filter**<br>Type de données : Mot clé|Implémentez ce paramètre afin que l’utilisateur peut spécifier un filtre qui sélectionne les ressources sur lequel effectuer l’action de l’applet de commande. Pour plus d’informations sur l’utilisation des filtres d’entrée, consultez [les paramètres de filtre d’entrée](./input-filter-parameters.md).|
 |**Suivez**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que les cours suivi lorsque le paramètre est spécifié.|
@@ -53,16 +53,16 @@ Le tableau suivant répertorie les noms recommandés pour les paramètres de l�
 |**Recurse**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que les applets de commande de manière récursive effectue ses actions sur les ressources lorsque le paramètre est spécifié.|
 |**Réparation**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que l’applet de commande va tenter de corriger quelque chose à partir d’un état interrompu lorsque le paramètre est spécifié.|
 |**RepairString**<br>Type de données : String|Mettre en œuvre de ce paramètre afin que l’utilisateur peut spécifier une chaîne à utiliser lorsque le **réparation** est précisé.|
-|**Retry**<br>Type de données : Ent32|Implémentez ce paramètre afin de l’utilisateur peut spécifier le nombre de fois que l’applet de commande va tenter une action.|
+|**Retry**<br>Type de données : Int32|Implémentez ce paramètre afin de l’utilisateur peut spécifier le nombre de fois que l’applet de commande va tenter une action.|
 |**Select**<br>Type de données : Tableau de mot clé|Implémentez ce paramètre afin que l’utilisateur peut spécifier un tableau des types d’éléments.|
 |**flux de données**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin de l’utilisateur peut diffuser plusieurs objets de sortie via le pipeline lorsque le paramètre est spécifié.|
 |**Strict**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que toutes les erreurs sont gérées comme des erreurs avec fin d’exécution lorsque le paramètre est spécifié.|
 |**TempLocation**<br>Type de données : String|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier l’emplacement des données temporaires qui sont utilisées pendant l’opération de l’applet de commande.|
-|**Délai d’attente**<br>Type de données : Ent32|Implémentez ce paramètre afin que l’utilisateur peut spécifier l’intervalle de délai d’attente (en millisecondes).|
+|**Délai d’attente**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur peut spécifier l’intervalle de délai d’attente (en millisecondes).|
 |**tronquer**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que l’applet de commande va tronquer ses actions lorsque le paramètre est spécifié. Si le paramètre n’est pas spécifié, l’applet de commande effectue une autre action.|
 |**Vérifier**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que l’applet de commande sera tester pour déterminer si une action s’est produite lorsque le paramètre est spécifié.|
 |**attente**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que l’applet de commande attendra pour l’entrée utilisateur avant de continuer lorsque le paramètre est spécifié.
-|**WaitTime**<br>Type de données : Ent32|Mettre en œuvre de ce paramètre afin que l’utilisateur peut spécifier la durée (en secondes) que l’applet de commande attendra utilisateur entrée quand le **attente** est précisé.|
+|**WaitTime**<br>Type de données : Int32|Mettre en œuvre de ce paramètre afin que l’utilisateur peut spécifier la durée (en secondes) que l’applet de commande attendra utilisateur entrée quand le **attente** est précisé.|
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c5242935-2782-4d23-84f5-2446b2b7ba83
 caps.latest.revision: 8
 ms.openlocfilehash: c9abd9f22907b87323c16d603a9f75bb3d375a03
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066632"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format"></a>CustomControlName, élément pour ExpressionBinding pour Controls pour Configuration (Format)
 

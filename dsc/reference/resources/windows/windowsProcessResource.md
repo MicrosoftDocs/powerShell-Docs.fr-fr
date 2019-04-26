@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource WindowsProcess dans DSC
 ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076756"
 ---
 # <a name="dsc-windowsprocess-resource"></a>Ressource WindowsProcess dans DSC
 
-S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource **WindowsProcess** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour configurer des processus sur un nœud cible.
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC WaitForSome
 ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059454"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076852"
 ---
 # <a name="dsc-waitforsome-resource"></a>Ressource DSC WaitForSome
 
-> S'applique à : Windows PowerShell 5.0 et ultérieur
+> S’applique à : Windows PowerShell 5.0 et ultérieur
 
 La ressource de configuration d’état souhaité (DSC) **WaitForSome** peut être utilisée dans un bloc de nœud dans une [configuration DSC](../../../configurations/configurations.md) pour spécifier les dépendances sur les configurations sur d’autres nœuds.
 

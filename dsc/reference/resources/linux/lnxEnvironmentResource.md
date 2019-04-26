@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxEnvironment dans DSC pour Linux
 ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047473"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078008"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>Ressource nxEnvironment dans DSC pour Linux
 
@@ -35,7 +35,7 @@ nxEnvironment <string> #ResourceName
 | Valeur| Valeur à attribuer à la variable d’environnement.|
 | Ensure| Détermine si l’existence de la variable doit être vérifiée. Définissez cette propriété sur « Present » pour vous assurer que la variable existe. Définissez la propriété sur « Absent » pour vous assurer que la variable n’existe pas. La valeur par défaut est « Present ».|
 | Path| Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur **$true** si la variable est une variable **Path** ; sinon, affectez-lui la valeur **$false**. La valeur par défaut est **$false**. Si la variable actuellement configurée est une variable **Path**, la valeur fournie par la propriété **Value** est adjointe à la valeur existante.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être effectuée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
