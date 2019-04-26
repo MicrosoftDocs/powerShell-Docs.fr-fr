@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: 3741982f81efa04d8fe7ab448fba5f2fdf4b0c01
-ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
-ms.translationtype: HT
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59984236"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068859"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
 
