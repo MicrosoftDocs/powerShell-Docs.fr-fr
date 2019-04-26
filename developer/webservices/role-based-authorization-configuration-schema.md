@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
 ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080541"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="482d4-102">Schéma de configuration des autorisations en fonction du rôle</span><span class="sxs-lookup"><span data-stu-id="482d4-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="72e67-102">Schéma de configuration des autorisations en fonction du rôle</span><span class="sxs-lookup"><span data-stu-id="72e67-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="482d4-103">Le [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) exemple utilise des fichiers XML pour configurer la stratégie d’autorisation.</span><span class="sxs-lookup"><span data-stu-id="482d4-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="482d4-104">Le schéma XSD suivant définit le schéma utilisé pour ces fichiers.</span><span class="sxs-lookup"><span data-stu-id="482d4-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="72e67-103">Le [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) exemple utilise des fichiers XML pour configurer la stratégie d’autorisation.</span><span class="sxs-lookup"><span data-stu-id="72e67-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="72e67-104">Le schéma XSD suivant définit le schéma utilisé pour ces fichiers.</span><span class="sxs-lookup"><span data-stu-id="72e67-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>

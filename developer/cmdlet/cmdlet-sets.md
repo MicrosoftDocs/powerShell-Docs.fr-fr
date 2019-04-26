@@ -9,31 +9,31 @@ ms.topic: article
 ms.assetid: bcf0739e-920e-4dd8-afca-2c6d6927bc2a
 caps.latest.revision: 10
 ms.openlocfilehash: ef3b5bab5dcafc578397bcb4f071776bbdeaced1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068383"
 ---
-# <a name="cmdlet-sets"></a><span data-ttu-id="51ea3-102">Ensembles d’applets de commande</span><span class="sxs-lookup"><span data-stu-id="51ea3-102">Cmdlet Sets</span></span>
+# <a name="cmdlet-sets"></a><span data-ttu-id="7245c-102">Ensembles d’applets de commande</span><span class="sxs-lookup"><span data-stu-id="7245c-102">Cmdlet Sets</span></span>
 
-<span data-ttu-id="51ea3-103">Lorsque vous concevez vos applets de commande, vous pouvez rencontrer des cas dans lequel vous avez besoin d’exécuter plusieurs actions sur les mêmes données.</span><span class="sxs-lookup"><span data-stu-id="51ea3-103">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="51ea3-104">Par exemple, vous devrez peut-être obtenir et définir les données ou démarrer et arrêter un processus.</span><span class="sxs-lookup"><span data-stu-id="51ea3-104">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="51ea3-105">Bien que vous devrez créer des applets de commande distincte pour effectuer chaque action, votre conception de l’applet de commande doit inclure une classe de base à partir de laquelle sont dérivées les classes pour les applets de commande individuels.</span><span class="sxs-lookup"><span data-stu-id="51ea3-105">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
+<span data-ttu-id="7245c-103">Lorsque vous concevez vos applets de commande, vous pouvez rencontrer des cas dans lequel vous avez besoin d’exécuter plusieurs actions sur les mêmes données.</span><span class="sxs-lookup"><span data-stu-id="7245c-103">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="7245c-104">Par exemple, vous devrez peut-être obtenir et définir les données ou démarrer et arrêter un processus.</span><span class="sxs-lookup"><span data-stu-id="7245c-104">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="7245c-105">Bien que vous devrez créer des applets de commande distincte pour effectuer chaque action, votre conception de l’applet de commande doit inclure une classe de base à partir de laquelle sont dérivées les classes pour les applets de commande individuels.</span><span class="sxs-lookup"><span data-stu-id="7245c-105">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
 
-<span data-ttu-id="51ea3-106">Gardez les points suivants à l’esprit lors de l’implémentation d’une classe de base.</span><span class="sxs-lookup"><span data-stu-id="51ea3-106">Keep the following things in mind when implementing a base class.</span></span>
+<span data-ttu-id="7245c-106">Gardez les points suivants à l’esprit lors de l’implémentation d’une classe de base.</span><span class="sxs-lookup"><span data-stu-id="7245c-106">Keep the following things in mind when implementing a base class.</span></span>
 
-- <span data-ttu-id="51ea3-107">Déclarer des paramètres communs utilisés par toutes les applets de commande dérivées dans la classe de base.</span><span class="sxs-lookup"><span data-stu-id="51ea3-107">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
+- <span data-ttu-id="7245c-107">Déclarer des paramètres communs utilisés par toutes les applets de commande dérivées dans la classe de base.</span><span class="sxs-lookup"><span data-stu-id="7245c-107">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
 
-- <span data-ttu-id="51ea3-108">Ajouter des paramètres spécifiques à l’applet de commande à la classe d’applet de commande approprié.</span><span class="sxs-lookup"><span data-stu-id="51ea3-108">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
+- <span data-ttu-id="7245c-108">Ajouter des paramètres spécifiques à l’applet de commande à la classe d’applet de commande approprié.</span><span class="sxs-lookup"><span data-stu-id="7245c-108">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
 
-- <span data-ttu-id="51ea3-109">Substituez la méthode dans la classe de base de traitement d’entrée appropriée.</span><span class="sxs-lookup"><span data-stu-id="51ea3-109">Override the appropriate input processing method in the base class.</span></span>
+- <span data-ttu-id="7245c-109">Substituez la méthode dans la classe de base de traitement d’entrée appropriée.</span><span class="sxs-lookup"><span data-stu-id="7245c-109">Override the appropriate input processing method in the base class.</span></span>
 
-- <span data-ttu-id="51ea3-110">Déclarez le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut sur toutes les classes de l’applet de commande, mais ne la déclarez pas sur la classe de base.</span><span class="sxs-lookup"><span data-stu-id="51ea3-110">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
+- <span data-ttu-id="7245c-110">Déclarez le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut sur toutes les classes de l’applet de commande, mais ne la déclarez pas sur la classe de base.</span><span class="sxs-lookup"><span data-stu-id="7245c-110">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
 
-- <span data-ttu-id="51ea3-111">Implémentez un [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) ou [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) classe dont le nom et description reflète l’ensemble des applets de commande.</span><span class="sxs-lookup"><span data-stu-id="51ea3-111">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
+- <span data-ttu-id="7245c-111">Implémentez un [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) ou [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) classe dont le nom et description reflète l’ensemble des applets de commande.</span><span class="sxs-lookup"><span data-stu-id="7245c-111">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
 
-## <a name="example"></a><span data-ttu-id="51ea3-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="51ea3-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="7245c-112">Exemple</span><span class="sxs-lookup"><span data-stu-id="7245c-112">Example</span></span>
 
-<span data-ttu-id="51ea3-113">L’exemple suivant montre l’implémentation d’une classe de base qui est utilisée par Get-Process et l’applet de commande Stop-Process qui dérivent de la même classe de base.</span><span class="sxs-lookup"><span data-stu-id="51ea3-113">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
+<span data-ttu-id="7245c-113">L’exemple suivant montre l’implémentation d’une classe de base qui est utilisée par Get-Process et l’applet de commande Stop-Process qui dérivent de la même classe de base.</span><span class="sxs-lookup"><span data-stu-id="7245c-113">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
 
 ```csharp
 using System;
@@ -170,6 +170,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="51ea3-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="51ea3-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7245c-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7245c-114">See Also</span></span>
 
-[<span data-ttu-id="51ea3-115">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="51ea3-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="7245c-115">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="7245c-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
