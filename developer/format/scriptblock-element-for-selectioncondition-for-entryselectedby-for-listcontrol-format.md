@@ -9,62 +9,62 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057771"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064351"
 ---
-# <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a><span data-ttu-id="7bbca-102">ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour ListControl (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-102">ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
+# <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a><span data-ttu-id="ff0c2-102">ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour ListControl (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-102">ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl (Format)</span></span>
 
-<span data-ttu-id="7bbca-103">Spécifie le script qui déclenche la condition.</span><span class="sxs-lookup"><span data-stu-id="7bbca-103">Specifies the script that triggers the condition.</span></span> <span data-ttu-id="7bbca-104">Lorsque ce script est évalué à `true`, la condition est remplie, et l’entrée de liste est utilisée.</span><span class="sxs-lookup"><span data-stu-id="7bbca-104">When this script is evaluated to `true`, the condition is met, and the list entry is used.</span></span>
+<span data-ttu-id="ff0c2-103">Spécifie le script qui déclenche la condition.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-103">Specifies the script that triggers the condition.</span></span> <span data-ttu-id="ff0c2-104">Lorsque ce script est évalué à `true`, la condition est remplie, et l’entrée de liste est utilisée.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-104">When this script is evaluated to `true`, the condition is met, and the list entry is used.</span></span>
 
-<span data-ttu-id="7bbca-105">Configuration élément (Format) ViewDefinitions, élément (Format) vue (Format) d’élément objet ListControl, élément (Format) situés (Format) ListEntry, élément (Format) EntrySelectedBy élément d’élément de SelectionCondition ListEntry (Format) pour EntrySelectedBy pour ListEntry (Format), élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element (Format) ListEntry Element (Format) EntrySelectedBy Element for ListEntry (Format) SelectionCondition Element for EntrySelectedBy for ListEntry (Format) ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)</span></span>
+<span data-ttu-id="ff0c2-105">Configuration élément (Format) ViewDefinitions, élément (Format) vue (Format) d’élément objet ListControl, élément (Format) situés (Format) ListEntry, élément (Format) EntrySelectedBy élément d’élément de SelectionCondition ListEntry (Format) pour EntrySelectedBy pour ListEntry (Format), élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element (Format) ListEntry Element (Format) EntrySelectedBy Element for ListEntry (Format) SelectionCondition Element for EntrySelectedBy for ListEntry (Format) ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7bbca-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bbca-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="ff0c2-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ff0c2-106">Syntax</span></span>
 
 ```xml
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="7bbca-107">Éléments et attributs</span><span class="sxs-lookup"><span data-stu-id="7bbca-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="ff0c2-107">Éléments et attributs</span><span class="sxs-lookup"><span data-stu-id="ff0c2-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="7bbca-108">Les sections suivantes décrivent les attributs et éléments enfants de l’élément parent le `ScriptBlock` élément.</span><span class="sxs-lookup"><span data-stu-id="7bbca-108">The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.</span></span>
+<span data-ttu-id="ff0c2-108">Les sections suivantes décrivent les attributs et éléments enfants de l’élément parent le `ScriptBlock` élément.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-108">The following sections describe attributes, child elements, and the parent element of the `ScriptBlock` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="7bbca-109">Attributes</span><span class="sxs-lookup"><span data-stu-id="7bbca-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="ff0c2-109">Attributes</span><span class="sxs-lookup"><span data-stu-id="ff0c2-109">Attributes</span></span>
 
-<span data-ttu-id="7bbca-110">Aucune.</span><span class="sxs-lookup"><span data-stu-id="7bbca-110">None.</span></span>
+<span data-ttu-id="ff0c2-110">Aucune.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="7bbca-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="7bbca-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="ff0c2-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="ff0c2-111">Child Elements</span></span>
 
-<span data-ttu-id="7bbca-112">Aucune.</span><span class="sxs-lookup"><span data-stu-id="7bbca-112">None.</span></span>
+<span data-ttu-id="ff0c2-112">Aucune.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="7bbca-113">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="7bbca-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="ff0c2-113">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="ff0c2-113">Parent Elements</span></span>
 
-|<span data-ttu-id="7bbca-114">Élément</span><span class="sxs-lookup"><span data-stu-id="7bbca-114">Element</span></span>|<span data-ttu-id="7bbca-115">Description</span><span class="sxs-lookup"><span data-stu-id="7bbca-115">Description</span></span>|
+|<span data-ttu-id="ff0c2-114">Élément</span><span class="sxs-lookup"><span data-stu-id="ff0c2-114">Element</span></span>|<span data-ttu-id="ff0c2-115">Description</span><span class="sxs-lookup"><span data-stu-id="ff0c2-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="7bbca-116">Élément SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-116">SelectionCondition Element for EntrySelectedBy for ListEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|<span data-ttu-id="7bbca-117">Définit la condition qui doit exister pour cette entrée de liste à utiliser.</span><span class="sxs-lookup"><span data-stu-id="7bbca-117">Defines the condition that must exist for this list entry to be used.</span></span>|
+|[<span data-ttu-id="ff0c2-116">Élément SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-116">SelectionCondition Element for EntrySelectedBy for ListEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|<span data-ttu-id="ff0c2-117">Définit la condition qui doit exister pour cette entrée de liste à utiliser.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-117">Defines the condition that must exist for this list entry to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="7bbca-118">Valeur de texte</span><span class="sxs-lookup"><span data-stu-id="7bbca-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="ff0c2-118">Valeur de texte</span><span class="sxs-lookup"><span data-stu-id="ff0c2-118">Text Value</span></span>
 
-<span data-ttu-id="7bbca-119">Spécifiez le script qui est évalué.</span><span class="sxs-lookup"><span data-stu-id="7bbca-119">Specify the script that is evaluated.</span></span>
+<span data-ttu-id="ff0c2-119">Spécifiez le script qui est évalué.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-119">Specify the script that is evaluated.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="7bbca-120">Remarques</span><span class="sxs-lookup"><span data-stu-id="7bbca-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="ff0c2-120">Remarques</span><span class="sxs-lookup"><span data-stu-id="ff0c2-120">Remarks</span></span>
 
-<span data-ttu-id="7bbca-121">La condition de sélection doit spécifier un moins un script ou le nom à évaluer, mais vous ne pouvez pas spécifier à la fois.</span><span class="sxs-lookup"><span data-stu-id="7bbca-121">The selection condition must specify a least one script or property name to evaluate, but cannot specify both.</span></span> <span data-ttu-id="7bbca-122">(Pour plus d’informations sur la façon dont les conditions de sélection peuvent être utilisées, consultez [définition Conditions pour lorsqu’une entrée de la vue ou d’élément est utilisé](./defining-conditions-for-displaying-data.md).)</span><span class="sxs-lookup"><span data-stu-id="7bbca-122">(For more information about how selection conditions can be used, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).)</span></span>
+<span data-ttu-id="ff0c2-121">La condition de sélection doit spécifier un moins un script ou le nom à évaluer, mais vous ne pouvez pas spécifier à la fois.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-121">The selection condition must specify a least one script or property name to evaluate, but cannot specify both.</span></span> <span data-ttu-id="ff0c2-122">(Pour plus d’informations sur la façon dont les conditions de sélection peuvent être utilisées, consultez [définition Conditions pour lorsqu’une entrée de la vue ou d’élément est utilisé](./defining-conditions-for-displaying-data.md).)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-122">(For more information about how selection conditions can be used, see [Defining Conditions for when a View Entry or Item is Used](./defining-conditions-for-displaying-data.md).)</span></span>
 
-<span data-ttu-id="7bbca-123">Pour plus d’informations sur les autres composants d’une vue liste, consultez [mode liste](./creating-a-list-view.md).</span><span class="sxs-lookup"><span data-stu-id="7bbca-123">For more information about the other components of a list view, see [List View](./creating-a-list-view.md).</span></span>
+<span data-ttu-id="ff0c2-123">Pour plus d’informations sur les autres composants d’une vue liste, consultez [mode liste](./creating-a-list-view.md).</span><span class="sxs-lookup"><span data-stu-id="ff0c2-123">For more information about the other components of a list view, see [List View](./creating-a-list-view.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7bbca-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7bbca-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ff0c2-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ff0c2-124">See Also</span></span>
 
-[<span data-ttu-id="7bbca-125">Élément ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-125">ListEntry Element (Format)</span></span>](./listentry-element-for-listcontrol-format.md)
+[<span data-ttu-id="ff0c2-125">Élément ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-125">ListEntry Element (Format)</span></span>](./listentry-element-for-listcontrol-format.md)
 
-[<span data-ttu-id="7bbca-126">Élément PropertyName pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-126">PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)</span></span>](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
+[<span data-ttu-id="ff0c2-126">Élément PropertyName pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-126">PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)</span></span>](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)
 
-[<span data-ttu-id="7bbca-127">Élément SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="7bbca-127">SelectionCondition Element for EntrySelectedBy for ListEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
+[<span data-ttu-id="ff0c2-127">Élément SelectionCondition pour EntrySelectedBy pour ListEntry (Format)</span><span class="sxs-lookup"><span data-stu-id="ff0c2-127">SelectionCondition Element for EntrySelectedBy for ListEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[<span data-ttu-id="7bbca-128">Affichage de liste</span><span class="sxs-lookup"><span data-stu-id="7bbca-128">List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="ff0c2-128">Affichage de liste</span><span class="sxs-lookup"><span data-stu-id="ff0c2-128">List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="7bbca-129">Définissent les Conditions d’une entrée de la vue ou un élément est utilisé.</span><span class="sxs-lookup"><span data-stu-id="7bbca-129">Defining Conditions for when a View Entry or Item is Used</span></span>](./defining-conditions-for-displaying-data.md)
+[<span data-ttu-id="ff0c2-129">Définissent les Conditions d’une entrée de la vue ou un élément est utilisé.</span><span class="sxs-lookup"><span data-stu-id="ff0c2-129">Defining Conditions for when a View Entry or Item is Used</span></span>](./defining-conditions-for-displaying-data.md)
 
-[<span data-ttu-id="7bbca-130">Écriture d’un mise en forme de Windows PowerShell et de Types de fichier</span><span class="sxs-lookup"><span data-stu-id="7bbca-130">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="ff0c2-130">Écriture d’un mise en forme de Windows PowerShell et de Types de fichier</span><span class="sxs-lookup"><span data-stu-id="ff0c2-130">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)
