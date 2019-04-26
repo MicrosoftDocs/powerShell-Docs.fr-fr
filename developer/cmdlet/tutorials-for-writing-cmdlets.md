@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d0b548aa-febf-45dd-bf71-2077730b9b73
 caps.latest.revision: 6
 ms.openlocfilehash: 767b392bd1603e83d80bad5b3fd9cb42ff142ce6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56863605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067244"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>Tutoriels pour l’écriture des applets de commande
 

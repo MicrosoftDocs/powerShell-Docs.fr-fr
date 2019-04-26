@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
 ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068247"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Définition de jeux de membres par défaut pour les objets
 

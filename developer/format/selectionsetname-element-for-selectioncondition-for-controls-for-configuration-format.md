@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
 caps.latest.revision: 7
 ms.openlocfilehash: 5db35a8094ea2bb966c8d6a96802c72f64c05c17
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858135"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064011"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format"></a>SelectionSetName, élément pour SelectionCondition pour Controls pour Configuration (Format)
 

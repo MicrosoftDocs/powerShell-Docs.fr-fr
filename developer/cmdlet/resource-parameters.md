@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 460c43aa-f5c5-4a1a-a6f2-5e07db143de1
 caps.latest.revision: 5
 ms.openlocfilehash: 9752570e5c997ef4da56a08df14f39b77ba37a4a
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067448"
 ---
 # <a name="resource-parameters"></a>Paramètres de ressource
 
@@ -39,7 +39,7 @@ Le tableau suivant répertorie les noms recommandés pour les paramètres de res
 |**Path**<br>Type de données : String, String[]|Implémentez ce paramètre afin que l’utilisateur peut indiquer les chemins d’accès à une ressource lorsque les caractères génériques sont pris en charge. (Utilisez le **LiteralPath** paramètre lorsque les caractères génériques ne sont pas pris en charge.) Nous vous recommandons de développer ce paramètre afin qu’il prend en charge la version complète `provider:path` syntaxe utilisée par les fournisseurs. Nous vous recommandons également de développer pour qu’il fonctionne avec les fournisseurs autant que possible.|
 |**Port**<br>Type de données : Entier, chaîne|Implémentez ce paramètre afin que l’utilisateur peut spécifier une valeur entière pour la mise en réseau ou une valeur de chaîne tel que « biztalk » pour les autres types de port.|
 |**Imprimante**<br>Type de données : Entier, chaîne|Implémentez ce paramètre afin que l’utilisateur peut spécifier l’imprimante pour l’applet de commande à utiliser.|
-|**Taille**<br>Type de données : Ent32|Implémentez ce paramètre afin que l’utilisateur peut spécifier une taille.|
+|**Taille**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur peut spécifier une taille.|
 |**TID**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier un identificateur de transaction (TID) pour l’applet de commande.|
 |**Type**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier le type de ressource à utiliser.|
 |**URL**<br>Type de données : String|Implémentez ce paramètre afin que l’utilisateur peut spécifier une URL Uniform Resource Locator ().|
