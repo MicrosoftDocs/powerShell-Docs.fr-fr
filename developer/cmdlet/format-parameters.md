@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10e025c5-9aa6-45a5-b851-23d14db1f4cc
 caps.latest.revision: 7
 ms.openlocfilehash: 0bd3888d81aa6d1dde26c0066f7bca9dac8a8bca
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068111"
 ---
 # <a name="format-parameters"></a>Paramètres de format
 
@@ -26,7 +26,7 @@ Le tableau suivant répertorie les noms recommandés et les fonctionnalités pou
 |**Encodage**<br>Type de données : Mot clé|Implémentez ce paramètre pour spécifier le type de codage pris en charge. Par exemple, les valeurs possibles peut être ASCII, UTF-8, Unicode, UTF7, BigEndianUnicode, octets et chaîne.|
 |**NewLine**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que les caractères de saut de ligne sont pris en charge lorsque le paramètre est spécifié.|
 |**ShortName**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que les noms courts sont pris en charge lorsque le paramètre est spécifié.|
-|**Width**<br>Type de données : Ent32|Implémentez ce paramètre afin que l’utilisateur peut spécifier la largeur du périphérique de sortie.|
+|**Width**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur peut spécifier la largeur du périphérique de sortie.|
 |**Retour à la ligne**<br>Type de données : SwitchParameter|Implémentez ce paramètre afin que l’habillage du texte est pris en charge lorsque le paramètre est spécifié.|
 ## <a name="see-also"></a>Voir aussi
 

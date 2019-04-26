@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 679c8bcb-b49d-4bb4-91f5-ea1af6c217e3
 caps.latest.revision: 8
 ms.openlocfilehash: 4553f95e48a2b1440c00b4951bea56376b00628a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065884"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-configuration-format"></a>FirstLineHanging, élément pour Frame pour Controls pour Configuration (Format)
 

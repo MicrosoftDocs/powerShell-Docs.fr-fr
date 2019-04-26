@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Ressources de la communauté
 ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794873"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085029"
 ---
 # <a name="community-resources"></a>Ressources de la communauté
 > Remarque : Ces informations sont provisoires et sujettes à modification.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
 ms.openlocfilehash: 00b015f1c16623d8ca4cf6f609aa2547c0385402
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429599"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081782"
 ---
 # <a name="getproc02-code-samples"></a>Exemples de code GetProc02
 
@@ -26,7 +26,7 @@ Voici les exemples de code pour l’applet de commande GetProc02 exemple. Il s�
 
 Pour l’exemple de code complet, consultez les rubriques suivantes.
 
-|Langue|Rubrique|
+|Language|Rubrique|
 |--------------|-----------|
 |C#|[GetProc02 (C#) exemple de Code](./getproc02-csharp-sample-code.md)|
 |VB.NET|[GetProc02 exemple de Code (VB.NET)](./getproc02-vb-net-sample-code.md)|

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
 ms.openlocfilehash: 367fecfe5417e0e4cc41b076bac6fefbe185624f
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081187"
 ---
 # <a name="stopprocesssample04-code-samples"></a>Exemples de code StopProcessSample04
 
@@ -26,7 +26,7 @@ Voici les exemples de code pour l’applet de commande StopProc00 exemple. Il s�
 
 Pour l’exemple de code complet, consultez les rubriques suivantes.
 
-|Langue|Rubrique|
+|Language|Rubrique|
 |--------------|-----------|
 |C#|[StopProc04 (C#) exemple de Code](./stopprocesssample04-csharp-sample-code.md)|
 |VB.NET|[StopProc04 exemple de Code (VB.NET)](./stopprocesssample04-vb-net-sample-code.md)|

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 71da921b-7c32-4155-b2f8-b19f30ec774d
 caps.latest.revision: 7
 ms.openlocfilehash: 5b1f093de5db364ac806e58c4ed8dbf2948cb6c6
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251351"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068230"
 ---
 # <a name="date-and-time-parameters"></a>Paramètres de date et d’heure
 

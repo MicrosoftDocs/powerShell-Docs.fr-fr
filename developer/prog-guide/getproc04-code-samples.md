@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
 ms.openlocfilehash: 67081528ebe14fbb082091c1b9500de82069b48f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054643"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081663"
 ---
 # <a name="getproc04-code-samples"></a>Exemples de code GetProc04
 
@@ -26,7 +26,7 @@ Voici les exemples de code pour l’applet de commande GetProc04 exemple. Il s�
 
 Pour l’exemple de code complet, consultez les rubriques suivantes.
 
-|Langue|Rubrique|
+|Language|Rubrique|
 |--------------|-----------|
 |C#|[GetProc04 (C#) exemple de Code](./getproc04-csharp-sample-code.md)|
 |VB.NET|[GetProc04 exemple de Code (VB.NET)](./getproc04-vb-net-sample-code.md)|

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054915"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080881"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Fournisseur Windows PowerShell - Démarrage rapide
 
