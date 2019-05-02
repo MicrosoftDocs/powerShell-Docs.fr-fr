@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: wmf,powershell,configuration
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677850"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055443"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -35,26 +35,30 @@ Pour en savoir plus sur les diverses améliorations apportées à PowerShell et 
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>Disponibilité de WMF sur les systèmes d’exploitation Windows
 
-|Version du système d'exploitation  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |Fourni par défaut|            |            |             |            |
-|Windows Server 2016       |Fourni par défaut|            |            |             |            |
-|Windows 10                |Fourni par défaut|Fourni par défaut|            |             |            |
-|Windows Server 2012 R2    |Oui         |Oui         |Fourni par défaut|             |            |
-|Windows 8.1               |Oui         |Oui         |Fourni par défaut|             |            |
-|Windows Server 2012       |Oui         |Oui         |Oui         |Fourni par défaut |            |
-|Windows 8                 |            |            |            |Fourni par défaut |            |
-|Windows Server 2008 R2 SP1|Oui         |Oui         |Oui         |Oui          |Fourni par défaut|
-|Windows 7 SP1             |Oui         |Oui         |Oui         |Oui          |Fourni par défaut|
-|Windows Server 2008 SP2   |            |            |            |Oui          |Oui         |
-|Windows Vista             |            |            |            |             |Oui         |
-|Windows Server 2003       |            |            |            |             |Oui         |
-|Windows XP                |            |            |            |Oui          |            |
+|        Version du système d'exploitation         | [WMF 5.1][]  | WMF 5.0<br>*Hors support* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | Fourni par défaut |                             |              |              |              |
+| Windows Server 2016                     | Fourni par défaut |                             |              |              |              |
+| Windows 10                              | Fourni par défaut | Fourni par défaut                |              |              |              |
+| Windows Server 2012 R2                  | Oui          | Oui                         | Fourni par défaut |              |              |
+| Windows 8.1                             | Oui          | Oui                         | Fourni par défaut |              |              |
+| Windows Server 2012                     | Oui          | Oui                         | Oui          | Fourni par défaut |              |
+| Windows 8<br>*Hors support*           |              |                             |              | Fourni par défaut |              |
+| Windows Server 2008 R2 SP1              | Oui          | Oui                         | Oui          | Oui          | Fourni par défaut |
+| Windows 7 SP1                           | Oui          | Oui                         | Oui          | Oui          | Fourni par défaut |
+| Windows Server 2008 SP2                 |              |                             |              | Oui          | Oui          |
+| Windows Vista<br>*Hors support*       |              |                             |              |              | Oui          |
+| Windows Server 2003<br>*Hors support* |              |                             |              |              | Oui          |
+| Windows XP<br>*Hors support*          |              |                             |              | Oui          | Oui          |
 
-**Fourni par défaut** : les fonctionnalités de la version spécifiée de WMF ont été fournies dans la version indiquée du client Windows ou de Windows Server.
+- **Fourni par défaut** : les fonctionnalités de la version spécifiée de WMF ont été fournies dans la version indiquée du client Windows ou de Windows Server.
+- **Hors support** : ces produits ne sont plus pris en charge par Microsoft. Vous devez effectuer une mise à niveau vers une nouvelle version prise en charge. Pour plus d’informations, consultez la page [Stratégie de cycle de vie Microsoft][].
 
+> [!NOTE]
+> Le programme d’installation de WMF 5.0 n’est plus disponible ou pris en charge. Il a été remplacé par WMF 5.1.
+
+[Stratégie de cycle de vie Microsoft]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download

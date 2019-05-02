@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054372"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085260"
 ---
 # <a name="known-issues-and-limitations"></a>Limitations et problèmes connus
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>Les raccourcis PowerShell sont rompus lors de la première utilisation
 
-**Résolution :** Effectuez l'une des opérations suivantes :
+**Résolution :** Effectuez l’une des opérations suivantes :
 
 1. Cliquez avec le bouton droit sur le raccourci PowerShell. Sélectionnez « Windows PowerShell » pour le démarrer sans autorisations élevées.
 2. Cliquez avec le bouton droit sur le raccourci PowerShell. Cliquez avec le bouton droit sur « Windows PowerShell » et sélectionnez « Exécuter en tant qu’administrateur » pour le démarrer en mode élevé.

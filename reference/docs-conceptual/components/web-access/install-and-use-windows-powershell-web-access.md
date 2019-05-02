@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056717"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058560"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
-Mise à jour : 5 novembre 2013 (modifié le 23 août 2017)
+Mise à jour : 5 novembre 2013 (modifié le 23 août 2017)
 
-S'applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="introduction"></a>Introduction
 
@@ -35,7 +35,7 @@ Cette rubrique ne fournit pas d’instructions détaillées sur les opérations 
 
 Le diagramme suivant illustre le fonctionnement d’Accès Web Windows PowerShell.
 
-![Diagramme Windows PowerShell Web Access](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Diagramme Accès Web Windows PowerShell](images/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## <a name="requirements-for-running-windows-powershell-web-access"></a>Configuration requise pour exécuter Accès Web Windows PowerShell
 
@@ -59,7 +59,7 @@ D’autres navigateurs acceptant les cookies, exécutant JavaScript et exécutan
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Navigateurs ou appareils mobiles testés de façon minimale
 
 - Windows Phone 7 et 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Google Android WebKit 3.1 pour navigateur Android 2.2.1 (Kernel 2.6)
 - Apple Safari pour système d’exploitation iPhone 5.0.1
 - Apple Safari pour système d’exploitation iPad 2 5.0.1
 
@@ -200,7 +200,7 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
    - Sur le Bureau Windows, cliquez avec le bouton droit dans la barre des tâches sur **Windows PowerShell**, puis cliquez sur **Exécuter en tant qu’administrateur**.
    - Dans l’écran d’**accueil** de Windows, cliquez avec le bouton droit sur **Windows PowerShell**, puis cliquez sur **Exécuter en tant qu’administrateur**.
 
-2. Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session : Vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session : vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Tapez ce qui suit, puis appuyez sur **Entrée**.
 
@@ -373,7 +373,7 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
 
 1. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session :
 
-   Vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+   vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Tapez ce qui suit, puis appuyez sur **Entrée**.
 

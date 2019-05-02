@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utiliser des informations d’identification avec des ressources DSC
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080048"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>Utiliser des informations d’identification avec des ressources DSC
 
-> S'applique à : Windows PowerShell 5.0, Windows PowerShell 5.1
+> S’applique à : Windows PowerShell 5.0, Windows PowerShell 5.1
 
 Vous pouvez exécuter une ressource DSC sous un jeu d’informations d’identification spécifié à l’aide de la propriété automatique **PsDscRunAsCredential** dans la configuration.
 Par défaut, DSC exécute chaque ressource comme compte système.

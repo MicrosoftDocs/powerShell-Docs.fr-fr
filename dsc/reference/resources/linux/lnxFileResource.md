@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxFile dans DSC pour Linux
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078025"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>Ressource nxFile dans DSC pour Linux
 
@@ -45,12 +45,12 @@ nxFile <string> #ResourceName
 | Type| Spécifie si la ressource actuellement configurée est un répertoire ou un fichier. Définissez cette propriété sur Directory pour indiquer que la ressource est un répertoire. Affectez-lui la valeur File pour indiquer que la ressource est un fichier. La valeur par défaut est File.|
 | Contents| Spécifie le contenu d’un fichier, tel qu’une chaîne spécifique.|
 | Checksum| Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs sont « ctime », « mtime » et « md5 ».|
-| Recurse| Indique si des sous-répertoires sont inclus. Définissez cette propriété sur **$true** pour indiquer que vous voulez inclure des sous-répertoires. La valeur par défaut est **$false**. **Remarque :** Cette propriété est valide uniquement lorsque le **Type** propriété est définie sur directory.|
+| Recurse| Indique si des sous-répertoires sont inclus. Définissez cette propriété sur **$true** pour indiquer que vous voulez inclure des sous-répertoires. La valeur par défaut est **$false**. **Remarque :** cette propriété est valide uniquement quand la propriété **Type** est définie sur Directory.|
 | Force| Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **$false**.|
 | Links| Spécifie le comportement souhaité pour les liens symboliques. Définissez cette propriété sur Follow pour suivre les liens symboliques et agir sur la cible des liens (par exemple, pour copier le fichier au lieu du lien). Définissez cette propriété sur Manage pour agir sur le lien (par exemple, pour copier le lien). Définissez cette propriété sur Ignore pour ignorer les liens symboliques.|
 | Group| Nom du **groupe** qui possède le fichier ou le répertoire.|
 | Mode| Spécifie les autorisations souhaitées pour la ressource, en notation octale ou symbolique (par exemple, 777 ou rwxrwxrwx). Si vous utilisez la notation symbolique, n’entrez pas le premier caractère qui indique le répertoire ou le fichier.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être effectuée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’**ID** **ResourceName** et le type **ResourceType**, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
@@ -76,7 +76,7 @@ nxFile resolvConf
 ```
 
 
-Étape 2 : Lire le contenu du fichier de script PowerShell avec [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) après avoir défini la propriété __$OFS__ pour utiliser le caractère de saut de ligne Linux.
+Étape 2 : Lire le contenu du fichier de script PowerShell avec [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) après avoir défini la propriété __$OFS__ pour utiliser le caractère de saut de ligne Linux.
 
 
 ```
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-Étape 3 : Utilisez une fonction PowerShell pour remplacer les sauts de ligne avec des caractères de saut de ligne Linux de Windows.
+Étape 3 : utiliser une fonction PowerShell pour remplacer les sauts de ligne Windows par des caractères de saut de ligne Linux.
 
 ```
 Function LinuxString($inputStr){

@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Objet PowerShellTab
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401347"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057670"
 ---
 # <a name="the-powershelltab-object"></a>Objet PowerShellTab
 
@@ -40,7 +40,7 @@ Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne f
 Exécute le script spécifié dans l’onglet PowerShell.
 
 > [!NOTE]
-> Cette méthode effectue cette action uniquement dans les onglets PowerShell autres que l’onglet PowerShell à partir duquel elle est exécutée. Le bloc de script est exécuté. Les valeurs renvoyées par le script sont renvoyées à l’environnement d’exécution à partir duquel vous avez appelé la commande. Si la commande prend plue de temps que le **millesecondsTimeout** spécifie de valeur, puis la commande échoue avec une exception : Le délai d'attente de l'opération a expiré.
+> Cette méthode effectue cette action uniquement dans les onglets PowerShell autres que l’onglet PowerShell à partir duquel elle est exécutée. Le bloc de script est exécuté. Les valeurs renvoyées par le script sont renvoyées à l’environnement d’exécution à partir duquel vous avez appelé la commande. Si la durée d’exécution de la commande dépasse la valeur **millesecondsTimeout** spécifiée, la commande échoue avec une exception : « Le délai de l’opération a expiré. »
 
 **Script** \- System.Management.Automation.ScriptBlock ou chaîne. Bloc de script à utiliser.
 

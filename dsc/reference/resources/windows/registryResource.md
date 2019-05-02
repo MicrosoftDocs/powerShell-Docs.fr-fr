@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Registry dans DSC
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047373"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076954"
 ---
 # <a name="dsc-registry-resource"></a>Ressource Registry dans DSC
 
-S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 La ressource **Registry** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer les clés et les valeurs de Registre sur un nœud cible.
 
@@ -42,7 +42,7 @@ Registry [string] #ResourceName
 | Hex| Indique si les données sont exprimées au format hexadécimal. Si elles sont spécifiées, les données de valeur DWORD/QWORD sont présentées au format hexadécimal. Non valide pour les autres types. La valeur par défaut est **$false**.|
 | DependsOn| Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType**, la syntaxe pour utiliser cette propriété est `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Les données de la valeur de Registre.|
-| ValueType| Indique le type de la valeur. Les types pris en charge sont les suivants : Chaîne (REG_SZ), binaire (REG-BINARY), valeur Dword 32 bits (REG_DWORD), Qword 64 bits (REG_QWORD), les chaînes multiples (REG_MULTI_SZ), chaîne extensible (REG_EXPAND_SZ) |
+| ValueType| Indique le type de la valeur. Les types pris en charge sont les suivants : chaîne (REG_SZ), binaire (REG-BINARY), dword 32 bits (REG_DWORD), qword 64 bits (REG_QWORD), chaîne multiple (REG_MULTI_SZ) et chaîne extensible (REG_EXPAND_SZ). |
 
 ## <a name="example"></a>Exemple
 

@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086633"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell
 
 Mise à jour : 24 juin 2013
 
-S'applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 Accès Web Windows PowerShell permet aux utilisateurs de se connecter à un site web sécurisé, pour pouvoir utiliser des sessions, des applets de commande et des scripts Windows PowerShell pour gérer un ordinateur distant.
 

@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Scripts PowerShell
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058486"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Consistency
 
-L’administration de systèmes peut être une tâche complexe. Les outils dont l’interface est cohérente facilitent le contrôle de la complexité intrinsèque. Malheureusement, ni les outils en ligne de commande, ni les objets COM pouvant contenir des scripts ne sont réputés pour leur cohérence.
+L’administration de systèmes peut être une tâche complexe. Les outils dont l’interface est cohérente facilitent le contrôle de la complexité intrinsèque. Malheureusement, les outils en ligne de commande et les objets COM (Component Object Model) scriptables ne sont pas réputés pour leur cohérence.
 
 La cohérence de PowerShell est l’un de ses principaux atouts. Par exemple, si vous apprenez à utiliser l’applet de commande `Sort-Object`, vous pouvez utiliser cette connaissance pour trier la sortie de toute applet de commande. Vous n’avez pas à apprendre les différentes routines de tri de chaque cmdlet.
 

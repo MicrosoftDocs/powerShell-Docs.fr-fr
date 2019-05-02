@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Considérations de sécurité JEA
 ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084774"
 ---
 # <a name="jea-security-considerations"></a>Considérations de sécurité JEA
 
@@ -127,7 +127,7 @@ Par exemple, examinez l’entrée de fonctionnalités de rôle suivante :
 ```
 
 Cette fonctionnalité de rôle permet aux utilisateurs d’exécuter une applet de commande PowerShell quelconque avec le nom « Process » à partir du module Microsoft.PowerShell.Management.
-Les utilisateurs devront peut-être accéder aux applets de commande comme `Get-Process` pour comprendre quelles applications s’exécutent sur le système et `Stop-Process` pour mettre fin à toutes les applications qui ne répondent pas.
+Les utilisateurs auront peut-être besoin d’accéder à des applets de commande telles que `Get-Process` pour comprendre quelles applications s’exécutent sur le système et `Stop-Process` pour mettre fin aux applications qui ne répondent pas.
 Toutefois, cette entrée autorise également `Start-Process`, qui peut être utilisé pour lancer un programme arbitraire avec des autorisations d’administrateur complètes.
 Le programme n’a pas besoin d’être installé localement sur le système. Un adversaire pourrait donc lancer simplement un programme sur un partage de fichiers qui donne les privilèges d’administrateur local à l’utilisateur qui se connecte, exécute un logiciel malveillant et bien plus encore.
 

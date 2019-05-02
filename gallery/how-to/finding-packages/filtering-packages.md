@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Filtrage des résultats de la recherche
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003746"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084400"
 ---
 # <a name="filtering-search-results"></a>Filtrage des résultats de la recherche
 
@@ -41,7 +41,7 @@ De même, pour afficher uniquement les scripts de PowerShell Gallery, cochez Scr
 
 > [!NOTE]
 > Les filtres sont inclusifs.
-> Exemple : un package contenant à la fois des cmdlets et des fonctions s’affiche si la case Cmdlet ou la case Function (ou les deux) sont cochées.
+> Exemple : un package contenant à la fois des cmdlets et des fonctions s’affiche si la case Cmdlet ou la case Function (ou les deux) sont cochées.
 > Si aucune des deux n’est sélectionnée, le package n’apparaît pas.
 > De même, si toutes les catégories sont sélectionnées, seuls les packages contenant l’une de ces catégories s’affichent.
 > **Les packages qui n’appartiennent à aucune de ces catégories n’apparaissent pas.**

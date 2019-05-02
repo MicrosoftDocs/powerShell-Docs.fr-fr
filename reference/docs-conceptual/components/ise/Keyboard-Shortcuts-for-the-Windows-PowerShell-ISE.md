@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Raccourcis clavier pour Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086831"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
@@ -20,7 +20,7 @@ Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suiva
 
 |Action|Raccourcis clavier|Utiliser dans|
 |----------|----------------------|----------|
-|**Aide**|F1|Volet script **Important :** Vous pouvez spécifier que la touche F1 provient de la bibliothèque TechNet sur le web ou aide téléchargée (voir Update-Help). Pour opérer votre choix, cliquez sur **Outils**, **Options**, sur l’onglet **Paramètres généraux**, puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.**|
+|**Aide**|F1|Volet Script **Important :** vous pouvez spécifier que la touche F1 provient de la Bibliothèque TechNet sur le web ou de l’aide téléchargée (voir Update-Help). Pour opérer votre choix, cliquez sur **Outils**, **Options**, sur l’onglet **Paramètres généraux**, puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.**|
 |**Copier**|Ctrl+C|Volets Script, Commande et Sortie|
 |**Couper**|Ctrl+X|Volets Script et Commande|
 |**Développer ou réduire le plan**|Ctrl+M|Volet Script|
@@ -47,8 +47,8 @@ Lorsque vous exécutez des scripts dans le volet Script, vous pouvez utiliser le
 |**Exécuter**|F5|
 |**Exécuter la sélection**|F8|
 |**Arrêter l’exécution**|CTRL+PAUSE. Vous pouvez utiliser Ctrl+C quand le contexte est sans ambiguïté (quand aucun texte n’est sélectionné).|
-|**Tab** (pour accéder au script suivant)|CTRL + TAB **Remarque :** TAB pour accéder au script suivant fonctionne uniquement lorsqu’un seul onglet Windows PowerShell est ouvert, ou lorsque vous avez plusieurs onglets Windows PowerShell ouvert, mais le focus est dans le volet de Script.|
-|**Tab** (pour accéder au script précédent)|CTRL + MAJ + TAB **Remarque :** TAB pour accéder au script précédent fonctionne lorsque vous n'avez qu’un seul onglet Windows PowerShell ouverte, ou si vous avez plusieurs onglets Windows PowerShell ouverte et que le focus est dans le volet de Script.|
+|**Tab** (pour accéder au script suivant)|CTRL+TAB **Remarque :** l’usage de la touche Tab pour accéder au script suivant fonctionne uniquement quand un seul onglet Windows PowerShell est ouvert ou, si plusieurs onglets Windows PowerShell sont ouverts, quand le focus est dans le volet Script.|
+|**Tab** (pour accéder au script précédent)|CTRL+MAJ+TAB **Remarque :** l’usage de la touche Tab pour accéder au script précédent fonctionne uniquement quand un seul onglet Windows PowerShell est ouvert ou, si plusieurs onglets Windows PowerShell sont ouverts, quand le focus est dans le volet Script.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Raccourcis clavier pour la personnalisation de l’affichage
 
@@ -120,4 +120,4 @@ Pour démarrer la console Windows PowerShell (PowerShell.exe) ou pour quitter Wi
 
 ## <a name="see-also"></a>Voir aussi
 
-- [PowerShell Magazine : La liste complète des raccourcis clavier de Windows PowerShell ISE](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell Magazine : Liste complète des raccourcis clavier pour Windows PowerShell ISE](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

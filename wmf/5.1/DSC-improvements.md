@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085526"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -206,12 +206,12 @@ Cette fonctionnalité empêche les nœuds d’exécuter des configurations ou de
 ### <a name="how-to-sign-configuration-and-module"></a>Comment signer des configurations et modules
 
 ***
-* Fichiers de configuration (. Fichiers MOF) : L’applet de commande PowerShell existante [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) est étendu pour prendre en charge la signature des fichiers MOF.
-* Modules Signature de modules s’effectue en signant le catalogue de module correspondant en procédant comme suit :
-    1. Créer un fichier catalogue : Un fichier catalogue contient une collection de hachages de chiffrement ou les empreintes numériques.
+* Fichiers de configuration (.mof) : la cmdlet PowerShell existante [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) est étendue de façon à prendre en charge la signature des fichiers MOF.
+* Modules : la signature de modules s’effectue en signant le catalogue de module correspondant :
+    1. Créer un fichier catalogue : un fichier catalogue contient une collection de hachages de chiffrement ou d’empreintes.
        Chaque empreinte correspond à un fichier qui est inclus dans le module.
        La nouvelle applet de commande [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) a été ajoutée pour permettre aux utilisateurs de créer un fichier catalogue pour leur module.
-    2. Signer le fichier catalogue : Utilisez [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) pour signer le fichier de catalogue.
+    2. Signer le fichier catalogue : utilisez [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) pour signer le fichier catalogue.
     3. Placer le fichier catalogue dans le dossier de module.
 Par convention, le fichier catalogue de module doit être placé sous le dossier de module portant le même nom que le module.
 
@@ -263,7 +263,7 @@ Le gestionnaire de configuration local effectue les étapes suivantes pour véri
 5. Il installe le module dans $env:ProgramFiles\WindowsPowerShell\Modules\.
 6. Il traite la configuration
 
-> Remarque : La validation des signatures sur le catalogue de module et la configuration est effectuée uniquement quand la configuration est appliquée au système pour la première fois ou quand le module est téléchargé et installé.
+> Remarque : la validation des signatures sur le catalogue de module et la configuration n’est effectuée que la première fois où la configuration est appliquée au système et lors du téléchargement et de l’installation du module.
 Les séries de tests de cohérence ne valident pas la signature de Current.mof ni ses dépendances de modules.
 Si la vérification a échoué à un stade, par exemple si la configuration extraite à partir du serveur collecteur n’est pas signée, le traitement de la configuration s’arrête avec l’erreur affichée ci-dessous et tous les fichiers temporaires sont supprimés.
 

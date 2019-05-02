@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Écriture de l’aide pour les configurations DSC
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080174"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Écriture de l’aide pour les configurations DSC
 
->S’applique à : Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 5.0
 
-Vous pouvez utiliser l’aide basée sur les commentaires dans les configurations DSC. Les utilisateurs peuvent accéder à l’aide en appelant le **Configuration** avec `-?`, ou à l’aide de la [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) applet de commande. Placez votre commentaire aide ci-dessus directement le `Configuration` mot clé.
-Vous pouvez placer le paramètre aide inline avec votre bloc de commentaire, juste au-dessus de la déclaration de paramètre, ou les deux, comme dans l’exemple ci-dessous.
+Vous pouvez utiliser l’aide basée sur les commentaires dans les configurations DSC. Les utilisateurs peuvent accéder à l’aide en appelant la **configuration** avec `-?` ou en utilisant l’applet de commande [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help). Placez votre aide basée sur les commentaires directement au-dessus du mot clé `Configuration`.
+Vous pouvez placer le paramètre help dans votre bloc de commentaire, juste au-dessus de la déclaration du paramètre, ou les deux, comme dans l’exemple ci-dessous.
 
 Pour plus d’informations sur l’aide PowerShell basée sur les commentaires, consultez [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 > [!NOTE]
-> Environnements de développement de PowerShell, tels que VSCode et l’environnement ISE, ont également des extraits de code pour vous permettre d’insérer automatiquement des modèles de bloc de commentaire.
+> Les environnements de développement PowerShell, tels que VSCode et ISE, proposent également des extraits de code pour vous permettre d’insérer automatiquement des modèles de bloc basés sur les commentaires.
 
-L’exemple suivant décrit un script qui contient une configuration et une aide connexe basée sur les commentaires. Cet exemple illustre une Configuration avec des paramètres. Pour en savoir plus sur l’utilisation de paramètres dans vos Configurations, consultez [ajouter des paramètres pour vos Configurations](add-parameters-to-a-configuration.md).
+L’exemple suivant décrit un script qui contient une configuration et une aide connexe basée sur les commentaires. Cet exemple montre une configuration avec des paramètres. Pour en savoir plus sur l’utilisation des paramètres dans vos configurations, consultez [Ajouter des paramètres à vos configurations](add-parameters-to-a-configuration.md).
 
 ```powershell
 <#
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>Affichage de l’aide de la configuration
 
-Pour afficher l’aide d’une configuration, utilisez le `Get-Help` applet de commande avec le nom de la fonction ou tapez le nom de la fonction suivie `-?`. Voici la sortie de la Configuration précédente passée à `Get-Help`.
+Pour afficher l’aide d’une configuration, utilisez l’applet de commande `Get-Help` avec le nom de la fonction ou tapez le nom de la fonction suivi de `-?`. Voici la sortie de la configuration précédente quand elle est passée à `Get-Help`.
 
 ```powershell
 Get-Help HelpSample1 -Detailed

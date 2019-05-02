@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Options relatives aux informations d’identification dans les données de configuration
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55678549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080150"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Options relatives aux informations d’identification dans les données de configuration
 
->S’applique à : Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Mots de passe en texte brut et utilisateurs de domaine
 
@@ -65,7 +65,7 @@ Toutefois, la ressource utilise uniquement la propriété `Credential`.
 
 Pour plus d’informations sur la propriété `PsDscRunAsCredential`, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Exemple : Propriété d’informations d’identification de la ressource Group
+## <a name="example-the-group-resource-credential-property"></a>Exemple : propriété d’informations d’identification de la ressource Group
 
 DSC s’exécute sous `Local System`. Il dispose donc déjà des autorisations pour modifier les utilisateurs et les groupes locaux.
 Si le membre ajouté est un compte local, aucune information d’identification n’est nécessaire.
@@ -137,7 +137,7 @@ Cet exemple comprend deux problèmes :
 1. L’erreur explique que les mots de passe en texte brut ne sont pas recommandés
 2. L’avertissement recommande de ne pas utiliser d’informations d’identification de domaine
 
-Les indicateurs **PSDSCAllowPlainTextPassword** et **PSDSCAllowDomainUser** supprimer l’erreur et un avertissement pour informer l’utilisateur du risque encouru.
+Les indicateurs **PSDSCAllowPlainTextPassword** et **PSDSCAllowDomainUser** suppriment l’erreur et l’avertissement informant l’utilisateur du risque encouru.
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-Le **PSDSCAllowPlainTextPassword** indicateur exige que l’utilisateur accuse risque du stockage des mots de passe en texte brut dans un fichier MOF. Dans le fichier MOF généré, même si un **PSCredential** objet contenant un **SecureString** a été utilisé, les mots de passe continuera d’apparaître en tant que texte brut. Il s’agit de la seule fois où que les informations d’identification sont exposées. Accéder à cette offre de fichier MOF tout le monde accès au compte d’administrateur.
+L’indicateur **PSDSCAllowPlainTextPassword** exige que l’utilisateur connaisse les risques liés au stockage de mots de passe en texte brut dans un fichier MOF. Dans le fichier MOF généré, même si un objet **PSCredential** contenant une valeur **SecureString** a été utilisé, les mots de passe continueront d’apparaître en tant que texte brut. C’est la seule fois où les informations d’identification sont exposées. Ce fichier MOF offre à tout le monde un accès au compte Administrateur.
 
 ```
 /*
@@ -218,14 +218,14 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>Informations d’identification en transit et au repos
 
-- Le **PSDscAllowPlainTextPassword** indicateur permet la compilation des fichiers MOF qui contiennent les mots de passe en texte clair.
-  Prenez des précautions lorsque vous stockez les fichiers MOF contenant des mots de passe de texte clair.
-- Lorsque le fichier MOF est remis à un nœud dans **Push** mode, WinRM chiffre la communication pour protéger le mot de passe de texte en clair, sauf si vous remplacez la valeur par défaut avec le **AllowUnencrypted** paramètre.
-  - Chiffrer le fichier MOF avec un certificat de protège le fichier MOF au repos avant qu’il a été appliquée à un nœud.
-- Dans **extraction** mode, vous pouvez configurer un serveur collecteur de Windows pour utiliser HTTPS pour chiffrer le trafic à l’aide du protocole spécifié dans Internet Information Server. Pour plus d’informations, consultez les articles [configuration d’un client du collecteur DSC](../pull-server/pullclient.md) et [fichiers MOF de sécurisation des certificats](../pull-server/secureMOF.md).
-  - Dans le [Configuration d’état Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service, l’extraction du trafic est toujours chiffré.
-- Sur le nœud, les fichiers MOF sont chiffrés au repos à compter de PowerShell 5.0.
-  - Dans PowerShell 4.0 MOF, les fichiers sont non chiffrés au repos, sauf si elles sont chiffrées avec un certificat lorsqu’ils envoyées ou extraites au nœud.
+- L’indicateur **PSDscAllowPlainTextPassword** permet la compilation de fichiers MOF contenant les mots de passe en texte clair.
+  Prenez des précautions lorsque vous stockez des fichiers MOF contenant des mots de passe de texte clair.
+- Lorsque le fichier MOF est transmis à un nœud en mode **Push**, WinRM chiffre la communication pour protéger le mot de passe de texte en clair, sauf si vous remplacez la valeur par défaut par le paramètre **AllowUnencrypted**.
+  - Le chiffrement du fichier MOF avec un certificat protège le fichier MOF au repos avant qu’il soit appliqué à un nœud.
+- En mode **Pull**, vous pouvez configurer un serveur Pull Windows afin d’utiliser HTTPS pour chiffrer le trafic à l’aide du protocole spécifié dans Internet Information Server. Pour plus d’informations, consultez les articles [Configuration d’un client Pull DSC](../pull-server/pullclient.md) et [Sécurisation des fichiers MOF avec des certificats](../pull-server/secureMOF.md).
+  - Dans le service [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview), le trafic Pull est toujours chiffré.
+- Sur le nœud, les fichiers MOF sont chiffrés au repos à compter de PowerShell 5.0.
+  - Dans PowerShell 4.0, les fichiers MOF ne sont pas chiffrés au repos, sauf s’ils sont chiffrés avec un certificat lorsqu’ils sont envoyés (Push) au nœud ou extraits (Pull) de celui-ci.
 
 **Microsoft recommande d’éviter les mots de passe en texte brut en raison de l’important risque de sécurité qu’ils présentent.**
 

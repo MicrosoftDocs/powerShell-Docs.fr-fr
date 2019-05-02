@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation des données de configuration
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401336"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080218"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 À l’aide du paramètre DSC intégré **ConfigurationData**, vous pouvez définir les données qui peuvent être utilisées dans une configuration.
 Cela vous permet de créer une configuration unique utilisée pour plusieurs nœuds ou différents environnements.
@@ -185,11 +185,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>Utilisation de variables ConfigurationData dans une configuration
 
-DSC fournit les variables spéciales suivantes qui peuvent être utilisées dans un script de configuration :
+DSC fournit les variables spéciales suivantes, qui peuvent être utilisées dans un script de configuration :
 
 - **$AllNodes** fait référence à l’ensemble de la collection de nœuds définis dans **ConfigurationData**. Vous pouvez filtrer la collection **AllNodes** à l’aide de **.Where()** et **.ForEach()**.
 - **ConfigurationData** fait référence à la table de hachage entière qui est passée comme paramètre lors de la compilation d’une configuration.
-- **MyTypeName** contient le [configuration](configurations.md) nom de la variable est utilisée dans. Par exemple, dans la configuration `MyDscConfiguration`, le `$MyTypeName` a la valeur de `MyDscConfiguration`.
+- **MyTypeName** contient le nom de la [configuration](configurations.md) dans laquelle la variable est utilisée. Par exemple, dans la configuration `MyDscConfiguration`, `$MyTypeName` aura la valeur `MyDscConfiguration`.
 - **Node** fait référence à une entrée particulière dans la collection **AllNodes** une fois qu’elle a été filtrée à l’aide de **.Where()** ou **.ForEach()**.
   - Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
 

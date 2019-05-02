@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: Exiger l’acceptation de la licence pour les scripts
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002580"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084672"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Exiger l’acceptation de la licence pour les scripts
 
@@ -18,7 +18,7 @@ Les commandes de scripts (Install-Script/Save-Script/Update-Script) prennent en 
 
 ## <a name="examples"></a>EXEMPLES
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Exemple 1 : installation d’un script avec des dépendances exigeant une acceptation de licence
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>Exemple 1 : installation d’un script avec des dépendances exigeant une acceptation de licence
 
 Le script 'ScriptRequireLicenseAcceptance' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur est invité à accepter la licence.
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exemple 2 : installation d’un script avec des dépendances exigeant une acceptation de licence et AcceptLicense
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exemple 2 : installation d’un script avec des dépendances exigeant une acceptation de licence et AcceptLicense
 
 Le script 'ScriptRequireLicenseAcceptance' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur n’est pas invité à accepter la licence, puisqu’AcceptLicense est spécifié.
 

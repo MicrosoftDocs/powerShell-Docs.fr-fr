@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076465"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
 
@@ -388,7 +388,7 @@ Nous allons créer une définition de version afin de déployer le projet dans l
 
 Pour ce faire, ajoutez une nouvelle définition de version associée à la définition de build `InfraDNS` que vous avez créée précédemment.
 Veillez à sélectionner **Continuous deployment** afin de déclencher une nouvelle version chaque fois qu’une nouvelle build est terminée.
-[Procédure : Utiliser des définitions de version](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions)) et configurez-le comme suit :
+([Que sont les pipelines de mise en production ? ](/azure/devops/pipelines/release/what-is-release-management)) et configurez-la comme suit :
 
 Ajoutez les étapes suivantes à la définition de version :
 

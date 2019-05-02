@@ -1,26 +1,26 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
-title: Publier sur un serveur collecteur à l’aide de l’ID de Configuration (v4/v5)
+title: Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
 ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401312"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079504"
 ---
-# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publier sur un serveur collecteur à l’aide de l’ID de Configuration (v4/v5)
+# <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
 
-Les sections ci-dessous supposent que vous avez déjà configuré un serveur collecteur. Si vous n’avez pas configuré votre serveur collecteur, vous pouvez utiliser les guides suivants :
+Les sections ci-dessous supposent que vous avez déjà configuré un serveur Pull. Si vous n’avez pas configuré votre serveur Pull, vous pouvez utiliser les guides suivants :
 
 - [Configurer un serveur Pull SMB DSC](pullServerSmb.md)
 - [Configurer un serveur Pull HTTP DSC](pullServer.md)
 
-Chaque nœud cible peut être configuré pour télécharger les configurations, ressources et même signaler son état. Cet article montre comment charger des ressources afin qu’ils soient disponibles pour être téléchargé et configurer les clients pour télécharger automatiquement les ressources. Lorsque le nœud reçoit une Configuration attribuée, via **extraire** ou **Push** (v5), il télécharge automatiquement toutes les ressources requises par la Configuration à partir de l’emplacement spécifié dans le Gestionnaire de configuration local.
+Chaque nœud cible peut être configuré pour télécharger les configurations et les ressources, et même pour signaler son état. Cet article montre comment uploader des ressources afin qu’elles soient disponibles pour être téléchargées, et comment configurer les clients pour télécharger automatiquement des ressources. Lorsque le nœud reçoit une configuration attribuée, via un serveur **Pull** ou **Push** (v5), il télécharge automatiquement toutes les ressources requises par la configuration depuis l’emplacement spécifié dans le gestionnaire de configuration local (LCM).
 
-## <a name="compile-configurations"></a>Compiler les Configurations
+## <a name="compile-configurations"></a>Compiler les configurations
 
-La première étape pour un stockage [Configurations](../configurations/configurations.md) sur un serveur collecteur, consiste à les compiler dans des fichiers « .mof ». Pour effectuer une configuration générique et applicables à plus de clients, utilisez `localhost` dans votre bloc de nœud. L’exemple ci-dessous montre un interpréteur de commandes de Configuration qui utilise `localhost` plutôt qu’un nom de client spécifique.
+La première étape pour stocker des [configurations](../configurations/configurations.md) sur un serveur Pull, consiste à les compiler dans des fichiers « .mof ». Pour effectuer une configuration générique et applicable à d’autres clients, utilisez `localhost` dans votre bloc de nœud. L’exemple ci-dessous montre un interpréteur de commandes de configuration qui utilise `localhost` plutôt qu’un nom de client spécifique.
 
 ```powershell
 Configuration GenericConfig
@@ -33,15 +33,15 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-Une fois que vous avez compilé votre configuration générique, vous devez disposer d’un fichier « localhost.mof ».
+Une fois que vous avez compilé votre configuration générique, vous devriez disposer d’un fichier « localhost.mof ».
 
 ## <a name="renaming-the-mof-file"></a>Renommer le fichier MOF
 
-Vous pouvez stocker des fichiers de Configuration de « .mof » sur un serveur collecteur par **ConfigurationName** ou **ConfigurationID**. Selon la façon dont vous souhaitez configurer vos clients d’extraction, vous pouvez choisir une section ci-dessous pour renommer correctement vos fichiers .mof « compilés ».
+Vous pouvez stocker des fichiers de configuration « .mof » sur un serveur Pull à l’aide de **ConfigurationName** ou de **ConfigurationID**. Selon la façon dont vous souhaitez configurer vos clients Pull, vous pouvez choisir une section ci-dessous afin de renommer correctement vos fichiers « .mof » compilés.
 
-### <a name="configuration-ids-guid"></a>ID (GUID) de la configuration
+### <a name="configuration-ids-guid"></a>ID (GUID) de configuration
 
-Vous devez renommer votre fichier de « localhost.mof » pour «<GUID>.mof « fichier. Vous pouvez créer un aléatoire **Guid** à l’aide de l’exemple ci-dessous, ou en utilisant le [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) applet de commande.
+Vous devrez renommer votre fichier « localhost.mof » en « <GUID>.mof ». Vous pouvez créer un **GUID** aléatoire à l’aide de l’exemple ci-dessous, ou en utilisant l’applet de commande [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid).
 
 ```powershell
 [System.Guid]::NewGuid()
@@ -55,17 +55,17 @@ Guid
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-Vous pouvez ensuite renommer votre fichier de « .mof » à l’aide de n’importe quelle méthode acceptable. L’exemple ci-dessous, utilise le [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) applet de commande.
+Vous pouvez ensuite renommer votre fichier « .mof » à l’aide de n’importe quelle méthode valide. L’exemple ci-dessous utilise l’applet de commande [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item).
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Pour plus d’informations sur l’utilisation de **GUID** dans votre environnement, consultez [planifier GUID](/powershell/dsc/secureserver#guids).
+Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](/powershell/dsc/secureserver#guids).
 
 ### <a name="configuration-names"></a>Noms de configuration
 
-Vous devez renommer votre fichier de « localhost.mof » pour «<Configuration Name>.mof « fichier. Dans l’exemple suivant, le nom de la configuration de la section précédente est utilisé. Vous pouvez ensuite renommer votre fichier de « .mof » à l’aide de n’importe quelle méthode acceptable. L’exemple ci-dessous, utilise le [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) applet de commande.
+Vous devrez renommer votre fichier « localhost.mof » en « <Configuration Name>.mof ». L’exemple suivant utilise le nom de la configuration de la section précédente. Vous pouvez ensuite renommer votre fichier « .mof » à l’aide de n’importe quelle méthode valide. L’exemple ci-dessous utilise l’applet de commande [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item).
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
@@ -73,21 +73,21 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 
 ## <a name="create-the-checksum"></a>Créer la somme de contrôle
 
-Chaque fichier de « .mof » stocké sur un serveur collecteur, ou un partage SMB doit avoir un fichier associé « .checksum ». Ce fichier permet aux clients de savoir quand le fichier .mof « associé » a changé et doit être téléchargé à nouveau.
+Chaque fichier « .mof » stocké sur un serveur Pull ou sur un partage SMB doit être associé à un fichier « .checksum ». Ce fichier permet aux clients de savoir quand le fichier « .mof » associé a changé et doit être téléchargé à nouveau.
 
-Vous pouvez créer un **CheckSum** avec la [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) applet de commande. Vous pouvez également exécuter `New-DSCCheckSum` par rapport à un répertoire de fichiers à l’aide de le `-Path` paramètre. Si une somme de contrôle existe déjà, vous pouvez le forcer à être recréé avec le `-Force` paramètre. L’exemple suivant a spécifié un répertoire contenant le fichier « .mof » à partir de la section précédente et utilise le `-Force` paramètre.
+Vous pouvez créer une **somme de contrôle** à l’aide de l’applet de commande [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum). Vous pouvez également exécuter `New-DSCCheckSum` dans un répertoire de fichiers à l’aide du paramètre `-Path`. Si une somme de contrôle existe déjà, vous pouvez forcer sa recréation avec le paramètre `-Force`. L’exemple suivant a spécifié un répertoire contenant le fichier « .mof » à partir de la section précédente et utilise le paramètre `-Force`.
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-Aucune sortie ne s’affiche, mais vous devriez maintenant voir un «<GUID or Configuration Name>. mof.checksum « fichier.
+Aucune sortie ne s’affichera, mais vous devriez maintenant voir un fichier « <GUID or Configuration Name>. mof.checksum ».
 
-## <a name="where-to-store-mof-files-and-checksums"></a>Emplacement où stocker les fichiers MOF et les sommes de contrôle
+## <a name="where-to-store-mof-files-and-checksums"></a>Emplacement de stockage des fichiers MOF et sommes de contrôle
 
-### <a name="on-a-dsc-http-pull-server"></a>Sur un serveur HTTP tirage de DSC
+### <a name="on-a-dsc-http-pull-server"></a>Sur un serveur Pull HTTP DSC
 
-Lorsque vous configurez votre serveur collecteur HTTP, comme expliqué dans [configurer un serveur Pull de DSC HTTP](pullServer.md), vous spécifiez des répertoires pour les **ModulePath** et **ConfigurationPath** clés. Le **ConfigurationPath** clé indique où tous les fichiers « .mof » doivent être stockées. Le **ConfigurationPath** indique où tous les fichiers de « .mof » et « .checksum » les fichiers doivent être stockées.
+Lorsque vous configurez votre serveur Pull HTTP, comme expliqué dans la section [Configurer un serveur Pull HTTP DSC](pullServer.md), vous spécifiez des répertoires pour les clés **ModulePath** et **ConfigurationPath**. La clé **ConfigurationPath** indique l’emplacement où tous les fichiers « .mof » devraient être stockés. La clé **ConfigurationPath** indique l’emplacement où tous les fichiers « .mof » et « .checksum » devraient être stockés.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,7 +102,7 @@ Lorsque vous configurez votre serveur collecteur HTTP, comme expliqué dans [con
 
 ### <a name="on-an-smb-share"></a>Sur un partage SMB
 
-Lorsque vous configurez un Client collecteur à utiliser un partage SMB, vous spécifiez un **ConfigurationRepositoryShare**. Tous les fichiers de « .mof » et « .checksum » doit alors être stockée dans le **SourcePath** répertoire à partir de la **ConfigurationRepositoryShare** bloc.
+Lorsque vous configurez un client Pull pour utiliser un partage SMB, vous spécifiez une clé **ConfigurationRepositoryShare**. Tous les fichiers « .mof » et « .checksum » doivent alors être stockés dans le répertoire **SourcePath** du bloc **ConfigurationRepositoryShare**.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -113,14 +113,14 @@ ConfigurationRepositoryShare SMBPullServer
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Ensuite, vous devez configurer les Clients d’extraction pour extraire la configuration spécifiée. Pour plus d’informations, consultez un des guides suivants :
+Vous devrez ensuite configurer les clients Pull pour extraire la configuration spécifiée. Pour plus d’informations, consultez l’un des guides suivants :
 
-- [Configurer un Client collecteur à l’aide de l’ID de Configuration (v4)](pullClientConfigId4.md)
-- [Configurer un Client collecteur à l’aide de l’ID de Configuration (v5)](pullClientConfigId.md)
-- [Configurer un Client collecteur à l’aide de noms de Configuration (v5)](pullClientConfigNames.md)
+- [Configurer un client Pull à l’aide d’ID de configuration (v4)](pullClientConfigId4.md)
+- [Configurer un client Pull à l’aide d’ID de configuration (v5)](pullClientConfigId.md)
+- [Configurer un client Pull à l’aide de noms de configuration (v5)](pullClientConfigNames.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Configurer un serveur Pull SMB DSC](pullServerSmb.md)
 - [Configurer un serveur Pull HTTP DSC](pullServer.md)
-- [Package et chargement des ressources à un serveur collecteur](package-upload-resources.md)
+- [Empaqueter et charger des ressources vers un serveur Pull](package-upload-resources.md)

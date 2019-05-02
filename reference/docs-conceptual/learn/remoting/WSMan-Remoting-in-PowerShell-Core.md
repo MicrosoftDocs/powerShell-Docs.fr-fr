@@ -2,12 +2,12 @@
 title: Accès distant à WS-Management (WSMan) dans PowerShell Core
 description: Accès distant dans PowerShell Core à l’aide de WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058877"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Accès distant à WS-Management (WSMan) dans PowerShell Core
 
@@ -28,7 +28,7 @@ Pour plus d’informations, reportez-vous au problème [#1193](https://github.co
 
 Le script
 
-1. Crée un répertoire pour le plug-in dans %windir%\System32\PowerShell
+1. Crée un répertoire pour le plug-in dans `$env:windir\System32\PowerShell`
 1. Copie pwrshplugin.dll à cet emplacement
 1. Génère un fichier de configuration
 1. Inscrit ce plug-in auprès de WinRM

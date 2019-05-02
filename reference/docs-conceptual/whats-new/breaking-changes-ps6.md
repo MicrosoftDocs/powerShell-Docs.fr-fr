@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085930"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
 
@@ -62,7 +62,7 @@ Au lieu de cela, nous vous recommandons d’utiliser les cmdlets CIM (également
 
 En raison de l’utilisation des API non prises en charge, `Microsoft.PowerShell.LocalAccounts` a été supprimé de PowerShell jusqu’à ce qu’une meilleure solution soit trouvée.
 
-### <a name="-computer-cmdlets"></a>Applets de commande `*-Computer`
+### <a name="-computer-cmdlets"></a>Cmdlets `*-Computer`
 
 En raison de l’utilisation d’API non prises en charge, les applets de commande suivantes ont été supprimées de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée.
 
@@ -71,11 +71,11 @@ En raison de l’utilisation d’API non prises en charge, les applets de comman
 - Remove-Computer
 - Restore-Computer
 
-### <a name="-counter-cmdlets"></a>Applets de commande `*-Counter`
+### <a name="-counter-cmdlets"></a>Cmdlets `*-Counter`
 
 En raison de l’utilisation des API non prises en charge, `*-Counter` a été supprimé de PowerShell jusqu’à ce qu’une meilleure solution soit trouvée.
 
-### <a name="-eventlog-cmdlets"></a>Applets de commande `*-EventLog`
+### <a name="-eventlog-cmdlets"></a>Cmdlets `*-EventLog`
 
 En raison de l’utilisation des API non prises en charge, `*-EventLog` a été supprimé de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée. `Get-WinEvent` et `Create-WinEvent` sont disponibles pour obtenir et créer des événements sur Windows.
 

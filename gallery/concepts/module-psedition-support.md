@@ -4,11 +4,11 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Modules avec des éditions PowerShell compatibles
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084723"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules avec des éditions PowerShell compatibles
 
@@ -79,7 +79,7 @@ Les auteurs de modules peuvent publier un même module ciblant une des deux édi
 
 Un même module peut fonctionner à la fois sur les versions Desktop et Core : dans ce module, l’auteur doit ajouter la logique nécessaire dans RootModule ou dans le manifeste du module en utilisant la variable $PSEdition. Les modules peuvent avoir deux ensembles de DLL compilées ciblant à la fois CoreCLR et FullCLR. Voici les deux options pour empaqueter votre module avec la logique de chargement des DLL appropriées.
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Option 1 : empaquetage d’un module pour cibler plusieurs versions et plusieurs éditions de PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>Option 1 : empaquetage d’un module pour cibler plusieurs versions et plusieurs éditions de PowerShell
 
 Contenu du dossier du module
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource Archive DSC
 ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077549"
 ---
 # <a name="dsc-archive-resource"></a>Ressource Archive DSC
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 La ressource Archive de la configuration d’état souhaité (DSC) de Windows PowerShell fournit un mécanisme permettant de décompresser les fichiers d’archive (.zip) à un emplacement spécifique.
 
@@ -35,7 +35,7 @@ Archive [string] #ResourceName
 |---|---|
 | Destination| Spécifie l’emplacement où le contenu de l’archive doit être extrait.|
 | Path| Spécifie le chemin source du fichier d’archive.|
-| __Checksum__| Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si __Checksum__ n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : SHA-1, SHA-256, SHA-512, createdDate, modifiedDate et none (valeur par défaut). Si vous spécifiez __Checksum__ sans __Validate__, la configuration échoue.|
+| __Checksum__| Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si __Checksum__ n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : SHA-1, SHA-256, SHA-512, createdDate, modifiedDate et none (par défaut). Si vous spécifiez __Checksum__ sans __Validate__, la configuration échoue.|
 | Ensure| Détermine s’il faut vérifier que le contenu de l’archive se trouve à la __Destination__ donnée. Définissez cette propriété sur __Present__ pour vous assurer que le contenu se trouve à l’emplacement donné. Définissez la propriété sur __Absent__ pour vous assurer que le contenu ne se trouve pas à l’emplacement donné. La valeur par défaut est __Present__.|
 | DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si l’ID du bloc de script de configuration de ressource que vous voulez exécuter en premier est ResourceName et son type est __ResourceType__, la syntaxe de cette propriété est `DependsOn = "[ResourceType]ResourceName"`.|
 | Validate| Utilise la propriété Checksum pour déterminer si l’archive correspond à la signature. Si vous spécifiez Checksum sans Validate, la configuration échoue. Si vous spécifiez Validate sans Checksum, une somme de contrôle SHA-256 est utilisée par défaut.|

@@ -4,20 +4,20 @@ keywords: powershell,applet de commande
 title: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678361"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086236"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 
-Dans certains cas, vous pouvez avoir un processus en cours d’exécution qui occupe une grande quantité de ressources de PowerShell.
-Ce processus peut s’exécuter dans le contexte d’un [Planificateur de tâches][] travail ou un [SQL Server Agent][] travail. S’il existe plusieurs processus PowerShell en cours d’exécution, il peut être difficile de savoir quel processus représente le problème. Cet article explique comment décoder un bloc de script, un processus PowerShell est en cours d’exécution.
+Il peut arriver qu’un processus PowerShell en cours d’exécution
+dans le contexte d’un travail [Planificateur de tâches][] ou [SQL Server Agent][] demande une grande quantité de ressources. Si plusieurs processus PowerShell sont en cours d’exécution, il peut être difficile de savoir lequel pose problème. Cet article explique comment décoder un bloc de script exécuté par un processus PowerShell.
 
-## <a name="create-a-long-running-process"></a>Créer un processus à long terme
+## <a name="create-a-long-running-process"></a>Créer un processus long
 
-Pour illustrer ce scénario, ouvrez une nouvelle fenêtre PowerShell et exécutez le code suivant. Il exécute une commande PowerShell qui génère un nombre à chaque minute pendant 10 minutes.
+Pour illustrer ce scénario, ouvrez une nouvelle fenêtre PowerShell et exécutez le code suivant. Il exécute une commande PowerShell qui génère un nombre par minute pendant 10 minutes.
 
 ```powershell
 powershell.exe -Command {
@@ -33,17 +33,17 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Afficher le processus
 
-Le corps de la commande qui est l’exécution de PowerShell est stocké dans le **CommandLine** propriété de la [Win32_Process][] classe. Si la commande est un [encodé commande][], le **CommandLine** propriété contient la chaîne « EncodedCommand ». À l’aide de ces informations, la commande encodée peut être dé-obfusquée via le processus suivant.
+Le corps de la commande exécuté par PowerShell est stocké dans la propriété **CommandLine** de la classe [Win32_Process][]. S’il s’agit d’une [commande encodée][], la propriété **CommandLine** contient la chaîne « EncodedCommand ». Ces informations permettent de révéler la commande encodée suivant le processus ci-dessous.
 
-Démarrez PowerShell en tant qu’administrateur. Il est essentiel que PowerShell s’exécute en tant qu’administrateur, sinon aucun résultats ne sont retournés lors de l’interrogation les processus en cours d’exécution.
+Lancez PowerShell en tant qu’administrateur. Il est essentiel que PowerShell s’exécute en mode administrateur ; sinon, aucun résultat ne sera retourné dans la liste des processus en cours d’exécution.
 
-Exécutez la commande suivante pour obtenir tous les processus PowerShell ayant une commande codée :
+Exécutez la commande suivante pour obtenir tous les processus PowerShell comportant une commande encodée :
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-La commande suivante crée un objet PowerShell personnalisé qui contient l’ID de processus et de la commande encodée.
+La commande suivante crée un objet PowerShell personnalisé contenant l’identificateur de processus et la commande encodée.
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-Désormais, la commande codée peut être décodée. L’extrait de code suivant effectue une itération sur l’objet de détails de commande décode la commande encodée et ajoute la commande décodée à l’objet pour un examen approfondi.
+Il est maintenant possible de décoder la commande encodée. L’extrait de code suivant effectue une itération sur l’objet de détails de la commande, décode la commande encodée et rajoute la commande décodée à l’objet en vue d’un examen approfondi.
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-La commande décodée peut désormais être consultée en sélectionnant la propriété command décodé.
+Il est maintenant possible de consulter la commande décodée en sélectionnant la propriété DecodedCommand.
 
 ```output
 ProcessId      : 8752
@@ -107,4 +107,4 @@ DecodedCommand :
 [Planificateur de tâches]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[encodé commande]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
+[Commande encodée]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

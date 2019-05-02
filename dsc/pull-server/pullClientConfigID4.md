@@ -1,31 +1,31 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
-title: Configurer un Client collecteur à l’aide des ID de Configuration dans PowerShell 4.0
+title: Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 4.0
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079470"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Configurer un Client collecteur à l’aide des ID de Configuration dans PowerShell 4.0
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 4.0
 
->S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
-Avant de configurer un client collecteur, vous devez configurer un serveur collecteur. Bien que cette commande ne soit pas obligatoire, elle facilite le dépannage et vous permet de vous assurer que l’inscription a réussi. Pour configurer un serveur collecteur, vous pouvez utiliser les guides suivants :
+Avant de configurer un client Pull, vous devez configurer un serveur Pull. Bien que cet ordre ne soit pas obligatoire, il facilite le dépannage et vous permet de vous assurer que l’inscription a réussi. Pour configurer un serveur Pull, vous pouvez utiliser les guides suivants :
 
 - [Configurer un serveur Pull SMB DSC](pullServerSmb.md)
 - [Configurer un serveur Pull HTTP DSC](pullServer.md)
 
-Chaque nœud cible peut être configuré pour télécharger les configurations, ressources et même signaler son état. Les sections suivantes vous montrent comment configurer un client collecteur avec un partage SMB ou un serveur d’extraction DSC HTTP. Lorsque Gestionnaire de configuration local du nœud est actualisé, il vous recontacte pour l’emplacement configuré pour télécharger toutes les configurations sont affectées. Si toutes les ressources requises n’existent pas sur le nœud, il les télécharge automatiquement à partir de l’emplacement configuré. Si le nœud est configuré avec un [serveur de rapports](reportServer.md), il sera ensuite l’état de l’opération.
+Chaque nœud cible peut être configuré pour télécharger les configurations et les ressources, et même pour signaler son état. Les sections suivantes montrent comment configurer un client Pull avec un partage SMB ou un serveur Pull DSC HTTP. Quand le Gestionnaire de configuration local du nœud est actualisé, il contacte l’emplacement configuré pour télécharger toutes les configurations affectées. Si des ressources requises n’existent pas sur le nœud, il les télécharge automatiquement à partir de l’emplacement configuré. Si le nœud est configuré avec un [serveur de rapports](reportServer.md), il signale ensuite l’état de l’opération.
 
-## <a name="configure-the-pull-client-lcm"></a>Configurer le client d’extraction LCM
+## <a name="configure-the-pull-client-lcm"></a>Configurer le Gestionnaire de configuration local du client Pull
 
-L’exécution d’un des exemples ci-dessous crée un nouveau dossier de sortie nommé **PullClientConfigID** et y place un fichier MOF de métaconfiguration. Dans ce cas, le fichier MOF de métaconfiguration est nommé `localhost.meta.mof`.
+L’exécution de l’un des exemples ci-dessous crée un dossier de sortie nommé **PullClientConfigID** et y place un fichier MOF de métaconfiguration. Dans ce cas, le fichier MOF de métaconfiguration est nommé `localhost.meta.mof`.
 
 Pour appliquer la configuration, appelez l’applet de commande **Set-DscLocalConfigurationManager** avec le paramètre **Path** défini sur l’emplacement du fichier MOF de métaconfiguration. Par exemple :
 
@@ -35,21 +35,21 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>ID de configuration
 
-Les exemples ci-dessous ensemble la **ConfigurationID** propriété du Gestionnaire de configuration local à un **Guid** qui avait été précédemment créé à cet effet. Le paramètre **ConfigurationID** est utilisé par le gestionnaire de configuration local pour rechercher la configuration appropriée sur le serveur collecteur. Le fichier MOF de configuration sur le serveur collecteur doit être nommé `ConfigurationID.mof`, où *ConfigurationID* est la valeur de la propriété **ConfigurationID** du gestionnaire de configuration local du nœud cible. Pour plus d’informations, consultez [publier les Configurations à un serveur collecteur (v4/v5)](publishConfigs.md).
+Les exemples ci-dessous affectent à la propriété **ConfigurationID** du Gestionnaire de configuration local un **GUID** précédemment créé à cet effet. Le paramètre **ConfigurationID** est utilisé par le gestionnaire de configuration local pour rechercher la configuration appropriée sur le serveur collecteur. Le fichier MOF de configuration sur le serveur collecteur doit être nommé `ConfigurationID.mof`, où *ConfigurationID* est la valeur de la propriété **ConfigurationID** du gestionnaire de configuration local du nœud cible. Pour plus d’informations, consultez [Publier des configurations vers un serveur Pull (v4/v5)](publishConfigs.md).
 
-Vous pouvez créer un aléatoire **Guid** à l’aide de l’exemple ci-dessous.
+Vous pouvez créer un **GUID** aléatoire à l’aide de l’exemple ci-dessous.
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>Configurer un Client collecteur à télécharger les Configurations
+## <a name="set-up-a-pull-client-to-download-configurations"></a>Configurer un client Pull pour télécharger des configurations
 
-Chaque client doit être configuré dans **extraction** mode et l’url du serveur collecteur où sa configuration est stockée. Pour ce faire, vous devez configurer le gestionnaire de configuration local avec les informations nécessaires. Pour configurer le LCM, vous créez un type spécial de configuration, avec un **LocalConfigurationManager** bloc. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuration du gestionnaire de configuration local](../managing-nodes/metaConfig4.md).
+Chaque client doit être configuré en mode **Pull** et il faut lui fournir l’URL du serveur Pull où sa configuration est stockée. Pour ce faire, vous devez configurer le gestionnaire de configuration local avec les informations nécessaires. Pour configurer le gestionnaire de configuration local, vous créez un type spécial de configuration, avec un bloc **LocalConfigurationManager**. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuration du gestionnaire de configuration local](../managing-nodes/metaConfig4.md).
 
-## <a name="http-dsc-pull-server"></a>Serveur collecteur de DSC HTTP
+## <a name="http-dsc-pull-server"></a>Serveur Pull DSC HTTP
 
-Si le serveur collecteur est configuré comme un service web, vous définissez le **DownloadManagerName** à **WebDownloadManager**. Le **WebDownloadManager** requiert que vous spécifiiez un **ServerUrl** à la **DownloadManagerCustomData** clé. Vous pouvez également spécifier une valeur pour **AllowUnsecureConnection**, comme dans l’exemple ci-dessous. Le script suivant configure le gestionnaire de configuration local de façon à extraire des configurations d’un serveur nommé « PullServer ».
+Si le serveur Pull est configuré comme un service web, définissez **DownloadManagerName** sur **WebDownloadManager**. **WebDownloadManager** requiert que vous spécifiiez une propriété **ServerUrl** pour la clé **DownloadManagerCustomData**. Vous pouvez également spécifier une valeur pour **AllowUnsecureConnection**, comme dans l’exemple ci-dessous. Le script suivant configure le gestionnaire de configuration local de façon à extraire des configurations d’un serveur nommé « PullServer ».
 
 ```powershell
 Configuration PullClientConfigId
@@ -71,7 +71,7 @@ PullClientConfigId -Output "."
 
 ## <a name="smb-share"></a>Partage SMB
 
-Si le serveur collecteur est configuré comme un partage de fichiers SMB, plutôt qu’un service web, vous définissez le **DownloadManagerName** à **DscFileDownloadManager** plutôt que **WebDownLoadManager**. Le **DscFileDownloadManager** requiert que vous spécifiiez un **SourcePath** propriété dans le **DownloadManagerCustomData**. Le script suivant configure le gestionnaire de configuration local de façon à extraire d’un partage SMB nommé « SmbDscShare » sur un serveur nommé « CONTOSO-SERVER ».
+Si le serveur collecteur est configuré comme un partage de fichiers SMB au lieu d’un service web, vous spécifiez **DownloadManagerName** sur **DscFileDownloadManager** au lieu de **WebDownLoadManager**. **DscFileDownloadManager** requiert que vous spécifiiez une propriété **SourcePath** dans **DownloadManagerCustomData**. Le script suivant configure le gestionnaire de configuration local de façon à extraire d’un partage SMB nommé « SmbDscShare » sur un serveur nommé « CONTOSO-SERVER ».
 
 ```powershell
 Configuration PullClientConfigId
@@ -93,12 +93,12 @@ PullClientConfigId -Output "."
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Une fois que le client d’extraction a été configuré, vous pouvez utiliser les guides suivants pour effectuer les étapes suivantes :
+Une fois le client Pull configuré, vous pouvez utiliser les guides suivants pour effectuer les étapes suivantes :
 
 - [Publier des configurations vers un serveur Pull (v4/v5)](publishConfigs.md)
 - [Empaqueter et charger des ressources vers un serveur Pull (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurer un serveur de collecteur web DSC](pullServer.md)
+- [Configurer un serveur collecteur web DSC](pullServer.md)
 - [Configurer un serveur Pull SMB DSC](pullServerSMB.md)

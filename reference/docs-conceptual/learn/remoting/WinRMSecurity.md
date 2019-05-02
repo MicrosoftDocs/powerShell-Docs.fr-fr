@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086359"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell
 
@@ -23,14 +23,14 @@ La communication à distance PowerShell n’est pas identique à l’utilisation
 
 La communication à distance PowerShell et WinRM écoutent sur les ports suivants :
 
-- HTTP : 5985
-- HTTPS : 5986
+- HTTP : 5985
+- HTTPS : 5986
 
 Par défaut, la communication à distance PowerShell autorise uniquement les connexions des membres du groupe de l’administrateur. Les sessions étant lancées dans le contexte de l’utilisateur, tous les contrôles d’accès au système d’exploitation appliqués à des utilisateurs et des groupes continuent de leur être appliqués pendant la connexion via la communication à distance PowerShell.
 
 Sur les réseaux privés, la règle de Pare-feu Windows par défaut pour la communication à distance PowerShell accepte toutes les connexions. Sur les réseaux publics, la règle de Pare-feu Windows par défaut autorise les connexions de communication à distance PowerShell uniquement sur le même sous-réseau. Vous devez modifier explicitement cette règle pour ouvrir la communication à distance PowerShell à toutes les connexions sur un réseau public.
 
->**Avertissement :** La règle de pare-feu pour les réseaux publics est destinée à protéger l’ordinateur contre les tentatives de connexions externes potentiellement malveillantes. Soyez prudent lors de la suppression de cette règle.
+>**Avertissement :** la règle de pare-feu pour les réseaux publics est destinée à protéger l’ordinateur contre les tentatives de connexions externes potentiellement malveillantes. Soyez prudent lors de la suppression de cette règle.
 
 ## <a name="process-isolation"></a>Isolation des processus
 

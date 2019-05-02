@@ -4,15 +4,15 @@ keywords: dsc,powershell,configuration,setup
 description: Fournit un mécanisme permettant de gérer des groupes locaux sur le nœud cible.
 title: Ressources GroupSet dans DSC
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047362"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077175"
 ---
 # <a name="dsc-groupset-resource"></a>Ressources GroupSet dans DSC
 
-> S'applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 La ressource **GroupSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme permettant de gérer des groupes locaux sur un nœud cible. Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la ressource [Group resource](groupResource.md) pour chaque groupe spécifié dans le paramètre `GroupName`.
 
@@ -44,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format *domaine*\\*nom d’utilisateur*. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur.|
 | DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID __ResourceName__ et le type __ResourceType__, utilisez la syntaxe suivante pour cette propriété : DependsOn = "[ResourceType]ResourceName"|
 
-## <a name="example-1-ensuring-groups-are-present"></a>Exemple 1 : S’assurer que les groupes sont présents
+## <a name="example-1-ensuring-groups-are-present"></a>Exemple 1 : S’assurer que des groupes sont présents
 
 L’exemple suivant montre comment s’assurer que les deux groupes « myGroup » et « myOtherGroup » sont présents.
 

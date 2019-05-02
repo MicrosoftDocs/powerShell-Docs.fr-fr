@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des clés API
 ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084338"
 ---
 # <a name="managing-api-keys"></a>Gestion des clés API
 
@@ -47,7 +47,7 @@ Les clés API étendues peuvent attribuer l’une des autorisations suivantes :
 
 Chaque nouvelle clé est assortie d’un délai d’expiration. La valeur du délai d’expiration est exprimée en jours. Les valeurs possibles du délai d’expiration sont les suivantes :
 
-- 1 jour
+- 1 jour
 - 90 jours
 - 180 jours
 - 270 jours

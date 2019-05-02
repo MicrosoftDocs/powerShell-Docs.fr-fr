@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: galerie,powershell,psgallery,RGPD
 title: Conformité RGPD de PowerShell Gallery
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084230"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>Conformité RGPD de PowerShell Gallery
 
@@ -53,7 +53,7 @@ Les e-mails envoyés par ou à PowerShell Gallery suivent une politique de conse
 Conformément à cette politique, les e-mails sont supprimés après 90 jours.
 
 Vous pouvez demander des copies de tous les e-mails envoyés à ou depuis votre adresse e-mail et PowerShell Gallery au cours des 90 jours qui ont précédé.
-Pour demander cette correspondance, envoyez un e-mail à [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), avec le titre : « Demande DSR des e-mails relatifs à ce compte ».
+Pour demander cette correspondance, envoyez un e-mail à [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), avec le titre : « Demande DSR des e-mails relatifs à ce compte ».
 Dans le corps du message, indiquez quelles informations vous demandez (par exemple : « Merci d’envoyer tous les e-mails envoyés ou reçus à cette adresse e-mail. »). Tous les e-mails impliquant votre adresse e-mail dans les 90 jours de la demande seront envoyés dans un délai de 7 jours ouvrés.
 
 ### <a name="powershell-gallery-account-information"></a>Informations du compte PowerShell Gallery

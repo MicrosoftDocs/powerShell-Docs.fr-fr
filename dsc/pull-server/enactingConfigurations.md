@@ -2,16 +2,16 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,setup
 title: Application des configurations
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401905"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079931"
 ---
 # <a name="enacting-configurations"></a>Application des configurations
 
->S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Il existe deux façons de promulguer des configurations DSC PowerShell : le mode par envoi et le mode par extraction.
 
@@ -24,7 +24,7 @@ Avec le mode par envoi, l’utilisateur applique activement une configuration à
 Après la création et la compilation d’une configuration, vous pouvez la promulguer avec le mode par envoi en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) et en définissant le paramètre -Path de l’applet de commande sur le chemin de la configuration MOF.
 Par exemple, si la configuration MOF se trouve à l’emplacement `C:\DSC\Configurations\localhost.mof`, vous pouvez l’appliquer à l’ordinateur local avec la commande suivante :`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __Remarque__ : Par défaut, DSC exécute une configuration en tant que tâche en arrière-plan. Pour exécuter la configuration de manière interactive, appelez [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) avec le paramètre __-Wait__.
+> __Remarque__ : par défaut, DSC exécute une configuration comme tâche en arrière-plan. Pour exécuter la configuration de manière interactive, appelez [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) avec le paramètre __-Wait__.
 
 ## <a name="pull-mode"></a>Mode par extraction
 
@@ -48,6 +48,6 @@ N’oubliez cependant pas que cette implémentation a des fonctionnalités limit
 
 Les rubriques suivantes expliquent les clients et les services d’extraction :
 
-- [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Configuration d’un serveur collecteur SMB](pullServerSMB.md)
 - [Configuration d’un client d’extraction](pullClientConfigID.md)

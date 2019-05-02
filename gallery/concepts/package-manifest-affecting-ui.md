@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084706"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -21,7 +21,7 @@ Cette rubrique fournit aux éditeurs des informations récapitulatives sur la fa
 
 Le tableau ci-dessous présente les packages de l’interface utilisateur PowerShell Gallery qui sont contrôlés par l’éditeur. Chaque élément précise s’il peut être contrôlé par le manifeste de type module ou script.
 
-| Élément de l'interface utilisateur | Description | Module | Script |
+| Élément de l’interface utilisateur | Description | Module | Script |
 | --- | --- | --- | --- |
 | **Titre** | Nom du package publié dans Gallery  | Non | Non |
 | **Version** | La version affichée représente la chaîne de version dans les métadonnées, ainsi qu’une préversion si elle est spécifiée. La partie principale de la version dans un manifeste Module est ModuleVersion. Pour un script, elle est identifiée par .VERSION. Si une chaîne de préversion est spécifiée, elle est ajoutée à la partie ModuleVersion pour les modules, ou identifiée par .VERSION pour les scripts. Il existe une documentation pour spécifier les chaînes de préversion dans les [modules](module-prerelease-support.md) et les [scripts](script-prerelease-support.md) | Oui | Oui |

@@ -4,20 +4,20 @@ keywords: powershell,applet de commande
 title: Tri d’objets
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086049"
 ---
 # <a name="sorting-objects"></a>Tri d’objets
 
-Vous pouvez organiser des données affichées pour faciliter leur analyse en utilisant le `Sort-Object` applet de commande. `Sort-Object` prend le nom d’une ou plusieurs propriétés à trier et retourner les données triées par les valeurs de ces propriétés.
+Vous pouvez organiser des données affichées pour faciliter leur analyse en utilisant l’applet de commande `Sort-Object`. L’applet de commande `Sort-Object` prend le nom d’une ou plusieurs propriétés pour trier et retourner les données triées sur les valeurs de ces propriétés.
 
 ## <a name="basic-sorting"></a>Tri de base
 
-Prenez le problème de répertorier les sous-répertoires et fichiers dans le répertoire actif.
-Si nous souhaitons trier par **LastWriteTime** puis par **nom**, nous pouvons le faire en tapant :
+Prenez le problème d’affichage des sous-répertoires et fichiers du répertoire actif.
+Si vous souhaitez trier sur l’état (**LastWriteTime**), puis sur le nom (**Name**), vous pouvez taper ce qui suit :
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-Vous pouvez également trier les objets dans l’ordre inverse en spécifiant le **décroissant** paramètre booléen.
+Vous pouvez également trier les objets dans l’ordre inverse en spécifiant le paramètre de commutateur **Descending**.
 
 ```powershell
 Get-ChildItem |
@@ -65,14 +65,14 @@ LastWriteTime          Name
 11/6/2017 10:10:11 AM  .localization-config
 ```
 
-## <a name="using-hash-tables"></a>À l’aide de tables de hachage
+## <a name="using-hash-tables"></a>Utilisation des tables de hachage
 
-Vous pouvez trier des propriétés différentes dans des ordres différents à l’aide de tables de hachage dans un tableau.
-Chaque table de hachage utilise un **Expression** clé pour spécifier le nom de propriété en tant que chaîne et un **croissant** ou **décroissant** clé pour spécifier l’ordre de tri par `$true` ou `$false`.
-Le **Expression** clé est obligatoire.
-Le **croissant** ou **décroissant** clé est facultative.
+Vous pouvez trier différentes propriétés selon divers ordres à l’aide de tables de hachage dans un tableau.
+Chaque table de hachage utilise une clé **Expression** pour spécifier le nom de la propriété comme chaîne, ainsi qu’une clé **Ascending** ou **Descending** pour spécifier l’ordre de tri par `$true` ou `$false`.
+La clé **Expression** est obligatoire.
+La clé **Ascending** (Croissant) ou **Descending** (Décroissant) est facultative.
 
-L’exemple suivant trie les objets dans l’ordre décroissant **LastWriteTime** ordre et croissant **nom** ordre.
+L’exemple suivant trie les objets par ordre décroissant **LastWriteTime** et par ordre croissant **Name**.
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-Vous pouvez également définir un bloc de script la **Expression** clé.
-Lorsque vous exécutez le `Sort-Object` applet de commande, le bloc de script est exécuté et le résultat est utilisé pour le tri.
+Vous pouvez également définir un bloc de script avec la clé **Expression**.
+Lorsque vous exécutez l’applet de commande `Sort-Object`, le bloc de script est exécuté et le résultat sert pour le tri.
 
-L’exemple suivant trie les objets dans l’ordre décroissant à l’intervalle de temps entre **CreationTime** et **LastWriteTime**.
+L’exemple suivant trie les objets par ordre décroissant en fonction de l’intervalle de temps entre **CreationTime** et **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -119,25 +119,25 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>Conseils
 
-Vous pouvez omettre le **propriété** nom du paramètre comme suit :
+Vous pouvez omettre le nom du paramètre **Property** comme suit :
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-En outre, vous pouvez faire référence à `Sort-Object` par son alias intégré, `sort`:
+En outre, vous pouvez faire référence à `Sort-Object` en utilisant son alias intégré, `sort` :
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-Les clés dans les tables de hachage pour le tri peuvent être abrégés comme suit :
+Les clés de tri figurant dans les tables de hachage peuvent être abrégées comme suit :
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-Dans cet exemple, le **e** est l’acronyme **Expression**, le **d** est l’acronyme **décroissant**et le **un** l’acronyme **croissant**.
+Dans cet exemple, la lettre **e** signifie **Expression**, **d** signifie **Descending** (décroissant) et **a** signifie **Ascending** (croissant).
 
 Pour améliorer la lisibilité, vous pouvez placer les tables de hachage dans une variable distincte :
 

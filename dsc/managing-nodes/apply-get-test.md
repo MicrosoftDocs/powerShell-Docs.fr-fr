@@ -3,19 +3,19 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Appliquer, obtenir et tester des configurations sur un nœud
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079708"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>Appliquer, obtenir et tester des configurations sur un nœud
 
-Ce guide vous explique comment travailler avec des Configurations sur une nœud cible. Ce guide est divisé en les étapes suivantes :
+Ce guide vous explique comment utiliser des configurations sur un nœud cible. Ce guide se compose des étapes suivantes :
 
-## <a name="apply-a-configuration"></a>Appliquer une Configuration
+## <a name="apply-a-configuration"></a>Appliquer une configuration
 
-Pour appliquer et gérer une Configuration, nous devons générer un fichier « .mof ». Le code suivant représente une Configuration simple qui sera utilisée tout au long de ce guide.
+Pour appliquer et gérer une configuration, nous devons générer un fichier « .mof ». Le code suivant représentera une configuration simple qui sera utilisée tout au long de ce guide.
 
 ```powershell
 Configuration Sample
@@ -36,7 +36,7 @@ Configuration Sample
 Sample -OutputPath "C:\Temp\"
 ```
 
-Compilation de cette configuration génère deux fichiers « .mof ».
+La compilation de cette configuration générera deux fichiers « .mof ».
 
 ```output
 Mode                LastWriteTime     Length Name
@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-Pour appliquer une Configuration, utilisez le [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) applet de commande. Le `-Path` paramètre spécifie un répertoire où se trouvent les fichiers « .mof ». Si aucun `-Computername` est spécifié, `Start-DSCConfiguration` tentera d’appliquer chaque Configuration pour le nom d’ordinateur spécifié par le nom du fichier « .mof » (\<computername\>.mof). Spécifiez `-Verbose` à `Start-DSCConfiguration` pour voir une sortie plus détaillée.
+Pour appliquer une configuration, utilisez l’applet de commande [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Le paramètre `-Path` spécifie un répertoire où se trouvent les fichiers « .mof ». Si aucune valeur `-Computername` n’est spécifiée, `Start-DSCConfiguration` tentera d’appliquer chaque configuration au nom d’ordinateur spécifié par le nom du fichier « .mof » (\<computername\>.mof). Définissez `-Verbose` sur `Start-DSCConfiguration` pour afficher un résultat plus détaillé.
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-Si `-Wait` n’est pas spécifié, vous voyez un travail créé. Le travail créé aura une **ChildJob** pour chaque fichier « .mof » traitées par `Start-DSCConfiguration`.
+Si la valeur `-Wait` n’est pas spécifiée, une tâche est créée. La tâche créée aura une propriété **ChildJob** pour chaque fichier « .mof » traité par `Start-DSCConfiguration`.
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -59,13 +59,13 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
 ```
 
-Si une Configuration est trop de temps et que vous souhaitez l’arrêter, vous pouvez utiliser [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) à arrêter l’application sur le nœud local.
+Si l’exécution d’une configuration prend trop de temps et que vous souhaitez l’arrêter, vous pouvez utiliser [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) pour arrêter l’application sur le nœud local.
 
 ```powershell
 Stop-DSCConfiguration -Force
 ```
 
-Une fois terminé, vous pouvez afficher l’état des tâches via l’objet de tâche retourné par [Get-Job](/powershell/module/microsoft.powershell.core/get-job).
+Une fois l’opération terminée, vous pouvez afficher l’état des tâches via l’objet de tâche retourné par [Get-Job](/powershell/module/microsoft.powershell.core/get-job).
 
 ```powershell
 $job = Get-Job
@@ -79,7 +79,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-Pour voir les **Verbose** de sortie, utilisez les commandes suivantes pour afficher le **Verbose** stream pour chaque **ChildJob**. Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Pour afficher le résultat **Détaillé**, utilisez les commandes suivantes pour afficher le flux **Détaillé** pour chaque **ChildJob**. Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
@@ -101,37 +101,37 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-À compter de PowerShell 5.0, le `-UseExisting` paramètre a été ajouté à `Start-DSCConfiguration`. En spécifiant `-UseExisting`, vous demander à l’applet de commande à utiliser la Configuration appliquée existante au lieu de celle spécifiée par la `-Path` paramètre.
+À compter de PowerShell 5.0, le paramètre `-UseExisting` a été ajouté à `Start-DSCConfiguration`. En spécifiant `-UseExisting`, vous demandez à l’applet de commande d’utiliser la configuration appliquée existante au lieu de celle spécifiée par le paramètre `-Path`.
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
 ```
 
-## <a name="test-a-configuration"></a>Tester une Configuration
+## <a name="test-a-configuration"></a>Tester une configuration
 
-Vous pouvez tester une Configuration actuellement appliquée à l’aide [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` retournera `True` si le nœud est conforme, et `False` si elle n’est pas.
+Vous pouvez tester une configuration actuellement appliquée à l’aide de [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` retournera `True` si le nœud est conforme, et `False` dans le cas contraire.
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-À compter de PowerShell 5.0, le `-Detailed` paramètre a été ajouté, qui retourne un objet avec des collections de **ResourcesInDesiredState** et **ResourcesNotInDesiredState**
+À compter de PowerShell 5.0, le paramètre `-Detailed` a été ajouté et retourne un objet avec des collections pour **ResourcesInDesiredState** et **ResourcesNotInDesiredState**
 
 ```powershell
 Test-DSCConfiguration -Detailed
 ```
 
-À compter de PowerShell 5.0, vous pouvez tester une Configuration sans l’appliquer. Le `-ReferenceConfiguration` paramètre accepte le chemin d’accès d’un fichier « .mof » pour tester le nœud par rapport. Ne **définir** actions sont effectuées sur le nœud. Dans PowerShell 4.0, il existe des solutions de contournement pour tester une Configuration sans l’appliquer, mais ils ne sont pas abordées ici.
+À compter de PowerShell 5.0, vous pouvez tester une configuration sans l’appliquer. Le paramètre `-ReferenceConfiguration` accepte le chemin d’accès d’un fichier « .mof » pour tester le nœud. Aucune action de type **Set** n’est appliquée au nœud. PowerShell 4.0 propose des solutions de contournement pour tester une configuration sans l’appliquer, mais elles ne sont pas présentées ici.
 
-## <a name="get-configuration-values"></a>Obtenir les valeurs de Configuration
+## <a name="get-configuration-values"></a>Obtenir les valeurs de la configuration
 
-Le [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) applet de commande renvoie les valeurs actuelles de toutes les ressources configurées dans la Configuration actuellement appliquée.
+L’applet de commande [Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) renvoie les valeurs actuelles de toutes les ressources configurées dans la configuration actuellement appliquée.
 
 ```powershell
 Get-DSCConfiguration
 ```
 
-Sortie à partir de notre exemple de Configuration ressemblerait à ceci si appliquées avec succès.
+Le résultat de notre exemple de configuration ressemblerait à ceci si cette configuration est appliquée avec succès.
 
 ```output
 ConfigurationName    : Sample
@@ -160,9 +160,9 @@ PSComputerName       :
 CimClassName         : MSFT_FileDirectoryConfiguration
 ```
 
-## <a name="get-configuration-status"></a>Obtenir l’état de Configuration
+## <a name="get-configuration-status"></a>Obtenir l’état de la configuration
 
-À compter de PowerShell 5.0 le [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) applet de commande vous permet de consulter l’historique des Configurations appliquées au nœud. PowerShell DSC effectue le suivi des {{N}} dernières Configurations appliquées dans **Push** ou **extraire** mode. Cela inclut tous *cohérence* vérifications exécutées par le Gestionnaire de configuration local. Par défaut, `Get-DSCConfigurationStatus` vous montre uniquement la dernière entrée de l’historique.
+À compter de PowerShell 5.0, l’applet de commande [Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) vous permet de consulter l’historique des configurations appliquées au nœud. PowerShell DSC effectue le suivi des {{N}} dernières configurations appliquées en mpde **Push** ou **Pull**. Cela inclut toutes les vérifications de *cohérence* exécutées par le gestionnaire de configuration local (LCM). Par défaut, `Get-DSCConfigurationStatus` vous montre uniquement la dernière entrée de l’historique.
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -174,10 +174,10 @@ Status     StartDate                 Type            Mode  RebootRequested      
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
 ```
 
-Utilisez le `-All` paramètre pour afficher tous les historique d’état de la Configuration.
+Utilisez le paramètre `-All` pour afficher tout l’historique des états de la configuration.
 
 > [!NOTE]
-> Sortie est tronquée par souci de concision.
+> Le résultat est tronqué par souci de concision.
 
 ```powershell
 Get-DSCConfigurationStatus -All
@@ -198,22 +198,22 @@ Success    11/27/2018 6:18:40 AM     Consistency     PUSH  False                
 Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                2
 ```
 
-## <a name="manage-configuration-documents"></a>Gérer des Documents de Configuration
+## <a name="manage-configuration-documents"></a>Gérer des documents de configuration
 
-Le LCM gère la Configuration du nœud en travaillant avec **Documents de Configuration**. Ces fichiers « .mof » se trouvent dans le répertoire « C:\Windows\System32\Configuration ».
+Le LCM gère la configuration du nœud à l’aide de **documents de configuration**. Ces fichiers « .mof » se trouvent dans le répertoire "C:\Windows\System32\Configuration".
 
-À compter de PowerShell 5.0 le [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) vous permet de supprimer les fichiers « .mof » pour arrêter les vérifications de cohérence futures ou de supprimer une Configuration qui comporte des erreurs lorsqu’il est appliqué. Le `-Stage` paramètre permet de spécifier le fichier « .mof » que vous souhaitez supprimer.
+À compter de PowerShell 5.0, [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) vous permet de supprimer les fichiers « .mof » pour arrêter les futures vérifications de cohérence ou pour supprimer une configuration dont l’application entraîne des erreurs. Le paramètre `-Stage` permet de spécifier le fichier « .mof » que vous souhaitez supprimer.
 
 ```powershell
 Remove-DSCConfigurationDocument -Stage Current
 ```
 
 > [!NOTE]
-> Dans PowerShell 4.0, vous pouvez toujours supprimer ces fichiers « .mof » directement à l’aide [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item).
+> Dans PowerShell 4.0, vous pouvez toujours supprimer ces fichiers « .mof » directement à l’aide de [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item).
 
-## <a name="publish-configurations"></a>Publier des Configurations
+## <a name="publish-configurations"></a>Publier les configurations
 
-À compter de PowerShell 5.0, le [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) applet de commande a été ajoutée. Cette applet de commande vous permet de publier un fichier « .mof » à des ordinateurs distants sans l’appliquer.
+À compter de PowerShell 5.0, l’applet de commande [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) a été ajoutée. Cette applet de commande vous permet de publier un fichier « .mof » sur des ordinateurs distants, sans l’appliquer.
 
 ```powershell
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)

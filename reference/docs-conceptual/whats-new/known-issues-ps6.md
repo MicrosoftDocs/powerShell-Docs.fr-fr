@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Problèmes connus de PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678660"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085964"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problèmes connus de PowerShell 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "55678660"
 
 Les versions alpha de PowerShell sous Linux et macOS sont globalement fonctionnelles, mais présentent d’importantes limitations et quelques problèmes d’utilisation. Les versions bêta de PowerShell sous Linux et macOS sont plus fonctionnelles et stables que les versions alpha, mais elles sont susceptibles de comporter des bogues et des fonctionnalités manquantes. Dans certains cas, ces problèmes sont tout simplement des bogues qui n’ont pas encore été corrigés. Dans d’autres (par exemple, les alias par défaut de ls, cp, etc.), nous attendons les commentaires de la communauté au sujet des choix que nous avons faits.
 
-Remarque : En raison des similitudes que présentent de nombreux sous-systèmes sous-jacents, PowerShell sous Linux et PowerShell sous macOS tendent à partagent le même niveau de maturité pour les fonctionnalités comme pour les bogues. Sauf mention contraire, les problèmes mentionnés dans cette section s’appliquent aux deux systèmes d’exploitation.
+Remarque : en raison des similitudes que présentent de nombreux sous-systèmes sous-jacents, PowerShell sur Linux et PowerShell sur macOS tendent à partagent le même niveau de maturité pour les fonctionnalités comme pour les bogues. Sauf mention contraire, les problèmes mentionnés dans cette section s’appliquent aux deux systèmes d’exploitation.
 
 ### <a name="case-sensitivity-in-powershell"></a>Respect de la casse dans PowerShell
 

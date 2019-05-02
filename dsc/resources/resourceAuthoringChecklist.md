@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Liste de vérification de création de ressources
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076580"
 ---
 # <a name="resource-authoring-checklist"></a>Liste de vérification de création de ressources
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>La ressource est idempotent dans le cas positif
 
-Une des caractéristiques fondamentales des ressources de DSC est l’idempotence. Cela signifie que l’application d’une configuration DSC contenant cette ressource plusieurs fois aboutit toujours au même résultat. Par exemple, si nous créons une configuration qui contient la ressource de fichier suivante :
+L’une des caractéristiques fondamentales des ressources DSC est l’idempotence. Cela signifie que l’application d’une configuration DSC contenant cette ressource plusieurs fois aboutit toujours au même résultat. Par exemple, si nous créons une configuration qui contient la ressource de fichier suivante :
 
 ```powershell
 File file {
@@ -210,11 +210,11 @@ La création d’exemples de qualité aidera les autres à comprendre comment l�
 
 Pour être efficaces, les messages d’erreur doivent être :
 
-- Présents : Le plus gros problème avec les messages d’erreur est qu’ils n’existent pas souvent, assurez-vous qu’ils s’y.
-- Facile à comprendre : Codes d’erreur humaine de lisible, n’obscurs
-- Précise Décrire ce qu’est exactement le problème
-- Constructifs : Conseils pour résoudre le problème
-- Poli : Ne pas rendre responsable utilisateur ou rendre vous inquiétez pas
+- Présents : le plus gros problème avec les messages d’erreur, c’est que souvent il n’y en a pas. Vérifiez donc qu’ils existent.
+- Faciles à comprendre : ils doivent être lisibles. Il ne doit pas s’agir de codes d’erreur obscurs.
+- Précis : décrivez le problème exact.
+- Constructifs : donnez des conseils pour résoudre le problème.
+- Polis : ne blâmez pas l’utilisateur et ne le rabaissez pas.
 
 Vérifiez les erreurs dans les scénarios de bout en bout (à l’aide de `Start-DscConfiguration`), car elles peuvent différer de celles retournées lors de l’exécution directe des fonctions de ressources.
 
@@ -222,7 +222,7 @@ Vérifiez les erreurs dans les scénarios de bout en bout (à l’aide de `Start
 
 Vérifiez que les journaux générés par la ressource sont faciles à comprendre et sont utiles à l’utilisateur. Les ressources doivent générer toutes les informations qui peuvent être utiles à l’utilisateur, mais il n’est pas toujours préférable de fournir davantage de journaux. Vous devez éviter de créer des redondances et des données qui n’apportent rien de plus. Ne forcez pas un utilisateur à parcourir des centaines d’entrées de journaux pour trouver ce qu’il cherche. Bien entendu, ne proposer aucun journal n’est pas non plus une solution acceptable pour ce problème.
 
-Pendant les tests, vous devez aussi analyser les journaux détaillés et les journaux de débogage (en exécutant `Start-DscConfiguration` avec les commutateurs `–Verbose` et `–Debug` le cas échéant), ainsi que les journaux ETW. Pour afficher les journaux ETW de DSC, accédez à l’Observateur d’événements et ouvrez le dossier suivant : Applications et Services Microsoft - Windows - Desired State Configuration.  Par défaut le canal Opérationnel est activé, mais veillez à activer également les canaux Analyse et Débogage avant d’exécuter la configuration.
+Pendant les tests, vous devez aussi analyser les journaux détaillés et les journaux de débogage (en exécutant `Start-DscConfiguration` avec les commutateurs `–Verbose` et `–Debug` le cas échéant), ainsi que les journaux ETW. Pour afficher les journaux ETW DSC, accédez à l’Observateur d’événements et ouvrez le dossier suivant : Applications and Services- Microsoft - Windows - Desired State Configuration.  Par défaut le canal Opérationnel est activé, mais veillez à activer également les canaux Analyse et Débogage avant d’exécuter la configuration.
 Pour activer les canaux Analyse/Débogage, vous pouvez exécuter le script ci-dessous :
 
 ```powershell
@@ -283,7 +283,7 @@ Les fonctions **Get/Set/Test-TargetResource** doivent être exécutées automati
 
 Cette liste de vérification contient des éléments qu’il est important de tester et/ou qui sont souvent oubliés. Il y aura plusieurs séries de tests, principalement des tests fonctionnels propres à la ressource que vous testez et qui ne sont pas mentionnés ici. N’oubliez pas les cas de tests négatifs.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bonne pratique Module de ressources contient un dossier Tests avec un script ResourceDesignerTests.ps1
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bonne pratique : le module de ressources contient un dossier Tests avec un script ResourceDesignerTests.ps1
 
 Il est conseillé de créer un dossier « Tests » à l’intérieur du module de ressources, de créer un fichier `ResourceDesignerTests.ps1` et d’ajouter des tests à l’aide de **Test-xDscResource** et **Test-xDscSchema** pour toutes les ressources d’un module donné.
 De cette façon, vous pouvez valider rapidement les schémas de toutes les ressources des modules donnés et effectuer des tests d’intégrité avant la publication.
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bonne pratique Dossier de ressources contient le script de Concepteur de ressources pour générer le schéma
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bonne pratique : le dossier de ressources contient un script de concepteur de ressources pour générer le schéma
 
 Chaque ressource doit contenir un script de concepteur de ressources qui génère un schéma mof de la ressource. Ce fichier doit être placé dans `<ResourceName>\ResourceDesignerScripts` et nommé Generate`<ResourceName>Schema.ps1`. Pour la ressource xRemoteFile, ce fichier se nommerait `GenerateXRemoteFileSchema.ps1` et contiendrait :
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>Bonne pratique Ressource prend en charge - WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>Bonne pratique : la ressource prend en charge -WhatIf
 
 Si votre ressource effectue des opérations « dangereuses », nous vous recommandons d’implémenter une fonctionnalité `-WhatIf`. Une fois ceci effectué, vérifiez que la sortie `-WhatIf` décrit correctement les opérations qui auraient lieu si la commande était exécutée sans commutateur `-WhatIf`.
 Vérifiez également que les opérations ne s’exécutent pas (l’état du nœud n’est pas modifié) quand le commutateur `–WhatIf` est présent.

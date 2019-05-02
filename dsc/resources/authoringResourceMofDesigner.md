@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation du Concepteur de ressources
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678629"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076665"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md).
 Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory.
@@ -25,7 +25,7 @@ La première chose à faire est de décider des propriétés que doit exposer la
 Nom du paramètre  Description
 * **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
 * **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
-* **DomainCredential** : mot de passe de l’utilisateur.
+* **DomainCredential** : mot de passe du domaine de l’utilisateur.
 * **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
 
 Pour créer les propriétés, nous utilisons l’applet de commande **New-xDscResourceProperty**. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.

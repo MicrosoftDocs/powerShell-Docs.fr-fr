@@ -3,17 +3,17 @@ ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678561"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058418"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013
+Mise à jour : 24 juin 2013
 
-S’applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 La fonctionnalité Accès Web Windows PowerShell dans Windows Server 2012 R2 et Windows Server 2012 a un modèle de sécurité restrictif. Les utilisateurs doivent recevoir explicitement une autorisation d’accès avant de pouvoir se connecter à la passerelle Accès Web Windows PowerShell et utiliser la console web Windows PowerShell.
 
@@ -139,7 +139,7 @@ Les applets de commande d’Accès Web Windows PowerShell prennent en charge un 
    Remove-PswaAuthorizationRule -ID <rule ID>
    ```
 
-   Si vous ne connaissez pas le numéro d’ID, mais que vous connaissez le nom convivial de la règle à supprimer, vous pouvez également obtenir le nom de la règle, puis le rediriger vers l’applet de commande `Remove-PswaAuthorizationRule` pour supprimer la règle, comme indiqué dans l’exemple suivant :
+   Si vous ne connaissez pas le numéro de l’ID mais que vous connaissez le nom convivial de la règle à supprimer, vous pouvez obtenir le nom de la règle, puis le faire suivre dans un pipe à l’applet de commande `Remove-PswaAuthorizationRule` pour supprimer la règle, comme dans l’exemple suivant :
 
    ```
    Get-PswaAuthorizationRule `
@@ -158,7 +158,7 @@ Chaque session Windows PowerShell utilise une configuration de session ; si auc
 
 - L’administrateur a créé un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis souhaite en restreindre l’accès à des utilisateurs spécifiques. L’administrateur crée un groupe d’utilisateurs appelé **Level1Support**, puis définit la règle suivante : **Level1Support,\*,PswaEndpoint**. La règle accorde à tous les utilisateurs inclus dans le groupe **Level1Support** un accès à tous les ordinateurs dotés de la configuration **PswaEndpoint**. De même, l’accès peut être limité à un ensemble d’ordinateurs spécifique.
 
-- Certains administrateurs accordent à certains utilisateurs un accès privilégié. Par exemple, un administrateur crée deux groupes d’utilisateurs, **Admins** et **BasicSupport**. Il crée également un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis définit les deux règles suivantes : **Admins,\*,\*** et **BasicSupport,\*,PswaEndpoint**. La première règle octroie à tous les utilisateurs du groupe **Admin** un accès à tous les ordinateurs, et la seconde règle octroie à tous les utilisateurs du groupe **BasicSupport** un accès aux seuls ordinateurs dotés de **PswaEndpoint**.
+- Certains administrateurs accordent à certains utilisateurs un accès privilégié. Par exemple, un administrateur crée deux groupes d’utilisateurs, **Admins** et **BasicSupport**. Il crée également un point de terminaison avec une instance d’exécution restreinte appelée **PswaEndpoint**, puis définit les deux règles suivantes : **Admins,\*,\*** et **BasicSupport,\*,PswaEndpoint**. La première règle octroie à tous les utilisateurs du groupe **Admin** un accès à tous les ordinateurs, et la seconde règle octroie à tous les utilisateurs du groupe **BasicSupport** un accès aux seuls ordinateurs dotés de **PswaEndpoint**.
 
 - Un administrateur a configuré un environnement de test privé et souhaite autoriser tous les utilisateurs réseau approuvés à accéder à tous les ordinateurs du réseau auxquels ils ont normalement accès, avec un accès à toutes les configurations de sessions auxquelles ils ont normalement accès. S’agissant d’un environnement de test privé, l’administrateur crée une règle d’autorisation non sécurisée. - L’administrateur exécute l’applet de commande `Add-PswaAuthorizationRule * * *`, qui utilise le caractère générique **\*** pour représenter tous les utilisateurs, tous les ordinateurs et toutes les configurations. - Cette règle est l’équivalent de la commande suivante : `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 

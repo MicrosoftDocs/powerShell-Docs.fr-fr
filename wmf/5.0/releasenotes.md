@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 ms.openlocfilehash: 07ebcfd37cc3e1f38a9434ffa8d86f479b89ee0f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678309"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085216"
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Présentation des Notes de publication de Windows Management Framework (WMF) 5.0 RTM
 
-**WMF 5.0 est remplacé par WMF 5.1. Les utilisateurs de WMF 5.0 doivent passer à WMF 5.1 pour profiter de la prise en charge. Veuillez suivre les [instructions d’installation de WMF 5.1](../5.1/install-configure.md)**
+**WMF 5.0 est remplacée par WMF 5.1. Les utilisateurs de WMF 5.0 doivent passer à WMF 5.1 pour profiter de la prise en charge. Veuillez suivre les [instructions d’installation de WMF 5.1](../5.1/install-configure.md)**
 
 Windows Management Framework (WMF) 5.0 RTM offre une fonctionnalité qui a été mise à jour par rapport à WMF 4.0. WMF 5.0 RTM peut être installé uniquement sur **Windows Server 2012 R2**, **Windows Server 2012**, **Windows Server 2008 R2**, **Windows 8.1** et **Windows 7 SP1**. Il contient les fonctionnalités nouvelles ou mises à jour suivantes :
 
@@ -24,4 +24,4 @@ Windows Management Framework (WMF) 5.0 RTM offre une fonctionnalité qui a ét�
 
 WMF 5.0 RTM remplace [WMF 5.0 Production Preview](http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx). Vous pouvez installer WMF 5.0 RTM sans désinstaller WMF 5.0 Production Preview, mais vous devez désinstaller toutes les autres versions plus anciennes des versions préliminaires de WMF 5.0 avant d’installer WMF 5.0 RTM.
 
-*Remarque :* Si vous exécutez Windows 10, vous pouvez obtenir le même ensemble de fonctionnalités que celui disponible dans WMF 5.0 RTM en effectuant la mise à jour vers la version de novembre de Windows 10 (Version 1511). Si vous n’avez pas encore mis à jour votre système Windows 10, sélectionnez le bouton Démarrer, puis sélectionnez Paramètres > Mise à jour et sécurité > Windows Update > Rechercher des mises à jour.
+*Remarque :* si vous exécutez Windows 10, vous pouvez obtenir le même ensemble de fonctionnalités que celui disponible dans WMF 5.0 RTM en effectuant la mise à jour vers la version de novembre de Windows 10 (Version 1511). Si vous n’avez pas encore mis à jour votre système Windows 10, sélectionnez le bouton Démarrer, puis sélectionnez Paramètres > Mise à jour et sécurité > Windows Update > Rechercher des mises à jour.

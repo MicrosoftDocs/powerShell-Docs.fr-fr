@@ -2,15 +2,15 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 ms.openlocfilehash: 7e87ed4bc9a86be52d4d06d3e87386a1111227c5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678709"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085012"
 ---
 # <a name="software-inventory-logging-sil"></a>Journalisation de l’inventaire logiciel
 
-**IMPORTANT :**  *Lors de l’installation de WMF 5.0 sur un serveur Windows Server 2012 R2 exécutant déjà la journalisation de l’inventaire logiciel, vous devez exécuter l’applet de commande Start-SilLogging une seule fois après l’installation de WMF, car le processus d’installation arrête la fonctionnalité de journalisation de l’inventaire logiciel de façon non contrôlée.*
+**IMPORTANT :** *lors de l’installation de WMF 5.0 sur un serveur Windows Server 2012 R2 exécutant déjà la journalisation de l’inventaire logiciel, vous devez exécuter l’applet de commande Start-SilLogging une seule fois après l’installation de WMF, car le processus d’installation arrête la fonctionnalité de journalisation de l’inventaire logiciel de façon non contrôlée.*
 
 La journalisation de l’inventaire logiciel aide à réduire les coûts d’exploitation liés à l’obtention d’informations précises concernant les logiciels Microsoft installés localement sur un serveur, mais plus particulièrement sur de nombreux serveurs d’un environnement informatique (en supposant que les logiciels soient installés et en cours d’exécution dans l’environnement informatique). Vous pouvez alors transférer ces données à un serveur d’agrégation et recueillir les données des journaux dans un emplacement centralisé à l’aide d’un processus uniforme et automatique.
 

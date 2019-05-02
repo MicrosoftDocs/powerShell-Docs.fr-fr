@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Syntaxe de recherche PowerShell Gallery
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742854"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084298"
 ---
 # <a name="gallery-search-syntax"></a>Syntaxe de recherche PowerShell Gallery
 
-Vous pouvez rechercher l’à l’aide de PowerShell Gallery le [site web de PowerShell Gallery](https://www.powershellgallery.com/).
-Site web PowerShell Gallery offre un searchbox de texte où vous pouvez utiliser des mots, expressions et des mots pour affiner les résultats de recherche.
+Pour faire une recherche dans PowerShell Gallery, vous pouvez utiliser le [site web de PowerShell Gallery](https://www.powershellgallery.com/).
+Il propose une zone de recherche de texte qui accepte des mots, des expressions et des mots clés pour limiter les résultats de la recherche.
 
 ## <a name="search-by-keywords"></a>Recherche par mots clés
 
     dsc azure sql
 
-Recherche tente de trouver des documents pertinents contenant toutes les 3 mots clés et retourner les documents correspondants.
+Sont recherchés et retournés les documents contenant les trois mots clés.
 
 ## <a name="search-using-phrases-and-keywords"></a>Recherche à l’aide d’expressions et de mots clés
 
@@ -40,7 +40,7 @@ Actuellement, les champs sur lesquels la recherche peut porter sont « Id », 
 
     ID:PSReadline
     
-recherche les packages avec un ID contenant « PSReadline ».
+Sont recherchés les packages dont l’ID contient « PSReadline ».
 
     Id:"AzureRM.Profile"
 
@@ -50,13 +50,13 @@ Le filtre Id étant une correspondance avec la sous-chaîne, si vous recherchez 
 
     Id:"azure"
 
-Cela fournit des résultats qui incluent AzureRM.Profile » et « Azure.Storage ».
+Les résultats retournés comportent « AzureRM.Profile » et « Azure.Storage ».
 
 Vous pouvez également rechercher plusieurs mots clés dans un champ unique. 
 
     id:azure tags:intellisense
 
-Et vous pouvez effectuer des recherches d’expressions à l’aide de guillemets doubles :
+Il est aussi possible d’effectuer des recherches d’expressions entre guillemets doubles :
 
     id:"azure.storage"
 

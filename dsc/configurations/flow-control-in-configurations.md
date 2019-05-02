@@ -3,22 +3,22 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Boucles et instructions conditionnelles dans les configurations
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080133"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>Boucles et instructions conditionnelles dans les configurations
 
-Vous pouvez rendre votre [Configurations](configurations.md) plus dynamique à l’aide de mots clés de contrôle de flux de PowerShell. Cet article vous explique comment vous pouvez utiliser des instructions conditionnelles et des boucles pour rendre vos Configurations plus dynamique. Combinaison conditionnelle et des boucles avec [paramètres](add-parameters-to-a-configuration.md) et [les données de Configuration](configData.md) vous permet de plus de souplesse et de contrôle lors de la compilation de vos Configurations.
+Vous pouvez rendre vos [configurations](configurations.md) plus dynamiques à l’aide de mots clés de contrôle de flux de PowerShell. Cet article vous explique comment utiliser des instructions conditionnelles et des boucles pour rendre vos configurations plus dynamiques. La combinaison d’instructions conditionnelles et de boucles avec des [paramètres](add-parameters-to-a-configuration.md) et des [données de configuration](configData.md) vous offre plus de souplesse et de contrôle lors de la compilation de vos configurations.
 
-Tout comme une fonction ou un bloc de Script, vous pouvez utiliser n’importe quel langage PowerShell au sein d’une Configuration. Les instructions que vous utilisez seront évaluées uniquement lorsque vous appelez votre Configuration pour compiler un fichier « .mof ». Les exemples ci-dessous illustrent des scénarios simples pour illustrer les concepts. Instructions conditionnelles sont boucles sont plus souvent utilisés avec des paramètres et données de Configuration.
+Comme pour une fonction ou un bloc de script, vous pouvez utiliser n’importe quel langage PowerShell au sein d’une configuration. Les instructions que vous utilisez seront évaluées uniquement lorsque vous appelez votre configuration pour compiler un fichier « .mof ». Les exemples ci-dessous montrent des scénarios simples pour illustrer des concepts. Les instructions conditionnelles représentent des boucles plus souvent utilisées avec des paramètres et des données de configuration.
 
-Dans cet exemple simple, le **Service** bloc de ressources récupère l’état actuel d’un service au moment de la compilation pour générer un fichier « .mof » qui conserve son état actuel.
+Dans cet exemple simple, le bloc de ressources **Service** récupère l’état actuel d’un service au moment de la compilation pour générer un fichier « .mof » qui conserve son état actuel.
 
 > [!NOTE]
-> À l’aide de blocs de ressources dynamiques sera préempter l’efficacité d’Intellisense. L’Analyseur de PowerShell ne peut pas déterminer si les valeurs spécifiées sont acceptables jusqu'à ce que la Configuration est compilée.
+> L’utilisation de blocs de ressources dynamiques sera plus efficace qu’IntelliSense. L’analyseur PowerShell ne peut pas déterminer si les valeurs spécifiées sont acceptables tant que la configuration n’a pas été compilée.
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +37,7 @@ Configuration ServiceState
 }
 ```
 
-En outre, vous pouvez créer un **Service** bloquer les ressources pour chaque service sur l’ordinateur actuel, à l’aide un `foreach` boucle.
+En outre, vous pouvez créer un bloc de ressources **Service** pour chaque service sur l’ordinateur actuel à l’aide d’une boucle `foreach`.
 
 ```powershell
 Configuration ServiceState
@@ -59,7 +59,7 @@ Configuration ServiceState
 }
 ```
 
-Vous pouvez créer également uniquement des configurations pour les ordinateurs qui sont en ligne, à l’aide d’une simple `if` instruction.
+Vous pouvez également créer uniquement des configurations pour les ordinateurs en ligne à l’aide d’une simple instruction `if`.
 
 ```powershell
 Configuration ServiceState
@@ -85,7 +85,7 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> La ressource dynamique bloque, dans la référence d’exemples ci-dessus, l’ordinateur actuel. Dans ce cas, ce qui serait l’ordinateur que vous créez la Configuration sur, pas la nœud cible.
+> Les blocs de ressources dynamiques des exemples ci-dessus font référence à l’ordinateur actuel. Dans ce cas, il s’agit de l’ordinateur sur lequel vous créez la configuration, et non pas le nœud cible.
 
 <!---
 Mention Get-DSCConfigurationFromSystem
@@ -93,19 +93,19 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>Résumé
 
-En résumé, vous pouvez utiliser n’importe quel langage PowerShell au sein d’une Configuration.
+En résumé, vous pouvez utiliser n’importe quel langage PowerShell au sein d’une configuration.
 
 Cela inclut des éléments tels que :
 
 - Objets personnalisés
 - Tables de hachage
-- Manipulation de chaînes
+- Manipulation de chaîne
 - Communication à distance
 - WMI et CIM
-- Objets Active Directory
+- Objets ActiveDirectory
 - et plus...
 
-N’importe quel code PowerShell défini dans une Configuration sera évaluée à un moment de la compilation, mais vous pouvez également placer le code dans le script qui contient votre Configuration. N’importe quel code en dehors du bloc de Configuration sera exécuté lorsque vous importez votre Configuration.
+Tout code PowerShell défini dans une configuration sera évalué lors d’une compilation, mais vous pouvez également placer le code dans le script contenant votre configuration. Tout code en dehors du bloc de configuration sera exécuté lorsque vous importez votre configuration.
 
 ## <a name="see-also"></a>Voir aussi
 

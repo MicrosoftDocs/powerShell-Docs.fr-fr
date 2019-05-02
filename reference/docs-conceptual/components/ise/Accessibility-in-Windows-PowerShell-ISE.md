@@ -4,11 +4,11 @@ keywords: powershell,applet de commande
 title: Accessibilité dans Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058452"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accessibilité dans Windows PowerShell ISE
 
@@ -85,8 +85,8 @@ Lorsque vous exécutez des scripts dans le volet Script, vous pouvez utiliser le
 |**Exécuter**|F5|
 |**Exécuter la sélection**|F8|
 |**Arrêter l’exécution**|CTRL+PAUSE. Vous pouvez utiliser Ctrl+C quand le contexte est sans ambiguïté (quand aucun texte n’est sélectionné).|
-|**Tab** (pour accéder au script suivant)|CTRL + TAB **Remarque :** TAB pour accéder au script suivant fonctionne uniquement lorsqu’un seul onglet PowerShell est ouvert, ou lorsque vous avez plusieurs onglets PowerShell ouvert, mais le focus est dans le volet de Script.|
-|**Tab** (pour accéder au script précédent)|CTRL + MAJ + TAB **Remarque :** TAB pour accéder au script précédent fonctionne lorsque vous n'avez qu’un seul onglet PowerShell ouverte, ou si vous avez plusieurs onglets PowerShell ouvert, et le focus est dans le volet de Script.|
+|**Tab** (pour accéder au script suivant)|CTRL+TAB **Remarque :** l’usage de la touche Tab pour accéder au script suivant fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script.|
+|**Tab** (pour accéder au script précédent)|CTRL+MAJ+TAB **Remarque :** l’usage de la touche Tab pour accéder au script précédent fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Raccourcis clavier pour la personnalisation de l’affichage
 

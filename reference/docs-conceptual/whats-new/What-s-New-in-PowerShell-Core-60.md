@@ -3,11 +3,11 @@ title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059013"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -233,11 +233,11 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 ## <a name="engine-updates"></a>Mises à jour du moteur
 
 - `$PSVersionTable` a quatre nouvelles propriétés :
-  - `PSEdition` : sa valeur est `Core` sur PowerShell Core et `Desktop` sur Windows PowerShell
-  - `GitCommitId` : il s’agit de l’ID de validation Git de la branche ou balise Git où PowerShell a été généré.
+  - `PSEdition` : sa valeur est `Core` sur PowerShell Core et `Desktop` sur Windows PowerShell
+  - `GitCommitId` : il s’agit de l’ID de validation Git de la branche ou balise Git où PowerShell a été généré.
     Sur les versions publiées, il est probable qu’il soit identique à `PSVersion`.
-  - `OS` : il s’agit d’une chaîne de version du système d’exploitation retournée par `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
-  - `Platform` : valeur retournée par `[System.Environment]::OSVersion.Platform` qui est égale à `Win32NT` sur Windows, `Unix` sur macOS et `Unix` sur Linux.
+  - `OS` : il s’agit d’une chaîne de version du système d’exploitation retournée par `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription`
+  - `Platform` : valeur retournée par `[System.Environment]::OSVersion.Platform` qui est égale à `Win32NT` sur Windows, `Unix` sur macOS et `Unix` sur Linux.
 - Suppression de la propriété `BuildVersion` de `$PSVersionTable`.
   Cette propriété était fortement liée à la version de build Windows.
   Au lieu de cela, nous vous recommandons d’utiliser `GitCommitId` pour récupérer la version de build exacte de PowerShell Core. (#3877) (merci à [@iSazonov](https://github.com/iSazonov) !)
@@ -274,7 +274,7 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 - Ajout du commutateur `-SkipHeaderValidation` aux applets de commande web pour prendre en charge l’ajout d’en-têtes sans valider la valeur d’en-tête. (#4085)
 - Autorisation aux applets de commande web de ne pas valider le certificat HTTPS du serveur si nécessaire.
 - Ajout de paramètres d’authentification aux applets de commande web. (#5052) (merci [@markekraus](https://github.com/markekraus))
-  - Ajouter `-Authentication` qui offre trois options : Basic, OAuth et Bearer.
+  - Ajout de `-Authentication`, qui offre trois options : Basic, OAuth et Bearer.
   - Ajout de `-Token` pour obtenir le jeton du porteur pour les options OAuth et Bearer.
   - Ajout de `-AllowUnencryptedAuthentication` pour contourner l’authentification qui est fournie pour n’importe quel schéma de transport autre que HTTPS.
 - Ajout de `-ResponseHeadersVariable` à `Invoke-RestMethod` pour activer la capture des en-têtes de réponse. (#4888) (merci [@markekraus](https://github.com/markekraus))

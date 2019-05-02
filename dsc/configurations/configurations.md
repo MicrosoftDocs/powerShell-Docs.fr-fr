@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configurations DSC
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401449"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080169"
 ---
 # <a name="dsc-configurations"></a>Configurations DSC
 
-> S'applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Les configurations DSC sont des scripts PowerShell qui définissent un type spécial de fonction.
 Pour définir une configuration, utilisez le mot clé PowerShell **Configuration**.
@@ -32,7 +32,7 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Enregistrez le script sous un `.ps1` fichier.
+Enregistrez le script comme fichier `.ps1`.
 
 ## <a name="configuration-syntax"></a>Syntaxe de configuration
 
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-Le **nœud** bloc peut également accepter plusieurs noms d’ordinateurs. Dans l’exemple ci-dessus, vous pouvez utiliser la `-ComputerName` paramètre ou une liste de pass séparées par des virgules d’ordinateurs directement à la **nœud** bloc.
+Le bloc **Node** peut également accepter plusieurs noms d’ordinateurs. Dans l’exemple ci-dessus, vous pouvez utiliser le paramètre `-ComputerName` ou transmettre une liste séparée par des virgules d’ordinateurs directement au bloc **Node**.
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-Lorsque vous spécifiez une liste d’ordinateurs à la **nœud** bloc, au sein d’une Configuration, vous devez utiliser la notation de tableau.
+Lorsque vous spécifiez une liste d’ordinateurs pour le bloc **Node** depuis une configuration, vous devez utiliser la notation des tableaux.
 
 ```powershell
 Configuration MyDscConfiguration
@@ -119,7 +119,7 @@ Quand vous appelez la configuration, elle :
 - Résout toutes les variables.
 - Crée un dossier dans le répertoire actif portant le même nom que la configuration.
 - Crée un fichier nommé _nom_nœud_.mof dans le nouveau répertoire, où _nom_nœud_ correspond au nom du nœud cible de la configuration.
-  S’il existe plusieurs nœuds, un fichier MOF est créé pour chaque nœud.
+  S’il existe plusieurs nœuds, un fichier MOF est créé pour chaque nœud.
 
 > [!NOTE]
 > Le fichier MOF contient toutes les informations de configuration du nœud cible. Il est donc important de le sécuriser.
@@ -161,17 +161,17 @@ Actuellement, DSC est fourni avec 12 ressources contenues dans le module PSDesi
 Une nouvelle cmdlet, [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), peut être utilisée pour déterminer quelles ressources sont installées sur le système et lesquelles peuvent être utilisées par le gestionnaire de configuration local.
 Une fois ces modules placés dans `$env:PSModulePath` et correctement reconnus par [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), ils doivent encore être chargés dans votre configuration.
 
-**Import-DscResource** est un mot clé dynamique qui peut être reconnu uniquement au sein d’un **Configuration** bloc, il n’est pas une applet de commande.
+**Import-DscResource** est un mot clé dynamique qui peut être reconnu uniquement au sein d’un bloc **Configuration** (ce n’est pas une applet de commande).
 **Import-DscResource** accepte deux paramètres :
 
 - **ModuleName** est recommandé pour l’utilisation d’**Import-DscResource**. Il accepte le nom du module qui contient les ressources à importer (ainsi qu’un tableau de chaînes comprenant des noms de modules).
 - **Name** correspond au nom de la ressource à importer. Il ne s’agit pas du nom convivial retourné comme « Name » par [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource), mais du nom de classe utilisé lors de la définition du schéma de la ressource (retourné comme **ResourceType** par [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)).
 
-Pour plus d’informations sur l’utilisation de `Import-DSCResource`, consultez [Import-DSCResource à l’aide de](import-dscresource.md)
+Pour plus d’informations sur l’utilisation de `Import-DSCResource`, consultez [Utilisation d’Import-DSCResource](import-dscresource.md)
 
-## <a name="powershell-v4-and-v5-differences"></a>Différences de v4 et v5 PowerShell
+## <a name="powershell-v4-and-v5-differences"></a>Différences entre PowerShell v4 et PowerShell v5
 
-Il existe des différences dans où les ressources DSC besoin d’être stocké dans PowerShell 4.0. Pour plus d’informations, consultez [emplacement de la ressource](import-dscresource.md#resource-location).
+Il existe des différences au niveau de l’emplacement où les ressources DSC doivent être stockées dans PowerShell 4.0. Pour plus d’informations, consultez [Emplacement des ressources](import-dscresource.md#resource-location).
 
 ## <a name="see-also"></a>Voir aussi
 

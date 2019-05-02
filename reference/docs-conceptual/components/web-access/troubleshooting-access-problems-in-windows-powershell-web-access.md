@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: résolution des problèmes d’accès dans Accès Web Windows PowerShell
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401413"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086593"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Résolution des problèmes d’accès dans Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013 (révisée le 23 août 2017)
+Mise à jour : 24 juin 2013 (révisée le 23 août 2017)
 
-S'applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 Les sections suivantes identifient certains problèmes courants que les utilisateurs peuvent rencontrer quand ils essaient de se connecter à un ordinateur distant à l’aide d’Accès Web Windows PowerShell. Elles incluent des suggestions pour la résolution des problèmes.
 
@@ -47,7 +47,7 @@ Ce problème est propre à Internet Explorer.
 
 Il peut survenir pour les utilisateurs qui se sont connectés avec un nom de domaine contenant des caractères chinois ou si un ou plusieurs caractères chinois font partie du nom du serveur de passerelle.
 
-#### <a name="workaround"></a>Solution
+#### <a name="workaround"></a>Solution de contournement
 
 1. [Installer et exécuter Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. Remplacez le paramètre Internet Explorer **Mode de document** par *Normes Internet Explorer 10*.
@@ -139,4 +139,4 @@ Pour plus d’informations sur les adresses IPv6, consultez [Fonctionnement d’
 
 - [Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Utiliser la console web Windows PowerShell](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
