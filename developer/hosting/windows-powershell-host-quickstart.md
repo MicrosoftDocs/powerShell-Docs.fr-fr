@@ -8,16 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9a080b6db7416ae6bf65a1b0353e9f17a56cc6c5
+ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082547"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64530622"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Hôte Windows PowerShell - Démarrage rapide
 
-Pour héberger Windows PowerShell dans votre application, vous utilisez le [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) classe. Cette classe fournit des méthodes qui de créer un pipeline de commandes, puis exécutez ces commandes dans une instance d’exécution. Pour créer une application hôte, le plus simple consiste à utiliser l’instance d’exécution par défaut. L’instance d’exécution par défaut contient toutes les commandes Windows PowerShell core. Si vous souhaitez que votre application pour exposer uniquement un sous-ensemble des commandes Windows PowerShell, vous devez créer une instance d’exécution personnalisé.
+Pour héberger Windows PowerShell dans votre application, vous utilisez le [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) classe.
+Cette classe fournit des méthodes qui de créer un pipeline de commandes, puis exécutez ces commandes dans une instance d’exécution.
+Pour créer une application hôte, le plus simple consiste à utiliser l’instance d’exécution par défaut.
+L’instance d’exécution par défaut contient toutes les commandes Windows PowerShell core.
+Si vous souhaitez que votre application pour exposer uniquement un sous-ensemble des commandes Windows PowerShell, vous devez créer une instance d’exécution personnalisé.
 
 ## <a name="using-the-default-runspace"></a>À l’aide de l’instance d’exécution par défaut
 
@@ -25,7 +29,9 @@ Pour commencer, nous allons utiliser l’instance d’exécution par défaut et 
 
 ### <a name="addcommand"></a>AddCommand
 
-Vous utilisez le [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) méthode de la [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) classe pour ajouter des commandes au pipeline. Par exemple, supposons que vous souhaitez obtenir la liste des processus en cours d’exécution sur l’ordinateur. La façon d’exécuter cette commande est la suivante.
+Vous utilisez le [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) méthode pour ajouter des commandes au pipeline.
+Par exemple, supposons que vous souhaitez obtenir la liste des processus en cours d’exécution sur l’ordinateur.
+La façon d’exécuter cette commande est la suivante.
 
 1. Créer un [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) objet.
 
@@ -45,11 +51,14 @@ Vous utilisez le [System.Management.Automation.Powershell.AddCommand*](/dotnet/a
    ps.Invoke();
    ```
 
-Si vous appelez le [System.Management.Automation.Powershell.AddCommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) méthode plusieurs fois avant d’appeler le [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) (méthode), le résultat de la première commande est dirigée vers le deuxième et ainsi de suite. Si vous ne souhaitez pas canalisez le résultat d’une commande à une commande précédente, ajoutez-le en appelant le [System.Management.Automation.Powershell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) à la place.
+Si vous appelez la méthode AddCommand plusieurs fois avant d’appeler le [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) (méthode), le résultat de la première commande est dirigée vers le deuxième et ainsi de suite.
+Si vous ne souhaitez pas canalisez le résultat d’une commande à une commande précédente, ajoutez-le en appelant le [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) à la place.
 
 ### <a name="addparameter"></a>AddParameter
 
-L’exemple précédent exécute une commande unique sans aucun paramètre. Vous pouvez ajouter des paramètres à la commande à l’aide de la [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) (méthode), par exemple, le code suivant obtient une liste de tous les processus qui sont nommés `PowerShell` en cours d’exécution le machine.
+L’exemple précédent exécute une commande unique sans aucun paramètre.
+Vous pouvez ajouter des paramètres à la commande à l’aide de la [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) (méthode).
+Par exemple, le code suivant obtient une liste de tous les processus qui sont nommés `PowerShell` en cours d’exécution sur l’ordinateur.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -57,7 +66,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Vous pouvez ajouter des paramètres supplémentaires en appelant [System.Management.Automation.PSCommand.AddParameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) à plusieurs reprises.
+Vous pouvez ajouter des paramètres supplémentaires en appelant la méthode de AddParameter à plusieurs reprises.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -66,7 +75,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-Vous pouvez également ajouter un dictionnaire de noms de paramètres et valeurs en appelant le [System.Management.Automation.PowerShell.AddParameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) (méthode).
+Vous pouvez également ajouter un dictionnaire de noms de paramètres et valeurs en appelant le [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) (méthode).
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -81,7 +90,8 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
-Vous pouvez simuler le traitement par lots à l’aide de la [System.Management.Automation.PowerShell.AddStatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) (méthode), qui ajoute une instruction supplémentaire à la fin du pipeline, le code suivant obtient une liste des processus en cours avec le nom `PowerShell`, puis obtient la liste des services en cours d’exécution.
+Vous pouvez simuler le traitement par lots à l’aide de la [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) (méthode), qui ajoute une instruction supplémentaire à la fin du pipeline.
+Le code suivant obtient une liste des processus en cours avec le nom `PowerShell`, puis obtient la liste des services en cours d’exécution.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -92,14 +102,18 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
-Vous pouvez exécuter un script existant en appelant le [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) (méthode). L’exemple suivant ajoute un script au pipeline et l’exécute. Cet exemple suppose un script nommé existe déjà `MyScript.ps1` dans un dossier nommé `D:\PSScripts`.
+Vous pouvez exécuter un script existant en appelant le [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) (méthode).
+L’exemple suivant ajoute un script au pipeline et l’exécute.
+Cet exemple suppose un script nommé existe déjà `MyScript.ps1` dans un dossier nommé `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Il existe également une version de la [System.Management.Automation.PowerShell.AddScript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) méthode qui accepte un paramètre booléen nommé `useLocalScope`. Si ce paramètre est défini sur `true`, puis le script est exécuté dans l’étendue locale. Le code suivant exécute le script dans l’étendue locale.
+Il existe également une version de la méthode AddScript qui accepte un paramètre booléen nommé `useLocalScope`.
+Si ce paramètre est défini sur `true`, puis le script est exécuté dans l’étendue locale.
+Le code suivant exécute le script dans l’étendue locale.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -108,11 +122,15 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ## <a name="creating-a-custom-runspace"></a>Création d’une instance d’exécution personnalisée
 
-Tandis que l’instance d’exécution par défaut utilisé dans les exemples précédents charge de toutes les commandes Windows PowerShell core, vous pouvez créer une instance d’exécution personnalisée qui charge uniquement un sous-ensemble spécifié de toutes les commandes. Vous pouvez souhaiter procéder ainsi pour améliorer les performances (le chargement d’un plus grand nombre de commandes est un gain de performances), ou pour limiter la capacité de l’utilisateur à effectuer des opérations. Une instance d’exécution qui expose uniquement un nombre limité de commandes est appelée une instance d’exécution contrainte. Pour créer une instance d’exécution limitée, vous utilisez le [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) et [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) classes.
+Tandis que l’instance d’exécution par défaut utilisé dans les exemples précédents charge de toutes les commandes Windows PowerShell core, vous pouvez créer une instance d’exécution personnalisée qui charge uniquement un sous-ensemble spécifié de toutes les commandes.
+Vous pouvez souhaiter procéder ainsi pour améliorer les performances (le chargement d’un plus grand nombre de commandes est un gain de performances), ou pour limiter la capacité de l’utilisateur à effectuer des opérations.
+Une instance d’exécution qui expose uniquement un nombre limité de commandes est appelée une instance d’exécution contrainte.
+Pour créer une instance d’exécution limitée, vous utilisez le [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) et [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) classes.
 
 ### <a name="creating-an-initialsessionstate-object"></a>Création d’un objet InitialSessionState
 
-Pour créer une instance d’exécution personnalisée, vous devez d’abord créer un [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet. Dans l’exemple suivant, nous utilisons le [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) pour créer une instance d’exécution après la création d’une valeur par défaut [System.Management.Automation.Runspaces.InitialSessionState ](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet.
+Pour créer une instance d’exécution personnalisée, vous devez d’abord créer un [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet.
+Dans l’exemple suivant, nous utilisons le [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) pour créer une instance d’exécution après la création d’un objet de InitialSessionState par défaut.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,11 +144,15 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Restriction de l’instance d’exécution
 
-Dans l’exemple précédent, nous avons créé une valeur par défaut [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet qui charge tous des principales intégré Windows PowerShell. Nous pouvons également avoir appelé la [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) méthode pour créer un objet InitialSessionState qui charge uniquement les commandes dans le Microsoft.PowerShell.Core composant logiciel enfichable. Pour créer une instance d’exécution plus limité, vous devez créer vide [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet en appelant le [ System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) (méthode), puis ajoutez des commandes à l’InitialSessionState.
+Dans l’exemple précédent, nous avons créé une valeur par défaut [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) objet qui charge tous des principales intégré Windows PowerShell.
+Nous pouvons également avoir appelé la [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) méthode pour créer un objet InitialSessionState qui charge uniquement les commandes dans le Microsoft.PowerShell.Core composant logiciel enfichable.
+Pour créer une instance d’exécution plus limité, vous devez créer un objet InitialSessionState vide en appelant le [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) (méthode), puis ajoutez les commandes pour le InitialSessionState.
 
 À l’aide d’une instance d’exécution qui charge uniquement les commandes que vous spécifiez fournit des performances significativement accrues.
 
-Vous utilisez les méthodes de la [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) classe pour définir des applets de commande pour l’état de session initiale. L’exemple suivant crée un état de session initiale vide, puis définit et ajoute le `Get-Command` et `Import-Module` commandes à l’état de session initiale. Nous avons créer une instance d’exécution limitée par cet état de session initial et que vous exécutez les commandes dans cette instance d’exécution.
+Vous utilisez les méthodes de la [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) classe pour définir des applets de commande pour l’état de session initiale.
+L’exemple suivant crée un état de session initiale vide, puis définit et ajoute le `Get-Command` et `Import-Module` commandes à l’état de session initiale.
+Nous avons créer une instance d’exécution limitée par cet état de session initial et que vous exécutez les commandes dans cette instance d’exécution.
 
 Créer l’état de session initiale.
 

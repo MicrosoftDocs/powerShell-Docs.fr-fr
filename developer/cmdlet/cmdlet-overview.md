@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068468"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229364"
 ---
 # <a name="cmdlet-overview"></a>Vue d’ensemble des applets de commande
 
@@ -38,19 +38,53 @@ Vous pouvez charger l’assembly qui contient la classe directement à l’aide 
 
 Les termes suivants sont fréquemment utilisées dans la documentation d’applet de commande Windows PowerShell :
 
-- **Attribut de l’applet de commande**: Un attribut .NET Framework qui est utilisé pour déclarer une classe de l’applet de commande comme une applet de commande. Bien que Windows PowerShell utilise plusieurs autres attributs sont facultatifs, l’attribut de l’applet de commande est requis. Pour plus d’informations sur cet attribut, consultez [déclaration d’attribut applet de commande](./cmdlet-attribute-declaration.md).
+### <a name="cmdlet-attribute"></a>Attribut de l’applet de commande
 
-- **Paramètre d’applet de commande**: Les propriétés publiques qui définissent les paramètres qui sont disponibles à l’utilisateur ou à l’application qui exécute l’applet de commande. Applets de commande peut avoir requis, nommé, positionnels, et *basculer* paramètres. Paramètres de commutateur permettent de définir des paramètres qui sont évaluées uniquement si les paramètres sont spécifiés dans l’appel. Pour plus d’informations sur les différents types de paramètres, consultez [paramètres de l’applet de commande](./cmdlet-parameters.md).
+Un attribut .NET Framework qui est utilisé pour déclarer une classe de l’applet de commande comme une applet de commande.
+Bien que PowerShell utilise plusieurs autres attributs sont facultatifs, l’attribut de l’applet de commande est requis.
+Pour plus d’informations sur cet attribut, consultez [déclaration d’attribut applet de commande](cmdlet-attribute-declaration.md).
 
-- **Jeu de paramètres**: Groupe de paramètres qui peut être utilisé dans la même commande pour effectuer une action spécifique. Une applet de commande peut avoir plusieurs jeux de paramètres, mais chaque jeu de paramètres doit avoir au moins un paramètre qui est unique. Conception de l’applet de commande bonne suggère fortement que le paramètre unique doit également être un paramètre obligatoire. Pour plus d’informations sur les jeux de paramètres, consultez [définit des paramètres d’applet de commande](./cmdlet-parameter-sets.md).
+### <a name="cmdlet-parameter"></a>Paramètre d'applet de commande
 
-- **Paramètre dynamique**: Un paramètre qui est ajouté à l’applet de commande lors de l’exécution. En règle générale, les paramètres dynamiques sont ajoutés à l’applet de commande quand un autre paramètre est défini sur une valeur spécifique. Pour plus d’informations sur les paramètres dynamiques, consultez [applet de commande des paramètres dynamiques](./cmdlet-dynamic-parameters.md).
+Les propriétés publiques qui définissent les paramètres qui sont disponibles à l’utilisateur ou à l’application qui exécute l’applet de commande.
+Applets de commande peut avoir requis, nommé, positionnels, et *basculer* paramètres.
+Paramètres de commutateur permettent de définir des paramètres qui sont évaluées uniquement si les paramètres sont spécifiés dans l’appel.
+Pour plus d’informations sur les différents types de paramètres, consultez [paramètres de l’applet de commande](cmdlet-parameters.md).
 
-- **Méthode de traitement d’entrée**: Méthode qu’une applet de commande peut utiliser pour traiter les enregistrements qu’elle reçoit en entrée. Les méthodes de traitement d’entrée incluent la [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode), le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), le [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) (méthode) et le [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) (méthode). Lorsque vous implémentez une applet de commande, vous devez substituer au moins de la [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)et [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthodes. En règle générale, le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode est la méthode que vous substituez parce qu’elle est appelée pour chaque enregistrement qui traite de l’applet de commande. En revanche, le [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode) et le [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthode est appelée une fois pour effectuer prétraitement ou de post-traitement des enregistrements. Pour plus d’informations sur ces méthodes, consultez [méthodes de traitement d’entrée](./cmdlet-input-processing-methods.md).
+### <a name="parameter-set"></a>Jeu de paramètres
 
-- **Fonctionnalité de ShouldProcess**: Windows PowerShell vous permet de créer des applets de commande qui invite l’utilisateur pour envoyer des commentaires avant que l’applet de commande effectue une modification dans le système. Pour utiliser cette fonctionnalité, l’applet de commande doit déclarer qu’il prend en charge la fonctionnalité de ShouldProcess quand vous déclarez l’attribut de l’applet de commande et l’applet de commande doit appeler le [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthodes à partir d’au sein d’une méthode de traitement des entrées. Pour plus d’informations sur la prise en charge la fonctionnalité de ShouldProcess, consultez [demande une Confirmation](./requesting-confirmation-from-cmdlets.md).
+Groupe de paramètres qui peut être utilisé dans la même commande pour effectuer une action spécifique.
+Une applet de commande peut avoir plusieurs jeux de paramètres, mais chaque jeu de paramètres doit avoir au moins un paramètre qui est unique.
+Conception de l’applet de commande bonne suggère fortement que le paramètre unique doit également être un paramètre obligatoire.
+Pour plus d’informations sur les jeux de paramètres, consultez [définit des paramètres d’applet de commande](cmdlet-parameter-sets.md).
 
-- **Transaction**: Un groupe logique de commandes qui sont traitées comme une seule tâche. Automatiquement, la tâche échoue si une commande dans le groupe échoue et l’utilisateur a le choix d’accepter ou rejeter les actions effectuées au sein de la transaction. Pour participer à une transaction, l’applet de commande doit être déclarée qu’il prend en charge les transactions lorsque l’attribut de l’applet de commande est déclaré. Prise en charge des transactions a été introduite dans Windows PowerShell 2.0. Pour plus d’informations sur les transactions, consultez [Windows PowerShell Transactions](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710).
+### <a name="dynamic-parameter"></a>Paramètre dynamique
+
+Un paramètre qui est ajouté à l’applet de commande lors de l’exécution.
+En règle générale, les paramètres dynamiques sont ajoutés à l’applet de commande quand un autre paramètre est défini sur une valeur spécifique.
+Pour plus d’informations sur les paramètres dynamiques, consultez [applet de commande des paramètres dynamiques](cmdlet-dynamic-parameters.md).
+
+### <a name="input-processing-method"></a>Méthode de traitement d’entrée
+
+Méthode qu’une applet de commande peut utiliser pour traiter les enregistrements qu’elle reçoit en entrée.
+Les méthodes de traitement d’entrée incluent la [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode), le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) (méthode), le [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) (méthode) et le [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) (méthode). Lorsque vous implémentez une applet de commande, vous devez substituer au moins de la [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)et [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthodes.
+En règle générale, le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode est la méthode que vous substituez parce qu’elle est appelée pour chaque enregistrement qui traite de l’applet de commande.
+En revanche, le [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) (méthode) et le [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) méthode est appelée une fois pour effectuer prétraitement ou de post-traitement des enregistrements.
+Pour plus d’informations sur ces méthodes, consultez [méthodes de traitement d’entrée](cmdlet-input-processing-methods.md).
+
+### <a name="shouldprocess-feature"></a>Fonctionnalité de ShouldProcess
+
+PowerShell vous permet de créer des applets de commande qui invite l’utilisateur pour envoyer des commentaires avant que l’applet de commande effectue une modification dans le système.
+Pour utiliser cette fonctionnalité, l’applet de commande doit déclarer qu’il prend en charge la fonctionnalité de ShouldProcess quand vous déclarez l’attribut de l’applet de commande et l’applet de commande doit appeler le [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [ System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) méthodes à partir d’au sein d’une méthode de traitement des entrées.
+Pour plus d’informations sur la prise en charge la fonctionnalité de ShouldProcess, consultez [demande une Confirmation](requesting-confirmation-from-cmdlets.md).
+
+### <a name="transaction"></a>Transaction
+
+Un groupe logique de commandes qui sont traitées comme une seule tâche.
+Automatiquement, la tâche échoue si une commande dans le groupe échoue et l’utilisateur a le choix d’accepter ou rejeter les actions effectuées au sein de la transaction.
+Pour participer à une transaction, l’applet de commande doit être déclarée qu’il prend en charge les transactions lorsque l’attribut de l’applet de commande est déclaré.
+Prise en charge des transactions a été introduite dans Windows PowerShell 2.0.
+Pour plus d’informations sur les transactions, consultez [comment la prise en charge des Transactions](how-to-support-transactions.md).
 
 ## <a name="how-cmdlets-differ-from-commands"></a>Comment diffèrent des applets de commande des commandes
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082224"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229332"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Guide pratique pour écrire un module binaire PowerShell
 
@@ -29,7 +29,10 @@ La procédure suivante décrit comment créer et installer un module binaire de 
 
 2. Si nécessaire, créez le reste de votre solution : (applets de commande supplémentaires, des fichiers XML et ainsi de suite) et les décrire avec un manifeste de module.
 
-   En plus de décrire les assemblys de l’applet de commande dans votre solution, un manifeste de module peut décrire comment vous souhaitez que votre module exportées et importées, quelles applets de commande sera exposée, et ce qui passe des fichiers supplémentaires dans le module. Comme indiqué précédemment Toutefois, PowerShell peut traiter une applet de commande binaire comme un module sans aucun effort supplémentaire. Par conséquent, un manifeste de module est utile principalement pour la combinaison de plusieurs fichiers dans un package unique, ou pour contrôler explicitement la publication pour un assembly donné. Pour plus d’informations, consultez [comment écrire un manifeste de Module PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+   En plus de décrire les assemblys de l’applet de commande dans votre solution, un manifeste de module peut décrire comment vous souhaitez que votre module exportées et importées, quelles applets de commande sera exposée, et ce qui passe des fichiers supplémentaires dans le module.
+   Comme indiqué précédemment Toutefois, PowerShell peut traiter une applet de commande binaire comme un module sans aucun effort supplémentaire.
+   Par conséquent, un manifeste de module est utile principalement pour la combinaison de plusieurs fichiers dans un package unique, ou pour contrôler explicitement la publication pour un assembly donné.
+   Pour plus d’informations, consultez [comment écrire un manifeste de Module PowerShell](how-to-write-a-powershell-module-manifest.md).
 
    Le code suivant est extrêmement simple C# bloc de code qui contient les trois applets de commande dans le même fichier peut être utilisé en tant que module.
 
@@ -82,7 +85,9 @@ La procédure suivante décrit comment créer et installer un module binaire de 
 
 Applets de commande et les fournisseurs qui existent dans le composant logiciel enfichable dans les assemblys peuvent être chargés en tant que modules binaires. Lorsque les assemblys sont chargés en tant que modules binaires, les applets de commande et les fournisseurs dans le composant logiciel enfichable sont disponibles à l’utilisateur, mais la classe snap-in dans l’assembly est ignorée, et le composant logiciel enfichable n’est pas inscrit. Par conséquent, les applets de commande enfichable fourni par Windows PowerShell ne peut pas détecter le composant logiciel enfichable même si les fournisseurs et applets de commande sont disponibles à la session.
 
-En outre, les fichiers de mise en forme ou de types qui sont référencés par le composant logiciel enfichable ne peut pas être importés dans le cadre d’un module binaire. Pour importer les fichiers de mise en forme et de types, vous devez créer un manifeste de module. Consultez, [comment écrire un manifeste de Module PowerShell](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6).
+En outre, les fichiers de mise en forme ou de types qui sont référencés par le composant logiciel enfichable ne peut pas être importés dans le cadre d’un module binaire.
+Pour importer les fichiers de mise en forme et de types, vous devez créer un manifeste de module.
+Consultez, [comment écrire un manifeste de Module PowerShell](how-to-write-a-powershell-module-manifest.md).
 
 ## <a name="see-also"></a>Voir aussi
 

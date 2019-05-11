@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068128"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229288"
 ---
 # <a name="events01-sample"></a>Exemple Events01
 
-Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique. Cet exemple dérive le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
+Cet exemple montre comment créer une applet de commande qui permet à l’utilisateur enregistrer les événements qui sont déclenchés par [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Avec cette applet de commande, les utilisateurs peuvent inscrire une action à exécuter quand un fichier est créé dans un répertoire spécifique.
+Cet exemple dérive le [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe de base.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Guide pratique pour générer l’exemple à l’aide de Visual Studio.
 
-1. Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier Events01. L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. Avec le Windows SDK PowerShell 2.0 installé, accédez au dossier Events01.
+   L’emplacement par défaut est `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Double-cliquez sur l’icône pour le fichier solution (.sln). L’exemple de projet s’ouvre dans Microsoft Visual Studio.
+2. Double-cliquez sur l’icône pour le fichier solution (.sln).
+   L’exemple de projet s’ouvre dans Microsoft Visual Studio.
 
 3. Dans le **Build** menu, sélectionnez **générer la Solution**.
-
-    La bibliothèque de l’exemple est générée dans les dossiers \bin ou \bin\debug par défaut.
+   La bibliothèque de l’exemple est générée dans la valeur par défaut `\bin` ou `\bin\debug` dossiers.
 
 ### <a name="how-to-run-the-sample"></a>Comment exécuter l’exemple
 
@@ -78,11 +81,14 @@ Cet exemple requiert Windows PowerShell 2.0.
 
 Cet exemple montre ce qui suit.
 
-- Comment écrire une applet de commande d’inscription d’événement. Dérive de l’applet de commande le [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) classe, qui fournit la prise en charge pour les paramètres communs à Register-* événement applets de commande. Applets de commande qui sont dérivés de [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Comment écrire une applet de commande d’inscription d’événement
+
+L’applet de commande dérive le [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) (classe), qui fournit la prise en charge pour les paramètres communs à la `Register-*Event` applets de commande.
+Applets de commande qui sont dérivés de [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) suffit de définir leurs paramètres particuliers et d’ignorer le `GetSourceObject` et `GetSourceObjectEventName` méthodes abstraites.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment s’inscrire aux événements déclenchés par [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+Cet exemple montre comment s’inscrire aux événements déclenchés par [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Voir aussi
 
-[Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
+[Écriture d’une applet de commande Windows PowerShell](writing-a-windows-powershell-cmdlet.md)
