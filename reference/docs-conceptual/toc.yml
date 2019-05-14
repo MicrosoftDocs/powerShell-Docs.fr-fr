@@ -68,7 +68,7 @@
   items:
     - name: Console
       items:
-        - name: Aide sur la ligne de commande PowerShell.exe
+        - name: Options de ligne de commande PowerShell
           href: components/console/powershell.exe-command-line-help.md
         - name: Utilisation du développement par tabulation
           href: components/console/using-tab-expansion.md
