@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079674"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229502"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
@@ -121,6 +121,10 @@ Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 |ConfigurationNames|String[]|Tableau des noms des configurations à extraire par le nœud cible. Ils sont utilisés uniquement si le nœud est enregistré auprès du service d’extraction à l’aide d’une propriété **RegistrationKey**. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|string|Un GUID sous lequel le nœud est enregistré auprès du service d’extraction. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|L’URL du service de configuration.|
+|ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
+|ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
+
+>!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ Un bloc **ResourceRepositoryWeb** définit les propriétés suivantes.
 |CertificateID|string|Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.|
 |RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
 |ServerURL|string|URL du serveur de configuration.|
+|ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
+|ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
+
+>!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ Un bloc **ReportServerWeb** définit les propriétés suivantes.
 |CertificateID|string|Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.|
 |RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
 |ServerURL|string|URL du serveur de configuration.|
+|ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
+|ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
+
+>!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 

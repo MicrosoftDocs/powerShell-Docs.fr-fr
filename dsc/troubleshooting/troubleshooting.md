@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Résolution des problèmes liés à DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076546"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229535"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC retourne « code de réponse inattendu InternalServerError » lors de l’inscription auprès du serveur Pull Windows
+
+Lorsque vous appliquez une métaconfiguration à un serveur pour l’inscrire auprès d’une instance de serveur Pull Windows, vous risquez de rencontrer l’erreur suivante.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Ce cas peut se produire lorsque le certificat utilisé sur le serveur pour chiffrer le trafic a un nom commun (CN) qui est différent du nom DNS utilisé par le nœud pour résoudre l’URL.
+Mettez à jour l’instance du serveur Pull Windows pour utiliser un certificat avec un nom correct.
 
 ## <a name="see-also"></a>Voir aussi
 

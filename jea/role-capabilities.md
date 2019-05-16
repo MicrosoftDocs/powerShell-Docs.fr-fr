@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Capacités de rôle JEA
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084791"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229555"
 ---
 # <a name="jea-role-capabilities"></a>Capacités de rôle JEA
 
@@ -183,6 +183,8 @@ Une applet de commande contrainte dans une session JEA présente le même compor
 
 Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus facile de les placer dans un [Module de script PowerShell](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx).
 Vous pouvez ensuite rendre ces fonctions visibles dans la session JEA à l’aide du champ VisibleFunctions, comme avec des modules intégrés et tiers.
+
+Pour que la complétion avec la touche TAB fonctionne correctement dans les sessions JEA, vous devez inclure la fonction intégrée `tabexpansion2` dans la liste **VisibleFunctions**.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Placer les capacités de rôle dans un module
 
