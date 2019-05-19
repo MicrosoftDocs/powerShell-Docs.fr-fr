@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068757"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854976"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Ajout de paramètres qui traitent l’entrée du pipeline
 
 Une source d’entrée pour une applet de commande est un objet sur le pipeline qui provient d’une applet de commande en amont. Cette section décrit comment ajouter un paramètre à l’applet de commande Get-Process (décrit dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)) afin que l’applet de commande peut traiter les objets pipeline.
 
 Cette applet de commande Get-Process utilise un `Name` paramètre qui accepte les entrées à partir d’un objet de pipeline, récupère les informations de processus à partir de l’ordinateur local selon les noms fournis, puis affiche des informations sur les processus à la ligne de commande.
-
-Rubriques de cette section sont les suivantes :
-
-- [Définition de la classe de l’applet de commande](#Defining-the-Cmdlet-Class)
-
-- [Définition d’entrée provenant du Pipeline](#Defining-Input-from-the-Pipeline)
-
-- [Substitution d’une méthode de traitement des entrées](#Overriding-an-Input-Processing-Method)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définition des Types d’objets et mise en forme](#Defining-Object-Types-and-Formatting)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Définition de la classe de l’applet de commande
 

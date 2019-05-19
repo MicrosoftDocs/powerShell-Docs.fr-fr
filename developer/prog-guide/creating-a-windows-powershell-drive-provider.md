@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055647"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855204"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Création d’un fournisseur de lecteur Windows PowerShell
 
 Cette rubrique décrit comment créer un fournisseur de lecteur Windows PowerShell qui fournit un moyen pour accéder à un magasin de données via un lecteur Windows PowerShell. Ce type de fournisseur est également appelé fournisseurs du lecteur Windows PowerShell. Les lecteurs Windows PowerShell utilisées par le fournisseur fournissent les moyens de se connecter au magasin de données.
 
 Le fournisseur du lecteur Windows PowerShell décrit ici fournit l’accès à une base de données Microsoft Access. Pour ce fournisseur, le lecteur Windows PowerShell représente la base de données (il est possible d’ajouter n’importe quel nombre de lecteurs à un fournisseur de lecteur), les conteneurs de niveau supérieur du lecteur représentent les tables dans la base de données et les éléments des conteneurs représentent les lignes dans les tables.
-
-Voici une liste des sections dans cette rubrique. Si vous n’êtes pas familiarisé avec l’écriture d’un fournisseur de lecteur Windows PowerShell, lisez ces sections dans l’ordre où ils apparaissent. Toutefois, si vous êtes familiarisé avec l’écriture d’un fournisseur de lecteur, accédez directement aux informations dont vous avez besoin.
-
-- [Définition de la classe de fournisseur PowerShell Windows](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Définition des fonctionnalités de Base](#Defining-Base-Functionality)
-
-- [Création d’informations sur l’état du lecteur](#Creating-Drive-State-Information)
-
-- [Création d’un lecteur](#Creating-a-Drive)
-
-- [Attachement des paramètres dynamiques à NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Retrait d’un lecteur](#Removing-a-Drive)
-
-- [L’initialisation par défaut de lecteurs](#Initializing-Default-Drives)
-
-- [Exemple de code](#Code-Sample)
-
-- [Test du fournisseur de lecteur PowerShell Windows](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Définition de la classe de fournisseur PowerShell Windows
 

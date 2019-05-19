@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068425"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854913"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Création d’une applet de commande qui modifie le système
 
@@ -42,28 +42,6 @@ Le fait de « modification du système » fait référence à une applet de co
 ## <a name="the-stopproc-cmdlet"></a>L’applet de commande StopProc
 
 Cette rubrique décrit une applet de commande Stop-Process qui tente d’arrêter les processus qui sont récupérées à l’aide de l’applet de commande Get-Process (décrit dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)).
-
-Rubriques de cette section sont les suivantes :
-
-- [Définition de l’applet de commande](#Defining-the-Cmdlet)
-
-- [Définition des paramètres pour la Modification du système](#Defining-Parameters-for-System-Modification)
-
-- [Substitution d’une méthode de traitement des entrées](#Overriding-an-Input-Processing-Method)
-
-- [Appel de la méthode ShouldProcess](#Calling-the-ShouldProcess-Method)
-
-- [Appel de la méthode ShouldContinue](#Calling-the-ShouldContinue-Method)
-
-- [Arrêt de traitement d’entrée](#Stopping-Input-Processing)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définition des Types d’objets et mise en forme](#Defining-Object-Types-and-Formatting)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Définition de l’applet de commande
 

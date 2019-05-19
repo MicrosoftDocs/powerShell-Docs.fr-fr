@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082496"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855087"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Écriture d’une application hôte Windows PowerShell
 
 Vous pouvez héberger Windows PowerShell dans votre application. L’application hôte peut définir l’instance d’exécution où les commandes sont à exécuter, ouvrir des sessions sur un ordinateur local ou distant et appeler les commandes que soit synchrone ou asynchrone, en fonction des besoins de l’application.
 
-Les rubriques suivantes expliquent comment créer une application qui héberge
+Les rubriques suivantes expliquent comment créer une application qui héberge Windows PowerShell.
 
 ## <a name="in-this-section"></a>Dans cette section
 

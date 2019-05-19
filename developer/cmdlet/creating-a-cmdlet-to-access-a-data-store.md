@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068349"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854850"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
 
@@ -22,24 +22,6 @@ Cette section décrit comment créer une applet de commande qui accède aux donn
 L’applet de commande Select-Str décrite ici permettre rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiées explicitement par l’intermédiaire du `Path` paramètre de l’applet de commande ou implicitement via la `Script` paramètre.
 
 L’applet de commande est conçue pour utiliser n’importe quel fournisseur Windows PowerShell qui dérive de [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Par exemple, l’applet de commande peut spécifier le fournisseur de système de fichiers ou le fournisseur Variable qui est fourni par Windows PowerShell. Pour plus d’informations aboutWindows une fournisseurs PowerShell, consultez [fournisseur concevoir votre PowerShell de Windows](../prog-guide/designing-your-windows-powershell-provider.md).
-
-Rubriques de cette section sont les suivantes :
-
-- [Définition de la classe de l’applet de commande](#Defining-the-Cmdlet-Class)
-
-- [Définition des paramètres pour accéder aux données](#Declaring-the-Path-Parameter)
-
-- [Substitution de méthodes de traitement d’entrée](#Overriding-Input-Processing-Methods)
-
-- [L’accès au contenu](#Accessing-Content)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définition des Types d’objets et mise en forme](#Declaring-Search-Support-Parameters)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Définition de la classe de l’applet de commande
 
@@ -397,7 +379,7 @@ Cette applet de commande Select-Str exemple utilise le [System.Management.Automa
 
 ## <a name="code-sample"></a>Exemple de code
 
-Le code suivant illustre l’implémentation de cette version de cette applet de commande Select-Str. Notez que ce code inclut la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell permet d’enregistrer l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [création de l’applet de commande](#Building-the-Cmdlet).
+Le code suivant illustre l’implémentation de cette version de cette applet de commande Select-Str. Notez que ce code inclut la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell permet d’enregistrer l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [création de l’applet de commande](#building-the-cmdlet).
 
 ```csharp
 //

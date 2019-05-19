@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068835"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854869"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
-
-Cette section décrit comment ajouter des ensembles de paramètre à l’applet de commande Stop-Process (décrit dans [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)). Comme pour les autres Stop-Process applets de commande décrites dans ce Guide du programmeur, cette applet de commande tente d’arrêter les processus qui sont récupérées à l’aide de l’applet de commande Get-Process (décrit dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)).
-
-Rubriques de cette section sont les suivantes :
-
-- [Choses à savoir sur les jeux de paramètres](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [Déclaration de la classe de l’applet de commande](#Declaring-the-Cmdlet-Class)
-
-- [Déclarer des paramètres de l’applet de commande](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Substitution d’une méthode de traitement des entrées](#Overriding-an-Input-Processing-Method)
-
-- [Exemple de code](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [Définition des Types d’objets et mise en forme](#Defining-Object-Types-and-Formatting)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>Choses à savoir sur les jeux de paramètres
 

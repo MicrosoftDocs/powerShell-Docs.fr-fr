@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068774"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854940"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Ajout de messages utilisateur à votre applet de commande
 
@@ -51,32 +51,6 @@ Applets de commande peut écrire plusieurs types de messages qui peuvent être a
 - Rapport de progression des messages qui contiennent des informations sur la quantité utiliser l’applet de commande est terminée lorsque vous effectuez une opération qui prend beaucoup de temps.
 
 Il n’existe aucune limite au nombre de messages que votre applet de commande peut écrire ou le type de message qui écrit votre applet de commande. Chaque message est écrit en effectuant un appel spécifique à partir de dans l’entrée de la méthode de votre applet de commande de traitement.
-
-## <a name="the-stopproc-cmdlet"></a>L’applet de commande StopProc
-
-Rubriques de cette section sont les suivantes :
-
-- [Définition de l’applet de commande](#Defining-the-Cmdlet)
-
-- [Définition des paramètres pour la Modification du système](#Defining-Parameters-for-System-Modification)
-
-- [Substitution d’une méthode de traitement des entrées](#Overriding-an-Input-Processing-Method)
-
-- [Écriture d’un Message détaillé](#Writing-a-Verbose-Message)
-
-- [Écriture d’un Message de débogage](#Writing-a-Debug-Message)
-
-- [Écriture d’un Message d’avertissement](#Writing-a-Warning-Message)
-
-- [Écriture d’un Message de progression](#Writing-a-Progress-Message)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définir les Types d’objets et la mise en forme](#Define-Object-Types-and-Formatting)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Définition de l’applet de commande
 

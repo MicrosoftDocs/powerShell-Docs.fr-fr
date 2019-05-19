@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081867"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855051"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Création d’un fournisseur d’élément Windows PowerShell
 
@@ -30,44 +30,6 @@ Cette rubrique décrit comment créer un fournisseur Windows PowerShell qui peut
 > Pour plus d’informations sur les autres implémentations du fournisseur Windows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
 Le fournisseur d’éléments de Windows PowerShell décrit dans cette rubrique Obtient les éléments de données à partir d’une base de données Access. Dans ce cas, un « élément » est soit une table dans la base de données Access ou une ligne dans une table.
-
-La liste suivante contient les sections de cette rubrique. Si vous n’êtes pas familiarisé avec l’écriture d’un fournisseur d’éléments de Windows PowerShell, lisez ces sections dans l’ordre où ils apparaissent. Toutefois, si vous êtes familiarisé avec l’écriture d’un fournisseur d’éléments de Windows PowerShell, accédez directement aux informations dont vous avez besoin :
-
-- [Définition de la classe de fournisseur Windows PowerShell élément](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Définition des fonctionnalités de Base](#Defining-Base-Functionality)
-
-- [Vérification de la validité du chemin d’accès](#Checking-for-Path-Validity)
-
-- [Déterminer si un élément existe](#Determining-if-an-Item-Exists)
-
-- [Attachement des paramètres dynamiques à la `Test-Path` applet de commande](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Extraction d’un élément](#Retrieving-an-Item)
-
-- [Attachement des paramètres dynamiques à la `Get-Item` applet de commande](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Spécification d’un élément](#Setting-an-Item)
-
-- [Attachement des paramètres dynamiques à la `Set-Item` applet de commande](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Efface un élément](#Clearing-an-Item)
-
-- [Attachement des paramètres dynamiques à l’applet de commande Clear-Item](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Exécution d’une Action par défaut pour un élément](#Performing-a-Default-Action-for-an-Item)
-
-- [Récupération des paramètres dynamiques pour InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implémentation des Classes et méthodes d’assistance](#Implementing-Helper-Methods-and-Classes)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définition des Types d’objets et mise en forme](#Defining-Object-Types-and-Formatting)
-
-- [Construction du fournisseur PowerShell de Windows](#Building-the-Windows-PowerShell-provider)
-
-- [Test du fournisseur PowerShell de Windows](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Définition de la classe de fournisseur Windows PowerShell élément
 
@@ -223,7 +185,7 @@ Ce fournisseur de l’élément n’implémente pas cette méthode. Toutefois, l
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implémentation des Classes et méthodes d’assistance
 
-Ce fournisseur d’élément implémente plusieurs méthodes d’assistance et les classes qui sont utilisées par le public substituer les méthodes définies par Windows PowerShell. Le code de ces classes et méthodes d’assistance sont affichés dans le [exemple de Code](#Code-Sample) section.
+Ce fournisseur d’élément implémente plusieurs méthodes d’assistance et les classes qui sont utilisées par le public substituer les méthodes définies par Windows PowerShell. Le code de ces classes et méthodes d’assistance sont affichés dans le [exemple de Code](#code-sample) section.
 
 ### <a name="normalizepath-method"></a>NormalizePath (méthode)
 

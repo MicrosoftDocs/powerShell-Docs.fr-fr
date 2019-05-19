@@ -11,32 +11,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068332"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854965"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
 
 Cette section décrit comment créer une applet de commande qui Récupère des informations à partir de l’ordinateur local sans l’utilisation de paramètres, puis écrit les informations dans le pipeline. L’applet de commande décrit ici est une applet de commande Get-Process qui extrait des informations sur les processus de l’ordinateur local, puis affiche ces informations à la ligne de commande.
-
-Rubriques de cette section sont les suivantes :
-
-- [L’applet de commande d’affectation de noms](#Naming-the-Cmdlet)
-
-- [Définition de la classe de l’applet de commande](#Defining-the-Cmdlet-Class)
-
-- [Substitution d’une méthode de traitement des entrées](#Overriding-an-Input-Processing-Method)
-
-- [Exemple de code](#Code-Sample)
-
-- [Définition des Types d’objets et mise en forme](#Defining-Object-Types-and-Formatting)
-
-- [Création de l’applet de commande](#Building-the-Cmdlet)
-
-- [Test de l’applet de commande](#Testing-the-Cmdlet)
 
 > [!NOTE]
 > N’oubliez pas que lors de l’écriture des applets de commande, les assemblys de référence Windows PowerShell® sont téléchargées sur le disque (par défaut dans C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Ils ne sont pas installés dans le Global Assembly Cache (GAC).

@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068791"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854857"
 ---
 # <a name="advisory-development-guidelines"></a>Instructions dont le suivi est conseillé pour le développement
 
 Cette section décrit les instructions qui vous aideront à assurer une bonne expérience des utilisateurs et de développement. Parfois, ils peuvent s’appliquer, et parfois ils ne le peuvent pas.
-
-## <a name="design-guidelines"></a>Règles de conception
-
-- [Prend en charge un paramètre InputObject (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Prise en charge le paramètre Force (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Gérer les informations d’identification via Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Prend en charge les paramètres d’encodage (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [Applets de commande de test doit retourner une valeur booléenne (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Instructions de code
-
-- [Suivez les Conventions de nom de la classe de l’applet de commande (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Si aucune entrée de Pipeline ne substituer la méthode BeginProcessing (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [Pour gérer les demandes d’arrêt substituent la méthode StopProcessing (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [Implémenter l’Interface IDisposable (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Utiliser des Types de paramètres de sérialisation conviviale (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Utilisez SecureString pour les données sensibles (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Règles de conception
 

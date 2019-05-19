@@ -1,18 +1,16 @@
 - name: Vue d’ensemble
   href: overview.md
-- name: Déployer JEA
-  items:
-    - name: Conditions préalables
-      href: prerequisites.md
-    - name: Capacités de rôle
-      href: role-capabilities.md
-    - name: Configurations de session
-      href: session-configurations.md
-    - name: Inscription de JEA
-      href: register-jea.md
-    - name: Utilisation de JEA
-      href: using-jea.md
-    - name: Considérations de sécurité
-      href: security-considerations.md
-    - name: Audit et rapport sur JEA
-      href: audit-and-report.md
+- name: Conditions préalables
+  href: prerequisites.md
+- name: Capacités de rôle
+  href: role-capabilities.md
+- name: Configurations de session
+  href: session-configurations.md
+- name: Inscription de JEA
+  href: register-jea.md
+- name: Utilisation de JEA
+  href: using-jea.md
+- name: Considérations de sécurité
+  href: security-considerations.md
+- name: Audit et rapport sur JEA
+  href: audit-and-report.md

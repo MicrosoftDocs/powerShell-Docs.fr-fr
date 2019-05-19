@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082071"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855064"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Création d’un fournisseur Windows PowerShell de base
 
@@ -26,22 +26,6 @@ Comme mentionné précédemment, le fournisseur de base décrit ici implémente 
 
 > [!NOTE]
 > Vous trouverez un exemple de ce fournisseur dans le fichier AccessDBSampleProvider01.cs fourni par Windows PowerShell.
-
-Les sections de cette rubrique sont les suivantes :
-
-- [Définition de la classe de fournisseur PowerShell Windows](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Définition des informations d’état spécifique au fournisseur](#Defining-Provider-Specific-State-Information)
-
-- [L’initialisation du fournisseur](#Initializing-the-Provider)
-
-- [Démarrer des paramètres dynamiques](#Start-Dynamic-Parameters)
-
-- [Annulation de l’initialisation du fournisseur](#Uninitializing-the-Provider)
-
-- [Exemple de code](#Code-Sample)
-
-- [Test du fournisseur PowerShell de Windows](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Définition de la classe de fournisseur PowerShell Windows
 
@@ -77,7 +61,7 @@ Ce fournisseur de base ne remplace pas cette méthode. Toutefois, le code suivan
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-Le fournisseur peut maintenir l’état des informations propres au fournisseur comme décrit dans [état des données spécifiques au fournisseur définition](#Defining-Provider-Specific-State-Information). Dans ce cas, votre implémentation doit remplacer le [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) méthode pour retourner une instance de la classe dérivée.
+Le fournisseur peut maintenir l’état des informations propres au fournisseur comme décrit dans [état des données spécifiques au fournisseur définition](#defining-provider-specific-state-information). Dans ce cas, votre implémentation doit remplacer le [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) méthode pour retourner une instance de la classe dérivée.
 
 ## <a name="start-dynamic-parameters"></a>Démarrer des paramètres dynamiques
 

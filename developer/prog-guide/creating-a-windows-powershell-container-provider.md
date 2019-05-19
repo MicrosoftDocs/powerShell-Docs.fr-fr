@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081901"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855194"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
 
@@ -35,44 +35,6 @@ Le fournisseur de conteneur Windows PowerShell décrit ici définit la base de d
 
 > [!CAUTION]
 > N’oubliez pas que cette conception suppose une base de données qui a un champ avec l’ID de nom, et que le type du champ est LongInteger.
-
-Voici une liste des sections dans cette rubrique. Si vous n’êtes pas familiarisé avec l’écriture d’un fournisseur de conteneur Windows PowerShell, veuillez lire ces informations dans l’ordre dans lequel elle apparaît. Toutefois, si vous êtes familiarisé avec l’écriture d’un fournisseur de conteneur Windows PowerShell, accédez directement aux informations dont vous avez besoin.
-
-- [Définition d’une classe de fournisseur de conteneur Windows PowerShell](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [Définition des fonctionnalités de Base](#defining-base-functionality)
-
-- [Récupération des éléments enfants](#Retrieving-Child-Items)
-
-- [Attachement des paramètres dynamiques à la `Get-ChildItem` applet de commande](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [Récupération des noms d’élément enfant](#Retrieving-Child-Item-Names)
-
-- [Attachement des paramètres dynamiques à la `Get-ChildItem` (nom) de l’applet de commande](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [Renommer des éléments](#Renaming-Items)
-
-- [Attachement des paramètres dynamiques à la `Rename-Item` applet de commande](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [Création d’éléments](#Creating-New-Items)
-
-- [Attachement des paramètres dynamiques à la `New-Item` applet de commande](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [Suppression de des éléments](#Removing-Items)
-
-- [Attachement des paramètres dynamiques à la `Remove-Item` applet de commande](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [Interrogation des éléments enfants](#Querying-for-Child-Items)
-
-- [Copie les éléments](#Copying-Items)
-
-- [Attachement des paramètres dynamiques à la `Copy-Item` applet de commande](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [Exemple de code](#Code-Sample)
-
-- [Construction du fournisseur PowerShell de Windows](#Building-the-Windows-PowerShell-Provider)
-
-- [Test du fournisseur PowerShell de Windows](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Définition d’une classe de fournisseur de conteneur Windows PowerShell
 
@@ -398,7 +360,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Votre implémentation de [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) est chargé pour empêcher une récurrence infinie lorsqu’il y a des liens circulaires et autres. Une exception de fin appropriée doit être levée pour refléter cette condition.
 
-- Votre implémentation de la [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) méthode doit appeler [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Après l’appel à [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne la valeur true, le [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) méthode doit appeler la [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) méthode comme une vérification supplémentaire pour les modifications du système potentiellement dangereux. Pour plus d’informations sur l’appel de ces méthodes, consultez [renommer les éléments](#Renaming-Items).
+- Votre implémentation de la [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) méthode doit appeler [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Après l’appel à [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne la valeur true, le [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) méthode doit appeler la [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) méthode comme une vérification supplémentaire pour les modifications du système potentiellement dangereux. Pour plus d’informations sur l’appel de ces méthodes, consultez [renommer les éléments](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Attachement des paramètres dynamiques à l’applet de commande Copy-Item
 

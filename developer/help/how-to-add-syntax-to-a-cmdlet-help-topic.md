@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083380"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855129"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
-
-- [Attributs de paramètre](#Parameter-Attributes)
-
-- [Attributs de valeur de paramètre](#Parameter-Value-Attributes)
-
-- [Collecte des informations sur la syntaxe](#Gathering-Syntax-Information)
-
-- [Le diagramme de syntaxe XML de codage](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Choses à savoir sur le diagramme de syntaxe dans l’aide de l’applet de commande
 
 Avant de commencer à coder le code XML pour le diagramme de syntaxe dans le fichier d’aide applet de commande, lisez cette section pour obtenir une vision claire du type de données, que vous devez fournir, telles que les attributs de paramètre et le mode d’affichage de ces données dans le diagramme de syntaxe...
 
@@ -166,7 +156,7 @@ En règle générale, les valeurs de paramètre qui sont des espaces réservés 
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Le diagramme de syntaxe XML de codage
 
-Le nœud de syntaxe du code XML commence immédiatement après le nœud de description, qui se termine par le \</maml:description > balise. Pour plus d’informations sur la collecte des données utilisées dans le diagramme de syntaxe, consultez [collecte des informations sur la syntaxe](#Gathering-Syntax-Information).
+Le nœud de syntaxe du code XML commence immédiatement après le nœud de description, qui se termine par le \</maml:description > balise. Pour plus d’informations sur la collecte des données utilisées dans le diagramme de syntaxe, consultez [collecte des informations sur la syntaxe](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Ajout d’un nœud de syntaxe
 
@@ -210,7 +200,7 @@ L’exemple suivant inclut un nœud de syntaxe qui possède des nœuds d’élé
 
 Chaque paramètre est ajouté au nœud d’élément de syntaxe est spécifiée au sein d’une paire de \<: paramètre de commande > balises. Vous avez besoin d’une paire de \<: paramètre de commande > balises pour chaque paramètre inclus dans le jeu de paramètres, à l’exception des paramètres courants que sont fournies par Windows PowerShell ?.
 
-Les attributs de l’ouverture \<: paramètre de commande > balise déterminer comment le paramètre apparaît dans le diagramme de syntaxe. Pour plus d’informations sur les attributs de paramètre, consultez [les attributs de paramètre](#Parameter-Attributes).
+Les attributs de l’ouverture \<: paramètre de commande > balise déterminer comment le paramètre apparaît dans le diagramme de syntaxe. Pour plus d’informations sur les attributs de paramètre, consultez [les attributs de paramètre](#parameter-attributes).
 
 > [!NOTE]
 > Le \<: paramètre de commande > balise prend en charge un élément enfant \<maml:description > dont le contenu n’est jamais affiché. Les descriptions de paramètre sont spécifiées dans le nœud de paramètre du fichier XML. Pour éviter les incohérences entre les informations contenues dans l’élément de syntaxe plan et le nœud de paramètre, omettez la (\<maml:description > ou laissez-le vide.
