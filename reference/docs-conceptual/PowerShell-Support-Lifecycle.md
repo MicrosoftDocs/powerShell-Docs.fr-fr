@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086956"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854374"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cycle de vie de support de PowerShell Core
 
@@ -41,8 +41,6 @@ Par exemple, si PowerShell Core 6.1 est publié le 1er juillet 2018, vous êtes 
 
 Par exemple, si vous exécutez PowerShell Core 6.1 et que la version 6.1.3 a été publiée le 19 février 2019, vous êtes censé mettre à jour vers PowerShell Core 6.1.3 d’ici le 21 mars 2019, soit 30 jours après la publication, pour continuer à bénéficier du support.
 Si des correctifs sont identifiés comme étant obligatoires, ils seront publiés dans notre prochaine mise à jour cumulative.
-
-![Cycle de vie de branche PowerShell Core][lifecycle-chart]
 
 La stratégie de cycle de vie moderne exige également que Microsoft prévienne les clients 12 mois avant de mettre fin au support d’un produit (par exemple, PowerShell Core).
 
@@ -88,7 +86,7 @@ Sur la base du [cycle de vie de PowerShell Core](#lifecycle-of-powershell-core),
 |---------|-------------------------------|
 | 6.0     | 13 février 2019             |
 | 6.1     | 28 septembre 2019            |
-| 6.2     | 6 mois après la publication de 6.3   |
+| 6.2     | 6 mois après la publication de la version 7     |
 
 ## <a name="platforms-which-are-out-of-support"></a>Plateformes qui ne sont plus prises en charge
 

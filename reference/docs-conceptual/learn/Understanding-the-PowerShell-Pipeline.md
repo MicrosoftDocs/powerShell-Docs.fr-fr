@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,applet de commande
 title: Présentation des pipelines PowerShell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086440"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854343"
 ---
 # <a name="understanding-pipelines"></a>Présentation des pipelines
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 La pagination réduit également l’utilisation du processeur, car le traitement transfère à la cmdlet `Out-Host` lorsqu’il a une page complète prête à afficher. L’exécution des cmdlets qui la précèdent dans le pipeline est interrompue jusqu’à ce que la page suivante de la sortie soit disponible.
 
-Vous pouvez voir la différence dans le Gestionnaire des tâches de Windows pour surveiller l’utilisation du processeur et de la mémoire par PowerShell. Exécutez la commande suivante : `Get-ChildItem C:\Windows -Recurse`. Comparez l’utilisation du processeur et de la mémoire avec cette commande : `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
+Pour voir l’incidence des pipelines sur l’utilisation du processeur et de la mémoire dans le Gestionnaire des tâches Windows, comparez les commandes suivantes :
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > Tous les hôtes PowerShell ne prennent pas en charge le paramètre **Pagination**. Par exemple, lorsque vous tentez d’utiliser le paramètre **Pagination** dans PowerShell ISE, vous voyez l’erreur suivante :

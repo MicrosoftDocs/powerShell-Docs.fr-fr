@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Utilisation de variables pour stocker des objets
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 16e82b83df967674da11193c8ac60d637687a01b
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086542"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854332"
 ---
 # <a name="using-variables-to-store-objects"></a>Utilisation de variables pour stocker des objets
 
@@ -99,4 +99,4 @@ Vous pouvez également créer et modifier des variables d’environnement à par
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-Bien que cela ne soit pas obligatoire, il est courant que les noms des variables d’environnement utilisent uniquement des lettres majuscules.
+Il est courant, quoique non obligatoire, d’écrire le nom des variables d’environnement en majuscules.
