@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082101"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470776"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Présentation d’un module Windows PowerShell
 
@@ -55,7 +55,7 @@ Un *module de manifeste* est un module qui utilise un fichier manifeste pour dé
 
 ### <a name="dynamic-modules"></a>Modules dynamiques
 
-Un *module dynamique* est un module n’est pas chargé à partir d’ou enregistré dans un fichier. Au lieu de cela, elles sont créées dynamiquement par un script, à l’aide de la [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) applet de commande. Ce type de module permet un script créer un module à la demande ne devant pas être chargé ou enregistré vers le stockage persistant. Par sa nature, un module dynamique est destiné à être de courte durée et par conséquent ne peut pas être accessible par le `Get-Module` applet de commande. De même, ils ne doivent généralement pas de manifestes de module, ni qu’elles probablement dossiers permanents pour stocker leurs assemblys associés.
+Un *module dynamique* est un module qui n’est pas chargé à partir ou enregistré dans un fichier. Au lieu de cela, elles sont créées dynamiquement par un script, à l’aide de la [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) applet de commande. Ce type de module permet un script créer un module à la demande ne devant pas être chargé ou enregistré vers le stockage persistant. Par sa nature, un module dynamique est destiné à être de courte durée et par conséquent ne peut pas être accessible par le `Get-Module` applet de commande. De même, ils ne doivent généralement pas de manifestes de module, ni qu’elles probablement dossiers permanents pour stocker leurs assemblys associés.
 
 ## <a name="module-manifests"></a>Manifestes de module
 

@@ -2,16 +2,16 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080456"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470807"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-Mise à jour : 8 juillet 2013
+Mise à jour : 8 juillet 2013
 
 Windows PowerShell® est un interpréteur de ligne de commande et un langage de script basé sur les tâches, conçu spécialement pour l’administration du système. Basé sur le .NET Framework, Windows PowerShell® permet aux professionnels de l’informatique et avancés à contrôler les utilisateurs et d’automatiser l’administration du système d’exploitation de Windows et des applications qui s’exécutent sur Windows.
 
@@ -22,7 +22,7 @@ Pour les informations de base nécessaires pour commencer à utiliser Windows Po
 
 ## <a name="windows-powershell-documents-on-msdn"></a>Windows PowerShell Documents sur MSDN
 
-- [L’installation du Kit de développement logiciel de Windows PowerShell](https://msdn.microsoft.com/en-us/library/ff458115.aspx) fournit des informations sur la façon d’installer le Kit de développement logiciel de Windows PowerShell.
+- [L’installation du Kit de développement logiciel de Windows PowerShell](./installing-the-windows-powershell-sdk.md) fournit des informations sur la façon d’installer le Kit de développement logiciel de Windows PowerShell.
 
 - [Écrire un PowerShell Module de Windows](./module/writing-a-windows-powershell-module.md) fournit des informations pour les administrateurs, développeurs de script et les développeurs d’applet de commande qui doivent empaqueter et distribuer leurs solutions de Windows PowerShell.
 
