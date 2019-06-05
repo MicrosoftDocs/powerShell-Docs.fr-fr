@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation d’imprimantes
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fce1bc129ada3c509c55941a59a70de230edf68f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058537"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470957"
 ---
 # <a name="working-with-printers"></a>Utilisation d’imprimantes
 
@@ -19,7 +19,7 @@ Vous pouvez utiliser Windows PowerShell pour gérer des imprimantes à l’aide 
 La manière la plus simple de répertorier les imprimantes installées sur un ordinateur consiste à utiliser la classe WMI **Win32_Printer** :
 
 ```powershell
-Get-WmiObject -Class Win32_Printer -ComputerName
+Get-WmiObject -Class Win32_Printer
 ```
 
 Vous pouvez également répertorier les imprimantes à l’aide de l’objet COM **WScript.Network** qui est généralement utilisé dans des scripts WSH :
