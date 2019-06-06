@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: Création de requêtes Get-WinEvent avec FilterHashtable
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058811"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471016"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Création de requêtes Get-WinEvent avec FilterHashtable
 
@@ -159,7 +159,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="keywords-static-property-value-optional"></a>Valeur de propriété statique Keywords (facultatif)
 
 La clé **Keywords** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
@@ -239,7 +239,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="level-static-property-in-enumeration-optional"></a>Propriété statique Level dans une énumération (facultative)
 
 La clé **Level** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de la table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
