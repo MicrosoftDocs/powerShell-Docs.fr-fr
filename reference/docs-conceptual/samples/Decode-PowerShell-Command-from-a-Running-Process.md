@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: powershell,applet de commande
 title: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086236"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470966"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Afficher le processus
 
-Le corps de la commande exécuté par PowerShell est stocké dans la propriété **CommandLine** de la classe [Win32_Process][]. S’il s’agit d’une [commande encodée][], la propriété **CommandLine** contient la chaîne « EncodedCommand ». Ces informations permettent de révéler la commande encodée suivant le processus ci-dessous.
+Le corps de la commande exécuté par PowerShell est stocké dans la propriété **CommandLine** de la classe [Win32_Process][]. S’il s’agit d’une commande encodée, la propriété **CommandLine** contient la chaîne « EncodedCommand ». Ces informations permettent de révéler la commande encodée suivant le processus ci-dessous.
 
 Lancez PowerShell en tant qu’administrateur. Il est essentiel que PowerShell s’exécute en mode administrateur ; sinon, aucun résultat ne sera retourné dans la liste des processus en cours d’exécution.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Planificateur de tâches]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[Commande encodée]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

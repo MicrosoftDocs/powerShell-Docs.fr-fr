@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell,applet de commande
 title: Écriture de modules portables
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086406"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470983"
 ---
 # <a name="portable-modules"></a>Modules portables
 
@@ -17,11 +17,12 @@ Windows PowerShell est écrit pour [.NET Framework][] alors que PowerShell Core 
 
 ### <a name="porting-a-pssnapin"></a>Portage d’un module PSSnapIn
 
-Les composants logiciels enfichables PowerShell (PSSnapIn) ne sont pas pris en charge dans PowerShell Core. Mais vous pouvez facilement convertir un module PSSnapIn en module PowerShell. En règle générale, le code d’inscription PSSnapIn figure dans un fichier source unique d’une classe qui dérive de [PSSnapIn][]. Supprimez ce fichier source de la build car il n’est plus nécessaire.
+Les composants logiciels enfichables PowerShell ([SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins)) ne sont pas pris en charge dans PowerShell Core. Mais vous pouvez facilement convertir un module PSSnapIn en module PowerShell. En règle générale, le code d’inscription PSSnapIn figure dans un fichier source unique d’une classe qui dérive de [PSSnapIn][].
+Supprimez ce fichier source de la build car il n’est plus nécessaire.
 
-Utilisez [New-ModuleManifest][] pour créer un manifeste de module qui évite la saisie du code d’inscription PSSnapIn. Certaines valeurs de PSSnapIn (par exemple, Description) peuvent être réutilisées dans le manifeste de module.
+Utilisez [New-ModuleManifest][] pour créer un manifeste de module qui évite la saisie du code d’inscription PSSnapIn. Certaines valeurs de **PSSnapIn** (par exemple, **Description**) peuvent être réutilisées dans le manifeste de module.
 
-La propriété `RootModule` du manifeste de module doit être définie sur le nom de l’assembly (dll) qui implémente les applets de commande.
+La propriété **RootModule** du manifeste de module doit être définie sur le nom de l’assembly (dll) qui implémente les applets de commande.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>Analyseur de portabilité .NET (également appelé APIPort)
 

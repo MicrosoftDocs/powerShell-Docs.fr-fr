@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854362"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471010"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
@@ -52,7 +52,7 @@ Pour obtenir une liste complète des options de ligne de commande pour Msiexec.e
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />Installation du package ZIP
 
-Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Notez que, lors de l’utilisation de l’archive ZIP, les conditions préalables ne sont pas vérifiées comme pour le package MSI. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [conditions préalables](#prerequisites).
+Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Notez que, lors de l’utilisation de l’archive ZIP, les conditions préalables ne sont pas vérifiées comme pour le package MSI. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
 
 ## <a name="deploying-on-windows-iot"></a>Déploiement sur Windows IoT
 
@@ -150,10 +150,8 @@ La procédure suivante vous guide tout au long du déploiement de PowerShell Cor
 
 PowerShell Core prend en charge le protocole de communication à distance PowerShell sur WSMan et SSH. Pour plus d’informations, voir :
 
-- [Accès distant SSH dans PowerShell Core][ssh-remoting]
+- [Accès distant SSH dans PowerShell Core] [ssh-remoting]
 - [Communication à distance WSMan dans PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[versions]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[versions] : https://github.com/PowerShell/PowerShell/releases [ssh-remoting] : ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting] : ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor] : https://ci.appveyor.com/project/PowerShell/powershell
