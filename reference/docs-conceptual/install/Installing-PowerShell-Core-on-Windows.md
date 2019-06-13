@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471010"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830222"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
@@ -22,7 +22,7 @@ Pour permettre la communication à distance PowerShell via WSMan, les conditions
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installation du package MSI
 
-Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2 et les versions ultérieures), téléchargez le package MSI sur notre page de [versions][] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
+Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2 et les versions ultérieures), téléchargez le package MSI sur notre page de [versions][releases] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
 
 Le fichier MSI ressemble à ceci : `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -150,8 +150,12 @@ La procédure suivante vous guide tout au long du déploiement de PowerShell Cor
 
 PowerShell Core prend en charge le protocole de communication à distance PowerShell sur WSMan et SSH. Pour plus d’informations, voir :
 
-- [Accès distant SSH dans PowerShell Core] [ssh-remoting]
+- [Communication à distance SSH dans PowerShell Core][ssh-remoting]
 - [Communication à distance WSMan dans PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[versions] : https://github.com/PowerShell/PowerShell/releases [ssh-remoting] : ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting] : ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor] : https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
