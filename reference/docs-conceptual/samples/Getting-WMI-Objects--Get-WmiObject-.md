@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Obtention d’objets WMI Get WmiObject
-ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: 522822ac3ea6f08b20fa5af6c9accb48b01035d3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 93276ce12135342af2d6f238976e65e5d8bdde7a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058248"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030214"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>Obtention d’objets WMI (Get-WmiObject)
 

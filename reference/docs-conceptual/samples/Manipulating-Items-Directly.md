@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Manipulation d'éléments de manière directe
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086219"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030128"
 ---
 # <a name="manipulating-items-directly"></a>Manipulation d'éléments de manière directe
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Quand vous tapez un chemin d’accès au Registre, veillez à inclure le signe deux-points (**:**) dans les noms de lecteur Windows PowerShell (HKLM: et HKCU:). Sans les deux-points, Windows PowerShell ne reconnaît pas le nom du lecteur dans le chemin d'accès.
+Quand vous tapez un chemin d’accès au Registre, veillez à inclure le signe deux-points ( **:** ) dans les noms de lecteur Windows PowerShell (HKLM: et HKCU:). Sans les deux-points, Windows PowerShell ne reconnaît pas le nom du lecteur dans le chemin d'accès.
 
 ## <a name="why-registry-values-are-not-items"></a>Pourquoi les valeurs de Registre ne sont pas des éléments
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run**. Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse (**\\**), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
+Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run**. Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse ( **\\** ), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
 
 ## <a name="renaming-existing-items-rename-item"></a>Affectation d'un nouveau nom à des éléments existants (Rename-Item)
 

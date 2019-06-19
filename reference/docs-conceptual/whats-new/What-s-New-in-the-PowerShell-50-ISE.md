@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés de PowerShell 5.0 ISE
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 52e8926a7320f86f2ab8970a7778faba6a14a714
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058180"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030024"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Nouveauté dans Windows PowerShell ISE
 Cette rubrique décrit les fonctionnalités nouvelles et mises à jour qui ont été introduites dans les versions de l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell.

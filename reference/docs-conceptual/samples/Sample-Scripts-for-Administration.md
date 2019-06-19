@@ -2,13 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Exemples de scripts pour l’administration système
-ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
-ms.openlocfilehash: 2fd5d16759f840e6f5809ba6e65e253279176b71
-ms.sourcegitcommit: 9ac95601eebf792be636ee4d85e15c7a7c35422f
+ms.openlocfilehash: 6b7e6d59bcbd8d30fd583102e326a8f394a4f9e6
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64933774"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030797"
 ---
 # <a name="sample-scripts-for-system-administration"></a>Exemples de scripts pour l’administration système
 

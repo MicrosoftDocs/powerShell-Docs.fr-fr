@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Comment utiliser des profils dans Windows PowerShell ISE
-ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: b319aa089c2a4a7008acd9850f15342dac70aee2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 28354f39aaaa577cec69c1b3f62cfe16ef091218
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057527"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030604"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Comment utiliser des profils dans Windows PowerShell ISE
 

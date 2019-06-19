@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Sélection d'éléments dans une zone de liste
-ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 55bc9409b0e330a2080781bfd4c586109896258f
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086066"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030834"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Sélection d'éléments dans une zone de liste
 
@@ -180,5 +179,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Voir aussi
 
 - [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub : WinFormsExampleUpdates de Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Astuce Windows PowerShell de la semaine :  Sélection d’éléments dans une zone de liste](https://technet.microsoft.com/library/ff730949.aspx)

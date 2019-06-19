@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Exécution de tâches de mise en réseau
-ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e581296b4b7609b374f206c447c4f797e3e2c400
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058282"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030858"
 ---
 # <a name="performing-networking-tasks"></a>Exécution de tâches de mise en réseau
 

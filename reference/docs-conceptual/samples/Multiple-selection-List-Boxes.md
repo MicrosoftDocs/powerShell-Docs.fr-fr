@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Zones de liste à sélection multiple
-ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: dcfa43ac8e7cc4ba6147f71791edbf7989af3583
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057948"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030099"
 ---
 # <a name="multiple-selection-list-boxes"></a>Zones de liste à sélection multiple
 
@@ -184,5 +183,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Voir aussi
 
 - [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub : WinFormsExampleUpdates de Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Astuce Windows PowerShell de la semaine :  Zones de liste à sélection multiple et bien plus encore](https://technet.microsoft.com/library/ff730950.aspx)

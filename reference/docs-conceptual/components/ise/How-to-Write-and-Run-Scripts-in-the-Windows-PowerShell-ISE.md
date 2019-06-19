@@ -2,13 +2,12 @@
 ms.date: 08/14/2018
 keywords: powershell,applet de commande
 title: Comment écrire et exécuter des scripts dans Windows PowerShell ISE
-ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 61db5e18f05e8e334cd9ba6dab2cf15dee7390cc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4a08d7d206d103dcb398964d7ce75bea1e76559a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086848"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028978"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Comment écrire et exécuter des scripts dans Windows PowerShell ISE
 

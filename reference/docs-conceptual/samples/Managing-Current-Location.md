@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion de l'emplacement actuel
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086253"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030203"
 ---
 # <a name="managing-current-location"></a>Gestion de l'emplacement actuel
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 Vous pouvez utiliser le paramètre **-PassThru** avec de nombreuses commandes Set dans Windows PowerShell pour retourner des informations sur le résultat quand aucune sortie n’est générée par défaut.
 
-Pour spécifier des chemins d'accès par rapport à votre emplacement actuel, procédez de la même façon que dans la plupart des interpréteurs de commandes UNIX et Windows. Dans la notation standard des chemins d’accès relatifs, un point (**.**) représente votre dossier actif, tandis qu’un point double (**..**) représente le répertoire parent de votre emplacement actuel.
+Pour spécifier des chemins d'accès par rapport à votre emplacement actuel, procédez de la même façon que dans la plupart des interpréteurs de commandes UNIX et Windows. Dans la notation standard des chemins d’accès relatifs, un point ( **.** ) représente votre dossier actif, tandis qu’un point double ( **..** ) représente le répertoire parent de votre emplacement actuel.
 
-Par exemple, si vous vous trouvez dans le dossier **C:\\Windows**, un point (**.**) représente **C:\\Windows** et un point double (**..**) représente **C:**. Pour passer de votre emplacement actuel à la racine du lecteur C:, tapez :
+Par exemple, si vous vous trouvez dans le dossier **C:\\Windows**, un point ( **.** ) représente **C:\\Windows** et un point double ( **..** ) représente **C:** . Pour passer de votre emplacement actuel à la racine du lecteur C:, tapez :
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-Vous pouvez employer la même technique sur les lecteurs Windows PowerShell qui ne sont pas des lecteurs du système de fichiers, comme **HKLM:**. Pour sélectionner l’emplacement de la clé HKLM\\Software dans le Registre, tapez ce qui suit :
+Vous pouvez employer la même technique sur les lecteurs Windows PowerShell qui ne sont pas des lecteurs du système de fichiers, comme **HKLM:** . Pour sélectionner l’emplacement de la clé HKLM\\Software dans le Registre, tapez ce qui suit :
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru
@@ -168,7 +167,7 @@ ou
 Push-Location \\FS01\Public
 ```
 
-Vous pouvez utiliser les commandes **Push-Location** et **Set-Location** pour modifier l’emplacement en le définissant sur tout lecteur disponible. Par exemple, si vous possédez un lecteur de CD-ROM local associé à la lettre de lecteur D qui contient un CD de données, vous pouvez passer à l’emplacement du lecteur de CD en entrant la commande **Set-Location D:**.
+Vous pouvez utiliser les commandes **Push-Location** et **Set-Location** pour modifier l’emplacement en le définissant sur tout lecteur disponible. Par exemple, si vous possédez un lecteur de CD-ROM local associé à la lettre de lecteur D qui contient un CD de données, vous pouvez passer à l’emplacement du lecteur de CD en entrant la commande **Set-Location D:** .
 
 Si le lecteur est vide, le message d'erreur suivant s'affiche :
 

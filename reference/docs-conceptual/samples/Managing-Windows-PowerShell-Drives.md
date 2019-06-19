@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des lecteurs Windows PowerShell
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057823"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030146"
 ---
 # <a name="managing-windows-powershell-drives"></a>Gestion des lecteurs Windows PowerShell
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > En général, les chemins d'accès ne respectent pas la casse.
 
-Vous pouvez référencer le nouveau lecteur Windows PowerShell comme tout autre lecteur Windows PowerShell, c’est-à-dire en tapant son nom suivi du signe deux-points (**:**).
+Vous pouvez référencer le nouveau lecteur Windows PowerShell comme tout autre lecteur Windows PowerShell, c’est-à-dire en tapant son nom suivi du signe deux-points ( **:** ).
 
 Un lecteur Windows PowerShell peut simplifier de nombreuses tâches. Par exemple, certaines clés importantes dans le Registre Windows ont des chemins d'accès tellement longs qu'il est difficile d'y accéder et de s'en souvenir. Les informations de configuration critiques se trouvent sous **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Pour afficher et modifier des éléments dans la clé de Registre CurrentVersion, vous pouvez créer un lecteur Windows PowerShell ayant pour racine cette clé en tapant :
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Accessibilité dans Windows PowerShell ISE
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058452"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030638"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accessibilité dans Windows PowerShell ISE
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Objet ISEOptions
-ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
-ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057772"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028921"
 ---
 # <a name="the-iseoptions-object"></a>Objet ISEOptions
 

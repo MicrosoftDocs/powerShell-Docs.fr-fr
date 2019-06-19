@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Collecte d’informations sur les ordinateurs
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058333"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030837"
 ---
 # <a name="collecting-information-about-computers"></a>Collecte d’informations sur les ordinateurs
 
@@ -18,7 +17,7 @@ En outre, WMI traite les données en tant qu’objets figurant dans des collecti
 Étant donné que Windows PowerShell fonctionne également avec des objets et dispose d’un pipeline permettant de traiter un ou plusieurs objets de la même façon, l’accès générique à WMI permet d’effectuer des tâches avancées sans grand effort.
 
 Les exemples suivants montrent comment collecter des informations spécifiques en appliquant l’applet de commande `Get-CimInstance` à un ordinateur arbitraire.
-Nous spécifions le paramètre **ComputerName** avec la valeur de point (**.**) qui représente l’ordinateur local.
+Nous spécifions le paramètre **ComputerName** avec la valeur de point ( **.** ) qui représente l’ordinateur local.
 Vous pouvez spécifier un nom ou une adresse IP associés à tout ordinateur accessible via WMI.
 Pour récupérer des informations sur l’ordinateur local, vous pouvez omettre le paramètre **ComputerName**.
 
