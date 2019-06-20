@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: d1abdca9ecbb5ab0a13593072e6dcb0d647b0b14
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066989"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263812"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Écriture d’une applet de commande Windows PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "62066989"
 
 [Exemples de Code de l’applet de commande](./examples-of-cmdlet-code.md) cette section contient des exemples de code que vous pouvez utiliser pour commencer à écrire vos propres applets de commande.
 
-[Exemples de mise en forme la sortie d’applet de commande](https://msdn.microsoft.com/en-us/65829249-124d-47d0-9bf3-8e397dc55855) cette section contient des exemples qui montrent comment formater la sortie de l’applet de commande.
+[Écriture de fichiers de mise en forme pour la sortie de l’applet de commande](../format/writing-a-powershell-formatting-file.md) cette section décrivent comment créer des fichiers de mise en forme. Fichiers de mise en forme définissent comment PowerShell affiche les objets à la ligne de commande.
 
 [Didacticiels pour les applets de commande écrit](./tutorials-for-writing-cmdlets.md) cette section contient des didacticiels que vous pouvez utiliser pour en savoir plus sur les notions de base derrière le code de l’applet de commande.
 
