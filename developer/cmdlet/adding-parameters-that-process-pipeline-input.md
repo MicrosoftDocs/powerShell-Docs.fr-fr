@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 34643d20c16f8cc45e7fb20dc2a87d78b18bbf10
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854976"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298643"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Ajout de paramètres qui traitent l’entrée du pipeline
 
@@ -77,7 +77,7 @@ Les ensembles de déclaration précédente le `ValueFromPipeline` mot clé à `t
 
 Si votre applet de commande consiste à gérer l’entrée de pipeline, il doit remplacer la méthodes de traitement d’entrée appropriée. Les méthodes de traitement d’entrée de base sont introduites dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
 
-Cette applet de commande Get-Process remplace le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour gérer la `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29) correspond à la sortie mécanisme pour envoyer la sortie des objets au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection`, est défini sur `true` indiquer au runtime de Windows PowerShell d’énumérer le tableau d’objets de processus et écrire un seul processus à la fois à la ligne de commande.
+Cette applet de commande Get-Process remplace le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour gérer la `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie pour envoyer des objets de sortie pour le pipeline. Le deuxième paramètre de cet appel, `enumerateCollection`, est défini sur `true` indiquer au runtime de Windows PowerShell d’énumérer le tableau d’objets de processus et écrire un seul processus à la fois à la ligne de commande.
 
 ```csharp
 protected override void ProcessRecord()
@@ -130,11 +130,11 @@ Pour l’ensemble C# exemple de code, consultez [GetProcessSample03 exemple](./g
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
 
-Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .net. Par conséquent, peut-être une applet de commande définir son propre type, ou peut-être l’applet de commande étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .net. Par conséquent, peut-être une applet de commande définir son propre type, ou peut-être l’applet de commande étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Création de l’applet de commande
 
-Après l’implémentation d’une applet de commande, il doit être enregistré avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Après l’implémentation d’une applet de commande, il doit être enregistré avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
@@ -180,9 +180,9 @@ La sortie suivante s’affiche.
 
 [Création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)
 
-[Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extension des Types d’objets et mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85))
 
 [Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
 

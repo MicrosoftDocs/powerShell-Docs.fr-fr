@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854913"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301403"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Création d’une applet de commande qui modifie le système
 
@@ -59,7 +59,7 @@ N’oubliez pas que, dans le [System.Management.Automation.CmdletAttribute](/dot
 
 ### <a name="extremely-destructive-actions"></a>Actions extrêmement destructeur
 
-Certaines opérations sont extrêmement destructeur, telles que le reformatage d’une partition de disque dur actif. Dans ces cas, l’applet de commande doit définir `ConfirmImpact`  =  `ConfirmImpact.High` lorsque vous déclarez le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Ce paramètre force l’applet de commande pour demander la confirmation utilisateur même lorsque l’utilisateur n’a pas spécifié le `Confirm` paramètre. Toutefois, les développeurs d’applet de commande doivent éviter un abus de `ConfirmImpact` pour les opérations qui sont simplement potentiellement destructrices, telles que la suppression d’un compte d’utilisateur. Rappelez-vous que si `ConfirmImpact` a la valeur [System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High).
+Certaines opérations sont extrêmement destructeur, telles que le reformatage d’une partition de disque dur actif. Dans ces cas, l’applet de commande doit définir `ConfirmImpact`  =  `ConfirmImpact.High` lorsque vous déclarez le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribut. Ce paramètre force l’applet de commande pour demander la confirmation utilisateur même lorsque l’utilisateur n’a pas spécifié le `Confirm` paramètre. Toutefois, les développeurs d’applet de commande doivent éviter un abus de `ConfirmImpact` pour les opérations qui sont simplement potentiellement destructrices, telles que la suppression d’un compte d’utilisateur. Rappelez-vous que si `ConfirmImpact` a la valeur [System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **haute**.
 
 De même, certaines opérations sont peu de chances d’être destructive, bien qu’elles modifient en théorie l’état en cours d’exécution d’un système en dehors de Windows PowerShell. Ces applets de commande peut définir `ConfirmImpact` à [System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Cela permettra d’ignorer les demandes de confirmation où l’utilisateur a demandé de confirmer les opérations uniquement moyenne impact et à fort impact.
 
@@ -278,11 +278,11 @@ Pour l’ensemble C# exemple de code, consultez [StopProcessSample01 exemple](./
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
 
-Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .net. Par conséquent, peut-être une applet de commande définir son propre type, ou peut-être l’applet de commande étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .net. Par conséquent, peut-être une applet de commande définir son propre type, ou peut-être l’applet de commande étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Création de l’applet de commande
 
-Après l’implémentation d’une applet de commande, il doit être enregistré avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Après l’implémentation d’une applet de commande, il doit être enregistré avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
@@ -354,9 +354,9 @@ La sortie suivante s’affiche.
 
 [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md)
 
-[Extension des Types d’objets et mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extension des Types d’objets et mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
