@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076465"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301491"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
 
@@ -22,10 +22,10 @@ Un pipeline CI/CD automatisé vous permet de mettre à jour les logiciels avec p
 
 Pour utiliser cet exemple, vous devez maîtriser les éléments suivants :
 
-- Les concepts CI-CD. Le [modèle de pipeline de mise en production](http://aka.ms/thereleasepipelinemodelpdf) constitue une bonne référence.
+- Les concepts CI-CD. Le [modèle de pipeline de mise en production](https://aka.ms/thereleasepipelinemodelpdf) constitue une bonne référence.
 - Contrôle de source [Git](https://git-scm.com/)
 - L’infrastructure de test [Pester](https://github.com/pester/Pester)
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Ce dont vous aurez besoin
 
@@ -44,7 +44,7 @@ L’ordinateur client doit être un ordinateur Windows avec les éléments suiva
 ### <a name="tfssrv1"></a>TFSSrv1
 
 L’ordinateur qui héberge le serveur TFS sur lequel vous allez définir votre build et votre version.
-[Team Foundation Server 2017](https://www.visualstudio.com/tfs/) doit être installé sur cet ordinateur.
+[Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) doit être installé sur cet ordinateur.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Elle recherche tous les nœuds qui ont été définis comme ayant un rôle de `DNSServer` dans les [données de configuration](../configurations/configData.md), créées par le script `DevEnv.ps1`.
 
-Vous pouvez en savoir plus sur la méthode `Where` dans [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+Vous pouvez en savoir plus sur la méthode `Where` dans [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 Il est important d’utiliser les données de configuration pour définir des nœuds lors de l’opération CI car les informations sur les nœuds sont susceptibles de changer entre les environnements, et ces données de configuration vous permet de modifier facilement les informations des nœuds sans modifier le code de la configuration.
 
@@ -319,7 +319,7 @@ Le script de test d’intégration utilise une combinaison des syntaxes [Pester]
 
 Maintenant que nous avons chargé notre code sur TFS et examiné son comportement, nous allons définir notre build.
 
-Ici, nous aborderons uniquement les étapes de build que vous ajouterez à la build. Pour obtenir des instructions sur la création d’une définition de build dans TFS, consultez [Créer et mettre en file d’attente une définition de build](/azure/devops/pipelines/get-started-designer).
+Ici, nous aborderons uniquement les étapes de build que vous ajouterez à la build. Pour obtenir des instructions sur la création d’une définition de build dans TFS, consultez [Créer et mettre en file d’attente une définition de build](/azure/devops/pipelines/create-first-pipeline).
 
 Créez une définition de build (sélectionnez le modèle **vide**) nommée « InfraDNS ».
 Ajoutez les étapes suivantes à votre définition de build :
@@ -374,10 +374,10 @@ Cette étape copie la build et les scripts de test dans le répertoire interméd
 
 Nous allons maintenant configurer un déclencheur qui génère le projet chaque fois qu’une modification est apportée à la branche `ci-cd-example` du référentiel git.
 
-1. Dans TFS, cliquez sur l’onglet **Build et version** 
+1. Dans TFS, cliquez sur l’onglet **Build et version**
 1. Sélectionnez la définition de build `DNS Infra`, puis cliquez sur **Modifier**
-1. Cliquez sur l’onglet **Déclencheurs** 
-1. Sélectionnez **Continuous integration (CI)**, puis `refs/heads/ci-cd-example` dans la liste déroulante de la branche
+1. Cliquez sur l’onglet **Déclencheurs**
+1. Sélectionnez **Continuous integration (CI)** , puis `refs/heads/ci-cd-example` dans la liste déroulante de la branche
 1. Cliquez sur **Enregistrer**, puis sur **OK**
 
 Désormais, chaque modification apportée au référentiel git TFS génère une build automatisée.
@@ -388,7 +388,7 @@ Nous allons créer une définition de version afin de déployer le projet dans l
 
 Pour ce faire, ajoutez une nouvelle définition de version associée à la définition de build `InfraDNS` que vous avez créée précédemment.
 Veillez à sélectionner **Continuous deployment** afin de déclencher une nouvelle version chaque fois qu’une nouvelle build est terminée.
-([Que sont les pipelines de mise en production ? ](/azure/devops/pipelines/release/what-is-release-management)) et configurez-la comme suit :
+([Que sont les pipelines de mise en production ? ](/azure/devops/pipelines/release/)) et configurez-la comme suit :
 
 Ajoutez les étapes suivantes à la définition de version :
 
@@ -405,14 +405,14 @@ Modifiez les étapes comme suit :
 
 ### <a name="first-publish-test-results"></a>Première publication des résultats des tests
 
-1. Sélectionnez `NUnit` pour le champ **Format des résultats des tests** 
+1. Sélectionnez `NUnit` pour le champ **Format des résultats des tests**
 1. Définissez le champ **Fichiers des résultats des tests** sur `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
 1. Définissez le champ **Titre de la série de tests** sur `Integration`
 1. Sous **Options de contrôle**, cochez la case **Toujours exécuter**
 
 ### <a name="second-publish-test-results"></a>Seconde publication des résultats des tests
 
-1. Sélectionnez `NUnit` pour le champ **Format des résultats des tests** 
+1. Sélectionnez `NUnit` pour le champ **Format des résultats des tests**
 1. Définissez le champ **Fichiers des résultats des tests** sur `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
 1. Définissez le champ **Titre de la série de tests** sur `Acceptance`
 1. Sous **Options de contrôle**, cochez la case **Toujours exécuter**

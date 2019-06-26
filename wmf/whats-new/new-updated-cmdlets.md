@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Cmdlets nouvelles et mises à jour
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855544"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298653"
 ---
 # <a name="new-and-updated-cmdlets"></a>Cmdlets nouvelles et mises à jour
 
@@ -39,7 +39,7 @@ Pour plus d’informations, voir :
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Applets de commande CMS (Cryptographic Message Syntax)
 
-Les applets de commande Cryptographic Message Syntax prennent en charge le chiffrement et le déchiffrement de contenu au format IETF pour la protection par chiffrement des messages comme documenté dans la [RFC5652](https://tools.ietf.org/html/rfc5652).
+Les applets de commande Cryptographic Message Syntax prennent en charge le chiffrement et le déchiffrement de contenu au format IETF pour la protection par chiffrement des messages comme documenté dans la [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
 Le standard CMS implémente un chiffrement à clé publique, selon lequel la clé servant à chiffrer le contenu (la *clé publique*) et la clé servant à le déchiffrer (la *clé privée*) sont distinctes.
 
@@ -47,9 +47,9 @@ La clé publique, qui ne constitue pas une donnée sensible, est partageable à 
 
 Pour plus d’informations, voir :
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 Les certificats ont besoin d’un identificateur EKU (utilisation améliorée de la clé), comme « signature du code » ou « courrier chiffré », pour être identifiés comme certificats de chiffrement de données dans PowerShell. Pour afficher des certificats de chiffrement de document dans le fournisseur de certificats, vous pouvez utiliser le paramètre dynamique **DocumentEncryptionCert** `Get-ChildItem` :
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.
