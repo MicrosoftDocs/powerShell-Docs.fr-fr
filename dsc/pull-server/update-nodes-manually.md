@@ -16,7 +16,7 @@ Les sections ci-dessous supposent que vous avez déjà configuré un serveur Pul
 - [Configurer un serveur Pull SMB DSC](pullServerSmb.md)
 - [Configurer un serveur Pull HTTP DSC](pullServer.md)
 
-Chaque nœud cible peut être configuré pour télécharger les configurations et les ressources, et même pour signaler son état. Cet article montre comment uploader des ressources afin qu’elles soient disponibles pour être téléchargées, et comment configurer les clients pour télécharger automatiquement des ressources. Lorsque le nœud reçoit une configuration attribuée, via un serveur **Pull** ou **Push** (v5), il télécharge automatiquement toutes les ressources requises par la configuration depuis l’emplacement spécifié dans le gestionnaire de configuration local (LCM).
+Chaque nœud cible peut être configuré pour télécharger les configurations et les ressources, et même pour signaler son état. Cet article montre comment charger des ressources afin qu’elles soient disponibles pour être téléchargées, et comment configurer les clients pour télécharger automatiquement des ressources. Lorsque le nœud reçoit une configuration attribuée, via un serveur **Pull** ou **Push** (v5), il télécharge automatiquement toutes les ressources requises par la configuration depuis l’emplacement spécifié dans le gestionnaire de configuration local (LCM).
 
 ## <a name="using-the-update-dscconfiguration-cmdlet"></a>Utilisation de l’applet de commande Update-DSCConfiguration
 
