@@ -59,7 +59,7 @@ Vous définissez normalement la classe pour une applet de commande dans un espac
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>Nommez la classe d’applet de commande doit correspondre au nom de l’applet de commande
 
-Lorsque vous nommez la classe .NET Framework qui implémente une applet de commande, nommez la classe «*\<verbe >**\<Noun >**\<commande >*», où vous remplacez le  *\<Verbe >* et  *\<Noun >* des espaces réservés avec le verbe et substantif, utilisé pour le nom de l’applet de commande. Par exemple, le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) applet de commande est implémentée par une classe appelée `GetProcessCommand`.
+Lorsque vous nommez la classe .NET Framework qui implémente une applet de commande, nommez la classe « *\<verbe > **\<Noun >** \<commande >* », où vous remplacez le  *\<Verbe >* et  *\<Noun >* des espaces réservés avec le verbe et substantif, utilisé pour le nom de l’applet de commande. Par exemple, le [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) applet de commande est implémentée par une classe appelée `GetProcessCommand`.
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Si aucune entrée de Pipeline ne substituer la méthode BeginProcessing (AC02)
 
