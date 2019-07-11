@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
 caps.latest.revision: 6
-ms.openlocfilehash: 064e7d7ea2ee173bbcdd75a9f3a6c12582afe17b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 232b282e366c9fad167686337696ef2ccd8b30d8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081289"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734943"
 ---
 # <a name="runspace07-code-sample"></a>Exemple de code RunSpace07
 
-Voici le code source pour l’exemple Runspace07 décrit dans [création d’une Application qu’ajoute des commandes de la Console à un Pipeline](http://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e). Cet exemple d’application crée une instance d’exécution, crée un pipeline, ajoute les deux commandes au pipeline, puis exécute le pipeline. Les commandes ajoutées au pipeline sont le `Get-Process` et `Measure-Object` applets de commande.
+Voici le code source pour l’exemple Runspace07 décrit dans [création d’une Application qu’ajoute des commandes de la Console à un Pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e). Cet exemple d’application crée une instance d’exécution, crée un pipeline, ajoute les deux commandes au pipeline, puis exécute le pipeline. Les commandes ajoutées au pipeline sont le `Get-Process` et `Measure-Object` applets de commande.
 
 > [!NOTE]
 > Vous pouvez télécharger le C# le fichier source (runspace07.cs) en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants de Microsoft .NET Framework 3.0 Runtime. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).

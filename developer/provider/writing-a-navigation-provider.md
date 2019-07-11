@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080864"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734733"
 ---
 # <a name="writing-a-navigation-provider"></a>Écriture d’un fournisseur de navigation
 
@@ -25,7 +25,7 @@ Pour plus d’informations sur les fournisseurs Windows PowerShell, consultez [v
 
 ## <a name="implementing-navigation-methods"></a>Implémentation des méthodes de navigation
 
-Le [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) classe implémente les méthodes qui prennent en charge des conteneurs imbriqués, les chemins d’accès relatifs et déplacement des éléments. Pour obtenir une liste complète de ces méthodes, consultez [NavigationCmdletProvider méthodes](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+Le [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) classe implémente les méthodes qui prennent en charge des conteneurs imbriqués, les chemins d’accès relatifs et déplacement des éléments. Pour obtenir une liste complète de ces méthodes, consultez [NavigationCmdletProvider méthodes](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Cette rubrique s’appuie sur les informations contenues dans [démarrage rapide de fournisseur Windows PowerShell](./windows-powershell-provider-quickstart.md). Cette rubrique ne couvre pas les principes fondamentaux de la configuration d’un projet de fournisseur, ou comment implémenter les méthodes héritées de la [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) classe créer et supprimer des lecteurs. Cette rubrique ne couvre pas plus de l’implémentation des méthodes exposées par le [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) ou [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) classes. Pour obtenir un exemple qui montre comment implémenter des applets de commande, consultez [écriture d’un fournisseur de l’élément](./writing-an-item-provider.md). Pour obtenir un exemple qui montre comment implémenter des applets de commande de conteneur, consultez [écriture d’un fournisseur de conteneur](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implémentation MakePath
 
-Le [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) un chemin d’accès parent spécifié et un chemin d’accès enfant spécifié pour créer un chemin d’accès interne de fournisseur (pour plus d’informations sur le chemin d’accès des types de jointures (méthode) les fournisseurs peuvent prendre en charge, consultez [vue d’ensemble du fournisseur Windows PowerShell](./windows-powershell-provider-overview.md). Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) applet de commande.
+Le [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) un chemin d’accès parent spécifié et un chemin d’accès enfant spécifié pour créer un chemin d’accès interne de fournisseur (pour plus d’informations sur le chemin d’accès des types de jointures (méthode) les fournisseurs peuvent prendre en charge, consultez [vue d’ensemble du fournisseur Windows PowerShell](./windows-powershell-provider-overview.md). Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) applet de commande.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implémentation MoveItem
 
-Le [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) méthode déplace un élément à partir du chemin spécifié pour le chemin d’accès de destination spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) applet de commande.
+Le [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) méthode déplace un élément à partir du chemin spécifié pour le chemin d’accès de destination spécifié. Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle le [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) applet de commande.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

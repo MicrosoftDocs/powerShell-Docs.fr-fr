@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081085"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734878"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell programmeur&#39;s Guide
 
@@ -37,7 +37,7 @@ Dans le développement de commande traditionnelles, vous devez écrire un analys
 
 Windows PowerShell définit plusieurs types de commandes que vous pouvez utiliser dans le développement. Ces commandes incluent : fonctions, les filtres, les scripts, les alias et les exécutables (applications). Le type de commande principal abordé dans ce guide est une commande simple, petite appelée un « cmdlet ». Windows PowerShell fournit un ensemble d’applets de commande et prend entièrement en charge la personnalisation de l’applet de commande pour l’adapter à votre environnement. Le runtime Windows PowerShell traite tous les types de commande comme il le fait applets de commande, à l’aide de pipelines.
 
-Outre les commandes, Windows PowerShell prend en charge les divers fournisseurs Windows PowerShell personnalisables qui rendent des ensembles spécifiques d’applets de commande disponibles. L’interpréteur de commandes opère au sein de l’application hôte fournis par Windows PowerShell (PowerShell.exe Windows), mais il est également accessible à partir d’une application hôte personnalisé que vous pouvez développer pour répondre aux besoins spécifiques. Pour plus d’informations, consultez [Windows PowerShell fonctionnement](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Outre les commandes, Windows PowerShell prend en charge les divers fournisseurs Windows PowerShell personnalisables qui rendent des ensembles spécifiques d’applets de commande disponibles. L’interpréteur de commandes opère au sein de l’application hôte fournis par Windows PowerShell (PowerShell.exe Windows), mais il est également accessible à partir d’une application hôte personnalisé que vous pouvez développer pour répondre aux besoins spécifiques. Pour plus d’informations, consultez [Windows PowerShell fonctionnement](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Applets de commande Windows PowerShell
 
@@ -51,17 +51,17 @@ Dans la réalisation des tâches d’administration, l’utilisateur peut-être 
 
 Windows PowerShell fournit par défaut plusieurs fournisseurs Windows PowerShell. Par exemple, le fournisseur Registry prend en charge la navigation et la manipulation du Registre Windows. Les clés de Registre sont représentées en tant qu’éléments et valeurs de Registre sont traités en tant que propriétés.
 
-Si vous exposez un magasin de données que vous devez accéder à l’utilisateur, vous devrez peut-être écrire votre propre fournisseur Windows PowerShell, comme décrit dans [créant les fournisseurs Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Pour plus d’informations aboutWindows une fournisseurs PowerShell, consultez [Windows PowerShell fonctionnement](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Si vous exposez un magasin de données que vous devez accéder à l’utilisateur, vous devrez peut-être écrire votre propre fournisseur Windows PowerShell, comme décrit dans [créant les fournisseurs Windows PowerShell](./how-to-create-a-windows-powershell-provider.md). Pour plus d’informations aboutWindows une fournisseurs PowerShell, consultez [Windows PowerShell fonctionnement](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Application hôte
 
 Windows PowerShell inclut la valeur par défaut hôte application powershell.exe, qui est une application console qui interagit avec l’utilisateur et héberge le runtime de Windows PowerShell à l’aide d’une fenêtre de console.
 
-Rarement vous devez écrire votre propre application hôte pour Windows PowerShell, bien que la personnalisation est prise en charge. Un cas dans lesquels vous devrez peut-être votre propre application est lorsque vous avez besoin d’une interface utilisateur graphique est plus riche que l’interface fournie par l’application d’hôte par défaut. Vous pourriez également une application personnalisée lorsque vous basez votre GUI sur la ligne de commande. Pour plus d’informations, consultez [comment créer une Application hôte de Windows PowerShell](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Rarement vous devez écrire votre propre application hôte pour Windows PowerShell, bien que la personnalisation est prise en charge. Un cas dans lesquels vous devrez peut-être votre propre application est lorsque vous avez besoin d’une interface utilisateur graphique est plus riche que l’interface fournie par l’application d’hôte par défaut. Vous pourriez également une application personnalisée lorsque vous basez votre GUI sur la ligne de commande. Pour plus d’informations, consultez [comment créer une Application hôte de Windows PowerShell](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Service d’exécution Windows PowerShell
 
-Le runtime de Windows PowerShell est le moteur d’exécution qui implémente le traitement des commandes. Il inclut les classes qui fournissent l’interface entre l’application hôte et les commandes Windows PowerShell et les fournisseurs. Le runtime de Windows PowerShell est implémenté comme un objet d’instance d’exécution pour la session Windows PowerShell actuelle, qui est l’environnement d’exploitation dans lequel l’interpréteur de commandes et les commandes s’exécutent. Pour obtenir des détails opérationnels, consultez [Windows PowerShell fonctionnement](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Le runtime de Windows PowerShell est le moteur d’exécution qui implémente le traitement des commandes. Il inclut les classes qui fournissent l’interface entre l’application hôte et les commandes Windows PowerShell et les fournisseurs. Le runtime de Windows PowerShell est implémenté comme un objet d’instance d’exécution pour la session Windows PowerShell actuelle, qui est l’environnement d’exploitation dans lequel l’interpréteur de commandes et les commandes s’exécutent. Pour obtenir des détails opérationnels, consultez [Windows PowerShell fonctionnement](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Langage de Windows PowerShell
 
@@ -81,7 +81,7 @@ Windows PowerShell fournit un accès à une variété de différents objets, tel
 
   À l’aide de ETS, vous pouvez créer nouveau flexibles « types » qui sont compatibles avec le langage Windows PowerShell. Si vous êtes un développeur .NET, vous êtes en mesure d’utiliser des objets à l’aide de la même sémantique que le langage Windows PowerShell s’applique aux scripts, par exemple, pour déterminer si un objet a la valeur `true`.
 
-  Pour plus d’informations sur ETS et comment Windows PowerShell utilise des objets, consultez [Concepts d’objet Windows PowerShell](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Pour plus d’informations sur ETS et comment Windows PowerShell utilise des objets, consultez [Concepts d’objet Windows PowerShell](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programmation pour Windows PowerShell
 
@@ -100,7 +100,7 @@ Pour plus d’informations sur le démarrage à utiliser l’interpréteur de co
 |Rubrique|Définition|
 |-----------|----------------|
 |[Comment créer un fournisseur PowerShell de Windows](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment générer un fournisseur Windows PowerShell pour Windows PowerShell.|
-|[Comment créer une Application hôte PowerShell de Windows](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|Cette section décrit comment écrire une application hôte qui manipule une instance d’exécution et comment écrire une application hôte qui implémente son propre hôte personnalisé.|
+|[Comment créer une Application hôte PowerShell de Windows](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|Cette section décrit comment écrire une application hôte qui manipule une instance d’exécution et comment écrire une application hôte qui implémente son propre hôte personnalisé.|
 |[Comment créer un composant logiciel enfichable PowerShell Windows](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire tous les fournisseurs et applets de commande dans un assembly et la création d’un composant logiciel enfichable personnalisé.|
 |[Comment créer un interpréteur de commandes de Console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
 |[Concepts de Windows PowerShell](./windows-powershell-concepts.md)|Cette section contient des informations conceptuelles qui vous aideront à comprendre Windows PowerShell à partir du point de vue d’un développeur.|

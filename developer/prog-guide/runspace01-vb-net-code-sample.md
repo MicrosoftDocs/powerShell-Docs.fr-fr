@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081431"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735020"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Exemple de code Runspace01 (VB.NET)
 
-Voici les exemples de code pour l’instance d’exécution décrit dans [création d’une Console Application qui s’exécute une commande spécifiée](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Pour ce faire, l’application appelle une instance d’exécution et appelle ensuite une commande. (Notez que cette application ne spécifie pas les informations de configuration d’instance d’exécution, ni il crée explicitement un pipeline). La commande est appelée est la `Get-Process` applet de commande.
+Voici les exemples de code pour l’instance d’exécution décrit dans [création d’une Console Application qui s’exécute une commande spécifiée](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Pour ce faire, l’application appelle une instance d’exécution et appelle ensuite une commande. (Notez que cette application ne spécifie pas les informations de configuration d’instance d’exécution, ni il crée explicitement un pipeline). La commande est appelée est la `Get-Process` applet de commande.
 
 ## <a name="code-sample"></a>Exemple de code
 

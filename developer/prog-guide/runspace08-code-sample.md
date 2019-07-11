@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f286201-8a02-4b00-9a2c-1b833ccdbdbf
 caps.latest.revision: 7
-ms.openlocfilehash: 1a09cfee3bb317de6c1ca4dde86a87d72a498e6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ec6aae544eafea1dedc1379dab00beeed2c7c436
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081272"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734917"
 ---
 # <a name="runspace08-code-sample"></a>Exemple de code RunSpace08
 
-Voici le code source pour l’exemple Runspace08 décrit dans [création d’une Application qu’ajoute des paramètres de la Console à une commande](http://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba). Cet exemple d’application crée une instance d’exécution, crée un pipeline, ajoute les deux commandes au pipeline, ajoute deux paramètres à la deuxième commande, puis exécute le pipeline. Les commandes qui sont ajoutés au pipeline sont le `Get-Process` et `Sort-Object` applets de commande.
+Voici le code source pour l’exemple Runspace08 décrit dans [création d’une Application qu’ajoute des paramètres de la Console à une commande](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba). Cet exemple d’application crée une instance d’exécution, crée un pipeline, ajoute les deux commandes au pipeline, ajoute deux paramètres à la deuxième commande, puis exécute le pipeline. Les commandes qui sont ajoutés au pipeline sont le `Get-Process` et `Sort-Object` applets de commande.
 
 ## <a name="code-sample"></a>Exemple de code
 

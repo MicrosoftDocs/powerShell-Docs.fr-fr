@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854850"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733952"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
 
@@ -72,7 +72,7 @@ Notez que ce paramètre appartient à deux jeux paramètres différents et qu’
 
 Deux [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributs déclarent que le `Path` paramètre appartient à la `ScriptParameterSet` et `PatternParameterSet`. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres pour une applet de commande](./adding-parameter-sets-to-a-cmdlet.md).
 
-Le [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribut déclare un `PSPath` alias pour le `Path` paramètre. Déclaration de cet alias est fortement recommandé de cohérence avec les autres applets de commande qui accèdent aux fournisseurs Windows PowerShell. Pour plus d’informations aboutWindows une chemins d’accès PowerShell, consultez « Concepts de chemin d’accès PowerShell » dans [Windows PowerShell fonctionnement](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Le [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribut déclare un `PSPath` alias pour le `Path` paramètre. Déclaration de cet alias est fortement recommandé de cohérence avec les autres applets de commande qui accèdent aux fournisseurs Windows PowerShell. Pour plus d’informations aboutWindows une chemins d’accès PowerShell, consultez « Concepts de chemin d’accès PowerShell » dans [Windows PowerShell fonctionnement](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Déclarer le paramètre de modèle
 
@@ -379,7 +379,7 @@ Cette applet de commande Select-Str exemple utilise le [System.Management.Automa
 
 ## <a name="code-sample"></a>Exemple de code
 
-Le code suivant illustre l’implémentation de cette version de cette applet de commande Select-Str. Notez que ce code inclut la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell permet d’enregistrer l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [création de l’applet de commande](#building-the-cmdlet).
+Le code suivant illustre l’implémentation de cette version de cette applet de commande Select-Str. Notez que ce code inclut la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell permet d’enregistrer l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [création de l’applet de commande](#Defining-the-Cmdlet-Class).
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>Création de l’applet de commande
 
-Après l’implémentation d’une applet de commande, vous devez l’inscrire avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Après l’implémentation d’une applet de commande, vous devez l’inscrire avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
@@ -1214,7 +1214,7 @@ Lorsque votre applet de commande a été inscrite avec Windows PowerShell, vous 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Comment créer une applet de commande Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Comment créer une applet de commande Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [Création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ Lorsque votre applet de commande a été inscrite avec Windows PowerShell, vous 
 
 [Concevoir votre fournisseur de Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Fonctionnement de Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Fonctionnement de Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

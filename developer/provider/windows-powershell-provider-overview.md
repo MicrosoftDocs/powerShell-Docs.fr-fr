@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080903"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734867"
 ---
 # <a name="windows-powershell-provider-overview"></a>Vue d’ensemble du fournisseur Windows PowerShell
 
@@ -27,7 +27,7 @@ Lorsque vous écrivez un fournisseur, vous pouvez spécifier par défaut lecteur
 
 ## <a name="type-of-providers"></a>Type de fournisseurs
 
-Il existe plusieurs types de fournisseurs, chacun d’eux fournit un autre niveau de fonctionnalité. Un fournisseur est implémenté en tant que classe qui dérive d’un des descendants de le [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) classe. Pour plus d’informations sur les différents types de fournisseurs, consultez [les types de fournisseur](./provider-types.md).
+Il existe plusieurs types de fournisseurs, chacun d’eux fournit un autre niveau de fonctionnalité. Un fournisseur est implémenté en tant que classe qui dérive d’un des descendants de le [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** classe. Pour plus d’informations sur les différents types de fournisseurs, consultez [les types de fournisseur](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Applets de commande de fournisseur
 
@@ -63,7 +63,7 @@ Fournisseurs peuvent définir des paramètres dynamiques qui sont ajoutés à un
 
 ## <a name="provider-capabilities"></a>Capacités du fournisseur
 
-Le [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) énumération définit un certain nombre de fonctionnalités prenant en charge les fournisseurs. Ceux-ci incluent la possibilité d’utiliser les caractères génériques, filtrer les éléments et les transactions de la prise en charge. Pour spécifier les fonctionnalités pour un fournisseur, ajoutez une liste de valeurs de la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) énumération, combinée avec un opérateur logique `OR` opération, comme le [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) propriété (le deuxième paramètre de l’attribut) de la [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribut pour votre classe de fournisseur. Par exemple, l’attribut suivant spécifie que le fournisseur prend en charge la [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) et [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) fonctionnalités.
+Le [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) énumération définit un certain nombre de fonctionnalités prenant en charge les fournisseurs. Ceux-ci incluent la possibilité d’utiliser les caractères génériques, filtrer les éléments et les transactions de la prise en charge. Pour spécifier les fonctionnalités pour un fournisseur, ajoutez une liste de valeurs de la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) énumération, combinée avec un opérateur logique `OR` opération, comme le [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) propriété (le deuxième paramètre de l’attribut) de la [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribut pour votre classe de fournisseur. Par exemple, l’attribut suivant spécifie que le fournisseur prend en charge la [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** et [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **Transactions** fonctionnalités.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

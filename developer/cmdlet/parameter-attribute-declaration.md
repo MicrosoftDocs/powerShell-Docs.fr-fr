@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067550"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735140"
 ---
 # <a name="parameter-attribute-declaration"></a>Déclaration de l’attribut Parameter
 
@@ -32,17 +32,17 @@ L’attribut de paramètre identifie une propriété publique de la classe de l�
 
 #### <a name="parameters"></a>Paramètres
 
-`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique le paramètre d’applet de commande est requis. Si un paramètre obligatoire n’est pas fourni lorsque l’applet de commande est appelée, Windows PowerShell invite l’utilisateur à une valeur de paramètre. La valeur par défaut est `false`.
+`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique le paramètre d’applet de commande est requis. Si un paramètre obligatoire n’est pas fourni lorsque l’applet de commande est appelée, Windows PowerShell invite l’utilisateur à une valeur de paramètre. Par défaut, il s’agit de `false`.
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) paramètre nommé facultatif. Spécifie que le paramètre défini que ce paramètre d’applet de commande appartient. Si aucun jeu de paramètres n’est spécifié, le paramètre appartient à tous les jeux de paramètres.
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) paramètre nommé facultatif. Spécifie la position du paramètre dans une commande Windows PowerShell.
+`Position` ([System.Int32](/dotnet/api/System.Int32)) paramètre nommé facultatif. Spécifie la position du paramètre dans une commande Windows PowerShell.
 
-`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande prend sa valeur à partir d’un objet de pipeline. Spécifiez ce mot clé si l’applet de commande accède à l’ensemble de l’objet, pas seulement une propriété de l’objet. La valeur par défaut est `false`.
+`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande prend sa valeur à partir d’un objet de pipeline. Spécifiez ce mot clé si l’applet de commande accède à l’ensemble de l’objet, pas seulement une propriété de l’objet. Par défaut, il s’agit de `false`.
 
-`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande prend sa valeur à partir d’une propriété d’un objet de pipeline qui a le même nom ou le même alias comme paramètre. Par exemple, si l’applet de commande a un `Name` paramètre et l’objet de pipeline possède également un `Name` propriété, la valeur de la `Name` propriété est affectée à la `Name` paramètre de l’applet de commande. La valeur par défaut est `false`.
+`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande prend sa valeur à partir d’une propriété d’un objet de pipeline qui a le même nom ou le même alias comme paramètre. Par exemple, si l’applet de commande a un `Name` paramètre et l’objet de pipeline possède également un `Name` propriété, la valeur de la `Name` propriété est affectée à la `Name` paramètre de l’applet de commande. Par défaut, il s’agit de `false`.
 
-`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande accepte tous les autres arguments passés à l’applet de commande. La valeur par défaut est `false`.
+`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` Indique que le paramètre d’applet de commande accepte tous les autres arguments passés à l’applet de commande. Par défaut, il s’agit de `false`.
 
 `HelpMessage` Paramètre nommé facultatif. Spécifie une brève description du paramètre. Windows PowerShell affiche ce message lorsqu’une applet de commande est exécutée et un paramètre obligatoire n’est pas spécifié.
 

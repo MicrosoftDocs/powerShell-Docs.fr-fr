@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064099"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735087"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>SelectionCondition, élément pour EntrySelectedBy pour ListControl (Format)
 
@@ -32,13 +32,13 @@ Configuration élément (Format) ViewDefinitions, élément (Format) vue (Format
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
 Les sections suivantes décrivent les attributs et éléments enfants de l’élément parent le `SelectionCondition` élément.
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -77,6 +77,6 @@ Pour plus d’informations sur d’autres composants d’une vue liste, consulte
 
 [Élément SelectionSetName pour EntrySelectedBy pour ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Élément TypeName pour EntrySelectedBy pour ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[Élément TypeName pour EntrySelectedBy pour ListEntry (Format)](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [Écriture d’un fichier de mise en forme de PowerShell](./writing-a-powershell-formatting-file.md)

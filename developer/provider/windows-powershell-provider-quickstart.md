@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080881"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734840"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Fournisseur Windows PowerShell - Démarrage rapide
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implémentation NewDrive
 
-Le [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) méthode est appelée par le moteur Windows PowerShell quand un utilisateur appelle le [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)applet de commande en spécifiant le nom de votre fournisseur. Le paramètre PSDriveInfo est transmis par le moteur Windows PowerShell, et la méthode retourne le nouveau lecteur pour le moteur Windows PowerShell. Cette méthode doit être déclarée au sein de la classe créée ci-dessus.
+Le [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) méthode est appelée par le moteur Windows PowerShell quand un utilisateur appelle le [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) applet de commande en spécifiant le nom de votre fournisseur. Le paramètre PSDriveInfo est transmis par le moteur Windows PowerShell, et la méthode retourne le nouveau lecteur pour le moteur Windows PowerShell. Cette méthode doit être déclarée au sein de la classe créée ci-dessus.
 
 La méthode vérifie d’abord pour vous assurer que l’objet de lecteur et la racine du lecteur qui ont été passés dans existent, retournant `null` si un d’eux n’est pas le cas. Il utilise ensuite un constructeur de la classe interne AccessDBPSDriveInfo pour créer un nouveau lecteur et représente une connexion à la base de données Access, le lecteur.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>Implémentation RemoveDrive
 
-Le [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) méthode est appelée par le moteur Windows PowerShell quand un utilisateur appelle le [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) applet de commande. La méthode dans ce fournisseur ferme la connexion à la base de données Access.
+Le [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) méthode est appelée par le moteur Windows PowerShell quand un utilisateur appelle le [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) applet de commande. La méthode dans ce fournisseur ferme la connexion à la base de données Access.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)
