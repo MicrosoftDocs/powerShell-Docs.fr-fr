@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080493"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733735"
 ---
 # <a name="windows-powershell-reference"></a>Informations de référence sur Windows PowerShell
 
@@ -53,4 +53,4 @@ Outre le Kit de développement Windows PowerShell, les ressources suivantes four
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) cet espace de noms contient les classes de base utilisées par d’autres classes de l’espace de noms. Par exemple, le [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) est la classe de base pour le [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) classe.
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) cet espace de noms contient les classes, les énumérations et les interfaces utilisées pour créer une instance d’exécution Windows PowerShell. Dans ce contexte, l’instance d’exécution Windows PowerShell est le contexte dans lequel un ou plusieurs pipelines de Windows PowerShell appellent les applets de commande. Autrement dit, les applets de commande fonctionnent dans le contexte d’une instance d’exécution Windows PowerShell. Pour plus d’informations aboutWindows une instances d’exécution de PowerShell, consultez [Windows PowerShell Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) cet espace de noms contient les classes, les énumérations et les interfaces utilisées pour créer une instance d’exécution Windows PowerShell. Dans ce contexte, l’instance d’exécution Windows PowerShell est le contexte dans lequel un ou plusieurs pipelines de Windows PowerShell appellent les applets de commande. Autrement dit, les applets de commande fonctionnent dans le contexte d’une instance d’exécution Windows PowerShell. Pour plus d’informations aboutWindows une instances d’exécution de PowerShell, consultez [Windows PowerShell Runspaces](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

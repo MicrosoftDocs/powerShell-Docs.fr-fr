@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854965"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733971"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
 
@@ -71,7 +71,7 @@ Windows PowerShell utilise le [Microsoft.PowerShell.Commands](/dotnet/api/Micros
 
 ## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement des entrées
 
-Le [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe fournit trois méthodes de traitement d’entrée principal, au moins un d'entre eux doit remplacer votre applet de commande. Pour plus d’informations sur la façon dont Windows PowerShell traite les enregistrements, consultez [Windows PowerShell fonctionnement](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Le [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) classe fournit trois méthodes de traitement d’entrée principal, au moins un d'entre eux doit remplacer votre applet de commande. Pour plus d’informations sur la façon dont Windows PowerShell traite les enregistrements, consultez [Windows PowerShell fonctionnement](/previous-versions//ms714658(v=vs.85)).
 
 Pour tous les types d’entrée, l’exécution de Windows PowerShell appelle [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) pour permettre un traitement. Si votre applet de commande doit exécuter certaines de prétraitement ou de la configuration, il peut le faire à en substituant cette méthode.
 
@@ -135,11 +135,11 @@ Pour l’ensemble C# exemple de code, consultez [exemple GetProcessSample01](./g
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
 
-Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .NET. Par conséquent, une applet de commande devez définir son propre type, ou l’applet de commande peut étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell passe les informations entre les applets de commande à l’aide d’objets .NET. Par conséquent, une applet de commande devez définir son propre type, ou l’applet de commande peut étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-cmdlet"></a>Création de l’applet de commande
 
-Après l’implémentation d’une applet de commande, vous devez l’inscrire avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Après l’implémentation d’une applet de commande, vous devez l’inscrire avec Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
@@ -260,14 +260,14 @@ Lorsque votre applet de commande a été inscrite avec Windows PowerShell, vous 
 
 [Création d’une applet de commande pour traiter l’entrée de Pipeline](./adding-parameters-that-process-pipeline-input.md)
 
-[Comment créer une applet de commande Windows PowerShell](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Comment créer une applet de commande Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extension des Types d’objets et mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extension des Types d’objets et mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[Fonctionnement de Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Fonctionnement de Windows PowerShell](/previous-versions//ms714658(v=vs.85))
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](/previous-versions//ms714644(v=vs.85))
 
-[Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
+[Référence Windows PowerShell](../windows-powershell-reference.md)
 
 [Exemples d’applet de commande](./cmdlet-samples.md)

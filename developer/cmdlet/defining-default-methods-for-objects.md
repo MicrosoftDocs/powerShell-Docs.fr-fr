@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: fa0f0371856d8723af7ec17a4306de209a481a18
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068213"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733979"
 ---
 # <a name="defining-default-methods-for-objects"></a>Définition de méthodes par défaut pour les objets
 
@@ -26,7 +26,7 @@ Lorsque vous étendez des objets .NET Framework, vous pouvez ajouter des méthod
 
 Une méthode de code fait référence à une méthode statique d’un objet .NET Framework.
 
-Dans l’exemple suivant, le **ConvertLargeIntegerToInt64** méthode est ajoutée à la [System.Xml.Xmlnode ? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) type. Le [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) élément définit la méthode étendue en tant qu’une méthode de code. Le [nom](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) élément spécifie le nom de la méthode étendue. Et, le [CodeReference](http://msdn.microsoft.com/en-us/70017b85-18d2-4f55-8357-92f309d5618b) élément spécifie la méthode statique. (Vous pouvez également ajouter le [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) élément aux membres de la [jeux de membres](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) élément.)
+Dans l’exemple suivant, le **ConvertLargeIntegerToInt64** méthode est ajoutée à la [System.Xml.Xmlnode ? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) type. Le [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) élément définit la méthode étendue en tant qu’une méthode de code. Le [nom](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) élément spécifie le nom de la méthode étendue. Et, le [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) élément spécifie la méthode statique. (Vous pouvez également ajouter le [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) élément aux membres de la [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) élément.)
 
 ```xml
 <Type>
@@ -45,7 +45,7 @@ Dans l’exemple suivant, le **ConvertLargeIntegerToInt64** méthode est ajouté
 
 ## <a name="script-methods"></a>Méthodes de script
 
-Une méthode de script définit une méthode dont la valeur est la sortie d’un script. Dans l’exemple suivant, le **ConvertToDateTime** méthode est ajoutée à la [System.Management.Managementobject ? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) type. Le [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) élément définit la méthode étendue en tant qu’une méthode de script. Le [nom](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) élément spécifie le nom de la méthode étendue. Et, le [Script](http://msdn.microsoft.com/en-us/1937ad1b-bb2b-4512-9864-01fc0767d46f) élément spécifie le script qui génère la valeur de la méthode. (Vous pouvez également ajouter le [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) élément aux membres de la [jeux de membres](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) élément.)
+Une méthode de script définit une méthode dont la valeur est la sortie d’un script. Dans l’exemple suivant, le **ConvertToDateTime** méthode est ajoutée à la [System.Management.Managementobject ? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) type. Le [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) élément définit la méthode étendue en tant qu’une méthode de script. Le [nom](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) élément spécifie le nom de la méthode étendue. Et, le [Script](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) élément spécifie le script qui génère la valeur de la méthode. (Vous pouvez également ajouter le [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) élément aux membres de la [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) élément.)
 
 ```xml
 <Type>
