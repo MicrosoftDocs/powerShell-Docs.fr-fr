@@ -19,7 +19,10 @@
     - name: Bien démarrer avec DSC sur Machines virtuelles Azure
       href: getting-started/azureDSCexthistory.md
 - name: Démarrages rapides
+  expanded: true
   items:
+    - name: Créer une configuration d’une stratégie de groupe
+      href: quickstarts/gpo-quickstart.md
     - name: Créer un site web avec DSC
       href: quickstarts/website-quickStart.md
 - name: Configurations
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: Configurer le Configuration Manager local (v5)
           href: managing-nodes/metaConfig.md
-        - name: Configurer le Configuration Manager local (v4)
+        - name: "Configuration du gestionnaire de configuration local dans PowerShell\_4.0"
           href: managing-nodes/metaConfig4.md
         - name: Appeler directement des méthodes de ressources DSC
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: Vue d’ensemble
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: Méthode ApplyConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'ApplyConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: Méthode DisableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'DisableDebugConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: Méthode EnableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'EnableDebugConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: Méthode GetConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'GetConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: Méthode GetConfigurationResultOutput de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'GetConfigurationResultOutput, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: Méthode GetConfigurationStatus de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'GetConfigurationStatus, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: Méthode GetMetaConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'GetMetaConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: Méthode PerformRequiredConfigurationChecks de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'PerformRequiredConfigurationChecks, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: Méthode RemoveConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'RemoveConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: Méthode ResourceGet de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'ResourceGet, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: Méthode ResourceSet de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'ResourceSet, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: Méthode ResourceTest de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'ResourceTest, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: Méthode RollBack de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'RollBack, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: Méthode SendConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'SendConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: Méthode SendConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'SendConfigurationApply, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: Méthode SendConfigurationApplyAsync de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'SendConfigurationApplyAsync, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: Méthode SendMetaConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'SendMetaConfigurationApply, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: Méthode StopConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'StopConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: Méthode TestConfiguration de la classe MSFT_DSCLocalConfigurationManager
+        - name: 'TestConfiguration, méthode'
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Lectures supplémentaires
   items:
