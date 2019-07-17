@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: Méthode SendConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendConfigurationApply, méthode
+ms.openlocfilehash: 11b9d435bbaac1600d25ff074b6c55b236a8378b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078252"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727005"
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode SendConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
+# <a name="sendconfigurationapply-method"></a>SendConfigurationApply, méthode
 
 Envoie le document de configuration au nœud géré et utilise l’agent de configuration pour appliquer la configuration.
 

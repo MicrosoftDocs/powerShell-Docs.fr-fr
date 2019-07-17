@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation des données de configuration
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080218"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727206"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 
@@ -187,11 +187,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC fournit les variables spéciales suivantes, qui peuvent être utilisées dans un script de configuration :
 
-- **$AllNodes** fait référence à l’ensemble de la collection de nœuds définis dans **ConfigurationData**. Vous pouvez filtrer la collection **AllNodes** à l’aide de **.Where()** et **.ForEach()**.
+- **$AllNodes** fait référence à l’ensemble de la collection de nœuds définis dans **ConfigurationData**. Vous pouvez filtrer la collection **AllNodes** à l’aide de **.Where()** et **.ForEach()** .
 - **ConfigurationData** fait référence à la table de hachage entière qui est passée comme paramètre lors de la compilation d’une configuration.
 - **MyTypeName** contient le nom de la [configuration](configurations.md) dans laquelle la variable est utilisée. Par exemple, dans la configuration `MyDscConfiguration`, `$MyTypeName` aura la valeur `MyDscConfiguration`.
-- **Node** fait référence à une entrée particulière dans la collection **AllNodes** une fois qu’elle a été filtrée à l’aide de **.Where()** ou **.ForEach()**.
-  - Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)
+- **Node** fait référence à une entrée particulière dans la collection **AllNodes** une fois qu’elle a été filtrée à l’aide de **.Where()** ou **.ForEach()** .
+  - Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
 
 ## <a name="using-non-node-data"></a>Utilisation des données n’appartenant pas à un nœud
 

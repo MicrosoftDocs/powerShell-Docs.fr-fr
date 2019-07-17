@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: résolution des problèmes d’accès dans Accès Web Windows PowerShell
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086593"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733869"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Résolution des problèmes d’accès dans Accès Web Windows PowerShell
 
@@ -35,7 +35,7 @@ L’échec peut avoir les causes suivantes.
 
   Vérifiez que la gestion à distance est activée sur l’ordinateur auquel l’utilisateur essaie de se connecter.
 
-  Pour plus d’informations, consultez [Comment configurer votre ordinateur pour la communication à distance](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Pour plus d’informations, consultez [Comment configurer votre ordinateur pour la communication à distance](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Erreur de serveur interne
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: Méthode DisableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: ec5a401de4cb93f302f8572c0408e3f32d8876ad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: DisableDebugConfiguration, méthode
+ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078892"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727158"
 ---
-# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode DisableDebugConfiguration de la classe MSFT_DSCLocalConfigurationManager
+# <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration, méthode
 
 Désactive le débogage des ressources DSC.
 

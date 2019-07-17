@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079198"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727200"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
 S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service).
 
 Résumé : Ce document vise à fournir une procédure et une extensibilité pour aider les ingénieurs qui préparent la solution. Les informations qu’il contient indiquent les bonnes pratiques identifiées par les clients puis validées par l’équipe du produit qui garantit que les recommandations sont innovantes et considérées comme stables.
 
@@ -50,9 +50,9 @@ Windows PowerShell fournit un ensemble d’extensions de langage pour DSC que vo
 Un serveur collecteur fournit un service centralisé pour stocker des configurations qui seront accessibles aux nœuds cibles.
 
 Vous pouvez déployer le rôle serveur collecteur comme instance de serveur web ou partage de fichiers SMB. La fonctionnalité de serveur web inclut une interface OData et peut éventuellement inclure des fonctionnalités permettant aux nœuds cibles d’envoyer une confirmation de réussite ou d’échec quand les configurations sont appliquées. Cette fonctionnalité est utile dans les environnements comportant un grand nombre de nœuds cibles.
-Après avoir configuré un nœud cible (également appelé « client ») pour pointer vers le serveur collecteur, téléchargez et appliquez les données de configuration les plus récentes et tous les scripts nécessaires. Vous pouvez effectuer ces opérations en un seul déploiement ou comme une tâche récurrente qui considère aussi le serveur collecteur comme important pour gérer les changements au besoin. Pour plus d’informations, consultez [Serveurs collecteurs Windows PowerShell DSC](/powershell/dsc/pullServer) et
+Après avoir configuré un nœud cible (également appelé « client ») pour pointer vers le serveur collecteur, téléchargez et appliquez les données de configuration les plus récentes et tous les scripts nécessaires. Vous pouvez effectuer ces opérations en un seul déploiement ou comme une tâche récurrente qui considère aussi le serveur collecteur comme important pour gérer les changements au besoin. Pour plus d’informations, consultez [Serveurs collecteurs Windows PowerShell DSC](/powershell/dsc/pullServer/pullserver) et
 
-[Modes de configuration d’émission et de collecte](/powershell/dsc/pullServer).
+[Modes de configuration d’émission et de collecte](/powershell/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Planification de la configuration
 

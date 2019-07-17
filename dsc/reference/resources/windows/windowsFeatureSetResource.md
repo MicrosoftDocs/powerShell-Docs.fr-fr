@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressources WindowsFeatureSet dans DSC
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076784"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726795"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>Ressources WindowsFeatureSet dans DSC
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  Propriété  |  Description   |
 |---|---|
-| Name| Nom des rôles ou fonctionnalités dont vous voulez garantir l’ajout ou la suppression. Il s’agit du même nom que celui de la propriété **Name** de l’applet de commande [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx), et non du nom d’affichage des rôles ou des fonctionnalité.|
+| Name| Nom des rôles ou fonctionnalités dont vous voulez garantir l’ajout ou la suppression. Il s’agit du même nom que celui de la propriété **Name** de l’applet de commande [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps), et non du nom d’affichage des rôles ou des fonctionnalité.|
 | Credential| Informations d’identification à utiliser pour ajouter ou supprimer les rôles ou les fonctionnalités.|
 | Ensure| Indique si les rôles ou fonctionnalités sont ajoutés. Pour vous assurer que les rôles ou fonctionnalités sont ajoutés, affectez la valeur « Present » à cette propriété. Pour vous assurer que les rôles ou fonctionnalités sont supprimés, affectez la valeur « Absent ».|
 | IncludeAllSubFeature| Affectez la valeur **$true** à cette propriété pour inclure toutes les sous-fonctionnalités requises avec la fonctionnalité que vous spécifiez avec la propriété **Name**.|

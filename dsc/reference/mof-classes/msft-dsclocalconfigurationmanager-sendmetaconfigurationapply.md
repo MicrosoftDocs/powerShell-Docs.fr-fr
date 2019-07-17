@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: Méthode SendMetaConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
-ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendMetaConfigurationApply, méthode
+ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078309"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727043"
 ---
-# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>Méthode SendMetaConfigurationApply de la classe MSFT_DSCLocalConfigurationManager
+# <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply, méthode
 
 Définissez les paramètres du Gestionnaire de configuration local qui permettent de contrôler l’agent de configuration.
 
