@@ -2,19 +2,21 @@
 title: Installation de PowerShell Core sous Linux
 description: Informations sur l’installation de PowerShell Core sur diverses distributions Linux
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530631"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829437"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installation de PowerShell Core sous Linux
 
-Prend en charge [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], et [Arch Linux][arch].
+Prend en charge [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28][fedora] et [Arch Linux][arch].
 
 Pour les distributions Linux qui ne sont pas officiellement prises en charge, vous pouvez essayer d’utiliser [PowerShell Snap Package][snap].
-Vous pouvez également essayer de déployer des fichiers binaires PowerShell directement à l’aide de [l’archive `tar.gz`][tar] Linux, mais vous devez configurer les dépendances nécessaires selon le système d’exploitation dans une procédure distincte.
+Vous pouvez également essayer de déployer les fichiers binaires PowerShell directement à l’aide de [l’archive `tar.gz`][tar] Linux, mais vous devez configurer les dépendances nécessaires en fonction du système d’exploitation dans des étapes distinctes.
 
 Tous les packages sont disponibles dans notre page de [versions][] GitHub.
 Une fois que le package est installé, exécutez `pwsh` à partir d’un terminal.
@@ -199,7 +201,7 @@ sudo apt-get remove powershell
 > [!NOTE]
 > La version 18.10 étant une [version intermédiaire](https://www.ubuntu.com/about/release-cycle), elle est uniquement [prise en charge par la communauté](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).
 
-L’installation de 18.10 est prise en charge via `snapd`. Consultez [Snap Package][snap] pour des instructions complètes.
+L’installation de 18.10 est prise en charge via `snapd`. Pour obtenir des instructions complètes, consultez [Snap Package][snap].
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -487,9 +489,9 @@ sudo dnf remove powershell
 
 PowerShell est disponible dans le dépôt utilisateur [Arch Linux][].
 
-* Il peut être compilé avec la [dernière version identifiée][arch-release]
-* Il peut être compilé à partir de la [dernière validation sur le maître][arch-git]
-* Il peut être installé à l’aide de la [dernière ressource binaire de version][arch-bin]
+* Il peut être compilé avec la [dernière version étiquetée][arch-release]
+* Il peut être compilé à partir de la [dernière validation sur le master][arch-git]
+* Il peut être installé en utilisant la [dernière ressource binaire de la version][arch-bin]
 
 Les packages dans le dépôt utilisateur Arch Linux sont gérés par la communauté ; il n’existe aucune prise en charge officielle.
 
@@ -588,8 +590,18 @@ Téléchargez [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/
 ### <a name="installation---raspbian"></a>Installation – Raspbian
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -647,7 +659,7 @@ Le graphique suivant montre les dépendances .NET Core 2.0 prises en charge offi
 | Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Pour déployer les fichiers binaires PowerShell sur les distributions Linux qui ne sont pas officiellement prises en charge, vous devez installer les dépendances nécessaires pour le système d’exploitation cible dans une procédure distincte.
-Par exemple, notre [fichier Dockerfile Amazon Linux][amazon-dockerfile] installe tout d’abord les dépendances, puis extrait l’archive `tar.gz` Linux.
+Par exemple, notre [fichier Dockerfile Amazon Linux][amazon-dockerfile] installe d’abord les dépendances, puis extrait l’archive Linux `tar.gz`.
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 

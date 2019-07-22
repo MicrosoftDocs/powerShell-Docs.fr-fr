@@ -2,25 +2,25 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882570"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733877"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
 En plus de [PowerShell ISE][ise], PowerShell est également bien pris en charge dans Visual Studio Code.
 De plus, l’environnement ISE n’est pas pris en charge avec PowerShell Core, alors que Visual Studio Code est pris en charge pour PowerShell Core sur toutes les plateformes (macOS, Windows et Linux)
 
-Vous pouvez utiliser Visual Studio Code sur Windows avec PowerShell version 5 avec Windows 10 ou en installant [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) pour les systèmes d’exploitation Windows d’une version antérieure (par exemple Windows 8.1, etc.).
+Vous pouvez utiliser Visual Studio Code sur Windows avec PowerShell version 5 avec Windows 10 ou en installant [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) pour les systèmes d’exploitation Windows d’une version antérieure (par exemple Windows 8.1, etc.).
 
 Avant de le démarrer, vérifiez que PowerShell est présent sur votre système.
 Pour les charges de travail modernes sur Windows, macOS et Linux, consultez :
 
-- [Installation de PowerShell Core sous Linux][install-pscore-linux]
-- [Installation de PowerShell Core sous macOS][install-pscore-macos]
+- [Installation de PowerShell Core sur Linux][install-pscore-linux]
+- [Installation de PowerShell Core sur macOS][install-pscore-macos]
 - [Installation de PowerShell Core sur Windows][install-pscore-windows]
 
 Pour les charges de travail Windows PowerShell classiques, consultez [Installation de Windows PowerShell][install-winps].
@@ -182,7 +182,7 @@ Pour plus d’informations sur l’encodage de fichier dans VS Code, consultez [
 
 ### <a name="no-workspace-debugging"></a>Débogage sans espace de travail
 
-À compter de Visual Studio Code version 1.9, vous pouvez déboguer des scripts PowerShell sans avoir à ouvrir le dossier contenant le script PowerShell. Ouvrez le fichier de script PowerShell avec **Fichier->Ouvrir un fichier...**, définissez un point d’arrêt sur une ligne (appuyez sur F9), puis appuyez sur F5 pour démarrer le débogage. Vous voyez apparaître le volet Actions de débogage, qui vous permet de vous arrêter dans le débogueur, d’effectuer un pas à pas détaillé, de reprendre et d’arrêter le débogage.
+À compter de Visual Studio Code version 1.9, vous pouvez déboguer des scripts PowerShell sans avoir à ouvrir le dossier contenant le script PowerShell. Ouvrez le fichier de script PowerShell avec **Fichier->Ouvrir un fichier...** , définissez un point d’arrêt sur une ligne (appuyez sur F9), puis appuyez sur F5 pour démarrer le débogage. Vous voyez apparaître le volet Actions de débogage, qui vous permet de vous arrêter dans le débogueur, d’effectuer un pas à pas détaillé, de reprendre et d’arrêter le débogage.
 
 ### <a name="workspace-debugging"></a>Débogage d’espace de travail
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC WaitForAny
-ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d15acb3fb34d571eca56ed496eaa9a04b2551ff0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076820"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726857"
 ---
 # <a name="dsc-waitforany-resource"></a>Ressource DSC WaitForAny
 
@@ -17,6 +17,9 @@ La ressource de configuration d’état souhaité (DSC) **WaitForAny** peut êtr
 
 La ressource réussit si la ressource spécifiée par la propriété **ResourceName** est dans l’état souhaité sur tous les nœuds cibles définis dans la propriété **NodeName**.
 
+> [!NOTE]
+> La ressource **WaitForAny** utilise Windows Remote Management pour vérifier l’état d’autres nœuds.
+> Pour plus d’informations sur la configuration requise des ports et de la sécurité pour WinRM, consultez [Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Syntaxe
 

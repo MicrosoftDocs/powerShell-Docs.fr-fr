@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Spécification de dépendances entre nœuds
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080201"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734671"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Spécification de dépendances entre nœuds
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 Toutes les ressources **WaitForXXXX** partagent les clés de syntaxe suivantes.
 
-|  Propriété  |  Description   | | RetryIntervalSec| Le nombre de secondes avant la nouvelle tentative. La valeur minimale est 1.| | RetryCount|Le nombre maximum de nouvelles tentatives.| | ThrottleLimit| Le nombre de machines à connecter simultanément. La valeur par défaut est `New-CimSession`.| | DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Pour plus d’informations, consultez [DependsOn](resource-depends-on.md)| | PsDscRunAsCredential | Voir [Utilisation de DSC avec des informations d’identification d’utilisateur](./runAsUser.md) |
-
+|Propriété|  Description   |
+|---------|---------------------|
+| RetryIntervalSec| Le nombre de secondes avant la nouvelle tentative. Le minimum est 1.|
+| RetryCount| Le nombre maximum de nouvelles tentatives.|
+| ThrottleLimit| Le nombre de machines à connecter simultanément. La valeur par défaut est `New-CimSession` par défaut.|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Pour plus d’informations, consultez [DependsOn](resource-depends-on.md).|
+| PsDscRunAsCredential | Voir [Exécution de DSC avec les informations d’identification de l’utilisateur](./runAsUser.md) |
 
 ## <a name="using-waitforxxxx-resources"></a>Utilisation de ressources WaitForXXXX
 
-Chaque ressource **WaitForXXXX** attend que les ressources spécifiées soient terminées sur le nœud spécifié. Les autres ressources dans la même configuration peuvent ensuite *dépendre* de la ressource **WaitForXXXX** à l’aide de la clé **DependsOn**.
+Chaque ressource **WaitForXXXX** attend que les ressources spécifiées soient terminées sur le nœud spécifié.
+Les autres ressources dans la même configuration peuvent ensuite *dépendre* de la ressource **WaitForXXXX** à l’aide de la clé **DependsOn**.
 
 Par exemple, dans la configuration suivante, le nœud cible attend que la ressource **xADDomain** se termine sur le nœud **MyDC** avec un nombre maximal de 30 tentatives, à des intervalles de 15 secondes, avant que le nœud cible ne puisse joindre le domaine.
+
+Par défaut, les ressources **WaitForXXX** effectuent une tentative, puis échouent. Même si ce n’est pas obligatoire, vous spécifiez généralement les valeurs **RetryCount** et **RetryIntervalSec**.
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 Lorsque vous compilez la configuration, deux fichiers « .mof » sont générés. Appliquez ces deux fichiers « .mof » aux nœuds cibles à l’aide de l’applet de commande [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 
->**Remarque :** par défaut les ressources WaitForXXX effectuent une tentative, puis échouent. Même si ce n’est pas obligatoire, vous spécifiez généralement les valeurs **RetryCount** et **RetryIntervalSec**.
+> [!NOTE]
+> Les ressources **WaitForXXX** utilisent Windows Remote Management pour vérifier l’état d’autres nœuds.
+> Pour plus d’informations sur la configuration requise des ports et de la sécurité pour WinRM, consultez [Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="see-also"></a>Voir aussi
 

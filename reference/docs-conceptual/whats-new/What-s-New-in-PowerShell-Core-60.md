@@ -2,16 +2,16 @@
 title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059013"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843929"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
-[PowerShell Core 6.0][github] est une nouvelle édition de PowerShell qui est multiplateforme (Windows, macOS et Linux), open source et conçue pour des environnements hétérogènes et le cloud hybride.
+[PowerShell Core 6.0][github] est une nouvelle édition de PowerShell multiplateforme (Windows, macOS et Linux), open source et conçue pour des environnements hétérogènes et le cloud hybride.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Passage du .NET Framework à .NET Core
 
@@ -139,7 +139,7 @@ La plupart des modules qui font partie de Windows (par exemple, `DnsClient`, `Hy
 L’équipe PowerShell travaille avec ces équipes et groupes de produits pour valider et déplacer leurs modules existants vers PowerShell Core.
 Avec .NET Standard et [CDXML][], la plupart de ces modules Windows PowerShell classiques semblent fonctionner dans PowerShell Core, mais ils n’ont pas été clairement validés et ne sont pas formellement pris en charge.
 
-En installant le module [`WindowsPSModulePath`][windowspsmodulepath], vous pouvez utiliser des modules Windows PowerShell en ajoutant Windows PowerShell `PSModulePath` à PowerShell Core `PSModulePath`.
+En installant le module [`WindowsPSModulePath`][windowspsmodulepath], vous pouvez utiliser des modules Windows PowerShell en ajoutant `PSModulePath` Windows PowerShell à `PSModulePath` PowerShell Core.
 
 Installez d’abord le module `WindowsPSModulePath` à partir de PowerShell Gallery :
 
@@ -159,7 +159,7 @@ Add-WindowsPSModulePath
 
 PowerShell Core ajoute la prise en charge des conteneurs Docker pour toutes les principales plateformes que nous prenons en charge (dont plusieurs distributions Linux, Windows Server Core et Nano Server).
 
-Pour obtenir la liste complète, consultez les balises sur [`microsoft/powershell` sur le hub Docker][docker-hub].
+Pour obtenir la liste complète, consultez les étiquettes sur [`microsoft/powershell` sur Docker Hub][docker-hub].
 Pour plus d’informations sur Docker et PowerShell Core, consultez [Docker][] sur GitHub.
 
 ## <a name="ssh-based-powershell-remoting"></a>Communication à distance PowerShell SSH
@@ -295,9 +295,10 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 
 ### <a name="csv-cmdlets"></a>Applets de commande CSV
 
+- `Import-Csv` prend maintenant en charge le format de fichier journal étendu W3C (#2482) (Merci à [@iSazonov](https://github.com/iSazonov) !)
 - Ajout de la prise en charge de `PSTypeName` pour `Import-Csv` et `ConvertFrom-Csv`. (#5389) (merci [@markekraus](https://github.com/markekraus) !)
 - `Import-Csv` doit prendre en charge `CR`, `LF` et `CRLF` comme séparateurs de ligne. (#5363) (merci [@iSazonov](https://github.com/iSazonov) !)
-- `-NoTypeInformation` doit être la valeur par défaut sur `Export-Csv` et `ConvertTo-Csv`. (#5164) (merci [@markekraus](https://github.com/markekraus))
+- `-NoTypeInformation` doit être la valeur par défaut sur `Export-Csv` et `ConvertTo-Csv`. (#5164) (Merci à [@markekraus](https://github.com/markekraus) !)
 
 ### <a name="service-cmdlets"></a>Applets de commande de service
 
@@ -346,7 +347,7 @@ Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](ht
 ## <a name="breaking-changes"></a>Modifications avec rupture
 
 Nous avons introduit un certain nombre de modifications avec rupture dans PowerShell Core 6.0.
-Pour plus d’informations détaillées sur ces modifications, consultez [Modifications avec rupture dans PowerShell Core 6.0][breaking-changes].
+Pour plus d’informations sur ces modifications, consultez [Modifications cassantes dans PowerShell Core 6.0][breaking-changes].
 
 ## <a name="debugging"></a>Débogage
 
@@ -375,7 +376,7 @@ Pour obtenir une liste complète des correctifs et modifications, consultez notr
 
 Si vous souhaitez désactiver cette télémétrie, créez simplement une variable d’environnement `POWERSHELL_TELEMETRY_OPTOUT` avec l’une des valeurs suivantes : `true`, `1` ou `yes`.
 La création de la variable permet d’ignorer toutes les données de télémétrie avant même la première exécution de PowerShell.
-Nous prévoyons également d’exposer ces données de télémétrie et les analyses recueillies de la télémétrie dans le [tableau de bord de la communauté][community-dashboard].
+Nous prévoyons également d’exposer ces données de télémétrie et les insights tirés de la télémétrie dans le [tableau de bord de la communauté][community-dashboard].
 Vous trouverez plus d’informations sur la façon dont nous utilisons ces données dans ce [billet de blog][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell

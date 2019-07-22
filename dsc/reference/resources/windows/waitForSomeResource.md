@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Ressource DSC WaitForSome
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076852"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726769"
 ---
 # <a name="dsc-waitforsome-resource"></a>Ressource DSC WaitForSome
 
@@ -17,6 +17,9 @@ La ressource de configuration d’état souhaité (DSC) **WaitForSome** peut êt
 
 La ressource réussit si la ressource spécifiée dans la propriété **ResourceName** est dans l’état souhaité sur un nombre minimal de nœuds (spécifié par **NodeCount**) défini par la propriété **NodeName**.
 
+> [!NOTE]
+> La ressource **WaitForSome** utilise Windows Remote Management pour vérifier l’état d’autres nœuds.
+> Pour plus d’informations sur la configuration requise des ports et de la sécurité pour WinRM, consultez [Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="syntax"></a>Syntaxe
 
