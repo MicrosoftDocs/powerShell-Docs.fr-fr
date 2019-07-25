@@ -2,12 +2,12 @@
 title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086389"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372139"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
@@ -17,8 +17,7 @@ L’accès distant PowerShell utilise normalement WinRM pour la négociation de 
 
 WinRM fournit un modèle d’hébergement robuste pour les sessions distantes PowerShell. La communication à distance SSH ne prend actuellement en charge ni la configuration de points de terminaison distants ni l’administration JEA (Just Enough Administration).
 
-La communication à distance SSH vous permet d’établir la communication à distance pour une session PowerShell de base entre des ordinateurs Windows et Linux. La communication à distance SSH crée un processus hôte PowerShell sur l’ordinateur cible en tant que sous-système SSH.
-Nous implémenterons prochainement un modèle d’hébergement général, similaire à WinRM, pour prendre en charge la configuration de point de terminaison et JEA.
+La communication à distance SSH vous permet d’établir la communication à distance pour une session PowerShell de base entre des ordinateurs Windows et Linux. La communication à distance SSH crée un processus hôte PowerShell sur l’ordinateur cible en tant que sous-système SSH. Nous implémenterons prochainement un modèle d’hébergement général, similaire à WinRM, pour prendre en charge la configuration de point de terminaison et JEA.
 
 Les cmdlets `New-PSSession` `Enter-PSSession` et `Invoke-Command` ont maintenant un nouvel ensemble de paramètres pour prendre en charge cette nouvelle connexion de communication à distance.
 
@@ -88,9 +87,9 @@ SSH doit être installé sur tous les ordinateurs. Installez le client SSH (`ssh
 
 5. Ajoutez le chemin où OpenSSH est installé à votre variable d’environnement Path. Par exemple, `C:\Program Files\OpenSSH\`. Cette entrée permet au système de trouver ssh.exe.
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Configuration sur un ordinateur Linux (Ubuntu 14.04)
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>Configuration sur un ordinateur Linux (Ubuntu 16.04)
 
-1. Installez la dernière version [PowerShell Core pour Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) à partir de GitHub
+1. Installez la dernière version [PowerShell Core pour Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) à partir de GitHub
 2. Installez [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) si nécessaire
 
    ```bash
@@ -169,11 +168,7 @@ SSH doit être installé sur tous les ordinateurs. Installez le client SSH (`ssh
 
 ## <a name="authentication"></a>Authentification
 
-L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même.
-Cela signifie que les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell.
-Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique, doublée d’un mot de passe à usage unique pour une sécurité renforcée.
-La configuration de l’authentification multifacteur sort du cadre de cette documentation.
-Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
+L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même. Cela signifie que les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell. Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique, doublée d’un mot de passe à usage unique pour une sécurité renforcée. La configuration de l’authentification multifacteur sort du cadre de cette documentation. Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
 
 ## <a name="powershell-remoting-example"></a>Exemple d’accès distant PowerShell
 
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -310,7 +305,7 @@ La commande sudo ne fonctionne pas dans une session distante sur un ordinateur L
 
 [PowerShell Core pour Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[PowerShell Core pour Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[PowerShell Core pour Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [PowerShell Core pour MacOS](../../install/installing-powershell-core-on-macos.md)
 
