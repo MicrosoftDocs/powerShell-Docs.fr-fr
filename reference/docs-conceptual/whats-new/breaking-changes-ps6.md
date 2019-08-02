@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843943"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
@@ -15,7 +15,7 @@ ms.locfileid: "67843943"
 
 ### <a name="powershell-workflow"></a>PowerShell Workflow
 
-[Workflow PowerShell][workflow]is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation] qui permet la création de runbooks robustes pour les tâches longues ou parallélisées.
+[PowerShell Workflow][workflow] est une fonctionnalité de Windows PowerShell qui s’appuie sur [Windows Workflow Foundation (WF)][workflow-foundation] et permet de créer des runbooks robustes pour les tâches de longue durée ou parallélisées.
 
 En raison du manque de prise en charge pour Windows Workflow Foundation dans .NET Core, nous ne prendrons plus en charge PowerShell Workflow dans PowerShell Core.
 
@@ -163,7 +163,7 @@ Les fonctionnalités suivantes ont été supprimées car elles ne sont pas prise
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Prise en charge de `RunspaceConfiguration` supprimée [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Avant, lors de la création programmatique d’une instance d’exécution PowerShell à l’aide de l’API, vous pouviez utiliser la [`RunspaceConfiguration`][runspaceconfig] existante or the newer [`InitialSessionState`][iss]. Cette modification supprime la prise en charge de `RunspaceConfiguration` et prend uniquement en charge `InitialSessionState`.
+Auparavant, lors de la création d’une instance d’exécution PowerShell par programmation à l’aide de l’API, vous pouviez utiliser [`RunspaceConfiguration`][runspaceconfig] hérité ou [`InitialSessionState`][iss] plus récent. Cette modification supprime la prise en charge de `RunspaceConfiguration` et prend uniquement en charge `InitialSessionState`.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
