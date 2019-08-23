@@ -1,5 +1,5 @@
 ---
-title: Paramètres de l’applet de commande dynamique | Microsoft Docs
+title: Paramètres dynamiques des applets de commande | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068536"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986248"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Paramètres dynamiques des applets de commande
 
-Applets de commande peut définir des paramètres qui sont disponibles à l’utilisateur sous certaines conditions, par exemple lorsque l’argument d’un autre paramètre est une valeur spécifique. Ces paramètres sont ajoutés lors de l’exécution et sont appelés *paramètres dynamiques* , car ils sont ajoutés uniquement lorsqu’elles sont nécessaires. Par exemple, vous pouvez concevoir une applet de commande qui ajoute plusieurs paramètres uniquement lorsqu’un paramètre de commutateur spécifique est spécifié.
+Les applets de commande peuvent définir des paramètres qui sont disponibles pour l’utilisateur dans des conditions spéciales, par exemple lorsque l’argument d’un autre paramètre est une valeur spécifique. Ces paramètres sont ajoutés au moment de l’exécution et sont appelés paramètres dynamiques, car ils sont ajoutés uniquement lorsque cela est nécessaire. Par exemple, vous pouvez concevoir une applet de commande qui ajoute plusieurs paramètres uniquement lorsqu’un paramètre de commutateur spécifique est spécifié.
 
 > [!NOTE]
-> Fournisseurs et des fonctions Windows PowerShell peuvent également définir des paramètres dynamiques.
+> Les fournisseurs et les fonctions PowerShell peuvent également définir des paramètres dynamiques.
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>Paramètres dynamiques dans les applets de commande Windows PowerShell
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>Paramètres dynamiques dans les applets de commande PowerShell
 
-Windows PowerShell utilise des paramètres dynamiques dans plusieurs de ses applets de commande fournisseur. Par exemple, le `Get-Item` et `Get-ChildItem` ajouter des applets de commande un `CodeSigningCert` paramètre lors de l’exécution lorsque le `Path` paramètre de l’applet de commande spécifie le chemin d’accès du fournisseur de certificat. Si le `Path` paramètre de l’applet de commande spécifie un chemin d’accès pour un autre fournisseur, le `CodeSigningCert` paramètre n’est pas disponible.
+PowerShell utilise des paramètres dynamiques dans plusieurs de ses applets de commande de fournisseur. Par exemple, les `Get-Item` applets de commande `Get-ChildItem` et ajoutent un paramètre **CodeSigningCert** au moment de l’exécution lorsque le paramètre **path** spécifie le chemin d’accès du fournisseur de **certificats** . Si le paramètre **path** spécifie un chemin d’accès pour un autre fournisseur, le paramètre **CodeSigningCert** n’est pas disponible.
 
-Les exemples suivants montrent comment la `CodeSigningCert` paramètre est ajouté lors de l’exécution lorsque le `Get-Item` applet de commande est exécutée.
+Les exemples suivants montrent comment le paramètre **CodeSigningCert** est ajouté lors de l' `Get-Item` exécution lors de l’exécution de.
 
-Dans le premier exemple, le runtime Windows PowerShell a ajouté le paramètre, et l’applet de commande a réussi.
+Dans cet exemple, le runtime PowerShell a ajouté le paramètre et l’applet de commande est réussie.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-Dans le deuxième exemple, un lecteur de système de fichiers est spécifié, et une erreur est retournée. Le message d’erreur indique que le `CodeSigningCert` paramètre ne peut pas être trouvé.
+Dans cet exemple, un lecteur de **système de fichiers** est spécifié et une erreur est retournée. Le message d’erreur indique que le paramètre **CodeSigningCert** est introuvable.
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -54,19 +54,25 @@ At line:1 char:37
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 ```
 
-## <a name="support-for-dynamic-parameters"></a>Prise en charge pour les paramètres dynamiques
+## <a name="support-for-dynamic-parameters"></a>Prise en charge des paramètres dynamiques
 
-Pour prendre en charge des paramètres dynamiques, le code de l’applet de commande doit inclure les éléments suivants.
+Pour prendre en charge les paramètres dynamiques, les éléments suivants doivent être inclus dans le code de l’applet de commande.
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) cette interface fournit la méthode qui Récupère les paramètres dynamiques.
+### <a name="interface"></a>Interface
 
-Exemple :
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
+Cette interface fournit la méthode qui récupère les paramètres dynamiques.
+
+Par exemple :
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) cette méthode récupère l’objet qui contient les définitions de paramètre dynamique.
+### <a name="method"></a>Méthode
 
-Exemple :
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
+Cette méthode récupère l’objet qui contient les définitions de paramètres dynamiques.
+
+Par exemple :
 
 ```csharp
  public object GetDynamicParameters()
@@ -81,9 +87,11 @@ Exemple :
 private SendGreetingCommandDynamicParameters context;
 ```
 
-Classe de paramètre dynamique cette classe définit les paramètres à ajouter. Cette classe doit inclure un attribut de paramètre pour chaque paramètre et les attributs facultatifs Alias et la Validation qui sont requises par l’applet de commande.
+### <a name="class"></a>Classe
 
-Exemple :
+Classe qui définit les paramètres dynamiques à ajouter. Cette classe doit inclure un attribut de **paramètre** pour chaque paramètre et tout **alias** facultatif et attributs de **validation** requis par l’applet de commande.
+
+Par exemple :
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -99,13 +107,13 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-Pour obtenir un exemple complet d’une applet de commande qui prend en charge des paramètres dynamiques, consultez [comment déclarer des paramètres dynamiques](./how-to-declare-dynamic-parameters.md).
+Pour obtenir un exemple complet d’une applet de commande qui prend en charge les paramètres dynamiques, consultez [comment déclarer des paramètres dynamiques](./how-to-declare-dynamic-parameters.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[System. Management. Automation. IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[System. Management. Automation. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
 [Comment déclarer des paramètres dynamiques](./how-to-declare-dynamic-parameters.md)
 
