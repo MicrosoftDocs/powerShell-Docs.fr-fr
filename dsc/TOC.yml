@@ -12,6 +12,8 @@
   items:
     - name: Bien démarrer avec DSC pour Linux
       href: getting-started/lnxGettingStarted.md
+    - name: Bien démarrer avec DSC pour Windows
+      href: getting-started/winGettingStarted.md
     - name: Bien démarrer avec DSC sur Nano
       href: getting-started/nanoDSC.md
     - name: Bien démarrer avec DSC dans Azure Automation
