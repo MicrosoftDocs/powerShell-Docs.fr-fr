@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: Communication à distance PowerShell
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: Vue d’ensemble
+              href: learn/remoting/jea/overview.md
+            - name: Conditions préalables
+              href: learn/remoting/jea/prerequisites.md
+            - name: Capacités de rôle
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Configurations de session
+              href: learn/remoting/jea/session-configurations.md
+            - name: Inscription de JEA
+              href: learn/remoting/jea/register-jea.md
+            - name: Utilisation de JEA
+              href: learn/remoting/jea/using-jea.md
+            - name: Considérations de sécurité
+              href: learn/remoting/jea/security-considerations.md
+            - name: Audit et rapport sur JEA
+              href: learn/remoting/jea/audit-and-report.md
         - name: Exécution de commandes à distance
           href: learn/remoting/running-remote-commands.md
         - name: Accès distant à PowerShell via SSH
