@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,configuration,setup
 title: Service collecteur DSC
-ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079402"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986529"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Service collecteur Desired State Configuration
 
@@ -228,7 +228,7 @@ Ces fichiers doivent se trouver dans un format spécifique afin que le serveur c
 
 Chaque module de ressources doit être compressé et nommé selon le modèle suivant : `{Module Name}_{Module Version}.zip`
 
-Par exemple, un module xWebAdminstration avec une version de module 3.1.2.0 est nommé `xWebAdministration_3.2.1.0.zip`.
+Par exemple, un module xWebAdminstration avec une version de module 3.1.2.0 est nommé `xWebAdministration_3.1.2.0.zip`.
 Chaque version d’un module doit être contenue dans un seul fichier zip.
 Étant donné que chaque fichier zip ne contient qu’une seule version d’une ressource, le format du module ajouté dans WMF 5.0, qui contient plusieurs versions de module dans un seul répertoire, n’est pas pris en charge.
 Cela signifie qu’avant de créer le package des modules de ressources DSC à utiliser avec le serveur collecteur, vous devez apporter une petite modification à la structure de répertoires.
