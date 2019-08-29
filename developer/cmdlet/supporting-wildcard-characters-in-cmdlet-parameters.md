@@ -1,73 +1,83 @@
 ---
-title: Prise en charge des caractères génériques dans les paramètres de l’applet de commande | Microsoft Docs
+title: Prise en charge des caractères génériques dans les paramètres des applets de commande
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/26/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- wildcards [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide], wildcards
-ms.assetid: 9b26e1e9-9350-4a5a-aad5-ddcece658d93
-caps.latest.revision: 12
-ms.openlocfilehash: 6c762d3889bc4b649252390625525db4735f4c1d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067397"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104442"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Prise en charge des caractères génériques dans les paramètres des applets de commande
 
-Souvent, vous devez concevoir une applet de commande à exécuter par rapport à un groupe de ressources, plutôt que sur une seule ressource. Par exemple, une applet de commande deviez trouver tous les fichiers dans un magasin de données qui ont le même nom ou l’extension. Vous devez fournir la prise en charge des caractères génériques lorsque vous concevez une applet de commande qui est exécutée par rapport à un groupe de ressources.
+Souvent, vous devez concevoir une applet de commande à exécuter sur un groupe de ressources plutôt que sur une seule ressource. Par exemple, une applet de commande peut avoir besoin de localiser tous les fichiers d’une banque de données qui ont le même nom ou extension. Vous devez fournir la prise en charge des caractères génériques lors de la conception d’une applet de commande qui sera exécutée sur un groupe de ressources.
 
 > [!NOTE]
-> Utilisation de caractères génériques est parfois appelé *globbing*.
+> L’utilisation de caractères génériques est parfois appelée *globbing*.
 
-## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Applets de commande Windows PowerShell qui utilisent des caractères génériques
+## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Applets de commande Windows PowerShell utilisant des caractères génériques
 
- Nombreuses applets de commande Windows PowerShell prend en charge les caractères génériques pour leurs valeurs de paramètre. Par exemple, presque chaque applet de commande qui a un `Name` ou `Path` paramètre prend en charge les caractères génériques pour ces paramètres. (Bien que la plupart des applets de commande qui ont un `Path` paramètre ont également un `LiteralPath` paramètre qui ne prend pas en charge les caractères génériques.) La commande suivante montre comment un caractère générique est utilisé pour retourner toutes les applets de commande dans la session active, dont le nom contient le verbe Get.
+ De nombreuses applets de commande Windows PowerShell prennent en charge les caractères génériques pour leurs valeurs de paramètres. Par exemple, presque toutes les applets de `Name` commande `Path` avec un paramètre ou prennent en charge les caractères génériques pour ces paramètres. (Bien que la plupart des cmdlets `Path` ayant un paramètre aient `LiteralPath` également un paramètre qui ne prend pas en charge les caractères génériques.) La commande suivante montre comment un caractère générique est utilisé pour retourner toutes les applets de commande de la session active dont le nom contient le verbe obtenir.
 
- **PS > get-command get -\***
+ `Get-Command get-*`
 
 ## <a name="supported-wildcard-characters"></a>Caractères génériques pris en charge
 
 Windows PowerShell prend en charge les caractères génériques suivants.
 
-|caractère générique|Description|Exemple|Correspond à|Ne correspond pas|
-|------------------------|-----------------|-------------|-------------|--------------------|
-|*|Correspond à zéro ou plusieurs caractères, en commençant à la position spécifiée|a*|A, groupe de disponibilité, Apple||
-|?|Tout_caractère correspond à la position spécifiée|?n|Un, dans, sur|exécuté|
-|[ ]|Correspond à une plage de caractères|[a-l]ook|book, cook, look|a duré|
-|[ ]|Correspond aux caractères spécifiés|[bc]ook|book, cook|coup de œil|
+| Caractère générique |                             Description                             |  Exemples   |     Correspond à      | Ne correspond pas |
+| -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
+| *        | Correspond à zéro ou plusieurs caractères, en commençant à la position spécifiée | `a*`       | A, AG, Apple     |                |
+| ?        | Correspond à n’importe quel caractère à la position spécifiée                     | `?n`       | , Dans, sur       | antécédent            |
+| [ ]      | Correspond à une plage de caractères                                       | `[a-l]ook` | livre, Cook, look | Nook, pris     |
+| [ ]      | Correspond aux caractères spécifiés                                    | `[bn]ook`  | livre, Nook       | Cook, regarder     |
 
-Lorsque vous concevez des applets de commande qui prennent en charge les caractères génériques, autoriser pour les combinaisons de caractères génériques. Par exemple, la commande suivante utilise le `Get-ChildItem` applet de commande pour récupérer tous les fichiers .txt qui se trouvent dans le dossier c:\Techdocs et qui commencent par les lettres « a » à « l. »
+Lorsque vous concevez des applets de commande qui prennent en charge les caractères génériques, autorisez les combinaisons de caractères génériques. Par exemple, la commande suivante utilise l' `Get-ChildItem` applet de commande pour récupérer tous les fichiers. txt qui se trouvent dans le dossier c:\techdocs et qui commencent par les lettres «a» à «l».
 
-**get-childitem c:\techdocs\\[a-l]\*.txt**
+`Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-La commande précédente utilise le caractère générique de plage **[a-l]** pour spécifier le nom de fichier doit commencer par les caractères « a » à « l. » La commande utilise ensuite le * caractère générique comme espace réservé pour tous les caractères entre la première lettre du nom de fichier et l’extension .txt.
+La commande précédente utilise le caractère générique `[a-l]` de plage pour spécifier que le nom de fichier doit commencer par les caractères «a» à «l» `*` et utilise le caractère générique comme espace réservé pour tous les caractères de la première lettre du nom de fichier et extension **. txt** .
 
-L’exemple suivant utilise un modèle de caractère générique de plage qui exclut la lettre « d », mais inclut toutes les autres lettres de « a » à « f. »
+L’exemple suivant utilise un modèle de caractère générique de plage qui exclut la lettre «d», mais inclut toutes les autres lettres de «a» à «f».
 
-**get-childitem c:\techdocs\\[a-cef]\*.txt**
+`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
 
-## <a name="handling-literal-characters-in-wildcard-patterns"></a>Gestion des caractères littéraux dans les modèles de caractère générique
+## <a name="handling-literal-characters-in-wildcard-patterns"></a>Gestion des caractères littéraux dans les modèles de caractères génériques
 
-Si le modèle de caractère générique que vous spécifiez contient des caractères littéraux, utilisez le caractère accent grave (') comme caractère d’échappement. Lorsque vous spécifiez des caractères littéraux par programmation, utilisez un accent grave unique. Lorsque vous spécifiez des caractères littéraux à l’invite de commandes, utilisez deux accents graves. Par exemple, le modèle suivant contient deux crochets doivent être prises littéralement.
+Si le modèle de caractère générique que vous spécifiez contient des caractères littéraux qui ne doivent pas être interprétés comme des`` ` ``caractères génériques, utilisez le caractère de soulignement () comme caractère d’échappement. Lorsque vous spécifiez des caractères littéraux int l’API PowerShell, utilisez un seul cycle. Lorsque vous spécifiez des caractères littéraux à l’invite de commandes PowerShell, utilisez deux cycles.
 
-« John Smith \`[*'] » (spécifié par programmation)
+Par exemple, le modèle suivant contient deux crochets qui doivent être pris littéralement.
 
-« John Smith \` \`[*\`«] » (spécifié à l’invite de commande)
+En cas d’utilisation dans l’API PowerShell, utilisez:
 
-Ce modèle correspond à « John Smith [Marketing] » ou « John Smith (développement) ».
+- «John Smith \`[* ']»
 
-## <a name="cmdlet-output-and-wildcard-characters"></a>Sortie de l’applet de commande et des caractères génériques
+En cas d’utilisation à partir de l’invite de commandes PowerShell:
 
-Lorsque les paramètres de l’applet de commande prennent en charge les caractères génériques, une opération de l’applet de commande génère habituellement une sortie de tableau. Parfois, il n’a aucun sens pour prendre en charge d’un tableau de sortie, car l’utilisateur peut utiliser qu’un seul élément à la fois. Par exemple, le `Set-Location` applet de commande ne prend pas en charge un tableau de sortie, car l’utilisateur ne définit qu’un seul emplacement. Dans ce cas, l’applet de commande prend toujours en charge les caractères génériques, mais il force la résolution vers un emplacement unique.
+- «John Smith \` \`[*\`']»
+
+Ce modèle correspond à «John Smith [marketing]» ou «John Smith [Development]». Par exemple :
+
+```
+PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
+True
+
+PS> "John Smith [Development]" -like "John Smith ``[*``]"
+True
+```
+
+## <a name="cmdlet-output-and-wildcard-characters"></a>Sortie de l’applet de commande et caractères génériques
+
+Lorsque les paramètres d’applet de commande prennent en charge les caractères génériques, l’opération génère généralement une sortie de tableau.
+Parfois, il n’est pas judicieux de prendre en charge une sortie de tableau, car l’utilisateur ne peut utiliser qu’un seul élément. Par exemple, l' `Set-Location` applet de commande ne prend pas en charge la sortie de tableau, car l’utilisateur ne définit qu’un seul emplacement. Dans ce cas, l’applet de commande prend toujours en charge les caractères génériques, mais elle force la résolution sur un emplacement unique.
 
 ## <a name="see-also"></a>Voir aussi
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 
-[Classe de WildcardPattern](/dotnet/api/system.management.automation.wildcardpattern)
+[WildcardPattern, classe](/dotnet/api/system.management.automation.wildcardpattern)
