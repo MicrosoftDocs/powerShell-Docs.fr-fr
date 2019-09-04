@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Utilisation d’Import-DSCResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080099"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215406"
 ---
 # <a name="using-import-dscresource"></a>Utilisation d’Import-DSCResource
 
@@ -78,7 +78,7 @@ Cette méthode offre les avantages suivants :
 
 Lorsque vous créez la configuration DSC dans ISE, PowerShell fournit à IntelliSence les ressources et les propriétés des ressources. Les définitions de ressources dans le chemin d’accès du module `$pshome` sont automatiquement chargées. Lorsque vous importez des ressources à l’aide du mot clé `Import-DSCResource`, les définitions de ressources spécifiées sont ajoutées, et IntelliSense est développé pour inclure le schéma de la ressource importée.
 
-![Ressource Intellisense](/media/resource-intellisense.png)
+![Ressource Intellisense](../media/resource-intellisense.png)
 
 > [!NOTE]
 > À compter de PowerShell 5.0, la saisie semi-automatique via la touche Tab a été ajoutée à ISE pour les ressources DSC et leurs propriétés. Pour plus d’informations, consultez [Ressources](../resources/resources.md).
@@ -137,11 +137,11 @@ L’installation et l’utilisation de plusieurs versions de ressources côte à
 
 Dans l’image ci-dessous, deux versions du module **xPSDesiredStateConfiguration** sont installées.
 
-![Correction de plusieurs versions de ressources](/media/multiple-resource-versions-broken.md)
+![Correction de plusieurs versions de ressources](../media/multiple-resource-versions-broken.png)
 
 Copiez le contenu de votre version de module souhaitée dans le niveau supérieur du répertoire du module.
 
-![Correction de plusieurs versions de ressources](/media/multiple-resource-versions-fixed.md)
+![Correction de plusieurs versions de ressources](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Emplacement de la ressource
 
