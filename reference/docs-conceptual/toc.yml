@@ -199,7 +199,7 @@
 - name: Exemples de scripts
   items:
     - name: Exemples de scripts pour l’administration
-      href: samples/sample-scripts-for-administration.md
+      href: samples/sample-scripts-for-administration.yml
     - name: Changement de l’état de l’ordinateur
       href: samples/changing-computer-state.md
     - name: Collecte d’informations sur les ordinateurs
