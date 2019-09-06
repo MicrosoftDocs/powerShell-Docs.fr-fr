@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de fichiers et dossiers
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030691"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215524"
 ---
 # <a name="working-with-files-and-folders"></a>Utilisation de fichiers et dossiers
 
@@ -106,15 +106,17 @@ Si vous ne souhaitez pas être invité à confirmer la suppression de chaque él
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Mappage d’un dossier local en tant que lecteur Windows accessible
+## <a name="mapping-a-local-folder-as-a-drive"></a>Mappage d’un dossier local en tant que lecteur
 
-Vous pouvez également mapper un dossier local à l’aide de la commande **subst**. La commande suivante crée un lecteur local P:, dans la racine du répertoire Program Files local :
+Vous pouvez également mapper un dossier local à l’aide de la commande **New-PSDrive**. La commande suivante crée un lecteur local P: dans la racine du répertoire Program Files local, visible uniquement à partir de la session PowerShell :
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Comme les lecteurs réseau, les lecteurs mappés à l’intérieur de Windows PowerShell avec la commande **subst** sont immédiatement visibles pour l’interpréteur de commandes Windows PowerShell.
+Comme les lecteurs réseau, les lecteurs mappés à l’intérieur de Windows PowerShell sont immédiatement visibles pour l’interpréteur de commandes Windows PowerShell.
+Pour créer un lecteur mappé visible à partir de l’Explorateur de fichiers, le paramètre **-Persist** est nécessaire. Toutefois, seuls les chemins d’accès distants peuvent être utilisés avec Persist.
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>Lecture d’un fichier texte dans un tableau
 

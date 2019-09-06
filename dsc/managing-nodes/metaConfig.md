@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: 42544036d87fcea3189fd6d2e55579fe87f137e1
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229502"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215391"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
@@ -77,7 +77,7 @@ Un bloc **Settings** définit les propriétés suivantes.
 | CertificateID| string| Empreinte d’un certificat utilisée pour sécuriser les informations d’identification transmise dans une configuration. Pour plus d’informations, consultez [Want to secure credentials in Windows PowerShell Desired State Configuration](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)? (Sécuriser les informations d’identification dans DSC Windows PowerShell). <br> __Remarque :__ ceci est géré automatiquement si vous utilisez le service d’extraction Azure Automation DSC.|
 | ConfigurationDownloadManagers| CimInstance[]| Obsolète. Utilisez les blocs __ConfigurationRepositoryWeb__ et __ConfigurationRepositoryShare__ pour définir les points de terminaison du service d’extraction de configuration.|
 | ConfigurationID| string| Pour la rétrocompatibilité avec des versions plus anciennes du service d’extraction. Un GUID qui identifie le fichier de configuration à obtenir d’un service d’extraction. Le nœud extrait les configurations du service d’extraction si le nom du fichier de configuration MOF est ConfigurationID.mof.<br> __Remarque :__ Si vous définissez cette propriété, l’enregistrement du nœud auprès d’un service d’extraction avec __RegistrationKey__ ne fonctionne pas. Pour plus d’informations, consultez [Configuration d’un client collecteur à l’aide des noms de configuration](../pull-server/pullClientConfigNames.md).|
-| ConfigurationMode| string | Spécifie de quelle façon le LCM applique réellement la configuration aux nœuds cibles. Les valeurs possibles sont __"ApplyOnly"__,__"ApplyAndMonitor"__ et __"ApplyAndAutoCorrect"__. <ul><li>__ApplyOnly__ : indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si une nouvelle configuration est transmise au nœud cible ou est extraite d’un service. Après l’application initiale d’une nouvelle configuration, DSC ne vérifie pas si le nœud cible est encore dans l’état précédemment configuré. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyOnly__ ne prenne effet. </li><li> __ApplyAndMonitor__ : Il s'agit de la valeur par défaut. indique au LCM d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, signale l’écart dans les journaux. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyAndMonitor__ ne prenne effet.</li><li>__ApplyAndAutoCorrect__ : indique à DSC d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, il signale l’écart dans les journaux, puis il réapplique la configuration actuelle.</li></ul>|
+| ConfigurationMode| string | Spécifie de quelle façon le LCM applique réellement la configuration aux nœuds cibles. Les valeurs possibles sont __"ApplyOnly"__ , __"ApplyAndMonitor"__ et __"ApplyAndAutoCorrect"__ . <ul><li>__ApplyOnly__ : indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si une nouvelle configuration est transmise au nœud cible ou est extraite d’un service. Après l’application initiale d’une nouvelle configuration, DSC ne vérifie pas si le nœud cible est encore dans l’état précédemment configuré. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyOnly__ ne prenne effet. </li><li> __ApplyAndMonitor__ : Il s'agit de la valeur par défaut. indique au LCM d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, signale l’écart dans les journaux. Notez que DSC tente d’appliquer la configuration jusqu’à ce que l’opération aboutisse avant que __ApplyAndMonitor__ ne prenne effet.</li><li>__ApplyAndAutoCorrect__ : indique à DSC d’appliquer chaque nouvelle configuration. Après l’application initiale d’une nouvelle configuration, DSC vérifie si le nœud cible est dans l’état souhaité et, si ce n’est pas le cas, il signale l’écart dans les journaux, puis il réapplique la configuration actuelle.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Fréquence, en minutes, à laquelle la configuration actuelle est vérifiée et appliquée. Cette propriété est ignorée si la propriété ConfigurationMode est définie sur ApplyOnly. La valeur par défaut est 15.|
 | DebugMode| string| Les valeurs possibles sont __None__, __ForceModuleImport__ et __All__. <ul><li>Définissez cette propriété sur __None__ pour utiliser les ressources mises en cache. Il s’agit de la valeur par défaut qui doit être utilisée dans les scénarios de production.</li><li>Définissez cette propriété sur __ForceModuleImport__ pour forcer le gestionnaire de configuration local à recharger tous les modules de ressources DSC, même ceux ayant déjà été chargés et mis en cache. Ce comportement diminue les performances de DSC, car chaque module utilisé est systématiquement rechargé. En général, vous utilisez cette valeur lors du débogage d’une ressource.</li><li>Dans cette version, __All__ est équivalent à __ForceModuleImport__</li></ul> |
 | RebootNodeIfNeeded| bool| affectez la valeur `$true` pour autoriser les ressources à redémarrer le nœud à l’aide de l’indicateur `$global:DSCMachineStatus`. Sinon, vous devez redémarrer manuellement le nœud. La valeur par défaut est `$false`. Pour utiliser ce paramètre lorsqu’une condition de redémarrage est imposée par autre chose que DSC (par exemple Windows Installer), combinez ce paramètre avec le module [xPendingReboot](https://github.com/powershell/xpendingreboot).|
@@ -124,7 +124,8 @@ Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 |ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
->!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
+> [!NOTE]
+> * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -150,7 +151,8 @@ Un bloc **ResourceRepositoryWeb** définit les propriétés suivantes.
 |ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
->!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
+> [!NOTE]
+> * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -177,7 +179,8 @@ Un bloc **ReportServerWeb** définit les propriétés suivantes.
 |ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
->!Remarque \* Pris en charge dans Windows 1809 et ultérieur.
+> [!NOTE]
+> * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
