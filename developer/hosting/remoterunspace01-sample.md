@@ -1,5 +1,5 @@
 ---
-title: Exemple de RemoteRunspace01 | Microsoft Docs
+title: Exemple RemoteRunspace01 | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059641"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737573"
 ---
 # <a name="remoterunspace01-sample"></a>Exemple RemoteRunspace01
 
-Cet exemple montre comment créer une instance d’exécution à distance qui est utilisé pour établir une connexion à distance.
+Cet exemple montre comment créer une instance d’exécution distante qui est utilisée pour établir une connexion à distance.
 
 ## <a name="requirements"></a>Spécifications
 
- Cet exemple requiert Windows PowerShell 2.0.
+ Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Montre
+## <a name="demonstrates"></a>Démonstrations
 
-- Création d’un [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objet.
+- Création d’un objet [System. Management. Automation. instances d’exécution. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .
 
-- Définition de la [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) et [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) propriétés de la [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objet.
+- Définition des propriétés [System. Management. Automation. instances d’exécution. Runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) et [System. Management. Automation. instances d’exécution. Runspaceconnectioninfo. OpenTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) de l' [option Objet System. Management. Automation. instances d’exécution. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) .
 
-- Création d’une instance d’exécution à distance qui utilise le [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) objet pour établir la connexion à distance.
+- Création d’une instance d’exécution distante qui utilise l’objet [System. Management. Automation. instances d’exécution. Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) pour établir la connexion distante.
 
-- Fermeture de l’instance d’exécution à distance pour libérer la connexion à distance.
+- Fermeture de l’instance d’exécution distante pour libérer la connexion à distance.
 
 ## <a name="example"></a>Exemple
 
