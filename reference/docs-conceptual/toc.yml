@@ -94,8 +94,6 @@
       items:
         - name: Présentation de Windows PowerShell ISE
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Environnement d'écriture de scripts intégré de Windows PowerShell
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: "Utilisation de Windows PowerShell\_ISE"
           items:
             - name: Découverte de Windows PowerShell ISE
@@ -200,12 +198,66 @@
   items:
     - name: Exemples de scripts pour l’administration
       href: samples/sample-scripts-for-administration.yml
-    - name: Changement de l’état de l’ordinateur
-      href: samples/changing-computer-state.md
-    - name: Collecte d’informations sur les ordinateurs
-      href: samples/collecting-information-about-computers.md
-    - name: Création de requêtes Get-WinEvent avec FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Utilisation d’objets
+      items:
+        - name: Affichage de structure d’objets - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Sélection de parties d’objets - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Suppression d’objets du pipeline - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Tri d’objets
+          href: samples/sorting-objects.md
+        - name: Répétition d’une tâche pour plusieurs objets - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Création d’objets .NET et COM - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Utilisation de classes et de méthodes statiques
+          href: samples/using-static-classes-and-methods.md
+        - name: Obtention d’objets WMI - Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Gestion des ordinateurs
+      items:
+        - name: Changement de l’état de l’ordinateur
+          href: samples/changing-computer-state.md
+        - name: Collecte d’informations sur les ordinateurs
+          href: samples/collecting-information-about-computers.md
+        - name: Création de requêtes Get-WinEvent avec FilterHashtable
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Gestion des processus et des services
+      items:
+        - name: Gestion des processus avec les applets de commande Process
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Gestion des services
+          href: samples/managing-services.md
+        - name: Gestion des lecteurs Windows PowerShell
+          href: samples/managing-windows-powershell-drives.md
+        - name: Utilisation d’imprimantes
+          href: samples/working-with-printers.md
+        - name: Exécution de tâches de mise en réseau
+          href: samples/performing-networking-tasks.md
+        - name: Utilisation des installations de logiciels
+          href: samples/working-with-software-installations.md
+        - name: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Utilisation de la sortie
+      items:
+        - name: Redirection de données à l’aide d’applets de commande Out-*
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Gérer les lecteurs et les fichiers
+      items:
+        - name: Gestion de l’emplacement actuel
+          href: samples/managing-current-location.md
+        - name: Utilisation de fichiers et de dossiers
+          href: samples/working-with-files-and-folders.md
+        - name: 'Utilisation de fichiers, de dossiers et de clés de Registre'
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Utilisation d’entrées de Registre
+          href: samples/working-with-registry-entries.md
+        - name: Utilisation de clés de Registre
+          href: samples/working-with-registry-keys.md
     - name: Création d’éléments d’interface utilisateur
       items:
         - name: Création d’une zone d’entrée personnalisée
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Sélection d’éléments dans une zone de liste
           href: samples/selecting-items-from-a-list-box.md
-    - name: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Gestion de l’emplacement actuel
-      href: samples/managing-current-location.md
-    - name: Gestion des processus avec les applets de commande Process
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Gestion des services
-      href: samples/managing-services.md
-    - name: Gestion des lecteurs Windows PowerShell
-      href: samples/managing-windows-powershell-drives.md
-    - name: Manipulation d’éléments de manière directe
-      href: samples/manipulating-items-directly.md
-    - name: Exécution de tâches de mise en réseau
-      href: samples/performing-networking-tasks.md
-    - name: Redirection de données à l’aide d’applets de commande Out-*
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Utilisation de fichiers et de dossiers
-      href: samples/working-with-files-and-folders.md
-    - name: 'Utilisation de fichiers, de dossiers et de clés de Registre'
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Utilisation d’objets
+    - name: Autres exemples
       items:
-        - name: Obtention d’objets WMI - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: Création d’objets .NET et COM - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Suppression d’objets du pipeline - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Sélection de parties d’objets - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Tri d’objets
-          href: samples/sorting-objects.md
-        - name: Répétition d’une tâche pour plusieurs objets - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Utilisation de classes et de méthodes statiques
-          href: samples/using-static-classes-and-methods.md
-        - name: Affichage de structure d’objets - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Utilisation d’imprimantes
-      href: samples/working-with-printers.md
-    - name: Utilisation d’entrées de Registre
-      href: samples/working-with-registry-entries.md
-    - name: Utilisation de clés de Registre
-      href: samples/working-with-registry-keys.md
-    - name: Utilisation des installations de logiciels
-      href: samples/working-with-software-installations.md
-    - name: Autres objets de script utiles
-      href: samples/other-useful-scripting-objects.md
-    - name: Annexe 1 Alias de compatibilité
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Manipulation d’éléments de manière directe
+          href: samples/manipulating-items-directly.md
+        - name: Autres objets de script utiles
+          href: samples/other-useful-scripting-objects.md
+        - name: Annexe 1 Alias de compatibilité
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
