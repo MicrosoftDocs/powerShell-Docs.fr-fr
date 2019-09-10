@@ -887,39 +887,13 @@
         - name: Écriture d’une aide pour les applets de commande Windows PowerShell
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: Écriture d’une aide pour les fournisseurs Windows PowerShell
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: Guide pratique pour créer une rubrique d’aide de fournisseur
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: Guide pratique pour ajouter le nom du fournisseur
-              href: ./help/how-to-add-the-provider-name.md
-            - name: Guide pratique pour ajouter les lecteurs du fournisseur
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: Guide pratique pour ajouter le synopsis du fournisseur
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: Guide pratique pour ajouter une description du fournisseur
-              href: ./help/how-to-add-a-provider-description.md
-            - name: Guide pratique pour ajouter des fonctionnalités
-              href: ./help/how-to-add-capabilities.md
-            - name: Guide pratique pour ajouter des tâches à une rubrique d’aide de fournisseur
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: Guide pratique pour ajouter des paramètres dynamiques à une rubrique d’aide de fournisseur
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: Guide pratique pour ajouter des remarques à une rubrique d’aide de fournisseur
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: Guide pratique pour une section Voir aussi à une rubrique d’aide de fournisseur
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Écriture d’une aide pour les scripts et les fonctions Windows PowerShell
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: Écriture de rubriques d’aide basées sur XML pour les scripts et les fonctions
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: Écriture d’une aide pour les composants logiciels enfichables Windows PowerShell
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: Écriture d’une aide pour les applets de commande personnalisées pour les fournisseurs Windows PowerShell
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: Écriture d’une aide À propos de pour Windows PowerShell
-          href: ./help/writing-windows-powershell-about-help.md
         - name: Écriture de rubriques d’aide basée sur les commentaires
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: Exemples d’aide basée sur les commentaires
               href: ./help/examples-of-comment-based-help.md
         - name: Écriture de rubriques d’aide XML pour les commandes
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: Guide pratique pour créer le fichier d’aide d’une applet de commande
               href: ./help/how-to-create-the-cmdlet-help-file.md
