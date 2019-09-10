@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (C#) exemple de Code | Microsoft Docs
+title: Exemple deC#code RunSpace03 () | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,21 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
-ms.openlocfilehash: e1fc91174a959d6acc306330afb8d5c2e7a9a860
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 9afdb97b8ae2919f091ca5bacccedbe37c2e1584
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67735006"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848030"
 ---
 # <a name="runspace03-c-code-sample"></a>Exemple de code RunSpace03 (C#)
 
-Voici le C# code source pour l’application de console décrite dans [création d’une Console Application qui s’exécute un Script spécifié](fd). Cet exemple utilise le [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) classe pour exécuter un script qui Récupère traite les informations à l’aide de la liste des noms de processus passés dans le script. Il montre comment passer des objets d’entrée à un script et comment récupérer des objets d’erreur, ainsi que les objets de sortie.
+Voici le C# code source de l’application console décrite dans la section « création d’une application console qui exécute un script spécifié ». Cet exemple utilise la classe [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) pour exécuter un script qui récupère les informations de processus à l’aide de la liste des noms de processus passée dans le script. Il montre comment passer des objets d’entrée à un script et comment récupérer des objets d’erreur ainsi que les objets de sortie.
 
 > [!NOTE]
-> Vous pouvez télécharger le C# le fichier source (runspace03.cs) pour cet exemple en utilisant le Microsoft Windows Software Development Kit pour Windows Vista et les composants d’exécution de Microsoft .NET Framework 3.0. Pour obtenir des instructions de téléchargement, consultez [comment PowerShell de Windows Installer et de télécharger le Kit de développement logiciel de Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
->
-> Les fichiers source téléchargé sont disponibles dans le  **\<exemples PowerShell >** directory.
+> Vous pouvez télécharger le C# fichier source (runspace03.cs) pour cet exemple à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et Microsoft .NET Framework 3,0 Framework. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/developer/installing-the-windows-powershell-sdk).
+> Les fichiers sources téléchargés sont disponibles dans  **\<** le répertoire des exemples de > PowerShell.
 
 ## <a name="code-sample"></a>Exemple de code
 

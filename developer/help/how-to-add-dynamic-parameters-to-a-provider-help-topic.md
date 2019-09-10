@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737597"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848121"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Guide pratique pour ajouter des paramètres dynamiques à une rubrique d’aide de fournisseur
 
@@ -23,7 +23,7 @@ Les *paramètres dynamiques* sont des paramètres d’une applet de commande ou 
 
 Les paramètres dynamiques documentés dans une rubrique d’aide du fournisseur sont les paramètres dynamiques que le fournisseur ajoute à l’applet de commande ou à la fonction lorsque l’applet de commande ou la fonction est utilisée dans le lecteur du fournisseur.
 
-Les paramètres dynamiques peuvent également être documentés dans l’aide sur les applets de commande personnalisées pour un fournisseur. Lors de l’écriture de l’aide du fournisseur et de l’aide sur les applets de commande personnalisées pour un fournisseur, incluez la documentation des paramètres dynamiques dans les deux documents. Pour plus d’informations sur l’aide sur les cmdlets personnalisées, consultez [écriture de l’aide des applets de commande personnalisées Windows PowerShell pour les fournisseurs](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)
+Les paramètres dynamiques peuvent également être documentés dans l’aide sur les applets de commande personnalisées pour un fournisseur. Lors de l’écriture de l’aide du fournisseur et de l’aide sur les applets de commande personnalisées pour un fournisseur, incluez la documentation des paramètres dynamiques dans les deux documents.
 
 Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’aide du fournisseur contient `DynamicParameters` un élément vide.
 
@@ -116,7 +116,7 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
    |------------------|-----------------|
    |PossibleValues|Cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValues` élément à chaque rubrique d’aide du fournisseur. L’élément peut être vide.|
    |PossibleValue|Cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValue` élément pour chaque valeur du paramètre dynamique.|
-   |Valeur|Spécifie le nom de la valeur.|
+   |`Value`|Spécifie le nom de la valeur.|
    |Description|Cet élément contient un `Para` élément. Le texte dans l' `Para` élément décrit la valeur nommée dans l' `Value` élément.|
 
    Par exemple, le code XML suivant montre `PossibleValue` un élément `Encoding` du paramètre dynamique.
