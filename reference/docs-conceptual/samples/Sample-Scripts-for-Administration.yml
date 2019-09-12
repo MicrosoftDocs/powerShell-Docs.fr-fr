@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Exemples de scripts pour l’administration système
+summary: Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.
+metadata:
+  title: Exemples de scripts pour l’administration système
+  description: Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392026"
+landingContent:
+- title: Utilisation d’objets
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Affichage de la structure d’objets
+      url: ./viewing-object-structure--get-member-.md
+    - text: Sélection de parties d’objets
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: Filtrage des objets dans le pipeline
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: Tri d’objets
+      url: ./sorting-objects.md
+    - text: Répétition d’une tâche pour plusieurs objets
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: Création d’objets .NET et COM
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: Utilisation de classes et de méthodes statiques
+      url: ./using-static-classes-and-methods.md
+    - text: Obtention d’objets WMI - Get-WmiObject
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: Gestion des ordinateurs
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Changement de l’état de l’ordinateur
+      url: ./changing-computer-state.md
+    - text: Collecte d’informations sur les ordinateurs
+      url: ./collecting-information-about-computers.md
+    - text: Création de requêtes Get-WinEvent avec FilterHashtable
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: Gestion des processus et des services
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Gestion des processus avec les applets de commande Process
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: Gestion des services
+      url: ./managing-services.md
+    - text: Gestion des lecteurs Windows PowerShell
+      url: ./managing-windows-powershell-drives.md
+    - text: Utilisation d’imprimantes
+      url: ./working-with-printers.md
+    - text: Exécution de tâches de mise en réseau
+      url: ./performing-networking-tasks.md
+    - text: Utilisation des installations de logiciels
+      url: ./working-with-software-installations.md
+    - text: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: Utilisation de la sortie
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Redirection de données à l’aide d’applets de commande Out-*
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
+      url: ./using-format-commands-to-change-output-view.md
+- title: Gestion des lecteurs et des fichiers
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Gestion de l’emplacement actuel
+      url: ./managing-current-location.md
+    - text: Utilisation de fichiers et de dossiers
+      url: ./working-with-files-and-folders.md
+    - text: Utilisation de fichiers, de dossiers et de clés de Registre
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: Utilisation d’entrées de Registre
+      url: ./working-with-registry-entries.md
+    - text: Utilisation de clés de Registre
+      url: ./working-with-registry-keys.md
+- title: Création d’éléments d’interface utilisateur
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Création d’une zone d’entrée personnalisée
+      url: ./creating-a-custom-input-box.md
+    - text: Création d'un sélecteur de dates graphique
+      url: ./creating-a-graphical-date-picker.md
+    - text: Zones de liste à sélection multiple
+      url: ./multiple-selection-list-boxes.md
+    - text: Sélection d’éléments dans une zone de liste
+      url: ./selecting-items-from-a-list-box.md
