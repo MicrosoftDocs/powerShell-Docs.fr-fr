@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: <span data-ttu-id="c9771-101">Exemples de scripts pour l’administration système</span><span class="sxs-lookup"><span data-stu-id="c9771-101">Sample scripts for system administration</span></span>
+summary: <span data-ttu-id="c9771-102">Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c9771-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+metadata:
+  title: <span data-ttu-id="c9771-103">Exemples de scripts pour l’administration système</span><span class="sxs-lookup"><span data-stu-id="c9771-103">Sample scripts for system administration</span></span>
+  description: <span data-ttu-id="c9771-104">Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c9771-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392026"
+landingContent:
+- title: <span data-ttu-id="c9771-105">Utilisation d’objets</span><span class="sxs-lookup"><span data-stu-id="c9771-105">Working with objects</span></span>
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: <span data-ttu-id="c9771-106">Affichage de la structure d’objets</span><span class="sxs-lookup"><span data-stu-id="c9771-106">Viewing object structure</span></span>
+      url: ./viewing-object-structure--get-member-.md
+    - text: <span data-ttu-id="c9771-107">Sélection de parties d’objets</span><span class="sxs-lookup"><span data-stu-id="c9771-107">Selecting parts of object</span></span>
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: <span data-ttu-id="c9771-108">Filtrage des objets dans le pipeline</span><span class="sxs-lookup"><span data-stu-id="c9771-108">Filtering objects in the pipeline</span></span>
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: <span data-ttu-id="c9771-109">Tri d’objets</span><span class="sxs-lookup"><span data-stu-id="c9771-109">Sorting objects</span></span>
+      url: ./sorting-objects.md
+    - text: <span data-ttu-id="c9771-110">Répétition d’une tâche pour plusieurs objets</span><span class="sxs-lookup"><span data-stu-id="c9771-110">Repeating a task for multiple objects</span></span>
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: <span data-ttu-id="c9771-111">Création d’objets .NET et COM</span><span class="sxs-lookup"><span data-stu-id="c9771-111">Creating .NET and COM objects</span></span>
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: <span data-ttu-id="c9771-112">Utilisation de classes et de méthodes statiques</span><span class="sxs-lookup"><span data-stu-id="c9771-112">Using static classes and methods</span></span>
+      url: ./using-static-classes-and-methods.md
+    - text: <span data-ttu-id="c9771-113">Obtention d’objets WMI - Get-WmiObject</span><span class="sxs-lookup"><span data-stu-id="c9771-113">Getting WMI objects - Get-WmiObject</span></span>
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: <span data-ttu-id="c9771-114">Gestion des ordinateurs</span><span class="sxs-lookup"><span data-stu-id="c9771-114">Managing computers</span></span>
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: <span data-ttu-id="c9771-115">Changement de l’état de l’ordinateur</span><span class="sxs-lookup"><span data-stu-id="c9771-115">Changing computer state</span></span>
+      url: ./changing-computer-state.md
+    - text: <span data-ttu-id="c9771-116">Collecte d’informations sur les ordinateurs</span><span class="sxs-lookup"><span data-stu-id="c9771-116">Collecting information about computers</span></span>
+      url: ./collecting-information-about-computers.md
+    - text: <span data-ttu-id="c9771-117">Création de requêtes Get-WinEvent avec FilterHashtable</span><span class="sxs-lookup"><span data-stu-id="c9771-117">Creating Get-WinEvent queries with FilterHashtable</span></span>
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: <span data-ttu-id="c9771-118">Gestion des processus et des services</span><span class="sxs-lookup"><span data-stu-id="c9771-118">Managing processes & services</span></span>
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: <span data-ttu-id="c9771-119">Gestion des processus avec les applets de commande Process</span><span class="sxs-lookup"><span data-stu-id="c9771-119">Managing processes with process cmdlets</span></span>
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: <span data-ttu-id="c9771-120">Gestion des services</span><span class="sxs-lookup"><span data-stu-id="c9771-120">Managing services</span></span>
+      url: ./managing-services.md
+    - text: <span data-ttu-id="c9771-121">Gestion des lecteurs Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="c9771-121">Managing Windows PowerShell drives</span></span>
+      url: ./managing-windows-powershell-drives.md
+    - text: <span data-ttu-id="c9771-122">Utilisation d’imprimantes</span><span class="sxs-lookup"><span data-stu-id="c9771-122">Working with printers</span></span>
+      url: ./working-with-printers.md
+    - text: <span data-ttu-id="c9771-123">Exécution de tâches de mise en réseau</span><span class="sxs-lookup"><span data-stu-id="c9771-123">Performing networking tasks</span></span>
+      url: ./performing-networking-tasks.md
+    - text: <span data-ttu-id="c9771-124">Utilisation des installations de logiciels</span><span class="sxs-lookup"><span data-stu-id="c9771-124">Working with software installations</span></span>
+      url: ./working-with-software-installations.md
+    - text: <span data-ttu-id="c9771-125">Décoder une commande PowerShell à partir d’un processus en cours d’exécution</span><span class="sxs-lookup"><span data-stu-id="c9771-125">Decode a PowerShell command from a running process</span></span>
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: <span data-ttu-id="c9771-126">Utilisation de la sortie</span><span class="sxs-lookup"><span data-stu-id="c9771-126">Working with output</span></span>
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: <span data-ttu-id="c9771-127">Redirection de données à l’aide d’applets de commande Out-\*</span><span class="sxs-lookup"><span data-stu-id="c9771-127">Redirecting data with Out-\* cmdlets</span></span>
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: <span data-ttu-id="c9771-128">Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie</span><span class="sxs-lookup"><span data-stu-id="c9771-128">Using format commands to change output view</span></span>
+      url: ./using-format-commands-to-change-output-view.md
+- title: <span data-ttu-id="c9771-129">Gestion des lecteurs et des fichiers</span><span class="sxs-lookup"><span data-stu-id="c9771-129">Managing drives & files</span></span>
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: <span data-ttu-id="c9771-130">Gestion de l’emplacement actuel</span><span class="sxs-lookup"><span data-stu-id="c9771-130">Managing current location</span></span>
+      url: ./managing-current-location.md
+    - text: <span data-ttu-id="c9771-131">Utilisation de fichiers et de dossiers</span><span class="sxs-lookup"><span data-stu-id="c9771-131">Working with files and folders</span></span>
+      url: ./working-with-files-and-folders.md
+    - text: <span data-ttu-id="c9771-132">Utilisation de fichiers, de dossiers et de clés de Registre</span><span class="sxs-lookup"><span data-stu-id="c9771-132">Working with files folders and registry keys</span></span>
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: <span data-ttu-id="c9771-133">Utilisation d’entrées de Registre</span><span class="sxs-lookup"><span data-stu-id="c9771-133">Working with registry entries</span></span>
+      url: ./working-with-registry-entries.md
+    - text: <span data-ttu-id="c9771-134">Utilisation de clés de Registre</span><span class="sxs-lookup"><span data-stu-id="c9771-134">Working with registry keys</span></span>
+      url: ./working-with-registry-keys.md
+- title: <span data-ttu-id="c9771-135">Création d’éléments d’interface utilisateur</span><span class="sxs-lookup"><span data-stu-id="c9771-135">Creating UI elements</span></span>
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: <span data-ttu-id="c9771-136">Création d’une zone d’entrée personnalisée</span><span class="sxs-lookup"><span data-stu-id="c9771-136">Creating a custom input box</span></span>
+      url: ./creating-a-custom-input-box.md
+    - text: <span data-ttu-id="c9771-137">Création d'un sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="c9771-137">Creating a graphical date picker</span></span>
+      url: ./creating-a-graphical-date-picker.md
+    - text: <span data-ttu-id="c9771-138">Zones de liste à sélection multiple</span><span class="sxs-lookup"><span data-stu-id="c9771-138">Multiple selection list boxes</span></span>
+      url: ./multiple-selection-list-boxes.md
+    - text: <span data-ttu-id="c9771-139">Sélection d’éléments dans une zone de liste</span><span class="sxs-lookup"><span data-stu-id="c9771-139">Selecting items from a list box</span></span>
+      url: ./selecting-items-from-a-list-box.md
