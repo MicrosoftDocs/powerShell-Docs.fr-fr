@@ -1,12 +1,12 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: Création de requêtes Get-WinEvent avec FilterHashtable
-ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471016"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143672"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Création de requêtes Get-WinEvent avec FilterHashtable
 
@@ -16,9 +16,11 @@ Cet article est un extrait du billet de blog d’origine qui explique comment ut
 
 Avec des journaux des événements volumineux, il n’est pas efficace d’envoyer des objets à une commande `Where-Object` à travers le pipeline. Avant PowerShell 6, la cmdlet `Get-EventLog` offrait un autre moyen de récupérer des données de journal. Par exemple, les commandes suivantes sont inefficaces pour filtrer les journaux **Microsoft-Windows-Defrag** :
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 La commande suivante utilise une table de hachage qui améliore les performances :
 
@@ -48,19 +50,35 @@ Les paires **clé/valeur** acceptées sont présentées dans le tableau suivant 
 
 Le tableau suivant indique les noms de clés et les types de données, et précise si les caractères génériques sont acceptés comme valeurs de données.
 
-| Nom de clé     | Type de données valeur    | Accepte les caractères génériques ? |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | Oui |
-| ProviderName | `<String[]>`       | Oui |
-| Path         | `<String[]>`       | Non  |
-| Mots clés     | `<Long[]>`         | Non  |
-| ID           | `<Int32[]>`        | Non  |
-| Niveau        | `<Int32[]>`        | Non  |
-| StartTime    | `<DateTime>`       | Non  |
-| EndTime      | `<DateTime>`       | Non  |
-| UserID       | `<SID>`            | Non  |
-| Données         | `<String[]>`       | Non  |
-| *            | `<String[]>`       | Non  |
+|    Nom de clé    | Type de données valeur | Accepte les caractères génériques ? |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | Oui                          |
+| ProviderName   | `<String[]>`    | Oui                          |
+| Path           | `<String[]>`    | Non                           |
+| Mots clés       | `<Long[]>`      | Non                           |
+| ID             | `<Int32[]>`     | Non                           |
+| Niveau          | `<Int32[]>`     | Non                           |
+| StartTime      | `<DateTime>`    | Non                           |
+| EndTime        | `<DateTime>`    | Non                           |
+| UserID         | `<SID>`         | Non                           |
+| Données           | `<String[]>`    | Non                           |
+| \<named-data\> | `<String[]>`    | Non                           |
+
+La clé \<named-data\> représente un champ de données d'événement nommé. Par exemple, l'événement Perflib 1008 peut contenir les données d'événement suivantes :
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+Vous pouvez rechercher ces événements à l'aide de la commande suivante :
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## <a name="building-a-query-with-a-hash-table"></a>Créer une requête avec une table de hachage
 
@@ -159,7 +177,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="keywords-static-property-value-optional"></a>Valeur de propriété statique Keywords (facultatif)
 
 La clé **Keywords** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
@@ -239,7 +257,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="level-static-property-in-enumeration-optional"></a>Propriété statique Level dans une énumération (facultative)
 
 La clé **Level** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de la table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
