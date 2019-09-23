@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Installation de PowerShellGet
-ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
-ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
+ms.openlocfilehash: a0ef46a9ee4bbf668a58067256d098967bde48c5
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68601423"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143592"
 ---
 # <a name="installing-powershellget"></a>Installation de PowerShellGet
 
@@ -19,49 +19,45 @@ ms.locfileid: "68601423"
 - [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) ou version ultérieure
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
-## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>Obtenir le module PowerShellGet pour les versions PowerShell 3.0 et 4.0
-
-- [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
-
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>Obtenir la dernière version de PowerShell Gallery
 
-- Avant d’effectuer la mise à jour de PowerShellGet, vous devez toujours installer le dernier fournisseur Nuget. Pour ce faire, exécutez la commande suivante dans une session PowerShell avec élévation de privilèges.
+Avant d’effectuer la mise à jour de **PowerShellGet**, vous devez toujours installer le dernier fournisseur **NuGet**. À partir d’une session PowerShell avec élévation de privilèges, exécutez la commande suivante.
 
-  ```powershell
-  Install-PackageProvider Nuget -Force
-  Exit
-  ```
+```powershell
+Install-PackageProvider -Name NuGet -Force
+Exit
+```
 
 ### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>Pour les systèmes avec PowerShell 5.0 (ou version ultérieure), vous pouvez installer la dernière version de PowerShellGet
 
-- Pour effectuer cette opération sous Windows 10, Windows Server 2016, tout système équipé de WMF 5.0 ou 5.1, ou tout système équipé de PowerShell 6, exécutez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges.
+Pour installer PowerShellGet sur Windows 10, Windows Server 2016, tout système équipé de WMF 5.0 ou 5.1, ou tout système équipé de PowerShell 6, exécutez les commandes suivantes à partir d’une session PowerShell avec élévation de privilèges.
 
-  ```powershell
-  Install-Module -Name PowerShellGet -Force
-  Exit
-  ```
+```powershell
+Install-Module -Name PowerShellGet -Force
+Exit
+```
 
-- Utilisez `Update-Module` pour obtenir des versions plus récentes.
+Utilisez `Update-Module` pour obtenir des versions plus récentes.
 
-  ```powershell
-  Update-Module -Name PowerShellGet
-  Exit
-  ```
+```powershell
+Update-Module -Name PowerShellGet
+Exit
+```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a>Pour les systèmes exécutant PowerShell 3 ou PowerShell 4 et qui ont installé [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-preview"></a>Pour les systèmes exécutant PowerShell 3 ou PowerShell 4 et qui ont installé la préversion de PackageManagement
 
-- Utilisez l’applet de commande PowerShellGet ci-dessous à partir d’une session PowerShell avec élévation de privilèges pour enregistrer les modules dans un répertoire local
+1. À partir d’une session PowerShell avec élévation de privilèges, utilisez `Save-Module` pour enregistrer les modules dans un répertoire local.
 
-  ```powershell
-  Save-Module PowerShellGet -Path C:\LocalFolder
-  Exit
-  ```
+   ```powershell
+   Save-Module -Name PowerShellGet -Path C:\LocalFolder
+   Exit
+   ```
 
-- Vérifiez que les modules PowerShellGet et PackageManagement ne sont pas chargés dans d’autres processus.
-- Supprimez le contenu des dossiers `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` et `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\`.
-- Ouvrez à nouveau la Console PS avec élévation de privilèges, puis exécutez les commandes suivantes.
+1. Vérifiez que les modules **PowerShellGet** et **PackageManagement** ne sont pas chargés dans d’autres processus.
+1. Supprimez le contenu des dossiers : `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` et `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\`.
+1. Ouvrez à nouveau la console PowerShell avec élévation de privilèges, puis exécutez les commandes suivantes.
 
-  ```powershell
-  Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-  Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
-  ```
+   ```powershell
+   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   ```

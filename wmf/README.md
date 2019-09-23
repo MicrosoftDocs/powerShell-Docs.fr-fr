@@ -1,14 +1,13 @@
 ---
-ms.openlocfilehash: 962d61aac474a04387151de150af75b3f8d62e40
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3f78dfdac647a95e85501863e66d5b9491dd35a4
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62055409"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143523"
 ---
 # <a name="readme"></a>Fichier Lisez-moi
 
-Ce dossier contient la documentation de Windows Management Framework (WMF).
-Elle est configurée en tant que docset distinct dans le dépôt PowerShell-Docs.
+Le contenu WMF a été déplacé vers [reference/docs-conceptual/wmf](https://github.com/MicrosoftDocs/PowerShell-Docs/tree/staging/reference/docs-conceptual/wmf).
 
-Pour plus d’informations sur la contribution à ce docset, consultez le [Guide des contributeurs](https://github.com/PowerShell/PowerShell-Docs/blob/staging/CONTRIBUTING.md) de PowerShell-Docs.
+Cette structure de dossiers est nécessaire à la redirection. Elle peut être supprimée une fois que le référencement SEO rend la redirection inutile.
