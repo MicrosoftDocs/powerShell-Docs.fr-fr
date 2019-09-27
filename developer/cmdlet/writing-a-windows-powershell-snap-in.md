@@ -1,5 +1,5 @@
 ---
-title: Écriture d’un composant logiciel enfichable PowerShell Windows | Microsoft Docs
+title: Écriture d’un composant logiciel enfichable Windows PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -10,50 +10,50 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066955"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322935"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell
 
-Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour enregistrer toutes les applets de commande et les fournisseurs Windows PowerShell dans un assembly.
+Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour inscrire toutes les applets de commande et tous les fournisseurs Windows PowerShell dans un assembly.
 
-Avec ce type de composant logiciel enfichable, vous ne sélectionnez pas les applets de commande et les fournisseurs que vous souhaitez inscrire. Pour écrire un composant logiciel enfichable qui vous permet de sélectionner ce qui est inscrit, consultez [écrire un personnalisé Windows PowerShell Snap-in](./writing-a-custom-windows-powershell-snap-in.md).
+Avec ce type de composant logiciel enfichable, vous ne sélectionnez pas les applets de commande et les fournisseurs que vous souhaitez inscrire. Pour écrire un composant logiciel enfichable qui vous permet de sélectionner les éléments inscrits, consultez [écriture d’un composant logiciel enfichable Windows PowerShell personnalisé](./writing-a-custom-windows-powershell-snap-in.md).
 
 ### <a name="writing-a-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell
 
 1. Ajoutez l’attribut RunInstallerAttribute.
 
-2. Créez une classe publique qui dérive de la [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) classe.
+2. Créez une classe publique qui dérive de la classe [System. Management. Automation. PSSnapin](/dotnet/api/System.Management.Automation.PSSnapIn) .
 
-    Dans cet exemple, le nom de classe est « GetProcPSSnapIn01 ».
+    Dans cet exemple, le nom de la classe est « GetProcPSSnapIn01 ».
 
-3. Ajouter une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Lorsque vous nommez des composants logiciel enfichables, n’utilisez pas les caractères suivants : #. , ( ) { } [ ] & - /\ $ ; : " ' \< > ; ? @ ` *
+3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : #. , () {} [] &-/\ $; : «» \< >;? @ ` *
 
     Dans cet exemple, le nom du composant logiciel enfichable est « GetProcPSSnapIn01 ».
 
-4. Ajouter une propriété publique pour le fournisseur du composant logiciel enfichable (obligatoire).
+4. Ajoutez une propriété publique pour le fournisseur du composant logiciel enfichable (obligatoire).
 
     Dans cet exemple, le fournisseur est « Microsoft ».
 
-5. Ajouter une propriété publique pour la ressource du fournisseur du composant logiciel enfichable (facultatif).
+5. Ajoutez une propriété publique pour la ressource fournisseur du composant logiciel enfichable (facultatif).
 
-    Dans cet exemple, la ressource de fournisseur est « GetProcPSSnapIn01, Microsoft ».
+    Dans cet exemple, la ressource Vendor est « GetProcPSSnapIn01, Microsoft ».
 
-6. Ajouter une propriété publique pour la description du composant logiciel enfichable en (obligatoire).
+6. Ajoutez une propriété publique pour la description du composant logiciel enfichable (obligatoire).
 
-    Dans cet exemple, la description est « Est un composant logiciel enfichable Windows PowerShell qui inscrit l’applet de commande get-Process ».
+    Dans cet exemple, la description est « il s’agit d’un composant logiciel enfichable Windows PowerShell qui inscrit l’applet de commande «obtenir-proc »».
 
-7. Ajouter une propriété publique pour la ressource de description du composant logiciel enfichable (facultatif).
+7. Ajoutez une propriété publique pour la ressource Description du composant logiciel enfichable (facultatif).
 
-    Dans cet exemple, la ressource de fournisseur est « GetProcPSSnapIn01, ceci est un composant logiciel enfichable Windows PowerShell qui inscrit l’applet de commande get-Process ».
+    Dans cet exemple, la ressource Vendor est « GetProcPSSnapIn01, il s’agit d’un composant logiciel enfichable Windows PowerShell qui inscrit l’applet de commande «obtenir-proc »».
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour inscrire l’applet de commande Get-Process dans l’interpréteur de commandes Windows PowerShell. N’oubliez pas que dans cet exemple, l’assembly complet contient uniquement la GetProcPSSnapIn01 classe snap-in et la classe d’applet de commande Get-Process.
+Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour inscrire l’applet de commande « obtenir-proc » dans le shell Windows PowerShell. Sachez que dans cet exemple, l’assembly complet contient uniquement la classe de composant logiciel enfichable GetProcPSSnapIn01 et la classe d’applet de commande « obtenir-proc ».
 
 ```csharp
 [RunInstaller(true)]
@@ -128,6 +128,6 @@ public class GetProcPSSnapIn01 : PSSnapIn
 
 ## <a name="see-also"></a>Voir aussi
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Interpréteur de commandes Windows PowerShell SDK](../windows-powershell-reference.md)
+[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: Planification des travaux avec l’API de Windows PowerShell | Microsoft Docs
+title: Planification de travaux à l’aide de l’API Windows PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080354"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322958"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a>Planification des travaux avec l’API PowerShell
+# <a name="scheduling-jobs-with-the-powershell-api"></a>Planification de travaux avec l’API PowerShell
 
-Vous pouvez utiliser les objets exposés par le **Microsoft.PowerShell.ScheduledJob** espace de noms pour effectuer les opérations suivantes :
+Vous pouvez utiliser les objets exposés par l’espace de noms **Microsoft. PowerShell. ScheduledJob** pour effectuer les opérations suivantes :
 
 - Créer une tâche planifiée.
-- Définir quand le travail s’exécute.
+- Définir le moment d’exécution de la tâche.
 - Obtenir des résultats sur la tâche terminée.
 
 ## <a name="triggering-the-job"></a>Déclenchement du travail
 
-Spécifie la première étape de création d’une tâche planifiée lorsque la tâche doit s’exécuter. Cela en créant et en configurant un **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** objet. Le code suivant crée un déclencheur qui planifie un travail à exécuter une seule fois à l’avenir de 20 secondes.
+La première étape de la création d’une tâche planifiée consiste à spécifier le moment où le travail doit s’exécuter. Pour ce faire, créez et configurez un objet **Microsoft. PowerShell. ScheduledJob. ScheduledJobTrigger** . Le code suivant crée un déclencheur qui planifie une tâche pour qu’elle s’exécute une seule fois 20 secondes à l’avenir.
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -38,20 +38,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ```
 
-## <a name="defining-the-job"></a>Définition de la tâche
+## <a name="defining-the-job"></a>Définition du travail
 
-Vous définissez une tâche PowerShell en créant un dictionnaire de paramètres. Les paramètres suivants sont pris en charge :
+Vous définissez un travail PowerShell en créant un dictionnaire de paramètres. Les paramètres suivants sont pris en charge :
 
 |Nom du paramètre|Description|
 |--------------------|-----------------|
-|**Nom**|Le nom de la tâche.|
-|**ScriptBock**|Un bloc de script PowerShell qui spécifie ce que fait le travail.|
-|**FilePath**|Chemin d’accès à un fichier qui contient un bloc de script PowerShell pour spécifier ce que fait le travail.|
-|**InitializationScript**|Un bloc de script PowerShell qui initialise la tâche.|
-|**ArgumentList**|Tableau d’objets qui spécifient les arguments par le travail.|
-|**RunAs32**|Une valeur booléenne qui spécifie s’il faut exécuter le travail dans un processus 32 bits.|
+|**Nom**|Nom du travail.|
+|**ScriptBock**|Bloc de script PowerShell qui spécifie ce que fait le travail.|
+|**FilePath**|Chemin d’accès à un fichier qui contient un bloc de script PowerShell pour spécifier le rôle du travail.|
+|**InitializationScript**|Un bloc de script PowerShell qui initialise le travail.|
+|**ArgumentList**|Tableau d’objets qui spécifient les arguments que prend le travail.|
+|**RunAs32**|Valeur booléenne qui spécifie si le travail doit être exécuté dans un processus 32 bits.|
 
-Le code suivant crée un objet de dictionnaire de paramètre et définit la **nom** et **ScriptBlock** paramètres.
+Le code suivant crée un objet de dictionnaire de paramètres et définit les paramètres **Name** et **scriptblock** .
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>Création d’objets de définition de l’appel et la tâche
+## <a name="creating-the-invocation-and-job-definition-objects"></a>Création des objets d’appel et de définition de tâche
 
-Vous créez ensuite `ScheduledJobInvocationInfo` et `ScheduledJobDefinition` objets pour exécuter le travail, comme indiqué dans l’exemple suivant :
+Vous créez `ScheduledJobInvocationInfo` ensuite des `ScheduledJobDefinition` objets et pour exécuter le travail, comme indiqué dans l’exemple suivant :
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>L’inscription de la tâche avec le Planificateur de tâches
+## <a name="registering-the-job-with-the-task-scheduler"></a>Inscription du travail à l’aide du planificateur de tâches
 
-Le code suivant inscrit le travail avec le [Planificateur de tâches Windows](http://go.microsoft.com/fwlink/?LinkId=251817).
+Le code suivant inscrit le travail avec le [Planificateur de tâches Windows](https://go.microsoft.com/fwlink/?LinkId=251817).
 
 ```csharp
 schedJobDefinition.Register();
@@ -95,7 +95,7 @@ schedJobDefinition.Register();
 
 ## <a name="complete-code-example"></a>Exemple de code complet
 
-Voici l’exemple de code complet à partir duquel les extraits de code précédents ont été effectuées.
+Voici l’exemple de code complet à partir duquel les extraits de code précédents ont été pris.
 
 ```csharp
 using System;

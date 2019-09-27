@@ -1,5 +1,5 @@
 ---
-title: Schéma de Configuration d’autorisation en fonction du rôle | Microsoft Docs
+title: Schéma de configuration de l’autorisation basée sur les rôles | Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080541"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323033"
 ---
 # <a name="role-based-authorization-configuration-schema"></a>Schéma de configuration des autorisations en fonction du rôle
 
-Le [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) exemple utilise des fichiers XML pour configurer la stratégie d’autorisation. Le schéma XSD suivant définit le schéma utilisé pour ces fichiers.
+L’exemple [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) utilise des fichiers XML pour configurer la stratégie d’autorisation. Le XSD suivant définit le schéma utilisé pour ces fichiers.
 
 ```
 <?xml version="1.0" encoding="utf-8"?>

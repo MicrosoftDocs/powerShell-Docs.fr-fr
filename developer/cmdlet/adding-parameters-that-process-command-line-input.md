@@ -15,22 +15,22 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854949"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322749"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Ajout de paramètres qui traitent l’entrée de la ligne de commande
 
-Une source d’entrée pour une applet de commande est la ligne de commande. Cette rubrique décrit comment ajouter un paramètre à la **Get-Process** applet de commande (qui est décrite dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)) afin que l’applet de commande peut traiter l’entrée à partir de l’ordinateur local selon explicite objets passés à l’applet de commande. Le **Get-Process** applet de commande décrite ici récupère des processus basés sur leurs noms, puis affiche des informations sur les processus à l’invite de commande.
+Une source d’entrée pour une applet de commande est la ligne de commande. Cette rubrique explique comment ajouter un paramètre à l’applet de commande **« obtenir-proc »** (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande) afin que l’applet de commande puisse traiter l’entrée de l’ordinateur local en fonction d’objets explicites passés à l’applet de commande. L’applet de commande **« obtenir-proc »** décrite ici récupère les processus en fonction de leurs noms, puis affiche des informations sur les processus à partir d’une invite de commandes.
 
-## <a name="defining-the-cmdlet-class"></a>Définition de la classe de l’applet de commande
+## <a name="defining-the-cmdlet-class"></a>Définition de la classe cmdlet
 
-La première étape de création de l’applet de commande est l’applet de commande d’affectation de noms et la déclaration de la classe .NET Framework qui implémente l’applet de commande. Cette applet de commande récupère les informations de processus, par conséquent, le nom du verbe choisi ici est « Get ». (Presque toute sorte de l’applet de commande qui est capable de récupérer des informations peut traiter l’entrée de ligne de commande.) Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [les noms de verbe applet de commande](./approved-verbs-for-windows-powershell-commands.md).
+La première étape de la création des applets de commande consiste à nommer l’applet de commande et la déclaration de la classe .NET Framework qui implémente l’applet de commande. Cette applet de commande récupère les informations sur le processus. le nom du verbe choisi ici est « obtenir ». (Presque tout type d’applet de commande capable de récupérer des informations peut traiter l’entrée de ligne de commande.) Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-Voici la déclaration de classe pour le **Get-Process** applet de commande. Plus d’informations sur cette définition sont fournies dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
+Voici la déclaration de classe pour l’applet de commande **« obtenir-proc »** . Des informations détaillées sur cette définition sont fournies dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -43,15 +43,15 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-## <a name="declaring-parameters"></a>Déclaration de paramètres
+## <a name="declaring-parameters"></a>Déclarer des paramètres
 
-Un paramètre d’applet de commande permet à l’utilisateur à fournir l’entrée à l’applet de commande. Dans l’exemple suivant, **Get-Process** et `Get-Member` sont les noms des applets de commande canalisée en rafale et `MemberType` est un paramètre pour le `Get-Member` applet de commande. Le paramètre a l’argument « property ».
+Un paramètre d’applet de commande permet à l’utilisateur de fournir une entrée à l’applet de commande. Dans l’exemple suivant, **obtenir-proc** et `Get-Member` sont les noms des applets de commande canalisées `MemberType` , et est un paramètre `Get-Member` de l’applet de commande. Le paramètre a l’argument « Property ».
 
-**PS > get-Process ; `get-member` membertype - propriété**
+**Bloc de > PS-proc ; `get-member` -MemberType, propriété**
 
-Pour déclarer des paramètres pour une applet de commande, vous devez d’abord définir les propriétés qui représentent les paramètres. Dans le **Get-Process** applet de commande, le seul paramètre est `Name`, qui dans ce cas représente le nom de l’objet de processus de .NET Framework à récupérer. Par conséquent, la classe de l’applet de commande définit une propriété de type chaîne pour accepter un tableau de noms.
+Pour déclarer des paramètres pour une applet de commande, vous devez d’abord définir les propriétés qui représentent les paramètres. Dans l’applet de commande **obtenir-proc** , le seul `Name`paramètre est, qui, dans ce cas, représente le nom de l’objet de processus .NET Framework à récupérer. Par conséquent, la classe d’applet de commande définit une propriété de type chaîne pour accepter un tableau de noms.
 
-Voici la déclaration de paramètre pour le `Name` paramètre de la **Get-Process** applet de commande.
+Voici la déclaration de paramètre pour le `Name` paramètre de l’applet de commande **« obtenir-proc »** .
 
 ```csharp
 /// <summary>
@@ -83,41 +83,41 @@ Public Property Name() As String()
 End Property
 ```
 
-Pour informer le runtime de Windows PowerShell que cette propriété est la `Name` paramètre, un [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribut est ajouté à la définition de propriété. La syntaxe de base pour déclarer cet attribut est `[Parameter()]`.
+Pour informer le runtime Windows PowerShell que cette propriété est le `Name` paramètre, un attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) est ajouté à la définition de propriété. La syntaxe de base pour déclarer cet attribut est `[Parameter()]`.
 
 > [!NOTE]
-> Un paramètre doit être explicitement marqué comme public. Paramètres qui ne sont pas marqués comme public par défaut interne et ne sont pas localisés par le runtime de Windows PowerShell.
+> Un paramètre doit être explicitement marqué comme public. Les paramètres qui ne sont pas marqués comme étant des paramètres par défaut publics et internes sont introuvables par le runtime Windows PowerShell.
 
-Cette applet de commande utilise un tableau de chaînes pour la `Name` paramètre. Si possible, votre applet de commande doit également définir un paramètre sous forme de tableau, car cela permet à l’applet de commande accepter plusieurs éléments.
+Cette applet de commande utilise un tableau de chaînes `Name` pour le paramètre. Si possible, votre applet de commande doit également définir un paramètre en tant que tableau, car cela permet à l’applet de commande d’accepter plusieurs éléments.
 
 #### <a name="things-to-remember-about-parameter-definitions"></a>Points à retenir sur les définitions de paramètres
 
-- Prédéfinies Windows PowerShell paramètre noms et types de données doivent être réutilisés autant que possible pour vous assurer que votre applet de commande est compatible avec les applets de commande Windows PowerShell. Par exemple, si toutes les applets de commande utilisent prédéfinis `Id` nom de paramètre pour identifier une ressource, l’utilisateur sera facilement comprendre la signification du paramètre, quel que soit l’applet de commande qu’ils utilisent. En fait, les noms de paramètres suivent les mêmes règles que celles utilisées pour les noms de variables dans le common language runtime (CLR). Pour plus d’informations sur le paramètre d’affectation de noms, consultez [noms de paramètre d’applet de commande](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb).
+- Les noms de paramètres et les types de données Windows PowerShell prédéfinis doivent être réutilisés autant que possible pour garantir la compatibilité de votre applet de commande avec les applets de commande Windows PowerShell. Par exemple, si toutes les applets de commande utilisent le `Id` nom de paramètre prédéfini pour identifier une ressource, l’utilisateur peut facilement comprendre la signification du paramètre, quelle que soit l’applet de commande qu’il utilise. Fondamentalement, les noms de paramètres suivent les mêmes règles que celles utilisées pour les noms de variables dans le common language runtime (CLR). Pour plus d’informations sur la dénomination des paramètres, consultez [noms des paramètres](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)de l’applet de commande.
 
-- Windows PowerShell réserve quelques noms de paramètre pour fournir une expérience utilisateur cohérente. N’utilisez pas ces noms de paramètre : `WhatIf`, `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable`, et `OutBuffer`. En outre, les alias suivants de ces noms de paramètres sont réservés : `vb`, `db`, `ea`, `ev`, `ov`, et `ob`.
+- Windows PowerShell réserve quelques noms de paramètres pour fournir une expérience utilisateur cohérente. N’utilisez pas ces noms de paramètres `WhatIf`: `Confirm`, `Verbose`, `Debug`, `Warn`, `ErrorAction`, `ErrorVariable`, `OutVariable`, et `OutBuffer`. En outre, les alias suivants pour ces noms de paramètres sont réservés : `vb`, `db`, `ea` `ev` `ov`,, et `ob`.
 
-- `Name` est un nom de paramètre simple et courant recommandé pour une utilisation dans vos applets de commande. Il est préférable de choisir un nom de paramètre, ainsi qu’un nom complex qui est unique pour une applet de commande spécifique et difficiles à mémoriser.
+- `Name`est un nom de paramètre simple et commun, recommandé pour une utilisation dans vos applets de commande. Il est préférable de choisir un nom de paramètre comme celui-ci plutôt qu’un nom complexe propre à une applet de commande spécifique et difficile à retenir.
 
-- Les paramètres respectent la casse dans Windows PowerShell, bien que par défaut l’interpréteur de commandes préserve la casse. Respect de la casse des arguments dépend de l’opération de l’applet de commande. Arguments sont passés à un paramètre comme spécifié dans la ligne de commande.
+- Les paramètres ne sont pas sensibles à la casse dans Windows PowerShell, bien que l’interpréteur de commandes conserve par défaut la casse. Le respect de la casse des arguments dépend du fonctionnement de l’applet de commande. Les arguments sont passés à un paramètre comme spécifié sur la ligne de commande.
 
-- Pour obtenir des exemples d’autres déclarations de paramètre, consultez [paramètres de l’applet de commande](./cmdlet-parameters.md).
+- Pour obtenir des exemples d’autres déclarations de paramètres, consultez [paramètres d’applet](./cmdlet-parameters.md)de commande.
 
-## <a name="declaring-parameters-as-positional-or-named"></a>Déclarer des paramètres positionnels ou nommés
+## <a name="declaring-parameters-as-positional-or-named"></a>Déclarer des paramètres en tant que positionnels ou nommés
 
-Une applet de commande doit définir chaque paramètre soit un paramètre positionnel ou nommé. Les deux types de paramètres acceptent des arguments uniques, plusieurs arguments séparés par des virgules et les paramètres de type Boolean. Un paramètre booléen, également appelé un *commutateur*, gère uniquement les paramètres de type Boolean. Le commutateur est utilisé pour déterminer la présence du paramètre. La valeur par défaut recommandée est `false`.
+Une applet de commande doit définir chaque paramètre en tant que paramètre positionnel ou nommé. Les deux types de paramètres acceptent des arguments uniques, plusieurs arguments séparés par des virgules et des paramètres booléens. Un paramètre booléen, également appelé *commutateur*, gère uniquement les paramètres booléens. Le commutateur est utilisé pour déterminer la présence du paramètre. La valeur par défaut `false`recommandée est.
 
-L’exemple **Get-Process** applet de commande définit le `Name` paramètre comme un paramètre de positionnement à la position 0. Cela signifie que le premier argument de l’utilisateur entre dans la ligne de commande est automatiquement inséré pour ce paramètre. Si vous souhaitez définir un paramètre nommé, pour lequel l’utilisateur doit spécifier le nom du paramètre à partir de la ligne de commande, laissez le `Position` mot clé hors de la déclaration d’attribut.
+L’applet de commande Sample **-proc** définit `Name` le paramètre en tant que paramètre positionnel avec la position 0. Cela signifie que le premier argument entré par l’utilisateur sur la ligne de commande est automatiquement inséré pour ce paramètre. Si vous souhaitez définir un paramètre nommé, pour lequel l’utilisateur doit spécifier le nom de paramètre à partir de la ligne de commande `Position` , laissez le mot clé en dehors de la déclaration d’attribut.
 
 > [!NOTE]
-> Sauf si les paramètres doivent être nommés, nous vous recommandons d’apporter les paramètres plus utilisées positionnels afin que les utilisateurs devront pas taper le nom du paramètre.
+> À moins que les paramètres ne soient nommés, nous vous recommandons de définir la position des paramètres les plus utilisés de manière à ce que les utilisateurs n’aient pas à taper le nom du paramètre.
 
-## <a name="declaring-parameters-as-mandatory-or-optional"></a>Déclarer des paramètres comme étant obligatoires ou facultatifs
+## <a name="declaring-parameters-as-mandatory-or-optional"></a>Déclarer des paramètres comme obligatoires ou facultatifs
 
-Une applet de commande doit définir chaque paramètre optionnel ou un paramètre obligatoire. Dans l’exemple **Get-Process** applet de commande, le `Name` paramètre est défini comme étant facultatifs, car le `Mandatory` mot clé n’est pas défini dans la déclaration d’attribut.
+Une applet de commande doit définir chaque paramètre en tant que paramètre facultatif ou obligatoire. Dans l’applet de commande Sample **-proc** , `Name` le paramètre est défini comme étant facultatif `Mandatory` , car le mot clé n’est pas défini dans la déclaration d’attribut.
 
-## <a name="supporting-parameter-validation"></a>Prise en charge de la Validation de paramètre
+## <a name="supporting-parameter-validation"></a>Prise en charge de la validation des paramètres
 
-L’exemple **Get-Process** applet de commande ajoute un attribut de validation d’entrée, [System.Management.Automation.Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute), à le `Name` paramètre pour activer la validation que le entrée n’est ni `null` ni vide. Cet attribut est un des attributs de validation de fournies par Windows PowerShell. Pour obtenir des exemples d’autres attributs de validation, consultez [validation des entrées de paramètre de](./validating-parameter-input.md).
+L’applet de commande Sample **-proc** ajoute un attribut de validation d’entrée, [System. Management. Automation. Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute) `Name` , au paramètre pour permettre la validation que l' `null` entrée n’est ni ni vide. Cet attribut est l’un des nombreux attributs de validation fournis par Windows PowerShell. Pour obtenir des exemples d’autres attributs de validation, consultez [validation des entrées de paramètres](./validating-parameter-input.md).
 
 ```
 [Parameter(Position = 0)]
@@ -125,11 +125,11 @@ L’exemple **Get-Process** applet de commande ajoute un attribut de validation 
 public string[] Name
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement des entrées
+## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement d’entrée
 
-Si votre applet de commande consiste à gérer l’entrée de ligne de commande, il doit remplacer la méthodes de traitement d’entrée appropriée. Les méthodes de traitement d’entrée de base sont introduites dans [création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md).
+Si votre applet de commande doit gérer l’entrée de ligne de commande, elle doit remplacer les méthodes de traitement d’entrée appropriées. Les méthodes de traitement d’entrée de base sont introduites lors de la [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
-Le **Get-Process** applet de commande remplace le [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) méthode pour gérer la `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé, ou tous les processus si aucun nom n’est fourni. Notez que dans [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) correspond à la sortie mécanisme pour envoyer la sortie des objets au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection`, est définie sur `true` pour informer le runtime de Windows PowerShell pour énumérer le tableau de sortie d’objets de processus et d’écrire un seul processus à la fois à la ligne de commande.
+L’applet de commande **obtenir-proc** remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour `Name` gérer l’entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé, ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [System. Management. Automation. applet de commande. WriteObject% 28System. Object% 2CSystem. Boolean% 29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie à l’applet de commande canaux. Le deuxième paramètre de cet appel, `enumerateCollection`, est défini sur `true` pour indiquer à l’exécution de Windows PowerShell d’énumérer le tableau de sortie des objets de processus et d’écrire un processus à la fois sur la ligne de commande.
 
 ```csharp
 protected override void ProcessRecord()
@@ -178,21 +178,21 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour l’ensemble C# exemple de code, consultez [exemple GetProcessSample02](./getprocesssample02-sample.md).
+Pour obtenir l' C# exemple de code complet, consultez [exemple GetProcessSample02](./getprocesssample02-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Définition des Types d’objets et mise en forme
+## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
 
-Windows PowerShell passe les informations entre les applets de commande à l’aide des objets .NET Framework. Par conséquent, une applet de commande devrez peut-être définir son propre type, ou peut-être une applet de commande étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou en étendant les types existants, consultez [étendant les Types d’objets et de mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Windows PowerShell transmet des informations entre les applets de commande à l’aide d’objets .NET Framework. Par conséquent, une applet de commande peut avoir besoin de définir son propre type, ou une applet de commande peut avoir besoin d’étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou l’extension de types existants, consultez [extension des types d’objets et de la mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-cmdlet"></a>Création de l’applet de commande
+## <a name="building-the-cmdlet"></a>Génération de l’applet de commande
 
-Une fois que vous implémentez une applet de commande, vous devez l’inscrire avec Windows PowerShell à l’aide d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’inscription des applets de commande, consultez [comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Après avoir implémenté une applet de commande, vous devez l’inscrire auprès de Windows PowerShell à l’aide d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’enregistrement des applets de commande, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande est enregistré avec Windows PowerShell, vous pouvez le tester en l’exécutant sur la ligne de commande. Voici deux façons de tester le code pour l’applet de commande d’exemple. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez [mise en route avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+Lorsque votre applet de commande est inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Voici deux façons de tester le code de l’applet de commande Sample. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- À l’invite Windows PowerShell, utilisez la commande suivante pour répertorier le processus Internet Explorer, qui est nommé « IEXPLORE. »
+- À l’invite de commandes Windows PowerShell, utilisez la commande suivante pour répertorier le processus Internet Explorer, qui est nommé « IEXPLORE ».
 
     ```powershell
     PS> get-proc -name iexplore
@@ -206,7 +206,7 @@ La sortie suivante s’affiche.
         354      11  10036   18992    85   0.67   3284   iexplore
     ```
 
-- Pour répertorier les processus Internet Explorer, Outlook et le bloc-notes, nommés « IEXPLORE », « OUTLOOK » et « NOTEPAD », utilisent la commande suivante. S’il existe plusieurs processus, tous d'entre eux sont affichés.
+- Pour répertorier les processus Internet Explorer, Outlook et bloc-notes nommés « IEXPLORE », « OUTLOOK » et « NOTEPAD », utilisez la commande suivante. S’il existe plusieurs processus, ils sont tous affichés.
 
     ```powershell
     PS> get-proc -name iexplore, outlook, notepad
@@ -226,13 +226,13 @@ La sortie suivante s’affiche.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Ajout de paramètres d’entrée de Pipeline de processus](./adding-parameters-that-process-pipeline-input.md)
+[Ajout de paramètres qui traitent l’entrée de pipeline](./adding-parameters-that-process-pipeline-input.md)
 
 [Création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)
 
-[Extension des Types d’objets et mise en forme](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extension des types d’objets et de la mise en forme](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Comment inscrire les applets de commande, fournisseurs et héberger des Applications](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
 

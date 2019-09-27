@@ -1,5 +1,5 @@
 ---
-title: Écriture d’une Application hôte PowerShell de Windows | Microsoft Docs
+title: Écriture d’une application hôte Windows PowerShell | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855087"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323494"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Écriture d’une application hôte Windows PowerShell
 
-Vous pouvez héberger Windows PowerShell dans votre application. L’application hôte peut définir l’instance d’exécution où les commandes sont à exécuter, ouvrir des sessions sur un ordinateur local ou distant et appeler les commandes que soit synchrone ou asynchrone, en fonction des besoins de l’application.
+Vous pouvez héberger Windows PowerShell dans votre application. L’application hôte peut définir l’instance d’exécution dans laquelle les commandes sont exécutées, ouvrir des sessions sur un ordinateur local ou distant et appeler les commandes de manière synchrone ou asynchrone en fonction des besoins de l’application.
 
 Les rubriques suivantes expliquent comment créer une application qui héberge Windows PowerShell.
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Démarrage rapide de Windows PowerShell hôte](./windows-powershell-host-quickstart.md) fournit des instructions et des exemples de code pour vous aider à démarrer la création d’applications de l’hôte.
+[Démarrage rapide de l’hôte Windows PowerShell](./windows-powershell-host-quickstart.md) Fournit des instructions et des exemples de code pour vous aider à créer des applications hôtes.
 
-[Création d’instances d’exécution](./creating-runspaces.md) ensemble de rubriques qui expliquent comment créer des instances d’exécution pour exécuter la commande Windows PowerShell dans une application hôte.
+[Création de instances d’exécution](./creating-runspaces.md) Ensemble de rubriques qui expliquent comment créer des instances d’exécution pour exécuter une commande Windows PowerShell dans une application hôte.
 
-[Ajout et l’appel des commandes](./adding-and-invoking-commands.md) explique comment créer et exécuter un pipeline de commande dans votre application hôte...
+[Ajout et appel de commandes](./adding-and-invoking-commands.md) Explique comment créer et exécuter un pipeline de commande dans votre application hôte.
 
-[Création d’instances d’exécution à distance](./creating-remote-runspaces.md) explique comment connecter une instance d’exécution à un ordinateur distant.
+[Création de instances d’exécution distants](./creating-remote-runspaces.md) Explique comment connecter une instance d’exécution à un ordinateur distant.
 
-[Création d’une interface utilisateur personnalisée](./creating-a-custom-user-interface.md) utilisateur personnalisée présente les interfaces et fournit des liens vers des exemples.
+[Création d’une interface utilisateur personnalisée](./creating-a-custom-user-interface.md) Présente des interfaces utilisateur personnalisées et fournit des liens vers des exemples.
 
-[Héberger des exemples d’applications](./host-application-samples.md) cette section inclut des exemples d’applications hôtes terminée.
+[Exemples d’applications hôtes](./host-application-samples.md) Cette section contient des exemples d’applications hôtes complètes.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
