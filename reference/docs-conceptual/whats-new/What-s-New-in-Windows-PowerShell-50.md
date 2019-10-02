@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085947"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325132"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 
@@ -181,7 +181,7 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nouvelles fonctionnalités dans Windows PowerShell ISE
 
-- Vous pouvez maintenant modifier des scripts et fichiers Windows PowerShell distants dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers à modifier, puis en exécutant **PSEdit \<chemin et nom de fichier sur l’ordinateur distant\>**. Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
+- Vous pouvez maintenant modifier des scripts et fichiers Windows PowerShell distants dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers à modifier, puis en exécutant **PSEdit \<chemin et nom de fichier sur l’ordinateur distant\>** . Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
 - L’applet de commande Start-Transcript est maintenant prise en charge dans Windows PowerShell ISE.
 - Vous pouvez maintenant déboguer des scripts à distance dans Windows PowerShell ISE.
 - Une nouvelle option de menu, **Interrompre tout** (Ctrl+B) arrête le débogueur pour les scripts s’exécutant tant en local qu’à distance.
@@ -217,7 +217,7 @@ Windows PowerShell 4.0 intègre les nouvelles fonctionnalités suivantes.
 - Le débogueur Windows PowerShell a été amélioré pour permettre de déboguer des workflows Windows PowerShell, ainsi que des scripts qui s’exécutent sur des ordinateurs distants. Il est maintenant possible de déboguer les workflows Windows PowerShell au niveau du script soit à partir de la ligne de commande Windows PowerShell, soit à partir de Windows PowerShell ISE. Les scripts Windows PowerShell, notamment les workflows de script, peuvent maintenant être débogués sur des sessions à distance. Les sessions de débogage à distance sont conservées sur des sessions à distance Windows PowerShell qui sont déconnectées, puis reconnectées.
 - Le paramètre **RunNow** pour les applets de commande **Register-ScheduledJob** et **Set-ScheduledJob** vous évite de devoir définir une date et une heure de démarrage immédiat pour les travaux à l’aide du paramètre **Trigger**.
 - Les applets de commande **Invoke-RestMethod** et **Invoke-WebRequest** vous permettent maintenant de définir tous les en-têtes à l’aide du paramètre Headers. Bien que ce paramètre ait toujours existé, il faisait partie des quelques paramètres d'applets de commande web qui généraient des erreurs ou des exceptions.
-- L’applet de commande **Get-Module** dispose d’un nouveau paramètre, **FullyQualifiedName**, du type **ModuleSpecification\[]**. Le paramètre **FullyQualifiedName** de l’applet de commande Get-Module permet maintenant de spécifier un module par son nom, sa version et éventuellement son GUID.
+- L’applet de commande **Get-Module** dispose d’un nouveau paramètre, **FullyQualifiedName**, du type **ModuleSpecification\[]** . Le paramètre **FullyQualifiedName** de l’applet de commande Get-Module permet maintenant de spécifier un module par son nom, sa version et éventuellement son GUID.
 - Le paramètre de stratégie d’exécution par défaut sur Windows Server 2012 R2 est **RemoteSigned**. Sur Windows 8.1, le paramètre par défaut ne change pas.
 - À partir de Windows PowerShell 4.0, l’appel de méthode à l’aide de noms de méthodes dynamiques est pris en charge. Vous pouvez utiliser une variable pour stocker un nom de méthode, puis appeler la méthode de façon dynamique en appelant la variable.
 - Les travaux de flux de travail asynchrones ne sont plus supprimés au terme du délai d’attente spécifié par le paramètre commun de flux de travail **PSElapsedTimeoutSec**.
@@ -407,7 +407,7 @@ La fonctionnalité **Get-Help -Online** dans Windows PowerShell 3.0 est encore 
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
-http://go.microsoft.com/fwlink/?LinkID=223923
+https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
 À compter de Windows PowerShell 3.0, les auteurs d’applets de commande en C# peuvent remplir la propriété **HelpUri** en créant un attribut **HelpUri** sur la classe de l’applet de commande. Les auteurs de fonctions avancées peuvent définir une propriété **HelpUri** sur l’attribut **CmdletBinding**. La valeur de la propriété **HelpUri** doit commencer par « http » ou « https ».

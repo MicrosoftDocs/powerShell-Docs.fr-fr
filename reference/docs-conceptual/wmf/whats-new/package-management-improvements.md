@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations apportées à la gestion des packages dans WMF 5.1
-ms.openlocfilehash: 24ff05d6bf5993826106f1a1d2cee6dad363d1e2
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: cb19c2d71391b5729ce9d73fc6b033270f8db307
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147789"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325116"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>Améliorations apportées à la gestion des packages dans WMF 5.1
 
@@ -66,5 +66,5 @@ Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 Dans WMF 5.1, PackageManagement accepte désormais les nouveaux paramètres de proxy `-ProxyCredential` et `-Proxy`. À l’aide de ces paramètres, vous pouvez spécifier l’URL et les informations d’identification de proxy aux applets de commande PackageManagement. Par défaut, les paramètres proxy du système sont utilisés. Par exemple :
 
 ```powershell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
+Find-Package -Source https://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
