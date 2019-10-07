@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: résolution des problèmes d’accès dans Accès Web Windows PowerShell
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733869"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692235"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Résolution des problèmes d’accès dans Accès Web Windows PowerShell
 
@@ -49,7 +49,7 @@ Il peut survenir pour les utilisateurs qui se sont connectés avec un nom de dom
 
 #### <a name="workaround"></a>Solution de contournement
 
-1. [Installer et exécuter Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. Installer et exécuter Internet Explorer 10
 1. Remplacez le paramètre Internet Explorer **Mode de document** par *Normes Internet Explorer 10*.
    1. Appuyez sur **F12** pour ouvrir la console Outils de développement.
    1. Dans Internet Explorer 10, cliquez sur **Mode navigateur**, puis sélectionnez *Internet Explorer 10*.

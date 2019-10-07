@@ -2,12 +2,12 @@
 title: Installation de PowerShell Core sous macOS
 description: Informations sur l’installation de PowerShell Core sur macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229740"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325275"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installation de PowerShell Core sous macOS
 
@@ -18,7 +18,7 @@ Une fois le package installé, exécutez `pwsh` à partir d’un terminal.
 ## <a name="about-brew"></a>À propos de Brew
 
 [Homebrew][brew] est le gestionnaire de package préféré pour macOS.
-Si la commande `brew` est introuvable, vous devez installer Homebrew en suivant [leurs instructions][brew].
+Si la commande `brew` est introuvable, vous devez installer Homebrew en suivant [ces instructions][brew].
 Sinon, vous pouvez installer PowerShell par [Téléchargement direct](#installation-via-direct-download) ou à partir des [Archives binaires](#binary-archives).
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation de la dernière version stable via Homebrew sur macOS 10.12 ou version ultérieure
@@ -47,14 +47,14 @@ brew cask upgrade powershell
 > [!NOTE]
 > Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter et redémarrer l’interpréteur de commandes PowerShell pour terminer la mise à niveau et actualiser les valeurs indiquées dans `$PSVersionTable`.
 
-[brew]: http://brew.sh/
+[brew]: https://brew.sh/
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installation de la dernière version préliminaire via Homebrew sur macOS 10.12 ou version ultérieure
 
 Pour plus d'informations sur Brew, voir [À propos de Brew](#about-brew).
 
 Une fois Homebrew installé, vous pouvez installer PowerShell.
-Tout d’abord, installez le package [Cask-Versions][cask-versions], ce qui va vous permettre d’installer d’autres versions de packages cask :
+Tout d’abord, installez le package [Cask-Versions][cask-versions] qui vous permettre d’installer d’autres versions de packages cask :
 
 ```sh
 brew tap homebrew/cask-versions
@@ -193,8 +193,8 @@ PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Site web d’Homebrew][brew]
-* [Dépôt GitHub d’Homebrew][GitHub]
+* [Site web Homebrew][brew]
+* [Dépôt Homebrew sur GitHub][GitHub]
 * [Homebrew-Cask][cask]
 
 [brew]: http://brew.sh/

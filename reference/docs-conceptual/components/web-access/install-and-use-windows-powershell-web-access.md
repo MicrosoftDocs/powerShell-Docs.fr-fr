@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058560"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692249"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
@@ -165,7 +165,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
 
 3. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes.
 
-   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)**.
+   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)** .
    - Dans l’écran d’**accueil** de Windows, cliquez sur **Gestionnaire de serveur**.
 
 4. Dans le volet de l’arborescence du Gestionnaire des services Internet, développez le nœud du serveur sur lequel Accès Web Windows PowerShell est installé jusqu’à ce que le dossier **Sites** apparaisse. Développez le dossier **Sites**.
@@ -256,8 +256,8 @@ Les instructions données dans cette section concernent l’installation de l’
 
 1. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes.
 
-   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)**.
-   - Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)**. Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
+   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)** .
+   - Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)** . Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
 
 2. Créez un pool d’applications pour Accès Web Windows PowerShell. Développez le nœud du serveur de passerelle dans l’arborescence du Gestionnaire des services Internet, sélectionnez **Pools d’applications**, puis cliquez sur **Ajouter un pool d’applications** dans le volet **Actions**.
 
@@ -275,7 +275,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
 9. Suivez les étapes de la procédure [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
-10. ![](images/SecurityNote.jpeg) Étape de sécurité facultative :
+10. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape de sécurité facultative :
 
     Avec le site web sélectionné dans l’arborescence, double-cliquez sur **Paramètres SSL** dans le volet de contenu.
     Sélectionnez **Exiger SSL**, puis dans le volet **Actions**, cliquez sur **Appliquer**. Dans le volet **Paramètres SSL**, vous pouvez éventuellement exiger que les utilisateurs qui se connectent au site web d’Accès Web Windows PowerShell possèdent des certificats clients. Ceux-ci aident à vérifier l’identité d’un utilisateur de périphérique client. Pour plus d’informations sur la manière dont l’exigence de certificats clients permet de renforcer la sécurité d’Accès Web Windows PowerShell, consultez [Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell](authorization-rules-and-security-features-of-windows-powershell-web-access.md) dans ce guide.
@@ -307,8 +307,8 @@ Les instructions données dans cette section concernent l’installation de l’
 
 1. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes.
 
-   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)**.
-   - Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)**. Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
+   - Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)** .
+   - Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)** . Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
 
 1. Dans le volet de l’arborescence du Gestionnaire des services Internet, développez le nœud du serveur sur lequel Accès Web Windows PowerShell est installé jusqu’à ce que le dossier **Sites** apparaisse. Sélectionnez le dossier **Sites**.
 
@@ -327,7 +327,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
    Modifiez le port par défaut si un autre site web utilise déjà le port 443 ou si vous avez d’autres raisons d’ordre sécuritaire. Si un autre site web qui s’exécute sur votre serveur de passerelle utilise votre port sélectionné, un avertissement s’affiche quand vous cliquez sur **OK** dans la boîte de dialogue **Ajouter un site Web**. Vous devez utiliser un port inutilisé pour exécuter Accès Web Windows PowerShell.
 
-1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **`www.contoso.com`**. Cliquez sur **OK**.
+1. Selon les besoins de votre organisation, spécifiez éventuellement un nom d’hôte qui a du sens pour votre organisation et ses utilisateurs, comme **`www.contoso.com`** . Cliquez sur **OK**.
 
 1. Pour un environnement de production plus sécurisé, nous vous recommandons vivement de fournir un certificat valide signé par une autorité de certification. Vous devez fournir un certificat SSL, car les utilisateurs peuvent uniquement se connecter à Accès Web Windows PowerShell par le biais d’un site web HTTPS. Pour plus d’informations sur l’obtention d’un certificat, consultez [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
