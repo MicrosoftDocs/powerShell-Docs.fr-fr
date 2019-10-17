@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 60999ed54ca3be15232ffee3ab0c49cb94873a8f
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986748"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72351811"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cycle de vie de support de PowerShell Core
 
@@ -49,28 +49,35 @@ Notre communauté a également proposé des packages pour certaines plateformes,
 
 Les plateformes répertoriées en tant que `Experimental` ne sont pas officiellement prises en charge, mais sont disponibles pour l’expérimentation et les commentaires.
 
-| Plate-forme                                          | 6.1         | 6.2         |
-|---------------------------------------------------|:-----------:|:-----------:|
-| Windows 7, 8.1 et 10                            | Pris en charge   | Pris en charge   |
-| Windows Server 2008 R2, 2012 R2, 2016             | Pris en charge   | Pris en charge   |
-| [Canal semi-annuel Windows Server][semi-annual] | Pris en charge   | Pris en charge   |
-| Ubuntu 16.04 et 18.04                            | Pris en charge   | Pris en charge   |
-| Ubuntu 18.10 (via Snap Package)                   | Communauté   | Communauté   |
-| Ubuntu 19.04 (via Snap Package)                   | Communauté   | Communauté   |
-| Debian 9                                          | Pris en charge   | Pris en charge   |
-| CentOS 7                                          | Pris en charge   | Pris en charge   |
-| Red Hat Enterprise Linux 7                        | Pris en charge   | Pris en charge   |
-| openSUSE 42.3                                     | Pris en charge   | Pris en charge   |
-| Fedora 28                                         | Pris en charge   | Pris en charge   |
-| macOS 10.12+                                      | Pris en charge   | Pris en charge   |
-| Arch                                              | Communauté   | Communauté   |
-| Raspbian                                          | Communauté   | Communauté   |
-| Kali                                              | Communauté   | Communauté   |
-| AppImage (fonctionne sur plusieurs plateformes Linux)      | Communauté   | Communauté   |
-| [Snap Package](https://snapcraft.io/powershell)   | Voir la remarque    | Voir la remarque    |
+| Plate-forme                                          |      6.2      |    7.0    |
+|---------------------------------------------------|:-------------:|:---------:|
+| Windows 7, 8.1 et 10                            |   Pris en charge   | Pris en charge |
+| Windows Server 2008 R2, 2012 R2, 2016             |   Pris en charge   | Pris en charge |
+| [Canal semi-annuel Windows Server][semi-annual] |   Pris en charge   | Pris en charge |
+| Ubuntu 16.04 et 18.04                            |   Pris en charge   | Pris en charge |
+| Ubuntu 18.10 (via Snap Package)                   |   Communauté   | Communauté |
+| Ubuntu 19.04 (via Snap Package)                   |   Communauté   | Communauté |
+| Debian 9                                          |   Pris en charge   | Pris en charge |
+| Debian 10                                         | Non pris en charge | Pris en charge |
+| CentOS 7                                          |   Pris en charge   | Pris en charge |
+| Red Hat Enterprise Linux 7                        |   Pris en charge   | Pris en charge |
+| openSUSE 42.3                                     |   Pris en charge   | Pris en charge |
+| Fedora 28                                         |   Pris en charge   | Pris en charge |
+| Fedora 29, 30                                     | Non pris en charge | Pris en charge |
+| Alpine 3.8                                        |   Voir la remarque    | Voir la remarque  |
+| Alpine 3.9 et 3.10                               | Non pris en charge | Voir la remarque  |
+| macOS 10.12+                                      |   Pris en charge   | Pris en charge |
+| Arch                                              |   Communauté   | Communauté |
+| Raspbian                                          |   Communauté   | Communauté |
+| Kali                                              |   Communauté   | Communauté |
+| AppImage (fonctionne sur plusieurs plateformes Linux)      |   Communauté   | Communauté |
+| [Snap Package](https://snapcraft.io/powershell)   |   Voir la remarque    | Voir la remarque  |
 
 > [!NOTE]
 > Les packages Snap sont pris en charge de la même manière que la distribution sur laquelle vous exécutez le package.
+
+> [!NOTE]
+> CIM, PowerShell Remoting et DSC ne sont pas pris en charge sur Alpine.
 
 ## <a name="powershell-releases-end-of-life"></a>Fin de vie des versions PowerShell
 
