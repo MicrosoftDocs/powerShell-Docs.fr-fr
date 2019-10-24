@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
+ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67843943"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561264"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
 
@@ -20,6 +20,8 @@ ms.locfileid: "67843943"
 En raison du manque de prise en charge pour Windows Workflow Foundation dans .NET Core, nous ne prendrons plus en charge PowerShell Workflow dans PowerShell Core.
 
 À l’avenir, nous aimerions activer le parallélisme/la concurrence natif(ve) dans le langage PowerShell sans utiliser PowerShell Workflow.
+
+S’il est nécessaire d’utiliser des points de contrôle pour reprendre un script après le redémarrage du système d’exploitation, nous vous recommandons d’utiliser Planificateur de tâches pour exécuter un script au démarrage du système d’exploitation, mais le script doit conserver son propre état (par exemple, le rendre persistant dans un fichier).
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
