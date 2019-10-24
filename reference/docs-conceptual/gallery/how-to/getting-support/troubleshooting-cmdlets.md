@@ -29,5 +29,5 @@ Les cmdlets d’installation et de mise à jour nécessitent un accès à Intern
 - oneget.org
 - go.microsoft.com
 - az818661.vo.msecnd.net
-- www.powershellgallery.com
+- [www.powershellgallery.com](www.powershellgallery.com)
 - devopsgallerystorage.blob.core.windows.net
