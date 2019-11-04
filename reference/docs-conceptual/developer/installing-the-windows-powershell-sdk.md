@@ -2,12 +2,12 @@
 title: Installation du Kit de développement logiciel Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72367268"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444502"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installation du Kit de développement logiciel Windows PowerShell
 
@@ -17,24 +17,21 @@ La rubrique suivante explique comment installer le SDK PowerShell sur différent
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installation du SDK Windows PowerShell 3.0 pour Windows 8 et Windows Server 2012
 
-Windows PowerShell 3.0 est automatiquement installé avec Windows 8 et Windows Server 2012. De plus, vous pouvez télécharger et installer les assemblys de référence pour Windows PowerShell 3.0 avec le SDK Windows 8. Ces assemblys permettent d’écrire des applets de commande, des fournisseurs et des programmes hôtes pour Windows PowerShell 3.0. Quand vous installez le SDK Windows pour Windows 8, les assemblys Windows PowerShell sont automatiquement installés dans le dossier d’assemblys de référence, dans \Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0. Pour plus d’informations, consultez le site de téléchargement du SDK Windows 8. Des exemples de code Windows PowerShell sont aussi disponibles dans le Centre de développement.
-Pour plus d’informations, consultez la page exemple de code du Bureau sur le site du centre de développement.
-
-Par ailleurs, Windows PowerShell 3.0 est rétrocompatible avec le SDK Windows PowerShell 2.0 qui comprend un certain nombre d’exemples de code. Pour plus d’informations sur la façon de télécharger le SDK Windows PowerShell 2.0, voir ci-dessous. (Même si les exemples de code 2.0 sont compatibles avec Windows 8 et Windows PowerShell 3.0, notez que vous ne pouvez pas installer Windows PowerShell 2.0 sur une plateforme Windows 8.)
+Windows PowerShell 3.0 est automatiquement installé avec Windows 8 et Windows Server 2012. De plus, vous pouvez télécharger et installer les assemblys de référence pour Windows PowerShell 3.0 avec le SDK Windows 8. Ces assemblys permettent d’écrire des applets de commande, des fournisseurs et des programmes hôtes pour Windows PowerShell 3.0. Quand vous installez le SDK Windows pour Windows 8, les assemblys Windows PowerShell sont installés automatiquement dans le dossier d’assemblys de référence, dans `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Pour plus d’informations, consultez le site de téléchargement du SDK Windows 8. Des exemples de code Windows PowerShell sont également disponibles sur le centre de développement à l’adresse [exemple de Pack SDK Windows powershell 3,0](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installation du SDK Windows PowerShell 3.0 pour Windows 7 et Windows Server 2008 R2
 
-PowerShell 2.0 est automatiquement installé sur Windows 7 et Windows Server 2008 R2. Par ailleurs, vous pouvez installer PowerShell 3.0 sur ces systèmes. (Pour plus d’informations, consultez Installation de Windows PowerShell.). Comme indiqué plus haut, vous pouvez aussi installer le SDK Windows 8 sur Windows 7 et Windows Server 2008 R2.
+PowerShell 2.0 est automatiquement installé sur Windows 7 et Windows Server 2008 R2. Par ailleurs, vous pouvez installer PowerShell 3.0 sur ces systèmes. Vous pouvez également installer le kit de développement logiciel (SDK) Windows 8 sur Windows 7 et Windows Server 2008 R2 comme décrit ci-dessus.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Installation du SDK Windows PowerShell 2.0 pour Windows 7, Vista, XP, Server 2003 et Server 2008
 
-Le SDK Windows PowerShell 2.0 fournit les assemblys de référence nécessaires à l’écriture d’applets de commande, de fournisseurs et d’applications d’hébergement. Il propose aussi un exemple de code C# qui peut vous servir de point de départ pour commencer à écrire du code.
-
-Pour installer ce SDK, consultez le kit de développement logiciel (SDK) Windows PowerShell 2,0.
+Le SDK Windows PowerShell 2.0 fournit les assemblys de référence nécessaires à l’écriture d’applets de commande, de fournisseurs et d’applications d’hébergement. Il propose aussi un exemple de code C# qui peut vous servir de point de départ pour commencer à écrire du code. Vous pouvez télécharger les exemples de code à partir de [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560).
 
 ### <a name="reference-assemblies"></a>Assemblys de référence
 
-Les assemblys de référence sont installés à l’emplacement suivant par défaut : c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0.
+Les assemblys de référence sont installés dans l’emplacement par défaut suivant : `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -43,14 +40,15 @@ Les assemblys de référence sont installés à l’emplacement suivant par déf
 
 ### <a name="samples"></a>exemples
 
-Les exemples de code sont installés à l’emplacement suivant par défaut : C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. Les sections suivantes fournissent une brève description de la fonction de chaque exemple.
+Les exemples de code sont installés dans l’emplacement par défaut suivant : `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Les sections suivantes fournissent une brève description de la fonction de chaque exemple.
 
 #### <a name="cmdlet-samples"></a>Exemples d’applet de commande
 
 - GetProcessSample01 : indique comment écrire une applet de commande simple qui obtient tous les processus sur l’ordinateur local.
 - GetProcessSample02 : indique comment ajouter des paramètres à l’applet de commande. L’applet de commande prend un ou plusieurs noms de processus et retourne les processus correspondants.
 - GetProcessSample03 : indique comment ajouter des paramètres qui acceptent les entrées du pipeline.
-- GetProcessSample04 : indique comment gérer les erreurs qui ne se terminent pas.
+- GetProcessSample04 : indique comment gérer les erreurs sans fin d’arrêt.
 - GetProcessSample05 : indique comment afficher une liste de processus spécifiés.
 - SelectObject : indique comment écrire un filtre pour sélectionner uniquement certains objets.
 - SelectString : indique comment rechercher des modèles spécifiés dans les fichiers.
