@@ -2,12 +2,12 @@
 title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692166"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444363"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
@@ -64,23 +64,24 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Créez le sous-système SSH destiné à héberger un processus PowerShell sur l’ordinateur distant :
 
    ```
-   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > OpenSSH pour Windows présente un bogue qui empêche les espaces de fonctionner dans les chemins exécutables du sous-système. Pour plus d’informations, consultez ce [problème GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
-
-   Une solution consiste à créer un lien symbolique vers le répertoire d’installation de PowerShell qui ne comporte pas d’espaces :
-
-   ```powershell
-   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
-   ```
-
-   Utilisez le chemin du lien symbolique vers l’exécutable PowerShell dans le sous-système :
-
-   ```
-   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+   > Vous devez utiliser le nom abrégé 8.3 pour les chemins de fichiers qui contiennent des espaces. OpenSSH pour Windows présente un bogue qui empêche les espaces de fonctionner dans les chemins exécutables du sous-système. Pour plus d’informations, consultez ce [problème GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
+   >
+   > Le nom abrégé 8.3 du dossier `Program Files` dans Windows est généralement `Progra~1`. Cependant, vous pouvez utiliser la commande suivante pour vous en assurer :
+   >
+   > ```powershell
+   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+   >   Select-Object EightDotThreeFileName
+   > ```
+   >
+   > ```Output
+   > EightDotThreeFileName
+   > ---------------------
+   > c:\progra~1
+   > ```
 
    Vous pouvez éventuellement activer l’authentification par clé :
 

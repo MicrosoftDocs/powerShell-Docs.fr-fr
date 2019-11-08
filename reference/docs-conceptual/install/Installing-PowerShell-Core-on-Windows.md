@@ -2,16 +2,23 @@
 title: Installation de PowerShell Core sous Windows
 description: Informations sur l’installation de PowerShell Core sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
-ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
+ms.openlocfilehash: c06eba06e376c3f795ab9c0fae9270cf6cf8f2ce
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66830222"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444463"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installation de PowerShell Core sous Windows
 
 Il existe plusieurs façons d’installer PowerShell Core dans Windows.
+
+> [!TIP]
+> Si vous avez déjà installé le kit [SDK .NET Core](/dotnet/core/sdk), il est facile d’installer PowerShell en tant qu’[outil global .NET](/dotnet/core/tools/global-tools).
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -22,7 +29,7 @@ Pour permettre la communication à distance PowerShell via WSMan, les conditions
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installation du package MSI
 
-Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2 et les versions ultérieures), téléchargez le package MSI sur notre page de [versions][releases] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
+Pour installer PowerShell sur un client Windows ou Windows Server (fonctionne sur Windows 7 SP1, Server 2008 R2, et versions ultérieures), téléchargez le package MSI à partir de notre page de [versions][releases] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
 
 Le fichier MSI ressemble à ceci : `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
