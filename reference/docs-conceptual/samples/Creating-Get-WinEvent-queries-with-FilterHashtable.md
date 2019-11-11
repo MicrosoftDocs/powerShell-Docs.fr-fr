@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Création de requêtes Get-WinEvent avec FilterHashtable
-ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143672"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444382"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Création de requêtes Get-WinEvent avec FilterHashtable
 
@@ -36,16 +36,16 @@ Get-WinEvent -FilterHashtable @{
 Cet article explique comment utiliser des valeurs énumérées dans une table de hachage. Pour plus d’informations sur l’énumération, voir ces billets de blog **Scripting Guy**. Pour créer une fonction qui retourne les valeurs énumérées, voir [Énumérations et valeurs](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values).
 Pour plus d’informations, voir la [série de billets de blog Scripting Guy sur l’énumération](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-## <a name="hash-table-keyvalue-pairs"></a>Paires clé/valeur de table de hachage
+## <a name="hash-table-key-value-pairs"></a>Paires clé-valeur de table de hachage
 
 Pour générer des requêtes efficaces, utilisez la cmdlet `Get-WinEvent` avec le paramètre **FilterHashtable**.
-**FilterHashtable** prend une table de hachage comme filtre pour obtenir des informations spécifiques dans les journaux des événements Windows. Une table de hachage utilise des paires **clé/valeur**. Pour plus d’informations sur les tables de hachage, voir [À propos des tables de hachage](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+**FilterHashtable** prend une table de hachage comme filtre pour obtenir des informations spécifiques dans les journaux des événements Windows. Une table de hachage utilise des paires **clé-valeur**. Pour plus d’informations sur les tables de hachage, voir [À propos des tables de hachage](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
-Si les paires **clé/valeur** se trouvent sur la même ligne, elles doivent être séparées par un point-virgule. Si chaque paire **clé/valeur** est sur une ligne distincte, le point-virgule n’est pas nécessaire. Cet article, par exemple, place une paire **clé/valeur** par ligne et n’utilise pas de points-virgules.
+Si les paires **clé-valeur** se trouvent sur la même ligne, elles doivent être séparées par un point-virgule. Si chaque paire **clé-valeur** est sur une ligne distincte, le point-virgule n’est pas nécessaire. Cet article, par exemple, place une paire **clé-valeur** par ligne et n’utilise pas de points-virgules.
 
-Cet exemple utilise plusieurs paires **clé/valeur** du paramètre **FilterHashtable**. La requête comporte **LogName**, **ProviderName**, **Keywords**, **ID** et **Level**.
+Cet exemple utilise plusieurs paires **clé-valeur** du paramètre **FilterHashtable**. La requête comporte **LogName**, **ProviderName**, **Keywords**, **ID** et **Level**.
 
-Les paires **clé/valeur** acceptées sont présentées dans le tableau suivant ainsi que dans la documentation relative au paramètre [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+Les paires **clé-valeur** acceptées sont présentées dans le tableau suivant ainsi que dans la documentation relative au paramètre [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 **FilterHashtable**.
 
 Le tableau suivant indique les noms de clés et les types de données, et précise si les caractères génériques sont acceptés comme valeurs de données.
@@ -62,9 +62,9 @@ Le tableau suivant indique les noms de clés et les types de données, et préci
 | EndTime        | `<DateTime>`    | Non                           |
 | UserID         | `<SID>`         | Non                           |
 | Données           | `<String[]>`    | Non                           |
-| \<named-data\> | `<String[]>`    | Non                           |
+| `<named-data>` | `<String[]>`    | Non                           |
 
-La clé \<named-data\> représente un champ de données d'événement nommé. Par exemple, l'événement Perflib 1008 peut contenir les données d'événement suivantes :
+La clé `<named-data>` représente un champ de données d’événement nommé. Par exemple, l'événement Perflib 1008 peut contenir les données d'événement suivantes :
 
 ```xml
 <EventData>
@@ -80,11 +80,14 @@ Vous pouvez rechercher ces événements à l'aide de la commande suivante :
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
+> [!NOTE]
+> La capacité à rechercher `<named-data>` a été ajoutée dans PowerShell 6.
+
 ## <a name="building-a-query-with-a-hash-table"></a>Créer une requête avec une table de hachage
 
-Pour pouvoir vérifier les résultats et résoudre les problèmes, il est plus facile de créer la table de hachage une paire **clé/valeur** à la fois. La requête récupère des données auprès du journal **Application**. La table de hachage est équivalente à `Get-WinEvent –LogName Application`.
+Pour pouvoir vérifier les résultats et résoudre les problèmes, il est plus facile de créer la table de hachage une paire **clé-valeur** à la fois. La requête récupère des données auprès du journal **Application**. La table de hachage est équivalente à `Get-WinEvent –LogName Application`.
 
-Pour commencer, créez la requête `Get-WinEvent`. Utilisez la paire **clé/valeur** du paramètre **FilterHashtable** avec la clé **LogName** et la valeur **Application**.
+Pour commencer, créez la requête `Get-WinEvent`. Utilisez la paire **clé-valeur** du paramètre **FilterHashtable** avec la clé **LogName** et la valeur **Application**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -96,7 +99,7 @@ Continuez à créer la table de hachage avec la clé **ProviderName**. **Provide
 
 ![Image des sources de l’observateur d’événements Windows](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Mettez à jour la table de hachage en incluant la paire **clé/valeur** avec la clé **ProviderName et la valeur **.NET Runtime**.
+Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **ProviderName et la valeur **.NET Runtime**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -148,7 +151,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d’informations, voir [Énumération StandardEventKeywords](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
+Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d’informations, voir [Énumération StandardEventKeywords](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 Les noms et valeurs énumérées **Keywords** sont les suivantes :
 
@@ -164,7 +167,7 @@ Les noms et valeurs énumérées **Keywords** sont les suivantes :
 | ResponseTime     | 281474976710656   |
 | Aucune             | 0                 |
 
-Mettez à jour la table de hachage en incluant la paire **clé/valeur** avec la clé **Keywords** et la valeur d’énumération **EventLogClassic** **36028797018963968**.
+Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **Keywords** et la valeur d’énumération **EventLogClassic** **36028797018963968**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -177,7 +180,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="keywords-static-property-value-optional"></a>Valeur de propriété statique Keywords (facultatif)
 
 La clé **Keywords** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
@@ -194,7 +197,7 @@ Get-WinEvent -FilterHashtable @{
 
 Pour affiner les données, les résultats de la requête sont filtrés par **ID d’événement**. La table de hachage y fait référence comme à la clé **ID** ; la valeur correspond à un **ID d’événement** en particulier. **L’Observateur d’événements Windows** affiche **l’ID d’événement**. Cet exemple utilise **l’ID d’événement 1023**.
 
-Mettez à jour la table de hachage en incluant la paire **clé/valeur** avec la clé **ID** et la valeur **1023**.
+Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **ID** et la valeur **1023**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -229,7 +232,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d’informations, voir [Énumération StandardEventLevel](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
+Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d’informations, voir [Énumération StandardEventLevel](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2).
 
 Les noms et valeurs énumérées de la clé **Level** sont les suivantes :
 
@@ -257,7 +260,7 @@ Get-WinEvent -FilterHashtable @{
 ### <a name="level-static-property-in-enumeration-optional"></a>Propriété statique Level dans une énumération (facultative)
 
 La clé **Level** est énumérée, mais il est possible d’utiliser un nom de propriété statique dans la requête de la table de hachage.
-Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__**.
+Au lieu de recourir à la chaîne retournée, il faut convertir le nom de propriété en une valeur avec la propriété **Value__** .
 
 Par exemple, le script suivant utilise la propriété **Value__** .
 
