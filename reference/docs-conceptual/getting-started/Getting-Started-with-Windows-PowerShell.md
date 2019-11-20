@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Prise en main de Windows PowerShell
-ms.openlocfilehash: 3b0bde8d86b0f0ae64b430022543ba493f3927b7
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: fde0788a877cf93ee6423566c3275380474f4ee4
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030464"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117549"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Prise en main de Windows PowerShell
 Windows PowerShell est un interpréteur de ligne de commande Windows spécialement conçu pour les administrateurs système. Windows PowerShell inclut une invite interactive et un environnement de script utilisables indépendamment ou conjointement.
@@ -22,8 +22,8 @@ Ce Guide de prise en main fournit une introduction à Windows PowerShell : lang
 
 Dans cette rubrique :
 
-- [Configuration nécessaire pour Windows PowerShell](../setup/Windows-PowerShell-System-Requirements.md)
+- [Configuration nécessaire pour Windows PowerShell](../install/Windows-PowerShell-System-Requirements.md)
 
-- [Installation de Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [Installation de Windows PowerShell](../install/Installing-Windows-PowerShell.md)
 
-- [Démarrage de Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [Démarrage de Windows PowerShell](Starting-Windows-PowerShell.md)

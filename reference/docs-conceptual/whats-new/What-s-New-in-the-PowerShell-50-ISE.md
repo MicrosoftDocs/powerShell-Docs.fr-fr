@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: powershell,applet de commande
 title: Nouveautés de PowerShell 5.0 ISE
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746219"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117520"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Nouveauté de Windows PowerShell 5.0 ISE
 
@@ -201,4 +201,4 @@ En utilisant `Show-Command` dans vos scripts Windows PowerShell, vous pouvez fou
 
 ## <a name="see-also"></a>Voir aussi
 
-Pour plus d’informations sur l’utilisation de Windows PowerShell ISE, consultez [Explorer l’environnement d’écriture de scripts intégré de Windows PowerShell](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
+Pour plus d’informations sur l’utilisation de Windows PowerShell ISE, consultez [Explorer l’environnement d’écriture de scripts intégré de Windows PowerShell](../components/ise/exploring-the-windows-powershell-ise.md).
