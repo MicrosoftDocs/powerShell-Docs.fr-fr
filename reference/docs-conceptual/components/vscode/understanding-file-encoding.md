@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VSCode et PowerShell
 description: Configuration de l’encodage de fichier dans VSCode et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058435"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117411"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Présentation de l’encodage de fichier dans VSCode et PowerShell
 
@@ -15,7 +15,7 @@ Quand vous utilisez Visual Studio Code pour créer et modifier des scripts Power
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>Qu’est-ce que l’encodage de fichier et pourquoi est-il important ?
 
-VSCode gère l’interface entre un utilisateur qui entre des chaînes de caractères dans une mémoire tampon et la lecture/écriture de blocs d’octets dans le système de fichiers. Quand VSCode enregistre un fichier, il utilise un encodage de texte.
+VSCode gère l’interface entre un utilisateur qui entre des chaînes de caractères dans une mémoire tampon et la lecture/écriture de blocs d’octets dans le système de fichiers. Quand VSCode enregistre un fichier, il utilise un encodage de texte pour décider des octets attribués à chaque caractère.
 
 De même, quand PowerShell exécute un script, il doit convertir les octets d’un fichier en caractères afin de reconstruire le fichier dans un programme PowerShell. Comme VSCode écrit le fichier et que PowerShell le lit, ils doivent utiliser le même système d’encodage. Ce processus d’analyse d’un script PowerShell est le suivant : *octets* -> *caractères* -> *jetons* ->  *arborescence de syntaxe abstraite* -> *exécution*.
 
@@ -27,9 +27,10 @@ Des problèmes d’encodage se produisent quand l’encodage de VSCode ou de vot
 
 Vous risquez davantage de rencontrer des problèmes d’encodage quand vous utilisez des caractères qui ne figurent pas dans le [jeu de caractères ASCII sept bits](https://ascii.cl/). Par exemple :
 
+- les caractères non alphabétiques étendus comme le tiret cadratin (`—`), l’espace insécable (` `) ou le guillemet double gauche (`“`)
 - Les caractères latins accentués (`É`, `ü`)
 - Les caractères non latins tels que les caractères cyrilliques (`Д`, `Ц`)
-- Les caractères chinois (`脚`, `本`)
+- Caractères CJC (`本`, `화`, `が`)
 
 Les causes courantes des problèmes d’encodage sont les suivantes :
 

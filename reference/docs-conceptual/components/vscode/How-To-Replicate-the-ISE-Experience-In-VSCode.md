@@ -2,12 +2,12 @@
 title: Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 description: Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058503"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117482"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 
@@ -27,12 +27,29 @@ Ce document vise à lister les paramètres configurables dans VSCode pour rendre
 
 Vous pouvez également [configurer vos propres combinaisons de touches](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) dans VSCode.
 
+## <a name="simplified-ise-like-ui"></a>Interface utilisateur de type ISE simplifiée
+
+Si vous envisagez de simplifier l’interface utilisateur Visual Studio Code pour vous rapprocher de l’interface utilisateur de l’environnement ISE, appliquez les deux paramètres suivants :
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+Ceci permet de masquer les sections « Barre d’activité » et « Barre latérale de débogage » ci-dessous dans l’encadré rouge :
+
+![la section en surbrillance comprend une barre d’activité et une barre latérale de débogage](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+Le résultat final ressemble à ceci :
+
+![Vue simplifiée de VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
 ## <a name="tab-completion"></a>Saisie semi-automatique via la touche Tab
 
 Pour activer une autocomplétion semblable à ISE, ajoutez ce paramètre :
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ Pour arrêter la console intégrée au démarrage, définissez :
 Pour que les nouveaux fichiers et les fichiers sans titre soient par défaut inscrits comme PowerShell :
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>Modèle de couleurs
@@ -77,7 +94,7 @@ Dans la liste déroulante, sélectionnez `PowerShell ISE`.
 Pour définir ce thème dans les paramètres :
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>Explorateur de commandes PowerShell
