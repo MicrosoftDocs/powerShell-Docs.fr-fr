@@ -1,5 +1,5 @@
 ---
-title: Création d’une applet de commande sans paramètres | Microsoft Docs
+title: Creating a Cmdlet without Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,37 +11,37 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72369858"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415676"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
 
-Cette section décrit comment créer une applet de commande qui récupère des informations à partir de l’ordinateur local sans utiliser de paramètres, puis écrit les informations dans le pipeline. L’applet de commande décrite ici est une applet de commande « obtenir-proc » qui récupère des informations sur les processus de l’ordinateur local, puis affiche ces informations sur la ligne de commande.
+This section describes how to create a cmdlet that retrieves information from the local computer without the use of parameters, and then writes the information to the pipeline. The cmdlet described here is a Get-Proc cmdlet that retrieves information about the processes of the local computer, and then displays that information at the command line.
 
 > [!NOTE]
-> Sachez que lors de l’écriture d’applets de commande, les assemblys de référence de® Windows PowerShell sont téléchargés sur le disque (par défaut, à l’emplacement C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Ils ne sont pas installés dans le global assembly cache (GAC).
+> Be aware that when writing cmdlets, the Windows PowerShell® reference assemblies are downloaded onto disk (by default at C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). They are not installed in the Global Assembly Cache (GAC).
 
-## <a name="naming-the-cmdlet"></a>Attribution d’un nom à l’applet de commande
+## <a name="naming-the-cmdlet"></a>Naming the Cmdlet
 
-Un nom d’applet de commande se compose d’un verbe qui indique l’action prise par l’applet de commande et d’un nom qui indique les éléments sur lesquels l’applet de commande agit. Étant donné que cet exemple d’applet de commande « obtenir-proc » récupère des objets de processus, il utilise le verbe « obtenir », défini par l’énumération [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) , et le nom « proc » pour indiquer que l’applet de commande fonctionne sur les éléments de processus.
+A cmdlet name consists of a verb that indicates the action the cmdlet takes and a noun that indicates the items that the cmdlet acts upon. Because this sample Get-Proc cmdlet retrieves process objects, it uses the verb "Get", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration, and the noun "Proc" to indicate that the cmdlet works on process items.
 
-Quand vous nommez des applets de commande, n’utilisez pas les caractères suivants : #, () {} [] &-/\ $; : «» < > &#124; ? @ ` .
+When naming cmdlets, do not use any of the following characters: # , () {} [] & - /\ $ ; : " '<> &#124; ? @ ` .
 
-### <a name="choosing-a-noun"></a>Choix d’un nom
+### <a name="choosing-a-noun"></a>Choosing a Noun
 
-Vous devez choisir un nom spécifique. Il est préférable d’utiliser un nom singulier préfixé avec une version abrégée du nom du produit. Un exemple de nom d’applet de commande de ce type est « `Get-SQLServer` ».
+You should choose a noun that is specific. It is best to use a singular noun prefixed with a shortened version of the product name. An example cmdlet name of this type is "`Get-SQLServer`".
 
-### <a name="choosing-a-verb"></a>Choix d’un verbe
+### <a name="choosing-a-verb"></a>Choosing a Verb
 
-Vous devez utiliser un verbe de l’ensemble des noms de verbe d’applet de commande approuvés. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
+You should use a verb from the set of approved cmdlet verb names. For more information about the approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-## <a name="defining-the-cmdlet-class"></a>Définition de la classe cmdlet
+## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
 
-Une fois que vous avez choisi un nom d’applet de commande, définissez une classe .NET pour implémenter l’applet de commande. Voici la définition de classe pour cet exemple d’applet de commande-proc :
+Once you have chosen a cmdlet name, define a .NET class to implement the cmdlet. Here is the class definition for this sample Get-Proc cmdlet:
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -54,35 +54,35 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Notez que précédent à la définition de classe, l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , avec la syntaxe `[Cmdlet(verb, noun, ...)]`, est utilisé pour identifier cette classe en tant qu’applet de commande. Il s’agit du seul attribut requis pour toutes les applets de commande et permet au runtime Windows PowerShell de les appeler correctement. Vous pouvez définir des mots clés d’attribut pour déclarer davantage la classe si nécessaire. Sachez que la déclaration d’attribut pour notre exemple de classe GetProcCommand déclare uniquement les noms de substantif et de verbe pour l’applet de commande « obtenir-proc ».
+Notice that previous to the class definition, the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute, with the syntax `[Cmdlet(verb, noun, ...)]`, is used to identify this class as a cmdlet. This is the only required attribute for all cmdlets, and it allows the Windows PowerShell runtime to call them correctly. You can set attribute keywords to further declare the class if necessary. Be aware that the attribute declaration for our sample GetProcCommand class declares only the noun and verb names for the Get-Proc cmdlet.
 
 > [!NOTE]
-> Pour toutes les classes d’attributs Windows PowerShell, les mots clés que vous pouvez définir correspondent aux propriétés de la classe d’attributs.
+> For all Windows PowerShell attribute classes, the keywords that you can set correspond to properties of the attribute class.
 
-Lorsque vous nommez la classe de l’applet de commande, il est recommandé de refléter le nom de l’applet de commande dans le nom de la classe. Pour ce faire, utilisez la forme « VerbNounCommand » et remplacez « Verb » et « substantif » par le verbe et le substantif utilisés dans le nom de l’applet de commande. Comme indiqué dans la définition de classe précédente, l’applet de commande Sample-proc définit une classe appelée GetProcCommand, qui dérive de la classe de base [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande.
+When naming the class of the cmdlet, it is a good practice to reflect the cmdlet name in the class name. To do this, use the form "VerbNounCommand" and replace "Verb" and "Noun" with the verb and noun used in the cmdlet name. As is shown in the previous class definition, the sample Get-Proc cmdlet defines a class called GetProcCommand, which derives from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) base class.
 
 > [!IMPORTANT]
-> Si vous souhaitez définir une applet de commande qui accède directement au runtime Windows PowerShell, votre classe .NET doit dériver de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Pour plus d’informations sur cette classe, consultez [création d’une applet de commande qui définit des jeux de paramètres](./adding-parameter-sets-to-a-cmdlet.md).
+> If you want to define a cmdlet that accesses the Windows PowerShell runtime directly, your .NET class should derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class. For more information about this class, see [Creating a Cmdlet that Defines Parameter Sets](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
-> La classe d’une applet de commande doit être explicitement marquée comme publique. Les classes qui ne sont pas marquées comme publiques sont par défaut internes et ne sont pas détectées par le runtime Windows PowerShell.
+> The class for a cmdlet must be explicitly marked as public. Classes that are not marked as public will default to internal and will not be found by the Windows PowerShell runtime.
 
-Windows PowerShell utilise l’espace de noms [Microsoft. PowerShell. Commands](/dotnet/api/Microsoft.PowerShell.Commands) pour ses classes d’applet de commande. Il est recommandé de placer vos classes d’applet de commande dans un espace de noms Commands de votre espace de noms d’API, par exemple, xxx. PS. Commands.
+Windows PowerShell uses the [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) namespace for its cmdlet classes. It is recommended to place your cmdlet classes in a Commands namespace of your API namespace, for example, xxx.PS.Commands.
 
-## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement d’entrée
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-La classe [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande fournit trois méthodes de traitement d’entrée principales, au moins l’une d’entre elles devant être substituée par votre applet de commande. Pour plus d’informations sur la façon dont Windows PowerShell traite les enregistrements, consultez fonctionnement de [Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+The [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class provides three main input processing methods, at least one of which your cmdlet must override. For more information about how Windows PowerShell processes records, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
 
-Pour tous les types d’entrée, le runtime Windows PowerShell appelle [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) pour activer le traitement. Si votre applet de commande doit effectuer un prétraitement ou une configuration, elle peut le faire en substituant cette méthode.
+For all types of input, the Windows PowerShell runtime calls [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) to enable processing. If your cmdlet must perform some preprocessing or setup, it can do this by overriding this method.
 
 > [!NOTE]
-> Windows PowerShell utilise le terme « enregistrement » pour décrire l’ensemble des valeurs de paramètre fournies lors de l’appel d’une applet de commande.
+> Windows PowerShell uses the term "record" to describe the set of parameter values supplied when a cmdlet is called.
 
-Si votre applet de commande accepte l’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , et éventuellement la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Par exemple, une applet de commande peut remplacer les deux méthodes si elle recueille toutes les entrées à l’aide de [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , puis opère sur l’entrée dans son ensemble plutôt que sur un élément à la fois, comme le fait l’applet de commande `Sort-Object`.
+If your cmdlet accepts pipeline input, it must override the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, and optionally the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. For example, a cmdlet might override both methods if it gathers all input using [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) and then operates on the input as a whole rather than one element at a time, as the `Sort-Object` cmdlet does.
 
-Si votre applet de commande ne prend pas d’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . N’oubliez pas que cette méthode est fréquemment utilisée à la place de [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) quand l’applet de commande ne peut pas fonctionner sur un élément à la fois, comme c’est le cas pour une applet de commande de tri.
+If your cmdlet does not take pipeline input, it should override the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. Be aware that this method is frequently used in place of [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) when the cmdlet cannot operate on one element at a time, as is the case for a sorting cmdlet.
 
-Étant donné que cet exemple d’applet de commande obtenir-proc doit recevoir l’entrée de pipeline, elle remplace la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) et utilise les implémentations par défaut pour [System. Management. Automation. applet de commande. BeginProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)et [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)de commande. EndProcessing. La substitution [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) récupère les processus et les écrit sur la ligne de commande à l’aide de la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
+Because this sample Get-Proc cmdlet must receive pipeline input, it overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method and uses the default implementations for [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) and [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). The [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) override retrieves processes and writes them to the command line using the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method.
 
 ```csharp
 protected override void ProcessRecord()
@@ -114,44 +114,44 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-#### <a name="things-to-remember-about-input-processing"></a>Points à retenir au sujet du traitement des entrées
+#### <a name="things-to-remember-about-input-processing"></a>Things to Remember About Input Processing
 
-- La source par défaut pour l’entrée est un objet explicite (par exemple, une chaîne) fourni par l’utilisateur sur la ligne de commande. Pour plus d’informations, consultez [création d’une applet de commande pour traiter l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md).
+- The default source for input is an explicit object (for example, a string) provided by the user on the command line. For more information, see [Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
 
-- Une méthode de traitement d’entrée peut également recevoir l’entrée de l’objet de sortie d’une applet de commande en amont sur le pipeline. Pour plus d’informations, consultez [création d’une applet de commande pour traiter l’entrée de pipeline](./adding-parameters-that-process-pipeline-input.md). N’oubliez pas que votre applet de commande peut recevoir l’entrée d’une combinaison de sources de ligne de commande et de pipeline.
+- An input processing method can also receive input from the output object of an upstream cmdlet on the pipeline. For more information, see [Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md). Be aware that your cmdlet can receive input from a combination of command-line and pipeline sources.
 
-- L’applet de commande en aval peut ne pas retourner pendant une longue période, ou pas du tout. Pour cette raison, la méthode de traitement d’entrée dans votre applet de commande ne doit pas contenir de verrous pendant les appels à [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), en particulier les verrous pour lesquels la portée s’étend au-delà de l’instance d’applet de commande.
+- The downstream cmdlet might not return for a long time, or not at all. For that reason, the input processing method in your cmdlet should not hold locks during calls to [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especially locks for which the scope extends beyond the cmdlet instance.
 
 > [!IMPORTANT]
-> Les applets de commande ne doivent jamais appeler [System. Console. WriteLine *](/dotnet/api/System.Console.WriteLine) ou son équivalent.
+> Cmdlets should never call [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) or its equivalent.
 
-- Votre applet de commande peut avoir des variables d’objet à nettoyer lorsqu’elle est terminée (par exemple, si elle ouvre un descripteur de fichier dans la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) et maintient le handle ouvert pour une utilisation par [ System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Il est important de se souvenir que le runtime Windows PowerShell n’appelle pas toujours la méthode [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) , qui doit effectuer un nettoyage d’objet.
+- Your cmdlet might have object variables to clean up when it is finished processing (for example, if it opens a file handle in the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and keeps the handle open for use by [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). It is important to remember that the Windows PowerShell runtime does not always call the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method, which should perform object cleanup.
 
-Par exemple, [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) peut ne pas être appelé si l’applet de commande est annulée à mi-chemin ou si une erreur d’arrêt se produit dans n’importe quelle partie de l’applet de commande. Par conséquent, une applet de commande qui requiert le nettoyage d’objets doit implémenter le modèle [System. IDisposable](/dotnet/api/System.IDisposable) complet, y compris le finaliseur, afin que le runtime puisse appeler à la fois [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) de commande. EndProcessing et [ System. IDisposable. dispose *](/dotnet/api/System.IDisposable.Dispose) à la fin du traitement.
+For example, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) might not be called if the cmdlet is canceled midway or if a terminating error occurs in any part of the cmdlet. Therefore, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including the finalizer, so that the runtime can call both [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) and [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) at the end of processing.
 
-## <a name="code-sample"></a>Exemple de code
+## <a name="code-sample"></a>Code Sample
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple GetProcessSample01](./getprocesssample01-sample.md).
+For the complete C# sample code, see [GetProcessSample01 Sample](./getprocesssample01-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Windows PowerShell transmet des informations entre les applets de commande à l’aide d’objets .NET. Par conséquent, une applet de commande peut avoir besoin de définir son propre type, ou l’applet de commande peut avoir besoin d’étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou l’extension de types existants, consultez [extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>Génération de l’applet de commande
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-Après l’implémentation d’une applet de commande, vous devez l’inscrire auprès de Windows PowerShell à l’aide d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’enregistrement des applets de commande, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
+After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Le code pour notre applet de commande Sample-proc est petit, mais il utilise toujours le runtime Windows PowerShell et un objet .NET existant, ce qui est suffisant pour le rendre utile. Nous allons le tester pour mieux comprendre ce que peut faire et comment sa sortie peut être utilisée. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The code for our sample Get-Proc cmdlet is small, but it still uses the Windows PowerShell runtime and an existing .NET object, which is enough to make it useful. Let's test it to better understand what Get-Proc can do and how its output can be used. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-1. Démarrez Windows PowerShell et récupérez les processus en cours d’exécution sur l’ordinateur.
+1. Start Windows PowerShell, and get the current processes running on the computer.
 
     ```powershell
     get-proc
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -163,31 +163,31 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     ...
     ```
 
-2. Assignez une variable aux résultats de l’applet de commande pour faciliter la manipulation.
+2. Assign a variable to the cmdlet results for easier manipulation.
 
     ```powershell
     $p=get-proc
     ```
 
-3. Obtient le nombre de processus.
+3. Get the number of processes.
 
     ```powershell
     $p.length
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     63
     ```
 
-4. Récupérez un processus spécifique.
+4. Retrieve a specific process.
 
     ```powershell
     $p[6]
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -195,13 +195,13 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     1033     3       2400   3336   35     0.53    1588  rundll32
     ```
 
-5. Obtient l’heure de début de ce processus.
+5. Get the start time of this process.
 
     ```powershell
     $p[6].starttime
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -215,13 +215,13 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     207
     ```
 
-6. Obtenez les processus pour lesquels le nombre de handles est supérieur à 500, puis triez le résultat.
+6. Get the processes for which the handle count is greater than 500, and sort the result.
 
     ```powershell
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -233,7 +233,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     ...
     ```
 
-7. Utilisez l’applet de commande `Get-Member` pour répertorier les propriétés disponibles pour chaque processus.
+7. Use the `Get-Member` cmdlet to list the properties available for each process.
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -243,7 +243,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
         TypeName: System.Diagnostics.Process
     ```
 
-    La sortie suivante s’affiche.
+    The following output appears.
 
     ```output
     Name                     MemberType Definition
@@ -256,18 +256,18 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’une applet de commande pour traiter l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md)
+[Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md)
 
-[Création d’une applet de commande pour traiter l’entrée de pipeline](./adding-parameters-that-process-pipeline-input.md)
+[Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
 
-[Comment créer une applet de commande Windows PowerShell](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Fonctionnement de Windows PowerShell](/previous-versions//ms714658(v=vs.85))
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
 [Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
 
-[Exemples d’applet de commande](./cmdlet-samples.md)
+[Cmdlet Samples](./cmdlet-samples.md)

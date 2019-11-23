@@ -1,35 +1,40 @@
 ---
-title: Comment écrire un module de script PowerShell | Microsoft Docs
+title: How to Write a PowerShell Script Module | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 11/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7742eedd67283535b9e5898adc74d0d48faf68fe
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360688"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416262"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>Guide pratique pour écrire un module de script PowerShell
 
-Un module de script est essentiellement tout script PowerShell valide enregistré dans une extension. psm1. Cette extension permet au moteur PowerShell d’utiliser un certain nombre de règles et d’applets de commande sur votre fichier. La plupart de ces fonctionnalités sont là pour vous aider à installer votre code sur d’autres systèmes, ainsi qu’à gérer la portée. Vous pouvez également utiliser un fichier manifeste de module, qui peut décrire des installations et des solutions encore plus complexes.
+A script module is any valid PowerShell script saved in a `.psm1` extension. This extension allows the PowerShell engine to use rules and module cmdlets on your file. Most of these capabilities are there to help you install your code on other systems, as well as manage scoping. You can also use a module manifest file, which describes more complex installations and solutions.
 
-## <a name="writing-a-powershell-script-module"></a>Écriture d’un module de script PowerShell
+## <a name="writing-a-powershell-script-module"></a>Writing a PowerShell script module
 
-Pour créer un module de script, enregistrez un script PowerShell valide dans un fichier. psm1, puis enregistrez ce fichier dans un répertoire situé dans lequel PowerShell peut le trouver. Dans ce dossier, vous pouvez également placer toutes les ressources dont vous avez besoin pour exécuter votre script, ainsi qu’un fichier manifeste qui décrit le fonctionnement de votre module dans PowerShell.
+To create a script module, save a valid PowerShell script to a `.psm1` file. The script and the directory where it's stored must use the same name. For example, a script named `MyPsScript.psm1` is stored in a directory named `MyPsScript`.
 
-#### <a name="to-create-a-basic-powershell-module"></a>Pour créer un module PowerShell de base
+The module's directory needs to be in a path specified in `$env:PSModulePath`. The module's directory can contain any resources that are needed to run the script, and a module manifest file that describes to PowerShell how your module works.
 
-1. Prenez un script PowerShell existant et enregistrez le script avec une extension. psm1.
+## <a name="create-a-basic-powershell-module"></a>Create a basic PowerShell module
 
-   L’enregistrement d’un script avec l’extension. psm1 signifie que vous pouvez utiliser les applets de commande du module, telles que [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), sur celui-ci. Ces applets de commande existent principalement pour vous permettre d’importer et d’exporter facilement votre code sur les systèmes d’autres utilisateurs. (L’autre solution consisterait à charger votre code sur d’autres systèmes, puis à le mettre sous-source dans la mémoire active, ce qui n’est pas une solution particulièrement Scalable.) Pour plus d’informations, consultez la section sur les **applets** de commande et les variables de module dans les [modules Windows PowerShell](./understanding-a-windows-powershell-module.md) . Notez que, par défaut, toutes les fonctions de votre script sont accessibles aux utilisateurs qui importent votre fichier. psm1, mais les propriétés ne le sont pas.
+The following steps describe how to create a PowerShell module.
 
-   Un exemple de script PowerShell, autorisé `Show-Calendar`, est disponible à la fin de cette rubrique.
+1. Save a PowerShell script with a `.psm1` extension. Use the same name for the script and the directory where the script is saved.
+
+   Saving a script with the `.psm1` extension means that you can use the module cmdlets, such as [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module). The module cmdlets exist primarily so that you can import and export your code onto other user's systems. The alternate solution would be to load your code on other systems and then dot-source it into active memory, which isn't a scalable solution. For more information, see [Understanding a Windows PowerShell Module](./understanding-a-windows-powershell-module.md#module-cmdlets-and-variables).
+   By default, when users import your `.psm1` file, all functions in your script are accessible, but variables aren't.
+
+   An example PowerShell script, entitled `Show-Calendar`, is available at the end of this article.
 
    ```powershell
    function Show-Calendar {
@@ -45,9 +50,9 @@ Pour créer un module de script, enregistrez un script PowerShell valide dans un
    }
    ```
 
-2. Pour contrôler l’accès utilisateur à certaines fonctions ou propriétés, appelez [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) à la fin de votre script.
+2. To control user access to certain functions or variables, call [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the end of your script.
 
-   L’exemple de code en bas de la page n’a qu’une seule fonction, qui est exposée par défaut. Toutefois, il est recommandé d’appeler explicitement les fonctions que vous souhaitez exposer, comme décrit dans le code suivant :
+   The example code at the bottom of the article has only one function, which by default would be exposed. However, it's recommended you explicitly call out which functions you wish to expose, as described in the following code:
 
    ```powershell
    function Show-Calendar {
@@ -55,37 +60,38 @@ Pour créer un module de script, enregistrez un script PowerShell valide dans un
    Export-ModuleMember -Function Show-Calendar
    ```
 
-   Vous pouvez également limiter les éléments importés à l’aide d’un manifeste de module. Pour plus d’informations, consultez [importation d’un module PowerShell](./importing-a-powershell-module.md) et [écriture d’un manifeste de module PowerShell](./how-to-write-a-powershell-module-manifest.md).
+   You can restrict what's imported using a module manifest. For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
 
-3. Si vous avez des modules qui doivent être chargés par votre propre module, vous pouvez les utiliser avec un appel à `Import-Module`, en haut de votre propre module.
+3. If you have modules that your own module needs to load, you can use `Import-Module`, at the top of your module.
 
-   `Import-Module` est une applet de commande qui importe un module ciblé sur un système. Par conséquent, il est également utilisé à un moment ultérieur de la procédure pour installer également votre propre module. L’exemple de code en bas de cette page n’utilise pas de modules d’importation. Dans le cas contraire, ils seraient répertoriés en haut du fichier, comme décrit dans le code suivant :
+   The `Import-Module` cmdlet imports a targeted module onto a system, and can be used at a later point in the procedure to install your own module. The sample code at the bottom of this article doesn't use any import modules. But if it did, they would be listed at the top of the file, as shown in the following code:
 
    ```powershell
    Import-Module GenericModule
    ```
 
-4. Pour décrire votre module au système d’aide PowerShell, vous pouvez soit utiliser des commentaires d’aide standard dans le fichier, soit créer un fichier d’aide supplémentaire.
+4. To describe your module to the PowerShell Help system, you can either use standard help comments inside the file, or create an additional Help file.
 
-   L’exemple de code en bas de cette rubrique contient des informations d’aide dans les commentaires. Vous pouvez également écrire des fichiers XML développés qui contiennent du contenu d’aide supplémentaire. Pour plus d’informations, consultez [écriture de l’aide pour les modules Windows PowerShell](./writing-help-for-windows-powershell-modules.md).
+   The code sample at the bottom of this article includes the help information in the comments. You could also write expanded XML files that contain additional help content. For more information, see [Writing Help for Windows PowerShell Modules](./writing-help-for-windows-powershell-modules.md).
 
-5. Si vous avez d’autres modules, fichiers XML ou tout autre contenu que vous souhaitez empaqueter avec votre module, vous pouvez le faire avec un manifeste de module.
+5. If you have additional modules, XML files, or other content you want to package with your module, you can use a module manifest.
 
-   Un manifeste de module est un fichier qui contient les noms d’autres modules, les dispositions de répertoire, les numéros de versioning, les données d’auteur et d’autres informations. PowerShell utilise le fichier manifeste du module pour organiser et déployer votre solution. Toutefois, en raison de la nature relativement simple de cet exemple, un fichier manifeste n’était pas nécessaire. Pour plus d’informations, consultez [manifestes de module](./how-to-write-a-powershell-module-manifest.md).
+   A module manifest is a file that contains the names of other modules, directory layouts, versioning numbers, author data, and other pieces of information. PowerShell uses the module manifest file to organize and deploy your solution. For more information, see [How to write a PowerShell module manifest](./how-to-write-a-powershell-module-manifest.md).
 
-6. Pour installer et exécuter votre module, enregistrez le module dans l’un des chemins PowerShell appropriés et effectuez un appel à `Import-Module`.
+6. To install and run your module, save the module to one of the appropriate PowerShell paths, and use `Import-Module`.
 
-   Les chemins d’accès où vous pouvez installer votre module se trouvent dans la variable globale `$env:PSModulePath`. Par exemple, un chemin d’accès commun pour enregistrer un module sur un système serait `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`. Veillez à créer un dossier dans lequel le module doit exister, même s’il s’agit d’un seul fichier. psm1. Si vous n’avez pas enregistré votre module dans l’un de ces chemins d’accès, vous devez passer l’emplacement de votre module dans l’appel à `Import-Module`. (Dans le cas contraire, PowerShell ne sera pas en mesure de le trouver.) À compter de PowerShell 3,0, si vous avez placé votre module dans l’un des chemins d’accès au module PowerShell, vous n’avez pas besoin de l’importer explicitement. Le module est chargé automatiquement lorsqu’un utilisateur appelle votre fonction.
-   Pour plus d’informations sur le chemin d’accès au module, consultez [importation d’un module PowerShell](./importing-a-powershell-module.md) et d’une [variable d’environnement PSModulePath](./modifying-the-psmodulepath-installation-path.md).
+   The paths where you can install your module are located in the `$env:PSModulePath` global variable. For example, a common path to save a module on a system would be `%SystemRoot%/users/<user>/Documents/PowerShell/Modules/<moduleName>`. Be sure to create a directory for your module that uses the same name as the script module, even if it's only a single `.psm1` file. If you didn't save your module to one of these paths, you would have to specify the module's location in the `Import-Module` command. Otherwise, PowerShell wouldn't be able to find the module.
 
-7. Pour supprimer un module d’un service actif, effectuez un appel à [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
+   Starting with PowerShell 3.0, if you've placed your module in one of the PowerShell module paths, you don't need to explicitly import it. Your module is automatically loaded when a user calls your function. For more information about the module path, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md).
 
-   Notez que [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) supprime votre module de la mémoire active. il ne le supprime pas réellement de l’emplacement où vous avez enregistré les fichiers de module.
+7. To remove a module from active service in the current PowerShell session, use [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-### <a name="show-calendar-code-example"></a>Show-exemple de code de calendrier
+   > [!NOTE]
+   > `Remove-Module` removes a module from the current PowerShell session, but doesn't uninstall the module or delete the module's files.
 
-L’exemple suivant est un module de script simple qui contient une fonction unique nommée `Show-Calendar`.
-Cette fonction affiche une représentation visuelle d’un calendrier. En outre, l’exemple contient les chaînes d’aide PowerShell pour le synopsis, la description, les valeurs de paramètre et l’exemple. Notez que la dernière ligne de code garantit que la fonction `Show-Calendar` est exportée en tant que membre de module lors de l’importation du module.
+## <a name="show-calendar-code-example"></a>Show-Calendar code example
+
+The following example is a script module that contains a single function named `Show-Calendar`. This function displays a visual representation of a calendar. The sample contains the PowerShell Help strings for the synopsis, description, parameter values, and code. When the module is imported, the `Export-ModuleMember` command ensures that the `Show-Calendar` function is exported as a module member.
 
 ```powershell
 <#
