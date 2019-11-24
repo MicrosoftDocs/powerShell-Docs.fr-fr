@@ -21,7 +21,7 @@ Les exemples de® Windows PowerShell sont disponibles par le biais du SDK Window
 
 > [!NOTE]
 > Lorsque le SDK Windows est installé, un répertoire d' **exemples** est créé dans lequel tous les exemples Windows PowerShell sont disponibles. Le répertoire d’installation par défaut est **C:\Program Files\Microsoft SDKs\Windows\v6.0**.
-> Démarrez Windows PowerShell et tapez **« CD Samples\SysMgmt\PowerShell »** pour rechercher le répertoire d’exemples Windows PowerShell. Dans ce document, le répertoire d’exemples Windows PowerShell est appelé **exemples de @no__t 1PowerShell >** .
+> Démarrez Windows PowerShell et tapez **« CD Samples\SysMgmt\PowerShell »** pour rechercher le répertoire d’exemples Windows PowerShell. Dans ce document, le répertoire des exemples Windows PowerShell est appelé **\<exemples PowerShell >** .
 
 ## <a name="sample-code-listing"></a>Exemple de liste de code
 

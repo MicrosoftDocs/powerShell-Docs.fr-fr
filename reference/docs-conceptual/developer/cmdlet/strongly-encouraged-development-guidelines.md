@@ -49,11 +49,11 @@ Les instructions suivantes doivent être suivies lors de la conception des apple
 
 Les noms utilisés dans les applets de commande doivent être très spécifiques afin que l’utilisateur puisse découvrir vos applets de commande. Préfixez les noms génériques tels que « Server » avec une version abrégée du nom du produit. Par exemple, si un nom fait référence à un serveur qui exécute une instance de Microsoft SQL Server, utilisez un nom tel que « SQLServer ». La combinaison de noms spécifiques et la liste réduite de verbes approuvés permettent à l’utilisateur de découvrir et d’anticiper rapidement les fonctionnalités tout en évitant la duplication parmi les noms d’applets de commande.
 
-Pour améliorer l’expérience utilisateur, le nom que vous choisissez pour un nom d’applet de commande doit être singulier. Par exemple, utilisez le nom `Get-Process` au lieu de « **obtenir-Processes »** . Il est préférable de suivre cette règle pour tous les noms d’applet de commande, même lorsqu’une applet de commande est susceptible d’agir sur plus d’un élément.
+Pour améliorer l’expérience utilisateur, le nom que vous choisissez pour un nom d’applet de commande doit être singulier. Par exemple, utilisez le nom `Get-Process` au lieu de l’extension **« obtenir-Processes »** . Il est préférable de suivre cette règle pour tous les noms d’applet de commande, même lorsqu’une applet de commande est susceptible d’agir sur plus d’un élément.
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Utiliser la casse Pascal pour les noms d’applets de commande (SD02)
 
-Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre du verbe et tous les termes utilisés dans le nom. Par exemple, « `Clear-ItemProperty` ».
+Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre du verbe et tous les termes utilisés dans le nom. Par exemple, «`Clear-ItemProperty`».
 
 ### <a name="parameter-design-guidelines-sd03"></a>Recommandations en matière de conception de paramètres (SD03)
 
@@ -61,7 +61,7 @@ Une applet de commande a besoin de paramètres qui reçoivent les données sur l
 
 #### <a name="use-standard-parameter-names"></a>Utiliser des noms de paramètres standard
 
-Votre applet de commande doit utiliser des noms de paramètres standard pour permettre à l’utilisateur de déterminer rapidement ce que signifie un paramètre particulier. Si un nom plus spécifique est requis, utilisez un nom de paramètre standard, puis spécifiez un nom plus spécifique en tant qu’alias. Par exemple, l’applet de commande `Get-Service` a un paramètre qui a un nom générique (`Name`) et un alias plus spécifique (`ServiceName`). Les deux termes peuvent être utilisés pour spécifier le paramètre.
+Votre applet de commande doit utiliser des noms de paramètres standard pour permettre à l’utilisateur de déterminer rapidement ce que signifie un paramètre particulier. Si un nom plus spécifique est requis, utilisez un nom de paramètre standard, puis spécifiez un nom plus spécifique en tant qu’alias. Par exemple, l’applet de commande `Get-Service` possède un paramètre qui a un nom générique (`Name`) et un alias plus spécifique (`ServiceName`). Les deux termes peuvent être utilisés pour spécifier le paramètre.
 
 Pour plus d’informations sur les noms de paramètres et leurs types de données, consultez [instructions relatives au nom du paramètre d’applet de commande et aux fonctionnalités](./standard-cmdlet-parameter-names-and-types.md).
 
@@ -73,7 +73,7 @@ Les noms de paramètres au pluriel doivent être utilisés uniquement dans les c
 
 #### <a name="use-pascal-case-for-parameter-names"></a>Utiliser la casse Pascal pour les noms de paramètres
 
-Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre de chaque mot dans le nom du paramètre, y compris la première lettre du nom. Par exemple, le nom du paramètre `ErrorAction` utilise la mise en majuscules correcte. Les noms de paramètres suivants utilisent une casse incorrecte :
+Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre de chaque mot dans le nom du paramètre, y compris la première lettre du nom. Par exemple, le nom du paramètre `ErrorAction` utilise la casse correcte. Les noms de paramètres suivants utilisent une casse incorrecte :
 
 - `errorAction`
 
@@ -101,9 +101,9 @@ Lorsque le même paramètre est utilisé par plusieurs applets de commande, util
 
 #### <a name="parameters-that-take-true-and-false"></a>Paramètres qui prennent la valeur true et false
 
-Si votre paramètre accepte uniquement `true` et `false`, définissez le paramètre en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter). Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre est `false`. Ne définissez pas de paramètres booléens.
+Si votre paramètre accepte uniquement `true` et `false`, définissez le paramètre en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter). Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre doit être `false`. Ne définissez pas de paramètres booléens.
 
-Si votre paramètre doit faire la distinction entre 3 valeurs : $true, $false et "Unspecified", définissez un paramètre de type Nullable @ no__t-0bool >.  La nécessité d’une troisième valeur « non spécifiée » se produit généralement lorsque l’applet de commande peut modifier une propriété booléenne d’un objet. Dans ce cas, « non spécifié » signifie que vous ne pouvez pas modifier la valeur actuelle de la propriété.
+Si votre paramètre doit faire la distinction entre 3 valeurs : $true, $false et "Unspecified", définissez un paramètre de type Nullable\<bool >.  La nécessité d’une troisième valeur « non spécifiée » se produit généralement lorsque l’applet de commande peut modifier une propriété booléenne d’un objet. Dans ce cas, « non spécifié » signifie que vous ne pouvez pas modifier la valeur actuelle de la propriété.
 
 #### <a name="support-arrays-for-parameters"></a>Tableaux de prise en charge pour les paramètres
 
@@ -170,7 +170,7 @@ Définissez un paramètre en déclarant une propriété publique de la classe cm
 
 Le chemin d’accès Windows PowerShell est le mécanisme permettant de normaliser l’accès aux espaces de noms. Lorsque vous attribuez un chemin d’accès Windows PowerShell à un paramètre dans l’applet de commande, l’utilisateur peut définir un « lecteur » personnalisé qui agit comme raccourci vers un chemin d’accès spécifique. Lorsqu’un utilisateur désigne un tel lecteur, les données stockées, telles que les données du Registre, peuvent être utilisées de manière cohérente.
 
-Si votre applet de commande permet à l’utilisateur de spécifier un fichier ou une source de données, il doit définir un paramètre de type [System. String](/dotnet/api/System.String). Si plusieurs lecteurs sont pris en charge, le type doit être un tableau. Le nom du paramètre doit être `Path`, avec l’alias `PSPath`. En outre, le paramètre `Path` doit prendre en charge les caractères génériques. Si la prise en charge des caractères génériques n’est pas nécessaire, définissez un paramètre `LiteralPath`.
+Si votre applet de commande permet à l’utilisateur de spécifier un fichier ou une source de données, il doit définir un paramètre de type [System. String](/dotnet/api/System.String). Si plusieurs lecteurs sont pris en charge, le type doit être un tableau. Le nom du paramètre doit être `Path`, avec un alias de `PSPath`. En outre, le paramètre `Path` doit prendre en charge les caractères génériques. Si la prise en charge des caractères génériques n’est pas nécessaire, définissez un paramètre `LiteralPath`.
 
 Si les données que l’applet de commande lit ou écrit doivent être un fichier, l’applet de commande doit accepter l’entrée de chemin d’accès Windows PowerShell, et l’applet de commande doit utiliser la propriété [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) pour convertir les chemins d’accès Windows PowerShell en chemins d’accès reconnus par le système de fichiers. Les mécanismes spécifiques incluent les méthodes suivantes :
 
@@ -182,7 +182,7 @@ Si les données que l’applet de commande lit ou écrit doivent être un fichie
 
 - [System. Management. Automation. PathIntrinsics. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Si les données que l’applet de commande lit ou écrit ne sont qu’un ensemble de chaînes au lieu d’un fichier, l’applet de commande doit utiliser les informations de contenu du fournisseur (`Content`) pour lire et écrire. Ces informations sont obtenues à partir de la propriété [System. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Ces mécanismes permettent à d’autres magasins de données de participer à la lecture et à l’écriture de données.
+Si les données que l’applet de commande lit ou écrit ne sont qu’un ensemble de chaînes au lieu d’un fichier, l’applet de commande doit utiliser les informations de contenu du fournisseur (`Content` membre) pour lire et écrire. Ces informations sont obtenues à partir de la propriété [System. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Ces mécanismes permettent à d’autres magasins de données de participer à la lecture et à l’écriture de données.
 
 #### <a name="support-wildcard-characters"></a>Prendre en charge les caractères génériques
 
@@ -206,7 +206,7 @@ Si vous concevez un objet pour une applet de commande, assurez-vous que ses memb
 
 Les objets .NET Framework préexistants retournés par les applets de commande sont souvent absents de certains membres importants ou pratiques qui sont requis par le développeur ou l’utilisateur de script. Ces membres manquants peuvent être particulièrement importants pour l’affichage et pour la création des noms de membres corrects afin que l’objet puisse être correctement transmis au pipeline. Créez un fichier Custom types. ps1xml pour documenter ces membres requis. Lorsque vous créez ce fichier, nous vous recommandons d’utiliser la Convention d’affectation de noms suivante : *< Your_Product_Name >* . Types. ps1xml.
 
-Par exemple, vous pouvez ajouter une propriété de script `Mode` au type [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) pour afficher plus clairement les attributs d’un fichier. En outre, vous pouvez ajouter une propriété d’alias `Count` au type [System. Array](/dotnet/api/System.Array) pour permettre l’utilisation cohérente de ce nom de propriété (au lieu de `Length`).
+Par exemple, vous pouvez ajouter une `Mode` propriété de script au type [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) pour afficher plus clairement les attributs d’un fichier. En outre, vous pouvez ajouter une `Count` propriété alias au type [System. Array](/dotnet/api/System.Array) pour permettre l’utilisation cohérente de ce nom de propriété (au lieu de `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implémenter l’interface IComparable
 
@@ -214,19 +214,19 @@ Implémentez une interface [System. IComparable](/dotnet/api/System.IComparable)
 
 ##### <a name="update-display-information"></a>Mettre à jour les informations d’affichage
 
-Si l’affichage d’un objet ne fournit pas les résultats attendus, créez un *> @no__t 1YourProductName*personnalisé. Fichier format. ps1xml pour cet objet.
+Si l’affichage d’un objet ne fournit pas les résultats attendus, créez un *>\<YourProductName*personnalisé. Fichier format. ps1xml pour cet objet.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Prendre en charge l’entrée de pipeline bien définie (SC02)
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implémentez pour le milieu d’un pipeline
 
-Implémentez une applet de commande en supposant qu’elle sera appelée à partir du milieu d’un pipeline (autrement dit, d’autres applets de commande produiront son entrée ou consomment sa sortie). Par exemple, vous pouvez supposer que l’applet de commande `Get-Process`, car elle génère des données, est utilisé uniquement comme première applet de commande dans un pipeline. Toutefois, étant donné que cette applet de commande est conçue pour le milieu d’un pipeline, cette applet de commande autorise les applets de commande ou les données précédentes dans le pipeline à spécifier les processus à récupérer.
+Implémentez une applet de commande en supposant qu’elle sera appelée à partir du milieu d’un pipeline (autrement dit, d’autres applets de commande produiront son entrée ou consomment sa sortie). Par exemple, vous pouvez supposer que l’applet de commande `Get-Process`, car elle génère des données, est utilisée uniquement comme première applet de commande dans un pipeline. Toutefois, étant donné que cette applet de commande est conçue pour le milieu d’un pipeline, cette applet de commande autorise les applets de commande ou les données précédentes dans le pipeline à spécifier les processus à récupérer.
 
 #### <a name="support-input-from-the-pipeline"></a>Prendre en charge l’entrée à partir du pipeline
 
 Dans chaque jeu de paramètres pour une applet de commande, incluez au moins un paramètre qui prend en charge l’entrée du pipeline. La prise en charge de l’entrée de pipeline permet à l’utilisateur de récupérer des données ou des objets, de les envoyer au jeu de paramètres correct et de transmettre les résultats directement à une applet de commande.
 
-Un paramètre accepte l’entrée du pipeline si l’attribut de **paramètre** comprend le mot clé `ValueFromPipeline`, l’attribut de mot clé `ValueFromPipelineByPropertyName` ou les deux mots clés dans sa déclaration. Si aucun des paramètres d’un jeu de paramètres ne prend en charge les mots clés `ValueFromPipeline` ou `ValueFromPipelineByPropertyName`, l’applet de commande ne peut pas être placée de manière significative après une autre applet de commande, car elle ignore toute entrée de pipeline.
+Un paramètre accepte l’entrée du pipeline si l’attribut du **paramètre** comprend le mot clé `ValueFromPipeline`, l’attribut `ValueFromPipelineByPropertyName` mot clé ou les deux mots clés dans sa déclaration. Si aucun des paramètres d’un jeu de paramètres ne prend en charge les mots clés `ValueFromPipeline` ou `ValueFromPipelineByPropertyName`, l’applet de commande ne peut pas être placée de manière significative après une autre applet de commande, car elle ignore toute entrée de pipeline.
 
 #### <a name="support-the-processrecord-method"></a>Prendre en charge la méthode ProcessRecord
 

@@ -20,7 +20,7 @@ ms.locfileid: "72364448"
 Lorsque vous étendez .NET Framework objets, vous pouvez ajouter des propriétés d’alias, des propriétés de code, des propriétés de note, des propriétés de script et des jeux de propriétés aux objets. Le code XML qui définit ces propriétés est décrit dans les sections suivantes.
 
 > [!NOTE]
-> Les exemples des sections suivantes proviennent du fichier de types `Types.ps1xml` par défaut dans le répertoire d’installation de PowerShell (`$PSHOME`). Pour plus d’informations, consultez [à propos des types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> Les exemples des sections suivantes proviennent du fichier de types de `Types.ps1xml` par défaut dans le répertoire d’installation de PowerShell (`$PSHOME`). Pour plus d’informations, consultez [à propos des types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="alias-properties"></a>Propriétés de l’alias
 
@@ -102,10 +102,10 @@ Dans l’exemple suivant, la propriété **VERSIONINFO** est ajoutée au type [S
 ## <a name="property-sets"></a>Jeux de propriétés
 
 Un jeu de propriétés définit un groupe de propriétés étendues qui peuvent être référencées par le nom de l’ensemble.
-Par exemple, le paramètre de**propriété** [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
- peut spécifier un jeu de propriétés spécifique à afficher. Quand un jeu de propriétés est spécifié, seules les propriétés qui appartiennent à l’ensemble sont affichées.
+Par exemple, le paramètre de **propriété** [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+peut spécifier un jeu de propriétés spécifique à afficher. Quand un jeu de propriétés est spécifié, seules les propriétés qui appartiennent à l’ensemble sont affichées.
 
-Il n’existe aucune restriction sur le nombre de jeux de propriétés qui peuvent être définis pour un objet. Toutefois, les jeux de propriétés utilisés pour définir les propriétés d’affichage par défaut d’un objet doivent être spécifiés dans le jeu de membres **PSStandardMembers** . Dans le fichier de types `Types.ps1xml`, les noms de jeu de propriétés par défaut sont **DefaultDisplayProperty**, **DefaultDisplayPropertySet**et **DefaultKeyPropertySet**. Tous les jeux de propriétés supplémentaires que vous ajoutez au jeu de membres **PSStandardMembers** sont ignorés.
+Il n’existe aucune restriction sur le nombre de jeux de propriétés qui peuvent être définis pour un objet. Toutefois, les jeux de propriétés utilisés pour définir les propriétés d’affichage par défaut d’un objet doivent être spécifiés dans le jeu de membres **PSStandardMembers** . Dans le fichier de types de `Types.ps1xml`, les noms de jeu de propriétés par défaut sont **DefaultDisplayProperty**, **DefaultDisplayPropertySet**et **DefaultKeyPropertySet**. Tous les jeux de propriétés supplémentaires que vous ajoutez au jeu de membres **PSStandardMembers** sont ignorés.
 
 Dans l’exemple suivant, le jeu de propriétés **DefaultDisplayPropertySet** est ajouté au jeu de membres **PSStandardMembers** du type [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) . L’élément [PropertySet](/dotnet/api/system.management.automation.pspropertyset) définit le groupe de propriétés. L’élément [Name](/dotnet/api/system.management.automation.psmemberinfo.name) spécifie le nom du jeu de propriétés. Et, l’élément [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) spécifie les propriétés de l’ensemble. Vous pouvez également ajouter l’élément `PropertySet` aux membres de l’élément [type](/dotnet/api/system.management.automation.pstypename) .
 

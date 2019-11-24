@@ -22,7 +22,7 @@ Souvent, vous devez concevoir une applet de commande à exécuter sur un groupe 
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Applets de commande Windows PowerShell utilisant des caractères génériques
 
- De nombreuses applets de commande Windows PowerShell prennent en charge les caractères génériques pour leurs valeurs de paramètres. Par exemple, presque toutes les applets de commande ayant un paramètre `Name` ou `Path` prennent en charge les caractères génériques pour ces paramètres. (Bien que la plupart des cmdlets ayant un paramètre `Path` aient également un paramètre `LiteralPath` qui ne prend pas en charge les caractères génériques.) La commande suivante montre comment un caractère générique est utilisé pour retourner toutes les applets de commande de la session active dont le nom contient le verbe obtenir.
+ De nombreuses applets de commande Windows PowerShell prennent en charge les caractères génériques pour leurs valeurs de paramètres. Par exemple, presque toutes les applets de commande possédant un paramètre `Name` ou `Path` prennent en charge les caractères génériques pour ces paramètres. (Bien que la plupart des applets de commande possédant un paramètre `Path` aient également un paramètre `LiteralPath` qui ne prend pas en charge les caractères génériques.) La commande suivante montre comment un caractère générique est utilisé pour retourner toutes les applets de commande de la session active dont le nom contient le verbe obtenir.
 
  `Get-Command get-*`
 
@@ -41,7 +41,7 @@ Lorsque vous concevez des applets de commande qui prennent en charge les caract�
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-La commande précédente utilise le caractère générique de plage `[a-l]` pour spécifier que le nom de fichier doit commencer par les caractères « a » à « l » et utilise le caractère générique `*` comme espace réservé pour tous les caractères entre la première lettre du nom de fichier et le fichier **. txt** extension.
+La commande précédente utilise le caractère générique de plage `[a-l]` pour spécifier que le nom de fichier doit commencer par les caractères « a » à « l » et utilise le `*` caractère générique comme espace réservé pour tous les caractères entre la première lettre du nom de fichier et l’extension **. txt** .
 
 L’exemple suivant utilise un modèle de caractère générique de plage qui exclut la lettre « d », mais inclut toutes les autres lettres de « a » à « f ».
 
@@ -55,13 +55,13 @@ Par exemple, le modèle suivant contient deux crochets qui doivent être pris li
 
 En cas d’utilisation dans l’API PowerShell, utilisez :
 
-- « John Smith \` [* '] »
+- « John Smith \`[* '] »
 
 En cas d’utilisation à partir de l’invite de commandes PowerShell :
 
-- « John Smith \` @ no__t-1 [* \` '] »
+- « John Smith \`\`[*\`»]»
 
-Ce modèle correspond à « John Smith [marketing] » ou « John Smith [Development] ». Par exemple :
+Ce modèle correspond à « John Smith [marketing] » ou « John Smith [Development] ». Exemple :
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"

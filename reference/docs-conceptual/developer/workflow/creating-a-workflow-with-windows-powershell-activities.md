@@ -23,7 +23,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 ### <a name="setting-up-the-project"></a>Configuration du projet
 
-1. Suivez la procédure décrite dans [Ajout d’activités Windows PowerShell à la boîte à outils Visual Studio](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) pour créer un projet de flux de travail et ajouter des activités à partir de [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) et [Microsoft. PowerShell. Management. Activities ](/dotnet/api/Microsoft.PowerShell.Management.Activities)assemblys de la boîte à outils.
+1. Suivez la procédure décrite dans [Ajout d’activités Windows PowerShell à la boîte à outils Visual Studio](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md) pour créer un projet de workflow et ajouter les activités des assemblys [Microsoft. PowerShell. Activities](/dotnet/api/Microsoft.PowerShell.Activities) et [Microsoft. PowerShell. Management. Activities](/dotnet/api/Microsoft.PowerShell.Management.Activities) à la boîte à outils.
 
 2. Ajoutez System. Management. Automation, Microsoft. PowerShell. Activities, System. Management, Microsoft. PowerShell. Management. Activities et Microsoft. PowerShell. Commands. Management au projet en tant qu’assemblys de référence.
 
@@ -45,7 +45,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 8. Modifiez les propriétés de l’activité **GetWmiObject** comme suit.
 
-   |Propriété|Value|
+   |Propriété|Valeur|
    |--------------|-----------|
    |**Type**|« Win32_ComputerSystem »|
    |**PSComputerName**|conformes|
@@ -55,7 +55,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 10. Modifiez les propriétés de l’activité **AddComputer** comme suit.
 
-    |Propriété|Value|
+    |Propriété|Valeur|
     |--------------|-----------|
     |**Nomd’ordinateur**|conformes|
     |**DomainCredential**|DomainCred|
@@ -64,7 +64,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 12. Modifiez les propriétés de l’activité **RestartComputer** comme suit.
 
-    |Propriété|Value|
+    |Propriété|Valeur|
     |--------------|-----------|
     |**Nomd’ordinateur**|conformes|
     |**Justificative**|MachineCred|
@@ -77,4 +77,5 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
     Lorsque vous avez terminé les procédures, la fenêtre de conception de Workflow doit ressembler à ceci.
 
-    ![JoinDomain XAML dans le concepteur de flux de travail @ no__t-1![JOINDOMAIN XAML dans le concepteur de workflow](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![XAML JoinDomain dans le concepteur de flux de travail](../media/joindomainworkflow.png)
+    ![XAML JoinDomain dans le concepteur de workflow](../media/joindomainworkflow.png "JoinDomainWorkflow")
