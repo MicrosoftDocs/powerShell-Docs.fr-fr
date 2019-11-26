@@ -1,5 +1,5 @@
 ---
-title: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters | Microsoft Docs
+title: Ajout d’alias, extension de caractère générique et aide aux paramètres d’applet de commande | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,15 +17,15 @@ ms.locfileid: "74415661"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
 
-This section describes how to add aliases, wildcard expansion, and Help messages to the parameters of the Stop-Proc cmdlet (described in [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)).
+Cette section décrit comment ajouter des alias, une extension de caractères génériques et des messages d’aide aux paramètres de l’applet de commande Stop-proc (décrit dans [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
+Cette applet de commande Stop-proc tente d’arrêter les processus qui sont récupérés à l’aide de l’applet de commande « obtient-proc » (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande).
 
-## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
+## <a name="defining-the-cmdlet"></a>Définition de l’applet de commande
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. Because this cmdlet stops system processes, it uses the verb "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate process. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Étant donné que vous écrivez une applet de commande pour modifier le système, elle doit être nommée en conséquence. Étant donné que cette applet de commande arrête les processus système, elle utilise le verbe « Stop », défini par la classe [System. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) , avec le nom « proc » pour indiquer le processus. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-The following code is the class definition for this Stop-Proc cmdlet.
+Le code suivant est la définition de classe pour cette applet de commande Stop-proc.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -33,15 +33,15 @@ The following code is the class definition for this Stop-Proc cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
+## <a name="defining-parameters-for-system-modification"></a>Définition des paramètres pour la modification du système
 
-Your cmdlet needs to define parameters that support system modifications and user feedback. The cmdlet should define a `Name` parameter or equivalent so that the cmdlet will be able to modify the system by some sort of identifier. In addition, the cmdlet should define the `Force` and `PassThru` parameters. For more information about these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Votre applet de commande doit définir des paramètres qui prennent en charge les modifications du système et les commentaires des utilisateurs. L’applet de commande doit définir un paramètre `Name` ou un équivalent pour que l’applet de commande puisse modifier le système par une sorte d’identificateur. En outre, l’applet de commande doit définir les paramètres `Force` et `PassThru`. Pour plus d’informations sur ces paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="defining-a-parameter-alias"></a>Defining a Parameter Alias
+## <a name="defining-a-parameter-alias"></a>Définition d’un alias de paramètre
 
-A parameter alias can be an alternate name or a well-defined 1-letter or 2-letter short name for a cmdlet parameter. In both cases, the goal of using aliases is to simplify user entry from the command line. Windows PowerShell supports parameter aliases through the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, which uses the declaration syntax [Alias()].
+Un alias de paramètre peut être un nom de remplacement ou un nom abrégé à une ou deux lettres bien défini pour un paramètre d’applet de commande. Dans les deux cas, l’objectif de l’utilisation d’alias est de simplifier l’entrée d’utilisateur à partir de la ligne de commande. Windows PowerShell prend en charge les alias de paramètres via l’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) , qui utilise la syntaxe de déclaration [alias ()].
 
-The following code shows how an alias is added to the `Name` parameter.
+Le code suivant montre comment un alias est ajouté au paramètre `Name`.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-In addition to using the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, the Windows PowerShell runtime performs partial name matching, even if no aliases are specified. For example, if your cmdlet has a `FileName` parameter and that is the only parameter that starts with `F`, the user could enter `Filename`, `Filenam`, `File`, `Fi`, or `F` and still recognize the entry as the `FileName` parameter.
+Outre l’utilisation de l’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) , le runtime Windows PowerShell effectue une correspondance de nom partielle, même si aucun alias n’est spécifié. Par exemple, si votre applet de commande a un paramètre `FileName` et qu’il s’agit du seul paramètre qui commence par `F`, l’utilisateur peut entrer `Filename`, `Filenam`, `File`, `Fi`ou `F` et toujours reconnaître l’entrée comme paramètre `FileName`.
 
-## <a name="creating-help-for-parameters"></a>Creating Help for Parameters
+## <a name="creating-help-for-parameters"></a>Création d’aide pour les paramètres
 
-Windows PowerShell allows you to create Help for cmdlet parameters. Do this for any parameter used for system modification and user feedback. For each parameter to support Help, you can set the `HelpMessage` attribute keyword in the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration. This keyword defines the text to display to the user for assistance in using the parameter. You can also set the `HelpMessageBaseName` keyword to identify the base name of a resource to use for the message. If you set this keyword, you must also set the `HelpMessageResourceId` keyword to specify the resource identifier.
+Windows PowerShell vous permet de créer de l’aide pour les paramètres de l’applet de commande. Procédez ainsi pour tous les paramètres utilisés pour la modification du système et les commentaires des utilisateurs. Pour chaque paramètre permettant de prendre en charge l’aide, vous pouvez définir le mot clé `HelpMessage` attribut dans la déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ce mot clé définit le texte à afficher à l’utilisateur pour obtenir de l’aide sur l’utilisation du paramètre. Vous pouvez également définir le mot clé `HelpMessageBaseName` pour identifier le nom de base d’une ressource à utiliser pour le message. Si vous définissez ce mot clé, vous devez également définir le mot clé `HelpMessageResourceId` pour spécifier l’identificateur de ressource.
 
-The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribute keyword for the `Name` parameter.
+Le code suivant de cette applet de commande Stop-proc définit le mot clé d’attribut `HelpMessage` pour le paramètre `Name`.
 
 ```csharp
 /// <summary>
@@ -86,32 +86,32 @@ The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribut
 )]
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
+## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement d’entrée
 
-Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Votre applet de commande doit remplacer une méthode de traitement d’entrée, le plus souvent, [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)de commande. ProcessRecord. Lors de la modification du système, l’applet de commande doit appeler les méthodes [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) pour permettre à l’utilisateur de fournir des commentaires avant qu’une modification soit apportée. Pour plus d’informations sur ces méthodes, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="supporting-wildcard-expansion"></a>Supporting Wildcard Expansion
+## <a name="supporting-wildcard-expansion"></a>Extension de caractères génériques prise en charge
 
-To allow the selection of multiple objects, your cmdlet can use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) and [System.Management.Automation.Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) classes to provide wildcard expansion support for parameter input. Examples of wildcard patterns are lsa*, \*.txt, and [a-c]\*. Use the back-quote character (`) as an escape character when the pattern contains a character that should be used literally.
+Pour permettre la sélection de plusieurs objets, votre applet de commande peut utiliser les classes [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) et [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) pour fournir une prise en charge des caractères génériques pour l’entrée de paramètre. Les exemples de modèles de caractère générique sont LSA *, \*. txt et [a-c]\*. Utilisez le caractère de guillemet (') comme caractère d’échappement lorsque le modèle contient un caractère qui doit être utilisé littéralement.
 
-Wildcard expansions of file and path names are examples of common scenarios where the cmdlet may want to allow support for path inputs when the selection of multiple objects is required. A common case is in the file system, where a user wants to see all files residing in the current folder.
+Les extensions de caractères génériques des noms de fichier et de chemin d’accès sont des exemples de scénarios courants dans lesquels l’applet de commande peut souhaiter prendre en charge les entrées de chemin d’accès lorsque la sélection de plusieurs objets est requise. Un cas courant se trouve dans le système de fichiers, où un utilisateur souhaite voir tous les fichiers résidant dans le dossier actif.
 
-You should need a customized wildcard pattern matching implementation only rarely. In this case, your cmdlet should support either the full POSIX 1003.2, 3.13 specification for wildcard expansion or the following simplified subset:
+Vous devez avoir besoin d’une implémentation de correspondance de modèle de caractère générique personnalisée uniquement rarement. Dans ce cas, votre applet de commande doit prendre en charge l’intégralité de la spécification POSIX 1003,2, 3,13 pour l’extension de caractères génériques ou le sous-ensemble simplifié suivant :
 
-- **Question mark (?).** Matches any character at the specified location.
+- **Point d’interrogation ( ?).** Correspond à n’importe quel caractère à l’emplacement spécifié.
 
-- **Asterisk (\*).** Matches zero or more characters starting at the specified location.
+- **Astérisque (\*).** Correspond à zéro ou plusieurs caractères en commençant à l’emplacement spécifié.
 
-- **Open bracket ([).** Introduces a pattern bracket expression that can contain characters or a range of characters. If a range is required, a hyphen (-) is used to indicate the range.
+- **Crochet ouvrant ([).** Introduit une expression de crochet de motif qui peut contenir des caractères ou une plage de caractères. Si une plage est requise, un trait d’Union (-) est utilisé pour indiquer la plage.
 
-- **Close bracket (]).** Ends a pattern bracket expression.
+- **Crochet fermant (]).** Termine une expression entre crochets.
 
-- **Back-quote escape character (`).** Indicates that the next character should be taken literally. Be aware that when specifying the back-quote character from the command line (as opposed to specifying it programmatically), the back-quote escape character must be specified twice.
+- **Caractère d’échappement du guillemet (').** Indique que le caractère suivant doit être pris littéralement. Sachez que lorsque vous spécifiez le caractère de guillemets avant à partir de la ligne de commande (au lieu de le spécifier par programmation), le caractère d’échappement du guillemet de retour doit être spécifié deux fois.
 
 > [!NOTE]
-> For more information about wildcard patterns, see [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md).
+> Pour plus d’informations sur les modèles de caractères génériques, consultez [prise en charge des caractères génériques dans les paramètres d’applet de](./supporting-wildcard-characters-in-cmdlet-parameters.md)commande.
 
-The following code shows how to set wildcard options and define the wildcard pattern used for resolving the `Name` parameter for this cmdlet.
+Le code suivant montre comment définir des options de caractères génériques et définir le modèle de caractère générique utilisé pour résoudre le paramètre `Name` de cette applet de commande.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -119,7 +119,7 @@ WildcardOptions options = WildcardOptions.IgnoreCase |
 WildcardPattern wildcard = new WildcardPattern(name,options);
 ```
 
-The following code shows how to test whether the process name matches the defined wildcard pattern. Notice that, in this case, if the process name does not match the pattern, the cmdlet continues on to get the next process name.
+Le code suivant montre comment tester si le nom du processus correspond au modèle de caractère générique défini. Notez que, dans ce cas, si le nom du processus ne correspond pas au modèle, l’applet de commande continue à recevoir le nom de processus suivant.
 
 ```csharp
 if (!wildcard.IsMatch(processName))
@@ -128,29 +128,29 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>Exemple de code
 
-For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
+Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample03](./stopprocesssample03-sample.md).
 
-## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
+## <a name="define-object-types-and-formatting"></a>Définir les types d’objets et la mise en forme
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell transmet des informations entre les applets de commande à l’aide d’objets .net. Par conséquent, une applet de commande peut avoir besoin de définir son propre type, ou l’applet de commande peut avoir besoin d’étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou l’extension de types existants, consultez [extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>Génération de l’applet de commande
 
-After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+Après l’implémentation d’une applet de commande, celle-ci doit être inscrite auprès de Windows PowerShell par le biais d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’enregistrement des applets de commande, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple d’applet de commande Stop-proc. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Start Windows PowerShell and use Stop-Proc to stop a process using the ProcessName alias for the `Name` parameter.
+- Démarrez Windows PowerShell et utilisez Stop-proc pour arrêter un processus à l’aide de l’alias ProcessName pour le paramètre `Name`.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-The following output appears.
+La sortie suivante s’affiche.
 
     ```
     Confirm
@@ -159,13 +159,13 @@ The following output appears.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- Make the following entry on the command line. Because the Name parameter is mandatory, you are prompted for it. Entering "!?" brings up the help text associated with the parameter.
+- Effectuez l’entrée suivante sur la ligne de commande. Étant donné que le paramètre Name est obligatoire, vous êtes invité à le faire. Entrée de «  !? » affiche le texte d’aide associé au paramètre.
 
     ```powershell
     PS> stop-proc
     ```
 
-The following output appears.
+La sortie suivante s’affiche.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ The following output appears.
     Name[0]: notepad
     ```
 
-- Now make the following entry to stop all processes that match the wildcard pattern "*note\*". You are prompted before stopping each process that matches the pattern.
+- À présent, effectuez l’entrée suivante pour arrêter tous les processus qui correspondent au modèle de caractère générique « * note\*». Vous êtes invité à arrêter chaque processus correspondant au modèle.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-The following output appears.
+La sortie suivante s’affiche.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ The following output appears.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-The following output appears.
+La sortie suivante s’affiche.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ The following output appears.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-The following output appears.
+La sortie suivante s’affiche.
 
     ```
     Confirm
@@ -211,14 +211,14 @@ The following output appears.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[Créer une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Comment créer une applet de commande Windows PowerShell](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
+[Extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85))
 
-[Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
+[Prise en charge des caractères génériques dans les paramètres d’applet de commande](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

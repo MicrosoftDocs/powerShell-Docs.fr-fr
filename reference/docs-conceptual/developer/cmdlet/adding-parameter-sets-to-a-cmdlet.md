@@ -1,5 +1,5 @@
 ---
-title: Adding Parameter Sets to a Cmdlet | Microsoft Docs
+title: Ajout de jeux de paramètres à une applet de commande | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -19,24 +19,24 @@ ms.locfileid: "74416311"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
 
-## <a name="things-to-know-about-parameter-sets"></a>Things to Know About Parameter Sets
+## <a name="things-to-know-about-parameter-sets"></a>Choses à savoir sur les jeux de paramètres
 
-Windows PowerShell defines a parameter set as a group of parameters that operate together. By grouping the parameters of a cmdlet, you can create a single cmdlet that can change its functionality based on what group of parameters the user specifies.
+Windows PowerShell définit un jeu de paramètres sous la forme d’un groupe de paramètres qui fonctionnent ensemble. En regroupant les paramètres d’une applet de commande, vous pouvez créer une applet de commande unique qui peut modifier ses fonctionnalités en fonction du groupe de paramètres que l’utilisateur spécifie.
 
-An example of a cmdlet that uses two parameter sets to define different functionalities is the `Get-EventLog` cmdlet that is provided by Windows PowerShell. This cmdlet returns different information when the user specifies the `List` or `LogName` parameter. If the `LogName` parameter is specified, the cmdlet returns information about the events in a given event log. If the `List` parameter is specified, the cmdlet returns information about the log files themselves (not the event information they contain). In this case, the `List` and `LogName` parameters identify two separate parameter sets.
+Un exemple d’applet de commande qui utilise deux jeux de paramètres pour définir des fonctionnalités différentes est l’applet de commande `Get-EventLog` fournie par Windows PowerShell. Cette applet de commande retourne des informations différentes lorsque l’utilisateur spécifie le paramètre `List` ou `LogName`. Si le paramètre `LogName` est spécifié, l’applet de commande renvoie des informations sur les événements dans un journal des événements donné. Si le paramètre `List` est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux eux-mêmes (pas sur les informations d’événement qu’elles contiennent). Dans ce cas, les paramètres `List` et `LogName` identifient deux jeux de paramètres distincts.
 
-Two important things to remember about parameter sets is that the Windows PowerShell runtime uses only one parameter set for a particular input, and that each parameter set must have at least one parameter that is unique for that parameter set.
+Deux points importants à retenir concernant les jeux de paramètres sont que le runtime Windows PowerShell n’utilise qu’un seul jeu de paramètres pour une entrée particulière, et que chaque jeu de paramètres doit avoir au moins un paramètre unique pour ce jeu de paramètres.
 
-To illustrate that last point, this Stop-Proc cmdlet uses three parameter sets: `ProcessName`, `ProcessId`, and `InputObject`. Each of these parameter sets has one parameter that is not in the other parameter sets. The parameter sets could share other parameters, but the cmdlet uses the unique parameters `ProcessName`, `ProcessId`, and `InputObject` to identify which set of parameters that the Windows PowerShell runtime should use.
+Pour illustrer ce dernier point, cette applet de commande Stop-proc utilise trois jeux de paramètres : `ProcessName`, `ProcessId`et `InputObject`. Chacun de ces jeux de paramètres possède un paramètre qui n’est pas dans les autres jeux de paramètres. Les jeux de paramètres peuvent partager d’autres paramètres, mais l’applet de commande utilise les paramètres uniques `ProcessName`, `ProcessId`et `InputObject` pour identifier le jeu de paramètres que le runtime Windows PowerShell doit utiliser.
 
-## <a name="declaring-the-cmdlet-class"></a>Declaring the Cmdlet Class
+## <a name="declaring-the-cmdlet-class"></a>Déclaration de la classe d’applet de commande
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. For this cmdlet, the life-cycle verb "Stop" is used because the cmdlet stops system processes. The noun name "Proc" is used because the cmdlet works on processes. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class.
+La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Pour cette applet de commande, le verbe « Stop » du cycle de vie est utilisé, car l’applet de commande arrête les processus système. Le nom substantif « proc » est utilisé, car l’applet de commande fonctionne sur les processus. Dans la déclaration ci-dessous, Notez que le verbe d’applet de commande et le nom substantif sont reflétés dans le nom de la classe d’applet de commande.
 
 > [!NOTE]
-> For more information about approved cmdlet verb names, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+> Pour plus d’informations sur les noms des verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-The following code is the class definition for this Stop-Proc cmdlet.
+Le code suivant est la définition de classe pour cette applet de commande Stop-proc.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "Proc",
@@ -52,13 +52,13 @@ Public Class StopProcCommand
     Inherits PSCmdlet
 ```
 
-## <a name="declaring-the-parameters-of-the-cmdlet"></a>Declaring the Parameters of the Cmdlet
+## <a name="declaring-the-parameters-of-the-cmdlet"></a>Déclaration des paramètres de l’applet de commande
 
-This cmdlet defines three parameters needed as input to the cmdlet (these parameters also define the parameter sets), as well as a `Force` parameter that manages what the cmdlet does and a `PassThru` parameter that determines whether the cmdlet sends an output object through the pipeline. By default, this cmdlet does not pass an object through the pipeline. For more information about these last two parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Cette applet de commande définit trois paramètres nécessaires comme entrée pour l’applet de commande (ces paramètres définissent également les jeux de paramètres), ainsi qu’un paramètre `Force` qui gère ce que fait l’applet de commande et un paramètre `PassThru` qui détermine si l’applet de commande envoie un objet de sortie via le pipeline. Par défaut, cette applet de commande ne passe pas un objet via le pipeline. Pour plus d’informations sur ces deux derniers paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
-### <a name="declaring-the-name-parameter"></a>Declaring the Name Parameter
+### <a name="declaring-the-name-parameter"></a>Déclaration du paramètre Name
 
-This input parameter allows the user to specify the names of the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `ProcessName` parameter set for this parameter.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier les noms des processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `ProcessName` pour ce paramètre.
 
 [!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
 
@@ -80,11 +80,11 @@ End Property
 Private processNames() As String
 ```
 
-Note also that the alias "ProcessName" is given to this parameter.
+Notez également que l’alias « ProcessName » est donné à ce paramètre.
 
-### <a name="declaring-the-id-parameter"></a>Declaring the Id Parameter
+### <a name="declaring-the-id-parameter"></a>Déclaration du paramètre ID
 
-This input parameter allows the user to specify the identifiers of the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `ProcessId` parameter set.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier les identificateurs des processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `ProcessId`.
 
 ```csharp
 [Parameter(
@@ -118,11 +118,11 @@ End Property
 Private processIds() As Integer
 ```
 
-Note also that the alias "ProcessId" is given to this parameter.
+Notez également que l’alias « ProcessId » est donné à ce paramètre.
 
-### <a name="declaring-the-inputobject-parameter"></a>Declaring the InputObject Parameter
+### <a name="declaring-the-inputobject-parameter"></a>Déclaration du paramètre InputObject
 
-This input parameter allows the user to specify an input object that contains information about the processes to be stopped. Note that the `ParameterSetName` attribute keyword of the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute specifies the `InputObject` parameter set for this parameter.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier un objet d’entrée qui contient des informations sur les processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `InputObject` pour ce paramètre.
 
 ```csharp
 [Parameter(
@@ -151,15 +151,15 @@ End Property
 Private myInputObject() As Process
 ```
 
-Note also that this parameter has no alias.
+Notez également que ce paramètre n’a pas d’alias.
 
-### <a name="declaring-parameters-in-multiple-parameter-sets"></a>Declaring Parameters in Multiple Parameter Sets
+### <a name="declaring-parameters-in-multiple-parameter-sets"></a>Déclaration de paramètres dans plusieurs jeux de paramètres
 
-Although there must be a unique parameter for each parameter set, parameters can belong to more than one parameter set. In these cases, give the shared parameter a [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration for each set to which that the parameter belongs. If a parameter is in all parameter sets, you only have to declare the parameter attribute once and do not need to specify the parameter set name.
+Bien qu’il ne doive y avoir qu’un seul paramètre pour chaque jeu de paramètres, les paramètres peuvent appartenir à plusieurs jeux de paramètres. Dans ce cas, attribuez au paramètre Shared une déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) pour chaque ensemble auquel appartient le paramètre. Si un paramètre est dans tous les jeux de paramètres, vous ne devez déclarer l’attribut de paramètre qu’une seule fois et vous n’avez pas besoin de spécifier le nom du jeu de paramètres.
 
-## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
+## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement d’entrée
 
-Every cmdlet must override an input processing method, most often this will be the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method. In this cmdlet, the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method is overridden so that the cmdlet can process any number of processes. It contains a Select statement that calls a different method based on which parameter set the user has specified.
+Chaque applet de commande doit remplacer une méthode de traitement d’entrée, le plus souvent, il s’agit de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Dans cette applet de commande, la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) est remplacée afin que l’applet de commande puisse traiter un nombre quelconque de processus. Il contient une instruction SELECT qui appelle une méthode différente selon le jeu de paramètres spécifié par l’utilisateur.
 
 ```csharp
 protected override void ProcessRecord()
@@ -209,25 +209,25 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord ' ProcessRecord
 ```
 
-The Helper methods called by the Select statement are not described here, but you can see their implementation in the complete code sample in the next section.
+Les méthodes d’assistance appelées par l’instruction SELECT ne sont pas décrites ici, mais vous pouvez voir leur implémentation dans l’exemple de code complet dans la section suivante.
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>Exemple de code
 
-For the complete C# sample code, see [StopProcessSample04 Sample](./stopprocesssample04-sample.md).
+Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample04](./stopprocesssample04-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
+## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
 
-Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell transmet des informations entre les applets de commande à l’aide d’objets .NET. Par conséquent, une applet de commande peut avoir besoin de définir son propre type, ou l’applet de commande peut avoir besoin d’étendre un type existant fourni par une autre applet de commande. Pour plus d’informations sur la définition de nouveaux types ou l’extension de types existants, consultez [extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>Génération de l’applet de commande
 
-After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+Après l’implémentation d’une applet de commande, vous devez l’inscrire auprès de Windows PowerShell à l’aide d’un composant logiciel enfichable Windows PowerShell. Pour plus d’informations sur l’enregistrement des applets de commande, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-When your cmdlet has been registered with Windows PowerShell, test it by running it on the command line. Here are some tests that show how the `ProcessId` and `InputObject` parameters can be used to test their parameter sets to stop a process.
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, testez-la en l’exécutant sur la ligne de commande. Voici quelques tests qui montrent comment les paramètres `ProcessId` et `InputObject` peuvent être utilisés pour tester leurs jeux de paramètres afin d’arrêter un processus.
 
-- With Windows PowerShell started, run the Stop-Proc cmdlet with the `ProcessId` parameter set to stop a process based on its identifier. In this case, the cmdlet is using the `ProcessId` parameter set to stop the process.
+- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `ProcessId` défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le jeu de paramètres `ProcessId` pour arrêter le processus.
 
     ```
     PS> stop-proc -Id 444
@@ -237,7 +237,7 @@ When your cmdlet has been registered with Windows PowerShell, test it by running
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- With Windows PowerShell started, run the Stop-Proc cmdlet with the `InputObject` parameter set to stop processes on the Notepad object retrieved by the `Get-Process` command.
+- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `InputObject` défini sur arrêter les processus sur l’objet Notepad récupéré par la commande `Get-Process`.
 
     ```
     PS> get-process notepad | stop-proc
@@ -249,12 +249,12 @@ When your cmdlet has been registered with Windows PowerShell, test it by running
 
 ## <a name="see-also"></a>Voir aussi
 
-[Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[Création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Comment créer une applet de commande Windows PowerShell](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
+[Extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

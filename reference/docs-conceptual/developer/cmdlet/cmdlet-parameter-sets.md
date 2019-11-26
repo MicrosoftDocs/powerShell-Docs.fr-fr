@@ -1,5 +1,5 @@
 ---
-title: Cmdlet Parameter Sets | Microsoft Docs
+title: Jeux de paramètres d’applet de commande | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,49 +15,49 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74415689"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
+# <a name="cmdlet-parameter-sets"></a>Ensembles de paramètres d’applet de commande
 
-PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
+PowerShell utilise des jeux de paramètres pour vous permettre d’écrire une applet de commande unique qui peut effectuer différentes actions pour différents scénarios. Les jeux de paramètres vous permettent d’exposer des paramètres différents à l’utilisateur. Et pour retourner des informations différentes en fonction des paramètres spécifiés par l’utilisateur.
 
-## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
+## <a name="examples-of-parameter-sets"></a>Exemples de jeux de paramètres
 
-For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
+Par exemple, l’applet de commande PowerShell `Get-EventLog` retourne des informations différentes selon que l’utilisateur spécifie le paramètre **List** ou **logname** . Si le paramètre **List** est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux, mais pas sur les informations d’événement qu’elles contiennent. Si le paramètre **logname** est spécifié, l’applet de commande renvoie des informations sur les événements dans un journal des événements spécifique. Les paramètres **List** et **logname** identifient deux jeux de paramètres distincts.
 
-## <a name="unique-parameter"></a>Unique parameter
+## <a name="unique-parameter"></a>Paramètre unique
 
-Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
+Chaque jeu de paramètres doit avoir un paramètre unique que le runtime PowerShell utilise pour exposer le jeu de paramètres approprié. Si possible, le paramètre unique doit être un paramètre obligatoire. Lorsqu’un paramètre est obligatoire, l’utilisateur doit spécifier le paramètre, et le runtime PowerShell utilise ce paramètre pour identifier le jeu de paramètres. Le paramètre unique ne peut pas être obligatoire si votre applet de commande est conçue pour s’exécuter sans spécifier de paramètres.
 
-## <a name="multiple-parameter-sets"></a>Multiple parameter sets
+## <a name="multiple-parameter-sets"></a>Jeux de paramètres multiples
 
-In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
+Dans l’illustration suivante, la colonne de gauche affiche trois jeux de paramètres valides. Le **paramètre a** est unique pour le premier jeu de paramètres, le **paramètre B** est unique pour le deuxième jeu de paramètres, et le **paramètre C** est unique pour le troisième jeu de paramètres. Dans la colonne de droite, les jeux de paramètres n’ont pas de paramètre unique.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>Parameter set requirements
+## <a name="parameter-set-requirements"></a>Spécifications du jeu de paramètres
 
-The following requirements apply to all parameter sets.
+Les exigences suivantes s’appliquent à tous les jeux de paramètres.
 
-- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
+- Chaque jeu de paramètres doit avoir au moins un paramètre unique. Si possible, définissez ce paramètre sur un paramètre obligatoire.
 
-- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
+- Un jeu de paramètres qui contient plusieurs paramètres positionnels doit définir des positions uniques pour chaque paramètre. Deux paramètres positionnels ne peuvent pas spécifier la même position.
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
-  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
+- Un seul paramètre d’un ensemble peut déclarer le mot clé `ValueFromPipeline` avec une valeur de `true`.
+  Plusieurs paramètres peuvent définir le mot clé `ValueFromPipelineByPropertyName` avec une valeur de `true`.
 
-- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
+- Si aucun jeu de paramètres n’est spécifié pour un paramètre, le paramètre appartient à tous les jeux de paramètres.
 
 > [!NOTE]
-> For a cmdlet or function, there is a limit of 32 parameter sets.
+> Pour une applet de commande ou une fonction, il existe une limite de 32 jeux de paramètres.
 
-## <a name="default-parameter-sets"></a>Default parameter sets
+## <a name="default-parameter-sets"></a>Jeux de paramètres par défaut
 
-When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
+Lorsque plusieurs jeux de paramètres sont définis, vous pouvez utiliser le mot clé `DefaultParameterSetName` de l’attribut d' **applet** de commande pour spécifier le jeu de paramètres par défaut. PowerShell utilise le jeu de paramètres par défaut s’il ne peut pas déterminer le jeu de paramètres à utiliser en fonction des informations fournies par la commande. Pour plus d’informations sur l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
-## <a name="declaring-parameter-sets"></a>Declaring parameter sets
+## <a name="declaring-parameter-sets"></a>Déclarer des jeux de paramètres
 
-To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
+Pour créer un jeu de paramètres, vous devez spécifier le mot clé `ParameterSetName` lorsque vous déclarez l’attribut de **paramètre** pour chaque paramètre dans le jeu de paramètres. Pour les paramètres appartenant à plusieurs jeux de paramètres, ajoutez un attribut de **paramètre** pour chaque jeu de paramètres. Cet attribut vous permet de définir différemment le paramètre pour chaque jeu de paramètres. Par exemple, vous pouvez définir un paramètre comme obligatoire dans un jeu et facultatif dans un autre. Toutefois, chaque jeu de paramètres doit contenir un paramètre unique. Pour plus d’informations, consultez [déclaration d’attribut de paramètre](parameter-attribute-declaration.md).
 
-In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
+Dans l’exemple suivant, le paramètre **username** est le paramètre unique du jeu de paramètres `Test01`, et le paramètre **ComputerName** est le paramètre unique du jeu de paramètres `Test02`. Le paramètre **SharedParam** appartient aux deux ensembles et est obligatoire pour le jeu de paramètres `Test01`, mais facultatif pour le jeu de paramètres `Test02`.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]

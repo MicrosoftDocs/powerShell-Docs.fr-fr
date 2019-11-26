@@ -1,5 +1,5 @@
 ---
-title: StopProcessSample04 (VB.NET) Sample Code | Microsoft Docs
+title: Exemple de code StopProcessSample04 (VB.NET) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,12 +17,12 @@ ms.locfileid: "74417806"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>Exemple de code StopProcessSample04 (VB.NET)
 
-Here is the complete VB.NET sample code for the StopProc04 sample cmdlet. This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+Voici l’exemple de code complet VB.NET pour l’applet de commande StopProc04 Sample. Voici le code de l’applet de commande `Stop-Process` décrit dans [Ajout de jeux de paramètres à une applet de](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)commande. L’applet de commande `Stop-Process` est conçue pour arrêter les processus qui sont récupérés à l’aide de l’applet de commande « obtient-proc » (décrit dans [création de votre première applet](../cmdlet/creating-a-cmdlet-without-parameters.md)de commande).
 
 > [!NOTE]
-> You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Vous pouvez télécharger le fichier source VB.NET (stopprocesssample04. vb) pour cette applet de commande Stop-proc à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .
 
 ```vb
 Imports System
@@ -479,6 +479,6 @@ End Namespace
 
 ## <a name="see-also"></a>Voir aussi
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Guide du programmeur Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

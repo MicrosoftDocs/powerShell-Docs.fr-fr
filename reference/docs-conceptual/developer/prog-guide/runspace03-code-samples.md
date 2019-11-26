@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 Code Samples | Microsoft Docs
+title: Exemples de code RunSpace03 | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74417977"
 ---
 # <a name="runspace03-code-samples"></a>Exemples de code RunSpace03
 
-Here are the code samples for the runspace described in "Creating a Console Application That Runs a Specified Script".
+Voici les exemples de code pour l’instance d’exécution décrite dans « création d’une application console qui exécute un script spécifié ».
 
 > [!NOTE]
-> You can download the C# source file (runspace03.cs) and the VB.NET source file (runspace03.vb) for this sample using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> Vous pouvez télécharger le C# fichier source (runspace03.cs) et le fichier source VB.net (runspace03. vb) pour cet exemple à l’aide du kit de développement logiciel Microsoft Windows pour les composants d’exécution de Windows Vista et Microsoft .NET Framework 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .
 
-For complete sample code, see the following topics.
+Pour obtenir un exemple de code complet, consultez les rubriques suivantes.
 
-| Language |                                 Rubrique                                 |
+| Langue |                                 Rubrique                                 |
 | -------- | --------------------------------------------------------------------- |
-| C#       | [RunSpace03 (C#) Code Sample](./runspace03-csharp-code-sample.md)     |
-| VB.NET   | [RunSpace03 (VB.NET) Code Sample](./runspace03-vb-net-code-sample.md) |
+| C#       | [Exemple deC#code RunSpace03 ()](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [Exemple de code RunSpace03 (VB.NET)](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>Voir aussi
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Guide du programmeur Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
