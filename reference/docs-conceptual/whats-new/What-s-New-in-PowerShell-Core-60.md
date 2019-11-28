@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: c70fcffc2e6225d3fc6a18b5728e063e5ca22f1d
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117537"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416756"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -210,7 +210,7 @@ Quand un pipeline est lancé en arrière-plan, un objet de traitement est retour
 Une fois que le pipeline est exécuté en tant que tâche, toutes les applets de commande `*-Job` standard peuvent être utilisées pour gérer la tâche.
 Les variables (en ignorant celles spécifiques au processus) utilisées dans le pipeline étant automatiquement copiées dans la tâche, `Copy-Item $foo $bar &` fonctionne tout simplement.
 La tâche est également exécutée dans le répertoire actuel au lieu du répertoire de base de l’utilisateur.
-Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](https://msdn.microsoft.com/powershell/reference/6/about/about_jobs).
+Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ## <a name="semantic-versioning"></a>Gestion sémantique de version
 
@@ -388,12 +388,12 @@ Vous trouverez plus d’informations sur la façon dont nous utilisons ces donn�
 [breaking-changes]: breaking-changes-ps6.md
 [journal des modifications]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
-[telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
+[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [Blog .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
+[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

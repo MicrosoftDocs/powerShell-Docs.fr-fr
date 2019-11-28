@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Mettre à jour des nœuds à partir d’un serveur Pull
-ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 516e50b0c39e4747a123307cb3f5e25259ac7ce5
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71955096"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417719"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>Mettre à jour des nœuds à partir d’un serveur Pull
 
@@ -38,4 +38,4 @@ $cimSession | Remove-CimSession
 
 ## <a name="see-also"></a>Voir aussi
 
-[PerformRequiredConfigurationChecks](/powershell/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks)
+[PerformRequiredConfigurationChecks](/powershell/scripting/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks)

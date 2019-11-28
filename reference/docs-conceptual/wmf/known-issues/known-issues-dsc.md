@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Problèmes connus liés à la Configuration d’état souhaité (DSC)
-ms.openlocfilehash: 6faf24795d14a93f265943029d9f6f1388f32263
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147719"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416608"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problèmes connus liés à la Configuration d’état souhaité (DSC)
 
@@ -52,7 +52,7 @@ Si vous appuyez sur Ctrl+C pour arrêter le traitement de `Get-DscConfiguration`
 
 Si vous tentez d’arrêter une opération lancée par `Get-DscConfiguration` alors que le gestionnaire de configuration local est en DebugMode, `Stop-DscConfiguration` risque de ne pas répondre.
 
-**Résolution :** Terminez le débogage de l’opération lancée par `Get-DscConfiguration` en suivant la procédure [Déboguer des ressources DSC](/powershell/dsc/troubleshooting/debugResource).
+**Résolution :** Terminez le débogage de l’opération lancée par `Get-DscConfiguration` en suivant la procédure [Déboguer des ressources DSC](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Aucun message d’erreur détaillé n’est affiché en DebugMode
 
@@ -80,7 +80,7 @@ La cmdlet `Invoke-DscResource` ne retourne pas les messages détaillés, d’ave
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Les ressources DSC ne peuvent pas être déboguées facilement en cas d’utilisation avec Invoke-DscResource
 
-Quand le gestionnaire de configuration local s’exécute en mode débogage, la cmdlet `Invoke-DscResource` ne donne pas d’informations sur l’instance d’exécution à laquelle il faut se connecter pour le débogage. Pour plus d’informations, consultez [Débogage des ressources DSC](/powershell/dsc/troubleshooting/debugResource).
+Quand le gestionnaire de configuration local s’exécute en mode débogage, la cmdlet `Invoke-DscResource` ne donne pas d’informations sur l’instance d’exécution à laquelle il faut se connecter pour le débogage. Pour plus d’informations, consultez [Débogage des ressources DSC](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 **Résolution :** Découvrez et joignez l’instance d’exécution à l’aide des cmdlets `Get-PSHostProcessInfo`, `Enter-PSHostProcess`, `Get-Runspace` et `Debug-Runspace` pour déboguer la ressource DSC.
 

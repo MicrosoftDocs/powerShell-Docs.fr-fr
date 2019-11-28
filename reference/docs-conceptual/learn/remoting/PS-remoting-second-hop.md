@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Effectuer le deuxième saut dans la communication à distance PowerShell
-ms.openlocfilehash: f4cfde39de8494050c31cfc3181271b968819695
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692143"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417632"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Effectuer le deuxième saut dans la communication à distance PowerShell
 
@@ -22,7 +22,7 @@ Il existe plusieurs moyens de résoudre ce problème. Dans cette rubrique, nous 
 
 ## <a name="credssp"></a>CredSSP
 
-Vous pouvez utiliser le [protocole CredSSP (Credential Security Support Provider)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) pour l’authentification. Le protocole CredSSP mettant en cache les informations d’identification sur le serveur distant (_ServerB_), son utilisation vous expose à des risques de vol de ces informations. Si l’ordinateur distant est compromis, la personne malveillante a accès aux informations d’identification de l’utilisateur. CredSSP est désactivé par défaut sur les ordinateurs clients et serveurs. Vous devez activer CredSSP uniquement dans les environnements les plus approuvés, Par exemple un administrateur de domaine qui se connecte à un contrôleur de domaine, car le contrôleur de domaine est hautement approuvé.
+Vous pouvez utiliser le [protocole CredSSP (Credential Security Support Provider)](/windows/win32/secauthn/credential-security-support-provider) pour l’authentification. Le protocole CredSSP mettant en cache les informations d’identification sur le serveur distant (_ServerB_), son utilisation vous expose à des risques de vol de ces informations. Si l’ordinateur distant est compromis, la personne malveillante a accès aux informations d’identification de l’utilisateur. CredSSP est désactivé par défaut sur les ordinateurs clients et serveurs. Vous devez activer CredSSP uniquement dans les environnements les plus approuvés, Par exemple un administrateur de domaine qui se connecte à un contrôleur de domaine, car le contrôleur de domaine est hautement approuvé.
 
 Pour plus d’informations sur les questions de sécurité lors de l’utilisation de CredSSP pour la communication à distance PowerShell, voir [Accidental Sabotage: Beware of CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -153,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Le [Centre de distribution de clés (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) Kerberos met en cache les tentatives d’accès refusées (cache négatif) pendant 15 minutes. Si _ServerB_ a précédemment essayé d’accéder à _ServerC_, vous devez effacer le cache sur _ServerB_ en appelant la commande suivante :
+Le [Centre de distribution de clés (KDC)](/windows/win32/secauthn/key-distribution-center) Kerberos met en cache les tentatives d’accès refusées (cache négatif) pendant 15 minutes. Si _ServerB_ a précédemment essayé d’accéder à _ServerC_, vous devez effacer le cache sur _ServerB_ en appelant la commande suivante :
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -214,8 +214,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Comment Windows Server 2012 facilite la délégation Kerberos contrainte, partie 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Comprendre la délégation Kerberos contrainte pour les déploiements de proxy d’applications Azure Active Directory avec l’authentification Windows intégrée](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: attributs de schéma Active Directory M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
-- [[MS-SFU] : extensions du protocole Kerberos : protocole de service pour l’utilisateur et de délégation contrainte 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
+- [[MS-ADA2]: attributs de schéma Active Directory M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
+- [[MS-SFU] : extensions du protocole Kerberos : protocole de service pour l’utilisateur et de délégation contrainte 1.3.2 S4U2proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
 - [Délégation Kerberos contrainte basée sur les ressources](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Administration à distance sans la délégation contrainte à l’aide de PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -238,7 +238,7 @@ Pour plus d’informations sur l’utilisation de PSSessionConfiguration et de R
 
 JEA vous permet de restreindre les commandes qu’un administrateur peut exécuter au cours d’une session PowerShell. Il peut être utilisé pour résoudre le problème du deuxième saut.
 
-Pour plus d’informations sur JEA, consultez [Juste assez d’administration](https://docs.microsoft.com/powershell/jea/overview).
+Pour plus d’informations sur JEA, consultez [Juste assez d’administration](/powershell/scripting/learn/remoting/jea/overview).
 
 ### <a name="pros"></a>Avantages
 
@@ -251,7 +251,7 @@ Pour plus d’informations sur JEA, consultez [Juste assez d’administration](h
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Transmettre des informations d’identification à l’intérieur d’un bloc de script Invoke-Command
 
-Vous pouvez transmettre des informations d’identification à l’intérieur du paramètre **ScriptBlock** d’un appel à l’applet de commande [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command).
+Vous pouvez transmettre des informations d’identification à l’intérieur du paramètre **ScriptBlock** d’un appel à l’applet de commande [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command).
 
 ### <a name="pros"></a>Avantages
 

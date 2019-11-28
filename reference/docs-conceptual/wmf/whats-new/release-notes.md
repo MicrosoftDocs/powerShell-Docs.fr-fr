@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Notes de publication de WMF 5.x
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147579"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416509"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Notes de publication de Windows Management Framework (WMF) 5.x
 
@@ -56,8 +56,8 @@ WMF 5.1 comprend les composants PowerShell, WMI, WinRM et SIL (Journalisation d
 
 - [Déterminer la version en cours d’exécution de PowerShell à l’aide de $PSVersionTable](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filtrer les résultats de Get-Module par CompatiblePSEditions à l’aide du paramètre PSEdition](/powershell/module/microsoft.powershell.core/get-module)
-- [Empêcher l’exécution des scripts, sauf en cas d’exécution sur une édition compatible de PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Déclarer la compatibilité d’un module avec des versions spécifiques de PowerShell](/powershell/gallery/concepts/module-psedition-support)
+- [Empêcher l’exécution des scripts, sauf en cas d’exécution sur une édition compatible de PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Déclarer la compatibilité d’un module avec des versions spécifiques de PowerShell](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>Cache d’analyse de module
 

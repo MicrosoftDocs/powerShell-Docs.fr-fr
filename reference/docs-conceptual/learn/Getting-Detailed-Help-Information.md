@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Obtention d’informations d’aide détaillées
-ms.openlocfilehash: 033a8962ca438b49c10fafa2852c87d19868b4d9
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325210"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417661"
 ---
 # <a name="getting-detailed-help-information"></a>Obtention d’informations d’aide détaillées
 
@@ -79,7 +79,7 @@ Par exemple, pour afficher uniquement les exemples de l’article d’aide pour 
 Get-Help Get-ChildItem -Examples
 ```
 
-Pour plus d’informations sur la manière de rédiger des articles d’aide sur les cmdlets que vous écrivez, consultez [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
+Pour plus d’informations sur la manière de rédiger des articles d’aide sur les cmdlets que vous écrivez, consultez [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## <a name="getting-conceptual-help"></a>Obtention d’aide conceptuelle
 

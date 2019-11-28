@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Création d’une ressource DSC en C#
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954316"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417700"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Création d’une ressource DSC en C\#
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-En règle générale, une ressource DSC Windows PowerShell personnalisée est implémentée dans un script PowerShell. Toutefois, vous pouvez également implémenter la fonctionnalité d’une ressource DSC personnalisée en écrivant des applets de commande en C#. Pour une introduction à l’écriture des applets de commande en C#, consultez [Écriture d’une applet de commande Windows PowerShell](/powershell/developer/windows-powershell).
+En règle générale, une ressource DSC Windows PowerShell personnalisée est implémentée dans un script PowerShell. Toutefois, vous pouvez également implémenter la fonctionnalité d’une ressource DSC personnalisée en écrivant des applets de commande en C#. Pour une introduction à l’écriture des applets de commande en C#, consultez [Écriture d’une applet de commande Windows PowerShell](/powershell/scripting/developer/windows-powershell).
 
 À part l’implémentation de la ressource en tant qu’applets de commande en langage C#, les processus de création du schéma MOF, de création de la structure de dossiers, et de l’importation et de l’utilisation de votre ressource DSC personnalisée, sont les mêmes que ceux décrits dans [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md).
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Concepts
 [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Autres ressources
-[Écriture d’une applet de commande Windows PowerShell](/powershell/developer/windows-powershell)
+[Écriture d’une applet de commande Windows PowerShell](/powershell/scripting/developer/windows-powershell)

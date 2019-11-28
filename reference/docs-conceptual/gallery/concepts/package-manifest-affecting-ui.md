@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328130"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417047"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -37,7 +37,7 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **Functions** | Ces informations sont spécifiées dans le manifeste du module à l’aide de FunctionsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
 | **Ressources DSC** | Pour les modules qui seront utilisés dans PowerShell version 5.0 et ultérieures, ces informations sont fournies dans le manifeste à l’aide de DscResourcesToExport. Si le module sera utilisé dans PowerShell 4, DSCResourcesToExport ne doit pas être utilisé car il ne s’agit pas d’une clé de manifeste prise en charge. (DSC n’était pas disponible avant PowerShell 4.) | Oui | Non |
 | **Flux de travail** | Les flux de travail sont publiés dans PowerShell Gallery en tant que scripts et identifiés en tant que flux de travail dans le code (voir [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) pour obtenir un exemple). Ces informations ne sont pas contrôlées par le manifeste. | Non | Non |
-| **Fonctionnalités de rôle** | Ces informations apparaissent lorsque le module publié dans PowerShell Gallery contient un ou plusieurs fichiers de capacité (.psrc) de rôle, utilisés par JEA. Consultez la documentation de JEA pour plus d’informations sur les [capacités de rôle](/powershell/jea/role-capabilities). | Oui | Non |
+| **Fonctionnalités de rôle** | Ces informations apparaissent lorsque le module publié dans PowerShell Gallery contient un ou plusieurs fichiers de capacité (.psrc) de rôle, utilisés par JEA. Consultez la documentation de JEA pour plus d’informations sur les [capacités de rôle](/powershell/scripting/learn/remoting/jea/role-capabilities). | Oui | Non |
 | **Éditions de PowerShell** | Ces informations sont spécifiées dans un manifeste de module ou de script. Pour les modules conçus pour être utilisés avec PowerShell 5.0 et versions antérieures, elles sont contrôlées à l’aide de balises. Pour un système de type bureau (Desktop), utilisez la balise PSEdition_Desktop, et pour un système de base (Core), utilisez la balise PSEdition_Core. Pour les modules qui seront utilisés uniquement dans PowerShell 5.1 et versions ultérieures, une clé CompatiblePSEditions est disponible dans le manifeste du principal. Pour plus d’informations, reportez-vous à la fonctionnalité PS Edition dans la [documentation PowerShell Get](module-psedition-support.md). | Oui | Oui |
 | **Dépendances** | Les dépendances représentent les modules de PowerShell Gallery qui sont déclarés dans le module en tant que RequiredModules ou dans le manifeste de script en tant que #Requires – Module (nom). | Oui | Oui |
 | **Version minimale de PowerShell** | Cette information peut être spécifiée dans un manifeste de module en tant que PowerShellVersion | Oui | Non |

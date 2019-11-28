@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
-ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953606"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417237"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
 
@@ -46,7 +46,7 @@ Vous pouvez créer un **GUID** aléatoire à l’aide de l’exemple ci-dessous,
 [System.Guid]::NewGuid()
 ```
 
-Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](/powershell/dsc/secureserver#guids).
+Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](/powershell/scripting/dsc/secureserver#guids).
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Configurer un client Pull pour télécharger des configurations
 

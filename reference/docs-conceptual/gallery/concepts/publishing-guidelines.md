@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 03c3a037b1d6c523914a2275249124940111fdcd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328510"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417669"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -98,7 +98,7 @@ Si vous constatez un comportement inapproprié sur l’un de ces canaux de commu
 
 Partager un script avec d’autres utilisateurs est une excellente idée qui leur offre d’autres exemples montrant comment résoudre les problèmes qu’ils peuvent rencontrer. Le problème est que les scripts de PowerShell Gallery sont des fichiers sans documentation, exemples ou tests distincts.
 
-Les Modules PowerShell ont une structure de dossiers qui permet d’inclure plusieurs dossiers et fichiers dans le package. La structure du module permet d’inclure les autres packages que nous avons présentés parmi les meilleures pratiques : aide sur la cmdlet, documentation, exemples et tests. Le principal inconvénient est qu’un script situé à l’intérieur d’un module doit être exposé et utilisé en tant que fonction. Pour plus d’informations sur la création d’un module, voir [Écrire un module Windows PowerShell](/powershell/developer/module/writing-a-windows-powershell-module).
+Les Modules PowerShell ont une structure de dossiers qui permet d’inclure plusieurs dossiers et fichiers dans le package. La structure du module permet d’inclure les autres packages que nous avons présentés parmi les meilleures pratiques : aide sur la cmdlet, documentation, exemples et tests. Le principal inconvénient est qu’un script situé à l’intérieur d’un module doit être exposé et utilisé en tant que fonction. Pour plus d’informations sur la création d’un module, voir [Écrire un module Windows PowerShell](/powershell/scripting/developer/module/writing-a-windows-powershell-module).
 
 Il existe des situations où un script fournit une meilleure expérience à l’utilisateur, en particulier avec les configurations DSC. Pour les configurations DSC, la meilleure solution consiste à publier la configuration en tant que script avec un module connexe contenant les documents, les exemples et les tests. Le script répertorie le module associé à l’aide de `RequiredModules = @(Name of the Module)`. Cette approche peut être utilisée avec n’importe quel script.
 
@@ -165,7 +165,7 @@ PowerShell prend en charge la validation de la signature du code via deux approc
 
 La signature des fichiers PowerShell est une approche parfaitement établie pour garantir que le code en cours d’exécution a été produit par une source fiable et n’a pas été modifié. Pour plus d’informations sur la façon de signer des fichiers de script PowerShell, voir l’article [À propose de la signature](/powershell/module/microsoft.powershell.core/about/about_signing). Pour résumer, une signature peut être ajoutée à tout fichier `.PS1` validé par PowerShell lorsque le script est chargé. PowerShell peut être contraint à utiliser les applets de commande de la [stratégie d’exécution](/powershell/module/microsoft.powershell.core/about/about_execution_policies) pour forcer l’utilisation de scripts signés.
 
-La signature de modules par un catalogue est une fonctionnalité ajoutée à la version 5.1 de PowerShell. La signature d’un module est abordée dans l’article [Applets de commande de catalogue](/powershell/wmf/5.1/catalog-cmdlets). Pour résumer, la signature du catalogue s’effectue en créant un fichier de catalogue contenant une valeur de hachage pour chaque fichier dans le module, puis en signant ce fichier.
+La signature de modules par un catalogue est une fonctionnalité ajoutée à la version 5.1 de PowerShell. La signature d’un module est abordée dans l’article [Applets de commande de catalogue](/powershell/scripting/wmf/5.1/catalog-cmdlets). Pour résumer, la signature du catalogue s’effectue en créant un fichier de catalogue contenant une valeur de hachage pour chaque fichier dans le module, puis en signant ce fichier.
 
 Les cmdlets **PowerShellGet** `Publish-Module`, `Install-Module` et `Update-Module` vérifient la validité de la signature, puis confirment que la valeur de hachage de chaque package correspond à ce qui figure dans le catalogue. `Save-Module` ne valide pas une signature. Si une version précédente du module est installée sur le système, l’applet de commande `Install-Module` confirmera que l’autorité de signature de la nouvelle version correspond à ce qui a été précédemment installé. `Install-Module` et `Update-Module` utiliseront la signature sur un fichier `.PSD1` si le package n’est pas signé par le catalogue. La signature du catalogue complète mais ne remplace pas la signature des fichiers de script. PowerShell ne valide pas les signatures du catalogue lors du chargement du module.
 

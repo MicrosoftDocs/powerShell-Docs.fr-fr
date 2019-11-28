@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Configurations partielles du service de configuration d’état souhaité PowerShell
-ms.openlocfilehash: f25bdec54e0a028e94b8c7d7b623e53ff3e3c666
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444522"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417742"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configurations partielles du service de configuration d’état souhaité PowerShell
 
@@ -23,7 +23,7 @@ Pour utiliser des configurations partielles en mode par envoi, vous configurez l
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configuration du gestionnaire de configuration local pour les configurations partielles en mode par émission
 
-Pour configurer le gestionnaire de configuration local pour les configurations partielles en mode par envoi, vous créez une configuration **DSCLocalConfigurationManager** avec un bloc **PartialConfiguration** pour chaque configuration partielle. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuring the Local Configuration Manager](/powershell/dsc/metaConfig). L’exemple suivant montre une configuration de gestionnaire de configuration local avec deux configurations partielles : une qui déploie le système d’exploitation, et l’autre qui déploie et configure SharePoint.
+Pour configurer le gestionnaire de configuration local pour les configurations partielles en mode par envoi, vous créez une configuration **DSCLocalConfigurationManager** avec un bloc **PartialConfiguration** pour chaque configuration partielle. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuring the Local Configuration Manager](/powershell/scripting/dsc/metaConfig). L’exemple suivant montre une configuration de gestionnaire de configuration local avec deux configurations partielles : une qui déploie le système d’exploitation, et l’autre qui déploie et configure SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]

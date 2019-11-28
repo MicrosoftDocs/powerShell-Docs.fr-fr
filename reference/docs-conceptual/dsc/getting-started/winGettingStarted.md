@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,configuration,setup
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Windows
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954406"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417766"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Windows
 
@@ -110,4 +110,4 @@ Doit spécifier le chemin du fichier MOF de métaconfiguration.
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Fichiers journaux de la fonctionnalité Desired State Configuration de Windows PowerShell
 
 Les journaux pour DSC sont écrits dans le journal des événements Windows dans le chemin d’accès `Microsoft-Windows-Dsc/Operational`.
-Des journaux supplémentaires à des fins de débogage peuvent être activés en suivant les étapes décrites dans [Où se trouvent les journaux des événements DSC](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
+Des journaux supplémentaires à des fins de débogage peuvent être activés en suivant les étapes décrites dans [Où se trouvent les journaux des événements DSC](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs).
