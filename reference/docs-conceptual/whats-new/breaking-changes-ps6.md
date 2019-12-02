@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561264"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417563"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>Modifications avec rupture dans PowerShell 6.0
+# <a name="breaking-changes-for-powershell-6x"></a>Modifications avec rupture dans PowerShell 6.x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Fonctionnalités qui ne sont plus disponibles dans PowerShell Core
 
@@ -23,7 +23,7 @@ En raison du manque de prise en charge pour Windows Workflow Foundation dans .NE
 
 S’il est nécessaire d’utiliser des points de contrôle pour reprendre un script après le redémarrage du système d’exploitation, nous vous recommandons d’utiliser Planificateur de tâches pour exécuter un script au démarrage du système d’exploitation, mais le script doit conserver son propre état (par exemple, le rendre persistant dans un fichier).
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>Composants logiciels enfichables personnalisés
@@ -291,3 +291,4 @@ L’API .NET sous-jacente des cmdlets web a été remplacée par `System.Net.Htt
 - Aucune authentification par certificat n’est actuellement disponible sur macOS.
 - L’utilisation de `-Credential` sur un URI `http://` génère une erreur. Utilisez un URI `https://` ou fournissez le paramètre `-AllowUnencryptedAuthentication` pour supprimer l’erreur.
 - `-MaximumRedirection` génère désormais une erreur avec fin d’exécution quand les tentatives de redirection dépassent la limite fournie au lieu de retourner les résultats de la dernière redirection.
+- Dans PowerShell 6.2, une modification a été apportée pour sélectionner par défaut à le codage UTF-8 pour les réponses JSON. Lorsqu’un jeu de caractères n’est pas fourni pour une réponse JSON, le codage par défaut doit être UTF-8 par RFC 8259.

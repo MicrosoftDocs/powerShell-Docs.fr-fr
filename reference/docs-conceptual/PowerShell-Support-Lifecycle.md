@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72351811"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416306"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cycle de vie de support de PowerShell Core
 
@@ -19,7 +19,7 @@ Vous pouvez également payer pour obtenir un [support assisté][] pour PowerShel
 ## <a name="community-support"></a>Support de la communauté
 
 Nous proposons également un [support de la communauté][] sur GitHub, où vous pouvez signaler un problème, un bogue ou une demande de fonctionnalité.
-Vous pouvez également bénéficier de l’aide d’autres membres de la communauté sur la [Communauté Microsoft][] générale ou la [Communauté technique PowerShell][] Microsoft. Nous ne garantissons pas que la communauté traitera ou résoudra votre problème en temps voulu. Si vous avez un problème nécessitant une attention immédiate, vous devez utiliser les options de support payantes classiques.
+En outre, vous pouvez trouver de l’aide auprès d’autres membres de la [communauté technique PowerShell][] Microsoft ou sur l’un des forums listés dans la section Communauté de la page du hub de [PowerShell][pshub]. Nous ne garantissons pas que la communauté traitera ou résoudra votre problème en temps voulu. Si vous avez un problème nécessitant une attention immédiate, vous devez utiliser les options de support payantes classiques.
 
 ## <a name="lifecycle-of-powershell-core"></a>Cycle de vie de PowerShell Core
 
@@ -117,9 +117,9 @@ PowerShell Core est publié sous la [licence MIT][]. Sous cette licence et en l�
 
 Le support de PowerShell Core n’inclut pas de modules du produit, sauf si ces modules prennent explicitement en charge PowerShell Core. Par exemple, l’utilisation du module `ActiveDirectory` qui est fourni dans le cadre de Windows Server est un scénario non pris en charge.
 
-Toutefois, les modules qui ne prennent pas explicitement en charge PowerShell Core peuvent être compatibles dans certains cas. En installant le module [`WindowsPSModulePath`][] vous pouvez ajouter Windows PowerShell `PSModulePath` à PowerShell Core `PSModulePath`.
+Toutefois, les modules qui ne prennent pas explicitement en charge PowerShell Core peuvent être compatibles dans certains cas. En installant le module [WindowsPSModulePath][] vous pouvez ajouter Windows PowerShell `PSModulePath` à PowerShell Core `PSModulePath`.
 
-Installez d’abord le module `WindowsPSModulePath` à partir de PowerShell Gallery :
+Installez d’abord le module **WindowsPSModulePath** à partir de PowerShell Gallery :
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
@@ -141,7 +141,7 @@ Les [fonctionnalités expérimentales][] sont limitées au [support de la commun
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [support de la communauté]: https://github.com/powershell/powershell/issues
-[Communauté Microsoft]: https://answers.microsoft.com/
+[pshub]: https://docs.microsoft.com/powershell
 [Communauté technique PowerShell]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [support assisté]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy

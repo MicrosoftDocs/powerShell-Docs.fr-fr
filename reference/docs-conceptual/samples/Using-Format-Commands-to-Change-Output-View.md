@@ -1,13 +1,13 @@
 ---
-ms.date: 10/22/2019
+ms.date: 11/22/2019
 keywords: powershell,applet de commande
 title: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
-ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444416"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417587"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
 
@@ -128,7 +128,7 @@ Id          : 21748
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Obtention d’informations détaillées en utilisant l’applet de commande Format-List avec des caractères génériques
 
-L’applet de commande `Format-List` permet d’utiliser un caractère générique comme valeur de son paramètre **Property**. Cela permet d’afficher des informations détaillées. Souvent, les objets contiennent plus d’informations qu’il n’en faut. C’est pourquoi, par défaut, PowerShell n’affiche pas les valeurs de toutes les propriétés. Pour afficher toutes les propriétés d’un objet, utilisez la commande **Format-List -Property \&#42;** . La commande suivante génère plus de 60 lignes de sortie pour un seul processus :
+L’applet de commande `Format-List` permet d’utiliser un caractère générique comme valeur de son paramètre **Property**. Cela permet d’afficher des informations détaillées. Souvent, les objets contiennent plus d’informations qu’il n’en faut. C’est pourquoi, par défaut, PowerShell n’affiche pas les valeurs de toutes les propriétés. Pour afficher toutes les propriétés d’un objet, utilisez la commande `Format-List -Property *`. La commande suivante génère plus de 60 lignes de sortie pour un seul processus :
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *

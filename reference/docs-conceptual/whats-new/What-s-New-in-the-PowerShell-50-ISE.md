@@ -2,16 +2,22 @@
 ms.date: 09/06/2019
 keywords: powershell,applet de commande
 title: Nouveautés de PowerShell 5.0 ISE
-ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117520"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416633"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Nouveauté de Windows PowerShell 5.0 ISE
 
-Cette rubrique décrit les fonctionnalités nouvelles et mises à jour qui ont été introduites dans les versions de l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell.
+Cette rubrique décrit les fonctionnalités nouvelles et mises à jour qui ont été introduites dans la version 5.0 de l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell.
+
+> [!NOTE]
+> L’environnement ISE PowerShell ne fait plus partie du développement de fonctionnalités actif. En tant que composant d’expédition de Windows, il continue d’être officiellement pris en charge pour la sécurité et les correctifs de maintenance de haute priorité.
+> Nous n’avons actuellement aucun projet de supprimer l’environnement ISE de Windows.
+>
+> Il n’existe aucune prise en charge pour l’environnement ISE dans PowerShell v6 et versions ultérieures. Les utilisateurs cherchant à remplacer l’environnement ISE doivent utiliser [Visual Studio Code](https://code.visualstudio.com/) avec [l’extension PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
 
 ## <a name="feature-description"></a>Description de la fonctionnalité
 
