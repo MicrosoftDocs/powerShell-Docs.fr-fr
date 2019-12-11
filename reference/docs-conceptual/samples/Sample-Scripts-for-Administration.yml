@@ -1,10 +1,4 @@
 ### YamlMime:Landing
-title: <span data-ttu-id="c9771-101">Exemples de scripts pour l’administration système</span><span class="sxs-lookup"><span data-stu-id="c9771-101">Sample scripts for system administration</span></span>
-summary: <span data-ttu-id="c9771-102">Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c9771-102">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
-metadata:
-  title: <span data-ttu-id="c9771-103">Exemples de scripts pour l’administration système</span><span class="sxs-lookup"><span data-stu-id="c9771-103">Sample scripts for system administration</span></span>
-  description: <span data-ttu-id="c9771-104">Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c9771-104">A collection of examples walks through scenarios for administering systems with PowerShell.</span></span>
-  ms.topic: landing-page### YamlMime:Landing
 title: Exemples de scripts pour l’administration système
 summary: Une collection d’exemples illustre des scénarios pour l’administration des systèmes avec PowerShell.
 metadata:
@@ -15,10 +9,10 @@ metadata:
   ms.author: sewhee
   ms.date: 09/05/2019
   ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
-  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/05/2019
+  ms.lasthandoff: 12/05/2019
   ms.locfileid: "70392026"
 landingContent:
 - title: Utilisation d’objets
