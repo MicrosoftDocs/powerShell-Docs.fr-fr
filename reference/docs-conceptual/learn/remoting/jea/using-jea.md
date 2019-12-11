@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,sécurité
 title: Utilisation de JEA
 ms.openlocfilehash: 8f3cc9186c61a2ae5b64eb3dc4f72ca83f1a58c5
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70017750"
 ---
 # <a name="using-jea"></a>Utilisation de JEA

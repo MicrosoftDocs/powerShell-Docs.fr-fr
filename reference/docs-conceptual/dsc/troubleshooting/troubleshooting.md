@@ -3,10 +3,10 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Résolution des problèmes liés à DSC
 ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954616"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC

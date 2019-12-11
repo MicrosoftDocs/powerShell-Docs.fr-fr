@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: powershell,applet de commande
 title: Présentation de Windows PowerShell ISE
 ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416285"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE

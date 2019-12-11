@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328050"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions

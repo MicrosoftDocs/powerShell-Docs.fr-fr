@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Installer des ressources DSC supplémentaires
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417795"
 ---
 # <a name="install-additional-dsc-resources"></a>Installer des ressources DSC supplémentaires

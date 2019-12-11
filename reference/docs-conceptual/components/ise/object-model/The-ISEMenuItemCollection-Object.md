@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Objet ISEMenuItemCollection
 ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030546"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Objet ISEMenuItemCollection

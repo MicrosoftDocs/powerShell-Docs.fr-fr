@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: powershell,applet de commande
 title: Présentation des concepts importants de PowerShell
 ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030982"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Présentation des concepts importants de PowerShell
@@ -30,7 +30,7 @@ Les commandes natives dans PowerShell sont appelées *cmdlets* (prononcé applet
 
 Lorsque vous tapez une commande, PowerShell traite toujours directement la saisie de la ligne de commande. PowerShell met également en forme la sortie sur écran. Cette différence est importante, car elle réduit le travail requis de chaque cmdlet. Elle garantit que vous pouvez toujours procéder de la même façon avec chaque cmdlet. Les développeurs de cmdlet n’ont besoin ni d’écrire du code pour analyser les arguments de ligne de commande, ni de mettre en forme la sortie.
 
-Les outils en ligne de commande traditionnels ont leurs propres modes de demande et d’affichage de l’aide. Certains outils en ligne de commande utilisent **/?** pour déclencher l’affichage de l’aide. D’autres utilisent **-?**, **/H**, voire **//**. Certains affichent l’aide dans une fenêtre d’interface graphique utilisateur, plutôt que dans l’affichage de la console. Si vous utilisez un paramètre incorrect, l’outil peut ignorer ce que vous avez tapé et commencer à exécuter une tâche automatiquement.
+Les outils en ligne de commande traditionnels ont leurs propres modes de demande et d’affichage de l’aide. Certains outils en ligne de commande utilisent **/?** pour déclencher l’affichage de l’aide. D’autres utilisent **-?** , **/H**, voire **//** . Certains affichent l’aide dans une fenêtre d’interface graphique utilisateur, plutôt que dans l’affichage de la console. Si vous utilisez un paramètre incorrect, l’outil peut ignorer ce que vous avez tapé et commencer à exécuter une tâche automatiquement.
 Dans la mesure où PowerShell analyse et traite automatiquement la ligne de commande, le paramètre **- ?** signifie toujours « afficher l’aide de cette commande ».
 
 > [!NOTE]

@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: Désinstaller Accès Web Windows PowerShell
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058135"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>désinstaller Accès Web Windows PowerShell
@@ -81,9 +81,9 @@ Les procédures de cette section vous permettent de désinstaller l’applicatio
 
 1. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes. Si elle est déjà ouverte, passez à l’étape suivante.
 
-    -   Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)**.
+    -   Sur le Bureau Windows, démarrez le Gestionnaire de serveur en cliquant sur **Gestionnaire de serveur** dans la barre des tâches Windows. Dans le menu **Outils** du Gestionnaire de serveur, cliquez sur **Gestionnaire des services Internet (IIS)** .
 
-    -   Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)**. Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
+    -   Sur l’écran d’**accueil** de Windows, tapez une partie du nom **Gestionnaire des services Internet (IIS)** . Cliquez sur le raccourci quand il s’affiche dans les résultats **Applications**.
 
 1. Dans le volet de l’arborescence du Gestionnaire des services Internet, sélectionnez le site web qui exécute l’application web Accès Web Windows PowerShell.
 

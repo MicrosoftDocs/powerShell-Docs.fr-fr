@@ -4,10 +4,10 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Écrire des scripts avec des éditions de PowerShell compatibles
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328060"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Écrire des scripts avec des éditions de PowerShell compatibles

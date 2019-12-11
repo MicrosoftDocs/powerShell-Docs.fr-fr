@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: État de compatibilité des produits
 ms.openlocfilehash: c740b2560162ecdab40daac2f9ae36c29811ac13
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147819"
 ---
 # <a name="product-compatibility-status"></a>État de compatibilité des produits

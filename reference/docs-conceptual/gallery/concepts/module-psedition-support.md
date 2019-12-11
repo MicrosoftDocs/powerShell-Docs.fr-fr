@@ -4,10 +4,10 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Modules avec des éditions PowerShell compatibles
 ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328500"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Modules avec des éditions PowerShell compatibles

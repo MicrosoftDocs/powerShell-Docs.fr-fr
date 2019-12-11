@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Problèmes connus dans WMF 5.1
 ms.openlocfilehash: 8348f9d45dca32dcda2ef8baa75d586c8728d0a4
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147949"
 ---
 # <a name="known-issues-in-wmf-51"></a>Problèmes connus dans WMF 5.1

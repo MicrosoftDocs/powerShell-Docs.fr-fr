@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
 ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416672"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1

@@ -3,10 +3,10 @@ title: Utilisation de Visual Studio Code pour le débogage et l’édition à di
 description: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 ms.date: 06/13/2019
 ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67263912"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Utilisation de Visual Studio Code pour le débogage et l’édition à distance

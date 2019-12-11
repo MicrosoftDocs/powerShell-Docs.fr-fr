@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Changement de l’état de l’ordinateur
 ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
-ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70386278"
 ---
 # <a name="changing-computer-state"></a>Changement de l’état de l’ordinateur
@@ -29,7 +29,7 @@ Pour arrêter des sessions particulières sur un serveur Terminal Server, utilis
 
 ## <a name="logging-off-the-current-session"></a>Déconnexion de la session en cours
 
-Pour vous déconnecter d’une session sur le système local, vous pouvez utiliser différentes techniques. La solution la plus simple consiste à utiliser l’outil en ligne de commande Bureau à distance/Services Terminal Server, **logoff.exe** (pour plus d’informations, à l’invite Windows PowerShell, tapez **logoff /?**). Pour fermer la session active, tapez **logoff** sans argument.
+Pour vous déconnecter d’une session sur le système local, vous pouvez utiliser différentes techniques. La solution la plus simple consiste à utiliser l’outil en ligne de commande Bureau à distance/Services Terminal Server, **logoff.exe** (pour plus d’informations, à l’invite Windows PowerShell, tapez **logoff /?** ). Pour fermer la session active, tapez **logoff** sans argument.
 
 Vous pouvez également recouvrir à l’outil **shutdown.exe** avec son option logoff :
 
@@ -53,7 +53,7 @@ Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName 
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>Arrêt ou redémarrage d’un ordinateur
 
-L’arrêt et le redémarrage d’ordinateurs sont généralement des tâches de même type. Les outils permettant d’arrêter un ordinateur permettent généralement aussi de le redémarrer, et inversement. Deux options simples permettent de redémarrer un ordinateur à partir de Windows PowerShell. Utilisez Tsshutdn.exe ou Shutdown.exe avec des arguments appropriés. Vous pouvez obtenir des informations d’utilisation détaillées à partir de **tsshutdn.exe /?** ou de **shutdown.exe /?**.
+L’arrêt et le redémarrage d’ordinateurs sont généralement des tâches de même type. Les outils permettant d’arrêter un ordinateur permettent généralement aussi de le redémarrer, et inversement. Deux options simples permettent de redémarrer un ordinateur à partir de Windows PowerShell. Utilisez Tsshutdn.exe ou Shutdown.exe avec des arguments appropriés. Vous pouvez obtenir des informations d’utilisation détaillées à partir de **tsshutdn.exe /?** ou de **shutdown.exe /?** .
 
 Vous pouvez également exécuter des opérations d’arrêt et de redémarrage directement depuis Windows PowerShell.
 

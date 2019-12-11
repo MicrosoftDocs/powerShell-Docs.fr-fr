@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Déployer sur Azure Automation
 ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71327910"
 ---
 # <a name="deploy-to-azure-automation"></a>Déployer sur Azure Automation

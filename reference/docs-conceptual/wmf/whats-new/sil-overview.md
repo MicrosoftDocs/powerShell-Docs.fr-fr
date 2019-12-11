@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Journalisation de l’inventaire logiciel
 ms.openlocfilehash: b12cfc4ae1e505bbc4d47596bed9352ce53a98f2
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147779"
 ---
 # <a name="software-inventory-logging-sil"></a>Journalisation de l’inventaire logiciel

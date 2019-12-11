@@ -3,10 +3,10 @@ title: Présentation de l’encodage de fichier dans VSCode et PowerShell
 description: Configuration de l’encodage de fichier dans VSCode et PowerShell
 ms.date: 02/28/2019
 ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117411"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Présentation de l’encodage de fichier dans VSCode et PowerShell

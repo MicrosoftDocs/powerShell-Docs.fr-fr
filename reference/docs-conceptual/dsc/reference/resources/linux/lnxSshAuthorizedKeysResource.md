@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,setup
 title: Ressource nxSshAuthorizedKeys dans DSC pour Linux
 ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953256"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Ressource nxSshAuthorizedKeys dans DSC pour Linux
