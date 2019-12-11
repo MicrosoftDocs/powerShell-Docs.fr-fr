@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086633"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell

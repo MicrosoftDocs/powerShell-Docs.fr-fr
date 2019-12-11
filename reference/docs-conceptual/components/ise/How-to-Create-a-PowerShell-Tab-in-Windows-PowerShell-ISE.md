@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Comment créer un onglet PowerShell dans Windows PowerShell ISE
 ms.openlocfilehash: 7baf9a4051a196045d53eebf8ce5260bdc1bc55a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030587"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Comment créer un onglet PowerShell dans Windows PowerShell ISE

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Ajouter des paramètres à une configuration
 ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954196"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Ajouter des paramètres à une configuration
