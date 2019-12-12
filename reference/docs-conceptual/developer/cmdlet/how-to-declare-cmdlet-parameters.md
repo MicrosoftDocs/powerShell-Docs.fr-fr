@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
 ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365678"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Guide pratique pour déclarer des paramètres d’applet de commande
@@ -37,7 +37,7 @@ Pour plus d’informations sur l’attribut de paramètre, consultez [déclarati
 
 ## <a name="how-to-declare-a-positional-parameter"></a>Comment déclarer un paramètre positionnel
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, définissez le mot clé `Position` à la position de l’argument. La valeur 0 indique la première position.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, définissez le mot clé `Position` sur la position de l’argument. La valeur 0 indique la première position.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -53,7 +53,7 @@ Pour plus d’informations sur l’attribut de paramètre, consultez [déclarati
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>Comment déclarer un paramètre obligatoire
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, définissez le mot clé `Mandatory` sur `true`.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, affectez la valeur `true`au mot clé `Mandatory`.
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]

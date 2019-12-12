@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368028"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName, élément pour Types (Format)
@@ -29,7 +29,7 @@ Spécifie le type .NET d’un objet qui appartient au jeu de sélection.
 
 ## <a name="attributes-and-elements"></a>Éléments et attributs
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `TypeName`. Au moins un élément `TypeName` doit être inclus dans le jeu de sélection.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `TypeName`. Au moins un élément de `TypeName` doit être inclus dans le jeu de sélection.
 
 ### <a name="attributes"></a>Attributs
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément types (format)](./types-element-for-selectionset-format.md)|Définit les objets .NET qui se trouvent dans le jeu de sélection.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom qualifié complet du type .NET.
 
@@ -53,7 +53,7 @@ Spécifiez le nom qualifié complet du type .NET.
 
 Vous pouvez utiliser des jeux de sélection quand vous avez un ensemble d’objets connexes que vous souhaitez référencer à l’aide d’un nom unique, tel qu’un ensemble d’objets liés par héritage. Lorsque vous définissez vos vues, vous pouvez spécifier le jeu d’objets en utilisant le nom du jeu de sélection au lieu de répertorier tous les objets dans chaque vue.
 
-Les jeux de sélection communs sont spécifiés par leur nom lors de la définition des vues du fichier de mise en forme. Dans ce cas, l’élément enfant `SelectionSetName` de l’élément `ViewSelectedBy` de la vue spécifie le jeu. Toutefois, différentes entrées d’une vue peuvent également spécifier un jeu de sélection qui s’applique uniquement à cette entrée de la vue. Pour plus d’informations sur les jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).
+Les jeux de sélection communs sont spécifiés par leur nom lors de la définition des vues du fichier de mise en forme. Dans ce cas, l' `SelectionSetName` élément enfant de l’élément `ViewSelectedBy` pour la vue spécifie le jeu. Toutefois, différentes entrées d’une vue peuvent également spécifier un jeu de sélection qui s’applique uniquement à cette entrée de la vue. Pour plus d’informations sur les jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exemple
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
 ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369308"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Types de paramètres des applets de commande
@@ -65,7 +65,7 @@ Get-Command get-service,set-service
 
 Vous pouvez également définir des paramètres d’applet de commande en tant que paramètres obligatoires ou facultatifs. (Un paramètre obligatoire doit être spécifié avant que le runtime Windows PowerShell appelle l’applet de commande.)  Par défaut, les paramètres sont définis comme facultatifs.
 
-Pour définir un paramètre obligatoire, ajoutez le mot clé `Mandatory` dans la déclaration d’attribut de paramètre et affectez-lui la valeur `true`, comme indiqué dans la déclaration de paramètre suivante.
+Pour définir un paramètre obligatoire, ajoutez le mot clé `Mandatory` dans la déclaration Attribute de paramètre et affectez-lui la valeur `true`, comme indiqué dans la déclaration de paramètre suivante.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true)]
@@ -77,7 +77,7 @@ public string UserName
 private string userName;
 ```
 
-Pour définir un paramètre facultatif, omettez le mot clé `Mandatory` dans la déclaration d’attribut de **paramètre** , comme indiqué dans la déclaration de paramètre suivante.
+Pour définir un paramètre facultatif, omettez le mot clé `Mandatory` dans la déclaration attribute **Parameter** , comme indiqué dans la déclaration de paramètre suivante.
 
 ```csharp
 [Parameter(Position = 0)]
@@ -95,7 +95,7 @@ Windows PowerShell fournit un type [System. Management. Automation. Paramètre_B
 
 Prenons l’exemple suivant. Par défaut, plusieurs applets de commande Windows PowerShell ne transmettent pas un objet de sortie dans le pipeline. Toutefois, ces applets de commande ont un paramètre de commutateur `PassThru` qui remplace le comportement par défaut. Si le paramètre `PassThru` est spécifié lors de l’appel de ces applets de commande, l’applet de commande renvoie un objet de sortie au pipeline.
 
-Si vous avez besoin que le paramètre ait une valeur par défaut de `true` lorsque le paramètre n’est pas spécifié dans l’appel, envisagez d’inverser le sens du paramètre. Par exemple, au lieu de définir l’attribut de paramètre sur une valeur booléenne égale à `true`, déclarez la propriété en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter) , puis définissez la valeur par défaut du paramètre sur `false`.
+Si vous avez besoin que le paramètre ait une valeur par défaut de `true` lorsque le paramètre n’est pas spécifié dans l’appel, envisagez d’inverser le sens du paramètre. Par exemple, au lieu de définir l’attribut de paramètre sur une valeur booléenne de `true`, déclarez la propriété en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter) , puis définissez la valeur par défaut du paramètre sur `false`.
 
 Pour définir un paramètre de commutateur, déclarez la propriété en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter) , comme indiqué dans l’exemple suivant.
 

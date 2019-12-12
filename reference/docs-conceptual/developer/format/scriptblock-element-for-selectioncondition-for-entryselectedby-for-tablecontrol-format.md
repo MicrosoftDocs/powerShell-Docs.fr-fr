@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 2b11fbcf-3426-48ae-9319-2c847969f723
 caps.latest.revision: 10
 ms.openlocfilehash: 7afc834e68ef332bee1e23da782fb5c5527fcf54
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368578"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
 
-Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et l’entrée de table est utilisée.
+Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de table est utilisée.
 
 Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry élément (format) EntrySelectedBy, élément pour TableRowEntry (format) Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format) ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|Définit la condition qui doit exister pour que cette entrée de table soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 

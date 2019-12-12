@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367718"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Écriture de l’aide pour les scripts et fonctions PowerShell
@@ -35,9 +35,9 @@ Pour plus d’informations sur l’écriture de rubriques d’aide basées sur d
 
 ### <a name="xml-based-command-help"></a>Aide sur les commandes basées sur XML
 La rubrique d’aide qui décrit un script ou une fonction peut être implémentée dans un fichier XML qui utilise le schéma de l’aide de la commande.
-Pour associer le script ou la fonction au fichier XML, utilisez le mot clé `ExternalHelp`, suivi du chemin d’accès et du nom du fichier XML.
+Pour associer le script ou la fonction au fichier XML, utilisez le mot clé `ExternalHelp` comment, suivi du chemin d’accès et du nom du fichier XML.
 
-Lorsque le mot clé `ExternalHelp` est présent, il est prioritaire par rapport à l’aide basée sur les commentaires, même lorsque `Get-Help` ne trouve pas de fichier d’aide qui correspond à la valeur du mot clé `ExternalHelp`.
+Lorsque le mot clé `ExternalHelp` comment est présent, il est prioritaire par rapport à l’aide basée sur les commentaires, même lorsque `Get-Help` ne trouve pas de fichier d’aide qui correspond à la valeur du mot clé `ExternalHelp`.
 
 ### <a name="online-help"></a>Aide en ligne
 Vous pouvez poster vos rubriques d’aide sur Internet, puis diriger `Get-Help` pour ouvrir les rubriques.

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366828"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Création d’un fournisseur de lecteur Windows PowerShell
@@ -31,7 +31,7 @@ Votre fournisseur de lecteurs doit définir une classe .NET qui dérive de la cl
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-Notez que dans cet exemple, l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) spécifie un nom convivial pour le fournisseur et les fonctionnalités spécifiques de Windows PowerShell que le fournisseur expose à Windows Runtime PowerShell pendant le traitement des commandes. Les valeurs possibles pour les fonctionnalités du fournisseur sont définies par l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Ce fournisseur de lecteurs ne prend en charge aucune de ces fonctionnalités.
+Notez que dans cet exemple, l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) spécifie un nom convivial pour le fournisseur et les fonctionnalités spécifiques de Windows PowerShell que le fournisseur expose au runtime Windows PowerShell pendant le traitement de la commande. Les valeurs possibles pour les fonctionnalités du fournisseur sont définies par l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Ce fournisseur de lecteurs ne prend en charge aucune de ces fonctionnalités.
 
 ## <a name="defining-base-functionality"></a>Définition des fonctionnalités de base
 
@@ -55,7 +55,7 @@ Votre remplacement de cette méthode doit effectuer les opérations suivantes :
 
 - Vérifiez que le membre [System. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) existe et qu’une connexion au magasin de données peut être établie.
 
-- Créez un lecteur et renseignez le membre de la connexion, à la prise en charge de l’applet de commande `New-PSDrive`.
+- Créez un lecteur et renseignez le membre de la connexion, pour la prise en charge de l’applet de commande `New-PSDrive`.
 
 - Validez l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) pour le lecteur proposé.
 
@@ -95,7 +95,7 @@ Ce fournisseur de lecteurs ne remplace pas la méthode [System. Management. Auto
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Points à retenir concernant l’implémentation de InitializeDefaultDrives
 
-Tous les fournisseurs de lecteurs doivent monter un lecteur racine pour aider l’utilisateur à se découvrir. Le lecteur racine peut répertorier les emplacements qui servent de racines pour d’autres lecteurs montés. Par exemple, le fournisseur de Active Directory peut créer un lecteur qui répertorie les contextes d’attribution de noms trouvés dans les attributs `namingContext` sur l’environnement de système distribué (DSE) racine. Cela permet aux utilisateurs de découvrir des points de montage pour d’autres lecteurs.
+Tous les fournisseurs de lecteurs doivent monter un lecteur racine pour aider l’utilisateur à se découvrir. Le lecteur racine peut répertorier les emplacements qui servent de racines pour d’autres lecteurs montés. Par exemple, le fournisseur Active Directory peut créer un lecteur qui répertorie les contextes d’attribution de noms trouvés dans les attributs `namingContext` de l’environnement de système distribué racine (DSE). Cela permet aux utilisateurs de découvrir des points de montage pour d’autres lecteurs.
 
 ## <a name="code-sample"></a>Exemple de code
 
@@ -107,7 +107,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
 1. Exécutez l’applet de commande `Get-PSProvider` pour récupérer la liste des fournisseurs afin de vérifier que le fournisseur de lecteurs AccessDB est présent :
 
-   **@No__t de > PS-1**
+   **`Get-PSProvider` de > PS**
 
    La sortie suivante apparaît :
 

@@ -3,10 +3,10 @@ title: Planification de travaux avec l’API Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359828"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Planification de travaux avec l’API Windows PowerShell
@@ -54,7 +54,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>Création des objets d’appel et de définition de tâche
 
-Vous créez ensuite des objets ScheduledJobInvocationInfo et ScheduledJobDefinition pour exécuter le travail. Le code suivant illustre cela.
+Vous créez ensuite des objets ScheduledJobInvocationInfo et ScheduledJobDefinition pour exécuter le travail. Le code suivant illustre cette méthode.
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

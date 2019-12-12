@@ -3,10 +3,10 @@ title: Installation du Kit de développement logiciel Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444502"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installation du Kit de développement logiciel Windows PowerShell
@@ -73,8 +73,8 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Les sections suivantes fo
 #### <a name="hosting-application-samples"></a>Exemples d’applications d’hébergement
 
 - Runspace01 : indique comment utiliser la classe PowerShell pour exécuter l’applet de commande `Get-Process` de façon synchrone.
-L’applet de commande `Get-Process` retourne les objets de processus pour chaque processus en cours d’exécution sur l’ordinateur local.
-- Runspace02 : indique comment utiliser la classe PowerShell pour exécuter les applets de commande `Get-Process` et `Sort-Object` de façon synchrone. L’applet de commande `Get-Process` retourne les objets de processus pour chaque processus en cours d’exécution sur l’ordinateur local, et la `Sort-Object` trie les objets en fonction de leur propriété ID. Les résultats de ces commandes s’affichent à l’aide d’un contrôle DataGridView.
+L’applet de commande `Get-Process` retourne les objets process pour chaque processus en cours d’exécution sur l’ordinateur local.
+- Runspace02 : indique comment utiliser la classe PowerShell pour exécuter les applets de commande `Get-Process` et `Sort-Object` de façon synchrone. L’applet de commande `Get-Process` retourne les objets de processus pour chaque processus en cours d’exécution sur l’ordinateur local, et le `Sort-Object` trie les objets en fonction de leur propriété ID. Les résultats de ces commandes s’affichent à l’aide d’un contrôle DataGridView.
 - Runspace03 : montre comment utiliser la classe PowerShell pour exécuter un script de façon synchrone et comment gérer les erreurs sans fin d’exécution. Le script reçoit une liste de noms de processus et récupère ensuite ces processus. Le résultat du script, notamment les erreurs sans fin d’exécution qui ont été générées pendant l’exécution du script, s’affiche dans une fenêtre de console.
 - Runspace04 : indique comment utiliser la classe PowerShell pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. Par conséquent, aucun objet n’est retourné et une erreur avec fin d’exécution est levée.
 - Runspace05 : indique comment ajouter un composant logiciel enfichable à un objet InitialSessionState afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande « obtenir-proc » (définie par l’exemple GetProcessSample01) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
@@ -90,7 +90,7 @@ L’applet de commande `Get-Process` retourne les objets de processus pour chaqu
 #### <a name="host-samples"></a>Exemples d’hôtes
 
 - Host01 : indique comment implémenter une application hôte qui utilise un hôte personnalisé. Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API PowerShell est utilisée pour exécuter un script qui appelle « Exit ». L’application hôte analyse ensuite la sortie du script et imprime les résultats.
-- Host02 : montre comment écrire une application hôte qui utilise le runtime Windows PowerShell avec une implémentation d’hôte personnalisée. L’application hôte définit la culture de l’hôte sur l’allemand, exécute l’applet de commande `Get-Process` et affiche les résultats comme vous le feriez à l’aide de pwrsh. exe, puis imprime les données actuelles et l’heure en allemand.
+- Host02 : montre comment écrire une application hôte qui utilise le runtime Windows PowerShell avec une implémentation d’hôte personnalisée. L’application hôte définit la culture de l’hôte en allemand, exécute l’applet de commande `Get-Process` et affiche les résultats comme vous pouvez les voir à l’aide de pwrsh. exe, puis imprime les données actuelles et l’heure en allemand.
 - Host03 : indique comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console.
 - Host04 : indique comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console. Cette application hôte prend aussi en charge l’affichage d’invites qui permettent à l’utilisateur de spécifier plusieurs options.
 - Host05 : indique comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console. Cette application hôte prend également en charge les appels à des ordinateurs distants à l’aide des applets de commande `Enter-PsSession` et `Exit-PsSession`.
@@ -104,8 +104,8 @@ L’applet de commande `Get-Process` retourne les objets de processus pour chaqu
 
 - AccessDBProviderSample03 : montre comment remplacer les méthodes GetItem et SetItem pour prendre en charge les appels aux applets de commande `Get-Item` et `Set-Item`. La classe de fournisseur de cet exemple dérive de la classe ItemCmdletProvider.
 
-- AccessDBProviderSample04 : indique comment remplacer les méthodes de conteneur pour prendre en charge les appels aux applets de commande `Copy-Item`, `Get-ChildItem`, `New-Item` et `Remove-Item`. Ces méthodes doivent être implémentées quand le magasin de données contient des éléments de type conteneur. Un conteneur est un groupe d’éléments enfants qui descendent d’un même élément parent. La classe de fournisseur de cet exemple dérive de la classe ItemCmdletProvider.
+- AccessDBProviderSample04 : indique comment remplacer les méthodes de conteneur pour prendre en charge les appels aux applets de commande `Copy-Item`, `Get-ChildItem`, `New-Item`et `Remove-Item`. Ces méthodes doivent être implémentées quand le magasin de données contient des éléments de type conteneur. Un conteneur est un groupe d’éléments enfants qui descendent d’un même élément parent. La classe de fournisseur de cet exemple dérive de la classe ItemCmdletProvider.
 
 - AccessDBProviderSample05 : indique comment remplacer les méthodes de conteneur pour prendre en charge les appels aux applets de commande `Move-Item` et `Join-Path`. Ces méthodes doivent être implémentées quand l’utilisateur a besoin de déplacer des éléments dans un conteneur et si le magasin de données contient des conteneurs imbriqués. La classe de fournisseur de cet exemple dérive de la classe NavigationCmdletProvider.
 
-- AccessDBProviderSample06 : indique comment remplacer les méthodes de contenu pour prendre en charge les appels aux applets de commande `Clear-Content`, `Get-Content` et `Set-Content`. Ces méthodes doivent être implémentées quand l’utilisateur a besoin de gérer le contenu des éléments situés dans le magasin de données. La classe de fournisseur de cet exemple dérive de la classe NavigationCmdletProvider et implémente l’interface IContentCmdletProvider.
+- AccessDBProviderSample06 : montre comment remplacer les méthodes de contenu pour prendre en charge les appels aux applets de commande `Clear-Content`, `Get-Content`et `Set-Content`. Ces méthodes doivent être implémentées quand l’utilisateur a besoin de gérer le contenu des éléments situés dans le magasin de données. La classe de fournisseur de cet exemple dérive de la classe NavigationCmdletProvider et implémente l’interface IContentCmdletProvider.

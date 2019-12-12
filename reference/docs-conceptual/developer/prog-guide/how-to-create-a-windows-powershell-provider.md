@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
 ms.openlocfilehash: ffbf8028ba2b52e77d8e22c061baa9b8b67f6da3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366648"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Guide pratique pour créer un fournisseur Windows PowerShell
@@ -29,7 +29,7 @@ Pour le développeur, le fournisseur Windows PowerShell est l’interface entre 
 
 Windows PowerShell fournit plusieurs fournisseurs (tels que le fournisseur de système de fichiers, le fournisseur de Registre et le fournisseur d’alias) qui sont utilisés pour accéder aux magasins de données connus. Pour plus d’informations sur les fournisseurs fournis par Windows PowerShell, utilisez la commande suivante pour accéder à l’aide en ligne :
 
-**> PS-Help about_Providers**
+**Bloc de > PS-Help about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Accès aux données stockées à l’aide des chemins d’accès Windows PowerShell
 

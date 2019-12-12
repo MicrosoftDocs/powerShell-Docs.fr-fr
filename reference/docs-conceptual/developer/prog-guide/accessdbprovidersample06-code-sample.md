@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: baab6a56-c199-48d7-a03e-a904b1bb1baa
 caps.latest.revision: 7
 ms.openlocfilehash: 7f75a3a3d2ab89696bb34ec2fdf7ba7a5ce0f9b1
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416239"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>Exemple de code AccessDbProviderSample06

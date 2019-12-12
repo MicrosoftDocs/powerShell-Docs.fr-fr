@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370028"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Verbes approuvés pour les commandes PowerShell
@@ -70,7 +70,7 @@ Le verbe `Search` est utilisé pour créer une référence à une ressource dans
 
 ### <a name="get-vs-read"></a>Obtenir ou lire
 Le verbe `Get` est utilisé pour récupérer une ressource, telle qu’un fichier.
-Le verbe `Read` est utilisé pour obtenir des informations à partir d’une source, par exemple un fichier.
+Le verbe `Read` est utilisé pour obtenir des informations à partir d’une source, telle qu’un fichier.
 
 ### <a name="invoke-vs-start"></a>Appeler et démarrer
 Le verbe `Invoke` est utilisé pour effectuer une opération qui est généralement une opération synchrone, telle que l’exécution d’une commande.
@@ -109,7 +109,7 @@ Le tableau suivant répertorie la plupart des verbes définis.
 |[Renommer](/dotnet/api/System.Management.Automation.VerbsCommon.Rename) (RN)|Modifie le nom d’une ressource. Par exemple, l’applet de commande `Rename-Item`, qui est utilisée pour accéder aux données stockées, modifie le nom d’un élément dans le magasin de données.|Pour cette action, n’utilisez pas un verbe tel que change.|
 |[Réinitialiser](/dotnet/api/System.Management.Automation.VerbsCommon.Reset) (RS)|Restaure une ressource à son état d’origine.||
 |[Recherche](/dotnet/api/System.Management.Automation.VerbsCommon.Search) (SR)|Crée une référence à une ressource dans un conteneur.|Pour cette action, n’utilisez pas de verbes tels que Find ou Locate.|
-|[Sélectionner](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (SC)|Localise une ressource dans un conteneur. Par exemple, l’applet de commande `Select-String` recherche du texte dans les chaînes et les fichiers.|Pour cette action, n’utilisez pas de verbes tels que Find ou Locate.|
+|[Sélectionner](/dotnet/api/System.Management.Automation.VerbsCommon.Select) (SC)|Localise une ressource dans un conteneur. Par exemple, l’applet de commande `Select-String` recherche du texte dans des chaînes et des fichiers.|Pour cette action, n’utilisez pas de verbes tels que Find ou Locate.|
 |[Jeu](/dotnet/api/System.Management.Automation.VerbsCommon.Set) (s)|Remplace des données sur une ressource existante ou crée une ressource qui contient des données. Par exemple, l’applet de commande `Set-Date` modifie l’heure système sur l’ordinateur local. (Le verbe `New` peut également être utilisé pour créer une ressource.) Ce verbe est associé à `Get`.|Pour cette action, n’utilisez pas de verbes tels que l’écriture, la réinitialisation, l’attribution ou la configuration.|
 |[Afficher](/dotnet/api/System.Management.Automation.VerbsCommon.Show) (SH)|Rend une ressource visible par l’utilisateur. Ce verbe est associé à `Hide`.|Pour cette action, n’utilisez pas de verbes tels que Display ou production.|
 |[Ignorer](/dotnet/api/System.Management.Automation.VerbsCommon.Skip) (SK)|Ignore une ou plusieurs ressources ou points dans une séquence.|Pour cette action, n’utilisez pas un verbe comme Bypass ou Jump.|
@@ -153,7 +153,7 @@ Le tableau suivant répertorie la plupart des verbes définis.
 |[Développer](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)|Restaure les données d’une ressource qui a été compressée à son état d’origine. Ce verbe est associé à `Compress`.|Pour cette action, n’utilisez pas de verbes tels que Eclater ou décompresser.|
 |[Exporter](/dotnet/api/System.Management.Automation.VerbsData.Export) (EP)|Encapsule l’entrée principale dans un magasin de données persistant, tel qu’un fichier, ou dans un format d’échange. Ce verbe est associé à `Import`.|Pour cette action, n’utilisez pas de verbes tels que Extract ou Backup.|
 |[Groupe](/dotnet/api/System.Management.Automation.VerbsData.Group) (GP)|Organise ou associe une ou plusieurs ressources.|Pour cette action, n’utilisez pas de verbes tels que l’agrégation, l’organisation, l’Association ou la corrélation.|
-|[Importation](/dotnet/api/System.Management.Automation.VerbsData.Import) (IP)|Crée une ressource à partir de données stockées dans un magasin de données persistant (tel qu’un fichier) ou dans un format d’échange. Par exemple, l’applet de commande `Import-CSV` importe des données à partir d’un fichier de valeurs séparées par des virgules (CSV) dans des objets qui peuvent être utilisés par d’autres applets de commande. Ce verbe est associé à `Export`.|Pour cette action, n’utilisez pas de verbes tels que BulkLoad ou Load.|
+|[Importation](/dotnet/api/System.Management.Automation.VerbsData.Import) (IP)|Crée une ressource à partir de données stockées dans un magasin de données persistant (tel qu’un fichier) ou dans un format d’échange. Par exemple, l’applet de commande `Import-CSV` importe des données à partir d’un fichier de valeurs séparées par des virgules (CSV) vers des objets qui peuvent être utilisés par d’autres applets de commande. Ce verbe est associé à `Export`.|Pour cette action, n’utilisez pas de verbes tels que BulkLoad ou Load.|
 |[Initialiser](/dotnet/api/System.Management.Automation.VerbsData.Initialize) (dans)|Prépare une ressource en vue de son utilisation et lui affecte un État par défaut.|Pour cette action, n’utilisez pas de verbes tels que Erase, init, Renew, Rebuild, Reinitialize ou Setup.|
 |[Limite](/dotnet/api/System.Management.Automation.VerbsData.Limit) (l)|Applique des contraintes à une ressource.|Pour cette action, n’utilisez pas un verbe tel que quota.|
 |[Fusion](/dotnet/api/System.Management.Automation.VerbsData.Merge) (mg)|Crée une ressource unique à partir de plusieurs ressources.|Pour cette action, n’utilisez pas de verbes tels que combine ou join.|
@@ -206,10 +206,10 @@ Le tableau suivant répertorie la plupart des verbes définis.
 |[Start](/dotnet/api/System.Management.Automation.VerbsLifecycle.Start) (sa)|Lance une opération. Par exemple, l’applet de commande `Start-Service` démarre un service. Ce verbe est associé à `Stop`.|Pour cette action, n’utilisez pas de verbes tels que le lancement, l’initialisation ou le démarrage.|
 |[Arrêter](/dotnet/api/System.Management.Automation.VerbsLifecycle.Stop) (SP)|Interrompt une activité. Ce verbe est associé à `Start`.|Pour cette action, n’utilisez pas de verbes tels que end, Kill, Terminate ou Cancel.|
 |[Envoi](/dotnet/api/System.Management.Automation.VerbsLifecycle.Submit) (SB)|Présente une ressource pour approbation.|Pour cette action, n’utilisez pas un verbe tel que la publication.|
-|[Suspendre](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (SS)|Suspend une activité. Par exemple, l’applet de commande `Suspend-Service` interrompt un service. Ce verbe est associé à `Resume`.|Pour cette action, n’utilisez pas un verbe tel que pause.|
+|[Suspendre](/dotnet/api/System.Management.Automation.VerbsLifecycle.Suspend) (SS)|Suspend une activité. Par exemple, l’applet de commande `Suspend-Service` suspend un service. Ce verbe est associé à `Resume`.|Pour cette action, n’utilisez pas un verbe tel que pause.|
 |[Désinstaller](/dotnet/api/System.Management.Automation.VerbsLifecycle.Uninstall) (US)|Supprime une ressource d’un emplacement indiqué. Ce verbe est associé à `Install`.||
 |[Annuler l’inscription](/dotnet/api/System.Management.Automation.VerbsLifecycle.Unregister) (votre)|Supprime l’entrée d’une ressource d’un référentiel. Ce verbe est associé à `Register`.|Pour cette action, n’utilisez pas de verbe tel que Remove.|
-|[Wait](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Interrompt une opération jusqu’à ce qu’un événement spécifié se produise. Par exemple, l’applet de commande `Wait-Job` interrompt les opérations jusqu’à ce qu’une ou plusieurs des tâches en arrière-plan soient terminées.|Pour cette action, n’utilisez pas de verbes tels que Sleep ou pause.|
+|[Wait](/dotnet/api/System.Management.Automation.VerbsLifecycle.Wait) (w)|Interrompt une opération jusqu’à ce qu’un événement spécifié se produise. Par exemple, l’applet de commande `Wait-Job` suspend les opérations jusqu’à ce qu’une ou plusieurs des tâches en arrière-plan soient terminées.|Pour cette action, n’utilisez pas de verbes tels que Sleep ou pause.|
 
 ## <a name="security-verbs"></a>Verbes de sécurité
 

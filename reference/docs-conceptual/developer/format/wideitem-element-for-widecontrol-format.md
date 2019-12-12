@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361398"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem, élément pour WideControl (Format)
@@ -33,7 +33,7 @@ Définit la propriété ou le script dont la valeur est affichée.
 
 ## <a name="attributes-and-elements"></a>Éléments et attributs
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `WideItem`. L’élément `FormatString` est facultatif. Toutefois, vous devez spécifier un élément `PropertyName` ou `ScriptBlock`, mais vous ne pouvez pas spécifier les deux.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `WideItem`. L'élément `FormatString` est facultatif. Toutefois, vous devez spécifier un élément `PropertyName` ou `ScriptBlock`, mais vous ne pouvez pas spécifier les deux.
 
 ### <a name="attributes"></a>Attributs
 
@@ -59,7 +59,7 @@ Pour plus d’informations sur les composants d’une vue étendue, consultez [v
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `WideEntry` qui définit un seul élément `WideItem`. L’élément `WideItem` définit la propriété ou le script dont la valeur est affichée dans la vue.
+L’exemple suivant montre un élément `WideEntry` qui définit un élément `WideItem` unique. L’élément `WideItem` définit la propriété ou le script dont la valeur est affichée dans la vue.
 
 ```xml
 <WideEntry>

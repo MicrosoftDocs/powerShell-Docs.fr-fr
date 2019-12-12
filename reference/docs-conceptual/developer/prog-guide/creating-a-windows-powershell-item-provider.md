@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
 ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417488"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Création d’un fournisseur d’élément Windows PowerShell
@@ -203,7 +203,7 @@ Ce fournisseur d’éléments implémente une méthode d’assistance ChunkPath 
 
 Ce fournisseur d’éléments implémente la méthode d’assistance GetTables qui retourne un objet DatabaseTableInfo qui représente des informations sur la table spécifiée dans l’appel.
 
-### <a name="getrow-method"></a>Méthode GetRow
+### <a name="getrow-method"></a>GetRow, méthode
 
 La méthode [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) de ce fournisseur d’éléments appelle la méthode d’assistance GetRows. Cette méthode d’assistance récupère un objet DatabaseRowInfo qui représente des informations sur la ligne spécifiée dans la table.
 

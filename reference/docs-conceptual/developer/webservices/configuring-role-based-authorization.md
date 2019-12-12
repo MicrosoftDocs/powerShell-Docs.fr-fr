@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359768"
 ---
 # <a name="configuring-role-based-authorization"></a>Configuration d’une autorisation en fonction du rôle
 
-Cette rubrique montre comment configurer la stratégie d’autorisation basée sur les rôles pour l’implémentation de l’exemple de l’interface [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) décrite dans [implémentation d’une autorisation personnalisée pour la gestion. Extension IIS OData](./implementing-custom-authorization-for-a-management-odata-web-service.md).
+Cette rubrique montre comment configurer la stratégie d’autorisation basée sur les rôles pour l’implémentation de l’exemple de l’interface [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) décrite dans [implémentation d’une autorisation personnalisée pour l’extension IIS de gestion OData](./implementing-custom-authorization-for-a-management-odata-web-service.md).
 
 Dans cet exemple, vous allez configurer un fichier XML utilisé par l’exemple d’application de gestion OData pour définir la stratégie d’autorisation. Vous allez créer deux rôles et associer différents modules Windows PowerShell qui contiennent des flux de travail à ces rôles. Le schéma qui définit le fichier XML est indiqué dans [schéma de configuration de l’autorisation basée sur les rôles](./role-based-authorization-configuration-schema.md).
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Modification du fichier RBacConfiguration. Xml
 
-Ce fichier définit la stratégie d’autorisation pour l’application. Les rôles sont définis à l’aide de nœuds `Group`. Un nœud `Group` définit les commandes Windows PowerShell que les utilisateurs affectés à ce groupe peuvent exécuter. Les utilisateurs sont affectés à des groupes à l’aide de nœuds `User`.
+Ce fichier définit la stratégie d’autorisation pour l’application. Les rôles sont définis à l’aide de nœuds `Group`. Un nœud de `Group` définit les commandes Windows PowerShell que les utilisateurs affectés à ce groupe peuvent exécuter. Les utilisateurs sont affectés à des groupes à l’aide de `User` nœuds.
 
 Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administrateur et ajouter un utilisateur à chaque groupe.
 
@@ -85,9 +85,9 @@ Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administ
    </RbacConfiguration>
    ```
 
-2. Le fichier contient deux nœuds `Group`. Celles-ci représentent les deux rôles utilisés dans cet exemple, les rôles `NonAdminGroup` et `AdminGroup`.
+2. Le fichier contient deux nœuds `Group`. Celles-ci représentent les deux rôles utilisés dans cet exemple, les `NonAdminGroup` et les rôles de `AdminGroup`.
 
-   Ajoutez le code XML suivant, juste après la balise `Cmdlets` dans le premier nœud `Group` :
+   Ajoutez le code XML suivant juste après la balise `Cmdlets` fermante dans le premier nœud `Group` :
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administ
 
 #### <a name="adding-a-user-to-a-group-node"></a>Ajout d’un utilisateur à un nœud de groupe
 
-1. Ouvrez le fichier **RBacConfiguration. xml** dans un éditeur de texte. Ce fichier se trouve dans le dossier C : \\ \ inetpub\wwwroot\Modata si vous n’avez pas modifié le nom du point de terminaison avant l’installation.
+1. Ouvrez le fichier **RBacConfiguration. xml** dans un éditeur de texte. Ce fichier se trouve dans le dossier C :\\\inetpub\wwwroot\Modata si vous n’avez pas modifié le nom du point de terminaison avant l’installation.
 
-2. Directement après la balise de fermeture dans le nœud `Users`, ajoutez le code XML suivant :
+2. Ajoutez le code XML suivant, juste après la balise de fermeture dans le nœud `Users` :
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

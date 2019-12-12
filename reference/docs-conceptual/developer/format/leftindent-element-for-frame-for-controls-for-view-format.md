@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 85a53ff2-92f0-4d9b-8e13-d06d82299435
 caps.latest.revision: 6
 ms.openlocfilehash: 06ed340e3db237d4090961fef98333bd67a2a755
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365158"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-view-format"></a>LeftIndent, élément pour Frame pour Controls pour View (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément Frame pour CustomItem pour les contrôles pour View (format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nombre de caractères dont vous souhaitez déplacer les données vers la gauche.
 

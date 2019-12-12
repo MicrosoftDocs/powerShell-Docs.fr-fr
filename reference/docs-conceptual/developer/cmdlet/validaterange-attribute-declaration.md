@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
 ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369128"
 ---
 # <a name="validaterange-attribute-declaration"></a>Déclaration de l’attribut ValidateRange
@@ -41,9 +41,9 @@ L’attribut ValidateRange spécifie les valeurs minimales et maximales (la plag
 
 - Le runtime Windows PowerShell lève une erreur de validation dans les conditions suivantes :
 
-    - Lorsque la valeur de l’argument est inférieure à la limite `MinRange` ou supérieure à la limite de `MaxRange`.
+    - Lorsque la valeur de l’argument est inférieure à la limite de `MinRange` ou supérieure à la limite de `MaxRange`.
 
-    - Lorsque l’argument n’est pas du même type que les paramètres `MinRange` et `MaxRange`.
+    - Lorsque l’argument n’est pas du même type que le `MinRange` et les paramètres `MaxRange`.
 
 - L’attribut ValidateRange est défini par la classe [System. Management. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) .
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362788"
 ---
 # <a name="list-view-labels"></a>Vue de liste (Étiquettes)
@@ -23,14 +23,14 @@ Cet exemple montre comment implémenter un affichage de liste qui affiche une é
 
 1. Copiez le code XML de la section exemple de cette rubrique dans un fichier texte.
 
-2. Enregistrez le fichier texte. Veillez à ajouter l’extension `format.ps1xml` au fichier pour l’identifier comme un fichier de mise en forme.
+2. Enregistrez le fichier texte. Veillez à ajouter l’extension de `format.ps1xml` au fichier pour l’identifier en tant que fichier de mise en forme.
 
 3. Ouvrez Windows PowerShell et exécutez la commande suivante pour charger le fichier de mise en forme dans la session active : `Update-formatdata -prependpath PathToFormattingFile`.
 
    > [!WARNING]
    > Ce fichier de mise en forme définit l’affichage d’un objet qui est déjà défini par un fichier de mise en forme Windows PowerShell. Vous devez utiliser le paramètre `prependPath` lorsque vous exécutez l’applet de commande, et vous ne pouvez pas charger ce fichier de mise en forme en tant que module.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Ce fichier de mise en forme montre les éléments XML suivants :
 

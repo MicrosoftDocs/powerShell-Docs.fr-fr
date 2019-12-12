@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
 ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369378"
 ---
 # <a name="stopprocesssample02-sample"></a>Exemple StopProcessSample02
@@ -27,7 +27,7 @@ Cet exemple montre comment écrire une applet de commande qui écrit des message
 
 2. Double-cliquez sur l’icône du fichier solution (. sln). L’exemple de projet s’ouvre dans Microsoft Visual Studio.
 
-3. Dans le menu **générer** , sélectionnez **générer la solution**.
+3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
 
     La bibliothèque de l’exemple sera générée dans les dossiers \bin ou \bin\debug par défaut.
 
@@ -53,7 +53,7 @@ Cet exemple montre comment écrire une applet de commande qui écrit des message
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Cet exemple illustre ce qui suit.
 
@@ -69,7 +69,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment écrire des messages de débogage, de commentaires et d’avertissement à l’aide des méthodes `WriteDebug`, `WriteVerbose` et `WriteWarning`.
+Cet exemple montre comment écrire des messages de débogage, de commentaires et d’avertissement à l’aide des méthodes `WriteDebug`, `WriteVerbose`et `WriteWarning`.
 
 ```csharp
 using System;

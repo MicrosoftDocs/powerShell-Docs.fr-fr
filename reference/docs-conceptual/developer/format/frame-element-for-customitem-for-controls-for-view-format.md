@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
 caps.latest.revision: 7
 ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363648"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>Frame, élément pour CustomItem pour Controls pour View (Format)

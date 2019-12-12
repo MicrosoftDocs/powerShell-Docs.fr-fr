@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364208"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>AutoSize, élément pour TableControl (Format)

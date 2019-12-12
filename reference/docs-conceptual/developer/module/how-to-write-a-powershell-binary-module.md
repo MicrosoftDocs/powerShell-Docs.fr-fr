@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367118"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Guide pratique pour écrire un module binaire PowerShell
@@ -73,7 +73,7 @@ La procédure suivante décrit comment créer et installer un module binaire Pow
 
 3. Empaquetez votre solution et enregistrez le package dans un chemin d’accès au module PowerShell.
 
-   La variable d’environnement global `PSModulePath` décrit les chemins d’accès par défaut que PowerShell utilisera pour localiser votre module. Par exemple, un chemin d’accès commun pour enregistrer un module sur un système serait `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Si vous n’utilisez pas les chemins d’accès par défaut, vous devrez indiquer explicitement l’emplacement de votre module lors de l’installation. Veillez à créer un dossier pour enregistrer votre module dans, car vous aurez peut-être besoin du dossier pour stocker plusieurs assemblys et fichiers pour votre solution.
+   La variable d’environnement global `PSModulePath` décrit les chemins d’accès par défaut que PowerShell utilisera pour localiser votre module. Par exemple, un chemin d’accès commun pour enregistrer un module sur un système est `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Si vous n’utilisez pas les chemins d’accès par défaut, vous devrez indiquer explicitement l’emplacement de votre module lors de l’installation. Veillez à créer un dossier pour enregistrer votre module dans, car vous aurez peut-être besoin du dossier pour stocker plusieurs assemblys et fichiers pour votre solution.
 
    Notez que techniquement, vous n’avez pas besoin d’installer votre module n’importe où sur le `PSModulePath` : il s’agit simplement des emplacements par défaut que PowerShell recherchera pour votre module. Toutefois, il est recommandé de le faire, sauf si vous avez une bonne raison de stocker votre module ailleurs. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md) et [modification du chemin d’installation du module PowerShell](./modifying-the-psmodulepath-installation-path.md).
 

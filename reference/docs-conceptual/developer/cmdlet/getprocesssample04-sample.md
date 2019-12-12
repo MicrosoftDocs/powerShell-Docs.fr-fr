@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: aa2aa4c4-3457-4601-806a-801afe3dcc80
 caps.latest.revision: 6
 ms.openlocfilehash: 095bebf868efd00f8eeaec979a5606f140714cb1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365708"
 ---
 # <a name="getprocesssample04-sample"></a>Exemple GetProcessSample04
@@ -25,7 +25,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 2. Double-cliquez sur l’icône du fichier solution (. sln). L’exemple de projet s’ouvre dans Visual Studio.
 
-3. Dans le menu **générer** , sélectionnez **générer la solution**.
+3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
 
     La bibliothèque de l’exemple sera générée dans les dossiers \bin ou \bin\debug par défaut.
 
@@ -51,7 +51,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Cet exemple illustre ce qui suit.
 

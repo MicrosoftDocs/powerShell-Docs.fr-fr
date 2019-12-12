@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: f2b58fa5-01bc-426c-a043-5c700d6578e9
 caps.latest.revision: 16
 ms.openlocfilehash: 443bf5f693d2ab161668de25a1097347826cb5c2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360558"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>Écriture d’une aide pour les modules Windows PowerShell
 
-Les modules Windows PowerShell peuvent inclure des rubriques d’aide sur le module et sur les membres du module, tels que des applets de commande, des fournisseurs, des fonctions et des scripts. L’applet de commande `Get-Help` affiche les rubriques d’aide du module dans le même format que celui utilisé pour afficher l’aide pour les autres éléments Windows PowerShell, et les utilisateurs utilisent des commandes standard `Get-Help` pour obtenir les rubriques d’aide.
+Les modules Windows PowerShell peuvent inclure des rubriques d’aide sur le module et sur les membres du module, tels que des applets de commande, des fournisseurs, des fonctions et des scripts. L’applet de commande `Get-Help` affiche les rubriques d’aide du module dans le même format qu’il affiche l’aide pour les autres éléments Windows PowerShell, et les utilisateurs utilisent des commandes de `Get-Help` standard pour obtenir les rubriques d’aide.
 
 Ce document explique le format et le positionnement correct des rubriques d’aide du module, et propose des instructions pour le contenu de l’aide du module.
 
@@ -33,7 +33,7 @@ Un module peut inclure les types d’aide suivants.
 
 - **Aide sur les scripts**. Les rubriques d’aide qui décrivent les scripts d’un module peuvent être des fichiers XML qui utilisent le schéma de l’aide de la commande ou des rubriques d’aide basées sur les commentaires dans le script ou le module de script.
 
-- **Aide conceptuelle (« à propos de »)** . Vous pouvez utiliser une rubrique d’aide conceptuelle (« à propos de ») pour décrire le module et ses membres, et pour expliquer comment les membres peuvent être utilisés ensemble pour effectuer des tâches. Les rubriques d’aide conceptuelle sont des fichiers texte avec l’encodage Unicode (UTF-8). Le nom de fichier doit utiliser le format `about_<name>.help.txt`, par exemple about_MyModule. Help. txt. Par défaut, Windows PowerShell comprend plus de 100 de ces rubriques d’aide conceptuelles, et elles sont mises en forme comme dans l’exemple suivant.
+- **Aide conceptuelle (« à propos de »)** . Vous pouvez utiliser une rubrique d’aide conceptuelle (« à propos de ») pour décrire le module et ses membres, et pour expliquer comment les membres peuvent être utilisés ensemble pour effectuer des tâches. Les rubriques d’aide conceptuelle sont des fichiers texte avec l’encodage Unicode (UTF-8). Le nom de fichier doit utiliser le format `about_<name>.help.txt`, tel que about_MyModule. Help. txt. Par défaut, Windows PowerShell comprend plus de 100 de ces rubriques d’aide conceptuelles, et elles sont mises en forme comme dans l’exemple suivant.
 
   ```
   TOPIC
@@ -77,7 +77,7 @@ Par exemple, le diagramme de structure de répertoire suivant montre l’emplace
 ```
 
 > [!NOTE]
-> Dans l’exemple, l’espace réservé *> \<ModulePath* représente l’un des chemins d’accès dans la variable d’environnement `PSModulePath`, par exemple $Home \documents\modules, $pshome nouvelle \modules., ou un chemin d’accès personnalisé que l’utilisateur spécifie.
+> Dans l’exemple, l’espace réservé *\<ModulePath >* représente l’un des chemins d’accès dans la variable d’environnement `PSModulePath`, par exemple $Home \documents\modules, $pshome nouvelle \modules., ou un chemin d’accès personnalisé que l’utilisateur spécifie.
 
 ## <a name="getting-module-help"></a>Obtention d’aide sur le module
 

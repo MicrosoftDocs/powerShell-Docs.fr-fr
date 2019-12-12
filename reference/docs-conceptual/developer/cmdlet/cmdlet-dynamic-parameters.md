@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
 ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369878"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Paramètres dynamiques des applets de commande
@@ -26,7 +26,7 @@ Les applets de commande peuvent définir des paramètres qui sont disponibles po
 
 PowerShell utilise des paramètres dynamiques dans plusieurs de ses applets de commande de fournisseur. Par exemple, les applets de commande `Get-Item` et `Get-ChildItem` ajoutent un paramètre **CodeSigningCert** au moment de l’exécution lorsque le paramètre **path** spécifie le chemin d’accès du fournisseur de **certificats** . Si le paramètre **path** spécifie un chemin d’accès pour un autre fournisseur, le paramètre **CodeSigningCert** n’est pas disponible.
 
-Les exemples suivants montrent comment le paramètre **CodeSigningCert** est ajouté lors de l’exécution lorsque `Get-Item` est exécutée.
+Les exemples suivants montrent comment le paramètre **CodeSigningCert** est ajouté au moment de l’exécution lors de l’exécution de `Get-Item`.
 
 Dans cet exemple, le runtime PowerShell a ajouté le paramètre et l’applet de commande est réussie.
 

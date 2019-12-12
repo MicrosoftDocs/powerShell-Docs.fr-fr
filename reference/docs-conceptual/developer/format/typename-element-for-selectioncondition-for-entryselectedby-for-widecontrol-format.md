@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6d6d43fa-c900-4e2f-952d-deccd584236f
 caps.latest.revision: 11
 ms.openlocfilehash: 6142350e3843a5feddcb5cee8901bbfa607d8d4c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368058"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>TypeName, élément pour SelectionCondition pour EntrySelectedBy pour WideControl (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Définit la condition qui doit exister pour cette grande entrée à utiliser.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo`.
 

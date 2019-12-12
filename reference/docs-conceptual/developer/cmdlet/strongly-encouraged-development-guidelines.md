@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369338"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Instructions dont le suivi est fortement recommandé pour le développement
 
 Cette section décrit les instructions que vous devez suivre lorsque vous écrivez vos applets de commande. Elles sont réparties en instructions pour concevoir des applets de commande et des instructions pour l’écriture de votre code d’applet de commande. Vous pouvez constater que ces instructions ne s’appliquent pas à chaque scénario. Toutefois, s’ils s’appliquent et que vous ne suivez pas ces instructions, vos utilisateurs peuvent avoir une expérience médiocre lorsqu’ils utilisent vos applets de commande.
 
-## <a name="design-guidelines"></a>Instructions de conception
+## <a name="design-guidelines"></a>Recommandations en matière de conception
 
 - [Utiliser un nom spécifique pour un nom d’applet de commande (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +41,7 @@ Cette section décrit les instructions que vous devez suivre lorsque vous écriv
 
 - [Rendre les applets de commande non sensibles à la casse et à la conservation de la casse (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Instructions de conception
+## <a name="design-guidelines"></a>Recommandations en matière de conception
 
 Les instructions suivantes doivent être suivies lors de la conception des applets de commande pour garantir une expérience utilisateur cohérente entre l’utilisation de vos applets de commande et d’autres applets de commande. Lorsque vous trouvez une instruction de conception qui s’applique à votre situation, veillez à consulter les instructions de code pour obtenir des instructions similaires.
 
@@ -53,7 +53,7 @@ Pour améliorer l’expérience utilisateur, le nom que vous choisissez pour un 
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Utiliser la casse Pascal pour les noms d’applets de commande (SD02)
 
-Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre du verbe et tous les termes utilisés dans le nom. Par exemple, «`Clear-ItemProperty`».
+Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre du verbe et tous les termes utilisés dans le nom. Exemple : « `Clear-ItemProperty` ».
 
 ### <a name="parameter-design-guidelines-sd03"></a>Recommandations en matière de conception de paramètres (SD03)
 
@@ -214,7 +214,7 @@ Implémentez une interface [System. IComparable](/dotnet/api/System.IComparable)
 
 ##### <a name="update-display-information"></a>Mettre à jour les informations d’affichage
 
-Si l’affichage d’un objet ne fournit pas les résultats attendus, créez un *>\<YourProductName*personnalisé. Fichier format. ps1xml pour cet objet.
+Si l’affichage d’un objet ne fournit pas les résultats attendus, créez un *\<YourProductName*personnalisé. Fichier format. ps1xml pour cet objet.
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>Prendre en charge l’entrée de pipeline bien définie (SC02)
 

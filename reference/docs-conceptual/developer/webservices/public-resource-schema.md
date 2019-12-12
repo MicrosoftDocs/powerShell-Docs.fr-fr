@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
 ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366268"
 ---
 # <a name="public-resource-schema"></a>Schéma des ressources publiques
@@ -40,7 +40,7 @@ Chaque nom de propriété est précédé d’un type de données. Les types de d
 
 Le qualificateur `Key` indique qu’une propriété est utilisée pour identifier de manière unique une instance de ressource. Une ressource peut avoir plusieurs clés.
 
-Le qualificateur `Required` indique que la propriété est obligatoire. Si une propriété est étiquetée avec le qualificateur `Key`, elle est considérée comme requise et le qualificateur `Required` n’est pas nécessaire.
+Le qualificateur `Required` indique que la propriété est obligatoire. Si une propriété est étiquetée avec le qualificateur `Key`, elle est considérée comme étant obligatoire et le qualificateur `Required` n’est pas nécessaire.
 
 ### <a name="complex-data-types"></a>Types de données complexes
 
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Pour déclarer une propriété d’entité en tant que type complexe, vous la déclarez en tant que type `string` avec le qualificateur `EmbeddedInstance`, y compris le nom du type complexe. L’exemple suivant illustre la déclaration d’une propriété du type `PswsTest_ProcessModule` déclaré dans l’exemple précédent.
+Pour déclarer une propriété d’entité en tant que type complexe, vous devez la déclarer en tant que type de `string` avec le qualificateur `EmbeddedInstance`, y compris le nom du type complexe. L’exemple suivant illustre la déclaration d’une propriété du type `PswsTest_ProcessModule` déclaré dans l’exemple précédent.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

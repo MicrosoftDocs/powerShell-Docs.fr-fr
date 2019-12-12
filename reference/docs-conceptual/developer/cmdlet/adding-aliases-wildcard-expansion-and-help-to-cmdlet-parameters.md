@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
 ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415661"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
@@ -150,7 +150,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     PS> stop-proc -ProcessName notepad
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Confirm
@@ -165,7 +165,7 @@ La sortie suivante s’affiche.
     PS> stop-proc
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -182,7 +182,7 @@ La sortie suivante s’affiche.
     PS> stop-proc -Name *note*
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ La sortie suivante s’affiche.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ La sortie suivante s’affiche.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Confirm

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362668"
 ---
 # <a name="name-element-for-selectionset-format"></a>Name, élément pour SelectionSet (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionSet (format)](./selectionset-element-format.md)|Définit un ensemble unique d’objets .NET qui peuvent être référencés par le nom de l’ensemble.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom pour faire référence au jeu de sélection. Il n’existe aucune restriction quant aux caractères qui peuvent être utilisés.
 

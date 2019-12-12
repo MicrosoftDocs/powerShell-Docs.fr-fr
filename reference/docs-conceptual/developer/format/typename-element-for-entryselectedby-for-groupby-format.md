@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
 caps.latest.revision: 6
 ms.openlocfilehash: 3b5ce60d3a0d76988af48f49445a5478a415d498
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361668"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>TypeName, élément pour EntrySelectedBy pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément EntrySelectedBy pour CustomEntry pour GroupBy (format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo`.
 

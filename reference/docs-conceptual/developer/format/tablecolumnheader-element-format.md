@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361848"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader, élément (Format)
@@ -55,7 +55,7 @@ Aucune.
 
 ## <a name="remarks"></a>Remarks
 
-Spécifiez un en-tête pour chaque colonne de la table. Les colonnes sont affichées dans l’ordre dans lequel les éléments `TableColumnHeader` sont définis.
+Spécifiez un en-tête pour chaque colonne de la table. Les colonnes sont affichées dans l’ordre dans lequel les éléments de `TableColumnHeader` sont définis.
 
 Une table doit avoir le même nombre d’éléments `TableColumnHeader` que les éléments `TableRowEntry`. L’en-tête de colonne définit le mode d’affichage du texte en haut de la table. Les entrées de ligne définissent les données qui sont affichées dans les lignes de la table.
 

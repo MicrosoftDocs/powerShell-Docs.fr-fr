@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369108"
 ---
 # <a name="windows-powershell-error-records"></a>Enregistrements d’erreurs Windows PowerShell
@@ -88,7 +88,7 @@ Lorsque vous développez un enregistrement d’erreur pour une applet de command
 
 Le message de remplacement est fourni par un objet [System. Management. Automation. ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) . Utilisez l’un des constructeurs suivants de cet objet, car ils fournissent des informations de localisation supplémentaires qui peuvent être utilisées par Windows PowerShell.
 
-- [ErrorDetails (cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): utilisez ce constructeur si votre chaîne de modèle est une chaîne de ressource dans le même assembly que celui dans lequel l’applet de commande est implémentée ou si vous souhaitez charger la chaîne de modèle par le biais d’une substitution de l' [applet de commande Méthode System. Management. Automation. applet de commande. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [ErrorDetails (cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): utilisez ce constructeur si votre chaîne de modèle est une chaîne de ressource dans le même assembly que celui dans lequel l’applet de commande est implémentée ou si vous souhaitez charger la chaîne de modèle par le biais d’une substitution de la méthode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
 - [ErrorDetails (assembly, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): utilisez ce constructeur si la chaîne de modèle se trouve dans un autre assembly et que vous ne la chargez pas par le biais d’une substitution de [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)de commande. GetResourceString.
 
@@ -102,7 +102,7 @@ L’objet [System. Management. Automation. ErrorDetails](/dotnet/api/System.Mana
 
 ## <a name="invocation-information"></a>Informations d’appel
 
-Quand une applet de commande utilise [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) ou [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) pour signaler un enregistrement d’erreur, Windows PowerShell ajoute automatiquement les informations qui décrivent commande qui a été appelée lorsque l’erreur s’est produite. Ces informations sont fournies par un objet [System. Management. Automation. InvocationInfo](/dotnet/api/System.Management.Automation.InvocationInfo) qui contient le nom de l’applet de commande qui a été appelée par la commande, la commande elle-même et les informations sur le pipeline ou le script. Cette propriété est en lecture seule.
+Quand une applet de commande utilise [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) ou [System. Management. Automation. cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) pour signaler un enregistrement d’erreur, Windows PowerShell ajoute automatiquement des informations qui décrivent la commande qui a été appelée lorsque l’erreur s’est produite. Ces informations sont fournies par un objet [System. Management. Automation. InvocationInfo](/dotnet/api/System.Management.Automation.InvocationInfo) qui contient le nom de l’applet de commande qui a été appelée par la commande, la commande elle-même et les informations sur le pipeline ou le script. Cette propriété est en lecture seule.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
 ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367868"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Width, élément pour TableColumnHeader pour TableControl (Format)
@@ -29,7 +29,7 @@ Définit la largeur (en caractères) d’une colonne.
 
 ## <a name="attributes-and-elements"></a>Éléments et attributs
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Width` utilisé lors de la définition des en-têtes de colonne.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Width` utilisé lors de la définition des en-têtes de colonnes.
 
 ### <a name="attributes"></a>Attributs
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément TableColumnHeader pour TableHeaders pour table ((format)](./tablecolumnheader-element-format.md)|Définit une étiquette, une largeur et un alignement des données pour une colonne de la table.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Dans la mesure du possible, spécifiez une largeur (en caractères) supérieure à la longueur des valeurs de propriété affichées.
 

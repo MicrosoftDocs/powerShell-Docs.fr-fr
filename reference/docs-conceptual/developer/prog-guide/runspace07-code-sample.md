@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
 caps.latest.revision: 6
 ms.openlocfilehash: b3c2e70d534e8a267b35ae1715bd24277267e0d8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417890"
 ---
 # <a name="runspace07-code-sample"></a>Exemple de code RunSpace07

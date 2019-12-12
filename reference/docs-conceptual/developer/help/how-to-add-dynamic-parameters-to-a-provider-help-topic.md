@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361258"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Guide pratique pour ajouter des paramètres dynamiques à une rubrique d’aide de fournisseur
@@ -57,14 +57,14 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
     </DynamicParameters>
     ```
 
-3. Dans chaque élément `DynamicParameter`, ajoutez un élément `Name` et `CmdletSupported`.
+3. Dans chaque élément `DynamicParameter`, ajoutez un `Name` et un élément `CmdletSupported`.
 
    |Nom de l’élément|Description|
    |------------------|-----------------|
    |Name|Spécifie le nom du paramètre.|
    |CmdletSupported|Spécifie les applets de commande dans lesquelles le paramètre est valide. Tapez une liste séparée par des virgules de noms d’applets de commande.|
 
-   Par exemple, le code XML suivant décrit le paramètre dynamique `Encoding` que le fournisseur de système de fichiers Windows PowerShell ajoute aux cmdlets `Add-Content`, `Get-Content`, `Set-Content`.
+   Par exemple, le code XML suivant décrit le `Encoding` paramètre dynamique que le fournisseur de système de fichiers Windows PowerShell ajoute aux applets de commande `Add-Content`, `Get-Content``Set-Content`.
 
     ```xml
     <DynamicParameters/>
@@ -77,7 +77,7 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
 
 4. Dans chaque élément `DynamicParameter`, ajoutez un élément `Type`. L’élément `Type` est un conteneur pour l’élément `Name` qui contient le type .NET de la valeur du paramètre dynamique.
 
-   Par exemple, le code XML suivant montre que le type .NET du paramètre dynamique `Encoding` est l’énumération [Microsoft. PowerShell. Commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) .
+   Par exemple, le code XML suivant montre que le type .NET de l' `Encoding` paramètre dynamique est l’énumération [Microsoft. PowerShell. Commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) .
 
     ```xml
     <DynamicParameters/>

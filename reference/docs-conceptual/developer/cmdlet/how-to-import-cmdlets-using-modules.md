@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364458"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Guide pratique pour importer des applets de commande avec des modules
@@ -28,7 +28,7 @@ Cet article explique comment importer des applets de commande dans une session P
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. Assurez-vous que la variable d’environnement `PSModulePath` comprend le chemin d’accès à votre nouveau dossier de module. Par défaut, le dossier système est déjà ajouté à la variable d’environnement `PSModulePath`. Pour afficher le `PSModulePath`, tapez : `$env:PSModulePath`.
+1. Assurez-vous que la variable d’environnement `PSModulePath` comprend le chemin d’accès à votre nouveau dossier de module. Par défaut, le dossier système est déjà ajouté à la variable d’environnement `PSModulePath`. Pour afficher les `PSModulePath`, tapez : `$env:PSModulePath`.
 
 1. Copiez l’assembly de l’applet de commande dans le dossier du module.
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365888"
 ---
 # <a name="cmdlet-overview"></a>Vue d’ensemble des applets de commande
@@ -67,7 +67,7 @@ Pour plus d’informations sur les paramètres dynamiques, consultez [paramètre
 ### <a name="input-processing-method"></a>Méthode de traitement d’entrée
 
 Méthode qu’une applet de commande peut utiliser pour traiter les enregistrements qu’elle reçoit en entrée.
-Les méthodes de traitement d’entrée incluent la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , l’applet de [commande System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et la méthode [System. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Lorsque vous implémentez une applet de commande, vous devez substituer au moins l’une des [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)et [ Méthodes System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) de commande. EndProcessing.
+Les méthodes de traitement d’entrée incluent la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , la méthode System [. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et la méthode [System. Management. Automation. cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) . Lorsque vous implémentez une applet de commande, vous devez substituer au moins l’une des méthodes [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)et [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) .
 En règle générale, la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) est la méthode que vous substituez, car elle est appelée pour chaque enregistrement traité par l’applet de commande.
 En revanche, la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) et la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) sont appelées une fois pour effectuer le prétraitement ou le traitement des enregistrements.
 Pour plus d’informations sur ces méthodes, consultez [méthodes de traitement d’entrée](cmdlet-input-processing-methods.md).
@@ -75,7 +75,7 @@ Pour plus d’informations sur ces méthodes, consultez [méthodes de traitement
 ### <a name="shouldprocess-feature"></a>Fonction ShouldProcess
 
 PowerShell vous permet de créer des applets de commande qui invitent l’utilisateur à entrer des commentaires avant que l’applet de commande n’apporte une modification au système.
-Pour utiliser cette fonctionnalité, l’applet de commande doit déclarer qu’elle prend en charge la fonctionnalité ShouldProcess lorsque vous déclarez l’attribut d’applet de commande, et l’applet de commande doit appeler [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [ Méthodes System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) à partir d’une méthode de traitement d’entrée.
+Pour utiliser cette fonctionnalité, l’applet de commande doit déclarer qu’elle prend en charge la fonctionnalité ShouldProcess lorsque vous déclarez l’attribut d’applet de commande, et l’applet de commande doit appeler les méthodes [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) à partir d’une méthode de traitement d’entrée.
 Pour plus d’informations sur la prise en charge de la fonctionnalité ShouldProcess, consultez [demande de confirmation](requesting-confirmation-from-cmdlets.md).
 
 ### <a name="transaction"></a>Transaction
@@ -104,7 +104,7 @@ Les applets de commande diffèrent des commandes dans d’autres environnements 
 
 Windows PowerShell prend en charge les applets de commande dérivées des deux classes de base suivantes.
 
-- La plupart des applets de commande sont basées sur les classes de .NET Framework qui dérivent de la classe de base [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande. La dérivation de cette classe permet à une applet de commande d’utiliser l’ensemble minimal de dépendances sur le runtime Windows PowerShell. Cela présente deux avantages. Le premier avantage est que les objets d’applet de commande sont plus petits et que vous êtes moins susceptible d’être affecté par les modifications apportées au runtime Windows PowerShell. Le deuxième avantage est que, si vous en avez besoin, vous pouvez créer directement une instance de l’objet cmdlet, puis l’appeler directement au lieu de l’appeler par le biais du runtime Windows PowerShell.
+- La plupart des applets de commande sont basées sur les classes de .NET Framework qui dérivent de la classe de base [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande. La dérivation de cette classe permet à une applet de commande d’utiliser l’ensemble minimal de dépendances sur le runtime Windows PowerShell. Cela a deux avantages. Le premier avantage est que les objets d’applet de commande sont plus petits et que vous êtes moins susceptible d’être affecté par les modifications apportées au runtime Windows PowerShell. Le deuxième avantage est que, si vous en avez besoin, vous pouvez créer directement une instance de l’objet cmdlet, puis l’appeler directement au lieu de l’appeler par le biais du runtime Windows PowerShell.
 
 - Les cmdlets les plus complexes sont basées sur les classes de .NET Framework qui dérivent de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . La dérivation de cette classe vous donne un plus grand accès au runtime Windows PowerShell. Cet accès permet à votre applet de commande d’appeler des scripts, d’accéder à des fournisseurs et d’accéder à l’état de session actuel. (Pour accéder à l’état de session actuel, vous recevez et définissez des variables et des préférences de session.) Toutefois, la dérivation de cette classe augmente la taille de l’objet cmdlet, et cela signifie que votre applet de commande est plus étroitement couplée à la version actuelle du runtime Windows PowerShell.
 

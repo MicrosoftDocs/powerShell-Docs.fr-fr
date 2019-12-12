@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369288"
 ---
 # <a name="types-of-cmdlet-output"></a>Types de sortie de l’applet de commande
@@ -34,7 +34,7 @@ Lorsque le paramètre de commutateur **PassThru** est spécifié sur la ligne de
 
 Les applets de commande peuvent signaler des erreurs. Lorsqu’une erreur se termine, l’applet de commande lève une exception. Lorsqu’une erreur sans fin d’exécution se produit, l’applet de commande appelle la méthode [System. Management. Automation. Provider. CmdletProvider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) pour envoyer un enregistrement d’erreur au flux de données d’erreur. Pour plus d’informations sur le rapport d’erreurs, consultez [concepts du rapport d’erreurs](./error-reporting-concepts.md).
 
-### <a name="verbose-output"></a>Sortie détaillée
+### <a name="verbose-output"></a>Sortie détaillée.
 
 Les applets de commande peuvent vous fournir des informations utiles pendant que l’applet de commande traite correctement les enregistrements en appelant la méthode [System. Management. Automation. applet de commande. WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) . La méthode génère des messages détaillés qui indiquent le mode de poursuite de l’action.
 

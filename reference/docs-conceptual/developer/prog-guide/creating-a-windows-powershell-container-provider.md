@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
 ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416219"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
@@ -360,7 +360,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Votre implémentation de [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) est chargée d’empêcher la récurrence infinie lorsqu’il y a des liens circulaires, et ainsi de suite. Une exception d’arrêt appropriée doit être levée pour refléter une telle condition.
 
-- Votre implémentation de la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne la valeur true, la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour effectuer un contrôle supplémentaire des modifications système potentiellement dangereuses. Pour plus d’informations sur l’appel de ces méthodes, consultez [Renommer des éléments](#renaming-items).
+- Votre implémentation de la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne la valeur true, la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour une vérification supplémentaire des modifications système potentiellement dangereuses. Pour plus d’informations sur l’appel de ces méthodes, consultez [Renommer des éléments](#renaming-items).
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Copy-Item
 
@@ -388,7 +388,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Get-ChildItem mydb:customers
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante s'affiche.
 
    ```output
    PSPath        : AccessDB::customers
@@ -407,7 +407,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    (Get-ChildItem mydb:customers).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante s'affiche.
 
    ```output
    TABLE_CAT   : c:\PS\northwind
@@ -423,7 +423,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Get-Item mydb:\customers\0
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante s'affiche.
 
    ```output
    PSPath        : AccessDB::customers\0
@@ -440,7 +440,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    (Get-Item mydb:\customers\0).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante s'affiche.
 
    ```output
    CustomerID   : 1234
@@ -469,7 +469,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    PS mydb:\Customers> (Get-Item 3).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante s'affiche.
 
    ```output
    ID        : 3

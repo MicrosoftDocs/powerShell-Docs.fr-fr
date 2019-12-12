@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 58d25835-4636-4c58-9f6c-0332b9318051
 caps.latest.revision: 6
 ms.openlocfilehash: 4045196e306e766cd805b3e7ae31bfcb3de184ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364828"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-groupby-format"></a>ScriptBlock, élément pour ItemSelectionCondition pour GroupBy (Format)
 
-Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
 Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour l’élément CustomEntry GroupBy (format) pour CustomControl pour GroupBy (format) élément CustomItem pour CustomEntry pour GroupBy (format) élément ExpressionBinding pour CustomItem pour l’élément GroupBy (format) ItemSelectionCondition pour ExpressionBinding pour l’élément ScriptBlock GroupBy (format) pour ItemSelectionCondition pour GroupBy (format)
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément ItemSelectionCondition pour ExpressionBinding pour GroupBy (format)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|Définit la condition qui doit exister pour que ce contrôle soit utilisé.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 

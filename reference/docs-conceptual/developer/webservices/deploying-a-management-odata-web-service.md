@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366178"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Déploiement d’un service web Management OData
@@ -23,9 +23,9 @@ Après avoir effectué toutes les étapes nécessaires à la création d’un se
 
 Procédez comme suit pour déployer le service Web OData de gestion.
 
-1. Créez un répertoire pour votre application Web dans votre répertoire IIS `WWWRoot`.
+1. Créez un répertoire pour votre application Web dans votre répertoire de `WWWRoot` IIS.
 
-2. Copiez le fichier de schéma MOF, le fichier de schéma XML, les dll qui exportent les interfaces [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) et [System. Management. Automation. Remoting. PSSessionConfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) , et le fichier Web. config dans le Répertoire de l’application.
+2. Copiez le fichier de schéma MOF, le fichier de schéma XML, les dll qui exportent les interfaces [Microsoft. Management. OData. Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) et [System. Management. Automation. Remoting. PSSessionConfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) , et le fichier Web. config dans le répertoire de l’application.
 
 3. Créez un ID de site.
 

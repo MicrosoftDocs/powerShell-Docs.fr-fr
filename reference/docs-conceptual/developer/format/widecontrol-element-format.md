@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367988"
 ---
 # <a name="widecontrol-element-format"></a>WideControl, élément (Format)
@@ -55,7 +55,7 @@ Aucune.
 
 ## <a name="remarks"></a>Remarks
 
-Lorsque vous définissez une vue étendue, vous pouvez ajouter l’élément `AutoSize` ou la `ColumnNumber`, mais vous ne pouvez pas ajouter les deux.
+Lorsque vous définissez une vue étendue, vous pouvez ajouter l’élément `AutoSize` ou le `ColumnNumber`, mais vous ne pouvez pas ajouter les deux.
 
 Dans la plupart des cas, une seule définition est requise pour chaque vue étendue, mais il est possible d’avoir plusieurs définitions si vous souhaitez utiliser la même vue pour afficher différents objets .NET. Dans ce cas, vous pouvez fournir une définition distincte pour chaque objet ou ensemble d’objets.
 

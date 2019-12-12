@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
 caps.latest.revision: 6
 ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368138"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Text, élément pour CustomItem pour Controls pour Configuration (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément CustomItem pour CustomEntry pour les contrôles de configuration](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|Définit les données affichées par le contrôle et leur mode d’affichage.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le texte d’un contrôle pour les données que vous souhaitez afficher.
 

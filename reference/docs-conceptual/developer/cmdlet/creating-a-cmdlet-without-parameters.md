@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
 ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415676"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
@@ -151,7 +151,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     get-proc
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -175,7 +175,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p.length
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     63
@@ -187,7 +187,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p[6]
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -201,7 +201,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p[6].starttime
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -221,7 +221,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -243,7 +243,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
         TypeName: System.Diagnostics.Process
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     Name                     MemberType Definition

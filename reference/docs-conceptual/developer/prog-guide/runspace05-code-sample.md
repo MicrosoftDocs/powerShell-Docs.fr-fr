@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
 caps.latest.revision: 7
 ms.openlocfilehash: 979403376c5e694b686aaf77a2cb787d765cb883
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417930"
 ---
 # <a name="runspace05-code-sample"></a>Exemple de code RunSpace05

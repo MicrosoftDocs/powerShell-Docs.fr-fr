@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d879c8ce-679d-4622-bc43-c207f6413871
 caps.latest.revision: 9
 ms.openlocfilehash: b11b154a94daccead57bdfb5e579e1de2c190c09
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363658"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Frame, élément pour CustomItem pour Controls pour Configuration (Format)

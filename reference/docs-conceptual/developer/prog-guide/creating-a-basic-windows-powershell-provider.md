@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360518"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Création d’un fournisseur Windows PowerShell de base
@@ -31,7 +31,7 @@ Comme mentionné précédemment, le fournisseur de base décrit ici implémente 
 
 La première étape de la création d’un fournisseur Windows PowerShell consiste à définir sa classe .NET. Ce fournisseur de base définit une classe appelée `AccessDBProvider` qui dérive de la classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 
-Il est recommandé de placer vos classes de fournisseur dans un espace de noms `Providers` de votre espace de noms d’API, par exemple, xxx. PowerShell. Providers. Ce fournisseur utilise l’espace de noms `Microsoft.Samples.PowerShell.Provider`, dans lequel tous les exemples du fournisseur Windows PowerShell s’exécutent.
+Il est recommandé de placer vos classes de fournisseur dans un espace de noms `Providers` de votre espace de noms d’API, par exemple, xxx. PowerShell. Providers. Ce fournisseur utilise l’espace de noms `Microsoft.Samples.PowerShell.Provider` dans lequel tous les exemples du fournisseur Windows PowerShell s’exécutent.
 
 > [!NOTE]
 > La classe d’un fournisseur Windows PowerShell doit être explicitement marquée comme publique. Les classes qui ne sont pas marquées comme étant publiques seront par défaut internes et ne seront pas trouvées par le runtime Windows PowerShell.
@@ -49,13 +49,13 @@ Vous pouvez définir des mots clés d’attribut pour déclarer davantage la cla
 
 ## <a name="defining-provider-specific-state-information"></a>Définition des informations d’État spécifiques au fournisseur
 
-La classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) et toutes les classes dérivées sont considérées comme sans État, car le runtime Windows PowerShell ne crée des instances de fournisseur que si nécessaire. Par conséquent, si votre fournisseur requiert un contrôle total et une maintenance de l’État pour les données spécifiques au fournisseur, il doit dériver une classe de la classe [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) . Votre classe dérivée doit définir les membres nécessaires pour maintenir l’État afin que les données spécifiques au fournisseur soient accessibles lorsque le runtime Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) pour Initialisez le fournisseur.
+La classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) et toutes les classes dérivées sont considérées comme sans État, car le runtime Windows PowerShell ne crée des instances de fournisseur que si nécessaire. Par conséquent, si votre fournisseur requiert un contrôle total et une maintenance de l’État pour les données spécifiques au fournisseur, il doit dériver une classe de la classe [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) . Votre classe dérivée doit définir les membres nécessaires pour maintenir l’État afin que les données spécifiques au fournisseur soient accessibles lorsque le runtime Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) pour initialiser le fournisseur.
 
 Un fournisseur Windows PowerShell peut également conserver un État basé sur la connexion. Pour plus d’informations sur la gestion de l’état de la connexion, consultez [création d’un fournisseur de lecteurs PowerShell](./creating-a-windows-powershell-drive-provider.md).
 
 ## <a name="initializing-the-provider"></a>Initialisation du fournisseur
 
-Pour initialiser le fournisseur, le runtime Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) au démarrage de Windows PowerShell. Pour l’essentiel, votre fournisseur peut utiliser l’implémentation par défaut de cette méthode, qui retourne simplement l’objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) qui décrit votre fournisseur. Toutefois, dans le cas où vous souhaitez ajouter des informations d’initialisation supplémentaires, vous devez implémenter votre propre méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) qui retourne une version modifiée du [ Objet System. Management. Automation. Providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) passé à votre fournisseur. En général, cette méthode doit retourner l’objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) fourni ou un objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) modifié qui contient d’autres informations d’initialisation.
+Pour initialiser le fournisseur, le runtime Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) au démarrage de Windows PowerShell. Pour l’essentiel, votre fournisseur peut utiliser l’implémentation par défaut de cette méthode, qui retourne simplement l’objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) qui décrit votre fournisseur. Toutefois, dans le cas où vous souhaitez ajouter des informations d’initialisation supplémentaires, vous devez implémenter votre propre méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) qui retourne une version modifiée de l’objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) transmis à votre fournisseur. En général, cette méthode doit retourner l’objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) fourni ou un objet [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) modifié qui contient d’autres informations d’initialisation.
 
 Ce fournisseur de base ne remplace pas cette méthode. Toutefois, le code suivant illustre l’implémentation par défaut de cette méthode :
 
@@ -65,7 +65,7 @@ Le fournisseur peut conserver l’état des informations spécifiques au fournis
 
 ## <a name="start-dynamic-parameters"></a>Démarrer les paramètres dynamiques
 
-L’implémentation de votre fournisseur de la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) peut nécessiter des paramètres supplémentaires. Dans ce cas, le fournisseur doit substituer la méthode [System. Management. Automation. Provider. Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) et retourner un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou un [ Objet System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
+L’implémentation de votre fournisseur de la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) peut nécessiter des paramètres supplémentaires. Dans ce cas, le fournisseur doit substituer la méthode [System. Management. Automation. Provider. Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) et retourner un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
 
 Ce fournisseur de base ne remplace pas cette méthode. Toutefois, le code suivant illustre l’implémentation par défaut de cette méthode :
 

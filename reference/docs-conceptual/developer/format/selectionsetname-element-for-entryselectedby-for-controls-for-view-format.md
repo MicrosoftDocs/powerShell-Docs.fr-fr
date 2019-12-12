@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b594a064-746f-4900-99e4-7be7bf5aa5a2
 caps.latest.revision: 7
 ms.openlocfilehash: d540c99707f4e0796b2d408f2161a9208257ab32
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368348"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-view-format"></a>SelectionSetName, élément pour EntrySelectedBy pour Controls pour View (Format)
@@ -46,7 +46,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément EntrySelectedBy pour CustomEntry pour les contrôles pour View (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom du jeu de sélection.
 

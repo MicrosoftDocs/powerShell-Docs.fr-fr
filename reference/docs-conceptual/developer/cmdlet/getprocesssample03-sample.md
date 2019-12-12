@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369708"
 ---
 # <a name="getprocesssample03-sample"></a>Exemple GetProcessSample03
@@ -25,7 +25,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 2. Double-cliquez sur l’icône du fichier solution (. sln). L’exemple de projet s’ouvre dans Visual Studio.
 
-3. Dans le menu **générer** , sélectionnez **générer la solution**.
+3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
 
     La bibliothèque de l’exemple sera générée dans les dossiers \bin ou \bin\debug par défaut.
 
@@ -51,7 +51,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Cet exemple illustre ce qui suit.
 
@@ -67,7 +67,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple illustre une implémentation de l’applet de commande « obtenir-proc » qui comprend un paramètre `Name` qui accepte les entrées du pipeline.
+Cet exemple illustre une implémentation de l’applet de commande Accept-proc qui comprend un paramètre `Name` qui accepte les entrées du pipeline.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

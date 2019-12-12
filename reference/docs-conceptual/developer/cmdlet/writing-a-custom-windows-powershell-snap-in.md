@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
 ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364248"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé
@@ -32,7 +32,7 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 
    Dans cet exemple, le nom de la classe est « CustomPSSnapinTest ».
 
-3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : #. , () {} [] &-/\ $; : «' \< > &#124; ? @ ` *
+3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : #. , () {} [] &-/\ $; : «» \< > &#124; ? @ ` *
 
    Dans cet exemple, le nom du composant logiciel enfichable est « CustomPSSnapInTest ».
 

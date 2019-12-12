@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2b9da6c5-548b-480f-86ae-6de6fecabaca
 caps.latest.revision: 8
 ms.openlocfilehash: 06089730008839f18c471711a4b4411722f99c38
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363778"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>ExpressionBinding, élément pour CustomItem pour Controls pour View (Format)

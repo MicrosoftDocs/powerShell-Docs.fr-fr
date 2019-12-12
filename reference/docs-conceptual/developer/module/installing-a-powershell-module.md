@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367068"
 ---
 # <a name="installing-a-powershell-module"></a>Installation d’un module PowerShell
@@ -62,7 +62,7 @@ Par défaut, la valeur de la variable d’environnement **PSModulePath** contien
   ```
 
   > [!IMPORTANT]
-  > Une fois que vous avez ajouté le chemin d’accès à **PSModulePath**, vous devez diffuser un message d’environnement sur la modification. La diffusion de la modification permet à d’autres applications, telles que l’interpréteur de commandes, de récupérer la modification. Pour diffuser la modification, faire en sorte que le code d’installation de votre produit envoie un message **WM_SETTINGCHANGE** avec `lParam` défini sur la chaîne « environnement ». Veillez à envoyer le message une fois que le code d’installation de votre module a mis à jour **PSModulePath**.
+  > Une fois que vous avez ajouté le chemin d’accès à **PSModulePath**, vous devez diffuser un message d’environnement sur la modification. La diffusion de la modification permet à d’autres applications, telles que l’interpréteur de commandes, de récupérer la modification. Pour diffuser la modification, faire en sorte que le code d’installation de votre produit envoie un message de **WM_SETTINGCHANGE** avec `lParam` défini sur la chaîne « environnement ». Veillez à envoyer le message une fois que le code d’installation de votre module a mis à jour **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Utiliser le nom de répertoire du module correct
 
@@ -89,7 +89,7 @@ Si le module n’est pas bien formé et que son emplacement n’est pas inclus d
 
 - La fonctionnalité de chargement automatique de module ne peut pas importer le module automatiquement.
 
-- Le paramètre `ListAvailable` de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) ne peut pas trouver le module.
+- Le paramètre `ListAvailable` de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) ne trouve pas le module.
 
 - L’applet [de commande Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) ne trouve pas le module. Pour importer le module, vous devez fournir le chemin d’accès complet au fichier de module racine ou au fichier manifeste du module.
 
@@ -101,7 +101,7 @@ Si le module n’est pas bien formé et que son emplacement n’est pas inclus d
 
 - L’applet de [commande show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) ne peut pas trouver et afficher les commandes du module.
 
-  Les commandes du module sont manquantes dans la fenêtre `Show-Command` dans Environnement d’écriture de scripts intégré de Windows PowerShell (ISE).
+  Les commandes du module sont absentes de la fenêtre `Show-Command` dans Environnement d’écriture de scripts intégré de Windows PowerShell (ISE).
 
 ## <a name="where-to-install-modules"></a>Emplacement d’installation des modules
 

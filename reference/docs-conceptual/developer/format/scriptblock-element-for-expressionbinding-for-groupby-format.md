@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e022ec4-8531-468e-96ff-77607755ec92
 caps.latest.revision: 6
 ms.openlocfilehash: 9afa53e1c7d1edabdbff56c4e59fcef0cf1647e3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362168"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-groupby-format"></a>ScriptBlock, élément pour ExpressionBinding pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément ExpressionBinding pour CustomItem pour GroupBy (format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script dont la valeur est affichée par le contrôle.
 

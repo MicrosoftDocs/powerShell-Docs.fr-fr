@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367898"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideEntry, élément pour WideControl (Format)
@@ -57,7 +57,7 @@ Un affichage étendu est un format de liste qui affiche une valeur de propriét�
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `WideEntry` qui définit un seul élément `WideItem`. L’élément `WideItem` définit la propriété dont la valeur est affichée dans la vue.
+L’exemple suivant montre un élément `WideEntry` qui définit un élément `WideItem` unique. L’élément `WideItem` définit la propriété dont la valeur est affichée dans la vue.
 
 ```xml
 <WideEntries>

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 5ec68309-7826-4643-a521-e29c996663fb
 caps.latest.revision: 11
 ms.openlocfilehash: 649a978e21e9421a3f3e953261e1d309e23c3f9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368558"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour WideControl (Format)
 
-Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition d’entrée étendue est utilisée.
+Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition d’entrée étendue est utilisée.
 
 Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément WideControl (format) WideEntries, élément (format) WideEntry élément (format) élément EntrySelectedBy pour WideEntry (format) SelectionCondition, élément pour EntrySelectedBy pour WideEntry (format) élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|Définit la condition qui doit exister pour que cette définition soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 

@@ -11,10 +11,10 @@ applies_to:
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
 ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366958"
 ---
 # <a name="updatable-help-overview"></a>Vue d’ensemble de l’aide actualisable
@@ -25,7 +25,7 @@ Ce document fournit une introduction à la conception et au fonctionnement de la
 
 Les rubriques d’aide de Windows PowerShell font partie intégrante de l’expérience Windows PowerShell. À l’instar des modules Windows PowerShell, les rubriques d’aide sont continuellement mises à jour et améliorées par les auteurs et par les contributions de la communauté des utilisateurs de Windows PowerShell.
 
-La fonctionnalité *d’aide actualisable* , introduite dans Windows PowerShell 3,0, garantit que les utilisateurs disposent des dernières versions des rubriques d’aide à l’invite de commandes, même pour les commandes Windows PowerShell intégrées, sans télécharger de nouveaux modules ni exécuter Windows Update . L’aide actualisable facilite la mise à jour en fournissant des applets de commande qui téléchargent les versions les plus récentes des rubriques d’aide à partir d’Internet et les installent dans les sous-répertoires appropriés sur l’ordinateur local de l’utilisateur. Même les utilisateurs qui se trouvent derrière des pare-feu peuvent utiliser les nouvelles applets de commande pour obtenir une aide mise à jour à partir d’un partage de fichiers interne.
+La fonctionnalité *d’aide actualisable* , introduite dans Windows PowerShell 3,0, garantit que les utilisateurs disposent des dernières versions des rubriques d’aide à l’invite de commandes, même pour les commandes Windows PowerShell intégrées, sans télécharger de nouveaux modules ou exécuter Windows Update. L’aide actualisable facilite la mise à jour en fournissant des applets de commande qui téléchargent les versions les plus récentes des rubriques d’aide à partir d’Internet et les installent dans les sous-répertoires appropriés sur l’ordinateur local de l’utilisateur. Même les utilisateurs qui se trouvent derrière des pare-feu peuvent utiliser les nouvelles applets de commande pour obtenir une aide mise à jour à partir d’un partage de fichiers interne.
 
 L’aide actualisable est entièrement prise en charge par tous les modules Windows PowerShell dans Windows® 8 et Windows Server® 2012, et ses fonctionnalités sont disponibles pour tous les auteurs de modules Windows PowerShell. L’aide actualisable prend en charge uniquement les fichiers d’aide basés sur XML. Elle ne prend pas en charge l’aide basée sur les commentaires.
 
@@ -35,7 +35,7 @@ L’aide actualisable comprend les fonctionnalités suivantes.
   Les utilisateurs peuvent utiliser l’applet de commande [obtenir-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) pour afficher immédiatement les rubriques d’aide récemment installées.
   Ils n’ont pas besoin de redémarrer PowerShell.
 
-- L’applet de commande [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) , qui télécharge les fichiers d’aide les plus récents à partir d’Internet et les enregistre dans un répertoire du système de fichiers. Les utilisateurs peuvent utiliser l’applet de commande `Update-Help` pour obtenir des fichiers d’aide à partir du répertoire du système de fichiers, et les décompresser et les installer dans les sous-répertoires du module sur l’ordinateur de l’utilisateur. L’applet de commande `Save-Help` est conçue pour les utilisateurs qui ont un accès limité ou nul à Internet et pour les entreprises qui préfèrent limiter l’accès à Internet.
+- L’applet de commande [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) , qui télécharge les fichiers d’aide les plus récents à partir d’Internet et les enregistre dans un répertoire du système de fichiers. Les utilisateurs peuvent utiliser l’applet de commande `Update-Help` pour obtenir des fichiers d’aide à partir du répertoire du système de fichiers, et les décompresser et les installer dans les sous-répertoires du module sur l’ordinateur de l’utilisateur. L’applet de commande `Save-Help` est conçue pour les utilisateurs qui ont un accès limité ou non à Internet et pour les entreprises qui préfèrent limiter l’accès à Internet.
 
 - **Aide pour un module**. Les fichiers d’aide d’un module sont gérés et remis en tant qu’unité, afin que les utilisateurs puissent obtenir tous les fichiers d’aide pour les modules qu’ils utilisent. L’aide actualisable est prise en charge uniquement pour les modules, et non pour les composants logiciels enfichables Windows PowerShell.
 

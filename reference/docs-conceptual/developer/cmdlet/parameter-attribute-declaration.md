@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
 ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365358"
 ---
 # <a name="parameter-attribute-declaration"></a>Déclaration de l’attribut Parameter
@@ -40,7 +40,7 @@ L’attribut de paramètre identifie une propriété publique de la classe d’a
 
 `ValueFromPipeline` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que le paramètre d’applet de commande prend sa valeur d’un objet Pipeline. Spécifiez ce mot clé si l’applet de commande accède à l’objet complet, et pas simplement à une propriété de l’objet. La valeur par défaut est `false`.
 
-`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que le paramètre d’applet de commande prend sa valeur d’une propriété d’un objet de pipeline qui a le même nom ou le même alias que ce paramètre. Par exemple, si l’applet de commande a un paramètre `Name` et que l’objet de pipeline a également une propriété `Name`, la valeur de la propriété `Name` est assignée au paramètre `Name` de l’applet de commande. La valeur par défaut est `false`.
+`ValueFromPipelineByPropertyName` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que le paramètre d’applet de commande prend sa valeur d’une propriété d’un objet de pipeline qui a le même nom ou le même alias que ce paramètre. Par exemple, si l’applet de commande a un paramètre `Name` et que l’objet pipeline a également une propriété `Name`, la valeur de la propriété `Name` est assignée au paramètre `Name` de l’applet de commande. La valeur par défaut est `false`.
 
 `ValueFromRemainingArguments` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que le paramètre d’applet de commande accepte tous les arguments restants qui sont passés à l’applet de commande. La valeur par défaut est `false`.
 
@@ -68,7 +68,7 @@ L’attribut de paramètre identifie une propriété publique de la classe d’a
 
     - Aucun jeu de paramètres ne doit contenir plus d’un paramètre positionnel avec la même position.
 
-    - Un seul paramètre dans un jeu de paramètres doit déclarer `ValueFromPipeline = true`. Plusieurs paramètres peuvent définir `ValueFromPipelineByPropertyName = true`.
+    - Un seul paramètre d’un jeu de paramètres doit déclarer `ValueFromPipeline = true`. Plusieurs paramètres peuvent définir `ValueFromPipelineByPropertyName = true`.
 
     - Plusieurs paramètres peuvent définir `ValueFromPipelineByPropertyName = true`.
 

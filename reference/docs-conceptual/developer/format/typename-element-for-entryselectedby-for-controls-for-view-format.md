@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 52003450-07ca-41e5-b075-8b6b03fc6e88
 caps.latest.revision: 6
 ms.openlocfilehash: 30215734ef832d778b08d3d7be224ff8d88b0579
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361778"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-view-format"></a>TypeName, élément pour EntrySelectedBy pour Controls pour View (Format)
@@ -46,7 +46,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément EntrySelectedBy pour CustomEntry pour les contrôles pour View (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo`.
 

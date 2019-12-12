@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
 caps.latest.revision: 13
 ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363688"
 ---
 # <a name="formatting-file-overview"></a>Vue d’ensemble des fichiers de mise en forme
@@ -38,7 +38,7 @@ Chaque fichier de mise en forme peut définir les composants suivants qui peuven
 
 Les vues de mise en forme peuvent afficher des objets dans un format de tableau, un format de liste, un format étendu et un format personnalisé. Pour l’essentiel, chaque définition de mise en forme est décrite par un ensemble de balises XML qui décrivent la vue. Chaque vue contient le nom de la vue, les objets qui utilisent la vue et les éléments de la vue, tels que les informations de colonne et de ligne pour une vue de table.
 
-La vue table répertorie les propriétés d’un objet ou une valeur de bloc de script dans une ou plusieurs colonnes. Chaque colonne représente une propriété unique de l’objet ou une valeur de script. Vous pouvez définir une vue de table qui affiche toutes les propriétés d’un objet, un sous-ensemble des propriétés d’un objet, ou une combinaison de propriétés et de valeurs de script. Chaque ligne de la table représente un objet retourné. La création d’une vue de table est très similaire à celle de lorsque vous dirigez un objet vers l’applet de commande `Format-Table`. Pour plus d’informations sur cette vue, consultez [vue table](./creating-a-table-view.md).
+La vue table répertorie les propriétés d’un objet ou une valeur de bloc de script dans une ou plusieurs colonnes. Chaque colonne représente une propriété unique de l’objet ou une valeur de script. Vous pouvez définir une vue de table qui affiche toutes les propriétés d’un objet, un sous-ensemble des propriétés d’un objet, ou une combinaison de propriétés et de valeurs de script. Chaque ligne de la table représente un objet retourné. La création d’un affichage de table est très similaire à la transmission d’un objet à l’applet de commande `Format-Table`. Pour plus d’informations sur cette vue, consultez [vue table](./creating-a-table-view.md).
 
 Le mode liste répertorie les propriétés d’un objet ou une valeur de script dans une seule colonne. Chaque ligne de la liste affiche une étiquette facultative ou le nom de la propriété, suivi de la valeur de la propriété ou du script. La création d’un affichage de liste est très similaire à la conduite d’un objet à l’applet de commande `Format-List`. Pour plus d’informations sur cette vue, consultez [affichage de liste](./creating-a-list-view.md).
 
@@ -116,7 +116,7 @@ Comme indiqué dans les exemples précédents, le fichier de mise en forme peut 
 
 ## <a name="example-of-a-table-view"></a>Exemple d’affichage de table
 
-L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](./viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](./view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque élément de [vue](./view-element-format.md) , l’élément [Name](./name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](./viewselectedby-element-format.md) définit les objets qui utilisent la vue et les différents éléments de contrôle (tels que l’élément `TableControl` illustré dans le code suivant exemple) définissez le type de la vue.
+L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](./viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](./view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque élément de [vue](./view-element-format.md) , l’élément [Name](./name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](./viewselectedby-element-format.md) définit les objets qui utilisent la vue, et les différents éléments de contrôle (tels que l’élément `TableControl` illustré dans l’exemple suivant) définissent le type de la vue.
 
 ```xml
 <ViewDefinitions>

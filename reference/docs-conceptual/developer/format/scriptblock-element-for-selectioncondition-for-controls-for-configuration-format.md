@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: bb032dfc-9ef6-403c-b557-5858617e3483
 caps.latest.revision: 6
 ms.openlocfilehash: 102987970152420896a0c986f0973280ae209623
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368618"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-configuration-format"></a>ScriptBlock, élément pour SelectionCondition pour Controls pour Configuration (Format)
 
-Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
 Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration ( Format) élément CustomEntry pour CustomControl pour les contrôles de configuration (format) élément EntrySelectedBy pour CustomEntry pour les contrôles de configuration (format) SelectionCondition, élément pour EntrySelectedBy pour les contrôles de configuration (format) Élément ScriptBlock pour SelectionCondition pour les contrôles de configuration (format)
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour les contrôles de configuration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Définit une condition qui doit exister pour que la définition de contrôle commun soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 

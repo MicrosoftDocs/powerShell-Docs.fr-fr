@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ea821e8b-4d65-4263-b7e4-6aeca9f534c2
 caps.latest.revision: 9
 ms.openlocfilehash: b44ced75bbaac7c0744f347bdc97f87365b8fe39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364108"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>CustomControlName, élément pour ExpressionBinding pour CustomControl pour View (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément ExpressionBinding pour CustomItem (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom du contrôle.
 

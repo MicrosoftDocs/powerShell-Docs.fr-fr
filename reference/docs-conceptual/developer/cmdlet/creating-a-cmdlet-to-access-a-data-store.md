@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415699"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
@@ -1100,7 +1100,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : True
@@ -1121,7 +1121,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : True
@@ -1142,7 +1142,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : True
@@ -1163,7 +1163,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : False
@@ -1184,7 +1184,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : True
@@ -1200,7 +1200,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    La sortie suivante s’affiche.
+    La sortie suivante s'affiche.
 
     ```output
     IgnoreCase   : True

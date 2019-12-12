@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
 ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367818"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
@@ -282,7 +282,7 @@ function Add-Extension
     #>
 ```
 
-Les résultats sont les mêmes que ceux de l’exemple 1. La fonction de récupération d’aide interprète les descriptions des paramètres comme si elles étaient accompagnées du mot clé `.Parameter`.
+Les résultats sont les mêmes que ceux de l’exemple 1. L’aide de l’interpréteur de la fonction interprète les descriptions des paramètres comme si elles étaient accompagnées du mot clé `.Parameter`.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exemple 4 : redirection vers un fichier XML
 
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exemple 5 : redirection vers une autre rubrique d’aide
 
-Le code suivant est un extrait du début de la fonction intégrée `Help` dans Windows PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande « obtenir-aide » décrit la fonction d’aide, la fonction d’aide utilise les mots clés `.ForwardHelpTargetName` et `.ForwardHelpCategory` pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
+Le code suivant est un extrait du début de la fonction intégrée `Help` dans Windows PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction Help, la fonction Help utilise les mots clés `.ForwardHelpTargetName` et `.ForwardHelpCategory` pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
 
 ```powershell
 function help

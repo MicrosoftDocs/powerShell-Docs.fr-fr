@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365918"
 ---
 # <a name="cmdlet-error-reporting"></a>Rapport d’erreurs d’applet de commande
@@ -43,7 +43,7 @@ Les instructions suivantes peuvent être utilisées pour déterminer si une cond
 
 ## <a name="reporting-nonterminating-errors"></a>Signalement d’erreurs qui ne se terminent pas
 
-La création de rapports d’une erreur qui n’est pas terminée doit toujours être effectuée au sein de l’implémentation de l’applet de commande de la méthode [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , ou méthode [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Ces types d’erreurs sont signalés en appelant la méthode [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) qui, à son tour, envoie un enregistrement d’erreur au flux d’erreurs.
+La création de rapports d’une erreur qui ne se termine pas doit toujours être effectuée au sein de l’implémentation de la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) , de la méthode System. [Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ou de la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) de l’applet de commande. Ces types d’erreurs sont signalés en appelant la méthode [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) qui, à son tour, envoie un enregistrement d’erreur au flux d’erreurs.
 
 ## <a name="reporting-terminating-errors"></a>Signalement des erreurs de fin
 

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
 ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363538"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Déclaration de l’attribut Cmdlet
@@ -42,7 +42,7 @@ L’attribut d’applet de commande identifie une classe Microsoft .NET Framewor
 
 `DefaultParameterSetName` ([System. String](/dotnet/api/System.String)) paramètre nommé facultatif. Spécifie le jeu de paramètres par défaut que le runtime Windows PowerShell tente d’utiliser lorsqu’il ne peut pas déterminer le jeu de paramètres à utiliser. Notez que cette situation peut être éliminée en faisant du paramètre unique de chaque paramètre un paramètre obligatoire.
 
-Il existe un cas où Windows PowerShell ne peut pas utiliser le jeu de paramètres par défaut même si un nom de jeu de paramètres par défaut est spécifié. Le runtime Windows PowerShell ne peut pas faire la distinction entre les jeux de paramètres basés uniquement sur le type d’objet. Par exemple, si vous avez un jeu de paramètres qui prend une chaîne comme chemin d’accès de fichier, et un autre jeu qui prend directement un objet **FileInfo** , Windows PowerShell ne peut pas déterminer le jeu de paramètres à utiliser en fonction des valeurs transmises à l’applet de commande, ni utiliser l’applet de commande jeu de paramètres par défaut. Dans ce cas, même si vous spécifiez un nom de jeu de paramètres par défaut, Windows PowerShell génère un message d’erreur de jeu de paramètres ambigu.
+Il existe un cas où Windows PowerShell ne peut pas utiliser le jeu de paramètres par défaut même si un nom de jeu de paramètres par défaut est spécifié. Le runtime Windows PowerShell ne peut pas faire la distinction entre les jeux de paramètres basés uniquement sur le type d’objet. Par exemple, si vous avez un jeu de paramètres qui prend une chaîne comme chemin d’accès de fichier, et un autre jeu qui prend directement un objet **FileInfo** , Windows PowerShell ne peut pas déterminer le jeu de paramètres à utiliser en fonction des valeurs transmises à l’applet de commande, pas plus qu’il n’utilise le jeu de paramètres par défaut. Dans ce cas, même si vous spécifiez un nom de jeu de paramètres par défaut, Windows PowerShell génère un message d’erreur de jeu de paramètres ambigu.
 
 `SupportsTransactions` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que l’applet de commande peut être utilisée dans une transaction. Lorsque `True` est spécifié, le runtime Windows PowerShell ajoute le paramètre `UseTransaction` à la liste de paramètres de l’applet de commande. `False`, la valeur par défaut, indique que l’applet de commande ne peut pas être utilisée dans une transaction.
 
@@ -54,9 +54,9 @@ Il existe un cas où Windows PowerShell ne peut pas utiliser le jeu de paramètr
 
 **VerbName-NounName**
 
-- Toutes les applets de commande qui modifient des ressources en dehors de Windows PowerShell doivent inclure le mot clé `SupportsShouldProcess` lorsque l’attribut d’applet de commande est déclaré, ce qui permet à l’applet de commande d’appeler la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) avant l’applet de commande exécute son action. Si l’appel [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourne `false`, l’action ne doit pas être effectuée. Pour plus d’informations sur les demandes de confirmation générées par l’appel [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md).
+- Toutes les applets de commande qui modifient des ressources en dehors de Windows PowerShell doivent inclure le mot clé `SupportsShouldProcess` lorsque l’attribut d’applet de commande est déclaré, ce qui permet à l’applet de commande d’appeler la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) avant que l’applet de commande exécute son action. Si l’appel [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourne `false`, l’action ne doit pas être effectuée. Pour plus d’informations sur les demandes de confirmation générées par l’appel [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md).
 
-Les paramètres d’applet de commande `Confirm` et `WhatIf` sont disponibles uniquement pour les applets de commande qui prennent en charge les appels [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) .
+Les paramètres d’applet de commande `Confirm` et `WhatIf` sont uniquement disponibles pour les applets de commande qui prennent en charge les appels [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) de commande. ShouldProcess.
 
 ## <a name="example"></a>Exemple
 

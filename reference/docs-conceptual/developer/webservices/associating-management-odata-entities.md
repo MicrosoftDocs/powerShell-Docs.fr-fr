@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
 ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359808"
 ---
 # <a name="associating-management-odata-entities"></a>Association d’entités Management OData
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-La classe `Category` définit une propriété qui est un tableau des noms des produits appartenant à cette catégorie.
+La classe `Category` définit une propriété qui est un tableau des noms des produits qui appartiennent à cette catégorie.
 
-Pour associer deux entités, vous devez définir une classe avec l’attribut `Association` dans le fichier MOF de schéma de ressource pour le service. La classe doit définir les deux entités à associer, appelées `ends` de l’Association. L’exemple suivant montre une définition d’une classe qui définit une association entre les entités Category et Products.
+Pour associer deux entités, vous devez définir une classe avec l’attribut `Association` dans le fichier MOF du schéma de ressource pour le service. La classe doit définir les deux entités à associer, appelées `ends` de l’Association. L’exemple suivant montre une définition d’une classe qui définit une association entre les entités Category et Products.
 
 ```csharp
 [Association]

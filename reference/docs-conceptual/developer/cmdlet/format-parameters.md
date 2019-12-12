@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 10e025c5-9aa6-45a5-b851-23d14db1f4cc
 caps.latest.revision: 7
 ms.openlocfilehash: 0bd3888d81aa6d1dde26c0066f7bca9dac8a8bca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369748"
 ---
 # <a name="format-parameters"></a>Paramètres de format
@@ -21,12 +21,12 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 
 |Paramètre|Fonctionnalités|
 |---|---|
-|**Servir**<br>Type de données : mot clé|Implémentez ce paramètre pour spécifier le format de sortie de l’applet de commande. Par exemple, les valeurs possibles peuvent être du texte ou des scripts.|
-|**Binaire2**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre pour indiquer que l’applet de commande gère les valeurs binaires.|
-|**Coda**<br>Type de données : mot clé|Implémentez ce paramètre pour spécifier le type d’encodage pris en charge. Par exemple, les valeurs possibles sont ASCII, UTF8, Unicode, UTF7, BigEndianUnicode, Byte et String.|
+|**As**<br>Type de données : mot clé|Implémentez ce paramètre pour spécifier le format de sortie de l’applet de commande. Par exemple, les valeurs possibles peuvent être du texte ou des scripts.|
+|**Binaire**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre pour indiquer que l’applet de commande gère les valeurs binaires.|
+|**Encoding**<br>Type de données : mot clé|Implémentez ce paramètre pour spécifier le type d’encodage pris en charge. Par exemple, les valeurs possibles sont ASCII, UTF8, Unicode, UTF7, BigEndianUnicode, Byte et String.|
 |**Caractère**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre afin que les caractères de saut de ligne soient pris en charge lorsque le paramètre est spécifié.|
 |**Nom court**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre afin que les noms courts soient pris en charge lorsque le paramètre est spécifié.|
-|**Largeur**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la largeur du périphérique de sortie.|
+|**Width**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la largeur du périphérique de sortie.|
 |**Collier**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre pour que l’habillage du texte soit pris en charge lorsque le paramètre est spécifié.|
 ## <a name="see-also"></a>Voir aussi
 

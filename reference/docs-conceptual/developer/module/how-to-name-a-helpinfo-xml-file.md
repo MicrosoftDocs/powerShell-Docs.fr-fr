@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64e85b53-5aeb-4d6c-903c-af4ab62f11c1
 caps.latest.revision: 7
 ms.openlocfilehash: 462cd7bd486a5924bb2bc43e0ac8d1558e30e657
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367198"
 ---
 # <a name="how-to-name-a-helpinfo-xml-file"></a>Guide pratique pour nommer un fichier XML HelpInfo

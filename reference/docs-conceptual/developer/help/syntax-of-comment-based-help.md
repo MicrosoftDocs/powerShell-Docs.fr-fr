@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
 ms.openlocfilehash: 584e5923008e8369a83c699478844f0e0c295adc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367758"
 ---
 # <a name="syntax-of-comment-based-help"></a>Syntaxe de l’aide basée sur les commentaires
@@ -37,7 +37,7 @@ Cette section décrit la syntaxe de l’aide basée sur les commentaires.
 
 ## <a name="syntax-description"></a>Description de la syntaxe
 
- L’aide basée sur les commentaires est écrite sous la forme d’une série de commentaires. Vous pouvez taper un symbole de commentaire (#) avant chaque ligne de commentaires, ou vous pouvez utiliser les symboles « \< # » et « # > » pour créer un bloc de commentaires. Toutes les lignes dans le bloc de commentaires sont interprétées comme des commentaires.
+ L’aide basée sur les commentaires est écrite sous la forme d’une série de commentaires. Vous pouvez taper un symbole de commentaire (#) avant chaque ligne de commentaires, ou vous pouvez utiliser les symboles «\<# » et « # > » pour créer un bloc de commentaires. Toutes les lignes dans le bloc de commentaires sont interprétées comme des commentaires.
 
  Chaque section de l’aide basée sur des commentaires est définie par un mot clé et chaque mot clé est précédé d’un point (.). Les mots clés peuvent apparaître dans n’importe quel ordre. Les noms de mots clés ne respectent pas la casse.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359818"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Ajout de ressources à un service web Management OData
@@ -49,19 +49,19 @@ La première étape consiste à importer le schéma à partir du point de termin
 
 2. Assurez-vous que l’option **ordinateur local** est sélectionnée, puis cliquez sur **suivant**.
 
-3. Assurez-vous que l’option modules Windows PowerShell installés est sélectionnée, puis sélectionnez Hyper-V dans la liste déroulante. Cliquez sur **suivant**. Cliquez sur **Suivant**.
+3. Assurez-vous que l’option modules Windows PowerShell installés est sélectionnée, puis sélectionnez Hyper-V dans la liste déroulante. Cliquez sur **Suivant**. Cliquez sur **Suivant**.
 
 4. Dans la liste nom de l' **applet** de commande, sélectionnez **VM**. Cliquez sur **Suivant**.
 
 5. Pour cet exemple, nous allons lier uniquement les commandes obtenir et supprimer avec des applets de commande. Désactivez les cases à cocher **créer** et **mettre à jour** , et assurez-vous que les cases à cocher **récupérer** et **supprimer** sont activées. Assurez-vous que l’applet de commande `Get-VM` est sélectionnée pour **obtenir**et que l’applet de commande `Remove-VM` est sélectionnée pour la **suppression**.
 
-6. Étant donné que les métadonnées des applets de commande de machine virtuelle ne spécifient pas de type de sortie, vous devez exécuter l’applet de commande pour spécifier le type de sortie. Sélectionnez **fournir le type de sortie** , puis cliquez sur **exécuter l’applet de commande**. La boîte de dialogue **exécuter l’applet de commande** s’affiche. Cliquez sur **exécuter**. La zone de **type CLR** est remplie avec le type `VirtualMachine`. Cliquez sur **OK**, puis sur **suivant**.
+6. Étant donné que les métadonnées des applets de commande de machine virtuelle ne spécifient pas de type de sortie, vous devez exécuter l’applet de commande pour spécifier le type de sortie. Sélectionnez **fournir le type de sortie** , puis cliquez sur **exécuter l’applet de commande**. La boîte de dialogue **exécuter l’applet de commande** s’affiche. Cliquez sur **Exécuter**. La zone de **type CLR** est remplie avec le type de `VirtualMachine`. Cliquez sur **OK**, puis sur **suivant**.
 
 7. Par défaut, toutes les propriétés de l’objet VirtualMachine sont sélectionnées. Vous pouvez effacer toutes les propriétés que vous ne souhaitez pas inclure dans les données retournées lorsque vous demandez cette ressource à partir du service Web. Cliquez sur **Suivant**.
 
 8. Vous devez sélectionner au moins une propriété à utiliser comme clé. Sélectionnez **nom** dans la liste, puis cliquez sur **suivant**.
 
-9. La fenêtre suivante vous permet de mapper les propriétés de la ressource OData de gestion aux propriétés des applets de commande sous-jacentes. L’Assistant mappe les propriétés avec des noms identiques par défaut. Par exemple, la propriété `ComputerName` de la ressource est mappée à la propriété `ComputerName` des applets de commande.  Cela vous permet de spécifier la propriété `ComputerName` dans une demande adressée au service Web et de faire en sorte que la valeur que vous spécifiez soit transmise à l’applet de commande `Get-VM`. `Id` et `Name` sont également mappés par défaut.
+9. La fenêtre suivante vous permet de mapper les propriétés de la ressource OData de gestion aux propriétés des applets de commande sous-jacentes. L’Assistant mappe les propriétés avec des noms identiques par défaut. Par exemple, la propriété `ComputerName` de la ressource est mappée à la propriété `ComputerName` des applets de commande.  Cela vous permet de spécifier la propriété `ComputerName` dans une requête adressée au service Web et de faire en sorte que la valeur que vous spécifiez soit transmise à l’applet de commande `Get-VM`. les `Id` et les `Name` sont également mappés par défaut.
 
    10. Cliquez sur **suivant**, puis sur **Terminer**.
 
@@ -77,4 +77,4 @@ La première étape consiste à importer le schéma à partir du point de termin
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Avant d’accéder à la nouvelle ressource de machine virtuelle à partir du service Web OData de gestion, vous devez mettre à jour le fichier RbacConfiguration. xml pour autoriser l’accès au module Windows PowerShell Hyper-V, comme décrit dans Configuration de l' [autorisation basée sur les rôles](./configuring-role-based-authorization.md), et vous pouvez également vous devez redémarrer le service Web.
+Avant d’accéder à la nouvelle ressource de machine virtuelle à partir du service Web OData de gestion, vous devez mettre à jour le fichier RbacConfiguration. xml pour autoriser l’accès au module Windows PowerShell Hyper-V, comme décrit dans Configuration de l' [autorisation basée sur les rôles](./configuring-role-based-authorization.md), et vous devrez également redémarrer le service Web.

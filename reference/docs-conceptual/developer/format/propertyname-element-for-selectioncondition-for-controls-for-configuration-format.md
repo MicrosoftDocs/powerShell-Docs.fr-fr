@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ec048408-e1c6-41ef-b39b-72f4c2dcf2ac
 caps.latest.revision: 6
 ms.openlocfilehash: b4b2440fdb7171d09fdc16ac7cc4f25ed1a4bb78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362398"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-configuration-format"></a>PropertyName, élément pour SelectionCondition pour Controls pour Configuration (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour les contrôles de configuration (format)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|Définit une condition qui doit exister pour qu’une définition de contrôle commun soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom de la propriété .NET.
 

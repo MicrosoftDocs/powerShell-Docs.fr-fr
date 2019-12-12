@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
 ms.openlocfilehash: 5eb2186cbceee21f8b4a8c88b812e9c71f15e0af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366028"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Création d’un workflow avec un script Windows PowerShell

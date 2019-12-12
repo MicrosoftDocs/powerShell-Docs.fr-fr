@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370038"
 ---
 # <a name="advisory-development-guidelines"></a>Instructions dont le suivi est conseillé pour le développement
 
 Cette section décrit les instructions que vous devez prendre en compte pour garantir une bonne expérience en matière de développement et d’expérience utilisateur. Parfois, ils peuvent s’appliquer et parfois non.
 
-## <a name="design-guidelines"></a>Instructions de conception
+## <a name="design-guidelines"></a>Recommandations en matière de conception
 
 Les instructions suivantes doivent être prises en compte lors de la conception des applets de commande. Lorsque vous trouvez une instruction de conception qui s’applique à votre situation, veillez à consulter les instructions de code pour obtenir des instructions similaires.
 
@@ -91,7 +91,7 @@ Types rehydratable intégrés :
 
 - PSPrimitiveDictionary
 
-- Paramètre_booléen
+- Paramètre booléen
 
 - PSListModifier
 

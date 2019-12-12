@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368148"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableRowEntries, élément pour TableControl (Format)
@@ -51,7 +51,7 @@ Aucune.
 
 ## <a name="remarks"></a>Remarks
 
-Vous devez spécifier un ou plusieurs éléments `TableRowEntry` pour la vue table. Il n’y a pas de limite maximale pour le nombre d’éléments `TableRowEntry` qui peuvent être ajoutés ou dont l’ordre est significatif.
+Vous devez spécifier un ou plusieurs éléments `TableRowEntry` pour la vue table. Il n’existe pas de limite maximale pour le nombre d’éléments de `TableRowEntry` qui peuvent être ajoutés ou dont l’ordre est significatif.
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 

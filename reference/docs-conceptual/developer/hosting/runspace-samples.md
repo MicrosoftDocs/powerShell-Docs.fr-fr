@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360998"
 ---
 # <a name="runspace-samples"></a>Exemples d’instances d’exécution
@@ -42,7 +42,7 @@ Cette section comprend un exemple de code qui montre comment utiliser différent
 
  [Exemple Runspace09](./runspace09-sample.md) Cet exemple montre comment ajouter un script au pipeline d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) et comment exécuter le script de manière asynchrone. Des événements sont utilisés pour gérer la sortie du script.
 
- [Exemple Runspace10](./runspace10-sample.md) Cet exemple montre comment créer un état de session initial par défaut, comment ajouter une applet de commande à [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), comment créer une instance d’exécution qui utilise l’état de session initial et comment exécuter la commande à l’aide d’un Objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace10](./runspace10-sample.md) Cet exemple montre comment créer un état de session initial par défaut, comment ajouter une applet de commande à [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), comment créer une instance d’exécution qui utilise l’état de session initial et comment exécuter la commande à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
  [Exemple Runspace11](./runspace11-sample.md) Cette rubrique montre comment utiliser la classe [System. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) pour créer une commande de proxy qui appelle une applet de commande existante, mais qui limite l’ensemble des paramètres disponibles. La commande proxy est ensuite ajoutée à un état de session initial qui sert à créer une instance d’exécution contrainte. Cela signifie que l’utilisateur ne peut accéder à la fonctionnalité de l’applet de commande qu’au moyen de la commande proxy.
 

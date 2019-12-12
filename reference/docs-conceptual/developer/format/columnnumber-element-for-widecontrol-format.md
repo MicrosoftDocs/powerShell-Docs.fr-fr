@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
 caps.latest.revision: 8
 ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364218"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>ColumnNumber, élément pour WideControl (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément WideControl (format)](./widecontrol-element-format.md)|Définit un format de liste larges (à valeur unique) pour la vue.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez une valeur entière positive.
 

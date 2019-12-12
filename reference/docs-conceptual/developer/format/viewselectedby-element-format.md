@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367968"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy, élément (Format)
@@ -32,7 +32,7 @@ Définit les objets .NET affichés par la vue. Chaque vue doit spécifier au moi
 
 ## <a name="attributes-and-elements"></a>Éléments et attributs
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ViewSelectedBy`. Cet élément doit contenir au moins un élément enfant `TypeName` ou `SelectionSetName`. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés et dont l’ordre est significatif.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ViewSelectedBy`. Cet élément doit contenir au moins un `TypeName` ou un élément enfant `SelectionSetName`. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés et dont l’ordre est significatif.
 
 ### <a name="attributes"></a>Attributs
 

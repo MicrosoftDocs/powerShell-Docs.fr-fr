@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
 ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363718"
 ---
 # <a name="format-schema-xml-reference"></a>Informations de référence sur le XML des schémas de format
@@ -263,33 +263,33 @@ Les rubriques de cette section décrivent les éléments XML utilisés par les f
 
 [Élément ScriptBlock pour GroupBy (format)](./scriptblock-element-for-groupby-format.md) Spécifie le script qui démarre un nouveau groupe chaque fois que sa valeur change.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[Élément ScriptBlock pour ItemSelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour GroupBy (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[Élément ScriptBlock pour ItemSelectionCondition pour GroupBy (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et l’élément de liste est utilisé. Cet élément est utilisé lors de la définition d’un affichage de liste.
+[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’élément de liste est utilisé. Cet élément est utilisé lors de la définition d’un affichage de liste.
 
 [Élément ScriptBlock pour ListItem (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md) Spécifie le script dont la valeur est affichée dans la ligne de la liste.
 
-[Élément ScriptBlock pour SelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[Élément ScriptBlock pour SelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément ScriptBlock pour SelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément ScriptBlock pour SelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
 [Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Spécifie le script qui déclenche la condition.
 
-[Élément ScriptBlock pour SelectionCondition pour GroupBy (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[Élément ScriptBlock pour SelectionCondition pour GroupBy (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et l’entrée de liste est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de liste est utilisée.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et l’entrée de table est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de table est utilisée.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et la définition d’entrée étendue est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition d’entrée étendue est utilisée.
 
 [Élément ScriptBlock pour TableColumnItem (format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) Spécifie le script dont la valeur est affichée dans la colonne de la ligne.
 

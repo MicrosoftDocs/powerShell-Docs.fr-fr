@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
 caps.latest.revision: 11
 ms.openlocfilehash: 6a371bdbb85d07730c32931a4a79ee40856ce298
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368798"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>EntrySelectedBy, élément pour EnumerableExpansion (Format)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
 caps.latest.revision: 6
 ms.openlocfilehash: 08db1f2d89c3fe6c1e9a5a522de3071425042c3f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363818"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>FirstLineHanging, élément pour Frame pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément Frame pour CustomItem pour GroupBy (format)](./frame-element-for-customitem-for-groupby-format.md)|Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nombre de caractères dont vous souhaitez déplacer la première ligne des données.
 

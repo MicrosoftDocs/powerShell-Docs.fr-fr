@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d2c65171-4d4c-46a9-a545-591df058acd1
 caps.latest.revision: 7
 ms.openlocfilehash: 00e9ae0916dd6d22602b99b201c9c4b7e549dc48
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361588"
 ---
 # <a name="typename-element-for-selectioncondition-for-customcontrol-for-view--format"></a>TypeName, élément pour SelectionCondition pour CustomControl pour View (Format)
@@ -46,7 +46,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour CustomControl pour View (format)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|Définit une condition qui doit exister pour que la définition de contrôle soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo`.
 

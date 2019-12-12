@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d5027c99-9f88-4c59-87ce-8793ef1d2fe3
 caps.latest.revision: 6
 ms.openlocfilehash: 09c893500d1a340c01c0c5254f5f4fbbed7264bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363258"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format"></a>EnumerateCollection, élément pour ExpressionBinding pour Controls pour Configuration (Format)

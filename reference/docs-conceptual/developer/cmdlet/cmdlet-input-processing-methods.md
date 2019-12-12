@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369868"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Méthodes de traitement des entrées des applets de commande
@@ -63,7 +63,7 @@ Par exemple, votre applet de commande peut être obligée de nettoyer les variab
 
 Lorsque PowerShell traite un pipeline de commande, PowerShell appelle cette méthode une fois pour chaque instance de l’applet de commande dans le pipeline.
 Toutefois, il est important de se souvenir que le runtime PowerShell n’appellera pas la méthode EndProcessing si l’applet de commande est annulée à mi-chemin dans son traitement d’entrée ou si une erreur d’arrêt se produit dans n’importe quelle partie de l’applet de commande.
-Pour cette raison, une applet de commande qui requiert le nettoyage d’objets doit implémenter le modèle [System. IDisposable](/dotnet/api/System.IDisposable) complet, y compris un finaliseur, afin que le runtime puisse appeler à la fois les méthodes EndProcessing et [System. IDisposable. dispose](/dotnet/api/System.IDisposable.Dispose) à la fin de traitée.
+Pour cette raison, une applet de commande qui requiert le nettoyage d’objets doit implémenter le modèle [System. IDisposable](/dotnet/api/System.IDisposable) complet, y compris un finaliseur, afin que le runtime puisse appeler à la fois les méthodes EndProcessing et [System. IDisposable. dispose](/dotnet/api/System.IDisposable.Dispose) à la fin du traitement.
 Pour plus d’informations sur la façon dont PowerShell appelle le pipeline de commande, consultez [cycle de vie du traitement des applets](/previous-versions/ms714429(v=vs.85))de commande.
 
 Le code suivant illustre une implémentation de la méthode EndProcessing.
@@ -86,6 +86,6 @@ protected override void EndProcessing()
 
 [Didacticiel SelectStr](selectstr-tutorial.md)
 
-[System. IDisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)

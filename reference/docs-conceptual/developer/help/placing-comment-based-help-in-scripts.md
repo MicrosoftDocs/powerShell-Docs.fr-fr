@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
 ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361178"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Mise en place de l’aide basée sur les commentaires dans les scripts
 
-Cette rubrique explique où placer l’aide basée sur des commentaires pour un script afin que l’applet de commande `Get-Help` associe la rubrique d’aide basée sur des commentaires à des scripts et non à des fonctions qui peuvent être dans le script.
+Cette rubrique explique où placer l’aide basée sur les commentaires pour un script afin que l’applet de commande `Get-Help` associe la rubrique d’aide basée sur des commentaires à des scripts et non à des fonctions qui peuvent être dans le script.
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Où placer l’aide basée sur les commentaires pour un script
 

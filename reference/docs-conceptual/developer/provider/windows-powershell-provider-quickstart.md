@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359918"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Fournisseur Windows PowerShell - Démarrage rapide
@@ -21,7 +21,7 @@ Cette rubrique explique comment créer un fournisseur Windows PowerShell qui dis
 
 ## <a name="writing-a-basic-provider"></a>Écriture d’un fournisseur de base
 
-La fonctionnalité la plus basique d’un fournisseur Windows PowerShell consiste à créer et à supprimer des lecteurs. Dans cet exemple, nous implémentons les méthodes [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) et [System. Management. Automation. Provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) de la [ Classe System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Vous verrez également comment déclarer une classe de fournisseur.
+La fonctionnalité la plus basique d’un fournisseur Windows PowerShell consiste à créer et à supprimer des lecteurs. Dans cet exemple, nous implémentons les méthodes [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) et [System. Management. Automation. Provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Vous verrez également comment déclarer une classe de fournisseur.
 
 Lorsque vous écrivez un fournisseur, vous pouvez spécifier les lecteurs de lecteurs par défaut qui sont créés automatiquement lorsque le fournisseur est disponible. Vous définissez également une méthode pour créer de nouveaux lecteurs qui utilisent ce fournisseur.
 
@@ -35,7 +35,7 @@ Dans Visual Studio, créez un projet de bibliothèque de classes nommé AccessDB
 
 1. Ajoutez l’assembly System. Management. Automation en tant que référence à votre projet.
 
-2. Cliquez sur **projet > propriétés AccessDBProviderSample > débogage**. Dans **Démarrer le projet**, cliquez sur **Démarrer le programme externe**, puis accédez à l’exécutable Windows PowerShell (généralement c:\windows\system32\windowspowershell\ v1.0\\.powershell.exe).
+2. Cliquez sur **projet > propriétés AccessDBProviderSample > débogage**. Dans **Démarrer le projet**, cliquez sur **Démarrer le programme externe**, puis accédez à l’exécutable Windows PowerShell (généralement c:\Windows\system32\WindowsPowerShell\v1.0\\. PowerShell. exe).
 
 3. Sous **options de démarrage**, entrez ce qui suit dans la zone **arguments de ligne de commande** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -43,7 +43,7 @@ Dans Visual Studio, créez un projet de bibliothèque de classes nommé AccessDB
 
 Notre fournisseur est dérivé de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . La plupart des fournisseurs qui fournissent des fonctionnalités réelles (accès et manipulation d’éléments, navigation dans le magasin de données et obtention et définition du contenu d’éléments) dérivent de la classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-En plus de spécifier que la classe dérive de [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), vous devez la décorer avec [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) , comme indiqué dans l’exemple. .
+En plus de spécifier que la classe dérive de [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), vous devez la décorer avec [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) , comme indiqué dans l’exemple.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -67,9 +67,9 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implémentation de les
 
-La méthode [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) est appelée par le moteur Windows PowerShell lorsqu’un utilisateur appelle l’applet de [commande Microsoft. PowerShell. Commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) en spécifiant le nom de votre moteur. Le paramètre PSDriveInfo est passé par le moteur Windows PowerShell et la méthode retourne le nouveau lecteur au moteur Windows PowerShell. Cette méthode doit être déclarée dans la classe créée ci-dessus.
+La méthode [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) est appelée par le moteur Windows PowerShell lorsqu’un utilisateur appelle l’applet de [commande Microsoft. PowerShell. Commands. NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) en spécifiant le nom de votre fournisseur. Le paramètre PSDriveInfo est passé par le moteur Windows PowerShell et la méthode retourne le nouveau lecteur au moteur Windows PowerShell. Cette méthode doit être déclarée dans la classe créée ci-dessus.
 
-La méthode commence par vérifier que l’objet lecteur et la racine du lecteur qui ont été transmis existent, en retournant `null` si l’un ou l’autre ne le fait pas. Il utilise ensuite un constructeur de la classe interne AccessDBPSDriveInfo pour créer un nouveau lecteur et une connexion à la base de données Access que le lecteur représente.
+La méthode commence par vérifier que l’objet lecteur et la racine du lecteur qui ont été transmis existent, en retournant `null` si ce n’est pas le cas. Il utilise ensuite un constructeur de la classe interne AccessDBPSDriveInfo pour créer un nouveau lecteur et une connexion à la base de données Access que le lecteur représente.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

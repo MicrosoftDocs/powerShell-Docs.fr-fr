@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367618"
 ---
 # <a name="creating-an-initialsessionstate"></a>Création d’un InitialSessionState
@@ -25,7 +25,7 @@ Le InitialSessionState spécifie les caractéristiques de l’instance d’exéc
 ## <a name="create-a-default-initialsessionstate"></a>Créer un InitialSessionState par défaut
 
 Les méthodes [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) et [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) de la classe **InitialSessionState** peuvent être utilisées pour créer un objet **InitialSessionState** .
-La méthode **CreateDefault** crée un **InitialSessionState** avec toutes les commandes intégrées chargées, tandis que la méthode **CreateDefault2** charge uniquement les commandes requises pour héberger PowerShell (les commandes du Module Microsoft. PowerShell. Core).
+La méthode **CreateDefault** crée un **InitialSessionState** avec toutes les commandes intégrées chargées, tandis que la méthode **CreateDefault2** charge uniquement les commandes requises pour héberger PowerShell (les commandes du module Microsoft. PowerShell. Core).
 
 Si vous souhaitez limiter davantage les commandes disponibles dans votre application hôte, vous devez créer une instance d’exécution limitée.
 Pour plus d’informations, consultez [création d’une instance d’exécution avec restriction](creating-a-constrained-runspace.md).

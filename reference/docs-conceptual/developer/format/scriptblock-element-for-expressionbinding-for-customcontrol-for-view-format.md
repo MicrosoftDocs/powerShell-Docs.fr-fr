@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d52d020c-3271-40d5-b4bb-7a5ef0caec8f
 caps.latest.revision: 6
 ms.openlocfilehash: 9f5f188b006c5dfac1d04ef4d5aa5606935db9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364908"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format"></a>ScriptBlock, élément pour ExpressionBinding pour CustomControl pour View (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément ExpressionBinding pour CustomItem pour CustomControl pour View (format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script dont la valeur est affichée par le contrôle.
 

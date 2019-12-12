@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359628"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Création d’un workflow avec des activités Windows PowerShell
@@ -45,9 +45,9 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 8. Modifiez les propriétés de l’activité **GetWmiObject** comme suit.
 
-   |Propriété|Valeur|
+   |Propriété|Value|
    |--------------|-----------|
-   |**Type**|« Win32_ComputerSystem »|
+   |**Classe**|« Win32_ComputerSystem »|
    |**PSComputerName**|conformes|
    |**PSCredential**|MachineCred|
 
@@ -55,21 +55,21 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 10. Modifiez les propriétés de l’activité **AddComputer** comme suit.
 
-    |Propriété|Valeur|
+    |Propriété|Value|
     |--------------|-----------|
-    |**Nomd’ordinateur**|conformes|
+    |**ComputerName**|conformes|
     |**DomainCredential**|DomainCred|
 
 11. Ajoutez une activité **RestartComputer** à la séquence **JoinDomain** après l’activité **AddComputer** .
 
 12. Modifiez les propriétés de l’activité **RestartComputer** comme suit.
 
-    |Propriété|Valeur|
+    |Propriété|Value|
     |--------------|-----------|
-    |**Nomd’ordinateur**|conformes|
-    |**Justificative**|MachineCred|
+    |**ComputerName**|conformes|
+    |**Informations d'identification**|MachineCred|
     |**Pour**|Microsoft. PowerShell. Commands. WaitForServiceTypes. PowerShell|
-    |**Appliqués**|True|
+    |**Force**|True|
     |Wait|True|
     |PSComputerName|{""}|
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
 ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367678"
 ---
 # <a name="creating-remote-runspaces"></a>Création d’instances d’exécution distantes
@@ -21,7 +21,7 @@ Les commandes PowerShell qui prennent un paramètre **ComputerName** peuvent êt
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>Utilisation d’un WSManConnection pour créer une instance d’exécution à distance
 
- Pour créer une instance d’exécution qui se connecte à un ordinateur distant, vous devez créer un objet [System. Management. Automation. instances d’exécution. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) . Vous spécifiez le point de terminaison cible pour la connexion en définissant la propriété [System. Management. Automation. instances d’exécution. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) de l’objet. Vous créez ensuite une instance d’exécution en appelant la méthode [System. Management. Automation. instances d’exécution. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , en spécifiant l’objet [System. Management. Automation. instances d’exécution. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) comme `connectionInfo` paramètre.
+ Pour créer une instance d’exécution qui se connecte à un ordinateur distant, vous devez créer un objet [System. Management. Automation. instances d’exécution. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) . Vous spécifiez le point de terminaison cible pour la connexion en définissant la propriété [System. Management. Automation. instances d’exécution. WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) de l’objet. Vous créez ensuite une instance d’exécution en appelant la méthode [System. Management. Automation. instances d’exécution. RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) , en spécifiant l’objet [System. Management. Automation. instances d’exécution. WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) comme paramètre `connectionInfo`.
 
  L’exemple suivant montre comment créer une instance d’exécution qui se connecte à un ordinateur distant. Dans l’exemple, `RemoteComputerUri` est utilisé comme espace réservé pour l’URI réel d’un ordinateur distant.
 

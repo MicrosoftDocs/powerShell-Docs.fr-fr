@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ms.openlocfilehash: 7166881bd1403ea8c81ec2928321f6b93e3ac58d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360268"
 ---
 # <a name="how-to-create-a-console-shell"></a>Guide pratique pour créer un shell de console
@@ -65,7 +65,7 @@ Voici une brève description des paramètres de make-shell.
 |-builtinscript S1. ps1 [, S2. ps1,...]|Liste de scripts intégrés pour l’interpréteur de commandes. Ces scripts sont découverts avant les scripts dans le chemin d’accès et leur contenu ne peut pas être modifié une fois l’interpréteur de commandes généré.<br /><br /> Les fichiers sont inclus « en l’absence »; aucune vérification de validité n’est effectuée par make-shell.|
 |-ressource ResourceFile. txt|Fichier. txt contenant les ressources d’aide et de bannière pour l’interpréteur de commandes. La première ressource est nommée ShellHelp et contient le texte affiché si l’interpréteur de commandes est appelé avec le paramètre `help`. La deuxième ressource est nommée ShellBanner et contient le texte et les informations de copyright affichés lorsque l’interpréteur de commandes est lancé en mode interactif.<br /><br /> Si ce paramètre n’est pas fourni, ou si ces ressources ne sont pas présentes, une aide et une bannière génériques sont utilisées.|
 |-cscflags cscFlags|Indicateurs qui doivent être passés au C# compilateur (CSC. exe). Celles-ci sont transmises sans modification. Si ce paramètre comprend des espaces, il doit être placé entre guillemets doubles.|
-|-?<br /><br /> -aide|Affiche les options de ligne de commande message de copyright et make-shell.|
+|-?<br /><br /> -help|Affiche les options de ligne de commande message de copyright et make-shell.|
 |-verbose|Affiche des informations détaillées pendant la création de l’interpréteur de commandes.|
 
 ## <a name="see-also"></a>Voir aussi

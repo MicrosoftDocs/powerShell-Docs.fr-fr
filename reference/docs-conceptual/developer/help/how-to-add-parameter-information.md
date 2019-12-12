@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361228"
 ---
 # <a name="how-to-add-parameter-information"></a>Guide pratique pour ajouter des informations sur les paramètres
@@ -175,7 +175,7 @@ La valeur par défaut permet à l’utilisateur de comprendre l’effet de ne pa
 
 La valeur par défaut du paramètre n’est pas affichée dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, il est affiché dans une table (avec les attributs de paramètre) qui suit la description du paramètre lorsque l’utilisateur demande la vue complète (obtenir-aide \<CmdletName >-Full) ou le paramètre (obtenir-aide \<CmdletName >-Parameter) de la rubrique.
 
-Le code XML suivant montre une paire de balises `<dev:defaultValue>` ajoutées au nœud `<command:parameter>`. Notez que la valeur par défaut suit immédiatement après la balise `</command:parameterValue>` fermante (lorsque la valeur du paramètre est spécifiée) ou la balise de fermeture `</maml:description>` de la description du paramètre. nomme.
+Le code XML suivant montre une paire de balises `<dev:defaultValue>` ajoutées au nœud `<command:parameter>`. Notez que la valeur par défaut suit immédiatement après la balise `</command:parameterValue>` fermante (lorsque la valeur du paramètre est spécifiée) ou la balise de fermeture `</maml:description>` de la description du paramètre. nom.
 
 ```xml
 <command:parameters>

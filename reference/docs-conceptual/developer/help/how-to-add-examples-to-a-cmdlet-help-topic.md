@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
 ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368108"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des exemples à une rubrique d’aide d’applet de commande
@@ -89,7 +89,7 @@ Le code XML suivant montre comment ajouter la commande réelle de l’exemple. L
 
 ## <a name="adding-a-description"></a>Ajout d’une description
 
-Le code XML suivant montre comment ajouter une description pour l’exemple. Windows PowerShell® utilise un ensemble unique de balises \<maml : para > pour la description, même si plusieurs balises \<maml : para > peuvent être utilisées.
+Le code XML suivant montre comment ajouter une description pour l’exemple. Windows PowerShell® utilise un ensemble unique de balises \<MAML : para > pour la description, même si plusieurs balises \<MAML : para > peuvent être utilisées.
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ Le code XML suivant montre comment ajouter une description pour l’exemple. Win
 
 ## <a name="adding-example-output"></a>Ajout d’un exemple de sortie
 
-Le code XML suivant montre comment ajouter la sortie de la commande. Les informations sur les résultats de la commande sont facultatives, mais dans certains cas, il est utile d’illustrer l’effet de l’utilisation de paramètres spécifiques. Windows PowerShell® utilise deux ensembles de balises \<maml : para > vides pour séparer la sortie de commande de la commande.
+Le code XML suivant montre comment ajouter la sortie de la commande. Les informations sur les résultats de la commande sont facultatives, mais dans certains cas, il est utile d’illustrer l’effet de l’utilisation de paramètres spécifiques. Windows PowerShell® utilise deux ensembles de balises vides \<MAML : para > pour séparer la sortie de commande de la commande.
 
 ```xml
 <command:examples>

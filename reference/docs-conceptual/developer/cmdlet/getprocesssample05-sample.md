@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365698"
 ---
 # <a name="getprocesssample05-sample"></a>Exemple GetProcessSample05
@@ -27,7 +27,7 @@ Cet exemple montre une version complète de l’applet de commande obtenir-proc.
 
 2. Double-cliquez sur l’icône du fichier solution (. sln). L’exemple de projet s’ouvre dans Visual Studio.
 
-3. Dans le menu **générer** , sélectionnez **générer la solution**.
+3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
 
    La bibliothèque de l’exemple sera générée dans les répertoires \bin ou \bin\debug par défaut.
 
@@ -53,7 +53,7 @@ Cet exemple montre une version complète de l’applet de commande obtenir-proc.
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Cet exemple illustre ce qui suit.
 

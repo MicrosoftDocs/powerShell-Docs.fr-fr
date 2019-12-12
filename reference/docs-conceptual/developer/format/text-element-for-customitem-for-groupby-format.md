@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
 caps.latest.revision: 6
 ms.openlocfilehash: dc8f1058448a0cf9720014972b736694de759404
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361758"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>Text, élément pour CustomItem pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément CustomItem pour CustomEntry pour GroupBy (format)](./customitem-element-for-customentry-for-groupby-format.md)|Définit un contrôle pour l’affichage de contrôle personnalisé.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le texte d’un contrôle pour les données que vous souhaitez afficher.
 

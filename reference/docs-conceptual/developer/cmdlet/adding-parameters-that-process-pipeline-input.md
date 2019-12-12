@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
 ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364598"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Ajout de paramètres qui traitent l’entrée du pipeline
@@ -45,7 +45,7 @@ Public Class GetProcCommand
 
 Cette section décrit comment définir une entrée à partir du pipeline pour une applet de commande. Cette applet de commande obtenir-proc définit une propriété qui représente le paramètre `Name` comme décrit dans [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md). (Pour obtenir des informations générales sur la déclaration des paramètres, consultez la rubrique.)
 
-Toutefois, lorsqu’une applet de commande doit traiter l’entrée de pipeline, elle doit avoir ses paramètres liés aux valeurs d’entrée par le runtime Windows PowerShell. Pour ce faire, vous devez ajouter le mot clé `ValueFromPipeline` ou ajouter le mot clé `ValueFromPipelineByProperty` à la déclaration de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Spécifiez le mot clé `ValueFromPipeline` si l’applet de commande accède à l’objet d’entrée complet. Spécifiez le `ValueFromPipelineByProperty` si l’applet de commande accède uniquement à une propriété de l’objet.
+Toutefois, lorsqu’une applet de commande doit traiter l’entrée de pipeline, elle doit avoir ses paramètres liés aux valeurs d’entrée par le runtime Windows PowerShell. Pour ce faire, vous devez ajouter le mot clé `ValueFromPipeline` ou ajouter le mot clé `ValueFromPipelineByProperty` à la déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Spécifiez le mot clé `ValueFromPipeline` si l’applet de commande accède à l’objet d’entrée complet. Spécifiez le `ValueFromPipelineByProperty` si l’applet de commande accède uniquement à une propriété de l’objet.
 
 Voici la déclaration de paramètre pour le paramètre `Name` de cette applet de commande Accept-proc qui accepte l’entrée de pipeline.
 
@@ -77,7 +77,7 @@ La déclaration précédente définit le mot clé `ValueFromPipeline` sur `true`
 
 Si votre applet de commande doit gérer l’entrée de pipeline, elle doit remplacer les méthodes de traitement d’entrée appropriées. Les méthodes de traitement d’entrée de base sont introduites lors de la [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
-Cette applet de commande obtenir-proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer l’entrée de paramètre `Name` fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection`, a la valeur `true` pour indiquer au runtime Windows PowerShell d’énumérer le tableau d’objets de processus et d’écrire un processus à la fois sur la ligne de commande.
+Cette applet de commande obtenir-proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer le `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection`, est défini sur `true` pour indiquer au runtime Windows PowerShell d’énumérer le tableau d’objets de processus et d’écrire un processus à la fois sur la ligne de commande.
 
 ```csharp
 protected override void ProcessRecord()
@@ -146,7 +146,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     PS> type ProcessNames | get-proc
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
@@ -157,13 +157,13 @@ La sortie suivante s’affiche.
        3927      62  71836   26984    467  195.19  1848  OUTLOOK
     ```
 
-- Entrez les lignes suivantes pour obtenir les objets processus qui ont une propriété `Name` à partir des processus appelés « IEXPLORE ». Cet exemple utilise l’applet de commande `Get-Process` (fournie par Windows PowerShell) comme une commande en amont pour récupérer les processus « IEXPLORE ».
+- Entrez les lignes suivantes pour obtenir les objets processus qui ont une propriété `Name` à partir des processus appelés « IEXPLORE ». Cet exemple utilise l’applet de commande `Get-Process` (fournie par Windows PowerShell) en tant que commande amont pour récupérer les processus « IEXPLORE ».
 
     ```powershell
     PS> get-process iexplore | get-proc
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName

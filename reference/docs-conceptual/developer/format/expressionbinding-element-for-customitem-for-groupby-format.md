@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eae5088-7605-4ef2-a703-faf3e5a5fc94
 caps.latest.revision: 8
 ms.openlocfilehash: 4714bfd1530585aa80aabc010b86d25bf0c7f9c4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368628"
 ---
 # <a name="expressionbinding-element-for-customitem-for-groupby-format"></a>ExpressionBinding, élément pour CustomItem pour GroupBy (Format)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
 ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364928"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>ScriptBlock, élément pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)|Définit le mode d’affichage d’un groupe d’objets .NET.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 

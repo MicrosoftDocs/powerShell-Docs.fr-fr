@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369518"
 ---
 # <a name="required-development-guidelines"></a>Instructions dont le suivi est impératif pour le développement
@@ -21,7 +21,7 @@ Les instructions suivantes doivent être suivies lors de l’écriture de vos ap
 
 ## <a name="in-this-topic"></a>Dans cette rubrique
 
-### <a name="design-guidelines"></a>Instructions de conception
+### <a name="design-guidelines"></a>Recommandations en matière de conception
 
 - [Utiliser uniquement les verbes approuvés (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +51,7 @@ Les instructions suivantes doivent être suivies lors de l’écriture de vos ap
 
 - [Utiliser un module Windows PowerShell pour déployer vos applets de commande (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Instructions de conception
+## <a name="design-guidelines"></a>Recommandations en matière de conception
 
 Les instructions suivantes doivent être suivies lors de la conception des applets de commande pour garantir une expérience utilisateur cohérente entre l’utilisation de vos applets de commande et d’autres applets de commande. Lorsque vous trouvez une instruction de conception qui s’applique à votre situation, veillez à consulter les instructions de code pour obtenir des instructions similaires.
 
@@ -81,33 +81,33 @@ Les utilisateurs ont besoin d’un ensemble de noms d’applets de commande dét
 
 Lorsque vous nommez des applets de commande, n’utilisez pas les caractères spéciaux suivants.
 
-|Symbole|Name|
+|Caractère|Name|
 |---------------|----------|
 |#|signe dièse|
-|,|point|
+|,|virgule|
 |()|parenthèses|
 |{}|accolades|
 |[]|crochets|
-|&|Reprises|
+|&|reprises|
 |-|Note de trait d’Union **:** le trait d’Union peut être utilisé pour séparer le verbe du nom, mais il ne peut pas être utilisé dans le nom ou dans le verbe.|
-|/|Barre oblique|
-|\\ | barre oblique inverse|
+|/|barre oblique|
+|\\| barre oblique inverse|
 |$|signe dollar|
-|^|signe insertion|
-|;|virgule|
-|:|Signe|
+|^|accent circonflexe|
+|;|point-virgule|
+|:|signe|
 |"|guillemet double|
-|'|guillemet simple|
+|»|guillemet simple|
 |<>|chevrons|
 |&#124;|barre verticale|
 |?|point d’interrogation|
 |@|arobase|
 |`|cycle d’arrière-plan (accent grave)|
-|*|sert|
+|*|astérisque|
 |%|signe de pourcentage|
-|+|Signe plus|
+|+|signe plus|
 |=|signe égal|
-|~|Surmonté|
+|~|surmonté|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Noms de paramètres qui ne peuvent pas être utilisés (RD03)
 
@@ -115,14 +115,14 @@ Windows PowerShell fournit un ensemble commun de paramètres à toutes les apple
 
 ### <a name="support-confirmation-requests-rd04"></a>Demandes de confirmation de support (RD04)
 
-Pour les cmdlets qui effectuent une opération qui modifie le système, ils doivent appeler la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour demander confirmation et, dans certains cas, appeler l' [applet de commande Méthode System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (La méthode [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) doit être appelée uniquement après l’appel de la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) .)
+Pour les applets de commande qui effectuent une opération qui modifie le système, ils doivent appeler la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour demander la confirmation. dans certains cas, appelez la méthode [System. Management. Automation. cmdlet. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) . (La méthode [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) doit être appelée uniquement après l’appel de la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) .)
 
 Pour effectuer ces appels, l’applet de commande doit spécifier qu’elle prend en charge les demandes de confirmation en définissant le mot clé `SupportsShouldProcess` de l’attribut d’applet de commande. Pour plus d’informations sur la définition de cet attribut, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
 > [!NOTE]
-> Si l’attribut d’applet de commande de la classe d’applet de commande indique que l’applet de commande prend en charge les appels à la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et que l’applet de commande ne parvient pas à appeler l' [applet de commande Méthode System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , l’utilisateur peut modifier le système de manière inattendue.
+> Si l’attribut d’applet de commande de la classe d’applet de commande indique que l’applet de commande prend en charge les appels à la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et que l’applet de commande ne parvient pas à appeler la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , l’utilisateur peut modifier le système de manière inattendue.
 
-Utilisez la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour toute modification du système. Une préférence utilisateur et le paramètre `WhatIf` contrôlent la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . En revanche, l’appel [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) effectue une vérification supplémentaire pour les modifications potentiellement dangereuses. Cette méthode n’est pas contrôlée par une préférence utilisateur ni par le paramètre `WhatIf`. Si votre applet de commande appelle la méthode [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , elle doit avoir un paramètre `Force` qui ignore les appels à ces deux méthodes et qui poursuit l’opération. C’est important, car cela permet d’utiliser votre applet de commande dans des hôtes et des scripts non interactifs.
+Utilisez la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour toute modification du système. Une préférence utilisateur et le paramètre `WhatIf` contrôlent la méthode [System. Management. Automation. cmdlet. ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) . En revanche, l’appel [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) effectue une vérification supplémentaire pour les modifications potentiellement dangereuses. Cette méthode n’est pas contrôlée par les préférences de l’utilisateur ou par le paramètre `WhatIf`. Si votre applet de commande appelle la méthode [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) , elle doit avoir un paramètre `Force` qui contourne les appels à ces deux méthodes et qui poursuit l’opération. C’est important, car cela permet d’utiliser votre applet de commande dans des hôtes et des scripts non interactifs.
 
 Si vos applets de commande prennent en charge ces appels, l’utilisateur peut déterminer si l’action doit réellement être effectuée. Par exemple, l’applet de commande [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) appelle la méthode [System. Management. Automation. applet de commande. ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) avant d’arrêter un ensemble de processus critiques, y compris les processus System, Winlogon et spoolsv.
 
@@ -196,11 +196,11 @@ Un environnement d’administration détecte par nature et apporte des modificat
 
 - Lorsqu’une erreur empêche une applet de commande de continuer à traiter d’autres enregistrements, il s’agit d’une erreur de fin. L’applet de commande doit appeler la méthode [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) qui référence un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Si une exception n’est pas interceptée par l’applet de commande, le runtime Windows PowerShell lui-même lève une erreur de fin contenant moins d’informations.
 
-- Pour une erreur sans fin d’exécution qui n’arrête pas l’opération sur l’enregistrement suivant provenant du pipeline (par exemple, un enregistrement produit par un processus différent), l’applet de commande doit appeler la méthode [System. Management. Automation. applet de commande. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) qui fait référence à un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Un exemple d’erreur sans fin d’exécution est l’erreur qui se produit en cas d’échec de l’arrêt d’un processus particulier. L’appel de la méthode [System. Management. Automation. applet de commande. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) permet à l’utilisateur d’effectuer de manière cohérente les actions demandées et de conserver les informations pour des actions particulières qui échouent. Votre applet de commande doit gérer chaque enregistrement de la manière la plus indépendante possible.
+- Pour une erreur sans fin d’exécution qui n’arrête pas l’opération sur l’enregistrement suivant provenant du pipeline (par exemple, un enregistrement produit par un processus différent), l’applet de commande doit appeler la méthode [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) qui référence un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) . Un exemple d’erreur sans fin d’exécution est l’erreur qui se produit en cas d’échec de l’arrêt d’un processus particulier. L’appel de la méthode [System. Management. Automation. applet de commande. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) permet à l’utilisateur d’effectuer de manière cohérente les actions demandées et de conserver les informations pour des actions particulières qui échouent. Votre applet de commande doit gérer chaque enregistrement de la manière la plus indépendante possible.
 
-- L’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) qui est référencé par les méthodes [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) et [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) requiert un exception à son noyau. Suivez les instructions de conception de .NET Framework lorsque vous déterminez l’exception à utiliser. Si l’erreur est sémantiquement identique à une exception existante, utilisez cette exception ou dérivez de cette exception. Sinon, dérivez une nouvelle exception ou une nouvelle hiérarchie d’exception directement à partir du type [System. exception](/dotnet/api/System.Exception) .
+- L’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) qui est référencé par les méthodes [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) et [System. Management. Automation. cmdlet. WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) requiert une exception au niveau de son noyau. Suivez les instructions de conception de .NET Framework lorsque vous déterminez l’exception à utiliser. Si l’erreur est sémantiquement identique à une exception existante, utilisez cette exception ou dérivez de cette exception. Sinon, dérivez une nouvelle exception ou une nouvelle hiérarchie d’exception directement à partir du type [System. exception](/dotnet/api/System.Exception) .
 
-Un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nécessite également une catégorie d’erreur qui regroupe les erreurs de l’utilisateur. L’utilisateur peut afficher les erreurs en fonction de la catégorie en définissant la valeur de la variable shell `$ErrorView` sur CategoryView. Les catégories possibles sont définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
+Un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) nécessite également une catégorie d’erreur qui regroupe les erreurs de l’utilisateur. L’utilisateur peut afficher les erreurs en fonction de la catégorie en affectant à la variable d’interpréteur de commandes `$ErrorView` la valeur CategoryView. Les catégories possibles sont définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) .
 
 - Si une applet de commande crée un nouveau thread et si le code qui s’exécute dans ce thread lève une exception non gérée, Windows PowerShell n’intercepte pas l’erreur et met fin au processus.
 

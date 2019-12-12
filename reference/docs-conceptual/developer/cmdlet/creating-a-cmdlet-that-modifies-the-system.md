@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365758"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Création d’une applet de commande qui modifie le système
@@ -294,7 +294,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     PS> stop-proc
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ La sortie suivante s’affiche.
     PS> stop-proc -Name notepad
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```
     Confirm
@@ -323,7 +323,7 @@ La sortie suivante s’affiche.
     PS> stop-proc -Name Winlogon
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```output
     Confirm
@@ -341,7 +341,7 @@ La sortie suivante s’affiche.
     PS> stop-proc -Name winlogon -Force
     ```
 
-La sortie suivante s’affiche.
+La sortie suivante s'affiche.
 
     ```output
     Confirm

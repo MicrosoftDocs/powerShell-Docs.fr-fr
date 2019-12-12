@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360638"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Présentation d’un module Windows PowerShell
@@ -107,7 +107,7 @@ Applet [de commande Import-Module](/powershell/module/Microsoft.PowerShell.Core/
 
 Applet [de commande obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cette applet de commande récupère des informations sur les modules qui ont été ou qui peuvent être importés dans la session active.
 
-Applet [de commande Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cette applet de commande spécifie les membres du module (tels que les applets de commande, les fonctions, les variables et les alias) qui sont exportés à partir d’un fichier de module de script (. psm1) ou d’un module dynamique créé à l’aide de l’applet de commande `New-Module`.
+Applet [de commande Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cette applet de commande spécifie les membres de module (tels que les applets de commande, les fonctions, les variables et les alias) qui sont exportés à partir d’un fichier de module de script (. psm1) ou d’un module dynamique créé à l’aide de l’applet de commande `New-Module`.
 
 Applet de commande [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cette applet de commande supprime les modules de la session active.
 

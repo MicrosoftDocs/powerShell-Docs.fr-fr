@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367638"
 ---
 # <a name="adding-and-invoking-commands"></a>Ajout et appel de commandes
@@ -21,7 +21,7 @@ Après avoir créé une instance d’exécution, vous pouvez ajouter des PowerSh
 
 ## <a name="creating-a-pipeline"></a>Création d’un pipeline
 
- La classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) fournit plusieurs méthodes permettant d’ajouter des commandes, des paramètres et des scripts au pipeline. Vous pouvez appeler le pipeline de façon synchrone en appelant une surcharge de la méthode [System. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) , ou de façon asynchrone en appelant une surcharge de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) puis la méthode [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
+ La classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) fournit plusieurs méthodes permettant d’ajouter des commandes, des paramètres et des scripts au pipeline. Vous pouvez appeler le pipeline de façon synchrone en appelant une surcharge de la méthode [System. Management. Automation. PowerShell. Invoke *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) , ou de façon asynchrone en appelant une surcharge de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) , puis la méthode [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -47,7 +47,7 @@ Après avoir créé une instance d’exécution, vous pouvez ajouter des PowerSh
 
 ### <a name="addparameter"></a>AddParameter
 
- L’exemple précédent exécute une seule commande sans aucun paramètre. Vous pouvez ajouter des paramètres à la commande à l’aide de la méthode [System. Management. Automation. PSCommand. AddParameter *.](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` s’exécutant sur l’ordinateur.
+ L’exemple précédent exécute une seule commande sans aucun paramètre. Vous pouvez ajouter des paramètres à la commande à l’aide de la méthode [System. Management. Automation. PSCommand. AddParameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) . par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` s’exécutant sur l’ordinateur.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Vous pouvez simuler le traitement par lot à l’aide de la méthode [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , qui ajoute une instruction supplémentaire à la fin du pipeline. le code suivant obtient une liste des processus en cours d’exécution portant le nom `PowerShell`, puis Obtient la liste des services en cours d’exécution.
+ Vous pouvez simuler le traitement par lot à l’aide de la méthode [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , qui ajoute une instruction supplémentaire à la fin du pipeline. le code suivant obtient une liste des processus en cours d’exécution avec le nom `PowerShell`, puis obtient la liste des services en cours d’exécution.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -97,7 +97,7 @@ PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Il existe également une version de la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) qui accepte un paramètre booléen nommé `useLocalScope`. Si ce paramètre a la valeur `true`, le script est exécuté dans l’étendue locale. Le code suivant exécute le script dans l’étendue locale.
+ Il existe également une version de la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) qui prend un paramètre booléen nommé `useLocalScope`. Si ce paramètre a la valeur `true`, le script est exécuté dans l’étendue locale. Le code suivant exécute le script dans l’étendue locale.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -138,7 +138,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>Appel d’un pipeline de manière asynchrone
 
- Vous appelez un pipeline de manière asynchrone en appelant une surcharge de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) pour créer un objet [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) , puis en appelant [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) méthode.
+ Vous appelez un pipeline de manière asynchrone en appelant une surcharge de [System. Management. Automation. PowerShell. BeginInvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) pour créer un objet [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) , puis en appelant la méthode [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) .
 
  L’exemple suivant montre comment appeler un pipeline de manière asynchrone.
 

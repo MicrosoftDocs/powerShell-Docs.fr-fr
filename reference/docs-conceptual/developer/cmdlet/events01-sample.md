@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369738"
 ---
 # <a name="events01-sample"></a>Exemple Events01
@@ -29,7 +29,7 @@ Cet exemple dérive de la classe de base [Microsoft. PowerShell. Commands. Objec
 2. Double-cliquez sur l’icône du fichier solution (. sln).
    L’exemple de projet s’ouvre dans Microsoft Visual Studio.
 
-3. Dans le menu **générer** , sélectionnez **générer la solution**.
+3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
    La bibliothèque de l’exemple sera générée dans les dossiers `\bin` ou `\bin\debug` par défaut.
 
 ### <a name="how-to-run-the-sample"></a>Comment exécuter l’exemple
@@ -77,13 +77,13 @@ A file was created in the TEMP directory
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Illustré
+## <a name="demonstrates"></a>Démontre
 
 Cet exemple illustre ce qui suit.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Comment écrire une applet de commande pour l’inscription des événements
 
-L’applet de commande dérive de la classe [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , qui fournit la prise en charge des paramètres communs aux cmdlets `Register-*Event`.
+L’applet de commande dérive de la classe [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , qui fournit la prise en charge des paramètres communs aux applets de commande `Register-*Event`.
 Les applets de commande dérivées de [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) ont uniquement besoin de définir leurs paramètres particuliers et de substituer les méthodes abstraites `GetSourceObject` et `GetSourceObjectEventName`.
 
 ## <a name="example"></a>Exemple

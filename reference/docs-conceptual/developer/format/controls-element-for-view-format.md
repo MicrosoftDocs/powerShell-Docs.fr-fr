@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363388"
 ---
 # <a name="controls-element-for-view-format"></a>Controls, élément pour View (Format)

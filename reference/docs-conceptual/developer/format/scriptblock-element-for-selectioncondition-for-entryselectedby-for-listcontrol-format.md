@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368588"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour ListControl (Format)
 
-Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true`, la condition est remplie et l’entrée de liste est utilisée.
+Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de liste est utilisée.
 
 Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément (format) ListEntry, élément (format) élément EntrySelectedBy pour ListEntry (format) élément SelectionCondition pour EntrySelectedBy pour ListEntry (format) élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (format)
 
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|Définit la condition qui doit exister pour que cette entrée de liste soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le script qui est évalué.
 
@@ -63,7 +63,7 @@ Pour plus d’informations sur les autres composants d’un affichage de liste, 
 
 [Élément SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[Mode liste](./creating-a-list-view.md)
+[ListView](./creating-a-list-view.md)
 
 [Définition des conditions d’utilisation d’une entrée ou d’un élément d’une vue](./defining-conditions-for-displaying-data.md)
 

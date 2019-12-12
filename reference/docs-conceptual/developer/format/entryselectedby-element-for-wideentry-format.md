@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
 caps.latest.revision: 9
 ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363328"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>EntrySelectedBy, élément pour WideEntry (Format)

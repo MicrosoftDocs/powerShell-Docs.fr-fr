@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
 caps.latest.revision: 12
 ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362748"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListEntry, élément pour ListControl (Format)

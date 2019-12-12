@@ -15,21 +15,21 @@ helpviewer_keywords:
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
 ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369528"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>Demandes de confirmation des applets de commande
 
 Les applets de commande doivent demander confirmation lorsqu’elles sont sur le le du système qui se trouve en dehors de l’environnement Windows PowerShell. Par exemple, si une applet de commande est sur le point d’ajouter un compte d’utilisateur ou d’arrêter un processus, l’applet de commande doit demander confirmation à l’utilisateur avant de continuer. En revanche, si une applet de commande est sur le paragraphe de la modification d’une variable Windows PowerShell, l’applet de commande n’a pas besoin de demander de confirmation.
 
-Pour que vous puissiez demander une confirmation, l’applet de commande doit indiquer qu’elle prend en charge les demandes de confirmation, et elle doit appeler [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. applet de commande. ShouldContinue ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)(facultatif) méthodes pour afficher un message de demande de confirmation.
+Pour effectuer une demande de confirmation, l’applet de commande doit indiquer qu’elle prend en charge les demandes de confirmation, et elle doit appeler les méthodes [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) (facultatif) pour afficher un message de demande de confirmation.
 
 ## <a name="supporting-confirmation-requests"></a>Prise en charge des demandes de confirmation
 
-Pour prendre en charge les demandes de confirmation, l’applet de commande doit définir le paramètre `SupportsShouldProcess` de l’attribut d’applet de commande sur `true`. Cela permet d’activer les paramètres d’applet de commande `Confirm` et `WhatIf` fournis par Windows PowerShell. Le paramètre `Confirm` permet à l’utilisateur de contrôler si la demande de confirmation est affichée. Le paramètre `WhatIf` permet à l’utilisateur de déterminer si l’applet de commande doit afficher un message ou exécuter son action. N’ajoutez pas manuellement les paramètres `Confirm` et `WhatIf` à une applet de commande.
+Pour prendre en charge les demandes de confirmation, l’applet de commande doit définir le paramètre `SupportsShouldProcess` de l’attribut d’applet de commande sur `true`. Cela active les paramètres d’applet de commande `Confirm` et `WhatIf` fournis par Windows PowerShell. Le paramètre `Confirm` permet à l’utilisateur de contrôler si la demande de confirmation est affichée. Le paramètre `WhatIf` permet à l’utilisateur de déterminer si l’applet de commande doit afficher un message ou exécuter son action. N’ajoutez pas manuellement les paramètres `Confirm` et `WhatIf` à une applet de commande.
 
 L’exemple suivant montre une déclaration d’attribut d’applet de commande qui prend en charge les demandes de confirmation.
 
@@ -70,11 +70,11 @@ Pour obtenir un exemple d’appel de la méthode [System. Management. Automation
 
 Lorsque vous créez l’applet de commande, spécifiez le niveau d’impact (gravité) de la modification. Pour ce faire, définissez la valeur du paramètre `ConfirmImpact` de l’attribut d’applet de commande sur élevé, moyen ou faible. Vous pouvez spécifier une valeur pour `ConfirmImpact` uniquement lorsque vous spécifiez également le paramètre `SupportsShouldProcess` pour l’applet de commande.
 
-Pour la plupart des applets de commande, vous n’avez pas à spécifier explicitement `ConfirmImpact`.  Au lieu de cela, utilisez le paramètre par défaut du paramètre, qui est moyen. Si vous affectez la valeur haute à `ConfirmImpact`, l’opération est confirmée par défaut. Réservez ce paramètre pour les actions très perturbatrices, telles que le reformatage d’un volume de disque dur.
+Pour la plupart des applets de commande, vous n’avez pas à spécifier explicitement `ConfirmImpact`.  Au lieu de cela, utilisez le paramètre par défaut du paramètre, qui est moyen. Si vous affectez à `ConfirmImpact` la valeur High, l’opération est confirmée par défaut. Réservez ce paramètre pour les actions très perturbatrices, telles que le reformatage d’un volume de disque dur.
 
 ## <a name="calling-non-confirmation-methods"></a>Appel de méthodes sans confirmation
 
-Si l’applet de commande ou le fournisseur doit envoyer un message, mais pas demander de confirmation, il peut appeler les trois méthodes suivantes. Évitez d’utiliser la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour envoyer des messages de ces types, car la sortie [System. Management. Automation. applet de commande. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) est mélangée avec la sortie normale de votre applet de commande ou de votre fournisseur , ce qui complique l’écriture du script.
+Si l’applet de commande ou le fournisseur doit envoyer un message, mais pas demander de confirmation, il peut appeler les trois méthodes suivantes. Évitez d’utiliser la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour envoyer des messages de ces types, car la sortie [System. Management. Automation. applet de commande. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) est mélangée avec la sortie normale de votre applet de commande ou fournisseur, ce qui complique l’écriture du script.
 
 - Pour faire attention à l’utilisateur et poursuivre l’opération, l’applet de commande ou le fournisseur peut appeler la méthode [System. Management. Automation. cmdlet. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) .
 

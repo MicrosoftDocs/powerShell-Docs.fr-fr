@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
 ms.openlocfilehash: 93bcdb1dae1c55e46fa06161141117286a9009a9
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417977"
 ---
 # <a name="runspace03-code-samples"></a>Exemples de code RunSpace03
@@ -25,7 +25,7 @@ Voici les exemples de code pour l’instance d’exécution décrite dans « cr
 
 Pour obtenir un exemple de code complet, consultez les rubriques suivantes.
 
-| Langue |                                 Rubrique                                 |
+| Language |                                 Rubrique                                 |
 | -------- | --------------------------------------------------------------------- |
 | C#       | [Exemple deC#code RunSpace03 ()](./runspace03-csharp-code-sample.md)     |
 | VB.NET   | [Exemple de code RunSpace03 (VB.NET)](./runspace03-vb-net-code-sample.md) |

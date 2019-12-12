@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
 caps.latest.revision: 5
 ms.openlocfilehash: dcf4f8b2bbd422067ffdf9b3b4972e279e91edf9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364058"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>CustomEntry, élément pour CustomControl pour GroupBy (Format)

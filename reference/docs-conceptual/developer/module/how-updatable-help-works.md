@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
 ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367078"
 ---
 # <a name="how-updatable-help-works"></a>Fonctionnement de l’aide actualisable
@@ -23,9 +23,9 @@ Cette rubrique explique comment mettre à jour l’aide pour traiter le fichier 
 
 La liste suivante décrit les actions de l’applet de commande [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) lorsqu’un utilisateur exécute une commande pour mettre à jour les fichiers d’aide d’un module dans une culture d’interface utilisateur particulière.
 
-1. `Update-Help` obtient le fichier XML HelpInfo distant à partir de l’emplacement spécifié par la valeur de la clé **HelpInfoURI** dans le manifeste de module et valide le fichier par rapport au schéma. (Pour afficher le schéma, consultez [schéma XML HelpInfo](./helpinfo-xml-schema.md).) @No__t-1 recherche ensuite un fichier XML HelpInfo local pour le module dans le répertoire du module sur l’ordinateur de l’utilisateur.
+1. `Update-Help` obtient le fichier XML HelpInfo distant à partir de l’emplacement spécifié par la valeur de la clé **HelpInfoURI** dans le manifeste de module et valide le fichier par rapport au schéma. (Pour afficher le schéma, consultez [schéma XML HelpInfo](./helpinfo-xml-schema.md).) Ensuite `Update-Help` recherche un fichier XML HelpInfo local pour le module dans le répertoire du module sur l’ordinateur de l’utilisateur.
 
-2. `Update-Help` compare le numéro de version des fichiers d’aide pour la culture d’interface utilisateur spécifiée dans les fichiers HelpInfo XML distants et locaux pour le module. Si le numéro de version du fichier distant est supérieur au numéro de version du fichier local, ou s’il n’existe aucun fichier XML HelpInfo local pour le module, `Update-Help` prépare le téléchargement des nouveaux fichiers d’aide.
+2. `Update-Help` compare le numéro de version des fichiers d’aide pour la culture d’interface utilisateur spécifiée dans les fichiers HelpInfo XML distants et locaux pour le module. Si le numéro de version du fichier distant est supérieur au numéro de version du fichier local, ou s’il n’existe aucun fichier XML HelpInfo local pour le module, `Update-Help` se prépare à télécharger les nouveaux fichiers d’aide.
 
 3. `Update-Help` sélectionne le fichier CAB du module à partir de l’emplacement spécifié par l’élément **HelpContentUri** dans le fichier XML HelpInfo distant. Elle utilise le nom du module, le GUID du module et la culture de l’interface utilisateur pour identifier le fichier CAB.
 
@@ -37,9 +37,9 @@ La liste suivante décrit les actions de l’applet de commande [Update-Help](/p
 
 La liste suivante décrit les actions des applets de commande [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) et [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) lorsqu’un utilisateur exécute des commandes pour mettre à jour les fichiers d’aide dans un partage de fichiers, puis utiliser ces fichiers pour mettre à jour les fichiers d’aide sur l’ordinateur de l’utilisateur.
 
-L’applet de commande `Save-Help` effectue les actions suivantes en réponse à une commande pour enregistrer les fichiers d’aide d’un module dans un partage de fichiers qui est spécifié par le paramètre **DestinationPath** .
+L’applet de commande `Save-Help` effectue les actions suivantes en réponse à une commande pour enregistrer les fichiers d’aide d’un module dans un partage de fichiers spécifié par le paramètre **DestinationPath** .
 
-1. `Save-Help` obtient le fichier XML HelpInfo distant à partir de l’emplacement spécifié par la valeur de la clé **HelpInfoURI** dans le manifeste de module et valide le fichier par rapport au schéma. (Pour afficher le schéma, consultez [schéma XML HelpInfo](./helpinfo-xml-schema.md).) @No__t-1 recherche ensuite un fichier XML HelpInfo local dans le répertoire spécifié par le paramètre **DestinationPath** dans la commande `Save-Help`.
+1. `Save-Help` obtient le fichier XML HelpInfo distant à partir de l’emplacement spécifié par la valeur de la clé **HelpInfoURI** dans le manifeste de module et valide le fichier par rapport au schéma. (Pour afficher le schéma, consultez [schéma XML HelpInfo](./helpinfo-xml-schema.md).) `Save-Help` recherche ensuite un fichier XML HelpInfo local dans le répertoire spécifié par le paramètre **DestinationPath** dans la commande `Save-Help`.
 
 2. `Save-Help` compare le numéro de version des fichiers d’aide pour la culture d’interface utilisateur spécifiée dans les fichiers HelpInfo XML distants et locaux pour le module. Si le numéro de version du fichier distant est supérieur au numéro de version du fichier local, ou s’il n’existe aucun fichier XML HelpInfo local pour le module dans le répertoire **DestinationPath** , `Save-Help` prépare le téléchargement des nouveaux fichiers d’aide.
 

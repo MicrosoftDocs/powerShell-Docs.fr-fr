@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365738"
 ---
 # <a name="common-parameter-names"></a>Noms de paramètres courants
@@ -40,13 +40,13 @@ Ce paramètre spécifie l’action qui doit être exécutée lorsqu’une erreur
 
 ### <a name="errorvariable-alias-ev"></a>ErrorVariable (alias : ev)
 
-Type de données : chaîne
+Type de données : Chaîne
 
 Ce paramètre spécifie la variable dans laquelle placer les objets lorsqu’une erreur se produit. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
 
 ### <a name="outvariable-alias-ov"></a>Dévariable (alias : OV)
 
-Type de données : chaîne
+Type de données : Chaîne
 
 Ce paramètre spécifie la variable dans laquelle placer tous les objets de sortie générés par l’applet de commande. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
 
@@ -70,7 +70,7 @@ Ce paramètre spécifie l’action qui doit être effectuée lorsque l’applet 
 
 ### <a name="warningvariable-alias-wv"></a>WarningVariable (alias : WV)
 
-Type de données : chaîne
+Type de données : Chaîne
 
 Ce paramètre spécifie la variable dans laquelle les messages d’avertissement peuvent être enregistrés. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
 ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359868"
 ---
 # <a name="writing-a-navigation-provider"></a>Écriture d’un fournisseur de navigation
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implémentation de MakePath
 
-La méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) joint un chemin d’accès parent spécifié et un chemin d’accès enfant spécifié pour créer un chemin d’accès interne au fournisseur (pour plus d’informations sur les types de chemins d’accès que les fournisseurs peuvent prendre en charge, consultez [Vue d’ensemble du fournisseur Windows PowerShell](./windows-powershell-provider-overview.md). Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle l’applet de [commande Microsoft. PowerShell. Commands. JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) .
+La méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) joint un chemin d’accès parent spécifié et un chemin d’accès enfant spécifié pour créer un chemin d’accès interne au fournisseur (pour plus d’informations sur les types de chemins d’accès que les fournisseurs peuvent prendre en charge, consultez [vue d’ensemble du fournisseur Windows PowerShell](./windows-powershell-provider-overview.md). Le moteur PowerShell appelle cette méthode lorsqu’un utilisateur appelle l’applet de [commande Microsoft. PowerShell. Commands. JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) .
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>Implémentation de NormalizeRelativePath
 
-La méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) prend les paramètres `path` et `basepath`, et retourne un chemin d’accès normalisé équivalent au paramètre `path` et relatif au `basepath` paramètre.
+La méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) prend `path` et `basepath` paramètres, et retourne un chemin d’accès normalisé équivalent au paramètre `path` et relatif au paramètre `basepath`.
 
 ```csharp
 protected override string NormalizeRelativePath(string path,

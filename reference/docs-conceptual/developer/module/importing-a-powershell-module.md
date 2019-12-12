@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360698"
 ---
 # <a name="importing-a-powershell-module"></a>Importation d’un module PowerShell
 
-Une fois que vous avez installé un module sur un système, vous souhaiterez probablement importer le module. L’importation est le processus qui charge le module dans la mémoire active, afin qu’un utilisateur puisse accéder à ce module dans sa session PowerShell. Dans PowerShell 2,0, vous pouvez importer un module PowerShell nouvellement installé à l’aide d’un appel à l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . Dans PowerShell 3,0, PowerShell est en mesure d’importer implicitement un module lorsque l’une des fonctions ou applets de commande du module est appelée par un utilisateur. Notez que les deux versions supposent que vous installez votre module à un emplacement où PowerShell peut le trouver. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md). Vous pouvez utiliser un manifeste de module pour limiter les parties de votre module qui sont exportées et vous pouvez utiliser les paramètres de l’appel `Import-Module` pour limiter les éléments importés.
+Une fois que vous avez installé un module sur un système, vous souhaiterez probablement importer le module. L’importation est le processus qui charge le module dans la mémoire active, afin qu’un utilisateur puisse accéder à ce module dans sa session PowerShell. Dans PowerShell 2,0, vous pouvez importer un module PowerShell nouvellement installé à l’aide d’un appel à l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . Dans PowerShell 3,0, PowerShell est en mesure d’importer implicitement un module lorsque l’une des fonctions ou applets de commande du module est appelée par un utilisateur. Notez que les deux versions supposent que vous installez votre module à un emplacement où PowerShell peut le trouver. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md). Vous pouvez utiliser un manifeste de module pour limiter les parties de votre module qui sont exportées, et vous pouvez utiliser les paramètres de l’appel `Import-Module` pour limiter les parties importées.
 
 ## <a name="importing-a-snap-in-powershell-10"></a>Importation d’un composant logiciel enfichable (PowerShell 1,0)
 
@@ -31,7 +31,7 @@ PowerShell 2,0 utilise l’applet de commande [import-module](/powershell/module
 Import-Module myModule
 ```
 
-En supposant que myModule se trouvait dans le `PSModulePath`, PowerShell chargera la mémoire active de myModule. Si myModule n’est pas situé sur un chemin d’accès `PSModulePath`, vous pouvez toujours indiquer explicitement à PowerShell où le trouver :
+En supposant que myModule se trouvait dans le `PSModulePath`, PowerShell chargeait myModule dans la mémoire active. Si myModule n’est pas situé sur un chemin d’accès `PSModulePath`, vous pouvez toujours indiquer explicitement à PowerShell où le trouver :
 
 ```powershell
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
@@ -41,13 +41,13 @@ Vous pouvez également utiliser le paramètre-Verbose pour identifier ce qui est
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>Importation implicite d’un module (PowerShell 3,0)
 
-À compter de Windows PowerShell 3,0, les modules sont importés automatiquement quand une applet de commande ou une fonction du module est utilisée dans une commande. Cette fonctionnalité fonctionne sur n’importe quel module d’un répertoire inclus dans la valeur de la variable d’environnement **PSModulePath** . Toutefois, si vous n’enregistrez pas votre module dans un chemin d’accès valide, vous pouvez toujours le charger à l’aide de l’option [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) explicite, décrite ci-dessus.
+À partir de Windows PowerShell 3.0, les modules sont importés automatiquement lorsqu’une applet de commande ou une fonction dans le module est utilisée dans une commande. Cette fonctionnalité fonctionne sur n’importe quel module d’un répertoire inclus dans la valeur de la variable d’environnement **PSModulePath** . Toutefois, si vous n’enregistrez pas votre module dans un chemin d’accès valide, vous pouvez toujours le charger à l’aide de l’option [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) explicite, décrite ci-dessus.
 
 Les actions suivantes déclenchent l’importation automatique d’un module, également appelé « chargement automatique de module ».
 
-- Utilisation d’une applet de commande dans une commande. Par exemple, si vous tapez `Get-ExecutionPolicy`, le module Microsoft. PowerShell. Security est importé et contient l’applet de commande `Get-ExecutionPolicy`.
+- Utilisation d’une applet de commande dans une commande. Par exemple, si vous tapez `Get-ExecutionPolicy` importe le module Microsoft. PowerShell. Security qui contient l’applet de commande `Get-ExecutionPolicy`.
 
-- Utilisation de l’applet de commande [« obtient-Command »](/powershell/module/Microsoft.PowerShell.Core/Get-Command) pour accéder à la commande.  Par exemple, si vous tapez `Get-Command Get-JobTrigger`, le module **PSScheduledJob** qui contient l’applet de commande `Get-JobTrigger` est importé. Une commande `Get-Command` qui comprend des caractères génériques est considérée comme étant découverte et ne déclenche pas l’importation d’un module.
+- Utilisation de l’applet de commande [« obtient-Command »](/powershell/module/Microsoft.PowerShell.Core/Get-Command) pour accéder à la commande.  Par exemple, si vous tapez `Get-Command Get-JobTrigger`, vous importez le module **PSScheduledJob** qui contient l’applet de commande `Get-JobTrigger`. Une commande `Get-Command` qui comprend des caractères génériques est considérée comme étant découverte et ne déclenche pas l’importation d’un module.
 
 - Utilisation de l’applet de commande [obtenir-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) pour obtenir de l’aide pour une applet de commande. Par exemple, si vous tapez `Get-Help Get-WinEvent`, le module Microsoft. PowerShell. Diagnostics contenant l’applet de commande `Get-WinEvent` est importé.
 
@@ -68,13 +68,13 @@ Par défaut, l’applet de commande [import-module](/powershell/module/Microsoft
 
 Quand un module est importé à l’aide de l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) , par défaut, tous les membres de module exportés sont importés dans la session, y compris les commandes exportées dans le module par un module imbriqué. Par défaut, les variables et les alias ne sont pas exportés. Pour restreindre les membres exportés, utilisez un [manifeste de module](./how-to-write-a-powershell-module-manifest.md). Pour restreindre les membres qui sont importés, utilisez les paramètres suivants de l’applet de commande `Import-Module`.
 
-- `Function` : ce paramètre restreint les fonctions exportées. (Si vous utilisez un manifeste de module, consultez la clé FunctionsToExport.)
+- `Function`: ce paramètre restreint les fonctions exportées. (Si vous utilisez un manifeste de module, consultez la clé FunctionsToExport.)
 
-- `Cmdlet` : ce paramètre restreint les applets de commande exportées (si vous utilisez un manifeste de module, consultez la clé CmdletsToExport.)
+- `Cmdlet`: ce paramètre restreint les applets de commande exportées (si vous utilisez un manifeste de module, consultez la clé CmdletsToExport.)
 
-- `Variable` : ce paramètre restreint les variables exportées (si vous utilisez un manifeste de module, consultez la clé VariablesToExport.)
+- `Variable`: ce paramètre restreint les variables exportées (si vous utilisez un manifeste de module, consultez la clé VariablesToExport.)
 
-- `Alias` : ce paramètre restreint les alias exportés (si vous utilisez un manifeste de module, consultez la clé AliasesToExport.)
+- `Alias`: ce paramètre restreint les alias exportés (si vous utilisez un manifeste de module, consultez la clé AliasesToExport.)
 
 ## <a name="see-also"></a>Voir aussi
 

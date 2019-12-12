@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366808"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Conception de votre fournisseur Windows PowerShell
@@ -33,15 +33,15 @@ Pour permettre à l’utilisateur d’accéder aux données situées sur un lect
 
 ### <a name="defining-a-provider-qualified-path"></a>Définition d’un chemin d’accès qualifié par le fournisseur
 
-Pour permettre au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès qualifié par le fournisseur. Par exemple, FileSystem :: \\ \ uncshare\abc\bar est le chemin d’accès qualifié par le fournisseur pour le fournisseur FileSystem fourni par Windows PowerShell.
+Pour permettre au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès qualifié par le fournisseur. Par exemple, FileSystem ::\\\uncshare\abc\bar est le chemin d’accès qualifié par le fournisseur pour le fournisseur FileSystem fourni par Windows PowerShell.
 
 ### <a name="defining-a-provider-direct-path"></a>Définition d’un chemin d’accès direct au fournisseur
 
-Pour autoriser l’accès à distance à votre fournisseur Windows PowerShell, il doit prendre en charge un chemin d’accès direct au fournisseur pour passer directement au fournisseur Windows PowerShell pour l’emplacement actuel. Par exemple, le fournisseur Windows PowerShell du Registre peut utiliser \\ \ server\regkeypath comme chemin d’accès direct au fournisseur.
+Pour autoriser l’accès à distance à votre fournisseur Windows PowerShell, il doit prendre en charge un chemin d’accès direct au fournisseur pour passer directement au fournisseur Windows PowerShell pour l’emplacement actuel. Par exemple, le fournisseur Windows PowerShell du Registre peut utiliser \\\server\regkeypath comme un chemin d’accès direct au fournisseur.
 
 ### <a name="defining-a-provider-internal-path"></a>Définition d’un chemin d’accès interne au fournisseur
 
-Pour permettre à l’applet de commande du fournisseur d’accéder aux données à l’aide d’interfaces de programmation d’applications (API) non-Windows PowerShell, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès interne au fournisseur. Ce chemin d’accès est indiqué après «  :: » dans le chemin d’accès qualifié du fournisseur. Par exemple, le chemin d’accès interne du fournisseur pour le fournisseur de système de fichiers Windows PowerShell est \\ \ uncshare\abc\bar.
+Pour permettre à l’applet de commande du fournisseur d’accéder aux données à l’aide d’interfaces de programmation d’applications (API) non-Windows PowerShell, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès interne au fournisseur. Ce chemin d’accès est indiqué après «  :: » dans le chemin d’accès qualifié du fournisseur. Par exemple, le chemin d’accès interne du fournisseur pour le fournisseur de système de fichiers Windows PowerShell est \\\uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Modification des données stockées
 
@@ -53,7 +53,7 @@ Windows PowerShell fournit un certain nombre de classes de base que vous pouvez 
 
 Chaque classe de base du fournisseur Windows PowerShell met à disposition un ensemble d’applets de commande. Cette section décrit les applets de commande, mais ne décrit pas leurs paramètres.
 
-À l’aide de l’état de session, le runtime Windows PowerShell met plusieurs applets de commande d’emplacement à la disposition de certains fournisseurs Windows PowerShell, comme les applets de commande `Get-Location`, `Set-Location`, `Pop-Location` et `Push-Location`. Vous pouvez utiliser l’applet de commande `Get-Help` pour obtenir des informations sur ces applets de commande d’emplacement.
+À l’aide de l’état de session, le runtime Windows PowerShell met plusieurs applets de commande d’emplacement à la disposition de certains fournisseurs Windows PowerShell, comme les applets de commande `Get-Location`, `Set-Location`, `Pop-Location`et `Push-Location`. Vous pouvez utiliser l’applet de commande `Get-Help` pour obtenir des informations sur ces applets de commande d’emplacement.
 
 ### <a name="cmdletprovider-base-class"></a>Classe de base CmdletProvider
 
@@ -84,7 +84,7 @@ La classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet
 |`Invoke-Item`|Appelle l’action par défaut pour l’élément au niveau du chemin d’accès spécifié.|
 |`Set-Item`|Définit un élément à l’emplacement spécifié avec la valeur indiquée. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.|
 |`Resolve-Path`|Résout les caractères génériques pour un chemin d’accès Windows PowerShell et les informations de chemin d’accès de flux.|
-|`Test-Path`|Teste le chemin d’accès spécifié et retourne `true` s’il existe et `false` dans le cas contraire. Cette applet de commande est implémentée pour prendre en charge le paramètre `IsContainer` pour la méthode [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
+|`Test-Path`|Teste le chemin d’accès spécifié et retourne `true` s’il existe et `false` dans le cas contraire. Cette applet de commande est implémentée pour prendre en charge le paramètre `IsContainer` de la méthode [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .|
 
 ### <a name="containercmdletprovider-base-class"></a>Classe de base ContainerCmdletProvider
 
@@ -141,7 +141,7 @@ L’interface [System. Management. Automation. Provider. Ipropertycmdletprovider
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-L’interface [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , dérivée de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), définit un fournisseur qui spécifie des paramètres dynamiques pour son applets de commande prises en charge. Ce type de fournisseur gère les opérations pour lesquelles des propriétés peuvent être définies au moment de l’exécution, par exemple, une nouvelle opération de propriété. Ces opérations ne sont pas possibles sur les éléments ayant des propriétés définies statiquement. Le tableau suivant répertorie les applets de commande exposées par cette interface.
+L’interface [System. Management. Automation. Provider. Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) , dérivée de [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider), définit un fournisseur qui spécifie des paramètres dynamiques pour ses applets de commande prises en charge. Ce type de fournisseur gère les opérations pour lesquelles des propriétés peuvent être définies au moment de l’exécution, par exemple, une nouvelle opération de propriété. Ces opérations ne sont pas possibles sur les éléments ayant des propriétés définies statiquement. Le tableau suivant répertorie les applets de commande exposées par cette interface.
 
 |Applet de commande|Définition|
 |------------|----------------|

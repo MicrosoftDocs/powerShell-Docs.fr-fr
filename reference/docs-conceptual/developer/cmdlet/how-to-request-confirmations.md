@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369678"
 ---
 # <a name="how-to-request-confirmations"></a>Guide pratique pour demander des confirmations
@@ -31,7 +31,7 @@ Cet exemple montre comment appeler les méthodes [System. Management. Automation
             SupportsShouldProcess = true)]
     ```
 
-2. Ajoutez un paramètre `Force` à votre applet de commande afin que l’utilisateur puisse remplacer une demande de confirmation.
+2. Ajoutez un paramètre `Force` à votre applet de commande pour permettre à l’utilisateur de remplacer une demande de confirmation.
 
     ```csharp
     [Parameter()]
@@ -49,7 +49,7 @@ Cet exemple montre comment appeler les méthodes [System. Management. Automation
 
 ## <a name="example"></a>Exemple
 
-Dans l’exemple de code suivant, les méthodes [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) sont appelées à partir de la substitution de l' [applet de commande Méthode System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Toutefois, vous pouvez également appeler ces méthodes à partir des autres méthodes de traitement d’entrée.
+Dans l’exemple de code suivant, les méthodes [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) sont appelées à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) . Toutefois, vous pouvez également appeler ces méthodes à partir des autres méthodes de traitement d’entrée.
 
 ```csharp
 protected override void ProcessRecord()

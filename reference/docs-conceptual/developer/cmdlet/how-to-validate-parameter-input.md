@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f6c700c8-0889-49a1-a990-8c6e9aaf4735
 caps.latest.revision: 6
 ms.openlocfilehash: 5166213f8247fa23d5e0b3fdfd2367062d595169
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365478"
 ---
 # <a name="how-to-validate-parameter-input"></a>Guide pratique pour valider l’entrée des paramètres

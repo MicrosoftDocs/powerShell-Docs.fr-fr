@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e45929d1-bbb4-4dc6-892f-f9eacdb1c84c
 caps.latest.revision: 8
 ms.openlocfilehash: 553878c34e74129f9876cca25a5393cb0d53445a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364388"
 ---
 # <a name="input-filter-parameters"></a>Paramètres de filtre d’entrée
 
-Une applet de commande peut définir des paramètres `Filter`, `Include` et `Exclude` qui filtrent le jeu d’objets d’entrée que l’applet de commande affecte.
+Une applet de commande peut définir des paramètres `Filter`, `Include`et `Exclude` qui filtrent le jeu d’objets d’entrée que l’applet de commande affecte.
 
-En règle générale, l’ensemble d’objets d’entrée est spécifié par un paramètre `InputObject`, `Path` ou `Name`. Par exemple, une applet de commande peut avoir un paramètre `Path` qui accepte plusieurs chemins d’accès à l’aide de caractères génériques, et chaque chemin d’accès pointe vers un objet d’entrée. Utilisés ensemble, les paramètres `Filter`, `Include` et `Exclude` qualifient plus précisément les chemins d’accès de l’applet de commande à chaque fois qu’elle est appelée.
+En règle générale, l’ensemble d’objets d’entrée est spécifié par un paramètre `InputObject`, `Path`ou `Name`. Par exemple, une applet de commande peut avoir un paramètre `Path` qui accepte plusieurs chemins d’accès à l’aide de caractères génériques, et chaque chemin d’accès pointe vers un objet d’entrée. Utilisés ensemble, les paramètres `Filter`, `Include`et `Exclude` qualifieront davantage les chemins d’accès de l’applet de commande à chaque fois qu’elle est appelée.
 
 ## <a name="include-and-exclude-parameters"></a>Paramètres include et Exclude
 

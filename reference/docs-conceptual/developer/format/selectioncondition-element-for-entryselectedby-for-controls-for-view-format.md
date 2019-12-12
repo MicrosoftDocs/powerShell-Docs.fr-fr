@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2623407e-fa10-4d27-a804-204f6d50ef22
 caps.latest.revision: 6
 ms.openlocfilehash: ea15e647a9dd7a7064718a0c536c4a3178d62d95
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362048"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>SelectionCondition, élément pour EntrySelectedBy pour Controls pour View (Format)

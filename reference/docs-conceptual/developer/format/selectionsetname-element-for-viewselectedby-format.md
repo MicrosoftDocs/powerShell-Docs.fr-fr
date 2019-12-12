@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
 caps.latest.revision: 13
 ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368258"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>SelectionSetName, élément pour ViewSelectedBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément ViewSelectedBy (format)](./viewselectedby-element-format.md)|Définit les objets .NET affichés par la vue.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom du jeu de sélection défini par l’élément `Name` pour le jeu de sélection.
 

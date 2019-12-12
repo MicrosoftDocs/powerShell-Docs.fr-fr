@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417467"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Création d’un fournisseur de propriété Windows PowerShell
@@ -42,7 +42,7 @@ Un fournisseur de propriétés doit créer une classe .NET qui prend en charge l
 
 L’interface [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) peut être attachée à l’une des classes de base du fournisseur, à l’exception de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Ajoutez la fonctionnalité de base requise par la classe de base que vous utilisez. Pour plus d’informations sur les classes de base, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
-## <a name="retrieving-properties"></a>Récupération des propriétés
+## <a name="retrieving-properties"></a>Récupération de propriétés
 
 Pour récupérer des propriétés, le fournisseur doit implémenter la méthode [System. Management. Automation. Provider. Ipropertycmdletprovider. GetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) pour prendre en charge les appels à partir de l’applet de commande `Get-ItemProperty`. Cette méthode récupère les propriétés de l’élément situé dans le chemin d’accès interne au fournisseur spécifié (qualifié complet).
 
@@ -70,7 +70,7 @@ Voici l’implémentation par défaut de [System. Management. Automation. Provid
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
-## <a name="setting-properties"></a>Définition des propriétés
+## <a name="setting-properties"></a>Définition de propriétés
 
 Pour définir des propriétés, le fournisseur de propriétés Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) pour prendre en charge les appels à partir de l’applet de commande `Set-ItemProperty`. Cette méthode définit une ou plusieurs propriétés de l’élément au niveau du chemin d’accès spécifié, et remplace les propriétés fournies selon les besoins. [System. Management. Automation. Provider. Ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) écrit également une instance d’un objet [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) qui représente un conteneur de propriétés des propriétés mises à jour.
 

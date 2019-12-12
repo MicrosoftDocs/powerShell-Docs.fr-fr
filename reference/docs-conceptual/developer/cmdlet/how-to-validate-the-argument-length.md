@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: d5ddaa6e-4904-46da-beb0-0295a8f38332
 caps.latest.revision: 12
 ms.openlocfilehash: 8a21675acd087df93f93c25952c78931255d60b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365488"
 ---
 # <a name="how-to-validate-the-argument-length"></a>Guide pratique pour valider une longueur d’argument

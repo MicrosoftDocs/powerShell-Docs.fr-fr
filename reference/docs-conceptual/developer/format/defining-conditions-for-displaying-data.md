@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363898"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Définition de conditions pour l’affichage de données
@@ -23,7 +23,7 @@ Lorsque vous définissez les données affichées par un affichage ou un contrôl
 
 Lorsque vous créez une définition pour une vue ou un contrôle, l’élément `EntrySelectedBy` est utilisé pour spécifier les objets qui utiliseront la définition ou la condition qui doit exister pour la définition à utiliser. La condition est spécifiée par l’élément `SelectionCondition`.
 
-Dans l’exemple suivant, une condition de sélection est spécifiée pour une définition d’une vue de table. Dans cet exemple, la définition est utilisée uniquement lorsque le script spécifié est évalué à `true`.
+Dans l’exemple suivant, une condition de sélection est spécifiée pour une définition d’une vue de table. Dans cet exemple, la définition est utilisée uniquement lorsque le script spécifié est évalué pour `true`.
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ Il n’existe aucune limite au nombre de conditions de sélection que vous pouve
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>Spécification d’une condition de sélection pour un élément
 
-Vous pouvez également spécifier quand un élément d’un contrôle ou d’un contrôle List est utilisé en incluant l’élément `ItemSelectionCondition` dans la définition de l’élément. Dans l’exemple suivant, une condition de sélection est spécifiée pour un élément d’un affichage de liste. Dans cet exemple, l’élément est utilisé uniquement lorsque le script est évalué à `true`.
+Vous pouvez également spécifier quand un élément d’un contrôle ou d’un contrôle List est utilisé en incluant l’élément `ItemSelectionCondition` dans la définition de l’élément. Dans l’exemple suivant, une condition de sélection est spécifiée pour un élément d’un affichage de liste. Dans cet exemple, l’élément est utilisé uniquement lorsque le script est évalué pour `true`.
 
 ```xml
 <ListItem>

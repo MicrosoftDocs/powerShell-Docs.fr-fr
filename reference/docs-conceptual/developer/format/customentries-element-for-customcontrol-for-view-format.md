@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
 caps.latest.revision: 11
 ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364078"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>CustomEntries, élément pour CustomControl pour View (Format)
@@ -51,7 +51,7 @@ Aucune.
 
 ## <a name="remarks"></a>Remarks
 
-Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un seul élément `CustomEntry`. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un élément `CustomEntry` pour chaque objet ou ensemble d’objets.
+Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un élément `CustomEntry` unique. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un élément `CustomEntry` pour chaque objet ou ensemble d’objets.
 
 ## <a name="see-also"></a>Voir aussi
 

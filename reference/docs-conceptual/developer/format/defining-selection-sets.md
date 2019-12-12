@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368848"
 ---
 # <a name="defining-selection-sets"></a>Définition de jeux de sélections
@@ -35,7 +35,7 @@ Vous définissez des jeux de sélection dans le cadre des données communes qui 
 
 Vous pouvez référencer un jeu de sélection des manières suivantes :
 
-- Chaque vue a un élément `ViewSelectedBy` qui définit les objets affichés à l’aide de la vue. L’élément `ViewSelectedBy` a un élément enfant `SelectionSetName` qui spécifie le jeu de sélection utilisé par toutes les définitions de la vue. Il n’existe aucune restriction sur le nombre de jeux de sélection que vous pouvez référencer à partir d’une vue.
+- Chaque vue a un élément `ViewSelectedBy` qui définit les objets qui sont affichés à l’aide de la vue. L’élément `ViewSelectedBy` a un élément enfant `SelectionSetName` qui spécifie le jeu de sélection utilisé par toutes les définitions de la vue. Il n’existe aucune restriction sur le nombre de jeux de sélection que vous pouvez référencer à partir d’une vue.
 
 - Dans chaque définition d’une vue ou d’un contrôle, l’élément `EntrySelectedBy` définit les objets qui sont affichés à l’aide de cette définition. En général, une vue ou un contrôle n’a qu’une seule définition, de sorte que les objets sont définis par l’élément `ViewSelectedBy`. L’élément `EntrySelectedBy` de la définition a un élément enfant `SelectionSetName` qui spécifie le jeu de sélection. Si vous spécifiez le jeu de sélection pour une définition, vous ne pouvez pas spécifier d’autres éléments enfants de l’élément `EntrySelectedBy`.
 
@@ -43,7 +43,7 @@ Vous pouvez référencer un jeu de sélection des manières suivantes :
 
 ## <a name="selection-set-example"></a>Exemple de jeu de sélection
 
-L’exemple suivant montre un jeu de sélection issu directement du fichier de mise en forme `FileSystem` fourni par Windows PowerShell. Pour plus d’informations sur les autres fichiers de mise en forme Windows PowerShell, consultez [fichiers de mise en forme Windows PowerShell](./powershell-formatting-files.md).
+L’exemple suivant montre un jeu de sélection provenant directement du `FileSystem` fichier de mise en forme fourni par Windows PowerShell. Pour plus d’informations sur les autres fichiers de mise en forme Windows PowerShell, consultez [fichiers de mise en forme Windows PowerShell](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -138,9 +138,9 @@ Le jeu de sélection précédent est référencé dans l’élément `ViewSelect
 
 [SelectionSet](./selectionset-element-format.md)
 
-[Nomme](./name-element-for-selectionset-format.md)
+[Name](./name-element-for-selectionset-format.md)
 
-[Modes](./types-element-for-selectionset-format.md)
+[Types](./types-element-for-selectionset-format.md)
 
 [Fichiers de mise en forme PowerShell](./powershell-formatting-files.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361408"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>Écriture d’un fichier de mise en forme PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "72361408"
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Présentation de la mise en forme du fichier](./formatting-file-overview.md) Décrit ce qu’est un fichier de format et les composants généraux d’un fichier de mise en forme, y compris les fonctionnalités communes qui peuvent être définies dans le fichier, les différents types de vues de format qui peuvent être définis pour les objets .NET et un exemple simplifié du code XML utilisé pour définir une table v icher.
+[Présentation de la mise en forme du fichier](./formatting-file-overview.md) Décrit ce qu’est un fichier de format et les composants généraux d’un fichier de mise en forme, y compris les fonctionnalités communes qui peuvent être définies dans le fichier, les différents types de vues de format qui peuvent être définis pour les objets .NET et un exemple simplifié du code XML utilisé pour définir une vue de table.
 
 [Mise en forme des concepts de fichier](./formatting-file-concepts.md) Contient des informations que vous devrez peut-être connaître lors de la création de vos propres fichiers de mise en forme, tels que les différents types d’affichages que vous pouvez définir et les composants spéciaux de ces vues.
 

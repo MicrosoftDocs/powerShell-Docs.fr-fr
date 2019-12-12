@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d1707317-6c26-4866-bcc1-8924103c9014
 caps.latest.revision: 6
 ms.openlocfilehash: 7241ea0ea364befa7ad4ab0af4c4209be72214a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364948"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>PropertyName, élément pour SelectionCondition pour GroupBy (Format)
@@ -45,7 +45,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément SelectionCondition pour EntrySelectedBy pour GroupBy (format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Définit une condition qui doit exister pour que la définition de contrôle soit utilisée.|
 
-## <a name="text-value"></a>Valeur texte
+## <a name="text-value"></a>Valeur de texte
 
 Spécifiez le nom de la propriété .NET.
 

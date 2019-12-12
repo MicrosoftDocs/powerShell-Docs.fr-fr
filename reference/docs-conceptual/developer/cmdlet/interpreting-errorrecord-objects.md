@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365418"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interprétation des objets ErrorRecord
 
 Dans la plupart des cas, un objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) représente une erreur sans fin d’exécution générée par une commande ou un script. Les erreurs de fin peuvent également spécifier des informations supplémentaires dans un ErrorRecord via l’interface [System. Management. Automation. Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) .
 
-Si vous souhaitez écrire un gestionnaire d’erreurs dans votre script ou un hôte pour gérer des erreurs spécifiques qui se produisent pendant l’exécution de la commande ou du script, vous devez interpréter l’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) pour déterminer s’il représente la classe de erreur que vous souhaitez gérer.
+Si vous souhaitez écrire un gestionnaire d’erreurs dans votre script ou un hôte pour gérer des erreurs spécifiques qui se produisent pendant l’exécution de la commande ou du script, vous devez interpréter l’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) pour déterminer s’il représente la classe d’erreur que vous souhaitez gérer.
 
 Lorsqu’une applet de commande rencontre une erreur de fin ou sans fin d’achèvement, elle doit créer un enregistrement d’erreur qui décrit la condition d’erreur. L’application hôte doit examiner ces enregistrements d’erreur et exécuter toute action qui atténue l’erreur. L’application hôte doit également examiner les enregistrements d’erreur pour les erreurs sans fin d’exécution qui n’ont pas réussi à traiter un enregistrement mais qui ont pu continuer, et il doit examiner les enregistrements d’erreur pour les erreurs de fin qui ont provoqué l’arrêt du pipeline.
 
@@ -52,7 +52,7 @@ L’applet de commande peut spécifier les catégories CloseError, OpenError, In
 
 L’exception incluse dans l’enregistrement d’erreur est fournie par l’applet de commande et est accessible via la propriété [System. Management. Automation. ErrorRecord. exception *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) de l’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) .
 
-Les applications hôtes peuvent utiliser le mot clé `is` pour déterminer que l’exception est d’une classe spécifique ou d’une classe dérivée. Il est préférable de créer une branche sur le type d’exception, comme illustré dans l’exemple suivant.
+Les applications hôtes peuvent utiliser le mot clé `is` pour identifier que l’exception est d’une classe spécifique ou d’une classe dérivée. Il est préférable de créer une branche sur le type d’exception, comme illustré dans l’exemple suivant.
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 

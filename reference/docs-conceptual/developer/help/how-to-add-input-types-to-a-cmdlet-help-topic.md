@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
 ms.openlocfilehash: f213605dda0132051d983f8608515325e815c455
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361238"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des types d’entrée à une rubrique d’aide d’applet de commande
 
 Cette section décrit comment ajouter une section d’entrées à une rubrique d’aide de l’applet de commande® Windows PowerShell. La section des entrées répertorie les classes .NET d’objets que l’applet de commande accepte comme entrée du pipeline, par valeur ou par nom de propriété.
 
-Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à une section d’entrées. Les types d’entrée sont placés dans un nœud \<command : inputTypes >, chaque classe étant placée dans un élément \<command : inputType >.
+Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à une section d’entrées. Les types d’entrée sont placés dans un \<commande : inputTypes > nœud, avec chaque classe placée dans une commande \<: inputType > élément.
 
-Le schéma comprend deux éléments \<maml : Description > dans chaque élément \<command : inputType >. Toutefois, l’applet de commande `Get-Help` affiche uniquement le contenu de l’élément \<command : inputType >/\<maml : Description >).
+Le schéma comprend deux \<MAML : Description > éléments dans chaque \<commande : inputType > élément. Toutefois, l’applet de commande `Get-Help` affiche uniquement le contenu de l’élément Command \<: inputType >/\<MAML : Description >).
 
-À compter de Windows PowerShell 3,0, l’applet de commande `Get-Help` affiche le contenu de l’élément \<maml : URI >. Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
+À compter de Windows PowerShell 3,0, l’applet de commande `Get-Help` affiche le contenu de l’élément \<MAML : URI >. Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
 
-Le code XML suivant montre le nœud \<maml : inputTypes >.
+Le code XML suivant montre le nœud \<MAML : inputTypes >.
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ Le code XML suivant montre le nœud \<maml : inputTypes >.
 </command:inputTypes>
 ```
 
-Le code XML suivant montre un exemple d’utilisation du nœud \<maml : inputTypes > pour documenter un type d’entrée.
+Le code XML suivant montre un exemple d’utilisation du nœud \<MAML : inputTypes > pour documenter un type d’entrée.
 
 ```xml
 <command:inputTypes>

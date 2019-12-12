@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360658"
 ---
 # <a name="supporting-online-help"></a>Prise en charge de l’aide en ligne
@@ -27,7 +27,7 @@ Avec l’avènement de l’aide actualisable dans Windows PowerShell 3,0, l’ai
 
 ## <a name="how-get-help--online-works"></a>Comment obtenir-Help-Online fonctionne
 
-Pour aider les utilisateurs à trouver les rubriques d’aide en ligne pour les commandes, la commande `Get-Help` a un paramètre en ligne qui ouvre la version en ligne de la rubrique d’aide pour une commande dans le navigateur Internet par défaut de l’utilisateur.
+Pour aider les utilisateurs à trouver les rubriques d’aide en ligne pour les commandes, la commande `Get-Help` possède un paramètre en ligne qui ouvre la version en ligne de la rubrique d’aide pour une commande dans le navigateur Internet par défaut de l’utilisateur.
 
 Par exemple, la commande suivante ouvre la rubrique d’aide en ligne de l’applet de commande `Invoke-Command`.
 
@@ -35,7 +35,7 @@ Par exemple, la commande suivante ouvre la rubrique d’aide en ligne de l’app
 Get-Help Invoke-Command -Online
 ```
 
-Pour implémenter `Get-Help`-Online, l’applet de commande `Get-Help` recherche une Uniform Resource Identifier (URI) pour la rubrique d’aide de la version en ligne aux emplacements suivants.
+Pour implémenter `Get-Help` en ligne, l’applet de commande `Get-Help` recherche une Uniform Resource Identifier (URI) pour la rubrique d’aide de la version en ligne aux emplacements suivants.
 
 - Premier lien de la section Liens connexes de la rubrique d’aide de la commande. La rubrique d’aide doit être installée sur l’ordinateur de l’utilisateur. Cette fonctionnalité a été introduite dans Windows PowerShell 2,0.
 
@@ -45,9 +45,9 @@ Pour implémenter `Get-Help`-Online, l’applet de commande `Get-Help` recherche
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Ajout d’un URI au premier lien associé d’une rubrique d’aide sur une commande
 
-Vous pouvez prendre en charge `Get-Help`-Online pour n’importe quelle commande en ajoutant un URI valide à la première entrée de la section Liens connexes de la rubrique d’aide XML de la commande. Cette option est valide uniquement dans les rubriques d’aide XML et fonctionne uniquement lorsque la rubrique d’aide est installée sur l’ordinateur de l’utilisateur. Lorsque la rubrique d’aide est installée et que l’URI est rempli, cette valeur est prioritaire par rapport à la propriété **HelpUri** de la commande.
+Vous pouvez prendre en charge `Get-Help`-Online pour n’importe quelle commande en ajoutant un URI valide à la première entrée de la section Liens connexes de la rubrique d’aide XML relative à la commande. Cette option est valide uniquement dans les rubriques d’aide XML et fonctionne uniquement lorsque la rubrique d’aide est installée sur l’ordinateur de l’utilisateur. Lorsque la rubrique d’aide est installée et que l’URI est rempli, cette valeur est prioritaire par rapport à la propriété **HelpUri** de la commande.
 
-Pour prendre en charge cette fonctionnalité, l’URI doit apparaître dans l’élément `maml:uri` sous le premier élément `maml:relatedLinks/maml:navigationLink` dans l’élément `maml:relatedLinks`.
+Pour prendre en charge cette fonctionnalité, l’URI doit apparaître dans l’élément `maml:uri` sous le premier élément `maml:relatedLinks/maml:navigationLink` de l’élément `maml:relatedLinks`.
 
 Le code XML suivant montre le positionnement correct de l’URI. Le texte « version en ligne : » dans l’élément `maml:linkText` est une meilleure pratique, mais il n’est pas obligatoire.
 

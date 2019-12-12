@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4732e38c-b1a0-4de7-b6de-75dbde850488
 caps.latest.revision: 8
 ms.openlocfilehash: c5eea216efd8048aee5768c78c0b48617670f091
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365538"
 ---
 # <a name="how-to-support-transactions"></a>Guide pratique pour prendre en charge les transactions
@@ -33,7 +33,7 @@ Cet exemple montre les éléments de code de base qui ajoutent la prise en charg
     ```
 
 2. Dans l’une des méthodes de traitement d’entrée, ajoutez un bloc `if` pour déterminer si une transaction est disponible.
-   Si l’instruction `if` correspond à `true`, les actions dans cette instruction peuvent être effectuées dans le contexte de la transaction actuelle.
+   Si l’instruction `if` est résolue en `true`, les actions dans cette instruction peuvent être effectuées dans le contexte de la transaction actuelle.
 
     ```csharp
     if (TransactionAvailable())
