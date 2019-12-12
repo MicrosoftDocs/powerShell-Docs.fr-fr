@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Utilisation du Concepteur de ressources
 ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71952856"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
@@ -17,7 +17,7 @@ L’outil Concepteur de ressources est un ensemble d’applets de commande expos
 Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory.
 Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
 
->**Remarque** : Install-Module est inclus dans le module **PowerShellGet** de PowerShell 5.0. Vous pouvez télécharger le module **PowerShellGet** pour PowerShell 3.0 et 4.0 ici : [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+>**Remarque** : **Install-Module** est inclus dans le module **PowerShellGet** de PowerShell 5.0. Vous pouvez télécharger le module **PowerShellGet** pour PowerShell 3.0 et 4.0 ici : [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
 
 ## <a name="creating-resource-properties"></a>Création de propriétés de ressource
 La première chose à faire est de décider des propriétés que doit exposer la ressource. Pour cet exemple, nous allons définir un utilisateur Active Directory avec les propriétés suivantes.

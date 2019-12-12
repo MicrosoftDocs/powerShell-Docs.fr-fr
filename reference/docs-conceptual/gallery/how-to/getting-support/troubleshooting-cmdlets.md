@@ -4,10 +4,10 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Résolution des problèmes des applets de commande
 ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72352106"
 ---
 # <a name="troubleshooting-cmdlets"></a>Résolution des problèmes des applets de commande
