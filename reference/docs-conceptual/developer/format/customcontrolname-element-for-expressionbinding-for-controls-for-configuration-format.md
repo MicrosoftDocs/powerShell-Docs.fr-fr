@@ -9,60 +9,60 @@ ms.topic: article
 ms.assetid: c5242935-2782-4d23-84f5-2446b2b7ba83
 caps.latest.revision: 8
 ms.openlocfilehash: c9abd9f22907b87323c16d603a9f75bb3d375a03
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364118"
 ---
-# <a name="customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format"></a><span data-ttu-id="08906-102">CustomControlName, élément pour ExpressionBinding pour Controls pour Configuration (Format)</span><span class="sxs-lookup"><span data-stu-id="08906-102">CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)</span></span>
+# <a name="customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format"></a><span data-ttu-id="c2ac1-102">CustomControlName, élément pour ExpressionBinding pour Controls pour Configuration (Format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-102">CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)</span></span>
 
-<span data-ttu-id="08906-103">Spécifie le nom d’un contrôle commun.</span><span class="sxs-lookup"><span data-stu-id="08906-103">Specifies the name of a common control.</span></span> <span data-ttu-id="08906-104">Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.</span><span class="sxs-lookup"><span data-stu-id="08906-104">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
+<span data-ttu-id="c2ac1-103">Spécifie le nom d’un contrôle commun.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-103">Specifies the name of a common control.</span></span> <span data-ttu-id="c2ac1-104">Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-104">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
 
-<span data-ttu-id="08906-105">Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration ( Format) élément CustomEntry pour CustomControl pour les contrôles de configuration (format) élément CustomItem pour CustomEntry pour les contrôles pour la configuration ExpressionBinding, élément pour CustomItem pour les contrôles de configuration (format) CustomControlName , Élément de ExpressionBinding pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="08906-105">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format) CustomEntry Element for CustomControl for Controls for Configuration (Format) CustomItem Element for CustomEntry for Controls for Configuration ExpressionBinding Element for CustomItem for Controls for Configuration (Format) CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)</span></span>
+<span data-ttu-id="c2ac1-105">Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration ( Format) élément CustomEntry pour CustomControl pour les contrôles de configuration (format) élément CustomItem pour CustomEntry pour les contrôles pour la configuration ExpressionBinding, élément pour CustomItem pour les contrôles de configuration (format) CustomControlName , Élément de ExpressionBinding pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-105">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format) CustomEntry Element for CustomControl for Controls for Configuration (Format) CustomItem Element for CustomEntry for Controls for Configuration ExpressionBinding Element for CustomItem for Controls for Configuration (Format) CustomControlName Element for ExpressionBinding for Controls for Configuration (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="08906-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08906-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="c2ac1-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c2ac1-106">Syntax</span></span>
 
 ```xml
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="08906-107">Éléments et attributs</span><span class="sxs-lookup"><span data-stu-id="08906-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="c2ac1-107">Éléments et attributs</span><span class="sxs-lookup"><span data-stu-id="c2ac1-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="08906-108">Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControlName`.</span><span class="sxs-lookup"><span data-stu-id="08906-108">The following sections describe attributes, child elements, and the parent element of the `CustomControlName` element.</span></span>
+<span data-ttu-id="c2ac1-108">Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControlName`.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-108">The following sections describe attributes, child elements, and the parent element of the `CustomControlName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="08906-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="08906-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="c2ac1-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="c2ac1-109">Attributes</span></span>
 
-<span data-ttu-id="08906-110">Aucune.</span><span class="sxs-lookup"><span data-stu-id="08906-110">None.</span></span>
+<span data-ttu-id="c2ac1-110">Aucune.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="08906-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="08906-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="c2ac1-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="c2ac1-111">Child Elements</span></span>
 
-<span data-ttu-id="08906-112">Aucune.</span><span class="sxs-lookup"><span data-stu-id="08906-112">None.</span></span>
+<span data-ttu-id="c2ac1-112">Aucune.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="08906-113">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="08906-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="c2ac1-113">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="c2ac1-113">Parent Elements</span></span>
 
-|<span data-ttu-id="08906-114">Élément</span><span class="sxs-lookup"><span data-stu-id="08906-114">Element</span></span>|<span data-ttu-id="08906-115">Description</span><span class="sxs-lookup"><span data-stu-id="08906-115">Description</span></span>|
+|<span data-ttu-id="c2ac1-114">Élément</span><span class="sxs-lookup"><span data-stu-id="c2ac1-114">Element</span></span>|<span data-ttu-id="c2ac1-115">Description</span><span class="sxs-lookup"><span data-stu-id="c2ac1-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="08906-116">Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="08906-116">ExpressionBinding Element for CustomItem for Controls for Configuration (Format)</span></span>](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|<span data-ttu-id="08906-117">Définit les données affichées par le contrôle.</span><span class="sxs-lookup"><span data-stu-id="08906-117">Defines the data that is displayed by the control.</span></span>|
+|[<span data-ttu-id="c2ac1-116">Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-116">ExpressionBinding Element for CustomItem for Controls for Configuration (Format)</span></span>](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|<span data-ttu-id="c2ac1-117">Définit les données affichées par le contrôle.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-117">Defines the data that is displayed by the control.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="08906-118">Valeur texte</span><span class="sxs-lookup"><span data-stu-id="08906-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="c2ac1-118">Valeur de texte</span><span class="sxs-lookup"><span data-stu-id="c2ac1-118">Text Value</span></span>
 
-<span data-ttu-id="08906-119">Spécifiez le nom du contrôle.</span><span class="sxs-lookup"><span data-stu-id="08906-119">Specify the name of the control.</span></span>
+<span data-ttu-id="c2ac1-119">Spécifiez le nom du contrôle.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-119">Specify the name of the control.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="08906-120">Remarks</span><span class="sxs-lookup"><span data-stu-id="08906-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="c2ac1-120">Remarks</span><span class="sxs-lookup"><span data-stu-id="c2ac1-120">Remarks</span></span>
 
-<span data-ttu-id="08906-121">Vous pouvez créer des contrôles communs qui peuvent être utilisés par toutes les vues d’un fichier de mise en forme, et vous pouvez créer des contrôles d’affichage qui peuvent être utilisés par une vue spécifique.</span><span class="sxs-lookup"><span data-stu-id="08906-121">You can create common controls that can be used by all the views of a formatting file, and you can create view controls that can be used by a specific view.</span></span> <span data-ttu-id="08906-122">Les éléments suivants spécifient les noms de ces contrôles :</span><span class="sxs-lookup"><span data-stu-id="08906-122">The following elements specify the names of these controls:</span></span>
+<span data-ttu-id="c2ac1-121">Vous pouvez créer des contrôles communs qui peuvent être utilisés par toutes les vues d’un fichier de mise en forme, et vous pouvez créer des contrôles d’affichage qui peuvent être utilisés par une vue spécifique.</span><span class="sxs-lookup"><span data-stu-id="c2ac1-121">You can create common controls that can be used by all the views of a formatting file, and you can create view controls that can be used by a specific view.</span></span> <span data-ttu-id="c2ac1-122">Les éléments suivants spécifient les noms de ces contrôles :</span><span class="sxs-lookup"><span data-stu-id="c2ac1-122">The following elements specify the names of these controls:</span></span>
 
-- [<span data-ttu-id="08906-123">Élément Name pour le contrôle des contrôles pour la configuration (format)</span><span class="sxs-lookup"><span data-stu-id="08906-123">Name Element for Control for Controls for Configuration (Format)</span></span>](./name-element-for-control-for-controls-for-configuration-format.md)
+- [<span data-ttu-id="c2ac1-123">Élément Name pour le contrôle des contrôles pour la configuration (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-123">Name Element for Control for Controls for Configuration (Format)</span></span>](./name-element-for-control-for-controls-for-configuration-format.md)
 
-- [<span data-ttu-id="08906-124">Élément Name pour le contrôle des contrôles pour View (format)</span><span class="sxs-lookup"><span data-stu-id="08906-124">Name Element for Control for Controls for View (Format)</span></span>](./name-element-for-control-for-controls-for-view-format.md)
+- [<span data-ttu-id="c2ac1-124">Élément Name pour le contrôle des contrôles pour View (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-124">Name Element for Control for Controls for View (Format)</span></span>](./name-element-for-control-for-controls-for-view-format.md)
 
-## <a name="see-also"></a><span data-ttu-id="08906-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08906-125">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c2ac1-125">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c2ac1-125">See Also</span></span>
 
-[<span data-ttu-id="08906-126">Élément Name pour le contrôle des contrôles pour la configuration (format)</span><span class="sxs-lookup"><span data-stu-id="08906-126">Name Element for Control for Controls for Configuration (Format)</span></span>](./name-element-for-control-for-controls-for-configuration-format.md)
+[<span data-ttu-id="c2ac1-126">Élément Name pour le contrôle des contrôles pour la configuration (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-126">Name Element for Control for Controls for Configuration (Format)</span></span>](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[<span data-ttu-id="08906-127">Élément Name pour le contrôle des contrôles pour View (format)</span><span class="sxs-lookup"><span data-stu-id="08906-127">Name Element for Control for Controls for View (Format)</span></span>](./name-element-for-control-for-controls-for-view-format.md)
+[<span data-ttu-id="c2ac1-127">Élément Name pour le contrôle des contrôles pour View (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-127">Name Element for Control for Controls for View (Format)</span></span>](./name-element-for-control-for-controls-for-view-format.md)
 
-[<span data-ttu-id="08906-128">Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="08906-128">ExpressionBinding Element for CustomItem for Controls for Configuration (Format)</span></span>](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[<span data-ttu-id="c2ac1-128">Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)</span><span class="sxs-lookup"><span data-stu-id="c2ac1-128">ExpressionBinding Element for CustomItem for Controls for Configuration (Format)</span></span>](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[<span data-ttu-id="08906-129">Écriture d’un fichier de mise en forme PowerShell</span><span class="sxs-lookup"><span data-stu-id="08906-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="c2ac1-129">Écriture d’un fichier de mise en forme PowerShell</span><span class="sxs-lookup"><span data-stu-id="c2ac1-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

@@ -9,67 +9,67 @@ ms.topic: article
 ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
 ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369358"
 ---
-# <a name="stopprocesssample04-sample"></a><span data-ttu-id="86e45-102">Exemple StopProcessSample04</span><span class="sxs-lookup"><span data-stu-id="86e45-102">StopProcessSample04 Sample</span></span>
+# <a name="stopprocesssample04-sample"></a><span data-ttu-id="24467-102">Exemple StopProcessSample04</span><span class="sxs-lookup"><span data-stu-id="24467-102">StopProcessSample04 Sample</span></span>
 
-<span data-ttu-id="86e45-103">Cet exemple montre comment écrire une applet de commande qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="86e45-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="86e45-104">Cette applet de commande est similaire à l’applet de commande `Stop-Process` fournie par Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="86e45-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="24467-103">Cet exemple montre comment écrire une applet de commande qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="24467-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="24467-104">Cette applet de commande est similaire à l’applet de commande `Stop-Process` fournie par Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="24467-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="86e45-105">Comment générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="86e45-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="24467-105">Comment générer l’exemple à l’aide de Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="24467-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="86e45-106">Une fois le kit de développement logiciel (SDK) 2,0 Windows PowerShell installé, accédez au dossier StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="86e45-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="86e45-107">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="86e45-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
+1. <span data-ttu-id="24467-106">Une fois le kit de développement logiciel (SDK) 2,0 Windows PowerShell installé, accédez au dossier StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="24467-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="24467-107">L’emplacement par défaut est C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span><span class="sxs-lookup"><span data-stu-id="24467-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
 
-2. <span data-ttu-id="86e45-108">Double-cliquez sur l’icône du fichier solution (. sln).</span><span class="sxs-lookup"><span data-stu-id="86e45-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="86e45-109">L’exemple de projet s’ouvre dans Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="86e45-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="24467-108">Double-cliquez sur l’icône du fichier solution (. sln).</span><span class="sxs-lookup"><span data-stu-id="24467-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="24467-109">L’exemple de projet s’ouvre dans Microsoft Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="24467-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="86e45-110">Dans le menu **générer** , sélectionnez **générer la solution**.</span><span class="sxs-lookup"><span data-stu-id="86e45-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="24467-110">Dans le menu **Générer**, sélectionnez **Générer la solution**.</span><span class="sxs-lookup"><span data-stu-id="24467-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="86e45-111">La bibliothèque de l’exemple sera générée dans les dossiers \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="86e45-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="24467-111">La bibliothèque de l’exemple sera générée dans les dossiers \bin ou \bin\debug par défaut.</span><span class="sxs-lookup"><span data-stu-id="24467-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="86e45-112">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="86e45-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="24467-112">Comment exécuter l’exemple</span><span class="sxs-lookup"><span data-stu-id="24467-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="86e45-113">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="86e45-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="24467-113">Créez le dossier de module suivant :</span><span class="sxs-lookup"><span data-stu-id="24467-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample04`
 
-2. <span data-ttu-id="86e45-114">Copiez l’exemple d’assembly dans le dossier du module.</span><span class="sxs-lookup"><span data-stu-id="86e45-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="24467-114">Copiez l’exemple d’assembly dans le dossier du module.</span><span class="sxs-lookup"><span data-stu-id="24467-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="86e45-115">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="86e45-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="24467-115">Démarrez Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="24467-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="86e45-116">Exécutez la commande suivante pour charger l’assembly dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="86e45-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="24467-116">Exécutez la commande suivante pour charger l’assembly dans Windows PowerShell :</span><span class="sxs-lookup"><span data-stu-id="24467-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample04`
 
-5. <span data-ttu-id="86e45-117">Exécutez la commande suivante pour exécuter l’applet de commande :</span><span class="sxs-lookup"><span data-stu-id="86e45-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="24467-117">Exécutez la commande suivante pour exécuter l’applet de commande :</span><span class="sxs-lookup"><span data-stu-id="24467-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="86e45-118">Spécifications</span><span class="sxs-lookup"><span data-stu-id="86e45-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="24467-118">Spécifications</span><span class="sxs-lookup"><span data-stu-id="24467-118">Requirements</span></span>
 
-<span data-ttu-id="86e45-119">Cet exemple requiert Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="86e45-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="24467-119">Cet exemple requiert Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="24467-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="86e45-120">Illustré</span><span class="sxs-lookup"><span data-stu-id="86e45-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="24467-120">Démontre</span><span class="sxs-lookup"><span data-stu-id="24467-120">Demonstrates</span></span>
 
-<span data-ttu-id="86e45-121">Cet exemple illustre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="86e45-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="24467-121">Cet exemple illustre ce qui suit.</span><span class="sxs-lookup"><span data-stu-id="24467-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="86e45-122">Déclaration d’une classe d’applet de commande à l’aide de l’attribut d’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="86e45-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="24467-122">Déclaration d’une classe d’applet de commande à l’aide de l’attribut d’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="24467-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="86e45-123">Déclaration d’un paramètre d’applet de commande à l’aide de l’attribut Parameter.</span><span class="sxs-lookup"><span data-stu-id="86e45-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="24467-123">Déclaration d’un paramètre d’applet de commande à l’aide de l’attribut Parameter.</span><span class="sxs-lookup"><span data-stu-id="24467-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="86e45-124">Ajout d’un paramètre qui accepte l’objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="86e45-124">Adding a parameter that accepts input object.</span></span>
+- <span data-ttu-id="24467-124">Ajout d’un paramètre qui accepte l’objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="24467-124">Adding a parameter that accepts input object.</span></span>
 
-- <span data-ttu-id="86e45-125">Ajout de paramètres aux jeux de paramètres</span><span class="sxs-lookup"><span data-stu-id="86e45-125">Adding parameters to parameter sets</span></span>
+- <span data-ttu-id="24467-125">Ajout de paramètres aux jeux de paramètres</span><span class="sxs-lookup"><span data-stu-id="24467-125">Adding parameters to parameter sets</span></span>
 
-- <span data-ttu-id="86e45-126">Spécification du jeu de paramètres par défaut.</span><span class="sxs-lookup"><span data-stu-id="86e45-126">Specifying the default parameter set.</span></span>
+- <span data-ttu-id="24467-126">Spécification du jeu de paramètres par défaut.</span><span class="sxs-lookup"><span data-stu-id="24467-126">Specifying the default parameter set.</span></span>
 
-## <a name="example"></a><span data-ttu-id="86e45-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="86e45-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="24467-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="24467-127">Example</span></span>
 
-<span data-ttu-id="86e45-128">Le code suivant illustre une implémentation de l’applet de commande Stop-proc qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="86e45-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
+<span data-ttu-id="24467-128">Le code suivant illustre une implémentation de l’applet de commande Stop-proc qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.</span><span class="sxs-lookup"><span data-stu-id="24467-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
 
-<span data-ttu-id="86e45-129">Cet exemple montre l’objet d’entrée, comment déclarer des jeux de paramètres et comment spécifier le jeu de paramètres par défaut à utiliser.</span><span class="sxs-lookup"><span data-stu-id="86e45-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
+<span data-ttu-id="24467-129">Cet exemple montre l’objet d’entrée, comment déclarer des jeux de paramètres et comment spécifier le jeu de paramètres par défaut à utiliser.</span><span class="sxs-lookup"><span data-stu-id="24467-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
 
 ```csharp
 using System;
@@ -490,6 +490,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="86e45-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="86e45-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="24467-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="24467-130">See Also</span></span>
 
-[<span data-ttu-id="86e45-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="86e45-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="24467-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="24467-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361048"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="56df1-102">Exemple Host01</span><span class="sxs-lookup"><span data-stu-id="56df1-102">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="08be5-102">Exemple Host01</span><span class="sxs-lookup"><span data-stu-id="08be5-102">Host01 Sample</span></span>
 
-<span data-ttu-id="56df1-103">Cet exemple montre comment implémenter une application hôte qui utilise un hôte personnalisé.</span><span class="sxs-lookup"><span data-stu-id="56df1-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="56df1-104">Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) est utilisée pour exécuter un script qui appelle « Exit ».</span><span class="sxs-lookup"><span data-stu-id="56df1-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="56df1-105">L’application hôte analyse ensuite la sortie du script et imprime les résultats.</span><span class="sxs-lookup"><span data-stu-id="56df1-105">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="08be5-103">Cet exemple montre comment implémenter une application hôte qui utilise un hôte personnalisé.</span><span class="sxs-lookup"><span data-stu-id="08be5-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="08be5-104">Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) est utilisée pour exécuter un script qui appelle « Exit ».</span><span class="sxs-lookup"><span data-stu-id="08be5-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="08be5-105">L’application hôte analyse ensuite la sortie du script et imprime les résultats.</span><span class="sxs-lookup"><span data-stu-id="08be5-105">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="56df1-106">Cet exemple utilise les fonctionnalités de l’interface utilisateur par défaut fournies par Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="56df1-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="56df1-107">Pour plus d’informations sur l’implémentation des fonctionnalités d’interface utilisateur d’un hôte personnalisé, consultez [exemple Host02](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="56df1-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="08be5-106">Cet exemple utilise les fonctionnalités de l’interface utilisateur par défaut fournies par Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="08be5-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="08be5-107">Pour plus d’informations sur l’implémentation des fonctionnalités d’interface utilisateur d’un hôte personnalisé, consultez [exemple Host02](./host02-sample.md).</span><span class="sxs-lookup"><span data-stu-id="08be5-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="56df1-108">Spécifications</span><span class="sxs-lookup"><span data-stu-id="56df1-108">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="08be5-108">Spécifications</span><span class="sxs-lookup"><span data-stu-id="08be5-108">Requirements</span></span>
 
- <span data-ttu-id="56df1-109">Cet exemple requiert Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="56df1-109">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="08be5-109">Cet exemple requiert Windows PowerShell 2,0.</span><span class="sxs-lookup"><span data-stu-id="08be5-109">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="56df1-110">Illustré</span><span class="sxs-lookup"><span data-stu-id="56df1-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="08be5-110">Démontre</span><span class="sxs-lookup"><span data-stu-id="08be5-110">Demonstrates</span></span>
 
-- <span data-ttu-id="56df1-111">Création d’une classe hôte personnalisée qui dérive de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) .</span><span class="sxs-lookup"><span data-stu-id="56df1-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="08be5-111">Création d’une classe hôte personnalisée qui dérive de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) .</span><span class="sxs-lookup"><span data-stu-id="08be5-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="56df1-112">Création d’une instance d’exécution qui utilise la classe hôte personnalisée.</span><span class="sxs-lookup"><span data-stu-id="56df1-112">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="08be5-112">Création d’une instance d’exécution qui utilise la classe hôte personnalisée.</span><span class="sxs-lookup"><span data-stu-id="08be5-112">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="56df1-113">Création d’un objet [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) qui exécute un script qui appelle Exit.</span><span class="sxs-lookup"><span data-stu-id="56df1-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="08be5-113">Création d’un objet [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) qui exécute un script qui appelle Exit.</span><span class="sxs-lookup"><span data-stu-id="08be5-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="56df1-114">Vérification que le code de sortie correct a été utilisé dans le processus de sortie.</span><span class="sxs-lookup"><span data-stu-id="56df1-114">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="08be5-114">Vérification que le code de sortie correct a été utilisé dans le processus de sortie.</span><span class="sxs-lookup"><span data-stu-id="08be5-114">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="56df1-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="56df1-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="08be5-115">Exemple</span><span class="sxs-lookup"><span data-stu-id="08be5-115">Example</span></span>
 
- <span data-ttu-id="56df1-116">Le code suivant illustre une implémentation d’une application hôte qui utilise une interface hôte personnalisée simple.</span><span class="sxs-lookup"><span data-stu-id="56df1-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="08be5-116">Le code suivant illustre une implémentation d’une application hôte qui utilise une interface hôte personnalisée simple.</span><span class="sxs-lookup"><span data-stu-id="08be5-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -137,9 +137,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="56df1-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="56df1-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="08be5-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="08be5-117">Example</span></span>
 
- <span data-ttu-id="56df1-118">Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte.</span><span class="sxs-lookup"><span data-stu-id="56df1-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="56df1-119">Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.</span><span class="sxs-lookup"><span data-stu-id="56df1-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="08be5-118">Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte.</span><span class="sxs-lookup"><span data-stu-id="08be5-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="08be5-119">Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.</span><span class="sxs-lookup"><span data-stu-id="08be5-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -308,4 +308,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="56df1-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="56df1-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="08be5-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="08be5-120">See Also</span></span>
