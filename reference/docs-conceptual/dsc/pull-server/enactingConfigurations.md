@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,setup
 title: Application des configurations
 ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953646"
 ---
 # <a name="enacting-configurations"></a>Application des configurations
@@ -17,7 +17,7 @@ Il existe deux façons de promulguer des configurations DSC PowerShell : le mo
 
 ## <a name="push-mode"></a>Mode par envoi
 
-![Mode par envoi](../images/pushModel.png "Fonctionnement du mode par envoi")
+![Mode par envoi](../images/pushModel.png "Fonctionnement du mode par envoi (push)")
 
 Avec le mode par envoi, l’utilisateur applique activement une configuration à un nœud cible en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 
@@ -28,7 +28,7 @@ Par exemple, si la configuration MOF se trouve à l’emplacement `C:\DSC\Confi
 
 ## <a name="pull-mode"></a>Mode par extraction
 
-![Mode par extraction](../images/pullModel.png "Fonctionnement du mode par extraction")
+![Mode par extraction](../images/pullModel.png "Fonctionnement du mode par extraction (pull)")
 
 Avec le mode par extraction, les clients d’extraction sont configurés de façon à obtenir leurs configurations d’état souhaité à partir d’un service d’extraction distant.
 De même, le serveur a été configuré pour héberger le service DSC et approvisionné avec les configurations et les ressources requises par les clients d’extraction.
