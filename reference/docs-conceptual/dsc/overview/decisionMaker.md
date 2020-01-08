@@ -1,13 +1,13 @@
 ---
 ms.date: 10/11/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Présentation de la configuration de l’état souhaité pour les décideurs
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352135"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737251"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Présentation de la configuration de l’état souhaité pour les décideurs
 
@@ -31,7 +31,7 @@ Les configurations peuvent être partagées via [PowerShell Gallery](https://pow
 
 ## <a name="dsc-and-devops"></a>DSC et DevOps
 
-DSC a été conçu autour de [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx). Il s’agit d’une association de personnes, de processus et d’outils qui permet un déploiement et une itération rapides centrés sur l’offre de valeur aux utilisateurs finaux, internes ou externes. Le fait de n’utiliser qu’une seule configuration pour définir un environnement signifie que les développeurs peuvent coder leurs spécifications dans une configuration et vérifier cette configuration dans le contrôle de code source. Les équipes responsables des opérations peuvent ainsi facilement déployer le code sans avoir à passer par des processus manuels sujets aux erreurs.
+DSC a été conçu autour de [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me). Il s’agit d’une association de personnes, de processus et d’outils qui permet un déploiement et une itération rapides centrés sur l’offre de valeur aux utilisateurs finaux, internes ou externes. Le fait de n’utiliser qu’une seule configuration pour définir un environnement signifie que les développeurs peuvent coder leurs spécifications dans une configuration et vérifier cette configuration dans le contrôle de code source. Les équipes responsables des opérations peuvent ainsi facilement déployer le code sans avoir à passer par des processus manuels sujets aux erreurs.
 
 Les configurations sont [basées sur les données](../configurations/configData.md). Les données définies permettent aux opérations d’identifier et de changer plus facilement les environnements, sans intervention des développeurs.
 
