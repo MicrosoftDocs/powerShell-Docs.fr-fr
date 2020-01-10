@@ -24,7 +24,7 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Configuration requise pour Windows PowerShell
           href: install/windows-powershell-system-requirements.md
-- name: Prendre en main
+- name: Bien démarrer
   items:
     - name: Prise en main de PowerShell
       href: getting-started/getting-started-with-windows-powershell.md
@@ -58,7 +58,7 @@
           items:
             - name: Vue d’ensemble
               href: learn/remoting/jea/overview.md
-            - name: Conditions préalables
+            - name: Conditions préalables requises
               href: learn/remoting/jea/prerequisites.md
             - name: Capacités de rôle
               href: learn/remoting/jea/role-capabilities.md
@@ -68,7 +68,7 @@
               href: learn/remoting/jea/register-jea.md
             - name: Utilisation de JEA
               href: learn/remoting/jea/using-jea.md
-            - name: Considérations de sécurité
+            - name: Considérations relatives à la sécurité
               href: learn/remoting/jea/security-considerations.md
             - name: Audit et rapport sur JEA
               href: learn/remoting/jea/audit-and-report.md
@@ -84,7 +84,7 @@
           href: learn/remoting/ps-remoting-second-hop.md
     - name: Glossaire
       href: learn/windows-powershell-glossary.md
-- name: Composants
+- name: Components
   items:
     - name: Console
       items:
@@ -164,7 +164,7 @@
           href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
         - name: Installation
           href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: Résolution des problèmes d’accès
+        - name: Dépannage des problèmes d’accès
           href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
         - name: Désinstaller l’accès Web Windows PowerShell
           href: components/web-access/uninstall-windows-powershell-web-access.md
@@ -178,9 +178,9 @@
       href: gallery/overview.md
     - name: Installation de PowerShellGet
       href: gallery/installing-psget.md
-    - name: Prise en main
+    - name: Mise en route
       href: gallery/getting-started.md
-    - name: Guides pratiques
+    - name: Procédure
       items:
         - name: Recherche de packages dans la galerie
           items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: Gestion des clés API
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: Utilisation des référentiels PowerShellGet locaux
+        - name: Utilisation des référentiels PowerShellGet privés
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: Concepts
       items:
@@ -258,15 +258,15 @@
           href: gallery/how-to/getting-support/dispute-resolution.md
         - name: Établissement d’un contact avec les administrateurs
           href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: Résolution des problèmes
+        - name: Dépannage
           href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
         - name: Démarrage du fournisseur NuGet et de NuGet.exe
           href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: "Conformité\_RGPD"
+        - name: Conformité RGPD
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: FAQ sur la galerie
       href: gallery/faqs.md
-- name: Nouveautés
+- name: What's New
   items:
     - name: "Nouveautés de PowerShell Core\_6.x"
       items:
@@ -300,7 +300,7 @@
           href: wmf/setup/install-configure.md
         - name: Désinstaller WMF 5.0
           href: wmf/setup/uninstall.md
-    - name: Nouveautés
+    - name: What's New
       expanded: true
       items:
         - name: Notes de publication de WMF 5.x
@@ -339,7 +339,7 @@
           href: wmf/known-issues/known-issues-51.md
         - name: Limitations et problèmes connus dans DSC
           href: wmf/known-issues/known-issues-dsc.md
-- name: Configuration d’état souhaité (DSC)
+- name: Configuration d’état souhaité
   items:
     - name: Vue d’ensemble
       items:
@@ -351,7 +351,7 @@
           href: dsc/overview/DscForEngineers.md
         - name: Présentation du rôle de DSC dans un pipeline CI/CD
           href: dsc/overview/authoringAdvanced.md
-    - name: Mise en route
+    - name: Prise en main
       items:
         - name: Bien démarrer avec DSC pour Linux
           href: dsc/getting-started/lnxGettingStarted.md
@@ -430,7 +430,7 @@
               href: dsc/resources/singleInstance.md
             - name: Liste de vérification de création de ressources
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Guides de procédures
+        - name: Guides pratiques
           items:
             - name: Écrire des ressources basées sur MOF dans PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -444,7 +444,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Gestion des nœuds
       items:
-        - name: Guides de procédures
+        - name: Guides pratiques
           items:
             - name: 'Appliquer, obtenir et tester des configurations sur un nœud'
               href: dsc/managing-nodes/apply-get-test.md
@@ -460,7 +460,7 @@
           items:
             - name: Modèle Push/Pull
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Guides de procédures
+        - name: Guides pratiques
           items:
             - name: Configurer un serveur Pull
               items:
@@ -504,13 +504,13 @@
           href: dsc/tutorials/bootstrapDsc.md
         - name: Configurer la clé de Registre DSCAutomationHostEnabled
           href: dsc/tutorials/DSCAutomationHostEnabled.md
-    - name: Résolution des problèmes
+    - name: Dépannage
       items:
         - name: Problèmes connus
           href: dsc/troubleshooting/troubleshooting.md
         - name: Déboguer des ressources DSC
           href: dsc/troubleshooting/debugResource.md
-    - name: Référence
+    - name: Informations de référence
       items:
         - name: Ressources intégrées Windows
           items:
@@ -812,7 +812,7 @@
                 - name: Noms et types des paramètres des applets de commande standard
                   href: developer/cmdlet/standard-cmdlet-parameter-names-and-types.md
                   items:
-                    - name: Paramètres d’activité
+                    - name: Paramètres de l’activité
                       href: developer/cmdlet/activity-parameters.md
                     - name: Paramètres de date et d’heure
                       href: developer/cmdlet/date-and-time-parameters.md
@@ -1830,5 +1830,5 @@
     - name: Informations de référence sur Windows PowerShell
       href: developer/windows-powershell-reference.md
       items:
-        - name: Nouveautés
+        - name: What's New
           href: developer/windows-powershell-reference-whats-new.md
