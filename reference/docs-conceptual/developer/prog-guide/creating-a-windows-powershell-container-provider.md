@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: fcb03d4021f00837095ce703beb0d841233391d6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416219"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870776"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
 
@@ -26,10 +26,7 @@ Les fournisseurs qui peuvent travailler sur des magasins de données à plusieur
 
 > [!NOTE]
 > Vous pouvez télécharger le C# fichier source (AccessDBSampleProvider04.cs) pour ce fournisseur à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour Windows Vista et .NET Framework les composants d’exécution 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .
->
-> Pour plus d’informations sur les autres implémentations du fournisseur Windows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
+> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** . Pour plus d’informations sur les autres implémentations du fournisseur Windows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
 Le fournisseur de conteneurs Windows PowerShell décrit ici définit la base de données en tant que conteneur unique, avec les tables et les lignes de la base de données définies en tant qu’éléments du conteneur.
 
@@ -41,8 +38,8 @@ Le fournisseur de conteneurs Windows PowerShell décrit ici définit la base de 
 Un fournisseur de conteneurs Windows PowerShell doit définir une classe .NET qui dérive de la classe de base [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Voici la définition de classe pour le fournisseur de conteneurs Windows PowerShell décrit dans cette section.
 
 ```csharp
-   [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-   public class AccessDBProvider : ContainerCmdletProvider
+[CmdletProvider("AccessDB", ProviderCapabilities.None)]
+public class AccessDBProvider : ContainerCmdletProvider
 ```
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
@@ -53,7 +50,8 @@ Notez que dans cette définition de classe, l’attribut [System. Management. Au
 
 Comme décrit dans [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md), la classe [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) dérive de plusieurs autres classes qui offraient des fonctionnalités de fournisseur différentes. Un fournisseur de conteneurs Windows PowerShell, par conséquent, doit définir toutes les fonctionnalités fournies par ces classes.
 
-Pour implémenter les fonctionnalités d’ajout d’informations d’initialisation spécifiques à la session et pour libérer les ressources utilisées par le fournisseur, consultez [création d’un fournisseur Windows PowerShell de base](./creating-a-basic-windows-powershell-provider.md). Toutefois, la plupart des fournisseurs (y compris le fournisseur décrit ici) peuvent utiliser l’implémentation par défaut de cette fonctionnalité fournie par Windows PowerShell.
+Pour implémenter les fonctionnalités d’ajout d’informations d’initialisation spécifiques à la session et pour libérer les ressources utilisées par le fournisseur, consultez [création d’un fournisseur Windows PowerShell de base](./creating-a-basic-windows-powershell-provider.md).
+Toutefois, la plupart des fournisseurs (y compris le fournisseur décrit ici) peuvent utiliser l’implémentation par défaut de cette fonctionnalité fournie par Windows PowerShell.
 
 Pour accéder au magasin de données, le fournisseur doit implémenter les méthodes de la classe de base [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Pour plus d’informations sur l’implémentation de ces méthodes, consultez [création d’un fournisseur de lecteurs Windows PowerShell](./creating-a-windows-powershell-drive-provider.md).
 
@@ -231,11 +229,13 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Lors de la définition de la classe de fournisseur, un fournisseur de conteneurs Windows PowerShell peut déclarer des fonctionnalités de fournisseur de ExpandWildcards, Filter, include ou Exclude, à partir de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Dans ces cas, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) doit garantir que le chemin d’accès passé à la méthode répond aux exigences des fonctionnalités spécifiées. Pour ce faire, la méthode doit accéder à la propriété appropriée, par exemple, les propriétés [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) et [System. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- La méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) est destinée uniquement à la modification du nom d’un élément, et non pas aux opérations de déplacement. Votre implémentation de la méthode doit écrire une erreur si le paramètre `newName` contient des séparateurs de chemin d’accès ou si elle peut entraîner la modification de son emplacement parent par l’élément.
+- La méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) est destinée uniquement à la modification du nom d’un élément, et non pas aux opérations de déplacement.
+  Votre implémentation de la méthode doit écrire une erreur si le paramètre `newName` contient des séparateurs de chemin d’accès ou si elle peut entraîner la modification de son emplacement parent par l’élément.
 
 - Par défaut, les substitutions de cette méthode ne doivent pas renommer les objets, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) soit spécifiée. Si le chemin d’accès spécifié indique un conteneur, la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) n’est pas obligatoire.
 
-- Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Cette méthode est utilisée pour confirmer l’exécution d’une opération quand une modification est apportée à l’état du système, par exemple, renommer des fichiers. [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) envoie le nom de la ressource à modifier à l’utilisateur, avec le runtime Windows PowerShell en tenant compte des paramètres de ligne de commande ou des variables de préférence pour déterminer ce qui doit être affiché.
+- Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Cette méthode est utilisée pour confirmer l’exécution d’une opération quand une modification est apportée à l’état du système, par exemple, renommer des fichiers.
+  [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) envoie le nom de la ressource à modifier à l’utilisateur, avec le runtime Windows PowerShell en tenant compte des paramètres de ligne de commande ou des variables de préférence pour déterminer ce qui doit être affiché.
 
   Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne `true`, la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Cette méthode envoie un message de confirmation à l’utilisateur afin d’autoriser des commentaires supplémentaires à indiquer si l’opération doit être poursuivie. Un fournisseur doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour une vérification supplémentaire des modifications système potentiellement dangereuses.
 
@@ -254,8 +254,7 @@ Pour créer de nouveaux éléments, un fournisseur de conteneurs doit implément
 Voici l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) pour ce fournisseur.
 
 ```csharp
-protected override void NewItem( string path, string type,
-                                 object newItemValue )
+protected override void NewItem( string path, string type, object newItemValue )
 {
     // Create the new item here after
     // performing necessary validations
@@ -279,7 +278,8 @@ protected override void NewItem( string path, string type,
 
 Les conditions suivantes peuvent s’appliquer à votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
 
-- La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit effectuer une comparaison ne respectant pas la casse de la chaîne passée dans le paramètre `type`. Elle doit également permettre des correspondances moins ambiguës. Par exemple, pour les types « fichier » et « répertoire », seule la première lettre est nécessaire pour lever l’ambiguïté. Si le paramètre `type` indique un type que votre fournisseur ne peut pas créer, la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit écrire une exception ArgumentException avec un message indiquant les types que le fournisseur peut créer.
+- La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit effectuer une comparaison ne respectant pas la casse de la chaîne passée dans le paramètre `type`.
+  Elle doit également permettre des correspondances moins ambiguës. Par exemple, pour les types « fichier » et « répertoire », seule la première lettre est nécessaire pour lever l’ambiguïté. Si le paramètre `type` indique un type que votre fournisseur ne peut pas créer, la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit écrire une exception ArgumentException avec un message indiquant les types que le fournisseur peut créer.
 
 - Pour le paramètre `newItemValue`, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) est recommandée pour accepter des chaînes au minimum. Elle doit également accepter le type d’objet récupéré par la méthode [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pour le même chemin d’accès. La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) peut utiliser la méthode [System. Management. Automation. LanguagePrimitives. ConvertTo *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) pour convertir les types vers le type souhaité.
 
@@ -376,7 +376,7 @@ Pour obtenir un exemple de code complet, consultez [exemple de code AccessDbProv
 
 ## <a name="building-the-windows-powershell-provider"></a>Génération du fournisseur Windows PowerShell
 
-Découvrez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Découvrez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Test du fournisseur Windows PowerShell
 
@@ -388,7 +388,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Get-ChildItem mydb:customers
    ```
 
-   La sortie suivante s'affiche.
+   La sortie suivante apparaît.
 
    ```output
    PSPath        : AccessDB::customers
@@ -407,7 +407,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    (Get-ChildItem mydb:customers).data
    ```
 
-   La sortie suivante s'affiche.
+   La sortie suivante apparaît.
 
    ```output
    TABLE_CAT   : c:\PS\northwind
@@ -423,7 +423,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Get-Item mydb:\customers\0
    ```
 
-   La sortie suivante s'affiche.
+   La sortie suivante apparaît.
 
    ```output
    PSPath        : AccessDB::customers\0
@@ -440,7 +440,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    (Get-Item mydb:\customers\0).data
    ```
 
-   La sortie suivante s'affiche.
+   La sortie suivante apparaît.
 
    ```output
    CustomerID   : 1234
@@ -456,7 +456,8 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Fax          : (425) 555-0101
    ```
 
-5. À présent, utilisez l’applet de commande `New-Item` pour ajouter une ligne à une table existante. Le paramètre `Path` spécifie le chemin d’accès complet à la ligne et doit indiquer un numéro de ligne qui est supérieur au nombre de lignes existant dans la table. Le paramètre `Type` indique « Row » pour spécifier ce type d’élément à ajouter. Enfin, le paramètre `Value` spécifie une liste délimitée par des virgules de valeurs de colonne pour la ligne.
+5. À présent, utilisez l’applet de commande `New-Item` pour ajouter une ligne à une table existante. Le paramètre `Path` spécifie le chemin d’accès complet à la ligne et doit indiquer un numéro de ligne qui est supérieur au nombre de lignes existant dans la table. Le paramètre `Type` indique « Row » pour spécifier ce type d’élément à ajouter.
+   Enfin, le paramètre `Value` spécifie une liste délimitée par des virgules de valeurs de colonne pour la ligne.
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
@@ -469,7 +470,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    PS mydb:\Customers> (Get-Item 3).data
    ```
 
-   La sortie suivante s'affiche.
+   La sortie suivante apparaît.
 
    ```output
    ID        : 3
@@ -496,7 +497,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
 [Implémentation d’un fournisseur de navigation Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md)
 
-[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

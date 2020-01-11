@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366278"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870861"
 ---
 # <a name="windows-powershell-reference"></a>Informations de référence sur Windows PowerShell
 
@@ -37,7 +37,8 @@ En plus du kit de développement logiciel (SDK) Windows PowerShell, les ressourc
 
 [Écriture d’une applet de commande Windows PowerShell](./cmdlet/writing-a-windows-powershell-cmdlet.md) Fournit des informations et des exemples de code pour les responsables de programme qui conçoivent des applets de commande et pour les développeurs qui implémentent du code d’applet de commande.
 
-[Blog de l’équipe Windows PowerShell](https://blogs.msdn.microsoft.com/PowerShell/) La meilleure ressource pour l’apprentissage et la collaboration avec d’autres utilisateurs de Windows PowerShell. Lisez le blog de l’équipe Windows PowerShell, puis joignez le Forum des utilisateurs Windows PowerShell (Microsoft. public. Windows. PowerShell). Utilisez Windows Live Search pour rechercher d’autres blogs et ressources Windows PowerShell. Ensuite, à mesure que vous développez votre expertise, participez librement à vos idées.
+[Blog de l’équipe Windows PowerShell](https://blogs.msdn.microsoft.com/PowerShell/) La meilleure ressource pour l’apprentissage et la collaboration avec d’autres utilisateurs de Windows PowerShell. Lisez le blog de l’équipe Windows PowerShell, puis joignez le Forum des utilisateurs Windows PowerShell (Microsoft. public. Windows. PowerShell).
+Utilisez Windows Live Search pour rechercher d’autres blogs et ressources Windows PowerShell. Ensuite, à mesure que vous développez votre expertise, participez librement à vos idées.
 
 [Explorateur de modules PowerShell](/powershell/module/) Fournit les dernières versions des rubriques d’aide de la ligne de commande.
 
@@ -53,4 +54,4 @@ En plus du kit de développement logiciel (SDK) Windows PowerShell, les ressourc
 
 [System. Management. Automation. Internal](/dotnet/api/System.Management.Automation.Internal) cet espace de noms contient les classes de base utilisées par d’autres classes d’espace de noms. Par exemple, la classe [System. Management. Automation. Internal. Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) est la classe de base pour la classe [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .
 
-[System. Management. Automation. instances d’exécution](/dotnet/api/System.Management.Automation.Runspaces) cet espace de noms contient les classes, les énumérations et les interfaces utilisées pour créer une instance d’exécution Windows PowerShell. Dans ce contexte, l’instance d’exécution Windows PowerShell est le contexte dans lequel un ou plusieurs pipelines Windows PowerShell appellent des applets de commande. Autrement dit, les applets de commande fonctionnent dans le contexte d’une instance d’exécution Windows PowerShell. Pour plus d’informations sur aboutWindows PowerShell instances d’exécution, consultez [Windows PowerShell instances d’exécution](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System. Management. Automation. instances d’exécution](/dotnet/api/System.Management.Automation.Runspaces) cet espace de noms contient les classes, les énumérations et les interfaces utilisées pour créer une instance d’exécution Windows PowerShell. Dans ce contexte, l’instance d’exécution Windows PowerShell est le contexte dans lequel un ou plusieurs pipelines Windows PowerShell appellent des applets de commande. Autrement dit, les applets de commande fonctionnent dans le contexte d’une instance d’exécution Windows PowerShell. Pour plus d’informations sur aboutWindows PowerShell instances d’exécution, consultez [Windows PowerShell instances d’exécution](hosting/creating-runspaces.md).

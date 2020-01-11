@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364248"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870487"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé
 
@@ -27,12 +27,11 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Pour écrire un composant logiciel enfichable Windows PowerShell qui inscrit des applets de commande spécifiques.
 
 1. Ajoutez l’attribut RunInstallerAttribute.
-
 2. Créez une classe publique qui dérive de la classe [System. Management. Automation. CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn) .
 
    Dans cet exemple, le nom de la classe est « CustomPSSnapinTest ».
 
-3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : #. , () {} [] &-/\ $; : «» \< > &#124; ? @ ` *
+3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Lorsque vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`
 
    Dans cet exemple, le nom du composant logiciel enfichable est « CustomPSSnapInTest ».
 
@@ -46,13 +45,15 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 
 6. Ajoutez une propriété publique pour la description du composant logiciel enfichable (obligatoire).
 
-   Dans cet exemple, la description est : « il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande test-HelloWorld et test-CustomSnapinTest ».
+   Dans cet exemple, la description est : « il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande `Test-HelloWorld` et `Test-CustomSnapinTest` ».
 
 7. Ajoutez une propriété publique pour la ressource Description du composant logiciel enfichable (facultatif).
 
-   Dans cet exemple, la ressource Vendor est « CustomPSSnapInTest, il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande test-HelloWorld et test-CustomSnapinTest ».
+   Dans cet exemple, la ressource Vendor est :
 
-8. Spécifiez les applets de commande qui appartiennent au composant logiciel enfichable personnalisé (facultatif) à l’aide de la classe [System. Management. Automation. instances d’exécution. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Les informations ajoutées ici incluent le nom de l’applet de commande, son type .NET et le nom du fichier d’aide de l’applet de commande (le format du nom du fichier d’aide de l’applet de commande doit être Name. dll-help. Xml).
+   > CustomPSSnapInTest, il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande test-HelloWorld et test-CustomSnapinTest».
+
+8. Spécifiez les applets de commande qui appartiennent au composant logiciel enfichable personnalisé (facultatif) à l’aide de la classe [System. Management. Automation. instances d’exécution. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Les informations ajoutées ici incluent le nom de l’applet de commande, son type .NET et le nom du fichier d’aide de l’applet de commande (le format du nom du fichier d’aide de l’applet de commande doit être` name.dll-help.xml`).
 
    Cet exemple ajoute les applets de commande test-HelloWorld et TestCustomSnapinTest.
 
@@ -70,7 +71,7 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell personnalisé qui peut être utilisé pour inscrire les applets de commande test-HelloWorld et test-CustomSnapinTest. Sachez que dans cet exemple, l’assembly complet peut contenir d’autres applets de commande et fournisseurs qui ne seraient pas inscrits par ce composant logiciel enfichable.
+Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell personnalisé qui peut être utilisé pour inscrire les applets de commande `Test-HelloWorld` et `Test-CustomSnapinTest`. Sachez que dans cet exemple, l’assembly complet peut contenir d’autres applets de commande et fournisseurs qui ne seraient pas inscrits par ce composant logiciel enfichable.
 
 ```csharp
 [RunInstaller(true)]
@@ -213,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-Pour plus d’informations sur l’inscription des composants logiciels enfichables, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c) dans le [Guide du programmeur Windows PowerShell](../prog-guide/windows-powershell-programmer-s-guide.md).
+Pour plus d’informations sur l’inscription des composants logiciels enfichables, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85)) dans le [Guide du programmeur Windows PowerShell](../prog-guide/windows-powershell-programmer-s-guide.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85))
 
 [Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)

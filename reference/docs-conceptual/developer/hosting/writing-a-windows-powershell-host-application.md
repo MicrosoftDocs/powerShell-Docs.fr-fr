@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fe0393634a1e5bb1a3d4a98ccf245e199beb0f16
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367278"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75869909"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Écriture d’une application hôte Windows PowerShell
 
@@ -34,7 +34,3 @@ Les rubriques suivantes expliquent comment créer une application qui héberge W
 [Création d’une interface utilisateur personnalisée](./creating-a-custom-user-interface.md) Présente des interfaces utilisateur personnalisées et fournit des liens vers des exemples.
 
 [Exemples d’applications hôtes](./host-application-samples.md) Cette section contient des exemples d’applications hôtes complètes.
-
-## <a name="see-also"></a>Voir aussi
-
-[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
