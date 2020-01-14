@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Imbrication des configurations
-ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954556"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417870"
 ---
 # <a name="nesting-dsc-configurations"></a>Imbrication des configurations DSC
 
-Une configuration imbriquée (également appelée configuration composite) est une configuration appelée dans une autre configuration, comme s’il s’agissait d’une ressource.
-Les deux configurations doivent être définies dans le même fichier.
+Une configuration imbriquée (également appelée configuration composite) est une configuration appelée dans une autre configuration, comme s’il s’agissait d’une ressource. Les deux configurations doivent être définies dans le même fichier.
 
 Examinons un exemple simple :
 
@@ -30,12 +29,11 @@ Configuration FileConfig
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     File FileTest
-       {
-           SourcePath = $CopyFrom
-           DestinationPath = $CopyTo
-           Ensure = 'Present'
-       }
-
+    {
+        SourcePath = $CopyFrom
+        DestinationPath = $CopyTo
+        Ensure = 'Present'
+    }
 }
 
 Configuration NestedFileConfig
@@ -51,9 +49,9 @@ Configuration NestedFileConfig
 }
 ```
 
-Dans cet exemple, `FileConfig` accepte deux paramètres obligatoires, **CopyFrom** et **CopyTo**, tous deux utilisés comme valeurs pour les propriétés **SourcePath** et **DestinationPath** du bloc de ressources `File`.
-La configuration `NestedConfig` appelle `FileConfig` comme s’il s’agissait d’une ressource.
-Les propriétés du bloc de ressources `NestedConfig` (**CopyFrom** et **CopyTo**) sont les paramètres de la configuration `FileConfig`.
+Dans cet exemple, `FileConfig` accepte deux paramètres obligatoires, **CopyFrom** et **CopyTo**, tous deux utilisés comme valeurs pour les propriétés **SourcePath** et **DestinationPath** du bloc de ressources `File`. La configuration `NestedConfig` appelle `FileConfig` comme s’il s’agissait d’une ressource. Les propriétés du bloc de ressources `NestedConfig` (**CopyFrom** et **CopyTo**) sont les paramètres de la configuration `FileConfig`.
+
+DSC ne prend pas actuellement en charge l’imbrication de configurations dans des configurations imbriquées. Vous pouvez uniquement imbriquer une configuration d’une profondeur de couche.
 
 ## <a name="see-also"></a>Voir aussi
 

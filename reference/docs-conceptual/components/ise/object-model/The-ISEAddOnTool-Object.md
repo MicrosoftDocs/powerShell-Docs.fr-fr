@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Objet ISEAddOnTool
-ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028983"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736128"
 ---
 # <a name="the-iseaddontool-object"></a>Objet ISEAddOnTool
 
@@ -33,6 +33,9 @@ La propriété **Control** fournit un accès en lecture à de nombreux détails 
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -139,11 +142,11 @@ IsSealed                    : False
 Dispatcher                  : System.Windows.Threading.Dispatcher
 ```
 
-### <a name="isvisible"></a>IsVisible
+### <a name="isvisible"></a>EstVisible
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Propriété booléenne qui indique si l’outil complémentaire est actuellement visible dans le volet associé. S’il est visible, vous pouvez définir la propriété **IsVisible** à la valeur **$false** pour masquer l’outil, ou définir la propriété **IsVisible** à la valeur **$true** pour afficher un outil complémentaire dans l’onglet PowerShell correspondant. Notez qu’un outil complémentaire masqué n’est plus accessible via l’objet **CurrentVisibleHorizontalTool** ou **CurrentVisibleVerticalTool**, et qu’il ne peut donc pas être affiché en définissant cette propriété sur cet objet.
+Propriété booléenne qui indique si l’outil complémentaire est actuellement visible dans le volet associé. Si elle est visible, vous pouvez définir la propriété **IsVisible** sur la valeur `$false` pour masquer l’outil ou définir la propriété **IsVisible** à la valeur `$true` pour afficher un outil de module complémentaire dans son onglet PowerShell. Notez qu’un outil complémentaire masqué n’est plus accessible via l’objet **CurrentVisibleHorizontalTool** ou **CurrentVisibleVerticalTool**, et qu’il ne peut donc pas être affiché en définissant cette propriété sur cet objet.
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -161,6 +164,9 @@ Propriété en lecture seule qui obtient le nom de l’outil complémentaire.
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: gallery, powershell, applet de commande, psgallery, psget
 title: Travailler avec des PSRepository locaux
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327990"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415820"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>Utilisation des référentiels PowerShellGet locaux
+# <a name="working-with-private-powershellget-repositories"></a>Utilisation des référentiels PowerShellGet privés
 
 Le module PowerShellGet prend en charge des référentiels autres que PowerShell Gallery.
 Ces cmdlets gèrent les cas suivants :
@@ -18,6 +18,7 @@ Ces cmdlets gèrent les cas suivants :
 - prise en charge d’un ensemble approuvé et prévalidé de modules PowerShell dans l’environnement ;
 - test d’un pipeline CI/CD qui génère des modules ou des scripts PowerShell ;
 - envoi de scripts et de modules PowerShell aux systèmes qui n’ont pas accès à Internet.
+- Fournir des scripts et des modules PowerShell accessibles uniquement à votre organisation
 
 Cet article explique comment configurer un référentiel PowerShell local. Il aborde également le module [OfflinePowerShellGetDeploy][] disponible sur PowerShell Gallery. Ce module contient des cmdlets permettant d’installer la dernière version de PowerShellGet dans un référentiel local.
 
@@ -25,7 +26,7 @@ Cet article explique comment configurer un référentiel PowerShell local. Il ab
 
 Il existe deux moyens de créer un PSRepository local : un serveur NuGet ou un partage de fichiers. Chacun présente des avantages et des inconvénients :
 
-Serveur NuGet
+### <a name="nuget-server"></a>Serveur NuGet
 
 | Avantages| Inconvénients |
 | --- | --- |
@@ -34,7 +35,7 @@ Serveur NuGet
 | NuGet prend en charge les métadonnées dans les packages `.Nupkg` | Gestion de clés API et maintenance nécessaires à la publication |
 | Fonctionnalités de recherche, d’administration de packages, etc. | |
 
-Partage de fichiers
+### <a name="file-share"></a>Partage de fichiers
 
 | Avantages| Inconvénients |
 | --- | --- |
@@ -98,18 +99,20 @@ Utilisez `Publish-Module` et `Publish-Script` pour publier votre module sur votr
 
 - Spécifiez l’emplacement de votre code.
 - Indiquez une clé API.
-- Spécifiez le nom du référentiel. Par exemple, `-PSRepository LocalPSRepo`.
+- Spécifiez le nom du référentiel. Par exemple : `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > Vous devez créer un compte dans le serveur NuGet, puis vous connecter pour générer et enregistrer la clé API.
 > Pour un partage de fichiers, utilisez une chaîne non vide comme valeur NuGetApiKey.
 
-Exemples :
+Exemples :
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Exemple :
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 Si votre PSRepository local est un référentiel web, la publication comporte une étape supplémentaire, qui utilise nuget.exe.
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Utiliser des solutions de packaging pour héberger des référentiels PowerShellGet
+
+Vous pouvez également utiliser des solutions de packaging comme Azure Artifacts pour héberger un référentiel PowerShellGet privé ou public. Pour obtenir des informations complémentaires et des instructions, consultez la [documentation Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
 
 > [!IMPORTANT]
 > Pour des raisons de sécurité, les clés API ne doivent pas être codées en dur dans les scripts. Utilisez un système de gestion de clés sécurisé.

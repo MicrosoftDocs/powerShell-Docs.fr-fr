@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEOptions
-ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9caa78a70cb837c755b2eff9af6ce0aa5dbb7452
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028921"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736945"
 ---
 # <a name="the-iseoptions-object"></a>Objet ISEOptions
 
@@ -80,7 +80,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 
 ### <a name="commandpanebackgroundcolor"></a>CommandPaneBackgroundColor
 
-Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE.  Pour les versions ultérieures, consultez [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE. Pour les versions ultérieures, consultez [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
 Spécifie la couleur d’arrière-plan pour le volet de commandes. Il s’agit d’une instance de la classe **System.Windows.Media.Color**.
 
@@ -137,7 +137,9 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie les couleurs des jetons IntelliSense dans le volet de la console Windows PowerShell ISE. Cette propriété est un objet dictionnaire qui contient les paires nom\/valeur des types et couleurs des jetons dans le volet de la console. Pour modifier les couleurs des jetons IntelliSense dans le volet de script, consultez [TokenColors](#tokencolors). Pour restaurer les valeurs par défaut des couleurs, consultez [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors). Les couleurs des jetons peuvent être définies pour les éléments suivants : Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+Spécifie les couleurs des jetons IntelliSense dans le volet de la console Windows PowerShell ISE. Cette propriété est un objet dictionnaire qui contient les paires nom\/valeur des types et couleurs des jetons dans le volet de la console. Pour modifier les couleurs des jetons IntelliSense dans le volet de script, consultez [TokenColors](#tokencolors).
+Pour restaurer les valeurs par défaut des couleurs, consultez [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).
+Les couleurs des jetons peuvent être définies pour les éléments suivants : Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -177,7 +179,9 @@ Collection de propriétés qui spécifient les valeurs par défaut à utiliser a
 ```powershell
 # Displays the name of the default options. This example is from ISE 4.0.
 $psISE.Options.DefaultOptions
+```
 
+```Output
 SelectedScriptPaneState                   : Top
 ShowDefaultSnippets                       : True
 ShowToolBar                               : True
@@ -263,7 +267,8 @@ $psISE.Options.FontSize = 20
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie le nombre de secondes pendant lesquelles IntelliSense tente de résoudre le texte que vous venez de taper. Après ce nombre de secondes, le délai de tentative IntelliSense expire et vous pouvez continuer à taper du texte. La valeur par défaut est trois secondes. La valeur est un entier.
+Spécifie le nombre de secondes pendant lesquelles IntelliSense tente de résoudre le texte que vous venez de taper.
+Après ce nombre de secondes, le délai de tentative IntelliSense expire et vous pouvez continuer à taper du texte. La valeur par défaut est trois secondes. La valeur est un entier.
 
 ```powershell
 # Changes the number of seconds for IntelliSense syntax recognition to 5.
@@ -283,7 +288,7 @@ $psISE.Options.MruCount = 5
 
 ### <a name="outputpanebackgroundcolor"></a>OutputPaneBackgroundColor
 
-Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE.  Pour les versions ultérieures, consultez [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE. Pour les versions ultérieures, consultez [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
 
 Propriété en lecture\/écriture qui obtient ou définit la couleur d’arrière-plan pour le volet de sortie. Il s’agit d’une instance de la classe **System.Windows.Media.Color**.
 
@@ -294,7 +299,7 @@ $psISE.Options.OutputPaneForegroundColor = 'gold'
 
 ### <a name="outputpanetextforegroundcolor"></a>OutputPaneTextForegroundColor
 
-Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE.  Pour les versions ultérieures, consultez [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
+Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE. Pour les versions ultérieures, consultez [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
 
 Propriété en lecture\/écriture qui modifie la couleur de premier plan du texte affiché dans le volet de sortie de Windows PowerShell ISE 2.0.
 
@@ -305,7 +310,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = 'blue'
 
 ### <a name="outputpanetextbackgroundcolor"></a>OutputPaneTextBackgroundColor
 
-Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE.  Pour les versions ultérieures, consultez [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
+Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE. Pour les versions ultérieures, consultez [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
 
 Propriété en lecture/écriture qui modifie la couleur d’arrière-plan du texte affiché dans le volet de sortie.
 
@@ -356,7 +361,8 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si la liste **Ctrl+J** des extraits de code inclut les éléments de démarrage qui sont fournis dans Windows PowerShell. Si cette propriété a la valeur **$false**, la liste **Ctrl+J** contient uniquement les extraits de code définis par l’utilisateur. La valeur par défaut est **$true**.
+Spécifie si la liste <kbd>CTRL</kbd>+<kbd>J</kbd> des extraits de code inclut les éléments de démarrage qui sont fournis dans Windows PowerShell. Si cette propriété est défini e sur `$false`, seuls les extraits de code définis par l’utilisateur sont affichés dans la liste <kbd>CTRL</kbd>+<kbd>J</kbd>.
+La valeur par défaut est `$true`.
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
@@ -367,7 +373,8 @@ $psISE.Options.ShowDefaultSnippets = $false
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si IntelliSense affiche des suggestions de syntaxe, de paramètre et de valeur dans le volet de la console. La valeur par défaut est **$true**.
+Spécifie si IntelliSense affiche des suggestions de syntaxe, de paramètre et de valeur dans le volet de la console.
+La valeur par défaut est `$true`.
 
 ```powershell
 # Turn off IntelliSense in the console pane.
@@ -378,7 +385,8 @@ $psISE.Options.ShowIntellisenseInConsolePane = $false
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si IntelliSense affiche des suggestions de syntaxe, de paramètre et de valeur dans le volet de script. La valeur par défaut est **$true**.
+Spécifie si IntelliSense affiche des suggestions de syntaxe, de paramètre et de valeur dans le volet de script.
+La valeur par défaut est `$true`.
 
 ```powershell
 # Turn off IntelliSense in the Script pane.
@@ -389,7 +397,7 @@ $psISE.Options.ShowIntellisenseInScriptPane = $false
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si le volet de script affiche les numéros de ligne dans la marge de gauche. La valeur par défaut est **$true**.
+Spécifie si le volet de script affiche les numéros de ligne dans la marge de gauche. La valeur par défaut est `$true`.
 
 ```powershell
 # Turn off line numbers in the Script pane.
@@ -400,7 +408,7 @@ $psISE.Options.ShowLineNumbers = $false
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si le volet de script affiche des crochets pouvant être développés et réduits en regard des sections de code dans la marge de gauche. Quand les crochets sont affichés, vous pouvez cliquer sur l’icône avec le signe moins \(-\) à côté du bloc de texte à réduire ou sur l’icône avec le signe plus \(+\) pour le développer. La valeur par défaut est **$true**.
+Spécifie si le volet de script affiche des crochets pouvant être développés et réduits en regard des sections de code dans la marge de gauche. Quand les crochets sont affichés, vous pouvez cliquer sur l’icône avec le signe moins `-` à côté du bloc de texte à réduire ou sur l’icône avec le signe plus `+` pour le développer. La valeur par défaut est `$true`.
 
 ```powershell
 # Turn off outlining in the Script pane.
@@ -411,7 +419,7 @@ $psISE.Options.ShowOutlining = $false
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Spécifie si la barre d’outils ISE est affichée en haut de la fenêtre Windows PowerShell ISE. La valeur par défaut est **$true**.
+Spécifie si la barre d’outils ISE est affichée en haut de la fenêtre Windows PowerShell ISE. La valeur par défaut est `$true`.
 
 ```powershell
 # Show the toolbar.
@@ -422,7 +430,8 @@ $psISE.Options.ShowToolBar = $true
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Spécifie si un message d’avertissement s’affiche quand un script est automatiquement enregistré avant de s’exécuter. La valeur par défaut est **$true**.
+Spécifie si un message d’avertissement s’affiche quand un script est automatiquement enregistré avant de s’exécuter.
+La valeur par défaut est `$true`.
 
 ```powershell
 # Enable the warning message when an attempt
@@ -434,7 +443,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Spécifie si un message d’avertissement s’affiche quand le même fichier est ouvert dans plusieurs onglets PowerShell. Si cette propriété a la valeur **$true**, l’ouverture du même fichier dans plusieurs onglets entraîne l’affichage de ce message : « Une copie de ce fichier est ouverte dans un autre onglet PowerShell. Les modifications apportées à ce fichier affecteront toutes les copies ouvertes. » La valeur par défaut est **$true**.
+Spécifie si un message d’avertissement s’affiche quand le même fichier est ouvert dans plusieurs onglets PowerShell. Si cette propriété est définie sur `$true`, l’ouverture du même fichier dans plusieurs onglets entraîne l’affichage de ce message : « Une copie de ce fichier est ouverte dans un autre onglet PowerShell. Les modifications apportées à ce fichier affecteront toutes les copies ouvertes. » La valeur par défaut est `$true`.
 
 ```powershell
 # Enable the warning message when a file is
@@ -446,7 +455,9 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Spécifie les couleurs des jetons IntelliSense dans le volet de script Windows PowerShell ISE. Cette propriété est un objet dictionnaire qui contient les paires nom/valeur des types et couleurs des jetons dans le volet de script. Pour modifier les couleurs des jetons IntelliSense dans le volet de la console, consultez [ConsoleTokenColors](#consoletokencolors). Pour restaurer les valeurs par défaut des couleurs, consultez [RestoreDefaultTokenColors](#restoredefaulttokencolors). Les couleurs des jetons peuvent être définies pour les éléments suivants : Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+Spécifie les couleurs des jetons IntelliSense dans le volet de script Windows PowerShell ISE. Cette propriété est un objet dictionnaire qui contient les paires nom/valeur des types et couleurs des jetons dans le volet de script. Pour modifier les couleurs des jetons IntelliSense dans le volet de la console, consultez [ConsoleTokenColors](#consoletokencolors).
+Pour restaurer les valeurs par défaut des couleurs, consultez [RestoreDefaultTokenColors](#restoredefaulttokencolors).
+Les couleurs des jetons peuvent être définies pour les éléments suivants : Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -459,7 +470,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si vous pouvez utiliser la touche Entrée pour sélectionner une option fournie par IntelliSense dans le volet de la console. La valeur par défaut est **$true**.
+Spécifie si vous pouvez utiliser la touche Entrée pour sélectionner une option fournie par IntelliSense dans le volet de la console. La valeur par défaut est `$true`.
 
 ```powershell
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
@@ -470,7 +481,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $false
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si vous pouvez utiliser la touche Entrée pour sélectionner une option fournie par IntelliSense dans le volet de script. La valeur par défaut est **$true**.
+Spécifie si vous pouvez utiliser la touche Entrée pour sélectionner une option fournie par IntelliSense dans le volet de script. La valeur par défaut est `$true`.
 
 ```powershell
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -481,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie si l’aide installée localement ou l’aide en ligne de la bibliothèque TechNet s’affiche quand vous appuyez sur F1 après avoir placé le curseur dans un mot clé. Si cette propriété a la valeur **$true**, une fenêtre contextuelle affiche le contenu de l’aide installée localement. Vous pouvez installer les fichiers d’aide en exécutant la commande `Update-Help`. Si cette propriété a la valeur **$false**, votre navigateur s’ouvre et affiche une page de la bibliothèque TechNet.
+Spécifie si l’aide installée localement ou l’aide en ligne de la bibliothèque TechNet s’affiche quand vous appuyez sur <kbd>F1</kbd> après avoir placé le curseur dans un mot clé. Si cette propriété est définie sur `$true`, une fenêtre contextuelle affiche le contenu de l’aide installée localement. Vous pouvez installer les fichiers d’aide en exécutant la commande `Update-Help`. Si cette propriété est définie sur `$false`, votre navigateur s’ouvre et affiche une page de la bibliothèque TechNet.
 
 ```powershell
 # Sets the option for the online help to be displayed.
@@ -551,7 +562,8 @@ $psISE.Options.XmlTokenColors["Comment"] = 'magenta'
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Spécifie la taille relative du texte dans les volets de la console et de script. La valeur par défaut est 100. Utilisez des valeurs plus basses pour réduire la taille du texte affiché dans Windows PowerShell ISE ou des valeurs plus élevées pour augmenter la taille du texte affiché. La valeur est un nombre entier compris entre 20 et 400.
+Spécifie la taille relative du texte dans les volets de la console et de script. La valeur par défaut est 100.
+Utilisez des valeurs plus basses pour réduire la taille du texte affiché dans Windows PowerShell ISE ou des valeurs plus élevées pour augmenter la taille du texte affiché. La valeur est un nombre entier compris entre 20 et 400.
 
 ```powershell
 # Changes the text in the Windows PowerShell ISE to be double its normal size.

@@ -1,33 +1,34 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/19/2019
 keywords: powershell,applet de commande
 title: Accessibilité dans Windows PowerShell ISE
-ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030638"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736281"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accessibilité dans Windows PowerShell ISE
 
 Cette rubrique décrit les fonctionnalités d’accessibilité de Windows PowerShell Integrated Scripting Environment (ISE) qui peuvent s’avérer utiles.
 
-* [Guide pratique pour modifier la taille et l’emplacement des volets Console et Script](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
-* [Raccourcis clavier pour l’édition du texte](#keyboard-shortcuts-for-editing-text)
-* [Raccourcis clavier pour l’exécution des scripts](#keyboard-shortcuts-for-running-scripts)
-* [Raccourcis clavier pour la personnalisation de l’affichage](#keyboard-shortcuts-for-customizing-the-view)
-* [Raccourcis clavier pour le débogage des scripts](#keyboard-shortcuts-for-debugging-scripts)
-* [Raccourcis clavier pour les onglets Windows PowerShell](#keyboard-shortcuts-for-windows-powershell-tabs)
-* [Raccourcis clavier pour le démarrage et la fermeture](#keyboard-shortcuts-for-starting-and-exiting)
+- [Guide pratique pour modifier la taille et l’emplacement des volets Console et Script](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+- [Raccourcis clavier pour l’édition du texte](#keyboard-shortcuts-for-editing-text)
+- [Raccourcis clavier pour l’exécution des scripts](#keyboard-shortcuts-for-running-scripts)
+- [Raccourcis clavier pour la personnalisation de l’affichage](#keyboard-shortcuts-for-customizing-the-view)
+- [Raccourcis clavier pour le débogage des scripts](#keyboard-shortcuts-for-debugging-scripts)
+- [Raccourcis clavier pour les onglets Windows PowerShell](#keyboard-shortcuts-for-windows-powershell-tabs)
+- [Raccourcis clavier pour le démarrage et la fermeture](#keyboard-shortcuts-for-starting-and-exiting)
+- [Gestion des points d’arrêt avec cmdlets](#breakpoint-management)
 
 Microsoft s'attache à rendre ses produits et services conviviaux. Les rubriques suivantes fournissent des informations sur les fonctionnalités, les produits et les services qui rendent Windows PowerShell ISE plus accessible aux personnes handicapées.
 
-Windows PowerShell ISE prend en charge l’affichage à contraste élevé. Pour les malvoyants, les informations de point d’arrêt sont disponibles via les applets de commande pour la gestion des points d’arrêt, telles que [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) et [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Pour plus d’informations, voir « Comment gérer des points d’arrêt » dans [Comment déboguer des scripts dans Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). En plus des fonctionnalités et utilitaires d’accessibilité dans Microsoft Windows, les fonctionnalités suivantes rendent Windows PowerShell ISE plus accessible aux personnes handicapées :
+En plus des fonctionnalités et utilitaires d’accessibilité dans Microsoft Windows, les fonctionnalités suivantes rendent Windows PowerShell ISE plus accessible aux personnes handicapées :
 
 - Raccourcis clavier
 
-- Table de coloration de la syntaxe et capacité de modifier plusieurs autres paramètres de couleur à l’aide de l’objet de script [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb).
+- Table de coloration de la syntaxe et capacité de modifier plusieurs autres paramètres de couleur à l’aide de l’objet de script [$psISE.Options](object-model/The-ISEOptions-Object.md).
 
 - Modification de la taille du texte
 
@@ -43,13 +44,13 @@ Pour modifier la taille et l’emplacement des volets Console et Script, vous po
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>Pour déplacer les volets Script et Console
 
-Effectuez l'une des opérations suivantes :
+Effectuez l’une des actions suivantes :
 
-- Pour déplacer le volet Script au-dessus du volet Console, appuyez sur **Ctrl+1** ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script en haut**, ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script en haut**.
+- Pour déplacer le volet Script au-dessus du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>1</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script en haut** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script en haut**.
 
-- Pour déplacer le volet Script à droite du volet Console, appuyez sur **Ctrl+2** ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script à droite**, ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script à droite**.
+- Pour déplacer le volet Script à droite du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>2</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script à droite** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script à droite**.
 
-- Pour agrandir le volet Script, appuyez sur **Ctrl+3** ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script agrandi**, ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script agrandi**.
+- Pour agrandir le volet Script, appuyez sur <kbd>CTRL</kbd>+<kbd>3</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script agrandi** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script agrandi**.
 
 - Pour agrandir le volet Console et masquer le volet Script, sur le bord de droit de la ligne d’onglets, cliquez sur l’icône **Masquer le volet Script**, ou, dans le menu **Affichage**, cliquez pour désactiver l’option de menu **Afficher le volet Script**.
 
@@ -59,102 +60,105 @@ Effectuez l'une des opérations suivantes :
 
 Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suivants.
 
-|Action|Raccourcis clavier|Utiliser dans|
-|----------|----------------------|----------|
-|**Copier**|Ctrl+C|Volet Script, volet Console|
-|**Couper**|Ctrl+X|Volet Script, volet Console|
-|**Rechercher dans le script**|Ctrl+F|Volet Script|
-|**Rechercher suivant dans le script**|F3|Volet Script|
-|**Rechercher précédent dans le script**|Maj+F3|Volet Script|
-|**Coller**|Ctrl+V|Volet Script, volet Console|
-|**Rétablir**|Ctrl+Y|Volet Script, volet Console|
-|**Remplacer dans le script**|Ctrl+H|Volet Script|
-|**Enregistrer**|Ctrl+S|Volet Script|
-|**Sélectionner tout**|Ctrl+A|Volet Script, volet Console|
-|**Annuler**|Ctrl+Z|Volet Script, volet Console|
+|           Action            |       Raccourcis clavier       |          Utiliser dans           |
+| --------------------------- | ------------------------------ | ------------------------- |
+| **Copy**                    | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Volet Script, volet Console |
+| **Couper**                     | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Volet Script, volet Console |
+| **Rechercher dans le script**          | <kbd>CTRL</kbd>+<kbd>F</kbd>   | Volet Script               |
+| **Rechercher suivant dans le script**     | <kbd>F3</kbd>                  | Volet Script               |
+| **Rechercher précédent dans le script** | <kbd>SHIFT</kbd>+<kbd>F3</kbd> | Volet Script               |
+| **Coller**                   | <kbd>CTRL</kbd>+<kbd>V</kbd>   | Volet Script, volet Console |
+| **Rétablir**                    | <kbd>CTRL</kbd>+<kbd>Y</kbd>   | Volet Script, volet Console |
+| **Remplacer dans le script**       | <kbd>CTRL</kbd>+<kbd>H</kbd>   | Volet Script               |
+| **Save**                    | <kbd>CTRL</kbd>+<kbd>S</kbd>   | Volet Script               |
+| **Sélectionner tout**              | <kbd>CTRL</kbd>+<kbd>A</kbd>   | Volet Script, volet Console |
+| **Annuler**                    | <kbd>CTRL</kbd>+<kbd>Z</kbd>   | Volet Script, volet Console |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Raccourcis clavier pour exécuter les scripts
 
 Lorsque vous exécutez des scripts dans le volet Script, vous pouvez utiliser les raccourcis clavier suivants.
 
-|Action|Raccourci clavier|
-|----------|---------------------|
-|**Nouveau**|Ctrl+N|
-|**Ouvrir**|Ctrl+O|
-|**Exécuter**|F5|
-|**Exécuter la sélection**|F8|
-|**Arrêter l’exécution**|CTRL+PAUSE. Vous pouvez utiliser Ctrl+C quand le contexte est sans ambiguïté (quand aucun texte n’est sélectionné).|
-|**Tab** (pour accéder au script suivant)|CTRL+TAB **Remarque :** l’usage de la touche Tab pour accéder au script suivant fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script.|
-|**Tab** (pour accéder au script précédent)|CTRL+MAJ+TAB **Remarque :** l’usage de la touche Tab pour accéder au script précédent fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script.|
+|            Action            |                                                                                                     Raccourci clavier                                                                                                      |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nouveau**                      | <kbd>CTRL</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
+| **Ouvrir**                     | <kbd>CTRL</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
+| **Exécuter**                      | <kbd>F5</kbd>                                                                                                                                                                                                              |
+| **Exécuter la sélection**            | <kbd>F8</kbd>                                                                                                                                                                                                              |
+| **Arrêter l’exécution**           | <kbd>CTRL</kbd>+<kbd>ARRÊTER</kbd>. Vous pouvez utiliser <kbd>CTRL</kbd>+<kbd>C</kbd> quand le contexte est sans ambiguïté (quand aucun texte n’est sélectionné).                                                                               |
+| **Tab** (pour accéder au script suivant)     | <kbd>CTRL</kbd>+<kbd>TAB</kbd> **Remarque :** l’usage de la touche Tab pour accéder au script suivant fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script.                |
+| **Tab** (pour accéder au script précédent) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>TAB</kbd> **Remarque :** l’usage de la touche Tab pour accéder au script précédent fonctionne uniquement quand un seul onglet PowerShell est ouvert ou, si plusieurs onglets PowerShell sont ouverts, quand le focus est dans le volet Script. |
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Raccourcis clavier pour la personnalisation de l’affichage
 
 Pour personnaliser l’affichage dans Windows PowerShell ISE, vous pouvez utiliser les raccourcis clavier suivants. Ils sont accessibles à partir de tous les volets de l’application.
 
-|Action|Raccourci clavier|
-|----------|---------------------|
-|**Accéder au volet Console**|Ctrl+D|
-|**Accéder au volet Script**|Ctrl+I|
-|**Afficher le volet Script**|Ctrl+R|
-|**Masquer le volet Script**|Ctrl+R|
-||
-|**Déplacer le volet Script vers le haut**|Ctrl+1|
-|**Déplacer le volet Script vers la droite**|Ctrl+2|
-|**Maximiser le volet Script**|Ctrl+3|
-|**Zoom avant**|Ctrl+Signe Plus|
-|**Zoom arrière**|Ctrl+Signe Moins|
+|           Action           |         Raccourci clavier        |
+| -------------------------- | -------------------------------- |
+| **Accéder au volet Console**     | <kbd>CTRL</kbd>+<kbd>D</kbd>     |
+| **Accéder au volet Script**      | <kbd>CTRL</kbd>+<kbd>I</kbd>     |
+| **Afficher le volet Script**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
+| **Masquer le volet Script**       | <kbd>CTRL</kbd>+<kbd>R</kbd>     |
+| **Déplacer le volet Script vers le haut**    | <kbd>CTRL</kbd>+<kbd>1</kbd>     |
+| **Déplacer le volet Script vers la droite** | <kbd>CTRL</kbd>+<kbd>2</kbd>     |
+| **Maximiser le volet Script**   | <kbd>CTRL</kbd>+<kbd>3</kbd>     |
+| **Zoom avant**                | <kbd>CTRL</kbd>+<kbd>PLUS</kbd>  |
+| **Zoom arrière**               | <kbd>CTRL</kbd>+<kbd>MINUS</kbd> |
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Raccourcis clavier pour le débogage des scripts
 
 Lors du débogage de scripts, vous pouvez utiliser les raccourcis clavier suivants.
 
-|Action|Raccourci clavier|Utiliser dans|
-|----------|---------------------|----------|
-|**Exécuter/continuer**|F5|Volet Script, lors du débogage d’un script|
-|**Pas à pas détaillé**|F11|Volet Script, lors du débogage d’un script|
-|**Pas à pas principal**|F10|Volet Script, lors du débogage d’un script|
-|**Pas à pas sortant**|Maj+F11|Volet Script, lors du débogage d’un script|
-|**Afficher la pile des appels**|Ctrl+Maj+D|Volet Script, lors du débogage d’un script|
-|**Afficher la liste des points d’arrêt**|Ctrl+Maj+L|Volet Script, lors du débogage d’un script|
-|**Basculer le point d’arrêt**|F9|Volet Script, lors du débogage d’un script|
-|**Supprimer tous les points d’arrêt**|Ctrl+Maj+F9|Volet Script, lors du débogage d’un script|
-|**Arrêter le débogueur**|Maj+F5|Volet Script, lors du débogage d’un script|
+|           Action           |               Raccourci clavier                |                Utiliser dans                |
+| -------------------------- | ---------------------------------------------- | ------------------------------------ |
+| **Exécuter/continuer**           | <kbd>F5</kbd>                                  | Volet Script, lors du débogage d’un script |
+| **Pas à pas détaillé**              | <kbd>F11</kbd>                                 | Volet Script, lors du débogage d’un script |
+| **Pas à pas principal**              | <kbd>F10</kbd>                                 | Volet Script, lors du débogage d’un script |
+| **Pas à pas sortant**               | <kbd>MAJ</kbd>+<kbd>F11</kbd>                | Volet Script, lors du débogage d’un script |
+| **Afficher la pile des appels**     | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>D</kbd>  | Volet Script, lors du débogage d’un script |
+| **Afficher la liste des points d’arrêt**       | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>L</kbd>  | Volet Script, lors du débogage d’un script |
+| **Basculer le point d’arrêt**      | <kbd>F9</kbd>                                  | Volet Script, lors du débogage d’un script |
+| **Supprimer tous les points d’arrêt** | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>F9</kbd> | Volet Script, lors du débogage d’un script |
+| **Arrêter le débogueur**          | <kbd>MAJ</kbd>+<kbd>F5</kbd>                 | Volet Script, lors du débogage d’un script |
 
 > [!NOTE]
->
 > Lors du débogage de scripts dans Windows PowerShell ISE, vous pouvez également utiliser les raccourcis clavier conçus pour la console Windows PowerShell. Pour utiliser ces raccourcis, vous devez les taper dans le volet Console, puis appuyer sur Entrée.
 
-|Action|Raccourci clavier|Utiliser dans|
-|----------|---------------------|----------|
-|**Continuer**|C|Volet Console, lors du débogage d’un script|
-|**Pas à pas détaillé**|S|Volet Console, lors du débogage d’un script|
-|**Pas à pas principal**|V|Volet Console, lors du débogage d’un script|
-|**Pas à pas sortant**|O|Volet Console, lors du débogage d’un script|
-|**Répéter la dernière commande** (pour un pas à pas détaillé ou un pas à pas principal)|ENTRÉE|Volet Console, lors du débogage d’un script|
-|**Afficher la pile des appels**|K|Volet Console, lors du débogage d’un script|
-|**Arrêter le débogage**|Q|Volet Console, lors du débogage d’un script|
-|**Afficher le script**|L|Volet Console, lors du débogage d’un script|
-|**Afficher les commandes de débogage de la console**|H ou ?|Volet Console, lors du débogage d’un script|
+|                 Action                  |      Raccourci clavier       |                Utiliser dans                 |
+| --------------------------------------- | ---------------------------- | ------------------------------------- |
+| **Continuer**                            | <kbd>C</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Pas à pas détaillé**                           | <kbd>S</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Pas à pas principal**                           | <kbd>V</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Pas à pas sortant**                            | <kbd>O</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Répéter la dernière commande**(effectuer un pas à pas détaillé/principal) | <kbd>ENTRÉE</kbd>             | Volet Console, lors du débogage d’un script |
+| **Afficher la pile des appels**                  | <kbd>K</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Arrêter le débogage**                      | <kbd>Q</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Afficher le script**                     | <kbd>L</kbd>                 | Volet Console, lors du débogage d’un script |
+| **Afficher les commandes de débogage de la console**  | <kbd>H</kbd> ou <kbd>?</kbd> | Volet Console, lors du débogage d’un script |
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Raccourcis clavier pour les onglets Windows PowerShell
 
 Lorsque vous utilisez les onglets Windows PowerShell, vous pouvez utiliser les raccourcis clavier suivants.
 
-|Action|Raccourci clavier|
-|----------|---------------------|
-|**Fermer l’onglet PowerShell**|Ctrl+W|
-|**Nouvel onglet PowerShell**|CTRL+T|
-|**Onglet PowerShell précédent**|Ctrl+Maj+Tab Ce raccourci ne fonctionne que si aucun fichier n’est ouvert sous aucun onglet PowerShell.|
-|**Onglet Windows PowerShell suivant**|CTRL+Tab Ce raccourci ne fonctionne que si aucun fichier n’est ouvert sous aucun onglet PowerShell.|
+|             Action              |                                 Raccourci clavier                                  |
+| ------------------------------- | ---------------------------------------------------------------------------------- |
+| **Fermer l’onglet PowerShell**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
+| **Nouvel onglet PowerShell**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
+| **Onglet PowerShell précédent**     | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>TAB</kbd> (Uniquement si aucun fichier n’est ouvert sous aucun onglet PowerShell)                 |
+| **Onglet Windows PowerShell suivant** | <kbd>CTRL</kbd>+<kbd>TAB</kbd> (Uniquement si aucun fichier n’est ouvert sous aucun onglet PowerShell) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Raccourcis clavier pour le démarrage et la fermeture
 
-Pour démarrer la console Windows PowerShell (PowerShell.exe) ou pour quitter Windows PowerShell ISE, vous pouvez utiliser les raccourcis clavier suivants.
+Pour démarrer la console Windows PowerShell (**PowerShell.exe**) ou pour quitter Windows PowerShell ISE, vous pouvez utiliser les raccourcis clavier suivants.
 
-|Action|Raccourci clavier|
-|----------|---------------------|
-|**Quitter**|ALT+F4|
-|**Démarrer PowerShell.exe** (console Windows PowerShell)|Ctrl+Maj+P|
+|                        Action                         |               Raccourci clavier               |
+| ----------------------------------------------------- | --------------------------------------------- |
+| **Quitter**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
+| **Démarrer PowerShell.exe** (console Windows PowerShell) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>P</kbd> |
+
+## <a name="breakpoint-management"></a>Gestion des points d’arrêt
+
+Pour les malvoyants, les informations de point d’arrêt sont disponibles via les applets de commande pour la gestion des points d’arrêt, telles que [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) et [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
+Pour plus d’informations, voir « Comment gérer des points d’arrêt » dans [Comment déboguer des scripts dans Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417563"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415711"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Modifications avec rupture dans PowerShell 6.x
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417563"
 
 [PowerShell Workflow][workflow] est une fonctionnalité de Windows PowerShell qui s’appuie sur [Windows Workflow Foundation (WF)][workflow-foundation] et permet de créer des runbooks robustes pour les tâches de longue durée ou parallélisées.
 
-En raison du manque de prise en charge pour Windows Workflow Foundation dans .NET Core, nous ne prendrons plus en charge PowerShell Workflow dans PowerShell Core.
+En raison du manque de support pour Windows Workflow Foundation dans .NET Core, nous ne prendrons plus en charge PowerShell Workflow dans PowerShell Core.
 
 À l’avenir, nous aimerions activer le parallélisme/la concurrence natif(ve) dans le langage PowerShell sans utiliser PowerShell Workflow.
 
@@ -64,6 +64,10 @@ Au lieu de cela, nous vous recommandons d’utiliser les cmdlets CIM (également
 
 En raison de l’utilisation des API non prises en charge, `Microsoft.PowerShell.LocalAccounts` a été supprimé de PowerShell jusqu’à ce qu’une meilleure solution soit trouvée.
 
+### <a name="new-webserviceproxy-cmdlet-removed"></a>Cmdlet `New-WebServiceProxy` supprimée
+
+.NET Core ne prend pas en charge l’infrastructure de communication Windows, qui fournit des services pour l’utilisation du protocole SOAP. Cette cmdlet a été supprimée, car elle nécessite SOAP.
+
 ### <a name="-computer-cmdlets"></a>Cmdlets `*-Computer`
 
 En raison de l’utilisation d’API non prises en charge, les applets de commande suivantes ont été supprimées de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée.
@@ -83,7 +87,7 @@ En raison de l’utilisation des API non prises en charge, `*-EventLog` a été 
 
 ## <a name="enginelanguage-changes"></a>Modifications apportées au moteur/langage
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>`powershell.exe` renommé `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>Renommer `powershell.exe` pour `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
 Afin d’offrir aux utilisateurs une solution déterministe pour appeler PowerShell Core sur Windows (par opposition à Windows PowerShell), le fichier binaire PowerShell Core a été remplacé par `pwsh.exe` sur Windows et `pwsh` sur les autres plateformes.
 
@@ -115,7 +119,7 @@ Auparavant, si `-Verbose` ou `-Debug` était spécifié, il remplaçait le compo
 
 Lorsqu’une API retourne simplement `null`, Invoke-RestMethod sérialisait cet élément comme la chaîne `"null"` au lieu de `$null`. Cette modification résout la logique dans `Invoke-RestMethod` pour sérialiser correctement une seule valeur JSON valide `null` de manière littérale en tant que `$null`.
 
-### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Supprimer `-Protocol` des cmdlets `*-Computer` [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Supprimer `-Protocol` des cmdlets `*-Computer`[#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
 En raison de problèmes avec l’accès à distance RPC dans CoreFX (en particulier sur les plateformes non Windows) et en vue de garantir une expérience cohérente de la communication à distance dans PowerShell, le paramètre `-Protocol` a été supprimé des cmdlets `\*-Computer`. DCOM n’est plus pris en charge pour la communication à distance. Les applets de commande suivantes prennent en charge seulement la communication à distance WSMAN :
 
@@ -123,7 +127,7 @@ En raison de problèmes avec l’accès à distance RPC dans CoreFX (en particul
 - Restart-Computer
 - Stop-Computer
 
-### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Supprimer `-ComputerName` des cmdlets `*-Service` [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Supprimer `-ComputerName` des cmdlets `*-Service`[#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
 Pour favoriser l’utilisation cohérente de PSRP, le paramètre `-ComputerName` a été supprimé des cmdlets `*-Service`.
 
@@ -145,7 +149,7 @@ Auparavant, la cmdlet affichait un commentaire en tant que première ligne conte
 
 Lorsque vous utilisez HTTP, le contenu, notamment les mots de passe, est envoyé en texte clair. Cette modification consiste à ne pas autoriser ce comportement par défaut et à retourner une erreur si les informations d’identification sont transmises de façon non sécurisée. Les utilisateurs peuvent contourner cela à l’aide du commutateur `-AllowUnencryptedAuthentication`.
 
-## <a name="api-changes"></a>Modifications apportées à l’API
+## <a name="api-changes"></a>Modifications d'API
 
 ### <a name="remove-addtypecommandbase-class-5407httpsgithubcompowershellpowershellissues5407"></a>Classe `AddTypeCommandBase` supprimée [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
@@ -174,7 +178,7 @@ Auparavant, lors de la création d’une instance d’exécution PowerShell par 
 
 En raison d’une position incorrecte d’un paramètre, les arguments étaient passés en tant qu’entrée au lieu d’arguments.
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Suppression du commutateur `-showwindow` non pris en charge de `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903httpsgithubcompowershellpowershellissues4903"></a>Supprimer le commutateur `-showwindow` non pris en charge de `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
 `-showwindow` s’appuie sur WPF, qui n’est pas pris en charge dans CoreCLR.
 
@@ -182,11 +186,11 @@ En raison d’une position incorrecte d’un paramètre, les arguments étaient 
 
 Auparavant, `-LiteralPath` avec un caractère générique le traitait de la même façon que `-Path` et si le caractère générique ne trouvait aucun fichier, il s’arrêtait en mode silencieux. Le comportement correct doit être que `-LiteralPath` est littéral, donc si le fichier n’existe pas, il doit afficher une erreur. La modification consiste à traiter les caractères génériques utilisés avec `-Literal` en tant qu’éléments littéraux.
 
-### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Corriger l’échec au test de `Set-Service` [#4802](https://github.com/PowerShell/PowerShell/issues/4802)
+### <a name="fix-set-service-failing-test-4802httpsgithubcompowershellpowershellissues4802"></a>Corriger l’échec au test de `Set-Service`[#4802](https://github.com/PowerShell/PowerShell/issues/4802)
 
 Auparavant, si `New-Service -StartupType foo` était utilisé, `foo` était ignoré et le service était créé avec un certain type de démarrage par défaut. Cette modification vise à lever explicitement une erreur pour un type de démarrage non valide.
 
-### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>`$IsOSX` renommé `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700httpsgithubcompowershellpowershellissues4700"></a>Renommer `$IsOSX` par `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
 L’affectation de noms dans PowerShell doit être cohérente avec notre affectation de noms et conforme à l’utilisation d’Apple de macOS au lieu de OSX. Toutefois, pour une lisibilité et une cohérence optimales, nous conservons la casse Pascal.
 
@@ -202,11 +206,11 @@ En raison d’API non prises en charge, le module `LocalAccounts` et les cmdlets
 
 Auparavant, l’utilisation de **powershell.exe** (désormais **pwsh.exe**) pour exécuter un script PowerShell à l’aide de `-File` ne fournissait aucun moyen de transmettre `$true`/`$false` comme valeurs de paramètre. La prise en charge de `$true`/`$false` comme valeurs analysées des paramètres a été ajoutée. Les valeurs de commutateur sont également prises en charge, car la syntaxe actuellement documentée ne fonctionne pas.
 
-### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Suppression de la propriété `ClrVersion` de `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Supprimer la propriété `ClrVersion` de `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
 La propriété `ClrVersion` de `$PSVersionTable` n’est pas utile avec CoreCLR, les utilisateurs finaux ne doivent pas utiliser cette valeur pour déterminer la compatibilité.
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Modifier le paramètre positionnel pour `powershell.exe` de `-Command` à `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019httpsgithubcompowershellpowershellissues4019"></a>Modifier le paramètre positionnel pour `powershell.exe` de `-Command` par `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
 Autoriser shebang à utiliser PowerShell sur les plateformes non Windows. Cela signifie que sur les systèmes Unix, vous pouvez rendre un script exécutable qui appelle PowerShell automatiquement au lieu d’appeler explicitement `pwsh`. Cela signifie également que vous pouvez faire des choses comme `powershell foo.ps1` ou `powershell fooScript` sans spécifier `-File`. Toutefois, cette modification nécessite désormais que vous indiquiez explicitement `-c` ou `-Command` quand vous essayez de faire des choses comme `powershell.exe Get-Command`.
 
@@ -238,7 +242,7 @@ Sous Unix, une convention stipule que les shells doivent accepter `-i` pour un s
 
 `BiosSerialNumber` était mal orthographié en tant que `BiosSeralNumber` et a été remplacé par l’orthographe correcte.
 
-### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Ajouter les cmdlets `Get-StringHash` et `Get-FileHash` [#3024](https://github.com/PowerShell/PowerShell/issues/3024)
+### <a name="add-get-stringhash-and-get-filehash-cmdlets-3024httpsgithubcompowershellpowershellissues3024"></a>Ajouter les cmdlets `Get-StringHash` et `Get-FileHash`[#3024](https://github.com/PowerShell/PowerShell/issues/3024)
 
 Cette modification indique que certains algorithmes de hachage ne sont pas pris en charge par CoreFX, donc ils ne sont plus disponibles :
 
@@ -265,7 +269,7 @@ La transmission de `$null` à l’un des éléments ci-dessous génère maintena
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Ajout de la prise en charge du Format de fichier journal étendu W3C dans `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482httpsgithubcompowershellpowershellissues2482"></a>Ajouter le support Format de fichier journal étendu W3C dans `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
 Auparavant, la cmdlet `Import-Csv` ne pouvait pas être utilisée pour importer directement les fichiers journaux au format de journal étendu W3C et une action supplémentaire était nécessaire. Avec cette modification, le format de journal étendu W3C est pris en charge.
 

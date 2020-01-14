@@ -2,17 +2,16 @@
 ms.date: 08/25/2017
 keywords: powershell,applet de commande
 title: Objet ObjectModelRoot
-ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086780"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736026"
 ---
 # <a name="the-objectmodelroot-object"></a>Objet ObjectModelRoot
 
-L’objet **$psISE**, qui est l’objet racine principal dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell® est une instance de la classe Microsoft.PowerShell.Host.ISE.ObjectModelRoot.
-Cette rubrique décrit les propriétés de l’objet **ObjectModelRoot**.
+L’objet `$psISE`, qui est l’objet racine principal dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell® est une instance de la classe Microsoft.PowerShell.Host.ISE.ObjectModelRoot. Cette rubrique décrit les propriétés de l’objet **ObjectModelRoot**.
 
 ## <a name="properties"></a>Propriétés
 

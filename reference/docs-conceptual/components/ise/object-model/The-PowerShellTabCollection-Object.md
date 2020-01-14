@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Objet PowerShellTabCollection
-ms.openlocfilehash: 5a1318534ddce19c2f5faa0d2013e2b38d8b79e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030492"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736111"
 ---
 # <a name="the-powershelltabcollection-object"></a>Objet PowerShellTabCollection
 
-L’objet collection **PowerShellTab** est une collection d’objets **PowerShellTab**. Chaque objet **PowerShellTab** fonctionne comme un environnement d’exécution distinct. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.PowerShellTabs. L’objet **$psISE.PowerShellTabs** en est un exemple.
+L’objet collection **PowerShellTab** est une collection d’objets **PowerShellTab**. Chaque objet **PowerShellTab** fonctionne comme un environnement d’exécution distinct. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.PowerShellTabs. L’objet `$psISE.PowerShellTabs` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 

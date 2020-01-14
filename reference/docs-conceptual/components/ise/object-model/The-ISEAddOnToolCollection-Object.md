@@ -1,21 +1,21 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEAddOnToolCollection
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030624"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737013"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Objet ISEAddOnToolCollection
 
-L’objet **ISEAddOnToolCollection** est une collection d’objets **ISEAddOnTool**. L’objet **$psISE.CurrentPowerShellTab.VerticalAddOnTools** en est un exemple.
+L’objet **ISEAddOnToolCollection** est une collection d’objets **ISEAddOnTool**. L’objet `$psISE.CurrentPowerShellTab.VerticalAddOnTools` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
-### <a name="add-name-controltype-isvisible-"></a>Add\( Name, ControlType, \[IsVisible\] \)
+### <a name="add-name-controltype-isvisible-"></a>Ajouter\( Nom, ControlType, \[IsVisible\] \)
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
@@ -25,7 +25,7 @@ Ajoute un nouvel outil complémentaire à la collection. Elle retourne l’outil
 
 **ControlType** : type. Spécifie le contrôle qui est ajouté.
 
-**\[IsVisible\]**  : valeur booléenne facultative. Si la valeur définie est **$true**, l’outil complémentaire est immédiatement visible dans le volet d’outils associé.
+**\[IsVisible\]**  : valeur booléenne facultative. Si la valeur définie est `$true`, l’outil de module complémentaire est immédiatement visible dans le volet d’outils associé.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: powershell,applet de commande
 title: Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande
-ms.openlocfilehash: 9fcb85668673adb1de596660d37e56f6607a4064
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07cf9ff75db8d33ed018542153bfcd7503035e40
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030998"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737081"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande
 
@@ -15,16 +15,16 @@ La saisie semi-automatique par le biais de la touche Tab fournit une aide automa
 
 ## <a name="to-automatically-complete-a-command-entry"></a>Pour compléter automatiquement une entrée de commande
 
-Dans le volet Commande ou Script, tapez quelques caractères d’une commande, puis appuyez sur la touche TAB pour sélectionner le texte de saisie semi-automatique souhaité. Si plusieurs éléments commencent par le texte que vous avez tapé initialement, continuez à appuyer sur la touche Tab jusqu’à ce que l’élément souhaité s’affiche. La saisie semi-automatique via la touche Tab peut vous aider à saisir un nom d’applet de commande, un nom de paramètre, un nom de variable, un nom de propriété d’objet ou un chemin d’accès de fichier.
+Dans le volet Commande ou Script, tapez quelques caractères d’une commande, puis appuyez sur <kbd>TAB</kbd> pour sélectionner le texte de saisie semi-automatique souhaité. Si plusieurs éléments commencent par le texte que vous avez tapé initialement, continuez à appuyer sur <kbd>TAB</kbd> jusqu’à ce que l’élément souhaité s’affiche. La saisie semi-automatique via la touche Tab peut vous aider à saisir un nom d’applet de commande, un nom de paramètre, un nom de variable, un nom de propriété d’objet ou un chemin d’accès de fichier.
 
 > [!NOTE]
-> Dans le volet Script, l’appui sur la touche TAB complète automatiquement une commande uniquement lorsque vous éditez des fichiers .psm1, .psd1 ou .ps1. La saisie semi-automatique via la touche Tab fonctionne à tout moment lorsque vous tapez dans le volet Commande.
+> Dans le volet Script, appuyer sur <kbd>TAB</kbd> permet de terminer automatiquement une commande uniquement lorsque vous éditez des fichiers `.ps1`, `.psd1` ou `.psm1`. La saisie semi-automatique via la touche Tab fonctionne à tout moment lorsque vous tapez dans le volet Commande.
 
 ## <a name="to-automatically-complete-a-cmdlet-parameter-entry"></a>Pour compléter automatiquement une entrée de paramètre d’applet de commande
 
-Dans le volet Commande ou Script, tapez une applet de commande suivie d’un tiret, puis appuyez sur la touche de tabulation.
+Dans le volet Commande ou Script, tapez une cmdlet suivie d’un tiret, puis appuyez sur <kbd>TAB</kbd>.
 
-Par exemple, tapez `Get-Process -` puis appuyez sur la touche TAB plusieurs fois pour afficher successivement chacun des paramètres de l’applet de commande.
+Par exemple, tapez `Get-Process -` puis appuyez sur <kbd>TAB</kbd> plusieurs fois pour afficher successivement chacun des paramètres de la cmdlet.
 
 ## <a name="see-also"></a>Voir aussi
 

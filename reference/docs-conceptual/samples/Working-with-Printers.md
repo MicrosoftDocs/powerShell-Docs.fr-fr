@@ -1,24 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation d’imprimantes
-ms.openlocfilehash: 816388325cc3155f1dbd1bc15fc1736155216092
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030682"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736860"
 ---
-# <a name="working-with-printers"></a>Utilisation d’imprimantes
+# <a name="working-with-printers-in-windows"></a>Utilisation d’imprimantes sur Windows
 
-Vous pouvez utiliser Windows PowerShell pour gérer des imprimantes à l’aide de WMI et de l’objet COM WScript.Network de WSH. Nous allons utiliser une combinaison de ces deux outils pour effectuer des tâches spécifiques.
+Vous pouvez utiliser PowerShell pour gérer des imprimantes à l’aide de WMI et de l’objet COM **WScript.Network** de WSH. Nous allons utiliser une combinaison de ces deux outils pour effectuer des tâches spécifiques.
 
 ## <a name="listing-printer-connections"></a>Affichage de la liste des connexions d’imprimante
 
 La manière la plus simple de répertorier les imprimantes installées sur un ordinateur consiste à utiliser la classe WMI **Win32_Printer** :
 
 ```powershell
-Get-WmiObject -Class Win32_Printer
+Get-CimInstance -Class Win32_Printer
 ```
 
 Vous pouvez également répertorier les imprimantes à l’aide de l’objet COM **WScript.Network** qui est généralement utilisé dans des scripts WSH :
@@ -42,7 +42,7 @@ Pour ajouter une nouvelle imprimante réseau, utilisez l’objet COM **WScript.N
 Pour utiliser WMI afin de définir l’imprimante par défaut, recherchez l’imprimante dans la collection **Win32_Printer**, puis appelez la méthode **SetDefaultPrinter** :
 
 ```powershell
-(Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
 ```
 
 L’objet COM **WScript.Network** est un peu plus simple à utiliser, car il dispose d’une méthode **SetDefaultPrinter** qui accepte uniquement le nom de l’imprimante en tant qu’argument :

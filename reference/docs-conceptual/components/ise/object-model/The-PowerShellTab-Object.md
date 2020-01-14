@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Objet PowerShellTab
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028911"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736928"
 ---
 # <a name="the-powershelltab-object"></a>Objet PowerShellTab
 
@@ -43,7 +43,7 @@ Exécute le script spécifié dans l’onglet PowerShell.
 
 **Script** \- System.Management.Automation.ScriptBlock ou chaîne. Bloc de script à utiliser.
 
-**\[useNewScope\]**  : valeur booléenne facultative qui a la valeur **$true** par défaut. Si la valeur est **$true**, une nouvelle étendue est créée pour y exécuter la commande. Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.
+**\[useNewScope\]**  : valeur booléenne facultative qui a la valeur `$true`. Si la valeur est `$true`, une nouvelle étendue est créée pour y exécuter la commande. Cela ne modifie pas l’environnement d’exécution de l’onglet PowerShell qui est spécifié par la commande.
 
 **\[millisecondsTimeout\]** - Entier facultatif qui a la valeur **500** par défaut.
 Si la commande ne se termine pas dans le délai spécifié, la commande génère une exception **TimeoutException** avec le message « Le délai de l’opération a expiré. »
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Propriété booléenne en lecture seule qui renvoie la valeur **$true** si un script peut être appelé avec la méthode [Invoke( Script )](#invoke-script-).
+La propriété booléenne en lecture seule qui renvoie une valeur `$true` si un script peut être appelé avec la méthode [Invoke( Script )](#invoke-script-).
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.  Dans Windows PowerShell ISE 2.0, cette propriété s’appelait **CommandPane**.
+Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures. Dans Windows PowerShell ISE 2.0, cette propriété s’appelait **CommandPane**.
 
 Propriété en lecture seule qui obtient l’objet [editor](The-ISEEditor-Object.md) du volet de la console.
 
@@ -154,9 +154,9 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>Sortie
+### <a name="output"></a>Output
 
-Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE.  Dans les versions ultérieures de Windows PowerShell ISE, vous pouvez utiliser l’objet **ConsolePane** à la place.
+Cette fonctionnalité est présente dans Windows PowerShell ISE 2.0, mais a été supprimée ou renommée dans les versions ultérieures de l'environnement ISE. Dans les versions ultérieures de Windows PowerShell ISE, vous pouvez utiliser l’objet **ConsolePane** à la place.
 
 Propriété en lecture seule qui obtient le volet de sortie de l’objet [editor](The-ISEEditor-Object.md) actuel.
 

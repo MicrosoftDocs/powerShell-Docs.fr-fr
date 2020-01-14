@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEMenuItemCollection
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030546"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736170"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Objet ISEMenuItemCollection
 
-Un objet **ISEMenuItemCollection** est une collection d’objets **ISEMenuItem**. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection. Par exemple, l’objet **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** est utilisé pour personnaliser le menu **Module complémentaire** dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell®.
+Un objet **ISEMenuItemCollection** est une collection d’objets **ISEMenuItem**. Il s’agit d’une instance de la classe **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection**. Par exemple, l’objet `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` est utilisé pour personnaliser le menu **Composant additionnel** dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell®.
 
 ## <a name="method"></a>Méthode
 
@@ -27,7 +27,7 @@ Ajoute un élément de menu à la collection.
 
 **Shortcut** Raccourci clavier associé à l’action.
 
-**Returns** Objet ISEMenuItem qui vient d’être ajouté.
+**Renvoie** l’objet **ISEMenuItem** qui vient d’être ajouté.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

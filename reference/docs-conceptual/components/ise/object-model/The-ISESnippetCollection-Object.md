@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISESnippetCollection
-ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030498"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736043"
 ---
 # <a name="the-isesnippetcollection-object"></a>Objet ISESnippetCollection
 
-L’objet **ISESnippetCollection** est une collection d’objets **ISESnippet**. La collection de fichiers qui est associée à un objet **PowerShellTab** est un membre de cette classe. La collection **$psISE.CurrentPowerShellTab.Files** en est un exemple.
+L’objet **ISESnippetCollection** est une collection d’objets **ISESnippet**. La collection de fichiers qui est associée à un objet **PowerShellTab** est un membre de cette classe. La collection `$psISE.CurrentPowerShellTab.Files` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
@@ -19,7 +19,7 @@ L’objet **ISESnippetCollection** est une collection d’objets **ISESnippet**.
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Charge un fichier .snippets.ps1xml qui contient des extraits de code défini par l’utilisateur. L’applet de commande New-IseSnippet est le moyen le plus simple de créer des extraits de code, car elle les stocke automatiquement dans votre dossier de profil pour qu’ils se chargent à chaque démarrage de Windows PowerShell ISE.
+Charge un fichier `.snippets.ps1xml` qui contient des extraits de code définis par l’utilisateur. L’utilisation de la cmdlet `New-IseSnippet` est le moyen le plus simple de créer des extraits de code, car elle les stocke automatiquement dans votre dossier de profil pour qu’ils se chargent à chaque démarrage de Windows PowerShell ISE.
 
 **FilePathName** : chaîne Chemin et nom d’un fichier .snippets.ps1xml qui contient les définitions des extraits de code.
 

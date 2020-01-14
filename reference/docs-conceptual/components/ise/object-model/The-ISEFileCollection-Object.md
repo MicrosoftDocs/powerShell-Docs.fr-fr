@@ -1,27 +1,27 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEFileCollection
-ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030519"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736213"
 ---
 # <a name="the-isefilecollection-object"></a>Objet ISEFileCollection
 
-L’objet **ISEFileCollection** est une collection d’objets **ISEFile**. La collection $psISE.CurrentPowerShellTab.Files en est un exemple.
+L’objet **ISEFileCollection** est une collection d’objets **ISEFile**. La collection `$psISE.CurrentPowerShellTab.Files` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
-### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Ajouter\( \[FullPath\] \)
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Crée et retourne un nouveau fichier sans titre, et l’ajoute à la collection. La propriété **IsUntitled** du nouveau fichier est **$true**.
+Crée et retourne un nouveau fichier sans titre, et l’ajoute à la collection. La propriété **IsUntitled** du fichier nouvellement créé est `$true`.
 
-**\[fullPath\]**  : chaîne facultative. Chemin entièrement spécifié du fichier. Une exception est générée si vous incluez le paramètre **fullPath** et un chemin d’accès relatif, ou si vous utilisez un nom de fichier au lieu du chemin d’accès complet.
+**\[fullPath\]**  : chaîne facultative. Chemin entièrement spécifié du fichier. Une exception est générée si vous incluez le paramètre **FullPath** et un chemin d’accès relatif ou si vous utilisez un nom de fichier au lieu du chemin d’accès complet.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -31,7 +31,7 @@ $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 ```
 
-### <a name="remove-file-force-"></a>Remove\( File, \[Force\] \)
+### <a name="remove-file-force-"></a>Supprimer le fichier \(, \[Force\] \)
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
@@ -39,7 +39,7 @@ Supprime un fichier spécifié dans l’onglet PowerShell actuel.
 
 **File** : chaîne. Fichier ISEFile que vous souhaitez supprimer de la collection. Si le fichier n’a pas été enregistré, cette méthode lève une exception. Utilisez le paramètre booléen **Force** pour forcer la suppression d’un fichier non enregistré.
 
-**\[Force\]**  : valeur booléenne facultative. Si la valeur est **$true**, le fichier peut être supprimé même s’il n’a pas été enregistré depuis sa dernière utilisation. La valeur par défaut est **$false**.
+**\[Force\]**  : valeur booléenne facultative. Si la valeur est `$true`, le fichier peut être supprimé même s’il n’a pas été enregistré depuis sa dernière utilisation. Par défaut, il s’agit de `$false`.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Sélectionne le fichier spécifié par le paramètre **selectedFile**.
+Sélectionne le fichier spécifié par le paramètre **SelectedFile**.
 
-**selectedFile** : Microsoft.PowerShell.Host.ISE.ISEFile. Fichier ISEFile que vous souhaitez sélectionner.
+**SelectedFile** : Microsoft.PowerShell.Host.ISE.ISEFile. Fichier ISEFile que vous souhaitez sélectionner.
 
 ```powershell
 # Selects the specified file.

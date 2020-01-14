@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEEditor
-ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086763"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736187"
 ---
 # <a name="the-iseeditor-object"></a>Objet ISEEditor
 
@@ -69,7 +69,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Déplace le point d’insertion vers le caractère correspondant si la propriété **CanGoToMatch** de l’objet editor a la valeur **$true**. Ceci se produit quand le point d’insertion se situe juste avant une parenthèse ouvrante, un crochet ouvrant ou une accolade ouvrante \( \[,{ - ou juste après une parenthèse fermante, un crochet fermant ou une accolade fermante -\),\],}.  Le point d’insertion se trouve avant un caractère ouvrant ou après un caractère fermant. Si la propriété **CanGoToMatch** a la valeur **$false**, cette méthode n’a aucun effet.
+Déplace le point d’insertion vers le caractère correspondant si la propriété **CanGoToMatch** de l’objet d’éditeur a la valeur `$true`. Ceci se produit quand le point d’insertion se situe juste avant une parenthèse ouvrante, un crochet ouvrant ou une accolade ouvrante `(`,`[`,`{` - ou juste après une parenthèse fermante, un crochet fermant ou une accolade fermante -`)`,`]`,`}`. Le point d’insertion se trouve avant un caractère ouvrant ou après un caractère fermant. Si la propriété **CanGoToMatch** a la valeur `$false`, cette méthode n’a aucun effet.
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -147,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-La propriété booléenne en lecture seule indique si le point d’insertion se trouve à côté d’une parenthèse, d’un crochet ou d’une accolade - \(\), \[\], {}. Si le point d’insertion est situé juste avant le caractère ouvrant ou juste après le caractère fermant d’une paire, cette propriété a la valeur **$true**. Sinon, elle a la valeur **$false**.
+La propriété booléenne en lecture seule indique si le point d’insertion se trouve à côté d’une parenthèse, d’un crochet ou d’une accolade - `()`, `[]`, `{}`. Si le point d’insertion est situé juste avant le caractère ouvrant ou juste après le caractère fermant d’une paire, cette propriété a la valeur `$true`. Sinon, c’est `$false`.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace

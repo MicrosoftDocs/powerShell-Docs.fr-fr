@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: powershell,applet de commande
 title: Découverte de Windows PowerShell ISE
-ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117439"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737098"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Découverte de Windows PowerShell ISE
 
@@ -27,29 +27,29 @@ La barre de menus contient les menus **Fichier**, **Modifier**, **Affichage**, *
 
 Un onglet Windows PowerShell est un environnement dans lequel s’exécute un script Windows PowerShell. Vous pouvez ouvrir de nouveaux onglets Windows PowerShell dans Windows PowerShell ISE pour créer des environnements distincts sur votre ordinateur local ou sur des ordinateurs distants. Vous pouvez avoir au maximum huit onglets PowerShell ouverts simultanément.
 
-## <a name="toolbar"></a>Barre d’outils
+## <a name="toolbar"></a>Barre d'outils
 
 La barre d’outils contient les boutons suivants.
 
-|Bouton|Fonction|
-|----------|------------|
-|**Nouveau**|Ouvre un nouveau script.|
-|**Ouvrir**|Ouvre un fichier ou un script existant.|
-|**Enregistrer**|Enregistre un script ou un fichier.|
-|**Couper**|Coupe le texte sélectionné et le copie dans le Presse-papiers.|
-|**Copier**|Copie le texte sélectionné dans le Presse-papiers.|
-|**Coller**|Colle le contenu du Presse-papiers à l’emplacement du curseur.|
-|**Effacer le volet de sortie**|Efface tout le contenu du volet sortie.|
-|**Annuler**|Annule l’action qui vient d’être exécutée.|
-|**Rétablir**|Effectue l’action qui vient d’être annulée.|
-|**Exécuter un script**|Exécute un script.|
-|**Exécuter la sélection**|Exécute une partie sélectionnée d’un script.|
-|**Arrêter l’exécution**|Arrête un script en cours d’exécution.|
-|**Nouvel onglet PowerShell à distance**|Crée un onglet PowerShell qui établit une session sur un ordinateur distant. Une boîte de dialogue s’affiche et vous invite à entrer les détails requis pour établir la connexion à distance.|
-|**Démarrer PowerShell.exe**|Ouvre une console PowerShell.|
-|**Afficher le volet Script en haut**|Déplace le volet Script vers le haut de l’écran.|
-|**Afficher le volet Script à droite**|Déplace le volet Script vers la droite de l’écran.|
-|**Afficher le volet Script agrandi**|Agrandit le volet Script.|
+|             Bouton             |                                                                                     Fonction                                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nouveau**                        | Ouvre un nouveau script.                                                                                                                                                              |
+| **Ouvrir**                       | Ouvre un fichier ou un script existant.                                                                                                                                                |
+| **Save**                       | Enregistre un script ou un fichier.                                                                                                                                                          |
+| **Couper**                        | Coupe le texte sélectionné et le copie dans le Presse-papiers.                                                                                                                           |
+| **Copy**                       | Copie le texte sélectionné dans le Presse-papiers.                                                                                                                                       |
+| **Coller**                      | Colle le contenu du Presse-papiers à l’emplacement du curseur.                                                                                                                     |
+| **Effacer le volet de sortie**          | Efface tout le contenu du volet sortie.                                                                                                                                           |
+| **Annuler**                       | Annule l’action qui vient d’être exécutée.                                                                                                                                     |
+| **Rétablir**                       | Effectue l’action qui vient d’être annulée.                                                                                                                                        |
+| **Exécuter un script**                 | Exécute un script.                                                                                                                                                                   |
+| **Exécuter la sélection**              | Exécute une partie sélectionnée d’un script.                                                                                                                                             |
+| **Arrêter l’exécution**             | Arrête un script en cours d’exécution.                                                                                                                                                  |
+| **Nouvel onglet PowerShell à distance**  | Crée un onglet PowerShell qui établit une session sur un ordinateur distant. Une boîte de dialogue s’affiche et vous invite à entrer les détails requis pour établir la connexion à distance. |
+| **Démarrer PowerShell.exe**       | Ouvre une console PowerShell.                                                                                                                                                      |
+| **Afficher le volet Script en haut**       | Déplace le volet Script vers le haut de l’écran.                                                                                                                                 |
+| **Afficher le volet Script à droite**     | Déplace le volet Script vers la droite de l’écran.                                                                                                                               |
+| **Afficher le volet Script agrandi** | Agrandit le volet Script.                                                                                                                                                       |
 
 ## <a name="script-tab"></a>Onglet de script
 
@@ -67,7 +67,7 @@ Affiche les résultats des commandes et des scripts que vous avez exécutés. Vo
 
 ## <a name="command-pane"></a>Volet Commande
 
-Permet d’écrire des commandes. Vous pouvez exécuter une commande d’une ou plusieurs lignes dans le volet Commande. Appuyez sur Maj+Entrée pour entrer chaque ligne d’une commande en comportant plusieurs, puis appuyez sur Entrée après la dernière ligne pour exécuter la commande multiligne. L’invite affichée en haut du volet Commandes affiche le chemin d’accès au répertoire de travail actif.
+Permet d’écrire des commandes. Vous pouvez exécuter une commande d’une ou plusieurs lignes dans le volet Commande. Appuyez sur <kbd>MAJ</kbd>+<kbd>ENTRÉE</kbd> pour entrer chaque ligne d’une commande en comportant plusieurs, puis appuyez sur <kbd>ENTRÉE</kbd> après la dernière ligne pour exécuter la commande multiligne. L’invite affichée en haut du volet Commandes affiche le chemin d’accès au répertoire de travail actif.
 
 ## <a name="status-bar"></a>Barre d’état
 
@@ -79,7 +79,8 @@ Augmente ou diminue la taille du texte à l’écran.
 
 ## <a name="help"></a>Aide
 
-L’aide sur Windows PowerShell ISE est disponible sur le web dans la bibliothèque TechNet. Vous pouvez accéder à l’aide en cliquant sur **Aide Windows PowerShell ISE** dans le menu **Aide**, ou en appuyant sur la touche F1 n’importe où, sauf quand le curseur est positionné sur un nom d’applet de commande dans le volet Script ou Console. À partir du menu **Aide** vous pouvez également exécuter l’applet de commande Update-Help et afficher la fenêtre Commande qui vous aide à construire des commandes en affichant tous les paramètres disponibles pour une applet de commande, et en vous permettant d’entrer les paramètres dans un formulaire simple d’utilisation.
+L’aide sur Windows PowerShell ISE est disponible sur le web dans la bibliothèque TechNet. Vous pouvez ouvrir l’aide en cliquant sur **Aide Windows PowerShell ISE** dans le menu **Aide** ou en appuyant sur la touche <kbd>F1</kbd> n’importe où, sauf quand le curseur est positionné sur un nom de cmdlet dans le volet Script ou Console.
+À partir du menu **Aide** vous pouvez également exécuter la cmdlet `Update-Help` et afficher la fenêtre Commande qui vous aide à construire des commandes en affichant tous les paramètres disponibles pour une cmdlet et en vous permettant d’entrer les paramètres dans un formulaire simple d’utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 
