@@ -1,48 +1,40 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Sélection de parties d’objets Select Object
-ms.openlocfilehash: 4d4c89f0b5103e4701a3af3cd07fcd7c8f1c697f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 06b92c7c4c5098c707a7d9f9d9a96e6b6a897f80
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030108"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737166"
 ---
-# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="e51e2-103">Sélection de parties d’objets (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="e51e2-103">Selecting Parts of Objects (Select-Object)</span></span>
+# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="7fbd9-103">Sélection de parties d’objets (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="7fbd9-103">Selecting Parts of Objects (Select-Object)</span></span>
 
-<span data-ttu-id="e51e2-104">L’applet de commande **Select-Object** permet de créer des objets Windows PowerShell personnalisés qui contiennent des propriétés sélectionnées à partir des objets que vous utilisez pour les créer.</span><span class="sxs-lookup"><span data-stu-id="e51e2-104">You can use the **Select-Object** cmdlet to create new, custom Windows PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="e51e2-105">Pour créer un objet qui inclut uniquement les propriétés Name et FreeSpace de la classe WMI de Win32_LogicalDisk, tapez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="e51e2-105">Type the following command to create a new object that includes only the Name and FreeSpace properties of the Win32_LogicalDisk WMI class:</span></span>
+<span data-ttu-id="7fbd9-104">Vous pouvez utiliser la cmdlet `Select-Object` pour créer des objets PowerShell personnalisés qui contiennent des propriétés sélectionnées à partir des objets que vous utilisez pour les créer.</span><span class="sxs-lookup"><span data-stu-id="7fbd9-104">You can use the `Select-Object` cmdlet to create new, custom PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="7fbd9-105">Pour créer un nouvel objet qui inclut uniquement les propriétés **Nom** et **FreeSpace** de la classe WMI **Win32_LogicalDisk**, tapez la commande suivante :</span><span class="sxs-lookup"><span data-stu-id="7fbd9-105">Type the following command to create a new object that includes only the **Name** and **FreeSpace** properties of the **Win32_LogicalDisk** WMI class:</span></span>
 
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
-
-Name                                    FreeSpace
-----                                    ---------
-C:                                      50664845312
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
 ```
 
-<span data-ttu-id="e51e2-106">Après avoir émis cette commande, vous ne pouvez pas voir le type des données mais, si vous canalisez le résultat de l’applet de commande Select-Object vers l’applet de commande Get-Member, vous pouvez constater que vous disposez d’un nouveau type d’objet, PSCustomObject :</span><span class="sxs-lookup"><span data-stu-id="e51e2-106">You cannot see the type of data after issuing that command, but if you pipe the result to Get-Member after the Select-Object, you can tell that you have a new type of object, a PSCustomObject:</span></span>
-
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace| Get-Member
-
-   TypeName: System.Management.Automation.PSCustomObject
-
-Name        MemberType   Definition
-----        ----------   ----------
-Equals      Method       System.Boolean Equals(Object obj)
-GetHashCode Method       System.Int32 GetHashCode()
-GetType     Method       System.Type GetType()
-ToString    Method       System.String ToString()
-FreeSpace   NoteProperty  FreeSpace=...
-Name        NoteProperty System.String Name=C:
+```Output
+Name      FreeSpace
+----      ---------
+C:      50664845312
 ```
 
-<span data-ttu-id="e51e2-107">L’applet de commande Select-Object a de nombreuses usages.</span><span class="sxs-lookup"><span data-stu-id="e51e2-107">Select-Object has many uses.</span></span> <span data-ttu-id="e51e2-108">L’un d’eux consiste à répliquer des données que vous pouvez ensuite modifier.</span><span class="sxs-lookup"><span data-stu-id="e51e2-108">One of them is replicating data that you can then modify.</span></span> <span data-ttu-id="e51e2-109">Nous pouvons désormais gérer le problème que nous avons rencontré dans la section précédente.</span><span class="sxs-lookup"><span data-stu-id="e51e2-109">We can now handle the problem we ran across in the previous section.</span></span> <span data-ttu-id="e51e2-110">Nous pouvons mettre à jour la valeur de FreeSpace dans nos objets nouvellement créés, et la sortie inclut l’étiquette descriptive :</span><span class="sxs-lookup"><span data-stu-id="e51e2-110">We can update the value of FreeSpace in our newly-created objects and the output will include the descriptive label:</span></span>
+<span data-ttu-id="7fbd9-106">Avec `Select-Object` vous pouvez créer des propriétés calculées.</span><span class="sxs-lookup"><span data-stu-id="7fbd9-106">With `Select-Object` you can create calculated properties.</span></span> <span data-ttu-id="7fbd9-107">Vous pouvez ainsi afficher **FreeSpace** en gigaoctets plutôt qu’en octets.</span><span class="sxs-lookup"><span data-stu-id="7fbd9-107">So you can display **FreeSpace** in gigabytes rather than bytes.</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk |
+  Select-Object -Property Name, @{
+    label='FreeSpace'
+    expression={($_.FreeSpace/1GB).ToString('F2')}
+  }
 ```
-Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0; $_}
-Name                                                                  FreeSpace
-----                                                                  ---------
-C:                                                                48317.7265625
+
+```Output
+Name    FreeSpace
+----    ---------
+C:      47.18
 ```
