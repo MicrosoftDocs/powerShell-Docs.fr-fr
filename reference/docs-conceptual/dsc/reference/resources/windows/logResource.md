@@ -1,13 +1,13 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource Log dans DSC
-ms.openlocfilehash: a1b7bf44fbaf36a3adaf0666e9f0a754fa3f6ee1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954666"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870759"
 ---
 # <a name="dsc-log-resource"></a>Ressource Log dans DSC
 
@@ -31,16 +31,16 @@ Log [string] #ResourceName
 
 ## <a name="properties"></a>Propriétés
 
-|Propriété |Description |
-|---|---|
-|Message |Indique le message à écrire dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic. |
+| Propriété |                                                   Description                                                    |
+| -------- | ---------------------------------------------------------------------------------------------------------------- |
+| Message  | Indique le message à écrire dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic. |
 
 ## <a name="common-properties"></a>Propriétés communes
 
-|Propriété |Description |
-|---|---|
-|DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
+|       Propriété       |                                                                                                                                                          Description                                                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| DependsOn            | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
+| PsDscRunAsCredential | Définit les informations d’identification pour l’exécution de l’ensemble de la ressource.                                                                                                                                                                                                                                                                        |
 
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
@@ -50,7 +50,7 @@ Log [string] #ResourceName
 L’exemple suivant écrit un message dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.
 
 > [!NOTE]
-> Si vous exécutez [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) avec cette ressource configurée, elle retourne toujours la valeur **$false**.
+> Si vous exécutez [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) avec cette ressource configurée, elle retourne toujours la valeur **$false**.
 
 ```powershell
 Configuration logResourceTest

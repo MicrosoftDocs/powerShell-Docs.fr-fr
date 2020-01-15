@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,configuration,installation
 title: Présentation de la configuration de l’état souhaité pour les décideurs
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737251"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870793"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Présentation de la configuration de l’état souhaité pour les décideurs
 
@@ -38,7 +38,7 @@ Les configurations sont [basées sur les données](../configurations/configData.
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC sur site et hors site
 
 DSC permet de gérer des déploiements sur site et hors site. Pour les solutions sur site, DSC possède un [serveur collecteur](../pull-server/pullServer.md) utilisé pour centraliser la gestion des ordinateurs et créer des rapports sur leur état. Pour les solutions de cloud hors site, DSC peut être utilisé partout où Windows est disponible.
-Il existe des offres Azure spécifiques basées sur DSC, notamment [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), qui centralise la création de rapports DSC.
+Il existe des offres Azure spécifiques basées sur DSC, notamment [Azure Automation](/azure/automation), qui centralise la création de rapports DSC.
 
 ## <a name="dsc-and-compatibility"></a>DSC et compatibilité
 
