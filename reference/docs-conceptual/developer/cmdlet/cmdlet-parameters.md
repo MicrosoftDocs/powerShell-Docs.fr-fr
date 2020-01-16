@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365928"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022213"
 ---
 # <a name="cmdlet-parameters"></a>Paramètres des applets de commande
 
@@ -33,7 +33,7 @@ Les paramètres d’applet de commande fournissent le mécanisme qui permet à u
 
 [Types de paramètres d’applet de](./types-of-cmdlet-parameters.md) commande Décrit les différents types de paramètres que vous pouvez déclarer dans les applets de commande.
 
-[Instructions relatives au nom et aux fonctionnalités des applets de](./standard-cmdlet-parameter-names-and-types.md) commande Étudiez les noms, le type de données recommandé et les fonctionnalités des paramètres standard.
+[Instructions relatives au nom et aux fonctionnalités des applets de](./standard-cmdlet-parameter-names-and-types.md) commande Décrit les noms, le type de données recommandé et les fonctionnalités des paramètres standard.
 
 [Alias de paramètres](./parameter-aliases.md) Décrit les alias que vous pouvez définir pour les paramètres.
 
