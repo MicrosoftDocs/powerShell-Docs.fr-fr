@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des services
-ms.openlocfilehash: d9e17b2d91ae01d7d4d6d573348289fa68dc9c56
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030165"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870521"
 ---
 # <a name="managing-services"></a>Gestion des services
 
@@ -89,7 +89,8 @@ Running  BITS               Background Intelligent Transfer Ser...
 Vous pouvez même obtenir tous les services qui ont des dépendances. C’est précisément ce que fait la commande suivante. Ensuite, elle utilise l’applet de commande Format-Table pour afficher les propriétés State, Name, RequiredServices et DependentServices des services sur l’ordinateur.
 
 ```powershell
-Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} |
+  Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Arrêt, démarrage, interruption et redémarrage de services
@@ -152,11 +153,11 @@ L’applet de commande Set-Service dispose également d’un paramètre StartupT
 
 Pour utiliser `Set-Service` sur Windows Vista et les versions ultérieures de Windows, ouvrez Windows PowerShell avec l’option Exécuter en tant qu’administrateur.
 
-Pour plus d’informations, voir [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+Pour plus d’informations, consultez [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-- [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
+- [Get-Service](/powershell/module/Microsoft.PowerShell.Management/get-service)
+- [Set-Service](/powershell/module/Microsoft.PowerShell.Management/set-service)
+- [Restart-Service](/powershell/module/Microsoft.PowerShell.Management/restart-service)
+- [Suspend-Service](/powershell/module/Microsoft.PowerShell.Management/suspend-service)
