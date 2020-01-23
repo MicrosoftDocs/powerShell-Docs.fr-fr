@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416306"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022229"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Cycle de vie de support de PowerShell Core
 
@@ -49,24 +49,26 @@ Notre communauté a également proposé des packages pour certaines plateformes,
 
 Les plateformes répertoriées en tant que `Experimental` ne sont pas officiellement prises en charge, mais sont disponibles pour l’expérimentation et les commentaires.
 
-| Plate-forme                                          |      6.2      |    7.0    |
+| Plateforme                                          |      6.2      |    7.0    |
 |---------------------------------------------------|:-------------:|:---------:|
-| Windows 7, 8.1 et 10                            |   Pris en charge   | Pris en charge |
-| Windows Server 2008 R2, 2012 R2, 2016             |   Pris en charge   | Pris en charge |
-| [Canal semi-annuel Windows Server][semi-annual] |   Pris en charge   | Pris en charge |
-| Ubuntu 16.04 et 18.04                            |   Pris en charge   | Pris en charge |
+| Windows 7, 8.1 et 10                            |   Prise en charge   | Prise en charge |
+| Windows Server 2008 R2, 2012 R2, 2016             |   Prise en charge   | Prise en charge |
+| [Canal semi-annuel Windows Server][semi-annual] |   Prise en charge   | Prise en charge |
+| Ubuntu 16.04 et 18.04                            |   Prise en charge   | Prise en charge |
 | Ubuntu 18.10 (via Snap Package)                   |   Communauté   | Communauté |
 | Ubuntu 19.04 (via Snap Package)                   |   Communauté   | Communauté |
-| Debian 9                                          |   Pris en charge   | Pris en charge |
-| Debian 10                                         | Non pris en charge | Pris en charge |
-| CentOS 7                                          |   Pris en charge   | Pris en charge |
-| Red Hat Enterprise Linux 7                        |   Pris en charge   | Pris en charge |
-| openSUSE 42.3                                     |   Pris en charge   | Pris en charge |
-| Fedora 28                                         |   Pris en charge   | Pris en charge |
-| Fedora 29, 30                                     | Non pris en charge | Pris en charge |
+| Debian 9                                          |   Prise en charge   | Prise en charge |
+| Debian 10                                         | Non pris en charge | Prise en charge |
+| CentOS 7                                          |   Prise en charge   | Prise en charge |
+| CentOS 8                                          | Non pris en charge | Prise en charge |
+| Red Hat Enterprise Linux 7                        |   Prise en charge   | Prise en charge |
+| Red Hat Enterprise Linux 8                        | Non pris en charge | Prise en charge |
+| openSUSE 42.3                                     |   Prise en charge   | Prise en charge |
+| Fedora 28                                         |   Prise en charge   | Prise en charge |
+| Fedora 29, 30                                     | Non pris en charge | Prise en charge |
 | Alpine 3.8                                        |   Voir la remarque    | Voir la remarque  |
 | Alpine 3.9 et 3.10                               | Non pris en charge | Voir la remarque  |
-| macOS 10.12+                                      |   Pris en charge   | Pris en charge |
+| macOS 10.12+                                      |   Prise en charge   | Prise en charge |
 | Arch                                              |   Communauté   | Communauté |
 | Raspbian                                          |   Communauté   | Communauté |
 | Kali                                              |   Communauté   | Communauté |
@@ -95,11 +97,11 @@ Lorsqu’une version de plateforme arrive en fin de vie conformément à la déf
 
 Les propriétaires de distribution ont donc mis fin au support pour les versions suivantes, qui ne sont plus prises en charge.
 
-| Plate-forme | Version | Fin de vie                                                                                 |
+| Plateforme | Version | Fin de vie                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [Août 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| Fedora   | 24      | [Août 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [Décembre 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | OpenSUSE | 42.1    | [Mai 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
 | OpenSUSE | 42.2    | [Janvier 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Juillet 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |

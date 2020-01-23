@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
+ms.date: 01/10/2020
 keywords: powershell,applet de commande
 title: Écriture de modules portables
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417648"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022247"
 ---
 # <a name="portable-modules"></a>Modules portables
 
@@ -200,7 +200,7 @@ Tout d’abord, vérifiez que votre module fonctionne sur Linux et macOS. Indiqu
 
 Dans le manifeste de module, la propriété `PrivateData` comporte une sous-propriété `PSData`. La propriété facultative `Tags` de `PSData` utilise un tableau de valeurs qui s’affichent dans PowerShell Gallery. PowerShell Gallery prend en charge les valeurs de compatibilité suivantes :
 
-| Légende               | Description                                |
+| Tag               | Description                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Compatible avec PowerShell Core 6          |
 | PSEdition_Desktop | Compatible avec Windows PowerShell         |
@@ -254,6 +254,45 @@ Exemple :
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>dépendance envers les bibliothèques natives
+
+Les modules destinés à être utilisés sur des systèmes d’exploitation ou des architectures de processeur différents peuvent dépendre d’une bibliothèque gérée qui dépend elle-même de certaines bibliothèques natives.
+
+Avant PowerShell 7, vous deviez avoir un code personnalisé pour charger le fichier DLL natif appropriée afin que la bibliothèque gérée puisse le trouver.
+
+Avec PowerShell 7, les fichiers binaires natifs à charger sont recherchés dans des sous-dossiers de l’emplacement de la bibliothèque gérée, à la suite d’un sous-ensemble de la notation [catalogue RID .NET][].
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ Exemple :
 [PowerShell Gallery]: https://www.powershellgallery.com
 [Analyseur de portabilité .NET]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[Catalogue RID .NET]: https://docs.microsoft.com/dotnet/core/rid-catalog
