@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
 caps.latest.revision: 7
-ms.openlocfilehash: 0f965f4ee1ef92a6a538b52b4348c04366cabf66
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8142a620f0f71de3d2a6b33fc2e45092b5743a54
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360738"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996000"
 ---
 # <a name="helpinfo-xml-schema"></a>Schéma XML HelpInfo
 
@@ -25,7 +25,7 @@ Les fichiers XML HelpInfo sont basés sur le schéma XML suivant.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="https://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
     <complexType>
       <sequence>

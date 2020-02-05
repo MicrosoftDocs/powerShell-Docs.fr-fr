@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
-ms.openlocfilehash: b21811e5a5a819c3d5c4a55fcbe685a84819b71d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ad0fe5c63b145c681f14328d5ef5a8784a035e26
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367798"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995928"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des valeurs de retour à une rubrique d’aide d’applet de commande
 
@@ -52,7 +52,7 @@ Le code XML suivant montre un exemple d’utilisation du nœud \<MAML : returnV
   <command:returnValue>
     <dev:type>
       <maml:name> System.DateTime </maml:name>
-      <maml:uri>  http://msdn.microsoft.com/library/system.datetime.aspx </maml:uri>
+      <maml:uri>  https://msdn.microsoft.com/library/system.datetime.aspx </maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367838"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995951"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>Guide pratique pour une section Voir aussi à une rubrique d’aide de fournisseur
 
@@ -29,7 +29,7 @@ La section Voir aussi est créée à partir de l’élément `RelatedLinks` et d
 
 1. Dans le fichier *AssemblyName*. dll-help. xml, dans l’élément `providerHelp`, ajoutez un élément `RelatedLinks`. L’élément `RelatedLinks` doit être le dernier élément de l’élément `providerHelp`. Un seul élément `RelatedLinks` est autorisé dans chaque rubrique d’aide du fournisseur.
 
-   Par exemple :
+   Par exemple :
 
     ```xml
     <providerHelp>
@@ -40,7 +40,7 @@ La section Voir aussi est créée à partir de l’élément `RelatedLinks` et d
 
 2. Pour chaque rubrique de la section **Voir aussi** , dans l’élément `RelatedLinks`, ajoutez un élément `navigationLink`. Ensuite, dans chaque élément `navigationLink`, ajoutez un élément `linkText` et un élément `uri`. Si vous n’utilisez pas l’élément `uri`, vous pouvez l’ajouter en tant qu’élément vide (\<URI/>).
 
-   Par exemple :
+   Par exemple :
 
     ```xml
     <providerHelp>
@@ -70,7 +70,7 @@ La section Voir aussi est créée à partir de l’élément `RelatedLinks` et d
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>
