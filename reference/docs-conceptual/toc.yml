@@ -654,8 +654,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: Utilisation de classes et de méthodes statiques
           href: samples/using-static-classes-and-methods.md
-        - name: Obtention d’objets WMI - Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: Obtention d’objets WMI - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: Gestion des ordinateurs
       items:
         - name: Changement de l’état de l’ordinateur
