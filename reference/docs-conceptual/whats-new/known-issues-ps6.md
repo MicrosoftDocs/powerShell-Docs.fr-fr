@@ -1,13 +1,13 @@
 ---
-ms.date: 05/17/2018
+ms.date: 02/03/2020
 keywords: powershell,core
 title: Problèmes connus de PowerShell 6.0
-ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692218"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996101"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problèmes connus de PowerShell 6.0
 
@@ -32,7 +32,7 @@ Historiquement, PowerShell ne respecte jamais la casse, à quelques exceptions p
 
 ### <a name="ps1-file-extensions"></a>Extensions de fichier .PS1
 
-Les scripts PowerShell doivent se terminer par `.ps1` pour que l’interpréteur comprenne comment les charger et les exécuter dans le processus actuel. Le comportement habituel attendu de PowerShell implique l’exécution de scripts au cours du processus actif. Il est possible d’ajouter le nombre magique `#!` à un script n’ayant pas d’extension `.ps1`, mais celui-ci s’exécutera alors dans une nouvelle instance de PowerShell, ce qui empêchera le script de fonctionner correctement en cas d’échange d’objets. (Remarque : Ce comportement peut être souhaitable pour exécuter un script PowerShell à partir de `bash` ou d’un autre shell.)
+Les scripts PowerShell doivent se terminer par `.ps1` pour que l’interpréteur comprenne comment les charger et les exécuter dans le processus actuel. Le comportement habituel attendu de PowerShell implique l’exécution de scripts au cours du processus actif. Il est possible d’ajouter le nombre magique `#!` à un script n’ayant pas d’extension `.ps1`, mais celui-ci s’exécute alors dans une nouvelle instance de PowerShell, ce qui empêche le script de fonctionner correctement en cas d’échange d’objets. (Remarque : Ce comportement peut être souhaitable pour exécuter un script PowerShell à partir de `bash` ou d’un autre shell.)
 
 ### <a name="missing-command-aliases"></a>Alias de commandes manquants
 
@@ -41,13 +41,13 @@ Sous Linux/macOS, les « alias de commodité » des commandes de base `ls`, `cp
 Cette mesure comporte des avantages et des inconvénients. La suppression des alias expose l’expérience des commandes natives à l’utilisateur de PowerShell, mais réduit les fonctionnalités du shell, car les commandes natives retournent des chaînes et non des objets.
 
 > [!NOTE]
-> L’équipe PowerShell aimerait avoir votre avis sur ce point.
-> Quelle est la meilleure solution ? Devons-nous laisser les choses telles quelles ou rétablir les alias de commodité ? Voir [Problème #929](https://github.com/PowerShell/PowerShell/issues/929).
+> L’équipe PowerShell aimerait avoir votre avis sur ce point. Quelle est la meilleure solution ?
+> Devons-nous laisser les choses telles quelles ou rétablir les alias de commodité ? Voir [Problème #929](https://github.com/PowerShell/PowerShell/issues/929).
 
 ### <a name="missing-wildcard-globbing-support"></a>Prise en charge manquante du caractère générique
 
 Actuellement, PowerShell ne procède à l’expansion de caractères génériques que pour les applets de commande intégrées sous Windows et pour les binaires ou les commandes externes ainsi que les applets de commande sous Linux. De ce fait, une commande du type `ls
-*.txt` échouera, car l’astérisque ne sera pas développée pour correspondre aux noms de fichiers. Vous pouvez contourner ce problème en écrivant `ls (gci *.txt | % name)` ou, plus simplement, `gci *.txt`, avec l’équivalent intégré de `ls` de PowerShell.
+*.txt` échoue, car l’astérisque n’est pas développée pour correspondre aux noms de fichiers. Vous pouvez contourner ce problème en écrivant `ls (gci *.txt | % name)` ou, plus simplement, `gci *.txt`, avec l’équivalent intégré de `ls` de PowerShell.
 
 Accédez à [#954](https://github.com/PowerShell/PowerShell/issues/954) pour nous donner votre avis sur la façon d’améliorer l’expérience d’utilisation des caractères génériques sous Linux/macOS.
 
@@ -55,7 +55,7 @@ Accédez à [#954](https://github.com/PowerShell/PowerShell/issues/954) pour nou
 
 PowerShell sous Linux/macOS utilise .NET Core, qui est un sous-ensemble de la version complète de .NET Framework sous Microsoft Windows. C’est un point important, car PowerShell offre un accès direct aux méthodes, types de frameworks, etc. sous-jacents. Par conséquent, les scripts qui s’exécutent sous Windows risquent de ne pas fonctionner sur les plateformes autres que Windows en raison des différences d’infrastructure. Pour plus d’informations sur .NET Core Framework, consultez [dotnetfoundation.org](https://dotnetfoundation.org/).
 
-Avec l’arrivée de [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 réintègrera la plupart des types et méthodes traditionnels présents dans la version complète du .NET Framework. PowerShell Core pourra donc charger de nombreux modules Windows PowerShell traditionnels sans modification. Vous pouvez suivre [ici](https://github.com/PowerShell/PowerShell/projects/4) nos travaux liés à .NET Standard 2.0.
+Avec l’arrivée de [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/), .NET Core 2.0 réintègre la plupart des types et méthodes traditionnels présents dans la version complète de .NET Framework. PowerShell Core peut donc charger de nombreux modules Windows PowerShell traditionnels sans modification. Vous pouvez suivre [ici](https://github.com/PowerShell/PowerShell/projects/4) nos travaux liés à .NET Standard 2.0.
 
 ### <a name="redirection-issues"></a>Problèmes de redirection
 
@@ -64,7 +64,7 @@ La redirection d’entrée n’est pas prise en charge dans PowerShell, quelle q
 
 Utilisez `Get-Content` pour écrire le contenu d’un fichier dans le pipeline.
 
-La sortie redirigée contiendra la marque d’ordre d’octet (BOM) Unicode lorsque l’encodage UTF-8 par défaut sera utilisé. Cet indicateur pose problème avec les utilitaires qui ne l’attendent pas ou en cas d’ajout à un fichier. Utilisez `-Encoding Ascii` pour écrire du texte ASCII (non Unicode, donc sans marque d’ordre d’octet).
+La sortie redirigée contient la marque d’ordre d’octet (BOM) Unicode lorsque l’encodage UTF-8 par défaut est utilisé. Cet indicateur pose problème avec les utilitaires qui ne l’attendent pas ou en cas d’ajout à un fichier. Utilisez `-Encoding Ascii` pour écrire du texte ASCII, qui n’a pas de marque d’ordre d’octet (BOM).
 
 > [!Note]
 > Accédez à [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) pour nous donner votre avis sur la façon d’améliorer l’expérience d’encodage de PowerShell Core sur toutes les plateformes. Nous travaillons actuellement à prendre en charge UTF-8 sans marque d’ordre d’octet et éventuellement à modifier les encodages par défaut pour diverses applets de commande sur différentes plateformes.
@@ -92,23 +92,22 @@ La possibilité de créer des points de terminaison de communication à distance
 
 PowerShell exécute la plupart des commandes en mémoire (par exemple, Python ou Ruby). De ce fait, il n’est pas possible d’utiliser sudo directement avec les modules intégrés de PowerShell. (Vous pouvez, bien entendu, exécuter `pwsh` à partir de sudo.) S’il vous faut exécuter une applet de commande PowerShell dans PowerShell avec sudo, par exemple, `sudo Set-Date 8/18/2016`, faites `sudo pwsh Set-Date 8/18/2016`. De même, vous ne pouvez pas exécuter directement un module intégré de PowerShell. Vous devrez passer par `exec pwsh item_to_exec`.
 
-Ce problème fait actuellement l’objet d’un suivi dans le ticket [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
+Ce problème fait l’objet d’un suivi dans le ticket [#3232](https://github.com/PowerShell/PowerShell/issues/3232).
 
 ### <a name="missing-cmdlets"></a>Applets de commande manquantes
 
-De nombreuses commandes (applets de commande) normalement disponibles dans PowerShell ne sont pas disponibles sous Linux/macOS. Dans la plupart des cas, elles ne sont pas pertinentes sur ces plateformes (par exemple, les fonctionnalités propres à Windows, comme le Registre). D’autres commandes, comme le contrôle de service (Get/Start/Stop-Service) sont présentes, mais non fonctionnelles. Les versions à venir corrigeront ces problèmes, en réparant les applets de commande non fonctionnelles et en en ajoutant de nouvelles au fur et à mesure.
+De nombreuses commandes (applets de commande) normalement disponibles dans PowerShell ne sont pas disponibles sous Linux/macOS. Dans la plupart des cas, elles ne sont pas pertinentes sur ces plateformes (par exemple, les fonctionnalités propres à Windows, comme le Registre). D’autres commandes, comme le contrôle de service (Get/Start/Stop-Service) sont présentes, mais non fonctionnelles. Les versions à venir sont susceptibles de corriger ces problèmes, en réparant les cmdlets non fonctionnelles et en en ajoutant de nouvelles au fur et à mesure.
 
 ### <a name="command-availability"></a>Disponibilité des commandes
 
 Le tableau suivant répertorie les commandes dont on sait qu’elles ne fonctionnent pas dans PowerShell sous Linux/macOS.
 
-|Commandes|État de fonctionnement|Remarques|
+|Commandes|État de fonctionnement|Notes|
 |--------|-----------------|-----|
-|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
-|`Get-Acl`, `Set-Acl`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
-|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Non disponible.|Ces commandes ne seront pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Non disponible.|Ces commandes ne sont pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|Non disponible.|Ces commandes ne sont pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
 |`Wait-Process`|Disponible, mais ne fonctionne pas correctement. |Par exemple, `Start-Process gvim -PassThru | Wait-Process` ne fonctionne pas ; il ne parvient pas à attendre le processus.|
-|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Disponible, mais ne fonctionne pas.|Écrit un message erreur d'indiquant que les commandes ne fonctionnent pas. Ces problèmes devraientt être corrigés dans une version ultérieure.|
-|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Disponible, mais aucune source d’événement n’est disponible.|Les commandes de gestion des événements de PowerShell sont présentes, mais la plupart des sources d’événements utilisées avec les commandes (par exemple, System.Timers.Timer) ne sont pas disponibles sous Linux, ce qui rend les commandes inutiles dans la version alpha.|
+|`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|Non disponible.|Ces commandes ne sont pas reconnues. Ce problème devrait être corrigé dans une version ultérieure.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|Disponible, mais aucune source d’événement n’est disponible.|Les commandes de gestion des événements de PowerShell sont présentes, mais la plupart des sources d’événements utilisées avec les commandes (par exemple, System.Timers.Timer) ne sont pas disponibles sous Linux, ce qui rend les commandes inutiles dans la version alpha.|
 |`Set-ExecutionPolicy`|Disponible, mais ne fonctionne pas.|Retourne un message indiquant que la prise en charge n’est pas assurée sur cette plateforme. La stratégie d’exécution est une « ceinture de sécurité » orientée utilisateur qui permet d’empêcher l’utilisateur de commettre des erreurs coûteuses. Il ne s’agit pas d’une limite de sécurité.|
 |`New-PSSessionOption`, `New-PSTransportOption`|Disponible, mais `New-PSSession` ne fonctionne pas.|Il n’a pas été vérifié que `New-PSSessionOption` et `New-PSTransportOption` fonctionnaient, maintenant que `New-PSSession` fonctionne.|
