@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Service collecteur DSC
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870810"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885385"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Service collecteur Desired State Configuration
 
@@ -22,6 +22,14 @@ Les options actuelles du service d’extraction sont les suivantes :
 - Service collecteur exécuté sur Windows Server
 - Solutions open source gérées par la communauté
 - Partage SMB
+
+L’échelle recommandée pour chaque solution est la suivante :
+
+|                   Solution                   |              Nœuds clients              |
+| -------------------------------------------- | -------------------------------------- |
+| Serveur Windows Pull utilisant une base de données MDB/ESENT | Jusqu’à 500 nœuds                        |
+| Serveur Windows Pull utilisant une base de données SQL       | Jusqu’à 1 000 nœuds                       |
+| Azure Automation DSC                         | Scénarios avec plus de 1 000 nœuds |
 
 **La solution recommandée**, qui est à la fois l’option offrant le plus de fonctionnalités, est [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -42,7 +50,7 @@ Fonctionnalités du service en ligne qui ne sont actuellement pas disponibles da
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Service collecteur DSC dans Windows Server
 
-Il est possible de configurer un service collecteur pour l’exécuter sur Windows Server. Notez que la solution de service collecteur incluse dans Windows Server contient uniquement les fonctionnalités de stockage des configurations/modules à télécharger, et les fonctionnalités de capture de données de rapport dans la base de données. Elle ne contient pas les nombreuses fonctionnalités offertes par le service dans Azure et n’est donc pas un bon outil pour évaluer la manière dont le service doit être utilisé.
+Il est possible de configurer un service collecteur pour l’exécuter sur Windows Server. Notez que la solution de service collecteur incluse dans Windows Server contient uniquement les fonctionnalités de stockage des configurations/modules à télécharger, et les fonctionnalités de capture de données de rapport dans une base de données. Elle ne contient pas les nombreuses fonctionnalités offertes par le service dans Azure et n’est donc pas un bon outil pour évaluer la manière dont le service doit être utilisé.
 
 Le service collecteur proposé dans Windows Server est un service web dans IIS qui utilise une interface OData pour mettre les fichiers de configuration DSC à la disposition des nœuds cibles quand ceux-ci en ont besoin.
 
@@ -219,7 +227,7 @@ Une fois l’installation du serveur collecteur terminée, vous placez les modul
 
 Chaque module de ressources doit être compressé et nommé selon le modèle suivant : `{Module Name}_{Module Version}.zip`
 
-Par exemple, un module xWebAdminstration avec une version de module 3.1.2.0 est nommé `xWebAdministration_3.1.2.0.zip`. Chaque version d’un module doit être contenue dans un seul fichier zip.
+Par exemple, un module **xWebAdminstration** avec une version de module 3.1.2.0 est nommé `xWebAdministration_3.1.2.0.zip`. Chaque version d’un module doit être contenue dans un seul fichier zip.
 Étant donné que chaque fichier zip ne contient qu’une seule version d’une ressource, le format du module ajouté dans WMF 5.0, qui contient plusieurs versions de module dans un seul répertoire, n’est pas pris en charge. Cela signifie qu’avant de créer le package des modules de ressources DSC à utiliser avec le serveur collecteur, vous devez apporter une petite modification à la structure de répertoires. Le format par défaut des modules contenant des ressources DSC dans WMF 5.0 est `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Avant de créer des packages pour le serveur collecteur, supprimez le dossier **{Module version}** afin que le chemin devienne `{Module Folder}\DscResources\{DSC Resource Folder}\`. Ensuite, compressez le dossier comme décrit ci-dessus, et placez ces fichiers zip dans le dossier **ModulePath**.
 
 Utilisez `New-DscChecksum {module zip file}` afin de créer un fichier de somme de contrôle pour le module qui vient d’être ajouté.

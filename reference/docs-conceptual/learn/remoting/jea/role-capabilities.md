@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Capacités de rôle JEA
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416769"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818173"
 ---
 # <a name="jea-role-capabilities"></a>Capacités de rôle JEA
 
@@ -77,7 +77,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 Le tableau ci-dessous décrit les différentes façons de personnaliser une fonction ou une applet de commande visible.
 Vous pouvez associer les méthodes suivantes comme vous le souhaitez dans le champ **VisibleCmdlets**.
 
-|                                           Exemple                                           |                                                             Cas d’usage                                                              |
+|                                           Exemple                                           |                                                             Cas d’utilisation                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `'My-Func'` ou `@{ Name = 'My-Func' }`                                                      | Permet à l’utilisateur d’exécuter `My-Func` sans aucune restriction sur les paramètres.                                                      |
 | `'MyModule\My-Func'`                                                                        | Permet à l’utilisateur d’exécuter `My-Func` à partir du module `MyModule` sans aucune restriction sur les paramètres.                           |
@@ -157,9 +157,11 @@ Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus pra
 
 Pour que la complétion avec la touche TAB fonctionne correctement dans les sessions JEA, vous devez inclure la fonction intégrée `tabexpansion2` dans la liste **VisibleFunctions**.
 
-## <a name="place-role-capabilities-in-a-module"></a>Placer les capacités de rôle dans un module
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Rendre les fonctionnalités de rôle disponibles pour une configuration
 
-Pour que PowerShell trouve un fichier de capacités de rôle, celui-ci doit être stocké dans le dossier **RoleCapabilities** d’un module PowerShell. Le module peut être stocké dans un dossier inclus dans la variable d’environnement `$env:PSModulePath` ; cependant, vous ne devez pas le placer dans System32 ou dans un dossier où des utilisateurs non fiables qui se connectent pourraient modifier les fichiers. Voici un exemple de création d’un module de script PowerShell de base, appelé **ContosoJEA** dans le chemin `$env:ProgramFiles`.
+Avant PowerShell 6, pour que PowerShell trouve un fichier de capacités de rôle, celui-ci doit être stocké dans le dossier **RoleCapabilities** d’un module PowerShell. Le module peut être stocké dans un dossier inclus dans la variable d’environnement `$env:PSModulePath` ; cependant, vous ne devez pas le placer dans `$env:SystemRoot\System32` ou dans un dossier où des utilisateurs non fiables pourraient modifier les fichiers.
+
+L’exemple suivant crée un module de script PowerShell appelé **ContosoJEA** dans le chemin `$env:ProgramFiles` pour héberger le fichier de capacités de rôle.
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 Pour plus d’informations sur les modules PowerShell, consultez [Comprendre un module PowerShell](/powershell/scripting/developer/windows-powershell).
+
+À compter de PowerShell 6, la propriété **RoleDefinitions** a été ajoutée au fichier de configuration de session. Cette propriété vous permet de spécifier l’emplacement d’un fichier de configuration de rôle pour votre définition de rôle. Consultez les exemples dans [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## <a name="updating-role-capabilities"></a>Mettre à jour les capacités de rôle
 

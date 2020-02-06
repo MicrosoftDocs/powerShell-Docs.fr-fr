@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Prendre en main PowerShell Gallery
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328460"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995885"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Bien démarrer avec PowerShell Gallery
 
@@ -27,12 +27,12 @@ Vous pouvez filtrer les résultats de la galerie avec les paramètres suivants :
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Légende
+- Tag
 - Includes
 - DscResource
 - RoleCapability
 - Commande
-- Filtre
+- Filtrer
 
 Si vous êtes uniquement intéressé par la détection de ressources DSC spécifiques dans PowerShell Gallery, vous pouvez exécuter l’applet de commande [Find-DscResource][]. Find-DscResource retourne des données sur les ressources DSC contenues dans la galerie. Étant donné que les ressources DSC sont toujours transmises dans le cadre d’un module, vous devez toujours exécuter [Install-Module][] pour installer ces ressources DSC.
 
@@ -68,7 +68,7 @@ Cette opération nécessite un compte d’administrateur. Si vous ajoutez le par
 
 Par défaut, [Install-Module][] et [Install-Script][] installent la dernière version du package. Pour installer une version antérieure, ajoutez le paramètre `-RequiredVersion`.
 
-### <a name="deploy"></a>Déployez
+### <a name="deploy"></a>Déployer
 
 Pour déployer un package de PowerShell Gallery sur Azure Automation, cliquez sur **Azure Automation**, puis sur **Déployer sur Azure Automation** sur la page de détails du package. Le Portail de gestion Azure s’affiche : connectez-vous à l’aide de vos informations d’identification de compte Azure. Sachez que le déploiement de packages comportant des dépendances a pour effet de déployer toutes les dépendances sur Azure Automation. Pour désactiver le bouton « Déployer sur Azure Automation », ajoutez la balise **AzureAutomationNotSupported** aux métadonnées du package.
 
@@ -76,7 +76,7 @@ Pour plus d’informations sur Azure Automation, consultez la documentation [Azu
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Mettre à jour des packages de PowerShell Gallery
 
-Pour mettre à jour des packages installés sur PowerShell Gallery, exécutez la cmdlet [Update-Module][] ou la cmdlet [Update-Script][]. Quand elle est exécutée sans paramètre supplémentaire, [Update-Module][] tente de mettre à jour tous les modules installés en exécutant [Install-Module][]. Pour mettre à jour les modules de façon sélective, ajoutez le paramètre `-Name`.
+Pour mettre à jour des packages installés sur PowerShell Gallery, exécutez la cmdlet [Update-Module][] ou [Update-Script][]. Quand elle est exécutée sans paramètre supplémentaire, [Update-Module][] tente de mettre à jour tous les modules installés en exécutant [Install-Module][]. Pour mettre à jour les modules de façon sélective, ajoutez le paramètre `-Name`.
 
 De même, quand elle est exécutée sans paramètre supplémentaire, [Update-Script][] tente également de mettre à jour tous les scripts installés en exécutant [Install-Script][]. Pour mettre à jour les scripts de façon sélective, ajoutez le paramètre `-Name`.
 
@@ -98,3 +98,5 @@ De même, pour connaître les scripts que vous avez installés à partir de Powe
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script

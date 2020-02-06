@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416672"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818105"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -299,7 +299,7 @@ De la même manière, l’extraction d’un module dont le catalogue n’est pas
 
 ![Exemple de module de sortie d’erreur](../images/DSC-improvements/PullUnisgnedCatalog.png)
 
-#### <a name="push"></a>Envoi
+#### <a name="push"></a>Envoi de données (push)
 
 Une configuration fournie à l’aide d’une transmission de type push peut être falsifiée à sa source avant d’être remise au nœud. Le gestionnaire de configuration local effectue des étapes de validation des signatures similaires pour les configurations envoyées ou publiées. Voici un exemple complet de validation des signatures pour l’envoi.
 

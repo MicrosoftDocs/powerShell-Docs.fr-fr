@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Liste de vérification de création de ressources
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952876"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818139"
 ---
 # <a name="resource-authoring-checklist"></a>Liste de vérification de création de ressources
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>La ressource et le schéma sont corrects
 
 Vérifiez le fichier de schéma de ressource (*.schema.mof). Vous pouvez utiliser le [Concepteur de ressources DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) pour développer et tester votre schéma.
-Vérifiez que :
+Assurez-vous que :
 
 - Les types de propriétés sont corrects (par exemple, n’utilisez pas String pour les propriétés qui acceptent des valeurs numériques ; utilisez à la place UInt32 ou d’autres types numériques).
 - Les attributs de propriétés sont spécifiés correctement en tant que ([key], [required], [write], [read])
@@ -52,7 +52,7 @@ Vérifiez que :
 
 - Le nom convivial est spécifié et conforme aux conventions d’affectation de noms DSC.
 
-  Exemple : `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
+  Exemple : `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
 - Chaque champ a une description explicite. Le dépôt GitHub de PowerShell présente des exemples intéressants, tel que [le fichier .schema.mof pour xRemoteFile](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
 
@@ -130,7 +130,7 @@ Types de problèmes possibles :
 - Les informations d’identification ou la session peuvent se comporter différemment, car l’agent DSC s’exécute en tant que service.  Veillez à tester ici toutes les fonctionnalités de bout en bout.
 - Les erreurs générées par `Start-DscConfiguration` peuvent être différentes de celles affichées quand vous appelez directement la fonction `Set-TargetResource`.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Compatibilité des tests sur toutes les plateformes prises en charge DSC
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Compatibilité des tests sur toutes les plateformes prises en charge DSC
 
 La ressource doit fonctionner sur toutes les plateformes prises en charge par DSC (Windows Server 2008 R2 et versions ultérieures). Installez la dernière version de WMF (Windows Management Framework) sur votre système d’exploitation pour obtenir la dernière version de DSC. Si la ressource ne fonctionne pas sur certaines de ces plateformes de par sa conception, un message d’erreur spécifique doit être retourné. Veillez aussi à ce que votre ressource vérifie si les applets de commande que vous appelez sont présentes sur un ordinateur particulier. Windows Server 2012 a ajouté un grand nombre de nouvelles applets de commande qui ne sont pas disponibles sur Windows Server 2008 R2, même avec WMF installé.
 
@@ -246,7 +246,7 @@ Si votre ressource a besoin d’accéder à des chemins spécifiques, utilisez d
 
 Exemple :
 
-Au lieu de :
+À la place de :
 
 ```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"

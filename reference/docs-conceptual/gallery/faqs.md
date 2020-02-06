@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328050"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818122"
 ---
-# <a name="frequently-asked-questions"></a>Forum Aux Questions
+# <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ)
 
 ## <a name="what-is-a-powershell-module"></a>Qu’est-ce qu’un module PowerShell ?
 
@@ -36,7 +36,7 @@ Pour plus d’informations sur l’exécution de ces applets de commande, examin
 
 **Il est inutile de s’inscrire ou de se connecter à PowerShell Gallery pour installer ou enregistrer des packages.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur : « (403) Interdit. » Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu'est-ce que cela signifie ?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur : « (403) Interdit. » Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu'est-ce que cela signifie ?
 
 Cette erreur peut se produire pour les raisons suivantes :
 
@@ -160,15 +160,15 @@ Le module **PowerShellGet** nécessite **PowerShell 3.0 ou ultérieur**.
 
 Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitation suivants :
 
-- Windows 10
-- Windows 8.1 Professionnel
-- Windows 8.1 Enterprise
+- Windows 10
+- Windows 8.1 Pro
+- Windows 8.1 Entreprise
 - Windows 7 SP1
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** nécessite également .NET Framework 4.5 ou ultérieur. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** nécessite également le .NET Framework 4.5 ou version ultérieure. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Est-il possible de réserver les noms des packages qui doivent être publiés à l’avenir ?
 

@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415711"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995464"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Modifications avec rupture dans PowerShell 6.x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Fonctionnalités qui ne sont plus disponibles dans PowerShell Core
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>Modules non livrés pour PowerShell 6.x
+
+Pour différentes raisons de compatibilité, les modules suivants ne sont pas inclus dans PowerShell 6.
+
+- ISE
+- Microsoft.PowerShell.LocalAccounts
+- Microsoft.PowerShell.ODataUtils
+- Microsoft.PowerShell.Operation.Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>PowerShell Workflow
 
@@ -40,10 +52,11 @@ Aujourd’hui, cela arrête les modules `ActiveDirectory` et `DnsClient` dans Wi
 
 En raison de la complexité de la prise en charge de deux ensembles de modules basés sur WMI, nous avons supprimé les cmdlets WMI v1 de PowerShell :
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 Au lieu de cela, nous vous recommandons d’utiliser les cmdlets CIM (également appelés WMI v2) qui offrent le même fonctionnement avec des fonctionnalités et une syntaxe nouvelles :
 
@@ -68,14 +81,51 @@ En raison de l’utilisation des API non prises en charge, `Microsoft.PowerShell
 
 .NET Core ne prend pas en charge l’infrastructure de communication Windows, qui fournit des services pour l’utilisation du protocole SOAP. Cette cmdlet a été supprimée, car elle nécessite SOAP.
 
-### <a name="-computer-cmdlets"></a>Cmdlets `*-Computer`
+### <a name="-transaction-cmdlets-removed"></a>Cmdlets `*-Transaction` supprimées
+
+Ces cmdlets ont une utilisation très limitée. Il a été décidé de ne plus les prendre en charge.
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>Cmdlets de sécurité non disponibles sur les plateformes autres que Windows
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer` et autres cmdlets spécifiques à Windows
 
 En raison de l’utilisation d’API non prises en charge, les applets de commande suivantes ont été supprimées de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée.
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>Cmdlets `*-Counter`
 
@@ -84,6 +134,31 @@ En raison de l’utilisation des API non prises en charge, `*-Counter` a été s
 ### <a name="-eventlog-cmdlets"></a>Cmdlets `*-EventLog`
 
 En raison de l’utilisation des API non prises en charge, `*-EventLog` a été supprimé de PowerShell Core jusqu’à ce qu’une meilleure solution soit trouvée. `Get-WinEvent` et `Create-WinEvent` sont disponibles pour obtenir et créer des événements sur Windows.
+
+### <a name="cmdlets-that-use-wpf-removed"></a>Les cmdlets qui utilisent WPF ont été supprimées
+
+WPF n’est pas pris en charge sur CoreCLR. Les cmdlets suivantes sont affectées :
+
+- `Show-Command`
+- `Out-GridView`
+- Le paramètre **showwindow** de `Get-Help`
+
+### <a name="some-dsc-cmdlets-removed"></a>Certaines cmdlets DSC supprimées
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>Modifications apportées au moteur/langage
 
