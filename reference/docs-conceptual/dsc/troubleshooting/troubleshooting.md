@@ -1,13 +1,13 @@
 ---
 ms.date: 10/30/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Résolution des problèmes liés à DSC
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954616"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478783"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC
 
@@ -17,7 +17,7 @@ Cette rubrique décrit comment résoudre les problèmes liés à DSC quand ils s
 
 ## <a name="winrm-dependency"></a>Dépendance de WinRM
 
-La Configuration de l’état souhaité (DSC) Windows PowerShell dépend de WinRM. WinRM n’est pas activé par défaut sur Windows Server 2008 R2 et Windows 7. Exécutez `Set-WSManQuickConfig` dans une session Windows PowerShell avec élévation des privilèges pour activer WinRM.
+Windows PowerShell Desired State Configuration (DSC) dépend de WinRM. WinRM n’est pas activé par défaut sur Windows Server 2008 R2 et Windows 7. Exécutez `Set-WSManQuickConfig` dans une session Windows PowerShell avec élévation des privilèges pour activer WinRM.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Utilisation de l’applet de commande Get-DscConfigurationStatus
 
@@ -119,7 +119,7 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-Les événements DSC sont enregistrés dans une structure particulière qui permet à l’utilisateur de regrouper les événements d’une seule tâche DSC. La structure est la suivante :
+Les événements DSC sont enregistrés dans une structure particulière qui permet à l’utilisateur de regrouper les événements d’une seule tâche DSC. La structure est comme suit :
 
 ```
 Job ID : <Guid>
@@ -242,7 +242,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
-### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4 : Messages d’erreur enregistrés pour les dernières opérations ayant échoué
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4 : Messages d’erreur enregistrés pour les dernières opérations ayant échoué
 
 `$SeparateDscOperations[0].Group` contient un ensemble d’événements pour la dernière opération. Exécutez l’applet de commande `Where-Object` pour filtrer les événements selon le nom d’affichage du niveau. Les résultats sont stockés dans la variable `$myFailedEvent`, qui peut être examinée pour obtenir le message d’événement :
 
@@ -258,7 +258,7 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1
 ```
 
-### <a name="5-all-events-generated-for-a-particular-job-id"></a>5 : Tous les événements générés pour un ID de tâche en particulier.
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5 : Tous les événements générés pour un ID de tâche en particulier.
 
 `$SeparateDscOperations` est un tableau de groupes, chacun d’eux a comme nom l’ID de tâche unique. En exécutant l’applet de commande `Where-Object`, vous pouvez extraire les groupes d’événements qui ont un ID de tâche particulier :
 
@@ -642,6 +642,16 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 
 Ce cas peut se produire lorsque le certificat utilisé sur le serveur pour chiffrer le trafic a un nom commun (CN) qui est différent du nom DNS utilisé par le nœud pour résoudre l’URL.
 Mettez à jour l’instance du serveur Pull Windows pour utiliser un certificat avec un nom correct.
+
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Erreur lors de l’exécution de Sysprep après l’application d’une configuration DSC
+
+Lorsque vous tentez d’exécuter Sysprep pour généraliser un serveur Windows après l’application d’une configuration DSC, vous pouvez rencontrer l’erreur suivante.
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+La généralisation d’un serveur une fois qu’il a été configuré avec Windows PowerShell Desired State Configuration n’est pas prise en charge.  Appliquez plutôt des configurations à Windows à l’issue de la phase Spécialiser du programme d’installation Windows.
 
 ## <a name="see-also"></a>Voir aussi
 
