@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417601"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706204"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 
@@ -51,7 +51,7 @@ Après l’inscription, vous êtes prêt à [utiliser JEA](using-jea.md). Vous p
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Configuration sur plusieurs machines avec DSC
 
-Pour le déploiement de JEA sur plusieurs machines, le modèle de déploiement le plus simple utilise la ressource JEA [Configuration d’état souhaité](/powershell/scripting/dsc/overview) (DSC, Desired State Configuration) pour déployer JEA de façon rapide et cohérente sur chaque machine.
+Pour le déploiement de JEA sur plusieurs machines, le modèle de déploiement le plus simple utilise la ressource JEA [Configuration d’état souhaité](../../../dsc/overview/overview.md) (DSC, Desired State Configuration) pour déployer JEA de façon rapide et cohérente sur chaque machine.
 
 Voici les prérequis à respecter pour pouvoir déployer JEA avec DSC :
 
@@ -65,7 +65,7 @@ Créez une configuration DSC pour votre point de terminaison JEA sur une machine
 
 Les propriétés suivantes sont configurables à l’aide de la ressource DSC :
 
-- Définitions de rôle
+- Définitions de rôles
 - Groupes de comptes virtuels
 - Nom du compte de service géré de groupe
 - Répertoire de transcription

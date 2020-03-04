@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Création d'un sélecteur de dates graphique
-ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030250"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706124"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Création d'un sélecteur de dates graphique
 
@@ -34,23 +34,23 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 }
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $result = $form.ShowDialog()
 
@@ -60,8 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**.
-Démarrez ensuite une nouvelle instance de la classe .NET Framework **Windows.Forms.Form**. Celle-ci fournit une fenêtre ou un formulaire vide où vous pouvez ajouter des contrôles.
+Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**. Démarrez ensuite une nouvelle instance de la classe .NET Framework **Windows.Forms.Form**. Celle-ci fournit une fenêtre ou un formulaire vide où vous pouvez ajouter des contrôles.
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -74,8 +73,7 @@ $form = New-Object Windows.Forms.Form -Property @{
 
 Cet exemple assigne des valeurs à quatre propriétés de cette classe à l’aide de la propriété **Property** et de la table de hachage.
 
-1. **StartPosition** : Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert.
-   Si vous affectez à cette propriété la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.
+1. **StartPosition** : Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert. Si vous affectez à cette propriété la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.
 
 2. **Size** : Il s'agit de la taille du formulaire en pixels.
    Le script précédent crée un formulaire de 243 pixels de largeur par 230 pixels de hauteur.
@@ -96,35 +94,31 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-Ensuite, créez un bouton **OK** dans votre formulaire.
-Spécifiez la taille et le comportement du bouton **OK**.
-Dans cet exemple, le bouton se trouve à 165 pixels du bord supérieur du formulaire et à 38 pixels du bord gauche.
-Le bouton mesure 23 pixels de haut et 75 pixels de long.
-Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
+Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK**. Dans cet exemple, le bouton se trouve à 165 pixels du bord supérieur du formulaire et à 38 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
 
 ```powershell
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
 De la même façon, créez un bouton **Annuler**.
 Le bouton **Annuler** se trouve à 165 pixels du bord supérieur de la fenêtre, mais à 113 pixels du bord gauche.
 
 ```powershell
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
 Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.
@@ -133,8 +127,7 @@ Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.
 $result = $form.ShowDialog()
 ```
 
-Enfin, le code à l’intérieur du bloc `if` indique à Windows comment traiter le formulaire quand un utilisateur sélectionne un jour dans le calendrier, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.
-Windows PowerShell affiche la date sélectionnée aux utilisateurs.
+Enfin, le code à l’intérieur du bloc `if` indique à Windows comment traiter le formulaire quand un utilisateur sélectionne un jour dans le calendrier, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**. Windows PowerShell affiche la date sélectionnée aux utilisateurs.
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -145,6 +138,5 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub : WinFormsExampleUpdates de Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Astuce Windows PowerShell de la semaine :  Créer un sélecteur de dates graphique](https://technet.microsoft.com/library/ff730942.aspx)
+- [Astuce Windows PowerShell de la semaine :  Créer un sélecteur de dates graphique](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
