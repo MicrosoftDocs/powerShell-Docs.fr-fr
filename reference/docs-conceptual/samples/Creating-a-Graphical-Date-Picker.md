@@ -2,20 +2,20 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Création d'un sélecteur de dates graphique
-ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030250"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706124"
 ---
-# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="f43ea-103">Création d'un sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="f43ea-103">Creating a Graphical Date Picker</span></span>
+# <a name="creating-a-graphical-date-picker"></a><span data-ttu-id="41f15-103">Création d'un sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="41f15-103">Creating a Graphical Date Picker</span></span>
 
-<span data-ttu-id="f43ea-104">Dans Windows PowerShell 3.0 et versions ultérieures, vous pouvez créer un formulaire avec un contrôle graphique de type calendrier qui permet aux utilisateurs de sélectionner un jour du mois.</span><span class="sxs-lookup"><span data-stu-id="f43ea-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
+<span data-ttu-id="41f15-104">Dans Windows PowerShell 3.0 et versions ultérieures, vous pouvez créer un formulaire avec un contrôle graphique de type calendrier qui permet aux utilisateurs de sélectionner un jour du mois.</span><span class="sxs-lookup"><span data-stu-id="41f15-104">Use Windows PowerShell 3.0 and later releases to create a form with a graphical, calendar-style control that lets users select a day of the month.</span></span>
 
-## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="f43ea-105">Créer un contrôle sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="f43ea-105">Create a graphical date-picker control</span></span>
+## <a name="create-a-graphical-date-picker-control"></a><span data-ttu-id="41f15-105">Créer un contrôle sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="41f15-105">Create a graphical date-picker control</span></span>
 
-<span data-ttu-id="f43ea-106">Copiez le code suivant, puis collez-le dans Windows PowerShell ISE. Ensuite, enregistrez-le en tant que script Windows PowerShell (.ps1).</span><span class="sxs-lookup"><span data-stu-id="f43ea-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="41f15-106">Copiez le code suivant, puis collez-le dans Windows PowerShell ISE. Ensuite, enregistrez-le en tant que script Windows PowerShell (.ps1).</span><span class="sxs-lookup"><span data-stu-id="41f15-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -34,23 +34,23 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 }
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 
 $result = $form.ShowDialog()
 
@@ -60,8 +60,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-<span data-ttu-id="f43ea-107">Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="f43ea-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span>
-<span data-ttu-id="f43ea-108">Démarrez ensuite une nouvelle instance de la classe .NET Framework **Windows.Forms.Form**. Celle-ci fournit une fenêtre ou un formulaire vide où vous pouvez ajouter des contrôles.</span><span class="sxs-lookup"><span data-stu-id="f43ea-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="41f15-107">Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**.</span><span class="sxs-lookup"><span data-stu-id="41f15-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="41f15-108">Démarrez ensuite une nouvelle instance de la classe .NET Framework **Windows.Forms.Form**. Celle-ci fournit une fenêtre ou un formulaire vide où vous pouvez ajouter des contrôles.</span><span class="sxs-lookup"><span data-stu-id="41f15-108">You then start a new instance of the .NET Framework class **Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -72,21 +71,20 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-<span data-ttu-id="f43ea-109">Cet exemple assigne des valeurs à quatre propriétés de cette classe à l’aide de la propriété **Property** et de la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="f43ea-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
+<span data-ttu-id="41f15-109">Cet exemple assigne des valeurs à quatre propriétés de cette classe à l’aide de la propriété **Property** et de la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="41f15-109">This example assigns values to four properties of this class by using the **Property** property and hashtable.</span></span>
 
-1. <span data-ttu-id="f43ea-110">**StartPosition** : Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert.</span><span class="sxs-lookup"><span data-stu-id="f43ea-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span>
-   <span data-ttu-id="f43ea-111">Si vous affectez à cette propriété la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.</span><span class="sxs-lookup"><span data-stu-id="f43ea-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+1. <span data-ttu-id="41f15-110">**StartPosition** : Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert.</span><span class="sxs-lookup"><span data-stu-id="41f15-110">**StartPosition**: If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="41f15-111">Si vous affectez à cette propriété la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.</span><span class="sxs-lookup"><span data-stu-id="41f15-111">By setting this property to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
-2. <span data-ttu-id="f43ea-112">**Size** : Il s'agit de la taille du formulaire en pixels.</span><span class="sxs-lookup"><span data-stu-id="f43ea-112">**Size**: This is the size of the form, in pixels.</span></span>
-   <span data-ttu-id="f43ea-113">Le script précédent crée un formulaire de 243 pixels de largeur par 230 pixels de hauteur.</span><span class="sxs-lookup"><span data-stu-id="f43ea-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
+2. <span data-ttu-id="41f15-112">**Size** : Il s'agit de la taille du formulaire en pixels.</span><span class="sxs-lookup"><span data-stu-id="41f15-112">**Size**: This is the size of the form, in pixels.</span></span>
+   <span data-ttu-id="41f15-113">Le script précédent crée un formulaire de 243 pixels de largeur par 230 pixels de hauteur.</span><span class="sxs-lookup"><span data-stu-id="41f15-113">The preceding script creates a form that’s 243 pixels wide by 230 pixels tall.</span></span>
 
-3. <span data-ttu-id="f43ea-114">**Text** : Il s'agit du titre de la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="f43ea-114">**Text**: This becomes the title of the window.</span></span>
+3. <span data-ttu-id="41f15-114">**Text** : Il s'agit du titre de la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="41f15-114">**Text**: This becomes the title of the window.</span></span>
 
-4. <span data-ttu-id="f43ea-115">**Topmost** : Affectez à cette propriété la valeur `$true` pour forcer la fenêtre à s’ouvrir au-dessus des autres fenêtres et boîtes de dialogue.</span><span class="sxs-lookup"><span data-stu-id="f43ea-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
+4. <span data-ttu-id="41f15-115">**Topmost** : Affectez à cette propriété la valeur `$true` pour forcer la fenêtre à s’ouvrir au-dessus des autres fenêtres et boîtes de dialogue.</span><span class="sxs-lookup"><span data-stu-id="41f15-115">**Topmost**: By setting this property to `$true`, you can force the window to open atop other open windows and dialog boxes.</span></span>
 
-<span data-ttu-id="f43ea-116">Ensuite, créez et ajoutez un contrôle calendrier dans votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="f43ea-116">Next, create and then add a calendar control in your form.</span></span>
-<span data-ttu-id="f43ea-117">Dans cet exemple, le jour actuel n'est ni mis en surbrillance ni encerclé.</span><span class="sxs-lookup"><span data-stu-id="f43ea-117">In this example, the current day is not highlighted or circled.</span></span>
-<span data-ttu-id="f43ea-118">Les utilisateurs peuvent sélectionner un seul jour à la fois dans le calendrier.</span><span class="sxs-lookup"><span data-stu-id="f43ea-118">Users can select only one day on the calendar at one time.</span></span>
+<span data-ttu-id="41f15-116">Ensuite, créez et ajoutez un contrôle calendrier dans votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="41f15-116">Next, create and then add a calendar control in your form.</span></span>
+<span data-ttu-id="41f15-117">Dans cet exemple, le jour actuel n'est ni mis en surbrillance ni encerclé.</span><span class="sxs-lookup"><span data-stu-id="41f15-117">In this example, the current day is not highlighted or circled.</span></span>
+<span data-ttu-id="41f15-118">Les utilisateurs peuvent sélectionner un seul jour à la fois dans le calendrier.</span><span class="sxs-lookup"><span data-stu-id="41f15-118">Users can select only one day on the calendar at one time.</span></span>
 
 ```powershell
 $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
@@ -96,45 +94,40 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-<span data-ttu-id="f43ea-119">Ensuite, créez un bouton **OK** dans votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="f43ea-119">Next, create an **OK** button for your form.</span></span>
-<span data-ttu-id="f43ea-120">Spécifiez la taille et le comportement du bouton **OK**.</span><span class="sxs-lookup"><span data-stu-id="f43ea-120">Specify the size and behavior of the **OK** button.</span></span>
-<span data-ttu-id="f43ea-121">Dans cet exemple, le bouton se trouve à 165 pixels du bord supérieur du formulaire et à 38 pixels du bord gauche.</span><span class="sxs-lookup"><span data-stu-id="f43ea-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span>
-<span data-ttu-id="f43ea-122">Le bouton mesure 23 pixels de haut et 75 pixels de long.</span><span class="sxs-lookup"><span data-stu-id="f43ea-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span>
-<span data-ttu-id="f43ea-123">Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.</span><span class="sxs-lookup"><span data-stu-id="f43ea-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="41f15-119">Ensuite, créez un bouton **OK** dans votre formulaire.</span><span class="sxs-lookup"><span data-stu-id="41f15-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="41f15-120">Spécifiez la taille et le comportement du bouton **OK**.</span><span class="sxs-lookup"><span data-stu-id="41f15-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="41f15-121">Dans cet exemple, le bouton se trouve à 165 pixels du bord supérieur du formulaire et à 38 pixels du bord gauche.</span><span class="sxs-lookup"><span data-stu-id="41f15-121">In this example, the button position is 165 pixels from the form’s top edge, and 38 pixels from the left edge.</span></span> <span data-ttu-id="41f15-122">Le bouton mesure 23 pixels de haut et 75 pixels de long.</span><span class="sxs-lookup"><span data-stu-id="41f15-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="41f15-123">Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.</span><span class="sxs-lookup"><span data-stu-id="41f15-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
-$OKButton = New-Object Windows.Forms.Button -Property @{
+$okButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 38, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'OK'
     DialogResult = [Windows.Forms.DialogResult]::OK
 }
-$form.AcceptButton = $OKButton
-$form.Controls.Add($OKButton)
+$form.AcceptButton = $okButton
+$form.Controls.Add($okButton)
 ```
 
-<span data-ttu-id="f43ea-124">De la même façon, créez un bouton **Annuler**.</span><span class="sxs-lookup"><span data-stu-id="f43ea-124">Similarly, you create a **Cancel** button.</span></span>
-<span data-ttu-id="f43ea-125">Le bouton **Annuler** se trouve à 165 pixels du bord supérieur de la fenêtre, mais à 113 pixels du bord gauche.</span><span class="sxs-lookup"><span data-stu-id="f43ea-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="41f15-124">De la même façon, créez un bouton **Annuler**.</span><span class="sxs-lookup"><span data-stu-id="41f15-124">Similarly, you create a **Cancel** button.</span></span>
+<span data-ttu-id="41f15-125">Le bouton **Annuler** se trouve à 165 pixels du bord supérieur de la fenêtre, mais à 113 pixels du bord gauche.</span><span class="sxs-lookup"><span data-stu-id="41f15-125">The **Cancel** button is 165 pixels from the top, but 113 pixels from the left edge of the window.</span></span>
 
 ```powershell
-$CancelButton = New-Object Windows.Forms.Button -Property @{
+$cancelButton = New-Object Windows.Forms.Button -Property @{
     Location     = New-Object Drawing.Point 113, 165
     Size         = New-Object Drawing.Size 75, 23
     Text         = 'Cancel'
     DialogResult = [Windows.Forms.DialogResult]::Cancel
 }
-$form.CancelButton = $CancelButton
-$form.Controls.Add($CancelButton)
+$form.CancelButton = $cancelButton
+$form.Controls.Add($cancelButton)
 ```
 
-<span data-ttu-id="f43ea-126">Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.</span><span class="sxs-lookup"><span data-stu-id="f43ea-126">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="41f15-126">Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.</span><span class="sxs-lookup"><span data-stu-id="41f15-126">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="f43ea-127">Enfin, le code à l’intérieur du bloc `if` indique à Windows comment traiter le formulaire quand un utilisateur sélectionne un jour dans le calendrier, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.</span><span class="sxs-lookup"><span data-stu-id="f43ea-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span>
-<span data-ttu-id="f43ea-128">Windows PowerShell affiche la date sélectionnée aux utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="f43ea-128">Windows PowerShell displays the selected date to users.</span></span>
+<span data-ttu-id="41f15-127">Enfin, le code à l’intérieur du bloc `if` indique à Windows comment traiter le formulaire quand un utilisateur sélectionne un jour dans le calendrier, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.</span><span class="sxs-lookup"><span data-stu-id="41f15-127">Finally, the code inside the `if` block instructs Windows what to do with the form after users select a day on the calendar, and then click the **OK** button or press the **Enter** key.</span></span> <span data-ttu-id="41f15-128">Windows PowerShell affiche la date sélectionnée aux utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="41f15-128">Windows PowerShell displays the selected date to users.</span></span>
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -143,8 +136,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f43ea-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f43ea-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="41f15-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="41f15-129">See Also</span></span>
 
-- [<span data-ttu-id="f43ea-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span><span class="sxs-lookup"><span data-stu-id="f43ea-130">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="f43ea-131">GitHub : WinFormsExampleUpdates de Dave Wyatt</span><span class="sxs-lookup"><span data-stu-id="f43ea-131">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="f43ea-132">Astuce Windows PowerShell de la semaine :  Créer un sélecteur de dates graphique</span><span class="sxs-lookup"><span data-stu-id="f43ea-132">Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker</span></span>](https://technet.microsoft.com/library/ff730942.aspx)
+- [<span data-ttu-id="41f15-130">GitHub : WinFormsExampleUpdates de Dave Wyatt</span><span class="sxs-lookup"><span data-stu-id="41f15-130">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- <span data-ttu-id="41f15-131">[Astuce Windows PowerShell de la semaine :  Créer un sélecteur de dates graphique](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))</span><span class="sxs-lookup"><span data-stu-id="41f15-131">[Windows PowerShell Tip of the Week:  Creating a Graphical Date Picker](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))</span></span>
