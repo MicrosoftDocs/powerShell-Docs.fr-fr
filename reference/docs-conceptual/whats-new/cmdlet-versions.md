@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Historique des versions des modules et des cmdlets
-ms.openlocfilehash: e421201d74da2cc74b1bd57529fb3c3e5245ecae
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995435"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706125"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Historique des versions des modules et des cmdlets
 
@@ -47,7 +47,7 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 | PSScheduledJob                            | &check; |         |         |         | Windows uniquement |
 | PSWorkflow                                | &check; |         |         |         | Windows uniquement |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows uniquement |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | Peut être installé dans PowerShell 5.1 |
 
 ## <a name="cmdlet-release-history"></a>Historique des versions des cmdlets
 
@@ -121,7 +121,7 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | Windows uniquement               |
-| Get-Verb                          | &check; |         |         |         | Windows uniquement               |
+| Get-Verb                          | &check; |         |         |         | Déplacé vers Microsoft.PowerShell.Utility 6.0+ |
 | Module d’importation                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-Command                    | &check; | &check; | &check; | &check; |                            |
 | Invoke-History                    | &check; | &check; | &check; | &check; |                            |
@@ -636,4 +636,4 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 
 |   Nom de l’applet de commande   |  5,1  |   6.x   |   7.0   |   7.1   | Remarque |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | Peut être installé dans PowerShell 5.1 |
