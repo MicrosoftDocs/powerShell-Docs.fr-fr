@@ -6,7 +6,7 @@
   items:
     - name: Installation de plusieurs versions de PowerShell
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: Installation de PowerShell
       items:
         - name: Installation de PowerShell Core sous Windows
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: Installation de PowerShell Core sous ARM
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: "Installation de Windows PowerShell\_5.1"
       items:
         - name: Installation de Windows PowerShell
           href: install/installing-windows-powershell.md
@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Configuration requise pour Windows PowerShell
           href: install/windows-powershell-system-requirements.md
+    - name: Utilisation de PowerShell dans Docker
+      href: install/PowerShell-in-Docker.md
 - name: Bien démarrer
   items:
     - name: Prise en main de PowerShell
@@ -58,7 +60,7 @@
           items:
             - name: Vue d’ensemble
               href: learn/remoting/jea/overview.md
-            - name: Conditions préalables requises
+            - name: Prérequis
               href: learn/remoting/jea/prerequisites.md
             - name: Capacités de rôle
               href: learn/remoting/jea/role-capabilities.md
@@ -266,8 +268,12 @@
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: FAQ sur la galerie
       href: gallery/faqs.md
-- name: What's New
+- name: Nouveautés
   items:
+    - name: "Nouveautés de PowerShell\_7.x"
+      items:
+        - name: "Nouveautés de PowerShell\_7.0"
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: "Nouveautés de PowerShell Core\_6.x"
       items:
         - name: "Nouveautés de PowerShell\_Core 6.2"

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359628"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277460"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Création d’un workflow avec des activités Windows PowerShell
 
@@ -45,7 +45,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 8. Modifiez les propriétés de l’activité **GetWmiObject** comme suit.
 
-   |Propriété|Value|
+   |Propriété|Valeur|
    |--------------|-----------|
    |**Classe**|« Win32_ComputerSystem »|
    |**PSComputerName**|conformes|
@@ -55,7 +55,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 10. Modifiez les propriétés de l’activité **AddComputer** comme suit.
 
-    |Propriété|Value|
+    |Propriété|Valeur|
     |--------------|-----------|
     |**ComputerName**|conformes|
     |**DomainCredential**|DomainCred|
@@ -64,7 +64,7 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
 12. Modifiez les propriétés de l’activité **RestartComputer** comme suit.
 
-    |Propriété|Value|
+    |Propriété|Valeur|
     |--------------|-----------|
     |**ComputerName**|conformes|
     |**Informations d'identification**|MachineCred|
@@ -77,5 +77,5 @@ Les procédures suivantes décrivent comment créer un flux de travail qui véri
 
     Lorsque vous avez terminé les procédures, la fenêtre de conception de Workflow doit ressembler à ceci.
 
-    ![XAML JoinDomain dans le concepteur de flux de travail](../media/joindomainworkflow.png)
-    ![XAML JoinDomain dans le concepteur de workflow](../media/joindomainworkflow.png "JoinDomainWorkflow")
+    ![XAML JoinDomain dans le concepteur de flux de travail](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![XAML JoinDomain dans le concepteur de workflow](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")
