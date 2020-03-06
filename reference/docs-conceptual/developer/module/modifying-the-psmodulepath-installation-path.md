@@ -8,18 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: 5957ea4c15cd3778bd09b67c4b97de0ef0cfdd2a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953838"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405039"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Modification du chemin d’Installation de PSModulePath
 
 La variable d’environnement `PSModulePath` stocke les chemins d’accès aux emplacements des modules installés sur le disque. PowerShell utilise cette variable pour localiser les modules lorsque l’utilisateur ne spécifie pas le chemin d’accès complet à un module. Les chemins d’accès de cette variable sont recherchés dans l’ordre dans lequel ils apparaissent.
 
-Au démarrage de PowerShell, `PSModulePath` est créé en tant que variable d’environnement système avec la valeur par défaut suivante : `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` ou `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` pour Windows PowerShell.
+Au démarrage de PowerShell, `PSModulePath` est créé en tant que variable d’environnement système avec la valeur par défaut suivante : `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` sur Windows et `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` sur Linux ou Mac, et `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` pour Windows PowerShell.
+
+> [!NOTE]
+> L’emplacement **CurrentUser** propre à l’utilisateur est le dossier `WindowsPowerShell\Modules` situé à l’emplacement **documents** dans votre profil utilisateur. Le chemin d’accès spécifique de cet emplacement varie selon la version de Windows et si vous utilisez la redirection de dossiers ou non. Par défaut, sur Windows 10, cet emplacement est `$HOME\Documents\WindowsPowerShell\Modules`.
 
 ## <a name="to-view-the-psmodulepath-variable"></a>Pour afficher la variable PSModulePath
 
@@ -56,3 +59,5 @@ Vous pouvez supprimer les chemins d’accès de la variable à l’aide de méth
 ## <a name="see-also"></a>Voir aussi
 
 [Écriture d’un module Windows PowerShell](./writing-a-windows-powershell-module.md)
+
+[about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)
