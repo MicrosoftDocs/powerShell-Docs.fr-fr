@@ -8,13 +8,13 @@
       href: install/installing-powershell.md
     - name: Installation de PowerShell
       items:
-        - name: Installation de PowerShell Core sous Windows
+        - name: Installation de PowerShell sur Windows
           href: install/installing-powershell-core-on-windows.md
-        - name: Installation de PowerShell Core sous Linux
+        - name: Installation de PowerShell sur Linux
           href: install/installing-powershell-core-on-linux.md
-        - name: Installation de PowerShell Core sous macOS
+        - name: Installation de PowerShell sur macOS
           href: install/installing-powershell-core-on-macos.md
-        - name: Installation de PowerShell Core sous ARM
+        - name: Installation de PowerShell sur ARM
           href: install/powershell-core-on-arm.md
     - name: "Installation de Windows PowerShell\_5.1"
       items:
@@ -268,7 +268,7 @@
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: FAQ sur la galerie
       href: gallery/faqs.md
-- name: Nouveautés
+- name: What's New
   items:
     - name: "Nouveautés de PowerShell\_7.x"
       items:
@@ -296,6 +296,8 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Historique des versions de modules et de cmdlets
       href: whats-new/cmdlet-versions.md
+    - name: Liste de compatibilité des modules
+      href: whats-new/module-compatibility.md
 - name: Cycle de vie du support de PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
