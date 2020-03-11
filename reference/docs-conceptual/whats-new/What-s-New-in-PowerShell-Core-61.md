@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.1
 description: Nouvelles fonctionnalités et modifications de PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995518"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277725"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nouveautés de PowerShell Core 6.1
 
@@ -169,7 +169,7 @@ Nous avons ajouté des applets de commande à la version 6.1 qui vous permettent
 
 Par exemple, `Show-Markdown` restitue un fichier Markdown dans la console :
 
-![Exemple Show-Markdown](./images/markdown_example.png)
+![Exemple Show-Markdown](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 Pour plus d’informations sur le fonctionnement de ces applets de commande, consultez [ce document RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md).
 
@@ -264,7 +264,7 @@ Les clients SSH prennent généralement en charge une chaîne de connexion au fo
 
 Grâce à [@bergmeister](https://github.com/bergmeister), vous pouvez désormais activer un menu contextuel dans Windows. Vous pouvez ouvrir votre installation de PowerShell 6.1 à l’échelle du système à partir de n’importe quel dossier de l’Explorateur Windows :
 
-![Menu contextuel de shell pour PowerShell 6](./images/shell_context_menu.png)
+![Menu contextuel de shell pour PowerShell 6](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>Avantages
 
@@ -272,7 +272,7 @@ Grâce à [@bergmeister](https://github.com/bergmeister), vous pouvez désormais
 
 Grâce à [@bergmeister](https://github.com/bergmeister), la liste de raccourcis de PowerShell Core comprend désormais l’option « Exécuter en tant qu’administrateur » :
 
-![Option Exécuter en tant qu’administrateur dans la liste de raccourcis PowerShell 6](./images/jumplist.png)
+![Option Exécuter en tant qu’administrateur dans la liste de raccourcis PowerShell 6](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` retourne au répertoire précédent
 

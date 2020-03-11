@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Déployer sur Azure Automation
-ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327910"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278708"
 ---
 # <a name="deploy-to-azure-automation"></a>Déployer sur Azure Automation
 
 Le bouton Déployer sur Azure Automation de la page de détails du package a pour effet de déployer le package de PowerShell Gallery sur Azure Automation.
 
-![Bouton Déployer sur Azure Automation](../../Images/DeployToAzureAutomationButton.png)
+![Bouton Déployer sur Azure Automation](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 Quand vous cliquez dessus, vous êtes redirigé vers le portail de gestion Azure où vous vous connectez à l’aide des informations d’identification de compte Azure.
 Si le package comporte des dépendances, elles sont toutes déployées sur Azure Automation par la même occasion.
@@ -30,9 +30,9 @@ Pour désactiver le bouton Déployer sur Azure Automation, ajoutez la balise Azu
 
 Si le module en cours de déploiement sur Azure Automation exige l’acceptation de la licence, l’avertissement suivant s’affiche sur l’interface utilisateur du portail : « Ce module exige l’acceptation de la licence. En cliquant sur OK, vous acceptez les termes du contrat de licence. »
 
-![Le déploiement sur Azure Automation nécessite l’acceptation de la licence.](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![Le déploiement sur Azure Automation nécessite l’acceptation de la licence.](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>Plus d’informations
+## <a name="more-details"></a>Détails supplémentaires
 
 - [Exiger l’acceptation de la licence dans PowerShellGet](../../concepts/module-license-acceptance.md)
 - [Exiger l’acceptation de la licence dans PowerShell Gallery](packages-that-require-license-acceptance.md)

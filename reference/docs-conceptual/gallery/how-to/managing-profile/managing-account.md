@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Paramètres de compte PowerShell Gallery
-ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328030"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278080"
 ---
 # <a name="powershell-gallery-account-settings"></a>Paramètres de compte PowerShell Gallery
 
@@ -25,7 +25,7 @@ PowerShell Gallery présente les paramètres de compte suivants :
 
 L’adresse e-mail est la destination des notifications de PowerShell Gallery. Elle ne doit pas nécessairement correspondre au compte de connexion. Vous pouvez utiliser n’importe quel compte de messagerie auquel vous avez accès. PowerShell Gallery ne communique jamais directement votre adresse e-mail à d’autres utilisateurs.
 
-![Changement d’adresse e-mail](../../Images/PSGallery_AcccountEmailAddress.png)
+![Changement d’adresse e-mail](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 Quand vous entrez une nouvelle adresse e-mail, PowerShell Gallery envoie un message de vérification à cette adresse. Ce message contient un lien vers PowerShell Gallery pour terminer le processus de modification. Tant que le processus de vérification n’est pas terminé, toutes les notifications sont envoyées à l’adresse précédente.
 
@@ -36,10 +36,10 @@ PowerShell Gallery propose les options de notification suivantes :
 - Les utilisateurs peuvent me contacter via PowerShell Gallery
 - M’avertir quand un package est envoyé (push) sur PowerShell Gallery avec mon compte
 
-![Changement d’adresse e-mail](../../Images/PSGallery_AccountEmailOptions.png)
+![Changement d’adresse e-mail](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Comme indiqué dans la page, les notifications critiques de PowerShell Gallery ne peuvent pas être désactivées.
-Ces paramètres sont les suivants :
+notamment :
 
 - Notifications de sécurité
 - Notifications de gestion de compte des administrateurs PowerShell Gallery
@@ -49,20 +49,20 @@ Ces paramètres sont les suivants :
 
 Pour modifier le compte de connexion, vous devez être connecté avec le compte actif. Effectuez les étapes suivantes pour effectuer la modification.
 
-![Paramètres de compte de connexion](../../Images/PSGallery_LoginAccountSettings.png)
+![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Cliquez sur **Changer de compte**. Une fenêtre contextuelle explique que la modification du compte de connexion s’applique à toutes les utilisations de ce compte dans PowerShell Gallery. Vérifiez les informations, puis cliquez sur **OK** pour continuer.
 
-   ![Paramètres de compte de connexion](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. Vous êtes ensuite invité à vous connecter en utilisant le _nouveau compte_.
 
-   ![Paramètres de compte de connexion](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. Quand vous cliquez sur **Suivant**, un message s’affiche pour vous indiquer que vous êtes connecté avec le compte actif.
    Cliquez sur **Se déconnecter et se connecter avec un autre compte**.
 
-   ![Paramètres de compte de connexion](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Entrez le mot de passe du nouveau compte. Après avoir entré le mot de passe, la page Paramètres du compte s’affiche à nouveau et vous indique que le compte de connexion a été mis à jour.
 

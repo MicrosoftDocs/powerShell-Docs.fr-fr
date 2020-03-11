@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818122"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278174"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ)
 
@@ -148,7 +148,7 @@ Dans la couche d’applet de commande PowerShell, [Install-Module][] est en fait
 
 Dans la couche de fournisseur de package PackageManagement, le fournisseur de package PSModule appelle en fait d’autres fournisseurs de package PackageManagement. Par exemple, quand vous utilisez des galeries NuGet (telles que PowerShell Gallery), le fournisseur de package PSModule utilise le fournisseur de package NuGet pour travailler avec le référentiel.
 
-![Architecture PowerShellGet](Images/powershellgetArchitecture.png)
+![Architecture PowerShellGet](media/faqs/powershellgetArchitecture.png)
 
 Figure 1 : Architecture PowerShellGet
 

@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 title: Packages avec un système d’exploitation ou des éditions PowerShell compatibles
-ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328440"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278355"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Packages avec des systèmes d’exploitation ou des éditions PowerShell compatibles
 
@@ -25,7 +25,7 @@ Les deux éditions de PowerShell sont :
 Si des éditions PS compatibles sont spécifiées pour un package, elles sont répertoriées dans le cadre des « Éditions PowerShell » dans la page d’affichage du package et également dans les résultats des packages.
 Vous pouvez également rechercher les packages compatibles à l’aide de PowerShell.
 
-![Page d’affichage de l’élément avec des éditions PS](../../Images/packagedisplaypagewithpseditions.PNG)
+![Page d’affichage de l’élément avec des éditions PS](media/searching-by-compatibility/packagedisplaypagewithpseditions.PNG)
 
 ### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Rechercher des packages dans l’interface utilisateur PowerShell Gallery qui fonctionnent sur PowerShellCore
 
@@ -33,11 +33,11 @@ Utiliser Tags:"PSEdition_Desktop" et Tags:"PSEdition_Core" pour filtrer les pack
 
 ### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Utiliser Tags:"PSEdition_Core" pour rechercher les éléments compatibles avec l’édition PowerShell Core.
 
-![Résultats de la recherche des éléments compatibles avec l’édition PowerShell Core](../../Images/searchresultswithpseditions.PNG)
+![Résultats de la recherche des éléments compatibles avec l’édition PowerShell Core](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
 ### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Utiliser Tags:"PSEdition_Desktop" pour rechercher les éléments compatibles avec l’édition PowerShell Desktop.
 
-![Résultats de la recherche des éléments compatibles avec l’édition PowerShell Desktop](../../Images/searchresultswithpseditionsdesktop.PNG)
+![Résultats de la recherche des éléments compatibles avec l’édition PowerShell Desktop](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Rechercher des packages pour trouver des éditions compatibles à l’aide de PowerShell
 Vous pouvez spécifier des balises pour filtrer l’édition de PowerShell et le système d’exploitation.

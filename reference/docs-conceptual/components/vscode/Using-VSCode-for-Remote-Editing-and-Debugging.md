@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 description: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67263912"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279128"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 
@@ -15,7 +15,7 @@ Ceux d’entre vous qui sont familiarisés avec l’environnement ISE se rappell
 
 Cette fonctionnalité est également disponible dans l’extension PowerShell pour VSCode. Ce guide vous explique comment procéder.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Ce guide suppose que vous disposez des éléments suivants :
 
@@ -38,7 +38,7 @@ Ces exemples montrent des modifications et un débogage à distance à partir d�
 
 Après avoir lancé l’extension PowerShell pour VSCode et ouvert la console PowerShell intégrée, nous pouvons taper `Open-EditorFile foo.ps1` ou `psedit foo.ps1` pour ouvrir le fichier local foo.ps1 directement dans l’éditeur.
 
-![Open-EditorFile foo.ps1 fonctionne localement](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo.ps1 fonctionne localement](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > Le fichier `foo.ps1` doit déjà exister.
@@ -47,11 +47,11 @@ Après avoir lancé l’extension PowerShell pour VSCode et ouvert la console Po
 
 - ajouter des points d’arrêt à la marge
 
-  ![ajout de points d’arrêt à la marge](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![ajout de points d’arrêt à la marge](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Appuyez sur F5 pour déboguer le script PowerShell.
 
-  ![débogage du script local PowerShell](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![débogage du script local PowerShell](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Pendant le débogage, vous pouvez interagir avec la console de débogage, consultez les variables dans l’étendue à gauche, et exécutez tous les autres outils de débogage standard.
 
@@ -73,20 +73,20 @@ Comme nous passons de macOS à une machine virtuelle Ubuntu dans Azure, nous uti
 
 Tout d’abord, dans la console intégrée, exécutez `Enter-PSSession`. Vous êtes connecté à la session à distance lorsque `[<hostname>]` s’affiche à gauche de votre invite.
 
-![L’appel à Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![L’appel à Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Maintenant, nous pouvons effectuer les mêmes étapes que si nous modifiions un script local.
 
 1. Exécutez `Open-EditorFile test.ps1` ou `psedit test.ps1` pour ouvrir le fichier `test.ps1` distant
 
-  ![Fichier Open-EditorFile the test.ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Fichier Open-EditorFile the test.ps1](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Modifier le fichier/définir des points d’arrêt
 
-   ![modifier et définir des points d’arrêt](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![modifier et définir des points d’arrêt](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Démarrer le débogage (F5) du fichier distant
 
-   ![débogage du fichier distant](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![débogage du fichier distant](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 Si vous rencontrez des problèmes, vous pouvez ouvrir des tickets dans le [référentiel GitHub](https://github.com/powershell/vscode-powershell).

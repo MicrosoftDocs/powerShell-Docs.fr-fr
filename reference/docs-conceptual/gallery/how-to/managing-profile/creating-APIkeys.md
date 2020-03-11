@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des clés API
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328290"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278287"
 ---
 # <a name="managing-api-keys"></a>Gestion des clés API
 
@@ -19,7 +19,7 @@ PowerShell Gallery permet la création de plusieurs clés API de façon à prend
 
 L’illustration suivante montre les options disponibles pendant la création d’une clé API étendue.
 
-![Création de clés API](../../Images/PSGallery_KeyScoped.png)
+![Création de clés API](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 Dans cet exemple, nous avons créé une clé API nommée **AzureRMDataFactory**. La valeur de cette clé peut être utilisée pour envoyer (push) des packages avec des noms qui commencent par « AzureRM.DataFactory » et qui sont valides pendant 365 jours. Il s’agit d’un scénario classique quand différentes équipes au sein d’une même entreprise travaillent sur différents packages. Les membres d’une équipe disposent d’une clé qui leur accorde des privilèges pour le package sur lequel ils travaillent.
 La valeur d’expiration évite que des clés obsolètes ou oubliées soient utilisées.
@@ -32,7 +32,7 @@ Si vous travaillez sur plusieurs packages, vous pouvez utiliser des modèles Glo
 
 Par mesure de sécurité, une valeur de clé qui vient d’être créée n’est jamais affichée à l’écran et n’est accessible qu’à partir du bouton Copier, comme illustré ci-dessous.
 
-![Obtention de la nouvelle valeur de clé API](../../Images/PSGallery_CopyCreatedKey.png)
+![Obtention d’une nouvelle valeur de clé API](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > Vous ne pouvez copier la valeur d’une clé API que de suite après l’avoir créée ou actualisée. Elle ne s’affiche pas et n’est plus accessible une fois que la page a été actualisée. Si vous perdez la valeur de la clé, vous devez cliquer sur Regénérer et copier la clé une fois qu’elle a été regénérée.
@@ -47,7 +47,7 @@ Les clés API étendues peuvent attribuer l’une des autorisations suivantes :
 
 Chaque nouvelle clé est assortie d’un délai d’expiration. La valeur du délai d’expiration est exprimée en jours. Les valeurs possibles du délai d’expiration sont les suivantes :
 
-- 1 jour
+- 1 jour
 - 90 jours
 - 180 jours
 - 270 jours
@@ -59,7 +59,7 @@ Ces paramètres ne peuvent pas être modifiés une fois que la clé est créée.
 
 Vous pouvez modifier certains paramètres d’une clé existante. Comme indiqué précédemment, vous ne pouvez ni modifier l’étendue de sécurité d’une clé API existante, ni modifier son délai d’expiration. Les options que vous pouvez modifier figurent dans la capture d’écran suivante :
 
-![Obtention d’une nouvelle valeur de clé API](../../Images/PSGallery_EditAPIKey.png)
+![Obtention d’une nouvelle valeur de clé API](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Pour modifier les packages contrôlés par une clé, vous pouvez choisir individuellement les packages dans la liste ou modifier le modèle Glob.
 

@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Get-Test-Set
-ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954286"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278413"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Méthodes Get, Test et Set](../media/get-test-set.png)
+![Méthodes Get, Test et Set](media/get-test-set/get-test-set.png)
 
 PowerShell Desired State Configuration est construit autour d’un processus **Get**, **Test** et **Set**. Chaque [ressource](resources.md) DSC contient des méthodes pour effectuer chacune de ces opérations. Dans une [configuration](../configurations/configurations.md), vous définissez des blocs de ressources pour renseigner des clés qui deviennent des paramètres pour les méthodes **Get**, **Test** et **Set** d’une ressource.
 
@@ -123,7 +123,7 @@ ModuleVersion = "1.0";
 
 Lorsqu’il est utilisé, le [gestionnaire de configuration local](../managing-nodes/metaConfig.md) lit la valeur « Spooler » du fichier « .mof » et la transmet au paramètre `-Name` des méthodes **Get**, **Test** et **Set** pour l’instance « MyService » de la ressource **Service**.
 
-## <a name="get"></a>Get
+## <a name="get"></a>Obtenir
 
 La méthode **Get** d’une ressource récupère l’état de la ressource telle qu’elle est configurée sur le nœud cible. Cet état est retourné sous la forme d’une [table de hachage](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Les clés de la **table de hachage** sont les valeurs configurables, ou paramètres, que la ressource accepte.
 
@@ -204,7 +204,7 @@ localhost       {[Service]Spooler}                                            Tr
 
 Pour plus d’informations, consultez [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
 
-## <a name="set"></a>Set
+## <a name="set"></a>Définissez
 
 La méthode **Set** d’une ressource tente de forcer le nœud à être conforme avec l’*état souhaité* de la ressource. La méthode **Set** est prévue pour être **idempotente**, ce qui signifie que **Set** peut être exécutée plusieurs fois et générer toujours le même résultat sans erreurs.  Lorsque vous exécutez [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), le LCM est appliqué en boucle sur chaque ressource dans la configuration actuellement appliquée. Le LCM récupère les valeurs des clés pour l’instance actuelle de la ressource à partir du fichier « .mof » et les utilise comme paramètres pour la méthode **Test**. Si la méthode **Test** retourne `$True`, le nœud est conforme à la ressource actuelle et la méthode **Set** est ignorée. Si le **test** retourne `$False`, le nœud n’est pas conforme.  Le LCM transmet les valeurs de clés de l’instance la ressource en tant que paramètres à la méthode **Set** de la ressource, restaurant ainsi la conformité du nœud.
 

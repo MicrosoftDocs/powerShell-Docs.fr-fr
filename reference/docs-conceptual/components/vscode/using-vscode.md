@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117386"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279064"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
@@ -48,7 +48,7 @@ Pour les charges de travail Windows PowerShell classiques, consultez [Installati
    1. La vue **Extensions** s’ouvre dans la barre latérale. Sélectionnez l’extension de PowerShell de Microsoft.
       Un écran VSCode apparaît :
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VSCode](media/using-vscode/vscode.png)
 
    1. Cliquez sur le bouton **Installer** sur l’extension PowerShell de Microsoft.
    1. Après l’installation, vous voyez le bouton **Installer** se changer en **Recharger**. Cliquez sur **Recharger**.
@@ -110,8 +110,8 @@ Ajoutez un élément à la liste `powershell.powerShellAdditionalExePaths` ou cr
 
 Chaque élément doit comporter :
 
-* `exePath` : chemin de l’exécutable `pwsh` ou `powershell`.
-* `versionName` : texte qui s’affichera dans le menu de session.
+* `exePath`: chemin de l’exécutable `pwsh` ou `powershell`.
+* `versionName`: texte qui s’affichera dans le menu de session.
 
 Vous pouvez définir la version de PowerShell par défaut avec le paramètre `powershell.powerShellDefaultVersion` en le définissant sur le texte qui s’affiche dans le menu de session (soit `versionName` dans le dernier paramètre) :
 

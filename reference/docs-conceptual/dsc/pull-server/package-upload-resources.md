@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Empaqueter et charger des ressources vers un serveur Pull
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954376"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278497"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Empaqueter et charger des ressources vers un serveur Pull
 
@@ -27,7 +27,7 @@ Chaque ressource disponible pour un client à télécharger doit être stockée 
 
 Vous pouvez compresser le répertoire des ressources à l’aide de l’utilitaire, du script ou de la méthode de votre choix. Dans Windows, *cliquez avec le bouton droit* sur le répertoire « xPSDesiredStateConfiguration », puis sélectionnez « Envoyer vers », puis « Dossier compressé ».
 
-![Cliquer avec le bouton droit](../media/right-click.gif)
+![Cliquer avec le bouton droit](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>Nommer l’archive de ressources
 
