@@ -726,6 +726,36 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: Communauté
+  items:
+    - name: Ressources communautaires
+      href: community/community-support.md
+    - name: Art numérique
+      href: community/digital-art.md
+    - name: Nouveautés de la documentation PowerShell
+      href: community/whats-new-in-docs.md
+    - name: Guide du contributeur
+      items:
+        - name: Vue d’ensemble
+          href: community/contributing/overview.md
+        - name: Guide pratique pour signaler un problème de documentation
+          href: community/contributing/file-an-issue.md
+        - name: Commencer à écrire de la documentation
+          href: community/contributing/get-started-writing.md
+        - name: Envoi d’une demande de tirage
+          href: community/contributing/pull-requests.md
+        - name: Guide de style pour la documentation PowerShell
+          href: community/contributing/powershell-style-guide.md
+        - name: Informations de référence sur la modification des applets de commande
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: Ressources supplémentaires
+          items:
+            - name: Check-list pour la rédaction
+              href: community/contributing/editorial-checklist.md
+            - name: Comment nous gérons les problèmes
+              href: community/contributing/managing-issues.md
+            - name: Comment nous gérons les demandes de tirage
+              href: community/contributing/managing-pull-requests.md
 - name: Kit SDK PowerShell
   items:
     - name: Vue d’ensemble
