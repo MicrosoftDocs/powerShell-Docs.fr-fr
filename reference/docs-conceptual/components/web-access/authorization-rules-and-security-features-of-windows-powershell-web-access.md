@@ -3,15 +3,15 @@ ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058418"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402606"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013
+Mise à jour : 24 juin 2013
 
 S’applique à : Windows Server 2012 R2, Windows Server 2012
 
@@ -47,7 +47,7 @@ Un administrateur peut également acheter et installer des logiciels d’authent
 
 Le tableau suivant décrit les quatre couches de sécurité entre les utilisateurs finals et les ordinateurs cibles.
 
-|Niveau|Couche|
+|Level|Couche|
 |-|-|
 |1|[fonctionnalités de sécurité du serveur web IIS](#iis-web-server-security-features)|
 |2|[authentification de la passerelle basée sur les formulaires Accès Web Windows PowerShell](#windows-powershell-web-access-forms-based-gateway-authentication)|
@@ -127,7 +127,7 @@ Les applets de commande d’Accès Web Windows PowerShell prennent en charge un 
    ```
 
 4. Vérifiez que la règle a été créée en exécutant l’applet de commande **Get-PswaAuthorizationRule** ou `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>`.
-   Par exemple, `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
+   Par exemple : `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`.
 
 #### <a name="to-remove-an-authorization-rule"></a>Pour supprimer une règle d’autorisation
 
@@ -181,8 +181,8 @@ Dans le scénario précédent, Accès Web Windows PowerShell établit une connex
 2. Authentification sur l’ordinateur cible en utilisant les informations d’identification supplémentaires fournies dans la page de connexion, dans la zone **Paramètres de connexion facultatifs**
 
    > [!NOTE]
-   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, voir [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx).
-   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, voir [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
+   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, consultez [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx).
+   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, consultez [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Utilisation d’un seul jeu de règles d’autorisation pour plusieurs sites
 

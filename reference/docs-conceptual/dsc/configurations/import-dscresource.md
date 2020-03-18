@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Utilisation d’Import-DSCResource
-ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417427"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402446"
 ---
 # <a name="using-import-dscresource"></a>Utilisation d’Import-DSCResource
 
@@ -80,7 +80,7 @@ Cette méthode offre les avantages suivants :
 
 Lorsque vous créez la configuration DSC dans ISE, PowerShell fournit à IntelliSence les ressources et les propriétés des ressources. Les définitions de ressources dans le chemin d’accès du module `$pshome` sont automatiquement chargées. Lorsque vous importez des ressources à l’aide du mot clé `Import-DSCResource`, les définitions de ressources spécifiées sont ajoutées, et IntelliSense est développé pour inclure le schéma de la ressource importée.
 
-![Ressource Intellisense](../media/resource-intellisense.png)
+![Ressource Intellisense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > À compter de PowerShell 5.0, la saisie semi-automatique via la touche Tab a été ajoutée à ISE pour les ressources DSC et leurs propriétés. Pour plus d’informations, consultez [Ressources](../resources/resources.md).
@@ -139,11 +139,11 @@ L’installation et l’utilisation de plusieurs versions de ressources côte à
 
 Dans l’image ci-dessous, deux versions du module **xPSDesiredStateConfiguration** sont installées.
 
-![Correction de plusieurs versions de ressources](../media/multiple-resource-versions-broken.png)
+![Correction de plusieurs versions de ressources](media/import-dscresource/multiple-resource-versions-broken.png)
 
 Copiez le contenu de votre version de module souhaitée dans le niveau supérieur du répertoire du module.
 
-![Correction de plusieurs versions de ressources](../media/multiple-resource-versions-fixed.png)
+![Correction de plusieurs versions de ressources](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Emplacement de la ressource
 

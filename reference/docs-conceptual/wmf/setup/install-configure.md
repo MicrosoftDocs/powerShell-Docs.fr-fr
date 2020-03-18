@@ -5,11 +5,11 @@ keywords: wmf,powershell,configuration
 contributor: keithb
 title: Installer et configurer WMF 5.1
 ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71147689"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402366"
 ---
 # <a name="install-and-configure-wmf-51"></a>Installer et configurer WMF 5.1
 
@@ -21,9 +21,9 @@ ms.locfileid: "71147689"
 
 Téléchargez le package WMF 5.1 correspondant au système d’exploitation et à l’architecture sur lesquels vous souhaitez installer :
 
-| Système d'exploitation       | Conditions préalables           | Liens de package                          |
+| Système d’exploitation       | Prérequis           | Liens de package                          |
 |------------------------|-------------------------|----------------------------------------|
-| Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
+| Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
 | Windows 8.1            |                         | **x64 :** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86 :** [Win8.1-KB3191564-x86.msu][] |
@@ -71,7 +71,7 @@ L’installation de WMF 5.1 sur Windows Server 2008 R2 SP1 ou Windows 7 SP
 
 ## <a name="winrm-dependency"></a>Dépendance de WinRM
 
-La Configuration de l’état souhaité (DSC) Windows PowerShell dépend de WinRM. WinRM n’est pas activé par défaut sur Windows Server 2008 R2 et Windows 7. Exécutez `Set-WSManQuickConfig` dans une session Windows PowerShell avec élévation des privilèges pour activer WinRM.
+Windows PowerShell Desired State Configuration (DSC) dépend de WinRM. WinRM n’est pas activé par défaut sur Windows Server 2008 R2 et Windows 7. Exécutez `Set-WSManQuickConfig` dans une session Windows PowerShell avec élévation des privilèges pour activer WinRM.
 
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Installer WMF 5.1 pour Windows Server 2012 R2, Windows Server 2012 et Windows 8.1
 
