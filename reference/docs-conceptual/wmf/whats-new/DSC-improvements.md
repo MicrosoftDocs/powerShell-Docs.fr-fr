@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818105"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277597"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -59,7 +59,7 @@ Consultez les captures instantanées ci-dessous :
 
 - Paramètres de configuration locale qui définissent une configuration partielle qu’un nœud est autorisé à recevoir.
 
-  ![Exemple de métaconfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Exemple de métaconfiguration](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - Exemple de définition d’une configuration partielle
 
@@ -80,11 +80,11 @@ Consultez les captures instantanées ci-dessous :
 
 - « ConfigurationName » incorporé dans le fichier MOF généré
 
-  ![Exemple de fichier mof généré](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![Exemple de fichier mof généré](media/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName dans le référentiel de configuration de tirage (pull)
 
-  ![FileName dans le dépôt de configuration](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![FileName dans le dépôt de configuration](media/DSC-improvements/PartialInConfigRepository.png)
 
   Le nom de service Azure Automation a généré des fichiers MOF sous la forme `<ConfigurationName>.<NodeName>.mof`. Par conséquent, la configuration ci-dessous est compilée dans PartialOne.localhost.mof.
 
@@ -249,7 +249,7 @@ Dans WMF 5.1, DSC prend en charge la validation des signatures numériques sur 
 
 #### <a name="pull"></a>Extraction
 
-Le gestionnaire de configuration local d’un nœud effectue une validation des signatures des modules et des configurations en fonction de ses paramètres actifs. Par défaut, la validation des signatures est désactivée. La validation des signatures peut être activée en ajoutant le bloc « SignatureValidation » à la définition de métaconfiguration du nœud, comme indiqué ci-dessous :
+Le gestionnaire de configuration local d’un nœud effectue une validation des signatures des modules et des configurations en fonction de ses paramètres actifs. Par défaut, la validation des signatures est désactivée. La validation des signatures peut être activée en ajoutant le bloc « SignatureValidation » à la définition de métaconfiguration du nœud :
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -293,11 +293,11 @@ La définition de la métaconfiguration ci-dessus sur un nœud active la validat
 > la validation des signatures sur le catalogue de module et la configuration n’est effectuée que la première fois où la configuration est appliquée au système et lors du téléchargement et de l’installation du module.
 > Les séries de tests de cohérence ne valident pas la signature de Current.mof ni ses dépendances de modules. Si la vérification a échoué à un stade, par exemple si la configuration extraite à partir du serveur collecteur n’est pas signée, le traitement de la configuration s’arrête avec l’erreur affichée ci-dessous et tous les fichiers temporaires sont supprimés.
 
-![Exemple de configuration de sortie d’erreur](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Exemple de configuration de sortie d’erreur](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 De la même manière, l’extraction d’un module dont le catalogue n’est pas signé entraîne l’erreur suivante :
 
-![Exemple de module de sortie d’erreur](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Exemple de module de sortie d’erreur](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Envoi de données (push)
 
@@ -345,12 +345,12 @@ Une configuration fournie à l’aide d’une transmission de type push peut êt
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Signez le fichier de configuration avec un certificat de signature de code.
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - Essayez de transmettre par push le fichier MOF signé.
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

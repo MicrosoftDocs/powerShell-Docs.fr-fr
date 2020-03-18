@@ -1,0 +1,109 @@
+---
+title: Processus de gestion des demandes de tirage
+description: Cet article explique comment l’équipe PowerShell-Docs gère les demandes de tirage (pull request).
+ms.date: 03/05/2020
+ms.topic: conceptual
+ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
+ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79060384"
+---
+# <a name="managing-pull-requests"></a>Gestion des demandes de tirage
+
+Cet article explique comment nous gérons les demandes de tirage (pull request) dans le référentiel PowerShell-Docs. Cet article est conçu pour servir d’aide-mémoire aux membres de l’équipe PowerShell-Docs. Il est publié ici dans un souci de transparence des processus pour nos contributeurs publics.
+
+## <a name="best-practices"></a>Meilleures pratiques
+
+- La personne qui soumet la demande de tirage ne doit pas fusionner la demande de tirage sans évaluation par les pairs.
+- Affectez le réviseur lors de l’envoi de la demande de tirage. Le fait d’anticiper l’affectation permet au réviseur d’envoyer plus rapidement ses remarques éditoriales.
+- Utilisez les commentaires pour décrire la nature de la modification ou le type de révision demandé. Veillez à utiliser une @mention pour faire référence au réviseur. Par exemple, s’il s’agit d’une modification mineure et que vous n’avez pas besoin d’une révision technique complète, expliquez-le en commentaire.
+
+## <a name="pr-process-steps"></a>Étapes du processus de demande de tirage
+
+1. Rédacteur : Crée la demande de tirage.
+   - Lie tous les problèmes résolus par la demande de tirage.
+   - Utilise la fonctionnalité de [fermeture automatique](https://help.github.com/en/articles/closing-issues-using-keywords) de GitHub pour fermer le problème.
+1. Rédacteur : Affecte un réviseur.
+1. Réviseur : Révise et commente (si nécessaire).
+1. Rédacteur : Incorpore les commentaires de révision.
+1. Les deux : Examinent le rendu de la préversion.
+1. Les deux : Vérifient le rapport de validation et corrigent les avertissements et les erreurs.
+1. Rédacteur : Ajoute un commentaire de signature (informations Acrolinx incluses).
+1. Réviseur : Marque la révision de la mention « Approuvée ».
+1. Administrateur du référentiel : Fusionne la demande de tirage (voir critères ci-dessous).
+
+## <a name="content-reviewer-checklist"></a>Liste de contrôle du réviseur de contenu
+
+Pour une liste plus complète, consultez la [liste de vérification éditoriale](editorial-checklist.md).
+
+- Corriger la grammaire, le style, la concision et la précision technique.
+- Vérifier que les exemples s’appliquent toujours à la version cible.
+- Examiner le rendu de la préversion.
+- Vérifier les métadonnées (ms.date, suppression de ms.assetid, vérification des champs obligatoires).
+- Valider l’exactitude du Markdown.
+  - Voir le guide de style pour la mise en forme des contenus spécifiques.
+- Réorganiser les exemples :
+  - phrase(s) d’introduction ;
+  - code et sortie ;
+  - explication détaillée du code (si nécessaire).
+- Vérifier l’exactitude des liens hypertextes.
+  - Remplacer ou supprimer les liens TechNet/MSDN.
+  - Garantir un nombre minimal de redirections vers la cible.
+  - Vérifier le protocole HTTPS.
+  - Type de lien correct :
+    - liens de fichiers pour les fichiers locaux ;
+    - liens URL pour les fichiers extérieurs à l’ensemble de documents.
+  - Supprimer les paramètres régionaux des URL.
+  - Simplifier les URL pointant vers `docs.microsoft.com`.
+
+## <a name="branch-merge-process"></a>Processus de fusion des branches
+
+La branche intermédiaire est la seule branche qui sera fusionnée dans live. Les branches à courte durée de vie (branches de travail) doivent faire l’objet d’une fusion Squash.
+
+| *Fusion à partir de/vers*  | *release-branch* | *staging*        | *live*      |
+| ---------------- |:----------------:|:----------------:|:-----------:|
+| *working-branch* | fusion Squash et fusion | fusion Squash et fusion | Non autorisé |
+| *release-branch* | &mdash;          | fusion            | Non autorisé |
+| *staging*        | rebaser           | &mdash;          | fusion       |
+
+### <a name="pr-merger-checklist"></a>Liste de contrôle des fusions de demandes de tirage
+
+- Révision du contenu terminée.
+- Branche cible correcte pour la modification.
+- Aucun conflit de fusion.
+- Réussite de toutes les étapes de validation et de build.
+  - Correction des avertissements et des suggestions (pour connaître les exceptions, consultez [Notes](#notes))
+  - Pas de liens rompus.
+- Fusion en fonction de la table.
+
+### <a name="notes"></a>Notes
+
+Les avertissements suivants peuvent être ignorés :
+
+```
+Can't find service name for `<version>/<modulepath>/About/About.md`
+```
+
+```
+Metadata with following name(s) are not allowed to be set in Yaml header, or as file level
+metadata in docfx.json, or as global metadata in docfx.json: `locale`. They are generated by
+Docs platform, so the values set in these 3 places will be ignored. Please remove them from all
+3 places to resolve the warning.
+```
+
+Lors de la fusion d’une demande de tirage, le début (HEAD) de la branche cible est modifié. Les demandes de tirage ouvertes qui étaient basées sur le début précédent sont désormais obsolètes. Il est possible de fusionner la demande de tirage obsolète avec des droits d’administrateur pour remplacer les avertissements de fusion dans GitHub. Cela peut être fait sans risque si la ou les demandes de tirage fusionnées précédemment n’ont pas touché les mêmes fichiers. L’option la plus sûre est cependant de cliquer sur le bouton **Mettre à jour la branche**. Il peut exister des conflits non résolus qui doivent être corrigés.
+
+## <a name="publishing-to-live"></a>Publier sur live
+
+Régulièrement, les modifications accumulées dans la branche `staging` doivent être publiées sur le site web en ligne. Cela implique de fusionner la branche `staging` dans la branche `live`.
+
+- La branche `staging` doit être fusionnée dans `live` au moins une fois par semaine.
+- La branche `staging` doit être fusionnée dans `live` après toute modification significative :
+  - modification d’au moins 50 fichiers ;
+  - après la fusion d’une branche de version ;
+  - modification des configurations du référentiel ou de l’ensemble de documents (docfx.json, configurations OPS, scripts de build, etc.) ;
+  - modification du fichier de redirection ;
+  - modification de la table des matières ;
+  - après la fusion d’une branche de « projet » (réorganisation de contenu, mise à jour en bloc, etc.).

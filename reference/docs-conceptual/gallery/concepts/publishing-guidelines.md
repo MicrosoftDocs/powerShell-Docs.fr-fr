@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417669"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278209"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -124,11 +124,11 @@ Utilisez les balises suivantes pour montrer aux utilisateurs quels packages fonc
 - PSEdition_Desktop : packages compatibles avec Windows PowerShell
 - PSEdition_Core : packages compatibles avec PowerShell Core
 - Windows : packages compatibles avec le système d’exploitation Windows
-- Linux : packages compatibles avec les systèmes d’exploitation Linux
+- Linux : packages compatibles avec les systèmes d’exploitation Linux
 - MacOS : packages compatibles avec le système d’exploitation Mac
 
 Si votre package est balisé avec la ou les plateformes compatibles, il sera inclus dans les filtres de recherche de la galerie dans le volet gauche des résultats de recherche. Si vous hébergez votre package sur GitHub, lorsque vous le balisez, vous pouvez également profiter de nos [protections de compatibilité PowerShell Gallery](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![protection de compatibilité](../Images/CosmosDB.svg).
+![protection de compatibilité](media/publishing-guidelines/CosmosDB.svg).
 
 ## <a name="include-tests"></a>Inclure des tests
 
@@ -167,7 +167,7 @@ La signature des fichiers PowerShell est une approche parfaitement établie pour
 
 La signature de modules par un catalogue est une fonctionnalité ajoutée à la version 5.1 de PowerShell. La signature d’un module est abordée dans l’article [Applets de commande de catalogue](/powershell/scripting/wmf/5.1/catalog-cmdlets). Pour résumer, la signature du catalogue s’effectue en créant un fichier de catalogue contenant une valeur de hachage pour chaque fichier dans le module, puis en signant ce fichier.
 
-Les cmdlets **PowerShellGet** `Publish-Module`, `Install-Module` et `Update-Module` vérifient la validité de la signature, puis confirment que la valeur de hachage de chaque package correspond à ce qui figure dans le catalogue. `Save-Module` ne valide pas une signature. Si une version précédente du module est installée sur le système, l’applet de commande `Install-Module` confirmera que l’autorité de signature de la nouvelle version correspond à ce qui a été précédemment installé. `Install-Module` et `Update-Module` utiliseront la signature sur un fichier `.PSD1` si le package n’est pas signé par le catalogue. La signature du catalogue complète mais ne remplace pas la signature des fichiers de script. PowerShell ne valide pas les signatures du catalogue lors du chargement du module.
+Les cmdlets **PowerShellGet** `Publish-Module`, `Install-Module` et `Update-Module` vérifient la validité de la signature, puis confirment que la valeur de hachage de chacun des packages correspond à ce qui figure dans le catalogue. `Save-Module` ne valide pas une signature. Si une version précédente du module est installée sur le système, l’applet de commande `Install-Module` confirmera que l’autorité de signature de la nouvelle version correspond à ce qui a été précédemment installé. `Install-Module` et `Update-Module` utiliseront la signature sur un fichier `.PSD1` si le package n’est pas signé par le catalogue. La signature du catalogue complète mais ne remplace pas la signature des fichiers de script. PowerShell ne valide pas les signatures du catalogue lors du chargement du module.
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>Suivre les instructions SemVer pour la gestion de versions
 
@@ -205,7 +205,7 @@ Il est fortement recommandé aux éditeurs d’utiliser les applets de commande 
 Si vous ne pouvez pas utiliser `Publish-Module` ou `Publish-Script`, faites-le nous savoir.
 Signalez un problème dans le dépôt GitHub de **PowerShellGet** et dites-nous ce qui vous a amené à opter pour **NuGet** ou **PackageManagement**.
 
-## <a name="recommended-workflow"></a>Flux de travail recommandé
+## <a name="recommended-workflow"></a>Workflow recommandé
 
 L’approche la plus efficace que nous ayons trouvée pour les packages publiés sur PowerShell Gallery est la suivante :
 
