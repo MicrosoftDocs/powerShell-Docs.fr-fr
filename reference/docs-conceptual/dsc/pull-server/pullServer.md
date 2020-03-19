@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Service collecteur DSC
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885385"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402436"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Service collecteur Desired State Configuration
 
@@ -28,10 +28,10 @@ L’échelle recommandée pour chaque solution est la suivante :
 |                   Solution                   |              Nœuds clients              |
 | -------------------------------------------- | -------------------------------------- |
 | Serveur Windows Pull utilisant une base de données MDB/ESENT | Jusqu’à 500 nœuds                        |
-| Serveur Windows Pull utilisant une base de données SQL       | Jusqu’à 1 000 nœuds                       |
-| Azure Automation DSC                         | Scénarios avec plus de 1 000 nœuds |
+| Serveur Windows Pull utilisant une base de données SQL       | Jusqu’à 3 500 nœuds                       |
+| Azure Automation DSC                         | Petits et grands environnements      |
 
-**La solution recommandée**, qui est à la fois l’option offrant le plus de fonctionnalités, est [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**La solution recommandée**, qui est à la fois l’option offrant le plus de fonctionnalités, est [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). Aucune limite supérieure du nombre de nœuds par compte Automation n’a été identifiée.
 
 Le service Azure peut gérer les nœuds locaux dans des centres de données privés ou dans des clouds publics tels qu’Azure et AWS. Pour les environnements où les serveurs ne peut pas se connecter directement à Internet, envisagez de limiter le trafic sortant à la seule plage IP Azure publiée (voir [Plages d’adresses IP Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653)).
 

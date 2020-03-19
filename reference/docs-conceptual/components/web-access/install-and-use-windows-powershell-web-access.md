@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
-ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692249"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402616"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell
 
@@ -35,7 +35,7 @@ Cette rubrique ne fournit pas d’instructions détaillées sur les opérations 
 
 Le diagramme suivant illustre le fonctionnement d’Accès Web Windows PowerShell.
 
-![Diagramme Accès Web Windows PowerShell](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Diagramme Accès Web Windows PowerShell](media/install-and-use-windows-powershell-web-access/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## <a name="requirements-for-running-windows-powershell-web-access"></a>Configuration requise pour exécuter Accès Web Windows PowerShell
 
@@ -46,7 +46,7 @@ Accès Web Windows PowerShell permet aux utilisateurs distants d’accéder aux 
 ## <a name="browser-and-client-device-support"></a>Prise en charge de navigateurs et de périphériques clients
 
 Accès Web Windows PowerShell prend en charge les navigateurs suivants. Bien que les navigateurs mobiles ne soient pas officiellement pris en charge, nombre d’entre eux sont susceptibles de pouvoir exécuter la console web Windows PowerShell.
-D’autres navigateurs acceptant les cookies, exécutant JavaScript et exécutant des sites Web HTTPS sont censés fonctionner, mais n’ont pas été testés officiellement.
+D’autres navigateurs acceptant les cookies, exécutant JavaScript et exécutant des sites web HTTPS sont censés fonctionner, mais n’ont pas été testés officiellement.
 
 ### <a name="supported-desktop-computer-browsers"></a>Navigateurs d’ordinateur de bureau pris en charge
 
@@ -92,14 +92,14 @@ Vous pouvez installer la passerelle Accès Web Windows PowerShell sur un serveur
    > Dans Windows PowerShell 3.0 et 4.0, il n’est pas nécessaire d’importer le module d’applet de commande du Gestionnaire de serveur dans la session Windows PowerShell avant d’exécuter des applets de commande qui font partie du module. Un module est automatiquement importé la première fois que vous exécutez une applet de commande qui fait partie du module.
    > En outre, les applets de commande Windows PowerShell ne respectent pas la casse.
 
-1. Tapez ce qui suit, puis appuyez sur **Entrée**, où *computer_name* représente le nom de l’ordinateur distant sur lequel vous souhaitez installer Accès Web Windows PowerShell, le cas échéant. Le paramètre `-Restart` redémarre automatiquement les serveurs de destination, si besoin.
+1. Tapez ce qui suit, puis appuyez sur **Entrée**, où *computer_name* représente le nom de l’ordinateur distant sur lequel vous souhaitez installer Accès Web Windows PowerShell, le cas échéant. Le paramètre `-Restart` redémarre automatiquement les serveurs de destination si nécessaire.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
    > [!NOTE]
    > Installer Accès Web Windows PowerShell à l’aide d’applets de commande Windows PowerShell n’ajoute pas les outils de gestion de serveur web (IIS) par défaut. Si vous voulez installer les outils de gestion sur le même serveur que la passerelle Accès Web Windows PowerShell, ajoutez le paramètre `-IncludeManagementTools` à la commande d’installation (comme indiqué dans cette étape). Si vous gérez le site web Accès Web Windows PowerShell à partir d’un ordinateur distant, installez le composant logiciel enfichable Gestionnaire des services Internet en installant les [outils d’administration de serveur distant pour Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) ou les [outils d’administration pour serveur distant pour Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) sur l’ordinateur à partir duquel vous voulez gérer la passerelle.
 
-   Pour installer des rôles et fonctionnalités sur un disque dur virtuel hors connexion, vous devez ajouter les paramètres `-ComputerName` et `-VHD` . Le paramètre `-ComputerName` contient le nom du serveur sur lequel monter le disque dur virtuel tandis que le paramètre `-VHD` contient le chemin d’accès au fichier VHD sur le serveur spécifié.
+   Pour installer des rôles et des fonctionnalités sur un disque dur virtuel hors connexion, vous devez ajouter à la fois le paramètre `-ComputerName` et le paramètre `-VHD`. Le paramètre `-ComputerName` contient le nom du serveur sur lequel sera monté le disque dur virtuel et le paramètre `-VHD` le chemin du fichier VHD sur le serveur spécifié.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
@@ -109,12 +109,13 @@ Vous pouvez installer la passerelle Accès Web Windows PowerShell sur un serveur
 
 ### <a name="configure-the-gateway"></a>Configurer la passerelle
 
-L’applet de commande **Install-PswaWebApplication** constitue un moyen rapide de configurer l’Accès Web Windows PowerShell. Bien que vous puissiez ajouter le paramètre `UseTestCertificate` à l’applet de commande `Install-PswaWebApplication` pour installer un certificat SSL auto-signé à des fins de test, cette pratique n’est pas sécurisée ; pour un environnement de production sécurisé, utilisez toujours un certificat SSL valide qui a été signé par une autorité de certification. Les administrateurs peuvent remplacer le certificat de test par le certificat signé de leur choix à l’aide de la console du Gestionnaire des services Internet.
+L’applet de commande **Install-PswaWebApplication** constitue un moyen rapide de configurer l’Accès Web Windows PowerShell. Bien qu’il soit possible d’ajouter le paramètre `UseTestCertificate` à la cmdlet `Install-PswaWebApplication` pour installer un certificat SSL auto-signé à des fins de test, cette pratique n’est pas sécurisée ; pour un environnement de production sécurisé, utilisez toujours un certificat SSL valide signé par une autorité de certification. Les administrateurs peuvent remplacer le certificat de test par le certificat signé de leur choix à l’aide de la console du Gestionnaire des services Internet.
 
 Vous pouvez terminer la configuration de l’application web Accès Web Windows PowerShell en exécutant l’applet de commande `Install-PswaWebApplication` ou en effectuant les étapes de configuration via l’interface graphique dans le Gestionnaire des services Internet.
 Par défaut, l’applet de commande installe l’application web, **pswa** (et son pool d’applications, **pswa_pool**), dans le conteneur **Site Web par défaut**, comme indiqué dans le Gestionnaire des services Internet ; si vous le voulez, vous pouvez obliger l’applet de commande à modifier le conteneur de site par défaut de l’application web. Le Gestionnaire des services Internet propose des options de configuration pour les applications web, telles que la modification du numéro de port ou du certificat SSL (Secure Sockets Layer).
 
-> **![Note de sécurité](images/securitynote.jpeg) Note de sécurité** Nous recommandons vivement aux administrateurs de configurer la passerelle pour qu’elle utilise un certificat valide signé par une autorité de certification.
+> [!IMPORTANT]
+> Nous conseillons vivement aux administrateurs de configurer la passerelle de façon à utiliser un certificat valide signé par une autorité de certification.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Pour configurer la passerelle Accès Web Windows PowerShell avec un certificat de test à l’aide de Install-PswaWebApplication
 
@@ -127,9 +128,10 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Note de sécurité](images/securitynote.jpeg) Note de sécurité** Le paramètre `UseTestCertificate` doit uniquement être utilisé dans un environnement de test privé. Pour un environnement de production sécurisé, nous vous recommandons d’utiliser un certificat valide signé par une autorité de certification.
+   > [!IMPORTANT]
+   > Le paramètre `UseTestCertificate` ne doit être utilisé que dans un environnement de test privé. Pour un environnement de production sécurisé, nous vous recommandons d’utiliser un certificat valide signé par une autorité de certification.
 
-   L’exécution de l’applet de commande permet d’installer l’application web Accès Web Windows PowerShell au sein du conteneur de site web IIS par défaut. L’applet de commande crée l’infrastructure nécessaire pour exécuter Accès Web Windows PowerShell sur le site web par défaut, `https://<server_name>/pswa`. Pour installer l’application Web dans un autre site Web, indiquez son nom en ajoutant le paramètre `WebSiteName` . Pour modifier le nom de l’application Web (par défaut, il s’agit de `pswa`), ajoutez le paramètre `WebApplicationName` .
+   L’exécution de l’applet de commande permet d’installer l’application web Accès Web Windows PowerShell au sein du conteneur de site web IIS par défaut. L’applet de commande crée l’infrastructure nécessaire pour exécuter Accès Web Windows PowerShell sur le site web par défaut, `https://<server_name>/pswa`. Pour installer l’application web dans un autre site web, indiquez le nom du site en ajoutant le paramètre `WebSiteName`. Pour modifier le nom de l’application web (par défaut, `pswa`), ajoutez le paramètre `WebApplicationName`.
 
    Les paramètres suivants peuvent être configurés en exécutant l’applet de commande. Vous pouvez les modifier manuellement dans la console du Gestionnaire des services Internet, si vous le souhaitez.
 
@@ -156,7 +158,7 @@ Par défaut, l’applet de commande installe l’application web, **pswa** (et s
 
    `Install-PswaWebApplication`
 
-   Les paramètres de passerelle suivants peuvent être configurés en exécutant l’applet de commande. Vous pouvez les modifier manuellement dans la console du Gestionnaire des services Internet, si vous le souhaitez. Vous pouvez également spécifier des valeurs pour les paramètres `WebsiteName` et `WebApplicationName` de l’applet de commande `Install-PswaWebApplication` .
+   Les paramètres de passerelle suivants peuvent être configurés en exécutant l’applet de commande. Vous pouvez les modifier manuellement dans la console du Gestionnaire des services Internet, si vous le souhaitez. Vous pouvez également spécifier des valeurs pour les paramètres `WebsiteName` et `WebApplicationName` de la cmdlet `Install-PswaWebApplication`.
 
    - Path: /pswa
    - ApplicationPool : pswa_pool
@@ -208,13 +210,13 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
 
    Cette règle d’autorisation accorde à un utilisateur spécifique d’accéder à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de script et d’applet de commande.
 
-   Dans l’exemple suivant, un utilisateur nommé `JSmith` dans le domaine `Contoso` se voit accorder un accès pour gérer l’ordinateur `Contoso_214`et utiliser une configuration de session nommée `NewAdminsOnly`.
+   Dans l’exemple suivant, un utilisateur nommé `JSmith` dans le domaine `Contoso` se voit accorder un accès permettant de gérer l’ordinateur `Contoso_214` et d’utiliser une configuration de session nommée `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
 4. Vérifiez que la règle a été créée en exécutant l’applet de commande `Get-PswaAuthorizationRule` ou `Test-PswaAuthorizationRule -UserName <domain\user> -ComputerName <computer-name>`.
 
-   Par exemple, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
+   Par exemple : `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
 Après avoir configuré une règle d’autorisation, les utilisateurs autorisés peuvent se connecter à la console web et commencer à utiliser Accès Web Windows PowerShell.
 
@@ -232,7 +234,7 @@ Après avoir installé Accès Web Windows PowerShell, vous pouvez personnaliser 
 
 2. Dans le menu **Gérer**, cliquez sur **Ajouter des rôles et fonctionnalités**.
 
-3. Dans la page **Sélectionner le type d’installation**, sélectionnez **Installation basée sur un rôle ou une fonctionnalité**.
+3. Sur la page **Sélectionner le type d’installation**, sélectionnez **Installation basée sur un rôle ou une fonctionnalité**.
    Cliquez sur **Suivant**.
 
 4. Dans la page **Sélectionner le serveur de destination**, sélectionnez un serveur dans le pool de serveurs ou sélectionnez un disque dur virtuel hors connexion. Pour sélectionner un disque dur virtuel hors connexion en guise de serveur de destination, choisissez d’abord le serveur sur lequel monter le disque dur virtuel, puis sélectionnez le fichier VHD. Pour plus d’informations sur l’ajout de serveurs à votre pool de serveurs, consultez l’Aide du Gestionnaire de serveur. Une fois que vous avez sélectionné le serveur de destination, cliquez sur **Suivant**.
@@ -250,7 +252,7 @@ Après avoir installé Accès Web Windows PowerShell, vous pouvez personnaliser 
 
 ### <a name="configure-the-gateway"></a>Configurer la passerelle
 
-Les instructions données dans cette section concernent l’installation de l’application web Accès Web Windows PowerShell dans un sous-répertoire, et non pas dans le répertoire racine de votre site web. Cette procédure est l’équivalent basé sur l’interface graphique utilisateur des actions effectuées par l’applet de commande `Install-PswaWebApplication` . Cette section inclut également des instructions sur la manière d’utiliser le Gestionnaire des services Internet pour configurer la passerelle Accès Web Windows PowerShell en tant que site web racine.
+Les instructions données dans cette section concernent l’installation de l’application web Accès Web Windows PowerShell dans un sous-répertoire, et non pas dans le répertoire racine de votre site web. Cette procédure est l’équivalent sur interface utilisateur graphique des actions effectuées par la cmdlet `Install-PswaWebApplication`. Cette section inclut également des instructions sur la manière d’utiliser le Gestionnaire des services Internet pour configurer la passerelle Accès Web Windows PowerShell en tant que site web racine.
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>Pour configurer la passerelle dans un site web existant à l’aide du Gestionnaire des services Internet
 
@@ -275,7 +277,7 @@ Les instructions données dans cette section concernent l’installation de l’
 
 9. Suivez les étapes de la procédure [Pour configurer un certificat SSL dans le Gestionnaire des services Internet](#to-configure-an-ssl-certificate-in-iis-manager) dans cette rubrique.
 
-10. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape de sécurité facultative :
+10. Étape de sécurité facultative :
 
     Avec le site web sélectionné dans l’arborescence, double-cliquez sur **Paramètres SSL** dans le volet de contenu.
     Sélectionnez **Exiger SSL**, puis dans le volet **Actions**, cliquez sur **Appliquer**. Dans le volet **Paramètres SSL**, vous pouvez éventuellement exiger que les utilisateurs qui se connectent au site web d’Accès Web Windows PowerShell possèdent des certificats clients. Ceux-ci aident à vérifier l’identité d’un utilisateur de périphérique client. Pour plus d’informations sur la manière dont l’exigence de certificats clients permet de renforcer la sécurité d’Accès Web Windows PowerShell, consultez [Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell](authorization-rules-and-security-features-of-windows-powershell-web-access.md) dans ce guide.
@@ -347,7 +349,7 @@ Les instructions données dans cette section concernent l’installation de l’
    c:\windows\system32\icacls.exe $authorizationFile
    ```
 
-1. Avec le nouveau site Web sélectionné dans le volet de l’arborescence du Gestionnaire des services Internet, cliquez sur **Démarrer** dans le volet **Actions** pour démarrer le site Web.
+1. Avec le nouveau site web sélectionné dans le volet de l’arborescence du Gestionnaire des services Internet, cliquez sur **Démarrer** dans le volet **Actions** pour démarrer le site web.
 
 1. Ouvrez une session de navigateur sur un périphérique client. Pour plus d’informations sur les navigateurs et périphériques pris en charge, voir [Prise en charge de navigateurs et de périphériques client](#browser-and-client-device-support) dans ce document.
 
@@ -371,7 +373,7 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
    - Sur le Bureau Windows, cliquez avec le bouton droit dans la barre des tâches sur **Windows PowerShell**, puis cliquez sur **Exécuter en tant qu’administrateur**.
    - Dans l’écran d’**accueil** de Windows, cliquez avec le bouton droit sur **Windows PowerShell**, puis cliquez sur **Exécuter en tant qu’administrateur**.
 
-1. ![Remarque sur la sécurité](images/SecurityNote.jpeg) Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session :
+1. Étape facultative pour restreindre l’accès utilisateur à l’aide de configurations de session :
 
    vérifiez que les configurations de session que vous souhaitez utiliser dans vos règles existent déjà. Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
@@ -379,15 +381,15 @@ Pour plus de détails sur les règles d’autorisation et la sécurité d’Acc�
 
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
-   Cette règle d’autorisation accorde à un utilisateur spécifique l’accès à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de script et d’applet de commande.
+   Cette règle d’autorisation permet à un utilisateur donné d’accéder à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de scripts et de cmdlets.
 
-   Dans l’exemple suivant, un utilisateur nommé `JSmith` dans le domaine `Contoso` se voit accorder un accès pour gérer l’ordinateur `Contoso_214`et utiliser une configuration de session nommée `NewAdminsOnly`.
+   Dans l’exemple suivant, un utilisateur nommé `JSmith` dans le domaine `Contoso` se voit accorder un accès permettant de gérer l’ordinateur `Contoso_214` et d’utiliser une configuration de session nommée `NewAdminsOnly`.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
 1. Vérifiez que la règle a été créée en exécutant l’applet de commande `Get-PswaAuthorizationRule` ou `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>`.
 
-   Par exemple, `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
+   Par exemple : `Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`.
 
    Après avoir configuré une règle d’autorisation, les utilisateurs autorisés peuvent se connecter à la console web et commencer à utiliser Accès Web Windows PowerShell.
 
