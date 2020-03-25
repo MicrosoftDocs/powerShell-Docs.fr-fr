@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur macOS
 description: Informations sur l’installation de PowerShell sur macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404829"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082771"
 ---
 # <a name="installing-powershell-on-macos"></a>Installation de PowerShell sur macOS
 
@@ -108,6 +108,8 @@ Si vous avez déjà installé le [kit SDK .NET Core](/dotnet/core/sdk), il est f
 ```
 dotnet tool install --global PowerShell
 ```
+
+Le programme d’installation de l’outil dotnet ajoute `~/.dotnet/tools` à votre variable d’environnement `PATH`. Toutefois, le `PATH` de l’interpréteur de commandes en cours d’exécution n’a pas été mis à jour. Vous devez pouvoir démarrer PowerShell à partir d’un nouvel interpréteur de commandes en tapant `pwsh`.
 
 ## <a name="binary-archives"></a>Archives binaires
 

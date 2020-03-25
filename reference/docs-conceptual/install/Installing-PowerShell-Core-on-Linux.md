@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur Linux
 description: Informations sur l’installation de PowerShell sur différentes distributions Linux
 ms.date: 03/09/2020
-ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402536"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082795"
 ---
 # <a name="installing-powershell-on-linux"></a>Installation de PowerShell sur Linux
 
@@ -298,7 +298,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation par téléchargement direct - Alpine 3.9 et 3.10
 
-Téléchargez le package tar.gz `powershell_7.0.0-linux-x64.tar.gz` à partir de la page de [versions][] sur l’ordinateur Alpine.
+Téléchargez le package tar.gz `powershell-7.0.0-linux-alpine-x64.tar.gz` à partir de la page de [versions][] sur l’ordinateur Alpine.
 
 Exécutez ensuite les commandes suivantes dans le terminal :
 
@@ -693,6 +693,8 @@ Si vous avez déjà installé le [kit SDK .NET Core](/dotnet/core/sdk), il est f
 ```
 dotnet tool install --global PowerShell
 ```
+
+Le programme d’installation de l’outil dotnet ajoute `~/.dotnet/tools` à votre variable d’environnement `PATH`. Toutefois, le `PATH` de l’interpréteur de commandes en cours d’exécution n’a pas été mis à jour. Vous devez pouvoir démarrer PowerShell à partir d’un nouvel interpréteur de commandes en tapant `pwsh`.
 
 ## <a name="binary-archives"></a>Archives binaires
 

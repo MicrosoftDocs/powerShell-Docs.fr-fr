@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Modules exigeant l’acceptation de la licence
-ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328520"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082815"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules exigeant l’acceptation de la licence
 
@@ -27,27 +27,28 @@ Les modules demandant aux utilisateurs d’accepter une licence doivent répondr
 
 ## <a name="impact-on-installsaveupdate-module"></a>Impact sur Install/Save/Update-Module
 
-- Les applets de commande Install/Save/Update prendront en charge un nouveau paramètre (AcceptLicense), qui se comportera comme si l’utilisateur avait vu la licence.
-- Si RequiredLicenseAcceptance est défini sur True qu’AcceptLicense n’est pas spécifié, l’utilisateur verra le fichier license.txt et sera invité à répondre à la question suivante : &quot;Acceptez-vous les termes du contrat de licence ? (Oui/Non/YesToAll/NoToAll)&quot;.
+- Les applets de commande Install/Save/Update prennent en charge un nouveau paramètre **AcceptLicense** qui se comporte comme si l’utilisateur avait vu la licence.
+- Si **RequiredLicenseAcceptance** est défini sur True et qu’**AcceptLicense** n’est pas spécifié, l’utilisateur voit le fichier `license.txt` et est invité à répondre à la question suivante : `Do you accept these license terms
+  (Yes/No/YesToAll/NoToAll)`
   - Si la licence est acceptée
-    - **Save-Module :** le module sera copié sur le système utilisateur&#39;s
-    - **Install-Module :** le module sera copié dans le bon dossier du système utilisateur&#39; (basé sur l’étendue)
-    - **Update-Module :** le module sera mis à jour.
+    - **Save-Module :** le module est copié sur le système de l’utilisateur
+    - **Install-Module :** le module est copié dans le bon dossier du système de l’utilisateur (basé sur l’étendue)
+    - **Update-Module :** le module est mis à jour.
   - Si la licence a été refusée.
-    - L’opération sera annulée.
-    - Vérifie toutes les applets de commande pour les métadonnées (requireLicenseAcceptance et version du Format) qui indiquent que l’acceptation d’une licence est nécessaire
-    - Si la version de format est antérieure à 2.0, l’opération échouera et l’utilisateur sera invité à mettre à jour le client.
-    - Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur LicenseAcceptance sera ignoré.
+    - L'opération est annulée.
+    - Toutes les applets de commande vérifient les métadonnées (**requireLicenseAcceptance** et version du format) qui indiquent que l’acceptation de la licence est nécessaire
+    - Si la version de format est antérieure à 2.0, l’opération échoue et l’utilisateur est invité à mettre à jour le client.
+    - Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur requireLicenseAcceptance est ignoré.
 
 ## <a name="module-dependencies"></a>Dépendances du module
 
-- Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) sera requis.
+- Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) est requis.
 - Si la version du module est déjà répertoriée dans le catalogue local comme étant installée sur le système, nous contournerons la vérification de la licence.
-- Si, au cours de l’opération d’installation/d’enregistrement/de mise à jour, un module dépendant exige une licence et que l’acceptation de cette licence n’a pas lieu, l’opération échoue et suit les processus normaux d’échec de l’installation/l’enregistrement/la mise à jour du package.
+- Si, au cours de l’opération d’installation/d’enregistrement/de mise à jour, un module dépendant exige une licence et que cette licence n’est pas acceptée, l’opération échoue et suit les processus normaux d’échec de l’installation/l’enregistrement/la mise à jour du package.
 
 ## <a name="impact-on--force"></a>Impact sur Force
 
-La spécification de `–Force` n’est PAS suffisante pour accepter une licence. `–AcceptLicense` est obligatoire pour autoriser l’installation. Si `–Force` est spécifié, que RequiredLicenseAcceptance a la valeur True et qu’`–AcceptLicense` n’est PAS spécifié, l’opération échouera.
+La spécification de `–Force` n’est PAS suffisante pour accepter une licence. `–AcceptLicense` est obligatoire pour autoriser l’installation. Si `–Force` est spécifié, que RequiredLicenseAcceptance a la valeur True et que `–AcceptLicense` n’est PAS spécifié, l’opération échoue.
 
 ## <a name="examples"></a>EXEMPLES
 
@@ -71,7 +72,7 @@ Cette commande met à jour le fichier de manifeste et définit l’indicateur Re
 Install-Module -Name ModuleRequireLicenseAcceptance
 ```
 
-```output
+```Output
 License Acceptance
 
 License 2.0
@@ -86,7 +87,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Cette commande affiche la licence du fichier license.txt et invite l’utilisateur à l’accepter.
+Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 3 : installation d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
@@ -102,7 +103,7 @@ Le module est installé sans invitation à accepter la licence.
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
 ```
 
-```output
+```Output
 PackageManagement\Install-Package : License Acceptance is required for module 'ModuleRequireLicenseAcceptance'. Please specify '-AcceptLicense' to perform this operation.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm1:1837 char:21
 + ...          $null = PackageManagement\Install-Package @PSBoundParameters
@@ -115,13 +116,13 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
 
 ### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Exemple 5 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence
 
-Le module 'ModuleWithDependency' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur est invité à accepter la licence.
+Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**. L’utilisateur est invité à accepter la licence.
 
 ```powershell
 Install-Module -Name ModuleWithDependency
 ```
 
-```output
+```Output
 License Acceptance
 MIT License 2.0
 Copyright (c) 2016 PowerShell Team
@@ -137,7 +138,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exemple 6 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence et AcceptLicense
 
-Le module 'ModuleWithDependency' dépend du module 'ModuleRequireLicenseAcceptance'. L’utilisateur n’est pas invité à accepter la licence, puisqu’AcceptLicense est spécifié.
+Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**. L’utilisateur n’est pas invité à accepter la licence, puisqu’**AcceptLicense** est spécifié.
 
 ```powershell
 Install-Module -Name ModuleWithDependency -AcceptLicense
@@ -149,8 +150,10 @@ Install-Module -Name ModuleWithDependency -AcceptLicense
 Install-Module -Name ModuleRequireLicenseAcceptance
 ```
 
-```output
-WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
+```Output
+WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion
+'2.0' is not supported by the current version of PowerShellGet. Get the latest version of the
+PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
 ### <a name="example-8-save-module-requiring-license-acceptance"></a>Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence
@@ -159,7 +162,7 @@ WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGe
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
 ```
 
-```output
+```Output
 License Acceptance
 
 License 2.0
@@ -174,7 +177,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Cette commande affiche la licence du fichier license.txt et invite l’utilisateur à l’accepter.
+Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 9 : enregistrement d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
@@ -190,7 +193,7 @@ Le module est enregistré sans invitation à accepter la licence.
 Update-Module -Name ModuleRequireLicenseAcceptance
 ```
 
-```output
+```Output
 License Acceptance
 
 License 2.0
@@ -205,7 +208,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Cette commande affiche la licence du fichier license.txt et invite l’utilisateur à l’accepter.
+Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>Exemple 11 : mise à jour d’un module nécessitant l’acceptation de la licence avec AcceptLicense
 
@@ -215,7 +218,7 @@ Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 Le module est mis à jour sans invitation à accepter la licence.
 
-## <a name="more-details"></a>Plus d’informations
+## <a name="more-details"></a>Détails supplémentaires
 
 [Exiger l’acceptation de la licence pour les scripts](./script-license-acceptance.md)
 
