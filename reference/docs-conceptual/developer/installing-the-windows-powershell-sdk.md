@@ -1,13 +1,13 @@
 ---
 title: Installation du Kit de développement logiciel Windows PowerShell
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444502"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394986"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installation du Kit de développement logiciel Windows PowerShell
 
@@ -18,7 +18,7 @@ La rubrique suivante explique comment installer le SDK PowerShell sur différent
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installation du SDK Windows PowerShell 3.0 pour Windows 8 et Windows Server 2012
 
 Windows PowerShell 3.0 est automatiquement installé avec Windows 8 et Windows Server 2012. De plus, vous pouvez télécharger et installer les assemblys de référence pour Windows PowerShell 3.0 avec le SDK Windows 8. Ces assemblys permettent d’écrire des applets de commande, des fournisseurs et des programmes hôtes pour Windows PowerShell 3.0. Quand vous installez le SDK Windows pour Windows 8, les assemblys Windows PowerShell sont installés automatiquement dans le dossier d’assemblys de référence, dans `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Pour plus d’informations, consultez le site de téléchargement du SDK Windows 8. Des exemples de code Windows PowerShell sont également disponibles sur le centre de développement à l’adresse [exemple de Pack SDK Windows powershell 3,0](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d).
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`. Pour plus d’informations, consultez le site de téléchargement du SDK Windows 8. Des exemples de code Windows PowerShell sont également disponibles dans le référentiel [PowerShell-SDK-Samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) .
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installation du SDK Windows PowerShell 3.0 pour Windows 7 et Windows Server 2008 R2
 
@@ -34,11 +34,9 @@ Les assemblys de référence sont installés dans l’emplacement par défaut su
 Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
->
 > Le code compilé sur les assemblys Windows PowerShell 2.0 ne peut pas être chargé dans les installations de Windows PowerShell 1.0. En revanche, le code compilé sur les assemblys Windows PowerShell 1.0 peut être chargé dans les installations de Windows PowerShell 2.0.
 
-
-### <a name="samples"></a>exemples
+### <a name="samples"></a>Exemples
 
 Les exemples de code sont installés dans l’emplacement par défaut suivant : `C:\Program Files\Microsoft
 SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Les sections suivantes fournissent une brève description de la fonction de chaque exemple.
@@ -73,13 +71,13 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Les sections suivantes fo
 #### <a name="hosting-application-samples"></a>Exemples d’applications d’hébergement
 
 - Runspace01 : indique comment utiliser la classe PowerShell pour exécuter l’applet de commande `Get-Process` de façon synchrone.
-L’applet de commande `Get-Process` retourne les objets process pour chaque processus en cours d’exécution sur l’ordinateur local.
+  L’applet de commande `Get-Process` retourne les objets process pour chaque processus en cours d’exécution sur l’ordinateur local.
 - Runspace02 : indique comment utiliser la classe PowerShell pour exécuter les applets de commande `Get-Process` et `Sort-Object` de façon synchrone. L’applet de commande `Get-Process` retourne les objets de processus pour chaque processus en cours d’exécution sur l’ordinateur local, et le `Sort-Object` trie les objets en fonction de leur propriété ID. Les résultats de ces commandes s’affichent à l’aide d’un contrôle DataGridView.
 - Runspace03 : montre comment utiliser la classe PowerShell pour exécuter un script de façon synchrone et comment gérer les erreurs sans fin d’exécution. Le script reçoit une liste de noms de processus et récupère ensuite ces processus. Le résultat du script, notamment les erreurs sans fin d’exécution qui ont été générées pendant l’exécution du script, s’affiche dans une fenêtre de console.
 - Runspace04 : indique comment utiliser la classe PowerShell pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. Par conséquent, aucun objet n’est retourné et une erreur avec fin d’exécution est levée.
-- Runspace05 : indique comment ajouter un composant logiciel enfichable à un objet InitialSessionState afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande « obtenir-proc » (définie par l’exemple GetProcessSample01) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
-- Runspace06 : indique comment ajouter un module à un objet InitialSessionState de sorte que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande « obtenir-proc » (définie par l’exemple GetProcessSample02) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
-- Runspace07 : indique comment créer une instance d’exécution, puis utiliser cette instance d’exécution pour exécuter deux cmdlets de façon synchrone à l’aide d’un objet PowerShell.
+- Runspace05 : indique comment ajouter un composant logiciel enfichable à un objet InitialSessionState afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l’exemple GetProcessSample01) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
+- Runspace06 : indique comment ajouter un module à un objet InitialSessionState de sorte que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande Run-proc (définie par l’exemple GetProcessSample02) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
+- Runspace07 : indique comment créer une instance d’exécution, puis utiliser cette instance d’exécution pour exécuter deux applets de commande de façon synchrone à l’aide d’un objet PowerShell.
 - Runspace08 : indique comment ajouter des commandes et des arguments au pipeline d’un objet PowerShell et comment exécuter les commandes de façon synchrone.
 - Runspace09 : montre comment ajouter un script au pipeline d’un objet PowerShell et comment exécuter le script de manière asynchrone. Des événements sont utilisés pour gérer la sortie du script.
 - Runspace10 : indique comment créer un état de session initial par défaut, comment ajouter une applet de commande à InitialSessionState, comment créer une instance d’exécution qui utilise l’état de session initial et comment exécuter la commande à l’aide d’un objet PowerShell.
@@ -89,7 +87,7 @@ L’applet de commande `Get-Process` retourne les objets process pour chaque pro
 
 #### <a name="host-samples"></a>Exemples d’hôtes
 
-- Host01 : indique comment implémenter une application hôte qui utilise un hôte personnalisé. Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API PowerShell est utilisée pour exécuter un script qui appelle « Exit ». L’application hôte analyse ensuite la sortie du script et imprime les résultats.
+- Host01 : indique comment implémenter une application hôte qui utilise un hôte personnalisé. Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API PowerShell est utilisée pour exécuter un script qui appelle `exit`. L’application hôte analyse ensuite la sortie du script et imprime les résultats.
 - Host02 : montre comment écrire une application hôte qui utilise le runtime Windows PowerShell avec une implémentation d’hôte personnalisée. L’application hôte définit la culture de l’hôte en allemand, exécute l’applet de commande `Get-Process` et affiche les résultats comme vous pouvez les voir à l’aide de pwrsh. exe, puis imprime les données actuelles et l’heure en allemand.
 - Host03 : indique comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console.
 - Host04 : indique comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console. Cette application hôte prend aussi en charge l’affichage d’invites qui permettent à l’utilisateur de spécifier plusieurs options.
