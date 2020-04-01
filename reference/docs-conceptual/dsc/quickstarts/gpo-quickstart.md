@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC,gpo,powershell,configuration,installation
 title: Démarrage rapide - Convertir la stratégie de groupe en DSC
-ms.openlocfilehash: 8c89dbbce5b2b146194b799d7e36ecce3105bfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953466"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500653"
 ---
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -56,6 +56,6 @@ Chaque nœud géré a également besoin des deux modules suivants :
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- Pour charger votre script de configuration dans Configuration d’état Azure Automation, consultez [Bien démarrer](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
+- Pour charger votre script de configuration dans Configuration d’état Azure Automation, consultez [Bien démarrer](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation).
 - Ajoutez les modules **SecurityPolicyDSC** et **AuditPolicyDSC** à votre [compte Automation](/azure/automation/shared-resources/modules).
 - Recherchez des configurations et des ressources DSC dans la [galerie PowerShell](https://www.powershellgallery.com/).

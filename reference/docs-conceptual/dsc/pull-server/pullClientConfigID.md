@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
-ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417237"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500736"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
 
@@ -46,7 +46,7 @@ Vous pouvez créer un **GUID** aléatoire à l’aide de l’exemple ci-dessous,
 [System.Guid]::NewGuid()
 ```
 
-Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](/powershell/scripting/dsc/secureserver#guids).
+Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](secureserver.md#guids).
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>Configurer un client Pull pour télécharger des configurations
 
@@ -244,8 +244,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-Pour spécifier un serveur de rapports, vous utilisez un bloc **ReportRepositoryWeb**. Un serveur de rapports ne peut pas être un serveur SMB.
-La métaconfiguration suivante configure un client collecteur de façon à obtenir sa configuration de **CONTOSO-PullSrv** et ses ressources de **CONTOSO-ResourceSrv**, et à envoyer des rapports d’état à **CONTOSO-ReportSrv** :
+Pour spécifier un serveur de rapports, vous utilisez un bloc **ReportRepositoryWeb**. Un serveur de rapports ne peut pas être un serveur SMB. La métaconfiguration suivante configure un client collecteur de façon à obtenir sa configuration de **CONTOSO-PullSrv** et ses ressources de **CONTOSO-ResourceSrv**, et à envoyer des rapports d’état à **CONTOSO-ReportSrv** :
 
 ```powershell
 [DSCLocalConfigurationManager()]

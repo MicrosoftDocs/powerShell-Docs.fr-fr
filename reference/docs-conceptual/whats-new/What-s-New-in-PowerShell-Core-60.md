@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995488"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500485"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -231,7 +231,7 @@ Le caractère `&` placé à la fin d’un pipeline entraîne l’exécution du p
 - Prise en charge de la pagination des en-têtes de liens dans les applets de commande web (#3828)
   - Pour `Invoke-WebRequest`, quand la réponse inclut un en-tête de lien, nous créons une propriété RelationLink sous forme d’un dictionnaire qui représente les URL et les attributs `rel`, puis vérifions que les URL sont absolues pour que le développeur puisse les utiliser plus facilement.
   - Pour `Invoke-RestMethod`, quand la réponse inclut un en-tête de lien, nous présentons un commutateur `-FollowRelLink` pour suivre automatiquement les liens `next` `rel` jusqu’à ce qu’ils n’existent plus ou que nous ayons atteint la valeur du paramètre `-MaximumFollowRelLink` facultative.
-- Ajout du paramètre `-CustomMethod` aux applets de commande web pour autoriser les verbes de méthode non standard. (#3142) (merci à [@Lee303](https://github.com/Lee303) !)
+- Ajout du paramètre `-CustomMethod` aux applets de commande web pour autoriser les verbes de méthode non standard. (#3142) (merci à @Lee303 !)
 - Ajout de la prise en charge de `SslProtocol` aux applets de commande web. (#5329) (merci [@markekraus](https://github.com/markekraus) !)
 - Ajout de la prise en charge de Multipart aux applets de commande web. (#4782) (merci [@markekraus](https://github.com/markekraus))
 - Ajout de `-NoProxy` aux applets de commande web afin qu’elles ignorent le paramètre de proxy à l’échelle du système. (#3447) (merci à [@TheFlyingCorpse](https://github.com/TheFlyingCorpse) !)
@@ -248,7 +248,7 @@ Le caractère `&` placé à la fin d’un pipeline entraîne l’exécution du p
 - Remplacement des applets de commande web `UserAgent``WindowsPowerShell` par `PowerShell`. (#4914) (merci [@markekraus](https://github.com/markekraus))
 - Ajout d’une détection `ContentType` explicite à `Invoke-RestMethod` (#4692)
 - Correction des applets de commande web `-SkipHeaderValidation` pour utiliser des en-têtes d’agent utilisateur non standard. (#4479 &
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (merci [@markekraus](https://github.com/markekraus))
+  #<a name="4512-thanks-markekraus"></a>4512) (merci [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>Applets de commande JSON
 

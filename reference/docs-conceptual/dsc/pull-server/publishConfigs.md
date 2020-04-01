@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
-ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417260"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500760"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
 
@@ -47,7 +47,7 @@ Vous devez renommer votre fichier `localhost.mof` en fichier `<GUID>.mof`. Vous 
 [System.Guid]::NewGuid()
 ```
 
-Sortie exemple
+Exemple de sortie
 
 ```Output
 Guid
@@ -61,7 +61,7 @@ Vous pouvez ensuite renommer votre fichier `.mof` à l’aide de n’importe que
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](/powershell/scripting/dsc/secureserver#guids).
+Pour plus d’informations sur l’utilisation des **GUID** dans votre environnement, consultez [Planifier les GUID](secureServer.md#guids).
 
 ### <a name="configuration-names"></a>Noms de configuration
 
