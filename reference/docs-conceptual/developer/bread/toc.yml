@@ -7,5 +7,5 @@
       topicHref: /powershell/index
       items:
         - name: Développeur
-          tocHref: /powershell/developer/
-          topicHref: /powershell/developer/index
+          tocHref: /powershell/scripting/developer/
+          topicHref: /powershell/scripting/developer/index
