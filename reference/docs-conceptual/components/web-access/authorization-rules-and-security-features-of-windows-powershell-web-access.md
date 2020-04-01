@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402606"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500884"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
@@ -85,7 +85,7 @@ Cette couche offre les mêmes mécanismes de sécurité que ceux qui évalueraie
 
 Par défaut, Accès Web Windows PowerShell utilise les nom d’utilisateur et mot de passe principaux pour l’authentification sur la passerelle et l’ordinateur cible. La page de connexion web, dans une section intitulée **Paramètres de connexion facultatifs**, permet aux utilisateurs de fournir des informations d’identification différentes pour l’ordinateur cible, si nécessaire. Si l’utilisateur ne fournit pas d’autres informations d’identification, le nom d’utilisateur et le mot de passe principaux utilisés pour se connecter à la passerelle sont également utilisés pour se connecter à l’ordinateur cible.
 
-Les règles d’autorisation peuvent servir à accorder aux utilisateurs un accès à une configuration de session particulière. Vous pouvez créer des _instances d’exécution restreintes_ ou des configurations de session pour Accès Web Windows PowerShell, puis autoriser des utilisateurs spécifiques à se connecter uniquement à des configurations de session spécifiques quand ils se connectent à Accès Web Windows PowerShell. Vous pouvez utiliser des listes de contrôle d’accès pour identifier les utilisateurs qui ont accès à des points de terminaison spécifiques et pour restreindre davantage l’accès à un point de terminaison pour un ensemble donné d’utilisateurs en appliquant les règles d’autorisation décrites dans cette section. Pour plus d’informations sur les instances d’exécution restreintes, consultez [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668).
+Les règles d’autorisation peuvent servir à accorder aux utilisateurs un accès à une configuration de session particulière. Vous pouvez créer des _instances d’exécution restreintes_ ou des configurations de session pour Accès Web Windows PowerShell, puis autoriser des utilisateurs spécifiques à se connecter uniquement à des configurations de session spécifiques quand ils se connectent à Accès Web Windows PowerShell. Vous pouvez utiliser des listes de contrôle d’accès pour identifier les utilisateurs qui ont accès à des points de terminaison spécifiques et pour restreindre davantage l’accès à un point de terminaison pour un ensemble donné d’utilisateurs en appliquant les règles d’autorisation décrites dans cette section. Pour plus d’informations sur les instances d’exécution restreintes, consultez [Creating a constrained runspace](/powershell/scripting/developer/hosting/creating-a-constrained-runspace).
 
 ### <a name="configuring-authorization-rules"></a>Configuration des règles d’autorisation
 
@@ -112,7 +112,7 @@ Les applets de commande d’Accès Web Windows PowerShell prennent en charge un 
 
    Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
-3. Cette règle d’autorisation accorde à un utilisateur spécifique l’accès à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de script et d’applet de commande. Tapez ce qui suit, puis appuyez sur **Entrée**.
+3. Cette règle d’autorisation permet à un utilisateur donné d’accéder à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de scripts et de cmdlets. Tapez ce qui suit, puis appuyez sur **Entrée**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Les applets de commande d’Accès Web Windows PowerShell prennent en charge un 
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Autres exemples de scénarios de règles d’autorisation
 
-Chaque session Windows PowerShell utilise une configuration de session ; si aucune n’est spécifiée pour une session, Windows PowerShell utilise la configuration de session Windows PowerShell prédéfinie par défaut, appelée Microsoft.PowerShell. La configuration de session par défaut inclut toutes les applets de commande disponibles sur un ordinateur. Les administrateurs peuvent limiter l’accès à tous les ordinateurs en définissant une configuration de session avec une instance d’exécution restreinte (une gamme limitée d’applets de commande et de tâches que les utilisateurs finals peuvent effectuer). Un utilisateur auquel est accordé l’accès à un ordinateur avec accès linguistique complet ou uniquement les applets de commande de gestion à distance Windows PowerShell peut se connecter à d’autres ordinateurs qui sont connectés au premier ordinateur. La définition d’une instance d’exécution restreinte peut empêcher les utilisateurs d’accéder à d’autres ordinateurs depuis leur instance d’exécution Windows PowerShell autorisée, et elle renforce la sécurité de votre environnement Accès Web Windows PowerShell. Il est possible de distribuer la configuration de session (à l’aide d’une stratégie de groupe) à tous les ordinateurs que les administrateurs veulent rendre accessibles par le biais d’Accès Web Windows PowerShell. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Voici quelques exemples de ce scénario.
+Chaque session Windows PowerShell utilise une configuration de session ; si aucune n’est spécifiée pour une session, Windows PowerShell utilise la configuration de session Windows PowerShell prédéfinie par défaut, appelée Microsoft.PowerShell. La configuration de session par défaut inclut toutes les applets de commande disponibles sur un ordinateur. Les administrateurs peuvent limiter l’accès à tous les ordinateurs en définissant une configuration de session avec une instance d’exécution restreinte (une gamme limitée d’applets de commande et de tâches que les utilisateurs finals peuvent effectuer). Un utilisateur auquel est accordé l’accès à un ordinateur avec accès linguistique complet ou uniquement les applets de commande de gestion à distance Windows PowerShell peut se connecter à d’autres ordinateurs qui sont connectés au premier ordinateur. La définition d’une instance d’exécution restreinte peut empêcher les utilisateurs d’accéder à d’autres ordinateurs depuis leur instance d’exécution Windows PowerShell autorisée, et elle renforce la sécurité de votre environnement Accès Web Windows PowerShell. Il est possible de distribuer la configuration de session (à l’aide d’une stratégie de groupe) à tous les ordinateurs que les administrateurs veulent rendre accessibles par le biais d’Accès Web Windows PowerShell. Pour plus d’informations sur les configurations de session, consultez [about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations).
+Voici quelques exemples de ce scénario.
 
 - Un administrateur crée un point de terminaison, appelé **PswaEndpoint**, avec une instance d’exécution restreinte. Il crée ensuite une règle, `*,*,PswaEndpoint`, et distribue le point de terminaison à d’autres ordinateurs. La règle permet à tous les utilisateurs d’accéder à tous les ordinateurs avec le point de terminaison **PswaEndpoint**.
   Si aucune autre règle d’autorisation n’est définie dans le jeu de règles, les ordinateurs n’ayant pas ce point de terminaison seront inaccessibles.
@@ -181,8 +182,8 @@ Dans le scénario précédent, Accès Web Windows PowerShell établit une connex
 2. Authentification sur l’ordinateur cible en utilisant les informations d’identification supplémentaires fournies dans la page de connexion, dans la zone **Paramètres de connexion facultatifs**
 
    > [!NOTE]
-   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, consultez [Création d’approbations de domaine et de forêt](https://technet.microsoft.com/library/cc794775.aspx).
-   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, consultez [Administration à distance à l’aide du Gestionnaire de serveur](https://technet.microsoft.com/library/dd759202.aspx).
+   > Si la passerelle et les ordinateurs cibles se trouvent dans des groupes de travail ou domaines différents, une relation d’approbation doit être établie entre les deux ordinateurs du groupe de travail, les deux domaines ou entre le groupe de travail et le domaine. Il n’est pas possible de configurer cette relation à l’aide des applets de commande des règles d’autorisation d’Accès Web Windows PowerShell. Les règles d’autorisation ne définissent pas une relation d’approbation entre des ordinateurs ; elles peuvent uniquement autoriser les utilisateurs à se connecter à des ordinateurs cibles et configurations de sessions spécifiques. Pour plus d’informations sur la manière de configurer une relation d’approbation entre différents domaines, consultez [Création d’approbations de domaine et de forêt](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10)).
+   > Pour plus d’informations sur la manière d’ajouter des ordinateurs de groupe de travail à une liste d’hôtes approuvés, consultez [Administration à distance à l’aide du Gestionnaire de serveur](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11)).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Utilisation d’un seul jeu de règles d’autorisation pour plusieurs sites
 
@@ -198,7 +199,7 @@ Par défaut, le serveur Web IIS est configuré pour redémarrer le pool d’appl
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Définition de paramètres par défaut sur la page de connexion.
 
-Si votre passerelle Accès Web Windows PowerShell s’exécute sur Windows Server 2012 R2, vous pouvez configurer les valeurs par défaut pour les paramètres affichés dans la page de connexion Accès Web Windows PowerShell. Vous pouvez configurer les valeurs du fichier **web.config** décrit dans le paragraphe précédent. Les valeurs par défaut des paramètres de la page de connexion se trouvent dans la section **appSettings** du fichier web.config ; ce qui suit est un exemple de la section **appSettings**. Les valeurs valides pour la plupart de ces paramètres sont les mêmes que celles des paramètres correspondants de l’applet de commande [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) dans Windows PowerShell.
+Si votre passerelle Accès Web Windows PowerShell s’exécute sur Windows Server 2012 R2, vous pouvez configurer les valeurs par défaut pour les paramètres affichés dans la page de connexion Accès Web Windows PowerShell. Vous pouvez configurer les valeurs du fichier **web.config** décrit dans le paragraphe précédent. Les valeurs par défaut des paramètres de la page de connexion se trouvent dans la section **appSettings** du fichier web.config ; ce qui suit est un exemple de la section **appSettings**. Les valeurs valides pour la plupart de ces paramètres sont les mêmes que celles des paramètres correspondants de l’applet de commande [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) dans Windows PowerShell.
 
 Par exemple, la clé `defaultApplicationName`, comme indiqué dans le bloc de code suivant, est la valeur de la variable de préférence **$PSSessionApplicationName** sur l’ordinateur cible.
 
@@ -225,8 +226,8 @@ Si le serveur de passerelle exécute Windows Server 2012 R2, Accès Web Window
 
 ## <a name="see-also"></a>Voir aussi
 
-[Installer et utiliser Accès Web Windows PowerShell](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Installer et utiliser Accès Web Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Applets de commande d’Accès Web Windows PowerShell](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

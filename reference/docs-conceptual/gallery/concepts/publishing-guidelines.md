@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 description: Recommandations pour les éditeurs
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 5ee33ba12475f9d3e5ceb3b31f37d9f2acc19d9e
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278209"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500604"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -165,7 +165,8 @@ PowerShell prend en charge la validation de la signature du code via deux approc
 
 La signature des fichiers PowerShell est une approche parfaitement établie pour garantir que le code en cours d’exécution a été produit par une source fiable et n’a pas été modifié. Pour plus d’informations sur la façon de signer des fichiers de script PowerShell, voir l’article [À propose de la signature](/powershell/module/microsoft.powershell.core/about/about_signing). Pour résumer, une signature peut être ajoutée à tout fichier `.PS1` validé par PowerShell lorsque le script est chargé. PowerShell peut être contraint à utiliser les applets de commande de la [stratégie d’exécution](/powershell/module/microsoft.powershell.core/about/about_execution_policies) pour forcer l’utilisation de scripts signés.
 
-La signature de modules par un catalogue est une fonctionnalité ajoutée à la version 5.1 de PowerShell. La signature d’un module est abordée dans l’article [Applets de commande de catalogue](/powershell/scripting/wmf/5.1/catalog-cmdlets). Pour résumer, la signature du catalogue s’effectue en créant un fichier de catalogue contenant une valeur de hachage pour chaque fichier dans le module, puis en signant ce fichier.
+La signature de modules par un catalogue est une fonctionnalité ajoutée à la version 5.1 de PowerShell. La signature d’un module est abordée dans l’article [Applets de commande de catalogue](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets).
+Pour résumer, la signature du catalogue s’effectue en créant un fichier de catalogue contenant une valeur de hachage pour chaque fichier dans le module, puis en signant ce fichier.
 
 Les cmdlets **PowerShellGet** `Publish-Module`, `Install-Module` et `Update-Module` vérifient la validité de la signature, puis confirment que la valeur de hachage de chacun des packages correspond à ce qui figure dans le catalogue. `Save-Module` ne valide pas une signature. Si une version précédente du module est installée sur le système, l’applet de commande `Install-Module` confirmera que l’autorité de signature de la nouvelle version correspond à ce qui a été précédemment installé. `Install-Module` et `Update-Module` utiliseront la signature sur un fichier `.PSD1` si le package n’est pas signé par le catalogue. La signature du catalogue complète mais ne remplace pas la signature des fichiers de script. PowerShell ne valide pas les signatures du catalogue lors du chargement du module.
 

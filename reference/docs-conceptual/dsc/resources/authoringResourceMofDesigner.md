@@ -1,23 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Utilisation du Concepteur de ressources
-ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952856"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500631"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md).
-Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory.
-Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
-
->**Remarque** : **Install-Module** est inclus dans le module **PowerShellGet** de PowerShell 5.0. Vous pouvez télécharger le module **PowerShellGet** pour PowerShell 3.0 et 4.0 ici : [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).
+L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md). Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory. Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
 
 ## <a name="creating-resource-properties"></a>Création de propriétés de ressource
 La première chose à faire est de décider des propriétés que doit exposer la ressource. Pour cet exemple, nous allons définir un utilisateur Active Directory avec les propriétés suivantes.
@@ -26,7 +22,7 @@ Nom du paramètre  Description
 * **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
 * **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
 * **DomainCredential** : mot de passe du domaine de l’utilisateur.
-* **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
+* **Mot de passe** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
 
 Pour créer les propriétés, nous utilisons l’applet de commande **New-xDscResourceProperty**. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.
 
@@ -60,7 +56,8 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Le script de la ressource se trouve à l’emplacement **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**. Il ne comprend pas la logique permettant d’implémenter la ressource. Vous devrez l’ajouter vous-même. Voici le contenu du script squelette.
+Le script de la ressource se trouve à l’emplacement **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**.
+Il ne comprend pas la logique permettant d’implémenter la ressource. Vous devrez l’ajouter vous-même. Voici le contenu du script squelette.
 
 ```powershell
 function Get-TargetResource
