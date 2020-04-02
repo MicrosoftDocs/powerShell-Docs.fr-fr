@@ -2,12 +2,12 @@
 ms.date: 12/19/2019
 keywords: powershell,applet de commande
 title: Accessibilité dans Windows PowerShell ISE
-ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736281"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500962"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accessibilité dans Windows PowerShell ISE
 
@@ -121,7 +121,7 @@ Lors du débogage de scripts, vous pouvez utiliser les raccourcis clavier suivan
 | **Arrêter le débogueur**          | <kbd>MAJ</kbd>+<kbd>F5</kbd>                 | Volet Script, lors du débogage d’un script |
 
 > [!NOTE]
-> Lors du débogage de scripts dans Windows PowerShell ISE, vous pouvez également utiliser les raccourcis clavier conçus pour la console Windows PowerShell. Pour utiliser ces raccourcis, vous devez les taper dans le volet Console, puis appuyer sur Entrée.
+> Lors du débogage de scripts dans Windows PowerShell ISE, vous pouvez également utiliser les raccourcis clavier conçus pour la console Windows PowerShell. Pour utiliser ces raccourcis, vous devez les taper dans le volet Console, puis appuyer sur <kbd>ENTRÉE</kbd>.
 
 |                 Action                  |      Raccourci clavier       |                Utiliser dans                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
@@ -143,7 +143,7 @@ Lorsque vous utilisez les onglets Windows PowerShell, vous pouvez utiliser les r
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **Fermer l’onglet PowerShell**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
 | **Nouvel onglet PowerShell**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
-| **Onglet PowerShell précédent**     | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>TAB</kbd> (Uniquement si aucun fichier n’est ouvert sous aucun onglet PowerShell)                 |
+| **Onglet PowerShell précédent**     | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>TAB</kbd> (Uniquement si aucun fichier n’est ouvert sous aucun onglet PowerShell) |
 | **Onglet Windows PowerShell suivant** | <kbd>CTRL</kbd>+<kbd>TAB</kbd> (Uniquement si aucun fichier n’est ouvert sous aucun onglet PowerShell) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Raccourcis clavier pour le démarrage et la fermeture
@@ -157,8 +157,7 @@ Pour démarrer la console Windows PowerShell (**PowerShell.exe**) ou pour quitte
 
 ## <a name="breakpoint-management"></a>Gestion des points d’arrêt
 
-Pour les malvoyants, les informations de point d’arrêt sont disponibles via les applets de commande pour la gestion des points d’arrêt, telles que [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) et [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
-Pour plus d’informations, voir « Comment gérer des points d’arrêt » dans [Comment déboguer des scripts dans Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
+Pour les malvoyants, les informations de point d’arrêt sont disponibles via les applets de commande pour la gestion des points d’arrêt, telles que [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) et [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). Pour plus d’informations, voir « Comment gérer des points d’arrêt » dans [Comment déboguer des scripts dans Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
 ## <a name="see-also"></a>Voir aussi
 

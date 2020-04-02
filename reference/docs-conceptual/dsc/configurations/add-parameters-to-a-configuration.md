@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Ajouter des paramètres à une configuration
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954196"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263150"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Ajouter des paramètres à une configuration
 
@@ -36,17 +36,18 @@ Configuration TestConfig
 
 Mais contrairement à une fonction, l’attribut [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) n’ajoute aucune fonctionnalité. Outre les [paramètres communs](/powershell/module/microsoft.powershell.core/about/about_commonparameters), les configurations peuvent également utiliser les paramètres intégrés suivants, sans que vous ayez à les définir.
 
-|Paramètre  |Description  |
-|---------|---------|
-|`-InstanceName`|Permet de définir des [configurations composites](compositeconfigs.md)|
-|`-DependsOn`|Permet de définir des [configurations composites](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Permet de définir des [configurations composites](compositeconfigs.md)|
-|`-ConfigurationData`|Permet de transmettre des [données de configuration](configData.md) structurées à utiliser dans la configuration.|
-|`-OutputPath`|Permet de spécifier l’emplacement où votre fichier « \<computername\>.mof » sera compilé|
+|        Paramètre        |                                         Description                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | Permet de définir des [configurations composites](compositeconfigs.md)                             |
+| `-DependsOn`            | Permet de définir des [configurations composites](compositeconfigs.md)                             |
+| `-PSDSCRunAsCredential` | Permet de définir des [configurations composites](compositeconfigs.md)                             |
+| `-ConfigurationData`    | Permet de transmettre des [données de configuration](configData.md) structurées à utiliser dans la configuration. |
+| `-OutputPath`           | Permet de spécifier l’emplacement où votre fichier « \<computername\>.mof » sera compilé                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Ajout de vos propres paramètres à des configurations
 
-Outre les paramètres intégrés, vous pouvez également ajouter vos propres paramètres à vos configurations. Le bloc de paramètres est placé directement dans la déclaration de la configuration, exactement comme une fonction. Un bloc de paramètres de configuration doit être placé en dehors de toute déclaration de **nœud** et avant toute instruction *import*. En ajoutant des paramètres, vous pouvez rendre vos configurations plus robustes et dynamiques.
+Outre les paramètres intégrés, vous pouvez également ajouter vos propres paramètres à vos configurations.
+Le bloc de paramètres est placé directement dans la déclaration de la configuration, exactement comme une fonction. Un bloc de paramètres de configuration doit être placé en dehors de toute déclaration de **nœud** et avant toute instruction *import*. En ajoutant des paramètres, vous pouvez rendre vos configurations plus robustes et dynamiques.
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Paramètres avancés dans les configurations
 
-Outre un paramètre `-ComputerName`, nous pouvons ajouter des paramètres pour le nom du service et l’état. L’exemple suivant ajoute un bloc de paramètres avec un paramètre `-ServiceName` et l’utilise pour définir dynamiquement le bloc de ressources **Service**. Il ajoute également un paramètre `-State` pour définir dynamiquement l’**état** dans le bloc de ressources **Service**.
+Outre un paramètre `-ComputerName`, nous pouvons ajouter des paramètres pour le nom du service et l’état.
+L’exemple suivant ajoute un bloc de paramètres avec un paramètre `-ServiceName` et l’utilise pour définir dynamiquement le bloc de ressources **Service**. Il ajoute également un paramètre `-State` pour définir dynamiquement l’**état** dans le bloc de ressources **Service**.
 
 ```powershell
 Configuration TestConfig
@@ -176,7 +178,7 @@ Vous pouvez spécifier des arguments pour chaque attribut `parameter` afin de co
 $ServiceName
 ```
 
-Pour le paramètre `$State`, nous aimerions empêcher l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’attribut `ValidationSet*` empêche l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’exemple suivant ajoute l’attribut `ValidationSet` au paramètre `$State`. Comme nous ne souhaitons pas rendre le paramètre `$State` **obligatoire**, nous devrons lui ajouter une valeur par défaut.
+Pour le paramètre `$State`, nous aimerions empêcher l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’attribut `ValidationSet*` empêche l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’exemple suivant ajoute l’attribut `ValidationSet` au paramètre `$State`. Comme nous ne souhaitons pas rendre le paramètre `$State`**obligatoire**, nous devrons lui ajouter une valeur par défaut.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {

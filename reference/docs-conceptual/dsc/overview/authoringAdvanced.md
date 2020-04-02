@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Présentation du rôle de DSC dans un pipeline CI/CD
-ms.openlocfilehash: 79740225c030974546035b67e0f873fa00aa690a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279351"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500824"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Présentation du rôle de DSC dans un pipeline CI/CD
 

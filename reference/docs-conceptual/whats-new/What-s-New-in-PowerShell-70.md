@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell 7.0
 description: Nouvelles fonctionnalités et modifications de PowerShell 7.0
 ms.date: 03/04/2020
-ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404999"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263133"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nouveautés de PowerShell 7.0
 
@@ -396,6 +396,7 @@ Pour plus d’informations sur [Invoke-DSCResource](/powershell/module/psdesired
 - Correction d’une fuite de ressources en annulant l’inscription du gestionnaire d’événements dans AppDomain.CurrentDomain.ProcessExit (#10626)
 - Ajout de la prise en charge à ActionPreference.Break pour s’arrêter dans le débogueur lorsque des messages de débogage, d’erreur, d’information, de progression, de commentaires ou d’avertissement sont générés (#8205) (Merci @KirkMunro !)
 - Activation du démarrage des compléments du panneau de configuration dans PowerShell Core sans spécifier une extension .CPL. (#9828)
+- Prise en charge des nombres négatifs dans l’opérateur -split (#8960) (Merci @ece-jacob-scott !)
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>Mises à jour et correctifs d’applets de commande générales
 

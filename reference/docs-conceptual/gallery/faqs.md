@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
-ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278174"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500591"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ)
 
@@ -29,10 +29,10 @@ Les modules conviennent généralement mieux pour le partage, mais nous allons p
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Comment puis-je publier dans PowerShell Gallery ?
 
-Vous devez inscrire un compte dans PowerShell Gallery avant de pouvoir y publier des packages. En effet, la publication de packages nécessite un NuGetApiKey, qui est fourni lors de l’inscription. Pour vous inscrire, utilisez votre compte personnel, professionnel ou scolaire pour vous connecter à PowerShell Gallery. Un processus d’inscription à usage unique est nécessaire quand vous vous connectez pour la première fois. Votre NuGetApiKey est ensuite disponible dans la page de votre profil.
+Vous devez inscrire un compte dans PowerShell Gallery avant de pouvoir y publier des packages. En effet, la publication de packages nécessite un NuGetApiKey, qui est fourni lors de l’inscription. Pour vous inscrire, utilisez votre compte personnel, professionnel ou scolaire pour vous connecter à PowerShell Gallery. Un processus d’inscription à usage unique est nécessaire quand vous vous connectez pour la première fois.
+Votre NuGetApiKey est ensuite disponible dans la page de votre profil.
 
-Une fois que vous êtes inscrit dans PowerShell Gallery, utilisez les applets de commande [Publish-Module][] ou [Publish-Script][] pour y publier votre package.
-Pour plus d’informations sur l’exécution de ces applets de commande, examinez l’onglet Publier ou lisez la documentation sur [Publish-Module][] et [Publish-Script][].
+Une fois que vous êtes inscrit dans PowerShell Gallery, utilisez les applets de commande [Publish-Module][] ou [Publish-Script][] pour y publier votre package. Pour plus d’informations sur l’exécution de ces applets de commande, examinez l’onglet Publier ou lisez la documentation sur [Publish-Module][] et [Publish-Script][].
 
 **Il est inutile de s’inscrire ou de se connecter à PowerShell Gallery pour installer ou enregistrer des packages.**
 
@@ -40,16 +40,15 @@ Pour plus d’informations sur l’exécution de ces applets de commande, examin
 
 Cette erreur peut se produire pour les raisons suivantes :
 
-- **La clé d’API spécifiée n’est pas valide.**
-     Vérifiez que vous avez spécifié la clé API valide à partir de votre compte. Pour obtenir votre clé API, examinez la page de votre profil.
-- **Le nom du package spécifié ne vous appartient pas.**
-     Si vous avez vérifié que votre clé API est correcte, il existe peut-être déjà un package portant le même nom que celui que vous essayez d’utiliser. Le package peut avoir été retiré de la liste par le propriétaire, auquel cas il n’apparaît dans aucun résultat de recherche. Pour déterminer si un package portant le même nom existe déjà, ouvrez un navigateur et accédez à la page de détails du package : `https://www.powershellgallery.com/packages/<packageName>`. Par exemple, un accès direct à `https://www.powershellgallery.com/packages/pester` vous dirige vers la page de détails du module Pester, qu’il soit répertorié ou non. Si un package avec un nom en conflit existe déjà et n’est pas répertorié, vous pouvez :
-    - sélectionner un autre nom pour votre package ;
-    - contacter les propriétaires du package existant.
+- **La clé d’API spécifiée n’est pas valide.** Vérifiez que vous avez spécifié la clé API valide à partir de votre compte. Pour obtenir votre clé API, examinez la page de votre profil.
+- **Le nom du package spécifié ne vous appartient pas.** Si vous avez vérifié que votre clé API est correcte, il existe peut-être déjà un package portant le même nom que celui que vous essayez d’utiliser. Le package peut avoir été retiré de la liste par le propriétaire, auquel cas il n’apparaît dans aucun résultat de recherche. Pour déterminer si un package portant le même nom existe déjà, ouvrez un navigateur et accédez à la page de détails du package : `https://www.powershellgallery.com/packages/<packageName>`. Par exemple, un accès direct à `https://www.powershellgallery.com/packages/pester` vous dirige vers la page de détails du module Pester, qu’il soit répertorié ou non. Si un package avec un nom en conflit existe déjà et n’est pas répertorié, vous pouvez :
+  - sélectionner un autre nom pour votre package ;
+  - contacter les propriétaires du package existant.
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Pourquoi ne puis-je pas me connecter avec mon compte personnel, alors que cela était possible hier ?
 
-Gardez à l’esprit que votre compte de galerie n’intègre pas les modifications apportées à votre alias d’e-mail principal. Pour plus d’informations, voir [Gérer les alias liés à votre compte Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
+Gardez à l’esprit que votre compte de galerie n’intègre pas les modifications apportées à votre alias d’e-mail principal.
+Pour plus d’informations, voir [Gérer les alias liés à votre compte Microsoft](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Pourquoi ne puis-je pas afficher tous les packages de la galerie quand je coche toutes les cases de catégorie sous l’onglet Packages ?
 
@@ -57,11 +56,7 @@ En cochant une case de catégorie, vous indiquez « J’aimerais voir tous les 
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Quelles sont les conditions requises pour publier un module dans PowerShell Gallery ?
 
-Tout type de module PowerShell (modules de script, modules binaires ou modules de manifeste) peut être publié dans la galerie.
-Pour publier un module, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence.
-Ces informations sont lues lors du processus de publication à partir du fichier *manifeste de module* (.psd1) ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Module][].
-Tous les modules publiés dans PowerShell Gallery doivent avoir des manifestes de module.
-Tout module qui inclut les informations suivantes dans son manifeste peut être publié dans PowerShell Gallery :
+Tout type de module PowerShell (modules de script, modules binaires ou modules de manifeste) peut être publié dans la galerie. Pour publier un module, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir du fichier *manifeste de module* (.psd1) ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Module][]. Tous les modules publiés dans PowerShell Gallery doivent avoir des manifestes de module. Tout module qui inclut les informations suivantes dans son manifeste peut être publié dans PowerShell Gallery :
 
 - Version
 - Description
@@ -78,11 +73,7 @@ Pour mettre à jour les champs de fichier manifeste de module, utilisez l’appl
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Quelles sont les conditions requises pour publier un script dans PowerShell Gallery ?
 
-Tout type de script PowerShell (scripts ou workflows) peut être publié dans la galerie.
-Pour publier un script, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence.
-Ces informations sont lues lors du processus de publication à partir de la section *PSScriptInfo* du fichier de script ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Script][].
-Tous les scripts publiés dans PowerShell Gallery doivent avoir des informations de métadonnées.
-Tout script qui inclut les informations suivantes dans sa section PSScriptInfo peut être publié dans PowerShell Gallery :
+Tout type de script PowerShell (scripts ou workflows) peut être publié dans la galerie. Pour publier un script, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir de la section *PSScriptInfo* du fichier de script ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Script][]. Tous les scripts publiés dans PowerShell Gallery doivent avoir des informations de métadonnées. Tout script qui inclut les informations suivantes dans sa section PSScriptInfo peut être publié dans PowerShell Gallery :
 
 - Version
 - Description
@@ -121,10 +112,7 @@ Tous les modules dans PowerShell Gallery contiennent des manifestes de module, e
 
 PackageManagement est une interface commune permettant de travailler avec n’importe quel gestionnaire de package. Finalement, qu’il s’agisse de modules PowerShell, de MSI, de RubyGems, de packages NuGet ou de modules Perl, vous devez pouvoir utiliser des commandes de PackageManagement (Find-Package et Install-Package) pour les rechercher et les installer. Pour cela, PackageManagement dispose d’un fournisseur de package pour chaque gestionnaire de package qui s’intègre à PackageManagement. Les fournisseurs effectuent l’intégralité du travail réel ; ils extraient le contenu des référentiels et l’installent en local. Souvent, les fournisseurs de package enveloppent simplement les outils du gestionnaire de package existants pour un type de package donné.
 
-PowerShellGet est le gestionnaire de package pour les packages PowerShell.
-Il existe un fournisseur de package PSModule qui expose les fonctionnalités PowerShellGet via PackageManagement.
-Pour cette raison, vous pouvez exécuter [Install-Module][] ou Install-Package -Provider PSModule pour installer un module à partir de PowerShell Gallery.
-Certaines fonctionnalités PowerShellGet, dont [Update-Module][] et [Publish-Module][], ne sont pas accessibles via les commandes PackageManagement.
+PowerShellGet est le gestionnaire de package pour les packages PowerShell. Il existe un fournisseur de package PSModule qui expose les fonctionnalités PowerShellGet via PackageManagement. Pour cette raison, vous pouvez exécuter [Install-Module][] ou Install-Package -Provider PSModule pour installer un module à partir de PowerShell Gallery. Certaines fonctionnalités PowerShellGet, dont [Update-Module][] et [Publish-Module][], ne sont pas accessibles via les commandes PackageManagement.
 
 En résumé, PowerShellGet a pour unique objectif de réussir une expérience de gestion des packages pour le contenu PowerShell. PackageManagement se concentre sur l’exposition de toutes les expériences de gestion des packages via un ensemble général d’outils. Si cette réponse ne vous satisfait pas, vous en trouverez une plus détaillée à la fin de ce document, dans la section **Quelle est la relation réelle entre PackageManagement et PowerShellGet ?** .
 
@@ -132,7 +120,8 @@ Pour plus d’informations, visitez la [page de projet PackageManagement](https:
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>Quelle est la relation entre NuGet et PowerShellGet ?
 
-PowerShell Gallery est une version modifiée de la [galerie NuGet](https://www.nuget.org/). PowerShellGet emploie le fournisseur NuGet pour utiliser les référentiels NuGet, comme PowerShell Gallery.
+PowerShell Gallery est une version modifiée de la [galerie NuGet](https://www.nuget.org/).
+PowerShellGet emploie le fournisseur NuGet pour utiliser les référentiels NuGet, comme PowerShell Gallery.
 
 Vous pouvez utiliser PowerShellGet sur n’importe quel partage de fichiers ou référentiel NuGet valide. Vous devez simplement ajouter le référentiel en exécutant l’applet de commande [Register-PSRepository][].
 
@@ -144,7 +133,7 @@ Oui.
 
 Du point de vue de l’implémentation, PowerShellGet exploite intensément l’infrastructure PackageManagement.
 
-Dans la couche d’applet de commande PowerShell, [Install-Module][] est en fait un simple wrapper autour d’Install-Package -Provider PSModule.
+Dans la couche d’applet de commande PowerShell, [Install-Module][] est en fait un simple wrapper autour de `Install-Package -Provider PSModule`.
 
 Dans la couche de fournisseur de package PackageManagement, le fournisseur de package PSModule appelle en fait d’autres fournisseurs de package PackageManagement. Par exemple, quand vous utilisez des galeries NuGet (telles que PowerShell Gallery), le fournisseur de package PSModule utilise le fournisseur de package NuGet pour travailler avec le référentiel.
 
@@ -168,11 +157,12 @@ Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitat
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** nécessite également le .NET Framework 4.5 ou version ultérieure. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** nécessite également .NET Framework 4.5 ou ultérieur. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Est-il possible de réserver les noms des packages qui doivent être publiés à l’avenir ?
 
-Il n’est pas possible de réserver des noms de packages. Si vous pensez qu’un package existant a pris le nom qui convient mieux à votre package, essayez de [contacter le propriétaire du package](./how-to/working-with-packages/contacting-package-owners.md). Si vous n’obtenez pas de réponse au bout de quelques semaines, vous pouvez contacter le support technique et l’équipe PowerShell Gallery examinera la question.
+Il n’est pas possible de réserver des noms de packages. Si vous pensez qu’un package existant a pris le nom qui convient mieux à votre package, essayez de [contacter le propriétaire du package](./how-to/working-with-packages/contacting-package-owners.md).
+Si vous n’obtenez pas de réponse au bout de quelques semaines, vous pouvez contacter le support technique et l’équipe PowerShell Gallery examinera la question.
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>Comment puis-je revendiquer la propriété de packages ?
 
@@ -180,12 +170,12 @@ Pour plus d’informations, consultez [Gestion des propriétaires de packages su
 
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Comment faire face au propriétaire d’un package qui ne respecte pas la licence de mon package ?
 
-Nous encourageons la communauté PowerShell à collaborer pour résoudre les conflits pouvant survenir entre les propriétaires de tous les packages.  Nous avons élaboré une [procédure de résolution des litiges](./how-to/getting-support/dispute-resolution.md) que nous vous demandons de suivre avant toute intervention des administrateurs de PowerShellGallery.com.
+Nous encourageons la communauté PowerShell à collaborer pour résoudre les conflits pouvant survenir entre les propriétaires de tous les packages. Nous avons élaboré une [procédure de résolution des litiges](./how-to/getting-support/dispute-resolution.md) que nous vous demandons de suivre avant toute intervention des administrateurs de PowerShellGallery.com.
 
+<!-- link references-->
 [New-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
 [Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
-[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
-
+[Update-ModuleManifest]: /powershell/module/PowerShellGet/Update-ModuleManifest
 [Install-Module]: /powershell/module/PowershellGet/Install-Module
 [New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
 [Publish-Module]: /powershell/module/PowershellGet/Publish-Module

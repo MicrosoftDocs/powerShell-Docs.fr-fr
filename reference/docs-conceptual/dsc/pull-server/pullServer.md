@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Service collecteur DSC
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402436"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500721"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Service collecteur Desired State Configuration
 
@@ -70,7 +70,7 @@ La meilleure façon de configurer Windows Server pour héberger un service colle
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (par défaut), MDB | ESENT (par défaut), MDB | ESENT (par défaut), SQL Server, MDB               |
 
-À compter de la version 17090 de [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver), SQL Server constitue une option prise en charge du service collecteur (fonctionnalité Windows *Service DSC*). Vous disposez ainsi d’une nouvelle option pour mettre à l’échelle les grands environnements DSC qui n’ont pas été migrés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+À compter de la version 17090 de Windows Server, SQL Server est une option prise en charge du service collecteur (fonctionnalité Windows *Service DSC*). Vous disposez ainsi d’une nouvelle option pour mettre à l’échelle les grands environnements DSC qui n’ont pas été migrés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
 > [!NOTE]
 > La prise en charge de SQL Server ne sera pas ajoutée aux versions précédentes de WMF 5.1 (ou versions antérieures) et sera uniquement disponible dans les versions de Windows Server supérieures ou égales à 17090.
@@ -82,7 +82,7 @@ Pour obtenir un exemple de configuration de SQL Server avec **xDscWebService**, 
 
 Le moyen le plus simple de configurer un serveur collecteur web consiste à utiliser la ressource **xDscWebService** qui se trouve dans le module **xPSDesiredStateConfiguration**. Les étapes suivantes expliquent comment utiliser la ressource dans une `Configuration` qui configure le service web.
 
-1. Appelez l’applet de commande [Install-Module](/reference/6/PowerShellGet/Install-Module.md) pour installer le module **xPSDesiredStateConfiguration**.
+1. Appelez l’applet de commande [Install-Module](/powershell/module/PowerShellGet/Install-Module) pour installer le module **xPSDesiredStateConfiguration**.
 
    > [!NOTE]
    > `Install-Module` est inclus dans le module **PowerShellGet** de PowerShell 5.0 et versions ultérieures.
@@ -234,7 +234,7 @@ Utilisez `New-DscChecksum {module zip file}` afin de créer un fichier de somme 
 
 ### <a name="configuration-mof-format"></a>Format du fichier MOF de configuration
 
-Un fichier MOF de configuration doit être associé à un fichier de somme de contrôle pour que le gestionnaire de configuration local sur un nœud cible puisse valider la configuration. Pour créer une somme de contrôle, appelez l’applet de commande [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md). L’applet de commande prend un paramètre **Path** qui spécifie le dossier où se trouve la configuration MOF. L’applet de commande crée un fichier de somme de contrôle nommé `ConfigurationMOFName.mof.checksum`, où `ConfigurationMOFName` est le nom du fichier MOF de configuration. S’il existe plusieurs fichiers MOF de configuration dans le dossier spécifié, une somme de contrôle est créée pour chaque configuration du dossier. Placez les fichiers MOF et leurs fichiers de somme de contrôle associés dans le dossier **ConfigurationPath**.
+Un fichier MOF de configuration doit être associé à un fichier de somme de contrôle pour que le gestionnaire de configuration local sur un nœud cible puisse valider la configuration. Pour créer une somme de contrôle, appelez l’applet de commande [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum). L’applet de commande prend un paramètre **Path** qui spécifie le dossier où se trouve la configuration MOF. L’applet de commande crée un fichier de somme de contrôle nommé `ConfigurationMOFName.mof.checksum`, où `ConfigurationMOFName` est le nom du fichier MOF de configuration. S’il existe plusieurs fichiers MOF de configuration dans le dossier spécifié, une somme de contrôle est créée pour chaque configuration du dossier. Placez les fichiers MOF et leurs fichiers de somme de contrôle associés dans le dossier **ConfigurationPath**.
 
 > [!NOTE]
 > Si vous modifiez le fichier MOF de configuration de quelque façon que ce soit, vous devez aussi recréer le fichier de somme de contrôle.
