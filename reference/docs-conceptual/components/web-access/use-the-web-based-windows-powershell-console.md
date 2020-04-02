@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402586"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500870"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell
 
@@ -102,7 +102,7 @@ Vous serez déconnecté de votre session web Windows PowerShell dans les cas sui
 
 - Mise hors tension ou déconnexion du périphérique client sur lequel le navigateur s’exécute.
 
-- Exécution de la commande **Exit** dans la console web. Cette commande ne fonctionne pas si la configuration de session à laquelle vous êtes connecté est configurée pour prendre en charge le mode [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) ou si elle est dans une instance d’exécution restreinte.
+- Exécution de la commande **Exit** dans la console web. Cette commande ne fonctionne pas si la configuration de session à laquelle vous êtes connecté est configurée pour prendre en charge le mode [NoLanguage](/dotnet/api/system.management.automation.pslanguagemode) ou si elle est dans une instance d’exécution restreinte.
 
 Si vous voulez vous reconnecter, rouvrez la page web Accès Web Windows PowerShell et connectez-vous en effectuant les étapes de la section [Connexion à Accès Web Windows PowerShell](#signing-in-to-windows-powershell-web-access) de cette rubrique.
 
@@ -211,12 +211,9 @@ Alt+F7          | Effacer la liste de l’historique de commandes
 
     Vous pouvez modifier la hauteur de la console d’une manière similaire.
 
-    D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](hhttps://devblogs.microsoft.com/powershell).
+    D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](h https://devblogs.microsoft.com/powershell).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur les applets de commande Windows PowerShell](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Windows PowerShell sur Microsoft TechNet](https://technet.microsoft.com/library/bb978526.aspx)
-- [Référentiel du Centre de scripts TechNet](https://gallery.technet.microsoft.com/scriptcenter)
-- [Centre de scripts - Blog « Hey, Scripting Guy! »](https://technet.microsoft.com/scriptcenter)
-- [Blog de l’équipe Windows PowerShell](https://blogs.msdn.com/b/powershell/)
+- [Hey, Scripting Guy !](https://devblogs.microsoft.com/scripting/)
+- [Blog de l’équipe PowerShell](https://devblogs.microsoft.com/powershell/)
