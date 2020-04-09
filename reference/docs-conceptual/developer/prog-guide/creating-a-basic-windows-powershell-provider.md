@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360518"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978506"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Création d’un fournisseur Windows PowerShell de base
 
@@ -38,7 +38,7 @@ Il est recommandé de placer vos classes de fournisseur dans un espace de noms `
 
 Voici la définition de classe pour ce fournisseur de base :
 
-[!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
 Juste avant la définition de classe, vous devez déclarer l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) , avec la syntaxe [CmdletProvider ()].
 
@@ -91,9 +91,9 @@ Une fois que votre fournisseur Windows PowerShell a été inscrit auprès de Win
 Get-PSProvider
 ```
 
-La sortie suivante apparaît :
+Vous obtenez la sortie suivante :
 
-```output
+```Output
 Name                 Capabilities                  Drives
 ----                 ------------                  ------
 AccessDb             None                          {}

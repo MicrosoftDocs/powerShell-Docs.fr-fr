@@ -12,30 +12,33 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366828"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978455"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Création d’un fournisseur de lecteur Windows PowerShell
 
 Cette rubrique explique comment créer un fournisseur de lecteurs Windows PowerShell qui fournit un moyen d’accéder à un magasin de données via un lecteur Windows PowerShell. Ce type de fournisseur est également appelé fournisseurs de lecteurs Windows PowerShell. Les lecteurs Windows PowerShell utilisés par le fournisseur permettent de se connecter au magasin de données.
 
-Le fournisseur de lecteur Windows PowerShell décrit ici permet d’accéder à une base de données Microsoft Access. Pour ce fournisseur, le lecteur Windows PowerShell représente la base de données (il est possible d’ajouter un nombre quelconque de lecteurs à un fournisseur de lecteur), les conteneurs de niveau supérieur du lecteur représentent les tables de la base de données, et les éléments des conteneurs représentent les lignes dans tables.
+Le fournisseur de lecteur Windows PowerShell décrit ici permet d’accéder à une base de données Microsoft Access.
+Pour ce fournisseur, le lecteur Windows PowerShell représente la base de données (il est possible d’ajouter un nombre quelconque de lecteurs à un fournisseur de lecteur), les conteneurs de niveau supérieur du lecteur représentent les tables de la base de données, et les éléments des conteneurs représentent les lignes des tables.
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Définition de la classe de fournisseur Windows PowerShell
 
 Votre fournisseur de lecteurs doit définir une classe .NET qui dérive de la classe de base [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) . Voici la définition de classe pour ce fournisseur de lecteurs :
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="29-30":::
 
-Notez que dans cet exemple, l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) spécifie un nom convivial pour le fournisseur et les fonctionnalités spécifiques de Windows PowerShell que le fournisseur expose au runtime Windows PowerShell pendant le traitement de la commande. Les valeurs possibles pour les fonctionnalités du fournisseur sont définies par l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Ce fournisseur de lecteurs ne prend en charge aucune de ces fonctionnalités.
+Notez que dans cet exemple, l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) spécifie un nom convivial pour le fournisseur et les fonctionnalités spécifiques de Windows PowerShell que le fournisseur expose au runtime Windows PowerShell pendant le traitement de la commande.
+Les valeurs possibles pour les fonctionnalités du fournisseur sont définies par l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Ce fournisseur de lecteurs ne prend en charge aucune de ces fonctionnalités.
 
 ## <a name="defining-base-functionality"></a>Définition des fonctionnalités de base
 
-Comme décrit dans [concevoir votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md), la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) dérive de la classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) qui définit les méthodes nécessaires pour initialiser et désinitialiser le fournisseur. Pour implémenter les fonctionnalités d’ajout d’informations d’initialisation spécifiques à la session et pour libérer les ressources utilisées par le fournisseur, consultez [création d’un fournisseur Windows PowerShell de base](./creating-a-basic-windows-powershell-provider.md). Toutefois, la plupart des fournisseurs (y compris le fournisseur décrit ici) peuvent utiliser l’implémentation par défaut de cette fonctionnalité fournie par Windows PowerShell.
+Comme décrit dans [concevoir votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md), la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) dérive de la classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) qui définit les méthodes nécessaires pour initialiser et désinitialiser le fournisseur. Pour implémenter les fonctionnalités d’ajout d’informations d’initialisation spécifiques à la session et pour libérer les ressources utilisées par le fournisseur, consultez [création d’un fournisseur Windows PowerShell de base](./creating-a-basic-windows-powershell-provider.md).
+Toutefois, la plupart des fournisseurs (y compris le fournisseur décrit ici) peuvent utiliser l’implémentation par défaut de cette fonctionnalité fournie par Windows PowerShell.
 
 ## <a name="creating-drive-state-information"></a>Création d’informations sur l’état du lecteur
 
@@ -43,24 +46,20 @@ Tous les fournisseurs Windows PowerShell sont considérés comme sans État, ce 
 
 Pour ce fournisseur de lecteur, les informations d’État incluent la connexion à la base de données qui est conservée dans le cadre des informations sur le lecteur. Voici le code qui montre comment ces informations sont stockées dans l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur :
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
 ## <a name="creating-a-drive"></a>Création d’un lecteur
 
 Pour autoriser le runtime Windows PowerShell à créer un lecteur, le fournisseur de lecteur doit implémenter la méthode [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) . Le code suivant illustre l’implémentation de la méthode [System. Management. Automation. Provider. Drivecmdletprovider. les *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) pour ce fournisseur de lecteurs :
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L42-L84 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="42-84":::
 
 Votre remplacement de cette méthode doit effectuer les opérations suivantes :
 
 - Vérifiez que le membre [System. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) existe et qu’une connexion au magasin de données peut être établie.
-
 - Créez un lecteur et renseignez le membre de la connexion, pour la prise en charge de l’applet de commande `New-PSDrive`.
-
 - Validez l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) pour le lecteur proposé.
-
 - Modifiez l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur avec les informations de performances ou de fiabilité requises, ou fournissez des données supplémentaires aux appelants à l’aide du lecteur.
-
 - Gérez les échecs à l’aide de la méthode [System. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) , puis retournez `null`.
 
   Cette méthode retourne soit les informations de lecteur qui ont été passées à la méthode, soit une version spécifique au fournisseur.
@@ -79,7 +78,7 @@ Pour fermer la connexion à la base de données, le fournisseur de lecteur doit 
 
 Le code suivant illustre l’implémentation de la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) pour ce fournisseur de lecteurs :
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
 Si le lecteur peut être supprimé, la méthode doit retourner les informations transmises à la méthode par le biais du paramètre `drive`. Si le lecteur ne peut pas être supprimé, la méthode doit écrire une exception, puis retourner `null`. Si votre fournisseur ne remplace pas cette méthode, l’implémentation par défaut de cette méthode retourne simplement les informations de lecteur passées comme entrée.
 
@@ -109,9 +108,9 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
    **`Get-PSProvider` de > PS**
 
-   La sortie suivante apparaît :
+   Vous obtenez la sortie suivante :
 
-   ```output
+   ```Output
    Name                 Capabilities                  Drives
    ----                 ------------                  ------
    AccessDB             None                          {}
@@ -122,15 +121,17 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. Assurez-vous qu’un nom de serveur de base de données existe pour la base de données en accédant à la partie **sources de données** des **Outils d’administration** du système d’exploitation. Dans la table **DSN utilisateur** , double-cliquez sur **base de données MS Access** et ajoutez le chemin d’accès au lecteur C:\ps\northwind.mdb.
+2. Assurez-vous qu’un nom de serveur de base de données existe pour la base de données en accédant à la partie **sources de données** des **Outils d’administration** du système d’exploitation. Dans la table **DSN utilisateur** , double-cliquez sur **base de données MS Access** et ajoutez le chemin d’accès au lecteur `C:\ps\northwind.mdb`.
 
 3. Créez un lecteur à l’aide de l’exemple de fournisseur de lecteur :
 
-   **PS > New-PSDrive-Name MyDB-root c:\ps\northwind.mdb-PSProvider AccessDb**
+   ```powershell
+   new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
+   ```
 
-   La sortie suivante apparaît :
+   Vous obtenez la sortie suivante :
 
-   ```output
+   ```Output
    Name     Provider     Root                   CurrentLocation
    ----     --------     ----                   ---------------
    mydb     AccessDB     c:\ps\northwind.mdb
@@ -143,9 +144,9 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
    **> PS (obten-PSDrive MyDB). connexion**
 
-   La sortie suivante apparaît :
+   Vous obtenez la sortie suivante :
 
-   ```output
+   ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb
    ConnectionTimeout : 15
    Database          : c:\ps\northwind
@@ -159,9 +160,10 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
 5. Retirez le lecteur et quittez l’interpréteur de commandes :
 
-   **Bloc de > PS-Remove-PSDrive MyDB**
-
-   **Sortie de la > PS**
+   ```powershell
+   PS> remove-psdrive mydb
+   PS> exit
+   ```
 
 ## <a name="see-also"></a>Voir aussi
 

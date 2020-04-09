@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
 caps.latest.revision: 6
-ms.openlocfilehash: f40b24951c44c228d85524845045aea58f680f2e
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 55005a254ef50a2230121095770899cb3b9b70f1
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870606"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978219"
 ---
 # <a name="runspace07-code-sample"></a>Exemple de code RunSpace07
 
@@ -26,7 +26,7 @@ Cet exemple d’application crée une instance d’exécution, crée un pipeline
 
 ## <a name="code-sample"></a>Exemple de code
 
-[!code-csharp[Runspace07.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs#L11-L108 "Runspace07.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace07/Runspace07.cs" range="11-108":::
 
 ## <a name="see-also"></a>Voir aussi
 

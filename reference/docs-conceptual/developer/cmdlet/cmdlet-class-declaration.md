@@ -11,21 +11,22 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363518"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978710"
 ---
 # <a name="cmdlet-class-declaration"></a>Déclaration de classe d’applets de commande
 
-Une classe Microsoft .NET Framework est déclarée en tant qu’applet de commande en spécifiant l’attribut d' **applet** de commande en tant que métadonnées pour la classe. (L’attribut d' **applet** de commande est le seul attribut requis pour toutes les applets de commande). Lorsque vous spécifiez l’attribut d' **applet** de commande, vous devez spécifier la paire verbe-and-substantif qui identifie l’applet de commande auprès de l’utilisateur. Et, vous devez décrire les fonctionnalités de Windows PowerShell prises en charge par l’applet de commande. Pour plus d’informations sur la syntaxe de déclaration utilisée pour spécifier l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
+Une classe Microsoft .NET Framework est déclarée en tant qu’applet de commande en spécifiant l’attribut d' **applet** de commande en tant que métadonnées pour la classe. (L’attribut d' **applet** de commande est le seul attribut requis pour toutes les applets de commande).
+Lorsque vous spécifiez l’attribut d' **applet** de commande, vous devez spécifier la paire verbe-and-substantif qui identifie l’applet de commande auprès de l’utilisateur. Et, vous devez décrire les fonctionnalités de Windows PowerShell prises en charge par l’applet de commande. Pour plus d’informations sur la syntaxe de déclaration utilisée pour spécifier l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
 > [!NOTE]
 > L’attribut d' **applet** de commande est défini par la classe [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Les propriétés de cette classe correspondent aux paramètres de déclaration utilisés lorsque vous déclarez l’attribut.
 
-## <a name="nouns"></a>Substantifs
+## <a name="nouns"></a>Noms
 
 Le nom de l’applet de commande spécifie les ressources sur lesquelles agit l’applet de commande. Le substantif fait la différence entre vos applets de commande et d’autres applets de commande.
 
@@ -33,7 +34,7 @@ Les noms des applets de commande doivent être spécifiques, et dans le cas de n
 
 Pour obtenir la liste des caractères spéciaux qui ne peuvent pas être utilisés dans les noms d’applets de commande, consultez [instructions de développement requises](./required-development-guidelines.md).
 
-## <a name="verbs"></a>Verbes
+## <a name="verbs"></a>Verbes et adverbes
 
 Lorsque vous spécifiez un verbe, les instructions de développement vous obligent à utiliser l’un des verbes prédéfinis fournis par Windows PowerShell. En utilisant l’un de ces verbes prédéfinis, vous assurez la cohérence entre les applets de commande que vous écrivez et les applets de commande écrites par Microsoft et par d’autres. Par exemple, le verbe « obtenir » est utilisé pour les applets de commande qui récupèrent des données.
 
@@ -45,11 +46,11 @@ L’attribut **cmdlet** vous permet également de spécifier que votre applet de
 
 Pour plus d’informations sur la syntaxe de déclaration utilisée pour spécifier l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
-## <a name="cmdlet-class-definition"></a>Définition des classes d'applets de commande
+## <a name="cmdlet-class-definition"></a>Définition de la classe cmdlet
 
 Le code suivant est la définition d’une classe d’applet de commande GetProc. Notez que la casse Pascal est utilisée et que le nom de la classe comprend le verbe et le nom de l’applet de commande.
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Casse Pascal
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416311"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978625"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
 
@@ -31,7 +31,7 @@ Pour illustrer ce dernier point, cette applet de commande Stop-proc utilise troi
 
 ## <a name="declaring-the-cmdlet-class"></a>Déclaration de la classe d’applet de commande
 
-La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Pour cette applet de commande, le verbe « Stop » du cycle de vie est utilisé, car l’applet de commande arrête les processus système. Le nom substantif « proc » est utilisé, car l’applet de commande fonctionne sur les processus. Dans la déclaration ci-dessous, Notez que le verbe d’applet de commande et le nom substantif sont reflétés dans le nom de la classe d’applet de commande.
+La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Pour cette applet de commande, le verbe de cycle de vie « Stop » est utilisé, car l’applet de commande arrête les processus système. Le nom substantif « proc » est utilisé, car l’applet de commande fonctionne sur les processus. Dans la déclaration ci-dessous, Notez que le verbe d’applet de commande et le nom substantif sont reflétés dans le nom de la classe d’applet de commande.
 
 > [!NOTE]
 > Pour plus d’informations sur les noms des verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
@@ -60,7 +60,7 @@ Cette applet de commande définit trois paramètres nécessaires comme entrée p
 
 Ce paramètre d’entrée permet à l’utilisateur de spécifier les noms des processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `ProcessName` pour ce paramètre.
 
-[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _
@@ -229,23 +229,23 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
 
 - Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `ProcessId` défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le jeu de paramètres `ProcessId` pour arrêter le processus.
 
-    ```
-    PS> stop-proc -Id 444
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
-    ```
+  ```
+  PS> stop-proc -Id 444
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+  ```
 
 - Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `InputObject` défini sur arrêter les processus sur l’objet Notepad récupéré par la commande `Get-Process`.
 
-    ```
-    PS> get-process notepad | stop-proc
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
-    ```
+  ```
+  PS> get-process notepad | stop-proc
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
+  ```
 
 ## <a name="see-also"></a>Voir aussi
 

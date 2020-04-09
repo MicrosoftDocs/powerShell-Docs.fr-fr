@@ -3,12 +3,12 @@ title: Création d’un fournisseur de navigation Windows PowerShell
 ms.date: 09/13/2016
 ms.topic: article
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-ms.openlocfilehash: 7ca7e3ca6feeba018ad793d074caf67cd9506a68
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 1280da0067f93873a42cb534fae75f758c310912
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500806"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978404"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Création d’un fournisseur de navigation Windows PowerShell
 
@@ -27,7 +27,7 @@ Le fournisseur décrit ici permet à l’utilisateur de gérer une base de donn�
 
 Un fournisseur de navigation Windows PowerShell doit créer une classe .NET qui dérive de la classe de base [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) . Voici la définition de classe pour le fournisseur de navigation décrit dans cette section.
 
-[!code-csharp[AccessDBProviderSample05.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="31-32":::
 
 Notez que dans ce fournisseur, l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) comprend deux paramètres. Le premier paramètre spécifie un nom convivial pour le fournisseur qui est utilisé par Windows PowerShell. Le deuxième paramètre spécifie les fonctionnalités spécifiques de Windows PowerShell que le fournisseur expose au runtime Windows PowerShell pendant le traitement de la commande. Pour ce fournisseur, aucune fonctionnalité spécifique de Windows PowerShell n’est ajoutée.
 
@@ -96,7 +96,7 @@ Le fournisseur de navigation peut implémenter la méthode [System. Management. 
 
 Le code suivant illustre l’implémentation de [System. Management. Automation. Provider. Navigationcmdletprovider. IsItemContainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) dans notre exemple de fournisseur de navigation. La méthode vérifie que le chemin d’accès spécifié est correct et, si la table existe, et retourne la valeur true si le chemin d’accès indique un conteneur.
 
-[!code-csharp[AccessDBProviderSample05.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="847-872":::
 
 #### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Points à retenir concernant l’implémentation de IsItemContainer
 

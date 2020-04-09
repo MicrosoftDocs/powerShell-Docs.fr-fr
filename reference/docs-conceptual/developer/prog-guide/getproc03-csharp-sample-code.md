@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
 caps.latest.revision: 5
-ms.openlocfilehash: 126df3092c0722b0fc9d02cb61d3faf0578b8e97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24f47ab8d99683e6d0024bd8073b6d7bb5dcbd90
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416125"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978370"
 ---
 # <a name="getproc03-c-sample-code"></a>Exemple de code GetProc03 (C#)
 
@@ -21,12 +21,11 @@ Le code suivant illustre l’implémentation d’une applet de commande `Get-Pro
 
 > [!NOTE]
 > Vous pouvez télécharger le C# fichier source (getprov03.cs) pour cette applet de commande « obtenir-proc » à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
 > Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .
 
 ## <a name="code-sample"></a>Exemple de code
 
-[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L11-L78 "GetProcessSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="11-78":::
 
 ## <a name="see-also"></a>Voir aussi
 

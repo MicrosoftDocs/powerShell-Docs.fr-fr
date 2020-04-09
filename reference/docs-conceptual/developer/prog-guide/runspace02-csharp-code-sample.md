@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59a7b8b9-f72e-43fd-9a10-77404441a3f2
 caps.latest.revision: 6
-ms.openlocfilehash: abf539bc29bd9ccac59bd5957397fbe68951f266
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 047d14d70853399bc262ac3f1541da38184c3ff8
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366618"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977877"
 ---
 # <a name="runspace02-c-code-sample"></a>Exemple de code Runspace02 (C#)
 
@@ -21,7 +21,7 @@ Voici le C# code source de l’exemple Runspace02. Cet exemple utilise la classe
 
 ## <a name="code-sample"></a>Exemple de code
 
-[!code-csharp[Runspace02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs#L11-L82 "Runspace02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs" range="11-82":::
 
 ## <a name="see-also"></a>Voir aussi
 
