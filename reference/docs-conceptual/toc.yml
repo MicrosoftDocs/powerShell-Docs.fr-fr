@@ -158,7 +158,7 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: Présentation de l’encodage de fichier dans VSCode et PowerShell
+        - name: Présentation de l’encodage de fichier dans VS Code et PowerShell
           href: components/vscode/understanding-file-encoding.md
     - name: Accès web
       items:
