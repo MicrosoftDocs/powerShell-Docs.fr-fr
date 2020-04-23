@@ -1,28 +1,28 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Création d’une ressource DSC en C#
 ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417700"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="1e5f5-103">Création d’une ressource DSC en C\#</span><span class="sxs-lookup"><span data-stu-id="1e5f5-103">Authoring a DSC resource in C\#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="118af-103">Création d’une ressource DSC en C\#</span><span class="sxs-lookup"><span data-stu-id="118af-103">Authoring a DSC resource in C\#</span></span>
 
-> <span data-ttu-id="1e5f5-104">S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1e5f5-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="118af-104">S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="118af-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="1e5f5-105">En règle générale, une ressource DSC Windows PowerShell personnalisée est implémentée dans un script PowerShell.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="1e5f5-106">Toutefois, vous pouvez également implémenter la fonctionnalité d’une ressource DSC personnalisée en écrivant des applets de commande en C#.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="1e5f5-107">Pour une introduction à l’écriture des applets de commande en C#, consultez [Écriture d’une applet de commande Windows PowerShell](/powershell/scripting/developer/windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="1e5f5-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).</span></span>
+<span data-ttu-id="118af-105">En règle générale, une ressource DSC Windows PowerShell personnalisée est implémentée dans un script PowerShell.</span><span class="sxs-lookup"><span data-stu-id="118af-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="118af-106">Toutefois, vous pouvez également implémenter la fonctionnalité d’une ressource DSC personnalisée en écrivant des applets de commande en C#.</span><span class="sxs-lookup"><span data-stu-id="118af-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="118af-107">Pour une introduction à l’écriture des applets de commande en C#, consultez [Écriture d’une applet de commande Windows PowerShell](/powershell/scripting/developer/windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="118af-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell).</span></span>
 
-<span data-ttu-id="1e5f5-108">À part l’implémentation de la ressource en tant qu’applets de commande en langage C#, les processus de création du schéma MOF, de création de la structure de dossiers, et de l’importation et de l’utilisation de votre ressource DSC personnalisée, sont les mêmes que ceux décrits dans [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="1e5f5-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="118af-108">À part l’implémentation de la ressource en tant qu’applets de commande en langage C#, les processus de création du schéma MOF, de création de la structure de dossiers, et de l’importation et de l’utilisation de votre ressource DSC personnalisée, sont les mêmes que ceux décrits dans [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md).</span><span class="sxs-lookup"><span data-stu-id="118af-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="1e5f5-109">Écriture d’une ressource basée sur une applet de commande</span><span class="sxs-lookup"><span data-stu-id="1e5f5-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="1e5f5-110">Pour cet exemple, nous implémenterons une ressource simple qui gère un fichier texte et son contenu.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="118af-109">Écriture d’une ressource basée sur une applet de commande</span><span class="sxs-lookup"><span data-stu-id="118af-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="118af-110">Pour cet exemple, nous implémenterons une ressource simple qui gère un fichier texte et son contenu.</span><span class="sxs-lookup"><span data-stu-id="118af-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="1e5f5-111">Écriture du schéma MOF</span><span class="sxs-lookup"><span data-stu-id="1e5f5-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="118af-111">Écriture du schéma MOF</span><span class="sxs-lookup"><span data-stu-id="118af-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="1e5f5-112">Voici la définition de la ressource MOF.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="118af-112">Voici la définition de la ressource MOF.</span><span class="sxs-lookup"><span data-stu-id="118af-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -34,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="1e5f5-113">Configuration du projet Visual Studio</span><span class="sxs-lookup"><span data-stu-id="1e5f5-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="1e5f5-114">Configuration d’un projet d’applet de commande</span><span class="sxs-lookup"><span data-stu-id="1e5f5-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="118af-113">Configuration du projet Visual Studio</span><span class="sxs-lookup"><span data-stu-id="118af-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="118af-114">Configuration d’un projet d’applet de commande</span><span class="sxs-lookup"><span data-stu-id="118af-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="1e5f5-115">Ouvrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="1e5f5-116">Créez un projet C# et donnez-lui un nom.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="1e5f5-117">Sélectionnez **Bibliothèque de classes** dans les modèles de projet disponibles.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="1e5f5-118">Cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="1e5f5-119">Ajoutez une référence d’assembly à System.Automation.Management.dll dans votre projet.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="1e5f5-120">Modifiez le nom d’assembly pour qu’il corresponde au nom de la ressource.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="1e5f5-121">Dans ce cas, l’assembly doit se nommer **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="118af-115">Ouvrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="118af-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="118af-116">Créez un projet C# et donnez-lui un nom.</span><span class="sxs-lookup"><span data-stu-id="118af-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="118af-117">Sélectionnez **Bibliothèque de classes** dans les modèles de projet disponibles.</span><span class="sxs-lookup"><span data-stu-id="118af-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="118af-118">Cliquez sur **OK**.</span><span class="sxs-lookup"><span data-stu-id="118af-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="118af-119">Ajoutez une référence d’assembly à System.Automation.Management.dll dans votre projet.</span><span class="sxs-lookup"><span data-stu-id="118af-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="118af-120">Modifiez le nom d’assembly pour qu’il corresponde au nom de la ressource.</span><span class="sxs-lookup"><span data-stu-id="118af-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="118af-121">Dans ce cas, l’assembly doit se nommer **MSFT_XDemoFile**.</span><span class="sxs-lookup"><span data-stu-id="118af-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="1e5f5-122">Écriture du code de l’applet de commande</span><span class="sxs-lookup"><span data-stu-id="1e5f5-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="118af-122">Écriture du code de l’applet de commande</span><span class="sxs-lookup"><span data-stu-id="118af-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="1e5f5-123">Le code C# suivant implémente les applets de commande **Get-TargetResource**, **Set-TargetResource** et **Test-TargetResource**.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="118af-123">Le code C# suivant implémente les applets de commande **Get-TargetResource**, **Set-TargetResource** et **Test-TargetResource**.</span><span class="sxs-lookup"><span data-stu-id="118af-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -262,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="1e5f5-124">Déploiement de la ressource</span><span class="sxs-lookup"><span data-stu-id="1e5f5-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="118af-124">Déploiement de la ressource</span><span class="sxs-lookup"><span data-stu-id="118af-124">Deploying the resource</span></span>
 
-<span data-ttu-id="1e5f5-125">Le fichier .dll compilé doit être enregistré dans une structure de fichiers similaire à une ressource de script.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="1e5f5-126">Voici la structure de dossiers de cette ressource.</span><span class="sxs-lookup"><span data-stu-id="1e5f5-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="118af-125">Le fichier .dll compilé doit être enregistré dans une structure de fichiers similaire à une ressource de script.</span><span class="sxs-lookup"><span data-stu-id="118af-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="118af-126">Voici la structure de dossiers de cette ressource.</span><span class="sxs-lookup"><span data-stu-id="118af-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -277,8 +277,8 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="1e5f5-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1e5f5-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="1e5f5-128">Concepts</span><span class="sxs-lookup"><span data-stu-id="1e5f5-128">Concepts</span></span>
-[<span data-ttu-id="1e5f5-129">Écriture d’une ressource DSC personnalisée avec MOF</span><span class="sxs-lookup"><span data-stu-id="1e5f5-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="1e5f5-130">Autres ressources</span><span class="sxs-lookup"><span data-stu-id="1e5f5-130">Other Resources</span></span>
-[<span data-ttu-id="1e5f5-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="1e5f5-131">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/scripting/developer/windows-powershell)
+### <a name="see-also"></a><span data-ttu-id="118af-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="118af-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="118af-128">Concepts</span><span class="sxs-lookup"><span data-stu-id="118af-128">Concepts</span></span>
+[<span data-ttu-id="118af-129">Écriture d’une ressource DSC personnalisée avec MOF</span><span class="sxs-lookup"><span data-stu-id="118af-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="118af-130">Autres ressources</span><span class="sxs-lookup"><span data-stu-id="118af-130">Other Resources</span></span>
+[<span data-ttu-id="118af-131">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="118af-131">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/scripting/developer/windows-powershell)
