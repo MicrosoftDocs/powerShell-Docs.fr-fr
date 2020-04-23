@@ -4,56 +4,56 @@ schema: 2.0.0
 keywords: powershell
 title: Modules exigeant l’acceptation de la licence
 ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082815"
 ---
-# <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="2e734-103">Modules exigeant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-103">Modules Requiring License Acceptance</span></span>
+# <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="7b3f2-103">Modules exigeant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-103">Modules Requiring License Acceptance</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="2e734-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2e734-104">SYNOPSIS</span></span>
+## <a name="synopsis"></a><span data-ttu-id="7b3f2-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="7b3f2-104">SYNOPSIS</span></span>
 
-<span data-ttu-id="2e734-105">Les services juridiques de certains éditeurs de modules exigent que les clients acceptent explicitement la licence avant d’installer leur module à partir de PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="2e734-105">Legal departments for some module publishers require that customers must explicitly accept the license before installing their module from PowerShell Gallery.</span></span> <span data-ttu-id="2e734-106">Si un utilisateur installe, met à jour ou enregistre un module avec PowerShellGet, directement ou dans une relation de dépendance avec un autre package, et que ce module exige que l’utilisateur accepte une licence, l’utilisateur doit indiquer qu’il accepte la licence, faute de quoi l’opération échoue.</span><span class="sxs-lookup"><span data-stu-id="2e734-106">If a user installs, updates, or saves a module using PowerShellGet, whether directly or as a dependency for another package, and that module requires the user to agree to a license, the user must indicate they accept the license or the operation fails.</span></span>
+<span data-ttu-id="7b3f2-105">Les services juridiques de certains éditeurs de modules exigent que les clients acceptent explicitement la licence avant d’installer leur module à partir de PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-105">Legal departments for some module publishers require that customers must explicitly accept the license before installing their module from PowerShell Gallery.</span></span> <span data-ttu-id="7b3f2-106">Si un utilisateur installe, met à jour ou enregistre un module avec PowerShellGet, directement ou dans une relation de dépendance avec un autre package, et que ce module exige que l’utilisateur accepte une licence, l’utilisateur doit indiquer qu’il accepte la licence, faute de quoi l’opération échoue.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-106">If a user installs, updates, or saves a module using PowerShellGet, whether directly or as a dependency for another package, and that module requires the user to agree to a license, the user must indicate they accept the license or the operation fails.</span></span>
 
-## <a name="publish-requirements-for-modules"></a><span data-ttu-id="2e734-107">Publier la configuration requise pour les modules</span><span class="sxs-lookup"><span data-stu-id="2e734-107">Publish Requirements for Modules</span></span>
+## <a name="publish-requirements-for-modules"></a><span data-ttu-id="7b3f2-107">Publier la configuration requise pour les modules</span><span class="sxs-lookup"><span data-stu-id="7b3f2-107">Publish Requirements for Modules</span></span>
 
-<span data-ttu-id="2e734-108">Les modules demandant aux utilisateurs d’accepter une licence doivent répondre aux conditions suivantes :</span><span class="sxs-lookup"><span data-stu-id="2e734-108">Modules that would like to require users to accept license should fulfill following requirements:</span></span>
+<span data-ttu-id="7b3f2-108">Les modules demandant aux utilisateurs d’accepter une licence doivent répondre aux conditions suivantes :</span><span class="sxs-lookup"><span data-stu-id="7b3f2-108">Modules that would like to require users to accept license should fulfill following requirements:</span></span>
 
-- <span data-ttu-id="2e734-109">La section PSData du manifeste de module doit inclure RequireLicenseAcceptance = $True.</span><span class="sxs-lookup"><span data-stu-id="2e734-109">PSData section of module manifest should include RequireLicenseAcceptance = $True.</span></span>
-- <span data-ttu-id="2e734-110">Le module doit contenir le fichier license.txt dans le répertoire racine.</span><span class="sxs-lookup"><span data-stu-id="2e734-110">Module should contain license.txt file in root directory.</span></span>
-- <span data-ttu-id="2e734-111">Le manifeste de module doit contenir l’Uri de la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-111">Module manifest should contain License Uri.</span></span>
-- <span data-ttu-id="2e734-112">Le module doit être publié avec PowerShellGet Format, version 2.0 et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="2e734-112">Module should be published with PowerShellGet Format Version 2.0 and above.</span></span>
+- <span data-ttu-id="7b3f2-109">La section PSData du manifeste de module doit inclure RequireLicenseAcceptance = $True.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-109">PSData section of module manifest should include RequireLicenseAcceptance = $True.</span></span>
+- <span data-ttu-id="7b3f2-110">Le module doit contenir le fichier license.txt dans le répertoire racine.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-110">Module should contain license.txt file in root directory.</span></span>
+- <span data-ttu-id="7b3f2-111">Le manifeste de module doit contenir l’Uri de la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-111">Module manifest should contain License Uri.</span></span>
+- <span data-ttu-id="7b3f2-112">Le module doit être publié avec PowerShellGet Format, version 2.0 et versions ultérieures.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-112">Module should be published with PowerShellGet Format Version 2.0 and above.</span></span>
 
-## <a name="impact-on-installsaveupdate-module"></a><span data-ttu-id="2e734-113">Impact sur Install/Save/Update-Module</span><span class="sxs-lookup"><span data-stu-id="2e734-113">Impact on Install/Save/Update-Module</span></span>
+## <a name="impact-on-installsaveupdate-module"></a><span data-ttu-id="7b3f2-113">Impact sur Install/Save/Update-Module</span><span class="sxs-lookup"><span data-stu-id="7b3f2-113">Impact on Install/Save/Update-Module</span></span>
 
-- <span data-ttu-id="2e734-114">Les applets de commande Install/Save/Update prennent en charge un nouveau paramètre **AcceptLicense** qui se comporte comme si l’utilisateur avait vu la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-114">Install/Save/Update cmdlets support a new parameter **AcceptLicense** that behaves as though the user saw the license.</span></span>
-- <span data-ttu-id="2e734-115">Si **RequiredLicenseAcceptance** est défini sur True et qu’**AcceptLicense** n’est pas spécifié, l’utilisateur voit le fichier `license.txt` et est invité à répondre à la question suivante : `Do you accept these license terms
-  (Yes/No/YesToAll/NoToAll)`</span><span class="sxs-lookup"><span data-stu-id="2e734-115">If **RequiredLicenseAcceptance** is True and **AcceptLicense** is not specified, the user is shown the `license.txt`, and prompted with: `Do you accept these license terms
+- <span data-ttu-id="7b3f2-114">Les applets de commande Install/Save/Update prennent en charge un nouveau paramètre **AcceptLicense** qui se comporte comme si l’utilisateur avait vu la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-114">Install/Save/Update cmdlets support a new parameter **AcceptLicense** that behaves as though the user saw the license.</span></span>
+- <span data-ttu-id="7b3f2-115">Si **RequiredLicenseAcceptance** est défini sur True et qu’**AcceptLicense** n’est pas spécifié, l’utilisateur voit le fichier `license.txt` et est invité à répondre à la question suivante : `Do you accept these license terms
+  (Yes/No/YesToAll/NoToAll)`</span><span class="sxs-lookup"><span data-stu-id="7b3f2-115">If **RequiredLicenseAcceptance** is True and **AcceptLicense** is not specified, the user is shown the `license.txt`, and prompted with: `Do you accept these license terms
   (Yes/No/YesToAll/NoToAll)`.</span></span>
-  - <span data-ttu-id="2e734-116">Si la licence est acceptée</span><span class="sxs-lookup"><span data-stu-id="2e734-116">If the license is accepted</span></span>
-    - <span data-ttu-id="2e734-117">**Save-Module :** le module est copié sur le système de l’utilisateur</span><span class="sxs-lookup"><span data-stu-id="2e734-117">**Save-Module:** the module is copied to the user's system</span></span>
-    - <span data-ttu-id="2e734-118">**Install-Module :** le module est copié dans le bon dossier du système de l’utilisateur (basé sur l’étendue)</span><span class="sxs-lookup"><span data-stu-id="2e734-118">**Install-Module:** the module is copied to the user's system to the proper folder (based on scope)</span></span>
-    - <span data-ttu-id="2e734-119">**Update-Module :** le module est mis à jour.</span><span class="sxs-lookup"><span data-stu-id="2e734-119">**Update-Module:** the module is updated.</span></span>
-  - <span data-ttu-id="2e734-120">Si la licence a été refusée.</span><span class="sxs-lookup"><span data-stu-id="2e734-120">If the license is declined.</span></span>
-    - <span data-ttu-id="2e734-121">L'opération est annulée.</span><span class="sxs-lookup"><span data-stu-id="2e734-121">Operation is canceled.</span></span>
-    - <span data-ttu-id="2e734-122">Toutes les applets de commande vérifient les métadonnées (**requireLicenseAcceptance** et version du format) qui indiquent que l’acceptation de la licence est nécessaire</span><span class="sxs-lookup"><span data-stu-id="2e734-122">All cmdlets check for the metadata (**requireLicenseAcceptance** and Format Version) that says a license acceptance is required</span></span>
-    - <span data-ttu-id="2e734-123">Si la version de format est antérieure à 2.0, l’opération échoue et l’utilisateur est invité à mettre à jour le client.</span><span class="sxs-lookup"><span data-stu-id="2e734-123">If format version of client is older than 2.0, operation fails and asks the user to update the client.</span></span>
-    - <span data-ttu-id="2e734-124">Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur requireLicenseAcceptance est ignoré.</span><span class="sxs-lookup"><span data-stu-id="2e734-124">If module was published with format version older than 2.0, requireLicenseAcceptance flag is ignored.</span></span>
+  - <span data-ttu-id="7b3f2-116">Si la licence est acceptée</span><span class="sxs-lookup"><span data-stu-id="7b3f2-116">If the license is accepted</span></span>
+    - <span data-ttu-id="7b3f2-117">**Save-Module :** le module est copié sur le système de l’utilisateur</span><span class="sxs-lookup"><span data-stu-id="7b3f2-117">**Save-Module:** the module is copied to the user's system</span></span>
+    - <span data-ttu-id="7b3f2-118">**Install-Module :** le module est copié dans le bon dossier du système de l’utilisateur (basé sur l’étendue)</span><span class="sxs-lookup"><span data-stu-id="7b3f2-118">**Install-Module:** the module is copied to the user's system to the proper folder (based on scope)</span></span>
+    - <span data-ttu-id="7b3f2-119">**Update-Module :** le module est mis à jour.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-119">**Update-Module:** the module is updated.</span></span>
+  - <span data-ttu-id="7b3f2-120">Si la licence a été refusée.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-120">If the license is declined.</span></span>
+    - <span data-ttu-id="7b3f2-121">L'opération est annulée.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-121">Operation is canceled.</span></span>
+    - <span data-ttu-id="7b3f2-122">Toutes les applets de commande vérifient les métadonnées (**requireLicenseAcceptance** et version du format) qui indiquent que l’acceptation de la licence est nécessaire</span><span class="sxs-lookup"><span data-stu-id="7b3f2-122">All cmdlets check for the metadata (**requireLicenseAcceptance** and Format Version) that says a license acceptance is required</span></span>
+    - <span data-ttu-id="7b3f2-123">Si la version de format est antérieure à 2.0, l’opération échoue et l’utilisateur est invité à mettre à jour le client.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-123">If format version of client is older than 2.0, operation fails and asks the user to update the client.</span></span>
+    - <span data-ttu-id="7b3f2-124">Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur requireLicenseAcceptance est ignoré.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-124">If module was published with format version older than 2.0, requireLicenseAcceptance flag is ignored.</span></span>
 
-## <a name="module-dependencies"></a><span data-ttu-id="2e734-125">Dépendances du module</span><span class="sxs-lookup"><span data-stu-id="2e734-125">Module Dependencies</span></span>
+## <a name="module-dependencies"></a><span data-ttu-id="7b3f2-125">Dépendances du module</span><span class="sxs-lookup"><span data-stu-id="7b3f2-125">Module Dependencies</span></span>
 
-- <span data-ttu-id="2e734-126">Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) est requis.</span><span class="sxs-lookup"><span data-stu-id="2e734-126">During Install/Save/Update operation, if a dependent module(something else depends on the module) requires license acceptance, then the license acceptance behavior (above) is required.</span></span>
-- <span data-ttu-id="2e734-127">Si la version du module est déjà répertoriée dans le catalogue local comme étant installée sur le système, nous contournerons la vérification de la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-127">If the module version is already listed in the local catalog as being installed on the system, we would bypass the license checking.</span></span>
-- <span data-ttu-id="2e734-128">Si, au cours de l’opération d’installation/d’enregistrement/de mise à jour, un module dépendant exige une licence et que cette licence n’est pas acceptée, l’opération échoue et suit les processus normaux d’échec de l’installation/l’enregistrement/la mise à jour du package.</span><span class="sxs-lookup"><span data-stu-id="2e734-128">During Install/Save/Update operation, if a dependent module requires a license, and the license acceptance does not occur, the operation fails and follows normal processes for the package failed to install/save/update.</span></span>
+- <span data-ttu-id="7b3f2-126">Pendant l’opération d’installation/d’enregistrement/de mise à jour, si un module dépendant (quelque chose d’autre dépend du module) nécessite une acceptation de licence, le comportement d’acceptation de licence (ci-dessus) est requis.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-126">During Install/Save/Update operation, if a dependent module(something else depends on the module) requires license acceptance, then the license acceptance behavior (above) is required.</span></span>
+- <span data-ttu-id="7b3f2-127">Si la version du module est déjà répertoriée dans le catalogue local comme étant installée sur le système, nous contournerons la vérification de la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-127">If the module version is already listed in the local catalog as being installed on the system, we would bypass the license checking.</span></span>
+- <span data-ttu-id="7b3f2-128">Si, au cours de l’opération d’installation/d’enregistrement/de mise à jour, un module dépendant exige une licence et que cette licence n’est pas acceptée, l’opération échoue et suit les processus normaux d’échec de l’installation/l’enregistrement/la mise à jour du package.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-128">During Install/Save/Update operation, if a dependent module requires a license, and the license acceptance does not occur, the operation fails and follows normal processes for the package failed to install/save/update.</span></span>
 
-## <a name="impact-on--force"></a><span data-ttu-id="2e734-129">Impact sur Force</span><span class="sxs-lookup"><span data-stu-id="2e734-129">Impact on -Force</span></span>
+## <a name="impact-on--force"></a><span data-ttu-id="7b3f2-129">Impact sur Force</span><span class="sxs-lookup"><span data-stu-id="7b3f2-129">Impact on -Force</span></span>
 
-<span data-ttu-id="2e734-130">La spécification de `–Force` n’est PAS suffisante pour accepter une licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-130">Specifying `–Force` is NOT sufficient to accept a license.</span></span> <span data-ttu-id="2e734-131">`–AcceptLicense` est obligatoire pour autoriser l’installation.</span><span class="sxs-lookup"><span data-stu-id="2e734-131">`–AcceptLicense` is required for permission to install.</span></span> <span data-ttu-id="2e734-132">Si `–Force` est spécifié, que RequiredLicenseAcceptance a la valeur True et que `–AcceptLicense` n’est PAS spécifié, l’opération échoue.</span><span class="sxs-lookup"><span data-stu-id="2e734-132">If `–Force` is specified, RequiredLicenseAcceptance is True, and `–AcceptLicense` is NOT specified, the operation fails.</span></span>
+<span data-ttu-id="7b3f2-130">La spécification de `–Force` n’est PAS suffisante pour accepter une licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-130">Specifying `–Force` is NOT sufficient to accept a license.</span></span> <span data-ttu-id="7b3f2-131">`–AcceptLicense` est obligatoire pour autoriser l’installation.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-131">`–AcceptLicense` is required for permission to install.</span></span> <span data-ttu-id="7b3f2-132">Si `–Force` est spécifié, que RequiredLicenseAcceptance a la valeur True et que `–AcceptLicense` n’est PAS spécifié, l’opération échoue.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-132">If `–Force` is specified, RequiredLicenseAcceptance is True, and `–AcceptLicense` is NOT specified, the operation fails.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="2e734-133">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="2e734-133">EXAMPLES</span></span>
+## <a name="examples"></a><span data-ttu-id="7b3f2-133">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="7b3f2-133">EXAMPLES</span></span>
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a><span data-ttu-id="2e734-134">Exemple 1 : mise à jour du manifeste de module pour exiger l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-134">Example 1: Update Module Manifest to require license acceptance</span></span>
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a><span data-ttu-id="7b3f2-134">Exemple 1 : mise à jour du manifeste de module pour exiger l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-134">Example 1: Update Module Manifest to require license acceptance</span></span>
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -65,9 +65,9 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
  } # End of PrivateData hashtable
 ```
 
-<span data-ttu-id="2e734-135">Cette commande met à jour le fichier de manifeste et définit l’indicateur RequireLicenseAcceptance sur true.</span><span class="sxs-lookup"><span data-stu-id="2e734-135">This command updates the manifest file and sets the RequireLicenseAcceptance flag to true.</span></span>
+<span data-ttu-id="7b3f2-135">Cette commande met à jour le fichier de manifeste et définit l’indicateur RequireLicenseAcceptance sur true.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-135">This command updates the manifest file and sets the RequireLicenseAcceptance flag to true.</span></span>
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a><span data-ttu-id="2e734-136">Exemple 2 : installation d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-136">Example 2: Install Module requiring license acceptance</span></span>
+### <a name="example-2-install-module-requiring-license-acceptance"></a><span data-ttu-id="7b3f2-136">Exemple 2 : installation d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-136">Example 2: Install Module requiring license acceptance</span></span>
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -88,17 +88,17 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="2e734-137">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="2e734-137">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
+<span data-ttu-id="7b3f2-137">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-137">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="2e734-138">Exemple 3 : installation d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="2e734-138">Example 3: Install Module requiring license acceptance with -AcceptLicense</span></span>
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="7b3f2-138">Exemple 3 : installation d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="7b3f2-138">Example 3: Install Module requiring license acceptance with -AcceptLicense</span></span>
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
-<span data-ttu-id="2e734-139">Le module est installé sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-139">Module is installed without any prompt to accept license.</span></span>
+<span data-ttu-id="7b3f2-139">Le module est installé sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-139">Module is installed without any prompt to accept license.</span></span>
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a><span data-ttu-id="2e734-140">Exemple 4 : installation d’un module nécessitant l’acceptation de la licence avec -Force</span><span class="sxs-lookup"><span data-stu-id="2e734-140">Example 4: Install Module requiring license acceptance with -Force</span></span>
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a><span data-ttu-id="7b3f2-140">Exemple 4 : installation d’un module nécessitant l’acceptation de la licence avec -Force</span><span class="sxs-lookup"><span data-stu-id="7b3f2-140">Example 4: Install Module requiring license acceptance with -Force</span></span>
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -115,9 +115,9 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="2e734-141">Exemple 5 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-141">Example 5: Install Module with dependencies requiring license acceptance</span></span>
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a><span data-ttu-id="7b3f2-141">Exemple 5 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-141">Example 5: Install Module with dependencies requiring license acceptance</span></span>
 
-<span data-ttu-id="2e734-142">Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**.</span><span class="sxs-lookup"><span data-stu-id="2e734-142">Module **ModuleWithDependency** depends on module **ModuleRequireLicenseAcceptance**.</span></span> <span data-ttu-id="2e734-143">L’utilisateur est invité à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-143">User is prompted to accept license.</span></span>
+<span data-ttu-id="7b3f2-142">Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-142">Module **ModuleWithDependency** depends on module **ModuleRequireLicenseAcceptance**.</span></span> <span data-ttu-id="7b3f2-143">L’utilisateur est invité à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-143">User is prompted to accept license.</span></span>
 
 ```powershell
 Install-Module -Name ModuleWithDependency
@@ -137,15 +137,15 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="2e734-144">Exemple 6 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence et AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="2e734-144">Example 6: Install Module with dependencies requiring license acceptance and -AcceptLicense</span></span>
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a><span data-ttu-id="7b3f2-144">Exemple 6 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence et AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="7b3f2-144">Example 6: Install Module with dependencies requiring license acceptance and -AcceptLicense</span></span>
 
-<span data-ttu-id="2e734-145">Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**.</span><span class="sxs-lookup"><span data-stu-id="2e734-145">Module **ModuleWithDependency** depends on module **ModuleRequireLicenseAcceptance**.</span></span> <span data-ttu-id="2e734-146">L’utilisateur n’est pas invité à accepter la licence, puisqu’**AcceptLicense** est spécifié.</span><span class="sxs-lookup"><span data-stu-id="2e734-146">User is not prompted to accept license as **AcceptLicense** is specified.</span></span>
+<span data-ttu-id="7b3f2-145">Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-145">Module **ModuleWithDependency** depends on module **ModuleRequireLicenseAcceptance**.</span></span> <span data-ttu-id="7b3f2-146">L’utilisateur n’est pas invité à accepter la licence, puisqu’**AcceptLicense** est spécifié.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-146">User is not prompted to accept license as **AcceptLicense** is specified.</span></span>
 
 ```powershell
 Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a><span data-ttu-id="2e734-147">Exemple 7 : installation d’un module nécessitant l’acceptation de la licence sur un client antérieure à PSGetFormatVersion 2.0</span><span class="sxs-lookup"><span data-stu-id="2e734-147">Example 7: Install module requiring license acceptance on a client older than PSGetFormatVersion 2.0</span></span>
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a><span data-ttu-id="7b3f2-147">Exemple 7 : installation d’un module nécessitant l’acceptation de la licence sur un client antérieure à PSGetFormatVersion 2.0</span><span class="sxs-lookup"><span data-stu-id="7b3f2-147">Example 7: Install module requiring license acceptance on a client older than PSGetFormatVersion 2.0</span></span>
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -157,7 +157,7 @@ WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGe
 PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a><span data-ttu-id="2e734-148">Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-148">Example 8: Save Module requiring license acceptance</span></span>
+### <a name="example-8-save-module-requiring-license-acceptance"></a><span data-ttu-id="7b3f2-148">Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-148">Example 8: Save Module requiring license acceptance</span></span>
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
@@ -178,17 +178,17 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="2e734-149">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="2e734-149">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
+<span data-ttu-id="7b3f2-149">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-149">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
 
-### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="2e734-150">Exemple 9 : enregistrement d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="2e734-150">Example 9: Save Module requiring license acceptance with -AcceptLicense</span></span>
+### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="7b3f2-150">Exemple 9 : enregistrement d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="7b3f2-150">Example 9: Save Module requiring license acceptance with -AcceptLicense</span></span>
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 ```
 
-<span data-ttu-id="2e734-151">Le module est enregistré sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-151">Module is saved without any prompt to accept license.</span></span>
+<span data-ttu-id="7b3f2-151">Le module est enregistré sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-151">Module is saved without any prompt to accept license.</span></span>
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a><span data-ttu-id="2e734-152">Exemple 10 : mise à jour d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="2e734-152">Example 10: Update Module requiring license acceptance</span></span>
+### <a name="example-10-update-module-requiring-license-acceptance"></a><span data-ttu-id="7b3f2-152">Exemple 10 : mise à jour d’un module nécessitant l’acceptation de la licence</span><span class="sxs-lookup"><span data-stu-id="7b3f2-152">Example 10: Update Module requiring license acceptance</span></span>
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -209,20 +209,20 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="2e734-153">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="2e734-153">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
+<span data-ttu-id="7b3f2-153">Cette commande affiche la licence du fichier `license.txt` et invite l’utilisateur à l’accepter.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-153">This command shows the license from `license.txt` file and prompts the user to accept the license.</span></span>
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="2e734-154">Exemple 11 : mise à jour d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="2e734-154">Example 11: Update Module requiring license acceptance with -AcceptLicense</span></span>
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a><span data-ttu-id="7b3f2-154">Exemple 11 : mise à jour d’un module nécessitant l’acceptation de la licence avec AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="7b3f2-154">Example 11: Update Module requiring license acceptance with -AcceptLicense</span></span>
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
-<span data-ttu-id="2e734-155">Le module est mis à jour sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="2e734-155">Module is updated without any prompt to accept license.</span></span>
+<span data-ttu-id="7b3f2-155">Le module est mis à jour sans invitation à accepter la licence.</span><span class="sxs-lookup"><span data-stu-id="7b3f2-155">Module is updated without any prompt to accept license.</span></span>
 
-## <a name="more-details"></a><span data-ttu-id="2e734-156">Détails supplémentaires</span><span class="sxs-lookup"><span data-stu-id="2e734-156">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="7b3f2-156">Détails supplémentaires</span><span class="sxs-lookup"><span data-stu-id="7b3f2-156">More details</span></span>
 
-[<span data-ttu-id="2e734-157">Exiger l’acceptation de la licence pour les scripts</span><span class="sxs-lookup"><span data-stu-id="2e734-157">Require License Acceptance for Scripts</span></span>](./script-license-acceptance.md)
+[<span data-ttu-id="7b3f2-157">Exiger l’acceptation de la licence pour les scripts</span><span class="sxs-lookup"><span data-stu-id="7b3f2-157">Require License Acceptance for Scripts</span></span>](./script-license-acceptance.md)
 
-[<span data-ttu-id="2e734-158">Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="2e734-158">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+[<span data-ttu-id="7b3f2-158">Exiger la prise en charge de l’acceptation de licence sur PowerShellGallery</span><span class="sxs-lookup"><span data-stu-id="7b3f2-158">Require License Acceptance support on PowerShellGallery</span></span>](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[<span data-ttu-id="2e734-159">Exiger l’acceptation de la licence lors du déploiement sur Azure Automation</span><span class="sxs-lookup"><span data-stu-id="2e734-159">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-packages/deploy-to-azure-automation.md)
+[<span data-ttu-id="7b3f2-159">Exiger l’acceptation de la licence lors du déploiement sur Azure Automation</span><span class="sxs-lookup"><span data-stu-id="7b3f2-159">Require License Acceptance on Deploy to Azure Automation</span></span>](../how-to/working-with-packages/deploy-to-azure-automation.md)
