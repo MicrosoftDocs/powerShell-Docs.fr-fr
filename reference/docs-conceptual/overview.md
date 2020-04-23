@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Scripts PowerShell
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058486"
 ---
 # <a name="powershell"></a>PowerShell
@@ -48,7 +48,7 @@ La plupart des cmdlets retournent des objets qui peuvent être manipulés puis r
 Get-Service | Get-Member
 ```
 
-### <a name="consistency"></a>Consistency
+### <a name="consistency"></a>Cohérence
 
 L’administration de systèmes peut être une tâche complexe. Les outils dont l’interface est cohérente facilitent le contrôle de la complexité intrinsèque. Malheureusement, les outils en ligne de commande et les objets COM (Component Object Model) scriptables ne sont pas réputés pour leur cohérence.
 

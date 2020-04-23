@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Problèmes connus liés à la Configuration d’état souhaité (DSC)
 ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416608"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problèmes connus liés à la Configuration d’état souhaité (DSC)
@@ -64,19 +64,19 @@ Si le gestionnaire de configuration local est en **DebugMode**, aucun message d�
 
 Si la cmdlet `Invoke-DscResource` est utilisée pour appeler directement les méthodes d’une ressource, il n’est pas possible de récupérer les enregistrements de cette opération avec `Get-DscConfigurationStatus`.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus retourne les opérations de cycle d’extraction en tant que type **Consistency**
 
 Quand un nœud est configuré en mode d’actualisation par extraction, la cmdlet `Get-DscConfigurationStatus` indique pour chaque opération d’extraction effectuée que son type est **Consistency** au lieu de *Initial*.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>L’applet de commande Invoke-DscResource ne retourne pas les messages dans l’ordre dans lequel ils ont été générés
 
 La cmdlet `Invoke-DscResource` ne retourne pas les messages détaillés, d’avertissement et d’erreur dans l’ordre dans lequel ils ont été produits par le gestionnaire de configuration local ou la ressource DSC.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Les ressources DSC ne peuvent pas être déboguées facilement en cas d’utilisation avec Invoke-DscResource
 
@@ -130,13 +130,13 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 Les adresses IPv6 en tant que noms de nœuds dans les scripts de configuration DSC ne sont pas prises en charge dans cette version.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="debugging-of-class-based-dsc-resources"></a>Débogage de ressources DSC `Class-Based`
 
 Le débogage des ressources DSC basées sur une classe n’est pas pris en charge dans cette version.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Les variables et fonctions définies dans la portée $script d’une ressource DSC basée sur une classe ne sont pas conservées d’un appel à une ressource DSC à l’autre
 
@@ -148,7 +148,7 @@ Plusieurs appels successifs à `Start-DSCConfiguration` échouent si la configur
 
 Le débogage d’une ressource DSC qui utilise la propriété **PSDscRunAsCredential** dans la configuration n’est pas pris en charge dans cette version.
 
-**Résolution :** Aucune.
+**Résolution :** Aucun.
 
 ## <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential n’est pas pris en charge pour les ressources DSC composites
 
@@ -158,7 +158,7 @@ Le débogage d’une ressource DSC qui utilise la propriété **PSDscRunAsCreden
 
 Le paramètre **Syntax** ne reflète pas correctement **PsDscRunAsCredential** quand la ressource la marque comme étant obligatoire ou ne la prend pas en charge.
 
-**Résolution :** Aucune. Cependant, la création de configuration dans ISE reflète les bonnes métadonnées de la propriété **PsDscRunAsCredential** si IntelliSense est utilisé.
+**Résolution :** Aucun. Cependant, la création de configuration dans ISE reflète les bonnes métadonnées de la propriété **PsDscRunAsCredential** si IntelliSense est utilisé.
 
 ## <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature n’est pas disponible dans Windows 7
 
@@ -186,13 +186,13 @@ Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'
 
 ## <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Certaines ressources DSC comme une ressource du Registre peuvent commencer à prendre beaucoup de temps pour traiter la demande.
 
-**Résolution 1 :** Créez une tâche planifiée qui nettoie le dossier suivant régulièrement.
+**Résolution 1 :** Créez une tâche planifiée qui nettoie le dossier suivant régulièrement.
 
 ```powershell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Résolution 2 :** Modifiez la configuration DSC pour nettoyer le dossier *CommandAnalysis* à la fin de la configuration.
+**Résolution 2 :** Modifiez la configuration DSC pour nettoyer le dossier *CommandAnalysis* à la fin de la configuration.
 
 ```powershell
 Configuration $configName

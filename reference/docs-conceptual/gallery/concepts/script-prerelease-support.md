@@ -4,10 +4,10 @@ contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Préversions des scripts
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328480"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Préversions des scripts
@@ -56,7 +56,7 @@ Quand vous publiez dans PowerShell Gallery, par défaut, la version du script qu
 
 ## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Rechercher et acquérir des packages en préversion avec les commandes PowerShellGet
 
-Le traitement de packages en préversion à l’aide des commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script nécessite l’ajout de l’indicateur -AllowPrerelease. Si -AllowPrerelease est spécifié, les packages en préversion présents sont inclus. S’il n’est pas spécifié, les packages en préversion ne s’affichent pas.
+Le traitement de packages en préversion à l’aide des commandes PowerShellGet Find-Script, Install-Script, Update-Script et Save-Script nécessite l’ajout de l’indicateur -AllowPrerelease. Si l’indicateur -AllowPrerelease est spécifié, les packages en préversion présents sont inclus. S’il n’est pas spécifié, les packages en préversion ne s’affichent pas.
 
 Les seules exceptions dans les commandes de script PowerShellGet sont Get-InstalledScript et certains cas avec Uninstall-Script.
 
@@ -138,7 +138,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="more-details"></a>Plus d’informations
+## <a name="more-details"></a>Détails supplémentaires
 
 - [Préversions de module](module-prerelease-support.md)
 - [Find-Script](/powershell/module/powershellget/find-script)

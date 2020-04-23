@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Améliorations apportées au débogage de script PowerShell
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147809"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Améliorations apportées au débogage de script PowerShell
@@ -48,7 +48,7 @@ De nouvelles cmdlets permettent de lister les instances d’exécution actives d
 
 ### <a name="attach-to-process-hosting-powershell"></a>Joindre au processus hébergeant PowerShell
 
-Il est à présent possible de joindre n’importe quel processus de l’ordinateur ayant chargé PowerShell. Pour cela, ouvrez une session interactive avec le processus hôte. Pour plus d’informations, voir :
+Il est à présent possible de joindre n’importe quel processus de l’ordinateur ayant chargé PowerShell. Pour cela, ouvrez une session interactive avec le processus hôte. Pour plus d'informations, consultez les pages suivantes :
 
 - [Enter-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Enter-PSHostProcess)
 - [Exit-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Exit-PSHostProcess)

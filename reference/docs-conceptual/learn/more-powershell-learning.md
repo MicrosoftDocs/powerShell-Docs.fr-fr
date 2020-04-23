@@ -3,10 +3,10 @@ ms.date: 06/18/2019
 keywords: powershell,applet de commande
 title: En savoir plus sur PowerShell
 ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416746"
 ---
 # <a name="more-powershell-learning"></a>En savoir plus sur PowerShell

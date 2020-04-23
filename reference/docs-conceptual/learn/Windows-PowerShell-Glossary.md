@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Glossaire Windows PowerShell
 ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030343"
 ---
 # <a name="windows-powershell-glossary"></a>Glossaire Windows PowerShell
@@ -21,7 +21,7 @@ ms.locfileid: "67030343"
 |paramètre dynamique|Paramètre qui est ajouté à une applet de commande, une fonction ou un script Windows PowerShell sous certaines conditions. Des applets de commande, des fonctions, des fournisseurs et des scripts peuvent ajouter des paramètres dynamiques.|
 |fichier de mise en forme|Fichier XML de Windows PowerShell portant l’extension .format.ps1xml, qui définit la manière dont Windows PowerShell affiche un objet en fonction de son type .NET Framework.|
 |état de session global|État de session contenant les données qui sont accessibles à l’utilisateur d’une session Windows PowerShell.|
-|ordinateur hôte|Interface que le moteur Windows PowerShell utilise pour communiquer avec l’utilisateur. Par exemple, l’hôte spécifie la manière dont les invites sont gérées entre Windows PowerShell et l’utilisateur.|
+|host|Interface que le moteur Windows PowerShell utilise pour communiquer avec l’utilisateur. Par exemple, l’hôte spécifie la manière dont les invites sont gérées entre Windows PowerShell et l’utilisateur.|
 |application hôte|Programme qui charge le moteur Windows PowerShell dans son processus et l’utilise pour effectuer des opérations.|
 |méthode de traitement d’entrée|Méthode qu’une applet de commande peut utiliser pour traiter les enregistrements qu’elle reçoit en entrée. Les méthodes de traitement d’entrée incluent la méthode BeginProcessing, la méthode ProcessRecord, la méthode EndProcessing et la méthode StopProcessing.|
 |module de manifeste|Module Windows PowerShell disposant d’un manifeste et dont la clé RootModule est vide.|
@@ -49,7 +49,7 @@ ms.locfileid: "67030343"
 |Fichier de données Windows PowerShell|Fichier texte portant l’extension de nom de fichier .psd1. Windows PowerShell utilise des fichiers de données à différentes fins, telles que le stockage des données de manifeste de module et le stockage de chaînes traduites pour l’internationalisation des scripts.|
 |lecteur Windows PowerShell|Disque virtuel qui fournit un accès direct à un magasin de données. Il peut être défini par un fournisseur Windows PowerShell ou créé via la ligne de commande. Les lecteurs créés via la ligne de commande sont spécifiques d’une session et perdus lors de la fermeture de celle-ci.|
 |Environnement d'écriture de scripts intégré de Windows PowerShell|Application hôte Windows PowerShell qui permet d’exécuter des commandes ainsi que d’écrire, tester et déboguer des scripts dans un environnement convivial, avec coloration de la syntaxe et compatible Unicode.|
-|module Windows PowerShell|Unité réutilisable intégrée qui permet de partitionner, d’organiser et d’abstraire votre code Windows PowerShell. Un module peut contenir des applets de commande, fournisseurs, fonctions, variables et autres types de ressources pouvant être importés en tant qu’unité unique.|
+|Module Windows PowerShell|Unité réutilisable intégrée qui permet de partitionner, d’organiser et d’abstraire votre code Windows PowerShell. Un module peut contenir des applets de commande, fournisseurs, fonctions, variables et autres types de ressources pouvant être importés en tant qu’unité unique.|
 |fournisseur Windows PowerShell|Programme Microsoft basé sur .NET Framework, qui rend les données d’une banque de données spécialisée disponibles dans Windows PowerShell, afin que vous puissiez les afficher et les gérer.|
 |script Windows PowerShell|Script écrit dans le langage Windows PowerShell.|
 |fichier de script Windows PowerShell|Fichier portant l’extension .ps1 et contenant un script écrit dans le langage Windows PowerShell.|

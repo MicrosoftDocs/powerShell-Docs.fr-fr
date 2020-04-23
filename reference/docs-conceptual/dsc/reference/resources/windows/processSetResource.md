@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressources ProcessSet dans DSC
 ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953126"
 ---
 # <a name="dsc-processset-resource"></a>Ressources ProcessSet dans DSC
@@ -37,7 +37,7 @@ ProcessSet [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Path |Chemin de l’exécutable du processus. S’il s’agit des noms des fichiers exécutables (et non des chemins d’accès complets), la ressource DSC recherche la variable d’environnement `$env:Path` pour rechercher les fichiers. Si les valeurs de cette propriété sont des chemins d’accès complets, DSC n’utilise pas la variable d’environnement `$env:Path` pour rechercher les fichiers et lève une erreur si l’un des chemins n’existe pas. Les chemins relatifs ne sont pas autorisés. |
-|Credential |Indique les informations d’identification pour démarrer le processus. |
+|Informations d'identification |Indique les informations d’identification pour démarrer le processus. |
 |StandardErrorPath |Chemin où les processus écrivent l’erreur standard. Tout fichier existant est remplacé. |
 |StandardInputPath |Flux à partir duquel le processus reçoit l’entrée standard. |
 |StandardOutputPath |Chemin du fichier où les processus écrivent la sortie standard. Tout fichier existant est remplacé. |

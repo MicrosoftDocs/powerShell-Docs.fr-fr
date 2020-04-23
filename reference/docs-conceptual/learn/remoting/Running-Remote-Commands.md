@@ -3,10 +3,10 @@ ms.date: 08/14/2018
 keywords: powershell,applet de commande
 title: Exécution de commandes à distance
 ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030319"
 ---
 # <a name="running-remote-commands"></a>Exécution de commandes à distance
@@ -132,7 +132,7 @@ Windows PowerShell inclut un fournisseur WSMan. Le fournisseur crée un lecteur 
 
 Pour plus d’informations sur le fournisseur WSMan, consultez [Fournisseur WSMan](https://technet.microsoft.com/library/dd819476.aspx) et [À propos des cmdlets WS-Management](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets) ou tapez `Get-Help wsman` dans la console Windows PowerShell.
 
-Pour plus d’informations, voir :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [About_Remote_FAQ](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

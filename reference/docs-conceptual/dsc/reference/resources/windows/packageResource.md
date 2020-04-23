@@ -1,17 +1,17 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource Package dans DSC
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953146"
 ---
 # <a name="dsc-package-resource"></a>Ressource Package dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Package** dans DSC Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages, tels que les packages Windows Installer et setup.exe, sur un nœud cible.
 
@@ -41,7 +41,7 @@ Package [string] #ResourceName
 |Path |Indique le chemin où se trouve le package. |
 |ProductId |Indique l’ID de produit qui identifie le package de manière unique. |
 |Arguments |Chaîne d’arguments transmise telle quelle au package. |
-|Credential |Informations d’identification permettant l’accès au package sur une source distante. Cette propriété n’est pas utilisée pour installer le package. Le package est toujours installé sur le système local. |
+|Informations d'identification |Informations d’identification permettant l’accès au package sur une source distante. Cette propriété n’est pas utilisée pour installer le package. Le package est toujours installé sur le système local. |
 |LogPath |Indique le chemin complet où vous souhaitez que le fournisseur enregistre un fichier journal pour installer ou désinstaller le package. |
 |ReturnCode |Indique le code de retour attendu. Si le code de retour réel ne correspond pas à la valeur attendue indiquée ici, la configuration retourne une erreur. |
 

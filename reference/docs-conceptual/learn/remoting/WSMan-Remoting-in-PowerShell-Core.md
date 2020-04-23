@@ -3,10 +3,10 @@ title: Accès distant à WS-Management (WSMan) dans PowerShell Core
 description: Accès distant dans PowerShell Core à l’aide de WSMan
 ms.date: 08/06/2018
 ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058877"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Accès distant à WS-Management (WSMan) dans PowerShell Core
@@ -24,7 +24,7 @@ Il s’agit d’un scénario à choisir explicitement là où l’utilisateur ex
 Le script d’installation est une solution à court terme jusqu’à ce que nous ajoutions une fonctionnalité supplémentaire à `Enable-PSRemoting` pour effectuer la même action.
 Pour plus d’informations, reportez-vous au problème [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
 
-### <a name="script-actions"></a>Actions du script
+### <a name="script-actions"></a>Actions de script
 
 Le script
 
@@ -56,7 +56,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**REMARQUE :** Le script d’inscription de communication à distance doit redémarrer WinRM. Toutes les sessions PSRP existantes seront donc terminées immédiatement après l’exécution du script. S’il est exécuté pendant une session à distance, ceci mettra fin à la connexion.
+**REMARQUE :** Le script d’inscription de l’accès distant doit redémarrer WinRM : toutes les sessions PSRP existantes seront donc terminées immédiatement après l’exécution du script. S’il est exécuté pendant une session à distance, ceci mettra fin à la connexion.
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>Comment se connecter à un nouveau point de terminaison
 

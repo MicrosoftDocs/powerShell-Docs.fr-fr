@@ -4,10 +4,10 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Résolution des problèmes des applets de commande
 ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "72352106"
 ---
 # <a name="troubleshooting-cmdlets"></a>Résolution des problèmes des applets de commande
@@ -29,5 +29,5 @@ Les cmdlets d’installation et de mise à jour nécessitent un accès à Intern
 - oneget.org
 - go.microsoft.com
 - az818661.vo.msecnd.net
-- [www.powershellgallery.com](www.powershellgallery.com)
+- www.powershellgallery.com
 - devopsgallerystorage.blob.core.windows.net

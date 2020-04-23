@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Hiérarchie du modèle objet ISE
 ms.openlocfilehash: 1ec5810fc5e7b765c2a08af83bce0415dd61a54b
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737030"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>Hiérarchie du modèle objet ISE
@@ -17,11 +17,11 @@ Cette rubrique présente la hiérarchie des objets qui font partie de l’enviro
 
 L’objet `$psISE` est l’[objet racine](The-ObjectModelRoot-Object.md) de la hiérarchie d’objets Windows PowerShell ISE. Cet objet de premier niveau fournit les objets de script suivants :
 
-## <a name="psisecurrentfilethe-isefile-objectmd"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
+## <a name="psisecurrentfile"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
 
 L'objet `$psISE.CurrentFile` est une instance de la classe [ISEFile](The-ISEFile-Object.md).
 
-## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
+## <a name="psisecurrentpowershelltab"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
 L'objet `$psISE.CurrentPowerShellTab` est une instance de la classe [PowerShellTab](The-PowerShellTab-Object.md).
 
@@ -33,11 +33,11 @@ L'objet `$psISE.CurrentVisibleHorizontalTool` est une instance de la classe [ISE
 
 L'objet `$psISE.CurrentVisibleHorizontalTool` est une instance de la classe [ISEAddOnTool](The-ISEAddOnTool-Object.md). Il représente l’outil complémentaire installé qui est actuellement ancré sur le bord droit de la fenêtre Windows PowerShell ISE.
 
-## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE.Options](The-ISEOptions-Object.md)
+## <a name="psiseoptions"></a>[$psISE.Options](The-ISEOptions-Object.md)
 
 L’objet `$psISE.Options` est une instance de la classe [ISEOptions](The-ISEOptions-Object.md). L’objet ISEOptions représente différents paramètres pour Windows PowerShell ISE. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.ISEOptions.
 
-## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
+## <a name="psisepowershelltabs"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 L'objet `$psISE.PowerShellTabs` est une instance de la classe [PowerShellTabCollection](The-PowerShellTabCollection-Object.md). Cet objet est une collection de tous les onglets PowerShell ouverts qui représentent les environnements d’exécution Windows PowerShell disponibles sur l’ordinateur local ou sur les ordinateurs distants connectés. Chaque membre de la collection est une instance de la classe [PowerShellTab](The-PowerShellTab-Object.md).
 

@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: powershell,applet de commande
 title: Objet ISEFile
 ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736996"
 ---
 # <a name="the-isefile-object"></a>Objet ISEFile
@@ -25,7 +25,7 @@ Enregistre le fichier sur le disque.
 
 ### <a name="exceptions"></a>Exceptions
 
-- **System.IO.IOException** : impossible d’enregistrer le fichier.
+- **System.IO.IOException** : le fichier n’a pas pu être enregistré.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -51,9 +51,9 @@ Enregistre le fichier avec le nom de fichier et l’encodage spécifiés.
 
 ### <a name="exceptions"></a>Exceptions
 
-- **System.ArgumentNullException** : le paramètre **filename** est nul.
+- **System.ArgumentNullException** : le paramètre **filename** est Null.
 - **System.ArgumentException** : le paramètre **filename** est vide.
-- **System.IO.IOException** : impossible d’enregistrer le fichier.
+- **System.IO.IOException** : le fichier n’a pas pu être enregistré.
 
 ```powershell
 # Save the file with a full path and name.

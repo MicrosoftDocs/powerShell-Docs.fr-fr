@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource Log dans DSC
 ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870759"
 ---
 # <a name="dsc-log-resource"></a>Ressource Log dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Log** dans DSC (Desired State Configuration) Windows PowerShell fournit un mécanisme permettant d’écrire des messages dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73933848"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
@@ -20,13 +20,13 @@ Les versions suivantes du système d’exploitation Linux prennent en charge DSC
 - CentOS 5, 6 et 7 (x86/x64)
 - Debian GNU/Linux 6, 7 et 8 (x86/x64)
 - Oracle Linux 5, 6 et 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5, 6 et 7 (x86/x64)
+- Red Hat Enterprise Linux Server 5, 6 et 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 et 12 (x86/x64)
 - Ubuntu Server 12.04 LTS, 14.04 LTS et 16.04 LTS (x86/x64)
 
 Le tableau suivant décrit les dépendances de package nécessaires pour utiliser DSC pour Linux.
 
-|  Package nécessaire |  Description |  Version minimale |
+|  Package requis |  Description |  Version minimale |
 |---|---|---|
 | glibc| Bibliothèque GNU| 2…4 – 31.30|
 | python| Python| 2.4 – 3.4|

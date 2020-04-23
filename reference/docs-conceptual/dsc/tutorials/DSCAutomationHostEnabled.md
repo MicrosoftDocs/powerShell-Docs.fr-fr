@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Clé de Registre DSCAutomationHostEnabled
 ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954266"
 ---
->S'applique à : Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>Clé de Registre DSCAutomationHostEnabled
 
@@ -20,7 +20,7 @@ DSC utilise la clé de Registre **DSCAutomationHostEnabled** sous **HKEY_LOCAL_M
 |---|---|
 0 | Désactive la configuration de la machine au démarrage. |
 1 | Active la configuration de la machine au démarrage. |
-2 | Active la configuration de la machine uniquement si DSC est en attente ou en cours. Il s'agit de la valeur par défaut. |
+2 | Active la configuration de la machine uniquement si DSC est en attente ou en cours. Il s’agit de la valeur par défaut. |
 
 ## <a name="see-also"></a>Voir aussi
 

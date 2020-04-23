@@ -1,17 +1,17 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource User dans DSC
 ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953006"
 ---
 # <a name="dsc-user-resource"></a>Ressource User dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **User** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer des comptes d’utilisateur locaux sur le nœud cible.
 
@@ -42,7 +42,7 @@ User [string] #ResourceName
 |Description |Indique la description que vous voulez utiliser pour le compte d’utilisateur. |
 |Désactivé |Indique si le compte est activé. Affectez la valeur `$true` à cette propriété pour vous assurer que ce compte est désactivé, ou `$false` pour vous assurer qu’il est activé. |
 |FullName |Représente une chaîne avec le nom complet que vous voulez utiliser pour le compte d’utilisateur. |
-|Password |Indique le mot de passe que vous voulez utiliser pour ce compte. |
+|Mot de passe |Indique le mot de passe que vous voulez utiliser pour ce compte. |
 |PasswordChangeNotAllowed |Indique si l’utilisateur peut modifier le mot de passe. Affectez la valeur `$true` à cette propriété pour vous assurer que l’utilisateur ne modifie pas le mot de passe, ou `$false` pour permettre à l’utilisateur de modifier le mot de passe. La valeur par défaut est `$false`. |
 |PasswordChangeRequired |Indique si l’utilisateur doit changer de mot de passe à la prochaine connexion. Affectez la valeur `$true` à cette propriété si l’utilisateur doit changer le mot de passe. La valeur par défaut est `$true`. |
 |PasswordNeverExpires |Indique si le mot de passe doit expirer. Pour faire en sorte que le mot de passe de ce compte n’expire jamais, définissez cette propriété sur `$true`. Définissez-la sur `$false` si le mot de passe doit expirer. La valeur par défaut est `$false`. |

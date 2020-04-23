@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: powershell,applet de commande
 title: Nouveautés de PowerShell 5.0 ISE
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416633"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Nouveauté de Windows PowerShell 5.0 ISE
@@ -27,7 +27,7 @@ Pour plus d'informations, consultez [Présentation de Windows PowerShell ISE](..
 
 Le tableau suivant répertorie les fonctionnalités nouvelles et modifiées pour cette version de Windows PowerShell ISE dans Windows PowerShell.
 
-## <a name="intellisense"></a>Intellisense
+## <a name="intellisense"></a>IntelliSense
 
 > Ajoutés dans ISE 3.0
 
@@ -111,8 +111,8 @@ Windows PowerShell ISE 2.0 n’offre pas de liste des derniers fichiers utilis�
 Les volets de commande et de sortie distincts qui étaient disponibles dans la première version de Windows PowerShell ISE ont été combinés en un volet de console unique. Le volet de la console est similaire dans sa fonction et son apparence à une console Windows PowerShell standard, mais il inclut les améliorations ci-dessous :
 
 - Coloration de la syntaxe pour le texte d’entrée (pas le texte de sortie), incluant la syntaxe XML
-- Intellisense
-- Accolades correspondantes
+- IntelliSense
+- Correspondance d’accolade
 - Indication des erreurs
 - Prise en charge complète d’Unicode
 - Aide contextuelle accessible via la touche <kbd>F1</kbd>
@@ -137,9 +137,9 @@ Windows PowerShell ISE 2.0 offre des volets de commande et de sortie distincts.
 
 Si vous démarrez Windows PowerShell ISE à partir de la ligne de commande (en tapant **Powershell_ise.exe**), vous pouvez ajouter les nouveaux commutateurs de ligne de commande suivants.
 
-- `-NoProfile` : démarre Windows PowerShell ISE sans exécuter `$profile`
-- `-Help` : affiche une fenêtre d’aide
-- `-mta` : démarre Windows PowerShell ISE en mode multithread cloisonné. Le mode d’opération par défaut pour Windows PowerShell ISE est un mode à thread unique cloisonné, ou `-sta`.
+- `-NoProfile`: démarre Windows PowerShell ISE sans exécuter `$profile`
+- `-Help`: affiche une fenêtre d’aide
+- `-mta`: démarre Windows PowerShell ISE en mode multithread cloisonné. Le mode d’opération par défaut pour Windows PowerShell ISE est un mode à thread unique cloisonné, ou `-sta`.
 
 **Quels avantages cette modification procure-t-elle ?**
 

@@ -4,17 +4,17 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Règlement des litiges
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328090"
 ---
 # <a name="dispute-resolution"></a>Règlement des litiges
 
 Ce document est une procédure recommandée de résolution des litiges qui aide les membres de la Communauté à résoudre les litiges avec d’autres éditeurs PowerShell Gallery.
 
-## <a name="process"></a>Procédure
+## <a name="process"></a>Process
 
 1. Contactez les propriétaires du package pour lequel vous avez un litige en utilisant le lien **Contacter les propriétaires** situé sur la page des détails du package.
    Décrivez votre problème de façon simple et directe.

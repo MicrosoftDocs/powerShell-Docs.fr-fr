@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Flux d’informations
 ms.openlocfilehash: c54603cf0dd4f0b69f8147620130f9f29bc3e5ec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147609"
 ---
 # <a name="information-stream"></a>Flux d’informations
 
-PowerShell 5.0 ajoute un nouveau flux **d’informations** structuré pour transmettre des données structurées entre un script et son hôte. `Write-Host` a également été mis à jour pour envoyer sa sortie vers le flux **d’informations**, où elle peut être capturée ou passée sous silence. Utilisée avec les paramètres communs **InformationVariable** et **InformationAction**, la nouvelle cmdlet `Write-Information` offre davantage de souplesse et de fonctionnalités.
+PowerShell 5.0 ajoute un nouveau flux **d’informations** structuré pour transmettre des données structurées entre un script et son hôte. `Write-Host` a également été mis à jour pour envoyer sa sortie vers le flux **d’informations**, où elle peut être capturée ou passée sous silence. Utilisée avec les paramètres communs `Write-Information`InformationVariable**et**InformationAction **, la nouvelle cmdlet**  offre davantage de souplesse et de fonctionnalités.
 
 La fonction suivante utilise des cmdlets qui exploitent le nouveau flux **d’informations**.
 
@@ -60,7 +60,7 @@ $r.Id
 4008
 ```
 
-Contrairement à la cmdlet `Write-Host`, le paramètre **InformationVariable** `Write-Information` permet de capturer la sortie dans une variable. Avec **Tags**, vous pouvez créer des canaux distincts pour le message envoyé au flux **d’informations**.
+Contrairement à la cmdlet `Write-Host`, le paramètre **InformationVariable**`Write-Information` permet de capturer la sortie dans une variable. Avec **Tags**, vous pouvez créer des canaux distincts pour le message envoyé au flux **d’informations**.
 
 ```powershell
 $r = OutputGusher -InformationVariable iv

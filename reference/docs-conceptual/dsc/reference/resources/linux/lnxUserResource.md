@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource nxUser dans DSC pour Linux
 ms.openlocfilehash: 6d7b52809741813af7fa80b1c6372b267aff4777
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954796"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Ressource nxUser dans DSC pour Linux
@@ -33,12 +33,12 @@ nxUser <string> #ResourceName
 
 ## <a name="properties"></a>Propriétés
 
-|Propriété |Indique le nom du compte pour lequel vous souhaitez garantir un état spécifique. |
+|Propriété |Indique le nom du compte pour lequel vous voulez garantir un état spécifique. |
 |---|---|
 |UserName |Spécifie l’emplacement d’un fichier ou d’un répertoire dont vous voulez garantir l’état. |
 |FullName |Chaîne contenant le nom complet à utiliser pour le compte d’utilisateur. |
 |Description |Description du compte d’utilisateur. |
-|Password |Hachage du mot de passe de l’utilisateur dans le format approprié pour l’ordinateur Linux. En règle générale, il s’agit d’un hachage salt SHA-256 ou SHA-512. Pour Debian et Ubuntu Linux, cette valeur peut être générée avec la commande `mkpasswd` Pour les autres versions de Linux, vous pouvez générer la valeur de hachage à l’aide de la méthode crypt disponible dans la bibliothèque de cryptage de Python. |
+|Mot de passe |Hachage du mot de passe de l’utilisateur dans le format approprié pour l’ordinateur Linux. En règle générale, il s’agit d’un hachage salt SHA-256 ou SHA-512. Pour Debian et Ubuntu Linux, cette valeur peut être générée avec la commande `mkpasswd` Pour les autres versions de Linux, vous pouvez générer la valeur de hachage à l’aide de la méthode crypt disponible dans la bibliothèque de cryptage de Python. |
 |Désactivé |Indique si le compte est activé. Affectez la valeur `$true` à cette propriété pour vous assurer que ce compte est désactivé, ou `$false` pour vous assurer qu’il est activé. |
 |PasswordChangeRequired |Indique si l’utilisateur peut modifier le mot de passe. Affectez la valeur `$true` à cette propriété pour vous assurer que l’utilisateur ne modifie pas le mot de passe, ou `$false` pour permettre à l’utilisateur de modifier le mot de passe. La valeur par défaut est `$false`. Cette propriété est évaluée uniquement si le compte d’utilisateur en cours de création n’existe pas encore. |
 |HomeDirectory |Indique le répertoire racine de l’utilisateur. |
@@ -49,7 +49,7 @@ nxUser <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Spécifie si le compte existe. Définissez cette propriété sur **Present** pour vous assurer que le compte existe, ou sur **Absent** pour vous assurer que le compte n’existe pas. |
+|Ensure |Spécifie si le compte existe. Définissez cette propriété sur **Present** pour faire en sorte que le compte existe ; définissez-la sur **Absent** pour faire en sorte qu’il n’existe pas. |
 
 ## <a name="example"></a>Exemple
 

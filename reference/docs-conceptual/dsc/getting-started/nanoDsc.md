@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Utilisation de DSC sur Nano Server
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953856"
 ---
 # <a name="using-dsc-on-nano-server"></a>Utilisation de DSC sur Nano Server
 
-> S’applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 **DSC sur Nano Server** est un package facultatif dans le dossier `NanoServer\Packages` du support Windows Server 2016. Le package peut être installé lorsque vous créez un disque dur virtuel pour Nano Server en spécifiant **Microsoft-NanoServer-DSC-Package** comme valeur du paramètre **Packages** de la fonction **New-NanoServerImage**. Par exemple, si vous créez un disque dur virtuel pour une machine virtuelle, la commande ressemble à ceci :
 
@@ -50,7 +50,7 @@ Modes par envoi et par extraction
 
 - Compilation de configurations (voir [Configurations DSC](../configurations/configurations.md))
 
-  **Problème :** Le chiffrement de mot de passe (voir [Sécurisation du fichier MOF](../pull-server/secureMOF.md)) pendant la compilation de la configuration ne fonctionne pas.
+  **Problème :** le chiffrement de mot de passe (voir [Sécurisation du fichier MOF](../pull-server/secureMOF.md)) pendant la compilation de la configuration ne fonctionne pas.
 
 - Compilation de métaconfigurations (voir [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md))
 
@@ -60,7 +60,7 @@ Modes par envoi et par extraction
 
 - Débogage des ressources DSC (voir [Débogage des ressources DSC](../troubleshooting/debugResource.md))
 
-  **Problème :** Ne fonctionne pas si une ressource utilise PsDscRunAsCredential (voir [Exécution de DSC avec les informations d’identification de l’utilisateur](../configurations/runAsUser.md))
+  **Problème :** ne fonctionne pas si une ressource utilise PsDscRunAsCredential (voir [Exécution de DSC avec les informations d’identification de l’utilisateur](../configurations/runAsUser.md))
 
 - [Spécification de dépendances entre nœuds](../configurations/crossNodeDependencies.md)
 
@@ -83,9 +83,9 @@ Modes par envoi et par extraction
 - **Archive**
 - **Environment**
 - **File**
-- **Log**
+- **Journal**
 - **ProcessSet**
-- **Registry**
+- **Registre**
 - **Script**
 - **WindowsPackageCab**
 - **WindowsProcess**
@@ -97,17 +97,17 @@ Modes par envoi et par extraction
 - **Groupe**
 - **GroupSet**
 
-  **Problème :** Les ressources ci-dessus échouent si une instance spécifique est appelée deux fois (exécution de la même configuration deux fois)
+  **Problème :** les ressources ci-dessus échouent si une instance spécifique est appelée deux fois (exécution de la même configuration deux fois)
 
 - **Service**
 - **ServiceSet**
 
-  **Problème :** Fonctionne uniquement pour le démarrage/l’arrêt du service (état). Échoue si vous essayez de modifier d’autres attributs de service, comme StartupType, les informations d’identification, la description, etc. L’erreur levée est semblable à :
+  **Problème :** fonctionne uniquement pour le démarrage/l’arrêt du service (état). Échoue si vous essayez de modifier d’autres attributs de service, comme StartupType, les informations d’identification, la description, etc. L’erreur levée est semblable à :
 
   *Impossible de trouver le type [management.managementobject] : vérifiez que l’assembly contenant ce type est chargé.*
 
 - Ressources non fonctionnelles
-- **User**
+- **Utilisateur**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Fonctionnalités DSC non disponibles sur Nano Server
 

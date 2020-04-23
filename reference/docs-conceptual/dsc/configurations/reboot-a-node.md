@@ -1,12 +1,12 @@
 ---
 ms.date: 01/17/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Redémarrer un nœud
 ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954026"
 ---
 # <a name="reboot-a-node"></a>Redémarrer un nœud
@@ -24,7 +24,7 @@ Vos [configurations](configurations.md) peuvent effectuer des étapes qui néces
 - Renommages de fichiers
 - Renommage d’ordinateur
 
-La ressource **PendingReboot** vérifie des emplacements d’ordinateurs spécifiques pour déterminer si un redémarrage est en attente. Si le nœud nécessite un redémarrage en dehors de DSC, la ressource **PendingReboot** affecte la valeur `1` à l’indicateur `$global:DSCMachineStatus` pour forcer un redémarrage et résoudre la condition en attente.
+La ressource **PendingReboot** vérifie des emplacements d’ordinateurs spécifiques pour déterminer si un redémarrage est en attente. Si le nœud nécessite un redémarrage en dehors de DSC, la ressource **PendingReboot** affecte la valeur `$global:DSCMachineStatus` à l’indicateur `1` pour forcer un redémarrage et résoudre la condition en attente.
 
 > [!NOTE]
 > Toute ressource DSC peut forcer le Gestionnaire de configuration local à redémarrer le nœud en définissant cet indicateur dans la fonction `Set-TargetResource`. Pour plus d’informations, consultez [Écriture d’une ressource DSC personnalisée avec MOF](../resources/authoringResourceMOF.md).

@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource nxGroup dans DSC pour Linux
 ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953206"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Ressource nxGroup dans DSC pour Linux
@@ -33,7 +33,7 @@ nxGroup <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |GroupName |Spécifie le nom du groupe pour lequel vous souhaitez garantir un état spécifique. |
-|Members |Spécifie les membres qui constituent le groupe. |
+|Membres |Spécifie les membres qui constituent le groupe. |
 |MembersToInclude |Spécifie les utilisateurs qui doivent faire partie du groupe. |
 |MembersToExclude |Spécifie les utilisateurs qui ne doivent pas faire partie du groupe. |
 |PreferredGroupID |Définit l’ID de groupe à la valeur fournie, si possible. Si l’ID de groupe est déjà utilisé, l’ID de groupe disponible suivant est utilisé. |

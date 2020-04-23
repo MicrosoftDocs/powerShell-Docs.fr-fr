@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Vue d’ensemble de la fonctionnalité Desired State Configuration de Windows PowerShell
 ms.openlocfilehash: 5c4853cb059ca0cf063a9450f97230732bc56b10
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953636"
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Vue d’ensemble de la fonctionnalité Desired State Configuration de Windows PowerShell
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC est une plateforme de gestion dans PowerShell qui vous permet de gérer votre infrastructure informatique et de développement avec la configuration en tant que code.
 
@@ -36,4 +36,4 @@ DSC est une plateforme déclarative employée pour la configuration, le déploie
 
 - [Configurations DSC](../configurations/configurations.md)
 - [Ressources DSC](../resources/resources.md)
-- [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md)
+- [Configuration de Local Configuration Manager](../managing-nodes/metaConfig.md)

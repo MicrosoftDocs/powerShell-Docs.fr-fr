@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Spécification de dépendances entre nœuds
 ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954106"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Spécification de dépendances entre nœuds
 
-> S’applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 DSC fournit des ressources spéciales, **WaitForAll**, **WaitForAny** et **WaitForSome**, qui peuvent être utilisées dans les configurations pour spécifier les dépendances sur les configurations sur d’autres nœuds. Le comportement de ces ressources est le suivant :
 
@@ -128,4 +128,4 @@ Lorsque vous compilez la configuration, deux fichiers « .mof » sont génér�
 - [Configurations DSC](configurations.md)
 - [Utiliser des dépendances de ressources](resource-depends-on.md)
 - [Ressources DSC](../resources/resources.md)
-- [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md)
+- [Configuration de Local Configuration Manager](../managing-nodes/metaConfig.md)

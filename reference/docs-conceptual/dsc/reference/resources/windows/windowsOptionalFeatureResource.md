@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsOptionalFeature dans DSC
 ms.openlocfilehash: 7312edcaeb47427bf4736f466a9ed41bd7c31f6a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954646"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Ressource WindowsOptionalFeature dans DSC
@@ -36,8 +36,8 @@ WindowsOptionalFeature [string] #ResourceName
 
 |Propriété |Description |
 |---|---|
-|Name |Indique le nom de la fonctionnalité que vous souhaitez voir activée ou désactivée. |
-|Source |Non implémentée. |
+|Nom |Indique le nom de la fonctionnalité que vous souhaitez voir activée ou désactivée. |
+|Source |Non implémenté. |
 |NoWindowsUpdateCheck |Indique si DISM contacte Windows Update (WU) lors de la recherche des fichiers sources pour activer une fonctionnalité. Si la valeur est `$true`, DISM ne contacte pas Windows Update. |
 |RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés à la fonctionnalité quand **Ensure** est défini sur **Absent**. |
 |LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly**, **ErrorsAndWarning** et **ErrorsAndWarningAndInformation**. |
@@ -48,7 +48,7 @@ WindowsOptionalFeature [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Spécifie si la fonctionnalité est activée. Pour faire en sorte que la fonctionnalité soit activée, affectez à cette propriété la valeur _Enable_. Pour faire en sorte que la fonctionnalité soit désactivée, affectez à cette propriété la valeur _Disable_. La valeur par défaut est _Enable_. |
+|Ensure |Indique si la fonctionnalité est activée. Pour faire en sorte que la fonctionnalité soit activée, affectez à cette propriété la valeur _Enable_. Pour faire en sorte que la fonctionnalité soit désactivée, affectez à cette propriété la valeur _Disable_. La valeur par défaut est _Enable_. |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

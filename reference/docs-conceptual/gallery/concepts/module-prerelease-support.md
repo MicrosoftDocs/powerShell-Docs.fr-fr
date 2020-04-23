@@ -4,10 +4,10 @@ contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Préversions de module
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328140"
 ---
 # <a name="prerelease-module-versions"></a>Préversions de module
@@ -192,7 +192,7 @@ Version         Name          Repository   Description
 1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
-## <a name="more-details"></a>Plus d’informations
+## <a name="more-details"></a>Détails supplémentaires
 
 - [Préversions de script](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)

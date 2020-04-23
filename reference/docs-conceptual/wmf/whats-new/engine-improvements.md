@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations du moteur PowerShell dans WMF 5.1
 ms.openlocfilehash: a0af702832c0a90c994650e25918ecacdc33fc4b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147649"
 ---
 # <a name="powershell-engine-improvements"></a>Améliorations du moteur PowerShell
@@ -26,7 +26,7 @@ Voici quelques exemples d’améliorations (les résultats peuvent varier en fon
 | Scénario | Durée 5.0 (ms) | Durée 5.1 (ms) |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| Première exécution PowerShell : `powershell -command "Unknown-Command"` | 30 000 | 13 000 |
+| Première exécution PowerShell : `powershell -command "Unknown-Command"` | 30000 | 13 000 |
 | Création du cache d’analyse de commande : `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 

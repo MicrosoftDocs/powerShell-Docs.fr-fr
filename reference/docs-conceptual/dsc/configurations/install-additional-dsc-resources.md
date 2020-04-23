@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Installer des ressources DSC supplémentaires
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417795"
 ---
 # <a name="install-additional-dsc-resources"></a>Installer des ressources DSC supplémentaires
@@ -18,18 +18,18 @@ Il s’agit d’une liste des ressources OOB incluses dans PowerShell 4.0 et d�
 > [!NOTE]
 > Cette liste est incomplète car le nombre de ressources OOB a augmenté avec chaque version de PowerShell.
 
-|Resource  |Description  |
+|Ressource  |Description  |
 |---------|---------|
 |**File**|Contrôle l’état des fichiers et des répertoires. Copie les fichiers d’une **source** vers une **destination** et les met à jour à chaque modification de la **source** en comparant les dates, les sommes de contrôle et les hachages.|
 |**Archive**|Décompresse les archives et un emplacement spécifié. Valide les archives avec une **somme de contrôle** spécifiée.|
 |**Environment**|Gère les variables d’environnement.|
 |**Groupe**|Gère les groupes locaux et contrôle l’appartenance au groupe.|
-|**Log**|Consigne des messages dans le journal des événements `Microsoft-Windows-Desired State Configuration/Analytic`.|
+|**Journal**|Consigne des messages dans le journal des événements `Microsoft-Windows-Desired State Configuration/Analytic`.|
 |**Package**|Installe ou désinstalle des packages à l’aide des paramètres **Arguments**, **LogPath**, **ReturnCode**, entre autres.|
-|**Registry**|Gère les valeurs et clés de Registre.|
+|**Registre**|Gère les valeurs et clés de Registre.|
 |**Script**|Vous permet de concevoir vos propres blocs de script [get-test-set](../resources/get-test-set.md).|
 |**Service**|Configure les services Windows.|
-|**User** |Gère les attributs et les utilisateurs locaux.|
+|**Utilisateur** |Gère les attributs et les utilisateurs locaux.|
 |**WindowsFeature**|Supprime des rôles et des fonctionnalités.|
 |**WindowsProcess**|Configure les processus Windows.|
 

@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: Création de requêtes Get-WinEvent avec FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444382"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Création de requêtes Get-WinEvent avec FilterHashtable
@@ -56,8 +56,8 @@ Le tableau suivant indique les noms de clés et les types de données, et préci
 | ProviderName   | `<String[]>`    | Oui                          |
 | Path           | `<String[]>`    | Non                           |
 | Mots clés       | `<Long[]>`      | Non                           |
-| ID             | `<Int32[]>`     | Non                           |
-| Niveau          | `<Int32[]>`     | Non                           |
+| id             | `<Int32[]>`     | Non                           |
+| Level          | `<Int32[]>`     | Non                           |
 | StartTime      | `<DateTime>`    | Non                           |
 | EndTime        | `<DateTime>`    | Non                           |
 | UserID         | `<SID>`         | Non                           |
@@ -108,7 +108,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-Si votre requête doit récupérer des données dans des journaux des événements archivés, utilisez la clé **Path**. La valeur **Path** spécifie le chemin d’accès complet au fichier journal. Pour plus d’informations, voir le billet de blog **Scripting Guy** [Utiliser PowerShell pour analyser la présence d’erreurs dans des journaux des événements enregistrés](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
+Si votre requête doit récupérer des données dans des journaux des événements archivés, utilisez la clé **Path**. La valeur **Path** spécifie le chemin d’accès complet au fichier journal. Pour plus d’informations, voir le billet de blog **Scripting Guy**[Utiliser PowerShell pour analyser la présence d’erreurs dans des journaux des événements enregistrés](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors).
 
 ## <a name="using-enumerated-values-in-a-hash-table"></a>Utiliser des valeurs énumérées dans une table de hachage
 
@@ -155,7 +155,7 @@ Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d�
 
 Les noms et valeurs énumérées **Keywords** sont les suivantes :
 
-| Name             |  Valeur            |
+| Nom             |  Valeur            |
 | ---------------- | ------------------|
 | AuditFailure     | 4503599627370496  |
 | AuditSuccess     | 9007199254740992  |
@@ -165,7 +165,7 @@ Les noms et valeurs énumérées **Keywords** sont les suivantes :
 | WdiDiagnostic    | 1125899906842624  |
 | WdiContext       | 562949953421312   |
 | ResponseTime     | 281474976710656   |
-| Aucune             | 0                 |
+| None             | 0                 |
 
 Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **Keywords** et la valeur d’énumération **EventLogClassic** **36028797018963968**.
 
@@ -236,12 +236,12 @@ Les valeurs énumérées sont documentées dans **.NET Framework**. Pour plus d�
 
 Les noms et valeurs énumérées de la clé **Level** sont les suivantes :
 
-| Name           | Valeur |
+| Nom           | Valeur |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Commentaires        |   5   |
 | Informationnel  |   4   |
 | Avertissement        |   3   |
-| Erreur          |   2   |
+| Error          |   2   |
 | Critique       |   1   |
 | LogAlways      |   0   |
 

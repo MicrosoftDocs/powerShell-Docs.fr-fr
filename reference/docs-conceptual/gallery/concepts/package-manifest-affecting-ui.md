@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417047"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
@@ -34,7 +34,7 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **FileList** | La liste des fichiers est extraite du package lors de sa publication dans PowerShell Gallery. Elle n’est pas contrôlable par les informations du manifeste. Remarque : un fichier .nuspec supplémentaire est répertorié avec chaque package dans PowerShell Gallery, mais n’est pas présent après l’installation du package sur un système. Il s’agit du manifeste du package Nuget pour le package, et il peut être ignoré. | Non | Non |
 | **Balises** | Pour les modules, les balises sont incluses sous PSData\PrivateData. Pour les scripts, la section est intitulée .TAGS. Notez que les balises ne peuvent pas contenir d’espaces, même si elles sont entourées de guillemets. Les balises comportent des exigences et des significations supplémentaires, décrites plus loin dans cette rubrique, à la section Détails de la balise. | Oui | Oui |
 | **Applets de commande** | Ces informations sont spécifiées dans le manifeste du module à l’aide de CmdletsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
-| **Functions** | Ces informations sont spécifiées dans le manifeste du module à l’aide de FunctionsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
+| **Fonctions** | Ces informations sont spécifiées dans le manifeste du module à l’aide de FunctionsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
 | **Ressources DSC** | Pour les modules qui seront utilisés dans PowerShell version 5.0 et ultérieures, ces informations sont fournies dans le manifeste à l’aide de DscResourcesToExport. Si le module sera utilisé dans PowerShell 4, DSCResourcesToExport ne doit pas être utilisé car il ne s’agit pas d’une clé de manifeste prise en charge. (DSC n’était pas disponible avant PowerShell 4.) | Oui | Non |
 | **Flux de travail** | Les flux de travail sont publiés dans PowerShell Gallery en tant que scripts et identifiés en tant que flux de travail dans le code (voir [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) pour obtenir un exemple). Ces informations ne sont pas contrôlées par le manifeste. | Non | Non |
 | **Fonctionnalités de rôle** | Ces informations apparaissent lorsque le module publié dans PowerShell Gallery contient un ou plusieurs fichiers de capacité (.psrc) de rôle, utilisés par JEA. Consultez la documentation de JEA pour plus d’informations sur les [capacités de rôle](/powershell/scripting/learn/remoting/jea/role-capabilities). | Oui | Non |
@@ -43,7 +43,7 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **Version minimale de PowerShell** | Cette information peut être spécifiée dans un manifeste de module en tant que PowerShellVersion | Oui | Non |
 | **Historique des versions** | L’historique des versions reflète les mises à jour apportées à un module dans PowerShell Gallery. Si une version d’un package est masquée à l’aide de la fonctionnalité de suppression, elle n’apparaît pas dans l’historique des versions, sauf pour les propriétaires du package. | Non | Non |
 | **Site du projet** | Le site du projet est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur ProjectURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .PROJECTURI. | Oui | Oui |
-| **Licence** | Le lien de la licence est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur LicenseURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .LICENSEURI. Il est important de noter que si une licence n’est pas fournie via LicenseURI ou dans un module, les conditions d’utilisation de PowerShell Gallery précisent les conditions d’utilisation du package. Pour plus d’informations, consultez les conditions d’utilisation. | Oui | Oui |
+| **License** | Le lien de la licence est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur LicenseURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .LICENSEURI. Il est important de noter que si une licence n’est pas fournie via LicenseURI ou dans un module, les conditions d’utilisation de PowerShell Gallery précisent les conditions d’utilisation du package. Pour plus d’informations, consultez les conditions d’utilisation. | Oui | Oui |
 | **Icône** | Il est possible de spécifier une icône pour tout package figurant dans PowerShell Gallery en fournissant l’indicateur IconURI dans le manifeste de script ou dans la section Privatedata-PSData du manifeste de module. IconURI doit pointer vers une image de 32 x 32 avec un arrière-plan transparent. L’URI **doit** être une URL d’image directe et **ne doit pas** accéder à une page web contenant l’image ou à un fichier du package PowerShell Gallery. | Oui | Oui |
 
 
@@ -51,13 +51,13 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 
 La page de modification du package dans PowerShell Gallery permet aux éditeurs de modifier certains des champs affichés pour un package, en particulier :
 
-- Title
+- Intitulé
 - Description
 - Résumé
 - URL de l'icône
 - URL de la page d’accueil du projet
 - Auteurs
-- Copyright
+- copyright
 - Balises
 - Notes de publication
 - Exiger une licence
@@ -86,7 +86,7 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 | DSCResource |  |
 | Automatisation |  |
 | REST |  |
-| ActiveDirectory | AD n’est pas actuellement utilisé  |
+| Active Directory | AD n’est pas actuellement utilisé  |
 | SQLServer |  |
 | DBA |  |
 | Sécurité | La balise Defense est moins précise |
@@ -100,8 +100,8 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 | Test | La balise Testing est moins précise |
 | VersionControl | La balise Version est moins précise, bien que plus utilisée  |
 | Journalisation | Il est recommandé d’utiliser l’action de journalisation |
-| Log | Il est recommandé d’utiliser le document Journal |
-| Secours |  |
+| Journal | Il est recommandé d’utiliser le document Journal |
+| Backup |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
@@ -110,12 +110,12 @@ Pour référence, voici quelques-unes des balises les plus couramment utilisées
 | GitHub |  |
 | Json |  |
 | Exchange |  |
-| Network (Réseau) | La balise Networking est similaire, mais moins souvent utilisée |
+| Réseau | La balise Networking est similaire, mais moins souvent utilisée |
 | SharePoint |  |
-| Création de rapports | La création de rapports est une action, le rapport est un document |
+| Signalement | La création de rapports est une action, le rapport est un document |
 | Rapport | Le rapport est un document |
 | WinRM |  |
-| Analyse |  |
+| Surveillance |  |
 | VSTS |  |
 | Excel |  |
 | Google |  |

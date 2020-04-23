@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Traçage et journalisation de script
 ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147799"
 ---
 # <a name="script-tracing-and-logging"></a>Traçage et journalisation de script
@@ -17,10 +17,10 @@ La journalisation s’active par le biais du paramètre de stratégie de groupe 
 
 Les événements sont :
 
-| Canal |                               Opérationnel                               |
+| Channel |                               En fonctionnement                               |
 | ------- | ----------------------------------------------------------------------- |
-| Niveau   | Verbose                                                                 |
-| Opcode  | Create                                                                  |
+| Level   | Commentaires                                                                 |
+| Opcode  | Créer                                                                  |
 | Tâche    | CommandStart                                                            |
 | Mot clé | Instance d'exécution                                                                |
 | EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
@@ -31,9 +31,9 @@ Le texte incorporé dans le message est l’étendue du bloc de script compilé.
 
 Quand vous activez la journalisation détaillée, la fonctionnalité écrit des marqueurs de début et de fin :
 
-| Canal |                                 Opérationnel                                |
+| Channel |                                 En fonctionnement                                |
 | ------- | -------------------------------------------------------------------------- |
-| Niveau   | Verbose                                                                    |
+| Level   | Commentaires                                                                    |
 | Opcode  | Open / Close                                                               |
 | Tâche    | CommandStart / CommandStop                                                 |
 | Mot clé | Instance d'exécution                                                                   |

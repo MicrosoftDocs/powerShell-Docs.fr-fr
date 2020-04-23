@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Création de types personnalisés à l’aide de classes PowerShell
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147839"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Création de types personnalisés à l’aide de classes PowerShell
@@ -318,11 +318,11 @@ Bien qu’ils soient publics, les membres masqués n’apparaissent pas dans la 
 
 Un nouvel attribut, **System.Management.Automation.HiddenAttribute**, a été ajouté pour que le code C\# puisse avoir la même sémantique dans PowerShell.
 
-### <a name="return-types"></a>Type de retour
+### <a name="return-types"></a>Types de retour
 
 Le type de retour est un contrat. La valeur de retour est convertie au type attendu. S’il n’est pas spécifié, le type de retour est **void**. Il n’y a pas de diffusion en continu d’objets. Il n’est pas possible d’écrire des objets dans le pipeline, que ce soit intentionnellement ou par accident.
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>Attributs
 
 Deux nouveaux attributs, **DscResource** et **DscProperty**, ont été ajoutés.
 

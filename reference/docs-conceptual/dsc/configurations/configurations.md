@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Configurations DSC
 ms.openlocfilehash: d7749ec88f9cca3e29c6b38d61fb73776af7ceb4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954496"
 ---
 # <a name="dsc-configurations"></a>Configurations DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Les configurations DSC sont des scripts PowerShell qui définissent un type spécial de fonction.
 Pour définir une configuration, utilisez le mot clé PowerShell **Configuration**.
@@ -175,6 +175,6 @@ Il existe des différences au niveau de l’emplacement où les ressources DSC d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de la configuration de l’état souhaité de Windows PowerShell](../overview/overview.md)
+- [Vue d’ensemble de la configuration d’état souhaité Windows PowerShell](../overview/overview.md)
 - [Ressources DSC](../resources/resources.md)
-- [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md)
+- [Configuration de Local Configuration Manager](../managing-nodes/metaConfig.md)

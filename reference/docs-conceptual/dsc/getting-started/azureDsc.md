@@ -3,10 +3,10 @@ ms.date: 03/15/2018
 keywords: dsc,powershell,configuration,installation
 title: Utilisation de DSC sur Microsoft Azure
 ms.openlocfilehash: 6d71b69eea78e775a3e5aaac64bccfa10092b8e6
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870827"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>Utilisation de DSC sur Microsoft Azure

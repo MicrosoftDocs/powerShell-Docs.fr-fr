@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation de clés de Registre
 ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736843"
 ---
 # <a name="working-with-registry-keys"></a>Utilisation de clés de Registre

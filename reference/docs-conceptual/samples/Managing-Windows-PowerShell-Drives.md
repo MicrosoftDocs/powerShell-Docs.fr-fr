@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des lecteurs Windows PowerShell
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215511"
 ---
 # <a name="managing-windows-powershell-drives"></a>Gestion des lecteurs Windows PowerShell
@@ -149,13 +149,13 @@ L'applet de commande New-PsDrive ajoute le nouveau lecteur uniquement à la sess
 
 Pour supprimer des lecteurs de Windows PowerShell, utilisez l’applet de commande **Remove-PSDrive**. L’applet de commande **Remove-PSDrive** est facile à utiliser. Pour supprimer un lecteur Windows PowerShell, vous devez simplement spécifier son nom.
 
-Par exemple, si vous avez ajouté le lecteur Windows PowerShell **Office :** qui apparaît dans la rubrique **New-PSDrive**, vous pouvez le supprimer en saisissant :
+Par exemple, si vous avez ajouté le lecteur Windows PowerShell **Office:** , comme illustré dans la rubrique **New-PSDrive**, vous pouvez le supprimer en tapant ce qui suit :
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-Pour supprimer le lecteur Windows PowerShell **cvkey:** qui apparaît aussi dans la rubrique **New-PSDrive**, utilisez la commande suivante :
+Pour supprimer le lecteur Windows PowerShell **cvkey:** , qui apparaît aussi dans la rubrique **New-PSDrive**, utilisez la commande suivante :
 
 ```powershell
 Remove-PSDrive -Name cvkey

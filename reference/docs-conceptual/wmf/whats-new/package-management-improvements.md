@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations apportées à la gestion des packages dans WMF 5.1
 ms.openlocfilehash: cb19c2d71391b5729ce9d73fc6b033270f8db307
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325116"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>Améliorations apportées à la gestion des packages dans WMF 5.1
@@ -40,7 +40,7 @@ Vous pouvez également contourner ce problème en supprimant manuellement l’an
 
 **Scénario** : Dans WMF 5.0, PackageManagement ne prenait pas en charge les ordinateurs ayant uniquement un accès à l’intranet (et non à Internet).
 
-**Solution** : Dans WMF 5.1, effectuez les étapes suivantes pour permettre aux ordinateurs connectés à l’intranet d’utiliser PackageManagement :
+**Solution** : Dans WMF 5.1, procédez comme suit pour permettre aux ordinateurs connectés à l’intranet d’utiliser PackageManagement :
 
 1. Téléchargez le fournisseur NuGet sur un autre ordinateur disposant d’une connexion Internet à l’aide de la commande `Install-PackageProvider -Name NuGet`.
 

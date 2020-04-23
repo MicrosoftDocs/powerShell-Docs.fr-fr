@@ -1,12 +1,12 @@
 ---
 ms.date: 10/13/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Présentation de la configuration de l’état souhaité pour les ingénieurs
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953796"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Présentation de la configuration de l’état souhaité pour les ingénieurs

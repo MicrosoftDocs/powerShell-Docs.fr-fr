@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Configuration du gestionnaire de configuration local dans PowerShell 4.0
 ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953826"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Configuration du gestionnaire de configuration local dans PowerShell 4.0
 
->S’applique à : Windows PowerShell 4.0
+>S’applique à : Windows PowerShell 4.0
 
 **Pour plus d’informations sur Windows PowerShell 5.0 et ultérieur, consultez [Configuration du Gestionnaire de Configuration local](metaConfig.md).**
 
@@ -26,7 +26,7 @@ Vous pouvez définir ou récupérer les différentes propriétés du Gestionnair
 - **AllowModuleOverwrite** : indique si vous autorisez le remplacement des configurations existantes sur le nœud cible par de nouvelles configurations téléchargées du service de configuration. Les valeurs possibles sont True et False.
 - **CertificateID** : Empreinte d’un certificat utilisée pour sécuriser les informations d’identification transmise dans une configuration. Pour plus d’informations, consultez [Sécuriser les informations d’identification dans DSC Windows PowerShell](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
 - **ConfigurationID** : indique le GUID utilisé pour obtenir un fichier de configuration spécifique à partir d’un service d’extraction. Le GUID permet d’identifier de façon unique le fichier de configuration à obtenir.
-- **ConfigurationMode** : spécifie de quelle façon le Gestionnaire de configuration local applique réellement la configuration aux nœuds cibles. Cette propriété peut avoir les valeurs suivantes :
+- **ConfigurationMode** : spécifie de quelle façon le Gestionnaire de configuration local applique réellement la configuration aux nœuds cibles. Il peut avoir les valeurs suivantes :
   - **ApplyOnly** : Cette valeur indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si vous transmettez une nouvelle configuration directement au nœud cible ou si vous vous connectez à un service d’extraction, et que DSC détecte une nouvelle configuration en interrogeant le service d’extraction. Si la configuration du nœud cible diffère de la configuration initiale, aucune action particulière n’est effectuée.
   - **ApplyAndMonitor** : cette valeur (valeur par défaut) indique à DSC d’appliquer chaque nouvelle configuration que vous avez transmise directement au nœud cible ou qui a été détectée sur un service d’extraction. Après l’application de la nouvelle configuration, si la configuration du nœud cible diffère du fichier de configuration, DSC signale l’écart dans les journaux. Pour plus d’informations sur la journalisation de DSC, consultez [Utilisation des journaux des événements pour diagnostiquer les erreurs de configuration de l’état souhaité](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
   - **ApplyAndAutoCorrect** : cette valeur indique à DSC d’appliquer chaque nouvelle configuration que vous avez transmise directement au nœud cible ou qui a été détectée sur un service d’extraction. Après l’application de la nouvelle configuration, si la configuration du nœud cible diffère du fichier de configuration, DSC signale l’écart dans les journaux, puis tente de modifier la configuration du nœud cible pour la rendre conforme au fichier de configuration.
@@ -35,7 +35,7 @@ Vous pouvez définir ou récupérer les différentes propriétés du Gestionnair
 - **DownloadManagerCustomData** : désigne un tableau qui contient des données personnalisées propres au Gestionnaire de téléchargement.
 - **DownloadManagerName** : indique le nom du Gestionnaire de téléchargement des configurations et des modules.
 - **RebootNodeIfNeeded** : affectez la valeur `$true` pour autoriser les ressources à redémarrer le nœud à l’aide de l’indicateur `$global:DSCMachineStatus`. Sinon, vous devez redémarrer manuellement le nœud. La valeur par défaut est `$false`. Pour utiliser ce paramètre lorsqu’une condition de redémarrage est imposée par autre chose que DSC (par exemple Windows Installer), combinez ce paramètre avec le module [xPendingReboot](https://github.com/powershell/xpendingreboot).
-- **RefreshFrequencyMins** : propriété à définir si vous avez configuré un service d’extraction. Elle indique la fréquence (en minutes) à laquelle le Gestionnaire de configuration local interroge un service d’extraction pour télécharger la configuration actuelle. Cette valeur peut être définie conjointement avec ConfigurationModeFrequencyMins. Quand la propriété RefreshMode est définie sur « Pull », le nœud cible interroge le service d’extraction à la fréquence définie par RefreshFrequencyMins et télécharge la configuration actuelle. À la fréquence définie par ConfigurationModeFrequencyMins, le moteur de cohérence applique ensuite la dernière configuration téléchargée sur le nœud cible. Le système arrondit la valeur de RefreshFrequencyMins si elle n’est pas un nombre entier multiple de la valeur de ConfigurationModeFrequencyMins. La valeur par défaut est 30.
+- **RefreshFrequencyMins** : propriété à définir si vous avez configuré un service d’extraction. Elle indique la fréquence (en minutes) à laquelle le Gestionnaire de configuration local interroge un service d’extraction pour télécharger la configuration actuelle. Cette valeur peut être définie conjointement avec ConfigurationModeFrequencyMins. Quand la propriété RefreshMode est définie sur « Pull », le nœud cible interroge le service d’extraction à la fréquence définie par RefreshFrequencyMins et télécharge la configuration actuelle. À la fréquence définie par ConfigurationModeFrequencyMins, le moteur de cohérence applique ensuite la dernière configuration téléchargée sur le nœud cible. Le système arrondit la valeur de RefreshFrequencyMins si elle n’est pas un nombre entier multiple de la valeur de ConfigurationModeFrequencyMins. La valeur par défaut est 30.
 - **RefreshMode** : les valeurs possibles sont **Push** (valeur par défaut) et **Pull**. Dans une configuration en mode « push », vous devez créer un fichier de configuration sur chaque nœud cible, avec n’importe quel ordinateur client. En mode « pull », vous devez configurer un service de tirage (pull) que le Gestionnaire de configuration local peut interroger pour obtenir les fichiers de configuration.
 
 > [!NOTE]

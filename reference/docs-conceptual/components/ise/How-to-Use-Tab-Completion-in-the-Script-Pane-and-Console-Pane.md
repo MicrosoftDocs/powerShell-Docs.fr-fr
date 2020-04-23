@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: powershell,applet de commande
 title: Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande
 ms.openlocfilehash: 07cf9ff75db8d33ed018542153bfcd7503035e40
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737081"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>Comment utiliser la saisie semi-automatique via la touche Tab dans les volets Script et Commande

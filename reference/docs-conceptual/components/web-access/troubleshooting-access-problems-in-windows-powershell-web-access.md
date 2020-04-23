@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: résolution des problèmes d’accès dans Accès Web Windows PowerShell
 ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870181"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Résolution des problèmes d’accès dans Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013 (révisée le 23 août 2017)
+Mise à jour : 24 juin 2013 (révisée le 23 août 2017)
 
-S’applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 Les sections suivantes identifient certains problèmes courants que les utilisateurs peuvent rencontrer quand ils essaient de se connecter à un ordinateur distant à l’aide d’Accès Web Windows PowerShell. Elles incluent des suggestions pour la résolution des problèmes.
 

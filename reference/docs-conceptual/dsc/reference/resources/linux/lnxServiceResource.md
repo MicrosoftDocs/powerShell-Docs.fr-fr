@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource nxService dans DSC pour Linux
 ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954836"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Ressource nxService dans DSC pour Linux
@@ -31,8 +31,8 @@ nxService <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |Name |Nom du service/démon à configurer. |
-|Controller |Type de contrôleur de service à utiliser lors de la configuration du service. |
-|Enabled |Indique si le service s’exécute au démarrage du système. |
+|Contrôleur |Type de contrôleur de service à utiliser lors de la configuration du service. |
+|activé |Indique si le service s’exécute au démarrage du système. |
 |State |Indique si le service est en cours d’exécution. Définissez cette propriété sur **Stopped** pour vous assurer que le service n’est pas en cours d’exécution. Définissez cette propriété sur **Running** pour vous assurer que le service est en cours d’exécution. |
 
 ## <a name="common-properties"></a>Propriétés communes

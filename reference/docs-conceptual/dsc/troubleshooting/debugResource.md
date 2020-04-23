@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Débogage des ressources DSC
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954256"
 ---
 # <a name="debugging-dsc-resources"></a>Débogage des ressources DSC
 
-> S’applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 Dans PowerShell 5.0, DSC contient une nouvelle fonctionnalité qui permet de déboguer une ressource DSC pendant qu’une configuration est appliquée.
 
@@ -105,7 +105,7 @@ Vous pouvez désormais utiliser les commandes de débogage dans l’environnemen
 
 Après avoir appelé [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), tous les appels à [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) causeront des erreurs de configuration dans le débogueur. Pour permettre aux configurations de s’exécuter normalement, vous devez désactiver le débogage en appelant l’applet de commande [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug).
 
->**Remarque :** Le redémarrage ne modifie pas l’état de débogage du Gestionnaire de configuration local. Si le débogage est activé, le démarrage d’une configuration générera toujours des erreurs après un redémarrage.
+>**Remarque :** le redémarrage ne modifie pas l’état de débogage du LCM. Si le débogage est activé, le démarrage d’une configuration générera toujours des erreurs après un redémarrage.
 
 ## <a name="see-also"></a>Voir aussi
 

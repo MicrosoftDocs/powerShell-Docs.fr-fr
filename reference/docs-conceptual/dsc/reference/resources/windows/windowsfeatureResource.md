@@ -1,17 +1,17 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsFeature dans DSC
 ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954626"
 ---
 # <a name="dsc-windowsfeature-resource"></a>Ressource WindowsFeature dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **WindowsFeature** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour garantir que des rôles et des fonctionnalités sont ajoutés ou supprimés sur un nœud cible.
 
@@ -36,7 +36,7 @@ WindowsFeature [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Name |Indique le nom du rôle ou de la fonctionnalité dont vous voulez garantir l’ajout ou la suppression. Il s’agit du même nom que celui de la propriété **Name** de l’applet de commande [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) et non du nom d’affichage du rôle ou de la fonctionnalité. |
-|Credential |Indique les informations d’identification à utiliser pour ajouter ou supprimer le rôle ou la fonctionnalité. |
+|Informations d'identification |Indique les informations d’identification à utiliser pour ajouter ou supprimer le rôle ou la fonctionnalité. |
 |IncludeAllSubFeature |Définissez cette propriété sur `$true` pour faire en sorte que l’état de toutes les sous-fonctionnalités nécessaires soit l’état de la fonctionnalité que vous spécifiez avec la propriété **Name**. |
 |LogPath |Indique le chemin d’un fichier journal dans lequel le fournisseur de ressources doit enregistrer l’opération. |
 |Source |Indique l’emplacement du fichier source à utiliser pour l’installation, si nécessaire. |

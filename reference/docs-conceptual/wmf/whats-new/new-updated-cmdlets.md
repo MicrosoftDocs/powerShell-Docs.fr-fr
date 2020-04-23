@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Cmdlets nouvelles et mises à jour
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147589"
 ---
 # <a name="new-and-updated-cmdlets"></a>Cmdlets nouvelles et mises à jour
@@ -32,7 +32,7 @@ Elles génèrent et valident des fichiers catalogue Windows.
 
 `Get-Clipboard` et `Set-Clipboard` permettent de transférer du contenu vers et à partir d’une session Windows PowerShell. Les applets de commande du Presse-papiers prennent en charge les images, les fichiers audio, les listes de fichiers et le texte.
 
-Pour plus d’informations, voir :
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Get-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Set-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)
@@ -45,13 +45,13 @@ Le standard CMS implémente un chiffrement à clé publique, selon lequel la cl�
 
 La clé publique, qui ne constitue pas une donnée sensible, est partageable à grande échelle. Le contenu chiffré avec la clé publique ne peut être déchiffré qu’avec la clé privée. Pour plus d’informations, consultez [Cryptographie asymétrique](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
-Pour plus d’informations, voir :
+Pour plus d’informations, consultez les pages suivantes :
 
 - [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-Les certificats ont besoin d’un identificateur EKU (utilisation améliorée de la clé), comme « signature du code » ou « courrier chiffré », pour être identifiés comme certificats de chiffrement de données dans PowerShell. Pour afficher des certificats de chiffrement de document dans le fournisseur de certificats, vous pouvez utiliser le paramètre dynamique **DocumentEncryptionCert** `Get-ChildItem` :
+Les certificats ont besoin d’un identificateur EKU (utilisation améliorée de la clé), comme « signature du code » ou « courrier chiffré », pour être identifiés comme certificats de chiffrement de données dans PowerShell. Pour afficher des certificats de chiffrement de document dans le fournisseur de certificats, vous pouvez utiliser le paramètre dynamique **DocumentEncryptionCert**`Get-ChildItem` :
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
@@ -190,7 +190,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a>liens physiques ;
+### <a name="hard-links"></a>Liens physiques
 
 Les combinaisons autorisées de **Path** et de **Name** décrites ci-dessus.
 

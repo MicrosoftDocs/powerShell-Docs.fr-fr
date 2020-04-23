@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Redirection de données à l’aide d’applets de commande Out
 ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030080"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Redirection de données à l’aide d’applets de commande Out-*
@@ -140,7 +140,7 @@ L’applet de commande **Out-File** met en forme le contenu du fichier pour qu�
 Get-Command | Out-File -FilePath c:\temp\output.txt
 ```
 
-La sortie doit ressembler à ceci :
+La sortie se présente ainsi :
 
 ```output
 CommandType     Name                            Definition

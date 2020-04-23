@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Utilisation des données de configuration
 ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954186"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Utilisation des données de configuration dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 À l’aide du paramètre DSC intégré **ConfigurationData**, vous pouvez définir les données qui peuvent être utilisées dans une configuration.
 Cela vous permet de créer une configuration unique utilisée pour plusieurs nœuds ou différents environnements.
@@ -23,7 +23,7 @@ Pour des exemples d’utilisation des données de configuration, consultez [Sép
 ## <a name="the-configurationdata-common-parameter"></a>Le paramètre commun ConfigurationData
 
 Une configuration DSC prend un paramètre commun, **ConfigurationData**, que vous spécifiez lorsque vous compilez la configuration.
-Pour plus d’informations sur la compilation de configurations, voir [Configurations DSC](configurations.md).
+Pour obtenir des informations sur la compilation des configurations, consultez [Configurations DSC](configurations.md).
 
 Le paramètre **ConfigurationData** est une table de hachage qui doit contenir au moins une clé nommée **AllNodes**.
 Il peut également avoir une ou plusieurs autres clés.

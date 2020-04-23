@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Utilisation de noms de commande familiers
 ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030895"
 ---
 # <a name="using-familiar-command-names"></a>Utilisation de noms de commande familiers
@@ -22,12 +22,12 @@ La liste ci-dessous contient quelques-unes des commandes **Cmd.exe** et Unix cou
 |||||
 |-|-|-|-|
 |cat|dir|mount|rm|
-|cd|echo|move|rmdir|
+|cd|echo|déplacer|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
-|cls|history|pushd|tee|
+|sécurité au niveau des colonnes|history|pushd|tee|
 |copy|kill|pwd|type|
-|del|lp|r|write|
+|del|lp|r|écrire|
 |diff|ls|ren||
 
 L’applet de commande `Get-Alias` affiche le nom réel de la commande PowerShell native associée à un alias.
@@ -53,10 +53,10 @@ Exemples d’abréviations :
 
 | Nom ou verbe | Abréviation |
 |--------------|--------------|
-| Get          | g            |
-| Set          | s            |
+| Obtenir          | g            |
+| Définissez          | s            |
 | Élément         | i            |
-| Emplacement     | l            |
+| Location     | l            |
 | Commande      | cm           |
 | Alias        | al           |
 

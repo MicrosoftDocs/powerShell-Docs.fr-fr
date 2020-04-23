@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource nxFile dans DSC pour Linux
 ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954826"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>Ressource nxFile dans DSC pour Linux
@@ -42,11 +42,11 @@ nxFile <string> #ResourceName
 |SourcePath |Spécifie le chemin à partir duquel copier la ressource de fichier ou de dossier. Ce chemin peut être un chemin local ou une URL `http/https/ftp`. Les URL `http/https/ftp` distantes sont uniquement prises en charge quand la valeur de la propriété **Type** est **file**. |
 |Type |Spécifie si la ressource actuellement configurée est un répertoire ou un fichier. Définissez cette propriété sur **directory** pour indiquer que la ressource est un répertoire. Affectez-lui la valeur **file** pour indiquer que la ressource est un fichier. La valeur par défaut est **file**. |
 |Contents |Spécifie le contenu d’un fichier, tel qu’une chaîne spécifique. |
-|Checksum |Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs sont **ctime**, **mtime** ou **md5**. |
-|Recurse |Indique si des sous-répertoires sont inclus. Définissez cette propriété sur `$true` pour indiquer que vous voulez inclure des sous-répertoires. La valeur par défaut est `$false`. Cette propriété est valide uniquement quand la propriété **Type** est définie sur **directory**. |
+|Somme de contrôle |Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs sont **ctime**, **mtime** ou **md5**. |
+|Recurse |Indique si des sous-répertoires sont inclus. Définissez cette propriété sur `$true` pour indiquer que vous voulez inclure des sous-répertoires. Par défaut, il s’agit de `$false`. Cette propriété est valide uniquement quand la propriété **Type** est définie sur **directory**. |
 |Force |Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est `$false`. |
-|Links |Spécifie le comportement souhaité pour les liens symboliques. Définissez cette propriété sur **follow** pour suivre les liens symboliques et agir sur la cible des liens. Par exemple, copiez le fichier au lieu du lien. Définissez cette propriété sur **manage** pour agir sur le lien. Par exemple, copiez le lien lui-même. Définissez cette propriété sur **ignore** pour ignorer les liens symboliques. |
-|Group |Nom du **groupe** qui doit avoir les autorisations sur le fichier ou le répertoire. |
+|Liens |Spécifie le comportement souhaité pour les liens symboliques. Définissez cette propriété sur **follow** pour suivre les liens symboliques et agir sur la cible des liens. Par exemple, copiez le fichier au lieu du lien. Définissez cette propriété sur **manage** pour agir sur le lien. Par exemple, copiez le lien lui-même. Définissez cette propriété sur **ignore** pour ignorer les liens symboliques. |
+|Groupe |Nom du **groupe** qui doit avoir les autorisations sur le fichier ou le répertoire. |
 |Mode |Spécifie les autorisations souhaitées pour la ressource, en notation octale ou symbolique Par exemple, **777** ou **rwxrwxrwx**. Si vous utilisez la notation symbolique, n’entrez pas le premier caractère qui indique le répertoire ou le fichier. |
 |Propriétaire |Nom du groupe qui possède le fichier ou le répertoire. |
 
@@ -55,7 +55,7 @@ nxFile <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine si l’existence du fichier doit être vérifiée. Définissez cette propriété sur **Present** pour vous assurer que le fichier existe. Définissez la propriété sur **Absent** pour vous assurer que le fichier n’existe pas. La valeur par défaut est **Present**. |
+|Ensure |Détermine si l’existence du fichier doit être vérifiée. Définissez cette propriété sur **Present** pour garantir l’existence du fichier. Définissez la propriété sur **Absent** pour vous assurer que le fichier n’existe pas. La valeur par défaut est **Present**. |
 
 ## <a name="additional-information"></a>Informations supplémentaires
 

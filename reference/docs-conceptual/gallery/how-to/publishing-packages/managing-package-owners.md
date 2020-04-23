@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des propriétaires de package
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328260"
 ---
 # <a name="managing-package-owners"></a>Gestion des propriétaires de package
@@ -34,7 +34,7 @@ Une fois qu’un package a été publié dans PowerShell Gallery, il est facile 
 5. Un e-mail est alors envoyé au nouveau copropriétaire pour inviter celui-ci à devenir le propriétaire d’un package.
 6. Une fois que l’utilisateur clique sur le lien, il est copropriétaire à part entière avec contrôle total sur un package, ce qui inclut la possibilité de supprimer d’autres utilisateurs comme propriétaires.
 
-**REMARQUE** : tant que le nouveau propriétaire n’a pas confirmé être propriétaire, il n’est *pas* présenté comme propriétaire du package.
+**REMARQUE** : Tant que le nouveau propriétaire n’a pas confirmé être propriétaire, il n’est *pas* répertorié comme propriétaire d’un package.
 Quand vous consultez la page **Gérer les propriétaires**, vous voyez une entrée « en attente d’approbation » dans les propriétaires actuels.
 Cette invitation peut être supprimée, de la même manière que peuvent l’être les autres propriétaires.
 Ce système d’invitation empêche les utilisateurs d’ajouter de façon factice d’autres utilisateurs comme propriétaires de leurs packages.

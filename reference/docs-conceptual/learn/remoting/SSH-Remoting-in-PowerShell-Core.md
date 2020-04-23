@@ -3,10 +3,10 @@ title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444363"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
@@ -19,7 +19,7 @@ WinRM fournit un modèle d’hébergement robuste pour les sessions distantes Po
 
 La communication à distance SSH vous permet d’établir la communication à distance pour une session PowerShell de base entre des ordinateurs Windows et Linux. La communication à distance SSH crée un processus hôte PowerShell sur l’ordinateur cible en tant que sous-système SSH. Nous implémenterons prochainement un modèle d’hébergement général, similaire à WinRM, pour prendre en charge la configuration de point de terminaison et JEA.
 
-Les cmdlets `New-PSSession` `Enter-PSSession` et `Invoke-Command` ont maintenant un nouvel ensemble de paramètres pour prendre en charge cette nouvelle connexion de communication à distance.
+Les cmdlets `New-PSSession``Enter-PSSession` et `Invoke-Command` ont maintenant un nouvel ensemble de paramètres pour prendre en charge cette nouvelle connexion de communication à distance.
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
@@ -97,7 +97,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Restart-Service sshd
    ```
 
-1. Ajoutez le chemin où OpenSSH est installé à votre variable d’environnement Path. Par exemple, `C:\Program Files\OpenSSH\`. Cette entrée permet au système de trouver `ssh.exe`.
+1. Ajoutez le chemin où OpenSSH est installé à votre variable d’environnement Path. Par exemple : `C:\Program Files\OpenSSH\`. Cette entrée permet au système de trouver `ssh.exe`.
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>Installation sur un ordinateur Linux Ubuntu 16.04
 
@@ -179,7 +179,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Authentification
+## <a name="authentication"></a>Authentication
 
 L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même. Résultat : les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell. Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique et un mot de passe à usage unique pour une sécurité renforcée. La configuration de l’authentification multifacteur sort du cadre de cette documentation. Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
 

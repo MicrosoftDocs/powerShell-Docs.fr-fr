@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Options relatives aux informations d’identification dans les données de configuration
 ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870555"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Options relatives aux informations d’identification dans les données de configuration
 
-> S’applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Mots de passe en texte brut et utilisateurs de domaine
 
@@ -57,7 +57,7 @@ Cet exemple utilise une ressource [Group](../resources/resources.md) du module d
 
 Pour plus d’informations sur la propriété `PsDscRunAsCredential`, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](runAsUser.md).
 
-## <a name="example-the-group-resource-credential-property"></a>Exemple : propriété d’informations d’identification de la ressource Group
+## <a name="example-the-group-resource-credential-property"></a>Exemple : Propriété d’informations d’identification de la ressource Group
 
 DSC s’exécute sous `Local System`. Il dispose donc déjà des autorisations pour modifier les utilisateurs et les groupes locaux. Si le membre ajouté est un compte local, aucune information d’identification n’est nécessaire. Si la ressource `Group` ajoute un compte de domaine au groupe local, des informations d’identification seront nécessaires.
 
@@ -220,7 +220,7 @@ Si vous exécutez à nouveau l’exemple de script de configuration (avec ou san
 
 **Quand vous utilisez des informations d’identification avec des ressources DSC, préférez un compte local à un compte de domaine quand cela est possible.**
 
-Si la propriété `Username` des informations d’identification comprend un « \\ » ou un « \@ », DSC la traite comme un compte de domaine. Il existe une exception pour « localhost », « 127.0.0.1 » et « :: 1 » dans la partie du nom d’utilisateur consacrée au domaine.
+Si la propriété \\ des informations d’identification comprend un « \@ » ou un « `Username` », DSC la traite comme un compte de domaine. Il existe une exception pour « localhost », « 127.0.0.1 » et « :: 1 » dans la partie du nom d’utilisateur consacrée au domaine.
 
 ## <a name="psdscallowdomainuser"></a>PsDscAllowDomainUser
 

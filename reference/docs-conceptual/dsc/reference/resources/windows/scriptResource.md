@@ -1,17 +1,17 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource Script dans DSC
 ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953066"
 ---
 # <a name="dsc-script-resource"></a>Ressource Script dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Script** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour exécuter des blocs de script Windows PowerShell sur des nœuds cibles. La ressource **Script** utilise les propriétés **GetScript**, **SetScript** et **TestScript** qui contiennent les blocs de script que vous définissez pour effectuer les opérations d’état DSC correspondantes.
 
@@ -39,7 +39,7 @@ Script [string] #ResourceName
 |GetScript |Un bloc de script qui retourne l’état actuel du nœud. |
 |SetScript |Un bloc de script utilisé par DSC pour appliquer la conformité lorsque le nœud n’est pas dans l’état souhaité. |
 |TestScript |Un bloc de script qui détermine si le nœud est dans l’état souhaité. |
-|Credential |Indique les informations d’identification à utiliser pour exécuter ce script, si elles sont nécessaires. |
+|Informations d'identification |Indique les informations d’identification à utiliser pour exécuter ce script, si elles sont nécessaires. |
 
 ## <a name="common-properties"></a>Propriétés communes
 
@@ -51,7 +51,7 @@ Script [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-### <a name="additional-information"></a>Informations complémentaires
+### <a name="additional-information"></a>Informations supplémentaires
 
 #### <a name="getscript"></a>GetScript
 
@@ -73,7 +73,7 @@ Cependant, dans ce cas, **SetScript** ne s’exécute pas, quel que soit le rés
 
 ## <a name="examples"></a>Exemples
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire un exemple de texte à l’aide d’une ressource Script
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire un exemple de texte à l’aide d’une ressource Script
 
 Cet exemple teste l’existence de `C:\TempFolder\TestFile.txt` sur chaque nœud. S’il n’existe pas, il le crée à l’aide de `SetScript`. `GetScript` retourne le contenu du fichier et sa valeur de retour n’est pas utilisée.
 
@@ -98,7 +98,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource Script
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource Script
 
 Cet exemple récupère les informations de la version *conforme* à partir d’un fichier texte sur l’ordinateur de création et stocke ces informations dans la variable `$version`. Lors de la génération du fichier MOF du nœud, DSC remplace les variables `$using:version` dans chaque bloc de script par la valeur de la variable `$version`.
 Lors de l’exécution, la version *conforme* est stockée dans un fichier texte sur chaque nœud, puis comparée et mise à jour lors des exécutions suivantes.

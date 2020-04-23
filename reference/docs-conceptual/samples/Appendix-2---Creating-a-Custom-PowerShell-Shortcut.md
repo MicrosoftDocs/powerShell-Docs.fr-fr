@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: 'Annexe 2 : création d’un raccourci PowerShell personnalisé'
 ms.openlocfilehash: 6f1a6a8187b1797103e3620b2cf9155978807ea5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030307"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Annexe 2 : création d’un raccourci PowerShell personnalisé
@@ -17,7 +17,7 @@ La procédure suivante décrit comment créer un raccourci vers Windows PowerShe
 
 2. Cliquez avec le bouton droit sur le raccourci, puis cliquez sur **Propriétés**.
 
-3. Cliquez sur l’onglet **Options**.
+3. Cliquez sur l’onglet **Options** .
 
 4. Dans la section **Modifier les options**, activez la case à cocher **QuickEdit**.
 

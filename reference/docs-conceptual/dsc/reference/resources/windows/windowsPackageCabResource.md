@@ -1,17 +1,17 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource DSC WindowsPackageCab
 ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954636"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>Ressource DSC WindowsPackageCab
 
-> S’applique à : Windows PowerShell 5.1
+> S’applique à : Windows PowerShell 5.1
 
 La ressource **WindowsPackageCab** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme permettant d’installer ou de désinstaller des packages de cabinet Windows (.cab) sur un nœud cible.
 
@@ -34,7 +34,7 @@ Le nœud cible doit disposer du module DISM PowerShell installé. Pour plus d’
 
 |Propriété |Description |
 |---|---|
-|Name |Indique le nom du package pour lequel vous souhaitez garantir un état spécifique. |
+|Nom |Indique le nom du package pour lequel vous souhaitez garantir un état spécifique. |
 |SourcePath |Indique le chemin où se trouve le package. |
 |LogPath |Indique le chemin complet où vous souhaitez que le fournisseur enregistre un fichier journal pour installer ou désinstaller le package. |
 

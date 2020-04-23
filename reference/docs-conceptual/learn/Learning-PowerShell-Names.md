@@ -3,10 +3,10 @@ ms.date: 08/24/2018
 keywords: powershell,applet de commande
 title: Apprentissage des noms de commande PowerShell
 ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030417"
 ---
 # <a name="learning-powershell-command-names"></a>Apprentissage des noms de commande PowerShell
@@ -21,7 +21,7 @@ En effet, chaque commande constitue un outil distinct. PowerShell présente une 
 La plupart des commandes sont conçues pour gérer des éléments du système d’exploitation ou des applications, telles que des services ou processus. Les commandes portent divers noms qui peuvent ou non appartenir à une famille. Par exemple, sur les systèmes Windows, les commandes `net start` et `net stop` permettent de démarrer et d’arrêter un service. **sc.exe** est un autre outil de contrôle des services pour Windows. Ce nom ne correspond pas au modèle de noms des commandes de service **net.exe**. En ce qui concerne la gestion des processus, Windows offre la commande **tasklist.exe** pour les lister et la commande **taskkill.exe** pour les tuer.
 
 Par ailleurs, ces commandes ont des spécifications de paramètres irrégulières. On ne peut pas utiliser la commande `net start` pour démarrer un service sur un ordinateur distant. C’est la commande **sc.exe** qui permet de le faire. Mais, pour spécifier l’ordinateur distant, il faut faire précéder son nom de deux barres obliques inverses. Pour démarrer le service spouleur sur un ordinateur distant nommé DC01, vous taperez `sc.exe \\DC01 start spooler`.
-Pour lister les tâches en cours d’exécution sur DC01, vous utiliserez le paramètre **/S** et le nom de l’ordinateur sans les barres obliques inverses. Par exemple, `tasklist /S DC01`.
+Pour lister les tâches en cours d’exécution sur DC01, vous utiliserez le paramètre **/S** et le nom de l’ordinateur sans les barres obliques inverses. Par exemple : `tasklist /S DC01`.
 
 > [!NOTE]
 > Avant PowerShell v6, `sc` était un alias de la cmdlet `Set-Content`. Par conséquent, pour exécuter la commande **sc.exe** dans une version de PowerShell antérieure à v6, vous devez inclure le nom de fichier complet **sc.exe** , y compris l’extension de fichier **exe**.

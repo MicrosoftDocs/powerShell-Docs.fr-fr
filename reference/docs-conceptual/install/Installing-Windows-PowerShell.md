@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: powershell, applet de commande, télécharger, installer, installation, programme d’installation, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installation de Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086474"
 ---
 # <a name="installing-windows-powershell"></a>Installation de Windows PowerShell
@@ -24,17 +24,17 @@ Toutes les versions listées ici sont les versions d’origine telles qu’elles
 
 ### <a name="for-console"></a>Pour la console
 
-Version | Emplacement
+Version | Location
 -- | --
-Windows 10 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper PowerShell
+Windows 10 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper PowerShell
 Windows 8.1, 8.0 | Sur l’écran d’accueil, commencez à taper PowerShell.<br/>Sur un poste de travail, cliquez sur l’icône Windows en bas à gauche et commencez à taper PowerShell
 Windows 7 SP1 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper PowerShell dans la zone de recherche
 
 ### <a name="for-ise"></a>Pour l’ISE
 
-Version | Emplacement
+Version | Location
 -- | --
-Windows 10 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper ISE
+Windows 10 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper ISE
 Windows 8.1, 8.0 | Sur l’écran d’accueil, tapez **PowerShell ISE**.<br/>Sur un poste de travail, cliquez sur l’icône Windows en bas à gauche et tapez **PowerShell ISE**
 Windows 7 SP1 | Cliquez sur l’icône Windows en bas à gauche et commencez à taper PowerShell dans la zone de recherche
 
@@ -71,7 +71,7 @@ Si vous devez mettre à jour votre version existante de PowerShell dans Windows,
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
 Windows 10 (voir Note1)<br/>Windows Server 2016 | - | - | - | installé
-Windows 8.1<br/>Windows Server 2012 R2 | - | installé | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8.1<br/>Windows Server 2012 R2 | - | installé | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 8<br/>Windows Server 2012 | installé | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 

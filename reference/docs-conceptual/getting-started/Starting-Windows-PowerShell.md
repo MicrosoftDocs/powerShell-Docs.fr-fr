@@ -3,10 +3,10 @@ ms.date: 12/05/2019
 keywords: powershell,applet de commande
 title: Démarrage de Windows PowerShell
 ms.openlocfilehash: 97b15a4cd79c77a391451ba917f985f9d99db3f5
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953821"
 ---
 # <a name="starting-windows-powershell"></a>Démarrage de Windows PowerShell
@@ -74,7 +74,7 @@ Dans **cmd.exe**, Windows PowerShell ou Windows PowerShell ISE, pour démarrer W
 PowerShell_ISE
 ```
 
-ou
+or
 
 ```
 ISE

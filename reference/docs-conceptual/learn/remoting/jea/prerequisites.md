@@ -3,13 +3,13 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Conditions préalables pour JEA
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416733"
 ---
-# <a name="prerequisites"></a>Conditions préalables
+# <a name="prerequisites"></a>Conditions préalables requises
 
 Just Enough Administration (JEA) est une fonctionnalité incluse dans PowerShell 5.0 et ultérieur. Cet article décrit les prérequis à satisfaire pour pouvoir commencer à utiliser JEA.
 
@@ -33,7 +33,7 @@ JEA est disponible avec PowerShell 5.0 et ultérieur. Pour bénéficier des fon
 | Système d’exploitation serveur |                Disponibilité de JEA                |
 | ----------------------- | ---------------------------------------------- |
 | Windows Server 2016+    | Préinstallé                                   |
-| Windows Server 2012 R2  | Fonctionnalité complète avec WMF 5.1                |
+| Windows Server 2012 R2  | Fonctionnalité complète avec WMF 5.1                |
 | Windows Server 2012     | Fonctionnalité complète avec WMF 5.1                |
 | Windows Server 2008 R2  | Fonctionnalités réduites<sup>1</sup> avec WMF 5.1 |
 
@@ -45,7 +45,7 @@ Vous pouvez également utiliser JEA sur un ordinateur personnel ou professionnel
 | Windows 10 1603, 1511   | Préinstallé, avec des fonctionnalités réduites<sup>2</sup> |
 | Windows 10 1507         | Non disponible                                        |
 | Windows 8, 8.1          | Fonctionnalité complète avec WMF 5.1                      |
-| Windows 7               | Fonctionnalités réduites<sup>1</sup> avec WMF 5.1       |
+| Windows 7               | Fonctionnalités réduites<sup>1</sup> avec WMF 5.1       |
 
 - <sup>1</sup> Vous ne pouvez pas configurer JEA pour utiliser des comptes de service gérés de groupe sur Windows Server 2008 R2 ou Windows 7. Les comptes virtuels et les autres fonctionnalités JEA *sont* pris en charge.
 

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation des entrées de Registre
 ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030718"
 ---
 # <a name="working-with-registry-entries"></a>Utilisation des entrées de Registre
@@ -59,7 +59,7 @@ PF_AccessoriesName  : Accessories
 
 Les propriétés liées à Windows PowerShell pour la clé possèdent toutes le préfixe « PS », comme **PSPath**, **PSParentPath**, **PSChildName** et **PSProvider**.
 
-Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation `*.*`. Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser `Set-Location` :
+Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation `*.*`. Pour passer d’abord au conteneur de Registre `Set-Location`CurrentVersion **, vous pouvez utiliser**  :
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -111,7 +111,7 @@ DevicePath   : C:\WINDOWS\inf
 Cette commande retourne les propriétés Windows PowerShell standard, ainsi que la propriété **DevicePath**.
 
 > [!NOTE]
-> Bien que `Get-ItemProperty` dispose des paramètres **Filter**, **Include** et **Exclude**, vous ne pouvez pas les utiliser pour filtrer sur le nom de propriété. Ces paramètres font référence aux clés de Registre (qui sont des chemins d’accès à des éléments) et non à des entrées de Registre. Les entrées de Registre sont des propriétés d’élément.
+> Bien que `Get-ItemProperty` dispose des paramètres **Filter**, **Include** et **Exclude**, vous ne pouvez pas les utiliser pour filtrer par nom de propriété. Ces paramètres font référence aux clés de Registre (qui sont des chemins d’accès à des éléments) et non à des entrées de Registre. Les entrées de Registre sont des propriétés d’élément.
 
 Une autre option consiste à utiliser l'outil en ligne de commande Reg.exe. Pour obtenir de l’aide sur reg.exe, tapez `reg.exe /?` à l’invite de commandes. Pour rechercher l'entrée DevicePath, utilisez reg.exe comme indiqué dans la commande suivante :
 

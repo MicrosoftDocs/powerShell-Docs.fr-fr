@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,applet de commande
 title: Obtention d’informations sur les commandes
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030946"
 ---
 # <a name="getting-information-about-commands"></a>Obtention d’informations sur les commandes

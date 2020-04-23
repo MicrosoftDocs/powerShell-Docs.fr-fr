@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: wmf,powershell,configuration
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147909"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -19,7 +19,7 @@ L’installation de WMF ajoute ou met à jour les fonctionnalités suivantes :
 - Configuration de l’état souhaité de Windows PowerShell (DSC)
 - Windows PowerShell Integrated Script Environment (ISE)
 - Windows Remote Management (WinRM)
-- Infrastructure de gestion Windows (WMI, Windows Management Instrumentation)
+- Windows Management Instrumentation (WMI)
 - Windows PowerShell Web Services (Extension ISS Management OData)
 - Journalisation de l’inventaire logiciel
 - Fournisseur CIM de Gestionnaire de serveur
@@ -37,18 +37,18 @@ Pour en savoir plus sur les diverses améliorations apportées à PowerShell et 
 
 |        Version du système d'exploitation         | [WMF 5.1][]  | WMF 5.0<br>*Hors support* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
 | --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
-| Windows Server 2019                     | Fourni par défaut |                             |              |              |              |
+| Windows Server 2019                     | Fourni par défaut |                             |              |              |              |
 | Windows Server 2016                     | Fourni par défaut |                             |              |              |              |
-| Windows 10                              | Fourni par défaut | Fourni par défaut                |              |              |              |
-| Windows Server 2012 R2                  | Oui          | Oui                         | Fourni par défaut |              |              |
+| Windows 10                              | Fourni par défaut | Fourni par défaut                |              |              |              |
+| Windows Server 2012 R2                  | Oui          | Oui                         | Fourni par défaut |              |              |
 | Windows 8.1                             | Oui          | Oui                         | Fourni par défaut |              |              |
 | Windows Server 2012                     | Oui          | Oui                         | Oui          | Fourni par défaut |              |
 | Windows 8<br>*Hors support*           |              |                             |              | Fourni par défaut |              |
 | Windows Server 2008 R2 SP1              | Oui          | Oui                         | Oui          | Oui          | Fourni par défaut |
 | Windows 7 SP1                           | Oui          | Oui                         | Oui          | Oui          | Fourni par défaut |
-| Windows Server 2008 SP2                 |              |                             |              | Oui          | Oui          |
+| Windows Server 2008 SP2                 |              |                             |              | Oui          | Oui          |
 | Windows Vista<br>*Hors support*       |              |                             |              |              | Oui          |
-| Windows Server 2003<br>*Hors support* |              |                             |              |              | Oui          |
+| Windows Server 2003<br>*Hors support* |              |                             |              |              | Oui          |
 | Windows XP<br>*Hors support*          |              |                             |              | Oui          | Oui          |
 
 - **Fourni par défaut** : les fonctionnalités de la version spécifiée de WMF ont été fournies dans la version indiquée du client Windows ou de Windows Server.

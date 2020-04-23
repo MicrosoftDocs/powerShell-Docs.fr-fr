@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Considérations de sécurité JEA
 ms.openlocfilehash: befc24fec368c4f6d60477daf63bf17e9431133e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017770"
 ---
 # <a name="jea-security-considerations"></a>Considérations de sécurité JEA
@@ -31,9 +31,9 @@ Le tableau suivant récapitule les options de configuration possibles et les aut
 
 |        Type d’ordinateur         | Configuration du groupe du compte virtuel |                   Contexte de l’utilisateur local                    | Contexte de l’utilisateur réseau |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Contrôleur de domaine            | Par défaut                             | Utilisateur de domaine, membre de « *DOMAIN*\Domain Admins »         | Compte d'ordinateur     |
+| Contrôleur de domaine            | Default                             | Utilisateur de domaine, membre de « *DOMAIN*\Domain Admins »         | Compte d'ordinateur     |
 | Contrôleur de domaine            | Groupes de domaine A et B               | Utilisateur de domaine, membre de « *DOMAIN*\A », « *DOMAIN*\B »       | Compte d'ordinateur     |
-| Serveur membre ou station de travail | Par défaut                             | Utilisateur local, membre de « *BUILTIN*\Administrators »        | Compte d'ordinateur     |
+| Serveur membre ou station de travail | Default                             | Utilisateur local, membre de « *BUILTIN*\Administrators »        | Compte d'ordinateur     |
 | Serveur membre ou station de travail | Groupes locaux C et D                | Utilisateur local, le membre de« *COMPUTER*\C » et « *COMPUTER*\D » | Compte d'ordinateur     |
 
 Quand vous examinez les événements d’audit de sécurité et les journaux des événements d’applications, vous voyez que chaque session d’utilisateur JEA a un compte virtuel unique. Ce compte unique vous permet de retracer les actions de l’utilisateur dans un point de terminaison JEA jusqu’à l’utilisateur d’origine qui a exécuté la commande. Les noms de compte virtuel sont au format `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>`. Par exemple, si l’utilisateur **Alice** dans le domaine **Contoso** redémarre un service dans un point de terminaison JEA, le nom d’utilisateur associé à des événements du Gestionnaire de contrôle des services est `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.
