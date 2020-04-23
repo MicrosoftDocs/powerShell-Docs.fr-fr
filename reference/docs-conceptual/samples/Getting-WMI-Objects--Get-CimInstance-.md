@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Obtention d’objets WMI - Get-CimInstance
 ms.openlocfilehash: 4ff47844fd367a49f554c7c05c491bdddf28eabc
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77002649"
 ---
 # <a name="getting-wmi-objects-get-ciminstance"></a>Obtention d’objets WMI (Get-CimInstance)

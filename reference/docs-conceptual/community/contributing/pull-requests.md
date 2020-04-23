@@ -4,10 +4,10 @@ description: Cet article explique comment envoyer des demandes de tirage au réf
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79060234"
 ---
 # <a name="how-to-submit-pull-requests"></a>Guide pratique pour envoyer des demandes de tirage

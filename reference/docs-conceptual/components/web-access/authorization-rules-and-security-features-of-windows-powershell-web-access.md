@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,applet de commande
 title: Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
-ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: ee25df052994e47e559daa87b89af813471d896b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500884"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624752"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Règles d’autorisation et fonctionnalités de sécurité d’Accès Web Windows PowerShell
 
@@ -112,7 +112,7 @@ Les applets de commande d’Accès Web Windows PowerShell prennent en charge un 
 
    Si elles n’ont pas encore été créées, utilisez les instructions relatives à la création de configurations de session dans [About Session Configuration Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
-3. Cette règle d’autorisation permet à un utilisateur donné d’accéder à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de scripts et de cmdlets. Tapez ce qui suit, puis appuyez sur **Entrée**.
+3. Cette règle d’autorisation accorde à un utilisateur spécifique d’accéder à un ordinateur sur le réseau auquel il a généralement accès, avec un accès à une configuration de session spécifique limitée aux besoins habituels de l’utilisateur en matière de script et d’applet de commande. Tapez ce qui suit, puis appuyez sur **Entrée**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `

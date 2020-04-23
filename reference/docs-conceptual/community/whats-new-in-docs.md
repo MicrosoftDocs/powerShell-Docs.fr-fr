@@ -3,10 +3,10 @@ title: Nouveautés de PowerShell-Docs
 description: Liste des modifications apportées à la documentation de PowerShell.
 ms.date: 03/31/2020
 ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
-ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80537062"
 ---
 # <a name="whats-new-in-powershell-docs"></a>Nouveautés de PowerShell-Docs
@@ -50,7 +50,7 @@ Les personnes suivantes ont contribué à la documentation de PowerShell en soum
 - mklement0 - 5 problèmes
 - juvtib - 4 problèmes
 - iSazonov - 3 problèmes
-- doctordns - 2 problèmes
+- doctordns (2 problèmes)
 - mdorantesm - 2 problèmes
 - qt3m45su0najc7 - 2 problèmes
 

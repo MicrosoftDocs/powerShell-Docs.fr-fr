@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: Modules exigeant l’acceptation de la licence
 ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082815"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules exigeant l’acceptation de la licence
@@ -52,7 +52,7 @@ La spécification de `–Force` n’est PAS suffisante pour accepter une licence
 
 ## <a name="examples"></a>EXEMPLES
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Exemple 1 : mise à jour du manifeste de module pour exiger l’acceptation de la licence
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>Exemple 1 : mise à jour du manifeste de module pour exiger l’acceptation de la licence
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -66,7 +66,7 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
 
 Cette commande met à jour le fichier de manifeste et définit l’indicateur RequireLicenseAcceptance sur true.
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>Exemple 2 : installation d’un module nécessitant l’acceptation de la licence
+### <a name="example-2-install-module-requiring-license-acceptance"></a>Exemple 2 : installation d’un module nécessitant l’acceptation de la licence
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -144,7 +144,7 @@ Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAccep
 Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Exemple 7 : installation d’un module nécessitant l’acceptation de la licence sur un client antérieure à PSGetFormatVersion 2.0
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>Exemple 7 : installation d’un module nécessitant l’acceptation de la licence sur un client antérieure à PSGetFormatVersion 2.0
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -156,7 +156,7 @@ WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGe
 PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a>Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence
+### <a name="example-8-save-module-requiring-license-acceptance"></a>Exemple 8 : enregistrement d’un module nécessitant l’acceptation de la licence
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved

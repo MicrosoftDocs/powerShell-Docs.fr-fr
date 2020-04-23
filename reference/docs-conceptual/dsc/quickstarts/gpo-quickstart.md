@@ -3,10 +3,10 @@ ms.date: 07/09/2019
 keywords: DSC,gpo,powershell,configuration,installation
 title: Démarrage rapide - Convertir la stratégie de groupe en DSC
 ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500653"
 ---
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0

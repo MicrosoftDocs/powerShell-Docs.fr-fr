@@ -4,10 +4,10 @@ description: Cet article explique dans les grandes lignes comment bien démarrer
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402626"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Contribution à la documentation de PowerShell
@@ -66,7 +66,7 @@ Consultez les documents suivants :
 - [Bien démarrer avec la rédaction de la documentation](get-started-writing.md)
 - [Envoi d’une demande de tirage](pull-requests.md)
 - [Guide de style PowerShell-Docs](powershell-style-guide.md)
-- [Informations de référence sur la modification des cmdlets](editing-cmdlet-ref.md)
+- [Modification des informations de référence sur les cmdlets](editing-cmdlet-ref.md)
 
 Ressources supplémentaires
 

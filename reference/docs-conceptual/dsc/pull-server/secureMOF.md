@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,configuration,installation
 title: Sécurisation du fichier MOF
 ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278463"
 ---
 # <a name="securing-the-mof-file"></a>Sécurisation du fichier MOF
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC gère la configuration des nœuds de serveur en appliquant les informations stockées dans un fichier MOF, où le Gestionnaire de configuration local implémente l’état de fin souhaitée. Étant donné que ce fichier contient les détails de la configuration, il est important qu’il soit sécurisé. Cette rubrique décrit comment s’assurer que le nœud cible a chiffré le fichier.
 
@@ -20,7 +20,7 @@ DSC gère la configuration des nœuds de serveur en appliquant les informations 
 > [!NOTE]
 > Cette rubrique traite des certificats utilisés pour le chiffrement. Pour le chiffrement, un certificat auto-signé est suffisant, car la clé privée est toujours gardée secrète et le chiffrement n’implique pas d’approbation du document. Les certificats auto-signés ne doivent *pas* être utilisés à des fins d’authentification. Pour l’authentification, vous devez utiliser un certificat d’une Autorité de certification (CA) approuvée.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Afin de chiffrer correctement les informations d’identification utilisées pour sécuriser une configuration DSC, assurez-vous d’avoir les éléments suivants :
 
@@ -43,11 +43,11 @@ Afin de chiffrer correctement les informations d’identification utilisées pou
 Pour activer le chiffrement des informations d’identification, un certificat de clé publique doit être disponible sur le _nœud cible_, qui est **approuvé** par l’ordinateur utilisé pour créer la configuration DSC. Pour pouvoir être utilisé, ce certificat de clé publique doit répondre à des exigences spécifiques pour le chiffrement des informations d’identification DSC :
 
 1. **Utilisation de la clé** :
-   - Doit contenir : « KeyEncipherment » et « DataEncipherment ».
-   - Ne peut _pas_ contenir : 'Signature numérique'.
+   - Doit contenir : « KeyEncipherment » et « DataEncipherment ».
+   - Ne doit _pas_ contenir : « Digital Signature ».
 2. **Utilisation améliorée de la clé** :
-   - Doit contenir : Chiffrement de document (1.3.6.1.4.1.311.80.1).
-   - Ne peut _pas_ contenir : Authentification de client (1.3.6.1.5.5.7.3.2) et authentification de serveur (1.3.6.1.5.5.7.3.1).
+   - Doit contenir : chiffrement de document (1.3.6.1.4.1.311.80.1).
+   - Ne doit _pas_ contenir : Client Authentication (1.3.6.1.5.5.7.3.2) et Server Authentication (1.3.6.1.5.5.7.3.1).
 3. La clé privée du certificat est disponible sur le *Nœud cible_.
 4. Le **fournisseur** pour le certificat doit être « Fournisseur de services de chiffrement Microsoft RSA SChannel ».
 

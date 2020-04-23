@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource DSC PackageManagement
 ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76995976"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Ressource DSC PackageManagement
@@ -41,7 +41,7 @@ PackageManagement [string] #ResourceName
 
 |Propriété |Description |
 |---|---|
-|Name |Spécifie le nom du package à installer ou à désinstaller. |
+|Nom |Spécifie le nom du package à installer ou à désinstaller. |
 |AdditionalParameters |Table de hachage spécifique du fournisseur, contenant les paramètres passés à `Get-Package -AdditionalArguments`. Par exemple, pour le fournisseur NuGet, vous pouvez passer des paramètres supplémentaires tels que DestinationPath. |
 |MaximumVersion |Spécifie la version maximale autorisée du package à rechercher. Si vous n’ajoutez pas ce paramètre, la ressource recherche la version disponible la plus récente du package. |
 |MinimumVersion |Spécifie la version minimale autorisée du package à rechercher. Si vous n’ajoutez pas ce paramètre, la ressource recherche la version la plus élevée du package parmi celles disponibles, sans toutefois dépasser la version maximale spécifiée par le paramètre **MaximumVersion**. |

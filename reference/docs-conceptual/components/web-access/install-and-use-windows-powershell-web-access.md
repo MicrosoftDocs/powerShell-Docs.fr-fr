@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: installer et utiliser Accès Web Windows PowerShell
 ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402616"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installer et utiliser Accès Web Windows PowerShell

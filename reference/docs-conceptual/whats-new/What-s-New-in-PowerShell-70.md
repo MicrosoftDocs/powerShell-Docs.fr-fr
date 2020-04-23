@@ -3,10 +3,10 @@ title: Nouveautés de PowerShell 7.0
 description: Nouvelles fonctionnalités et modifications de PowerShell 7.0
 ms.date: 03/04/2020
 ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
-ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80263133"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nouveautés de PowerShell 7.0

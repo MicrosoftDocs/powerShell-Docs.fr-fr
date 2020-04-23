@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
 ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706204"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA

@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation d’imprimantes
 ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
-ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78935207"
 ---
 # <a name="working-with-printers-in-windows"></a>Utilisation d’imprimantes sur Windows

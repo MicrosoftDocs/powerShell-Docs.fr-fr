@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
 ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500591"
 ---
 # <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ)
@@ -36,7 +36,7 @@ Une fois que vous êtes inscrit dans PowerShell Gallery, utilisez les applets de
 
 **Il est inutile de s’inscrire ou de se connecter à PowerShell Gallery pour installer ou enregistrer des packages.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur : « (403) Interdit. » Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu'est-ce que cela signifie ?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur de type : (403) Refusé. Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu'est-ce que cela signifie ?
 
 Cette erreur peut se produire pour les raisons suivantes :
 
@@ -56,7 +56,7 @@ En cochant une case de catégorie, vous indiquez « J’aimerais voir tous les 
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Quelles sont les conditions requises pour publier un module dans PowerShell Gallery ?
 
-Tout type de module PowerShell (modules de script, modules binaires ou modules de manifeste) peut être publié dans la galerie. Pour publier un module, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir du fichier *manifeste de module* (.psd1) ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Module][]. Tous les modules publiés dans PowerShell Gallery doivent avoir des manifestes de module. Tout module qui inclut les informations suivantes dans son manifeste peut être publié dans PowerShell Gallery :
+Tout type de module PowerShell (modules de script, modules binaires ou modules de manifeste) peut être publié dans la galerie. Pour publier un module, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir du fichier *manifeste de module* (.psd1) ou de la valeur du paramètre [Publish-Module][] de l’applet de commande **Publish-Module**. Tous les modules publiés dans PowerShell Gallery doivent avoir des manifestes de module. Tout module qui inclut les informations suivantes dans son manifeste peut être publié dans PowerShell Gallery :
 
 - Version
 - Description
@@ -73,7 +73,7 @@ Pour mettre à jour les champs de fichier manifeste de module, utilisez l’appl
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Quelles sont les conditions requises pour publier un script dans PowerShell Gallery ?
 
-Tout type de script PowerShell (scripts ou workflows) peut être publié dans la galerie. Pour publier un script, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir de la section *PSScriptInfo* du fichier de script ou de la valeur du paramètre **LicenseUri** de l’applet de commande [Publish-Script][]. Tous les scripts publiés dans PowerShell Gallery doivent avoir des informations de métadonnées. Tout script qui inclut les informations suivantes dans sa section PSScriptInfo peut être publié dans PowerShell Gallery :
+Tout type de script PowerShell (scripts ou workflows) peut être publié dans la galerie. Pour publier un script, PowerShellGet doit connaître quelques détails le concernant : version, description, auteur et mode de licence. Ces informations sont lues lors du processus de publication à partir de la section *PSScriptInfo* du fichier de script ou de la valeur du paramètre [Publish-Script][] de l’applet de commande **Publish-Script**. Tous les scripts publiés dans PowerShell Gallery doivent avoir des informations de métadonnées. Tout script qui inclut les informations suivantes dans sa section PSScriptInfo peut être publié dans PowerShell Gallery :
 
 - Version
 - Description

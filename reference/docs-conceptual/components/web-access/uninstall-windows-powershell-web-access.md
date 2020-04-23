@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: Désinstaller Accès Web Windows PowerShell
 ms.openlocfilehash: 3c2c83525f5a240976eef215b5eac939796c91e8
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78279008"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>désinstaller Accès Web Windows PowerShell
 
-Mise à jour : 24 juin 2013
+Mise à jour : 24 juin 2013
 
-S’applique à : Windows Server 2012 R2, Windows Server 2012
+S’applique à : Windows Server 2012 R2, Windows Server 2012
 
 Les étapes décrites dans cette rubrique suppriment le site web Accès Web Windows PowerShell et l’application correspondante du serveur de passerelle où elle est installée.
 
@@ -32,7 +32,7 @@ Les procédures de cette section vous permettent de désinstaller :
 
 à l’aide d’applets de commande Windows PowerShell.
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Étape 1 : Supprimer l’application web à l’aide d’applets de commande
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Étape 1 : Supprimer l’application web à l’aide d’applets de commande
 
 1. Effectuez une des opérations suivantes pour ouvrir une session Windows PowerShell.
 
@@ -53,7 +53,7 @@ Les procédures de cette section vous permettent de désinstaller :
 
       `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Étape 2 : Désinstaller Accès Web Windows PowerShell à l’aide d’applets de commande
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Étape 2 : Désinstaller Accès Web Windows PowerShell à l’aide d’applets de commande
 
 1. Effectuez une des opérations suivantes pour ouvrir une session Windows PowerShell avec des droits utilisateur élevés. Si une session est déjà ouverte, passez à l’étape suivante.
 
@@ -76,7 +76,7 @@ Les procédures de cette section vous permettent de désinstaller :
 
 Les procédures de cette section vous permettent de désinstaller l’application web Accès Web Windows PowerShell et la fonctionnalité Accès Web Windows PowerShell en utilisant l’Assistant Suppression de rôles et de fonctionnalités dans le Gestionnaire de serveur et la console du Gestionnaire des services Internet.
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Étape 1 : Supprimer l’application web à l’aide du Gestionnaire des services Internet
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Étape 1 : Supprimer l’application web à l’aide du Gestionnaire des services Internet
 
 1. Ouvrez la console du Gestionnaire des services Internet en procédant de l’une des manières suivantes. Si elle est déjà ouverte, passez à l’étape suivante.
 
@@ -97,7 +97,7 @@ Les procédures de cette section vous permettent de désinstaller l’applicatio
    > [!WARNING]
    > Le certificat n’est pas supprimé durant la désinstallation. Si vous avez créé un certificat auto-signé ou utilisé un certificat de test et que vous souhaitez le supprimer, supprimez le certificat dans le Gestionnaire des services Internet.
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Étape 2 : Désinstaller Accès Web Windows PowerShell à l’aide de l’Assistant Suppression de rôles et de fonctionnalités
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Étape 2 : Désinstaller Accès Web Windows PowerShell à l’aide de l’Assistant Suppression de rôles et de fonctionnalités
 
 1. Si le Gestionnaire de serveur est déjà ouvert, passez à l’étape suivante. S’il n’est pas déjà ouvert, ouvrez-le en effectuant l’une des opérations suivantes.
 

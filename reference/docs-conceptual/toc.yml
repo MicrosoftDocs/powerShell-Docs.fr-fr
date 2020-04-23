@@ -60,7 +60,7 @@
           items:
             - name: Vue d’ensemble
               href: learn/remoting/jea/overview.md
-            - name: Prérequis
+            - name: Conditions préalables requises
               href: learn/remoting/jea/prerequisites.md
             - name: Capacités de rôle
               href: learn/remoting/jea/role-capabilities.md
@@ -734,7 +734,7 @@
       href: community/community-support.md
     - name: Art numérique
       href: community/digital-art.md
-    - name: Nouveautés de la documentation PowerShell
+    - name: Nouveautés de PowerShell-Docs
       href: community/whats-new-in-docs.md
     - name: Guide du contributeur
       items:
@@ -791,7 +791,7 @@
               items:
                 - name: Vue d’ensemble de l’aide actualisable
                   href: developer/module/updatable-help-overview.md
-                - name: "Création d’une aide actualisable\_: procédure pas à pas"
+                - name: 'Création d’aide actualisable : pas à pas'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Fonctionnement de l’aide actualisable
                   href: developer/module/how-updatable-help-works.md

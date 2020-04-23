@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: gallery,powershell,cmdlet,psget
 title: Amorcer NuGet
 ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
-ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78935172"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Amorcer le fournisseur NuGet et NuGet.exe
@@ -158,7 +158,7 @@ Une option consiste à démarrer une machine connectée à Internet et de copier
   $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
-L’autre possibilité consiste à télécharger NuGet.exe sur le site web NuGet.Org : [https://dist.nuget.org/index.html](https://www.nuget.org/downloads). Pour les ordinateurs de production, veillez à sélectionner une version de NuGet ultérieure à 2.8.5.208 et étiquetée comme étant « recommandée ». N’oubliez pas de débloquer le fichier s’il a été téléchargé à l’aide d’un navigateur. Vous pouvez pour cela exécuter l’applet de commande `Unblock-File`.
+Une seconde option consiste à télécharger NuGet.exe à partir du site web NuGet.Org : [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Quand vous sélectionnez une version de NuGet pour les machines de production, vérifiez qu’elle est ultérieure à 2.8.5.208 et identifiez la version qui a été étiquetée comme étant « recommandée ». N’oubliez pas de débloquer le fichier s’il a été téléchargé à l’aide d’un navigateur. Vous pouvez pour cela exécuter l’applet de commande `Unblock-File`.
 
 Dans les deux cas, le fichier NuGet.exe peut être copié vers un emplacement quelconque dans `$env:path`, mais les emplacements standard sont :
 

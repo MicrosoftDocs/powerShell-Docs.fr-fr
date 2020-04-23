@@ -3,15 +3,15 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,installation
 title: Résolution des problèmes liés à DSC
 ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402406"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC
 
-_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
+_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Cette rubrique décrit comment résoudre les problèmes liés à DSC quand ils se produisent.
 
@@ -79,7 +79,7 @@ StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
 
-## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mon script ne s’exécute pas : Utilisation des journaux DSC pour diagnostiquer les erreurs de script
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mon script ne s’exécute pas : utilisation des journaux DSC pour diagnostiquer les erreurs de script
 
 Comme tous les logiciels Windows, DSC enregistre les erreurs et les événements dans des [journaux](/windows/desktop/EventLog/about-event-logging) qui peuvent être consultés dans l’[Observateur d’événements](https://support.microsoft.com/hub/4338813/windows-help).
 L’examen de ces journaux peut vous aider à comprendre pourquoi une opération particulière a échoué et comment éviter que cela se reproduise. L’écriture de scripts de configuration peut être compliquée. Ainsi, pour faciliter le suivi des erreurs pendant le processus de création, utilisez la ressource Log dans DSC pour suivre la progression de votre configuration dans le journal des événements d’analyse DSC.
@@ -100,7 +100,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Comme indiqué ci-dessus, le nom du journal DSC principal est **Microsoft->Windows->DSC** (les autres noms de journaux dans Windows ne sont pas cités ici, par souci de concision). Le nom principal est ajouté au nom du canal pour créer le nom complet du journal. Le moteur DSC écrit principalement dans trois types de journaux : [les journaux des opérations, d’analyse et de débogage](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Les journaux d’analyse et de débogage étant désactivés par défaut, vous devez les activer dans l’Observateur d’événements. Pour ce faire, ouvrez l’Observateur d’événements en tapant Show-EventLog dans Windows PowerShell ou cliquez sur le bouton **Démarrer**, sur **Panneau de configuration**, **Outils d’administration**, puis **Observateur d’événements**.
+Comme indiqué ci-dessus, le nom du journal DSC principal est **Microsoft->Windows->DSC** (les autres noms de journaux dans Windows ne sont pas cités ici, par souci de concision). Le nom principal est ajouté au nom du canal pour créer le nom complet du journal. Le moteur DSC écrit principalement dans trois types de journaux : [journaux des opérations, d’analyse et de débogage](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Les journaux d’analyse et de débogage étant désactivés par défaut, vous devez les activer dans l’Observateur d’événements. Pour ce faire, ouvrez l’Observateur d’événements en tapant Show-EventLog dans Windows PowerShell ou cliquez sur le bouton **Démarrer**, sur **Panneau de configuration**, **Outils d’administration**, puis **Observateur d’événements**.
 Dans le menu **Affichage** de l’Observateur d’événements, cliquez sur **Afficher les journaux d’analyse et de débogage**. Le nom du journal du canal d’analyse est **Microsoft-Windows-Dsc/Analytic** et celui du canal de débogage est **Microsoft-Windows-Dsc/Debug**. Vous pouvez également utiliser l’utilitaire [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) pour activer les journaux, comme l’illustre l’exemple suivant.
 
 ```powershell
@@ -194,7 +194,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 Vous pouvez extraire les données de la variable `$SeparateDscOperations` à l’aide de [Where-Object](/powershell/module/microsoft.powershell.core/where-object). Voici cinq scénarios dans lesquels vous pouvez extraire les données pour résoudre les problèmes liés à DSC :
 
-### <a name="1-operations-failures"></a>1 : Échecs des opérations
+### <a name="1-operations-failures"></a>1 : échecs d’opérations
 
 Tous les événements sont associés à des [niveaux de gravité](/windows/desktop/WES/defining-severity-levels). Ces informations peuvent être utilisées pour identifier les événements d’erreur :
 
@@ -206,7 +206,7 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2 : Détails des opérations exécutées au cours de la dernière demi-heure
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2 : détails des opérations exécutées au cours de la dernière demi-heure
 
 `TimeCreated`, une propriété de chaque événement Windows, indique l’heure de création de l’événement. Vous pouvez comparer cette propriété avec un objet date/heure particulier pour filtrer tous les événements :
 
@@ -219,7 +219,7 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
 ```
 
-### <a name="3-messages-from-the-latest-operation"></a>3 : Messages de la dernière opération
+### <a name="3-messages-from-the-latest-operation"></a>3 : messages de la dernière opération
 
 La dernière opération est stockée dans le premier index du groupe de tableaux `$SeparateDscOperations`.
 L’interrogation des messages du groupe pour l’index 0 retourne tous les messages de la dernière opération :
@@ -242,7 +242,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
-### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4 : Messages d’erreur enregistrés pour les dernières opérations ayant échoué
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4 : messages d’erreur enregistrés pour les dernières opérations ayant échoué
 
 `$SeparateDscOperations[0].Group` contient un ensemble d’événements pour la dernière opération. Exécutez l’applet de commande `Where-Object` pour filtrer les événements selon le nom d’affichage du niveau. Les résultats sont stockés dans la variable `$myFailedEvent`, qui peut être examinée pour obtenir le message d’événement :
 
@@ -258,7 +258,7 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1
 ```
 
-### <a name="5-all-events-generated-for-a-particular-job-id"></a>5 : Tous les événements générés pour un ID de tâche en particulier.
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5 : tous les événements générés pour un ID de tâche en particulier.
 
 `$SeparateDscOperations` est un tableau de groupes, chacun d’eux a comme nom l’ID de tâche unique. En exécutant l’applet de commande `Where-Object`, vous pouvez extraire les groupes d’événements qui ont un ID de tâche particulier :
 
@@ -461,7 +461,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Mes ressources ne sont pas mises à jour : Comment réinitialiser le cache
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Mes ressources ne sont pas mises à jour : comment réinitialiser le cache
 
 Le moteur DSC met en cache les ressources implémentées comme module PowerShell pour des raisons d’efficacité.
 Toutefois, cela peut entraîner des problèmes quand vous créez et testez une ressource simultanément, car DSC charge la version mise en cache tant que le processus n’est pas redémarré. La seule façon pour que DSC charge la version la plus récente est d’arrêter explicitement le processus qui héberge le moteur DSC.

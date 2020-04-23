@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277597"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978285"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -147,7 +147,7 @@ Consultez les captures instantanées ci-dessous :
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Utilisation de PsDscRunAsCredential avec des ressources composites DSC
 
-Nous avons ajouté la prise en charge de [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) avec des ressources [composites](/powershell/scripting/dsc/authoringresourcecomposite) DSC.
+Nous avons ajouté la prise en charge de [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) avec des ressources [composites](/powershell/scripting/dsc/resources/authoringresourcecomposite) DSC.
 
 Il est maintenant possible de spécifier une valeur pour **PsDscRunAsCredential** tout en utilisant des ressources composites dans les configurations. Le cas échéant, toutes les ressources sont exécutées dans une ressource composite en tant qu’utilisateur RunAs. Si une ressource composite en appelle d’autres, toutes ces ressources sont également exécutées en tant qu’utilisateur RunAs. Les informations d’identification RunAs sont propagées à tout niveau de la hiérarchie des ressources composites. Si une ressource située à l’intérieur d’une ressource composite spécifie sa propre valeur de **PsDscRunAsCredential**, une erreur de fusion se produit pendant la compilation de la configuration.
 
@@ -239,9 +239,9 @@ Dans WMF 5.1, DSC prend en charge la validation des signatures numériques sur 
 
 ### <a name="how-to-sign-configuration-and-module"></a>Comment signer des configurations et modules
 
-- Fichiers de configuration (.mof) : la cmdlet PowerShell existante [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) est étendue de façon à prendre en charge la signature des fichiers MOF.
-- Modules : la signature de modules s’effectue en signant le catalogue de module correspondant :
-  1. Créer un fichier catalogue : un fichier catalogue contient une collection de hachages de chiffrement ou d’empreintes. Chaque empreinte correspond à un fichier qui est inclus dans le module. La nouvelle applet de commande [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog) a été ajoutée pour permettre aux utilisateurs de créer un fichier catalogue pour leur module.
+- Fichiers de configuration (.MOF) : l’applet de commande PowerShell existante [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) est étendue pour prendre en charge la signature des fichiers MOF.
+- Modules : la signature de modules s’effectue en signant le catalogue de module correspondant en procédant comme suit :
+  1. Créer un fichier catalogue : un fichier catalogue contient une collection de hachages de chiffrement ou d’empreintes numériques. Chaque empreinte correspond à un fichier qui est inclus dans le module. La nouvelle applet de commande [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog) a été ajoutée pour permettre aux utilisateurs de créer un fichier catalogue pour leur module.
   2. Signer le fichier catalogue : utilisez [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) pour signer le fichier catalogue.
   3. Placer le fichier catalogue dans le dossier de module. Par convention, le fichier catalogue de module doit être placé sous le dossier de module portant le même nom que le module.
 

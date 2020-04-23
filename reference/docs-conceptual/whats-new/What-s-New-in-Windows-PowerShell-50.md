@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500462"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978200"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 
@@ -460,7 +460,7 @@ Vous pouvez gérer les instances de travaux planifiés terminés à l’aide d�
 
 Les travaux planifiés sont également fournis avec un ensemble personnalisé d'applets de commande permettant de les gérer. Les applets de commande vous permettent non seulement de créer, modifier, gérer, désactiver et réactiver des tâches planifiées, mais aussi de créer des déclencheurs et définir les options des tâches planifiées.
 
-Pour plus d’informations sur les travaux planifiés, voir [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs).
+Pour plus d’informations sur les travaux planifiés, voir [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1).
 
 ### <a name="windows-powershell-language-enhancements"></a>Améliorations apportées au langage Windows PowerShell
 

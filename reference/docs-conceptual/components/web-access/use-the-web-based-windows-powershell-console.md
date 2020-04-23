@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,applet de commande
 title: utiliser la console web Windows PowerShell
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500870"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978659"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Utiliser la console web Windows PowerShell
 
@@ -211,9 +211,8 @@ Alt+F7          | Effacer la liste de l’historique de commandes
 
     Vous pouvez modifier la hauteur de la console d’une manière similaire.
 
-    D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](h https://devblogs.microsoft.com/powershell).
+    D’autres exemples de personnalisation de l’affichage de la console sont disponibles sur le [blog de l’équipe Windows PowerShell](https://devblogs.microsoft.com/powershell).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Hey, Scripting Guy !](https://devblogs.microsoft.com/scripting/)
-- [Blog de l’équipe PowerShell](https://devblogs.microsoft.com/powershell/)

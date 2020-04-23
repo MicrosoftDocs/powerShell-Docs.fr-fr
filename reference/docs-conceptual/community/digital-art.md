@@ -4,10 +4,10 @@ ms.author: sewhee
 ms.date: 02/14/2020
 title: Art numérique PowerShell
 ms.openlocfilehash: e67cafa274ca1720661aa24953278c13444d7698
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79060314"
 ---
 # <a name="powershell-digital-art"></a>Art numérique PowerShell

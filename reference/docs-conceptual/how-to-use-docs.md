@@ -3,10 +3,10 @@ ms.date: 10/20/2019
 keywords: powershell,applet de commande
 title: Guide pratique pour utiliser la documentation PowerShell
 ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082835"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Guide pratique pour utiliser la documentation PowerShell

@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Notes de publication de WMF 5.x
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402356"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Notes de publication de Windows Management Framework (WMF) 5.x
@@ -49,7 +49,7 @@ WMF 5.1 comprend les composants PowerShell, WMI, WinRM et SIL (Journalisation d
 
 À compter de la version 5.1, PowerShell est disponible dans différentes éditions qui affichent une compatibilité distincte avec les plateformes et des ensembles de fonctionnalités variables.
 
-- **Édition Desktop :** repose sur le .NET Framework et offre une compatibilité avec les scripts et les modules ciblant les versions de PowerShell exécutées sur les éditions complètes de Windows, telles que Server Core et Bureau Windows.
+- **Édition Desktop :** repose sur .NET Framework et offre une compatibilité avec les scripts et les modules ciblant les versions de PowerShell exécutées sur les éditions complètes de Windows, telles que Server Core et le Bureau Windows.
 - **Core Edition :** basée sur .NET Core, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions réduites de Windows telles que Nano Server et Windows IoT.
 
 ### <a name="learn-more-about-using-powershell-editions"></a>En savoir plus sur l’utilisation des éditions de PowerShell

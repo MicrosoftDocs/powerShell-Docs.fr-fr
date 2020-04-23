@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Création d'une zone d'entrée personnalisée
 ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706187"
 ---
 # <a name="creating-a-custom-input-box"></a>Création d'une zone d'entrée personnalisée
@@ -159,5 +159,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [GitHub : WinFormsExampleUpdates de Dave Wyatt](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
-- [Astuce Windows PowerShell de la semaine :  Créer une zone d’entrée personnalisée](https://technet.microsoft.com/library/ff730941.aspx)
+- [GitHub: Dave Wyatt’s WinFormsExampleUpdates](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
+- [Astuce Windows PowerShell de la semaine : création d’une zone d’entrée personnalisée](https://technet.microsoft.com/library/ff730941.aspx)

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
 ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500760"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
