@@ -60,7 +60,7 @@
           items:
             - name: Vue d’ensemble
               href: learn/remoting/jea/overview.md
-            - name: Conditions préalables requises
+            - name: Prérequis
               href: learn/remoting/jea/prerequisites.md
             - name: Capacités de rôle
               href: learn/remoting/jea/role-capabilities.md
@@ -372,9 +372,9 @@
         - name: Bien démarrer avec DSC sur Nano
           href: dsc/getting-started/nanoDSC.md
         - name: Bien démarrer avec DSC dans Azure Automation
-          href: dsc/getting-started/azureDSC.md
-        - name: Bien démarrer avec DSC sur Machines virtuelles Azure
-          href: dsc/getting-started/azureDSCexthistory.md
+          href: /azure/automation/automation-dsc-getting-started
+        - name: Bien démarrer avec la configuration d’invité d’Azure Policy
+          href: /azure/governance/policy/concepts/guest-configuration
     - name: Démarrages rapides
       expanded: true
       items:
@@ -734,7 +734,7 @@
       href: community/community-support.md
     - name: Art numérique
       href: community/digital-art.md
-    - name: Nouveautés de PowerShell-Docs
+    - name: Nouveautés de la documentation PowerShell
       href: community/whats-new-in-docs.md
     - name: Guide du contributeur
       items:
@@ -791,7 +791,7 @@
               items:
                 - name: Vue d’ensemble de l’aide actualisable
                   href: developer/module/updatable-help-overview.md
-                - name: 'Création d’aide actualisable : pas à pas'
+                - name: "Création d’une aide actualisable\_: procédure pas à pas"
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Fonctionnement de l’aide actualisable
                   href: developer/module/how-updatable-help-works.md
