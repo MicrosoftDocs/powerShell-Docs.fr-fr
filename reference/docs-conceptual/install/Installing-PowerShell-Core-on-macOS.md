@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur macOS
 description: Informations sur l’installation de PowerShell sur macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395007"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80977520"
 ---
 # <a name="installing-powershell-on-macos"></a>Installation de PowerShell sur macOS
 
@@ -146,13 +146,7 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>Installer OpenSSL
 
-OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell. Vous pouvez l’installer avec MacPorts ou Brew.
-
-#### <a name="install-openssl-via-brew"></a>Installer OpenSSL avec Brew
-
-Pour plus d'informations sur Brew, voir [À propos de Brew](#about-brew).
-
-Exécutez `brew install openssl` pour installer OpenSSL.
+OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell. Vous pouvez l’installer avec MacPorts.
 
 #### <a name="install-openssl-via-macports"></a>Installer OpenSSL avec MacPorts
 
@@ -161,12 +155,12 @@ Exécutez `brew install openssl` pour installer OpenSSL.
    Pour connaître les instructions à suivre, reportez-vous au [guide d’installation](https://guide.macports.org/chunked/installing.macports.html).
 1. Mettez à jour MacPorts en exécutant `sudo port selfupdate`.
 1. Mettez à niveau les packages MacPorts en exécutant `sudo port upgrade outdated`.
-1. Installez OpenSSL en exécutant `sudo port install openssl`.
+1. Installez OpenSSL en exécutant `sudo port install openssl10`.
 1. Liez les bibliothèques pour les mettre à la disposition de PowerShell :
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell"></a>Désinstallation de PowerShell

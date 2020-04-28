@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Prendre en main PowerShell Gallery
-ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995885"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81219691"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Bien démarrer avec PowerShell Gallery
 
@@ -23,7 +23,7 @@ Pour rechercher des packages sur PowerShell Gallery, vous pouvez utiliser le con
 
 Vous pouvez filtrer les résultats de la galerie avec les paramètres suivants :
 
-- Name
+- Nom
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -85,6 +85,16 @@ De même, quand elle est exécutée sans paramètre supplémentaire, [Update-Scr
 Pour connaître les modules que vous avez installés à partir de PowerShell Gallery, exécutez l’applet de commande [Get-InstalledModule][]. Cette commande répertorie tous les modules qui ont été installés directement à partir de PowerShell Gallery sur votre système.
 
 De même, pour connaître les scripts que vous avez installés à partir de PowerShell Gallery, exécutez l’applet de commande [Get-InstalledScript][]. Cette commande liste tous les scripts qui ont été installés sur votre système directement à partir de PowerShell Gallery.
+
+## <a name="network-access-to-the-powershell-gallery"></a>Accès réseau à PowerShell Gallery
+
+PowerShell Gallery utilise les noms d’hôte suivants.
+
+- `psg-prod-eastus.azureedge.net` - nom d’hôte CDN
+- `devopsgallerystorage.blob.core.windows.net` - nom d’hôte du compte de stockage
+- `*.powershellgallery.com` - site web
+
+Ces noms d’hôte doivent être ajoutés aux listes d’autorisation qui contrôlent l’accès à partir de votre réseau.
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Retirer des packages de la liste
-ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328270"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978268"
 ---
 # <a name="unlisting-packages"></a>Retirer des packages de la liste
 
@@ -16,9 +16,9 @@ ms.locfileid: "71328270"
 
 PowerShell Gallery ne gère pas la suppression définitive de packages par des utilisateurs.
 Cela permet à d’autres utilisateurs d’ajouter des dépendances vis-à-vis de vos packages sans avoir à se soucier de risques d’arrêts.
-Par exemple, si le module Pester dépend du module Azure et que le module Azure est supprimé de la galerie, l’utilisateur ne peut plus utiliser le module Pester.
+Par exemple, si le module Pester dépend du module Azure et que le module Azure est supprimé de la galerie, les utilisateurs ne peuvent plus utiliser le module Pester.
 
-Toutefois, plutôt que de supprimer un package, vous pouvez le retirer de la liste.
+Au lieu de supprimer un package, vous pouvez ne plus le répertorier.
 
 **À quoi sert le retrait d’un package sur PowerShell Gallery ?**
 
@@ -26,7 +26,7 @@ Lorsqu’un package, comme un module ou un script, est retiré de la liste sur P
 La seule façon de le télécharger consiste à spécifier son nom et sa version exacts.
 Le retrait d’un package de la liste ne provoque donc pas l’arrêt des modules ou des scripts qui en dépendent.
 
-Pour retirer votre package de la liste, accédez à la page des détails du package, puis sélectionnez « Supprimer le module ». Décochez la case « Répertorié », puis cliquez sur Enregistrer.
+Pour retirer votre package de la liste, accédez à la page des détails du package, puis sélectionnez « Supprimer le module ». Décochez la case « Répertorié », puis sélectionnez « Enregistrer ».
 
 **Comment supprimer un package ?**
 

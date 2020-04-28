@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressources DSC PackageManagementSource
 ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954786"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>Ressources DSC PackageManagementSource
@@ -39,7 +39,7 @@ PackageManagementSource [String] #ResourceName
 
 |Propriété |Description |
 |---|---|
-|Name |Spécifie le nom de la source du package à inscrire ou à désinscrire sur votre système. |
+|Nom |Spécifie le nom de la source du package à inscrire ou à désinscrire sur votre système. |
 |ProviderName |Spécifie le nom du fournisseur OneGet par le biais duquel vous pouvez interagir avec la source du package. |
 |SourceLocation |Spécifie l’URI de la source du package. |
 |InstallationPolicy |Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Détermine si vous faites confiance à la source du package. Valeurs possibles : **Untrusted** ou **Trusted**. |

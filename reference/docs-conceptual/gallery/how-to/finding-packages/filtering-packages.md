@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Filtrage des résultats de la recherche
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328040"
 ---
 # <a name="filtering-search-results"></a>Filtrage des résultats de la recherche
@@ -33,7 +33,7 @@ Les cases à cocher sous la liste déroulante permettent aux utilisateurs de fil
   - Applet de commande
   - Ressource DSC
   - Fonction
-  - Fonctionnalité de rôle
+  - Fonctionnalité Rôle
   - Workflow
 
 Pour afficher uniquement les modules de PowerShell Gallery, cochez Module dans Types de packages.

@@ -3,12 +3,12 @@ title: Liste de contrôle éditoriale
 description: Il s’agit d’une liste résumée des règles de modification de la documentation de PowerShell.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060334"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624735"
 ---
 # <a name="editors-checklist"></a>Liste de contrôle de l’éditeur
 
@@ -36,7 +36,8 @@ Il s’agit d’un résumé des règles à appliquer lors de l’écriture de no
   - exemples syntaxiques `Verb-Noun -Parameter` ;
   - chemins de fichiers `C:\Program Files\PowerShell`, `/usr/bin/pwsh` ;
   - URL qui ne sont pas censées être cliquables dans le document.
-- Mettre en gras les noms de propriétés, les valeurs de paramètres, les noms de paramètres, les noms de classes, les noms de modules, les noms d’entités, les noms d’objets et les noms de types.
+  - Valeurs de propriété ou de paramètre
+- Mettre en gras les noms de propriétés, les noms de paramètres, les noms de classes, les noms de modules, les noms d’entités, les noms d’objets et les noms de types.
   - Les caractères gras servent au balisage sémantique et non à l’accentuation.
   - Gras : utiliser des astérisques `**`.
 - Italique : utiliser le trait de soulignement `_`.
@@ -60,7 +61,7 @@ Il s’agit d’un résumé des règles à appliquer lors de l’écriture de no
 - Ligne vide avant et après.
 - Utiliser des limites de code balisées : **powershell**, **Output** ou tout autre ID de langage adapté.
 - Limite non balisée : blocs syntaxiques ou autres shells.
-- Placer **Output** dans un bloc de code distinct, sauf pour les exemples simples où le lecteur n’est pas censé utiliser le bouton **Copier**.
+- Placer la sortie dans un bloc de code distinct, sauf pour les exemples simples où le lecteur n’est pas censé utiliser le bouton **Copier**.
 - Voir la liste des [langages pris en charge](/contribute/code-in-docs#supported-languages).
 
 ### <a name="lists"></a>Listes

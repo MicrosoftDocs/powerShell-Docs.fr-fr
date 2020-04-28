@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954236"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Création d’un pipeline d’intégration continue et de déploiement continu avec DSC
@@ -18,7 +18,7 @@ Ce processus simule la première partie d’un pipeline qui sera utilisée dans 
 
 Un pipeline CI/CD automatisé vous permet de mettre à jour les logiciels avec plus de rapidité et de fiabilité, garantissant que tout le code est testé et qu’une version actuelle de votre code est disponible à tout moment.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour utiliser cet exemple, vous devez maîtriser les éléments suivants :
 
@@ -324,14 +324,14 @@ Ici, nous aborderons uniquement les étapes de build que vous ajouterez à la bu
 Créez une définition de build (sélectionnez le modèle **vide**) nommée « InfraDNS ».
 Ajoutez les étapes suivantes à votre définition de build :
 
-- Script PowerShell
+- script PowerShell
 - Publier les résultats des tests
 - Copier les fichiers
 - Publier l’artefact
 
 Après avoir ajouté ces étapes de build, modifiez les propriétés de chaque étape comme suit :
 
-### <a name="powershell-script"></a>Script PowerShell
+### <a name="powershell-script"></a>script PowerShell
 
 1. Définissez la propriété **Type** sur `File Path`.
 1. Définissez la propriété **Chemin d'accès du script** sur `initiate.ps1`.
@@ -392,13 +392,13 @@ Veillez à sélectionner **Continuous deployment** afin de déclencher une nouve
 
 Ajoutez les étapes suivantes à la définition de version :
 
-- Script PowerShell
+- script PowerShell
 - Publier les résultats des tests
 - Publier les résultats des tests
 
 Modifiez les étapes comme suit :
 
-### <a name="powershell-script"></a>Script PowerShell
+### <a name="powershell-script"></a>script PowerShell
 
 1. Définissez le champ **Chemin d'accès du script** sur `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. Définissez le champ **Arguments** sur `-fileName Deploy`

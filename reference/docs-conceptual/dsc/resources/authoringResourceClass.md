@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Écriture d’une ressource DSC personnalisée avec les classes PowerShell
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952826"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Écriture d’une ressource DSC personnalisée avec les classes PowerShell
@@ -21,7 +21,7 @@ Dans cette rubrique, nous allons créer une ressource simple nommée **FileResou
 
 Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md)
 
->**Remarque :** ls collections génériques ne sont pas prises en charge dans les ressources de classe.
+>**Remarque :** ls collections génériques ne sont pas prises en charge dans les ressources de classe.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Structure des dossiers pour une ressource de classe
 
@@ -473,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>Prise en charge de PsDscRunAsCredential
 
->**Remarque :** **PsDscRunAsCredential** est pris en charge dans PowerShell 5.0 et versions ultérieures.
+>**Remarque :** **PsDscRunAsCredential** est pris en charge dans PowerShell 5.0 et versions ultérieures.
 
 La propriété **PsDscRunAsCredential** peut être utilisée dans le bloc de ressources [Configurations DSC](../configurations/configurations.md) pour spécifier que la ressource doit être exécutée sous un jeu d’informations d’identification spécifié.
 Pour plus d’informations, consultez [Exécution de DSC avec les informations d’identification de l’utilisateur](../configurations/runAsUser.md).
@@ -483,7 +483,7 @@ Pour plus d’informations, consultez [Exécution de DSC avec les informations d
 L’attribut **DscResource()** accepte un paramètre facultatif, **RunAsCredential**.
 Ce paramètre prend une des trois valeurs suivantes :
 
-- `Optional` **PsDscRunAsCredential** est facultatif pour les configurations qui appellent cette ressource. Il s'agit de la valeur par défaut.
+- `Optional` **PsDscRunAsCredential** est facultatif pour les configurations qui appellent cette ressource. Il s’agit de la valeur par défaut.
 - `Mandatory` **PsDscRunAsCredential** doit être utilisé pour toute configuration qui appelle cette ressource.
 - `NotSupported` Les configurations qui appellent cette ressource ne peuvent pas utiliser **PsDscRunAsCredential**.
 - `Default` Identique à `Optional`.

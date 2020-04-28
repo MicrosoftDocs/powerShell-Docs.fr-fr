@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource Archive DSC
 ms.openlocfilehash: ddabe1a623783fe213b8059f47851184d5253fc5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954766"
 ---
 # <a name="dsc-archive-resource"></a>Ressource Archive DSC
@@ -37,9 +37,9 @@ Archive [string] #ResourceName
 |---|---|
 |Destination |Spécifie l’emplacement où le contenu de l’archive doit être extrait. |
 |Path |Spécifie le chemin source du fichier d’archive. |
-|Checksum |Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. |
+|Somme de contrôle |Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. |
 |Force |Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **False**. |
-|Validate| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. Si vous spécifiez **Validate** sans **Checksum**, la valeur _SHA-256_ est utilisée par défaut pour **Checksum**. |
+|Valider| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. Si vous spécifiez **Validate** sans **Checksum**, une **somme de contrôle** _SHA-256_ est utilisée par défaut. |
 
 ## <a name="common-properties"></a>Propriétés communes
 

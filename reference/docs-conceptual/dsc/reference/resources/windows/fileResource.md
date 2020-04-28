@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: dsc,powershell,configuration,installation
 title: Ressource File DSC
 ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954676"
 ---
 # <a name="dsc-file-resource"></a>Ressource File DSC
@@ -41,12 +41,12 @@ File [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DestinationPath |Emplacement sur le nœud cible où vous voulez vérifier que la propriété **Ensure** a la valeur **Present** ou **Absent**. |
-|Attributes |L’état souhaité des attributs du fichier ou du répertoire cible. Les valeurs valides sont _Archive_, _Hidden_, _ReadOnly_ et _System_. |
-|Checksum |Le type de somme de contrôle à utiliser pour déterminer si deux fichiers sont identiques. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
-|Contents |Valide uniquement quand elle est utilisée avec **Type** **File**. Indique le contenu dont la présence ou l’absence doivent être garanties à partir du fichier cible avec **Ensure** et les valeurs **Present** ou **Absent**. |
-|Credential |Les informations d’identification nécessaires pour accéder aux ressources, telles que des fichiers sources. |
+|Attributs |L’état souhaité des attributs du fichier ou du répertoire cible. Les valeurs valides sont _Archive_, _Hidden_, _ReadOnly_ et _System_. |
+|Somme de contrôle |Le type de somme de contrôle à utiliser pour déterminer si deux fichiers sont identiques. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. |
+|Contents |Valide uniquement si utilisé avec **Type** **File**. Indique le contenu dont la présence ou l’absence doivent être garanties à partir du fichier cible avec **Ensure** et les valeurs **Present** ou **Absent**. |
+|Informations d'identification |Les informations d’identification nécessaires pour accéder aux ressources, telles que des fichiers sources. |
 |Force |Remplace les opérations d’accès qui entraîneraient une erreur (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire qui n’est pas vide). La valeur par défaut est `$false`. |
-|Recurse |Valide uniquement quand elle est utilisée avec **Type** **Directory**. Exécute l’opération d’état de manière récursive sur tous les sous-répertoires. La valeur par défaut est `$false`. |
+|Recurse |Valide uniquement si utilisé avec **Type** **Directory**. Exécute l’opération d’état de manière récursive sur tous les sous-répertoires. La valeur par défaut est `$false`. |
 |SourcePath |Chemin à partir duquel copier la ressource de fichier ou de dossier. |
 |Type |Le type de ressource en cours de configuration. Les valeurs valides sont **Directory** et **File**. La valeur par défaut est **File**. |
 |MatchSource |Détermine si la ressource doit contrôler les nouveaux fichiers ajoutés au répertoire source après la copie initiale. La valeur `$true` indique que, après la copie initiale, les nouveaux fichiers source doivent être copiés dans la destination. Si la valeur est définie sur `$false`, la ressource met en cache le contenu du répertoire source et ignore les fichiers ajoutés après la copie initiale. La valeur par défaut est `$false`. |
@@ -65,7 +65,7 @@ File [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-### <a name="additional-information"></a>Informations complémentaires
+### <a name="additional-information"></a>Informations supplémentaires
 
 - Quand vous spécifiez uniquement un **DestinationPath**, la ressource vérifie que le chemin existe si la valeur définie est **Present** ou qu’il n’existe pas si la valeur définie est **Absent**.
 - Quand vous spécifiez un **SourcePath** et un **DestinationPath** et que **Type** a la valeur **Directory**, la ressource copie le répertoire source sur le chemin de destination. Les propriétés **Recurse**, **Force** et **MatchSource** modifient le type d’opération de copie effectuée, tandis que **Credential** détermine le compte à utiliser pour accéder au répertoire source.

@@ -2,12 +2,12 @@
 title: Migration de Windows PowerShell 5.1 vers PowerShell 7
 description: Mise à jour de PowerShell 5.1 vers PowerShell 7 pour vos plateformes Windows.
 ms.date: 03/25/2020
-ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8f19297bdb4825f3bbd50544dc5737997e3c83e3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500500"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81440490"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migration de Windows PowerShell 5.1 vers PowerShell 7
 
@@ -176,7 +176,7 @@ Pour créer une session distante, spécifiez l’ordinateur cible avec le param�
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-Si vous utilisez le paramètre **HostName**, vous pouvez également fournir les informations de nom d’utilisateur en y ajoutant le signe arobase (@) et le nom de l’ordinateur.
+Si vous utilisez le paramètre **HostName**, vous pouvez également fournir les informations de nom d’utilisateur en y ajoutant le signe arobase (`@`) et le nom de l’ordinateur.
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>
