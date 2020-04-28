@@ -3,12 +3,12 @@ title: Modification des articles de référence
 description: Cet article explique les conditions requises pour modifier les informations de référence sur les cmdlets et les rubriques About_ de la documentation de PowerShell.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3aed1c14429310c57681397d4877a3a6f48400fd
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: e135f6cc81ba7537a535a08421e1ca9b2b2af573
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500972"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624769"
 ---
 # <a name="editing-reference-articles"></a>Modification des articles de référence
 
@@ -26,18 +26,17 @@ PlatyPS possède un schéma codé en dur pour les informations de référence su
 
 ## <a name="formatting-about_-files"></a>Mise en forme des fichiers About_
 
-Les fichiers `About_*` sont maintenant traités par [Pandoc][] et non plus par PlatyPS. Leur mise en forme répond à l’objectif de maximiser la compatibilité dans toutes les versions de PowerShell et avec les outils de publication.
+Les fichiers `About_*` sont écrits dans Markdown mais sont fournis en tant que fichiers texte bruts. Nous utilisons [Pandoc][] pour convertir Markdown en texte brut. Leur mise en forme répond à l’objectif de maximiser la compatibilité dans toutes les versions de PowerShell et avec les outils de publication.
 
 Instructions de mise en forme de base :
 
-- Limitez les lignes à 80 caractères.
-- Les blocs de code et les tables sont limités à 76 caractères, car Pandoc ajoute un retrait de quatre espaces lors de la conversion en texte brut.
-- Les tables doivent tenir dans 76 caractères.
-  - Ajoutez manuellement des retours à la ligne au contenu des cellules.
-  - Utilisez des caractères `|` ouvrants et fermants sur chaque ligne.
-  - Vous trouverez un exemple fonctionnel dans [about_Comparison_Operators][about-example].
-- Si vous utilisez les caractères spéciaux Pandoc `\`, `$` et `<` :
-  - Dans un en-tête : ils doivent être placés dans une séquence d’échappement précédée d’un caractère `\` ou entre accents graves (`` ` ``)
+- Limitez les lignes à 80 caractères. Pandoc met en retrait certains blocs Markdown, de sorte que ces blocs doivent être ajustés.
+  - Les blocs de code sont limités à 76 caractères
+  - Les tables sont limitées à 76 caractères
+  - Les citations (et les alertes) sont limitées à 78 caractères
+
+- Si vous utilisez les méta-caractères spéciaux Pandoc `\`, `$` et `<`
+  - Dans un en-tête : ils doivent être placés dans une séquence d’échappement précédée d’un caractère `\` ou dans des morceaux de code entre accents graves (`` ` ``)
   - Dans un paragraphe : ils doivent être placés dans un morceau de code. Par exemple :
 
     ~~~markdown
@@ -45,6 +44,29 @@ Instructions de mise en forme de base :
 
     The `$foo` variable is used to store ...
     ~~~
+
+- Les tables doivent tenir dans 76 caractères.
+  - Ajoutez manuellement des retours à la ligne au contenu des cellules.
+  - Utilisez des caractères `|` ouvrants et fermants sur chaque ligne.
+  - L’exemple suivant montre comment construire correctement une table qui contient des informations qui s’encapsulent sur plusieurs lignes dans une cellule.
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > La limite de 76 colonnes s’applique uniquement aux rubriques `About_*`. Vous pouvez utiliser des colonnes larges dans les articles de référence sur les cmdlets ou conceptuelles.
 
 ## <a name="structuring-examples"></a>Structuration des exemples
 
