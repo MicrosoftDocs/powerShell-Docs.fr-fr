@@ -2,18 +2,14 @@
 title: Installation de PowerShell sur Linux
 description: Informations sur l’installation de PowerShell sur différentes distributions Linux
 ms.date: 03/09/2020
-ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 201bb693c3473f6b1f05d860562b1fc132912bb2
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500550"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174130"
 ---
 # <a name="installing-powershell-on-linux"></a>Installation de PowerShell sur Linux
-
-Prend en charge [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [Alpine 3.9 et 3.10][alpine], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 28][fedora], [Fedora 29][fedora], [Fedora 30][fedora] et [Arch Linux][arch].
-
-Pour les distributions Linux qui ne sont pas officiellement prises en charge, vous pouvez essayer d’installer PowerShell avec [PowerShell Snap Package][snap]. Vous pouvez également essayer de déployer les fichiers binaires PowerShell directement à l’aide de [l’archive `tar.gz`][tar] Linux, mais vous devez configurer les dépendances nécessaires en fonction du système d’exploitation dans des étapes distinctes.
 
 Tous les packages sont disponibles dans notre page de [versions][] GitHub. Une fois le package installé, exécutez `pwsh` à partir d’un terminal. Exécutez `pwsh-preview` si vous avez installé une [préversion](#installing-preview-releases).
 
@@ -24,36 +20,40 @@ Tous les packages sont disponibles dans notre page de [versions][] GitHub. Une f
 >
 > Si vous devez exécuter PowerShell 6 côte à côte avec PowerShell 7, réinstallez PowerShell 6 suivant la méthode [Archive binaire](#binary-archives).
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+Pour les distributions Linux qui ne sont pas officiellement prises en charge, vous pouvez essayer d’installer PowerShell avec [PowerShell Snap Package][snap]. Vous pouvez également essayer de déployer les fichiers binaires PowerShell directement à l’aide de [l’archive `tar.gz`][tar] Linux, mais vous devez configurer les dépendances nécessaires en fonction du système d’exploitation dans des étapes distinctes.
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+Mises en production officiellement prises en charge
 
-## <a name="installing-preview-releases"></a>Installation de préversions
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpine 3.9 et 3.10
+- CentOS 7
+- Red Hat Enterprise Linux (RHEL) 7
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42.3
+- openSUSE Leap 15
 
-Lorsque vous installez une préversion de PowerShell pour Linux au moyen d’un référentiel de packages, le nom de package passe de `powershell` à `powershell-preview`.
+Mises en production prises en charge par la communauté
 
-Les installations par téléchargement direct ne changent rien, sinon le nom de fichier.
+- Ubuntu 18.10
+- Ubuntu 19.04
+- Arch Linux
+- Kali
+- Raspbian (expérimental)
 
-Le tableau suivant contient des commandes permettant d’installer les packages stables et en préversion à l’aide des divers gestionnaires de package :
+Autres méthodes d’installation
 
-| Distribution(s) |            Commande stable            |               Commande de préversion                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snap Package
+- Archives binaires
+- Outil .NET Global
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -573,9 +573,9 @@ sudo dnf remove powershell
 
 PowerShell est disponible dans le dépôt utilisateur [Arch Linux][].
 
-* Il peut être compilé avec la [dernière version étiquetée][arch-release]
-* Il peut être compilé à partir de la [dernière validation sur le master][arch-git]
-* Il peut être installé en utilisant la [dernière ressource binaire de la version][arch-bin]
+- Il peut être compilé avec la [dernière version étiquetée][arch-release]
+- Il peut être compilé à partir de la [dernière validation sur le master][arch-git]
+- Il peut être installé en utilisant la [dernière ressource binaire de la version][arch-bin]
 
 Les packages dans le dépôt utilisateur Arch Linux sont gérés par la communauté ; il n’existe aucune prise en charge officielle.
 
@@ -710,6 +710,20 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="installing-preview-releases"></a>Installation de préversions
+
+Lorsque vous installez une préversion de PowerShell pour Linux au moyen d’un référentiel de packages, le nom de package passe de `powershell` à `powershell-preview`.
+
+Les installations par téléchargement direct ne changent rien, sinon le nom de fichier.
+
+Le tableau suivant contient des commandes permettant d’installer les packages stables et en préversion à l’aide des divers gestionnaires de package :
+
+| Distribution(s) |            Commande stable            |               Commande de préversion                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+
 ## <a name="install-as-a-net-global-tool"></a>Installation en tant qu’outil global .NET
 
 Si vous avez déjà installé le [kit SDK .NET Core](/dotnet/core/sdk), il est facile d’installer PowerShell en tant [qu’outil global .NET](/dotnet/core/tools/global-tools).
@@ -781,7 +795,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 - Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`
 - Les modules partagés sont lus à partir de `/usr/local/share/powershell/Modules`
 - Les modules par défaut sont lus à partir de `$PSHOME/Modules`
-- L’historique PSReadline est enregistré dans `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- L’historique PSReadLine est enregistré dans`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Les profils respectant la configuration par hôte de PowerShell, les profils spécifiques à l’hôte par défaut existent sur `Microsoft.PowerShell_profile.ps1` aux mêmes emplacements.
 

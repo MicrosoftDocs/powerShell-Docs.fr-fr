@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur Windows
 description: Informations sur l’installation de PowerShell sur Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
+ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374892"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141378"
 ---
 # <a name="installing-powershell-on-windows"></a>Installation de PowerShell sur Windows
 
@@ -82,11 +82,11 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installation du package ZIP
 
-Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Contrairement aux packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
+Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Contrairement aux packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Téléchargez l’archive ZIP à partir de la page des [mises en production][releases]. Selon la façon dont vous téléchargez le fichier, vous devrez peut-être débloquer le fichier avec l’applet de commande `Unblock-File`. Décompressez le contenu à l’emplacement de votre choix et exécutez `pwsh.exe` à partir de celui-ci. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
 
-## <a name="deploying-on-windows-iot"></a>Déploiement sur Windows IoT
+## <a name="deploying-on-windows-10-iot-enterprise"></a>Déploiement sur Windows 10 IoT Entreprise
 
-Windows IoT contient Windows PowerShell, que l’on peut utiliser pour déployer PowerShell 7.
+Windows 10 IoT Entreprise contient Windows PowerShell, que l’on peut utiliser pour déployer PowerShell 7.
 
 1. Créez `PSSession` sur l’appareil cible
 
@@ -128,6 +128,16 @@ Windows IoT contient Windows PowerShell, que l’on peut utiliser pour déployer
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## <a name="deploying-on-windows-10-iot-core"></a>Déploiement sur Windows 10 IoT Core
+
+Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité *IOT_POWERSHELL*, que nous pouvons utiliser pour déployer PowerShell 7.
+Les étapes définies ci-dessus pour Windows 10 IoT Entreprise peuvent également être suivies pour IoT Core.
+
+Pour ajouter la dernière version de PowerShell dans l’image d’expédition, utilisez la commande [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) pour inclure le package dans la zone de travail et ajouter la fonctionnalité *OPENSRC_POWERSHELL* à votre image.
+
+> [!NOTE]
+> Pour l’architecture ARM64, Windows PowerShell n’est pas ajouté lorsque vous incluez *IOT_POWERSHELL*. L’installation basée sur zip ne fonctionne donc pas.
+> Vous devrez utiliser la commande Import-PSCoreRelease pour l’ajouter dans l’image.
 
 ## <a name="deploying-on-nano-server"></a>Déploiement sur Nano Server
 

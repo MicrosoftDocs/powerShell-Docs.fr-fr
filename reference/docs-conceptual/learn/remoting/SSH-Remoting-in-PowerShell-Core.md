@@ -2,12 +2,12 @@
 title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444363"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174129"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
@@ -64,10 +64,12 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Créez le sous-système SSH destiné à héberger un processus PowerShell sur l’ordinateur distant :
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > L’emplacement par défaut de l’exécutable PowerShell est `c:/progra~1/powershell/7/pwsh.exe`. L’emplacement peut varier en fonction de la façon dont vous avez installé PowerShell.
+   >
    > Vous devez utiliser le nom abrégé 8.3 pour les chemins de fichiers qui contiennent des espaces. OpenSSH pour Windows présente un bogue qui empêche les espaces de fonctionner dans les chemins exécutables du sous-système. Pour plus d’informations, consultez ce [problème GitHub](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
    > Le nom abrégé 8.3 du dossier `Program Files` dans Windows est généralement `Progra~1`. Cependant, vous pouvez utiliser la commande suivante pour vous en assurer :
@@ -123,6 +125,9 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
+   > [!NOTE]
+   > L’emplacement par défaut de l’exécutable PowerShell est `/usr/bin/pwsh`. L’emplacement peut varier en fonction de la façon dont vous avez installé PowerShell.
+
    Vous pouvez éventuellement activer l’authentification par clé :
 
    ```
@@ -166,6 +171,9 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
+   > [!NOTE]
+   > L’emplacement par défaut de l’exécutable PowerShell est `/usr/local/bin/pwsh`. L’emplacement peut varier en fonction de la façon dont vous avez installé PowerShell.
+
    Vous pouvez éventuellement activer l’authentification par clé :
 
    ```
@@ -179,7 +187,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Authentification
 
 L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même. Résultat : les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell. Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique et un mot de passe à usage unique pour une sécurité renforcée. La configuration de l’authentification multifacteur sort du cadre de cette documentation. Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
 
