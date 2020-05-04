@@ -731,13 +731,20 @@
         - name: Annexe 2 Création d’un raccourci PowerShell personnalisé
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: Communauté
+  expanded: true
   items:
-    - name: Ressources communautaires
+    - name: Mise à jour de la communauté
+      href: community/community-update.yml
+    - name: Support de la communauté pour les objets blob
       href: community/community-support.md
-    - name: Art numérique
-      href: community/digital-art.md
-    - name: Nouveautés de la documentation PowerShell
-      href: community/whats-new-in-docs.md
+    - name: Panthéon des contributeurs
+      href: community/hall-of-fame.md
+    - name: Nouveautés dans la documentation
+      items:
+        - name: 2020-T2
+          href: community/2020-Q2.md
+        - name: 2020-T1
+          href: community/2020-Q1.md
     - name: Guide du contributeur
       items:
         - name: Vue d’ensemble
@@ -758,8 +765,10 @@
               href: community/contributing/editorial-checklist.md
             - name: Comment nous gérons les problèmes
               href: community/contributing/managing-issues.md
-            - name: Comment nous gérons les demandes de tirage
+            - name: Processus de gestion des demandes de tirage
               href: community/contributing/managing-pull-requests.md
+    - name: Art numérique
+      href: community/digital-art.md
 - name: Kit SDK PowerShell
   items:
     - name: Vue d’ensemble
