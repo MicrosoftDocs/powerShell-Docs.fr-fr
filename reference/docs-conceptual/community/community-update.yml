@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: Mise à jour de la communauté
+summary: Une liste de ressources et un résumé des nouveaux articles et des contributions de la communauté.
+metadata:
+  title: Mise à jour de la communauté
+  description: Une liste de ressources et un résumé des nouveaux articles et des contributions de la communauté.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 04/29/2020
+  ms.openlocfilehash: 42d8de8ffedf9ac1b0bd7ee5df1483f8d1316da7
+  ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+  ms.translationtype: HT
+  ms.contentlocale: fr-FR
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630885"
+landingContent:
+- title: Ressources communautaires
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Support de la communauté pour les objets blob
+      url: community-support.md
+    - text: Art numérique
+      url: digital-art.md
+    - text: Panthéon des contributeurs
+      url: hall-of-fame.md
+- title: Nouveautés de PowerShell-Docs
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 2020-T2
+      url: ./2020-Q2.md
+    - text: 2020-T1
+      url: ./2020-Q1.md
+- title: Participer - Contribuer aux documents PowerShell
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Guide du contributeur PowerShell
+      url: contributing/overview.md
+    - text: Bien démarrer avec l’écriture
+      url: contributing/get-started-writing.md
+  - linkListType: how-to-guide
+    links:
+    - text: Signaler un problème
+      url: contributing/file-an-issue.md
+    - text: Envoi d’une demande de tirage
+      url: contributing/pull-requests.md
+    - text: Guide de style pour la documentation PowerShell
+      url: contributing/powershell-style-guide.md
+    - text: Informations de référence sur la modification des applets de commande
+      url: contributing/editing-cmdlet-ref.md
+  - linkListType: reference
+    links:
+    - text: Liste de contrôle éditoriale
+      url: contributing/editorial-checklist.md
+    - text: Comment nous gérons les problèmes
+      url: contributing/managing-issues.md
+    - text: Processus de gestion des demandes de tirage
+      url: contributing/managing-pull-requests.md

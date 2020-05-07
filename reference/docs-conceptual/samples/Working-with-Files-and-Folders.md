@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de fichiers et dossiers
-ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 8876ff70adbd10c9019f6d80ce7ad327f2932c74
+ms.sourcegitcommit: 08acbea14c69a347f2f46aafcb215a5233c7d830
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70215524"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691486"
 ---
 # <a name="working-with-files-and-folders"></a>Utilisation de fichiers et dossiers
 
@@ -15,19 +15,19 @@ La navigation dans des lecteurs Windows PowerShell et la manipulation des élém
 
 ## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Affichage de la liste de tous les fichiers et dossiers figurant dans un dossier
 
-Vous pouvez obtenir tous les éléments figurant directement dans un dossier à l’aide de l’applet de commande **Get-ChildItem**. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche le contenu direct du lecteur C de Windows PowerShell (qui est le même que le lecteur physique C de Windows) :
+Vous pouvez obtenir tous les éléments figurant directement dans un dossier à l’aide de `Get-ChildItem`. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche le contenu direct du lecteur C de Windows PowerShell (qui est le même que le lecteur physique C de Windows) :
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
 ```
 
-La commande répertorie uniquement les éléments contenus directement, de manière très similaire à la commande **DIR** de Cmd.exe ou à la commande **ls** dans un interpréteur de commande UNIX. Pour afficher les éléments contenus, vous devez également spécifier le paramètre **-Recurse**. (Cela peut prendre beaucoup de temps.) Pour répertorier tout ce qui figure sur le lecteur C :
+La commande répertorie uniquement les éléments contenus directement, de manière très similaire à la commande `DIR` de `Cmd.exe` ou à `ls` dans un interpréteur de commande UNIX. Pour afficher les éléments contenus, vous devez également spécifier le paramètre `-Recurse`. (Cela peut prendre beaucoup de temps.) Pour répertorier tout ce qui figure sur le lecteur C :
 
 ```powershell
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-L’applet de commande **Get-ChildItem** peut filtrer les éléments avec ses paramètres **Path**, **Filter**, **Include** et **Exclude**, mais ceux-ci sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de l’applet de commande **Where-Object**.
+`Get-ChildItem` peut filtrer les éléments avec ses paramètres **Path**, **Filter**, **Include** et **Exclude**, mais ceux-ci sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de `Where-Object`.
 
 La commande suivante recherche dans le dossier Program Files tous les exécutables modifiés après le 1er octobre 2005, dont la taille n’est pas inférieure à 1 Mo ou supérieure à 10 Mo :
 
@@ -37,7 +37,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 
 ## <a name="copying-files-and-folders"></a>Copie de fichiers et dossiers
 
-La copie s’effectue à l’aide de l’applet de commande **Copy-Item**. La commande suivante sauvegarde C:\\boot.ini dans C:\\boot.bak :
+La copie s’effectue avec `Copy-Item`. La commande suivante sauvegarde C:\\boot.ini dans C:\\boot.bak :
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
@@ -51,19 +51,19 @@ Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 
 Cette commande fonctionne même lorsque la destination est en lecture seule.
 
-La copie de dossier fonctionne de la même manière. Cette commande copie le dossier C:\\temp\\test1 vers le nouveau dossier C:\\temp\\DeleteMe de façon récursive :
+La copie de dossier fonctionne de la même manière. Cette commande copie le dossier `C:\temp\test1` dans le nouveau dossier `C:\temp\DeleteMe` de manière récursive :
 
 ```powershell
 Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
-Vous pouvez également copier une sélection d’éléments. La commande suivante copie tous les fichiers .txt contenus n’importe où dans C:\\data vers C:\\temp\\text :
+Vous pouvez également copier une sélection d’éléments. La commande suivante copie tous les fichiers .txt contenus n’importe où dans `C:\data` vers `C:\temp\text` :
 
 ```powershell
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du système de fichiers. Les objets XCOPY, ROBOCOPY et COM, tels que **Scripting.FileSystemObject**, fonctionnent tous dans Windows PowerShell. Par exemple, vous pouvez utiliser la classe Windows Script Host **Scripting.FileSystem COM** pour sauvegarder C:\\boot.ini dans C:\\boot.bak :
+Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du système de fichiers. Les objets XCOPY, ROBOCOPY et COM, tels que **Scripting.FileSystemObject**, fonctionnent tous dans Windows PowerShell. Par exemple, vous pouvez utiliser la classe Windows Script Host **Scripting.FileSystem COM** pour sauvegarder `C:\boot.ini` dans `C:\boot.bak` :
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -73,27 +73,30 @@ Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du sys
 
 La création de nouveaux éléments fonctionne de la même manière sur tous les fournisseurs Windows PowerShell. Si un fournisseur Windows PowerShell a plus d’un type d’élément (par exemple, le fournisseur FileSystem de Windows PowerShell fait la distinction entre les répertoires et les fichiers), vous devez spécifier le type d’élément.
 
-Cette commande crée un dossier C:\\temp\\New Folder :
+Cette commande crée un nouveau dossier `C:\temp\New Folder` :
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder' -ItemType Directory
 ```
 
-Cette commande crée un fichier vide C:\\temp\\New Folder\\file.txt
+Cette commande crée un nouveau fichier vide `C:\temp\New Folder\file.txt`
 
 ```powershell
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
+> [!IMPORTANT]
+> Lorsque vous utilisez le commutateur **Force** avec la commande `New-Item` pour créer un dossier et que le dossier existe déjà, cela n’écrase ou ne remplace _pas_ le dossier. L’objet de dossier existant est simplement retourné. Toutefois, si vous utilisez `New-Item -Force` sur un fichier qui existe déjà, le fichier _est_ entièrement remplacé.
+
 ## <a name="removing-all-files-and-folders-within-a-folder"></a>Suppression de tous les fichiers et dossiers figurant dans un dossier
 
-Vous pouvez supprimer des élément contenus à l’aide de l’applet de commande **Remove-Item**, mais vous devez confirmer la suppression si les éléments contiennent autre chose. Par exemple, si vous tentez de supprimer le dossier C:\\temp\\DeleteMe contenant d’autres éléments, Windows PowerShell vous invite à confirmer la suppression :
+Vous pouvez supprimer des éléments contenus à l’aide de `Remove-Item`, mais vous devez confirmer la suppression si les éléments contiennent autre chose. Par exemple, si vous tentez de supprimer le dossier `C:\temp\DeleteMe` contenant d’autres éléments, Windows PowerShell vous invite à confirmer la suppression :
 
 ```
 Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
-The item at C:\temp\DeleteMe has children and the -recurse parameter was not
+The item at C:\temp\DeleteMe has children and the Recurse parameter was not
 specified. If you continue, all children will be removed with the item. Are you
 sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
@@ -108,19 +111,17 @@ Remove-Item -Path C:\temp\DeleteMe -Recurse
 
 ## <a name="mapping-a-local-folder-as-a-drive"></a>Mappage d’un dossier local en tant que lecteur
 
-Vous pouvez également mapper un dossier local à l’aide de la commande **New-PSDrive**. La commande suivante crée un lecteur local P: dans la racine du répertoire Program Files local, visible uniquement à partir de la session PowerShell :
+Vous pouvez également mapper un dossier local à l’aide de la commande `New-PSDrive`. La commande suivante crée un lecteur local `P:` dans la racine du répertoire Program Files local, visible uniquement à partir de la session PowerShell :
 
 ```powershell
 New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Comme les lecteurs réseau, les lecteurs mappés à l’intérieur de Windows PowerShell sont immédiatement visibles pour l’interpréteur de commandes Windows PowerShell.
-Pour créer un lecteur mappé visible à partir de l’Explorateur de fichiers, le paramètre **-Persist** est nécessaire. Toutefois, seuls les chemins d’accès distants peuvent être utilisés avec Persist.
-
+Comme les lecteurs réseau, les lecteurs mappés à l’intérieur de Windows PowerShell sont immédiatement visibles pour l’interpréteur de commandes Windows PowerShell. Pour créer un lecteur mappé visible à partir de l’Explorateur de fichiers, le paramètre `-Persist` est nécessaire. Toutefois, seuls les chemins d’accès distants peuvent être utilisés avec Persist.
 
 ## <a name="reading-a-text-file-into-an-array"></a>Lecture d’un fichier texte dans un tableau
 
-L’un des formats de stockage courants pour les données de texte est celui d’un fichier contenant des lignes séparées traitées en tant qu’éléments de données distincts. L’applet de commande **Get-Content** permet de lire un fichier entier en une seule étape, comme illustré ici :
+L’un des formats de stockage courants pour les données de texte est celui d’un fichier contenant des lignes séparées traitées en tant qu’éléments de données distincts. La cmdlet `Get-Content` permet de lire un fichier entier en une seule étape, comme illustré ici :
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -134,17 +135,17 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-L’applet de commande **Get-Content** traite déjà les données lues à partir du fichier en tant que tableau, avec un élément par ligne de contenu du fichier. Vous pouvez vous en assurer en vérifiant la longueur (**longueur**) du contenu retourné :
+`Get-Content` traite déjà les données lues à partir du fichier en tant que tableau, avec un élément par ligne de contenu du fichier. Vous pouvez vous en assurer en vérifiant la longueur (**longueur**) du contenu retourné :
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Cette commande est particulièrement utile pour obtenir des listes d’informations directement dans Windows PowerShell. Par exemple, vous pouvez stocker une liste de noms d’ordinateur ou d’adresses IP dans un fichier C:\\temp\\domainMembers.txt, avec un nom sur chaque ligne du fichier. Vous pouvez utiliser l’applet de commande **Get-Content** pour récupérer le contenu du fichier et le placer dans la variable **$Computers** :
+Cette commande est particulièrement utile pour obtenir des listes d’informations directement dans Windows PowerShell. Par exemple, vous pouvez stocker une liste de noms d’ordinateur ou d’adresses IP dans un fichier `C:\temp\domainMembers.txt`, avec un nom sur chaque ligne du fichier. Vous pouvez utiliser `Get-Content` pour récupérer le contenu du fichier et le placer dans la variable `$Computers` :
 
 ```powershell
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
-La variable **$Computers** est désormais un tableau contenant un nom d’ordinateur dans chaque élément.
+`$Computers` est désormais un tableau contenant un nom d’ordinateur dans chaque élément.
