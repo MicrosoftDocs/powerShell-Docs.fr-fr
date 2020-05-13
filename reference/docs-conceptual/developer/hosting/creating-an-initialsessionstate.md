@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367618"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271880"
 ---
 # <a name="creating-an-initialsessionstate"></a>Création d’un InitialSessionState
 
@@ -95,6 +95,6 @@ namespace SampleHost
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’une instance d’exécution avec restriction](creating-a-constrained-runspace.md)
+[Création d’une instance d’exécution contrainte](creating-a-constrained-runspace.md)
 
 [Ajout et appel de commandes](adding-and-invoking-commands.md)

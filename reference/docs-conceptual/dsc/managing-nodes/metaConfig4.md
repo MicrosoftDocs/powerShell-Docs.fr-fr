@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Configuration du gestionnaire de configuration local dans PowerShell 4.0
-ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a9dedf67f9fb18fdd7f5adf70dbf1402fb3f918
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953826"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271829"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Configuration du gestionnaire de configuration local dans PowerShell 4.0
 
@@ -24,11 +24,11 @@ Cette rubrique répertorie les propriétés du Gestionnaire de configuration loc
 Vous pouvez définir ou récupérer les différentes propriétés du Gestionnaire de configuration local décrites ci-dessous.
 
 - **AllowModuleOverwrite** : indique si vous autorisez le remplacement des configurations existantes sur le nœud cible par de nouvelles configurations téléchargées du service de configuration. Les valeurs possibles sont True et False.
-- **CertificateID** : Empreinte d’un certificat utilisée pour sécuriser les informations d’identification transmise dans une configuration. Pour plus d’informations, consultez [Sécuriser les informations d’identification dans DSC Windows PowerShell](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
+- **CertificateID** : Empreinte d’un certificat utilisée pour sécuriser les informations d’identification transmise dans une configuration. Pour plus d’informations, consultez [Sécuriser les informations d’identification dans DSC Windows PowerShell](https://devblogs.microsoft.com/powershell/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
 - **ConfigurationID** : indique le GUID utilisé pour obtenir un fichier de configuration spécifique à partir d’un service d’extraction. Le GUID permet d’identifier de façon unique le fichier de configuration à obtenir.
 - **ConfigurationMode** : spécifie de quelle façon le Gestionnaire de configuration local applique réellement la configuration aux nœuds cibles. Il peut avoir les valeurs suivantes :
   - **ApplyOnly** : Cette valeur indique à DSC d’appliquer la configuration et de ne faire aucune autre opération, sauf si vous transmettez une nouvelle configuration directement au nœud cible ou si vous vous connectez à un service d’extraction, et que DSC détecte une nouvelle configuration en interrogeant le service d’extraction. Si la configuration du nœud cible diffère de la configuration initiale, aucune action particulière n’est effectuée.
-  - **ApplyAndMonitor** : cette valeur (valeur par défaut) indique à DSC d’appliquer chaque nouvelle configuration que vous avez transmise directement au nœud cible ou qui a été détectée sur un service d’extraction. Après l’application de la nouvelle configuration, si la configuration du nœud cible diffère du fichier de configuration, DSC signale l’écart dans les journaux. Pour plus d’informations sur la journalisation de DSC, consultez [Utilisation des journaux des événements pour diagnostiquer les erreurs de configuration de l’état souhaité](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
+  - **ApplyAndMonitor** : cette valeur (valeur par défaut) indique à DSC d’appliquer chaque nouvelle configuration que vous avez transmise directement au nœud cible ou qui a été détectée sur un service d’extraction. Après l’application de la nouvelle configuration, si la configuration du nœud cible diffère du fichier de configuration, DSC signale l’écart dans les journaux. Pour plus d’informations sur la journalisation de DSC, consultez [Utilisation des journaux des événements pour diagnostiquer les erreurs de configuration de l’état souhaité](https://devblogs.microsoft.com/powershell/using-event-logs-to-diagnose-errors-in-desired-state-configuration/).
   - **ApplyAndAutoCorrect** : cette valeur indique à DSC d’appliquer chaque nouvelle configuration que vous avez transmise directement au nœud cible ou qui a été détectée sur un service d’extraction. Après l’application de la nouvelle configuration, si la configuration du nœud cible diffère du fichier de configuration, DSC signale l’écart dans les journaux, puis tente de modifier la configuration du nœud cible pour la rendre conforme au fichier de configuration.
 - **ConfigurationModeFrequencyMins** : Représente la fréquence (en minutes) à laquelle l’application d’arrière-plan de DSC tente d’implémenter la configuration actuelle sur le nœud cible. La valeur par défaut est 15. Cette valeur peut être définie conjointement avec RefreshMode. Quand la propriété RefreshMode est définie sur « Pull », le nœud cible interroge le service de configuration à la fréquence définie par RefreshFrequencyMins et télécharge la configuration actuelle. Quelle que soit la valeur de RefreshMode, le moteur de cohérence applique la dernière configuration téléchargée sur le nœud cible, à la fréquence définie par ConfigurationModeFrequencyMins. La valeur de RefreshFrequencyMins doit être un nombre entier multiple de la valeur de ConfigurationModeFrequencyMins.
 - **Credential** : indique les informations d’identification (comme avec Get-Credential) nécessaires pour accéder à des ressources distantes, par exemple pour interroger le service de configuration.
