@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VS Code et PowerShell
 description: Configuration de l’encodage de fichier dans VS Code et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: b09c13374c28e88c66d1d84fbe56ca5c66b34c8c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 991e3ccc95dd0dd2106cefe6c68371e59c031f35
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978676"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271863"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>Présentation de l’encodage de fichier dans VS Code et PowerShell
 
@@ -73,7 +73,7 @@ L’extension PowerShell interagit avec les scripts de plusieurs façons :
 2. Quand les scripts sont exécutés directement dans la console intégrée, ils sont lus directement à partir du fichier par PowerShell. Si l’encodage de PowerShell est différent de celui de VS Code, les choses peuvent mal tourner.
 3. Quand un script ouvert dans VS Code référence un autre script qui n’est pas ouvert dans VS Code, l’extension charge le contenu de ce script à partir du système de fichiers. L’extension PowerShell utilise par défaut l’encodage UTF-8, mais elle utilise la détection de [marque d’ordre d’octet][] pour sélectionner l’encodage correct.
 
-Le problème se produit en cas d’encodage des formats sans marque d’ordre d’octet (comme [UTF-8][] sans marque d’ordre d’octet et [Windows-1252][]). L’extension PowerShell utilise par défaut UTF-8. L’extension ne peut pas modifier les paramètres d’encodage de VS Code. Pour plus d’informations, consultez le [problème #824](https://github.com/Microsoft/VS Code/issues/824).
+Le problème se produit en cas d’encodage des formats sans marque d’ordre d’octet (comme [UTF-8][] sans marque d’ordre d’octet et [Windows-1252][]). L’extension PowerShell utilise par défaut UTF-8. L’extension ne peut pas modifier les paramètres d’encodage de VS Code. Pour plus d’informations, consultez le [problème n°824](https://github.com/Microsoft/VSCode/issues/824).
 
 ## <a name="choosing-the-right-encoding"></a>Choix de l’encodage correct
 
@@ -255,11 +255,11 @@ Il existe quelques autres billets intéressants sur l’encodage et sa configura
 
 - Synthèse de [@mklement0] concernant l’[encodage PowerShell sur StackOverflow](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - Problèmes précédents ouverts sur VS Code-PowerShell concernant l’encodage :
-  - [#1308](https://github.com/PowerShell/VS Code-powershell/issues/1308)
-  - [#1628](https://github.com/PowerShell/VS Code-powershell/issues/1628)
-  - [#1680](https://github.com/PowerShell/VS Code-powershell/issues/1680)
-  - [#1744](https://github.com/PowerShell/VS Code-powershell/issues/1744)
-  - [#1751](https://github.com/PowerShell/VS Code-powershell/issues/1751)
+  - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
+  - [#1628](https://github.com/PowerShell/VSCode-powershell/issues/1628)
+  - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
+  - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
+  - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [Article classique de *Joel on Software* concernant Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encodage dans .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
