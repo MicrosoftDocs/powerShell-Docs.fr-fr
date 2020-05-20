@@ -24,7 +24,7 @@ Vos [configurations](configurations.md) peuvent effectuer des étapes qui néces
 - Renommages de fichiers
 - Renommage d’ordinateur
 
-La ressource **PendingReboot** vérifie des emplacements d’ordinateurs spécifiques pour déterminer si un redémarrage est en attente. Si le nœud nécessite un redémarrage en dehors de DSC, la ressource **PendingReboot** affecte la valeur `$global:DSCMachineStatus` à l’indicateur `1` pour forcer un redémarrage et résoudre la condition en attente.
+La ressource **PendingReboot** vérifie des emplacements d’ordinateurs spécifiques pour déterminer si un redémarrage est en attente. Si le nœud nécessite un redémarrage en dehors de DSC, la ressource **PendingReboot** affecte la valeur `1` à l’indicateur `$global:DSCMachineStatus` pour forcer un redémarrage et résoudre la condition en attente.
 
 > [!NOTE]
 > Toute ressource DSC peut forcer le Gestionnaire de configuration local à redémarrer le nœud en définissant cet indicateur dans la fonction `Set-TargetResource`. Pour plus d’informations, consultez [Écriture d’une ressource DSC personnalisée avec MOF](../resources/authoringResourceMOF.md).

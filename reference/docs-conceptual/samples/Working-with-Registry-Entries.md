@@ -59,7 +59,7 @@ PF_AccessoriesName  : Accessories
 
 Les propriétés liées à Windows PowerShell pour la clé possèdent toutes le préfixe « PS », comme **PSPath**, **PSParentPath**, **PSChildName** et **PSProvider**.
 
-Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation `*.*`. Pour passer d’abord au conteneur de Registre `Set-Location`CurrentVersion **, vous pouvez utiliser**  :
+Pour faire référence à l’emplacement actuel, vous pouvez utiliser la notation `*.*`. Pour passer d’abord au conteneur de Registre **CurrentVersion**, vous pouvez utiliser `Set-Location` :
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
