@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996035"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560166"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Guide pratique pour créer le fichier d’aide d’une applet de commande
 
@@ -93,18 +93,18 @@ Cette section décrit comment créer un fichier XML valide contenant du contenu 
 
  [Comment ajouter la description détaillée à une rubrique d’aide sur une applet de commande](./how-to-add-a-cmdlet-description.md)
 
- [Guide pratique pour ajouter une syntaxe à une rubrique d’aide sur une applet de commande](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Comment ajouter des paramètres à une rubrique d’aide sur une applet de commande](./how-to-add-parameter-information.md)
 
- [Comment ajouter des types d’entrée à une rubrique d’aide sur une applet de commande](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
+ [Guide pratique pour ajouter des types d’entrée à une rubrique d’aide d’applet de commande](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Comment ajouter des valeurs de retour à une rubrique d’aide sur une applet de commande](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Guide pratique pour ajouter des valeurs de retour à une rubrique d’aide d’applet de commande](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
  [Comment ajouter des notes à une rubrique d’aide sur une applet de commande](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Comment ajouter des exemples à une rubrique d’aide sur une applet de commande](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Guide pratique pour ajouter des exemples à une rubrique d’aide d’applet de commande](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Comment ajouter des liens connexes à une rubrique d’aide sur une applet de commande](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Guide pratique pour ajouter des liens connexes à une rubrique d’aide d’applet de commande](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
-ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369288"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561409"
 ---
 # <a name="types-of-cmdlet-output"></a>Types de sortie de l’applet de commande
 
@@ -54,7 +54,7 @@ Par défaut, les messages de débogage ne sont pas affichés. Vous pouvez spéci
 
 Les applets de commande peuvent afficher des messages d’avertissement en appelant la méthode [System. Management. Automation. applet de commande. WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) .
 
-Par défaut, les messages d’avertissement s’affichent. Toutefois, vous pouvez configurer des messages d’avertissement à l’aide de la variable `$WarningPreference` ou à l’aide des paramètres **détaillés** et de **débogage** lorsque l’applet de commande est appelée.
+Par défaut, les messages d’avertissement s’affichent. Toutefois, vous pouvez configurer des messages d’avertissement à l’aide de la `$WarningPreference` variable ou à l’aide des paramètres **détaillés** et de **débogage** lorsque l’applet de commande est appelée.
 
 ## <a name="displaying-output"></a>Affichage de la sortie
 
@@ -66,8 +66,8 @@ Vous pouvez également concevoir une applet de commande pour accéder directemen
 
 ## <a name="see-also"></a>Voir aussi
 
-[Concepts de signalement d’erreurs](./error-reporting-concepts.md)
+[Concepts des rapports d’erreurs](./error-reporting-concepts.md)
 
-[Présentation des applets de commande](./cmdlet-overview.md)
+[Vue d’ensemble des applets de commande](./cmdlet-overview.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

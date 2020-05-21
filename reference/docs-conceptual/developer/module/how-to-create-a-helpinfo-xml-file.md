@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367318"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564787"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Guide pratique pour créer un fichier XML HelpInfo
 
@@ -27,7 +27,7 @@ Chaque module a un seul fichier XML HelpInfo, même si le module inclut plusieur
 
 Il est essentiel que le fichier XML HelpInfo soit soigneusement géré. Si vous téléchargez de nouveaux fichiers, mais oubliez d’incrémenter les numéros de version, l’aide actualisable ne téléchargera pas les nouveaux fichiers sur les ordinateurs des utilisateurs. Si vous ajoutez des fichiers d’aide pour une nouvelle culture d’interface utilisateur, mais que vous ne mettez pas à jour le fichier XML HelpInfo ou que vous le placez à l’emplacement approprié, l’aide actualisable ne télécharge pas les nouveaux fichiers.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 Cette section comprend les rubriques suivantes.
 
@@ -35,9 +35,9 @@ Cette section comprend les rubriques suivantes.
 
 - [Exemple de fichier XML HelpInfo](./helpinfo-xml-sample-file.md)
 
-- [Comment nommer un fichier XML HelpInfo](./how-to-name-a-helpinfo-xml-file.md)
+- [Guide pratique pour nommer un fichier XML HelpInfo](./how-to-name-a-helpinfo-xml-file.md)
 
-- [Définition des numéros de version XML HelpInfo](./how-to-set-helpinfo-xml-version-numbers.md)
+- [Guide pratique pour définir les numéros de version XML HelpInfo](./how-to-set-helpinfo-xml-version-numbers.md)
 
 ## <a name="see-also"></a>Voir aussi
 

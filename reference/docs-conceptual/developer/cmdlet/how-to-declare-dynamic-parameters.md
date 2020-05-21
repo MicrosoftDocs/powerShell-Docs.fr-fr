@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364418"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561050"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Guide pratique pour déclarer des paramètres dynamiques
 
-Cet exemple montre comment définir des paramètres dynamiques qui sont ajoutés à l’applet de commande au moment de l’exécution. Dans cet exemple, le paramètre `Department` est ajouté à l’applet de commande chaque fois que l’utilisateur spécifie le paramètre de commutateur `Employee`. Pour plus d’informations sur les paramètres dynamiques, consultez [paramètres dynamiques des applets](./cmdlet-dynamic-parameters.md)de commande.
+Cet exemple montre comment définir des paramètres dynamiques qui sont ajoutés à l’applet de commande au moment de l’exécution. Dans cet exemple, le `Department` paramètre est ajouté à l’applet de commande chaque fois que l’utilisateur spécifie le `Employee` paramètre de commutateur. Pour plus d’informations sur les paramètres dynamiques, consultez [paramètres dynamiques des applets](./cmdlet-dynamic-parameters.md)de commande.
 
 ## <a name="to-define-dynamic-parameters"></a>Pour définir des paramètres dynamiques
 
@@ -27,7 +27,7 @@ Cet exemple montre comment définir des paramètres dynamiques qui sont ajoutés
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. Appelez la méthode [System. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) , qui retourne l’objet dans lequel les paramètres dynamiques sont définis. Dans cet exemple, la méthode est appelée lorsque le paramètre `Employee` est spécifié.
+2. Appelez la méthode [System. Management. Automation. Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) , qui retourne l’objet dans lequel les paramètres dynamiques sont définis. Dans cet exemple, la méthode est appelée lorsque le `Employee` paramètre est spécifié.
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ Cet exemple montre comment définir des paramètres dynamiques qui sont ajoutés
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, le paramètre `Department` est ajouté chaque fois que l’utilisateur spécifie le paramètre `Employee`. Le paramètre `Department` est un paramètre facultatif, et l’attribut ValidateSet est utilisé pour spécifier les arguments autorisés.
+Dans cet exemple, le `Department` paramètre est ajouté chaque fois que l’utilisateur spécifie le `Employee` paramètre. Le `Department` paramètre est un paramètre facultatif, et l’attribut ValidateSet est utilisé pour spécifier les arguments autorisés.
 
 ```csharp
 using System;

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870657"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560047"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Conception de votre fournisseur Windows PowerShell
 
@@ -33,15 +33,15 @@ Pour permettre à l’utilisateur d’accéder aux données situées sur un lect
 
 ### <a name="defining-a-provider-qualified-path"></a>Définition d’un chemin d’accès qualifié par le fournisseur
 
-Pour permettre au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès qualifié par le fournisseur. Par exemple, FileSystem ::\\\uncshare\abc\bar est le chemin d’accès qualifié par le fournisseur pour le fournisseur FileSystem fourni par Windows PowerShell.
+Pour permettre au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès qualifié par le fournisseur. Par exemple, FileSystem :: \\ \uncshare\abc\bar est le chemin d’accès qualifié par le fournisseur pour le fournisseur FileSystem fourni par Windows PowerShell.
 
 ### <a name="defining-a-provider-direct-path"></a>Définition d’un chemin d’accès direct au fournisseur
 
-Pour autoriser l’accès à distance à votre fournisseur Windows PowerShell, il doit prendre en charge un chemin d’accès direct au fournisseur pour passer directement au fournisseur Windows PowerShell pour l’emplacement actuel. Par exemple, le fournisseur Windows PowerShell du Registre peut utiliser \\\server\regkeypath comme un chemin d’accès direct au fournisseur.
+Pour autoriser l’accès à distance à votre fournisseur Windows PowerShell, il doit prendre en charge un chemin d’accès direct au fournisseur pour passer directement au fournisseur Windows PowerShell pour l’emplacement actuel. Par exemple, le fournisseur Windows PowerShell du Registre peut utiliser \\ \server\regkeypath comme chemin d’accès direct au fournisseur.
 
 ### <a name="defining-a-provider-internal-path"></a>Définition d’un chemin d’accès interne au fournisseur
 
-Pour permettre à l’applet de commande du fournisseur d’accéder aux données à l’aide d’interfaces de programmation d’applications (API) non-Windows PowerShell, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès interne au fournisseur. Ce chemin d’accès est indiqué après «  :: » dans le chemin d’accès qualifié du fournisseur. Par exemple, le chemin d’accès interne du fournisseur pour le fournisseur de système de fichiers Windows PowerShell est \\\uncshare\abc\bar.
+Pour permettre à l’applet de commande du fournisseur d’accéder aux données à l’aide d’interfaces de programmation d’applications (API) non-Windows PowerShell, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès interne au fournisseur. Ce chemin d’accès est indiqué après «  :: » dans le chemin d’accès qualifié du fournisseur. Par exemple, le chemin d’accès interne du fournisseur pour le fournisseur de système de fichiers Windows PowerShell est \\ \uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Modification des données stockées
 
@@ -53,12 +53,12 @@ Windows PowerShell fournit un certain nombre de classes de base que vous pouvez 
 
 Chaque classe de base du fournisseur Windows PowerShell met à disposition un ensemble d’applets de commande. Cette section décrit les applets de commande, mais ne décrit pas leurs paramètres.
 
-À l’aide de l’état de session, le runtime Windows PowerShell met plusieurs applets de commande d’emplacement à la disposition de certains fournisseurs Windows PowerShell, comme les applets de commande `Get-Location`, `Set-Location`, `Pop-Location`et `Push-Location`. Vous pouvez utiliser l’applet de commande `Get-Help` pour obtenir des informations sur ces applets de commande d’emplacement.
+À l’aide de l’état de session, le runtime Windows PowerShell met plusieurs applets de commande d’emplacement à la disposition de certains fournisseurs Windows PowerShell, tels que les `Get-Location` applets de commande,, `Set-Location` `Pop-Location` et `Push-Location` . Vous pouvez utiliser l' `Get-Help` applet de commande pour obtenir des informations sur ces applets de commande d’emplacement.
 
 ### <a name="cmdletprovider-base-class"></a>Classe de base CmdletProvider
 
 La classe [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) définit un fournisseur Windows PowerShell de base. Cette classe prend en charge la déclaration du fournisseur et fournit un certain nombre de propriétés et de méthodes qui sont disponibles pour tous les fournisseurs Windows PowerShell.
-La classe est appelée par l’applet de commande `Get-PSProvider` pour répertorier tous les fournisseurs disponibles pour une session.
+La classe est appelée par l' `Get-PSProvider` applet de commande pour répertorier tous les fournisseurs disponibles pour une session.
 L’implémentation de cette applet de commande est fournie par l’état de session.
 
 > [!NOTE]
@@ -81,12 +81,12 @@ La classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet
 
 |     Applet de commande     |                                                                                                                                                            Définition                                                                                                                                                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-Item`   | Efface le contenu actuel des éléments à l’emplacement spécifié et le remplace par la valeur « Clear » spécifiée par le fournisseur. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.                                                                                   |
+| `Clear-Item`   | Efface le contenu actuel des éléments à l’emplacement spécifié et le remplace par la valeur « Clear » spécifiée par le fournisseur. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.                                                                                   |
 | `Get-Item`     | Récupère des éléments à partir de l’emplacement spécifié et diffuse en continu les objets résultants.                                                                                                                                                                                                                                                  |
 | `Invoke-Item`  | Appelle l’action par défaut pour l’élément au niveau du chemin d’accès spécifié.                                                                                                                                                                                                                                                                   |
-| `Set-Item`     | Définit un élément à l’emplacement spécifié avec la valeur indiquée. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.                                                                                                                                                   |
+| `Set-Item`     | Définit un élément à l’emplacement spécifié avec la valeur indiquée. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.                                                                                                                                                   |
 | `Resolve-Path` | Résout les caractères génériques pour un chemin d’accès Windows PowerShell et les informations de chemin d’accès de flux.                                                                                                                                                                                                                                              |
-| `Test-Path`    | Teste le chemin d’accès spécifié et retourne `true` s’il existe et `false` dans le cas contraire. Cette applet de commande est implémentée pour prendre en charge le paramètre `IsContainer` de la méthode [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
+| `Test-Path`    | Teste le chemin d’accès spécifié et retourne `true` s’il existe ; `false` sinon,. Cette applet de commande est implémentée pour prendre en charge le `IsContainer` paramètre de la méthode [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) . |
 
 ### <a name="containercmdletprovider-base-class"></a>Classe de base ContainerCmdletProvider
 
@@ -96,11 +96,11 @@ Cette classe dérive de la classe de base [System. Management. Automation. Provi
 
 |     Applet de commande      |                                                                        Définition                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Copy-Item`     | Copie des éléments d’un emplacement vers un autre. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
+| `Copy-Item`     | Copie des éléments d’un emplacement vers un autre. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
 | `Get-Childitem` | Récupère les éléments enfants à l’emplacement spécifié et les diffuse sous forme d’objets.                                                                        |
 | `New-Item`      | Crée de nouveaux éléments à l’emplacement spécifié et diffuse l’objet résultant.                                                                           |
 | `Remove-Item`   | Supprime des éléments de l’emplacement spécifié.                                                                                                               |
-| `Rename-Item`   | Renomme un élément à l’emplacement spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
+| `Rename-Item`   | Renomme un élément à l’emplacement spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
 
 ### <a name="navigationcmdletprovider-base-class"></a>Classe de base NavigationCmdletProvider
 
@@ -109,13 +109,13 @@ La classe [System. Management. Automation. Provider. Navigationcmdletprovider](/
 |    Applet de commande    |                                                                      Définition                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Combinaison-chemin | Combine deux chemins d’accès en un seul chemin d’accès, à l’aide d’un délimiteur spécifique au fournisseur entre les chemins d’accès. Cette applet de commande diffuse des chaînes.                               |
-| `Move-Item`  | Déplace les éléments à l’emplacement spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
+| `Move-Item`  | Déplace les éléments à l’emplacement spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
 
-Une applet de commande associée est l’applet de commande Basic parse-Path fournie par Windows PowerShell. Cette applet de commande peut être utilisée pour analyser un chemin d’accès Windows PowerShell afin de prendre en charge le paramètre `Parent`. Il diffuse en continu la chaîne du chemin d’accès parent.
+Une applet de commande associée est l’applet de commande Basic parse-Path fournie par Windows PowerShell. Cette applet de commande peut être utilisée pour analyser un chemin d’accès Windows PowerShell afin de prendre en charge le `Parent` paramètre. Il diffuse en continu la chaîne du chemin d’accès parent.
 
 ## <a name="select-provider-interfaces-to-support"></a>Sélectionner les interfaces de fournisseur à prendre en charge
 
-En plus de dériver de l’une des classes de base Windows PowerShell, votre fournisseur Windows PowerShell peut prendre en charge d’autres fonctionnalités en dérivant d’une ou plusieurs des interfaces de fournisseur suivantes. Cette section définit ces interfaces et les applets de commande prises en charge par chaque. Elle ne décrit pas les paramètres des applets de commande prises en charge par l’interface. Les informations sur les paramètres d’applet de commande sont disponibles en ligne à l’aide des applets de commande `Get-Command` et `Get-Help`.
+En plus de dériver de l’une des classes de base Windows PowerShell, votre fournisseur Windows PowerShell peut prendre en charge d’autres fonctionnalités en dérivant d’une ou plusieurs des interfaces de fournisseur suivantes. Cette section définit ces interfaces et les applets de commande prises en charge par chaque. Elle ne décrit pas les paramètres des applets de commande prises en charge par l’interface. Les informations sur les paramètres d’applet de commande sont disponibles en ligne à l’aide des `Get-Command` applets de commande et `Get-Help` .
 
 ### <a name="icontentcmdletprovider"></a>IContentCmdletProvider
 
@@ -123,23 +123,23 @@ L’interface [System. Management. Automation. Provider. Icontentcmdletprovider]
 
 |     Applet de commande      |                                                                                        Définition                                                                                        |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Add-Content`   | Ajoute les longueurs de valeur indiquées au contenu de l’élément spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
-| `Clear-Content` | Définit le contenu de l’élément spécifié sur la valeur « Clear ». Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.               |
+| `Add-Content`   | Ajoute les longueurs de valeur indiquées au contenu de l’élément spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
+| `Clear-Content` | Définit le contenu de l’élément spécifié sur la valeur « Clear ». Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.               |
 | `Get-Content`   | Récupère le contenu des éléments spécifiés et diffuse en continu les objets résultants.                                                                                                         |
-| `Set-Content`   | Remplace le contenu existant pour les éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.                     |
+| `Set-Content`   | Remplace le contenu existant pour les éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
 L’interface [System. Management. Automation. Provider. Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) définit un fournisseur Windows PowerShell de propriété qui effectue des opérations sur les propriétés des éléments dans le magasin de données. Le tableau suivant répertorie les applets de commande exposées par cette interface.
 
 > [!NOTE]
-> Le paramètre `Path` sur ces applets de commande indique un chemin d’accès à un élément au lieu d’identifier une propriété.
+> Le `Path` paramètre sur ces applets de commande indique un chemin d’accès à un élément au lieu d’identifier une propriété.
 
 |        Applet de commande        |                                                                                   Définition                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-ItemProperty` | Affecte à la valeur « Clear » les propriétés des éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.      |
+| `Clear-ItemProperty` | Affecte à la valeur « Clear » les propriétés des éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.      |
 | `Get-ItemProperty`   | Récupère les propriétés des éléments spécifiés et diffuse en continu les objets résultants.                                                                                                |
-| `Set-ItemProperty`   | Définit les propriétés des éléments spécifiés avec les valeurs indiquées. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
+| `Set-ItemProperty`   | Définit les propriétés des éléments spécifiés avec les valeurs indiquées. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
@@ -148,11 +148,11 @@ Le tableau suivant répertorie les applets de commande exposées par cette inter
 
 |        Applet de commande         |                                                                                Définition                                                                                |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Copy-ItemProperty`   | Copie une propriété de l’élément spécifié vers un autre élément. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié. |
-| `Move-ItemProperty`   | Déplace une propriété de l’élément spécifié vers un autre élément. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.  |
+| `Copy-ItemProperty`   | Copie une propriété de l’élément spécifié vers un autre élément. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
+| `Move-ItemProperty`   | Déplace une propriété de l’élément spécifié vers un autre élément. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.  |
 | `New-ItemProperty`    | Crée une propriété sur les éléments spécifiés et diffuse en continu les objets résultants.                                                                                             |
 | `Remove-ItemProperty` | Supprime une propriété pour les éléments spécifiés.                                                                                                                              |
-| `Rename-ItemProperty` | Renomme une propriété des éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son paramètre `PassThru` soit spécifié.                 |
+| `Rename-ItemProperty` | Renomme une propriété des éléments spécifiés. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié.                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 

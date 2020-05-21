@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52244ee7496b99e11f0306e93728736fc9c51be5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366268"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564701"
 ---
 # <a name="public-resource-schema"></a>Schéma des ressources publiques
 
@@ -38,13 +38,13 @@ class PswsTest_Process
 
 Chaque nom de propriété est précédé d’un type de données. Les types de données de cet exemple correspondent aux types de données CLR primitifs dans le .NET Framework, mais les propriétés peuvent également être des références à d’autres ressources ou types complexes, qui sont tous deux décrits ultérieurement.
 
-Le qualificateur `Key` indique qu’une propriété est utilisée pour identifier de manière unique une instance de ressource. Une ressource peut avoir plusieurs clés.
+Le `Key` qualificateur indique qu’une propriété est utilisée pour identifier de manière unique une instance de ressource. Une ressource peut avoir plusieurs clés.
 
-Le qualificateur `Required` indique que la propriété est obligatoire. Si une propriété est étiquetée avec le qualificateur `Key`, elle est considérée comme étant obligatoire et le qualificateur `Required` n’est pas nécessaire.
+Le `Required` qualificateur indique que la propriété est obligatoire. Si une propriété est étiquetée avec le `Key` qualificateur, elle est considérée comme étant obligatoire et le `Required` qualificateur n’est pas nécessaire.
 
 ### <a name="complex-data-types"></a>Types de données complexes
 
-Les propriétés des entités peuvent avoir des types de données complexes. Les types de données complexes sont des types qui sont constitués d’autres types, comme des structs dans le langage de programmation C. Un type complexe est déclaré dans le fichier MOF en tant que classe avec le qualificateur `ComplexType`, comme dans l’exemple suivant.
+Les propriétés des entités peuvent avoir des types de données complexes. Les types de données complexes sont des types qui sont constitués d’autres types, comme des structs dans le langage de programmation C. Un type complexe est déclaré dans le fichier MOF en tant que classe avec le `ComplexType` qualificateur, comme dans l’exemple suivant.
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Pour déclarer une propriété d’entité en tant que type complexe, vous devez la déclarer en tant que type de `string` avec le qualificateur `EmbeddedInstance`, y compris le nom du type complexe. L’exemple suivant illustre la déclaration d’une propriété du type `PswsTest_ProcessModule` déclaré dans l’exemple précédent.
+Pour déclarer une propriété d’entité en tant que type complexe, vous devez la déclarer en tant que `string` type avec le `EmbeddedInstance` qualificateur, y compris le nom du type complexe. L’exemple suivant illustre la déclaration d’une propriété du `PswsTest_ProcessModule` type déclaré dans l’exemple précédent.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

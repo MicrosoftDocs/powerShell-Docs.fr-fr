@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2551ceed-836f-4275-9fc0-ea68446d6a35
 caps.latest.revision: 7
-ms.openlocfilehash: 4f0be193fb5b5c753d040a48e5f49235ece11708
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8a9938a1685e9abc2f1dbfb18c3b2b9008d9be
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366008"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564924"
 ---
 # <a name="writing-a-windows-powershell-workflow"></a>Écriture d'un workflow Windows PowerShell
 
@@ -38,10 +38,10 @@ Vous pouvez créer un flux de travail XAML en ajoutant des activités exposées 
 
 - [Ajout d’activités Windows PowerShell à la boîte à outils Visual Studio](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)
 
-- [Création d’un flux de travail avec des activités Windows PowerShell](./creating-a-workflow-with-windows-powershell-activities.md)
+- [Création d’un workflow avec des activités Windows PowerShell](./creating-a-workflow-with-windows-powershell-activities.md)
 
-- [Création d’un workflow à l’aide d’un script Windows PowerShell](./creating-a-workflow-by-using-a-windows-powershell-script.md)
+- [Création d’un workflow avec un script Windows PowerShell](./creating-a-workflow-by-using-a-windows-powershell-script.md)
 
-- [Importation et appel d’un flux de travail Windows PowerShell](./importing-and-invoking-a-windows-powershell-workflow.md)
+- [Importation et appel d’un workflow Windows PowerShell](./importing-and-invoking-a-windows-powershell-workflow.md)
 
 - [Création d’une activité de workflow à partir d’une applet de commande Windows PowerShell](./creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md)

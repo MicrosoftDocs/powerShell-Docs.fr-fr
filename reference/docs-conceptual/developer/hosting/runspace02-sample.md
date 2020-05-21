@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7630bb63-ef39-4abd-b795-8000f984c1e5
 caps.latest.revision: 9
-ms.openlocfilehash: 6352169cffbb8a8bf59a42f79979f5003c150fa4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 997b1d6841ff014093ba54bf7a1db7b0b7d746b8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360978"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564804"
 ---
 # <a name="runspace02-sample"></a>Exemple Runspace02
 
-Cet exemple montre comment utiliser la classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) pour exécuter les applets de commande d' [obtention-processus](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et de [Tri-objet](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) de façon synchrone. L’applet de commande [obtenir-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourne les objets [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) pour chaque processus en cours d’exécution sur l’ordinateur local, et le `Sort-Object` trie les objets en fonction de leur propriété [System.Diagnostics.Process.ID *](/dotnet/api/System.Diagnostics.Process.Id) . Les résultats de ces commandes s’affichent à l’aide d’un contrôle [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) .
+Cet exemple montre comment utiliser la classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) pour exécuter les applets de commande d' [obtention-processus](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et de [Tri-objet](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) de façon synchrone. L’applet de commande [obtenir-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) retourne les objets [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) pour chaque processus en cours d’exécution sur l’ordinateur local, et `Sort-Object` trie les objets en fonction de leur propriété [System.Diagnostics.Process.ID *](/dotnet/api/System.Diagnostics.Process.Id) . Les résultats de ces commandes s’affichent à l’aide d’un contrôle [System. Windows. Forms. DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) .
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 

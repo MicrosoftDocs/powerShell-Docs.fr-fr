@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1d0e1eb1-a962-4406-9625-175cfa3364ad
 caps.latest.revision: 10
-ms.openlocfilehash: f142548be473da15e702f4fa01835609d75b9d51
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b4c04a14c3d86c7a3b94b768e8fb59116d8c6f5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361188"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560625"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter le nom de l’applet de commande et le synopsis à une rubrique d’aide d’une applet de commande
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367818"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564838"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
 
@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 L’exemple de fonction suivant comprend une aide basée sur des commentaires.
 
-Notez les lignes vides entre le **#>** de fermeture et l’instruction `Param`. Dans un script qui n’a pas d’instruction `Param`, il doit y avoir au moins deux lignes vides entre le commentaire final de la rubrique d’aide et la première déclaration de fonction. Sans ces lignes vides, la fonction obtenir-Help associe la rubrique d’aide à la fonction, au lieu du script.
+Notez les lignes vides entre la fermeture **#>** et l' `Param` instruction. Dans un script qui n’a pas d' `Param` instruction, il doit y avoir au moins deux lignes vides entre le commentaire final de la rubrique d’aide et la première déclaration de fonction. Sans ces lignes vides, la fonction obtenir-Help associe la rubrique d’aide à la fonction, au lieu du script.
 
 ```powershell
 <#
@@ -257,7 +257,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Exemple 3 : descriptions des paramètres dans une instruction param
 
-Cet exemple montre comment insérer ParameterDescriptions dans l’instruction `Param` d’une fonction ou d’un script. Ce format est particulièrement utile lorsque les descriptions des paramètres sont courtes.
+Cet exemple montre comment insérer ParameterDescriptions dans l' `Param` instruction d’une fonction ou d’un script. Ce format est particulièrement utile lorsque les descriptions des paramètres sont courtes.
 
 ```powershell
 function Add-Extension
@@ -282,11 +282,11 @@ function Add-Extension
     #>
 ```
 
-Les résultats sont les mêmes que ceux de l’exemple 1. L’aide de l’interpréteur de la fonction interprète les descriptions des paramètres comme si elles étaient accompagnées du mot clé `.Parameter`.
+Les résultats sont les mêmes que ceux de l’exemple 1. L’aide de l’interpréteur de la fonction interprète les descriptions des paramètres comme si elles étaient accompagnées du `.Parameter` mot clé.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exemple 4 : redirection vers un fichier XML
 
-Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du script Update-Month. ps1. Le script utilise le mot clé `.ExternalHelp` pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
+Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du script Update-Month. ps1. Le script utilise le `.ExternalHelp` mot clé pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -296,7 +296,7 @@ Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et
     function Get-Data { }
 ```
 
-L’exemple suivant illustre l’utilisation du mot clé `.ExternalHelp` dans une fonction.
+L’exemple suivant illustre l’utilisation du `.ExternalHelp` mot clé dans une fonction.
 
 ```powershell
 function Add-Extension
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exemple 5 : redirection vers une autre rubrique d’aide
 
-Le code suivant est un extrait du début de la fonction intégrée `Help` dans Windows PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction Help, la fonction Help utilise les mots clés `.ForwardHelpTargetName` et `.ForwardHelpCategory` pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
+Le code suivant est un extrait du début de la `Help` fonction intégrée dans Windows PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction d’aide, la fonction d’aide utilise les `.ForwardHelpTargetName` `.ForwardHelpCategory` Mots clés et pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
 
 ```powershell
 function help

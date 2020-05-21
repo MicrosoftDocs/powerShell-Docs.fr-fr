@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 495869a6-080e-4401-9ddc-16edd2f86857
 caps.latest.revision: 6
-ms.openlocfilehash: 2c1fbd70aab1f65f33ea206b7ab1e2bd3dfd8c7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 35b3fd696419d0135fd6f662223e6c8586df443a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367138"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561388"
 ---
 # <a name="how-to-update-help-files"></a>Guide pratique pour mettre à jour les fichiers d’aide
 

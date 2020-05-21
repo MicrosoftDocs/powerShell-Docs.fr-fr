@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e619ab16-90ad-46e9-9bde-d6dce492ba56
 caps.latest.revision: 4
-ms.openlocfilehash: e3d32f36b597088abc41e229bb0955c1b25504e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d740c0028fd2d4ddd83fe97d66ea45aa6300e16b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361078"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561033"
 ---
 # <a name="writing-comment-based-help-topics"></a>Écriture de rubriques d’aide basée sur les commentaires
 
 Vous pouvez écrire des rubriques d’aide basées sur des commentaires pour les fonctions et les scripts en utilisant des mots clés de commentaires d’aide spéciaux.
 
- L’applet de commande `Get-Help` affiche l’aide basée sur les commentaires dans le même format que celui dans lequel elle affiche les rubriques d’aide sur les applets de commande générées à partir de fichiers XML. Les utilisateurs peuvent utiliser tous les paramètres de `Get-Help`, tels que detailed, Full, example et Online, pour afficher l’aide relative aux fonctions et aux scripts.
+ L' `Get-Help` applet de commande affiche l’aide basée sur les commentaires dans le même format que celui dans lequel elle affiche les rubriques d’aide sur les applets de commande générées à partir de fichiers XML. Les utilisateurs peuvent utiliser tous les paramètres de `Get-Help` , tels que detailed, Full, example et Online, pour afficher l’aide relative aux fonctions et aux scripts.
 
  Vous pouvez également écrire des rubriques d’aide XML pour les scripts et les fonctions et utiliser les mots clés de commentaires d’aide pour rediriger les utilisateurs vers les rubriques XML ou d’autres rubriques.
 

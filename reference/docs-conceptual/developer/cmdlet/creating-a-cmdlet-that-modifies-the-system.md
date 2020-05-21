@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f0ce30c3fa76141908680934bcac41a989622c42
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365758"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560064"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Création d’une applet de commande qui modifie le système
 
@@ -26,15 +26,15 @@ Parfois, une applet de commande doit modifier l’état d’exécution du systè
 
 Pour prendre en charge la confirmation, une applet de commande doit faire deux choses.
 
-- Déclarez que l’applet de commande prend en charge la confirmation quand vous spécifiez l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) en définissant le mot clé SupportsShouldProcess sur `true`.
+- Déclarez que l’applet de commande prend en charge la confirmation quand vous spécifiez l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) en définissant le mot clé SupportsShouldProcess sur `true` .
 
 - Appelez [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pendant l’exécution de l’applet de commande (comme indiqué dans l’exemple suivant).
 
-En prenant en charge la confirmation, une applet de commande expose les paramètres `Confirm` et `WhatIf` fournis par Windows PowerShell, ainsi que les instructions de développement pour les applets de commande (pour plus d’informations sur les instructions de développement des applets de commande, consultez [instructions de développement d’applets](./cmdlet-development-guidelines.md)de commande).
+En prenant en charge la confirmation, une applet de commande expose les `Confirm` `WhatIf` paramètres et fournis par Windows PowerShell, ainsi que les instructions de développement des applets de commande (pour plus d’informations sur les instructions de développement des applets de commande, consultez [instructions de développement d’applets](./cmdlet-development-guidelines.md)de commande).
 
 ## <a name="changing-the-system"></a>Modification du système
 
-L’acte de « modification du système » fait référence à toute applet de commande qui modifie potentiellement l’état du système en dehors de Windows PowerShell. Par exemple, l’arrêt d’un processus, l’activation ou la désactivation d’un compte d’utilisateur, ou l’ajout d’une ligne à une table de base de données sont toutes des modifications apportées au système qui doivent être confirmées. En revanche, les opérations qui lisent les données ou établissent des connexions temporaires ne modifient pas le système et ne nécessitent généralement pas de confirmation. La confirmation n’est pas non plus nécessaire pour les actions dont l’effet est limité à dans le runtime Windows PowerShell, par exemple `set-variable`. Les applets de commande qui peuvent ou ne peuvent pas effectuer une modification permanente doivent déclarer `SupportsShouldProcess` et appeler [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) uniquement si elles sont sur le lieu d’effectuer une modification permanente.
+L’acte de « modification du système » fait référence à toute applet de commande qui modifie potentiellement l’état du système en dehors de Windows PowerShell. Par exemple, l’arrêt d’un processus, l’activation ou la désactivation d’un compte d’utilisateur, ou l’ajout d’une ligne à une table de base de données sont toutes des modifications apportées au système qui doivent être confirmées. En revanche, les opérations qui lisent les données ou établissent des connexions temporaires ne modifient pas le système et ne nécessitent généralement pas de confirmation. La confirmation n’est pas non plus nécessaire pour les actions dont l’effet est limité à dans le runtime Windows PowerShell, tel que `set-variable` . Les applets de commande qui peuvent ou ne peuvent pas effectuer de modification permanente doivent déclarer `SupportsShouldProcess` et appeler [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) uniquement si elles sont sur le lieu d’effectuer une modification permanente.
 
 > [!NOTE]
 > La confirmation ShouldProcess s’applique uniquement aux applets de commande. Si une commande ou un script modifie l’état d’exécution d’un système en appelant directement des méthodes ou des propriétés .NET, ou en appelant des applications en dehors de Windows PowerShell, cette forme de confirmation n’est pas disponible.
@@ -55,25 +55,25 @@ Voici la définition de classe pour cette applet de commande Stop-proc.
 public class StopProcCommand : Cmdlet
 ```
 
-Sachez que dans la Déclaration [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , le mot clé d’attribut `SupportsShouldProcess` est défini sur `true` pour permettre à l’applet de commande d’effectuer des appels à [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Si ce mot clé n’est pas défini, les paramètres `Confirm` et `WhatIf` ne seront pas accessibles à l’utilisateur.
+Sachez que dans la Déclaration [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , le `SupportsShouldProcess` mot clé d’attribut a la valeur `true` pour permettre à l’applet de commande d’effectuer des appels à [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) et [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Si ce mot clé n’est pas défini, les `Confirm` `WhatIf` paramètres et ne sont pas disponibles pour l’utilisateur.
 
 ### <a name="extremely-destructive-actions"></a>Actions extrêmement destructrices
 
-Certaines opérations sont extrêmement destructrices, telles que le reformatage d’une partition de disque dur active. Dans ce cas, l’applet de commande doit définir `ConfirmImpact` = `ConfirmImpact.High` lors de la déclaration de l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Ce paramètre force l’applet de commande à demander la confirmation de l’utilisateur même si l’utilisateur n’a pas spécifié le paramètre `Confirm`. Toutefois, les développeurs d’applets de commande doivent éviter d’utiliser des `ConfirmImpact` pour les opérations qui sont simplement potentiellement destructrices, telles que la suppression d’un compte d’utilisateur. N’oubliez pas que si `ConfirmImpact` a la valeur [System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**.
+Certaines opérations sont extrêmement destructrices, telles que le reformatage d’une partition de disque dur active. Dans ce cas, l’applet de commande doit être définie `ConfirmImpact`  =  `ConfirmImpact.High` lors de la déclaration de l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Ce paramètre force l’applet de commande à demander la confirmation de l’utilisateur même si l’utilisateur n’a pas spécifié le `Confirm` paramètre. Toutefois, les développeurs d’applets de commande doivent éviter de les utiliser `ConfirmImpact` pour les opérations qui sont simplement potentiellement destructrices, telles que la suppression d’un compte d’utilisateur. N’oubliez pas que si `ConfirmImpact` a la valeur [System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**.
 
-De même, certaines opérations ont peu de chances d’être destructrices, bien qu’elles modifient en théorie l’état d’exécution d’un système en dehors de Windows PowerShell. Ces applets de commande peuvent définir `ConfirmImpact` sur [System. Management. Automation. ConfirmImpact. Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Cela permet de contourner les demandes de confirmation lorsque l’utilisateur a demandé à confirmer uniquement les opérations à impact moyen et à impact élevé.
+De même, certaines opérations ont peu de chances d’être destructrices, bien qu’elles modifient en théorie l’état d’exécution d’un système en dehors de Windows PowerShell. Ces applets de commande peuvent `ConfirmImpact` être définies sur [System. Management. Automation. ConfirmImpact. Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0). Cela permet de contourner les demandes de confirmation lorsque l’utilisateur a demandé à confirmer uniquement les opérations à impact moyen et à impact élevé.
 
 ## <a name="defining-parameters-for-system-modification"></a>Définition des paramètres pour la modification du système
 
 Cette section décrit comment définir les paramètres de l’applet de commande, y compris ceux qui sont nécessaires pour prendre en charge la modification du système. Consultez [Ajout de paramètres qui traitent l’entrée de la ligne de](./adding-parameters-that-process-command-line-input.md) commande si vous avez besoin d’informations générales sur la définition des paramètres.
 
-L’applet de commande Stop-proc définit trois paramètres : `Name`, `Force`et `PassThru`.
+L’applet de commande Stop-proc définit trois paramètres : `Name` , `Force` et `PassThru` .
 
-Le paramètre `Name` correspond à la propriété `Name` de l’objet de traitement d’entrée. N’oubliez pas que le paramètre `Name` dans cet exemple est obligatoire, car l’applet de commande échoue s’il n’a pas de processus nommé à arrêter.
+Le `Name` paramètre correspond à la `Name` propriété de l’objet de traitement d’entrée. Sachez que le `Name` paramètre de cet exemple est obligatoire, car l’applet de commande échouera s’il n’a pas de processus nommé à arrêter.
 
-Le paramètre `Force` permet à l’utilisateur de substituer des appels à [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)de commande. ShouldContinue. En fait, toute applet de commande qui appelle [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) doit avoir un paramètre `Force`. ainsi, lorsque `Force` est spécifié, l’applet de commande ignore l’appel à [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) et poursuit l’opération. N’oubliez pas que cela n’affecte pas les appels à [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)de commande. ShouldProcess.
+Le `Force` paramètre permet à l’utilisateur de substituer des appels à [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)de commande. ShouldContinue. En fait, toute applet de commande qui appelle [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) doit avoir un `Force` paramètre de sorte que lorsque `Force` est spécifié, l’applet de commande ignore l’appel à [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) et poursuit l’opération. N’oubliez pas que cela n’affecte pas les appels à [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)de commande. ShouldProcess.
 
-Le paramètre `PassThru` permet à l’utilisateur d’indiquer si l’applet de commande passe un objet de sortie via le pipeline, dans ce cas, après l’arrêt d’un processus. N’oubliez pas que ce paramètre est lié à l’applet de commande elle-même et non à une propriété de l’objet d’entrée.
+Le `PassThru` paramètre permet à l’utilisateur d’indiquer si l’applet de commande passe un objet de sortie via le pipeline, dans ce cas, après l’arrêt d’un processus. N’oubliez pas que ce paramètre est lié à l’applet de commande elle-même et non à une propriété de l’objet d’entrée.
 
 Voici la déclaration du paramètre pour l’applet de commande Stop-proc.
 
@@ -120,7 +120,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Substitution d’une méthode de traitement d’entrée
 
-L’applet de commande doit remplacer une méthode de traitement d’entrée. Le code suivant illustre la substitution [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) utilisée dans l’exemple d’applet de commande Stop-proc. Pour chaque nom de processus demandé, cette méthode garantit que le processus n’est pas un processus spécial, tente d’arrêter le processus, puis envoie un objet de sortie si le paramètre `PassThru` est spécifié.
+L’applet de commande doit remplacer une méthode de traitement d’entrée. Le code suivant illustre la substitution [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) utilisée dans l’exemple d’applet de commande Stop-proc. Pour chaque nom de processus demandé, cette méthode garantit que le processus n’est pas un processus spécial, tente d’arrêter le processus, puis envoie un objet de sortie si le `PassThru` paramètre est spécifié.
 
 ```csharp
 protected override void ProcessRecord()
@@ -243,7 +243,7 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>Appel de la méthode ShouldContinue
 
-L’appel à la méthode [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) envoie un message secondaire à l’utilisateur. Cet appel est effectué après l’appel à [System. Management. Automation. applet de commande. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourne `true` et si le paramètre `Force` n’a pas la valeur `true`. L’utilisateur peut ensuite fournir des commentaires pour indiquer si l’opération doit être poursuivie. Votre applet de commande appelle [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en guise de vérification supplémentaire des modifications système potentiellement dangereuses ou lorsque vous souhaitez fournir des options Oui-à-tout et non-tout à l’utilisateur.
+L’appel à la méthode [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) envoie un message secondaire à l’utilisateur. Cet appel est effectué après l’appel à [System. Management. Automation. applet de commande. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) retourne `true` et si le `Force` paramètre n’a pas la valeur `true` . L’utilisateur peut ensuite fournir des commentaires pour indiquer si l’opération doit être poursuivie. Votre applet de commande appelle [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) en guise de vérification supplémentaire des modifications système potentiellement dangereuses ou lorsque vous souhaitez fournir des options Oui-à-tout et non-tout à l’utilisateur.
 
 L’exemple suivant illustre l’appel à [System. Management. Automation. applet de commande. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) dans l’exemple d’applet de commande Stop-proc.
 
@@ -270,11 +270,11 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>Arrêt du traitement des entrées
 
-La méthode de traitement d’entrée d’une applet de commande qui effectue des modifications du système doit permettre d’arrêter le traitement des entrées. Dans le cas de cette applet de commande Stop-proc, un appel est effectué à partir de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) vers la méthode [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Étant donné que le paramètre `PassThru` a la valeur `true`, [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande appelle également [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour envoyer l’objet processus au pipeline.
+La méthode de traitement d’entrée d’une applet de commande qui effectue des modifications du système doit permettre d’arrêter le traitement des entrées. Dans le cas de cette applet de commande Stop-proc, un appel est effectué à partir de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) vers la méthode [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) . Étant donné que le `PassThru` paramètre a la valeur `true` , [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) appelle également [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour envoyer l’objet processus au pipeline.
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample01](./stopprocesssample01-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple StopProcessSample01](./stopprocesssample01-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
 
@@ -288,13 +288,13 @@ Après l’implémentation d’une applet de commande, celle-ci doit être inscr
 
 Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Voici plusieurs tests qui testent l’applet de commande Stop-proc. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Démarrez Windows PowerShell et utilisez l’applet de commande Stop-proc pour arrêter le traitement, comme indiqué ci-dessous. Étant donné que l’applet de commande spécifie le paramètre `Name` comme obligatoire, l’applet de commande interroge le paramètre.
+- Démarrez Windows PowerShell et utilisez l’applet de commande Stop-proc pour arrêter le traitement, comme indiqué ci-dessous. Étant donné que l’applet de commande spécifie le `Name` paramètre comme obligatoire, l’applet de commande interroge le paramètre.
 
     ```powershell
     PS> stop-proc
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ La sortie suivante s'affiche.
     PS> stop-proc -Name notepad
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Confirm
@@ -323,7 +323,7 @@ La sortie suivante s'affiche.
     PS> stop-proc -Name Winlogon
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Confirm
@@ -335,13 +335,13 @@ La sortie suivante s'affiche.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-- Essayons maintenant d’arrêter le processus WINLOGON sans recevoir d’avertissement. N’oubliez pas que cette entrée de commande utilise le paramètre `Force` pour remplacer l’avertissement.
+- Essayons maintenant d’arrêter le processus WINLOGON sans recevoir d’avertissement. N’oubliez pas que cette entrée de commande utilise le `Force` paramètre pour remplacer l’avertissement.
 
     ```powershell
     PS> stop-proc -Name winlogon -Force
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Confirm
@@ -360,4 +360,4 @@ La sortie suivante s'affiche.
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Exemples d’applet de commande](./cmdlet-samples.md)
+[Exemples d’applets de commande](./cmdlet-samples.md)

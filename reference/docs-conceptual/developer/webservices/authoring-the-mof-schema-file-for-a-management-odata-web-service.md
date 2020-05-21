@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366168"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561703"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Création du fichier de schéma MOF pour un service web Management OData
 
@@ -23,7 +23,7 @@ Vous définissez les ressources exposées par votre service Web OData de gestion
 
 Le fichier suivant définit les ressources de service et de processus. Chacune de ces ressources correspond à un objet qui peut être géré par un ensemble d’applets de commande Windows PowerShell. Les propriétés correspondent aux paramètres utilisés par ces applets de commande.
 
-Chacune des deux ressources contient des propriétés de type complexe. Les types complexes sont définis en tant que classes modifiées avec le qualificateur `ComplexType`.
+Chacune des deux ressources contient des propriétés de type complexe. Les types complexes sont définis en tant que classes modifiées avec le `ComplexType` qualificateur.
 
 ```csharp
 
@@ -211,6 +211,6 @@ class PswsTest_Stream
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un service Web OData de gestion](./creating-a-management-odata-web-service.md)
+[Création d’un service web Management OData](./creating-a-management-odata-web-service.md)
 
-[Schéma de ressource publique](./public-resource-schema.md)
+[Schéma des ressources publiques](./public-resource-schema.md)

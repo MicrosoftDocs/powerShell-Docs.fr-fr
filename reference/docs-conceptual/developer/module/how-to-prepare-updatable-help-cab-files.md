@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: a8f48736-c9fa-4e07-bd18-dd813e11f774
 caps.latest.revision: 6
-ms.openlocfilehash: fb5189e2e77b90ddaf61386246a6f001369bfda4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9d87b086a8309560c039b000afc1c6535dbca38e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360708"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560540"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>Guide pratique pour préparer les fichiers CAB d’aide actualisable
 
@@ -23,11 +23,11 @@ Cette rubrique explique le contenu et l’utilisation du fichier CAB (. CAB) dan
 
 Cette section comprend les rubriques suivantes.
 
-- [Comment créer et charger des fichiers CAB](./how-to-create-and-upload-cab-files.md)
+- [Guide pratique pour créer et charger des fichiers CAB](./how-to-create-and-upload-cab-files.md)
 
-- [Comment nommer un fichier CAB d’aide actualisable](./how-to-name-an-updatable-help-cab-file.md)
+- [Guide pratique pour nommer un fichier CAB d’aide actualisable](./how-to-name-an-updatable-help-cab-file.md)
 
-- [Types de fichiers autorisés dans un fichier CAB d’aide pouvant être mis à jour](./file-types-permitted-in-an-updatable-help-cab-file.md)
+- [Types de fichiers autorisés dans un fichier CAB d’aide actualisable](./file-types-permitted-in-an-updatable-help-cab-file.md)
 
 ## <a name="see-also"></a>Voir aussi
 

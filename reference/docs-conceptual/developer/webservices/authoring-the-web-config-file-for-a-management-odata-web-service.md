@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
-ms.openlocfilehash: eee515252cf03c05d15368ee6e2a1cb62dc82647
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8e5897c3df38689e80d2135dfb82898bf9a05b86
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500785"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561479"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Création du fichier Web.config pour un service web Management OData
 
@@ -63,12 +63,12 @@ Voici un exemple de ce à quoi ressemble le fichier Web. config de votre service
 
 ## <a name="see-also"></a>Voir aussi
 
-[Implémentation d’une autorisation personnalisée pour un service Web OData de gestion](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Implémentation d’une autorisation personnalisée pour un service web Management OData](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[Implémentation de Configurationsession pour un service Web OData de gestion](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[Implémentation de SessionConfiguration pour un service web Management OData](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[Création du fichier de schéma MOF pour un service Web OData de gestion](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Création du fichier de schéma MOF pour un service web Management OData](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Création du fichier de schéma XML pour un service Web OData de gestion](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[Création du fichier de schéma XML pour un service web Management OData](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[Création d’un service Web OData de gestion](./creating-a-management-odata-web-service.md)
+[Création d’un service web Management OData](./creating-a-management-odata-web-service.md)

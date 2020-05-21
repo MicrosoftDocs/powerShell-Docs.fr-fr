@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7c4098c6c670f22253fe7d463b33e45208d00790
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415661"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559996"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
 
@@ -35,13 +35,13 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Définition des paramètres pour la modification du système
 
-Votre applet de commande doit définir des paramètres qui prennent en charge les modifications du système et les commentaires des utilisateurs. L’applet de commande doit définir un paramètre `Name` ou un équivalent pour que l’applet de commande puisse modifier le système par une sorte d’identificateur. En outre, l’applet de commande doit définir les paramètres `Force` et `PassThru`. Pour plus d’informations sur ces paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
+Votre applet de commande doit définir des paramètres qui prennent en charge les modifications du système et les commentaires des utilisateurs. L’applet de commande doit définir un `Name` paramètre ou un équivalent pour que l’applet de commande puisse modifier le système par une sorte d’identificateur. En outre, l’applet de commande doit définir les `Force` `PassThru` paramètres et. Pour plus d’informations sur ces paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="defining-a-parameter-alias"></a>Définition d’un alias de paramètre
 
 Un alias de paramètre peut être un nom de remplacement ou un nom abrégé à une ou deux lettres bien défini pour un paramètre d’applet de commande. Dans les deux cas, l’objectif de l’utilisation d’alias est de simplifier l’entrée d’utilisateur à partir de la ligne de commande. Windows PowerShell prend en charge les alias de paramètres via l’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) , qui utilise la syntaxe de déclaration [alias ()].
 
-Le code suivant montre comment un alias est ajouté au paramètre `Name`.
+Le code suivant montre comment un alias est ajouté au `Name` paramètre.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Outre l’utilisation de l’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) , le runtime Windows PowerShell effectue une correspondance de nom partielle, même si aucun alias n’est spécifié. Par exemple, si votre applet de commande a un paramètre `FileName` et qu’il s’agit du seul paramètre qui commence par `F`, l’utilisateur peut entrer `Filename`, `Filenam`, `File`, `Fi`ou `F` et toujours reconnaître l’entrée comme paramètre `FileName`.
+Outre l’utilisation de l’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) , le runtime Windows PowerShell effectue une correspondance de nom partielle, même si aucun alias n’est spécifié. Par exemple, si votre applet de commande a un `FileName` paramètre et qu’il s’agit du seul paramètre qui commence par `F` , l’utilisateur peut entrer `Filename` , `Filenam` ,, `File` `Fi` ou `F` et toujours reconnaître l’entrée comme `FileName` paramètre.
 
 ## <a name="creating-help-for-parameters"></a>Création d’aide pour les paramètres
 
-Windows PowerShell vous permet de créer de l’aide pour les paramètres de l’applet de commande. Procédez ainsi pour tous les paramètres utilisés pour la modification du système et les commentaires des utilisateurs. Pour chaque paramètre permettant de prendre en charge l’aide, vous pouvez définir le mot clé `HelpMessage` attribut dans la déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ce mot clé définit le texte à afficher à l’utilisateur pour obtenir de l’aide sur l’utilisation du paramètre. Vous pouvez également définir le mot clé `HelpMessageBaseName` pour identifier le nom de base d’une ressource à utiliser pour le message. Si vous définissez ce mot clé, vous devez également définir le mot clé `HelpMessageResourceId` pour spécifier l’identificateur de ressource.
+Windows PowerShell vous permet de créer de l’aide pour les paramètres de l’applet de commande. Procédez ainsi pour tous les paramètres utilisés pour la modification du système et les commentaires des utilisateurs. Pour chaque paramètre permettant de prendre en charge l’aide, vous pouvez définir le `HelpMessage` mot clé attribute dans la déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ce mot clé définit le texte à afficher à l’utilisateur pour obtenir de l’aide sur l’utilisation du paramètre. Vous pouvez également définir le `HelpMessageBaseName` mot clé pour identifier le nom de base d’une ressource à utiliser pour le message. Si vous définissez ce mot clé, vous devez également définir le `HelpMessageResourceId` mot clé pour spécifier l’identificateur de ressource.
 
-Le code suivant de cette applet de commande Stop-proc définit le mot clé d’attribut `HelpMessage` pour le paramètre `Name`.
+Le code suivant de cette applet de commande Stop-proc définit le `HelpMessage` mot clé Attribute pour le `Name` paramètre.
 
 ```csharp
 /// <summary>
@@ -92,7 +92,7 @@ Votre applet de commande doit remplacer une méthode de traitement d’entrée, 
 
 ## <a name="supporting-wildcard-expansion"></a>Extension de caractères génériques prise en charge
 
-Pour permettre la sélection de plusieurs objets, votre applet de commande peut utiliser les classes [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) et [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) pour fournir une prise en charge des caractères génériques pour l’entrée de paramètre. Les exemples de modèles de caractère générique sont LSA *, \*. txt et [a-c]\*. Utilisez le caractère de guillemet (') comme caractère d’échappement lorsque le modèle contient un caractère qui doit être utilisé littéralement.
+Pour permettre la sélection de plusieurs objets, votre applet de commande peut utiliser les classes [System. Management. Automation. Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) et [System. Management. Automation. Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) pour fournir une prise en charge des caractères génériques pour l’entrée de paramètre. LSA *, \* . txt et [a-c] sont des exemples de modèles de caractères génériques \* . Utilisez le caractère de guillemet (') comme caractère d’échappement lorsque le modèle contient un caractère qui doit être utilisé littéralement.
 
 Les extensions de caractères génériques des noms de fichier et de chemin d’accès sont des exemples de scénarios courants dans lesquels l’applet de commande peut souhaiter prendre en charge les entrées de chemin d’accès lorsque la sélection de plusieurs objets est requise. Un cas courant se trouve dans le système de fichiers, où un utilisateur souhaite voir tous les fichiers résidant dans le dossier actif.
 
@@ -100,7 +100,7 @@ Vous devez avoir besoin d’une implémentation de correspondance de modèle de 
 
 - **Point d’interrogation ( ?).** Correspond à n’importe quel caractère à l’emplacement spécifié.
 
-- **Astérisque (\*).** Correspond à zéro ou plusieurs caractères en commençant à l’emplacement spécifié.
+- **Astérisque ( \* ).** Correspond à zéro ou plusieurs caractères en commençant à l’emplacement spécifié.
 
 - **Crochet ouvrant ([).** Introduit une expression de crochet de motif qui peut contenir des caractères ou une plage de caractères. Si une plage est requise, un trait d’Union (-) est utilisé pour indiquer la plage.
 
@@ -111,7 +111,7 @@ Vous devez avoir besoin d’une implémentation de correspondance de modèle de 
 > [!NOTE]
 > Pour plus d’informations sur les modèles de caractères génériques, consultez [prise en charge des caractères génériques dans les paramètres d’applet de](./supporting-wildcard-characters-in-cmdlet-parameters.md)commande.
 
-Le code suivant montre comment définir des options de caractères génériques et définir le modèle de caractère générique utilisé pour résoudre le paramètre `Name` de cette applet de commande.
+Le code suivant montre comment définir des options de caractères génériques et définir le modèle de caractère générique utilisé pour résoudre le `Name` paramètre pour cette applet de commande.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -130,7 +130,7 @@ if (!wildcard.IsMatch(processName))
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample03](./stopprocesssample03-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple StopProcessSample03](./stopprocesssample03-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Définir les types d’objets et la mise en forme
 
@@ -144,13 +144,13 @@ Après l’implémentation d’une applet de commande, celle-ci doit être inscr
 
 Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple d’applet de commande Stop-proc. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Démarrez Windows PowerShell et utilisez Stop-proc pour arrêter un processus à l’aide de l’alias ProcessName pour le paramètre `Name`.
+- Démarrez Windows PowerShell et utilisez Stop-proc pour arrêter un processus à l’aide de l’alias ProcessName pour le `Name` paramètre.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Confirm
@@ -165,7 +165,7 @@ La sortie suivante s'affiche.
     PS> stop-proc
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ La sortie suivante s'affiche.
     Name[0]: notepad
     ```
 
-- À présent, effectuez l’entrée suivante pour arrêter tous les processus qui correspondent au modèle de caractère générique « * note\*». Vous êtes invité à arrêter chaque processus correspondant au modèle.
+- À présent, effectuez l’entrée suivante pour arrêter tous les processus qui correspondent au modèle de caractère générique « * Remarque \* ». Vous êtes invité à arrêter chaque processus correspondant au modèle.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ La sortie suivante s'affiche.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ La sortie suivante s'affiche.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     Confirm

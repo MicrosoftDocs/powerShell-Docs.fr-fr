@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369738"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561445"
 ---
 # <a name="events01-sample"></a>Exemple Events01
 
@@ -30,7 +30,7 @@ Cet exemple dérive de la classe de base [Microsoft. PowerShell. Commands. Objec
    L’exemple de projet s’ouvre dans Microsoft Visual Studio.
 
 3. Dans le menu **Générer**, sélectionnez **Générer la solution**.
-   La bibliothèque de l’exemple sera générée dans les dossiers `\bin` ou `\bin\debug` par défaut.
+   La bibliothèque de l’exemple sera générée dans les `\bin` dossiers ou par défaut `\bin\debug` .
 
 ### <a name="how-to-run-the-sample"></a>Comment exécuter l’exemple
 
@@ -73,18 +73,18 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Comment écrire une applet de commande pour l’inscription des événements
 
-L’applet de commande dérive de la classe [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , qui fournit la prise en charge des paramètres communs aux applets de commande `Register-*Event`.
-Les applets de commande dérivées de [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) ont uniquement besoin de définir leurs paramètres particuliers et de substituer les méthodes abstraites `GetSourceObject` et `GetSourceObjectEventName`.
+L’applet de commande dérive de la classe [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) , qui fournit la prise en charge des paramètres communs aux `Register-*Event` cmdlets.
+Les applets de commande dérivées de [Microsoft. PowerShell. Commands. ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) ont uniquement besoin de définir leurs paramètres particuliers et de substituer les `GetSourceObject` `GetSourceObjectEventName` méthodes abstraites et.
 
 ## <a name="example"></a>Exemple
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f224eed114e8a8925960ec4cac82ef74023f647c
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366128"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564684"
 ---
 # <a name="role-based-authorization-configuration-schema"></a>Schéma de configuration des autorisations en fonction du rôle
 

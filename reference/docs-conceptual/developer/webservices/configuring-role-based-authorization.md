@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
-ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2c9d6040b7a9c17dc5204c8eb835fd69780f62c5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359768"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564255"
 ---
 # <a name="configuring-role-based-authorization"></a>Configuration d’une autorisation en fonction du rôle
 
@@ -23,9 +23,9 @@ Dans cet exemple, vous allez configurer un fichier XML utilisé par l’exemple 
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Modification du fichier RBacConfiguration. Xml
 
-Ce fichier définit la stratégie d’autorisation pour l’application. Les rôles sont définis à l’aide de nœuds `Group`. Un nœud de `Group` définit les commandes Windows PowerShell que les utilisateurs affectés à ce groupe peuvent exécuter. Les utilisateurs sont affectés à des groupes à l’aide de `User` nœuds.
+Ce fichier définit la stratégie d’autorisation pour l’application. Les rôles sont définis à l’aide de `Group` nœuds. Un `Group` nœud définit les commandes Windows PowerShell que les utilisateurs affectés à ce groupe peuvent exécuter. Les utilisateurs sont affectés à des groupes à l’aide de `User` nœuds.
 
-Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administrateur et ajouter un utilisateur à chaque groupe.
+Dans ces exemples, vous allez ajouter un module au nœud administrateur `Group` et ajouter un utilisateur à chaque groupe.
 
 #### <a name="adding-a-module-to-a-group-node"></a>Ajout d’un module à un nœud de groupe
 
@@ -85,9 +85,9 @@ Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administ
    </RbacConfiguration>
    ```
 
-2. Le fichier contient deux nœuds `Group`. Celles-ci représentent les deux rôles utilisés dans cet exemple, les `NonAdminGroup` et les rôles de `AdminGroup`.
+2. Le fichier contient deux `Group` nœuds. Celles-ci représentent les deux rôles utilisés dans cet exemple, les `NonAdminGroup` `AdminGroup` rôles et.
 
-   Ajoutez le code XML suivant juste après la balise `Cmdlets` fermante dans le premier nœud `Group` :
+   Juste après la `Cmdlets` balise de fermeture dans le premier `Group` nœud, ajoutez le code XML suivant :
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ Dans ces exemples, vous allez ajouter un module au nœud `Group` de l’administ
 
 #### <a name="adding-a-user-to-a-group-node"></a>Ajout d’un utilisateur à un nœud de groupe
 
-1. Ouvrez le fichier **RBacConfiguration. xml** dans un éditeur de texte. Ce fichier se trouve dans le dossier C :\\\inetpub\wwwroot\Modata si vous n’avez pas modifié le nom du point de terminaison avant l’installation.
+1. Ouvrez le fichier **RBacConfiguration. xml** dans un éditeur de texte. Ce fichier se trouve dans le dossier C : \\ \inetpub\wwwroot\Modata si vous n’avez pas modifié le nom du point de terminaison avant l’installation.
 
-2. Ajoutez le code XML suivant, juste après la balise de fermeture dans le nœud `Users` :
+2. Juste après la balise de fermeture dans le `Users` nœud, ajoutez le code XML suivant :
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

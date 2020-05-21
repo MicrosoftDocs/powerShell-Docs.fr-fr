@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416029"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561067"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Ajout de messages utilisateur à votre applet de commande
 
@@ -56,7 +56,7 @@ Il n’existe aucune limite quant au nombre de messages que votre applet de comm
 
 La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Tout type d’applet de commande peut écrire des notifications utilisateur à partir de ses méthodes de traitement d’entrée. ainsi, en général, vous pouvez nommer cette applet de commande à l’aide de n’importe quel verbe qui indique les modifications système effectuées par l’applet de commande. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-L’applet de commande Stop-proc est conçue pour modifier le système. par conséquent, la Déclaration [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) pour la classe .net doit inclure le mot clé `SupportsShouldProcess` attribut et avoir la valeur `true`.
+L’applet de commande Stop-proc est conçue pour modifier le système. par conséquent, la Déclaration [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) pour la classe .net doit inclure le `SupportsShouldProcess` mot clé Attribute et avoir la valeur `true` .
 
 Le code suivant est la définition de cette classe d’applet de commande Stop-proc. Pour plus d’informations sur cette définition, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Définition des paramètres pour la modification du système
 
-L’applet de commande Stop-proc définit trois paramètres : `Name`, `Force`et `PassThru`. Pour plus d’informations sur la définition de ces paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
+L’applet de commande Stop-proc définit trois paramètres : `Name` , `Force` et `PassThru` . Pour plus d’informations sur la définition de ces paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
 Voici la déclaration du paramètre pour l’applet de commande Stop-proc.
 
@@ -143,7 +143,7 @@ WriteVerbose(message);
 La méthode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) est utilisée pour écrire des messages de débogage qui peuvent être utilisés pour dépanner le fonctionnement de l’applet de commande. L’appel est effectué à partir d’une méthode de traitement d’entrée.
 
 > [!NOTE]
-> Windows PowerShell définit également un paramètre `Debug` qui présente des informations détaillées et de débogage. Si votre applet de commande prend en charge ce paramètre, il n’est pas nécessaire d’appeler [System. Management. Automation. applet de commande. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) dans le même code qui appelle [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)de commande. WriteVerbose.
+> Windows PowerShell définit également un `Debug` paramètre qui présente des informations détaillées et de débogage. Si votre applet de commande prend en charge ce paramètre, il n’est pas nécessaire d’appeler [System. Management. Automation. applet de commande. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) dans le même code qui appelle [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)de commande. WriteVerbose.
 
 Les deux sections de code suivantes de l’exemple d’applet de commande Stop-proc affichent les appels à la méthode [System. Management. Automation. cmdlet. WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows PowerShell achemine automatiquement les appels [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) de commande. WriteDebug vers l’infrastructure de suivi et les applets de commande. Cela permet aux appels de méthode d’être suivis à l’application d’hébergement, à un fichier ou à un débogueur sans que vous ayez à effectuer d’autres tâches de développement dans l’applet de commande. L’entrée de ligne de commande suivante implémente une opération de suivi.
 
-**PS > trace-expression Stop-proc-file proc. log-Command Stop-Process Notepad**
+**PS> trace-expression Stop-proc-file proc. log-Command Stop-Process Notepad**
 
 ## <a name="writing-a-warning-message"></a>Écriture d’un message d’avertissement
 
@@ -208,7 +208,7 @@ WriteProgress(pr);
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample02](./stopprocesssample02-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple StopProcessSample02](./stopprocesssample02-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Définir les types d’objets et la mise en forme
 
@@ -228,7 +228,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```
     VERBOSE: Attempting to stop process " notepad ".

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
-ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 27f1c346863458920b310c6c4ce1403b3aab69ba
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369728"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563799"
 ---
 # <a name="getprocesssample01-sample"></a>Exemple GetProcessSample01
 
@@ -31,7 +31,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 ### <a name="how-to-run-the-sample"></a>Comment exécuter l’exemple
 
-1. Ouvrez une fenêtre d'invite de commandes.
+1. Ouvrez une fenêtre d’invite de commandes.
 
 2. Accédez au répertoire contenant le fichier Sample. dll.
 
@@ -64,11 +64,11 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
    A file was created in the TEMP directory
    ```
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
 Cet exemple requiert Windows PowerShell 1,0 ou une version ultérieure.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 7ccdeeb2833b79cabc7c77d1a400e0c9132b2dcd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996072"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561462"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Création du fichier de schéma XML pour un service web Management OData
 
@@ -47,11 +47,11 @@ Vous spécifiez ensuite les applets de commande qui correspondent aux opération
 |Commande CRUD|Élément XML|
 |------------------|-----------------|
 |Créer|Créer|
-|Lecture|Requête|
-|Mettre à jour/Mise à jour|Mettre à jour/Mise à jour|
-|Supprimer|Supprimer|
+|Lire|Query|
+|Update|Update|
+|DELETE|Supprimer|
 
-L’exemple suivant montre les mappages pour les opérations de création, de lecture et de mise à jour sur la ressource `Service`.
+L’exemple suivant montre les mappages pour les opérations de création, de lecture et de mise à jour sur la `Service` ressource.
 
 ```xml
 <ClassImplementations>
@@ -159,8 +159,8 @@ L’exemple suivant montre les mappages pour les opérations de création, de le
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création du fichier de schéma MOF pour un service Web OData de gestion](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Création du fichier de schéma MOF pour un service web Management OData](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
 [Schéma de mappage des ressources](./resource-mapping-schema.md)
 
-[Création d’un service Web OData de gestion](./creating-a-management-odata-web-service.md)
+[Création d’un service web Management OData](./creating-a-management-odata-web-service.md)

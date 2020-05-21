@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82df2cde-ba12-46d2-b6ec-da5455fd9b57
 caps.latest.revision: 8
-ms.openlocfilehash: a472f07cb24b0de8e5dcdfcaddd2802575318d7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eff917e71e91114fad3c78de58291b623aae6797
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360838"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565398"
 ---
 # <a name="windows-powershell-api-samples"></a>Exemples d’API Windows PowerShell
 
