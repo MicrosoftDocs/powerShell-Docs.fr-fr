@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
-ms.openlocfilehash: ad0fe5c63b145c681f14328d5ef5a8784a035e26
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995928"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565541"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des valeurs de retour à une rubrique d’aide d’applet de commande
 
 Cette section décrit comment ajouter une section OUTPUTs à une rubrique d’aide de l’applet de commande® Windows PowerShell. La section OUTPUTs répertorie les classes .NET des objets que l’applet de commande retourne ou transmet le pipeline.
 
-Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à la section OUTPUTs. Les types de retour d’une applet de commande sont placés dans une commande \<: returnValues > nœud, chaque classe comprise dans une commande \<: returnValue > élément.
+Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à la section OUTPUTs. Les types de retour d’une applet de commande sont placés dans une \< commande : returnvalues> nœud, avec chaque classe placée dans un \< élément Command : returnValue>.
 
 Si une applet de commande ne génère pas de sortie, utilisez cette section pour indiquer qu’il n’y a pas de sortie. Par exemple, à la place du nom de la classe, écrivez « None » et fournissez une brève explication. Si l’applet de commande génère une sortie conditionnelle, utilisez ce nœud pour expliquer les conditions et décrire la sortie conditionnelle.
 
-Le schéma comprend deux \<MAML : Description > éléments dans chaque \<commande : returnValue > élément. Toutefois, l’applet de commande `Get-Help` affiche uniquement le contenu de l’élément Command \<: returnValue >/\<MAML : Description >.
+Le schéma comprend deux \< éléments MAML : description> dans chaque \< commande : returnValue> élément. Toutefois, l' `Get-Help` applet de commande affiche uniquement le contenu de l' \< élément Command : returnValue>/ \< maml : description>.
 
-À compter de Windows PowerShell 3,0, l’applet de commande `Get-Help` affiche le contenu de l’élément \<MAML : URI >. Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
+À compter de Windows PowerShell 3,0, l' `Get-Help` applet de commande affiche le contenu de l' \< élément MAML : URI>. Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
 
-Le code XML suivant montre le nœud \<MAML : returnValues >.
+Le code XML suivant montre le \< nœud MAML : returnvalues>.
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ Le code XML suivant montre le nœud \<MAML : returnValues >.
 </command: returnValues>
 ```
 
-Le code XML suivant montre un exemple d’utilisation du nœud \<MAML : returnValues > pour documenter un type de sortie.
+Le code XML suivant montre un exemple d’utilisation du \< nœud MAML : returnvalues> pour documenter un type de sortie.
 
 ```xml
 <command:returnValues>
@@ -61,6 +61,3 @@ Le code XML suivant montre un exemple d’utilisation du nœud \<MAML : returnV
   </command: returnValue>
 </command: returnValues>
 ```
-
-
-

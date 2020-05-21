@@ -8,37 +8,37 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
-ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c3974e272fe1032557b492c36504b0f16b3c9c1
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359968"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692478"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-Cet exemple montre comment remplacer les méthodes de conteneur pour prendre en charge les appels aux applets de commande `Move-Item` et `Join-Path`. Ces méthodes doivent être implémentées quand l’utilisateur a besoin de déplacer des éléments dans un conteneur et si le magasin de données contient des conteneurs imbriqués. La classe de fournisseur de cet exemple dérive de la classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
+Cet exemple montre comment remplacer les méthodes de conteneur pour prendre en charge les appels aux `Move-Item` applets de commande et `Join-Path` . Ces méthodes doivent être implémentées quand l’utilisateur a besoin de déplacer des éléments dans un conteneur et si le magasin de données contient des conteneurs imbriqués. La classe de fournisseur de cet exemple dérive de la classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 > [!IMPORTANT]
 > Votre classe de fournisseur va probablement dériver de l’une des classes suivantes et éventuellement implémenter d’autres interfaces de fournisseur :
 >
-> -   Classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Consultez [AccessDBProviderSample03](./accessdbprovidersample03.md).
-> -   Classe [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Consultez [AccessDBProviderSample04](./accessdbprovidersample04.md).
-> -   Classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
+> - Classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Consultez [AccessDBProviderSample03](./accessdbprovidersample03.md).
+> - Classe [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Consultez [AccessDBProviderSample04](./accessdbprovidersample04.md).
+> - Classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 >
 > Pour plus d’informations sur le choix de la classe de fournisseur à partir de laquelle dériver les fonctionnalités du fournisseur, consultez [conception de votre fournisseur Windows PowerShell](./provider-types.md).
 
-Cet exemple illustre les fonctions suivantes :
+Cet exemple indique :
 
-- Déclaration de l’attribut `CmdletProvider`.
+- Déclaration de l' `CmdletProvider` attribut.
 
 - Définition d’une classe de fournisseur qui dérive de la classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-- Remplacement de la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. MoveItem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) pour modifier le comportement de l’applet de commande `Move-Item`, permettant à l’utilisateur de déplacer des éléments d’un emplacement à un autre. (Cet exemple n’indique pas comment ajouter des paramètres dynamiques à l’applet de commande `Move-Item`.)
+- Remplacement de la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. MoveItem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) pour modifier le comportement de l' `Move-Item` applet de commande, ce qui permet à l’utilisateur de déplacer des éléments d’un emplacement à un autre. (Cet exemple n’indique pas comment ajouter des paramètres dynamiques à l' `Move-Item` applet de commande.)
 
-- Remplacement de la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) pour modifier le comportement de l’applet de commande `Join-Path`.
+- Remplacement de la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) pour modifier le comportement de l' `Join-Path` applet de commande.
 
 - Remplacement de la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. IsItemContainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) .
 

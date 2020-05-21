@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 06b1b050-0bf7-48f5-ba05-43f489d597c0
 caps.latest.revision: 10
-ms.openlocfilehash: 476fce9fc087b870bad93a9204a820c5a84df99e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f903c99300a34c0dfbed598738e96142588d69d9
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359718"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691485"
 ---
 # <a name="creating-a-management-odata-web-service"></a>Création d’un service web Management OData
 
@@ -24,30 +24,30 @@ Téléchargez et installez l’exemple [PswsRoleBasedPlugins](https://code.msdn.
 > [!IMPORTANT]
 > Avant d’activer l’extension IIS Management ODATA sur Windows Server 2008 R2 SP1, les fonctionnalités suivantes doivent être activées.
 >
-> 1.  IIS-WebServerRole
-> 2.  IIS-WebServer
-> 3.  IIS-HttpTracing
-> 4.  IIS-ManagementOData
+> 1. IIS-WebServerRole
+> 2. IIS-WebServer
+> 3. IIS-HttpTracing
+> 4. IIS-ManagementOData
 
 ## <a name="steps-for-creating-a-management-odata-web-service"></a>Étapes de création d’un service Web OData de gestion
 
 Les rubriques suivantes décrivent comment créer et déployer un service Web OData de gestion.
 
-- [Ajout de ressources à un service Web OData de gestion](./adding-resources-to-a-management-odata-web-service.md)
+- [Ajout de ressources à un service web Management OData](./adding-resources-to-a-management-odata-web-service.md)
 
-- [Implémentation d’une autorisation personnalisée pour un service Web OData de gestion](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+- [Implémentation d’une autorisation personnalisée pour un service web Management OData](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-- [Implémentation de Configurationsession pour un service Web OData de gestion](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+- [Implémentation de SessionConfiguration pour un service web Management OData](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-- [Création du fichier de schéma MOF pour un service Web OData de gestion](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+- [Création du fichier de schéma MOF pour un service web Management OData](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-- [Création du fichier de schéma XML pour un service Web OData de gestion](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+- [Création du fichier de schéma XML pour un service web Management OData](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-- [Création du fichier Web. config pour un service Web OData de gestion](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+- [Création du fichier Web.config pour un service web Management OData](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-- [Déploiement d’un service Web OData de gestion](./deploying-a-management-odata-web-service.md)
+- [Déploiement d’un service web Management OData](./deploying-a-management-odata-web-service.md)
 
-- [Association d’entités de gestion OData](./associating-management-odata-entities.md)
+- [Association d’entités Management OData](./associating-management-odata-entities.md)
 
 ## <a name="see-also"></a>Voir aussi
 

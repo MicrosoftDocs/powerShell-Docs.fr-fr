@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
-ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b9ccca75c2d9126e84a7f486ffe803042a742b62
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361228"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565558"
 ---
 # <a name="how-to-add-parameter-information"></a>Guide pratique pour ajouter des informations sur les paramètres
 
@@ -157,7 +157,7 @@ Le contenu de la section des paramètres doit être cohérent avec le contenu de
 
 Voici quelques points à retenir lors de l’ajout de paramètres.
 
-- Les attributs du paramètre ne sont pas affichés dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, ils sont affichés dans un tableau qui suit la description du paramètre lorsque l’utilisateur demande la vue complète \<(CmdletName >-Full) ou le paramètre (obtient-Help \<CmdletName >-Parameter) de la rubrique.
+- Les attributs du paramètre ne sont pas affichés dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, ils sont affichés dans un tableau qui suit la description du paramètre lorsque l’utilisateur demande la vue complète (CmdletName-Help \<>-complet) ou le paramètre ( \<> CmdletName-Help) de la rubrique.
 
 - La description du paramètre est l’une des parties les plus importantes d’une rubrique d’aide sur une applet de commande. La description doit être brève, ainsi que minutieusement. En outre, n’oubliez pas que si la description du paramètre devient trop longue, par exemple quand deux paramètres interagissent entre eux, vous pouvez ajouter du contenu dans la section Remarques de la rubrique d’aide de l’applet de commande.
 
@@ -171,11 +171,11 @@ Voici quelques points à retenir lors de l’ajout de paramètres.
 
 La valeur par défaut du paramètre est la valeur utilisée si le paramètre n’est pas spécifié sur la ligne de commande. Notez que la valeur par défaut est facultative et n’est pas nécessaire pour certains paramètres, tels que les paramètres requis. Toutefois, vous devez spécifier une valeur par défaut pour la plupart des paramètres facultatifs.
 
-La valeur par défaut permet à l’utilisateur de comprendre l’effet de ne pas utiliser le paramètre. Décrivez la valeur par défaut de manière très spécifique, par exemple le « répertoire actif » ou le « répertoire d’installation Windows PowerShell ($pshome) » pour un chemin d’accès facultatif. Vous pouvez également écrire une phrase qui décrit la valeur par défaut, telle que la phrase suivante utilisée pour le paramètre `PassThru` : « si PassThru n’est pas spécifié, l’applet de commande ne passe pas d’objets dans le pipeline ».  En outre, étant donné que la valeur est affichée en regard du nom de champ «**valeur par défaut**», vous n’avez pas besoin d’inclure le terme « valeur par défaut » dans l’entrée.
+La valeur par défaut permet à l’utilisateur de comprendre l’effet de ne pas utiliser le paramètre. Décrivez la valeur par défaut de manière très spécifique, par exemple le « répertoire actif » ou le « répertoire d’installation Windows PowerShell ($pshome) » pour un chemin d’accès facultatif. Vous pouvez également écrire une phrase qui décrit la valeur par défaut, telle que la phrase suivante utilisée pour le `PassThru` paramètre : « si PassThru n’est pas spécifié, l’applet de commande ne passe pas d’objets dans le pipeline ».  En outre, étant donné que la valeur est affichée en regard du nom de champ «**valeur par défaut**», vous n’avez pas besoin d’inclure le terme « valeur par défaut » dans l’entrée.
 
-La valeur par défaut du paramètre n’est pas affichée dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, il est affiché dans une table (avec les attributs de paramètre) qui suit la description du paramètre lorsque l’utilisateur demande la vue complète (obtenir-aide \<CmdletName >-Full) ou le paramètre (obtenir-aide \<CmdletName >-Parameter) de la rubrique.
+La valeur par défaut du paramètre n’est pas affichée dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, il est affiché dans une table (avec les attributs de paramètre) qui suit la description du paramètre lorsque l’utilisateur demande la vue complète ( \< CmdletName de l’aide>-complet) ou du paramètre (obtenir-Help \< CmdletName> paramètre) de la rubrique.
 
-Le code XML suivant montre une paire de balises `<dev:defaultValue>` ajoutées au nœud `<command:parameter>`. Notez que la valeur par défaut suit immédiatement après la balise `</command:parameterValue>` fermante (lorsque la valeur du paramètre est spécifiée) ou la balise de fermeture `</maml:description>` de la description du paramètre. nom.
+Le code XML suivant montre une paire de `<dev:defaultValue>` balises ajoutées au `<command:parameter>` nœud. Notez que la valeur par défaut suit immédiatement après la `</command:parameterValue>` balise de fermeture (lorsque la valeur du paramètre est spécifiée) ou la `</maml:description>` balise de fermeture de la description du paramètre. nom.
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ Le code XML suivant montre une paire de balises `<dev:defaultValue>` ajoutées a
 
 Ajouter des valeurs pour les types énumérés
 
-Si le paramètre comporte plusieurs valeurs ou valeurs d’un type énuméré, vous pouvez utiliser un nœud facultatif \<dev : possibleValues >. Ce nœud vous permet de spécifier un nom et une description pour plusieurs valeurs.
+Si le paramètre comporte plusieurs valeurs ou valeurs d’un type énuméré, vous pouvez utiliser un nœud de \<> dev : possibleValues facultatif. Ce nœud vous permet de spécifier un nom et une description pour plusieurs valeurs.
 
-Sachez que les descriptions des valeurs énumérées n’apparaissent pas dans les vues d’aide par défaut affichées par l’applet de commande `Get-Help`, mais d’autres observateurs d’aide peuvent afficher ce contenu dans leurs vues.
+Sachez que les descriptions des valeurs énumérées n’apparaissent pas dans les vues d’aide par défaut affichées par l’applet de commande `Get-Help` , mais d’autres observateurs d’aide peuvent afficher ce contenu dans leurs vues.
 
-Le code XML suivant montre un nœud `<dev:possibleValues>` avec deux valeurs spécifiées.
+Le code XML suivant montre un `<dev:possibleValues>` nœud avec deux valeurs spécifiées.
 
 ```xml
 <command:parameters>

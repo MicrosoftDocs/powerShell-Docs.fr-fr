@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369228"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692377"
 ---
 # <a name="validatecount-attribute-declaration"></a>Déclaration de l’attribut ValidateCount
 
@@ -31,11 +31,11 @@ L’attribut ValidateCount spécifie le nombre minimal et maximal d’arguments 
 
 #### <a name="parameters"></a>Paramètres
 
-`MinLength` ([System.Int32][]) requis. Spécifie le nombre minimal d’arguments.
+`MinLength`([System. Int32][]) requis. Spécifie le nombre minimal d’arguments.
 
-`MaxLength`([System.Int32][]) requis. Spécifie le nombre maximal d’arguments.
+`MaxLength`([System. Int32][]) requis. Spécifie le nombre maximal d’arguments.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 - Pour plus d’informations sur la façon de déclarer cet attribut, consultez [Comment valider un nombre d’arguments][].
 
@@ -43,9 +43,9 @@ L’attribut ValidateCount spécifie le nombre minimal et maximal d’arguments 
 
 - Le runtime Windows PowerShell génère une erreur dans les conditions suivantes :
 
-    - Les paramètres d’attribut `MinLength` et `MaxLength` ne sont pas de type [System.Int32][].
+  - Les `MinLength` `MaxLength` paramètres d’attribut et ne sont pas de type [System. Int32][].
 
-    - La valeur du paramètre d’attribut `MaxLength` est inférieure à la valeur du paramètre d’attribut `MinLength`.
+  - La valeur du `MaxLength` paramètre d’attribut est inférieure à la valeur du `MinLength` paramètre d’attribut.
 
 - L’attribut ValidateCount est défini par la classe [System. Management. Automation. ValidateCountAttribute][] .
 
@@ -53,12 +53,12 @@ L’attribut ValidateCount spécifie le nombre minimal et maximal d’arguments 
 
 [System. Management. Automation. ValidateCountAttribute][]
 
-[Comment valider un nombre d’arguments][]
+[Guide pratique pour valider un nombre d’arguments][]
 
 [Écriture d’une applet de commande Windows PowerShell][]
 
-[Comment valider un nombre d’arguments]: how-to-validate-an-argument-count.md
+[Guide pratique pour valider un nombre d’arguments]: how-to-validate-an-argument-count.md
 [Écriture d’une applet de commande Windows PowerShell]: writing-a-windows-powershell-cmdlet.md
 
-[System.Int32]: /dotnet/api/System.Int32
+[System. Int32]: /dotnet/api/System.Int32
 [System. Management. Automation. ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute
