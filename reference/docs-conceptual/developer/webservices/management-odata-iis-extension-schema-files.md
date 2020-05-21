@@ -8,17 +8,17 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d603de38-6dfe-4fd9-898c-21fbcb686645
 caps.latest.revision: 8
-ms.openlocfilehash: 099a4955cd74770008f353c67491077899e5a31c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf7555c07b0c3d8584565f5dd1f11e9973de9a9e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359698"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557241"
 ---
-# <a name="management-odata-iis-extension-schema-files"></a><span data-ttu-id="93896-102">Fichiers de schéma de l’extension IIS Management OData</span><span class="sxs-lookup"><span data-stu-id="93896-102">Management OData IIS Extension Schema Files</span></span>
+# <a name="management-odata-iis-extension-schema-files"></a><span data-ttu-id="18652-102">Fichiers de schéma de l’extension IIS Management OData</span><span class="sxs-lookup"><span data-stu-id="18652-102">Management OData IIS Extension Schema Files</span></span>
 
-<span data-ttu-id="93896-103">Les services Web OData de gestion utilisent des fichiers MOF pour définir des ressources et des fichiers XML pour définir le mappage des ressources.</span><span class="sxs-lookup"><span data-stu-id="93896-103">Management OData web services use MOF files to define resources and XML files to define resource mapping.</span></span> <span data-ttu-id="93896-104">Les rubriques suivantes décrivent les schémas de ces fichiers.</span><span class="sxs-lookup"><span data-stu-id="93896-104">The following topics describe the schemas for those files.</span></span>
+<span data-ttu-id="18652-103">Les services Web OData de gestion utilisent des fichiers MOF pour définir des ressources et des fichiers XML pour définir le mappage des ressources.</span><span class="sxs-lookup"><span data-stu-id="18652-103">Management OData web services use MOF files to define resources and XML files to define resource mapping.</span></span> <span data-ttu-id="18652-104">Les rubriques suivantes décrivent les schémas de ces fichiers.</span><span class="sxs-lookup"><span data-stu-id="18652-104">The following topics describe the schemas for those files.</span></span>
 
-- [<span data-ttu-id="93896-105">Schéma de mappage des ressources</span><span class="sxs-lookup"><span data-stu-id="93896-105">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
+- [<span data-ttu-id="18652-105">Schéma de mappage des ressources</span><span class="sxs-lookup"><span data-stu-id="18652-105">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
 
-- [<span data-ttu-id="93896-106">Schéma de ressource publique</span><span class="sxs-lookup"><span data-stu-id="93896-106">Public Resource Schema</span></span>](./public-resource-schema.md)
+- [<span data-ttu-id="18652-106">Schéma des ressources publiques</span><span class="sxs-lookup"><span data-stu-id="18652-106">Public Resource Schema</span></span>](./public-resource-schema.md)
