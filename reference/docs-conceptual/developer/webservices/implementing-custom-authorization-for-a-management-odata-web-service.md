@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4989b0bb8a379011cde1a1d2cc803a081d79d97f
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359678"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557292"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Implémentation d’une autorisation personnalisée pour un service web Management OData
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Autorisation basée sur des rôles
 
-L’exemple suivant implémente une stratégie d’autorisation basée sur les rôles. La stratégie est définie dans un fichier XML qui réside dans le répertoire principal de l’application avec les fichiers de schéma de mappage Web. config et MOF et XML. Pour plus d’informations sur la configuration du fichier de schéma d’autorisation, consultez Configuration de l' [autorisation basée sur les rôles](./configuring-role-based-authorization.md). La première partie de l’exemple implémente les méthodes [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) et [Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) . Dans ce cas, les méthodes d’interface appellent les méthodes de la classe `RbacSystem` (définie ci-dessous) qui effectuent le travail réel de vérification des autorisations pour l’utilisateur.
+L’exemple suivant implémente une stratégie d’autorisation basée sur les rôles. La stratégie est définie dans un fichier XML qui réside dans le répertoire principal de l’application avec les fichiers de schéma de mappage Web. config et MOF et XML. Pour plus d’informations sur la configuration du fichier de schéma d’autorisation, consultez Configuration de l' [autorisation basée sur les rôles](./configuring-role-based-authorization.md). La première partie de l’exemple implémente les méthodes [Microsoft. Management. OData. CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) et [Microsoft. Management. OData. CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) . Dans ce cas, les méthodes d’interface appellent des méthodes dans la `RbacSystem` classe (définie ci-dessous) qui effectuent le travail réel de vérification des autorisations pour l’utilisateur.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368108"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557088"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des exemples à une rubrique d’aide d’applet de commande
 
@@ -58,7 +58,7 @@ Le code XML suivant montre comment ajouter un titre pour l’exemple. Le titre e
 
 ## <a name="adding-preceding-characters"></a>Ajout de caractères précédents
 
-Le code XML suivant montre comment ajouter des caractères, tels que l’invite de commandes Windows PowerShell, qui sont affichés immédiatement avant l’exemple de commande (sans espaces intermédiaires). Windows PowerShell® utilise l’invite de commandes Windows PowerShell : C:\PS >.
+Le code XML suivant montre comment ajouter des caractères, tels que l’invite de commandes Windows PowerShell, qui sont affichés immédiatement avant l’exemple de commande (sans espaces intermédiaires). Windows PowerShell® utilise l’invite de commandes Windows PowerShell : C:\PS>.
 
 ```xml
 <command:examples>
@@ -89,7 +89,7 @@ Le code XML suivant montre comment ajouter la commande réelle de l’exemple. L
 
 ## <a name="adding-a-description"></a>Ajout d’une description
 
-Le code XML suivant montre comment ajouter une description pour l’exemple. Windows PowerShell® utilise un ensemble unique de balises \<MAML : para > pour la description, même si plusieurs balises \<MAML : para > peuvent être utilisées.
+Le code XML suivant montre comment ajouter une description pour l’exemple. Windows PowerShell® utilise un ensemble unique de \< balises MAML : para> pour la description, même si plusieurs \< balises MAML : para> peuvent être utilisées.
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ Le code XML suivant montre comment ajouter une description pour l’exemple. Win
 
 ## <a name="adding-example-output"></a>Ajout d’un exemple de sortie
 
-Le code XML suivant montre comment ajouter la sortie de la commande. Les informations sur les résultats de la commande sont facultatives, mais dans certains cas, il est utile d’illustrer l’effet de l’utilisation de paramètres spécifiques. Windows PowerShell® utilise deux ensembles de balises vides \<MAML : para > pour séparer la sortie de commande de la commande.
+Le code XML suivant montre comment ajouter la sortie de la commande. Les informations sur les résultats de la commande sont facultatives, mais dans certains cas, il est utile d’illustrer l’effet de l’utilisation de paramètres spécifiques. Windows PowerShell® utilise deux ensembles de \< balises MAML : para> vides pour séparer la sortie de commande de la commande.
 
 ```xml
 <command:examples>

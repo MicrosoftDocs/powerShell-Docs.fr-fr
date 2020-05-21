@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
-ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 37b31aa77dde23c1bd57a9af67e2232ef0827005
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367328"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557582"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>Guide pratique pour créer et charger des fichiers CAB
 
@@ -25,7 +25,7 @@ Vous pouvez utiliser la fonctionnalité d’aide actualisable pour remettre des 
 
 1. Organisez les fichiers d’aide pour le module par culture d’interface utilisateur. Chaque fichier CAB d’aide actualisable contient les fichiers d’aide d’un module dans une culture d’interface utilisateur. Vous pouvez fournir plusieurs fichiers CAB d’aide pour le module, chacun pour une culture d’interface utilisateur différente.
 
-2. Vérifiez que les fichiers d’aide incluent uniquement les types de fichiers autorisés pour l’aide actualisable et validez-les par rapport à un schéma de fichier d’aide. Si l’applet de commande `Update-Help` rencontre un fichier qui n’est pas valide ou n’est pas un type autorisé, il n’installe pas le fichier non valide et arrête l’installation des fichiers à partir du fichier CAB. Pour obtenir la liste des types de fichiers autorisés, consultez [types de fichiers autorisés dans un fichier CAB de l’aide actualisable](./file-types-permitted-in-an-updatable-help-cab-file.md).
+2. Vérifiez que les fichiers d’aide incluent uniquement les types de fichiers autorisés pour l’aide actualisable et validez-les par rapport à un schéma de fichier d’aide. Si l' `Update-Help` applet de commande rencontre un fichier qui n’est pas valide ou n’est pas un type autorisé, elle n’installe pas le fichier non valide et arrête l’installation des fichiers à partir du fichier CAB. Pour obtenir la liste des types de fichiers autorisés, consultez [types de fichiers autorisés dans un fichier CAB de l’aide actualisable](./file-types-permitted-in-an-updatable-help-cab-file.md).
 
 3. Signez numériquement les fichiers d’aide. Les signatures numériques ne sont pas requises, mais elles constituent une bonne pratique.
 

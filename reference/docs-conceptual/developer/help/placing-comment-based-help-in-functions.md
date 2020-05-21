@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
-ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367778"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557060"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Mise en place de l’aide basée sur les commentaires dans les fonctions
 
-Cette rubrique explique où placer l’aide basée sur les commentaires pour une fonction afin que l’applet de commande `Get-Help` associe la rubrique d’aide basée sur des commentaires à la fonction correcte.
+Cette rubrique explique où placer l’aide basée sur des commentaires pour une fonction afin que l’applet de commande `Get-Help` associe la rubrique d’aide basée sur les commentaires à la fonction correcte.
 
 ## <a name="where-to-place-comment-based-help-for-a-function"></a>Où placer l’aide basée sur les commentaires pour une fonction
 
@@ -25,7 +25,7 @@ Cette rubrique explique où placer l’aide basée sur les commentaires pour une
 
 - À la fin du corps de la fonction.
 
-- Avant le mot clé `Function`. Lorsque la fonction se trouve dans un script ou un module de script, il ne peut pas y avoir plus d’une ligne vide entre la dernière ligne de l’aide basée sur les commentaires et le mot clé `Function`. Dans le cas contraire, `Get-Help` associe l’aide au script, et non à la fonction.
+- Avant le `Function` mot clé. Lorsque la fonction se trouve dans un script ou un module de script, il ne peut pas y avoir plus d’une ligne vide entre la dernière ligne de l’aide basée sur les commentaires et le `Function` mot clé. Sinon, `Get-Help` associe l’aide au script, et non à la fonction.
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Exemples de placement d’aide dans une fonction
 

@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 416061e5812e608f2099ca833bcaac4f0e651f59
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360898"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557616"
 ---
 # <a name="runspace04-sample"></a>Exemple Runspace04
 
 Cet exemple montre comment utiliser la classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. Par conséquent, aucun objet n’est retourné et une erreur avec fin d’exécution est levée.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Conditions requises
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 

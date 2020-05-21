@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
-ms.openlocfilehash: 93780ee8af80d78a5b97a32098384a148070b54a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ac597359d81184157a71dc497cca07358f3a3492
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366138"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557275"
 ---
 # <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a>Implémentation de SessionConfiguration pour un service web Management OData
 
@@ -116,4 +116,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
 ## <a name="see-also"></a>Voir aussi
 
-[Implémentation d’une autorisation personnalisée pour un service Web OData de gestion](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Implémentation d’une autorisation personnalisée pour un service web Management OData](./implementing-custom-authorization-for-a-management-odata-web-service.md)
