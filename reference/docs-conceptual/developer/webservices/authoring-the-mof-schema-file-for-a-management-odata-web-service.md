@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366168"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561703"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="72b34-102">Création du fichier de schéma MOF pour un service web Management OData</span><span class="sxs-lookup"><span data-stu-id="72b34-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="eb154-102">Création du fichier de schéma MOF pour un service web Management OData</span><span class="sxs-lookup"><span data-stu-id="eb154-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="72b34-103">Vous définissez les ressources exposées par votre service Web OData de gestion en créant un fichier MOF qui utilisait le schéma de ressource publique.</span><span class="sxs-lookup"><span data-stu-id="72b34-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="72b34-104">Chaque ressource est définie en tant que classe dans le fichier, et les propriétés sont définies comme membres de classe.</span><span class="sxs-lookup"><span data-stu-id="72b34-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="72b34-105">Pour plus d’informations sur le schéma utilisé dans le fichier MOF, consultez [schéma de ressources publiques](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="72b34-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="eb154-103">Vous définissez les ressources exposées par votre service Web OData de gestion en créant un fichier MOF qui utilisait le schéma de ressource publique.</span><span class="sxs-lookup"><span data-stu-id="eb154-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="eb154-104">Chaque ressource est définie en tant que classe dans le fichier, et les propriétés sont définies comme membres de classe.</span><span class="sxs-lookup"><span data-stu-id="eb154-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="eb154-105">Pour plus d’informations sur le schéma utilisé dans le fichier MOF, consultez [schéma de ressources publiques](./public-resource-schema.md).</span><span class="sxs-lookup"><span data-stu-id="eb154-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="72b34-106">Exemple de fichier MOF</span><span class="sxs-lookup"><span data-stu-id="72b34-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="eb154-106">Exemple de fichier MOF</span><span class="sxs-lookup"><span data-stu-id="eb154-106">Example MOF file</span></span>
 
-<span data-ttu-id="72b34-107">Le fichier suivant définit les ressources de service et de processus.</span><span class="sxs-lookup"><span data-stu-id="72b34-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="72b34-108">Chacune de ces ressources correspond à un objet qui peut être géré par un ensemble d’applets de commande Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="72b34-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="72b34-109">Les propriétés correspondent aux paramètres utilisés par ces applets de commande.</span><span class="sxs-lookup"><span data-stu-id="72b34-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="eb154-107">Le fichier suivant définit les ressources de service et de processus.</span><span class="sxs-lookup"><span data-stu-id="eb154-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="eb154-108">Chacune de ces ressources correspond à un objet qui peut être géré par un ensemble d’applets de commande Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="eb154-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="eb154-109">Les propriétés correspondent aux paramètres utilisés par ces applets de commande.</span><span class="sxs-lookup"><span data-stu-id="eb154-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="72b34-110">Chacune des deux ressources contient des propriétés de type complexe.</span><span class="sxs-lookup"><span data-stu-id="72b34-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="72b34-111">Les types complexes sont définis en tant que classes modifiées avec le qualificateur `ComplexType`.</span><span class="sxs-lookup"><span data-stu-id="72b34-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="eb154-110">Chacune des deux ressources contient des propriétés de type complexe.</span><span class="sxs-lookup"><span data-stu-id="eb154-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="eb154-111">Les types complexes sont définis en tant que classes modifiées avec le `ComplexType` qualificateur.</span><span class="sxs-lookup"><span data-stu-id="eb154-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="72b34-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="72b34-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eb154-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="eb154-112">See Also</span></span>
 
-[<span data-ttu-id="72b34-113">Création d’un service Web OData de gestion</span><span class="sxs-lookup"><span data-stu-id="72b34-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="eb154-113">Création d’un service web Management OData</span><span class="sxs-lookup"><span data-stu-id="eb154-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="72b34-114">Schéma de ressource publique</span><span class="sxs-lookup"><span data-stu-id="72b34-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="eb154-114">Schéma des ressources publiques</span><span class="sxs-lookup"><span data-stu-id="eb154-114">Public Resource Schema</span></span>](./public-resource-schema.md)
