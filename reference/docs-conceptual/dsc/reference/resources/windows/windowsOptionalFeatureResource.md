@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsOptionalFeature dans DSC
-ms.openlocfilehash: 7312edcaeb47427bf4736f466a9ed41bd7c31f6a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bca6294db74c92a2c1940cfbe00305542a1c5d19
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954646"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565364"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Ressource WindowsOptionalFeature dans DSC
 

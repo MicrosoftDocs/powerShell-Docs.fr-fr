@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource Package dans DSC
-ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ff2eae712b4117da9bca915f52e18caed7c4885d
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953146"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559928"
 ---
 # <a name="dsc-package-resource"></a>Ressource Package dans DSC
 

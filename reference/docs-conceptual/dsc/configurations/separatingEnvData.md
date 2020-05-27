@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Séparation des données de configuration et d’environnement
-ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954436"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692423"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Séparation des données de configuration et d’environnement
 
@@ -32,14 +32,14 @@ Nous allons créer une configuration unique qui garantit la présence d’**IIS*
 ```powershell
 Configuration MyDscConfiguration {
 
-    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-        WindowsFeature IISInstall {
-            Ensure = 'Present'
-            Name   = 'Web-Server'
-        }
+  WindowsFeature IISInstall {
+    Ensure = 'Present'
+    Name   = 'Web-Server'
+  }
 
-    }
+ }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
@@ -102,7 +102,7 @@ Nous définissons les données de l’environnement de développement et de prod
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-        WebSiteName     = "New website"
+            WebSiteName     = "New website"
         },
 
         @{
@@ -253,11 +253,12 @@ Notez que vous pouvez avoir autant de clés supplémentaires que vous le souhait
 
 Accédez aux clés supplémentaires en utilisant la variable spéciale **$ConfigurationData**.
 Dans cet exemple, `ConfigFileContents` est accessible avec la ligne :
+
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- dans le bloc de ressources `File`.
 
+ dans le bloc de ressources `File`.
 
 ```powershell
 $MyData =
@@ -311,8 +312,8 @@ configuration WebsiteConfig
 }
 ```
 
-
 ## <a name="see-also"></a>Voir aussi
+
 - [Utilisation des données de configuration](configData.md)
 - [Options relatives aux informations d’identification dans les données de configuration](configDataCredentials.md)
 - [Configurations DSC](configurations.md)

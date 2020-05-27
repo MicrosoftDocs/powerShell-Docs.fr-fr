@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell-Docs
 description: Liste des modifications apportées à la documentation de PowerShell.
 ms.date: 04/29/2020
-ms.openlocfilehash: a3b99c4d98362f2509ca9974d32c1a4d4780b664
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630905"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692510"
 ---
 # <a name="community-contributor-hall-of-fame"></a>Panthéon des contributeurs de la communauté
 
@@ -15,7 +15,7 @@ La communauté PowerShell est un groupe vivant et collaboratif. Nous apprécions
 
 Depuis avril 2020, ces utilisateurs GitHub sont les meilleurs contributeurs de l’histoire de la communauté.
 
-### <a name="pull-requests-opened"></a>Demandes de tirage ouvertes
+## <a name="pull-requests-opened"></a>Demandes de tirage ouvertes
 
 Les demandes de tirage nous aident à résoudre ces problèmes et à améliorer la documentation pour tout le monde.
 
@@ -40,7 +40,7 @@ Les demandes de tirage nous aident à résoudre ces problèmes et à améliorer 
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### <a name="github-issues-opened"></a>Problèmes GitHub ouverts
+## <a name="github-issues-opened"></a>Problèmes GitHub ouverts
 
 Les problèmes GitHub nous aident à identifier les erreurs et les lacunes de notre documentation.
 

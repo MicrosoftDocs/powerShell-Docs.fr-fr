@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Appel direct de méthodes de ressources DSC
-ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954386"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692401"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Appel direct de méthodes de ressources DSC
 
@@ -26,8 +26,8 @@ Voici quelques exemples d’appels directs de méthodes de ressources :
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
-                            DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
-                            Contents = 'This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
+              Contents = 'This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -35,8 +35,8 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -44,14 +44,15 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result.ItemValue | fl
 ```
 
 >**Remarque :** l’appel direct de méthodes de ressources composites n’est pas pris en charge. Appelez plutôt les ressources sous-jacentes qui forment la ressource composite.
 
 ## <a name="see-also"></a>Voir aussi
+
 - [Écriture d’une ressource DSC personnalisée avec MOF](../resources/authoringResourceMOF.md)
 - [Écriture d’une ressource DSC personnalisée avec les classes PowerShell](../resources/authoringResourceClass.md)
 - [Débogage des ressources DSC](../troubleshooting/debugResource.md)

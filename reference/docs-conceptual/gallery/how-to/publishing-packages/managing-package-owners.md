@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des propriétaires de package
-ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328260"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564667"
 ---
 # <a name="managing-package-owners"></a>Gestion des propriétaires de package
 
@@ -41,7 +41,6 @@ Ce système d’invitation empêche les utilisateurs d’ajouter de façon facti
 
 Notez que les métadonnées des « Auteurs » sont purement du texte libre. Seuls les « Propriétaires » sont contrôlés.
 
-
 ## <a name="removing-owners"></a>Suppression de propriétaires
 
 Quand un package a plusieurs propriétaires et que l’un d’eux doit être supprimé, le processus est simple :
@@ -50,8 +49,6 @@ Quand un package a plusieurs propriétaires et que l’un d’eux doit être sup
 2. Accédez à la page d’un élément via l’onglet « Packahes » en recherchant votre nom d’utilisateur ou en cliquant dessus, puis sur [**Gérer mes éléments**](https://www.powershellgallery.com/account/Packages).
 3. Une fois que vous êtes connecté comme propriétaire d’un package, un lien « Gérer les propriétaires » sur lequel vous pouvez cliquer est affiché sur le côté gauche.
 4. Cliquez sur le lien « supprimer » en regard du propriétaire à supprimer.
-
-
 
 ## <a name="transferring-package-ownership"></a>Transfert de propriété de package
 
@@ -65,7 +62,6 @@ Cette demande se présente sous deux formes, mais le processus fonctionne de la 
 
 - La propriété d’un package passe d’un développeur à un autre
 - Le package a été publié accidentellement à l’aide du mauvais compte
-
 
 ## <a name="orphaned-packages"></a>Packages orphelins
 

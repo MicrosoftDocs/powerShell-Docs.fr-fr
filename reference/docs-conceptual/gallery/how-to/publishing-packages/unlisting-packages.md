@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Retirer des packages de la liste
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978268"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692350"
 ---
 # <a name="unlisting-packages"></a>Retirer des packages de la liste
 
@@ -32,6 +32,7 @@ Pour retirer votre package de la liste, accédez à la page des détails du pack
 
 Si vous vous trouvez dans une situation nécessitant la suppression d’un package, contactez les administrateurs PowerShell Gallery.
 Les scénarios de suppression valides sont les suivants :
+
 - Problèmes de violation des droits d’auteur.
 - Contenu potentiellement dangereux.
 - Package contenant des données sensibles.

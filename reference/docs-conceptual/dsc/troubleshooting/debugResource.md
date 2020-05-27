@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Débogage des ressources DSC
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954256"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691961"
 ---
 # <a name="debugging-dsc-resources"></a>Débogage des ressources DSC
 
@@ -22,7 +22,6 @@ Cette applet de commande prend un paramètre obligatoire : **BreakAll**.
 Vous pouvez vérifier que le débogage a été activé en examinant le résultat d’un appel à [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
 La sortie PowerShell suivante montre le résultat de l’activation du débogage :
-
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -40,7 +39,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>Démarrage d’une configuration avec le débogage activé
 Pour déboguer une ressource DSC, démarrez une configuration qui appelle cette ressource.
@@ -61,6 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 Après la compilation de la configuration, démarrez-la en appelant [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 La configuration s’arrête quand le gestionnaire de configuration local appelle la première ressource de la configuration.
 Si vous utilisez les paramètres `-Verbose` et `-Wait`, la sortie affiche les lignes que vous devez entrer pour démarrer le débogage.
@@ -85,6 +84,7 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 À ce stade, le gestionnaire de configuration local a appelé la ressource et arrive au premier point d’arrêt.
 Les trois dernières lignes de la sortie vous montrent comment attacher au processus et commencer à déboguer le script de ressource.
 

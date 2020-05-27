@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: WinRMSecurity
-ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62086359"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564427"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell
 
@@ -69,11 +69,9 @@ L’authentification NTLM est désactivée par défaut, mais peut être autoris�
 S’il n’est pas possible de déployer un certificat SSL sur un serveur pour les connexions NTLM, vous pouvez supprimer les erreurs d’identité obtenues en ajoutant le serveur à la liste **TrustedHosts** de WinRM. Notez que l’ajout d’un nom de serveur à la liste TrustedHosts ne doit pas être considéré comme une forme de déclaration de fiabilité des hôtes eux-mêmes, puisque le protocole d’authentification NTLM ne peut pas garantir que vous vous connectez en fait à l’hôte souhaité.
 Vous devez plutôt considérer le paramètre TrustedHosts comme représentant la liste des hôtes pour lesquels vous voulez supprimer l’erreur générée par l’impossibilité de vérifier l’identité du serveur.
 
-
 ### <a name="ongoing-communication"></a>Communications en cours
 
 Une fois l’authentification initiale terminée, le [protocole de communication à distance PowerShell](https://msdn.microsoft.com/library/dd357801.aspx) chiffre toutes les communications en cours avec une clé symétrique AES-256 par session.
-
 
 ## <a name="making-the-second-hop"></a>Second saut
 

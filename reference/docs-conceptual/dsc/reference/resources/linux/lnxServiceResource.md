@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource nxService dans DSC pour Linux
-ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30f3b15fccd1491fac2989832486ad15d062c1ad
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954836"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563987"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Ressource nxService dans DSC pour Linux
 

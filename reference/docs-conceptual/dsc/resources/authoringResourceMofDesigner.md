@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Utilisation du Concepteur de ressources
-ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500631"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692183"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
@@ -19,6 +19,7 @@ L’outil Concepteur de ressources est un ensemble d’applets de commande expos
 La première chose à faire est de décider des propriétés que doit exposer la ressource. Pour cet exemple, nous allons définir un utilisateur Active Directory avec les propriétés suivantes.
 
 Nom du paramètre  Description
+
 * **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
 * **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
 * **DomainCredential** : mot de passe de l’utilisateur.

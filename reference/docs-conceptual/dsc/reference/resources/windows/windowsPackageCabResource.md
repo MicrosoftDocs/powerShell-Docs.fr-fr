@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource DSC WindowsPackageCab
-ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b1b8b6d065882400608d26a991318fec9ad5747
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954636"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563947"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>Ressource DSC WindowsPackageCab
 

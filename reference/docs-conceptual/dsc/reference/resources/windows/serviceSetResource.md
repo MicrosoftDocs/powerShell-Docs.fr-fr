@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressources ServiceSet dans DSC
-ms.openlocfilehash: 97c25f46940d69ed6c696e2692e29131e9a997b0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: a071a8cdd4a7dc6fd050fc1b88901aa0ce428615
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953026"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563967"
 ---
 # <a name="dsc-serviceset-resource"></a>Ressources ServiceSet dans DSC
 

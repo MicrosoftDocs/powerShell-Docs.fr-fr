@@ -3,12 +3,12 @@ title: Guide pratique pour envoyer des demandes de tirage
 description: Cet article explique comment envoyer des demandes de tirage au référentiel PowerShell-Docs.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2600049b06da5ad4869b6ff335f00bc40c2d1c22
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060234"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690945"
 ---
 # <a name="how-to-submit-pull-requests"></a>Guide pratique pour envoyer des demandes de tirage
 

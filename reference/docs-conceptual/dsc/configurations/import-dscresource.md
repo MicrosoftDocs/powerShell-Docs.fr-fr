@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Utilisation d’Import-DSCResource
-ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402446"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692462"
 ---
 # <a name="using-import-dscresource"></a>Utilisation d’Import-DSCResource
 
@@ -123,10 +123,12 @@ IntelliSense et le schéma de validation vous permettent de détecter plus d’e
 
 > [!NOTE]
 > Chaque ressource DSC peut avoir un nom et une propriété **FriendlyName** définie par le schéma de la ressource. Voici les deux premières lignes du fichier « MSFT_ServiceResource.shema.mof ».
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > Lorsque vous utilisez cette ressource dans une configuration, vous pouvez spécifier **MSFT_ServiceResource** ou **Service**.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Différences entre PowerShell v4 et PowerShell v5

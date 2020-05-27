@@ -1,13 +1,13 @@
 ---
 title: Installation de PowerShell sur Windows
 description: Informations sur l’installation de PowerShell sur Windows
-ms.date: 08/06/2018
-ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+ms.date: 05/21/2020
+ms.openlocfilehash: 864f297e4f569030439bd6b581ef593d36f8b910
+ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141378"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791483"
 ---
 # <a name="installing-powershell-on-windows"></a>Installation de PowerShell sur Windows
 
@@ -30,8 +30,8 @@ Pour installer PowerShell sur Windows, téléchargez le package d’installation
 
 Le fichier MSI ressemble à `PowerShell-<version>-win-<os-arch>.msi`. Par exemple :
 
-- `PowerShell-7.0.0-win-x64.msi`
-- `PowerShell-7.0.0-win-x86.msi`
+- `PowerShell-7.0.1-win-x64.msi`
+- `PowerShell-7.0.1-win-x86.msi`
 
 Une fois téléchargé, double-cliquez sur le programme d’installation et suivez les invites.
 
@@ -60,7 +60,7 @@ Les packages MSI peuvent être installés à partir de la ligne de commande, ce 
 L’exemple suivant montre comment installer PowerShell sans assistance avec toutes les options d’installation activées.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 Pour obtenir une liste complète des options de ligne de commande pour `Msiexec.exe`, consultez [Options de ligne de commande](/windows/desktop/Msi/command-line-options).
@@ -128,6 +128,7 @@ Windows 10 IoT Entreprise contient Windows PowerShell, que l’on peut utiliser
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+
 ## <a name="deploying-on-windows-10-iot-core"></a>Déploiement sur Windows 10 IoT Core
 
 Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité *IOT_POWERSHELL*, que nous pouvons utiliser pour déployer PowerShell 7.

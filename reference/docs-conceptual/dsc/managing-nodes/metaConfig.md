@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271846"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691992"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
@@ -125,6 +125,7 @@ Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
 > [!NOTE]
+>
 > * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -152,6 +153,7 @@ Un bloc **ResourceRepositoryWeb** définit les propriétés suivantes.
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
 > [!NOTE]
+>
 > * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -180,6 +182,7 @@ Un bloc **ReportServerWeb** définit les propriétés suivantes.
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
 > [!NOTE]
+>
 > * Pris en charge dans Windows 1809 et ultérieur.
 
 Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)

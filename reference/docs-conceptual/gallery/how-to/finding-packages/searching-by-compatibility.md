@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,applet de commande,psgallery
 title: Packages avec un système d’exploitation ou des éditions PowerShell compatibles
-ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278355"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691449"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Packages avec des systèmes d’exploitation ou des éditions PowerShell compatibles
 
@@ -17,6 +17,7 @@ ms.locfileid: "78278355"
 ## <a name="searching-by-powershell-edition"></a>Recherche par édition de PowerShell
 
 Les deux éditions de PowerShell sont :
+
 - **Édition Desktop :** repose sur le .NET Framework et offre une compatibilité avec les scripts et les modules ciblant les versions de PowerShell exécutées sur les éditions complètes de Windows, telles que Server Core et Bureau Windows.
 - **Core Edition :** basée sur .NET Core, elle fournit la compatibilité avec les scripts et les modules qui ciblent des versions de PowerShell exécutées sur des éditions réduites de Windows telles que Nano Server et Windows IoT.
 

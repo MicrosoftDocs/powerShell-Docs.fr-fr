@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Filtrage des résultats de la recherche
-ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328040"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691464"
 ---
 # <a name="filtering-search-results"></a>Filtrage des résultats de la recherche
 
@@ -20,12 +20,14 @@ Pour afficher des informations sur un package en particulier, cliquez dessus.
 ## <a name="filter-by"></a>Filtrer par
 
 La liste déroulante sous « Filtrer par » permet aux utilisateurs de filtrer les résultats selon :
+
 - Inclure la préversion
 - Stable uniquement
 
 Pour plus d’informations sur « Préversion » et « Stable », consultez [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) (Gestion des préversions ajoutée à PowerShellGet et à PowerShell Gallery) dans le blog de l’équipe PowerShell.
 
 Les cases à cocher sous la liste déroulante permettent aux utilisateurs de filtrer les résultats par :
+
 - Types de packages
   - Module
   - Script
@@ -49,6 +51,7 @@ De même, pour afficher uniquement les scripts de PowerShell Gallery, cochez Scr
 ## <a name="sort-by"></a>Trier par
 
 La liste déroulante Trier par permet aux utilisateurs de trier les résultats par :
+
 - Popularité : la popularité est déterminée par le nombre de téléchargements
 - A à Z : par ordre alphabétique de nom de package
 - Récent : par date de publication des packages

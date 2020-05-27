@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417047"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560421"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -45,7 +45,6 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **Site du projet** | Le site du projet est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur ProjectURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .PROJECTURI. | Oui | Oui |
 | **License** | Le lien de la licence est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur LicenseURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .LICENSEURI. Il est important de noter que si une licence n’est pas fournie via LicenseURI ou dans un module, les conditions d’utilisation de PowerShell Gallery précisent les conditions d’utilisation du package. Pour plus d’informations, consultez les conditions d’utilisation. | Oui | Oui |
 | **Icône** | Il est possible de spécifier une icône pour tout package figurant dans PowerShell Gallery en fournissant l’indicateur IconURI dans le manifeste de script ou dans la section Privatedata-PSData du manifeste de module. IconURI doit pointer vers une image de 32 x 32 avec un arrière-plan transparent. L’URI **doit** être une URL d’image directe et **ne doit pas** accéder à une page web contenant l’image ou à un fichier du package PowerShell Gallery. | Oui | Oui |
-
 
 ## <a name="editing-package-details"></a>Modification des détails du package
 

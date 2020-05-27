@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500677"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692257"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
@@ -86,6 +86,7 @@ Le module **PowerShellGet** télécharge le module dans :
 `C:\Program Files\Windows PowerShell\Modules`
 
 Tâche de planification
+
 - Avez-vous accès aux fichiers d’installation de Windows Server 2012 R2 ?
 - L’environnement de déploiement disposera-t-il d’un accès à Internet pour télécharger WMF et le module à partir de la galerie en ligne ?
 - Comment allez-vous installer les dernières mises à jour de sécurité après l’installation du système d’exploitation ?
@@ -102,6 +103,7 @@ Les déploiements de serveurs collecteurs sont pris en charge sur les serveurs p
 - Réseau : carte Gigabit Ethernet
 
 Tâche de planification
+
 - Effectuerez-vous le déploiement sur du matériel physique ou sur une plateforme de virtualisation ?
 - Quelle est la procédure pour demander un nouveau serveur dans votre environnement cible ?
 - Combien de temps faut-il en moyenne pour rendre un serveur disponible ?
@@ -121,14 +123,15 @@ Un CNAME DNS vous permet de créer un alias pour faire référence à votre enre
 Quand vous choisissez un nom pour l’enregistrement DNS, gardez à l’esprit l’architecture de la solution.
 Si vous utilisez l’équilibrage de charge, le certificat servant à sécuriser le trafic sur HTTPS doit partager le même nom que l’enregistrement DNS.
 
-       Scénario        |                                                                                         Bonne pratique
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Environnement de test       | Reproduisez l’environnement de production planifié, si possible. Un nom d’hôte de serveur convient aux configurations simples. Si DNS n’est pas disponible, une adresse IP peut être utilisée à la place d’un nom d’hôte.
-Déploiement à nœud unique | Créez un enregistrement DNS CNAME qui pointe vers le nom d’hôte du serveur.
+|       Scénario        |                                                                                         Bonne pratique
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Environnement de test       | Reproduisez l’environnement de production planifié, si possible. Un nom d’hôte de serveur convient aux configurations simples. Si DNS n’est pas disponible, une adresse IP peut être utilisée à la place d’un nom d’hôte.
+|Déploiement à nœud unique | Créez un enregistrement DNS CNAME qui pointe vers le nom d’hôte du serveur.
 
 Pour plus d’informations, consultez [Configuration du tourniquet (round robin) DNS dans Windows Server](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Tâche de planification
+
 - Savez-vous qui contacter pour créer et modifier des enregistrements DNS ?
 - Combien de temps faut-il en moyenne pour demander un enregistrement DNS ?
 - Avez-vous besoin de demander des enregistrements de nom d’hôte (A) statiques pour les serveurs ?
@@ -143,6 +146,7 @@ Bien qu’il soit possible de déployer un serveur collecteur à l’aide de HTT
 Les critères de certificat pour sécuriser le trafic HTTPS pour le serveur collecteur ne sont pas différents de ceux pour sécuriser un site web HTTPS. Le modèle de **serveur web** dans un service de certificats Windows Server est conforme aux fonctionnalités demandées.
 
 Tâche de planification
+
 - Si les demandes de certificats ne sont pas automatisées, qui devrez-vous contacter pour demander un certificat ?
 - Combien de temps faut-il en moyenne pour la demande ?
 - Comment le fichier de certificat vous sera-t-il transféré ?
@@ -159,6 +163,7 @@ Vous pouvez déployer un serveur collecteur à l’aide d’un service web hébe
 Les clients qui interagissent avec le service web adressent une demande d’informations qui sont retournées dans une réponse unique. Aucune demande séquentielle n’est nécessaire. La plateforme d’équilibrage de charge n’a donc pas besoin de garantir la conservation des sessions sur un serveur unique à un moment donné.
 
 Tâche de planification
+
 - Quelle solution sera utilisée pour le trafic d’équilibrage de charge entre les serveurs ?
 - Si vous utilisez un programme d’équilibrage de charge matérielle, qui acceptera une demande d’ajout d’une nouvelle configuration à l’appareil ?
 - Combien de temps faut-il en moyenne pour faire une demande de configuration d’un nouveau service web à charge équilibrée ?
@@ -187,6 +192,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Tâche de planification
+
 - Si vous planifiez un environnement de test ou de laboratoire, quels scénarios sont essentiels pour la validation ?
 - Existe-t-il des modules à la disposition du public qui contiennent des ressources permettant de couvrir tout ce dont vous avez besoin ou devrez-vous créer vos propres ressources ?
 - Votre environnement aura-t-il accès à Internet pour récupérer les modules publics ?
@@ -210,6 +216,7 @@ Il convient d’apporter une attention supplémentaire à la planification des *
   Le GUID doit être considéré comme une donnée sensible, car il peut être exploité par une personne ayant des intentions malveillantes pour recueillir des informations sur la façon dont les serveurs sont déployés et configurés dans votre environnement. Pour plus d’informations, consultez [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (Allocation de Guids de manière sécurisée dans la configuration de l’état désiré de PowerShell en mode Pull).
 
 Tâche de planification
+
 - Qui sera chargé de la copie des configurations dans le dossier des serveurs collecteurs quand elles seront prêtes ?
 - Si les configurations sont créées par une équipe d’application, quelle sera la procédure pour les transmettre ?
 - Allez-vous exploiter un dépôt pour stocker les configurations à mesure qu’elles seront créées, entre les équipes ?
