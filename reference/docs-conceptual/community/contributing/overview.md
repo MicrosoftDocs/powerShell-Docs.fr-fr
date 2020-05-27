@@ -3,12 +3,12 @@ title: Contribution à la documentation de PowerShell
 description: Cet article explique dans les grandes lignes comment bien démarrer en tant que contributeur de la documentation de PowerShell.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5f9efbff500b1fd0c11e9b43ca0a7feb77684c6a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402626"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560659"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Contribution à la documentation de PowerShell
 
@@ -66,7 +66,7 @@ Consultez les documents suivants :
 - [Bien démarrer avec la rédaction de la documentation](get-started-writing.md)
 - [Envoi d’une demande de tirage](pull-requests.md)
 - [Guide de style PowerShell-Docs](powershell-style-guide.md)
-- [Modification des informations de référence sur les cmdlets](editing-cmdlet-ref.md)
+- [Informations de référence sur la modification des cmdlets](editing-cmdlet-ref.md)
 
 Ressources supplémentaires
 

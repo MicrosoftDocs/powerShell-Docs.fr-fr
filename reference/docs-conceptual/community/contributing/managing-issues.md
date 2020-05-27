@@ -3,12 +3,12 @@ title: Processus de gestion des problèmes
 description: Cet article explique comment l’équipe PowerShell-Docs gère les demandes de tirage (pull request).
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060274"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692536"
 ---
 # <a name="how-we-manage-issues"></a>Processus de gestion des problèmes
 
@@ -60,21 +60,25 @@ L’équipe PowerShell-Docs se réunit une fois par semaine pour discuter des pr
 - Entrez un commentaire pour le client indiquant qu’il s’agit de commentaires sur le produit et fournissez un lien vers le canal de commentaires correspondant.
 - Facultatif : Copiez le problème à l’emplacement de commentaires sur le produit correspondant, ajoutez un lien vers l’élément copié, puis fermez le problème. NE copiez PAS les problèmes sur UserVoice.
 
-  | Ensemble de documents    | URL de commentaires sur le produit                                         |
-  | --------- | ------------------------------------------------------------ |
-  | developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | galerie   | https://github.com/powershell/powershellgallery/issues/new   |
-  | jea       | https://github.com/powershell/jea/issues/new                 |
-  | reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | Ensemble de documents    | URL de commentaires sur le produit                                           |
+  | --------- | -------------------------------------------------------------- |
+  | developer | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | galerie   | `https://github.com/powershell/powershellgallery/issues/new`   |
+  | jea       | `https://github.com/powershell/jea/issues/new`                 |
+  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
 
 ### <a name="support-requests"></a>Demandes de support
 
 - Si la question de support est simple, répondez-y poliment et fermez le problème.
 - Si la question est plus compliquée ou que le demandeur répond par d’autres questions, redirigez-le vers des forums et des canaux de support. Texte suggéré pour la redirection vers des forums :
 
-    > Il ne s’agit pas d’un forum adapté à ce type de question. Essayez de publier votre question sur l’un des forums de support de la communauté. Pour connaître la liste des forums de la communauté, rendez-vous sur https://docs.microsoft.com/powershell/scripting/community/community-support.
+  ```Markdown
+  > This is not the right forum for these kinds of questions. Try posting your question in a
+  > community support forum. For a list of community forums see:
+  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```
 
 ### <a name="code-of-conduct-violations"></a>Violation du code de conduite
 
