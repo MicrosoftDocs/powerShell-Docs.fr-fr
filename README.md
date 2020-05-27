@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 034d75a84e39cb0cf88a272ca58b5ccc229c5d9b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0d91230aa063e58106b35a4ada1d577f316f8f27
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74540459"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840990"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Code de conduite Microsoft Open Source
 
@@ -15,9 +15,9 @@ Ce projet a adopté le [Code de conduite Open Source de Microsoft](https://opens
 
 ## <a name="build-status"></a>État de la build
 
-| Branche active | Branche de mise en lots |
-|:------------|:---------------|
-| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge]
+|          Branche active          |           Branche de mise en lots            |
+| :---------------------------- | :---------------------------------- |
+| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge] |
 
 ## <a name="powershell-documentation"></a>Documentation de PowerShell
 
@@ -32,15 +32,16 @@ Chacun des dossiers de premier niveau suivants dans ce référentiel contient un
     - [developer/](https://docs.microsoft.com/powershell/scripting/developer/) correspond à la documentation du SDK PowerShell (migrée depuis MSDN).
     - [dsc/](https://docs.microsoft.com/powershell/scripting/dsc/) correspond à la fonctionnalité de configuration d’état souhaité.
     - [gallery/](https://docs.microsoft.com/powershell/scripting/gallery) correspond à la [PowerShell Gallery](https://www.powershellgallery.com/)
-    - [jea/](https://docs.microsoft.com/powershell/scripting/jea/) correspond à la fonctionnalité JEA (Just Enough Administration)
-    - [wmf/](https://docs.microsoft.com/powershell/scripting/wmf/overview) contient les notes de publication pour Windows Management Framework, le package utilisé pour distribuer les nouvelles versions de PowerShell aux versions antérieures de Windows.
+    - [jea/](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) correspond à la fonctionnalité JEA (Just Enough Administration)
+    - [wmf/](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview) contient les notes de publication pour Windows Management Framework, le package utilisé pour distribuer les nouvelles versions de PowerShell aux versions antérieures de Windows.
 
 ## <a name="contributing"></a>Contribution
 
-Nous fusionnons activement les contributions dans ce dépôt via une [demande Pull](https://help.github.com/articles/using-pull-requests/) dans la branche de *préproduction*.
-Notez qu’avant d’envoyer une demande Pull, vous devez [signer un contrat de licence de contribution](https://cla.microsoft.com/) pour garantir que la communauté est libre d’utiliser vos envois.
+Nous fusionnons activement les contributions dans ce dépôt via des [demandes Pull](https://help.github.com/articles/using-pull-requests/) dans la branche de _préproduction_.
+Notez qu’avant d’envoyer une demande Pull, vous devez signer un [contrat de licence de contribution](https://cla.microsoft.com/) pour garantir que la communauté est libre d’utiliser vos envois.
 
-Pour plus d’informations sur la contribution, lisez notre [guide du contributeur](https://docs.microsoft.com/contribute/powershell/powershell-contribute). Le guide du contributeur contient des informations détaillées sur la manière de contribuer à la documentation, les outils, ainsi que sur les exigences concernant le style et la mise en forme. Utilisez les modèles « Issue » et « Pull Request » afin que la documentation soit cohérente entre les versions.
+Pour plus d’informations sur la contribution, lisez notre [guide du contributeur](https://docs.microsoft.com/powershell/scripting/community/contributing/overview).
+Le guide du contributeur contient des informations détaillées sur la manière de contribuer à la documentation, les outils, ainsi que sur les exigences concernant le style et la mise en forme. Utilisez les modèles « Issue » et « Pull Request » afin que la documentation soit cohérente entre les versions.
 
 ## <a name="licenses"></a>Licences
 

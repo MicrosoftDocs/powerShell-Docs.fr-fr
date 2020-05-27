@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Historique des versions des modules et des cmdlets
-ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
+ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082735"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83751325"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Historique des versions des modules et des cmdlets
 
@@ -77,7 +77,6 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 | Get-IseSnippet    | &check; |      |       |       | Windows uniquement |
 | Import-IseSnippet | &check; |      |       |       | Windows uniquement |
 | New-IseSnippet    | &check; |      |       |       | Windows uniquement |
-
 
 ### <a name="microsoftpowershellarchive"></a>Microsoft.PowerShell.Archive
 
@@ -260,7 +259,7 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 | Rename-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Windows uniquement                     |
 | Resolve-Path                  | &check; | &check; | &check; | &check; |                                  |
-| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-Computer              | &check; | &check; | &check; | &check; | Ajout de la prise en charge de Linux/macOS dans 7.1 |
 | Restart-Service               | &check; | &check; | &check; | &check; | Windows uniquement                     |
 | Restore-Computer              | &check; |         |         |         | Windows uniquement                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | Windows uniquement                     |
@@ -278,7 +277,7 @@ Il s’agit d’un travail en cours. Aidez-nous à conserver ces informations à
 | Start-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Windows uniquement                     |
 | Start-Transaction             | &check; |         |         |         | Windows uniquement                     |
-| Stop-Computer                 | &check; | &check; | &check; | &check; | Ajout de la prise en charge de Linux/macOS dans 7.0 |
+| Stop-Computer                 | &check; | &check; | &check; | &check; | Ajout de la prise en charge de Linux/macOS dans 7.1 |
 | Stop-Process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | Windows uniquement                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | Windows uniquement                     |

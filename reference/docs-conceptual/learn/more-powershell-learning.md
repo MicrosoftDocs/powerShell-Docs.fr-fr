@@ -1,25 +1,25 @@
 ---
 ms.date: 06/18/2019
 keywords: powershell,applet de commande
-title: En savoir plus sur PowerShell
-ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Ressources d’apprentissage PowerShell
+ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416746"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808433"
 ---
-# <a name="more-powershell-learning"></a>En savoir plus sur PowerShell
+# <a name="powershell-learning-resources"></a>Ressources d’apprentissage PowerShell
 
-Autres sources d’information sur PowerShell
+Ressources supplémentaires pour en savoir plus sur PowerShell.
 
-## <a name="resources-for-powershell-users"></a>Ressources pour les utilisateurs de PowerShell
+## <a name="blogs-and-community"></a>Blogs et communauté
 
 Outre l’aide disponible à la ligne de commande, les ressources suivantes contiennent d’autres informations pour les utilisateurs souhaitant exécuter PowerShell.
 
 - [Blog de l’équipe PowerShell](https://devblogs.microsoft.com/powershell/). Cette ressource vous permet d’accéder directement aux informations publiées par l’équipe en charge de PowerShell.
 - Le blog [Hey, Scripting Guy! Les articles du blog](https://devblogs.microsoft.com/scripting/) basés sur des scénarios sont écrits de manière engageante et animée.
-- Vous avez des questions sur l’utilisation de PowerShell ? Connectez-vous à des centaines d’autres personnes qui ont des centres d’intérêt similaires dans l’un des nombreux forums de la communauté répertoriés à la page [Communauté PowerShell](/powershell/#pivot=main&panel=community).
+- Vous avez des questions sur l’utilisation de PowerShell ? Connectez-vous à des centaines d’autres personnes qui ont des centres d’intérêt similaires dans l’un des nombreux forums de la communauté répertoriés à la page [Communauté PowerShell](/powershell/scripting/community/community-support).
 
 ## <a name="channel-9-videos"></a>Vidéos Channel 9
 

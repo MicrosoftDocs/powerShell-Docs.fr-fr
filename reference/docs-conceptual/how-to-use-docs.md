@@ -1,13 +1,13 @@
 ---
-ms.date: 10/20/2019
+ms.date: 05/22/2020
 keywords: powershell,applet de commande
 title: Guide pratique pour utiliser la documentation PowerShell
-ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 259eb1eea1dc7e8b5ae5730f97c938b838a320bf
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082835"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808263"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Guide pratique pour utiliser la documentation PowerShell
 
@@ -38,3 +38,15 @@ Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      18362  145
 ```
+
+## <a name="finding-articles-for-previous-versions"></a>Recherche d’articles pour les versions précédentes
+
+La documentation des versions antérieures de PowerShell a été archivée dans notre site [Versions précédentes](https://aka.ms/PSLegacyDocs).
+
+Ce site contient la documentation pour les rubriques suivantes :
+
+- PowerShell 3.0
+- PowerShell 4.0
+- PowerShell 5.0
+- Flux de travail PowerShell
+- Accès web PowerShell

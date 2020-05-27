@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500987"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560727"
 ---
 # <a name="powershell-support-lifecycle"></a>Cycle de vie du support de PowerShell
 
@@ -139,6 +139,17 @@ Pour plus d’informations, consultez l’article [about_Windows_Compatibility][
 
 Les [fonctionnalités expérimentales][] sont limitées au [support de la communauté](#community-support).
 
+## <a name="security-servicing-criteria"></a>Critères de maintenance de la sécurité
+
+PowerShell suit les [critères de maintenance de la sécurité de Microsoft pour Windows][].
+Le tableau ci-dessous présente les fonctionnalités qui respectent les critères de maintenance et celles qui ne le font pas.
+
+| Fonctionnalité                          | Type             |
+|----------------------------------|------------------|
+| Stratégie d’exécution                 | Défense en profondeur |
+| Verrouillage du système - avec AppLocker | Défense en profondeur |
+| Verrouillage du système - avec WDAC      | Fonctionnalité de sécurité |
+
 ## <a name="release-history"></a>Historique des mises en production
 
 Le tableau suivant contient une chronologie des versions majeures de PowerShell. Ce tableau est fourni à des fins de référence historique. Il n’est pas destiné à déterminer le cycle de vie de la prise en charge.
@@ -172,3 +183,4 @@ Le tableau suivant contient une chronologie des versions majeures de PowerShell.
 [Liste de compatibilité des modules]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Fonctionnalités expérimentales]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[Critères de maintenance de la sécurité de Microsoft pour Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria

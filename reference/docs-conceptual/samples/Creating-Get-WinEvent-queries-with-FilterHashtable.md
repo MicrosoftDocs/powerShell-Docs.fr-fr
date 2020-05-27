@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: Création de requêtes Get-WinEvent avec FilterHashtable
-ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444382"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563940"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Création de requêtes Get-WinEvent avec FilterHashtable
 
@@ -99,7 +99,7 @@ Continuez à créer la table de hachage avec la clé **ProviderName**. **Provide
 
 ![Image des sources de l’observateur d’événements Windows](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **ProviderName et la valeur **.NET Runtime**.
+Mettez à jour la table de hachage en incluant la paire **clé-valeur** avec la clé **ProviderName** et la valeur **.NET Runtime**.
 
 ```powershell
 Get-WinEvent -FilterHashtable @{

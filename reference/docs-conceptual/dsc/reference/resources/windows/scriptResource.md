@@ -2,16 +2,16 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource Script dans DSC
-ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953066"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557020"
 ---
 # <a name="dsc-script-resource"></a>Ressource Script dans DSC
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Script** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour exécuter des blocs de script Windows PowerShell sur des nœuds cibles. La ressource **Script** utilise les propriétés **GetScript**, **SetScript** et **TestScript** qui contiennent les blocs de script que vous définissez pour effectuer les opérations d’état DSC correspondantes.
 
@@ -73,7 +73,7 @@ Cependant, dans ce cas, **SetScript** ne s’exécute pas, quel que soit le rés
 
 ## <a name="examples"></a>Exemples
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire un exemple de texte à l’aide d’une ressource Script
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Exemple 1 : Écrire un exemple de texte à l’aide d’une ressource Script
 
 Cet exemple teste l’existence de `C:\TempFolder\TestFile.txt` sur chaque nœud. S’il n’existe pas, il le crée à l’aide de `SetScript`. `GetScript` retourne le contenu du fichier et sa valeur de retour n’est pas utilisée.
 
@@ -98,7 +98,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource Script
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Exemple 2 : Comparer les informations de version à l’aide d’une ressource Script
 
 Cet exemple récupère les informations de la version *conforme* à partir d’un fichier texte sur l’ordinateur de création et stocke ces informations dans la variable `$version`. Lors de la génération du fichier MOF du nœud, DSC remplace les variables `$using:version` dans chaque bloc de script par la valeur de la variable `$version`.
 Lors de l’exécution, la version *conforme* est stockée dans un fichier texte sur chaque nœud, puis comparée et mise à jour lors des exécutions suivantes.
@@ -136,4 +136,63 @@ Configuration ScriptTest
         }
     }
 }
+```
+
+### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>Exemple 3 : Utilisation de paramètres dans une ressource Script
+
+Cet exemple accède aux paramètres à partir de la ressource Script en utilisant l’étendue `using`. Notez que **ConfigurationData** est accessible de la même façon. Comme dans l’exemple 2, une version est censée être stockée dans un fichier local sur le nœud cible. Toutefois, le chemin d’accès au fichier local et la version sont configurables, mais le code est découplé à partir des données de configuration.
+
+```powershell
+Configuration ScriptTest
+{
+    param
+    (
+        [Version]
+        $Version,
+
+        [string]
+        $FilePath
+    )
+
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+
+    Node localhost
+    {
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content -Path $using:FilePath
+                return @{ 'Result' = "$currentVersion" }
+            }
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:Version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                Set-Content -Path $using:FilePath -Value $using:Version
+            }
+        }
+    }
+}
+```
+
+Le fichier MOF qui en résulte comprend les variables et leurs valeurs accessibles par le biais de l’étendue `using`.
+Elles sont injectées dans chaque bloc de script qui utilise les variables. Les scripts Test et Set ont été supprimés par souci de concision :
+
+```Output
+instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
+{
+ GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
+ TestScript = ...;
+ SetScript = ...;
+};
 ```

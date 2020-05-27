@@ -2,16 +2,16 @@
 ms.date: 10/31/2017
 keywords: dsc,powershell,configuration,installation
 title: Sécurisation du fichier MOF
-ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278463"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556385"
 ---
 # <a name="securing-the-mof-file"></a>Sécurisation du fichier MOF
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC gère la configuration des nœuds de serveur en appliquant les informations stockées dans un fichier MOF, où le Gestionnaire de configuration local implémente l’état de fin souhaitée. Étant donné que ce fichier contient les détails de la configuration, il est important qu’il soit sécurisé. Cette rubrique décrit comment s’assurer que le nœud cible a chiffré le fichier.
 
@@ -20,7 +20,7 @@ DSC gère la configuration des nœuds de serveur en appliquant les informations 
 > [!NOTE]
 > Cette rubrique traite des certificats utilisés pour le chiffrement. Pour le chiffrement, un certificat auto-signé est suffisant, car la clé privée est toujours gardée secrète et le chiffrement n’implique pas d’approbation du document. Les certificats auto-signés ne doivent *pas* être utilisés à des fins d’authentification. Pour l’authentification, vous devez utiliser un certificat d’une Autorité de certification (CA) approuvée.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Prérequis
 
 Afin de chiffrer correctement les informations d’identification utilisées pour sécuriser une configuration DSC, assurez-vous d’avoir les éléments suivants :
 
@@ -43,11 +43,11 @@ Afin de chiffrer correctement les informations d’identification utilisées pou
 Pour activer le chiffrement des informations d’identification, un certificat de clé publique doit être disponible sur le _nœud cible_, qui est **approuvé** par l’ordinateur utilisé pour créer la configuration DSC. Pour pouvoir être utilisé, ce certificat de clé publique doit répondre à des exigences spécifiques pour le chiffrement des informations d’identification DSC :
 
 1. **Utilisation de la clé** :
-   - Doit contenir : « KeyEncipherment » et « DataEncipherment ».
-   - Ne doit _pas_ contenir : « Digital Signature ».
+   - Doit contenir : « KeyEncipherment » et « DataEncipherment ».
+   - Ne peut _pas_ contenir : 'Signature numérique'.
 2. **Utilisation améliorée de la clé** :
-   - Doit contenir : chiffrement de document (1.3.6.1.4.1.311.80.1).
-   - Ne doit _pas_ contenir : Client Authentication (1.3.6.1.5.5.7.3.2) et Server Authentication (1.3.6.1.5.5.7.3.1).
+   - Doit contenir : Chiffrement de document (1.3.6.1.4.1.311.80.1).
+   - Ne peut _pas_ contenir : Authentification de client (1.3.6.1.5.5.7.3.2) et authentification de serveur (1.3.6.1.5.5.7.3.1).
 3. La clé privée du certificat est disponible sur le *Nœud cible_.
 4. Le **fournisseur** pour le certificat doit être « Fournisseur de services de chiffrement Microsoft RSA SChannel ».
 
@@ -303,8 +303,8 @@ configuration CredentialEncryptionExample
 
 À ce stade, vous pouvez exécuter la configuration qui produira deux fichiers :
 
-- Un fichier *.meta.mof qui configure le gestionnaire de configuration local de façon à déchiffrer les informations d’identification à l’aide du certificat stocké dans le magasin de l’ordinateur local et identifié par son empreinte numérique.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applique le fichier *.meta.mof.
+- Un fichier \*.meta.mof qui configure le gestionnaire de configuration local de façon à déchiffrer les informations d’identification à l’aide du certificat stocké dans le magasin de l’ordinateur local et identifié par son empreinte numérique.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) applique le fichier \*.meta.mof.
 - Un fichier MOF qui applique la configuration. Start-DscConfiguration applique la configuration.
 
 Ces commandes accomplissent les étapes suivantes :

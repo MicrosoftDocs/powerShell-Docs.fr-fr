@@ -2,12 +2,12 @@
 ms.date: 02/28/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressources DSC
-ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278242"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692204"
 ---
 # <a name="dsc-resources"></a>Ressources DSC
 
@@ -22,9 +22,9 @@ Une ressource peut modéliser un élément générique comme un fichier ou spéc
 Chaque ressource comporte un *schéma qui détermine la syntaxe nécessaire pour utiliser la ressource dans une [configuration](../configurations/configurations.md).
 Le schéma d’une ressource peut être défini comme suit :
 
-- Fichier **'Schema.Mof'**  : La plupart des ressources définissent leur _schéma_ dans un fichier « Schema.MOF » à l’aide de [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- Fichier **'\<Nom de la ressource\>.schema.psm1'**  : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur *schéma* dans un fichier '<ResourceName>.schema.psm1' à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- Fichier **'\<Nom de la ressource\>.psm1'**  : Les ressources DSC basées sur la classe définissent leur _schéma_ dans la définition de classe. Les éléments de syntaxe sont signalés en tant que propriétés de classe. Pour plus d’informations, consultez [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- Fichier `Schema.Mof` : La plupart des ressources définissent leur _schéma_ dans un fichier « Schema.MOF » à l’aide de [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- Fichier `<Resource Name>.schema.psm1` : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur *schéma* dans un fichier `<ResourceName>.schema.psm1` à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- Fichier `<Resource Name>.psm1` : Les ressources DSC basées sur la classe définissent leur _schéma_ dans la définition de classe. Les éléments de syntaxe sont signalés en tant que propriétés de classe. Pour plus d’informations, consultez [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
 Pour récupérer la syntaxe d’une ressource DSC, utilisez l’applet de commande [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) avec le paramètre `-Syntax`. Cette méthode est similaire à l’utilisation de [Get-Command](/powershell/module/microsoft.powershell.core/get-command) avec le paramètre `-Syntax` pour obtenir la syntaxe de l’applet de commande. Le résultat affichera le modèle utilisé pour un bloc de ressources correspondant à la ressource que vous spécifiez.
 
