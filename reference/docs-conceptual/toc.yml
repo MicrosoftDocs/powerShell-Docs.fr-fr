@@ -41,8 +41,28 @@
           href: learn/ps101/powershell.exe-command-line-help.md
         - name: Utilisation du développement par tabulation
           href: learn/ps101/using-tab-expansion.md
-    - name: Utilisation des fonctionnalités expérimentales
-      href: learn/experimental-features.md
+    - name: En profondeur
+      items:
+        - name: Vue d’ensemble
+          href: learn/deep-dives/overview.md
+        - name: Tout ce que vous voulez savoir sur les tableaux
+          href: learn/deep-dives/everything-about-arrays.md
+        - name: Tout ce que vous voulez savoir sur les tables de hachage
+          href: learn/deep-dives/everything-about-hashtable.md
+        - name: Tout ce que vous voulez savoir sur PSCustomObject
+          href: learn/deep-dives/everything-about-pscustomobject.md
+        - name: Tout ce que vous voulez savoir sur la substitution de chaînes
+          href: learn/deep-dives/everything-about-string-substitutions.md
+        - name: Tout ce que vous voulez savoir sur if/then/else
+          href: learn/deep-dives/everything-about-if.md
+        - name: Tout ce que vous voulez savoir sur switch
+          href: learn/deep-dives/everything-about-switch.md
+        - name: Tout ce que vous voulez savoir sur les exceptions
+          href: learn/deep-dives/everything-about-exceptions.md
+        - name: Tout ce que vous voulez savoir sur $null
+          href: learn/deep-dives/everything-about-null.md
+        - name: Tout ce que vous voulez savoir sur ShouldProcess
+          href: learn/deep-dives/everything-about-shouldprocess.md
     - name: Communication à distance PowerShell
       items:
         - name: Just Enough Administration (JEA)
@@ -73,6 +93,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: Effectuer le deuxième saut dans la communication à distance PowerShell
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: Utilisation des fonctionnalités expérimentales
+      href: learn/experimental-features.md
     - name: Ressources supplémentaires
       href: learn/more-powershell-learning.md
     - name: Glossaire
@@ -748,6 +770,8 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: Écriture de modules portables
       href: dev-cross-plat/writing-portable-modules.md
+    - name: Guide pratique pour créer un module binaire de bibliothèque standard
+      href: dev-cross-plat/create-standard-library-binary-module.md
     - name: Kit SDK PowerShell hérité
       items:
         - name: Vue d’ensemble
