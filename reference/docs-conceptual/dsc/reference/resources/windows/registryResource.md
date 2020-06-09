@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource Registry dans DSC
-ms.openlocfilehash: 9f65815cbe6a94831b88cb3425bf688e1a99a9c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
+ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559900"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203645"
 ---
 # <a name="dsc-registry-resource"></a>Ressource Registry dans DSC
 
@@ -54,9 +54,11 @@ Registry [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-## <a name="example"></a>Exemple
+## <a name="examples"></a>Exemples
 
-Cet exemple permet de s’assurer qu’une clé nommée « ExampleKey » est présente dans la ruche **HKEY\_LOCAL\_MACHINE**.
+### <a name="example-1-ensure-specified-value-and-data-under-specified-registry-key"></a>Exemple 1 : Vérifier une valeur et des données spécifiées sous une clé de Registre spécifiée
+
+Cet exemple vérifie que la valeur de Registre « TestValue » sous une clé nommée « ExampleKey1 » est présente dans la ruche `HKEY\_LOCAL\_MACHINE` et contient les données « TestData ».
 
 ```powershell
 Configuration RegistryTest
@@ -64,9 +66,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### <a name="example-2-ensure-specified-registry-key-exists"></a>Exemple 2 : Vérifier l’existence d’une clé de Registre spécifiée
+
+Cet exemple vérifie qu’une clé nommée « ExampleKey2 » est présente dans la ruche **HKEY\_LOCAL\_MACHINE**.
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```
