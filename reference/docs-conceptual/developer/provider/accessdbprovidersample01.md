@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
-ms.openlocfilehash: 67c2b6cfd36a805fce25bf0c7c55db56ec14092c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 5d738de60bc47d000377779ee4e564bff4ad31ad
+ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690925"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84633428"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 Cet exemple montre comment déclarer une classe de fournisseur qui dérive directement de la classe [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . Il est indiqué ici uniquement par souci de citer tous les exemples.
 
-## <a name="demonstrates"></a>Illustre le
+## <a name="demonstrates"></a>Illustre
 
 > [!IMPORTANT]
 > Votre classe de fournisseur va probablement dériver de l’une des classes suivantes et éventuellement implémenter d’autres interfaces de fournisseur :
@@ -40,23 +40,7 @@ Cet exemple indique :
 
 Cet exemple montre comment définir une classe de fournisseur et comment déclarer l' `CmdletProvider` attribut.
 
-```csharp
-namespace Microsoft.Samples.PowerShell.Providers
-{
-  using System.Management.Automation;
-  using System.Management.Automation.Provider;
-
-  /// <summary>
-  /// This sample shows how to declare a provider class and how to
-  /// declare the CmdletProvider attribute.
-  /// </summary>
-  [CmdletProvider("AccessDB", ProviderCapabilities.None)]
-  public class AccessDBProvider : CmdletProvider
-  {
-    // Add provider logic here.
-  }
-}
-```
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="11-30":::
 
 ## <a name="see-also"></a>Voir aussi
 
