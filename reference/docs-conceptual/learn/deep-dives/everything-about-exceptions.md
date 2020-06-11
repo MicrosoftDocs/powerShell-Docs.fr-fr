@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les exceptions
 description: La gestion des erreurs fait partie intégrante du travail dès lors qu’il s’agit d’écrire du code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149542"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337180"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Tout ce que vous avez toujours voulu savoir sur les exceptions
 
@@ -55,7 +55,7 @@ Voici un tour d’horizon rapide de la syntaxe de gestion des exceptions de base
 Pour créer notre propre événement d’exception, nous levons une exception avec le mot clé `throw`,
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 qui crée une exception à l’exécution. Il s’agit d’une erreur bloquante. Elle est gérée par un `catch` dans une fonction d’appel ou quitte le script avec un message comme celui-ci.
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Merci à Lee Daily d’avoir rappelé cette utilisation de `-ErrorAction Stop`.
 Spécifié sur une fonction ou une cmdlet avancée, `-ErrorAction Stop` convertit toutes les instructions `Write-Error` en erreurs bloquantes qui interrompent l’exécution ou qui peuvent être gérées par un `catch`.
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Try/Catch
@@ -99,7 +99,7 @@ La gestion des exceptions fonctionne ainsi dans PowerShell (et dans beaucoup d�
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ Cette propriété montre l’ordre des appels de fonction qui conduisent dans le
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ Il est possible de choisir les exceptions à intercepter. Elles possèdent en ef
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ Il est possible d’intercepter plusieurs types d’exceptions avec la même ins
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 Le fait qu’il précise que l’exécution du script s’est arrêtée parce que `throw` a été appelé à la ligne 31 n’est pas pertinent pour les utilisateurs du script, car non instructif.
 
 Dexter Dhami a souligné que l’on peut utiliser `ThrowTerminatingError()` pour y remédier.
@@ -495,13 +494,13 @@ La source de l’erreur devient la cmdlet et les éléments internes de la fonct
 Kirk Munro signale que certaines exceptions ne constituent des erreurs bloquantes que si elles sont exécutées dans un bloc `try/catch`. Voici son exemple, qui génère une exception de division par zéro à l’exécution.
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 Appelez-le ainsi : comme vous pouvez le constater, il génère l’erreur, mais donne quand même le message.
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 Toutefois, en plaçant ce même code à l’intérieur d’un bloc `try/catch`, le résultat est différent.
@@ -509,14 +508,13 @@ Toutefois, en plaçant ce même code à l’intérieur d’un bloc `try/catch`, 
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 L’erreur devient bloquante et ne génère pas le premier message. Le problème est que ce code peut se trouver dans une fonction et agir différemment si quelqu’un utilise un bloc `try/catch`.
 
@@ -528,12 +526,12 @@ L’une des nuances de `$PSCmdlet.ThrowTerminatingError()` est qu’elle crée u
 
 ### <a name="public-function-templates"></a>Modèles de fonctions publics
 
-Par ailleurs, Kirk Munro place un bloc `try{...}catch{...}` autour de chaque bloc `begin`, `process` ou `end` dans toutes ses fonctions avancées. Dans ces blocs catch génériques, il se sert d’une ligne unique avec `$PSCmdlet.ThrowTerminatingError($PSitem)` pour traiter toutes les exceptions qui quittent ses fonctions.
+Par ailleurs, Kirk Munro place un bloc `try{...}catch{...}` autour de chaque bloc `begin`, `process` ou `end` dans toutes ses fonctions avancées. Dans ces blocs Catch génériques, il se sert d’une ligne unique utilisant `$PSCmdlet.ThrowTerminatingError($PSItem)` pour traiter toutes les exceptions qui quittent ses fonctions.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }

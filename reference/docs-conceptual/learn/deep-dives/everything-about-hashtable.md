@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149512"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307127"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 
@@ -541,10 +541,9 @@ Cela crée la même table de hachage que celle que nous étudiée ci-dessus et n
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+Il existe de nombreuses façons d’aborder la structure de vos objets. Voici une deuxième façon de regarder une table de hachage imbriquée.
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 Il existe deux points importants à noter concernant cette méthode. Tout d’abord, l’objet JSON est écrit en mode multiligne et je dois donc utiliser l’option `-Raw` pour le relire dans une chaîne unique. Deuxièmement, l’objet importé n’est plus un objet `[hashtable]`. C’est maintenant un objet `[pscustomobject]` et cela peut provoquer des problèmes si vous ne vous y attendiez pas.
 
+Observez les tables de hachage profondément imbriquées. Lorsque vous les convertissez en JSON, vous risquez de ne pas obtenir les résultats attendus.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Utilisez le paramètre **Depth** pour vous assurer que vous avez développé toutes les tables de hachage imbriquées.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 Si vous avez besoin d’un objet `[hashtable]` lors de l’importation, vous devez utiliser les commandes `Export-CliXml` et `Import-CliXml`.
 
 ### <a name="converting-json-to-hashtable"></a>Conversion d’un objet JSON en table de hachage
@@ -682,6 +711,18 @@ Si vous avez besoin de convertir un objet JSON en `[hashtable]`, vous pouvez uti
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+À compter de PowerShell v6, la prise en charge de JSON utilise JSON.NET NewtonSoft et ajoute la prise en charge de la table de hachage.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+PowerShell 6.2 a ajouté le paramètre **Depth** à `ConvertFrom-Json`. La valeur par défaut de **Depth** est 1024.
 
 ### <a name="reading-directly-from-a-file"></a>Lecture directe à partir d’un fichier
 
@@ -698,9 +739,9 @@ Cette procédure importe le contenu du fichier dans un objet `scriptblock`, puis
 
 Saviez-vous qu’un manifeste de module (fichier psd1) n’est en fait qu’une simple table de hachage ?
 
-## <a name="keys-are-just-strings"></a>Les clés ne sont que des chaînes
+## <a name="keys-can-be-any-object"></a>Les clés peuvent être n’importe quel objet
 
-Je n’ai pas voulu dévier vers ce sujet jusqu’à présent, mais les clés sont simplement des chaînes. Nous pouvons donc entourer de guillemets l’élément de notre choix pour le transformer en clé.
+La plupart du temps, les clés sont simplement des chaînes. Nous pouvons donc entourer de guillemets l’élément de notre choix pour le transformer en clé.
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 Mais ce n’est pas parce que vous pouvez réaliser quelque chose que vous devez nécessaire le faire. Ce dernier exemple semble clairement annoncer qu’une erreur va se produire et risque d’être facilement mal interprété par quiconque lira votre code.
 
-Techniquement, votre clé ne doit pas nécessairement être une chaîne, mais les opérations sont bien plus simples à réaliser si vous utilisez uniquement des chaînes.
+Techniquement, votre clé ne doit pas nécessairement être une chaîne, mais les opérations sont bien plus simples à réaliser si vous utilisez uniquement des chaînes. Toutefois, l’indexation ne fonctionne pas correctement avec les clés complexes.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+L’accès à une valeur dans la table de hachage par sa clé ne fonctionne pas toujours. Par exemple :
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+L’utilisation de la notation d’accès membre (`.`) ne retourne rien. Toutefois, l’utilisation de la notation d’index de tableau (`[]`) fonctionne.
 
 ## <a name="use-in-automatic-variables"></a>Utilisation dans des variables automatiques
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters][] est une variable automatique qui n’existe que dans le contexte d’une fonction. Elle contient tous les paramètres avec lesquels la fonction a été appelée. Il ne s’agit pas exactement d’une table de hachage, mais elle y ressemble suffisamment pour la traiter en tant que telle.
+[$PSBoundParameters][] est une variable automatique qui n’existe que dans le contexte d’une fonction.
+Elle contient tous les paramètres avec lesquels la fonction a été appelée. Il ne s’agit pas exactement d’une table de hachage, mais elle y ressemble suffisamment pour la traiter en tant que telle.
 
 Cela comprend la suppression des clés et leur projection dans d’autres fonctions. Si vous écrivez des fonctions de proxy, examinez cette variable plus en détail.
 
@@ -893,8 +955,6 @@ Elle ne gère aucun un autre type de référence ou tableau, mais il s’agit d�
 ## <a name="anything-else"></a>Autre chose ?
 
 J’ai abordé beaucoup de concepts dans cet article. Mon espoir est que vous puissiez apprendre quelque chose de nouveau ou approfondir vos connaissances à chaque lecture de cet article. Comme j’ai abordé le spectre complet de cette fonctionnalité, certains aspects ne s’appliquent pas à votre cas pour le moment. C’est tout à fait normal et attendu en fonction du volume du travail que vous effectuez avec PowerShell.
-
-Voici une liste de tous les thèmes que nous avons abordés, au cas où vous souhaiteriez revenir sur un sujet particulier. En règle générale, cette liste est fournie en premier, mais elle a été écrite de haut en bas avec des exemples qui s’appuient sur tout ce qui précède.
 
 <!-- link references -->
 [Version d’origine]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
