@@ -2,43 +2,43 @@
 title: Nouveautés de PowerShell-Docs
 description: Liste des modifications apportées à la documentation de PowerShell.
 ms.date: 04/29/2020
-ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: eaf42c0464b6d25e70df0fe8ff5bd51531ea0a06
+ms.sourcegitcommit: 582391eadc7687a8f625c959ea97b8a71963b9a2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692510"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84250398"
 ---
 # <a name="community-contributor-hall-of-fame"></a>Panthéon des contributeurs de la communauté
 
 La communauté PowerShell est un groupe vivant et collaboratif. Nous apprécions beaucoup l’aide et le support que nous recevons de la communauté. Découvrez comment vous pouvez contribuer en lisant le [Guide du contributeur][contrib].
 
-Depuis avril 2020, ces utilisateurs GitHub sont les meilleurs contributeurs de l’histoire de la communauté.
+Depuis la fin du mois de mai 2020, ces utilisateurs GitHub sont les meilleurs contributeurs de l’histoire de la communauté.
 
 ## <a name="pull-requests-opened"></a>Demandes de tirage ouvertes
 
 Les demandes de tirage nous aident à résoudre ces problèmes et à améliorer la documentation pour tout le monde.
 
-| Demandes de tirage Docs envoyées | 2016 | 2017 | 2018 | 2019 | 2020 | Total général |
-| ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Communauté          |  198 |  448 |  468 |  322 |   38 |        1477 |
-| matt9ucci          |      |  157 |   80 |   30 |      |         267 |
-| nschonni           |      |      |   14 |  138 |      |         152 |
-| kiazhi             |   25 |   79 |   12 |      |      |         116 |
-| alexandair         |   59 |    8 |   26 |    2 |    1 |          96 |
-| doctordns          |    5 |   32 |   20 |    7 |    2 |          66 |
-| sethvs             |      |    1 |   44 |      |      |          45 |
-| Dan1el42           |   20 |      |      |      |      |          20 |
-| NReilingh          |    2 |      |   13 |    3 |      |          18 |
-| it-praktyk         |      |      |   16 |    1 |      |          17 |
-| vors               |   15 |    1 |      |      |      |          16 |
-| markekraus         |      |   11 |    5 |      |      |          16 |
-| purdo17            |      |      |   13 |      |      |          13 |
-| k-takai            |      |      |    5 |    1 |    7 |          13 |
-| kvprasoon          |    2 |    1 |    7 |    2 |      |          12 |
-| PlagueHO           |   10 |      |      |    1 |      |          11 |
-| exchange12rocks    |      |    7 |    3 |      |      |          10 |
-| KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
+| Fusion des demandes de tirage sur Docs | 2016 | 2017 | 2018 | 2019 | 2020 | Total général |
+| --------------- | ---: | ---: | ---: | ---: | ---: | ----------: |
+| Communauté       |  198 |  448 |  468 |  322 |   59 |        1495 |
+| matt9ucci       |      |  157 |   80 |   30 |      |         267 |
+| nschonni        |      |      |   14 |  138 |   10 |         162 |
+| kiazhi          |   25 |   79 |   12 |      |      |         116 |
+| alexandair      |   59 |    8 |   26 |    2 |    1 |          96 |
+| doctordns       |    5 |   32 |   20 |    7 |    3 |          67 |
+| sethvs          |      |    1 |   44 |      |      |          45 |
+| Dan1el42        |   20 |      |      |      |      |          20 |
+| NReilingh       |    2 |      |   13 |    3 |      |          18 |
+| it-praktyk      |      |      |   16 |    1 |      |          17 |
+| vors            |   15 |    1 |      |      |      |          16 |
+| markekraus      |      |   11 |    5 |      |      |          16 |
+| purdo17         |      |      |   13 |      |      |          13 |
+| k-takai         |      |      |    5 |    1 |    7 |          13 |
+| kvprasoon       |    2 |    1 |    7 |    2 |      |          12 |
+| PlagueHO        |   10 |      |      |    1 |      |          11 |
+| exchange12rocks |      |    7 |    3 |      |      |          10 |
+| KirkMunro       |    1 |    1 |    2 |    6 |      |          10 |
 
 ## <a name="github-issues-opened"></a>Problèmes GitHub ouverts
 
@@ -46,10 +46,10 @@ Les problèmes GitHub nous aident à identifier les erreurs et les lacunes de no
 
 | Problèmes Docs ouverts | 2016 | 2017 | 2018 | 2019 | 2020 | Total général |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Communauté          |   48 |   93 |  212 |  575 |  212 |        1152 |
-| mklement0          |      |   19 |   60 |   56 |   26 |         161 |
+| Communauté          |   54 |   95 |  213 |  575 |  261 |        1198 |
+| mklement0          |      |   19 |   60 |   56 |   31 |         166 |
+| iSazonov           |      |    1 |    4 |   10 |    5 |          20 |
 | jszabo98           |      |      |    2 |   15 |    3 |          20 |
-| iSazonov           |      |    1 |    4 |   10 |    4 |          19 |
 | doctordns          |      |    5 |    3 |    5 |    4 |          17 |
 | alexandair         |    9 |    4 |    2 |      |      |          15 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
