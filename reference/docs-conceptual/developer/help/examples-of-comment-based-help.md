@@ -8,12 +8,11 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
-ms.translationtype: MT
+ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
+ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564838"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035431"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
 
@@ -185,7 +184,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-La commande suivante obtient l’aide du script. Étant donné que le script n’est pas un répertoire qui est listé dans la variable d’environnement PATH, la commande obtenir-Help qui obtient l’aide du script doit spécifier le chemin d’accès du script.
+La commande suivante obtient l’aide du script. Étant donné que le script n’est pas dans un répertoire qui est listé dans la variable d’environnement PATH, la commande obtenir-Help qui obtient l’aide du script doit spécifier le chemin d’accès du script.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -257,7 +256,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Exemple 3 : descriptions des paramètres dans une instruction param
 
-Cet exemple montre comment insérer ParameterDescriptions dans l' `Param` instruction d’une fonction ou d’un script. Ce format est particulièrement utile lorsque les descriptions des paramètres sont courtes.
+Cet exemple montre comment insérer des descriptions de paramètres dans l' `Param` instruction d’une fonction ou d’un script. Ce format est particulièrement utile lorsque les descriptions des paramètres sont courtes.
 
 ```powershell
 function Add-Extension
@@ -286,7 +285,7 @@ Les résultats sont les mêmes que ceux de l’exemple 1. L’aide de l’interp
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exemple 4 : redirection vers un fichier XML
 
-Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du script Update-Month. ps1. Le script utilise le `.ExternalHelp` mot clé pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
+Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du script de Update-Month.ps1. Le script utilise le `.ExternalHelp` mot clé pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
