@@ -1,19 +1,12 @@
 ---
-title: Comment ajouter des paramètres dynamiques à une rubrique d’aide du fournisseur | Microsoft Docs
-ms.custom: ''
+title: Guide pratique pour ajouter des paramètres dynamiques à une rubrique d’aide de fournisseur
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
-caps.latest.revision: 5
-ms.openlocfilehash: 57978616f4a868b1ad260f4b557f9b699a1ef3ab
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ddf964292ee7bf477767a2ca17c717aef84bad51
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557122"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893456"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Guide pratique pour ajouter des paramètres dynamiques à une rubrique d’aide de fournisseur
 
@@ -29,7 +22,7 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
 
 ### <a name="to-add-dynamic-parameters"></a>Pour ajouter des paramètres dynamiques
 
-1. Dans le fichier *AssemblyName*. dll-help. xml, dans l' `providerHelp` élément, ajoutez un `DynamicParameters` élément. L' `DynamicParameters` élément doit apparaître après l' `Tasks` élément et avant l' `RelatedLinks` élément.
+1. Dans le `<AssemblyName>.dll-help.xml` fichier, dans l' `providerHelp` élément, ajoutez un `DynamicParameters` élément. L' `DynamicParameters` élément doit apparaître après l' `Tasks` élément et avant l' `RelatedLinks` élément.
 
    Par exemple :
 
@@ -46,7 +39,7 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
 
    Si le fournisseur n’implémente aucun paramètre dynamique, l' `DynamicParameters` élément peut être vide.
 
-2. Dans l' `DynamicParameters` élément, pour chaque paramètre dynamique, ajoutez un `DynamicParameter` élément.
+1. Dans l' `DynamicParameters` élément, pour chaque paramètre dynamique, ajoutez un `DynamicParameter` élément.
 
    Par exemple :
 
@@ -57,12 +50,10 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
     </DynamicParameters>
     ```
 
-3. Dans chaque `DynamicParameter` élément, ajoutez un `Name` `CmdletSupported` élément and.
+1. Dans chaque `DynamicParameter` élément, ajoutez un `Name` `CmdletSupported` élément and.
 
-   |Nom de l’élément|Description|
-   |------------------|-----------------|
-   |Nom|Spécifie le nom du paramètre.|
-   |CmdletSupported|Spécifie les applets de commande dans lesquelles le paramètre est valide. Tapez une liste séparée par des virgules de noms d’applets de commande.|
+   - Nom : spécifie le nom du paramètre
+   - CmdletSupported : spécifie les applets de commande dans lesquelles le paramètre est valide. Tapez une liste séparée par des virgules de noms d’applets de commande.
 
    Par exemple, le code XML suivant décrit le `Encoding` paramètre dynamique que le fournisseur de système de fichiers Windows PowerShell ajoute aux `Add-Content` applets de commande, `Get-Content` , `Set-Content` .
 
@@ -75,9 +66,9 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
 
     ```
 
-4. Dans chaque `DynamicParameter` élément, ajoutez un `Type` élément. L' `Type` élément est un conteneur pour l' `Name` élément qui contient le type .net de la valeur du paramètre dynamique.
+1. Dans chaque `DynamicParameter` élément, ajoutez un `Type` élément. L' `Type` élément est un conteneur pour l' `Name` élément qui contient le type .net de la valeur du paramètre dynamique.
 
-   Par exemple, le code XML suivant montre que le type .NET du `Encoding` paramètre dynamique est l’énumération [Microsoft. PowerShell. Commands. FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) .
+   Par exemple, le code XML suivant montre que le type .NET du `Encoding` paramètre dynamique est l’énumération [FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding) .
 
     ```xml
     <DynamicParameters/>
@@ -91,7 +82,7 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
     </DynamicParameters>
     ```
 
-5. Ajoutez l' `Description` élément, qui contient une brève description du paramètre dynamique. Lorsque vous composez la description, utilisez les instructions prescrites pour tous les paramètres d’applet de commande dans [comment ajouter des informations de paramètres](./how-to-add-parameter-information.md).
+1. Ajoutez l' `Description` élément, qui contient une brève description du paramètre dynamique. Lorsque vous composez la description, utilisez les instructions prescrites pour tous les paramètres d’applet de commande dans [comment ajouter des informations de paramètres](./how-to-add-parameter-information.md).
 
    Par exemple, le code XML suivant comprend la description du `Encoding` paramètre dynamique.
 
@@ -108,16 +99,14 @@ Si un fournisseur n’implémente aucun paramètre dynamique, la rubrique d’ai
     </DynamicParameters>
     ```
 
-6. Ajoutez l' `PossibleValues` élément et ses éléments enfants. Ensemble, ces éléments décrivent les valeurs du paramètre dynamique. Cet élément est conçu pour les valeurs énumérées. Si le paramètre dynamique ne prend pas de valeur, comme c’est le cas avec un paramètre de commutateur, ou si les valeurs ne peuvent pas être énumérées, ajoutez un `PossibleValues` élément vide.
+1. Ajoutez l' `PossibleValues` élément et ses éléments enfants. Ensemble, ces éléments décrivent les valeurs du paramètre dynamique. Cet élément est conçu pour les valeurs énumérées. Si le paramètre dynamique ne prend pas de valeur, comme c’est le cas avec un paramètre de commutateur, ou si les valeurs ne peuvent pas être énumérées, ajoutez un `PossibleValues` élément vide.
 
    Le tableau suivant répertorie et décrit l' `PossibleValues` élément et ses éléments enfants.
 
-   |Nom de l’élément|Description|
-   |------------------|-----------------|
-   |PossibleValues|Cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValues` élément à chaque rubrique d’aide du fournisseur. L’élément peut être vide.|
-   |PossibleValue|Cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValue` élément pour chaque valeur du paramètre dynamique.|
-   |Value|Spécifie le nom de la valeur.|
-   |Description|Cet élément contient un `Para` élément. Le texte dans l' `Para` élément décrit la valeur nommée dans l' `Value` élément.|
+   - PossibleValues : cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValues` élément à chaque rubrique d’aide du fournisseur. L’élément peut être vide.
+   - PossibleValue : cet élément est un conteneur. Ses éléments enfants sont décrits ci-dessous. Ajoutez un `PossibleValue` élément pour chaque valeur du paramètre dynamique.
+   - Valeur : spécifie le nom de la valeur.
+   - Description : cet élément contient un `Para` élément. Le texte dans l' `Para` élément décrit la valeur nommée dans l' `Value` élément.
 
    Par exemple, le code XML suivant montre un `PossibleValue` élément du `Encoding` paramètre dynamique.
 

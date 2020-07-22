@@ -1,19 +1,12 @@
 ---
-title: Comment mettre à jour les fichiers d’aide | Microsoft Docs
-ms.custom: ''
+title: Guide pratique pour mettre à jour les fichiers d’aide
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 495869a6-080e-4401-9ddc-16edd2f86857
-caps.latest.revision: 6
-ms.openlocfilehash: 35b3fd696419d0135fd6f662223e6c8586df443a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 80f7c8865729515de98648765fa36ce540e00162
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811648"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892946"
 ---
 # <a name="how-to-update-help-files"></a>Guide pratique pour mettre à jour les fichiers d’aide
 
@@ -26,17 +19,10 @@ Il existe de nombreuses raisons de mettre à jour les fichiers d’aide, tels qu
 Pour mettre à jour un fichier d’aide :
 
 1. Modifiez les fichiers.
-
-2. Traduisez les fichiers dans d’autres cultures d’interface utilisateur.
-
-3. Collecter tous les fichiers d’aide (nouveaux, modifiés et inchangés) pour le module dans chaque culture d’interface utilisateur.
-
-4. Validez les fichiers par rapport au schéma XML.
-
-5. Régénérez les fichiers CAB pour chaque culture d’interface utilisateur.
-
-6. Dans le fichier XML HelpInfo, incrémentez les numéros de version du fichier CAB pour chaque culture d’interface utilisateur.
-
-7. Chargez les nouveaux fichiers CAB à l’emplacement spécifié par la valeur de l’élément **HelpContentUri** dans le fichier XML HelpInfo. Remplacez les anciens fichiers CAB par les nouveaux fichiers CAB.
-
-8. Téléchargez le fichier XML HelpInfo mis à jour à l’emplacement spécifié par la clé **HelpInfoUri** dans le manifeste de module. Remplacez l’ancien fichier XML HelpInfo par le nouveau fichier.
+1. Traduisez les fichiers dans d’autres cultures d’interface utilisateur.
+1. Collecter tous les fichiers d’aide (nouveaux, modifiés et inchangés) pour le module dans chaque culture d’interface utilisateur.
+1. Validez les fichiers par rapport au schéma XML.
+1. Régénérez les fichiers CAB pour chaque culture d’interface utilisateur.
+1. Dans le fichier XML HelpInfo, incrémentez les numéros de version du fichier CAB pour chaque culture d’interface utilisateur.
+1. Chargez les nouveaux fichiers CAB à l’emplacement spécifié par la valeur de l’élément **HelpContentUri** dans le fichier XML HelpInfo. Remplacez les anciens fichiers CAB par les nouveaux fichiers CAB.
+1. Téléchargez le fichier XML HelpInfo mis à jour à l’emplacement spécifié par la clé **HelpInfoUri** dans le manifeste de module. Remplacez l’ancien fichier XML HelpInfo par le nouveau fichier.

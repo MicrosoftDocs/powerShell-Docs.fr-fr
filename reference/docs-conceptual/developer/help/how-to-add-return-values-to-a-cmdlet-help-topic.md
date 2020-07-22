@@ -1,33 +1,28 @@
 ---
-title: Comment ajouter des valeurs de retour à une rubrique d’aide sur une applet de commande | Microsoft Docs
-ms.custom: ''
+title: Guide pratique pour ajouter des valeurs de retour à une rubrique d’aide d’applet de commande
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
-caps.latest.revision: 7
-ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c164556cd06b332d04857987360c98f740a150b5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565541"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893354"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter des valeurs de retour à une rubrique d’aide d’applet de commande
 
-Cette section décrit comment ajouter une section OUTPUTs à une rubrique d’aide de l’applet de commande® Windows PowerShell. La section OUTPUTs répertorie les classes .NET des objets que l’applet de commande retourne ou transmet le pipeline.
+Cette section décrit comment ajouter une section OUTPUTs à une rubrique d’aide sur une applet de commande PowerShell. La section **Outputs** répertorie les classes .net des objets que l’applet de commande retourne ou transmet le pipeline.
 
-Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à la section OUTPUTs. Les types de retour d’une applet de commande sont placés dans une \< commande : returnvalues> nœud, avec chaque classe placée dans un \< élément Command : returnValue>.
+Il n’existe aucune limite au nombre de classes que vous pouvez ajouter à la section **Outputs** . Les types de retour d’une applet de commande sont placés dans un `<command:returnValues>` nœud, chaque classe étant placée dans un `<command:returnValue>` élément.
 
-Si une applet de commande ne génère pas de sortie, utilisez cette section pour indiquer qu’il n’y a pas de sortie. Par exemple, à la place du nom de la classe, écrivez « None » et fournissez une brève explication. Si l’applet de commande génère une sortie conditionnelle, utilisez ce nœud pour expliquer les conditions et décrire la sortie conditionnelle.
+Si une applet de commande ne génère pas de sortie, utilisez cette section pour indiquer qu’il n’y a pas de sortie. Par exemple, à la place du nom de la classe, écrivez **aucun** et fournissez une brève explication. Si l’applet de commande génère une sortie conditionnelle, utilisez ce nœud pour expliquer les conditions et décrire la sortie conditionnelle.
 
-Le schéma comprend deux \< éléments MAML : description> dans chaque \< commande : returnValue> élément. Toutefois, l' `Get-Help` applet de commande affiche uniquement le contenu de l' \< élément Command : returnValue>/ \< maml : description>.
+Le schéma comprend deux `<maml:description>` éléments dans chaque `<command:returnValue>` élément.
+Toutefois, l' `Get-Help` applet de commande affiche uniquement le contenu de l' `<command:returnValue>/<maml:description>` élément.
 
-À compter de Windows PowerShell 3,0, l' `Get-Help` applet de commande affiche le contenu de l' \< élément MAML : URI>. Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
+À compter de PowerShell 3,0, l' `Get-Help` applet de commande affiche le contenu de l' `<maml:uri>` élément.
+Cet élément vous permet de diriger les utilisateurs vers des rubriques qui décrivent la classe .NET.
 
-Le code XML suivant montre le \< nœud MAML : returnvalues>.
+Le code XML suivant montre le `<maml:returnValues>` nœud.
 
 ```xml
 <command:returnValues>
@@ -45,7 +40,7 @@ Le code XML suivant montre le \< nœud MAML : returnvalues>.
 </command: returnValues>
 ```
 
-Le code XML suivant montre un exemple d’utilisation du \< nœud MAML : returnvalues> pour documenter un type de sortie.
+Le code XML suivant montre un exemple d’utilisation du `<maml:returnValues>` nœud pour documenter un type de sortie.
 
 ```xml
 <command:returnValues>

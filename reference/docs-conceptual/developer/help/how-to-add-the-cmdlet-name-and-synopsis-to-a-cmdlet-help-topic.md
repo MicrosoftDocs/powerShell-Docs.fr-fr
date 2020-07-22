@@ -1,32 +1,26 @@
 ---
-title: Comment ajouter le nom de l’applet de commande et synopsis à une rubrique d’aide sur une applet de commande | Microsoft Docs
-ms.custom: ''
+title: Guide pratique pour ajouter le nom de l’applet de commande et le synopsis à une rubrique d’aide d’une applet de commande
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1d0e1eb1-a962-4406-9625-175cfa3364ad
-caps.latest.revision: 10
-ms.openlocfilehash: 5b4c04a14c3d86c7a3b94b768e8fb59116d8c6f5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 399defcb596ff9e9a596f4cd25ebcb6bcb7c34d2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560625"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892878"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter le nom de l’applet de commande et le synopsis à une rubrique d’aide d’une applet de commande
 
-Cette section décrit comment ajouter du contenu qui s’affiche dans les sections nom et SYNOPSIS de l’aide de l’applet de commande. Dans le fichier d’aide, ce contenu est ajouté au nœud de commande pour chaque applet de commande.
+Cette section décrit comment ajouter du contenu qui s’affiche dans les sections **nom** et **Synopsis** de l’aide de l’applet de commande. Dans le fichier d’aide, ce contenu est ajouté au nœud de commande pour chaque applet de commande.
 
 > [!NOTE]
-> Pour obtenir une vue complète d’un fichier d’aide, ouvrez l’un des fichiers dll-Help. XML qui se trouvent dans le répertoire d’installation de Windows PowerShell. Par exemple, le fichier Microsoft. PowerShell. Commands. Management. dll-Help. xml contient du contenu pour plusieurs des applets de commande Windows PowerShell.
+> Pour obtenir une vue complète d’un fichier d’aide, ouvrez l’un des `dll-Help.xml` fichiers situés dans le répertoire d’installation de PowerShell. Par exemple, le `Microsoft.PowerShell.Commands.Management.dll-Help.xml` fichier contient du contenu pour plusieurs des applets de commande PowerShell.
 
-### <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>Pour ajouter le nom de l’applet de commande et un Synopsis
+## <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>Pour ajouter le nom de l’applet de commande et un Synopsis
 
-- L’aide de l’applet de commande peut afficher deux descriptions pour l’applet de commande. La première description est une brève description, appelée Synopsis. La deuxième Description est une description plus détaillée qui est décrite dans [Ajout de la description détaillée à une rubrique d’aide sur une applet](./how-to-add-a-cmdlet-description.md)de commande. Ces deux descriptions doivent être écrites sous la forme d’un seul paragraphe.
+- L’aide de l’applet de commande peut afficher deux descriptions pour l’applet de commande. La première description est une brève description, appelée Synopsis. La deuxième Description est une description plus détaillée qui est décrite dans [Ajout de la description détaillée à une rubrique d’aide sur une applet](./how-to-add-a-cmdlet-description.md)de commande.
+  Ces deux descriptions doivent être écrites sous la forme d’un seul paragraphe.
 
-- Dans le synopsis, ne répétez pas le nom de l’applet de commande. Informant l’utilisateur que l’applet de commande obtenir-Server obtient un serveur est brève, mais pas informatif. Utilisez plutôt des synonymes et ajoutez des détails à la description.
+- Dans le synopsis, ne répétez pas le nom de l’applet de commande. Informer l’utilisateur que l’applet de commande `Get-Server` obtient un serveur est bref, mais pas informatif. Utilisez plutôt des synonymes et ajoutez des détails à la description.
 
   Exemple : « obtient un objet qui représente un ordinateur local ou distant ».
 
@@ -40,4 +34,4 @@ Cette section décrit comment ajouter du contenu qui s’affiche dans les sectio
 
 ## <a name="see-also"></a>Voir aussi
 
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

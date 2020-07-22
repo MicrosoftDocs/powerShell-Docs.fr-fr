@@ -1,19 +1,12 @@
 ---
-title: 'Création d’une aide actualisable : pas à pas | Microsoft Docs'
-ms.custom: ''
+title: Création d’une aide actualisable-étape par étape
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
-caps.latest.revision: 13
-ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811378"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893116"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Création d’une aide actualisable : procédure pas à pas
 
@@ -48,14 +41,10 @@ HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 
 Le fichier d’informations XML HelpInfo contient l’URI de l’emplacement Internet de vos fichiers d’aide et les numéros de version des fichiers d’aide les plus récents pour votre module dans chaque culture d’interface utilisateur prise en charge. Chaque module Windows PowerShell dispose d’un fichier XML HelpInfo. Lorsque vous mettez à jour vos fichiers d’aide, vous modifiez ou remplacez le fichier XML HelpInfo ; vous n’en ajoutez pas une autre. Pour plus d’informations, voir [How to Create a HELPINFO XML file](./how-to-create-a-helpinfo-xml-file.md).
 
-### <a name="step-4-sign-your-help-files"></a>Étape 4 : signer vos fichiers d’aide
+### <a name="step-4-create-cab-files"></a>Étape 4 : créer des fichiers CAB
 
-Les signatures numériques ne sont pas requises, mais elles sont recommandées à chaque fois que vous partagez des fichiers.
+Utilisez un outil qui crée `.cab` des fichiers Cabinet (), tels que `MakeCab.exe` , pour créer un fichier CAB qui contient les fichiers d’aide de votre module. Créez un fichier CAB distinct pour les fichiers d’aide dans chaque culture d’interface utilisateur prise en charge. Pour plus d’informations, consultez [Comment préparer des fichiers CAB d’aide pouvant être mis à jour](./how-to-prepare-updatable-help-cab-files.md).
 
-### <a name="step-5-create-cab-files"></a>Étape 5 : créer des fichiers CAB
-
-Utilisez un outil qui crée des fichiers Cabinet (. cab), tels que MakeCab. exe, pour créer un. Fichier CAB qui contient les fichiers d’aide de votre module. Créez un fichier CAB distinct pour les fichiers d’aide dans chaque culture d’interface utilisateur prise en charge. Pour plus d’informations, consultez [Comment préparer des fichiers CAB d’aide pouvant être mis à jour](./how-to-prepare-updatable-help-cab-files.md).
-
-### <a name="step-6-upload-your-files"></a>Étape 6 : télécharger vos fichiers
+### <a name="step-5-upload-your-files"></a>Étape 5 : télécharger vos fichiers
 
 Pour publier des fichiers d’aide nouveaux ou mis à jour, téléchargez les fichiers CAB vers l’emplacement Internet spécifié par l’élément **HelpContentUri** dans le fichier XML HelpInfo. Ensuite, chargez le fichier XML HelpInfo à l’emplacement Internet spécifié par la valeur de la clé **HelpInfoUri** dans le manifeste de module.

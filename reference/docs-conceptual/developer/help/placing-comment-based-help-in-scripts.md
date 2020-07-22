@@ -1,19 +1,12 @@
 ---
-title: Placement de l’aide basée sur des commentaires dans des scripts | Microsoft Docs
-ms.custom: ''
+title: Mise en place de l’aide basée sur les commentaires dans les scripts
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
-caps.latest.revision: 4
-ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565524"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893184"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Mise en place de l’aide basée sur les commentaires dans les scripts
 
@@ -21,7 +14,9 @@ Cette rubrique explique où placer l’aide basée sur les commentaires pour un 
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Où placer l’aide basée sur les commentaires pour un script
 
-- Au début du fichier de script. L’aide sur les scripts peut être précédée du script uniquement par des commentaires et des lignes vides.
+- Au début du fichier de script.
+
+  L’aide sur les scripts peut être précédée du script uniquement par des commentaires et des lignes vides.
 
 - À la fin du fichier de script.
 
@@ -29,13 +24,13 @@ Cette rubrique explique où placer l’aide basée sur les commentaires pour un 
 
 ## <a name="examples-of-help-placement-in-a-script"></a>Exemples de placement d’aide dans un script
 
- Les exemples suivants montrent chacune des options de positionnement pour l’aide basée sur des commentaires pour un script.
+Les exemples suivants montrent chacune des options de positionnement pour l’aide basée sur des commentaires pour un script.
 
 ### <a name="help-at-the-beginning-of-a-script"></a>Aide au début d’un script
 
- L’exemple suivant illustre la base de commentaires au début d’un script.
+L’exemple suivant illustre la base de commentaires au début d’un script.
 
-```
+```powershell
 <#
 .Description
 This script performs a series of network connection tests.
@@ -57,5 +52,4 @@ function Ping { Test-Connection -ComputerName $ComputerName }
 .Description
 This script performs a series of network connection tests.
 #>
-
 ```

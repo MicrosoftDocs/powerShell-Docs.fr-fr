@@ -1,19 +1,12 @@
 ---
-title: Schéma XML HelpInfo | Microsoft Docs
-ms.custom: ''
+title: Schéma XML HelpInfo
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
-caps.latest.revision: 7
-ms.openlocfilehash: 3e2a113e120c61fab1ba76c4fd897ded67d13319
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: e894c1f2695ddbc5a386f8fec96054a7b31e7778
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811518"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893252"
 ---
 # <a name="helpinfo-xml-schema"></a>Schéma XML HelpInfo
 
@@ -54,12 +47,12 @@ Les fichiers XML HelpInfo sont basés sur le schéma XML suivant.
 
 Le fichier XML HelpInfo contient les éléments suivants.
 
-HelpContentURI contient l’URI de l’emplacement des fichiers CAB de l’aide pour le module. L’URI doit commencer par « http » ou « HTTPS ». L’URI doit spécifier un emplacement Internet, mais ne doit pas inclure le nom du fichier CAB. La valeur **HelpContentURI** peut être identique ou différente de la valeur **HelpInfoURI** .
+- **HelpContentURI** : contient l’URI de l’emplacement des fichiers CAB de l’aide pour le module. L’URI doit commencer par « http » ou « HTTPS ». L’URI doit spécifier un emplacement Internet, mais ne doit pas inclure le nom de fichier CAB. La valeur **HelpContentURI** peut être identique ou différente de la valeur **HelpInfoURI** .
 
-SupportedUICultures représente les fichiers d’aide du module dans toutes les cultures d’interface utilisateur. Contient les éléments **UICulture** , chacun représentant un jeu de fichiers d’aide pour le module dans une culture d’interface utilisateur spécifiée.
+- **SupportedUICultures** : représente les fichiers d’aide du module dans toutes les cultures d’interface utilisateur. Contient les éléments **UICulture** , chacun représentant un jeu de fichiers d’aide pour le module dans une culture d’interface utilisateur spécifiée.
 
-UICulture représente un ensemble de fichiers d’aide pour le module dans une culture d’interface utilisateur spécifiée. Ajoutez un élément **UICulture** pour chaque culture d’interface utilisateur dans laquelle les fichiers d’aide sont écrits.
+- **UICulture** -représente un ensemble de fichiers d’aide pour le module dans une culture d’interface utilisateur spécifiée. Ajoutez un élément **UICulture** pour chaque culture d’interface utilisateur dans laquelle les fichiers d’aide sont écrits.
 
-UICultureName contient le code de langue pour la culture d’interface utilisateur dans laquelle les fichiers d’aide sont écrits.
+- **UICultureName** : contient le code de langue pour la culture d’interface utilisateur dans laquelle les fichiers d’aide sont écrits.
 
-UICultureVersion contient un numéro de version en quatre parties dans « N1 ». N2. N3. N4» qui représente la version du fichier CAB d’aide dans la culture de l’interface utilisateur. Incrémentez ce numéro de version chaque fois que vous téléchargez de nouveaux fichiers CAB d’aide dans la culture d’interface utilisateur spécifiée par **UICultureName**. Pour plus d’informations sur cette valeur, consultez « classe de version (système) » dans MSDN.
+- **UICultureVersion** -contient un numéro de version en 4 parties dans « N1 ». N2. N3. N4» qui représente la version du fichier CAB d’aide dans la culture de l’interface utilisateur. Incrémentez ce numéro de version chaque fois que vous téléchargez de nouveaux fichiers CAB d’aide dans la culture d’interface utilisateur spécifiée par **UICultureName**. Pour plus d’informations sur cette valeur, consultez [version, classe](/dotnet/api/system.version).

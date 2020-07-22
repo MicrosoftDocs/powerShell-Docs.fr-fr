@@ -1,18 +1,12 @@
 ---
-title: Exemples d’aide basée sur des commentaires | Microsoft Docs
-ms.custom: ''
+title: Exemples d’aide basée sur les commentaires
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
-caps.latest.revision: 4
-ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3858fa7f15d71c505dacaf9679910d45ef4640e5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86035431"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893490"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
 
@@ -70,13 +64,13 @@ function Add-Extension
 }
 ```
 
-La sortie suivante montre les résultats d’une commande obtenir-Help qui affiche l’aide de la fonction Add-Extension.
+La sortie suivante montre les résultats d’une `Get-Help` commande qui affiche l’aide de la `Add-Extension` fonction.
 
 ```powershell
 C:\PS> get-help add-extension -full
 ```
 
-```output
+```Output
         NAME
             Add-Extension
 
@@ -144,7 +138,7 @@ C:\PS> get-help add-extension -full
 
 L’exemple de fonction suivant comprend une aide basée sur des commentaires.
 
-Notez les lignes vides entre la fermeture **#>** et l' `Param` instruction. Dans un script qui n’a pas d' `Param` instruction, il doit y avoir au moins deux lignes vides entre le commentaire final de la rubrique d’aide et la première déclaration de fonction. Sans ces lignes vides, la fonction obtenir-Help associe la rubrique d’aide à la fonction, au lieu du script.
+Notez les lignes vides entre la fermeture **#>** et l' `Param` instruction. Dans un script qui n’a pas d' `Param` instruction, il doit y avoir au moins deux lignes vides entre le commentaire final de la rubrique d’aide et la première déclaration de fonction. Sans ces lignes vides, `Get-Help` associe la rubrique d’aide à la fonction, au lieu du script.
 
 ```powershell
 <#
@@ -184,13 +178,13 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-La commande suivante obtient l’aide du script. Étant donné que le script n’est pas dans un répertoire qui est listé dans la variable d’environnement PATH, la commande obtenir-Help qui obtient l’aide du script doit spécifier le chemin d’accès du script.
+La commande suivante obtient l’aide du script. Étant donné que le script n’est pas dans un répertoire qui est listé dans la variable d’environnement PATH, la `Get-Help` commande qui obtient l’aide du script doit spécifier le chemin d’accès du script.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
 ```
 
-```output
+```Output
             NAME
                 C:\ps-test\Update-Month.ps1
 
@@ -281,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-Les résultats sont les mêmes que ceux de l’exemple 1. L’aide de l’interpréteur de la fonction interprète les descriptions des paramètres comme si elles étaient accompagnées du `.Parameter` mot clé.
+Les résultats sont les mêmes que ceux de l’exemple 1. `Get-Help`interprète les descriptions des paramètres comme s’ils étaient accompagnés du `.Parameter` mot clé.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exemple 4 : redirection vers un fichier XML
 
-Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du script de Update-Month.ps1. Le script utilise le `.ExternalHelp` mot clé pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
+Vous pouvez écrire des rubriques d’aide basées sur XML pour des fonctions et des scripts. Bien que l’aide basée sur les commentaires soit plus facile à implémenter, une aide XML est nécessaire si vous souhaitez contrôler plus précisément le contenu de l’aide ou si vous traduisez des rubriques d’aide en plusieurs langues. L’exemple suivant montre les premières lignes du `Update-Month.ps1` script. Le script utilise le `.ExternalHelp` mot clé pour spécifier le chemin d’accès à une rubrique d’aide XML pour le script.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -310,7 +304,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exemple 5 : redirection vers une autre rubrique d’aide
 
-Le code suivant est un extrait du début de la `Help` fonction intégrée dans Windows PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction d’aide, la fonction d’aide utilise les `.ForwardHelpTargetName` `.ForwardHelpCategory` Mots clés et pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
+Le code suivant est un extrait du début de la `Help` fonction intégrée dans PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction d’aide, la fonction d’aide utilise les `.ForwardHelpTargetName` `.ForwardHelpCategory` Mots clés et pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
 
 ```powershell
 function help
@@ -328,13 +322,13 @@ function help
     ...
 ```
 
-La commande suivante utilise cette fonctionnalité. Quand un utilisateur tape une commande obtenir-aide pour la fonction d’aide, l’applet de commande obtient-help affiche la rubrique d’aide de l’applet de commande « obtenir-Help ».
+La commande suivante utilise cette fonctionnalité. Quand un utilisateur tape une `Get-Help` commande pour la `Help` fonction, `Get-Help` affiche la rubrique d’aide de l’applet de commande `Get-Help` .
 
 ```powershell
 C:\PS> get-help help
 ```
 
-```output
+```Output
             NAME
                 Get-Help
 

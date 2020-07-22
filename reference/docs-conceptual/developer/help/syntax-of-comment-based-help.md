@@ -1,19 +1,12 @@
 ---
-title: Syntaxe de l’aide basée sur les commentaires | Microsoft Docs
-ms.custom: ''
+title: Syntaxe de l’aide basée sur les commentaires
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
-caps.latest.revision: 4
-ms.openlocfilehash: da74c674c704794d8648dcdf9ba0a1617decba9b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 950afecc39f9d27207f77547679faab700481458
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560608"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893218"
 ---
 # <a name="syntax-of-comment-based-help"></a>Syntaxe de l’aide basée sur les commentaires
 
@@ -37,11 +30,11 @@ Cette section décrit la syntaxe de l’aide basée sur les commentaires.
 
 ## <a name="syntax-description"></a>Description de la syntaxe
 
- L’aide basée sur les commentaires est écrite sous la forme d’une série de commentaires. Vous pouvez taper un symbole de commentaire (#) avant chaque ligne de commentaires, ou vous pouvez utiliser les \< symboles « # » et « # > » pour créer un bloc de commentaires. Toutes les lignes dans le bloc de commentaires sont interprétées comme des commentaires.
+ L’aide basée sur les commentaires est écrite sous la forme d’une série de commentaires. Vous pouvez taper un symbole de commentaire ( `#` ) avant chaque ligne de commentaires, ou vous pouvez utiliser `<#` les `#>` symboles et pour créer un bloc de commentaires. Toutes les lignes dans le bloc de commentaires sont interprétées comme des commentaires.
 
- Chaque section de l’aide basée sur des commentaires est définie par un mot clé et chaque mot clé est précédé d’un point (.). Les mots clés peuvent apparaître dans n’importe quel ordre. Les noms de mots clés ne respectent pas la casse.
+ Chaque section de l’aide basée sur des commentaires est définie par un mot clé et chaque mot clé est précédé d’un point ( `.` ). Les mots clés peuvent apparaître dans n’importe quel ordre. Les noms de mots clés ne respectent pas la casse.
 
- Un bloc de commentaires doit contenir au moins un mot clé d’aide. Certains mots clés, tels que EXAMPLE, peuvent apparaître plusieurs fois dans le même bloc de commentaires. Le contenu de l’aide pour chaque mot clé commence sur la ligne qui suit le mot clé et peut s’étendre sur plusieurs lignes.
+ Un bloc de commentaires doit contenir au moins un mot clé d’aide. Certains mots clés, tels que **example**, peuvent apparaître plusieurs fois dans le même bloc de commentaires. Le contenu de l’aide pour chaque mot clé commence sur la ligne qui suit le mot clé et peut s’étendre sur plusieurs lignes.
 
  Toutes les lignes d’une rubrique d’aide basée sur des commentaires doivent être contiguës. Si une rubrique d’aide basée sur des commentaires suit un commentaire qui ne fait pas partie de la rubrique d’aide, il doit y avoir au moins une ligne vide entre la dernière ligne de commentaire non-aide et le début de l’aide basée sur les commentaires.
 

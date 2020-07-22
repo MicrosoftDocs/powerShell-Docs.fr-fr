@@ -1,25 +1,16 @@
 ---
-title: Prise en charge de l’aide actualisable | Microsoft Docs
-ms.custom: ''
+title: Prise en charge de l’aide actualisable
 ms.date: 10/28/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
-caps.latest.revision: 7
-ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811388"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893337"
 ---
 # <a name="supporting-updatable-help"></a>Prise en charge de l’aide actualisable
 
-Le *système d’aide actualisable de Windows PowerShell*, introduit dans Windows® 8 et windows Server® 2012, est conçu pour s’assurer que les utilisateurs disposent toujours des dernières rubriques d’aide à l’invite de commandes sur leur ordinateur local. Avec l’aide en ligne de Windows PowerShell, l’aide actualisable fournit une solution d’aide complète pour les utilisateurs. Cette section décrit le système d’aide actualisable et explique comment les auteurs de modules peuvent prendre en charge l’aide actualisable pour leurs modules.
+Le *système d’aide actualisable de Windows PowerShell*, introduit dans Windows 8 et windows server 2012, est conçu pour s’assurer que les utilisateurs disposent toujours des dernières rubriques d’aide à l’invite de commandes sur leur ordinateur local. Avec l’aide en ligne de Windows PowerShell, l’aide actualisable fournit une solution d’aide complète pour les utilisateurs. Cette section décrit le système d’aide actualisable et explique comment les auteurs de modules peuvent prendre en charge l’aide actualisable pour leurs modules.
 
 Cette section comprend les rubriques suivantes.
 

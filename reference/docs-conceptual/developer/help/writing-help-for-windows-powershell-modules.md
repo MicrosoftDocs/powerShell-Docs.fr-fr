@@ -1,12 +1,12 @@
 ---
 title: Écriture de l’aide pour les modules PowerShell
 ms.date: 04/10/2020
-ms.openlocfilehash: 2c6450c03fb9847de331605fb6b9bfb203af3d89
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811458"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893065"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Écriture de l’aide pour les modules PowerShell
 
@@ -29,7 +29,7 @@ Un module peut inclure les types d’aide suivants.
 - **Aide conceptuelle (« à propos de »)**. Vous pouvez utiliser une rubrique d’aide conceptuelle (« à propos de ») pour décrire le module et ses membres, et pour expliquer comment les membres peuvent être utilisés ensemble pour effectuer des tâches.
   Les rubriques d’aide conceptuelle sont des fichiers texte avec l’encodage Unicode (UTF-8). Le nom de fichier doit utiliser le `about_<name>.help.txt` format, par exemple `about_MyModule.help.txt` . Par défaut, PowerShell comprend plus de 100 de ces rubriques d’aide conceptuelles, et elles sont mises en forme comme dans l’exemple suivant.
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 
