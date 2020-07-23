@@ -1,12 +1,12 @@
 ---
 title: Schéma XML HelpInfo
 ms.date: 09/12/2016
-ms.openlocfilehash: e894c1f2695ddbc5a386f8fec96054a7b31e7778
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893252"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953248"
 ---
 # <a name="helpinfo-xml-schema"></a>Schéma XML HelpInfo
 
@@ -18,7 +18,7 @@ Les fichiers XML HelpInfo sont basés sur le schéma XML suivant.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<schema targetNamespace="https://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="http://schemas.microsoft.com/powershell/help/2010/05" xmlns="http://www.w3.org/2001/XMLSchema">
   <element name="HelpInfo">
     <complexType>
       <sequence>
