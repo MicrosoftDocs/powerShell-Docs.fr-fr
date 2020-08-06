@@ -1,23 +1,18 @@
 ---
 title: Création d’une applet de commande pour accéder à un magasin de données
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415699"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782138"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
 
 Cette section décrit comment créer une applet de commande qui accède aux données stockées au moyen d’un fournisseur Windows PowerShell. Ce type d’applet de commande utilise l’infrastructure du fournisseur Windows PowerShell du runtime Windows PowerShell et, par conséquent, la classe cmdlet doit dériver de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-L’applet de commande SELECT-Str décrite ici peut rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiés explicitement par le biais du paramètre `Path` de l’applet de commande ou implicitement par le biais du paramètre `Script`.
+L’applet de commande SELECT-Str décrite ici peut rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiés explicitement par le biais du `Path` paramètre de l’applet de commande ou implicitement via le `Script` paramètre.
 
 L’applet de commande est conçue pour utiliser n’importe quel fournisseur Windows PowerShell dérivé de [System. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Par exemple, l’applet de commande peut spécifier le fournisseur FileSystem ou le fournisseur de variables fourni par Windows PowerShell. Pour plus d’informations sur les fournisseurs aboutWindows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md).
 
@@ -34,18 +29,18 @@ Le code suivant est la définition de classe pour cette applet de commande SELEC
 public class SelectStringCommand : PSCmdlet
 ```
 
-Cette applet de commande définit un jeu de paramètres par défaut en ajoutant le mot clé `DefaultParameterSetName` attribut à la déclaration de classe. Le jeu de paramètres par défaut `PatternParameterSet` est utilisé lorsque le paramètre `Script` n’est pas spécifié. Pour plus d’informations sur ce jeu de paramètres, consultez la discussion sur les paramètres `Pattern` et `Script` dans la section suivante.
+Cette applet de commande définit un jeu de paramètres par défaut en ajoutant le `DefaultParameterSetName` mot clé Attribute à la déclaration de classe. Le jeu de paramètres par défaut `PatternParameterSet` est utilisé lorsque le `Script` paramètre n’est pas spécifié. Pour plus d’informations sur ce jeu de paramètres, consultez la discussion sur les `Pattern` `Script` paramètres et dans la section suivante.
 
 ## <a name="defining-parameters-for-data-access"></a>Définition des paramètres pour l’accès aux données
 
-Cette applet de commande définit plusieurs paramètres qui permettent à l’utilisateur d’accéder aux données stockées et de les examiner. Ces paramètres incluent un paramètre de `Path` qui indique l’emplacement du magasin de données, un paramètre de `Pattern` qui spécifie le modèle à utiliser dans la recherche, ainsi que plusieurs autres paramètres qui prennent en charge l’exécution de la recherche.
+Cette applet de commande définit plusieurs paramètres qui permettent à l’utilisateur d’accéder aux données stockées et de les examiner. Ces paramètres incluent un `Path` paramètre qui indique l’emplacement du magasin de données, un `Pattern` paramètre qui spécifie le modèle à utiliser dans la recherche et plusieurs autres paramètres qui prennent en charge l’exécution de la recherche.
 
 > [!NOTE]
 > Pour plus d’informations sur les principes de base de la définition de paramètres, consultez [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md).
 
 ### <a name="declaring-the-path-parameter"></a>Déclaration du paramètre Path
 
-Pour localiser le magasin de données, cette applet de commande doit utiliser un chemin d’accès Windows PowerShell pour identifier le fournisseur Windows PowerShell qui est conçu pour accéder au magasin de données. Par conséquent, il définit un paramètre `Path` de type tableau de chaînes pour indiquer l’emplacement du fournisseur.
+Pour localiser le magasin de données, cette applet de commande doit utiliser un chemin d’accès Windows PowerShell pour identifier le fournisseur Windows PowerShell qui est conçu pour accéder au magasin de données. Par conséquent, il définit un `Path` paramètre de type tableau de chaînes pour indiquer l’emplacement du fournisseur.
 
 ```csharp
 [Parameter(
@@ -68,13 +63,13 @@ private string[] paths;
 
 Notez que ce paramètre appartient à deux jeux de paramètres différents et qu’il a un alias.
 
-Deux attributs [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) déclarent que le paramètre `Path` appartient au `ScriptParameterSet` et à la `PatternParameterSet`. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
+Deux attributs [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) déclarent que le `Path` paramètre appartient au `ScriptParameterSet` et au `PatternParameterSet` . Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
 
-L’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) déclare un alias `PSPath` pour le paramètre `Path`. La déclaration de cet alias est fortement recommandée pour assurer la cohérence avec d’autres applets de commande qui accèdent aux fournisseurs Windows PowerShell. Pour plus d’informations sur les chemins d’accès PowerShell aboutWindows, consultez « concepts du chemin d’accès PowerShell » dans fonctionnement de [Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+L’attribut [System. Management. Automation. AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute) déclare un `PSPath` alias pour le `Path` paramètre. La déclaration de cet alias est fortement recommandée pour assurer la cohérence avec d’autres applets de commande qui accèdent aux fournisseurs Windows PowerShell. Pour plus d’informations sur les chemins d’accès PowerShell aboutWindows, consultez « concepts du chemin d’accès PowerShell » dans fonctionnement de [Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="declaring-the-pattern-parameter"></a>Déclaration du paramètre de modèle
 
-Pour spécifier les modèles à rechercher, cette applet de commande déclare un paramètre `Pattern` qui est un tableau de chaînes. Un résultat positif est retourné lorsque l’un des modèles est trouvé dans le magasin de données. Notez que ces modèles peuvent être compilés dans un tableau d’expressions régulières compilées ou un tableau de modèles de caractère générique utilisé pour les recherches littérales.
+Pour spécifier les modèles à rechercher, cette applet de commande déclare un `Pattern` paramètre qui est un tableau de chaînes. Un résultat positif est retourné lorsque l’un des modèles est trouvé dans le magasin de données. Notez que ces modèles peuvent être compilés dans un tableau d’expressions régulières compilées ou un tableau de modèles de caractère générique utilisé pour les recherches littérales.
 
 ```csharp
 [Parameter(
@@ -91,13 +86,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-Lorsque ce paramètre est spécifié, l’applet de commande utilise le jeu de paramètres par défaut `PatternParameterSet`. Dans ce cas, l’applet de commande utilise les modèles spécifiés ici pour sélectionner des chaînes. En revanche, le paramètre `Script` peut également être utilisé pour fournir un script qui contient les modèles. Les paramètres `Script` et `Pattern` définissent deux jeux de paramètres distincts, de sorte qu’ils s’excluent mutuellement.
+Lorsque ce paramètre est spécifié, l’applet de commande utilise le jeu de paramètres par défaut `PatternParameterSet` . Dans ce cas, l’applet de commande utilise les modèles spécifiés ici pour sélectionner des chaînes. En revanche, le `Script` paramètre peut également être utilisé pour fournir un script qui contient les modèles. Les `Script` `Pattern` paramètres et définissent deux jeux de paramètres distincts, afin qu’ils s’excluent mutuellement.
 
 ### <a name="declaring-search-support-parameters"></a>Déclaration des paramètres de prise en charge de recherche
 
 Cette applet de commande définit les paramètres de prise en charge suivants qui peuvent être utilisés pour modifier les fonctions de recherche de l’applet de commande.
 
-Le paramètre `Script` spécifie un bloc de script qui peut être utilisé pour fournir un autre mécanisme de recherche pour l’applet de commande. Le script doit contenir les modèles utilisés pour la correspondance et retourner un objet [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) . Notez que ce paramètre est également le paramètre unique qui identifie le jeu de paramètres `ScriptParameterSet`. Quand le runtime Windows PowerShell voit ce paramètre, il utilise uniquement les paramètres qui appartiennent au jeu de paramètres `ScriptParameterSet`.
+Le `Script` paramètre spécifie un bloc de script qui peut être utilisé pour fournir un autre mécanisme de recherche pour l’applet de commande. Le script doit contenir les modèles utilisés pour la correspondance et retourner un objet [System. Management. Automation. PSObject](/dotnet/api/System.Management.Automation.PSObject) . Notez que ce paramètre est également le paramètre unique qui identifie le `ScriptParameterSet` jeu de paramètres. Quand le runtime Windows PowerShell voit ce paramètre, il utilise uniquement les paramètres qui appartiennent au `ScriptParameterSet` jeu de paramètres.
 
 ```csharp
 [Parameter(
@@ -112,7 +107,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-Le paramètre `SimpleMatch` est un paramètre de commutateur qui indique si l’applet de commande doit faire correspondre explicitement les modèles à mesure qu’ils sont fournis. Lorsque l’utilisateur spécifie le paramètre au niveau de la ligne de commande (`true`), l’applet de commande utilise les modèles tels qu’ils sont fournis. Si le paramètre n’est pas spécifié (`false`), l’applet de commande utilise des expressions régulières. La valeur par défaut de ce paramètre est `false`.
+Le `SimpleMatch` paramètre est un paramètre de commutateur qui indique si l’applet de commande doit faire correspondre explicitement les modèles à mesure qu’ils sont fournis. Lorsque l’utilisateur spécifie le paramètre au niveau de la ligne de commande ( `true` ), l’applet de commande utilise les modèles tels qu’ils sont fournis. Si le paramètre n’est pas spécifié ( `false` ), l’applet de commande utilise des expressions régulières. La valeur par défaut de ce paramètre est `false` .
 
 ```csharp
 [Parameter]
@@ -124,7 +119,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-Le paramètre `CaseSensitive` est un paramètre de commutateur qui indique si une recherche respectant la casse est effectuée. Lorsque l’utilisateur spécifie le paramètre au niveau de la ligne de commande (`true`), l’applet de commande recherche les caractères majuscules et minuscules lors de la comparaison des modèles. Si le paramètre n’est pas spécifié (`false`), l’applet de commande ne fait pas la distinction entre les majuscules et les minuscules. Par exemple, « MyFile » et « MyFile » seraient tous deux retournés en tant que résultats positifs. La valeur par défaut de ce paramètre est `false`.
+Le `CaseSensitive` paramètre est un paramètre de commutateur qui indique si une recherche respectant la casse est effectuée. Lorsque l’utilisateur spécifie le paramètre au niveau de la ligne de commande ( `true` ), l’applet de commande recherche les caractères majuscules et minuscules lors de la comparaison des modèles. Si le paramètre n’est pas spécifié ( `false` ), l’applet de commande ne fait pas la distinction entre les majuscules et les minuscules. Par exemple, « MyFile » et « MyFile » seraient tous deux retournés en tant que résultats positifs. La valeur par défaut de ce paramètre est `false` .
 
 ```csharp
 [Parameter]
@@ -136,7 +131,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-Les paramètres `Exclude` et `Include` identifient les éléments qui sont explicitement exclus de la recherche ou inclus dans celle-ci. Par défaut, l’applet de commande recherche tous les éléments dans le magasin de données. Toutefois, pour limiter la recherche effectuée par l’applet de commande, ces paramètres peuvent être utilisés pour indiquer explicitement les éléments à inclure dans la recherche ou à omettre.
+Les `Exclude` `Include` paramètres et identifient les éléments qui sont explicitement exclus de la recherche ou inclus dans celle-ci. Par défaut, l’applet de commande recherche tous les éléments dans le magasin de données. Toutefois, pour limiter la recherche effectuée par l’applet de commande, ces paramètres peuvent être utilisés pour indiquer explicitement les éléments à inclure dans la recherche ou à omettre.
 
 ```csharp
 [Parameter]
@@ -175,7 +170,7 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Déclarer des jeux de paramètres
 
-Cette applet de commande utilise deux jeux de paramètres (`ScriptParameterSet` et `PatternParameterSet`, qui est la valeur par défaut) en tant que noms de deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet` est le jeu de paramètres par défaut et est utilisé lorsque le paramètre `Pattern` est spécifié. `ScriptParameterSet` est utilisé lorsque l’utilisateur spécifie un autre mécanisme de recherche par le biais du paramètre `Script`. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
+Cette applet de commande utilise deux jeux `ScriptParameterSet` de paramètres (et `PatternParameterSet` , qui est la valeur par défaut) comme noms de deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet`est le jeu de paramètres par défaut et est utilisé lorsque le `Pattern` paramètre est spécifié. `ScriptParameterSet`est utilisé lorsque l’utilisateur spécifie un autre mécanisme de recherche par le biais du `Script` paramètre. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
 
 ## <a name="overriding-input-processing-methods"></a>Substitution des méthodes de traitement d’entrée
 
@@ -1100,7 +1095,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : True
@@ -1115,13 +1110,13 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     Pattern      : .NET
     ```
 
-2. Recherchez dans le fichier Notes des occurrences de lignes avec le mot « sur », suivi d’un autre texte. Le paramètre `SimpleMatch` utilise la valeur par défaut de `false`. La recherche ne respecte pas la casse, car le paramètre `CaseSensitive` est défini sur `false`.
+2. Recherchez dans le fichier Notes des occurrences de lignes avec le mot « sur », suivi d’un autre texte. Le `SimpleMatch` paramètre utilise la valeur par défaut `false` . La recherche ne respecte pas la casse, car le `CaseSensitive` paramètre a la valeur `false` .
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : True
@@ -1142,7 +1137,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : True
@@ -1163,7 +1158,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : False
@@ -1184,7 +1179,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : True
@@ -1200,7 +1195,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     IgnoreCase   : True

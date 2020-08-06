@@ -1,25 +1,18 @@
 ---
 title: Wrap, élément de TableRowEntry pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
-caps.latest.revision: 11
-ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361388"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779877"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>Wrap, élément pour TableRowEntry pour TableControl (Format)
 
 Spécifie que le texte qui dépasse la largeur de colonne est affiché sur la ligne suivante. Par défaut, le texte qui dépasse de la largeur de colonne est tronqué.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableRowEntries pour table ((format) élément TableRowEntry pour TableRowEntries pour table ((format) Wrap, élément pour TableRowEntry pour table ((format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableRowEntries pour table ((format) élément TableRowEntry pour TableRowEntries pour table ((format) Wrap, élément pour TableRowEntry (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,25 +20,25 @@ Spécifie que le texte qui dépasse la largeur de colonne est affiché sur la li
 <Wrap/>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `Wrap`.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `Wrap` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableRowEntry pour TableRowEntries pour table ((format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Définit les données affichées dans une ligne de la table.|
+|[TableRowEntry, élément pour TableRowEntries pour TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Définit les données affichées dans une ligne de la table.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 
@@ -53,6 +46,6 @@ Pour plus d’informations sur les composants d’une vue de table, consultez [c
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Élément TableRowEntry pour TableRowEntries pour table ((format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
+[TableRowEntry, élément pour TableRowEntries pour TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

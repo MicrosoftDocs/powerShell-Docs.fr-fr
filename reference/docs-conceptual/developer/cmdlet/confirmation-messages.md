@@ -1,19 +1,12 @@
 ---
 title: Messages de confirmation | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
-caps.latest.revision: 8
-ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8f8192f6ed96b1eeb22e3b28ce1366eee8e7c16a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365728"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782189"
 ---
 # <a name="confirmation-messages"></a>Messages de confirmation
 
@@ -24,7 +17,7 @@ Voici différents messages de confirmation qui peuvent être affichés en foncti
 
 ## <a name="specifying-the-resource"></a>Spécification de la ressource
 
-Vous pouvez spécifier la ressource qui va être modifiée en appelant [System. Management. Automation. cmdlet. ShouldProcess% 2A ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) (méthode). Dans ce cas, vous fournissez la ressource à l’aide du paramètre `target` de la méthode, et l’opération est ajoutée par Windows PowerShell. Dans le message suivant, le texte « MyResource » est la ressource sur laquelle l’opération est effectuée et l’opération est le nom de la commande qui effectue l’appel.
+Vous pouvez spécifier la ressource qui va être modifiée en appelant [System. Management. Automation. cmdlet. ShouldProcess% 2A ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) (méthode). Dans ce cas, vous fournissez la ressource à l’aide du `target` paramètre de la méthode, et l’opération est ajoutée par Windows PowerShell. Dans le message suivant, le texte « MyResource » est la ressource sur laquelle l’opération est effectuée et l’opération est le nom de la commande qui effectue l’appel.
 
 ```output
 Confirm
@@ -48,7 +41,7 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>Spécification de l’opération et de la ressource
 
-Vous pouvez spécifier la ressource qui va être modifiée et l’opération que la commande va effectuer en appelant [System. Management. Automation. cmdlet. ShouldProcess% 2A ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) (méthode). Dans ce cas, vous fournissez la ressource à l’aide du paramètre `target` et de l’opération à l’aide du paramètre `target`. Dans le message suivant, le texte « MyResource » est la ressource traitée et « MyAction » est l’opération à effectuer.
+Vous pouvez spécifier la ressource qui va être modifiée et l’opération que la commande va effectuer en appelant [System. Management. Automation. cmdlet. ShouldProcess% 2A ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0) (méthode). Dans ce cas, vous fournissez la ressource à l’aide du `target` paramètre et de l’opération à l’aide du `target` paramètre. Dans le message suivant, le texte « MyResource » est la ressource traitée et « MyAction » est l’opération à effectuer.
 
 ```output
 Confirm

@@ -1,25 +1,18 @@
 ---
 title: PropertyName, élément de ListItem pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
-caps.latest.revision: 12
-ms.openlocfilehash: 405184f7bdbf1955f1df7766bf2723c244dcc27f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9ee466d7f73e53b129f8d46f49a21549683bb32c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780829"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>PropertyName, élément pour ListItem pour ListControl (Format)
 
 Spécifie la propriété .NET dont la valeur est affichée dans la liste.
 
-Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément (format) ListEntry, élément (format) ListItems, élément (format) élément ListItem (format) NomPropriété, élément de ListItem (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) ListControl, élément (format) ListEntries, élément (format) ListEntry, élément (format) ListItems élément (format) élément ListItem (format) NomPropriété, élément pour ListItem (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +20,17 @@ Spécifie la propriété .NET dont la valeur est affichée dans la liste.
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `PropertyName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `PropertyName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,11 +38,11 @@ Aucune.
 |-------------|-----------------|
 |[ListItem, élément (format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Définit la propriété ou le script dont la valeur est affichée dans la ligne de la vue liste.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom de la propriété dont la valeur est affichée.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Lorsque cet élément est spécifié, vous ne pouvez pas spécifier l’élément [scriptblock](./scriptblock-element-for-listitem-for-listcontrol-format.md) .
 
@@ -69,9 +62,9 @@ ListItem>
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément ScriptBlock pour ListItem pour ListControl (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
+[ScriptBlock, élément pour ListItem pour ListControl (Format)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Élément ListItem pour ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 

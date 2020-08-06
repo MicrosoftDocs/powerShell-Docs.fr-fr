@@ -1,21 +1,14 @@
 ---
 title: Comment valider une plage d’arguments | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateRange attribute, example
-ms.assetid: 3cba3ab7-c3b6-4d17-aa17-88377496551b
-caps.latest.revision: 9
-ms.openlocfilehash: a39e34d1f1c333185f09b4a934819e1368d29a48
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b48b1b87425add51e855c48ec700c78c3ae296c1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365518"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782070"
 ---
 # <a name="how-to-validate-an-argument-range"></a>Guide pratique pour valider une plage d’argument
 
@@ -26,7 +19,7 @@ Cet exemple montre comment spécifier une règle de validation que le runtime Wi
 
 ### <a name="to-validate-an-argument-range"></a>Pour valider une plage d’arguments
 
-- Ajoutez l’attribut ValidateRange comme indiqué dans le code suivant. Cet exemple spécifie une plage de 0 à 5 pour le paramètre `InputData`.
+- Ajoutez l’attribut ValidateRange comme indiqué dans le code suivant. Cet exemple spécifie une plage de 0 à 5 pour le `InputData` paramètre.
 
     ```csharp
     [ValidateRange(0, 5)]
@@ -43,6 +36,6 @@ Pour plus d’informations sur la façon de déclarer cet attribut, consultez [d
 
 ## <a name="see-also"></a>Voir aussi
 
-[Déclaration d’attribut ValidateRange](./validaterange-attribute-declaration.md)
+[Déclaration de l’attribut ValidateRange](./validaterange-attribute-declaration.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

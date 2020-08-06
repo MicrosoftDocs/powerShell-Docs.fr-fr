@@ -1,25 +1,18 @@
 ---
 title: Élément Frame pour CustomItem pour CustomControl pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
-caps.latest.revision: 6
-ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4864ea1a865f77c9de6e495d7e8296e81c19b366
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363638"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781441"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Frame, élément pour CustomItem pour CustomControl pour View (Format)
 
 Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément CustomControl (format) élément CustomEntries pour CustomControl pour View (format) élément CustomEntry pour CustomEntries pour la vue (format) CustomItem, élément de CustomEntry pour l’élément de frame CustomControlView (format) pour CustomItem pour CustomControl pour View (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) CustomControl, élément (format) CustomEntries élément pour CustomControl pour la vue (format) élément CustomEntry pour CustomEntries pour la vue (format) élément CustomItem pour CustomEntry pour CustomControlView (format) élément Frame pour CustomItem pour la vue (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,13 +26,13 @@ Définit le mode d’affichage des données, par exemple en décalant les donné
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Frame`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Frame` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -57,9 +50,9 @@ Aucune.
 |-------------|-----------------|
 |[Élément CustomItem pour CustomEntry pour View (format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|Définit les données affichées par le contrôle et leur mode d’affichage.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Vous ne pouvez pas spécifier les éléments [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) et [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) dans le même élément `Frame`.
+Vous ne pouvez pas spécifier les éléments [FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md) et [FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md) dans le même `Frame` élément.
 
 ## <a name="see-also"></a>Voir aussi
 

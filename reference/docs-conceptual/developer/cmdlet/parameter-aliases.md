@@ -1,23 +1,16 @@
 ---
 title: Alias de paramètres | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
-caps.latest.revision: 13
-ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369588"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781985"
 ---
 # <a name="parameter-aliases"></a>Alias de paramètres
 
-Les paramètres d'applet de commande peuvent également avoir des alias. Vous pouvez utiliser les alias à la place des noms de paramètres lorsque vous tapez ou spécifiez le paramètre dans une commande.
+Les paramètres d’applet de commande peuvent également avoir des alias. Vous pouvez utiliser les alias à la place des noms de paramètres lorsque vous tapez ou spécifiez le paramètre dans une commande.
 
 ## <a name="benefits-of-using-aliases"></a>Avantages de l’utilisation d’alias
 
@@ -50,8 +43,8 @@ private string userName;
 
 ## <a name="see-also"></a>Voir aussi
 
-[Noms de paramètres communs](./common-parameter-names.md)
+[Noms de paramètres courants](./common-parameter-names.md)
 
-[Comment déclarer des paramètres d’applet de commande](./how-to-declare-cmdlet-parameters.md)
+[Guide pratique pour déclarer des paramètres d’applet de commande](./how-to-declare-cmdlet-parameters.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: Ajout et appel de commandes | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367638"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779792"
 ---
 # <a name="adding-and-invoking-commands"></a>Ajout et appel de commandes
 
@@ -47,7 +40,7 @@ Après avoir créé une instance d’exécution, vous pouvez ajouter des PowerSh
 
 ### <a name="addparameter"></a>AddParameter
 
- L’exemple précédent exécute une seule commande sans aucun paramètre. Vous pouvez ajouter des paramètres à la commande à l’aide de la méthode [System. Management. Automation. PSCommand. AddParameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) . par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` s’exécutant sur l’ordinateur.
+ L’exemple précédent exécute une seule commande sans aucun paramètre. Vous pouvez ajouter des paramètres à la commande à l’aide de la méthode [System. Management. Automation. PSCommand. AddParameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) . par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` en cours d’exécution sur l’ordinateur.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +72,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- Vous pouvez simuler le traitement par lot à l’aide de la méthode [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , qui ajoute une instruction supplémentaire à la fin du pipeline. le code suivant obtient une liste des processus en cours d’exécution avec le nom `PowerShell`, puis obtient la liste des services en cours d’exécution.
+ Vous pouvez simuler le traitement par lot à l’aide de la méthode [System. Management. Automation. PowerShell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , qui ajoute une instruction supplémentaire à la fin du pipeline. le code suivant obtient une liste des processus en cours d’exécution avec le nom `PowerShell` , puis obtient la liste des services en cours d’exécution.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +83,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- Vous pouvez exécuter un script existant en appelant la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) . L’exemple suivant ajoute un script au pipeline et l’exécute. Cet exemple suppose qu’il existe déjà un script nommé `MyScript.ps1` dans un dossier nommé `D:\PSScripts`.
+ Vous pouvez exécuter un script existant en appelant la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) . L’exemple suivant ajoute un script au pipeline et l’exécute. Cet exemple suppose qu’il existe déjà un script nommé `MyScript.ps1` dans un dossier nommé `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Il existe également une version de la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) qui prend un paramètre booléen nommé `useLocalScope`. Si ce paramètre a la valeur `true`, le script est exécuté dans l’étendue locale. Le code suivant exécute le script dans l’étendue locale.
+ Il existe également une version de la méthode [System. Management. Automation. PowerShell. addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) qui accepte un paramètre booléen nommé `useLocalScope` . Si ce paramètre a la valeur `true` , le script est exécuté dans l’étendue locale. Le code suivant exécute le script dans l’étendue locale.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -186,4 +179,4 @@ namespace HostPS3
 
  [Création d’un InitialSessionState](./creating-an-initialsessionstate.md)
 
- [Création d’une instance d’exécution avec restriction](./creating-a-constrained-runspace.md)
+ [Création d’une instance d’exécution contrainte](./creating-a-constrained-runspace.md)

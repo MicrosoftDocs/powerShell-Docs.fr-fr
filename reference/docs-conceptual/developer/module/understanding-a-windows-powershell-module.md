@@ -1,19 +1,12 @@
 ---
 title: Fonctionnement d’un module Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
-caps.latest.revision: 19
-ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79407152"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779231"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Présentation d’un module Windows PowerShell
 
@@ -45,17 +38,17 @@ Enfin, un module de script, comme tout autre module qui n’est pas dynamiquemen
 
 ### <a name="binary-modules"></a>Modules binaires
 
-Un *module binaire* est un assembly .NET Framework (. dll) qui contient le code compilé, C#tel que. Les développeurs d’applets de commande peuvent utiliser ce type de module pour partager des applets de commande, des fournisseurs, etc. (Les composants logiciels enfichables existants peuvent également être utilisés en tant que modules binaires.) Par rapport à un module de script, un module binaire vous permet de créer des applets de commande plus rapides ou utilisant des fonctionnalités (telles que le multithreading) qui ne sont pas aussi faciles à coder dans les scripts Windows PowerShell.
+Un *module binaire* est un assembly .NET Framework (. dll) qui contient le code compilé, tel que C#. Les développeurs d’applets de commande peuvent utiliser ce type de module pour partager des applets de commande, des fournisseurs, etc. (Les composants logiciels enfichables existants peuvent également être utilisés en tant que modules binaires.) Par rapport à un module de script, un module binaire vous permet de créer des applets de commande plus rapides ou utilisant des fonctionnalités (telles que le multithreading) qui ne sont pas aussi faciles à coder dans les scripts Windows PowerShell.
 
 Comme avec les modules de script, vous pouvez inclure un fichier manifeste pour décrire les ressources supplémentaires utilisées par votre module et pour suivre les métadonnées relatives à votre module. De même, vous devez probablement installer votre module binaire dans un dossier situé dans le chemin d’accès du module PowerShell. Pour plus d’informations, consultez Comment [écrire un module binaire PowerShell](./how-to-write-a-powershell-binary-module.md).
 
 ### <a name="manifest-modules"></a>Modules de manifeste
 
-Un *module de manifeste* est un module qui utilise un fichier manifeste pour décrire tous ses composants, mais qui n’a aucun type d’assembly ou de script principal. (Formellement, un module de manifeste laisse l’élément `ModuleToProcess` ou `RootModule` du manifeste vide.) Toutefois, vous pouvez toujours utiliser les autres fonctionnalités d’un module, telles que la possibilité de charger des assemblys dépendants ou d’exécuter automatiquement certains scripts de pré-traitement. Vous pouvez également utiliser un module de manifeste comme un moyen pratique d’empaqueter des ressources que d’autres modules utiliseront, telles que des modules imbriqués, des assemblys, des types ou des formats. Pour plus d’informations, consultez [Comment écrire un manifeste de module PowerShell](./how-to-write-a-powershell-module-manifest.md).
+Un *module de manifeste* est un module qui utilise un fichier manifeste pour décrire tous ses composants, mais qui n’a aucun type d’assembly ou de script principal. (Officiellement, un module de manifeste laisse `ModuleToProcess` l' `RootModule` élément ou du manifeste vide.) Toutefois, vous pouvez toujours utiliser les autres fonctionnalités d’un module, telles que la possibilité de charger des assemblys dépendants ou d’exécuter automatiquement certains scripts de pré-traitement. Vous pouvez également utiliser un module de manifeste comme un moyen pratique d’empaqueter des ressources que d’autres modules utiliseront, telles que des modules imbriqués, des assemblys, des types ou des formats. Pour plus d’informations, consultez [Comment écrire un manifeste de module PowerShell](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Modules dynamiques
 
-Un *module dynamique* est un module qui n’est pas chargé à partir d’un fichier, ou enregistré dans celui-ci. Au lieu de cela, ils sont créés dynamiquement par un script, à l’aide de l’applet [de commande New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Ce type de module permet à un script de créer un module à la demande qui n’a pas besoin d’être chargé ou enregistré dans un stockage persistant. Par nature, un module dynamique est destiné à être éphémère et, par conséquent, n’est pas accessible par l’applet de commande `Get-Module`. De même, ils n’ont généralement pas besoin de manifestes de module, pas plus qu’ils n’ont probablement besoin de dossiers permanents pour stocker leurs assemblys associés.
+Un *module dynamique* est un module qui n’est pas chargé à partir d’un fichier, ou enregistré dans celui-ci. Au lieu de cela, ils sont créés dynamiquement par un script, à l’aide de l’applet [de commande New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module) . Ce type de module permet à un script de créer un module à la demande qui n’a pas besoin d’être chargé ou enregistré dans un stockage persistant. Par nature, un module dynamique est destiné à être éphémère et, par conséquent, n’est pas accessible par l' `Get-Module` applet de commande. De même, ils n’ont généralement pas besoin de manifestes de module, pas plus qu’ils n’ont probablement besoin de dossiers permanents pour stocker leurs assemblys associés.
 
 ## <a name="module-manifests"></a>Manifestes de module
 
@@ -67,7 +60,7 @@ Un *manifeste de module* est un fichier. psd1 qui contient une table de hachage.
 
 - Déterminez la façon dont les composants sont traités.
 
-  Les manifestes ne sont pas nécessaires pour un module. Les modules peuvent référencer des fichiers de script (. ps1), des fichiers de module de script (. psm1), des fichiers manifeste (. psd1), des fichiers de mise en forme et de type (. ps1xml), des assemblys de cmdlet et de fournisseur (. dll), des fichiers de ressources, des fichiers d’aide, des fichiers de localisation ou tout autre type de fichier est fourni dans le cadre du module. Pour un script international, le dossier du module contient également un ensemble de fichiers du catalogue de messages. Si vous ajoutez un fichier manifeste au dossier de module, vous pouvez référencer les fichiers multiples en tant qu’unité unique en référençant le manifeste.
+  Les manifestes ne sont pas nécessaires pour un module. Les modules peuvent faire référence à des fichiers de script (. ps1), à des fichiers de module de script (. psm1), à des fichiers manifeste (. psd1), à des fichiers de mise en forme et de type (. ps1xml), à des assemblys d’applet de commande et de fournisseur (. Pour un script international, le dossier du module contient également un ensemble de fichiers du catalogue de messages. Si vous ajoutez un fichier manifeste au dossier de module, vous pouvez référencer les fichiers multiples en tant qu’unité unique en référençant le manifeste.
 
   Le manifeste lui-même décrit les catégories d’informations suivantes :
 
@@ -85,13 +78,13 @@ Un *manifeste de module* est un fichier. psd1 qui contient une table de hachage.
 
 Une fois que vous avez créé un script, un fichier binaire ou un module manifeste, vous pouvez enregistrer votre travail dans un emplacement auquel d’autres utilisateurs peuvent y accéder. Par exemple, votre module peut être stocké dans le dossier système où Windows PowerShell est installé, ou il peut être stocké dans un dossier utilisateur.
 
-En règle générale, vous pouvez déterminer où vous devez installer votre module en utilisant l’un des chemins d’accès stockés dans la variable `$ENV:PSModulePath`. L’utilisation de l’un de ces chemins d’accès signifie que PowerShell peut rechercher et charger automatiquement votre module lorsqu’un utilisateur effectue un appel vers celui-ci dans son code. Si vous stockez votre module ailleurs, vous pouvez laisser PowerShell déterminer explicitement en passant l’emplacement de votre module en tant que paramètre lorsque vous appelez `Install-Module`.
+En règle générale, vous pouvez déterminer où vous devez installer votre module en utilisant l’un des chemins d’accès stockés dans la `$ENV:PSModulePath` variable. L’utilisation de l’un de ces chemins d’accès signifie que PowerShell peut rechercher et charger automatiquement votre module lorsqu’un utilisateur effectue un appel vers celui-ci dans son code. Si vous stockez votre module ailleurs, vous pouvez laisser PowerShell déterminer explicitement en passant l’emplacement de votre module en tant que paramètre lorsque vous appelez `Install-Module` .
 
 Indépendamment, le chemin d’accès du dossier est appelé *base* du module (ModuleBase), et le nom du fichier de script, binaire ou du module de manifeste doit être le même que le nom du dossier de module, avec les exceptions suivantes :
 
-- Les modules dynamiques créés par l’applet de commande `New-Module` peuvent être nommés à l’aide du paramètre `Name` de l’applet de commande.
+- Les modules dynamiques créés par l' `New-Module` applet de commande peuvent être nommés à l’aide du `Name` paramètre de l’applet de commande.
 
-- Les modules importés à partir d’objets assembly par la commande **`Import-Module`-assembly** sont nommés selon la syntaxe suivante : `"dynamic_code_module_" + assembly.GetName()`.
+- Les modules importés à partir d’objets assembly par la commande ** `Import-Module` -assembly** sont nommés selon la syntaxe suivante : `"dynamic_code_module_" + assembly.GetName()` .
 
   Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md) et [modification du chemin d’installation de PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 
@@ -107,7 +100,7 @@ Applet [de commande Import-Module](/powershell/module/Microsoft.PowerShell.Core/
 
 Applet [de commande obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cette applet de commande récupère des informations sur les modules qui ont été ou qui peuvent être importés dans la session active.
 
-Applet [de commande Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cette applet de commande spécifie les membres de module (tels que les applets de commande, les fonctions, les variables et les alias) qui sont exportés à partir d’un fichier de module de script (. psm1) ou d’un module dynamique créé à l’aide de l’applet de commande `New-Module`.
+Applet [de commande Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cette applet de commande spécifie les membres du module (tels que les applets de commande, les fonctions, les variables et les alias) qui sont exportés à partir d’un fichier de module de script (. psm1) ou d’un module dynamique créé à l’aide de l’applet de commande `New-Module` .
 
 Applet de commande [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cette applet de commande supprime les modules de la session active.
 

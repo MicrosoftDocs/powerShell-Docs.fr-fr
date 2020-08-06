@@ -1,19 +1,12 @@
 ---
 title: Élément WideItem pour WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
-caps.latest.revision: 18
-ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6b2f7c97978c20350caeec894589c5995ae7ccc4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361398"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779894"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideItem, élément pour WideControl (Format)
 
@@ -31,19 +24,19 @@ Définit la propriété ou le script dont la valeur est affichée.
 </WideItem>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `WideItem`. L'élément `FormatString` est facultatif. Toutefois, vous devez spécifier un élément `PropertyName` ou `ScriptBlock`, mais vous ne pouvez pas spécifier les deux.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `WideItem` élément. L’élément `FormatString` est facultatif. Toutefois, vous devez spécifier un `PropertyName` `ScriptBlock` élément ou, mais vous ne pouvez pas spécifier les deux.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[FormatString, élément de WideItem pour WideControl (format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie un modèle de format qui définit la façon dont la valeur de la propriété ou du script est affichée dans la vue.|
+|[FormatString, élément pour WideItem pour WideControl (Format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie un modèle de format qui définit la façon dont la valeur de la propriété ou du script est affichée dans la vue.|
 |[PropertyName, élément de WideItem (format)](./propertyname-element-for-wideitem-for-widecontrol-format.md)|Spécifie la propriété de l’objet dont la valeur est affichée dans la vue étendue.|
 |[Élément ScriptBlock pour WideItem (format)](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|Spécifie le script dont la valeur est affichée dans la vue étendue.|
 
@@ -53,13 +46,13 @@ Aucune.
 |-------------|-----------------|
 |[Élément WideEntry (format)](./wideentry-element-for-widecontrol-format.md)|Fournit une définition de la vue étendue.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue étendue, consultez [vue étendue](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `WideEntry` qui définit un élément `WideItem` unique. L’élément `WideItem` définit la propriété ou le script dont la valeur est affichée dans la vue.
+L’exemple suivant montre un `WideEntry` élément qui définit un `WideItem` élément unique. L' `WideItem` élément définit la propriété ou le script dont la valeur est affichée dans la vue.
 
 ```xml
 <WideEntry>
@@ -73,7 +66,7 @@ Pour obtenir un exemple complet d’une vue étendue, consultez [vue étendue (d
 
 ## <a name="see-also"></a>Voir aussi
 
-[FormatString, élément de WideItem pour WideControl (format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)
+[FormatString, élément pour WideItem pour WideControl (Format)](./formatstring-element-for-wideitem-for-widecontrol-format.md)
 
 [PropertyName, élément de WideItem (format)](./propertyname-element-for-wideitem-for-widecontrol-format.md)
 

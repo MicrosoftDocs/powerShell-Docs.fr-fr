@@ -1,25 +1,18 @@
 ---
 title: Élément ItemSelectionCondition pour ExpressionBinding pour les contrôles de configuration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd3ddc33-b21c-4464-b3f2-a78dbe0062a8
-caps.latest.revision: 8
-ms.openlocfilehash: 4865d716ebe0460b662253a3019e93e82428b882
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3bfd3efe916b4d88c024de8f959482cab515f777
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362918"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781220"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format"></a>ItemSelectionCondition, élément pour ExpressionBinding pour Controls pour Configuration (Format)
 
 Définit la condition qui doit exister pour que ce contrôle soit utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration ( Format) élément CustomEntry pour CustomControl pour les contrôles de configuration (format) élément CustomItem pour CustomEntry pour les contrôles pour la configuration ExpressionBinding, élément pour CustomItem pour les contrôles de configuration (format) Élément ItemSelectionCondition pour ExpressionBinding pour les contrôles de configuration (format)
+Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration (format) élément CustomEntry pour CustomControl pour les contrôles de configuration (format), élément CustomItem pour CustomEntry pour les contrôles de l’élément de configuration ExpressionBinding pour CustomItem pour les contrôles de configuration (format) ItemSelectionCondition élément pour ExpressionBinding pour les contrôles de configuration (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,13 +23,13 @@ Définit la condition qui doit exister pour que ce contrôle soit utilisé. Cet 
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ItemSelectionCondition`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ItemSelectionCondition` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -49,9 +42,9 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Définit les données affichées par le contrôle.|
+|[ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez spécifier un nom de propriété ou un script pour cette condition, mais vous ne pouvez pas spécifier les deux.
 
@@ -61,6 +54,6 @@ Vous pouvez spécifier un nom de propriété ou un script pour cette condition, 
 
 [Élément ScriptBlock pour ItemSelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
 
-[Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

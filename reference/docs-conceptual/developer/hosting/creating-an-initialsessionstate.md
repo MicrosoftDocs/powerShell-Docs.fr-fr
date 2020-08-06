@@ -1,25 +1,18 @@
 ---
 title: Création d’un InitialSessionState | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
-caps.latest.revision: 5
-ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271880"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779724"
 ---
 # <a name="creating-an-initialsessionstate"></a>Création d’un InitialSessionState
 
 Les commandes PowerShell s’exécutent dans une instance d’exécution.
 Pour héberger PowerShell dans votre application, vous devez créer un objet [System. Management. Automation. instances d’exécution. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .
-Chaque instance d’exécution est associée à un objet [System. Management. Automation. instances d’exécution. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+Chaque instance d’exécution est associée à un objet [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 Le InitialSessionState spécifie les caractéristiques de l’instance d’exécution, telles que les commandes, les variables et les modules disponibles pour cette instance d’exécution.
 
 ## <a name="create-a-default-initialsessionstate"></a>Créer un InitialSessionState par défaut

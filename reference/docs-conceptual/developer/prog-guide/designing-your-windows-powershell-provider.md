@@ -1,21 +1,14 @@
 ---
 title: Conception de votre fournisseur Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
-ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
-caps.latest.revision: 10
-ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: dec6c71a2d7bbe5636f96dc140e701213d6f6487
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560047"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778935"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Conception de votre fournisseur Windows PowerShell
 

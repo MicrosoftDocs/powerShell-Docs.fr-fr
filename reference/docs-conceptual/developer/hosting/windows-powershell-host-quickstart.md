@@ -1,19 +1,12 @@
 ---
 title: Démarrage rapide de l’hôte Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
-caps.latest.revision: 9
-ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fea6bd5ae49ecf552c583271ee9d869b1ccebae8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360818"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779401"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Hôte Windows PowerShell - Démarrage rapide
 
@@ -58,7 +51,7 @@ Si vous ne souhaitez pas diriger le résultat d’une commande précédente vers
 
 L’exemple précédent exécute une seule commande sans aucun paramètre.
 Vous pouvez ajouter des paramètres à la commande à l’aide de la méthode [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) .
-Par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` s’exécutant sur l’ordinateur.
+Par exemple, le code suivant obtient une liste de tous les processus nommés `PowerShell` en cours d’exécution sur l’ordinateur.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +84,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 Vous pouvez simuler le traitement par lot à l’aide de la méthode [System. Management. Automation. PowerShell. AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) , qui ajoute une instruction supplémentaire à la fin du pipeline.
-Le code suivant obtient une liste des processus en cours d’exécution portant le nom `PowerShell`, puis obtient la liste des services en cours d’exécution.
+Le code suivant obtient une liste des processus en cours d’exécution portant le nom `PowerShell` , puis obtient la liste des services en cours d’exécution.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +97,15 @@ ps.Invoke();
 
 Vous pouvez exécuter un script existant en appelant la méthode [System. Management. Automation. PowerShell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) .
 L’exemple suivant ajoute un script au pipeline et l’exécute.
-Cet exemple suppose qu’il existe déjà un script nommé `MyScript.ps1` dans un dossier nommé `D:\PSScripts`.
+Cet exemple suppose qu’il existe déjà un script nommé `MyScript.ps1` dans un dossier nommé `D:\PSScripts` .
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-Il existe également une version de la méthode AddScript qui prend un paramètre booléen nommé `useLocalScope`.
-Si ce paramètre a la valeur `true`, le script est exécuté dans l’étendue locale.
+Il existe également une version de la méthode AddScript qui accepte un paramètre booléen nommé `useLocalScope` .
+Si ce paramètre a la valeur `true` , le script est exécuté dans l’étendue locale.
 Le code suivant exécute le script dans l’étendue locale.
 
 ```csharp
@@ -125,11 +118,11 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 Tandis que l’instance d’exécution par défaut utilisée dans les exemples précédents charge toutes les commandes Windows PowerShell de base, vous pouvez créer une instance d’exécution personnalisée qui charge uniquement un sous-ensemble spécifié de toutes les commandes.
 Vous pouvez le faire pour améliorer les performances (le chargement d’un plus grand nombre de commandes est un gain de performances) ou pour limiter la capacité de l’utilisateur à effectuer des opérations.
 Une instance d’exécution qui expose uniquement un nombre limité de commandes est appelée une instance d’exécution limitée.
-Pour créer une instance d’exécution avec restriction, vous utilisez les classes [System. Management. Automation. instances d’exécution. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) et [System. Management. Automation. instances d’exécution. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+Pour créer une instance d’exécution avec restriction, vous utilisez les classes [System. Management. Automation. instances d’exécution. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) et [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 ### <a name="creating-an-initialsessionstate-object"></a>Création d’un objet InitialSessionState
 
-Pour créer une instance d’exécution personnalisée, vous devez d’abord créer un objet [System. Management. Automation. instances d’exécution. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+Pour créer une instance d’exécution personnalisée, vous devez d’abord créer un objet [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 Dans l’exemple suivant, nous utilisons [System. Management. Automation. instances d’exécution. RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) pour créer une instance d’exécution après la création d’un objet InitialSessionState par défaut.
 
 ```csharp
@@ -144,14 +137,14 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>Restriction de l’instance d’exécution
 
-Dans l’exemple précédent, nous avons créé un objet [System. Management. Automation. instances d’exécution. InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) par défaut qui charge l’ensemble du noyau Windows PowerShell intégré.
-Nous aurions pu également appeler la méthode [System. Management. Automation. instances d’exécution. InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) pour créer un objet InitialSessionState qui chargera uniquement les commandes dans le composant logiciel enfichable Microsoft. PowerShell. Core.
-Pour créer une instance d’exécution plus restreinte, vous devez créer un objet InitialSessionState vide en appelant la méthode [System. Management. Automation. instances d’exécution. InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) , puis ajouter des commandes au InitialSessionState.
+Dans l’exemple précédent, nous avons créé un objet [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) par défaut qui charge l’ensemble du noyau Windows PowerShell intégré.
+Nous aurions pu également appeler la méthode [System.Management.Automation.Runspaces.InitialSessionState. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) pour créer un objet InitialSessionState qui chargera uniquement les commandes dans le composant logiciel enfichable Microsoft. PowerShell. Core.
+Pour créer une instance d’exécution plus restreinte, vous devez créer un objet InitialSessionState vide en appelant la méthode [System.Management.Automation.Runspaces.InitialSessionState. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) , puis ajouter des commandes au InitialSessionState.
 
 L’utilisation d’une instance d’exécution qui charge uniquement les commandes que vous spécifiez fournit des performances considérablement améliorées.
 
 Vous utilisez les méthodes de la classe [System. Management. Automation. instances d’exécution. SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) pour définir des applets de commande pour l’état de session initial.
-L’exemple suivant crée un état de session initial vide, puis définit et ajoute les commandes `Get-Command` et `Import-Module` à l’état de session initial.
+L’exemple suivant crée un état de session initial vide, puis définit et ajoute `Get-Command` les `Import-Module` commandes et à l’état de session initial.
 Nous créons ensuite une instance d’exécution restreinte par cet état de session initial, puis nous exécutons les commandes dans cette instance d’exécution.
 
 Créez l’état de session initial.

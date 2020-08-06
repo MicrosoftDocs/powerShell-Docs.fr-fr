@@ -1,19 +1,12 @@
 ---
 title: Chargement et exportation de données de mise en forme | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
-caps.latest.revision: 6
-ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365118"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781118"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Chargement et exportation de données de mise en forme
 
@@ -31,11 +24,11 @@ La mise en forme des fichiers peut être chargée dans la session active à l’
 
 - Si vous appelez des commandes par programme, vous pouvez ajouter une entrée de fichier de mise en forme à l’état de session initial de l’instance d’exécution dans laquelle les commandes sont exécutées. Pour plus d’informations sur le type .NET utilisé pour ajouter le fichier de mise en forme, consultez [System. Management. Automation. instances d’exécution. Sessionstateformatentry ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) Class.
 
-Lorsqu’un fichier de mise en forme est chargé, il est ajouté à une liste interne que Windows PowerShell utilise pour déterminer la vue à utiliser lors de l’affichage des objets sur la ligne de commande. Vous pouvez ajouter votre fichier de mise en forme au début de la liste, ou vous pouvez l’ajouter à la fin de la liste. Il est important de savoir où votre fichier de mise en forme est ajouté à cette liste si vous chargez un fichier de mise en forme qui définit une vue pour un objet qui a une vue existante définie, par exemple lorsque vous souhaitez modifier la façon dont un objet retourné par une applet de commande Windows PowerShell Core est  présentés. Si vous chargez un fichier de mise en forme qui définit la seule vue d’un objet, vous pouvez utiliser l’une des méthodes décrites précédemment.  Si vous chargez un fichier de mise en forme qui définit une autre vue pour un objet, vous devez utiliser l’applet de commande [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) et ajouter votre fichier au début de la liste.
+Lorsqu’un fichier de mise en forme est chargé, il est ajouté à une liste interne que Windows PowerShell utilise pour déterminer la vue à utiliser lors de l’affichage des objets sur la ligne de commande. Vous pouvez ajouter votre fichier de mise en forme au début de la liste, ou vous pouvez l’ajouter à la fin de la liste. Il est important de savoir où votre fichier de mise en forme est ajouté à cette liste si vous chargez un fichier de mise en forme qui définit une vue pour un objet qui a une vue existante définie, par exemple lorsque vous souhaitez modifier le mode d’affichage d’un objet retourné par une applet de commande Windows PowerShell Core. Si vous chargez un fichier de mise en forme qui définit la seule vue d’un objet, vous pouvez utiliser l’une des méthodes décrites précédemment.  Si vous chargez un fichier de mise en forme qui définit une autre vue pour un objet, vous devez utiliser l’applet de commande [Update-FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData) et ajouter votre fichier au début de la liste.
 
 ## <a name="storing-your-formatting-file"></a>Stockage de votre fichier de mise en forme
 
-L’emplacement de stockage des fichiers de mise en forme sur le disque n’est pas obligatoire. Toutefois, il est fortement recommandé de les stocker dans le dossier suivant : `user\documents\windowspowershell\`
+L’emplacement de stockage des fichiers de mise en forme sur le disque n’est pas obligatoire. Toutefois, il est fortement recommandé de les stocker dans le dossier suivant :`user\documents\windowspowershell\`
 
 #### <a name="loading-a-format-file-using-import-formatdata"></a>Chargement d’un fichier de format à l’aide de Import-FormatData
 

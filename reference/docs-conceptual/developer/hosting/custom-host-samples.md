@@ -1,19 +1,12 @@
 ---
 title: Exemples d’hôtes personnalisés | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
-caps.latest.revision: 11
-ms.openlocfilehash: 1e58b74cf1c37c70ebfb0f4970cfbf8a8263ec5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a10d3da6d8bf93986a3f5b029fdae3afb23a903
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367508"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779520"
 ---
 # <a name="custom-host-samples"></a>Exemples d’hôtes personnalisés
 
@@ -23,7 +16,7 @@ Cette section comprend un exemple de code pour l’écriture d’un hôte person
 
  [Exemple host01](./host01-sample.md) Cet exemple montre comment implémenter une application hôte qui utilise un hôte personnalisé de base.
 
- [Exemple Host02](./host02-sample.md) Cet exemple montre comment écrire une application hôte qui utilise le runtime Windows PowerShell avec une implémentation d’hôte personnalisée. L’application hôte définit la culture de l’hôte sur l’allemand, exécute l’applet de commande [obtenir-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et affiche les résultats comme vous le feriez à l’aide de pwrsh. exe, puis imprime les données actuelles et l’heure en allemand.
+ [Exemple Host02](./host02-sample.md) Cet exemple montre comment écrire une application hôte qui utilise le runtime Windows PowerShell avec une implémentation d’hôte personnalisée. L’application hôte définit la culture de l’hôte en allemand, exécute l’applet de commande [obtenir-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) et affiche les résultats comme vous pouvez les voir à l’aide de pwrsh.exe, puis imprime les données actuelles et l’heure en allemand.
 
  [Exemple Host03](./host03-sample.md) Cet exemple montre comment créer une application hôte basée sur une console interactive qui lit les commandes à partir de la ligne de commande, exécute les commandes, puis affiche les résultats dans la console.
 

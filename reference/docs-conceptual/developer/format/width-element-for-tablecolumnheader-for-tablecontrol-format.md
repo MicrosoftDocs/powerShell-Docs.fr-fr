@@ -1,25 +1,18 @@
 ---
 title: Width, élément de TableColumnHeader pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
-caps.latest.revision: 18
-ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9540d3d351041ad7cb98a21bb360ebea7eca117
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367868"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779911"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>Width, élément pour TableColumnHeader pour TableControl (Format)
 
 Définit la largeur (en caractères) d’une colonne.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément table ((format) élément TableHeaders pour table ((format) TableColumnHeader élément TableHeaders pour table ((format) Width, élément de TableColumnHeader pour table ((format)
+Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément table ((format) élément TableHeaders pour table ((format) TableColumnHeader élément TableHeaders pour table ((format) élément Width pour TableColumnHeader (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +20,17 @@ Définit la largeur (en caractères) d’une colonne.
 <Width>NumberOfCharacters</Width>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Width` utilisé lors de la définition des en-têtes de colonnes.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Width` élément utilisé lors de la définition des en-têtes de colonne.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,17 +38,17 @@ Aucune.
 |-------------|-----------------|
 |[Élément TableColumnHeader pour TableHeaders pour table ((format)](./tablecolumnheader-element-format.md)|Définit une étiquette, une largeur et un alignement des données pour une colonne de la table.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Dans la mesure du possible, spécifiez une largeur (en caractères) supérieure à la longueur des valeurs de propriété affichées.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `TableColumnHeader` dont la largeur est de 16 caractères.
+L’exemple suivant montre un `TableColumnHeader` élément dont la largeur est de 16 caractères.
 
 ```xml
 <TableColumnHeader>

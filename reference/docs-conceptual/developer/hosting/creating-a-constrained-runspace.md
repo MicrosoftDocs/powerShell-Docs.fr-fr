@@ -1,23 +1,16 @@
 ---
 title: Création d’une instance d’exécution restreinte | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
-caps.latest.revision: 5
-ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367648"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779809"
 ---
 # <a name="creating-a-constrained-runspace"></a>Création d’une instance d’exécution contrainte
 
-Pour des raisons de performances ou de sécurité, vous souhaiterez peut-être restreindre les commandes Windows PowerShell disponibles pour votre application hôte. Pour ce faire, vous devez créer un [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) vide en appelant la méthode [System. Management. Automation. instances d’exécution. Initialsessionstate. Create *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) , puis ajouter uniquement les commandes que vous souhaitez utiliser.
+Pour des raisons de performances ou de sécurité, vous souhaiterez peut-être restreindre les commandes Windows PowerShell disponibles pour votre application hôte. Pour ce faire, vous devez créer un [System.Management.Automation.Runspaces.Inivide tialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) en appelant l' [System.Management.Automation.Runspaces.Initialsessionstate. Créez *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) , puis ajoutez uniquement les commandes que vous souhaitez utiliser.
 
  L’utilisation d’une instance d’exécution qui charge uniquement les commandes que vous spécifiez fournit des performances considérablement améliorées.
 

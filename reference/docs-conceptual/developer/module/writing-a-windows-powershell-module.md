@@ -1,25 +1,18 @@
 ---
 title: Écriture d’un module Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
-caps.latest.revision: 17
-ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d2398a8111a9832af2465d045be0bdefc3cf927a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360618"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779146"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Écriture d’un module Windows PowerShell
 
 Ce document est destiné aux administrateurs, aux développeurs de scripts et aux développeurs d’applets de commande qui doivent empaqueter et distribuer leurs applets de commande Windows PowerShell. À l’aide des modules Windows PowerShell, vous pouvez empaqueter et distribuer vos solutions Windows PowerShell sans utiliser de langage compilé.
 
-Les modules Windows PowerShell vous permettent de partitionner, d’organiser et d’abstraire votre code Windows PowerShell en unités autonomes réutilisables. Ces unités réutilisables vous permettent de partager facilement vos modules directement avec d’autres. Si vous êtes développeur de script, vous pouvez également reconditionner des modules tiers pour créer des applications basées sur des scripts personnalisés. Les modules, similaires aux modules dans d’autres langages de script tels que Perl et Python, permettent des solutions de script prêtes pour la production qui utilisent des composants redistribuables réutilisables, avec l’avantage supplémentaire de vous permettre de reconditionner et d’abstraire plusieurs composants dans créer des solutions personnalisées.
+Les modules Windows PowerShell vous permettent de partitionner, d’organiser et d’abstraire votre code Windows PowerShell en unités autonomes réutilisables. Ces unités réutilisables vous permettent de partager facilement vos modules directement avec d’autres. Si vous êtes développeur de script, vous pouvez également reconditionner des modules tiers pour créer des applications basées sur des scripts personnalisés. Les modules, similaires aux modules dans d’autres langages de script tels que Perl et Python, permettent des solutions de script prêtes pour la production qui utilisent des composants redistribuables réutilisables, avec l’avantage supplémentaire de vous permettre de reconditionner et d’abstraire plusieurs composants pour créer des solutions personnalisées.
 
 Au niveau le plus basique, Windows PowerShell traite tout code de script Windows PowerShell valide enregistré dans un fichier. psm1 en tant que module. PowerShell traitera également automatiquement tout assembly d’applet de commande binaire comme un module. Toutefois, vous pouvez également utiliser un module (ou plus spécifiquement, un manifeste de module) pour regrouper une solution entière. Les scénarios suivants décrivent les utilisations typiques des modules Windows PowerShell.
 
@@ -37,15 +30,15 @@ Les développeurs d’applets de commande et fournisseurs peuvent utiliser des m
 
 ## <a name="see-also"></a>Voir aussi
 
-[Fonctionnement d’un module Windows PowerShell](./understanding-a-windows-powershell-module.md)
+[Présentation d’un module Windows PowerShell](./understanding-a-windows-powershell-module.md)
 
-[Comment écrire un module de script PowerShell](./how-to-write-a-powershell-script-module.md)
+[Guide pratique pour écrire un module de script PowerShell](./how-to-write-a-powershell-script-module.md)
 
-[Comment écrire un module binaire PowerShell](./how-to-write-a-powershell-binary-module.md)
+[Guide pratique pour écrire un module binaire PowerShell](./how-to-write-a-powershell-binary-module.md)
 
-[Comment écrire un manifeste de module PowerShell](how-to-write-a-powershell-module-manifest.md)
+[Guide pratique pour écrire un manifeste de module PowerShell](how-to-write-a-powershell-module-manifest.md)
 
-[Modification du chemin d’installation de PSModulePath](./modifying-the-psmodulepath-installation-path.md)
+[Modification du chemin d’Installation de PSModulePath](./modifying-the-psmodulepath-installation-path.md)
 
 [Importation d’un module PowerShell](./importing-a-powershell-module.md)
 

@@ -1,19 +1,12 @@
 ---
 title: Élément TypeName pour ViewSelectedBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
-caps.latest.revision: 12
-ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9a391565c3e66041dd9a340455dccfce9ce929b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361438"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780030"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>TypeName, élément pour ViewSelectedBy (Format)
 
@@ -27,29 +20,29 @@ Spécifie un objet .NET qui est affiché par la vue.
 <TypeName>FullyQualifiedTypeName</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `TypeName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `TypeName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ViewSelectedBy (format)](./viewselectedby-element-format.md)|Définit les objets .NET affichés par la vue.|
+|[ViewSelectedBy, élément (Format)](./viewselectedby-element-format.md)|Définit les objets .NET affichés par la vue.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
-Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo`.
+Spécifiez le nom qualifié complet du type .NET, par exemple `System.IO.DirectoryInfo` .
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur l’utilisation de cet élément dans différents affichages, consultez [création d’un affichage de table](./creating-a-table-view.md), [création d’un affichage de liste](./creating-a-list-view.md), [création d’un affichage étendu](./creating-a-wide-view.md)et [composants de vue personnalisés](./creating-custom-controls.md).
 
@@ -69,14 +62,14 @@ L’exemple suivant montre comment spécifier l’objet [System. ServiceProcess.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Création de contrôles personnalisés](./creating-custom-controls.md)
 
-[Élément ViewSelectedBy (format)](./viewselectedby-element-format.md)
+[ViewSelectedBy, élément (Format)](./viewselectedby-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

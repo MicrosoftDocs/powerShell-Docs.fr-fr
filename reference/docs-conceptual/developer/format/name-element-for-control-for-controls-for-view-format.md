@@ -1,19 +1,12 @@
 ---
 title: Élément Name pour le contrôle des contrôles pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
-caps.latest.revision: 7
-ms.openlocfilehash: 7e24aa60f7abae5768707d2527826c452b709002
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 109f3a40606dbe82322decf0c69d2367c75175f6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365098"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781084"
 ---
 # <a name="name-element-for-control-for-controls-for-view-format"></a>Name, élément pour Control pour Controls pour View (Format)
 
@@ -27,17 +20,17 @@ Spécifie le nom du contrôle.
 <Name>ControlName</Name>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Name`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Name` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,11 +38,11 @@ Aucune.
 |-------------|-----------------|
 |[Control, élément de Controls pour View (format)](./control-element-for-controls-for-view-format.md)|Définit un contrôle qui peut être utilisé par la vue et le nom utilisé pour référencer le contrôle.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom utilisé pour référencer le contrôle.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Le nom spécifié ici peut être utilisé dans les éléments suivants pour référencer ce contrôle.
 
@@ -59,9 +52,9 @@ Le nom spécifié ici peut être utilisé dans les éléments suivants pour réf
 
 ## <a name="see-also"></a>Voir aussi
 
-[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)
+[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)
 
-[Élément ExpressionBinding pour CustomItem pour les contrôles pour View (format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[ExpressionBinding, élément pour CustomItem pour Controls pour View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
 [Control, élément de Controls pour View (format)](./control-element-for-controls-for-view-format.md)
 

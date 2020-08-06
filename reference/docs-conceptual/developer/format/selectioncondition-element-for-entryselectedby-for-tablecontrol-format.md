@@ -1,25 +1,18 @@
 ---
 title: Élément SelectionCondition pour EntrySelectedBy pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 912f3e63-e4d5-41ce-8710-6dfd8c885dc2
-caps.latest.revision: 12
-ms.openlocfilehash: 2faca6021dc26878869bdd2d35bc4ffc64d0fe7b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4a829f9daef22c4b3fd6b21dfb3af2f8539bdeb3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368388"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780285"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>SelectionCondition, élément pour EntrySelectedBy pour TableControl (Format)
 
 Définit la condition qui doit exister pour être utilisée pour cette définition de la vue de table. Il n’existe aucune limite au nombre de conditions de sélection qui peuvent être spécifiées pour une définition de table.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry élément (format) EntrySelectedBy, élément pour TableRowEntry (format) Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry élément (format) EntrySelectedBy élément pour TableRowEntry (format) SelectionCondition élément pour EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,19 +25,19 @@ Définit la condition qui doit exister pour être utilisée pour cette définiti
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
 Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément SelectionCondition.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
+|[PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
 |[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
 |[Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
 |[Élément TypeName pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
@@ -55,7 +48,7 @@ Aucune.
 |-------------|-----------------|
 |[Élément EntrySelectedBy pour TableRowEntry (format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Définit les types .NET qui utilisent cette entrée de table ou la condition qui doit exister pour que cette entrée soit utilisée.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Au moins un nom de type, un jeu de sélection ou une condition de sélection doivent être définis pour chaque entrée de liste.
 
@@ -77,7 +70,7 @@ Pour plus d’informations sur les composants d’une vue de table, consultez [c
 
 [Élément EntrySelectedBy (format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)
+[PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)
 
 [Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 

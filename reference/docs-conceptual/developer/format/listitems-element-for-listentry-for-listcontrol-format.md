@@ -1,19 +1,12 @@
 ---
 title: Élément ListItems pour ListEntry pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
-caps.latest.revision: 9
-ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03b89a3df2ab0498533d0c00f303f643e0039b25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362738"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781135"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListItems, élément pour ListEntry pour ListControl (Format)
 
@@ -29,13 +22,13 @@ Définit les propriétés et les scripts dont les valeurs sont affichées dans l
 </ListItems>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ListItems`. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés. L’ordre des éléments enfants définit l’ordre dans lequel les valeurs sont affichées en mode liste.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ListItems` élément. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés. L’ordre des éléments enfants définit l’ordre dans lequel les valeurs sont affichées en mode liste.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -47,9 +40,9 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ListEntry pour ListControl (format)](./listentry-element-for-listcontrol-format.md)|Fournit une définition de la vue liste.|
+|[ListEntry, élément pour ListControl (Format)](./listentry-element-for-listcontrol-format.md)|Fournit une définition de la vue liste.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur ce type d’affichage, consultez [création d’un affichage de liste](./creating-a-list-view.md).
 
@@ -75,10 +68,10 @@ Cet exemple montre les éléments XML qui définissent trois lignes de la vue li
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément ListEntry pour ListControl (format)](./listentry-element-for-listcontrol-format.md)
+[ListEntry, élément pour ListControl (Format)](./listentry-element-for-listcontrol-format.md)
 
 [Élément ListItem pour ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

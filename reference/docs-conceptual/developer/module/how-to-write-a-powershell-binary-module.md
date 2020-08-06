@@ -1,19 +1,12 @@
 ---
 title: Comment écrire un module binaire PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
-caps.latest.revision: 15
-ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 92395bd6b8be1bd3741888eb3716d62f0253e213
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367118"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779265"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Guide pratique pour écrire un module binaire PowerShell
 
@@ -23,7 +16,7 @@ La procédure suivante décrit comment créer et installer un module binaire Pow
 
 #### <a name="how-to-create-and-install-a-powershell-binary-module"></a>Comment créer et installer un module binaire PowerShell
 
-1. Créez une solution PowerShell binaire (telle qu’une applet de commande C#écrite dans), avec les fonctionnalités dont vous avez besoin et assurez-vous qu’elle s’exécute correctement.
+1. Créez une solution PowerShell binaire (telle qu’une applet de commande écrite en C#), avec les fonctionnalités dont vous avez besoin et assurez-vous qu’elle s’exécute correctement.
 
    Du point de vue du code, le cœur d’un module binaire est simplement un assembly d’applet de commande. En fait, PowerShell traitera un assembly d’applet de commande unique comme un module, en termes de chargement et de déchargement, sans effort supplémentaire de la part du développeur. Pour plus d’informations sur l’écriture d’une applet de commande, consultez [écriture d’une applet de commande Windows PowerShell](../cmdlet/writing-a-windows-powershell-cmdlet.md).
 
@@ -34,7 +27,7 @@ La procédure suivante décrit comment créer et installer un module binaire Pow
    Par conséquent, un manifeste de module est utile principalement pour la combinaison de plusieurs fichiers dans un package unique, ou pour le contrôle explicite de la publication pour un assembly donné.
    Pour plus d’informations, consultez [Comment écrire un manifeste de module PowerShell](how-to-write-a-powershell-module-manifest.md).
 
-   Le code suivant est un bloc de C# code extrêmement simple qui contient trois applets de commande dans le même fichier qui peuvent être utilisées en tant que module.
+   Le code suivant est un bloc de code C# extrêmement simple qui contient trois applets de commande dans le même fichier qui peuvent être utilisées en tant que module.
 
    ```csharp
    using System.Management.Automation;           // Windows PowerShell namespace.
@@ -73,9 +66,9 @@ La procédure suivante décrit comment créer et installer un module binaire Pow
 
 3. Empaquetez votre solution et enregistrez le package dans un chemin d’accès au module PowerShell.
 
-   La variable d’environnement global `PSModulePath` décrit les chemins d’accès par défaut que PowerShell utilisera pour localiser votre module. Par exemple, un chemin d’accès commun pour enregistrer un module sur un système est `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Si vous n’utilisez pas les chemins d’accès par défaut, vous devrez indiquer explicitement l’emplacement de votre module lors de l’installation. Veillez à créer un dossier pour enregistrer votre module dans, car vous aurez peut-être besoin du dossier pour stocker plusieurs assemblys et fichiers pour votre solution.
+   La `PSModulePath` variable d’environnement globale décrit les chemins d’accès par défaut que PowerShell utilisera pour localiser votre module. Par exemple, un chemin d’accès commun pour enregistrer un module sur un système est `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>` . Si vous n’utilisez pas les chemins d’accès par défaut, vous devrez indiquer explicitement l’emplacement de votre module lors de l’installation. Veillez à créer un dossier pour enregistrer votre module dans, car vous aurez peut-être besoin du dossier pour stocker plusieurs assemblys et fichiers pour votre solution.
 
-   Notez que techniquement, vous n’avez pas besoin d’installer votre module n’importe où sur le `PSModulePath` : il s’agit simplement des emplacements par défaut que PowerShell recherchera pour votre module. Toutefois, il est recommandé de le faire, sauf si vous avez une bonne raison de stocker votre module ailleurs. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md) et [modification du chemin d’installation du module PowerShell](./modifying-the-psmodulepath-installation-path.md).
+   Notez que techniquement, vous n’avez pas besoin d’installer votre module à l’emplacement de votre choix `PSModulePath` : il s’agit simplement des emplacements par défaut que PowerShell recherchera pour votre module. Toutefois, il est recommandé de le faire, sauf si vous avez une bonne raison de stocker votre module ailleurs. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md) et [modification du chemin d’installation du module PowerShell](./modifying-the-psmodulepath-installation-path.md).
 
 4. Importez votre module dans PowerShell avec un appel à [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module).
 

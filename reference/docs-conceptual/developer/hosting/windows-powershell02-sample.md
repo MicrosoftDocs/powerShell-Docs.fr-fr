@@ -1,19 +1,12 @@
 ---
 title: Exemple Windows PowerShell02 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
-caps.latest.revision: 9
-ms.openlocfilehash: 4d697e73ff4ab4cc4b88593f814d589f89005663
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a82366a88addb08e186eede79e621d90d915c50f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978642"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779384"
 ---
 # <a name="windows-powershell02-sample"></a>Exemple Windows PowerShell02
 
@@ -25,7 +18,7 @@ Cet exemple montre comment exécuter des commandes de manière asynchrone à l�
 
 ## <a name="demonstrates"></a>Illustre le
 
-Cet exemple illustre les fonctions suivantes :
+Cet exemple indique :
 
 - La création d’un objet RunspacePool avec un nombre minimal et maximal de instances d’exécution autorisé à être ouvert en même temps.
 - Création d’une liste de commandes.

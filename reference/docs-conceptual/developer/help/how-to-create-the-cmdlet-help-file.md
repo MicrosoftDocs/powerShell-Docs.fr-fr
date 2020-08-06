@@ -1,19 +1,12 @@
 ---
 title: Comment créer le fichier d’aide de l’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
-caps.latest.revision: 17
-ms.openlocfilehash: 652e095bcce606e47cb97658f79eaca34033b239
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 7ab0404e5d0122a64483883e6e2d4760dfa5038d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953299"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779826"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Guide pratique pour créer le fichier d’aide d’une applet de commande
 

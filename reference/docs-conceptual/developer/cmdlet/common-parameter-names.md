@@ -1,26 +1,19 @@
 ---
 title: Noms de paramètres communs | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
-ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365738"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782223"
 ---
 # <a name="common-parameter-names"></a>Noms de paramètres courants
 
 Les paramètres décrits dans cette rubrique sont appelés *paramètres communs*. Ils sont ajoutés aux applets de commande par le runtime Windows PowerShell et ne peuvent pas être déclarés par l’applet de commande.
 
 > [!NOTE]
-> Ces paramètres sont également ajoutés aux applets de commande du fournisseur et aux fonctions qui sont décorées avec l’attribut `CmdletBinding`.
+> Ces paramètres sont également ajoutés aux applets de commande du fournisseur et aux fonctions qui sont décorées avec l' `CmdletBinding` attribut.
 
 ## <a name="general-common-parameters"></a>Paramètres communs généraux
 

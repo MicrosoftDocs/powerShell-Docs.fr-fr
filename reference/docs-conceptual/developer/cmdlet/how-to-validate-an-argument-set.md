@@ -1,21 +1,14 @@
 ---
 title: Comment valider un jeu d’arguments | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateSet attribute, example
-ms.assetid: 55f0f664-d2ad-4501-a3dc-9f7a27c8ab11
-caps.latest.revision: 8
-ms.openlocfilehash: 6d8b189ed6311efd5a7348ab1e58934e9bff12a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365508"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782002"
 ---
 # <a name="how-to-validate-an-argument-set"></a>Guide pratique pour valider un jeu d’arguments
 
@@ -26,7 +19,7 @@ Cet exemple montre comment spécifier une règle de validation que le runtime Wi
 
 ## <a name="to-validate-an-argument-set"></a>Pour valider un jeu d’arguments
 
-- Ajoutez l’attribut ValidateSet comme indiqué dans le code suivant. Cet exemple spécifie un ensemble de trois valeurs possibles pour le paramètre `UserName`.
+- Ajoutez l’attribut ValidateSet comme indiqué dans le code suivant. Cet exemple spécifie un ensemble de trois valeurs possibles pour le `UserName` paramètre.
 
     ```csharp
     [ValidateSet("Steve", "Mary", "Carl", IgnoreCase = true)]
@@ -46,6 +39,6 @@ Pour plus d’informations sur la façon de déclarer cet attribut, consultez [d
 
 [System. Management. Automation. Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
-[Déclaration d’attribut ValidateSet](./validateset-attribute-declaration.md)
+[Déclaration de l’attribut ValidateSet](./validateset-attribute-declaration.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

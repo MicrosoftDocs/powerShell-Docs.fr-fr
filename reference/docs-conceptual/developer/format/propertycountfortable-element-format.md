@@ -1,28 +1,21 @@
 ---
 title: Élément PropertyCountForTable (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b2faa062-a959-49ff-932b-a64279f8ff2e
-caps.latest.revision: 4
-ms.openlocfilehash: 6055b9ffaa3e5a71a0c2fa0d15746d63db0c6d81
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71e1ee9d3de6d06f512181ee50b69a377130bbe2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362578"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780902"
 ---
 # <a name="propertycountfortable-element-format"></a>PropertyCountForTable, élément (Format)
 
 Insérez l'introduction ici.
 
-## <a name="section-heading"></a>En-tête de la section
+## <a name="section-heading"></a>Titre de section
 
 Insérez le corps de la section ici.
 
-### <a name="subsection-heading"></a>En-tête de la sous-section
+### <a name="subsection-heading"></a>Titre de la sous-section
 
 Insérez le corps de la sous-section ici.
