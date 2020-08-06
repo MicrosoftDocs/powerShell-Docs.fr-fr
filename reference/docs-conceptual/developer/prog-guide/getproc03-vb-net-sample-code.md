@@ -1,24 +1,17 @@
 ---
 title: Exemple de code GetProc03 (VB.NET) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ff94c452-d4ec-4492-ac20-61ad52f8ae8c
-caps.latest.revision: 7
-ms.openlocfilehash: a0a88ca517347a94fc81534caace6efa0f13fdd7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ad8a7b13d30b77acdaa2f5365b9b2da02aaeedce
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360308"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771921"
 ---
-# <a name="getproc03-vbnet-sample-code"></a><span data-ttu-id="a7b2d-102">Exemple de code GetProc03 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="a7b2d-102">GetProc03 (VB.NET) Sample Code</span></span>
+# <a name="getproc03-vbnet-sample-code"></a><span data-ttu-id="d1752-102">Exemple de code GetProc03 (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="d1752-102">GetProc03 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="a7b2d-103">Le code suivant illustre l’implémentation d’une applet de commande `Get-Process` qui peut accepter une entrée en pipeline.</span><span class="sxs-lookup"><span data-stu-id="a7b2d-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="a7b2d-104">Cette implémentation définit un paramètre de `Name` qui accepte l’entrée de pipeline, récupère des informations de processus à partir de l’ordinateur local en fonction des noms fournis, puis utilise la méthode [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) comme mécanisme de sortie pour envoyer des objets au pipeline.</span><span class="sxs-lookup"><span data-stu-id="a7b2d-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending objects to the pipeline.</span></span>
+<span data-ttu-id="d1752-103">Le code suivant illustre l’implémentation d’une `Get-Process` applet de commande qui peut accepter une entrée en pipeline.</span><span class="sxs-lookup"><span data-stu-id="d1752-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="d1752-104">Cette implémentation définit un `Name` paramètre qui accepte l’entrée de pipeline, récupère des informations de processus à partir de l’ordinateur local en fonction des noms fournis, puis utilise la méthode [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) comme mécanisme de sortie pour envoyer des objets au pipeline.</span><span class="sxs-lookup"><span data-stu-id="d1752-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending objects to the pipeline.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="a7b2d-105">Exemple de code</span><span class="sxs-lookup"><span data-stu-id="a7b2d-105">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="d1752-105">Exemple de code</span><span class="sxs-lookup"><span data-stu-id="d1752-105">Code Sample</span></span>
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#getproc03vbAll](Msh_samplesgetproc03#getproc03vbAll)]  -->
