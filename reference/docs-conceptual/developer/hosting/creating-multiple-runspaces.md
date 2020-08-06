@@ -1,27 +1,20 @@
 ---
 title: Création de plusieurs instances d’exécution | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
-caps.latest.revision: 4
-ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1047492d2b859ae14ddd279e25e5e1dff0013820
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367608"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779623"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="dada5-102">Création de plusieurs instances d’exécution</span><span class="sxs-lookup"><span data-stu-id="dada5-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="70115-102">Création de plusieurs instances d’exécution</span><span class="sxs-lookup"><span data-stu-id="70115-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="dada5-103">Si vous créez un grand nombre de instances d’exécution, vous pouvez envisager de créer un pool d’instances d’exécution.</span><span class="sxs-lookup"><span data-stu-id="dada5-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="dada5-104">L’utilisation d’un objet [System. Management. Automation. instances d’exécution. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) , au lieu de créer un grand nombre de instances d’exécution individuelles avec les mêmes caractéristiques, peut améliorer les performances.</span><span class="sxs-lookup"><span data-stu-id="dada5-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="70115-103">Si vous créez un grand nombre de instances d’exécution, vous pouvez envisager de créer un pool d’instances d’exécution.</span><span class="sxs-lookup"><span data-stu-id="70115-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="70115-104">L’utilisation d’un objet [System. Management. Automation. instances d’exécution. Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) , au lieu de créer un grand nombre de instances d’exécution individuelles avec les mêmes caractéristiques, peut améliorer les performances.</span><span class="sxs-lookup"><span data-stu-id="70115-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="dada5-105">Création et utilisation d’un pool d’instances d’exécution.</span><span class="sxs-lookup"><span data-stu-id="dada5-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="70115-105">Création et utilisation d’un pool d’instances d’exécution.</span><span class="sxs-lookup"><span data-stu-id="70115-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="dada5-106">L’exemple suivant montre comment créer un pool d’instances d’exécution et comment exécuter une commande de façon asynchrone dans une instance d’exécution du pool.</span><span class="sxs-lookup"><span data-stu-id="dada5-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="70115-106">L’exemple suivant montre comment créer un pool d’instances d’exécution et comment exécuter une commande de façon asynchrone dans une instance d’exécution du pool.</span><span class="sxs-lookup"><span data-stu-id="70115-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +72,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="dada5-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="dada5-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="70115-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="70115-107">See Also</span></span>
 
- [<span data-ttu-id="dada5-108">Création d’un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="dada5-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="70115-108">Création d’un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="70115-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)

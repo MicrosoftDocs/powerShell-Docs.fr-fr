@@ -1,55 +1,48 @@
 ---
 title: Comment importer des applets de commande à l’aide de modules | Microsoft Docs
-ms.custom: ''
 ms.date: 08/28/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
-caps.latest.revision: 8
-ms.openlocfilehash: 840c5bc92d718ec4e54d864dc5e012cd33f83905
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa8d629c14b06e3f9e9d6151cf09aa6b4acce358
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811318"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779367"
 ---
-# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="ea9fc-102">Guide pratique pour importer des applets de commande avec des modules</span><span class="sxs-lookup"><span data-stu-id="ea9fc-102">How to Import Cmdlets Using Modules</span></span>
+# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="cd2a0-102">Guide pratique pour importer des applets de commande avec des modules</span><span class="sxs-lookup"><span data-stu-id="cd2a0-102">How to Import Cmdlets Using Modules</span></span>
 
-<span data-ttu-id="ea9fc-103">Cet article explique comment importer des applets de commande dans une session PowerShell à l’aide d’un module binaire.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-103">This article describes how to import cmdlets to a PowerShell session by using a binary module.</span></span>
+<span data-ttu-id="cd2a0-103">Cet article explique comment importer des applets de commande dans une session PowerShell à l’aide d’un module binaire.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-103">This article describes how to import cmdlets to a PowerShell session by using a binary module.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ea9fc-104">Les membres des modules peuvent inclure des applets de commande, des fournisseurs, des fonctions, des variables, des alias et bien plus encore.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="ea9fc-105">Les composants logiciels enfichables peuvent contenir uniquement des applets de commande et des fournisseurs.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-105">Snap-ins can contain only cmdlets and providers.</span></span>
+> <span data-ttu-id="cd2a0-104">Les membres des modules peuvent inclure des applets de commande, des fournisseurs, des fonctions, des variables, des alias et bien plus encore.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="cd2a0-105">Les composants logiciels enfichables peuvent contenir uniquement des applets de commande et des fournisseurs.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-105">Snap-ins can contain only cmdlets and providers.</span></span>
 
-## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="ea9fc-106">Comment charger des applets de commande à l’aide d’un module</span><span class="sxs-lookup"><span data-stu-id="ea9fc-106">How to load cmdlets using a module</span></span>
+## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="cd2a0-106">Comment charger des applets de commande à l’aide d’un module</span><span class="sxs-lookup"><span data-stu-id="cd2a0-106">How to load cmdlets using a module</span></span>
 
-1. <span data-ttu-id="ea9fc-107">Créez un dossier de module portant le même nom que le fichier d’assembly dans lequel les applets de commande sont implémentées.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="ea9fc-108">Dans cette procédure, le dossier de module est créé dans le `system32` dossier Windows.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-108">In this procedure, the module folder is created in the Windows `system32` folder.</span></span>
+1. <span data-ttu-id="cd2a0-107">Créez un dossier de module portant le même nom que le fichier d’assembly dans lequel les applets de commande sont implémentées.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="cd2a0-108">Dans cette procédure, le dossier de module est créé dans le `system32` dossier Windows.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-108">In this procedure, the module folder is created in the Windows `system32` folder.</span></span>
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. <span data-ttu-id="ea9fc-109">Assurez-vous que la `PSModulePath` variable d’environnement comprend le chemin d’accès à votre nouveau dossier de module.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="ea9fc-110">Par défaut, le dossier système est déjà ajouté à la `PSModulePath` variable d’environnement.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span> <span data-ttu-id="ea9fc-111">Pour afficher le `PSModulePath` , tapez : `$env:PSModulePath` .</span><span class="sxs-lookup"><span data-stu-id="ea9fc-111">To view the `PSModulePath`, type: `$env:PSModulePath`.</span></span>
+1. <span data-ttu-id="cd2a0-109">Assurez-vous que la `PSModulePath` variable d’environnement comprend le chemin d’accès à votre nouveau dossier de module.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="cd2a0-110">Par défaut, le dossier système est déjà ajouté à la `PSModulePath` variable d’environnement.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span> <span data-ttu-id="cd2a0-111">Pour afficher le `PSModulePath` , tapez : `$env:PSModulePath` .</span><span class="sxs-lookup"><span data-stu-id="cd2a0-111">To view the `PSModulePath`, type: `$env:PSModulePath`.</span></span>
 
-1. <span data-ttu-id="ea9fc-112">Copiez l’assembly de l’applet de commande dans le dossier du module.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-112">Copy the cmdlet assembly into the module folder.</span></span>
+1. <span data-ttu-id="cd2a0-112">Copiez l’assembly de l’applet de commande dans le dossier du module.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-112">Copy the cmdlet assembly into the module folder.</span></span>
 
-1. <span data-ttu-id="ea9fc-113">Ajoutez un fichier manifeste de module ( `.psd1` ) dans le dossier racine du module.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-113">Add a module manifest file (`.psd1`) in the module's root folder.</span></span> <span data-ttu-id="ea9fc-114">PowerShell utilise le manifeste de module pour importer votre module.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-114">PowerShell uses the module manifest to import your module.</span></span> <span data-ttu-id="ea9fc-115">Pour plus d’informations, consultez [Comment écrire un manifeste de module PowerShell](../module/how-to-write-a-powershell-module-manifest.md).</span><span class="sxs-lookup"><span data-stu-id="ea9fc-115">For more information, see [How to Write a PowerShell Module Manifest](../module/how-to-write-a-powershell-module-manifest.md).</span></span>
+1. <span data-ttu-id="cd2a0-113">Ajoutez un fichier manifeste de module ( `.psd1` ) dans le dossier racine du module.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-113">Add a module manifest file (`.psd1`) in the module's root folder.</span></span> <span data-ttu-id="cd2a0-114">PowerShell utilise le manifeste de module pour importer votre module.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-114">PowerShell uses the module manifest to import your module.</span></span> <span data-ttu-id="cd2a0-115">Pour plus d’informations, consultez [Comment écrire un manifeste de module PowerShell](../module/how-to-write-a-powershell-module-manifest.md).</span><span class="sxs-lookup"><span data-stu-id="cd2a0-115">For more information, see [How to Write a PowerShell Module Manifest](../module/how-to-write-a-powershell-module-manifest.md).</span></span>
 
-1. <span data-ttu-id="ea9fc-116">Exécutez la commande suivante pour ajouter les applets de commande à la session :</span><span class="sxs-lookup"><span data-stu-id="ea9fc-116">Run the following command to add the cmdlets to the session:</span></span>
+1. <span data-ttu-id="cd2a0-116">Exécutez la commande suivante pour ajouter les applets de commande à la session :</span><span class="sxs-lookup"><span data-stu-id="cd2a0-116">Run the following command to add the cmdlets to the session:</span></span>
 
    `Import-Module [Module_Name]`
 
-   <span data-ttu-id="ea9fc-117">Cette procédure peut être utilisée pour tester vos applets de commande.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-117">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="ea9fc-118">Elle ajoute toutes les applets de commande de l’assembly à la session.</span><span class="sxs-lookup"><span data-stu-id="ea9fc-118">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="ea9fc-119">Pour plus d’informations sur les modules, consultez [écriture d’un module Windows PowerShell](../module/writing-a-windows-powershell-module.md).</span><span class="sxs-lookup"><span data-stu-id="ea9fc-119">For more information about modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
+   <span data-ttu-id="cd2a0-117">Cette procédure peut être utilisée pour tester vos applets de commande.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-117">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="cd2a0-118">Elle ajoute toutes les applets de commande de l’assembly à la session.</span><span class="sxs-lookup"><span data-stu-id="cd2a0-118">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="cd2a0-119">Pour plus d’informations sur les modules, consultez [écriture d’un module Windows PowerShell](../module/writing-a-windows-powershell-module.md).</span><span class="sxs-lookup"><span data-stu-id="cd2a0-119">For more information about modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ea9fc-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ea9fc-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cd2a0-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd2a0-120">See also</span></span>
 
-[<span data-ttu-id="ea9fc-121">Guide pratique pour écrire un manifeste de module PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea9fc-121">How to Write a PowerShell Module Manifest</span></span>](../module/how-to-write-a-powershell-module-manifest.md)
+[<span data-ttu-id="cd2a0-121">Guide pratique pour écrire un manifeste de module PowerShell</span><span class="sxs-lookup"><span data-stu-id="cd2a0-121">How to Write a PowerShell Module Manifest</span></span>](../module/how-to-write-a-powershell-module-manifest.md)
 
-[<span data-ttu-id="ea9fc-122">Importation d’un module PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea9fc-122">Importing a PowerShell Module</span></span>](../module/importing-a-powershell-module.md)
+[<span data-ttu-id="cd2a0-122">Importation d’un module PowerShell</span><span class="sxs-lookup"><span data-stu-id="cd2a0-122">Importing a PowerShell Module</span></span>](../module/importing-a-powershell-module.md)
 
-[<span data-ttu-id="ea9fc-123">Import-module</span><span class="sxs-lookup"><span data-stu-id="ea9fc-123">Import-Module</span></span>](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+[<span data-ttu-id="cd2a0-123">Module d’importation</span><span class="sxs-lookup"><span data-stu-id="cd2a0-123">Import-Module</span></span>](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
-[<span data-ttu-id="ea9fc-124">Installation des modules</span><span class="sxs-lookup"><span data-stu-id="ea9fc-124">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+[<span data-ttu-id="cd2a0-124">Installation des modules</span><span class="sxs-lookup"><span data-stu-id="cd2a0-124">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
 
-[<span data-ttu-id="ea9fc-125">Modification du chemin d’Installation de PSModulePath</span><span class="sxs-lookup"><span data-stu-id="ea9fc-125">Modifying the PSModulePath Installation Path</span></span>](../module/modifying-the-psmodulepath-installation-path.md)
+[<span data-ttu-id="cd2a0-125">Modification du chemin d’Installation de PSModulePath</span><span class="sxs-lookup"><span data-stu-id="cd2a0-125">Modifying the PSModulePath Installation Path</span></span>](../module/modifying-the-psmodulepath-installation-path.md)
 
-[<span data-ttu-id="ea9fc-126">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea9fc-126">Writing a Windows PowerShell Cmdlet</span></span>](../cmdlet/cmdlet-overview.md)
+[<span data-ttu-id="cd2a0-126">Écriture d’une applet de commande Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="cd2a0-126">Writing a Windows PowerShell Cmdlet</span></span>](../cmdlet/cmdlet-overview.md)
