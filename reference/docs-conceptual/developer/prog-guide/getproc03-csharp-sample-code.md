@@ -1,34 +1,27 @@
 ---
-title: Exemple deC#code GetProc03 () | Microsoft Docs
-ms.custom: ''
+title: Exemple de code GetProc03 (C#) | Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
-caps.latest.revision: 5
-ms.openlocfilehash: 24f47ab8d99683e6d0024bd8073b6d7bb5dcbd90
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 278c3f36bb975f9ea195978853e6539c0bd15084
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978370"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787119"
 ---
-# <a name="getproc03-c-sample-code"></a><span data-ttu-id="b3df0-102">Exemple de code GetProc03 (C#)</span><span class="sxs-lookup"><span data-stu-id="b3df0-102">GetProc03 (C#) Sample Code</span></span>
+# <a name="getproc03-c-sample-code"></a><span data-ttu-id="689ad-102">Exemple de code GetProc03 (C#)</span><span class="sxs-lookup"><span data-stu-id="689ad-102">GetProc03 (C#) Sample Code</span></span>
 
-<span data-ttu-id="b3df0-103">Le code suivant illustre l’implémentation d’une applet de commande `Get-Process` qui peut accepter une entrée en pipeline.</span><span class="sxs-lookup"><span data-stu-id="b3df0-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="b3df0-104">Cette implémentation définit un paramètre de `Name` qui accepte l’entrée de pipeline, récupère des informations de processus à partir de l’ordinateur local en fonction des noms fournis, puis utilise la méthode [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) comme mécanisme de sortie pour envoyer des objets au pipeline.</span><span class="sxs-lookup"><span data-stu-id="b3df0-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending objects to the pipeline.</span></span>
+<span data-ttu-id="689ad-103">Le code suivant illustre l’implémentation d’une `Get-Process` applet de commande qui peut accepter une entrée en pipeline.</span><span class="sxs-lookup"><span data-stu-id="689ad-103">The following code shows the implementation of a `Get-Process` cmdlet that can accept pipelined input.</span></span> <span data-ttu-id="689ad-104">Cette implémentation définit un `Name` paramètre qui accepte l’entrée de pipeline, récupère des informations de processus à partir de l’ordinateur local en fonction des noms fournis, puis utilise la méthode [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) comme mécanisme de sortie pour envoyer des objets au pipeline.</span><span class="sxs-lookup"><span data-stu-id="689ad-104">This implementation defines a `Name` parameter that accepts pipeline input, retrieves process information from the local computer based on the supplied names, and then uses the [WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) method as the output mechanism for sending objects to the pipeline.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="b3df0-105">Vous pouvez télécharger le C# fichier source (getprov03.cs) pour cette applet de commande « obtenir-proc » à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0.</span><span class="sxs-lookup"><span data-stu-id="b3df0-105">You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="b3df0-106">Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="b3df0-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
-> <span data-ttu-id="b3df0-107">Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .</span><span class="sxs-lookup"><span data-stu-id="b3df0-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="689ad-105">Vous pouvez télécharger le fichier source C# (getprov03.cs) pour cette applet de commande « obtenir-proc » à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0.</span><span class="sxs-lookup"><span data-stu-id="689ad-105">You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="689ad-106">Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="689ad-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="689ad-107">Les fichiers sources téléchargés sont disponibles dans le **\<PowerShell Samples>** répertoire.</span><span class="sxs-lookup"><span data-stu-id="689ad-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="b3df0-108">Exemple de code</span><span class="sxs-lookup"><span data-stu-id="b3df0-108">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="689ad-108">Exemple de code</span><span class="sxs-lookup"><span data-stu-id="689ad-108">Code Sample</span></span>
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="11-78":::
 
-## <a name="see-also"></a><span data-ttu-id="b3df0-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b3df0-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="689ad-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="689ad-109">See Also</span></span>
 
-[<span data-ttu-id="b3df0-110">Guide du programmeur Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="b3df0-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="689ad-110">Guide de programmation pour Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="689ad-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="b3df0-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="b3df0-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="689ad-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="689ad-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
