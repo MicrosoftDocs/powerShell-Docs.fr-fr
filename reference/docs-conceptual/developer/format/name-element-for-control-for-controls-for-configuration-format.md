@@ -1,19 +1,12 @@
 ---
 title: Élément Name pour le contrôle des contrôles pour la configuration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
-caps.latest.revision: 8
-ms.openlocfilehash: 2704a530e0ae269efb772ac10e531bcbb12f6eff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3d45ba98b909ebee18e01d2b6985a48906ce39d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362708"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783532"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>Name, élément pour Control pour Controls pour Configuration (Format)
 
@@ -28,29 +21,29 @@ Spécifie le nom du contrôle. Cet élément est utilisé lors de la définition
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Name`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Name` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)|Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme et le nom utilisé pour référencer le contrôle.|
+|[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)|Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme et le nom utilisé pour référencer le contrôle.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom utilisé pour référencer ce contrôle.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Le nom spécifié ici peut être utilisé dans les éléments suivants pour référencer ce contrôle.
 
@@ -62,12 +55,12 @@ Le nom spécifié ici peut être utilisé dans les éléments suivants pour réf
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)
+[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)
 
-[Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[Élément ExpressionBinding pour CustomItem pour les contrôles pour View (format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+[ExpressionBinding, élément pour CustomItem pour Controls pour View (Format)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
-[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)
+[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

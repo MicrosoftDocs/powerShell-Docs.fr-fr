@@ -1,19 +1,12 @@
 ---
 title: Paramètres de filtre d’entrée | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e45929d1-bbb4-4dc6-892f-f9eacdb1c84c
-caps.latest.revision: 8
-ms.openlocfilehash: 7a1582031d27f78bad069f5539408312ccabb3f2
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ccaf6c4859d2a4f14866ec1252b999e90e1a830f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563868"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784042"
 ---
 # <a name="input-filter-parameters"></a>Paramètres de filtre d’entrée
 

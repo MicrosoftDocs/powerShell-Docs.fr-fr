@@ -1,14 +1,12 @@
 ---
 title: Exemples d’instances d’exécution distantes
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
-ms.openlocfilehash: ada4a16b3e8142f505a2adb794c746129e3f359c
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 68248f0ba9e816865b6b92dbf6e7686e2d871370
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870436"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783226"
 ---
 # <a name="remote-runspace-samples"></a>Exemples d’instances d’exécution distantes
 

@@ -1,25 +1,18 @@
 ---
 title: LeftIndent, élément de frame pour les contrôles pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85a53ff2-92f0-4d9b-8e13-d06d82299435
-caps.latest.revision: 6
-ms.openlocfilehash: 06ed340e3db237d4090961fef98333bd67a2a755
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e190061152b25f1f63ba5d2d9a9970970b419e0d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365158"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783600"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-view-format"></a>LeftIndent, élément pour Frame pour Controls pour View (Format)
 
 Spécifie le nombre de caractères de décalage des données par rapport à la marge de gauche. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) contrôle l’élément (format) Control, élément pour les contrôles pour View (format) CustomControl, élément de Control pour les contrôles pour l’élément View (format) CustomEntries pour CustomControl pour View (format) CustomEntry, élément pour CustomEntries pour les contrôles pour l’élément CustomItem (format) View pour CustomEntry pour les contrôles pour l’élément Frame (format) de la vue pour CustomItem pour les contrôles pour l’élément LeftIndent View (format) du frame de Contrôles de vue (format)
+Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) contrôle l’élément (format) contrôle élément pour les contrôles pour View (format) CustomControl, élément de Control pour les contrôles pour l’élément CustomEntries View (format) pour CustomControl pour View (format) élément CustomEntry pour CustomEntries pour les contrôles de l’élément View (format) CustomItem pour CustomEntry pour les contrôles pour l’élément Frame (format) View pour CustomItem pour les contrôles pour l’élément de vue (format) LeftIndent de frame de contrôles de vue (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,32 +20,32 @@ Spécifie le nombre de caractères de décalage des données par rapport à la m
 <LeftIndent>CharactersToShift</LeftIndent>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `LeftIndent`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `LeftIndent` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément Frame pour CustomItem pour les contrôles pour View (format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite.|
+|[Frame, élément pour CustomItem pour Controls pour View (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)|Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nombre de caractères dont vous souhaitez déplacer les données vers la gauche.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément Frame pour CustomItem pour les contrôles pour View (format)](./frame-element-for-customitem-for-controls-for-view-format.md)
+[Frame, élément pour CustomItem pour Controls pour View (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

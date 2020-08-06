@@ -1,19 +1,12 @@
 ---
 title: Types d’attributs | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9b1026ad-f072-4fca-8052-a2d8eb491c2a
-caps.latest.revision: 6
-ms.openlocfilehash: 52c75b3ca73706da39029d5b3ead52ff7197a5f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96fdd38ba10eb748ab0762f0c910463dd472494d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364578"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782376"
 ---
 # <a name="attribute-types"></a>Types d’attributs
 
@@ -28,7 +21,7 @@ Identifie une classe .NET Framework en tant qu’applet de commande.
 Il s’agit de l’attribut de base requis.
 Pour plus d’informations, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
-## <a name="parameter-attributes"></a>Attributs de paramètres
+## <a name="parameter-attributes"></a>Attributs de paramètre
 
 ### <a name="parameter"></a>Paramètre
 

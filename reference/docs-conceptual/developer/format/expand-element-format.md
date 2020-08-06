@@ -1,19 +1,12 @@
 ---
 title: Expand, élément (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
-caps.latest.revision: 9
-ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: deee832254bb8a774ee2c1f5bd451d3ced1bd47a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368738"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783651"
 ---
 # <a name="expand-element-format"></a>Expand, élément (Format)
 
@@ -27,25 +20,25 @@ Spécifie comment l’objet de collection est développé pour cette définition
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Expand`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Expand` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EnumerableExpansion (format)](./enumerableexpansion-element-format.md)|Définit la façon dont des objets de collection .NET spécifiques sont développés lorsqu’ils sont affichés dans une vue.|
+|[EnumerableExpansion, élément (Format)](./enumerableexpansion-element-format.md)|Définit la façon dont des objets de collection .NET spécifiques sont développés lorsqu’ils sont affichés dans une vue.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez l'une des valeurs suivantes :
 
@@ -55,7 +48,7 @@ Spécifiez l'une des valeurs suivantes :
 
 - Both : affiche les propriétés des objets dans la collection et les propriétés de l’objet de collection.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Cet élément est utilisé pour définir le mode d’affichage des objets de collection et des objets de la collection. Dans ce cas, un objet de collection fait référence à tout objet qui prend en charge l’interface **System. Collections. ICollection** .
 

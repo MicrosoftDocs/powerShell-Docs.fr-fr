@@ -1,25 +1,18 @@
 ---
 title: Élément CustomControlName pour ExpressionBinding pour CustomControl pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ea821e8b-4d65-4263-b7e4-6aeca9f534c2
-caps.latest.revision: 9
-ms.openlocfilehash: b44ced75bbaac7c0744f347bdc97f87365b8fe39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6f1ffca045b7efcecb4dce4e788a8c508fa6ef08
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364108"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783753"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>CustomControlName, élément pour ExpressionBinding pour CustomControl pour View (Format)
 
 Spécifie le nom d’un contrôle commun ou d’un contrôle View. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément CustomControl pour View (format) CustomEntries element pour CustomControl pour View (format) CustomEntry, élément pour CustomEntries pour View (format) CustomItem Élément pour CustomEntry pour l’élément ExpressionBinding View (format) pour CustomItem (format) CustomControlName élément pour la liaison d’expression pour CustomItem (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément CustomControl pour l’élément View (format) CustomEntries pour CustomControl pour la vue (format) élément CustomEntry pour CustomEntries pour l’élément View (format) CustomItem pour CustomEntry pour l’élément View (format) ExpressionBinding pour CustomItem (format) CustomControlName élément pour la liaison d’expression pour CustomItem (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +20,17 @@ Spécifie le nom d’un contrôle commun ou d’un contrôle View. Cet élément
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControlName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomControlName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,23 +38,23 @@ Aucune.
 |-------------|-----------------|
 |[Élément ExpressionBinding pour CustomItem (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom du contrôle.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez créer des contrôles communs qui peuvent être utilisés par toutes les vues d’un fichier de mise en forme et vous pouvez créer des contrôles d’affichage qui peuvent être utilisés par une vue spécifique. Les noms de ces contrôles sont spécifiés par les éléments suivants.
 
-- [Élément Name pour le contrôle des contrôles pour la configuration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
+- [Name, élément pour Control pour Controls pour Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-- [Élément Name pour le contrôle des contrôles pour View (format)](./name-element-for-control-for-controls-for-view-format.md)
+- [Name, élément pour Control pour Controls pour View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément Name pour le contrôle des contrôles pour la configuration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Name, élément pour Control pour Controls pour Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[Élément Name pour le contrôle des contrôles pour View (format)](./name-element-for-control-for-controls-for-view-format.md)
+[Name, élément pour Control pour Controls pour View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 [Élément ExpressionBinding pour CustomItem (format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 

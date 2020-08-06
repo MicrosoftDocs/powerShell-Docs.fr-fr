@@ -1,19 +1,12 @@
 ---
 title: Sortie de l’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1362f4cd-4e05-4ace-ade6-7128da8ad86c
-caps.latest.revision: 10
-ms.openlocfilehash: 4c6aacd49b0a87bca6806ba5f08a1b4d48a90959
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7697db01c8c4d1c831202c07256559bf638aeaef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365938"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784433"
 ---
 # <a name="cmdlet-output"></a>Sortie des applets de commande
 
@@ -27,7 +20,7 @@ Cette section décrit les types de sortie des applets de commande et les méthod
 
 [Extension d’objets de sortie](./extending-output-objects.md) Explique comment utiliser les fichiers de types (. ps1xml) pour étendre les objets .NET Framework retournés par des applets de commande, des fonctions et des scripts.
 
-[Fichiers de mise en forme PowerShell](../format/powershell-formatting-files.md) Décrit les fichiers de mise en forme (. format. ps1xml) qui définissent l’affichage par défaut pour un ensemble spécifique d’objets .NET Framework dans Windows PowerShell.
+[Fichiers de mise en forme PowerShell](../format/powershell-formatting-files.md) Décrit les fichiers de mise en forme (.format.ps1XML) qui définissent l’affichage par défaut pour un ensemble spécifique d’objets .NET Framework dans Windows PowerShell.
 
 [Fichiers de mise en forme personnalisés](./custom-formatting-files.md) Décrit comment créer vos propres fichiers de mise en forme personnalisés pour remplacer les formats d’affichage par défaut ou pour définir l’affichage des objets retournés par vos propres commandes.
 

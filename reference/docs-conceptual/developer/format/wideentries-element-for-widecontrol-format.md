@@ -1,19 +1,12 @@
 ---
 title: Élément WideEntries pour WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
-caps.latest.revision: 12
-ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74383b288c945008c1d7b5119363a166c04802ae
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361428"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785045"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideEntries, élément pour WideControl (Format)
 
@@ -30,13 +23,13 @@ Fournit les définitions de la vue étendue. La vue étendue doit spécifier une
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `WideEntries`. Au moins un élément enfant doit être spécifié.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `WideEntries` élément. Au moins un élément enfant doit être spécifié.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -48,15 +41,15 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément WideControl (format)](./widecontrol-element-format.md)|Définit un format de liste larges (à valeur unique) pour la vue.|
+|[WideControl, élément (Format)](./widecontrol-element-format.md)|Définit un format de liste larges (à valeur unique) pour la vue.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Un affichage étendu est un format de liste qui affiche une valeur de propriété ou une valeur de script unique pour chaque objet. Pour plus d’informations sur les composants d’une vue étendue, consultez [composants de vue larges](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `WideEntries` qui définit un élément `WideEntry` unique. L’élément `WideEntry` contient un seul élément `WideItem` qui définit la valeur de la propriété ou du script qui est affichée dans la vue.
+L’exemple suivant montre un `WideEntries` élément qui définit un `WideEntry` élément unique. L' `WideEntry` élément contient un `WideItem` élément unique qui définit la valeur de la propriété ou du script qui est affichée dans la vue.
 
 ```xml
 <WideControl>
@@ -72,9 +65,9 @@ Pour obtenir un exemple complet d’une vue étendue, consultez [vue étendue (d
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
-[Élément WideControl (format)](./widecontrol-element-format.md)
+[WideControl, élément (Format)](./widecontrol-element-format.md)
 
 [Élément WideEntry (format)](./wideentry-element-for-widecontrol-format.md)
 

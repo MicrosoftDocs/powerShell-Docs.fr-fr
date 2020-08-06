@@ -1,23 +1,16 @@
 ---
 title: Verbes approuvés pour les commandes PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/07/2018
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - action names [PowerShell SDK]
 - verb names [PowerShell SDK]
 - cmdlets [PowerShell SDK], verb names
-ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
-caps.latest.revision: 36
-ms.openlocfilehash: ab3915124b1d92e3273e4ffa38cd617a03e336f9
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: 1cdfed5727c0b93bd1d4008fd0d6c03c448c6aed
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469682"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782393"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Verbes approuvés pour les commandes PowerShell
 

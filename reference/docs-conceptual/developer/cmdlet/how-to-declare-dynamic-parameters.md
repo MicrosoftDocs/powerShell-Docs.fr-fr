@@ -1,19 +1,12 @@
 ---
 title: Comment déclarer des paramètres dynamiques | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: db04f1df-def5-4456-8869-336024cda723
-caps.latest.revision: 8
-ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c8839aa8841bf94a9b7f8f930ca315fe0ccedb30
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561050"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784178"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Guide pratique pour déclarer des paramètres dynamiques
 

@@ -1,19 +1,12 @@
 ---
 title: Élément ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
-caps.latest.revision: 12
-ms.openlocfilehash: 7a117c25b0d117dc846ba8e060e31e838b5edd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362778"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785725"
 ---
 # <a name="listcontrol-element-format"></a>ListControl, élément (Format)
 
@@ -30,13 +23,13 @@ Définit un format de liste pour la vue.
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ListControl`. Cet élément ne doit contenir qu’un seul élément enfant.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ListControl` élément. Cet élément ne doit contenir qu’un seul élément enfant.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -48,9 +41,9 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[View, élément (format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher les membres d’un ou de plusieurs objets.|
+|[View, élément (Format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher les membres d’un ou de plusieurs objets.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur la création d’un affichage de liste, consultez [création d’un mode liste](./creating-a-list-view.md).
 
@@ -74,10 +67,10 @@ Cet exemple montre un affichage de liste pour l’objet [System. ServiceProcess.
 
 ## <a name="see-also"></a>Voir aussi
 
-[View, élément (format)](./view-element-format.md)
+[View, élément (Format)](./view-element-format.md)
 
 [ListEntries, élément (format)](./listentries-element-for-listcontrol-format.md)
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Écriture d’un fichier de mise en forme et de types Windows PowerShell](./writing-a-powershell-formatting-file.md)

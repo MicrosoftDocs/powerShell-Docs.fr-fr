@@ -1,19 +1,12 @@
 ---
 title: Installation d’un module PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
-ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367068"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784858"
 ---
 # <a name="installing-a-powershell-module"></a>Installation d’un module PowerShell
 
@@ -31,14 +24,14 @@ La variable d’environnement **PSModulePath** ($env :P smodulepath) contient l
 
 Par défaut, la valeur de la variable d’environnement **PSModulePath** contient les répertoires du module système et utilisateur suivants, mais vous pouvez ajouter et modifier la valeur.
 
-- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules`%Windir%\system32\WindowsPowerShell\v1.0\Modules
 
   > [!WARNING]
   > Cet emplacement est réservé aux modules fournis avec Windows. N’installez pas les modules à cet emplacement.
 
-- `$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules`(%UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules`(%ProgramFiles%\WindowsPowerShell\Modules)
 
   Pour récupérer la valeur de la variable d’environnement **PSModulePath** , utilisez l’une des commandes suivantes.
 
@@ -70,7 +63,7 @@ Un module bien formé est un module qui est stocké dans un répertoire portant 
 
 Le « nom de base » d’un fichier est le nom sans l’extension de nom de fichier. Dans un module bien formé, le nom du répertoire qui contient les fichiers de module doit correspondre au nom de base d’au moins un fichier dans le module.
 
-Par exemple, dans l’exemple de module Fabrikam, le répertoire qui contient les fichiers de module est nommé « Fabrikam » et au moins un fichier a le nom de base « fabrikam ». Dans ce cas, fabrikam. psd1 et fabrikam. dll ont tous les deux le nom de base « fabrikam ».
+Par exemple, dans l’exemple de module Fabrikam, le répertoire qui contient les fichiers de module est nommé « Fabrikam » et au moins un fichier a le nom de base « fabrikam ». Dans ce cas, les Fabrikam.psd1 et Fabrikam.dll ont le nom de base « fabrikam ».
 
 ```
 C:\Program Files
@@ -89,7 +82,7 @@ Si le module n’est pas bien formé et que son emplacement n’est pas inclus d
 
 - La fonctionnalité de chargement automatique de module ne peut pas importer le module automatiquement.
 
-- Le paramètre `ListAvailable` de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) ne trouve pas le module.
+- Le `ListAvailable` paramètre de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) ne peut pas trouver le module.
 
 - L’applet [de commande Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) ne trouve pas le module. Pour importer le module, vous devez fournir le chemin d’accès complet au fichier de module racine ou au fichier manifeste du module.
 
@@ -101,7 +94,7 @@ Si le module n’est pas bien formé et que son emplacement n’est pas inclus d
 
 - L’applet de [commande show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) ne peut pas trouver et afficher les commandes du module.
 
-  Les commandes du module sont absentes de la fenêtre `Show-Command` dans Environnement d’écriture de scripts intégré de Windows PowerShell (ISE).
+  Les commandes du module sont manquantes dans la `Show-Command` fenêtre de environnement d’écriture de scripts intégré de Windows PowerShell (ISE).
 
 ## <a name="where-to-install-modules"></a>Emplacement d’installation des modules
 
@@ -153,7 +146,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Si un module est utilisé par plusieurs composants d’un produit ou par plusieurs versions d’un produit, installez le module dans un sous-répertoire spécifique au module du sous-répertoire%ProgramFiles%\Common Files\Modules.
 
-Dans l’exemple suivant, le module Fabrikam est installé dans un sous-répertoire Fabrikam du sous-répertoire `%ProgramFiles%\Common Files\Modules`. Notez que chaque module réside dans son propre sous-répertoire dans le sous-répertoire Modules.
+Dans l’exemple suivant, le module Fabrikam est installé dans un sous-répertoire Fabrikam du `%ProgramFiles%\Common Files\Modules` sous-répertoire. Notez que chaque module réside dans son propre sous-répertoire dans le sous-répertoire Modules.
 
 ```
 C:\Program Files
@@ -185,7 +178,7 @@ Pour installer plusieurs versions du même module, utilisez la procédure suivan
 2. Créez un manifeste de module pour chaque version du module. Dans la valeur de la clé **ModuleVersion** dans le manifeste, entrez le numéro de version du module. Enregistrez le fichier manifeste (. psd1) dans le répertoire spécifique à la version du module.
 3. Ajoutez le chemin d’accès au dossier racine du module à la valeur de la variable d’environnement **PSModulePath** , comme indiqué dans les exemples suivants.
 
-Pour importer une version particulière du module, l’utilisateur final peut utiliser les paramètres `MinimumVersion` ou `RequiredVersion` de l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Pour importer une version particulière du module, l’utilisateur final peut utiliser les `MinimumVersion` `RequiredVersion` paramètres ou de l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Par exemple, si le module Fabrikam est disponible dans les versions 8,0 et 9,0, la structure de répertoires du module Fabrikam peut ressembler à ce qui suit.
 
@@ -210,7 +203,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Une fois ces étapes terminées, le paramètre **listAvailable** de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) obtient les deux modules fabrikam. Pour importer un module particulier, utilisez les paramètres `MinimumVersion` ou `RequiredVersion` de l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
+Une fois ces étapes terminées, le paramètre **listAvailable** de l’applet de commande [obtenir-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) obtient les deux modules fabrikam. Pour importer un module particulier, utilisez les `MinimumVersion` `RequiredVersion` paramètres ou de l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Si les deux modules sont importés dans la même session et que les modules contiennent des applets de commande portant le même nom, les applets de commande importées en dernier sont effectives dans la session.
 
@@ -220,7 +213,7 @@ Les conflits de noms de commande peuvent se produire lorsque les commandes expor
 
 Quand une session contient deux commandes qui portent le même nom, Windows PowerShell exécute le type de commande qui est prioritaire. Quand une session contient deux commandes qui ont le même nom et le même type, Windows PowerShell exécute la commande qui a été ajoutée à la session la plus récente. Pour exécuter une commande qui n’est pas exécutée par défaut, les utilisateurs peuvent qualifier le nom de la commande avec le nom du module.
 
-Par exemple, si la session contient une fonction `Get-Date` et l’applet de commande `Get-Date`, Windows PowerShell exécute la fonction par défaut. Pour exécuter l’applet de commande, faites précéder la commande du nom du module, par exemple :
+Par exemple, si la session contient une `Get-Date` fonction et l' `Get-Date` applet de commande, Windows PowerShell exécute la fonction par défaut. Pour exécuter l’applet de commande, faites précéder la commande du nom du module, par exemple :
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date

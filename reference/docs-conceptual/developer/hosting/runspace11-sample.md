@@ -1,25 +1,18 @@
 ---
 title: Exemple Runspace11 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
-caps.latest.revision: 8
-ms.openlocfilehash: 606f06339d0bbec3393c6b2602df3636c1f4e458
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e8a4080bb4fb33f7e0d428e24483b5cfac5c70e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784926"
 ---
 # <a name="runspace11-sample"></a>Exemple Runspace11
 
 Cet exemple montre comment utiliser la classe [System. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) pour créer une commande de proxy qui appelle une applet de commande existante, mais qui limite l’ensemble des paramètres disponibles. La commande proxy est ensuite ajoutée à un état de session initial qui sert à créer une instance d’exécution contrainte. Cela signifie que l’utilisateur ne peut accéder à la fonctionnalité de l’applet de commande qu’au moyen de la commande proxy.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Spécifications
 
 Cet exemple requiert Windows PowerShell 2,0.
 
@@ -29,11 +22,11 @@ Cet exemple illustre ce qui suit.
 
 - Création d’un objet [System. Management. Automation. Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) qui décrit les métadonnées d’une applet de commande existante.
 
-- Création d’un objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Création d’un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 - Modification des métadonnées de l’applet de commande pour supprimer un paramètre de l’applet de commande.
 
-- Ajout de l’applet de commande à l’objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) et création de l’applet de commande privée.
+- Ajout de l’applet de commande à l’objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) et création de l’applet de commande privée.
 
 - Création d’une fonction proxy qui appelle l’applet de commande existante, mais expose uniquement un jeu restreint de paramètres.
 

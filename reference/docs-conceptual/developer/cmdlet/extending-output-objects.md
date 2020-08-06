@@ -1,27 +1,20 @@
 ---
 title: Extension des objets de sortie | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
-caps.latest.revision: 11
-ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 48f4f2996159d84257ad72d499e3a796aeaa9116
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690902"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784314"
 ---
 # <a name="extending-output-objects"></a>Extension des objets de sortie
 
-Vous pouvez étendre les objets .NET Framework retournés par les applets de commande, les fonctions et les scripts à l’aide des fichiers de types (. ps1xml). Les fichiers de types sont des fichiers XML qui vous permettent d’ajouter des propriétés et des méthodes aux objets existants. Par exemple, Windows PowerShell fournit le fichier types. ps1xml, qui ajoute des éléments à plusieurs objets .NET Framework existants. Le fichier types. ps1xml se trouve dans le répertoire d’installation de Windows PowerShell ( `$pshome` ). Vous pouvez créer votre propre fichier de types pour étendre davantage ces objets ou pour étendre d’autres objets. Quand vous étendez un objet à l’aide d’un fichier de types, toute instance de l’objet est étendue avec les nouveaux éléments.
+Vous pouvez étendre les objets .NET Framework retournés par les applets de commande, les fonctions et les scripts à l’aide des fichiers de types (. ps1xml). Les fichiers de types sont des fichiers XML qui vous permettent d’ajouter des propriétés et des méthodes aux objets existants. Par exemple, Windows PowerShell fournit le fichier XML Types.ps1, qui ajoute des éléments à plusieurs objets .NET Framework existants. Le fichier XML Types.ps1se trouve dans le répertoire d’installation de Windows PowerShell ( `$pshome` ). Vous pouvez créer votre propre fichier de types pour étendre davantage ces objets ou pour étendre d’autres objets. Quand vous étendez un objet à l’aide d’un fichier de types, toute instance de l’objet est étendue avec les nouveaux éléments.
 
 ## <a name="extending-the-systemarray-object"></a>Extension de l’objet System. Array
 
-L’exemple suivant montre comment Windows PowerShell étend l’objet [System. Array](/dotnet/api/System.Array) dans le fichier types. ps1xml. Par défaut, les objets [System. Array](/dotnet/api/System.Array) ont une `Length` propriété qui répertorie le nombre d’objets dans le tableau. Toutefois, étant donné que le nom « length » ne décrit pas clairement la propriété, Windows PowerShell ajoute la `Count` propriété alias, qui affiche la même valeur que la `Length` propriété. Le code XML suivant ajoute la `Count` propriété au type [System. Array](/dotnet/api/System.Array) .
+L’exemple suivant montre comment Windows PowerShell étend l’objet [System. Array](/dotnet/api/System.Array) dans le fichier XML Types.ps1. Par défaut, les objets [System. Array](/dotnet/api/System.Array) ont une `Length` propriété qui répertorie le nombre d’objets dans le tableau. Toutefois, étant donné que le nom « length » ne décrit pas clairement la propriété, Windows PowerShell ajoute la `Count` propriété alias, qui affiche la même valeur que la `Length` propriété. Le code XML suivant ajoute la `Count` propriété au type [System. Array](/dotnet/api/System.Array) .
 
 ```xml
 <Type>
@@ -89,7 +82,7 @@ Pour ajouter vos propres types étendus au fichier, ajoutez un élément types p
 
 Une fois que vous avez défini vos propres types étendus, utilisez l’une des méthodes suivantes pour rendre vos objets étendus disponibles :
 
-- Pour mettre votre fichier de types étendus à la disposition de la session active, utilisez l’applet de commande [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) pour ajouter le nouveau fichier. Si vous souhaitez que vos types aient la priorité sur les types définis dans d’autres types de fichiers (y compris le fichier types. ps1xml), utilisez le `PrependData` paramètre de l’applet de commande [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
+- Pour mettre votre fichier de types étendus à la disposition de la session active, utilisez l’applet de commande [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) pour ajouter le nouveau fichier. Si vous souhaitez que vos types aient la priorité sur les types définis dans d’autres types de fichiers (y compris le fichier XML Types.ps1), utilisez le `PrependData` paramètre de l’applet de commande [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) .
 - Pour mettre votre fichier de types étendus à la disposition de toutes les sessions ultérieures, ajoutez le fichier de types à un module, exportez la session active ou ajoutez la commande [Update-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) à votre profil Windows PowerShell.
 
 ## <a name="signing-types-files"></a>Fichiers de types de signature

@@ -1,19 +1,12 @@
 ---
 title: Élément ColumnNumber pour WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
-caps.latest.revision: 8
-ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5f151bb0e629efcebe6295cdcae6cebcbbb1b39b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364218"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783855"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>ColumnNumber, élément pour WideControl (Format)
 
@@ -27,31 +20,31 @@ Spécifie le nombre de colonnes affichées dans la vue étendue.
 <ColumnNumber>PositiveInteger</ColumnNumber>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ColumnNumber`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ColumnNumber` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément WideControl (format)](./widecontrol-element-format.md)|Définit un format de liste larges (à valeur unique) pour la vue.|
+|[WideControl, élément (Format)](./widecontrol-element-format.md)|Définit un format de liste larges (à valeur unique) pour la vue.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez une valeur entière positive.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Lorsque vous définissez une vue étendue, vous pouvez ajouter l’élément `AutoSize` ou l’élément `ColumnNumber`, mais vous ne pouvez pas ajouter les deux.
+Lorsque vous définissez une vue étendue, vous pouvez ajouter l' `AutoSize` élément ou l' `ColumnNumber` élément, mais vous ne pouvez pas ajouter les deux.
 
 Pour plus d’informations sur les composants d’une vue étendue, consultez [création d’une vue étendue](./creating-a-wide-view.md).
 
@@ -61,8 +54,8 @@ Pour obtenir un exemple de vue étendue, consultez [vue étendue (de base)](./wi
 
 [AutoSize, élément de WideControl (format)](./autosize-element-for-widecontrol-format.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
-[Vue étendue (de base)](./wide-view-basic.md)
+[Vue large (De base)](./wide-view-basic.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

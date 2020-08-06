@@ -1,23 +1,16 @@
 ---
 title: Exemple GetProcessSample03 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
-caps.latest.revision: 6
-ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 09df93792ab611e167279bc35755d8d6c28e7cf3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369708"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784212"
 ---
 # <a name="getprocesssample03-sample"></a>Exemple GetProcessSample03
 
-Cet exemple montre comment implémenter une applet de commande qui récupère les processus sur l’ordinateur local. Il fournit un paramètre `Name` qui peut accepter un objet du pipeline ou une valeur d’une propriété d’un objet dont le nom de la propriété est le même que le nom du paramètre. Cette applet de commande est une version simplifiée de l’applet de commande `Get-Process` fournie par Windows PowerShell 2,0.
+Cet exemple montre comment implémenter une applet de commande qui récupère les processus sur l’ordinateur local. Il fournit un `Name` paramètre qui peut accepter un objet du pipeline ou une valeur d’une propriété d’un objet dont le nom de la propriété est le même que le nom du paramètre. Cette applet de commande est une version simplifiée de l’applet de commande `Get-Process` fournie par Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Comment générer l’exemple à l’aide de Visual Studio.
 
@@ -51,7 +44,7 @@ Cet exemple montre comment implémenter une applet de commande qui récupère le
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 
@@ -67,7 +60,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple illustre une implémentation de l’applet de commande Accept-proc qui comprend un paramètre `Name` qui accepte les entrées du pipeline.
+Cet exemple illustre une implémentation de l’applet de commande Accept-proc qui comprend un `Name` paramètre qui accepte les entrées du pipeline.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

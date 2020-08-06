@@ -1,25 +1,18 @@
 ---
 title: Élément ScriptBlock pour ListItem pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
-caps.latest.revision: 11
-ms.openlocfilehash: 76b600256af3f957f7fe0578f9fef810262aa5d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249d3e36b4246b7baa410815122f8e30340f1862
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364808"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785453"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>ScriptBlock, élément pour ListItem pour ListControl (Format)
 
 Spécifie le script dont la valeur est affichée dans la ligne.
 
-Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément de ListControl (format) ListEntry, élément de ListEntries pour ListControl (format) ListItems, élément de ListEntry pour l’élément ListControl (format) ListItem pour ListItems pour ListControl (format) ScriptBlock, élément pour ListItem pour ListControl (format)
+Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément de ListControl (format) ListEntry, élément de ListEntries pour ListControl (format) élément ListItems pour l’élément ListEntry pour ListControl (format) ListItem pour l’élément ListItems pour ListControl (format) ScriptBlock pour ListControl pour ListControl (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +20,17 @@ Spécifie le script dont la valeur est affichée dans la ligne.
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ScriptBlock`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ScriptBlock` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,11 +38,11 @@ Aucune.
 |-------------|-----------------|
 |[ListItem, élément (format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Définit la propriété ou le script dont la valeur est affichée dans une ligne de la vue liste.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le script dont la valeur est affichée dans la ligne.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Lorsque cet élément est spécifié, vous ne pouvez pas spécifier l’élément [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md) .
 
@@ -68,10 +61,10 @@ L’exemple suivant montre comment spécifier la propriété dont la valeur est 
 
 ## <a name="see-also"></a>Voir aussi
 
-[PropertyName, élément de ListItem pour ListControl (format)](./propertyname-element-for-listitem-for-listcontrol-format.md)
+[PropertyName, élément pour ListItem pour ListControl (Format)](./propertyname-element-for-listitem-for-listcontrol-format.md)
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
-[Élément ListItem pour ListItems pour ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+[ListItem, élément pour ListItems pour ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

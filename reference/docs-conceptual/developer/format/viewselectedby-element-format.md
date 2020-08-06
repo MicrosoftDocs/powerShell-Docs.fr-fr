@@ -1,19 +1,12 @@
 ---
 title: Élément ViewSelectedBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
-caps.latest.revision: 19
-ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c8704c1504c6e24c9cac6bc8bc25e92a0d9110cc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367968"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785011"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy, élément (Format)
 
@@ -30,32 +23,32 @@ Définit les objets .NET affichés par la vue. Chaque vue doit spécifier au moi
 </ViewSelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ViewSelectedBy`. Cet élément doit contenir au moins un `TypeName` ou un élément enfant `SelectionSetName`. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés et dont l’ordre est significatif.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ViewSelectedBy` élément. Cet élément doit contenir au moins un `TypeName` `SelectionSetName` élément enfant ou. Il n’existe aucune limite quant au nombre d’éléments enfants qui peuvent être spécifiés et dont l’ordre est significatif.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TypeName pour ViewSelectedBy (format)](./typename-element-for-viewselectedby-format.md)|Élément facultatif.<br /><br /> Spécifie un objet .NET qui est affiché par la vue.|
-|[Élément SelectionSetName pour ViewSelectedBy (format)](./selectionsetname-element-for-viewselectedby-format.md)|Élément facultatif.<br /><br /> Spécifie un jeu d’objets .NET qui sont affichés par la vue.|
+|[TypeName, élément pour ViewSelectedBy (Format)](./typename-element-for-viewselectedby-format.md)|Élément facultatif.<br /><br /> Spécifie un objet .NET qui est affiché par la vue.|
+|[SelectionSetName, élément pour ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)|Élément facultatif.<br /><br /> Spécifie un jeu d’objets .NET qui sont affichés par la vue.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[View, élément (format)](./view-element-format.md)|Définit une vue qui affiche un ou plusieurs objets .NET.|
+|[View, élément (Format)](./view-element-format.md)|Définit une vue qui affiche un ou plusieurs objets .NET.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur l’utilisation de cet élément dans différents affichages, consultez [composants de vue de table](./creating-a-table-view.md), composants de vue de [liste](./creating-a-list-view.md), composants de [vue larges](./creating-a-wide-view.md)et [composants de contrôle personnalisé](./creating-custom-controls.md).
 
-L’élément `SelectionSetName` est utilisé lorsque le fichier de mise en forme définit un ensemble d’objets qui sont affichés par plusieurs vues. Pour plus d’informations sur la façon dont les jeux de sélection sont définis et référencés, consultez [définition de jeux d’objets](./defining-selection-sets.md).
+L' `SelectionSetName` élément est utilisé lorsque le fichier de mise en forme définit un ensemble d’objets qui sont affichés par plusieurs vues. Pour plus d’informations sur la façon dont les jeux de sélection sont définis et référencés, consultez [définition de jeux d’objets](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exemple
 
@@ -73,17 +66,17 @@ L’exemple suivant montre comment spécifier l’objet [System. ServiceProcess.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Création de contrôles personnalisés](./creating-custom-controls.md)
 
-[Définition des jeux de sélection](./defining-selection-sets.md)
+[Définition de jeux de sélections](./defining-selection-sets.md)
 
-[Élément SelectionSetName pour ViewSelectedBy (format)](./selectionsetname-element-for-viewselectedby-format.md)
+[SelectionSetName, élément pour ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)
 
 [TypeName, élément (format)](./typename-element-for-viewselectedby-format.md)
 

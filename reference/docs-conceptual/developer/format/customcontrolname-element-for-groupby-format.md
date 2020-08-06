@@ -1,19 +1,12 @@
 ---
 title: Élément CustomControlName pour GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 473d9b56-521b-479a-8010-67fe9f040063
-caps.latest.revision: 8
-ms.openlocfilehash: 3a386eff95044eae573c255a451c5c8b8f16714d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4e3102f12cd37fa72a2de1bf1db5d1f82db31222
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368878"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783736"
 ---
 # <a name="customcontrolname-element-for-groupby-format"></a>CustomControlName, élément pour GroupBy (Format)
 
@@ -27,42 +20,42 @@ Spécifie le nom d’un contrôle personnalisé utilisé pour afficher le nouvea
 <CustomControlName>ControlName</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `CustomControlName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `CustomControlName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)|Définit la manière dont Windows PowerShell affiche un nouveau groupe d’objets.|
+|[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)|Définit la manière dont Windows PowerShell affiche un nouveau groupe d’objets.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom du contrôle personnalisé utilisé pour afficher un nouveau groupe.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez créer des contrôles communs qui peuvent être utilisés par toutes les vues d’un fichier de mise en forme, et vous pouvez créer des contrôles d’affichage qui peuvent être utilisés par une vue spécifique. Les éléments suivants spécifient les noms de ces contrôles personnalisés :
 
-- [Élément Name pour le contrôle des contrôles pour la configuration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
+- [Name, élément pour Control pour Controls pour Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-- [Élément Name pour le contrôle des contrôles pour View (format)](./name-element-for-control-for-controls-for-view-format.md)
+- [Name, élément pour Control pour Controls pour View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)
+[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)
 
-[Élément Name pour le contrôle des contrôles pour la configuration (format)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Name, élément pour Control pour Controls pour Configuration (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[Élément Name pour le contrôle des contrôles pour View (format)](./name-element-for-control-for-controls-for-view-format.md)
+[Name, élément pour Control pour Controls pour View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

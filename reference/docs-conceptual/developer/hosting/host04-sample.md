@@ -1,19 +1,12 @@
 ---
 title: Exemple Host04 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3cbf64e5-f9e8-4002-b40c-4d3f39025c83
-caps.latest.revision: 11
-ms.openlocfilehash: 0ca522cebb22c624902ab986b13e425db3754adf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a34c8424fd661b9c41e6233c4d8d48177a9cfb4e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361028"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783277"
 ---
 # <a name="host04-sample"></a>Exemple Host04
 
@@ -23,13 +16,13 @@ Cet exemple montre comment créer une application hôte basée sur une console i
 
  Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 - Création d’un hôte personnalisé dont les classes dérivent de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de la classe System. Management. Automation. [host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) et de la classe [System. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Génération d’une application console qui utilise ces classes hôtes pour créer un interpréteur de commandes Windows PowerShell interactif.
 
-- Création d’une variable `$profile` et chargement des profils suivants.
+- Création d’une `$profile` variable et chargement des profils suivants.
 
   - utilisateur actuel, hôte actuel
 

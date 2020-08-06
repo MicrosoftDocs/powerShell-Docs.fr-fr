@@ -1,22 +1,15 @@
 ---
 title: Déclaration de classe d’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], declaring
 - declaring cmdlets [PowerShell SDK]
-ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
-caps.latest.revision: 14
-ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978710"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784501"
 ---
 # <a name="cmdlet-class-declaration"></a>Déclaration de classe d’applets de commande
 
@@ -30,7 +23,7 @@ Lorsque vous spécifiez l’attribut d' **applet** de commande, vous devez spéc
 
 Le nom de l’applet de commande spécifie les ressources sur lesquelles agit l’applet de commande. Le substantif fait la différence entre vos applets de commande et d’autres applets de commande.
 
-Les noms des applets de commande doivent être spécifiques, et dans le cas de noms génériques, tels que *serveur*, il est préférable d’ajouter un préfixe abrégé qui différencie votre ressource des autres ressources similaires. Par exemple, un nom d’applet de commande qui comprend un nom avec un préfixe est `Get-SQLServer`. La combinaison d’un nom spécifique avec un verbe plus général permet à l’utilisateur de localiser rapidement l’applet de commande en fonction de son action, puis d’identifier l’applet de commande par sa ressource tout en évitant les doublons de noms d’applets de commande inutiles.
+Les noms des applets de commande doivent être spécifiques, et dans le cas de noms génériques, tels que *serveur*, il est préférable d’ajouter un préfixe abrégé qui différencie votre ressource des autres ressources similaires. Par exemple, un nom d’applet de commande incluant un nom avec un préfixe est `Get-SQLServer` . La combinaison d’un nom spécifique avec un verbe plus général permet à l’utilisateur de localiser rapidement l’applet de commande en fonction de son action, puis d’identifier l’applet de commande par sa ressource tout en évitant les doublons de noms d’applets de commande inutiles.
 
 Pour obtenir la liste des caractères spéciaux qui ne peuvent pas être utilisés dans les noms d’applets de commande, consultez [instructions de développement requises](./required-development-guidelines.md).
 
@@ -54,7 +47,7 @@ Le code suivant est la définition d’une classe d’applet de commande GetProc
 
 ## <a name="pascal-casing"></a>Casse Pascal
 
-Lorsque vous nommez des applets de commande, utilisez la casse Pascal. Par exemple, les applets de commande `Get-Item` et `Get-ItemProperty` montrent la méthode correcte pour utiliser la mise en majuscules lorsque vous nommez des applets de commande.
+Lorsque vous nommez des applets de commande, utilisez la casse Pascal. Par exemple, les `Get-Item` applets de commande et `Get-ItemProperty` montrent la méthode correcte pour utiliser la mise en majuscules lorsque vous nommez des applets de commande.
 
 ## <a name="see-also"></a>Voir aussi
 

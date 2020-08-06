@@ -1,23 +1,16 @@
 ---
 title: Mettre en forme la référence XML du schéma | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
-caps.latest.revision: 21
-ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 111f90269e669aa6f8f97082ccc6063a62ddc7b1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363718"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785793"
 ---
 # <a name="format-schema-xml-reference"></a>Informations de référence sur le XML des schémas de format
 
-Les rubriques de cette section décrivent les éléments XML utilisés par les fichiers de mise en forme (fichiers format. ps1xml). Les fichiers de mise en forme définissent la façon dont l’objet .NET est affiché. elles ne modifient pas l’objet lui-même.
+Les rubriques de cette section décrivent les éléments XML utilisés par la mise en forme des fichiers (Format.ps1fichiers XML). Les fichiers de mise en forme définissent la façon dont l’objet .NET est affiché. elles ne modifient pas l’objet lui-même.
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -213,33 +206,33 @@ Les rubriques de cette section décrivent les éléments XML utilisés par les f
 
 [PropertyName, élément de GroupBy (format)](./propertyname-element-for-groupby-format.md) Spécifie la propriété .NET qui démarre un nouveau groupe chaque fois que sa valeur change.
 
-[PropertyName, élément de ItemSeclectionCondition pour les contrôles de configuration (format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[PropertyName, élément de ItemSeclectionCondition pour les contrôles de configuration (format)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément PropertyName pour ItemSelectionCondition pour les contrôles pour View (format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément PropertyName pour ItemSelectionCondition pour les contrôles pour View (format)](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[PropertyName, élément de ItemSelectionCondition pour CustomControl pour View (format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) spécifie la propriété .net qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[PropertyName, élément de ItemSelectionCondition pour CustomControl pour View (format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) spécifie la propriété .net qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-[PropertyName, élément de ItemSelectionCondition pour GroupBy (format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[PropertyName, élément de ItemSelectionCondition pour GroupBy (format)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[PropertyName, élément de ItemSelectionCondition pour ListItem (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et la vue est utilisée. Cet élément est utilisé lors de la définition d’un affichage de liste.
+[PropertyName, élément de ItemSelectionCondition pour ListItem (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et la vue est utilisée. Cet élément est utilisé lors de la définition d’un affichage de liste.
 
 [PropertyName, élément de ListItem pour ListControl (format)](./propertyname-element-for-listitem-for-listcontrol-format.md) Spécifie la propriété .NET dont la valeur est affichée dans la liste.
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et l’entrée est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et l’entrée est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément PropertyName pour SelectionCondition pour les contrôles pour View (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et l’entrée est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément PropertyName pour SelectionCondition pour les contrôles pour View (format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et l’entrée est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[Élément PropertyName pour SelectionCondition pour CustomControl pour View (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[Élément PropertyName pour SelectionCondition pour CustomControl pour View (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et la définition est utilisée.
+[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et la définition est utilisée.
 
-[PropertyName, élément de SelectionCondition pour GroupBy (format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[PropertyName, élément de SelectionCondition pour GroupBy (format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et l’entrée de liste est utilisée.
+[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et l’entrée de liste est utilisée.
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et l’entrée de table est utilisée.
+[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et l’entrée de table est utilisée.
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true`, la condition est remplie et la définition est utilisée.
+[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md) Spécifie la propriété .NET qui déclenche la condition. Lorsque cette propriété est présente ou lorsqu’elle prend la valeur `true` , la condition est remplie et la définition est utilisée.
 
 [PropertyName, élément de TableColumnItem (format)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md) Spécifie la propriété dont la valeur est affichée dans la colonne de la ligne.
 
@@ -263,33 +256,33 @@ Les rubriques de cette section décrivent les éléments XML utilisés par les f
 
 [Élément ScriptBlock pour GroupBy (format)](./scriptblock-element-for-groupby-format.md) Spécifie le script qui démarre un nouveau groupe chaque fois que sa valeur change.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément ScriptBlock pour ItemSelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[Élément ScriptBlock pour ItemSelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour GroupBy (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[Élément ScriptBlock pour ItemSelectionCondition pour GroupBy (format)](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et le contrôle est utilisé. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’élément de liste est utilisé. Cet élément est utilisé lors de la définition d’un affichage de liste.
+[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et l’élément de liste est utilisé. Cet élément est utilisé lors de la définition d’un affichage de liste.
 
 [Élément ScriptBlock pour ListItem (format)](./scriptblock-element-for-listitem-for-listcontrol-format.md) Spécifie le script dont la valeur est affichée dans la ligne de la liste.
 
-[Élément ScriptBlock pour SelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
+[Élément ScriptBlock pour SelectionCondition pour les contrôles de configuration (format)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-[Élément ScriptBlock pour SelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
+[Élément ScriptBlock pour SelectionCondition pour les contrôles pour View (format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
+[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
 [Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md) Spécifie le script qui déclenche la condition.
 
-[Élément ScriptBlock pour SelectionCondition pour GroupBy (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
+[Élément ScriptBlock pour SelectionCondition pour GroupBy (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et la définition est utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de liste est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour ListEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et l’entrée de liste est utilisée.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et l’entrée de table est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md) Spécifie le bloc de script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et l’entrée de table est utilisée.
 
-[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué pour `true`, la condition est remplie et la définition d’entrée étendue est utilisée.
+[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md) Spécifie le script qui déclenche la condition. Lorsque ce script est évalué à `true` , la condition est remplie et la définition d’entrée étendue est utilisée.
 
 [Élément ScriptBlock pour TableColumnItem (format)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md) Spécifie le script dont la valeur est affichée dans la colonne de la ligne.
 

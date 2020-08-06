@@ -1,25 +1,18 @@
 ---
 title: Ajout d’un rapport d’erreurs sans fin d’achèvement à votre applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
-caps.latest.revision: 8
-ms.openlocfilehash: ec29d1cffa083e4cce667d3e1efbd4eeecbffb51
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870113"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784586"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
 
 Les applets de commande peuvent signaler des erreurs qui ne se terminent pas en appelant la méthode [System. Management. Automation. applet de commande. WriteError][] tout en continuant à fonctionner sur l’objet d’entrée actuel ou sur d’autres objets de pipeline entrants. Cette section explique comment créer une applet de commande qui signale les erreurs qui ne se terminent pas à partir de ses méthodes de traitement d’entrée.
 
-Pour les erreurs qui ne se terminent pas (ainsi que les erreurs de fin), l’applet de commande doit passer un objet [System. Management. Automation. ErrorRecord][] qui identifie l’erreur. Chaque enregistrement d’erreur est identifié par une chaîne unique appelée « identificateur d’erreur ». En plus de l’identificateur, la catégorie de chaque erreur est spécifiée par des constantes définies par une énumération [System. Management. Automation. ErrorCategory][] . L’utilisateur peut afficher les erreurs en fonction de sa catégorie en affectant à la variable `$ErrorView` la valeur « CategoryView ».
+Pour les erreurs qui ne se terminent pas (ainsi que les erreurs de fin), l’applet de commande doit passer un objet [System. Management. Automation. ErrorRecord][] qui identifie l’erreur. Chaque enregistrement d’erreur est identifié par une chaîne unique appelée « identificateur d’erreur ». En plus de l’identificateur, la catégorie de chaque erreur est spécifiée par des constantes définies par une énumération [System. Management. Automation. ErrorCategory][] . L’utilisateur peut afficher les erreurs en fonction de sa catégorie en affectant à la variable la valeur `$ErrorView` « CategoryView ».
 
 Pour plus d’informations sur les enregistrements d’erreurs, consultez la page [enregistrements d’erreurs Windows PowerShell](./windows-powershell-error-records.md).
 
@@ -27,7 +20,7 @@ Pour plus d’informations sur les enregistrements d’erreurs, consultez la pag
 
 La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Cette applet de commande récupère les informations de processus, le nom du verbe choisi ici est « obtenir ». (Presque tout type d’applet de commande capable de récupérer des informations peut traiter l’entrée de ligne de commande.) Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](approved-verbs-for-windows-powershell-commands.md)de commande.
 
-Voici la définition de cette `Get-Proc` applet de commande. Les détails de cette définition sont donnés dans [création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
+Voici la définition de cette applet de commande `Get-Proc` . Les détails de cette définition sont donnés dans [création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -78,7 +71,7 @@ End Property
 
 ## <a name="overriding-input-processing-methods"></a>Substitution des méthodes de traitement d’entrée
 
-Toutes les applets de commande doivent remplacer au moins l’une des méthodes de traitement d’entrée fournies par la classe [System. Management. Automation. applet de commande][] de commande. Ces méthodes sont décrites dans [création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
+Toutes les applets de commande doivent remplacer au moins l’une des méthodes de traitement d’entrée fournies par la classe [System. Management. Automation. applet][] de commande. Ces méthodes sont décrites dans [création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
 
 > [!NOTE]
 > Votre applet de commande doit gérer chaque enregistrement de la manière la plus indépendante possible.
@@ -117,7 +110,7 @@ Les exceptions non gérées ne sont pas interceptées par PowerShell dans les co
 
 L’une des méthodes de traitement d’entrée peut signaler une erreur sans fin d’exécution au flux de sortie à l’aide de la méthode [System. Management. Automation. applet de commande. WriteError][] .
 
-Voici un exemple de code de cette applet de commande « obtenir-proc » qui illustre l’appel à [System. Management. Automation. applet de commande. WriteError][] à partir de la substitution de la méthode [System. Management. Automation. applet de commande. ProcessRecord][] . Dans ce cas, l’appel est effectué si l’applet de commande ne parvient pas à trouver un processus pour un identificateur de processus spécifié.
+Voici un exemple de code de cette applet de commande « obtenir-proc » qui illustre l’appel à [System. Management. Automation. cmdlet. WriteError][] à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord][] . Dans ce cas, l’appel est effectué si l’applet de commande ne parvient pas à trouver un processus pour un identificateur de processus spécifié.
 
 ```csharp
 protected override void ProcessRecord()
@@ -161,13 +154,13 @@ protected override void ProcessRecord()
 
 Pour une erreur qui ne se termine pas, l’applet de commande doit générer un identificateur d’erreur spécifique pour chaque objet d’entrée spécifique.
 
-Une applet de commande doit souvent modifier l’action PowerShell produite par une erreur qui ne se termine pas. Pour ce faire, vous devez définir les paramètres `ErrorAction` et `ErrorVariable`. Si vous définissez le paramètre `ErrorAction`, l’applet de commande présente les options utilisateur [System. Management. Automation. PréférenceAction][]. vous pouvez également influencer directement l’action en définissant la variable `$ErrorActionPreference`.
+Une applet de commande doit souvent modifier l’action PowerShell produite par une erreur qui ne se termine pas. Pour ce faire, il peut définir `ErrorAction` les `ErrorVariable` paramètres et. Si vous définissez le `ErrorAction` paramètre, l’applet de commande présente les options utilisateur [System. Management. Automation. PréférenceAction][]. vous pouvez également influencer directement l’action en définissant la `$ErrorActionPreference` variable.
 
-L’applet de commande peut enregistrer les erreurs sans fin d’utilisation dans une variable à l’aide du paramètre `ErrorVariable`, qui n’est pas affecté par le paramètre de `ErrorAction`. Les échecs peuvent être ajoutés à une variable d’erreur existante en ajoutant un signe plus (+) au début du nom de la variable.
+L’applet de commande peut enregistrer les erreurs sans fin d’utilisation dans une variable à l’aide du `ErrorVariable` paramètre, qui n’est pas affecté par le paramètre de `ErrorAction` . Les échecs peuvent être ajoutés à une variable d’erreur existante en ajoutant un signe plus (+) au début du nom de la variable.
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple GetProcessSample04](./getprocesssample04-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple GetProcessSample04](./getprocesssample04-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Définir les types d’objets et la mise en forme
 
@@ -197,7 +190,7 @@ Lorsque votre applet de commande a été inscrite auprès de PowerShell, vous po
 
 ## <a name="see-also"></a>Voir aussi
 
-[Ajout de paramètres qui traitent l’entrée de pipeline](./adding-parameters-that-process-pipeline-input.md)
+[Ajout de paramètres qui traitent l’entrée du pipeline](./adding-parameters-that-process-pipeline-input.md)
 
 [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md)
 
@@ -209,9 +202,9 @@ Lorsque votre applet de commande a été inscrite auprès de PowerShell, vous po
 
 [Référence Windows PowerShell](../windows-powershell-reference.md)
 
-[Exemples d’applet de commande](./cmdlet-samples.md)
+[Exemples d’applets de commande](./cmdlet-samples.md)
 
-[System. exception]: /dotnet/api/System.Exception
+[System.Exception]: /dotnet/api/System.Exception
 [System. Management. Automation. PréférenceAction]: /dotnet/api/System.Management.Automation.ActionPreference
 [System. Management. Automation. applet de commande. ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
 [System. Management. Automation. applet de commande. WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError

@@ -1,25 +1,18 @@
 ---
 title: Élément label pour TableColumnHeader pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
-caps.latest.revision: 11
-ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365168"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785742"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label, élément pour TableColumnHeader pour TableControl (Format)
 
 Définit l’étiquette qui s’affiche en haut d’une colonne. Cet élément est utilisé lors de la définition d’une vue de table.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableHeaders pour table ((format) élément TableColumnHeader pour TableHeaders pour l’élément label table ((format) pour TableColumnHeader pour table ((format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableHeaders pour table ((format) élément TableColumnHeader pour TableHeaders pour table ((format) élément label pour TableColumnHeader (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,17 +21,17 @@ Définit l’étiquette qui s’affiche en haut d’une colonne. Cet élément e
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Label`. Une seule étiquette est autorisée pour chaque colonne.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Label` élément. Une seule étiquette est autorisée pour chaque colonne.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -46,11 +39,11 @@ Aucune.
 |-------------|-----------------|
 |[Élément TableColumnHeader pour TableHeaders pour table ((format)](./tablecolumnheader-element-format.md)|Définit une étiquette, la largeur et l’alignement des données pour une colonne de la table.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le texte affiché en haut de la colonne de la table. Il n’y a pas de caractères restreints pour l’étiquette de colonne.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Si aucune étiquette n’est spécifiée, le nom de la propriété dont la valeur est affichée dans les lignes est utilisé.
 
@@ -58,7 +51,7 @@ Pour plus d’informations sur les composants d’une vue de table, consultez [c
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre un élément `TableColumnHeader` dont l’étiquette est « column 1 ».
+Cet exemple montre un `TableColumnHeader` élément dont l’étiquette est « column 1 ».
 
 ```xml
 <TableColumnHeader>
@@ -72,6 +65,6 @@ Cet exemple montre un élément `TableColumnHeader` dont l’étiquette est « 
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Élément TableColumnHeader (format)](./tablecolumnheader-element-format.md)
+[TableColumnHeader, élément (Format)](./tablecolumnheader-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

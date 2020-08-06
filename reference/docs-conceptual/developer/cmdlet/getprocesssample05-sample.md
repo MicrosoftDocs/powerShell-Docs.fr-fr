@@ -1,19 +1,12 @@
 ---
 title: Exemple GetProcessSample05 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
-caps.latest.revision: 6
-ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365698"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784195"
 ---
 # <a name="getprocesssample05-sample"></a>Exemple GetProcessSample05
 
@@ -53,7 +46,7 @@ Cet exemple montre une version complète de l’applet de commande obtenir-proc.
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 

@@ -1,25 +1,18 @@
 ---
 title: Élément TableColumnItems pour TableRowEntry pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
-caps.latest.revision: 12
-ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 661b938e8db0e68e10dc05f552e4f3a14608bc55
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361808"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785147"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableColumnItems, élément pour TableRowEntry pour TableControl (Format)
 
 Définit les propriétés ou les scripts dont les valeurs sont affichées dans une ligne.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableRowEntries pour table ((format) élément TableRowEntry pour TableRowEntries pour table ((format) Élément TableColumnItems pour TableControlEntry pour table ((format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément table ((format) élément TableRowEntries pour table ((format) élément TableRowEntry pour TableRowEntries pour table ((format) TableColumnItems élément pour TableControlEntry (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,35 +22,35 @@ TableColumnItems>
 </TableColumnItems>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `TableColumnItems`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `TableColumnItems` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableColumnItem pour TableColumnItems pour table ((format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Élément requis.<br /><br /> Définit la propriété ou le script dont la valeur est affichée dans une colonne de la ligne.|
+|[TableColumnItem, élément pour TableColumnItems pour TableControl (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Élément requis.<br /><br /> Définit la propriété ou le script dont la valeur est affichée dans une colonne de la ligne.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableRowEntry pour TableRowEntries pour table ((format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Définit les données affichées dans une ligne de la table.|
+|[TableRowEntry, élément pour TableRowEntries pour TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Définit les données affichées dans une ligne de la table.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Un élément `TableColumnItem` est requis pour chaque colonne de la ligne. La première entrée est affichée dans la première colonne, la deuxième entrée de la deuxième colonne, et ainsi de suite.
+Un `TableColumnItem` élément est requis pour chaque colonne de la ligne. La première entrée est affichée dans la première colonne, la deuxième entrée de la deuxième colonne, et ainsi de suite.
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `TableColumnItems` qui définit trois propriétés de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
+L’exemple suivant montre un `TableColumnItems` élément qui définit trois propriétés de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <TableColumnItems>

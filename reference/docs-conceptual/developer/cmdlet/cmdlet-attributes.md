@@ -1,26 +1,19 @@
 ---
 title: Attributs d’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes [PowerShell SDK]
 - attributes [PowerShell SDK], described
-ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
-caps.latest.revision: 14
-ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f22c2882fbe5b2f51ca5ea218b921192b0a7d41f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369958"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784518"
 ---
 # <a name="cmdlet-attributes"></a>Attributs des applets de commande
 
-Windows PowerShell définit plusieurs attributs que vous pouvez utiliser pour ajouter des fonctionnalités communes à vos applets de commande sans implémenter cette fonctionnalité dans votre propre code. Cela comprend l’attribut d’applet de commande qui identifie une classe d’infrastructure Microsoft .NET en tant que classe d’applet de commande, l’attribut OutputType qui spécifie les types de .NET Framework retournés par l’applet de commande, l’attribut de paramètre qui identifie les propriétés publiques comme cmdlet paramètres, et bien plus encore.
+Windows PowerShell définit plusieurs attributs que vous pouvez utiliser pour ajouter des fonctionnalités communes à vos applets de commande sans implémenter cette fonctionnalité dans votre propre code. Cela comprend l’attribut d’applet de commande qui identifie une classe d’infrastructure Microsoft .NET en tant que classe d’applet de commande, l’attribut OutputType qui spécifie les types de .NET Framework retournés par l’applet de commande, l’attribut de paramètre qui identifie les propriétés publiques comme paramètres d’applet de commande, et bien plus encore.
 
 ## <a name="in-this-section"></a>Dans cette section
 

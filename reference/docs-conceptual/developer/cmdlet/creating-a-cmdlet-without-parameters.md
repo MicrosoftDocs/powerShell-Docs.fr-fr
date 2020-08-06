@@ -1,22 +1,15 @@
 ---
 title: Création d’une applet de commande sans paramètres | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], creating
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
-caps.latest.revision: 8
-ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415676"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784382"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
 
@@ -29,11 +22,11 @@ Cette section décrit comment créer une applet de commande qui récupère des i
 
 Un nom d’applet de commande se compose d’un verbe qui indique l’action prise par l’applet de commande et d’un nom qui indique les éléments sur lesquels l’applet de commande agit. Étant donné que cet exemple d’applet de commande « obtenir-proc » récupère des objets de processus, il utilise le verbe « obtenir », défini par l’énumération [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) , et le nom « proc » pour indiquer que l’applet de commande fonctionne sur les éléments de processus.
 
-Quand vous nommez des applets de commande, n’utilisez pas les caractères suivants : #, () {} [] &-/\ $; : «» < > &#124; ? @ ` .
+Quand vous nommez des applets de commande, n’utilisez pas les caractères suivants : #, () {} [] &-/\ $;: "' <> &#124;  ? @ ` .
 
 ### <a name="choosing-a-noun"></a>Choix d’un nom
 
-Vous devez choisir un nom spécifique. Il est préférable d’utiliser un nom singulier préfixé avec une version abrégée du nom du produit. Un exemple de nom d’applet de commande de ce type est «`Get-SQLServer`».
+Vous devez choisir un nom spécifique. Il est préférable d’utiliser un nom singulier préfixé avec une version abrégée du nom du produit. Un exemple de nom d’applet de commande de ce type est « `Get-SQLServer` ».
 
 ### <a name="choosing-a-verb"></a>Choix d’un verbe
 
@@ -54,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Notez que précédent à la définition de classe, l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , avec la syntaxe `[Cmdlet(verb, noun, ...)]`, est utilisé pour identifier cette classe en tant qu’applet de commande. Il s’agit du seul attribut requis pour toutes les applets de commande et permet au runtime Windows PowerShell de les appeler correctement. Vous pouvez définir des mots clés d’attribut pour déclarer davantage la classe si nécessaire. Sachez que la déclaration d’attribut pour notre exemple de classe GetProcCommand déclare uniquement les noms de substantif et de verbe pour l’applet de commande « obtenir-proc ».
+Notez que, avant la définition de classe, l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , avec la syntaxe `[Cmdlet(verb, noun, ...)]` , est utilisé pour identifier cette classe en tant qu’applet de commande. Il s’agit du seul attribut requis pour toutes les applets de commande et permet au runtime Windows PowerShell de les appeler correctement. Vous pouvez définir des mots clés d’attribut pour déclarer davantage la classe si nécessaire. Sachez que la déclaration d’attribut pour notre exemple de classe GetProcCommand déclare uniquement les noms de substantif et de verbe pour l’applet de commande « obtenir-proc ».
 
 > [!NOTE]
 > Pour toutes les classes d’attributs Windows PowerShell, les mots clés que vous pouvez définir correspondent aux propriétés de la classe d’attributs.
@@ -78,7 +71,7 @@ Pour tous les types d’entrée, le runtime Windows PowerShell appelle [System. 
 > [!NOTE]
 > Windows PowerShell utilise le terme « enregistrement » pour décrire l’ensemble des valeurs de paramètre fournies lors de l’appel d’une applet de commande.
 
-Si votre applet de commande accepte l’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , et éventuellement la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Par exemple, une applet de commande peut substituer les deux méthodes si elle recueille toutes les entrées à l’aide de [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , puis opère sur l’entrée dans son ensemble au lieu d’un élément à la fois, comme le fait l’applet de commande `Sort-Object`.
+Si votre applet de commande accepte l’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , et éventuellement la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Par exemple, une applet de commande peut substituer les deux méthodes si elle recueille toutes les entrées à l’aide de [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , puis opère sur l’entrée dans son ensemble au lieu d’un élément à la fois, comme le fait l’applet de commande `Sort-Object` .
 
 Si votre applet de commande ne prend pas d’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . N’oubliez pas que cette méthode est fréquemment utilisée à la place de [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) quand l’applet de commande ne peut pas fonctionner sur un élément à la fois, comme c’est le cas pour une applet de commande de tri.
 
@@ -131,7 +124,7 @@ Par exemple, [System. Management. Automation. applet de commande. EndProcessing]
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple GetProcessSample01](./getprocesssample01-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple GetProcessSample01](./getprocesssample01-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
 
@@ -151,7 +144,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     get-proc
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -175,7 +168,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p.length
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     63
@@ -187,7 +180,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p[6]
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -201,7 +194,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p[6].starttime
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -221,7 +214,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -233,7 +226,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
     ...
     ```
 
-7. Utilisez l’applet de commande `Get-Member` pour répertorier les propriétés disponibles pour chaque processus.
+7. Utilisez l' `Get-Member` applet de commande pour répertorier les propriétés disponibles pour chaque processus.
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -243,7 +236,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
         TypeName: System.Diagnostics.Process
     ```
 
-    La sortie suivante s'affiche.
+    La sortie suivante apparaît.
 
     ```output
     Name                     MemberType Definition
@@ -268,6 +261,6 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
 
 [Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85))
 
-[Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
+[Référence Windows PowerShell](../windows-powershell-reference.md)
 
-[Exemples d’applet de commande](./cmdlet-samples.md)
+[Exemples d’applets de commande](./cmdlet-samples.md)

@@ -1,25 +1,18 @@
 ---
 title: Élément SelectionCondition pour EntrySelectedBy pour CustomControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
-caps.latest.revision: 7
-ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52858dba5c7a5222b5410835f3374546ce8b88a2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368438"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785351"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>SelectionCondition, élément pour EntrySelectedBy pour CustomControl (Format)
 
 Définit une condition qui doit exister pour une définition de contrôle à utiliser. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément CustomControl pour l’élément View (format) CustomEntries pour CustomControl pour la vue (format) élément CustomEntry pour CustomEntries pour CustomControl pour View ( Format) élément CustomItem pour CustomEntry pour CustomControl pour la vue (format) élément EntrySelectedBy pour CustomEntry pour CustomControl pour l’élément View (format) SelectionCondition pour CustomControl pour la vue (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément CustomControl pour la vue (format) élément CustomEntries pour CustomControl pour la vue (format) élément CustomEntry pour CustomEntries pour CustomControl pour la vue (format) CustomItem élément pour la vue (format) CustomEntry pour CustomControl pour la vue (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,30 +25,30 @@ Définit une condition qui doit exister pour une définition de contrôle à uti
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `SelectionCondition`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionCondition` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément PropertyName pour SelectionCondition pour CustomControl pour View (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie une propriété .NET qui déclenche la condition.|
-|[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
+|[PropertyName, élément pour SelectionCondition pour CustomControl pour View (Format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie une propriété .NET qui déclenche la condition.|
+|[ScriptBlock, élément pour SelectionCondition pour CustomControl pour View (Format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
 |[Élément SelectionSetName pour SelectionCondition pour un contrôle personnalisé pour View (format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
-|[Élément TypeName pour SelectionCondition pour CustomControl pour View (format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
+|[TypeName, élément pour SelectionCondition pour CustomControl pour View (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour CustomEntry pour CustomControl pour View (format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
+|[EntrySelectedBy, élément pour CustomEntry pour CustomControl pour View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Lorsque vous définissez une condition de sélection, les conditions suivantes s’appliquent :
 
@@ -67,14 +60,14 @@ Pour plus d’informations sur l’utilisation des conditions de sélection, con
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément PropertyName pour SelectionCondition pour CustomControl pour View (format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[PropertyName, élément pour SelectionCondition pour CustomControl pour View (Format)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[Élément ScriptBlock pour SelectionCondition pour CustomControl pour View (format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[ScriptBlock, élément pour SelectionCondition pour CustomControl pour View (Format)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
 [Élément SelectionSetName pour SelectionCondition pour un contrôle personnalisé pour View (format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[Élément TypeName pour SelectionCondition pour CustomControl pour View (format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[TypeName, élément pour SelectionCondition pour CustomControl pour View (Format)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[Élément EntrySelectedBy pour CustomEntry pour CustomControl pour View (format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[EntrySelectedBy, élément pour CustomEntry pour CustomControl pour View (Format)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

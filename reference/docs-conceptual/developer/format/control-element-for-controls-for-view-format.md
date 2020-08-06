@@ -1,19 +1,12 @@
 ---
 title: Control, élément de Controls pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1fd53f55-698d-4df5-bb9a-fe28dc3193e1
-caps.latest.revision: 11
-ms.openlocfilehash: df568ccb36a2646b983622cdf95718dd5cac62c3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 13ea2f09aec7fea8e5460197f133b5f5219cd369
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363468"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783804"
 ---
 # <a name="control-element-for-controls-for-view--format"></a>Control, élément pour Controls pour View (Format)
 
@@ -30,20 +23,20 @@ Définit un contrôle qui peut être utilisé par la vue et le nom utilisé pour
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Control`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Control` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
 |[Élément Name pour le contrôle pour View (format)](./name-element-for-control-for-controls-for-view-format.md)|Élément requis.<br /><br /> Spécifie le nom du contrôle.|
-|[CustomControl, élément de Control pour les contrôles pour View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Élément requis.<br /><br /> Définit le contrôle utilisé par cette vue.|
+|[CustomControl, élément pour Control pour View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)|Élément requis.<br /><br /> Définit le contrôle utilisé par cette vue.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -51,32 +44,32 @@ Aucune.
 |-------------|-----------------|
 |[Élément Controls (format)](./controls-element-for-view-format.md)|Définit les contrôles d’affichage qui peuvent être utilisés par une vue spécifique.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Ce contrôle peut être spécifié par les éléments suivants :
 
-- [Élément CustomControlName pour ExpressionBinding pour les contrôles pour View (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+- [CustomControlName, élément pour ExpressionBinding pour Controls pour View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
-- [Élément CustomControlName pour ExpressionBinding pour CustomControl pour View (format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+- [CustomControlName, élément pour ExpressionBinding pour CustomControl pour View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
-- [Élément CustomControlName pour ExpressionBinding pour GroupBy (format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+- [CustomControlName, élément pour ExpressionBinding pour GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
-- [Élément CustomControlName pour GroupBy (format)](./customcontrolname-element-for-groupby-format.md)
+- [CustomControlName, élément pour GroupBy (Format)](./customcontrolname-element-for-groupby-format.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-[CustomControl, élément de Control pour les contrôles pour View (format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
+[CustomControl, élément pour Control pour View (Format)](./customcontrol-element-for-control-for-controls-for-view-format.md)
 
-[Élément CustomControlName pour ExpressionBinding pour les contrôles pour View (format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
+[CustomControlName, élément pour ExpressionBinding pour Controls pour View (Format)](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)
 
-[Élément CustomControlName pour ExpressionBinding pour CustomControl pour View (format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
+[CustomControlName, élément pour ExpressionBinding pour CustomControl pour View (Format)](./customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md)
 
-[Élément CustomControlName pour ExpressionBinding pour GroupBy (format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+[CustomControlName, élément pour ExpressionBinding pour GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
-[Élément CustomControlName pour ExpressionBinding pour GroupBy (format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
+[CustomControlName, élément pour ExpressionBinding pour GroupBy (Format)](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)
 
 [Élément Controls (format)](./controls-element-for-view-format.md)
 
-[Élément Name pour le contrôle des contrôles pour View (format)](./name-element-for-control-for-controls-for-view-format.md)
+[Name, élément pour Control pour Controls pour View (Format)](./name-element-for-control-for-controls-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

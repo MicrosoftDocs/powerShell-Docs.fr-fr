@@ -1,25 +1,18 @@
 ---
 title: Élément CustomItem pour CustomEntry pour CustomControl pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
-caps.latest.revision: 12
-ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 25101c9c156ef91657f51db7044bf9a6653142a2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363948"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785827"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>CustomItem, élément pour CustomEntry pour CustomControl pour View (Format)
 
 Définit les données affichées par l’affichage de contrôle personnalisé et leur mode d’affichage. Cet élément est utilisé lors de la définition d’un affichage de contrôle personnalisé.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément CustomControl (format) élément CustomEntries pour CustomControl pour View (format) élément CustomEntry pour CustomEntries pour la vue (format) CustomItem, élément de CustomEntry pour la vue (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément de vue (format) élément CustomControl (format) élément CustomEntries pour CustomControl pour View (format) élément CustomEntry pour CustomEntries pour l’élément View (format) CustomItem pour CustomEntry pour View (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,20 +25,20 @@ Définit les données affichées par l’affichage de contrôle personnalisé et
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomItem`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomItem` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ExpressionBinding pour CustomItem pour CustomControl pour View (format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Définit les données affichées par le contrôle.|
-|[Élément Frame pour CustomItem pour CustomControl pour View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Définit les données affichées par l’affichage de contrôle personnalisé et leur mode d’affichage.|
+|[ExpressionBinding, élément pour CustomItem pour CustomControl pour View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Définit les données affichées par le contrôle.|
+|[Frame, élément pour CustomItem pour CustomControl pour View (Format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Définit les données affichées par l’affichage de contrôle personnalisé et leur mode d’affichage.|
 |[Élément NewLine pour CustomItem pour un contrôle personnalisé pour View (format)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|Élément facultatif.<br /><br /> Ajoute une ligne vide à l’affichage du contrôle.|
 |[Élément de texte pour CustomItem pour CustomControl pour View (format)](./text-element-for-customitem-for-customview-for-view-format.md)|Élément facultatif.<br /><br /> Spécifie du texte supplémentaire pour les données affichées par le contrôle.|
 
@@ -53,19 +46,19 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntry pour CustomEntries pour CustomControl pour View (format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Fournit une définition de l’affichage de contrôle personnalisé.|
+|[CustomEntry, élément pour CustomEntries pour CustomControl pour View (Format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|Fournit une définition de l’affichage de contrôle personnalisé.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
 [Élément CustomEntry pour CustomEntries pour View (format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
 
-[Élément ExpressionBinding pour CustomItem pour CustomControl pour View (format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+[ExpressionBinding, élément pour CustomItem pour CustomControl pour View (Format)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Élément Frame pour CustomItem pour CustomControl pour View (format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
+[Frame, élément pour CustomItem pour CustomControl pour View (Format)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[Élément NewLine pour CustomItem pour CustomControl pour View (format)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
+[NewLine, élément pour CustomItem pour CustomControl pour View (Format)](./newline-element-for-customitem-for-customcontrol-for-view-format.md)
 
 [Élément de texte pour CustomItem pour CustomControl pour View (format)](./text-element-for-customitem-for-customview-for-view-format.md)
 

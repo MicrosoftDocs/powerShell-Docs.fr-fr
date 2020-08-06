@@ -1,25 +1,18 @@
 ---
 title: Rapport d’erreurs d’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error records [PowerShell], terminating
 - non-terminating errors [PowerShell]
 - error records [PowerShell]
 - terminating errors [PowerShell]
 - error records [PowerShell], non-terminating
-ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
-caps.latest.revision: 8
-ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365918"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784467"
 ---
 # <a name="cmdlet-error-reporting"></a>Rapport d’erreurs d’applet de commande
 
@@ -82,12 +75,12 @@ Les catégories d’erreur sont utilisées pour regrouper les erreurs de l’uti
 
 Pour obtenir une description des catégories d’erreurs disponibles, consultez l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . En général, vous devez éviter d’utiliser **NOERROR**, **UndefinedError**et **erreur générique** dans la mesure du possible.
 
-Les utilisateurs peuvent afficher les erreurs en fonction de la catégorie lorsqu’ils définissent `$ErrorView` sur **CategoryView**.
+Les utilisateurs peuvent afficher les erreurs en fonction de la catégorie lorsqu’ils sont définis `$ErrorView` sur **CategoryView**.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Présentation des applets de commande](./cmdlet-overview.md)
+[Vue d’ensemble des applets de commande](./cmdlet-overview.md)
 
-[Types de sortie de l’applet de commande](./types-of-cmdlet-output.md)
+[Types de sortie des applets de commande](./types-of-cmdlet-output.md)
 
-[Informations de référence sur Windows PowerShell](../windows-powershell-reference.md)
+[Référence Windows PowerShell](../windows-powershell-reference.md)

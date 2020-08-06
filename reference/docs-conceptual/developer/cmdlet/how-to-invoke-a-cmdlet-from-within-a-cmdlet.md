@@ -1,23 +1,16 @@
 ---
 title: Comment appeler une applet de commande à partir d’une applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
-caps.latest.revision: 12
-ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365548"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784144"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Guide pratique pour appeler une applet de commande à partir d’une applet de commande
 
-Cet exemple montre comment appeler une applet de commande à partir d’une autre applet de commande, ce qui vous permet d’ajouter la fonctionnalité de l’applet de commande appelée à l’applet de commande que vous développez. Dans cet exemple, l’applet de commande `Get-Process` est appelée pour récupérer les processus en cours d’exécution sur l’ordinateur local. L’appel à l’applet de commande `Get-Process` est équivalent à la commande suivante. Cette commande récupère tous les processus dont les noms commencent par les caractères « a » à « t ».
+Cet exemple montre comment appeler une applet de commande à partir d’une autre applet de commande, ce qui vous permet d’ajouter la fonctionnalité de l’applet de commande appelée à l’applet de commande que vous développez. Dans cet exemple, l' `Get-Process` applet de commande est appelée pour récupérer les processus en cours d’exécution sur l’ordinateur local. L’appel à l' `Get-Process` applet de commande est équivalent à la commande suivante. Cette commande récupère tous les processus dont les noms commencent par les caractères « a » à « t ».
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +21,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Pour appeler une applet de commande à partir d’une applet de commande
 
-1. Assurez-vous que l’assembly qui définit l’applet de commande à appeler est référencé et que l’instruction `using` appropriée est ajoutée. Dans cet exemple, les espaces de noms suivants sont ajoutés.
+1. Assurez-vous que l’assembly qui définit l’applet de commande à appeler est référencé et que l' `using` instruction appropriée est ajoutée. Dans cet exemple, les espaces de noms suivants sont ajoutés.
 
     ```csharp
     using System.Diagnostics;
@@ -43,7 +36,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. Appelez la méthode [System. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) pour appeler l’applet de commande `Get-Process`.
+3. Appelez la méthode [System. Management. Automation. cmdlet. Invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) pour appeler l' `Get-Process` applet de commande.
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -55,7 +48,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>Exemple
 
-Dans cet exemple, l’applet de commande `Get-Process` est appelée à partir de la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) d’une applet de commande.
+Dans cet exemple, l' `Get-Process` applet de commande est appelée à partir de la méthode [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) d’une applet de commande.
 
 ```csharp
 using System;

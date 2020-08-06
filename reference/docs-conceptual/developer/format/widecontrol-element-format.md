@@ -1,19 +1,12 @@
 ---
 title: Élément WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
-caps.latest.revision: 14
-ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6f19cf94dcb440eeaf53547db407287e5462520
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367988"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784977"
 ---
 # <a name="widecontrol-element-format"></a>WideControl, élément (Format)
 
@@ -31,31 +24,31 @@ Définit un format de liste larges (à valeur unique) pour la vue. Cette vue aff
 </WideControl>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `WideControl`. Vous ne pouvez pas spécifier les éléments `AutoSize` et `ColumnNumber` en même temps.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `WideControl` élément. Vous ne pouvez pas spécifier les `AutoSize` `ColumnNumber` éléments et en même temps.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[AutoSize, élément de WideControl (format)](./autosize-element-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie si la taille de colonne et le nombre de colonnes sont ajustés en fonction de la taille des données.|
-|[Élément ColumnNumber pour WideControl (format)](./columnnumber-element-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le nombre de colonnes affichées dans la vue étendue.|
+|[AutoSize, élément pour WideControl (Format)](./autosize-element-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie si la taille de colonne et le nombre de colonnes sont ajustés en fonction de la taille des données.|
+|[ColumnNumber, élément pour WideControl (Format)](./columnnumber-element-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le nombre de colonnes affichées dans la vue étendue.|
 |[Élément WideEntries (format)](./wideentries-element-for-widecontrol-format.md)|Élément requis.<br /><br /> Fournit les définitions de la vue étendue.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[View, élément (format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher un ou plusieurs objets .NET.|
+|[View, élément (Format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher un ou plusieurs objets .NET.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Lorsque vous définissez une vue étendue, vous pouvez ajouter l’élément `AutoSize` ou le `ColumnNumber`, mais vous ne pouvez pas ajouter les deux.
+Lorsque vous définissez une vue étendue, vous pouvez ajouter l' `AutoSize` élément ou le, `ColumnNumber` mais vous ne pouvez pas ajouter les deux.
 
 Dans la plupart des cas, une seule définition est requise pour chaque vue étendue, mais il est possible d’avoir plusieurs définitions si vous souhaitez utiliser la même vue pour afficher différents objets .NET. Dans ce cas, vous pouvez fournir une définition distincte pour chaque objet ou ensemble d’objets.
 
@@ -63,7 +56,7 @@ Pour plus d’informations sur les composants d’une vue étendue, consultez [c
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `WideControl` utilisé pour afficher une propriété de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
+L’exemple suivant montre un `WideControl` élément utilisé pour afficher une propriété de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <View>
@@ -83,14 +76,14 @@ Pour obtenir un exemple complet d’une vue étendue, consultez [vue étendue (d
 
 [AutoSize, élément de WideControl (format)](./autosize-element-for-widecontrol-format.md)
 
-[Élément ColumnNumber pour WideControl (format)](./columnnumber-element-for-widecontrol-format.md)
+[ColumnNumber, élément pour WideControl (Format)](./columnnumber-element-for-widecontrol-format.md)
 
-[View, élément (format)](./view-element-format.md)
+[View, élément (Format)](./view-element-format.md)
 
 [Élément WideEntries (format)](./wideentries-element-for-widecontrol-format.md)
 
-[Vue étendue (de base)](./wide-view-basic.md)
+[Vue large (De base)](./wide-view-basic.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

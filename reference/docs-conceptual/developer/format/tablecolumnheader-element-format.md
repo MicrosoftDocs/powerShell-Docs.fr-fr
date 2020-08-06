@@ -1,19 +1,12 @@
 ---
 title: Élément TableColumnHeader (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
-caps.latest.revision: 19
-ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6296aea5c567663b1c3c0a2cf0a57b21aa5394de
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361848"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785181"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader, élément (Format)
 
@@ -31,39 +24,39 @@ Définit l’étiquette, la largeur de la colonne et l’alignement de l’étiq
 </TableColumnHeader>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `TableColumnHeader`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `TableColumnHeader` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
 |[Élément label pour TableColumnHeader pour table ((format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Définit l’étiquette qui s’affiche en haut de la colonne. Si aucune étiquette n’est spécifiée, le nom de la propriété dont la valeur est affichée dans les lignes est utilisé.|
-|[Width, élément de TableColumnHeader pour table ((format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Élément requis.<br /><br /> Spécifie la largeur (en caractères) de la colonne.|
-|[Élément Alignment pour TableColumnHeader pour table ((format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le mode d’affichage de l’étiquette de la colonne. Si aucun alignement n’est spécifié, l’étiquette est alignée sur la gauche.|
+|[Width, élément pour TableColumnHeader pour TableControl (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|Élément requis.<br /><br /> Spécifie la largeur (en caractères) de la colonne.|
+|[Alignment, élément pour TableColumnHeader pour TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le mode d’affichage de l’étiquette de la colonne. Si aucun alignement n’est spécifié, l’étiquette est alignée sur la gauche.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableHeaders (format)](./tableheaders-element-format.md)|Définit les colonnes d’une vue de table.|
+|[TableHeaders, élément (Format)](./tableheaders-element-format.md)|Définit les colonnes d’une vue de table.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Spécifiez un en-tête pour chaque colonne de la table. Les colonnes sont affichées dans l’ordre dans lequel les éléments de `TableColumnHeader` sont définis.
+Spécifiez un en-tête pour chaque colonne de la table. Les colonnes sont affichées dans l’ordre dans lequel les `TableColumnHeader` éléments sont définis.
 
-Une table doit avoir le même nombre d’éléments `TableColumnHeader` que les éléments `TableRowEntry`. L’en-tête de colonne définit le mode d’affichage du texte en haut de la table. Les entrées de ligne définissent les données qui sont affichées dans les lignes de la table.
+Une table doit avoir le même nombre d’éléments `TableColumnHeader` que les `TableRowEntry` éléments. L’en-tête de colonne définit le mode d’affichage du texte en haut de la table. Les entrées de ligne définissent les données qui sont affichées dans les lignes de la table.
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [vue table](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre deux éléments `TableColumnHeader`. Le premier élément définit une colonne dont l’étiquette est « colonne 1 », a une largeur de 16 caractères et dont l’étiquette est alignée à gauche. Le deuxième élément définit une colonne dont l’étiquette est « colonne 2 », a une largeur de 10 caractères et dont l’étiquette est centrée dans la colonne.
+L’exemple suivant montre deux `TableColumnHeader` éléments. Le premier élément définit une colonne dont l’étiquette est « colonne 1 », a une largeur de 16 caractères et dont l’étiquette est alignée à gauche. Le deuxième élément définit une colonne dont l’étiquette est « colonne 2 », a une largeur de 10 caractères et dont l’étiquette est centrée dans la colonne.
 
 ```xml
 <TableHeaders>
@@ -82,11 +75,11 @@ L’exemple suivant montre deux éléments `TableColumnHeader`. Le premier élé
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément Alignment pour TableColumnHeader pour table ((format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Alignment, élément pour TableColumnHeader pour TableControl (Format)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Élément label pour TableColumnHeader pour table ((format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[Label, élément pour TableColumnHeader pour TableControl (Format)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [Élément TableHeaders pour table ((format)](./tableheaders-element-format.md)
 

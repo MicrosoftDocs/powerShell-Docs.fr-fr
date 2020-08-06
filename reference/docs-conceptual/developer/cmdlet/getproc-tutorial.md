@@ -1,19 +1,12 @@
 ---
 title: Didacticiel GetProc | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4663905f-560a-4e39-9b03-6db2c315c322
-caps.latest.revision: 6
-ms.openlocfilehash: bbd07a0d0abd30742b7e02482adedae3af43aca4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cc99cb4de8e3b8fcab8eac28b21162764aecd8a1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364438"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784263"
 ---
 # <a name="getproc-tutorial"></a>Tutoriel GetProc
 
@@ -33,11 +26,11 @@ Les rubriques de ce didacticiel sont conçues pour être lues de manière séque
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’une applet de commande sans paramètres](./creating-a-cmdlet-without-parameters.md)
+[Création d’une applet de commande sans paramètre](./creating-a-cmdlet-without-parameters.md)
 
 [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md)
 
-[Ajout de paramètres qui traitent l’entrée de pipeline](./adding-parameters-that-process-pipeline-input.md)
+[Ajout de paramètres qui traitent l’entrée du pipeline](./adding-parameters-that-process-pipeline-input.md)
 
 [Ajout d’un rapport d’erreurs qui ne se termine pas à votre applet de commande](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 

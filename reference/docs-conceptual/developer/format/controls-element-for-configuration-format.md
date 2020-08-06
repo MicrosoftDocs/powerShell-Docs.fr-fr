@@ -1,19 +1,12 @@
 ---
 title: Controls, élément de configuration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
-caps.latest.revision: 18
-ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 44b9db0d3523e5e9086da9911882b258a2a54ca6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368998"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783787"
 ---
 # <a name="controls-element-for-configuration-format"></a>Controls, élément pour Configuration (Format)
 
@@ -29,34 +22,34 @@ Définit les contrôles communs qui peuvent être utilisés par toutes les vues 
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Controls`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Controls` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)|Élément requis.<br /><br /> Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme.|
+|[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)|Élément requis.<br /><br /> Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément configuration (format)](./configuration-element-format.md)|Représente l’élément de niveau supérieur d’un fichier de mise en forme.|
+|[Configuration, élément (Format)](./configuration-element-format.md)|Représente l’élément de niveau supérieur d’un fichier de mise en forme.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez créer n’importe quel nombre de contrôles communs. Pour chaque contrôle, vous devez spécifier le nom utilisé pour référencer le contrôle et les composants du contrôle.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément configuration (format)](./configuration-element-format.md)
+[Configuration, élément (Format)](./configuration-element-format.md)
 
-[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)
+[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

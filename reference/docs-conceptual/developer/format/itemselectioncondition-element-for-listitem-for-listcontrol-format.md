@@ -1,25 +1,18 @@
 ---
 title: Élément ItemSelectionCondition pour ListItem pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
-caps.latest.revision: 10
-ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f5c388928668e03b96923130fb5849f637548f12
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365188"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783617"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ItemSelectionCondition, élément pour ListItem pour ListControl (Format)
 
 Définit la condition qui doit exister pour l’élément de liste à utiliser.
 
-Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément de ListControl (format) ListEntry, élément de ListEntries pour ListControl (format) ListItems, élément de ListEntry pour l’élément ListControl (format) ListItem pour ListItems pour ListControl (format), élément ItemSelectionCondition pour ListItem pour ListControl (format)
+Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) ListControl, élément (format) ListEntries, élément de ListControl (format) ListEntry, élément de ListEntries pour ListControl (format) ListItems, élément de ListEntry pour ListControl (format) ListItem, élément de ListItems pour ListControl (format) élément ItemSelectionCondition pour ListItem pour ListControl (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,37 +23,37 @@ Définit la condition qui doit exister pour l’élément de liste à utiliser.
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ItemSelectionCondition`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ItemSelectionCondition` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément PropertyName pour ItemSelectionCondition pour ListControl (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
-|[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
+|[PropertyName, élément pour ItemSelectionCondition pour ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
+|[ScriptBlock, élément pour ItemSelectionCondition pour ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ListItem pour ListItems pour ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Définit la propriété ou le script dont la valeur est affichée dans une ligne de la vue liste.|
+|[ListItem, élément pour ListItems pour ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)|Définit la propriété ou le script dont la valeur est affichée dans une ligne de la vue liste.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez spécifier un nom de propriété ou un script pour cette condition, mais vous ne pouvez pas spécifier les deux.
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément ListItem pour ListItems pour ListControl (format)](./listitem-element-for-listitems-for-listcontrol-format.md)
+[ListItem, élément pour ListItems pour ListControl (Format)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[Élément PropertyName pour ItemSelectionCondition pour ListControl (format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
+[PropertyName, élément pour ItemSelectionCondition pour ListControl (Format)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+[ScriptBlock, élément pour ItemSelectionCondition pour ListControl (Format)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

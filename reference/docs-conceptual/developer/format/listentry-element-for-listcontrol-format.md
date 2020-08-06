@@ -1,19 +1,12 @@
 ---
 title: Élément ListEntry pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
-caps.latest.revision: 12
-ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d98f0b5215eea7668f866d2733214ade79d748f1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362748"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785691"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListEntry, élément pour ListControl (Format)
 
@@ -30,13 +23,13 @@ Fournit une définition de la vue liste.
 </ListEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ListEntry`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ListEntry` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -51,7 +44,7 @@ Aucune.
 |-------------|-----------------|
 |[ListEntries, élément (format)](./listentries-element-for-listcontrol-format.md)|Fournit les définitions de la vue liste.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Un affichage de liste est un format de liste qui affiche des valeurs de propriété ou des valeurs de script pour chaque objet. Pour plus d’informations sur les affichages de liste, consultez [création d’un mode liste](./creating-a-list-view.md).
 
@@ -77,7 +70,7 @@ Cet exemple montre les éléments XML qui définissent le mode liste de l’obje
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Élément EntrySelectedBy pour ListEntry (format)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 

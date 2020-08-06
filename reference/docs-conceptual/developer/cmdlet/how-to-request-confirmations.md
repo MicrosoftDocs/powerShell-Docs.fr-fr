@@ -1,19 +1,12 @@
 ---
 title: Comment demander des confirmations | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
-caps.latest.revision: 9
-ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ebe928724f1b750afc11c1e3c1207375f4ec8e42
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369678"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784093"
 ---
 # <a name="how-to-request-confirmations"></a>Guide pratique pour demander des confirmations
 
@@ -24,14 +17,14 @@ Cet exemple montre comment appeler les méthodes [System. Management. Automation
 
 ## <a name="to-request-confirmation"></a>Pour demander une confirmation
 
-1. Assurez-vous que le paramètre `SupportsShouldProcess` de l’attribut d’applet de commande est défini sur `true`. (Pour functions, il s’agit d’un paramètre de l’attribut CmdletBinding.)
+1. Assurez-vous que le `SupportsShouldProcess` paramètre de l’attribut d’applet de commande a la valeur `true` . (Pour functions, il s’agit d’un paramètre de l’attribut CmdletBinding.)
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
             SupportsShouldProcess = true)]
     ```
 
-2. Ajoutez un paramètre `Force` à votre applet de commande pour permettre à l’utilisateur de remplacer une demande de confirmation.
+2. Ajoutez un `Force` paramètre à votre applet de commande pour permettre à l’utilisateur de remplacer une demande de confirmation.
 
     ```csharp
     [Parameter()]
@@ -43,9 +36,9 @@ Cet exemple montre comment appeler les méthodes [System. Management. Automation
     private bool force;
     ```
 
-3. Ajoutez une instruction `if` qui utilise la valeur de retour de la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour déterminer si la méthode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) est appelée.
+3. Ajoutez une `if` instruction qui utilise la valeur de retour de la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) pour déterminer si la méthode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) est appelée.
 
-4. Ajoutez une deuxième instruction `if` qui utilise la valeur de retour de la méthode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) et la valeur du paramètre `Force` pour déterminer si l’opération doit être effectuée.
+4. Ajoutez une deuxième `if` instruction qui utilise la valeur de retour de la méthode [System. Management. Automation. cmdlet. ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) et la valeur du `Force` paramètre pour déterminer si l’opération doit être effectuée.
 
 ## <a name="example"></a>Exemple
 

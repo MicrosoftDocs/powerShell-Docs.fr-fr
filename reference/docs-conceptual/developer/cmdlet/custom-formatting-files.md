@@ -1,23 +1,16 @@
 ---
 title: Fichiers de mise en forme personnalisés | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
-ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369828"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784348"
 ---
 # <a name="custom-formatting-files"></a>Fichiers de mise en forme personnalisée
 
-Le format d’affichage des objets retournés par les applets de commande, les fonctions et les scripts est défini à l’aide des fichiers de mise en forme (fichiers format. ps1xml). Plusieurs de ces fichiers sont fournis par Windows PowerShell pour définir le format d’affichage par défaut pour les objets retournés par les applets de commande Windows PowerShell. Toutefois, vous pouvez également créer vos propres fichiers de mise en forme personnalisés pour remplacer les formats d’affichage par défaut ou pour définir l’affichage des objets retournés par vos propres commandes.
+Le format d’affichage des objets retournés par les applets de commande, les fonctions et les scripts est défini à l’aide de fichiers de mise en forme (format.ps1fichiers XML). Plusieurs de ces fichiers sont fournis par Windows PowerShell pour définir le format d’affichage par défaut pour les objets retournés par les applets de commande Windows PowerShell. Toutefois, vous pouvez également créer vos propres fichiers de mise en forme personnalisés pour remplacer les formats d’affichage par défaut ou pour définir l’affichage des objets retournés par vos propres commandes.
 
 Windows PowerShell utilise les données de ces fichiers de mise en forme pour déterminer ce qui est affiché et la façon dont les données sont mises en forme. Les données affichées peuvent inclure les propriétés d’un objet ou la valeur d’un bloc de script.  Les blocs de script sont utilisés si vous souhaitez afficher une valeur qui n’est pas directement disponible à partir des propriétés d’un objet. Par exemple, vous souhaiterez peut-être ajouter la valeur de deux propriétés d’un objet et afficher la somme sous la forme d’un élément de données distinct. Lorsque vous écrivez votre propre fichier de mise en forme, vous devez définir des *vues* pour les objets que vous souhaitez afficher. Vous pouvez définir une vue unique pour chaque objet, vous pouvez définir une vue unique pour plusieurs objets, ou vous pouvez définir plusieurs vues pour le même objet. Il n’existe aucune limite quant au nombre d’affichages que vous pouvez définir.
 
@@ -40,7 +33,7 @@ Affichage personnalisé affiche une vue personnalisable des propriétés de l’
 
 ## <a name="view-xml-elements"></a>Afficher les éléments XML
 
-L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](../format/viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](../format/view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque vue, l’élément [Name](../format/name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](../format/viewselectedby-element-format.md) définit les objets qui utilisent la vue, et les différents éléments de contrôle (tels que l’élément `TableControl`) définissent le format de la vue.
+L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](../format/viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](../format/view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque vue, l’élément [Name](../format/name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](../format/viewselectedby-element-format.md) définit les objets qui utilisent la vue, et les différents éléments de contrôle (tels que l' `TableControl` élément) définissent le format de la vue.
 
 ```xml
 ViewDefinitions
@@ -81,7 +74,7 @@ ViewDefinitions
 
 [Vue table](../format/creating-a-table-view.md)
 
-[ListView](../format/creating-a-list-view.md)
+[Mode liste](../format/creating-a-list-view.md)
 
 [Vue étendue](../format/creating-a-wide-view.md)
 

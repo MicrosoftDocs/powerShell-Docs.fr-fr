@@ -1,19 +1,12 @@
 ---
 title: PropertyName, élément de GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
-caps.latest.revision: 10
-ms.openlocfilehash: da6ac5abe7acbbee8f57b3e81529664f81800b86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e83ebd49e4f3087c817b3cc8772889dbe85113aa
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362518"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785606"
 ---
 # <a name="propertyname-element-for-groupby-format"></a>PropertyName, élément pour GroupBy (Format)
 
@@ -27,29 +20,29 @@ Spécifie la propriété .NET qui démarre un nouveau groupe chaque fois que sa 
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `PropertyName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `PropertyName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)|Définit le mode d’affichage d’un groupe d’objets .NET.|
+|[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)|Définit le mode d’affichage d’un groupe d’objets .NET.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom de la propriété .NET.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Windows PowerShell démarre un nouveau groupe chaque fois que la valeur de cette propriété change.
 
@@ -71,8 +64,8 @@ Pour obtenir un exemple de fichier de mise en forme complet qui comprend cet él
 
 ## <a name="see-also"></a>Voir aussi
 
-[GroupBy, élément de View (format)](./groupby-element-for-view-format.md)
+[GroupBy, élément pour View (Format)](./groupby-element-for-view-format.md)
 
-[Élément ScriptBlock pour GroupBy (format)](./scriptblock-element-for-groupby-format.md)
+[ScriptBlock, élément pour GroupBy (Format)](./scriptblock-element-for-groupby-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

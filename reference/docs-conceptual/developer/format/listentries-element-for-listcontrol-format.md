@@ -1,19 +1,12 @@
 ---
 title: Élément ListEntries pour ListControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
-caps.latest.revision: 12
-ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0fe07e739c2d2fec153599ec6c0c0b3ecc14df18
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362758"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785708"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListEntries, élément pour ListControl (Format)
 
@@ -29,13 +22,13 @@ Fournit les définitions de la vue liste. Le mode liste doit spécifier une ou p
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ListEntries`. Au moins un élément enfant doit être spécifié.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ListEntries` élément. Au moins un élément enfant doit être spécifié.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -47,9 +40,9 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ListControl (format)](./listcontrol-element-format.md)|Définit un format de liste pour la vue.|
+|[ListControl, élément (Format)](./listcontrol-element-format.md)|Définit un format de liste pour la vue.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les affichages de liste, consultez [affichage de liste](./creating-a-list-view.md).
 
@@ -75,10 +68,10 @@ Cet exemple montre les éléments XML qui définissent le mode liste de l’obje
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément ListControl (format)](./listcontrol-element-format.md)
+[ListControl, élément (Format)](./listcontrol-element-format.md)
 
 [Élément ListEntry (format)](./listentry-element-for-listcontrol-format.md)
 
-[ListView](./creating-a-list-view.md)
+[Mode liste](./creating-a-list-view.md)
 
 [Écriture d’un fichier de mise en forme et de types Windows PowerShell](./writing-a-powershell-formatting-file.md)

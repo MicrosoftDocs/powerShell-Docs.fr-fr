@@ -1,19 +1,12 @@
 ---
 title: Élément SelectionSetName pour EntrySelectedBy pour EnumerableExpansion (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
-caps.latest.revision: 8
-ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8745ef9e6f326c3e8a5dbf185a595bbe93e92414
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368328"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785317"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionSetName, élément pour EntrySelectedBy pour EnumerableExpansion (Format)
 
@@ -28,29 +21,29 @@ Spécifie l’ensemble des types .NET développés par cette définition.
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `SelectionSetName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionSetName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Définit les objets de collection .NET développés par cette définition.|
+|[EntrySelectedBy, élément pour EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Définit les objets de collection .NET développés par cette définition.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom du jeu de sélection.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Chaque définition doit spécifier un ou plusieurs noms de types, un jeu de sélection ou une condition de sélection.
 
@@ -58,8 +51,8 @@ Les jeux de sélection sont généralement utilisés lorsque vous souhaitez déf
 
 ## <a name="see-also"></a>Voir aussi
 
-[Définition des jeux de sélection](./defining-selection-sets.md)
+[Définition de jeux de sélections](./defining-selection-sets.md)
 
-[Élément EntrySelectedBy pour EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)
+[EntrySelectedBy, élément pour EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

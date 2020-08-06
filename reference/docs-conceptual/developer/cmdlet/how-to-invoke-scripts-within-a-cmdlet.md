@@ -1,19 +1,12 @@
 ---
 title: Comment appeler des scripts dans une applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cc0bc6ce-48a5-4d9c-927e-636bca743e9f
-caps.latest.revision: 9
-ms.openlocfilehash: 7dcb8bc20ab56225764854f9dc6fdfd858ed7451
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 248ad7e2e35fe53682836d094a391023007fa0b7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364408"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784127"
 ---
 # <a name="how-to-invoke-scripts-within-a-cmdlet"></a>Guide pratique pour appeler des scripts dans une applet de commande
 

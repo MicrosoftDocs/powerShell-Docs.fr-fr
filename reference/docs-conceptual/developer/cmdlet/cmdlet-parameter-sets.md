@@ -1,19 +1,12 @@
 ---
-title: Jeux de paramètres d’applet de commande | Microsoft Docs
-ms.custom: ''
+title: Jeux de paramètres des applets de commande
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
-caps.latest.revision: 10
-ms.openlocfilehash: 41cb32735091f065a0835378428de190d08f3160
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 202cdd354693b9b7edaca5c127ae1f7d88ff4a28
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278979"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784416"
 ---
 # <a name="cmdlet-parameter-sets"></a>Ensembles de paramètres d’applet de commande
 
@@ -21,7 +14,7 @@ PowerShell utilise des jeux de paramètres pour vous permettre d’écrire une a
 
 ## <a name="examples-of-parameter-sets"></a>Exemples de jeux de paramètres
 
-Par exemple, l’applet de commande PowerShell `Get-EventLog` retourne des informations différentes selon que l’utilisateur spécifie le paramètre **List** ou **logname** . Si le paramètre **List** est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux, mais pas sur les informations d’événement qu’elles contiennent. Si le paramètre **logname** est spécifié, l’applet de commande renvoie des informations sur les événements dans un journal des événements spécifique. Les paramètres **List** et **logname** identifient deux jeux de paramètres distincts.
+Par exemple, l’applet de commande PowerShell `Get-EventLog` retourne des informations différentes selon que l’utilisateur spécifie ou non le paramètre **List** ou **logname** . Si le paramètre **List** est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux, mais pas sur les informations d’événement qu’elles contiennent. Si le paramètre **logname** est spécifié, l’applet de commande renvoie des informations sur les événements dans un journal des événements spécifique. Les paramètres **List** et **logname** identifient deux jeux de paramètres distincts.
 
 ## <a name="unique-parameter"></a>Paramètre unique
 
@@ -31,7 +24,7 @@ Chaque jeu de paramètres doit avoir un paramètre unique que le runtime PowerSh
 
 Dans l’illustration suivante, la colonne de gauche affiche trois jeux de paramètres valides. Le **paramètre a** est unique pour le premier jeu de paramètres, le **paramètre B** est unique pour le deuxième jeu de paramètres, et le **paramètre C** est unique pour le troisième jeu de paramètres. Dans la colonne de droite, les jeux de paramètres n’ont pas de paramètre unique.
 
-![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
+![Illustration des jeux de paramètres](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## <a name="parameter-set-requirements"></a>Spécifications du jeu de paramètres
 
@@ -41,8 +34,8 @@ Les exigences suivantes s’appliquent à tous les jeux de paramètres.
 
 - Un jeu de paramètres qui contient plusieurs paramètres positionnels doit définir des positions uniques pour chaque paramètre. Deux paramètres positionnels ne peuvent pas spécifier la même position.
 
-- Un seul paramètre d’un ensemble peut déclarer le mot clé `ValueFromPipeline` avec une valeur de `true`.
-  Plusieurs paramètres peuvent définir le mot clé `ValueFromPipelineByPropertyName` avec une valeur de `true`.
+- Un seul paramètre d’un ensemble peut déclarer le `ValueFromPipeline` mot clé avec la valeur `true` .
+  Plusieurs paramètres peuvent définir le `ValueFromPipelineByPropertyName` mot clé avec la valeur `true` .
 
 - Si aucun jeu de paramètres n’est spécifié pour un paramètre, le paramètre appartient à tous les jeux de paramètres.
 
@@ -51,13 +44,13 @@ Les exigences suivantes s’appliquent à tous les jeux de paramètres.
 
 ## <a name="default-parameter-sets"></a>Jeux de paramètres par défaut
 
-Lorsque plusieurs jeux de paramètres sont définis, vous pouvez utiliser le mot clé `DefaultParameterSetName` de l’attribut d' **applet** de commande pour spécifier le jeu de paramètres par défaut. PowerShell utilise le jeu de paramètres par défaut s’il ne peut pas déterminer le jeu de paramètres à utiliser en fonction des informations fournies par la commande. Pour plus d’informations sur l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
+Lorsque plusieurs jeux de paramètres sont définis, vous pouvez utiliser le `DefaultParameterSetName` mot clé de l’attribut d' **applet** de commande pour spécifier le jeu de paramètres par défaut. PowerShell utilise le jeu de paramètres par défaut s’il ne peut pas déterminer le jeu de paramètres à utiliser en fonction des informations fournies par la commande. Pour plus d’informations sur l’attribut d' **applet** de commande, consultez [déclaration d’attribut d’applet](./cmdlet-attribute-declaration.md)de commande.
 
 ## <a name="declaring-parameter-sets"></a>Déclarer des jeux de paramètres
 
-Pour créer un jeu de paramètres, vous devez spécifier le mot clé `ParameterSetName` lorsque vous déclarez l’attribut de **paramètre** pour chaque paramètre dans le jeu de paramètres. Pour les paramètres appartenant à plusieurs jeux de paramètres, ajoutez un attribut de **paramètre** pour chaque jeu de paramètres. Cet attribut vous permet de définir différemment le paramètre pour chaque jeu de paramètres. Par exemple, vous pouvez définir un paramètre comme obligatoire dans un jeu et facultatif dans un autre. Toutefois, chaque jeu de paramètres doit contenir un paramètre unique. Pour plus d’informations, consultez [déclaration d’attribut de paramètre](parameter-attribute-declaration.md).
+Pour créer un jeu de paramètres, vous devez spécifier le `ParameterSetName` mot clé lorsque vous déclarez l’attribut de **paramètre** pour chaque paramètre dans le jeu de paramètres. Pour les paramètres appartenant à plusieurs jeux de paramètres, ajoutez un attribut de **paramètre** pour chaque jeu de paramètres. Cet attribut vous permet de définir différemment le paramètre pour chaque jeu de paramètres. Par exemple, vous pouvez définir un paramètre comme obligatoire dans un jeu et facultatif dans un autre. Toutefois, chaque jeu de paramètres doit contenir un paramètre unique. Pour plus d’informations, consultez [déclaration d’attribut de paramètre](parameter-attribute-declaration.md).
 
-Dans l’exemple suivant, le paramètre **username** est le paramètre unique du jeu de paramètres `Test01`, et le paramètre **ComputerName** est le paramètre unique du jeu de paramètres `Test02`. Le paramètre **SharedParam** appartient aux deux ensembles et est obligatoire pour le jeu de paramètres `Test01`, mais facultatif pour le jeu de paramètres `Test02`.
+Dans l’exemple suivant, le paramètre **username** est le paramètre unique du `Test01` jeu de paramètres, et le paramètre **ComputerName** est le paramètre unique du jeu de `Test02` paramètres. Le paramètre **SharedParam** appartient aux deux ensembles et est obligatoire pour le `Test01` jeu de paramètres, mais facultatif pour le `Test02` jeu de paramètres.
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]

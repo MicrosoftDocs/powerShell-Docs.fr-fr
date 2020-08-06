@@ -1,19 +1,12 @@
 ---
 title: Création d’un affichage de liste | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
-ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368978"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783770"
 ---
 # <a name="creating-a-list-view"></a>Création d’une vue de liste
 
@@ -255,7 +248,7 @@ Pour obtenir un exemple de fichier de mise en forme complet qui définit des gro
 
 ## <a name="using-format-strings"></a>Utilisation de chaînes de format
 
-La mise en forme des chaînes peut être ajoutée à une vue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la propriété `StartTime`.
+La mise en forme des chaînes peut être ajoutée à une vue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la `StartTime` propriété.
 
 ```xml
 <ListItem>
@@ -274,7 +267,7 @@ Les éléments XML suivants peuvent être utilisés pour spécifier un modèle d
 
 - L’élément [scriptblock](./scriptblock-element-for-listitem-for-listcontrol-format.md) (non affiché) spécifie le script dont la valeur est affichée par la vue. Vous devez spécifier un script ou une propriété, mais vous ne pouvez pas spécifier les deux.
 
-Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString`, qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
+Dans l’exemple suivant, la `ToString` méthode est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString` , qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
 
 ```xml
 <ListItem>
@@ -285,7 +278,7 @@ Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en for
 </ListItem>
 ```
 
-L’élément XML suivant peut être utilisé pour appeler la méthode `ToString` :
+L’élément XML suivant peut être utilisé pour appeler la `ToString` méthode :
 
 - L’élément [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md) spécifie les données affichées par la vue.
 

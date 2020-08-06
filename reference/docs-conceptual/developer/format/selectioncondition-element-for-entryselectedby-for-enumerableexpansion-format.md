@@ -1,19 +1,12 @@
 ---
 title: Élément SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
-caps.latest.revision: 10
-ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d5858145e092dc962174a776889a4f62db366d71
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362008"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785334"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionCondition, élément pour EntrySelectedBy pour EnumerableExpansion (Format)
 
@@ -32,30 +25,30 @@ Définit la condition qui doit exister pour développer les objets de collection
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `SelectionCondition`. Vous devez spécifier un élément `PropertyName` ou `ScriptBlock` unique. Les éléments `SelectionSetName` et `TypeName` sont facultatifs. Vous pouvez spécifier l’un des deux éléments.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionCondition` élément. Vous devez spécifier un seul `PropertyName` `ScriptBlock` élément ou. Les `SelectionSetName` `TypeName` éléments et sont facultatifs. Vous pouvez spécifier l’un des deux éléments.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
-|[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
-|[Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
-|[Élément TypeName pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
+|[PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
+|[ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie le script qui déclenche la condition.|
+|[SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
+|[TypeName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour EnumerableExpansion (format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Définit les objets de collection .NET développés par cette définition.|
+|[EntrySelectedBy, élément pour EnumerableExpansion (Format)](./entryselectedby-element-for-enumerableexpansion-format.md)|Définit les objets de collection .NET développés par cette définition.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Au moins un nom de type, un jeu de sélection ou une condition de sélection doivent être définis pour chaque définition.
 

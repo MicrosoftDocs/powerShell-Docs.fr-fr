@@ -1,25 +1,18 @@
 ---
 title: Exemple Runspace08 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
-caps.latest.revision: 7
-ms.openlocfilehash: e99b2936520c00150fe7ba55a9b7ef7ca8d63258
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4fcf58eceb415f9f02391c22d2719e9140c77ea9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560251"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783158"
 ---
 # <a name="runspace08-sample"></a>Exemple Runspace08
 
 Cet exemple montre comment ajouter des commandes et des arguments au pipeline d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) et comment exécuter les commandes de façon synchrone.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Spécifications
 
 Cet exemple requiert Windows PowerShell 2,0.
 

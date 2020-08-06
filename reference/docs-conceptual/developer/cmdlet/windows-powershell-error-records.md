@@ -1,24 +1,17 @@
 ---
 title: Enregistrements d’erreurs Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error category [PowerShell SDK]
 - error identifier [PowerShell SDK]
 - error records [PowerShell SDK]
 - error category string [PowerShell SDK]
-ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
-caps.latest.revision: 9
-ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52243916adf18b4f3a1e00f1fb4199c2619946e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369108"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783974"
 ---
 # <a name="windows-powershell-error-records"></a>Enregistrements d’erreurs Windows PowerShell
 
@@ -38,7 +31,7 @@ Si l’applet de commande n’a pas intercepté d’exception, elle doit créer 
 
 - Informations d’appel facultatives sur l’applet de commande qui a levé l’erreur. Ces informations sont spécifiées par Windows PowerShell (voir message d’appel).
 
-- Objet cible qui était en cours de traitement lorsque l’erreur s’est produite. Il peut s’agir de l’objet d’entrée ou d’un autre objet que votre applet de commande traitait. Par exemple, pour la commande `remove-item -recurse c:\somedirectory`, l’erreur peut être une instance d’un objet FileInfo pour « c:\somedirectory\lockedfile ». Les informations de l’objet cible sont facultatives.
+- Objet cible qui était en cours de traitement lorsque l’erreur s’est produite. Il peut s’agir de l’objet d’entrée ou d’un autre objet que votre applet de commande traitait. Par exemple, pour la commande `remove-item -recurse c:\somedirectory` , l’erreur peut être une instance d’un objet FileInfo pour « c:\somedirectory\lockedfile ». Les informations de l’objet cible sont facultatives.
 
 ## <a name="error-identifier"></a>Identificateur d’erreur
 
@@ -58,9 +51,9 @@ Utilisez les instructions suivantes pour générer des identificateurs d’erreu
 
 - Ne générez pas dynamiquement des identificateurs d’erreur d’une manière non reproductible. Par exemple, n’incorporez pas d’informations d’erreur comme un ID de processus. Les identificateurs d’erreur sont utiles uniquement s’ils correspondent aux identificateurs d’erreur détectés par d’autres utilisateurs qui rencontrent la même condition d’erreur.
 
-## <a name="error-category"></a>Catégorie d’erreur
+## <a name="error-category"></a>Catégorie de l'erreur
 
-Lorsque vous créez un enregistrement d’erreur, spécifiez la catégorie de l’erreur à l’aide de l’une des constantes définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows PowerShell utilise la catégorie d’erreur pour afficher les informations d’erreur lorsque les utilisateurs définissent la variable `$ErrorView` sur `"CategoryView"`.
+Lorsque vous créez un enregistrement d’erreur, spécifiez la catégorie de l’erreur à l’aide de l’une des constantes définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows PowerShell utilise la catégorie d’erreur pour afficher les informations d’erreur lorsque les utilisateurs définissent la `$ErrorView` variable sur `"CategoryView"` .
 
 Évitez d’utiliser la constante **NotSpecified** [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Si vous avez des informations sur l’erreur ou sur l’opération à l’origine de l’erreur, choisissez la catégorie qui décrit le mieux l’erreur ou l’opération, même si la catégorie n’est pas parfaite.
 
