@@ -1,25 +1,18 @@
 ---
 title: Élément CustomEntry pour CustomControl pour GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
-caps.latest.revision: 5
-ms.openlocfilehash: dcf4f8b2bbd422067ffdf9b3b4972e279e91edf9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4df8e5b96868b3814c6d84fa329950bb5345ef6e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364058"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785912"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>CustomEntry, élément pour CustomControl pour GroupBy (Format)
 
 Fournit une définition du contrôle. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour l’élément CustomEntry GroupBy (format) pour CustomControl pour GroupBy (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour la clause GroupBy (format) CustomEntry élément pour CustomControl pour GroupBy (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,35 +23,35 @@ Fournit une définition du contrôle. Cet élément est utilisé lors de la déf
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `CustomEntry`.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `CustomEntry` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour CustomEntry pour GroupBy (format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Élément facultatif.<br /><br /> Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
-|[Élément CustomItem pour CustomEntry pour GroupBy (format)](./customitem-element-for-customentry-for-groupby-format.md)|Élément requis.<br /><br /> Définit le mode d’affichage des données par le contrôle.|
+|[EntrySelectedBy, élément pour CustomEntry pour GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)|Élément facultatif.<br /><br /> Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
+|[CustomItem, élément pour CustomEntry pour GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)|Élément requis.<br /><br /> Définit le mode d’affichage des données par le contrôle.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntries pour CustomControl pour GroupBy (format)](./customentries-element-for-customcontrol-for-groupby-format.md)|Fournit les définitions pour le contrôle.|
+|[CustomEntries, élément pour CustomControl pour GroupBy (Format)](./customentries-element-for-customcontrol-for-groupby-format.md)|Fournit les définitions pour le contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément EntrySelectedBy pour CustomEntry pour GroupBy (format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
+[EntrySelectedBy, élément pour CustomEntry pour GroupBy (Format)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 
-[Élément CustomItem pour CustomEntry pour GroupBy (format)](./customitem-element-for-customentry-for-groupby-format.md)
+[CustomItem, élément pour CustomEntry pour GroupBy (Format)](./customitem-element-for-customentry-for-groupby-format.md)
 
-[Élément CustomEntries pour CustomControl pour GroupBy (format)](./customentries-element-for-customcontrol-for-groupby-format.md)
+[CustomEntries, élément pour CustomControl pour GroupBy (Format)](./customentries-element-for-customcontrol-for-groupby-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

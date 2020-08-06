@@ -1,19 +1,12 @@
 ---
 title: Élément DefaultSettings (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
-caps.latest.revision: 11
-ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7da7948fc0814e38a8f3910596e223470ec27d75
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363868"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787731"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings, élément (Format)
 
@@ -33,23 +26,23 @@ Définit des paramètres communs qui s’appliquent à toutes les vues du fichie
 </DefaultSettings>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `DefaultSettings`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `DefaultSettings` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément DisplayError (format)](./displayerror-element-format.md)|Élément facultatif.<br /><br /> Spécifie que la chaîne #ERR s’affiche lorsqu’une erreur se produit lors de l’affichage d’un élément de données.|
-|[Élément EnumerableExpansions (format)](./enumerableexpansions-element-format.md)|Élément facultatif.<br /><br /> Définit les différentes façons dont les objets .NET sont développés lorsqu’ils sont affichés dans une vue.|
+|[DisplayError, élément (Format)](./displayerror-element-format.md)|Élément facultatif.<br /><br /> Spécifie que la chaîne #ERR s’affiche lorsqu’une erreur se produit lors de l’affichage d’un élément de données.|
+|[EnumerableExpansions, élément (Format)](./enumerableexpansions-element-format.md)|Élément facultatif.<br /><br /> Définit les différentes façons dont les objets .NET sont développés lorsqu’ils sont affichés dans une vue.|
 |[PropertyCountForTable (format)](./propertycountfortable-element-format.md)|Élément facultatif.<br /><br /> Spécifie le nombre minimal de propriétés qu’un objet doit avoir pour afficher l’objet dans une vue table.|
-|[Élément ShowError (format)](./showerror-element-format.md)|Élément facultatif.<br /><br /> Spécifie que l’enregistrement complet de l’erreur s’affiche lorsqu’une erreur se produit lors de l’affichage d’un élément de données.|
-|[Élément WrapTables (format)](./wraptables-element-format.md)|Élément facultatif.<br /><br /> Spécifie que les données d’une table sont déplacées vers la ligne suivante si elles ne correspondent pas à la largeur de la colonne.|
+|[ShowError, élément (Format)](./showerror-element-format.md)|Élément facultatif.<br /><br /> Spécifie que l’enregistrement complet de l’erreur s’affiche lorsqu’une erreur se produit lors de l’affichage d’un élément de données.|
+|[WrapTables, élément (Format)](./wraptables-element-format.md)|Élément facultatif.<br /><br /> Spécifie que les données d’une table sont déplacées vers la ligne suivante si elles ne correspondent pas à la largeur de la colonne.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -57,20 +50,20 @@ Aucune.
 |-------------|-----------------|
 |[Élément de configuration](./configuration-element-format.md)|Représente l’élément de niveau supérieur d’un fichier de mise en forme.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
 [Élément de configuration](./configuration-element-format.md)
 
-[Élément DisplayError (format)](./displayerror-element-format.md)
+[DisplayError, élément (Format)](./displayerror-element-format.md)
 
-[Élément EnumerableExpansions (format)](./enumerableexpansions-element-format.md)
+[EnumerableExpansions, élément (Format)](./enumerableexpansions-element-format.md)
 
 [PropertyCountForTable (format)](./propertycountfortable-element-format.md)
 
-[Élément ShowError (format)](./showerror-element-format.md)
+[ShowError, élément (Format)](./showerror-element-format.md)
 
-[Élément WrapTables (format)](./wraptables-element-format.md)
+[WrapTables, élément (Format)](./wraptables-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

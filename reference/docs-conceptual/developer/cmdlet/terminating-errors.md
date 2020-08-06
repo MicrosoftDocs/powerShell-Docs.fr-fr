@@ -1,19 +1,12 @@
 ---
 title: Arrêt des erreurs | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b804e738-aefa-41bb-9649-f9ed897fd96c
-caps.latest.revision: 8
-ms.openlocfilehash: d1967fe7996f75ec5229920f7ec49aa5ff6bdbfd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 272e6cdd9a1da3cfd2e4f730f6aeb27577948278
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369328"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786388"
 ---
 # <a name="terminating-errors"></a>Erreur avec fin d’exécution
 
@@ -29,7 +22,7 @@ Les applets de commande peuvent écrire un nombre quelconque d’objets de sorti
 
 Les applets de commande peuvent appeler [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) uniquement à partir du thread qui a appelé la méthode de traitement d’entrée System. Management. Automation. cmdlet. [BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ou [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . N’essayez pas d’appeler [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) de commande. ThrowTerminatingError * ou [System. Management. Automation. cmdlet. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) à partir d’un autre thread. Au lieu de cela, les erreurs doivent être communiquées au thread principal.
 
-Une applet de commande peut lever une exception dans son implémentation de la méthode System. [Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ou [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Toute exception levée à partir de ces méthodes (à l’exception de quelques conditions d’erreur graves qui arrêtent l’hôte Windows PowerShell) est interprétée comme une erreur de fin qui arrête le pipeline, mais pas Windows PowerShell dans son ensemble. (Cela s’applique uniquement au thread principal de l’applet de commande. Exceptions non interceptées dans les threads générés par l’applet de commande, en général, arrêtez l’hôte Windows PowerShell.) Nous vous recommandons d’utiliser [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) au lieu de lever une exception, car l’enregistrement d’erreur fournit des informations supplémentaires sur la condition d’erreur, ce qui est utile pour l’utilisateur final. Les applets de commande doivent respecter les instructions du code managé par rapport à l’interception et à la gestion de toutes les exceptions (`catch (Exception e)`). Convertit uniquement les exceptions des types connus et attendus en enregistrements d’erreur.
+Une applet de commande peut lever une exception dans son implémentation de la méthode System. [Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing), [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ou [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . Toute exception levée à partir de ces méthodes (à l’exception de quelques conditions d’erreur graves qui arrêtent l’hôte Windows PowerShell) est interprétée comme une erreur de fin qui arrête le pipeline, mais pas Windows PowerShell dans son ensemble. (Cela s’applique uniquement au thread principal de l’applet de commande. Exceptions non interceptées dans les threads générés par l’applet de commande, en général, arrêtez l’hôte Windows PowerShell.) Nous vous recommandons d’utiliser [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) au lieu de lever une exception, car l’enregistrement d’erreur fournit des informations supplémentaires sur la condition d’erreur, ce qui est utile pour l’utilisateur final. Les applets de commande doivent respecter les instructions du code managé par rapport à l’interception et à la gestion de toutes les exceptions ( `catch (Exception e)` ). Convertit uniquement les exceptions des types connus et attendus en enregistrements d’erreur.
 
 ## <a name="see-also"></a>Voir aussi
 

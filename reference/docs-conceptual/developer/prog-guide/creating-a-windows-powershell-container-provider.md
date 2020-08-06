@@ -1,13 +1,12 @@
 ---
 title: Création d’un fournisseur de conteneur Windows PowerShell
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: eec92d526ad78d2351eef6679eaa0df19900715b
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a5bcba425909eb98c010a1ea010cb02b995771f3
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978489"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787204"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
 
@@ -16,8 +15,8 @@ Cette rubrique explique comment créer un fournisseur Windows PowerShell qui peu
 Les fournisseurs qui peuvent travailler sur des magasins de données à plusieurs niveaux sont appelés fournisseurs de conteneurs Windows PowerShell. Toutefois, sachez qu’un fournisseur de conteneurs Windows PowerShell ne peut être utilisé qu’en présence d’éléments dans un conteneur (sans conteneurs imbriqués). S’il existe des conteneurs imbriqués, vous devez implémenter un fournisseur de navigation Windows PowerShell. Pour plus d’informations sur l’implémentation du fournisseur de navigation Windows PowerShell, consultez [création d’un fournisseur de navigation Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md).
 
 > [!NOTE]
-> Vous pouvez télécharger le C# fichier source (AccessDBSampleProvider04.cs) pour ce fournisseur à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour Windows Vista et .NET Framework les composants d’exécution 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** . Pour plus d’informations sur les autres implémentations du fournisseur Windows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
+> Vous pouvez télécharger le fichier source C# (AccessDBSampleProvider04.cs) pour ce fournisseur à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour Windows Vista et .NET Framework les composants d’exécution 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Les fichiers sources téléchargés sont disponibles dans le **\<PowerShell Samples>** répertoire. Pour plus d’informations sur les autres implémentations du fournisseur Windows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md).
 
 Le fournisseur de conteneurs Windows PowerShell décrit ici définit la base de données en tant que conteneur unique, avec les tables et les lignes de la base de données définies en tant qu’éléments du conteneur.
 
@@ -50,7 +49,7 @@ Pour manipuler les éléments d’un magasin de données, tels que l’obtention
 
 ## <a name="retrieving-child-items"></a>Récupération d’éléments enfants
 
-Pour récupérer un élément enfant, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) pour prendre en charge les appels à partir de l’applet de commande `Get-ChildItem`. Cette méthode récupère les éléments enfants dans le magasin de données et les écrit dans le pipeline en tant qu’objets. Si le paramètre `recurse` de l’applet de commande est spécifié, la méthode récupère tous les enfants, quel que soit le niveau auquel ils se trouvent. Si le paramètre `recurse` n’est pas spécifié, la méthode récupère uniquement un seul niveau d’enfants.
+Pour récupérer un élément enfant, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) pour prendre en charge les appels de l’applet de commande `Get-ChildItem` . Cette méthode récupère les éléments enfants dans le magasin de données et les écrit dans le pipeline en tant qu’objets. Si le `recurse` paramètre de l’applet de commande est spécifié, la méthode récupère tous les enfants, quel que soit le niveau auquel ils se trouvent. Si le `recurse` paramètre n’est pas spécifié, la méthode récupère uniquement un seul niveau d’enfants.
 
 Voici l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) pour ce fournisseur. Notez que cette méthode récupère les éléments enfants dans toutes les tables de base de données lorsque le chemin d’accès indique la base de données Access et récupère les éléments enfants à partir des lignes de cette table si le chemin d’accès indique une table de données.
 
@@ -117,7 +116,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Lors de la définition de la classe de fournisseur, un fournisseur de conteneurs Windows PowerShell peut déclarer des fonctionnalités de fournisseur de ExpandWildcards, Filter, include ou Exclude, à partir de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Dans ces cas, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) doit garantir que le chemin d’accès passé à la méthode répond aux exigences des fonctionnalités spécifiées. Pour ce faire, la méthode doit accéder à la propriété appropriée, par exemple, les propriétés [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) et [System. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- L’implémentation de cette méthode doit prendre en compte toute forme d’accès à l’élément qui peut rendre l’élément visible à l’utilisateur. Par exemple, si un utilisateur dispose d’un accès en écriture à un fichier via le fournisseur FileSystem (fourni par Windows PowerShell), mais pas d’accès en lecture, le fichier existe toujours et [System. Management. Automation. Provider. Itemcmdletprovider. itemExists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) retourne `true`. Votre implémentation peut nécessiter la vérification d’un élément parent pour voir si l’enfant peut être énuméré.
+- L’implémentation de cette méthode doit prendre en compte toute forme d’accès à l’élément qui peut rendre l’élément visible à l’utilisateur. Par exemple, si un utilisateur dispose d’un accès en écriture à un fichier via le fournisseur FileSystem (fourni par Windows PowerShell), mais pas d’accès en lecture, le fichier existe toujours et [System. Management. Automation. Provider. Itemcmdletprovider. itemExists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) retourne `true` . Votre implémentation peut nécessiter la vérification d’un élément parent pour voir si l’enfant peut être énuméré.
 
 - Lors de l’écriture de plusieurs éléments, la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) peut prendre un certain temps. Vous pouvez concevoir votre fournisseur pour écrire les éléments à l’aide de la méthode [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) une à la fois. L’utilisation de cette technique permet de présenter les éléments à l’utilisateur dans un flux.
 
@@ -125,7 +124,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 ## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande
 
-Parfois, l’applet de commande `Get-ChildItem` qui appelle [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) nécessite des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `Get-ChildItem`.
+Parfois `Get-ChildItem` , l’applet de commande qui appelle [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) nécessite des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Get-ChildItem` applet de commande.
 
 Ce fournisseur de conteneurs Windows PowerShell n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de cette méthode.
 
@@ -133,7 +132,7 @@ Ce fournisseur de conteneurs Windows PowerShell n’implémente pas cette métho
 
 ## <a name="retrieving-child-item-names"></a>Récupération des noms d’éléments enfants
 
-Pour récupérer les noms des éléments enfants, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) pour prendre en charge les appels à partir de l’applet de commande `Get-ChildItem` lorsque son paramètre `Name` est spécifié. Cette méthode récupère les noms des éléments enfants pour le chemin d’accès ou les noms d’éléments enfants spécifiés pour tous les conteneurs si le paramètre `returnAllContainers` de l’applet de commande est spécifié. Un nom enfant est la partie feuille d’un chemin d’accès. Par exemple, le nom enfant pour le chemin d’accès c:\windows\system32\abc.dll est « ABC. dll ». Le nom enfant du répertoire c:\Windows\System32 est « system32 ».
+Pour récupérer les noms des éléments enfants, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) pour prendre en charge les appels de l’applet de commande `Get-ChildItem` lorsque son `Name` paramètre est spécifié. Cette méthode récupère les noms des éléments enfants pour le chemin d’accès ou les noms d’éléments enfants spécifiés pour tous les conteneurs si le `returnAllContainers` paramètre de l’applet de commande est spécifié. Un nom enfant est la partie feuille d’un chemin d’accès. Par exemple, le nom de l’enfant pour le chemin d’accès c:\windows\system32\abc.dll est « abc.dll ». Le nom enfant du répertoire c:\Windows\System32 est « system32 ».
 
 Voici l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) pour ce fournisseur. Notez que la méthode récupère les noms des tables si le chemin d’accès spécifié indique la base de données Access (lecteur) et les numéros de ligne si le chemin d’accès indique une table.
 
@@ -192,7 +191,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 - Lors de la définition de la classe de fournisseur, un fournisseur de conteneurs Windows PowerShell peut déclarer des fonctionnalités de fournisseur de ExpandWildcards, Filter, include ou Exclude, à partir de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Dans ces cas, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) doit garantir que le chemin d’accès passé à la méthode répond aux exigences des fonctionnalités spécifiées. Pour ce faire, la méthode doit accéder à la propriété appropriée, par exemple, les propriétés [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) et [System. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
   > [!NOTE]
-  > Une exception à cette règle se produit lorsque le paramètre `returnAllContainers` de l’applet de commande est spécifié. Dans ce cas, la méthode doit récupérer tout nom enfant pour un conteneur, même s’il ne correspond pas aux valeurs des propriétés [System. Management. Automation. Provider. Cmdletprovider. Filter *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter), System. Management. Automation. Provider. [Cmdletprovider. include](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)* ou [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .
+  > Une exception à cette règle se produit lorsque le `returnAllContainers` paramètre de l’applet de commande est spécifié. Dans ce cas, la méthode doit récupérer tout nom enfant pour un conteneur, même s’il ne correspond pas aux valeurs des propriétés [System. Management. Automation. Provider. Cmdletprovider. Filter *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Filter), System. Management. Automation. Provider. [Cmdletprovider. include](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)* ou [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .
 
 - Par défaut, les substitutions de cette méthode ne doivent pas récupérer les noms des objets qui sont généralement masqués par l’utilisateur, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) soit spécifiée. Si le chemin d’accès spécifié indique un conteneur, la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) n’est pas obligatoire.
 
@@ -200,7 +199,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 ## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Attachement de paramètres dynamiques à l’applet de commande (Name) de l’applet de commande
 
-Parfois, l’applet de commande `Get-ChildItem` (avec le paramètre `Name`) requiert des paramètres supplémentaires qui sont spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `Get-ChildItem`.
+Parfois, l’applet de commande `Get-ChildItem` (avec le `Name` paramètre) requiert des paramètres supplémentaires qui sont spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Get-ChildItem` applet de commande.
 
 Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de cette méthode.
 
@@ -208,7 +207,7 @@ Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant es
 
 ## <a name="renaming-items"></a>Attribution d’un nouveau nom aux éléments
 
-Pour renommer un élément, un fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) pour prendre en charge les appels à partir de l’applet de commande `Rename-Item`. Cette méthode remplace le nom de l’élément au niveau du chemin d’accès spécifié par le nouveau nom fourni. Le nouveau nom doit toujours être relatif à l’élément parent (conteneur).
+Pour renommer un élément, un fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) pour prendre en charge les appels de l’applet de commande `Rename-Item` . Cette méthode remplace le nom de l’élément au niveau du chemin d’accès spécifié par le nouveau nom fourni. Le nouveau nom doit toujours être relatif à l’élément parent (conteneur).
 
 Ce fournisseur ne remplace pas la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) . Toutefois, l’implémentation par défaut est la suivante.
 
@@ -221,18 +220,18 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 - Lors de la définition de la classe de fournisseur, un fournisseur de conteneurs Windows PowerShell peut déclarer des fonctionnalités de fournisseur de ExpandWildcards, Filter, include ou Exclude, à partir de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Dans ces cas, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) doit garantir que le chemin d’accès passé à la méthode répond aux exigences des fonctionnalités spécifiées. Pour ce faire, la méthode doit accéder à la propriété appropriée, par exemple, les propriétés [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) et [System. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
 - La méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) est destinée uniquement à la modification du nom d’un élément, et non pas aux opérations de déplacement.
-  Votre implémentation de la méthode doit écrire une erreur si le paramètre `newName` contient des séparateurs de chemin d’accès ou si elle peut entraîner la modification de son emplacement parent par l’élément.
+  Votre implémentation de la méthode doit écrire une erreur si le `newName` paramètre contient des séparateurs de chemin d’accès ou si elle peut entraîner la modification de son emplacement parent par l’élément.
 
 - Par défaut, les substitutions de cette méthode ne doivent pas renommer les objets, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) soit spécifiée. Si le chemin d’accès spécifié indique un conteneur, la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) n’est pas obligatoire.
 
 - Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Cette méthode est utilisée pour confirmer l’exécution d’une opération quand une modification est apportée à l’état du système, par exemple, renommer des fichiers.
   [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) envoie le nom de la ressource à modifier à l’utilisateur, avec le runtime Windows PowerShell en tenant compte des paramètres de ligne de commande ou des variables de préférence pour déterminer ce qui doit être affiché.
 
-  Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne `true`, la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Cette méthode envoie un message de confirmation à l’utilisateur afin d’autoriser des commentaires supplémentaires à indiquer si l’opération doit être poursuivie. Un fournisseur doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour une vérification supplémentaire des modifications système potentiellement dangereuses.
+  Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) `true` est retourné, la méthode [System. Management. Automation. Provider. Containercmdletprovider. RenameItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) . Cette méthode envoie un message de confirmation à l’utilisateur afin d’autoriser des commentaires supplémentaires à indiquer si l’opération doit être poursuivie. Un fournisseur doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour une vérification supplémentaire des modifications système potentiellement dangereuses.
 
 ## <a name="attaching-dynamic-parameters-to-the-rename-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Rename-Item
 
-Parfois, l’applet de commande `Rename-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) . Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `Rename-Item`.
+Parfois, l’applet de commande `Rename-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Renameitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) . Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Rename-Item` applet de commande.
 
 Ce fournisseur de conteneurs n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de cette méthode.
 
@@ -240,7 +239,7 @@ Ce fournisseur de conteneurs n’implémente pas cette méthode. Toutefois, le c
 
 ## <a name="creating-new-items"></a>Création de nouveaux éléments
 
-Pour créer de nouveaux éléments, un fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) pour prendre en charge les appels à partir de l’applet de commande `New-Item`. Cette méthode crée un élément de données situé dans le chemin d’accès spécifié. Le paramètre `type` de l’applet de commande contient le type défini par le fournisseur pour le nouvel élément. Par exemple, le fournisseur FileSystem utilise un paramètre `type` avec la valeur « file » ou « Directory ». Le paramètre `newItemValue` de l’applet de commande spécifie une valeur spécifique au fournisseur pour le nouvel élément.
+Pour créer de nouveaux éléments, un fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) pour prendre en charge les appels de l’applet de commande `New-Item` . Cette méthode crée un élément de données situé dans le chemin d’accès spécifié. Le `type` paramètre de l’applet de commande contient le type défini par le fournisseur pour le nouvel élément. Par exemple, le fournisseur FileSystem utilise un `type` paramètre avec la valeur « file » ou « Directory ». Le `newItemValue` paramètre de l’applet de commande spécifie une valeur spécifique au fournisseur pour le nouvel élément.
 
 Voici l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) pour ce fournisseur.
 
@@ -269,16 +268,16 @@ protected override void NewItem( string path, string type, object newItemValue )
 
 Les conditions suivantes peuvent s’appliquer à votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem):
 
-- La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit effectuer une comparaison ne respectant pas la casse de la chaîne passée dans le paramètre `type`.
-  Elle doit également permettre des correspondances moins ambiguës. Par exemple, pour les types « fichier » et « répertoire », seule la première lettre est nécessaire pour lever l’ambiguïté. Si le paramètre `type` indique un type que votre fournisseur ne peut pas créer, la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit écrire une exception ArgumentException avec un message indiquant les types que le fournisseur peut créer.
+- La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit effectuer une comparaison ne respectant pas la casse de la chaîne passée dans le `type` paramètre.
+  Elle doit également permettre des correspondances moins ambiguës. Par exemple, pour les types « fichier » et « répertoire », seule la première lettre est nécessaire pour lever l’ambiguïté. Si le `type` paramètre indique un type que votre fournisseur ne peut pas créer, la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit écrire une exception ArgumentException avec un message indiquant les types que le fournisseur peut créer.
 
-- Pour le paramètre `newItemValue`, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) est recommandée pour accepter des chaînes au minimum. Elle doit également accepter le type d’objet récupéré par la méthode [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pour le même chemin d’accès. La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) peut utiliser la méthode [System. Management. Automation. LanguagePrimitives. ConvertTo *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) pour convertir les types vers le type souhaité.
+- Pour le `newItemValue` paramètre, il est recommandé d’implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) pour accepter des chaînes au minimum. Elle doit également accepter le type d’objet récupéré par la méthode [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pour le même chemin d’accès. La méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) peut utiliser la méthode [System. Management. Automation. LanguagePrimitives. ConvertTo *](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo) pour convertir les types vers le type souhaité.
 
 - Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne la valeur true, la méthode [System. Management. Automation. Provider. Containercmdletprovider. newItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour effectuer un contrôle supplémentaire des modifications système potentiellement dangereuses.
 
 ## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande New-Item
 
-Parfois, l’applet de commande `New-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) . Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `New-Item`.
+Parfois, l’applet de commande `New-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Newitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters) . Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `New-Item` applet de commande.
 
 Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de cette méthode.
 
@@ -286,7 +285,7 @@ Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant es
 
 ## <a name="removing-items"></a>Suppression d’éléments
 
-Pour supprimer des éléments, le fournisseur Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) pour prendre en charge les appels à partir de l’applet de commande `Remove-Item`. Cette méthode supprime un élément du magasin de données dans le chemin d’accès spécifié. Si le paramètre `recurse` de l’applet de commande `Remove-Item` a la valeur `true`, la méthode supprime tous les éléments enfants, quel que soit leur niveau. Si le paramètre a la valeur `false`, la méthode supprime un seul élément au chemin d’accès spécifié.
+Pour supprimer des éléments, le fournisseur Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) pour prendre en charge les appels de l’applet de commande `Remove-Item` . Cette méthode supprime un élément du magasin de données dans le chemin d’accès spécifié. Si le `recurse` paramètre de l' `Remove-Item` applet de commande a la valeur `true` , la méthode supprime tous les éléments enfants, quel que soit leur niveau. Si le paramètre a la valeur `false` , la méthode supprime un seul élément au chemin d’accès spécifié.
 
 Ce fournisseur ne prend pas en charge la suppression d’éléments. Toutefois, le code suivant est l’implémentation par défaut de [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem).
 
@@ -302,11 +301,11 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) est chargée d’empêcher la récurrence infinie lorsqu’il y a des liens circulaires, et ainsi de suite. Une exception d’arrêt appropriée doit être levée pour refléter une telle condition.
 
-- Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) retourne `true`, la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour effectuer un contrôle supplémentaire des modifications système potentiellement dangereuses.
+- Votre implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) doit appeler [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) et vérifier sa valeur de retour avant d’apporter des modifications au magasin de données. Une fois que l’appel à [System. Management. Automation. Provider. Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) `true` est retourné, la méthode [System. Management. Automation. Provider. Containercmdletprovider. RemoveItem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) doit appeler la méthode [System. Management. Automation. Provider. Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) pour une vérification supplémentaire des modifications système potentiellement dangereuses.
 
 ## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Remove-Item
 
-Parfois, l’applet de commande `Remove-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) pour gérer ces paramètres. Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `Remove-Item`.
+Parfois, l’applet de commande `Remove-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) pour gérer ces paramètres. Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Remove-Item` applet de commande.
 
 Ce fournisseur de conteneurs n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de [System. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters).
 
@@ -314,9 +313,9 @@ Ce fournisseur de conteneurs n’implémente pas cette méthode. Toutefois, le c
 
 ## <a name="querying-for-child-items"></a>Interrogation d’éléments enfants
 
-Pour vérifier si des éléments enfants existent dans le chemin d’accès spécifié, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) . Cette méthode retourne `true` si l’élément a des enfants, et `false` dans le cas contraire. Pour un chemin d’accès null ou vide, la méthode considère que tous les éléments du magasin de données sont des enfants et retourne `true`.
+Pour vérifier si des éléments enfants existent dans le chemin d’accès spécifié, le fournisseur de conteneurs Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) . Cette méthode retourne `true` si l’élément a des enfants, et dans le `false` cas contraire. Pour un chemin d’accès null ou vide, la méthode considère tous les éléments du magasin de données comme des enfants et retourne `true` .
 
-Voici le remplacement de la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) . S’il existe plus de deux parties de chemin d’accès créées par la méthode d’assistance ChunkPath, la méthode retourne `false`, car seul un conteneur de base de données et un conteneur de table sont définis. Pour plus d’informations sur cette méthode d’assistance, consultez la méthode ChunkPath est décrite dans [création d’un fournisseur d’éléments Windows PowerShell](./creating-a-windows-powershell-item-provider.md).
+Voici le remplacement de la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) . S’il existe plus de deux parties de chemin d’accès créées par la méthode d’assistance ChunkPath, la méthode retourne `false` , car seul un conteneur de base de données et un conteneur de table sont définis. Pour plus d’informations sur cette méthode d’assistance, consultez la méthode ChunkPath est décrite dans [création d’un fournisseur d’éléments Windows PowerShell](./creating-a-windows-powershell-item-provider.md).
 
 ```csharp
 protected override bool HasChildItems( string path )
@@ -331,11 +330,11 @@ protected override bool HasChildItems( string path )
 
 Les conditions suivantes peuvent s’appliquer à votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems):
 
-- Si le fournisseur de conteneurs expose une racine qui contient des points de montage intéressants, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) doit retourner `true` lorsqu’une chaîne null ou vide est passée pour le chemin d’accès.
+- Si le fournisseur de conteneurs expose une racine qui contient des points de montage intéressants, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. Haschilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems) doit retourner `true` quand une chaîne null ou vide est passée pour le chemin d’accès.
 
 ## <a name="copying-items"></a>Copie d’éléments
 
-Pour copier des éléments, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) pour prendre en charge les appels à partir de l’applet de commande `Copy-Item`. Cette méthode copie un élément de données à partir de l’emplacement indiqué par le paramètre `path` de l’applet de commande vers l’emplacement indiqué par le paramètre `copyPath`. Si le paramètre `recurse` est spécifié, la méthode copie tous les sous-conteneurs. Si le paramètre n’est pas spécifié, la méthode copie uniquement un seul niveau d’éléments.
+Pour copier des éléments, le fournisseur de conteneurs doit implémenter la méthode [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) pour prendre en charge les appels à partir de l’applet de commande `Copy-Item` . Cette méthode copie un élément de données à partir de l’emplacement indiqué par le `path` paramètre de l’applet de commande à l’emplacement indiqué par le `copyPath` paramètre. Si le `recurse` paramètre est spécifié, la méthode copie tous les sous-conteneurs. Si le paramètre n’est pas spécifié, la méthode copie uniquement un seul niveau d’éléments.
 
 Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem).
 
@@ -347,7 +346,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Lors de la définition de la classe de fournisseur, un fournisseur de conteneurs Windows PowerShell peut déclarer des fonctionnalités de fournisseur de ExpandWildcards, Filter, include ou Exclude, à partir de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) . Dans ces cas, l’implémentation de la méthode [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) doit garantir que le chemin d’accès passé à la méthode répond aux exigences des fonctionnalités spécifiées. Pour ce faire, la méthode doit accéder à la propriété appropriée, par exemple, les propriétés [System. Management. Automation. Provider. Cmdletprovider. Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) et [System. Management. Automation. Provider. Cmdletprovider. include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) .
 
-- Par défaut, les substitutions de cette méthode ne doivent pas copier des objets sur des objets existants, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) soit définie sur `true`. Par exemple, le fournisseur FileSystem ne copie pas c:\temp\abc.txt sur un fichier c:\ABC.txt existant, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) soit définie sur `true`. Si le chemin d’accès spécifié dans le paramètre `copyPath` existe et qu’il indique un conteneur, la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) n’est pas obligatoire. Dans ce cas, [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit copier l’élément indiqué par le paramètre `path` dans le conteneur indiqué par le paramètre `copyPath` en tant qu’enfant.
+- Par défaut, les substitutions de cette méthode ne doivent pas copier des objets sur des objets existants, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ait la valeur `true` . Par exemple, le fournisseur FileSystem ne copie pas c:\temp\abc.txt sur un fichier c:\abc.txt existant, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ait la valeur `true` . Si le chemin d’accès spécifié dans le `copyPath` paramètre existe et qu’il indique un conteneur, la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) n’est pas obligatoire. Dans ce cas, [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) doit copier l’élément indiqué par le `path` paramètre dans le conteneur indiqué par le `copyPath` paramètre en tant qu’enfant.
 
 - Votre implémentation de [System. Management. Automation. Provider. ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) est chargée d’empêcher la récurrence infinie lorsqu’il y a des liens circulaires, et ainsi de suite. Une exception d’arrêt appropriée doit être levée pour refléter une telle condition.
 
@@ -355,7 +354,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Copy-Item
 
-Parfois, l’applet de commande `Copy-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) pour gérer ces paramètres. Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande `Copy-Item`.
+Parfois, l’applet de commande `Copy-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) pour gérer ces paramètres. Cette méthode récupère les paramètres pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Copy-Item` applet de commande.
 
 Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant est l’implémentation par défaut de [System. Management. Automation. Provider. Containercmdletprovider. Copyitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters).
 
@@ -373,13 +372,13 @@ Découvrez [comment inscrire des applets de commande, des fournisseurs et des ap
 
 Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows PowerShell, vous pouvez le tester en exécutant les applets de commande prises en charge sur la ligne de commande. N’oubliez pas que l’exemple de sortie suivant utilise une base de données d’accès fictif.
 
-1. Exécutez l’applet de commande `Get-ChildItem` pour récupérer la liste des éléments enfants d’une table Customers dans la base de données Access.
+1. Exécutez l' `Get-ChildItem` applet de commande pour récupérer la liste des éléments enfants d’une table Customers dans la base de données Access.
 
    ```powershell
    Get-ChildItem mydb:customers
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante apparaît.
 
    ```output
    PSPath        : AccessDB::customers
@@ -392,13 +391,13 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Columns       :
    ```
 
-2. Exécutez à nouveau l’applet de commande `Get-ChildItem` pour récupérer les données d’une table.
+2. Exécutez à `Get-ChildItem` nouveau l’applet de commande pour récupérer les données d’une table.
 
    ```powershell
    (Get-ChildItem mydb:customers).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante apparaît.
 
    ```output
    TABLE_CAT   : c:\PS\northwind
@@ -408,13 +407,13 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    REMARKS     :
    ```
 
-3. À présent, utilisez l’applet de commande `Get-Item` pour récupérer les éléments à la ligne 0 dans la table de données.
+3. Utilisez maintenant l' `Get-Item` applet de commande pour récupérer les éléments à la ligne 0 dans la table de données.
 
    ```powershell
    Get-Item mydb:\customers\0
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante apparaît.
 
    ```output
    PSPath        : AccessDB::customers\0
@@ -425,13 +424,13 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    RowNumber     : 0
    ```
 
-4. Réutilisez `Get-Item` pour récupérer les données des éléments de la ligne 0.
+4. Réutilisez `Get-Item` pour récupérer les données pour les éléments de la ligne 0.
 
    ```powershell
    (Get-Item mydb:\customers\0).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante apparaît.
 
    ```output
    CustomerID   : 1234
@@ -447,8 +446,8 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Fax          : (425) 555-0101
    ```
 
-5. À présent, utilisez l’applet de commande `New-Item` pour ajouter une ligne à une table existante. Le paramètre `Path` spécifie le chemin d’accès complet à la ligne et doit indiquer un numéro de ligne qui est supérieur au nombre de lignes existant dans la table. Le paramètre `Type` indique « Row » pour spécifier ce type d’élément à ajouter.
-   Enfin, le paramètre `Value` spécifie une liste délimitée par des virgules de valeurs de colonne pour la ligne.
+5. Utilisez maintenant l' `New-Item` applet de commande pour ajouter une ligne à une table existante. Le `Path` paramètre spécifie le chemin d’accès complet à la ligne et doit indiquer un numéro de ligne qui est supérieur au nombre de lignes existant dans la table. Le `Type` paramètre indique « Row » pour spécifier ce type d’élément à ajouter.
+   Enfin, le `Value` paramètre spécifie une liste délimitée par des virgules de valeurs de colonne pour la ligne.
 
    ```powershell
    New-Item -Path mydb:\Customers\3 -ItemType "row" -Value "3,CustomerFirstName,CustomerLastName,CustomerEmailAddress,CustomerTitle,CustomerCompany,CustomerPhone, CustomerAddress,CustomerCity,CustomerState,CustomerZip,CustomerCountry"
@@ -461,7 +460,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    PS mydb:\Customers> (Get-Item 3).data
    ```
 
-   La sortie suivante s’affiche.
+   La sortie suivante apparaît.
 
    ```output
    ID        : 3
@@ -492,4 +491,4 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Guide du programmeur Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Guide de programmation pour Windows PowerShell](./windows-powershell-programmer-s-guide.md)

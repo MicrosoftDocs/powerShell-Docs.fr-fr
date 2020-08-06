@@ -1,23 +1,16 @@
 ---
 title: Déclaration d’attribut ValidatePattern | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidatePattern
 - ValidatePattern attribute, described
 - ValidatePattern attribute
-ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
-caps.latest.revision: 13
-ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369158"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787799"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Déclaration de l’attribut ValidatePattern
 
@@ -34,15 +27,15 @@ Quand ValidatePattern est appelé dans une applet de commande, le runtime Window
 
 #### <a name="parameters"></a>Paramètres
 
-`RegexString` ([System. String](/dotnet/api/System.String)) requis. Spécifie une expression régulière qui valide l’argument du paramètre.
+`RegexString`([System. String](/dotnet/api/System.String)) requis. Spécifie une expression régulière qui valide l’argument du paramètre.
 
 Options ([System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) paramètre nommé facultatif. Spécifie une combinaison d’opérations de bits d’indicateurs [System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) qui spécifient des options d’expression régulière.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 - Cet attribut ne peut être utilisé qu’une seule fois par paramètre.
 
-- Vous pouvez utiliser le paramètre `Option` de l’attribut pour définir plus précisément le modèle. Par exemple, vous pouvez rendre le modèle sensible à la casse.
+- Vous pouvez utiliser le `Option` paramètre de l’attribut pour définir plus précisément le modèle. Par exemple, vous pouvez rendre le modèle sensible à la casse.
 
 - Si cet attribut est appliqué à une collection, chaque élément de la collection doit correspondre au modèle.
 

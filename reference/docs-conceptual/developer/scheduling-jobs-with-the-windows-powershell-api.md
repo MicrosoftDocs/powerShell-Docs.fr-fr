@@ -1,13 +1,12 @@
 ---
 title: Planification de travaux avec l’API Windows PowerShell
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 19962d3140b6e20164c378e63a317b888120e13b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359828"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786728"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Planification de travaux avec l’API Windows PowerShell
 
@@ -33,9 +32,9 @@ Vous définissez un travail Windows PowerShell en créant un dictionnaire de par
 
 |Nom du paramètre|Description|
 |---|---|
-|Name|Nom du travail.|
+|Nom|Nom du travail.|
 |ScriptBock|Bloc de script Windows PowerShell qui spécifie ce que fait le travail.|
-|Chemin d'accès au fichier|Chemin d’accès à un fichier qui contient le bloc de script Windows PowerShell qui spécifie ce que le travail fait.|
+|FilePath|Chemin d’accès à un fichier qui contient le bloc de script Windows PowerShell qui spécifie ce que le travail fait.|
 |InitializationScript|Bloc de script Windows PowerShell qui initialise le travail.|
 |ArgumentList|Tableau d’objets qui spécifient les arguments que prend le travail.|
 |RunAs32|Valeur booléenne qui spécifie si le travail doit être exécuté dans un processus 32 bits.|

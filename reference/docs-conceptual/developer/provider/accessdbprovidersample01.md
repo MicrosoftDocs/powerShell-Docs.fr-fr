@@ -1,25 +1,18 @@
 ---
 title: AccessDBProviderSample01 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
-caps.latest.revision: 10
-ms.openlocfilehash: 5d738de60bc47d000377779ee4e564bff4ad31ad
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: 50ec218e8d0fe6b2be5c8ac00956f72c6723f84a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633428"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786915"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 Cet exemple montre comment déclarer une classe de fournisseur qui dérive directement de la classe [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) . Il est indiqué ici uniquement par souci de citer tous les exemples.
 
-## <a name="demonstrates"></a>Illustre
+## <a name="demonstrates"></a>Illustre le
 
 > [!IMPORTANT]
 > Votre classe de fournisseur va probablement dériver de l’une des classes suivantes et éventuellement implémenter d’autres interfaces de fournisseur :

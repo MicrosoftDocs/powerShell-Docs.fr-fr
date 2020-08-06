@@ -1,25 +1,18 @@
 ---
 title: Élément CustomEntry pour CustomEntries pour les contrôles pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c6739205-2bc9-4507-b2af-d19d548c2057
-caps.latest.revision: 6
-ms.openlocfilehash: b92b99d88992cf13dbf7bfbe88aad603615f3138
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4fc960ab803580f684ce0f224b1db4d7d4af1720
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364048"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785895"
 ---
 # <a name="customentry-element-for-customentries-for-controls-for-view-format"></a>CustomEntry, élément pour CustomEntries pour Controls pour View (Format)
 
 Fournit une définition du contrôle. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) contrôle l’élément (format) Control, élément pour les contrôles pour View (format) CustomControl, élément de Control pour les contrôles pour l’élément View (format) CustomEntries pour CustomControl pour View (format) CustomEntry, élément pour CustomEntries pour les contrôles pour View (format)
+Élément de configuration (format) élément ViewDefinitions (format) vue, élément (format) contrôle l’élément (format) contrôle élément pour les contrôles pour la vue (format) élément CustomControl pour le contrôle des contrôles pour l’élément View (format) CustomEntries pour CustomControl pour la vue (format) élément CustomEntry pour CustomEntries pour les contrôles pour View (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,31 +23,31 @@ Fournit une définition du contrôle. Cet élément est utilisé lors de la déf
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `CustomEntry`.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `CustomEntry` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour CustomEntry pour les contrôles pour View (format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Élément facultatif.<br /><br /> Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
-|[Élément CustomItem pour CustomEntry pour les contrôles pour View (format)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Élément requis.<br /><br /> Définit le mode d’affichage des données par le contrôle.|
+|[EntrySelectedBy, élément pour CustomEntry pour Controls pour View (Format)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|Élément facultatif.<br /><br /> Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée.|
+|[CustomItem, élément pour CustomEntry pour Controls pour View (Format)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Élément requis.<br /><br /> Définit le mode d’affichage des données par le contrôle.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntries pour CustomControl pour View (format)](./customentries-element-for-customcontrol-for-view-format.md)|Fournit les définitions pour le contrôle.|
+|[CustomEntries, élément pour CustomControl pour View (Format)](./customentries-element-for-customcontrol-for-view-format.md)|Fournit les définitions pour le contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément CustomEntries pour CustomControl pour View (format)](./customentries-element-for-customcontrol-for-view-format.md)
+[CustomEntries, élément pour CustomControl pour View (Format)](./customentries-element-for-customcontrol-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

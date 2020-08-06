@@ -1,25 +1,18 @@
 ---
 title: AccessDBProviderSample05 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
-caps.latest.revision: 8
-ms.openlocfilehash: 43d18672ec4f52961b2a2460635468a2d6fb41e5
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: 67a10d9192350b339da1b82d9eb367ee4af6ef86
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633377"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786847"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 Cet exemple montre comment remplacer les méthodes de conteneur pour prendre en charge les appels aux `Move-Item` applets de commande et `Join-Path` . Ces méthodes doivent être implémentées quand l’utilisateur a besoin de déplacer des éléments dans un conteneur et si le magasin de données contient des conteneurs imbriqués. La classe de fournisseur de cet exemple dérive de la classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) .
 
-## <a name="demonstrates"></a>Illustre
+## <a name="demonstrates"></a>Illustre le
 
 > [!IMPORTANT]
 > Votre classe de fournisseur va probablement dériver de l’une des classes suivantes et éventuellement implémenter d’autres interfaces de fournisseur :

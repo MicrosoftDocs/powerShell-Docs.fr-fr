@@ -1,13 +1,12 @@
 ---
 title: Jeux de membres du système de type étendu
 ms.date: 07/09/2020
-ms.topic: conceptual
-ms.openlocfilehash: 11e1e7819efecc1f1d8164ef32fb97cda978e748
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.openlocfilehash: 3f4e44ed7b498bb7c4a71f7b131270ed4f2ef981
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217943"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786252"
 ---
 # <a name="ets-member-sets"></a>Jeux de membres ETS
 

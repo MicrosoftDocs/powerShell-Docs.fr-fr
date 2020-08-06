@@ -1,23 +1,16 @@
 ---
 title: Comment créer un fournisseur Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - providers [PowerShell Programmer's Guide]
 - providers [PowerShellProgrammer's Guide], creating
 - Windows PowerShell Programmer's Guide, providers
-ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
-caps.latest.revision: 5
-ms.openlocfilehash: 4c84d015aba327c0ab039558414c5777d43ec4ba
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 5e7424c035d22d0f5eb154b369427a6da80b1c49
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870878"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787102"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Guide pratique pour créer un fournisseur Windows PowerShell
 
@@ -29,7 +22,7 @@ Pour le développeur, le fournisseur Windows PowerShell est l’interface entre 
 
 Windows PowerShell fournit plusieurs fournisseurs (tels que le fournisseur de système de fichiers, le fournisseur de Registre et le fournisseur d’alias) qui sont utilisés pour accéder aux magasins de données connus. Pour plus d’informations sur les fournisseurs fournis par Windows PowerShell, utilisez la commande suivante pour accéder à l’aide en ligne :
 
-**Bloc de > PS-Help about_providers**
+**Bloc de>PS-Help about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Accès aux données stockées à l’aide des chemins d’accès Windows PowerShell
 
@@ -47,18 +40,18 @@ Windows PowerShell applique les règles suivantes pour un lecteur Windows PowerS
 
 ## <a name="in-this-section"></a>Dans cette section
 
-Le tableau suivant répertorie les rubriques qui contiennent des exemples de code qui s’appuient les uns sur les autres. À partir de la deuxième rubrique, le fournisseur Windows PowerShell de base peut être initialisé et non initialisé par le runtime Windows PowerShell, la rubrique suivante ajoute des fonctionnalités pour accéder aux données, la rubrique suivante ajoute des fonctionnalités pour la manipulation des données ( les éléments dans les données stockées), et ainsi de suite.
+Le tableau suivant répertorie les rubriques qui contiennent des exemples de code qui s’appuient les uns sur les autres. À partir de la deuxième rubrique, le fournisseur Windows PowerShell de base peut être initialisé et non initialisé par le runtime Windows PowerShell, la rubrique suivante ajoute des fonctionnalités pour accéder aux données, la rubrique suivante ajoute des fonctionnalités pour manipuler les données (les éléments dans les données stockées), et ainsi de suite.
 
 |                                                    Rubrique                                                    |                                                                                         Définition                                                                                          |
 | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Conception de votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md)               | Cette rubrique décrit les éléments à prendre en compte avant d’implémenter un fournisseur Windows PowerShell. Il résume les interfaces et les classes de base du fournisseur Windows PowerShell qui sont utilisées. |
 | [Création d’un fournisseur Windows PowerShell de base](./creating-a-basic-windows-powershell-provider.md)           | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur.                                        |
-| [Création d’un fournisseur de lecteurs Windows PowerShell](./creating-a-windows-powershell-drive-provider.md)           | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur d’accéder à un magasin de données via un lecteur Windows PowerShell.                                                |
-| [Création d’un fournisseur d’éléments Windows PowerShell](./creating-a-windows-powershell-item-provider.md)             | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler les éléments d’un magasin de données.                                                                  |
-| [Création d’un fournisseur de conteneurs Windows PowerShell](./creating-a-windows-powershell-container-provider.md)   | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de travailler sur des magasins de données multicouches.                                                                        |
+| [Création d’un fournisseur de lecteur Windows PowerShell](./creating-a-windows-powershell-drive-provider.md)           | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur d’accéder à un magasin de données via un lecteur Windows PowerShell.                                                |
+| [Création d’un fournisseur d’élément Windows PowerShell](./creating-a-windows-powershell-item-provider.md)             | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler les éléments d’un magasin de données.                                                                  |
+| [Création d’un fournisseur de conteneur Windows PowerShell](./creating-a-windows-powershell-container-provider.md)   | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de travailler sur des magasins de données multicouches.                                                                        |
 | [Création d’un fournisseur de navigation Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md) | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de parcourir les éléments d’un magasin de données de manière hiérarchique.                                           |
 | [Création d’un fournisseur de contenu Windows PowerShell](./creating-a-windows-powershell-content-provider.md)       | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler le contenu des éléments d’un magasin de données.                                                       |
-| [Création d’un fournisseur de propriétés Windows PowerShell](./creating-a-windows-powershell-property-provider.md)     | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler les propriétés des éléments d’un magasin de données.                                                    |
+| [Création d’un fournisseur de propriété Windows PowerShell](./creating-a-windows-powershell-property-provider.md)     | Cette rubrique montre comment créer un fournisseur Windows PowerShell qui permet à l’utilisateur de manipuler les propriétés des éléments d’un magasin de données.                                                    |
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -66,4 +59,4 @@ Le tableau suivant répertorie les rubriques qui contiennent des exemples de cod
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Guide du programmeur Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Guide de programmation pour Windows PowerShell](./windows-powershell-programmer-s-guide.md)

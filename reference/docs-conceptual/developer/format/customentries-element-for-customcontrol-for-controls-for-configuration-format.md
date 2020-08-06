@@ -1,25 +1,18 @@
 ---
 title: Élément CustomEntries pour CustomControl pour les contrôles de configuration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
-caps.latest.revision: 11
-ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b1f494cf1a254d71362830ba9eb0f4905a2a484d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368818"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785980"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>CustomEntries, élément pour CustomControl pour Controls pour Configuration (Format)
 
 Fournit les définitions d’un contrôle commun. Cet élément est utilisé lors de la définition d’un contrôle commun qui peut être utilisé par toutes les vues dans le fichier de mise en forme.
 
-Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration ( Format
+Élément de configuration (format) contrôle l’élément de configuration (format) élément de contrôle pour les contrôles de configuration (format) CustomControl élément de contrôle pour la configuration (format) élément CustomEntries pour CustomControl pour la configuration (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,19 +23,19 @@ Fournit les définitions d’un contrôle commun. Cet élément est utilisé lor
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomEntries`. Vous devez spécifier un ou plusieurs éléments enfants.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomEntries` élément. Vous devez spécifier un ou plusieurs éléments enfants.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntry pour CustomControl pour les contrôles de configuration (format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Fournit une définition du contrôle commun.|
+|[CustomEntry, élément pour CustomControl pour Controls pour Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|Fournit une définition du contrôle commun.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -50,14 +43,14 @@ Aucune.
 |-------------|-----------------|
 |[CustomControl, élément de Control pour la configuration (format)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|Définit un contrôle commun.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un élément `CustomEntry` unique. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un élément `CustomEntry` pour chaque objet ou ensemble d’objets.
+Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un `CustomEntry` élément unique. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un `CustomEntry` élément pour chaque objet ou ensemble d’objets.
 
 ## <a name="see-also"></a>Voir aussi
 
 [CustomControl, élément de Control pour la configuration (format)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)
 
-[Élément CustomEntry pour CustomControl pour les contrôles de configuration (format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
+[CustomEntry, élément pour CustomControl pour Controls pour Configuration (Format)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

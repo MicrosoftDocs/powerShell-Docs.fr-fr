@@ -1,19 +1,12 @@
 ---
 title: Paramètres dynamiques des applets de commande du fournisseur | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
-caps.latest.revision: 6
-ms.openlocfilehash: 9e70fbeaef61d04e66f16d06519742ff2f679df6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564238"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786813"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Paramètres dynamiques des applets de commande de fournisseur
 
@@ -89,7 +82,7 @@ Applet de commande ChildItems vous pouvez définir des paramètres dynamiques qu
 
 `New-ItemProperty`vous pouvez définir des paramètres dynamiques qui sont déclenchés par les `Path` `Name` paramètres,, `PropertyType` et `Value` de l’applet de commande `New-ItemProperty` en implémentant la méthode [System. Management. Automation. Provider. Idynamicpropertycmdletprovider. Newpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) .
 
-`New-PSDrive`Vous pouvez définir des paramètres dynamiques qui sont déclenchés par l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) renvoyé par l' `New-PSDrive` applet de commande en implémentant la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) .
+`New-PSDrive`Vous pouvez définir des paramètres dynamiques qui sont déclenchés par l’objet [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) renvoyé par l' `New-PSDrive` applet de commande en implémentant la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) .
 
 `Remove-Item`Vous pouvez définir des paramètres dynamiques qui sont déclenchés par `Path` les `Recurse` paramètres et de l’applet de commande `Remove-Item` en implémentant la méthode [System. Management. Automation. Provider. Containercmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) .
 

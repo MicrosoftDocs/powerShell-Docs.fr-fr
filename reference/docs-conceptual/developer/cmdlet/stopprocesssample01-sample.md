@@ -1,23 +1,16 @@
 ---
 title: Exemple StopProcessSample01 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
-caps.latest.revision: 9
-ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365298"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786456"
 ---
 # <a name="stopprocesssample01-sample"></a>Exemple StopProcessSample01
 
-Cet exemple montre comment écrire une applet de commande qui demande des commentaires à l’utilisateur avant de tenter d’arrêter un processus, et comment implémenter un paramètre `PassThru` indiquant que l’utilisateur souhaite que l’applet de commande retourne un objet. Cette applet de commande est similaire à l’applet de commande `Stop-Process` fournie par Windows PowerShell 2,0.
+Cet exemple montre comment écrire une applet de commande qui demande des commentaires à l’utilisateur avant de tenter d’arrêter un processus, et comment implémenter un `PassThru` paramètre indiquant que l’utilisateur souhaite que l’applet de commande retourne un objet. Cette applet de commande est similaire à l’applet de commande `Stop-Process` fournie par Windows PowerShell 2,0.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Comment générer l’exemple à l’aide de Visual Studio.
 
@@ -51,7 +44,7 @@ Cet exemple montre comment écrire une applet de commande qui demande des commen
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 
@@ -61,11 +54,11 @@ Cet exemple illustre ce qui suit.
 
 - Appel de la méthode ShouldProcess pour demander confirmation.
 
-- Implémentation d’un paramètre `PassThru` qui indique si l’utilisateur souhaite que l’applet de commande retourne un objet. Par défaut, cette applet de commande ne retourne pas d’objet au pipeline.
+- Implémentation d’un `PassThru` paramètre qui indique si l’utilisateur souhaite que l’applet de commande retourne un objet. Par défaut, cette applet de commande ne retourne pas d’objet au pipeline.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment implémenter un paramètre `PassThru` qui indique que l’utilisateur souhaite que l’applet de commande retourne un objet, et comment demander des commentaires utilisateur en appelant les méthodes `ShouldProcess` et `ShouldContinue`.
+Cet exemple montre comment implémenter un `PassThru` paramètre qui indique que l’utilisateur souhaite que l’applet de commande retourne un objet, et comment demander des commentaires d’utilisateur par le biais d’appels aux `ShouldProcess` `ShouldContinue` méthodes et.
 
 ```csharp
 using System;

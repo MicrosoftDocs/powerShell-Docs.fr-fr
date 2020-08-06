@@ -1,19 +1,12 @@
 ---
 title: Création d’une vue table | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
-ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363408"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786150"
 ---
 # <a name="creating-a-table-view"></a>Création d’une vue de table
 
@@ -21,7 +14,7 @@ Un affichage de table affiche les données dans une ou plusieurs colonnes. Chaqu
 
 ## <a name="a-table-view-display"></a>Affichage d’une vue de table
 
-L’exemple suivant montre comment Windows PowerShell affiche l’objet [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) qui est retourné par l’applet de commande [« obtient-service »](/powershell/module/microsoft.powershell.management/get-service) . Pour cet objet, Windows PowerShell a défini une vue de table qui affiche la propriété `Status`, la propriété `Name` (cette propriété est une propriété d’alias pour la propriété `ServiceName`) et la propriété `DisplayName`. Chaque ligne de la table représente un objet retourné par l’applet de commande.
+L’exemple suivant montre comment Windows PowerShell affiche l’objet [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) qui est retourné par l’applet de commande [« obtient-service »](/powershell/module/microsoft.powershell.management/get-service) . Pour cet objet, Windows PowerShell a défini une vue de table qui affiche la `Status` propriété, la `Name` propriété (cette propriété est une propriété d’alias pour la `ServiceName` propriété) et la `DisplayName` propriété. Chaque ligne de la table représente un objet retourné par l’applet de commande.
 
 ```output
 Status   Name               DisplayName
@@ -215,7 +208,7 @@ Les éléments XML suivants peuvent être utilisés pour spécifier les objets u
 
 ## <a name="using-format-strings"></a>Utilisation de chaînes de format
 
-La mise en forme des chaînes peut être ajoutée à une vue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la propriété `StartTime`.
+La mise en forme des chaînes peut être ajoutée à une vue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la `StartTime` propriété.
 
 ```xml
 <TableColumnItem>
@@ -232,7 +225,7 @@ Les éléments XML suivants peuvent être utilisés pour spécifier un modèle d
 
 - L’élément [FormatString](./label-element-for-listitem-for-listcontrol-format.md) spécifie un modèle de format qui définit le mode d’affichage de la valeur de la propriété ou du script.
 
-Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString`, qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
+Dans l’exemple suivant, la `ToString` méthode est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString` , qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
 
 ```xml
 <ListItem>
@@ -243,7 +236,7 @@ Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en for
 </ListItem>
 ```
 
-L’élément XML suivant peut être utilisé pour appeler la méthode `ToString` :
+L’élément XML suivant peut être utilisé pour appeler la `ToString` méthode :
 
 - L’élément [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) définit la propriété ou le script dont la valeur est affichée dans la colonne de la ligne. Un élément [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md) est requis pour chaque colonne de la ligne. La première entrée est affichée dans la première colonne, la deuxième entrée de la deuxième colonne, et ainsi de suite.
 

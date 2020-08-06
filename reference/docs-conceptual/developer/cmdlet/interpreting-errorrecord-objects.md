@@ -1,19 +1,12 @@
 ---
 title: Interprétation des objets ErrorRecord | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
-ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365418"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786592"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interprétation des objets ErrorRecord
 
@@ -52,7 +45,7 @@ L’applet de commande peut spécifier les catégories CloseError, OpenError, In
 
 L’exception incluse dans l’enregistrement d’erreur est fournie par l’applet de commande et est accessible via la propriété [System. Management. Automation. ErrorRecord. exception *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception) de l’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) .
 
-Les applications hôtes peuvent utiliser le mot clé `is` pour identifier que l’exception est d’une classe spécifique ou d’une classe dérivée. Il est préférable de créer une branche sur le type d’exception, comme illustré dans l’exemple suivant.
+Les applications hôtes peuvent utiliser le `is` mot clé pour identifier que l’exception est d’une classe spécifique ou d’une classe dérivée. Il est préférable de créer une branche sur le type d’exception, comme illustré dans l’exemple suivant.
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 
@@ -90,7 +83,7 @@ L’objet [System. Management. Automation. ErrorRecord](/dotnet/api/System.Manag
 
 [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[Ajout d’un rapport d’erreurs sans fin d’achèvement à votre applet de commande](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
+[Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 
 [Rapport d’erreurs Windows PowerShell](./error-reporting-concepts.md)
 

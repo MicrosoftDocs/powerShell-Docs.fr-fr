@@ -1,19 +1,12 @@
 ---
 title: Élément CustomEntries pour CustomControl pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
-caps.latest.revision: 11
-ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c89eb25f6922a92e2c18298d0128c4c2ca93df3d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364078"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785963"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>CustomEntries, élément pour CustomControl pour View (Format)
 
@@ -29,13 +22,13 @@ Fournit les définitions de l’affichage de contrôle personnalisé. L’affich
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControlEntries`. Vous devez spécifier un ou plusieurs éléments enfants.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomControlEntries` élément. Vous devez spécifier un ou plusieurs éléments enfants.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -47,15 +40,15 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[CustomControl, élément de View (format)](./customcontrol-element-for-view-format.md)|Élément requis.<br /><br /> Définit un format de contrôle personnalisé pour la vue.|
+|[CustomControl, élément pour View (Format)](./customcontrol-element-for-view-format.md)|Élément requis.<br /><br /> Définit un format de contrôle personnalisé pour la vue.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un élément `CustomEntry` unique. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un élément `CustomEntry` pour chaque objet ou ensemble d’objets.
+Dans la plupart des cas, un contrôle n’a qu’une seule définition, qui est définie dans un `CustomEntry` élément unique. Toutefois, il est possible d’avoir plusieurs définitions si vous souhaitez utiliser le même contrôle pour afficher différents objets .NET. Dans ce cas, vous pouvez définir un `CustomEntry` élément pour chaque objet ou ensemble d’objets.
 
 ## <a name="see-also"></a>Voir aussi
 
-[CustomControl, élément de View (format)](./customcontrol-element-for-view-format.md)
+[CustomControl, élément pour View (Format)](./customcontrol-element-for-view-format.md)
 
 [Élément CustomEntry pour CustomEntries pour View (format)](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
 

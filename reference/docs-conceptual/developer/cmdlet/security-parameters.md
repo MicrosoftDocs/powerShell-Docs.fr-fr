@@ -1,25 +1,18 @@
 ---
 title: Paramètres de sécurité | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
-caps.latest.revision: 6
-ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 290905b04547af932182005869b18dc1bc210ca4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369498"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786507"
 ---
 # <a name="security-parameters"></a>Paramètres de sécurité
 
 Le tableau suivant répertorie les noms et les fonctionnalités recommandés pour les paramètres utilisés pour fournir des informations de sécurité pour une opération, telles que les paramètres qui spécifient la clé de certificat et les informations de privilège.
 
-|Paramètre|Fonctionnalités|
+|Paramètre|Fonctionnalité|
 |---|---|
 |**ACL**<br>Type de données : Chaîne|Implémentez ce paramètre pour spécifier le niveau de contrôle d’accès de protection d’un catalogue ou d’un Uniform Resource Identifier (URI).|
 |**CertFile**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le nom d’un fichier qui contient l’un des éléments suivants :<br>-Un certificat x. 509 encodé en base64 ou Distinguished Encoding Rules (DER)<br>-Un fichier PKCS (Public Key Cryptography Standards) #12 qui contient au moins un certificat et une clé|
@@ -36,7 +29,7 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 |**KeyAlgorithm**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier l’algorithme de génération de clé à utiliser pour la sécurité.|
 |**KeyContainerName**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le nom du conteneur de clé.|
 |**KeyLength**<br>Type de données : Entier|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la longueur de la clé en bits.|
-|**Opération**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier une action qui peut être effectuée sur un objet protégé.|
+|**opération**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier une action qui peut être effectuée sur un objet protégé.|
 |**Principal**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier une entité identifiable unique pour l’accès.|
 |**Privilège**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le droit qu’une applet de commande doive exécuter pour une entité particulière.|
 |**Privilèges**<br>Type de données : tableau de privilèges|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier les droits nécessaires à l’exécution d’une applet de commande pour une entrée particulière.|
@@ -49,7 +42,7 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 
 ## <a name="see-also"></a>Voir aussi
 
-[Paramètres d’applet de commande](./cmdlet-parameters.md)
+[Paramètres des applets de commande](./cmdlet-parameters.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 

@@ -1,19 +1,12 @@
 ---
 title: Création de contrôles personnalisés | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
-ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786116"
 ---
 # <a name="creating-custom-controls"></a>Création de contrôles personnalisés
 
@@ -21,7 +14,7 @@ Les contrôles personnalisés sont les composants les plus flexibles d’un fich
 
 ## <a name="custom-control-example"></a>Exemple de contrôle personnalisé
 
-L’exemple suivant montre un contrôle personnalisé défini dans le fichier Certificates. format. ps1xml. Ce contrôle personnalisé est utilisé pour séparer les objets [System. Management. Automation. signature](/dotnet/api/System.Management.Automation.Signature) affichés dans une vue table.
+L’exemple suivant montre un contrôle personnalisé défini dans le fichier XML Certificates.Format.ps1. Ce contrôle personnalisé est utilisé pour séparer les objets [System. Management. Automation. signature](/dotnet/api/System.Management.Automation.Signature) affichés dans une vue table.
 
 ```xml
 <Controls>

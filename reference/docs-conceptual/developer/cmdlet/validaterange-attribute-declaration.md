@@ -1,23 +1,16 @@
 ---
 title: Déclaration d’attribut ValidateRange | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateRange, described
 - ValidateRange attribute
 - attributes, ValidateRange
-ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
-caps.latest.revision: 11
-ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 9aeaa6f03c170389ff61a058b505dbcf74df6958
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692012"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787782"
 ---
 # <a name="validaterange-attribute-declaration"></a>Déclaration de l’attribut ValidateRange
 

@@ -1,26 +1,19 @@
 ---
 title: Exemple de code Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
-caps.latest.revision: 7
-ms.openlocfilehash: 76b4195eb33a1058109df8f6174a89708ba039d1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563248"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786932"
 ---
 # <a name="windows-powershell-sample-code"></a>Exemple de code Windows PowerShell
 
 Les exemples de® Windows PowerShell sont disponibles par le biais du SDK Windows. Cette section contient l’exemple de code contenu dans les exemples de SDK Windows.
 
 > [!NOTE]
-> Lorsque le SDK Windows est installé, un répertoire d' **exemples** est créé dans lequel tous les exemples Windows PowerShell sont disponibles. Le répertoire d’installation par défaut est **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Démarrez Windows PowerShell et tapez **« CD Samples\SysMgmt\PowerShell »** pour rechercher le répertoire d’exemples Windows PowerShell. Dans ce document, le répertoire des exemples Windows PowerShell est appelé ** \< exemples PowerShell>**.
+> Lorsque le SDK Windows est installé, un répertoire d' **exemples** est créé dans lequel tous les exemples Windows PowerShell sont disponibles. Le répertoire d’installation par défaut est **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Démarrez Windows PowerShell et tapez **« CD Samples\SysMgmt\PowerShell »** pour rechercher le répertoire d’exemples Windows PowerShell. Dans ce document, le répertoire des exemples Windows PowerShell est appelé **\<PowerShell Samples>** .
 
 ## <a name="sample-code-listing"></a>Exemple de liste de code
 

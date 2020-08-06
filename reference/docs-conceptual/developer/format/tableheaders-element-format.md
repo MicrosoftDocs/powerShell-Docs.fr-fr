@@ -1,19 +1,12 @@
 ---
 title: Élément TableHeaders (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
-caps.latest.revision: 15
-ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361818"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787425"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders, élément (Format)
 
@@ -30,33 +23,33 @@ Définit les en-têtes pour les colonnes d’une table.
 
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `TableHeaders`. Il doit y avoir un élément enfant pour chaque propriété de l’objet qui doit être affiché. Les informations d’en-tête de colonne s’affichent dans l’ordre dans lequel les éléments enfants sont spécifiés.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `TableHeaders` élément. Il doit y avoir un élément enfant pour chaque propriété de l’objet qui doit être affiché. Les informations d’en-tête de colonne s’affichent dans l’ordre dans lequel les éléments enfants sont spécifiés.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément TableColumnHeader (format)](./tablecolumnheader-element-format.md)|Élément facultatif.<br /><br /> Définit l’étiquette, la largeur et l’alignement des données pour une colonne d’une vue de table.|
+|[TableColumnHeader, élément (Format)](./tablecolumnheader-element-format.md)|Élément facultatif.<br /><br /> Définit l’étiquette, la largeur et l’alignement des données pour une colonne d’une vue de table.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément table ((format)](./tablecontrol-element-format.md)|Définit un format de table pour une vue.|
+|[TableControl, élément (Format)](./tablecontrol-element-format.md)|Définit un format de table pour une vue.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre un élément `TableHeaders` qui définit deux en-têtes de colonne.
+Cet exemple montre un `TableHeaders` élément qui définit deux en-têtes de colonne.
 
 ```xml
 <TableHeaders>
@@ -77,8 +70,8 @@ Cet exemple montre un élément `TableHeaders` qui définit deux en-têtes de co
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Élément TableColumnHeader (format)](./tablecolumnheader-element-format.md)
+[TableColumnHeader, élément (Format)](./tablecolumnheader-element-format.md)
 
-[Élément table ((format)](./tablecontrol-element-format.md)
+[TableControl, élément (Format)](./tablecontrol-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,16 @@
 ---
 title: Déclaration d’attribut ValidateSet | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateSet
 - ValidateSet attribute, described
 - ValidateSet attribute
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
-ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364278"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787765"
 ---
 # <a name="validateset-attribute-declaration"></a>Déclaration de l’attribut ValidateSet
 
@@ -34,16 +27,16 @@ Lorsque cet attribut est spécifié, le runtime Windows PowerShell détermine si
 
 #### <a name="parameters"></a>Paramètres
 
-`ValidValues` ([System. String](/dotnet/api/System.String)) requis. Spécifie les valeurs d’élément de paramètre valides. L’exemple suivant montre comment spécifier un élément ou plusieurs éléments.
+`ValidValues`([System. String](/dotnet/api/System.String)) requis. Spécifie les valeurs d’élément de paramètre valides. L’exemple suivant montre comment spécifier un élément ou plusieurs éléments.
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. La valeur par défaut de `true` indique que la casse est ignorée. La valeur `false` rend l’applet de commande sensible à la casse.
+`IgnoreCase`([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. La valeur par défaut `true` indique que la casse est ignorée. La valeur de `false` rend l’applet de commande sensible à la casse.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 - Cet attribut ne peut être utilisé qu’une seule fois par paramètre.
 

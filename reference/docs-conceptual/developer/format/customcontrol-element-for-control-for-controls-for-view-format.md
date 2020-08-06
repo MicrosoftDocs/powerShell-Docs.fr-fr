@@ -1,19 +1,12 @@
 ---
 title: CustomControl, élément de Control pour les contrôles pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
-caps.latest.revision: 8
-ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2020725bf6afb086901e14a976abbdc04366869c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363368"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786099"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>CustomControl, élément pour Control pour View (Format)
 
@@ -29,19 +22,19 @@ Définit un contrôle qui est utilisé par la vue.
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControl`. Vous devez spécifier un seul élément enfant.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomControl` élément. Vous devez spécifier un seul élément enfant.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntries pour CustomControl pour les contrôles View (format)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|Élément requis.<br /><br /> Fournit les définitions pour le contrôle.|
+|[CustomEntries, élément pour CustomControl pour Controls pour View (Format)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|Élément requis.<br /><br /> Fournit les définitions pour le contrôle.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -49,11 +42,11 @@ Aucune.
 |-------------|-----------------|
 |[Control, élément de Controls pour View (format)](./control-element-for-controls-for-view-format.md)|Définit un contrôle qui peut être utilisé par la vue et le nom utilisé pour référencer le contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément CustomEntries pour CustomControl pour View (format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
+[CustomEntries, élément pour CustomControl pour View (Format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 
 [Control, élément de Controls pour View (format)](./control-element-for-controls-for-view-format.md)
 

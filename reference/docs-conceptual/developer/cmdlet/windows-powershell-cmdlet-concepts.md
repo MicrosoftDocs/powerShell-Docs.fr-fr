@@ -1,19 +1,12 @@
 ---
 title: Concepts des applets de commande Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7b3ef3f4-c626-4679-884f-406a37412b3e
-caps.latest.revision: 16
-ms.openlocfilehash: 2f84c57da7429462c69b2a020d9f8ac04f8d0f35
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c5462bbebd1be536b83854ca260592b841035fe
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369118"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787748"
 ---
 # <a name="windows-powershell-cmdlet-concepts"></a>Concepts des applets de commande Windows PowerShell
 

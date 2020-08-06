@@ -1,13 +1,12 @@
 ---
 title: Méthodes de classe de système de type étendu
 ms.date: 07/09/2020
-ms.topic: conceptual
-ms.openlocfilehash: 97c11093d2faeb2a73b349c479d6de34ae2ea788
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.openlocfilehash: bd03b873893f8aa9cb92eda33538c1703ead9773
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217936"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786235"
 ---
 # <a name="ets-class-methods"></a>Méthodes de la classe ETS
 

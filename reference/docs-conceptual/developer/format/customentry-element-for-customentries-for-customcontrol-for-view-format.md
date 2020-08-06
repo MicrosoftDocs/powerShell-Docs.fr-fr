@@ -1,19 +1,12 @@
 ---
 title: Élément CustomEntry pour CustomEntries pour CustomControl pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
-caps.latest.revision: 11
-ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a13e83ec941bed80eaab02e40131054432fcce00
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364018"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785878"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>CustomEntry, élément pour CustomEntries pour CustomControl pour View (Format)
 
@@ -30,13 +23,13 @@ Fournit une définition de l’affichage de contrôle personnalisé.
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomEntry`. Vous devez spécifier les éléments affichés par la définition.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomEntry` élément. Vous devez spécifier les éléments affichés par la définition.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -49,15 +42,15 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntries pour CustomControl pour View (format)](./customentries-element-for-customcontrol-for-view-format.md)|Fournit les définitions de l’affichage de contrôle personnalisé. L’affichage de contrôle personnalisé doit spécifier une ou plusieurs définitions.|
+|[CustomEntries, élément pour CustomControl pour View (Format)](./customentries-element-for-customcontrol-for-view-format.md)|Fournit les définitions de l’affichage de contrôle personnalisé. L’affichage de contrôle personnalisé doit spécifier une ou plusieurs définitions.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Dans la plupart des cas, une seule définition est requise pour chaque affichage de contrôle personnalisé, mais il est possible d’avoir plusieurs définitions si vous souhaitez utiliser la même vue pour afficher différents objets .NET. Dans ce cas, vous pouvez fournir une définition distincte pour chaque objet ou ensemble d’objets.
 
 ## <a name="see-also"></a>Voir aussi
 
-[CustomControl, élément de View (format)](./customcontrol-element-for-view-format.md)
+[CustomControl, élément pour View (Format)](./customcontrol-element-for-view-format.md)
 
 [Élément CustomItem pour CustomEntry pour View (format)](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 

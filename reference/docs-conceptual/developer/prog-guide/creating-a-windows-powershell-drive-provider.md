@@ -1,23 +1,16 @@
 ---
 title: Création d’un fournisseur de lecteurs Windows PowerShell | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - drive providers [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], drive provider
 - drives [PowerShell Programmer's Guide]
-ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
-caps.latest.revision: 6
-ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978455"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787187"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Création d’un fournisseur de lecteur Windows PowerShell
 
@@ -44,7 +37,7 @@ Toutefois, la plupart des fournisseurs (y compris le fournisseur décrit ici) pe
 
 Tous les fournisseurs Windows PowerShell sont considérés comme sans État, ce qui signifie que le fournisseur de votre lecteur doit créer les informations d’État requises par le runtime Windows PowerShell lorsqu’il appelle votre fournisseur.
 
-Pour ce fournisseur de lecteur, les informations d’État incluent la connexion à la base de données qui est conservée dans le cadre des informations sur le lecteur. Voici le code qui montre comment ces informations sont stockées dans l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur :
+Pour ce fournisseur de lecteur, les informations d’État incluent la connexion à la base de données qui est conservée dans le cadre des informations sur le lecteur. Voici le code qui montre comment ces informations sont stockées dans le [System.Management.Automation.PSDobjet riveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur :
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
@@ -56,17 +49,17 @@ Pour autoriser le runtime Windows PowerShell à créer un lecteur, le fournisseu
 
 Votre remplacement de cette méthode doit effectuer les opérations suivantes :
 
-- Vérifiez que le membre [System. Management. Automation. PSDriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) existe et qu’une connexion au magasin de données peut être établie.
-- Créez un lecteur et renseignez le membre de la connexion, pour la prise en charge de l’applet de commande `New-PSDrive`.
-- Validez l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) pour le lecteur proposé.
-- Modifiez l’objet [System. Management. Automation. PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur avec les informations de performances ou de fiabilité requises, ou fournissez des données supplémentaires aux appelants à l’aide du lecteur.
-- Gérez les échecs à l’aide de la méthode [System. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) , puis retournez `null`.
+- Vérifiez que la [System.Management.Automation.PSDriveinfo. Racine *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) le membre existe et qu’une connexion au magasin de données peut être établie.
+- Créez un lecteur et renseignez le membre de la connexion, pour la prise en charge de l’applet de commande `New-PSDrive` .
+- Validez le [System.Management.Automation.PSDobjet riveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) pour le lecteur proposé.
+- Modifiez l' [System.Management.Automation.PSDobjet riveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) qui décrit le lecteur avec les informations de performances ou de fiabilité requises, ou fournissez des données supplémentaires aux appelants à l’aide du lecteur.
+- Gérez les échecs à l’aide de la méthode [System. Management. Automation. Provider. Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) , puis retournez `null` .
 
   Cette méthode retourne soit les informations de lecteur qui ont été passées à la méthode, soit une version spécifique au fournisseur.
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Attachement de paramètres dynamiques à les
 
-L’applet de commande `New-PSDrive` prise en charge par votre fournisseur de lecteurs peut nécessiter des paramètres supplémentaires. Pour attacher ces paramètres dynamiques à l’applet de commande, le fournisseur implémente la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Cette méthode retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
+L' `New-PSDrive` applet de commande prise en charge par votre fournisseur de lecteurs peut nécessiter des paramètres supplémentaires. Pour attacher ces paramètres dynamiques à l’applet de commande, le fournisseur implémente la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) . Cette méthode retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) .
 
 Ce fournisseur de lecteurs ne remplace pas cette méthode. Toutefois, le code suivant illustre l’implémentation par défaut de cette méthode :
 
@@ -80,21 +73,21 @@ Le code suivant illustre l’implémentation de la méthode [System. Management.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
-Si le lecteur peut être supprimé, la méthode doit retourner les informations transmises à la méthode par le biais du paramètre `drive`. Si le lecteur ne peut pas être supprimé, la méthode doit écrire une exception, puis retourner `null`. Si votre fournisseur ne remplace pas cette méthode, l’implémentation par défaut de cette méthode retourne simplement les informations de lecteur passées comme entrée.
+Si le lecteur peut être supprimé, la méthode doit retourner les informations transmises à la méthode par le biais du `drive` paramètre. Si le lecteur ne peut pas être supprimé, la méthode doit écrire une exception, puis retourner `null` . Si votre fournisseur ne remplace pas cette méthode, l’implémentation par défaut de cette méthode retourne simplement les informations de lecteur passées comme entrée.
 
 ## <a name="initializing-default-drives"></a>Initialisation des lecteurs par défaut
 
-Votre fournisseur de lecteur implémente la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) pour monter des lecteurs. Par exemple, le fournisseur de Active Directory peut monter un lecteur pour le contexte d’appellation par défaut si l’ordinateur est joint à un domaine.
+Votre fournisseur de lecteur implémente la méthode [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) pour monter des lecteurs. Par exemple, le fournisseur de Active Directory peut monter un lecteur pour le contexte d’appellation par défaut si l’ordinateur est joint à un domaine.
 
 Cette méthode retourne une collection d’informations sur les lecteurs initialisés, ou une collection vide. L’appel à cette méthode est effectué après que le runtime Windows PowerShell a appelé la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) pour initialiser le fournisseur.
 
-Ce fournisseur de lecteurs ne remplace pas la méthode [System. Management. Automation. Provider. Drivecmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) . Toutefois, le code suivant montre l’implémentation par défaut, qui retourne une collection de lecteurs vide :
+Ce fournisseur de lecteurs ne remplace pas la méthode [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives) . Toutefois, le code suivant montre l’implémentation par défaut, qui retourne une collection de lecteurs vide :
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinitializedefaultdrives](Msh_samplestestcmdlets#testproviderinitializedefaultdrives)]  -->
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>Points à retenir concernant l’implémentation de InitializeDefaultDrives
 
-Tous les fournisseurs de lecteurs doivent monter un lecteur racine pour aider l’utilisateur à se découvrir. Le lecteur racine peut répertorier les emplacements qui servent de racines pour d’autres lecteurs montés. Par exemple, le fournisseur Active Directory peut créer un lecteur qui répertorie les contextes d’attribution de noms trouvés dans les attributs `namingContext` de l’environnement de système distribué racine (DSE). Cela permet aux utilisateurs de découvrir des points de montage pour d’autres lecteurs.
+Tous les fournisseurs de lecteurs doivent monter un lecteur racine pour aider l’utilisateur à se découvrir. Le lecteur racine peut répertorier les emplacements qui servent de racines pour d’autres lecteurs montés. Par exemple, le fournisseur de Active Directory peut créer un lecteur qui répertorie les contextes d’attribution de noms trouvés dans les `namingContext` attributs de l’environnement de système distribué (DSE) racine. Cela permet aux utilisateurs de découvrir des points de montage pour d’autres lecteurs.
 
 ## <a name="code-sample"></a>Exemple de code
 
@@ -104,11 +97,11 @@ Pour obtenir un exemple de code complet, consultez [exemple de code AccessDbProv
 
 Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows PowerShell, vous pouvez le tester en exécutant les applets de commande prises en charge sur la ligne de commande, y compris les applets de commande rendues disponibles par dérivation. Nous allons tester l’exemple de fournisseur de lecteur.
 
-1. Exécutez l’applet de commande `Get-PSProvider` pour récupérer la liste des fournisseurs afin de vérifier que le fournisseur de lecteurs AccessDB est présent :
+1. Exécutez l' `Get-PSProvider` applet de commande pour récupérer la liste des fournisseurs afin de vérifier que le fournisseur de lecteurs AccessDB est présent :
 
-   **`Get-PSProvider` de > PS**
+   **> PS`Get-PSProvider`**
 
-   Vous obtenez la sortie suivante :
+   Vous obtenez la sortie suivante :
 
    ```Output
    Name                 Capabilities                  Drives
@@ -121,7 +114,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. Assurez-vous qu’un nom de serveur de base de données existe pour la base de données en accédant à la partie **sources de données** des **Outils d’administration** du système d’exploitation. Dans la table **DSN utilisateur** , double-cliquez sur **base de données MS Access** et ajoutez le chemin d’accès au lecteur `C:\ps\northwind.mdb`.
+2. Assurez-vous qu’un nom de serveur de base de données existe pour la base de données en accédant à la partie **sources de données** des **Outils d’administration** du système d’exploitation. Dans la table **DSN utilisateur** , double-cliquez sur **base de données MS Access** et ajoutez le chemin d’accès au lecteur `C:\ps\northwind.mdb` .
 
 3. Créez un lecteur à l’aide de l’exemple de fournisseur de lecteur :
 
@@ -129,7 +122,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
    ```
 
-   Vous obtenez la sortie suivante :
+   Vous obtenez la sortie suivante :
 
    ```Output
    Name     Provider     Root                   CurrentLocation
@@ -144,7 +137,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
    **> PS (obten-PSDrive MyDB). connexion**
 
-   Vous obtenez la sortie suivante :
+   Vous obtenez la sortie suivante :
 
    ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb

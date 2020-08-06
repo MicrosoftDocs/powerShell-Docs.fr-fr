@@ -1,22 +1,15 @@
 ---
 title: Création d’un fournisseur Windows PowerShell de base | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - base provider [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], base provider
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
-ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978506"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787221"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Création d’un fournisseur Windows PowerShell de base
 
@@ -31,7 +24,7 @@ Comme mentionné précédemment, le fournisseur de base décrit ici implémente 
 
 La première étape de la création d’un fournisseur Windows PowerShell consiste à définir sa classe .NET. Ce fournisseur de base définit une classe appelée `AccessDBProvider` qui dérive de la classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) .
 
-Il est recommandé de placer vos classes de fournisseur dans un espace de noms `Providers` de votre espace de noms d’API, par exemple, xxx. PowerShell. Providers. Ce fournisseur utilise l’espace de noms `Microsoft.Samples.PowerShell.Provider` dans lequel tous les exemples du fournisseur Windows PowerShell s’exécutent.
+Il est recommandé de placer vos classes de fournisseur dans un `Providers` espace de noms de votre espace de noms d’API, par exemple, xxx. PowerShell. Providers. Ce fournisseur utilise l' `Microsoft.Samples.PowerShell.Provider` espace de noms dans lequel tous les exemples du fournisseur Windows PowerShell s’exécutent.
 
 > [!NOTE]
 > La classe d’un fournisseur Windows PowerShell doit être explicitement marquée comme publique. Les classes qui ne sont pas marquées comme étant publiques seront par défaut internes et ne seront pas trouvées par le runtime Windows PowerShell.
@@ -85,13 +78,13 @@ Pour obtenir un exemple de code complet, consultez [exemple de code AccessDbProv
 
 ## <a name="testing-the-windows-powershell-provider"></a>Test du fournisseur Windows PowerShell
 
-Une fois que votre fournisseur Windows PowerShell a été inscrit auprès de Windows PowerShell, vous pouvez le tester en exécutant les applets de commande prises en charge sur la ligne de commande. Pour ce fournisseur de base, exécutez le nouvel interpréteur de commandes et utilisez l’applet de commande `Get-PSProvider` pour récupérer la liste des fournisseurs et vérifier que le fournisseur AccessDb est présent.
+Une fois que votre fournisseur Windows PowerShell a été inscrit auprès de Windows PowerShell, vous pouvez le tester en exécutant les applets de commande prises en charge sur la ligne de commande. Pour ce fournisseur de base, exécutez le nouvel interpréteur de commandes et utilisez l' `Get-PSProvider` applet de commande pour récupérer la liste des fournisseurs et vérifier que le fournisseur AccessDb est présent.
 
 ```powershell
 Get-PSProvider
 ```
 
-Vous obtenez la sortie suivante :
+Vous obtenez la sortie suivante :
 
 ```Output
 Name                 Capabilities                  Drives

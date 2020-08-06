@@ -1,19 +1,12 @@
 ---
 title: Création d’un affichage étendu | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
-caps.latest.revision: 16
-ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0cf6a35201c47e4b12dd160191570eccec3427ef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368948"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786133"
 ---
 # <a name="creating-a-wide-view"></a>Création d’une vue large
 
@@ -220,7 +213,7 @@ Pour obtenir un exemple de fichier de mise en forme complet qui définit des gro
 
 ## <a name="using-format-strings"></a>Utilisation de chaînes de format
 
-La mise en forme des chaînes peut être ajoutée à une vue étendue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la propriété `StartTime`.
+La mise en forme des chaînes peut être ajoutée à une vue étendue pour définir davantage la façon dont les données sont affichées. L’exemple suivant montre comment définir une chaîne de mise en forme pour la valeur de la `StartTime` propriété.
 
 ```xml
 <WideItem>
@@ -239,7 +232,7 @@ Les éléments XML suivants peuvent être utilisés pour spécifier un modèle d
 
 - L’élément [scriptblock](./scriptblock-element-for-wideitem-for-widecontrol-format.md) (non affiché) spécifie le script dont la valeur est affichée par la vue. Vous devez spécifier un script ou une propriété, mais vous ne pouvez pas spécifier les deux.
 
-Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString`, qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
+Dans l’exemple suivant, la `ToString` méthode est appelée pour mettre en forme la valeur du script. Les scripts peuvent appeler n’importe quelle méthode d’un objet. Par conséquent, si un objet a une méthode, telle que `ToString` , qui a des paramètres de mise en forme, le script peut appeler cette méthode pour mettre en forme la valeur de sortie du script.
 
 ```xml
 <WideItem>
@@ -250,7 +243,7 @@ Dans l’exemple suivant, la méthode `ToString` est appelée pour mettre en for
 </WideItem>
 ```
 
-L’élément XML suivant peut être utilisé pour appeler la méthode `ToString` :
+L’élément XML suivant peut être utilisé pour appeler la `ToString` méthode :
 
 - L’élément [WideItem](./wideitem-element-for-widecontrol-format.md) spécifie les données affichées par la vue.
 
@@ -258,8 +251,8 @@ L’élément XML suivant peut être utilisé pour appeler la méthode `ToString
 
 ## <a name="see-also"></a>Voir aussi
 
-[Vue étendue (de base)](./wide-view-basic.md)
+[Vue large (De base)](./wide-view-basic.md)
 
-[Vue étendue (GroupBy)](./wide-view-groupby.md)
+[Vue large (GroupBy)](./wide-view-groupby.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

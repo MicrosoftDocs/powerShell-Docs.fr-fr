@@ -1,19 +1,12 @@
 ---
 title: CustomControl, élément de Control pour les contrôles de configuration (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
-caps.latest.revision: 10
-ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5aacf824421dfce19f1f495fc0a95e766cdbaf8b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368968"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786082"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>CustomControl, élément pour Control pour Controls (Format)
 
@@ -29,13 +22,13 @@ Définit un contrôle. Cet élément est utilisé lors de la définition d’un 
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `CustomControl`. Cet élément doit avoir au moins un élément enfant. Il n’existe pas de limite maximale pour le nombre d’éléments enfants qui peuvent être spécifiés.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `CustomControl` élément. Cet élément doit avoir au moins un élément enfant. Il n’existe pas de limite maximale pour le nombre d’éléments enfants qui peuvent être spécifiés.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -47,13 +40,13 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)|Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme et le nom utilisé pour référencer le contrôle.|
+|[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)|Définit un contrôle commun qui peut être utilisé par toutes les vues du fichier de mise en forme et le nom utilisé pour référencer le contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément Control pour les contrôles de configuration (format)](./control-element-for-controls-for-configuration-format.md)
+[Control, élément pour Controls pour Configuration (Format)](./control-element-for-controls-for-configuration-format.md)
 
 [Élément CustomEntries pour CustomControl pour la configuration (format)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 

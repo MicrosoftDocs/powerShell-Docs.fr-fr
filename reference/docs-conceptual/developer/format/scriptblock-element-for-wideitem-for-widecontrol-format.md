@@ -1,19 +1,12 @@
 ---
 title: Élément ScriptBlock pour WideItem pour WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
-caps.latest.revision: 8
-ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: be649d6de0d2dfa6bad14f2d7476cced9cd6cb6d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362028"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787595"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>ScriptBlock, élément pour WideItem pour WideControl (Format)
 
@@ -27,17 +20,17 @@ Spécifie le script dont la valeur est affichée dans la vue étendue.
 <ScriptBlock>ScriptToExecute</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ScriptBlock`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ScriptBlock` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,17 +38,17 @@ Aucune.
 |-------------|-----------------|
 |[Élément WideItem (format)](./wideitem-element-for-widecontrol-format.md)|Définit la propriété ou le bloc de script dont la valeur est affichée dans la vue étendue.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le script dont la valeur est affichée.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue étendue, consultez [création d’une vue étendue](./creating-a-wide-view.md).
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre un élément `WideItem` qui définit un script dont la valeur est affichée dans la vue.
+Cet exemple montre un `WideItem` élément qui définit un script dont la valeur est affichée dans la vue.
 
 ```xml
 <WideItem>
@@ -67,6 +60,6 @@ Cet exemple montre un élément `WideItem` qui définit un script dont la valeur
 
 [Élément WideItem (format)](./wideitem-element-for-widecontrol-format.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

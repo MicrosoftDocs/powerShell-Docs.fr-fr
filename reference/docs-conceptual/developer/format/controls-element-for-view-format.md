@@ -1,19 +1,12 @@
 ---
 title: Controls, élément de View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
-caps.latest.revision: 14
-ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 26b7e73afd465b1be9632cd71a75e4be6cc4aeca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363388"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786167"
 ---
 # <a name="controls-element-for-view-format"></a>Controls, élément pour View (Format)
 
@@ -29,13 +22,13 @@ Définit les contrôles d’affichage qui peuvent être utilisés par une vue sp
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l’élément `Controls`. Cet élément doit avoir au moins un élément enfant. Il n’y a pas de nombre maximal d’éléments enfants, et leur ordre n’est pas significatif.
+Les sections suivantes décrivent les attributs, les éléments enfants et les éléments parents de l' `Controls` élément. Cet élément doit avoir au moins un élément enfant. Il n’y a pas de nombre maximal d’éléments enfants, et leur ordre n’est pas significatif.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -47,14 +40,14 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[View, élément (format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher les membres d’un ou de plusieurs objets .NET.|
+|[View, élément (Format)](./view-element-format.md)|Définit une vue qui est utilisée pour afficher les membres d’un ou de plusieurs objets .NET.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
 [Control, élément (format)](./control-element-for-controls-for-view-format.md)
 
-[View, élément (format)](./view-element-format.md)
+[View, élément (Format)](./view-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

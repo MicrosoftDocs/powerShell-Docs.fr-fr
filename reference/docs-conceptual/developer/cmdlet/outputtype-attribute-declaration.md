@@ -1,23 +1,16 @@
 ---
 title: OutputType, déclaration d’attribut | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a97a98ee-ffc0-42f0-a9a6-b0717b39c798
-caps.latest.revision: 5
-ms.openlocfilehash: 7aa6fa407e509a31c4066c4f73ae01b02b2f338c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a4cc874031bba092cfef6041bef0e19e6af3f09c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365338"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786541"
 ---
 # <a name="outputtype-attribute-declaration"></a>Déclaration de l’attribut OutputType
 
-L’attribut `OutputType` identifie les types de .NET Framework retournés par une applet de commande, une fonction ou un script.
+L' `OutputType` attribut identifie les types de .NET Framework retournés par une applet de commande, une fonction ou un script.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,11 +23,11 @@ L’attribut `OutputType` identifie les types de .NET Framework retournés par u
 
 #### <a name="parameters"></a>Paramètres
 
-Type (`string[]` ou `Type[]`) requis. Spécifie les types retournés par la fonction d’applet de commande, ou le script.
+Type ( `string[]` ou `Type[]` ) requis. Spécifie les types retournés par la fonction d’applet de commande, ou le script.
 
-ParameterSetName (String []) facultatif. Spécifie les jeux de paramètres qui retournent les types spécifiés dans le paramètre `type`.
+ParameterSetName (String []) facultatif. Spécifie les jeux de paramètres qui retournent les types spécifiés dans le `type` paramètre.
 
-providerCmdlet facultatif. Spécifie l’applet de commande du fournisseur qui retourne les types spécifiés dans le paramètre `type`.
+providerCmdlet facultatif. Spécifie l’applet de commande du fournisseur qui retourne les types spécifiés dans le `type` paramètre.
 
 ## <a name="see-also"></a>Voir aussi
 

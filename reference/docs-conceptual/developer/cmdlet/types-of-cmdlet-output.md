@@ -1,21 +1,14 @@
 ---
 title: Types de sortie de l’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 01/18/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
-ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
-caps.latest.revision: 12
-ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8f761fdddd264b7c580c4a860081fdc5d2776ee7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561409"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786354"
 ---
 # <a name="types-of-cmdlet-output"></a>Types de sortie de l’applet de commande
 
@@ -62,7 +55,7 @@ Pour tous les appels de méthode d’écriture, l’affichage du contenu est dé
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>Accès aux fonctionnalités de sortie d’une application hôte
 
-Vous pouvez également concevoir une applet de commande pour accéder directement aux fonctionnalités de sortie d’une application hôte par le biais du runtime PowerShell. L’utilisation des API d’hôte fournies par PowerShell au lieu de [System. console](/dotnet/api/System.Console) ou de [System. Windows. Forms](/dotnet/api/System.Windows.Forms) garantit que votre applet de commande fonctionne avec un large éventail d’hôtes. Par exemple : l’hôte de la console **PowerShell. exe** , l’hôte graphique **Powershell_ise. exe** , l’hôte de communication à distance PowerShell et les hôtes tiers.
+Vous pouvez également concevoir une applet de commande pour accéder directement aux fonctionnalités de sortie d’une application hôte par le biais du runtime PowerShell. L’utilisation des API d’hôte fournies par PowerShell au lieu de [System. console](/dotnet/api/System.Console) ou de [System. Windows. Forms](/dotnet/api/System.Windows.Forms) garantit que votre applet de commande fonctionne avec un large éventail d’hôtes. Par exemple : l’hôte de la console **powershell.exe** , l’hôte graphique **powershell_ise.exe** , l’hôte de communication à distance PowerShell et les hôtes tiers.
 
 ## <a name="see-also"></a>Voir aussi
 

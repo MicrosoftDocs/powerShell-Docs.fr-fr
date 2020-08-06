@@ -1,15 +1,14 @@
 ---
 title: Informations de référence sur Windows PowerShell-nouveautés
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 364d081ddf2f87ceeaa47732266a35f4a126246f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4e87fce34f74e0fcbfe25939e1555df308a7f7d0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366088"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786694"
 ---
-# <a name="whats-new"></a>Nouveautés
+# <a name="whats-new"></a>What's New
 
 Windows PowerShell 2,0 fournit les nouvelles fonctionnalités suivantes à utiliser lors de l’écriture d’applets de commande, de fournisseurs et d’applications hôtes.
 

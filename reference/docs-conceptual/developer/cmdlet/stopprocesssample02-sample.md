@@ -1,19 +1,12 @@
 ---
 title: Exemple StopProcessSample02 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786439"
 ---
 # <a name="stopprocesssample02-sample"></a>Exemple StopProcessSample02
 
@@ -53,7 +46,7 @@ Cet exemple montre comment écrire une applet de commande qui écrit des message
 
 Cet exemple requiert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Démontre
+## <a name="demonstrates"></a>Illustre le
 
 Cet exemple illustre ce qui suit.
 
@@ -69,7 +62,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment écrire des messages de débogage, de commentaires et d’avertissement à l’aide des méthodes `WriteDebug`, `WriteVerbose`et `WriteWarning`.
+Cet exemple montre comment écrire des messages de débogage, de commentaires et d’avertissement à l’aide des `WriteDebug` `WriteVerbose` méthodes, et `WriteWarning` .
 
 ```csharp
 using System;

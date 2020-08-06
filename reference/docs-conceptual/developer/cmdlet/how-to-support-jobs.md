@@ -1,19 +1,12 @@
 ---
 title: Comment prendre en charge les travaux | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
-ms.openlocfilehash: 65f6b3d44910a0a3e848b4d2cd3e619186e5ed25
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706238"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786626"
 ---
 # <a name="how-to-support-jobs"></a>Guide pratique pour prendre en charge les travaux
 
@@ -21,7 +14,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
 ## <a name="to-support-jobs"></a>Pour prendre en charge les travaux
 
-1. Définissez un paramètre de commutateur `AsJob` pour permettre à l’utilisateur de décider s’il faut exécuter l’applet de commande en tant que tâche.
+1. Définissez un `AsJob` paramètre de commutateur afin que l’utilisateur puisse décider d’exécuter l’applet de commande en tant que tâche.
 
     L’exemple suivant illustre une déclaration de paramètre AsJob.
 
@@ -47,7 +40,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Dans une méthode de traitement des enregistrements, ajoutez une instruction `if` pour détecter si l’applet de commande doit s’exécuter en tant que tâche. Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.
+3. Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction pour détecter si l’applet de commande doit s’exécuter en tant que tâche. Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.
 
     ```csharp
     protected override void ProcessRecord()
