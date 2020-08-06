@@ -1,23 +1,16 @@
 ---
-title: Guide des programmeurs&#39;Windows PowerShell | Microsoft Docs
-ms.custom: ''
+title: Guide des&#39;des programmeurs Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
-ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
-caps.latest.revision: 9
-ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417778"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771564"
 ---
-# <a name="windows-powershell-programmer39s-guide"></a>Guide du programmeur&#39;Windows PowerShell
+# <a name="windows-powershell-programmer39s-guide"></a>Guide des&#39;des programmeurs Windows PowerShell
 
 Ce guide du programmeur est destiné aux développeurs qui souhaitent fournir un environnement de gestion en ligne de commande pour les administrateurs système. Windows PowerShell offre un moyen simple de créer des commandes de gestion qui exposent des objets .NET, tout en permettant à Windows PowerShell d’effectuer la majeure partie du travail pour vous.
 
@@ -37,9 +30,9 @@ Dans le développement de commande traditionnel, vous devez écrire un analyseur
 
 Windows PowerShell définit plusieurs types de commandes que vous pouvez utiliser dans le développement. Ces commandes sont les suivantes : fonctions, filtres, scripts, alias et exécutables (applications). Le type de commande principal abordé dans ce guide est une simple commande simple appelée « cmdlet ». Windows PowerShell fournit un ensemble d’applets de commande et prend entièrement en charge la personnalisation des applets de commande pour les adapter à votre environnement. Le runtime Windows PowerShell traite tous les types de commande comme c’est le cas pour les applets de commande, à l’aide de pipelines.
 
-En plus des commandes, Windows PowerShell prend en charge différents fournisseurs Windows PowerShell personnalisables qui rendent disponibles des ensembles d’applets de commande spécifiques. L’interpréteur de commandes fonctionne dans l’application hôte fournie par Windows PowerShell (Windows PowerShell. exe), mais il est également accessible à partir d’une application hôte personnalisée que vous pouvez développer pour répondre à des exigences spécifiques. Pour plus d’informations, consultez fonctionnement de [Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+En plus des commandes, Windows PowerShell prend en charge différents fournisseurs Windows PowerShell personnalisables qui rendent disponibles des ensembles d’applets de commande spécifiques. L’interpréteur de commandes fonctionne dans l’application hôte fournie par Windows PowerShell (Windows PowerShell.exe), mais il est également accessible à partir d’une application hôte personnalisée que vous pouvez développer pour répondre à des exigences spécifiques. Pour plus d’informations, consultez fonctionnement de [Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="windows-powershell-cmdlets"></a>Applets de commande Windows PowerShell
+### <a name="windows-powershell-cmdlets"></a>Applets de commande Windows PowerShell
 
 Une applet de commande est une commande légère qui est utilisée dans l’environnement Windows PowerShell. Le runtime Windows PowerShell appelle ces applets de commande dans le contexte des scripts d’automatisation fournis sur la ligne de commande, et le runtime Windows PowerShell les appelle également par programme par le biais des API Windows PowerShell.
 
@@ -55,7 +48,7 @@ Si vous exposez un magasin de données auquel l’utilisateur doit accéder, vou
 
 ### <a name="host-application"></a>Application hôte
 
-Windows PowerShell comprend l’application hôte par défaut PowerShell. exe, qui est une application console qui interagit avec l’utilisateur et qui héberge le runtime Windows PowerShell à l’aide d’une fenêtre de console.
+Windows PowerShell comprend l’application hôte par défaut powershell.exe, qui est une application console qui interagit avec l’utilisateur et qui héberge le runtime Windows PowerShell à l’aide d’une fenêtre de console.
 
 Il vous suffit rarement d’écrire votre propre application hôte pour Windows PowerShell, bien que la personnalisation soit prise en charge. Si vous avez besoin d’une interface GUI plus riche que l’interface fournie par l’application hôte par défaut, vous pouvez avoir besoin de votre propre application. Vous pouvez également avoir besoin d’une application personnalisée lorsque vous basez votre interface utilisateur graphique sur la ligne de commande. Pour plus d’informations, consultez [comment créer une application hôte Windows PowerShell](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application).
 
@@ -79,7 +72,7 @@ Windows PowerShell permet d’accéder à différents objets, tels que les objet
 
 - Écriture d’objets personnalisés.
 
-  À l’aide de ETS, vous pouvez créer de nouveaux « types » flexibles qui sont compatibles avec le langage Windows PowerShell. Si vous êtes un développeur .NET, vous pouvez utiliser des objets à l’aide de la même sémantique que le langage Windows PowerShell s’applique aux scripts, par exemple, pour déterminer si un objet prend la valeur `true`.
+  À l’aide de ETS, vous pouvez créer de nouveaux « types » flexibles qui sont compatibles avec le langage Windows PowerShell. Si vous êtes un développeur .NET, vous pouvez utiliser des objets à l’aide de la même sémantique que le langage Windows PowerShell s’applique aux scripts, par exemple, pour déterminer si un objet prend la valeur `true` .
 
   Pour plus d’informations sur ETS et sur la façon dont Windows PowerShell utilise les objets, consultez [concepts relatifs aux objets Windows PowerShell](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
@@ -99,10 +92,10 @@ Pour plus d’informations sur le démarrage de l’utilisation de l’interpré
 
 |Rubrique|Définition|
 |-----------|----------------|
-|[Comment créer un fournisseur Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment créer un fournisseur Windows PowerShell pour Windows PowerShell.|
+|[Guide pratique pour créer un fournisseur Windows PowerShell](./how-to-create-a-windows-powershell-provider.md)|Cette section décrit comment créer un fournisseur Windows PowerShell pour Windows PowerShell.|
 |[Comment créer une application hôte Windows PowerShell](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|Cette section décrit comment écrire une application hôte qui manipule une instance d’exécution et comment écrire une application hôte qui implémente son propre hôte personnalisé.|
-|[Comment créer un composant logiciel enfichable Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire toutes les applets de commande et tous les fournisseurs dans un assembly et comment créer un composant logiciel enfichable personnalisé.|
-|[Comment créer un interpréteur de commandes de console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
+|[Guide pratique pour créer un composant logiciel enfichable Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|Cette section décrit comment créer un composant logiciel enfichable qui est utilisé pour inscrire toutes les applets de commande et tous les fournisseurs dans un assembly et comment créer un composant logiciel enfichable personnalisé.|
+|[Guide pratique pour créer un shell de console](./how-to-create-a-console-shell.md)|Cette section décrit comment créer un interpréteur de commandes de console qui n’est pas extensible.|
 |[Concepts de Windows PowerShell](./windows-powershell-concepts.md)|Cette section contient des informations conceptuelles qui vous aideront à comprendre Windows PowerShell du point de vue d’un développeur.|
 
 ## <a name="see-also"></a>Voir aussi

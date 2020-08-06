@@ -1,19 +1,12 @@
 ---
 title: Définition des jeux de membres par défaut pour les objets | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
-caps.latest.revision: 8
-ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 80e1f54890d3aac1702414699ead16fcf38271e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369778"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774624"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Définition de jeux de membres par défaut pour les objets
 
@@ -43,7 +36,7 @@ Dans l’exemple suivant, le jeu de membres PSStandardMembers définit le jeu de
   </MemberSet>
 ```
 
-La sortie suivante montre les propriétés par défaut retournées par l’applet [de commande Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) . Seules les propriétés `Id`, `Handles`, `CPU`et `Name` sont retournées pour chaque objet processus.
+La sortie suivante montre les propriétés par défaut retournées par l’applet [de commande Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) . Seules les `Id` `Handles` Propriétés,, `CPU` et `Name` sont retournées pour chaque objet processus.
 
 ```powershell
 Get-Process | format-list

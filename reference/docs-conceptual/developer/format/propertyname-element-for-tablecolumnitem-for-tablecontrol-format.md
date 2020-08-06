@@ -1,25 +1,18 @@
 ---
 title: PropertyName, élément de TableColumnItem pour table ((format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb26d72c-2f77-4801-badf-0537ccc55e31
-caps.latest.revision: 10
-ms.openlocfilehash: 6e86b6a0874b385703121802bc8108a0410442cd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf267eeb83aef59abea2d945af12e849252309c8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362248"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772975"
 ---
 # <a name="propertyname-element-for-tablecolumnitem-for-tablecontrol-format"></a>PropertyName, élément pour TableColumnItem pour TableControl (Format)
 
 Spécifie la propriété dont la valeur est affichée dans la colonne de la ligne.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry, élément (format) TableColumnItems élément (format) TableColumnItem, élément (format) PropertyName, élément de TableColumnItem (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry, élément (format) TableColumnItems élément (format) TableColumnItem élément (format) PropertyName élément pour TableColumnItem (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,17 +20,17 @@ Spécifie la propriété dont la valeur est affichée dans la colonne de la lign
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `PropertyName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `PropertyName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,17 +38,17 @@ Aucune.
 |-------------|-----------------|
 |[Élément TableColumnItem (format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|Définit la propriété ou le script dont la valeur est affichée dans la colonne de la ligne.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom de la propriété dont la valeur est affichée.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Pour plus d’informations sur les composants d’une vue de table, consultez [création d’une vue table](./creating-a-table-view.md).
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre un élément `TableColumnItem` qui spécifie la propriété `Status` de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
+Cet exemple montre un `TableColumnItem` élément qui spécifie la `Status` propriété de l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) .
 
 ```xml
 <TableColumnItem>

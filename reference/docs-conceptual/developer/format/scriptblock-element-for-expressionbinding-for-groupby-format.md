@@ -1,25 +1,18 @@
 ---
 title: Élément ScriptBlock pour ExpressionBinding pour GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3e022ec4-8531-468e-96ff-77607755ec92
-caps.latest.revision: 6
-ms.openlocfilehash: 9afa53e1c7d1edabdbff56c4e59fcef0cf1647e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24268e871e6bc66ad235113b262c60208e74b61c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362168"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772924"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-groupby-format"></a>ScriptBlock, élément pour ExpressionBinding pour GroupBy (Format)
 
 Spécifie le script dont la valeur est affichée par le contrôle. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour l’élément CustomEntry GroupBy (format) pour CustomControl pour GroupBy (format) CustomItem, élément pour CustomEntry pour GroupBy (format) élément ExpressionBinding pour CustomItem pour l’élément ScriptBlock GroupBy (format) pour ExpressionBinding pour GroupBy (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour View (format) CustomControl, élément pour GroupBy (format) élément CustomEntries pour CustomControl pour la clause GroupBy (format) CustomEntry élément pour CustomControl pour GroupBy (format) élément CustomItem pour l’élément CustomEntry pour GroupBy (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,32 +20,32 @@ Spécifie le script dont la valeur est affichée par le contrôle. Cet élément
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `ScriptBlock`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `ScriptBlock` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ExpressionBinding pour CustomItem pour GroupBy (format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Définit les données affichées par le contrôle.|
+|[ExpressionBinding, élément pour CustomItem pour GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)|Définit les données affichées par le contrôle.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le script dont la valeur est affichée par le contrôle.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément ExpressionBinding pour CustomItem pour GroupBy (format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
+[ExpressionBinding, élément pour CustomItem pour GroupBy (Format)](./expressionbinding-element-for-customitem-for-groupby-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

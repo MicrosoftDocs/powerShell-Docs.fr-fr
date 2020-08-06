@@ -1,25 +1,18 @@
 ---
 title: Exemple Windows PowerShell01 | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
-ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560999"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771938"
 ---
 # <a name="windows-powershell01-sample"></a>Exemple Windows PowerShell01
 
-Cet exemple montre comment utiliser un objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour limiter les fonctionnalités d’une instance d’exécution. La sortie de cet exemple montre comment limiter le mode de langage de l’instance d’exécution, comment marquer une applet de commande comme étant privée, comment ajouter et supprimer des applets de commande et des fournisseurs, ajouter une commande de proxy, et bien plus encore. Cet exemple se concentre sur la façon de restreindre l’instance d’exécution par programme. Les scripts alternatives à la restriction de l’instance d’exécution incluent les commandes $ExecutionContext. SessionState. LanguageMode et PSSessionConfiguration.
+Cet exemple montre comment utiliser un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour limiter les fonctionnalités d’une instance d’exécution. La sortie de cet exemple montre comment limiter le mode de langage de l’instance d’exécution, comment marquer une applet de commande comme étant privée, comment ajouter et supprimer des applets de commande et des fournisseurs, ajouter une commande de proxy, et bien plus encore. Cet exemple se concentre sur la façon de restreindre l’instance d’exécution par programme. Les scripts alternatives à la restriction de l’instance d’exécution incluent les commandes $ExecutionContext. SessionState. LanguageMode et PSSessionConfiguration.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Spécifications
 
 Cet exemple requiert Windows PowerShell 2,0.
 
@@ -27,17 +20,17 @@ Cet exemple requiert Windows PowerShell 2,0.
 
 Cet exemple indique :
 
-- Pour restreindre la langue, définissez la propriété [System. Management. Automation. instances d’exécution. Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) .
+- Pour restreindre la langue, définissez la [System.Management.Automation.Runspaces.Initialsessionstate. Propriété Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) .
 
 - Ajout d’alias à l’état de session initial à l’aide d’un [System. Management. Automation. instances d’exécution. Sessionstatealiasentry ? Displayproperty = FullName](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) , objet.
 
 - Marquage des commandes comme privées.
 
-- Suppression des fournisseurs de l’état de session initial à l’aide de la propriété [System. Management. Automation. instances d’exécution. Initialsessionstate. Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .
+- Suppression des fournisseurs de l’état de session initial à l’aide de l' [System.Management.Automation.Runspaces.Initialsessionstate. Propriété fournisseurs](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) .
 
-- Suppression de commandes de l’état de session initial à l’aide de la propriété [System. Management. Automation. instances d’exécution. Initialsessionstate. Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
+- Suppression de commandes de l’état de session initial à l’aide de la propriété [System.Management.Automation.Runspaces.Initialsessionstate. Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) .
 
-- Ajout de commandes et de fournisseurs à l’objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
+- Ajout de commandes et de fournisseurs à l’objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .
 
 ## <a name="example"></a>Exemple
 

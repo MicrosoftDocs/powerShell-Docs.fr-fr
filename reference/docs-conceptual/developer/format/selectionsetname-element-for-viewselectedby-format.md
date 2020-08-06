@@ -1,19 +1,12 @@
 ---
 title: Élément SelectionSetName pour ViewSelectedBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
-caps.latest.revision: 13
-ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f6410b463bcb00d2758849c2f7e13cd839277e50
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368258"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772601"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>SelectionSetName, élément pour ViewSelectedBy (Format)
 
@@ -27,29 +20,29 @@ Spécifie un jeu d’objets .NET qui sont affichés par la vue.
 <SelectionSetName>Name of selection set<SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `SelectionSetName`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionSetName` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément ViewSelectedBy (format)](./viewselectedby-element-format.md)|Définit les objets .NET affichés par la vue.|
+|[ViewSelectedBy, élément (Format)](./viewselectedby-element-format.md)|Définit les objets .NET affichés par la vue.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
-Spécifiez le nom du jeu de sélection défini par l’élément `Name` pour le jeu de sélection.
+Spécifiez le nom du jeu de sélection défini par l' `Name` élément pour le jeu de sélection.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez utiliser des jeux de sélection quand vous avez un ensemble d’objets connexes que vous souhaitez référencer à l’aide d’un nom unique, tel qu’un ensemble d’objets liés par héritage. Pour plus d’informations sur la définition et le référencement des jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).
 
@@ -69,8 +62,8 @@ L’exemple suivant montre comment spécifier un jeu de sélection pour un mode 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Définition des jeux de sélection](./defining-selection-sets.md)
+[Définition de jeux de sélections](./defining-selection-sets.md)
 
-[Élément ViewSelectedBy (format)](./viewselectedby-element-format.md)
+[ViewSelectedBy, élément (Format)](./viewselectedby-element-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

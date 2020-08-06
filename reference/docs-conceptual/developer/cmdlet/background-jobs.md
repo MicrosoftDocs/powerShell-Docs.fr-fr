@@ -1,19 +1,12 @@
 ---
 title: Travaux en arrière-plan | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
-caps.latest.revision: 13
-ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363558"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774845"
 ---
 # <a name="background-jobs"></a>Travaux en arrière-plan
 
@@ -35,11 +28,11 @@ Pour plus d’informations sur la gestion des tâches en arrière-plan sur la li
 
 Pour écrire une applet de commande qui peut être exécutée en tant que tâche en arrière-plan, vous devez effectuer les tâches suivantes :
 
-- Définissez un paramètre de commutateur `asJob` pour permettre à l’utilisateur de décider s’il faut exécuter l’applet de commande en tant que tâche en arrière-plan.
+- Définissez un `asJob` paramètre de commutateur afin que l’utilisateur puisse décider d’exécuter l’applet de commande en tant que tâche en arrière-plan.
 
 - Créez un objet qui dérive de la classe [System. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Cet objet peut être un objet de traitement personnalisé ou un objet de traitement fourni par Windows PowerShell, tel qu’un objet [System. Management. Automation. PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) .
 
-- Dans une méthode de traitement des enregistrements, ajoutez une instruction `if` qui détecte si l’applet de commande doit s’exécuter en tant que tâche en arrière-plan.
+- Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction qui détecte si l’applet de commande doit s’exécuter en tant que tâche en arrière-plan.
 
 - Pour les objets de travail personnalisés, implémentez la classe Job.
 

@@ -1,11 +1,6 @@
 ---
 title: Paramètres d’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - optional parameters [PowerShell SDK]
 - aliases [PowerShell SDK]
@@ -14,14 +9,12 @@ helpviewer_keywords:
 - mandatory parameters [PowerShell SDK]
 - positional parameters [PowerShell SDK]
 - cmdlets [PowerShell SDK], parameters
-ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
-caps.latest.revision: 23
-ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022213"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774760"
 ---
 # <a name="cmdlet-parameters"></a>Paramètres des applets de commande
 
@@ -47,14 +40,14 @@ Les paramètres d’applet de commande fournissent le mécanisme qui permet à u
 
 [Validation](./validating-parameter-input.md) de l’entrée de paramètre Décrit comment Windows PowerShell valide les arguments passés aux paramètres de l’applet de commande.
 
-[Paramètres de filtre d’entrée](./input-filter-parameters.md) Décrit les paramètres `Filter`, `Include`et `Exclude` qui filtrent le jeu d’objets d’entrée que l’applet de commande affecte.
+[Paramètres de filtre d’entrée](./input-filter-parameters.md) Décrit les `Filter` paramètres, `Include` et `Exclude` qui filtrent le jeu d’objets d’entrée que l’applet de commande affecte.
 
 ## <a name="related-sections"></a>Sections connexes
 
-[Comment valider une entrée de paramètre](./how-to-validate-parameter-input.md)
+[Guide pratique pour valider l’entrée des paramètres](./how-to-validate-parameter-input.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-[Déclaration d’attribut de paramètre](./parameter-attribute-declaration.md)
+[Déclaration de l’attribut Parameter](./parameter-attribute-declaration.md)
 
-[Applets de commande Windows PowerShell](./cmdlet-overview.md)
+[Applets de commande Windows PowerShell](./cmdlet-overview.md)

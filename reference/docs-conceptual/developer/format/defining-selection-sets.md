@@ -1,23 +1,16 @@
 ---
 title: Définition des jeux de sélection | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
-caps.latest.revision: 16
-ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692284"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774301"
 ---
 # <a name="defining-selection-sets"></a>Définition de jeux de sélections
 
-Lorsque vous créez plusieurs vues et contrôles, vous pouvez définir des ensembles d’objets appelés jeux de sélection. Un jeu de sélection vous permet de définir les objets une seule fois, sans avoir à les définir à plusieurs reprises pour chaque vue ou contrôle. En règle générale, les jeux de sélection sont utilisés lorsque vous avez un ensemble d’objets .NET associés. Par exemple, le `FileSystem` fichier de mise en forme (FileSystem. format. ps1xml) définit un jeu de sélection des types de système de fichiers utilisés par plusieurs vues.
+Lorsque vous créez plusieurs vues et contrôles, vous pouvez définir des ensembles d’objets appelés jeux de sélection. Un jeu de sélection vous permet de définir les objets une seule fois, sans avoir à les définir à plusieurs reprises pour chaque vue ou contrôle. En règle générale, les jeux de sélection sont utilisés lorsque vous avez un ensemble d’objets .NET associés. Par exemple, le `FileSystem` fichier de mise en forme (FileSystem.format.ps1XML) définit un jeu de sélection des types de système de fichiers utilisés par plusieurs vues.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Où les jeux de sélection sont définis et référencés
 

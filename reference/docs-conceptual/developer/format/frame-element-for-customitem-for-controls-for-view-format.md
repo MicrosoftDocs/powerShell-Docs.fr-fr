@@ -1,25 +1,18 @@
 ---
 title: Élément Frame pour CustomItem pour les contrôles pour View (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
-caps.latest.revision: 7
-ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ade36c183a026cb9001a2abbe91d31638a87108
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363648"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773451"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>Frame, élément pour CustomItem pour Controls pour View (Format)
 
 Définit le mode d’affichage des données, par exemple en décalant les données à gauche ou à droite. Cet élément est utilisé lors de la définition de contrôles qui peuvent être utilisés par une vue.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) contrôle l’élément (format) Control, élément pour les contrôles pour View (format) CustomControl, élément de Control pour les contrôles pour l’élément View (format) CustomEntries pour CustomControl pour View (format) CustomEntry, élément pour CustomEntries pour les contrôles pour l’élément CustomItem (format) View pour CustomEntry pour les contrôles pour l’élément Frame (format) de la vue pour CustomItem pour les contrôles pour View (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) contrôle l’élément (format) Control, élément pour les contrôles pour View (format) CustomControl, élément de Control pour les contrôles pour l’élément View (format) CustomEntries pour CustomControl pour View (format) CustomEntry, élément pour CustomEntries pour les contrôles pour la vue (format) CustomItem, élément pour CustomEntry pour les contrôles pour l’élément Frame (format) pour CustomItem pour les contrôles pour View (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -33,13 +26,13 @@ Définit le mode d’affichage des données, par exemple en décalant les donné
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `Frame`.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `Frame` élément.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -55,11 +48,11 @@ Aucune.
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomItem pour CustomEntry pour les contrôles pour View (format)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Définit les données affichées par le contrôle et leur mode d’affichage.|
+|[CustomItem, élément pour CustomEntry pour Controls pour View (Format)](./customitem-element-for-customentry-for-controls-for-view-format.md)|Définit les données affichées par le contrôle et leur mode d’affichage.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Vous ne pouvez pas spécifier les éléments [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md) et [FirstLineIndent](./firstlineindent-element-for-frame-for-controls-for-view-format.md) dans le même élément `Frame`.
+Vous ne pouvez pas spécifier les éléments [FirstLineHanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md) et [FirstLineIndent](./firstlineindent-element-for-frame-for-controls-for-view-format.md) dans le même `Frame` élément.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -71,6 +64,6 @@ Vous ne pouvez pas spécifier les éléments [FirstLineHanging](./firstlinehangi
 
 [Élément RightIndent du frame des contrôles de vue (format)](./rightindent-element-for-frame-for-controls-for-view-format.md)
 
-[Élément CustomItem pour CustomEntry pour les contrôles pour View (format)](./customitem-element-for-customentry-for-controls-for-view-format.md)
+[CustomItem, élément pour CustomEntry pour Controls pour View (Format)](./customitem-element-for-customentry-for-controls-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

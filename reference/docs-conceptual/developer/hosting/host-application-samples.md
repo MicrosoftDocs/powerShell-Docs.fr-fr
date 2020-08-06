@@ -1,19 +1,12 @@
 ---
 title: Exemples d’applications hôtes | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2b4a41cc-2e22-49a0-b375-2e2447967751
-caps.latest.revision: 11
-ms.openlocfilehash: 8c7c62989ebd0cea1a551e14d460f234230a1f84
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 260f813c8c8c8f699c6af209d64ad71f18c91c7a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75869943"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772278"
 ---
 # <a name="host-application-samples"></a>Exemples d’applications hôtes
 

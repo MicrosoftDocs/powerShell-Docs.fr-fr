@@ -1,25 +1,18 @@
 ---
 title: Élément SelectionCondition pour EntrySelectedBy pour WideControl (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
-caps.latest.revision: 11
-ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4115ad1ee8729ea4fc16bc19698018d2f4ed9be1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364778"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772703"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>SelectionCondition, élément pour EntrySelectedBy pour WideControl (Format)
 
 Définit la condition qui doit exister pour que cette définition soit utilisée. Il n’existe aucune limite au nombre de conditions de sélection qui peuvent être spécifiées pour une définition d’entrée étendue.
 
-Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément WideControl (format) WideEntries, élément (format) WideEntry élément (format) élément EntrySelectedBy pour WideEntry (format) SelectionCondition, élément pour EntrySelectedBy pour WideEntry (format)
+Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément WideControl (format) WideEntries, élément (format) WideEntry élément (format) EntrySelectedBy élément pour WideEntry (format) SelectionCondition élément pour EntrySelectedBy (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,30 +25,30 @@ Définit la condition qui doit exister pour que cette définition soit utilisée
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `SelectionCondition`. Vous devez spécifier un élément `PropertyName` ou `ScriptBlock` unique. Les éléments `SelectionSetName` et `TypeName` sont facultatifs. Vous pouvez spécifier l’un des deux éléments.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionCondition` élément. Vous devez spécifier un seul `PropertyName` `ScriptBlock` élément ou. Les `SelectionSetName` `TypeName` éléments et sont facultatifs. Vous pouvez spécifier l’un des deux éléments.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
+|[PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour WideEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Élément facultatif.<br /><br /> Spécifie la propriété .NET qui déclenche la condition.|
 |[Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie le bloc de script qui déclenche la condition.|
-|[Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
+|[SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|Élément facultatif.<br /><br /> Spécifie l’ensemble des types .NET qui déclenchent la condition.|
 |[Élément TypeName pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui déclenche la condition.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EntrySelectedBy pour WideEntry (format)](./entryselectedby-element-for-wideentry-format.md)|Définit les types .NET qui utilisent cette entrée étendue ou la condition qui doit exister pour que cette entrée soit utilisée.|
+|[EntrySelectedBy, élément pour WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)|Définit les types .NET qui utilisent cette entrée étendue ou la condition qui doit exister pour que cette entrée soit utilisée.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Chaque entrée à largeur unique doit avoir au moins un nom de type, un jeu de sélection ou une condition de sélection définie.
 
@@ -71,17 +64,17 @@ Pour plus d’informations sur les autres composants d’une vue étendue, consu
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Définition des conditions d’affichage des données](./defining-conditions-for-displaying-data.md)
 
-[Élément EntrySelectedBy pour WideEntry (format)](./entryselectedby-element-for-wideentry-format.md)
+[EntrySelectedBy, élément pour WideEntry (Format)](./entryselectedby-element-for-wideentry-format.md)
 
-[PropertyName, élément de SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+[PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour WideEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
 [Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+[SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
 [Élément TypeName pour SelectionCondition pour EntrySelectedBy pour WideEntry (format)](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 

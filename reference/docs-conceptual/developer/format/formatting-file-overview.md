@@ -1,23 +1,16 @@
 ---
 title: Présentation de la mise en forme du fichier | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
-caps.latest.revision: 13
-ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: efdd3eed15c5f3c88636fcbe7a39f6c6cfb20ced
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363688"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773502"
 ---
 # <a name="formatting-file-overview"></a>Vue d’ensemble des fichiers de mise en forme
 
-Le format d’affichage des objets retournés par les commandes (applets de commande, fonctions et scripts) est défini à l’aide de fichiers de mise en forme (fichiers format. ps1xml). Plusieurs de ces fichiers sont fournis par PowerShell pour définir le format d’affichage des objets retournés par les commandes fournies par PowerShell, telles que l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) retourné par l’applet de commande `Get-Process`. Toutefois, vous pouvez également créer vos propres fichiers de mise en forme personnalisés pour remplacer les formats d’affichage par défaut ou vous pouvez écrire un fichier de mise en forme personnalisé pour définir l’affichage des objets retournés par vos propres commandes.
+Le format d’affichage des objets retournés par les commandes (applets de commande, fonctions et scripts) est défini à l’aide de fichiers de mise en forme (format.ps1fichiers XML). Plusieurs de ces fichiers sont fournis par PowerShell pour définir le format d’affichage des objets retournés par les commandes fournies par PowerShell, telles que l’objet [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) retourné par l’applet de commande `Get-Process` . Toutefois, vous pouvez également créer vos propres fichiers de mise en forme personnalisés pour remplacer les formats d’affichage par défaut ou vous pouvez écrire un fichier de mise en forme personnalisé pour définir l’affichage des objets retournés par vos propres commandes.
 
 > [!IMPORTANT]
 > La mise en forme des fichiers ne détermine pas les éléments d’un objet qui sont retournés au pipeline. Lorsqu’un objet est retourné au pipeline, tous les membres de cet objet sont disponibles, même si certains ne sont pas affichés.
@@ -38,19 +31,19 @@ Chaque fichier de mise en forme peut définir les composants suivants qui peuven
 
 Les vues de mise en forme peuvent afficher des objets dans un format de tableau, un format de liste, un format étendu et un format personnalisé. Pour l’essentiel, chaque définition de mise en forme est décrite par un ensemble de balises XML qui décrivent la vue. Chaque vue contient le nom de la vue, les objets qui utilisent la vue et les éléments de la vue, tels que les informations de colonne et de ligne pour une vue de table.
 
-La vue table répertorie les propriétés d’un objet ou une valeur de bloc de script dans une ou plusieurs colonnes. Chaque colonne représente une propriété unique de l’objet ou une valeur de script. Vous pouvez définir une vue de table qui affiche toutes les propriétés d’un objet, un sous-ensemble des propriétés d’un objet, ou une combinaison de propriétés et de valeurs de script. Chaque ligne de la table représente un objet retourné. La création d’un affichage de table est très similaire à la transmission d’un objet à l’applet de commande `Format-Table`. Pour plus d’informations sur cette vue, consultez [vue table](./creating-a-table-view.md).
+La vue table répertorie les propriétés d’un objet ou une valeur de bloc de script dans une ou plusieurs colonnes. Chaque colonne représente une propriété unique de l’objet ou une valeur de script. Vous pouvez définir une vue de table qui affiche toutes les propriétés d’un objet, un sous-ensemble des propriétés d’un objet, ou une combinaison de propriétés et de valeurs de script. Chaque ligne de la table représente un objet retourné. La création d’un affichage de table est très similaire à l’acheminement d’un objet vers l’applet de commande `Format-Table` . Pour plus d’informations sur cette vue, consultez [vue table](./creating-a-table-view.md).
 
-Le mode liste répertorie les propriétés d’un objet ou une valeur de script dans une seule colonne. Chaque ligne de la liste affiche une étiquette facultative ou le nom de la propriété, suivi de la valeur de la propriété ou du script. La création d’un affichage de liste est très similaire à la conduite d’un objet à l’applet de commande `Format-List`. Pour plus d’informations sur cette vue, consultez [affichage de liste](./creating-a-list-view.md).
+Le mode liste répertorie les propriétés d’un objet ou une valeur de script dans une seule colonne. Chaque ligne de la liste affiche une étiquette facultative ou le nom de la propriété, suivi de la valeur de la propriété ou du script. La création d’un affichage de liste est très similaire à la conduite d’un objet à l’applet de commande `Format-List` . Pour plus d’informations sur cette vue, consultez [affichage de liste](./creating-a-list-view.md).
 
-Vue larges répertorie une seule propriété d’un objet ou une valeur de script dans une ou plusieurs colonnes. Il n’y a pas d’étiquette ou d’en-tête pour cette vue. La création d’un affichage étendu est très similaire à la conduite d’un objet à l’applet de commande `Format-Wide`. Pour plus d’informations sur cette vue, consultez [vue étendue](./creating-a-wide-view.md).
+Vue larges répertorie une seule propriété d’un objet ou une valeur de script dans une ou plusieurs colonnes. Il n’y a pas d’étiquette ou d’en-tête pour cette vue. La création d’un affichage étendu est très similaire à la conduite d’un objet à l’applet de commande `Format-Wide` . Pour plus d’informations sur cette vue, consultez [vue étendue](./creating-a-wide-view.md).
 
-Affichage personnalisé affiche une vue personnalisable des propriétés de l’objet ou des valeurs de script qui n’adhère pas à la structure rigide des vues de table, des affichages de liste ou des vues larges. Vous pouvez définir une vue personnalisée autonome, ou vous pouvez définir une vue personnalisée qui est utilisée par une autre vue, telle qu’une vue de table ou une vue de liste. La création d’un affichage personnalisé est très similaire à la conduite d’un objet à l’applet de commande `Format-Custom`. Pour plus d’informations sur cette vue, consultez [vue personnalisée](./creating-custom-controls.md).
+Affichage personnalisé affiche une vue personnalisable des propriétés de l’objet ou des valeurs de script qui n’adhère pas à la structure rigide des vues de table, des affichages de liste ou des vues larges. Vous pouvez définir une vue personnalisée autonome, ou vous pouvez définir une vue personnalisée qui est utilisée par une autre vue, telle qu’une vue de table ou une vue de liste. La création d’un affichage personnalisé est très similaire à la conduite d’un objet à l’applet de commande `Format-Custom` . Pour plus d’informations sur cette vue, consultez [vue personnalisée](./creating-custom-controls.md).
 
 ## <a name="components-of-a-view"></a>Composants d’une vue
 
 Les exemples XML suivants illustrent les composants XML de base d’une vue. Les éléments XML individuels varient en fonction de la vue que vous souhaitez créer, mais les composants de base des vues sont les mêmes.
 
-Pour commencer, chaque vue a un élément `Name` qui spécifie un nom convivial utilisé pour référencer la vue. élément `ViewSelectedBy` qui définit les objets .NET affichés par la vue et un élément de *contrôle* qui définit la vue.
+Pour commencer, chaque vue a un `Name` élément qui spécifie un nom convivial utilisé pour référencer la vue. `ViewSelectedBy`élément qui définit les objets .net affichés par la vue et un élément de *contrôle* qui définit la vue.
 
 ```xml
 <ViewDefinitions>
@@ -116,7 +109,7 @@ Comme indiqué dans les exemples précédents, le fichier de mise en forme peut 
 
 ## <a name="example-of-a-table-view"></a>Exemple d’affichage de table
 
-L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](./viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](./view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque élément de [vue](./view-element-format.md) , l’élément [Name](./name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](./viewselectedby-element-format.md) définit les objets qui utilisent la vue, et les différents éléments de contrôle (tels que l’élément `TableControl` illustré dans l’exemple suivant) définissent le type de la vue.
+L’exemple suivant montre les balises XML utilisées pour définir une vue de table qui contient deux colonnes. L’élément [ViewDefinitions](./viewdefinitions-element-format.md) est l’élément conteneur pour toutes les vues définies dans le fichier de mise en forme. L’élément [View](./view-element-format.md) définit la table, la liste, la largeur ou la vue personnalisée spécifique. Dans chaque élément de [vue](./view-element-format.md) , l’élément [Name](./name-element-for-view-format.md) spécifie le nom de la vue, l’élément [ViewSelectedBy](./viewselectedby-element-format.md) définit les objets qui utilisent la vue, et les différents éléments de contrôle (tels que l' `TableControl` élément illustré dans l’exemple suivant) définissent le type de la vue.
 
 ```xml
 <ViewDefinitions>
@@ -155,11 +148,11 @@ L’exemple suivant montre les balises XML utilisées pour définir une vue de t
 
 ## <a name="see-also"></a>Voir aussi
 
-[Création d’un affichage de liste](./creating-a-list-view.md)
+[Création d’une vue de liste](./creating-a-list-view.md)
 
 [Création d’une vue de table](./creating-a-table-view.md)
 
-[Création d’un affichage étendu](./creating-a-wide-view.md)
+[Création d’une vue large](./creating-a-wide-view.md)
 
 [Création de contrôles personnalisés](./creating-custom-controls.md)
 

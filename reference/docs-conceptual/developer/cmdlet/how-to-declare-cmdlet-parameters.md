@@ -1,19 +1,12 @@
 ---
 title: Comment déclarer des paramètres d’applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
-caps.latest.revision: 10
-ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365678"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774386"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Guide pratique pour déclarer des paramètres d’applet de commande
 
@@ -21,7 +14,7 @@ Ces exemples montrent comment déclarer des paramètres nommés, positionnels, o
 
 ## <a name="how-to-declare-a-named-parameter"></a>Comment déclarer un paramètre nommé
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, omettez le mot clé `Position` de l’attribut.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, omettez le `Position` mot clé de l’attribut.
 
     ```csharp
     [Parameter()]
@@ -37,7 +30,7 @@ Pour plus d’informations sur l’attribut de paramètre, consultez [déclarati
 
 ## <a name="how-to-declare-a-positional-parameter"></a>Comment déclarer un paramètre positionnel
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, définissez le mot clé `Position` sur la position de l’argument. La valeur 0 indique la première position.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, définissez le `Position` mot clé sur la position de l’argument. La valeur 0 indique la première position.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -53,7 +46,7 @@ Pour plus d’informations sur l’attribut de paramètre, consultez [déclarati
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>Comment déclarer un paramètre obligatoire
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, affectez la valeur `true`au mot clé `Mandatory`.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, affectez au `Mandatory` mot clé la valeur `true` .
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -69,7 +62,7 @@ Pour plus d’informations sur l’attribut de paramètre, consultez [déclarati
 
 ## <a name="how-to-declare-an-optional-parameter"></a>Comment déclarer un paramètre facultatif
 
-- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, omettez le mot clé `Mandatory`.
+- Définissez une propriété publique comme indiqué dans le code suivant. Lorsque vous ajoutez l’attribut de paramètre, omettez le `Mandatory` mot clé.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -116,10 +109,10 @@ Pour plus d’informations sur l’attribut alias, consultez [déclaration d’a
 
 ## <a name="see-also"></a>Voir aussi
 
-[System. Management. Automation. Paramètre_booléen](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
-[Déclaration d’attribut de paramètre](./parameter-attribute-declaration.md)
+[Déclaration de l’attribut Parameter](./parameter-attribute-declaration.md)
 
-[Déclaration d’attribut d’alias](./alias-attribute-declaration.md)
+[Déclaration de l’attribut Alias](./alias-attribute-declaration.md)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

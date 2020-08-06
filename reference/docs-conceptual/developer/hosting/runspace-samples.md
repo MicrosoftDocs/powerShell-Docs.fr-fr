@@ -1,19 +1,12 @@
 ---
 title: Exemples d’instances d’exécution | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
-caps.latest.revision: 17
-ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f7c11101a570f89657f9ffc4d52fa6ebce3a91e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360998"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772210"
 ---
 # <a name="runspace-samples"></a>Exemples d’instances d’exécution
 
@@ -32,9 +25,9 @@ Cette section comprend un exemple de code qui montre comment utiliser différent
 
  [Exemple Runspace04](./runspace04-sample.md) Cet exemple montre comment utiliser la classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. En conséquence, aucun objet n’est retourné et une erreur de fin est levée.
 
- [Exemple Runspace05](./runspace05-sample.md) Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace05](./runspace05-sample.md) Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour que l’applet de commande du composant logiciel enfichable soit disponible quand l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
- [Exemple Runspace06](./runspace06-sample.md) Cet exemple montre comment ajouter un module à un objet [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) afin que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande « obtenir-proc » (définie par l' [exemple GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace06](./runspace06-sample.md) Cet exemple montre comment ajouter un module à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) afin que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande « obtenir-proc » (définie par l' [exemple GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
  [Exemple Runspace07](./runspace07-sample.md) Cet exemple montre comment créer une instance d’exécution, puis utiliser cette instance d’exécution pour exécuter deux applets de commande de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
@@ -42,7 +35,7 @@ Cette section comprend un exemple de code qui montre comment utiliser différent
 
  [Exemple Runspace09](./runspace09-sample.md) Cet exemple montre comment ajouter un script au pipeline d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) et comment exécuter le script de manière asynchrone. Des événements sont utilisés pour gérer la sortie du script.
 
- [Exemple Runspace10](./runspace10-sample.md) Cet exemple montre comment créer un état de session initial par défaut, comment ajouter une applet de commande à [System. Management. Automation. instances d’exécution. Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), comment créer une instance d’exécution qui utilise l’état de session initial et comment exécuter la commande à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace10](./runspace10-sample.md) Cet exemple montre comment créer un état de session initial par défaut, comment ajouter une applet de commande à l' [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), comment créer une instance d’exécution qui utilise l’état de session initial et comment exécuter la commande à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
  [Exemple Runspace11](./runspace11-sample.md) Cette rubrique montre comment utiliser la classe [System. Management. Automation. ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) pour créer une commande de proxy qui appelle une applet de commande existante, mais qui limite l’ensemble des paramètres disponibles. La commande proxy est ensuite ajoutée à un état de session initial qui sert à créer une instance d’exécution contrainte. Cela signifie que l’utilisateur ne peut accéder à la fonctionnalité de l’applet de commande qu’au moyen de la commande proxy.
 

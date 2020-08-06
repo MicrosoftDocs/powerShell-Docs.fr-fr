@@ -1,27 +1,20 @@
 ---
-title: Exemple deC#code GetProc04 () | Microsoft Docs
-ms.custom: ''
+title: Exemple de code GetProc04 (C#) | Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
-caps.latest.revision: 5
-ms.openlocfilehash: d17a67019b7451f2da5595b3258457a01cc86b0b
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: dd3965ee504641b1b629ba203090ee14c670da43
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978353"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771887"
 ---
 # <a name="getproc04-c-sample-code"></a>Exemple de code GetProc04 (C#)
 
-Le code suivant illustre l’implémentation d’une applet de commande `Get-Process` qui signale des erreurs qui ne se terminent pas. Cette implémentation appelle la méthode [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) pour signaler les erreurs qui ne se terminent pas.
+Le code suivant illustre l’implémentation d’une `Get-Process` applet de commande qui signale des erreurs qui ne se terminent pas. Cette implémentation appelle la méthode [System. Management. Automation. applet de commande. WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) pour signaler les erreurs qui ne se terminent pas.
 
 > [!NOTE]
-> Vous pouvez télécharger le C# fichier source (getprov04.cs) pour cette applet de commande « obtenir-proc » à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> Les fichiers sources téléchargés sont disponibles dans le répertoire des **exemples de >\<PowerShell** .
+> Vous pouvez télécharger le fichier source C# (getprov04.cs) pour cette applet de commande « obtenir-proc » à l’aide du kit de développement logiciel (SDK) Microsoft Windows pour les composants d’exécution de Windows Vista et .NET Framework 3,0. Pour obtenir des instructions de téléchargement, consultez [Comment installer Windows PowerShell et télécharger le kit de développement logiciel (SDK) Windows PowerShell](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Les fichiers sources téléchargés sont disponibles dans le **\<PowerShell Samples>** répertoire.
 
 ## <a name="code-sample"></a>Exemple de code
 
@@ -29,6 +22,6 @@ Le code suivant illustre l’implémentation d’une applet de commande `Get-Pro
 
 ## <a name="see-also"></a>Voir aussi
 
-[Guide du programmeur Windows PowerShell](./windows-powershell-programmer-s-guide.md)
+[Guide de programmation pour Windows PowerShell](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

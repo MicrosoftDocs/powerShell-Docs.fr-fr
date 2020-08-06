@@ -1,19 +1,12 @@
 ---
 title: Affichage des informations sur les erreurs | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 76fcc0c1-9795-45d3-a564-40f822b657b5
-caps.latest.revision: 8
-ms.openlocfilehash: 4bc8666ee9053eb368402c8644558f4fe2dcc9ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e542110e9c35a74c5d4c112b0a831f7f8ad9242e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369968"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774573"
 ---
 # <a name="displaying-error-information"></a>Affichage des informations sur les erreurs
 
@@ -26,7 +19,7 @@ $ stop-service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
-Toutefois, les utilisateurs peuvent afficher les erreurs par catégorie en affectant à la variable `$ErrorView` la valeur `"CategoryView"`. Affichage des catégories affiche des informations spécifiques à partir de l’enregistrement d’erreur plutôt qu’une description de l’erreur en texte libre. Cette vue peut être utile si vous avez une longue liste d’erreurs à analyser. Dans l’affichage des catégories, le message d’erreur précédent s’affiche comme suit.
+Toutefois, les utilisateurs peuvent afficher les erreurs par catégorie en affectant à la variable la valeur `$ErrorView` `"CategoryView"` . Affichage des catégories affiche des informations spécifiques à partir de l’enregistrement d’erreur plutôt qu’une description de l’erreur en texte libre. Cette vue peut être utile si vous avez une longue liste d’erreurs à analyser. Dans l’affichage des catégories, le message d’erreur précédent s’affiche comme suit.
 
 ```powershell
 $ $ErrorView = "CategoryView"

@@ -1,25 +1,18 @@
 ---
 title: Élément EntrySelectedBy pour CustomEntry pour GroupBy (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
-caps.latest.revision: 7
-ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 75a0f42e7722b54791a873200a35c8fcbbd665b1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363858"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774131"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>EntrySelectedBy, élément pour CustomEntry pour GroupBy (Format)
 
 Définit les types .NET qui utilisent cette définition de contrôle ou la condition qui doit exister pour que cette définition soit utilisée. Cet élément est utilisé lors de la définition du mode d’affichage d’un nouveau groupe d’objets.
 
-Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour l’élément CustomEntry GroupBy (format) pour CustomControl pour GroupBy (format) élément EntrySelectedBy pour CustomEntry pour GroupBy (format)
+Élément de configuration (format) élément ViewDefinitions (format) élément d’affichage (format) élément GroupBy pour l’élément View (format) CustomControl pour GroupBy (format) élément CustomEntries pour CustomControl pour la clause GroupBy (format) CustomEntry élément pour CustomControl pour GroupBy (format) EntrySelectedBy élément pour CustomEntry pour GroupBy (format)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,40 +24,40 @@ Définit les types .NET qui utilisent cette définition de contrôle ou la condi
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `EntrySelectedBy`. Vous devez spécifier au moins un type, un jeu de sélection ou une condition de sélection pour une définition. Il n’existe pas de limite maximale pour le nombre d’éléments enfants que vous pouvez utiliser.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `EntrySelectedBy` élément. Vous devez spécifier au moins un type, un jeu de sélection ou une condition de sélection pour une définition. Il n’existe pas de limite maximale pour le nombre d’éléments enfants que vous pouvez utiliser.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément SelectionCondition pour EntrySelectedBy pour GroupBy (format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Définit la condition qui doit exister pour que cette définition soit utilisée.|
-|[Élément SelectionSetName pour EntrySelectedBy pour GroupBy (format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Spécifie un ensemble de types .NET qui utilisent cette définition du contrôle.|
-|[Élément TypeName pour EntrySelectedBy pour GroupBy (format)](./typename-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui utilise cette définition du contrôle.|
+|[SelectionCondition, élément pour EntrySelectedBy pour GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Définit la condition qui doit exister pour que cette définition soit utilisée.|
+|[SelectionSetName, élément pour EntrySelectedBy pour GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Spécifie un ensemble de types .NET qui utilisent cette définition du contrôle.|
+|[TypeName, élément pour EntrySelectedBy pour GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)|Élément facultatif.<br /><br /> Spécifie un type .NET qui utilise cette définition du contrôle.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément CustomEntry pour CustomControl pour GroupBy (format)](./customentry-element-for-customcontrol-for-groupby-format.md)|Fournit une définition du contrôle.|
+|[CustomEntry, élément pour CustomControl pour GroupBy (Format)](./customentry-element-for-customcontrol-for-groupby-format.md)|Fournit une définition du contrôle.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-Les conditions de sélection sont utilisées pour définir une condition qui doit exister pour la définition à utiliser, par exemple lorsqu’un objet a une propriété spécifique ou lorsqu’une valeur de propriété ou un script spécifique prend la valeur `true`. Pour plus d’informations sur les conditions de sélection, consultez [définition des conditions d’utilisation d’une entrée ou d’un élément de vue](./defining-conditions-for-displaying-data.md).
+Les conditions de sélection sont utilisées pour définir une condition qui doit exister pour la définition à utiliser, par exemple lorsqu’un objet a une propriété spécifique ou lorsqu’une valeur de propriété ou un script spécifique prend la valeur `true` . Pour plus d’informations sur les conditions de sélection, consultez [définition des conditions d’utilisation d’une entrée ou d’un élément de vue](./defining-conditions-for-displaying-data.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-[Élément SelectionCondition pour EntrySelectedBy pour GroupBy (format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+[SelectionCondition, élément pour EntrySelectedBy pour GroupBy (Format)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
 
-[Élément SelectionSetName pour EntrySelectedBy pour GroupBy (format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+[SelectionSetName, élément pour EntrySelectedBy pour GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
-[Élément TypeName pour EntrySelectedBy pour GroupBy (format)](./typename-element-for-entryselectedby-for-groupby-format.md)
+[TypeName, élément pour EntrySelectedBy pour GroupBy (Format)](./typename-element-for-entryselectedby-for-groupby-format.md)
 
-[Élément CustomEntry pour CustomEntries pour les contrôles pour View (format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
+[CustomEntry, élément pour CustomEntries pour Controls pour View (Format)](./customentry-element-for-customentries-for-controls-for-view-format.md)
 
 [Écriture d’un fichier de mise en forme PowerShell](./writing-a-powershell-formatting-file.md)

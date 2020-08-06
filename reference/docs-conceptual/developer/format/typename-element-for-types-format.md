@@ -1,19 +1,12 @@
 ---
 title: Élément TypeName pour les types (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
-caps.latest.revision: 15
-ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368028"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772533"
 ---
 # <a name="typename-element-for-types-format"></a>TypeName, élément pour Types (Format)
 
@@ -27,17 +20,17 @@ Spécifie le type .NET d’un objet qui appartient au jeu de sélection.
 <TypeName>Nameof.NetType</Name>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `TypeName`. Au moins un élément de `TypeName` doit être inclus dans le jeu de sélection.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `TypeName` élément. Au moins un `TypeName` élément doit être inclus dans le jeu de sélection.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucune.
+Aucun.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -45,19 +38,19 @@ Aucune.
 |-------------|-----------------|
 |[Élément types (format)](./types-element-for-selectionset-format.md)|Définit les objets .NET qui se trouvent dans le jeu de sélection.|
 
-## <a name="text-value"></a>Valeur de texte
+## <a name="text-value"></a>Valeur texte
 
 Spécifiez le nom qualifié complet du type .NET.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Vous pouvez utiliser des jeux de sélection quand vous avez un ensemble d’objets connexes que vous souhaitez référencer à l’aide d’un nom unique, tel qu’un ensemble d’objets liés par héritage. Lorsque vous définissez vos vues, vous pouvez spécifier le jeu d’objets en utilisant le nom du jeu de sélection au lieu de répertorier tous les objets dans chaque vue.
 
-Les jeux de sélection communs sont spécifiés par leur nom lors de la définition des vues du fichier de mise en forme. Dans ce cas, l' `SelectionSetName` élément enfant de l’élément `ViewSelectedBy` pour la vue spécifie le jeu. Toutefois, différentes entrées d’une vue peuvent également spécifier un jeu de sélection qui s’applique uniquement à cette entrée de la vue. Pour plus d’informations sur les jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).
+Les jeux de sélection communs sont spécifiés par leur nom lors de la définition des vues du fichier de mise en forme. Dans ce cas, l' `SelectionSetName` élément enfant de l' `ViewSelectedBy` élément de la vue spécifie le jeu. Toutefois, différentes entrées d’une vue peuvent également spécifier un jeu de sélection qui s’applique uniquement à cette entrée de la vue. Pour plus d’informations sur les jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre un élément `SelectionSet` qui définit quatre types .NET.
+L’exemple suivant montre un `SelectionSet` élément qui définit quatre types .net.
 
 ```
 <SelectionSets>
@@ -75,11 +68,11 @@ L’exemple suivant montre un élément `SelectionSet` qui définit quatre types
 
 ## <a name="see-also"></a>Voir aussi
 
-[Définition des jeux de sélection](./defining-selection-sets.md)
+[Définition de jeux de sélections](./defining-selection-sets.md)
 
-[Élément SelectionSet (format)](./selectionset-element-format.md)
+[SelectionSet, élément (Format)](./selectionset-element-format.md)
 
-[Élément SelectionSets (format)](./selectionsets-element-format.md)
+[SelectionSets, élément (Format)](./selectionsets-element-format.md)
 
 [Élément types (format)](./types-element-for-selectionset-format.md)
 

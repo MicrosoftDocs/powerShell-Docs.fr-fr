@@ -1,19 +1,12 @@
 ---
 title: Élément EnumerableExpansions (format) | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
-caps.latest.revision: 9
-ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2b536b1ab9b34b0089d0a38d3c5dc7a937176443
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363298"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774012"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions, élément (Format)
 
@@ -29,27 +22,27 @@ Définit la façon dont les objets de collection .NET sont développés lorsqu�
 </EnumerableExpansions>
 ```
 
-## <a name="attributes-and-elements"></a>Éléments et attributs
+## <a name="attributes-and-elements"></a>Attributs et éléments
 
-Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l’élément `EnumerableExpansions`. Il n’existe aucune limite quant au nombre d’éléments enfants que vous pouvez utiliser.
+Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `EnumerableExpansions` élément. Il n’existe aucune limite quant au nombre d’éléments enfants que vous pouvez utiliser.
 
 ### <a name="attributes"></a>Attributs
 
-Aucune.
+Aucun.
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément EnumerableExpansion (format)](./enumerableexpansion-element-format.md)|Élément facultatif.<br /><br /> Définit les objets de collection .NET spécifiques qui sont développés lorsqu’ils sont affichés dans une vue.|
+|[EnumerableExpansion, élément (Format)](./enumerableexpansion-element-format.md)|Élément facultatif.<br /><br /> Définit les objets de collection .NET spécifiques qui sont développés lorsqu’ils sont affichés dans une vue.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[Élément DefaultSettings (format)](./defaultsettings-element-format.md)|Définit des paramètres communs qui s’appliquent à toutes les vues du fichier de mise en forme.|
+|[DefaultSettings, élément (Format)](./defaultsettings-element-format.md)|Définit des paramètres communs qui s’appliquent à toutes les vues du fichier de mise en forme.|
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
 Cet élément est utilisé pour définir le mode d’affichage des objets de collection et des objets de la collection. Dans ce cas, un objet de collection fait référence à tout objet qui prend en charge l’interface **System. Collections. ICollection** .
 

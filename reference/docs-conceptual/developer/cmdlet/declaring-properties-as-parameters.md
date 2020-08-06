@@ -1,25 +1,18 @@
 ---
 title: Déclaration des propriétés en tant que paramètres | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
-caps.latest.revision: 9
-ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 63113f541df534b1f720ceb06e14b5031f2311b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365748"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774641"
 ---
 # <a name="declaring-properties-as-parameters"></a>Déclaration des propriétés en tant que paramètres
 
 Cette rubrique fournit des informations de base que vous devez comprendre avant de déclarer les paramètres d’une applet de commande.
 
-Pour déclarer les paramètres d’une applet de commande dans votre classe d’applet de commande, définissez les propriétés publiques qui représentent chaque paramètre, puis ajoutez un ou plusieurs attributs de paramètre à chaque propriété. Le runtime Windows PowerShell utilise les attributs de paramètre pour identifier la propriété en tant que paramètre d’applet de commande. La syntaxe de base pour déclarer l’attribut de paramètre est `[Parameter()]`.
+Pour déclarer les paramètres d’une applet de commande dans votre classe d’applet de commande, définissez les propriétés publiques qui représentent chaque paramètre, puis ajoutez un ou plusieurs attributs de paramètre à chaque propriété. Le runtime Windows PowerShell utilise les attributs de paramètre pour identifier la propriété en tant que paramètre d’applet de commande. La syntaxe de base pour déclarer l’attribut de paramètre est `[Parameter()]` .
 
 Voici un exemple de propriété définie en tant que paramètre obligatoire.
 

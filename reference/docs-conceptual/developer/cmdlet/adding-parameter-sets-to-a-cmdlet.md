@@ -1,21 +1,14 @@
 ---
 title: Ajout de jeux de paramètres à une applet de commande | Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
-ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978625"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774981"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
 
@@ -23,11 +16,11 @@ ms.locfileid: "80978625"
 
 Windows PowerShell définit un jeu de paramètres sous la forme d’un groupe de paramètres qui fonctionnent ensemble. En regroupant les paramètres d’une applet de commande, vous pouvez créer une applet de commande unique qui peut modifier ses fonctionnalités en fonction du groupe de paramètres que l’utilisateur spécifie.
 
-Un exemple d’applet de commande qui utilise deux jeux de paramètres pour définir des fonctionnalités différentes est l’applet de commande `Get-EventLog` fournie par Windows PowerShell. Cette applet de commande retourne des informations différentes lorsque l’utilisateur spécifie le paramètre `List` ou `LogName`. Si le paramètre `LogName` est spécifié, l’applet de commande renvoie des informations sur les événements dans un journal des événements donné. Si le paramètre `List` est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux eux-mêmes (pas sur les informations d’événement qu’elles contiennent). Dans ce cas, les paramètres `List` et `LogName` identifient deux jeux de paramètres distincts.
+L’applet de commande `Get-EventLog` fournie par Windows PowerShell est un exemple d’applet de commande qui utilise deux jeux de paramètres pour définir des fonctionnalités différentes. Cette applet de commande retourne des informations différentes lorsque l’utilisateur spécifie le `List` `LogName` paramètre ou. Si le `LogName` paramètre est spécifié, l’applet de commande retourne des informations sur les événements dans un journal des événements donné. Si le `List` paramètre est spécifié, l’applet de commande renvoie des informations sur les fichiers journaux eux-mêmes (pas sur les informations d’événement qu’elles contiennent). Dans ce cas, les `List` `LogName` paramètres et identifient deux jeux de paramètres distincts.
 
 Deux points importants à retenir concernant les jeux de paramètres sont que le runtime Windows PowerShell n’utilise qu’un seul jeu de paramètres pour une entrée particulière, et que chaque jeu de paramètres doit avoir au moins un paramètre unique pour ce jeu de paramètres.
 
-Pour illustrer ce dernier point, cette applet de commande Stop-proc utilise trois jeux de paramètres : `ProcessName`, `ProcessId`et `InputObject`. Chacun de ces jeux de paramètres possède un paramètre qui n’est pas dans les autres jeux de paramètres. Les jeux de paramètres peuvent partager d’autres paramètres, mais l’applet de commande utilise les paramètres uniques `ProcessName`, `ProcessId`et `InputObject` pour identifier le jeu de paramètres que le runtime Windows PowerShell doit utiliser.
+Pour illustrer ce dernier point, cette applet de commande Stop-proc utilise trois jeux de paramètres : `ProcessName` , `ProcessId` et `InputObject` . Chacun de ces jeux de paramètres possède un paramètre qui n’est pas dans les autres jeux de paramètres. Les jeux de paramètres peuvent partager d’autres paramètres, mais l’applet de commande utilise les paramètres uniques `ProcessName` , `ProcessId` et `InputObject` pour identifier le jeu de paramètres que le runtime Windows PowerShell doit utiliser.
 
 ## <a name="declaring-the-cmdlet-class"></a>Déclaration de la classe d’applet de commande
 
@@ -54,11 +47,11 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>Déclaration des paramètres de l’applet de commande
 
-Cette applet de commande définit trois paramètres nécessaires comme entrée pour l’applet de commande (ces paramètres définissent également les jeux de paramètres), ainsi qu’un paramètre `Force` qui gère ce que fait l’applet de commande et un paramètre `PassThru` qui détermine si l’applet de commande envoie un objet de sortie via le pipeline. Par défaut, cette applet de commande ne passe pas un objet via le pipeline. Pour plus d’informations sur ces deux derniers paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
+Cette applet de commande définit trois paramètres nécessaires comme entrée de l’applet de commande (ces paramètres définissent également les jeux de paramètres), ainsi qu’un `Force` paramètre qui gère ce que fait l’applet de commande et un `PassThru` paramètre qui détermine si l’applet de commande envoie un objet de sortie via le pipeline. Par défaut, cette applet de commande ne passe pas un objet via le pipeline. Pour plus d’informations sur ces deux derniers paramètres, consultez [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ### <a name="declaring-the-name-parameter"></a>Déclaration du paramètre Name
 
-Ce paramètre d’entrée permet à l’utilisateur de spécifier les noms des processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `ProcessName` pour ce paramètre.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier les noms des processus à arrêter. Notez que le `ParameterSetName` mot clé Attribute de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le `ProcessName` jeu de paramètres pour ce paramètre.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
@@ -84,7 +77,7 @@ Notez également que l’alias « ProcessName » est donné à ce paramètre.
 
 ### <a name="declaring-the-id-parameter"></a>Déclaration du paramètre ID
 
-Ce paramètre d’entrée permet à l’utilisateur de spécifier les identificateurs des processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `ProcessId`.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier les identificateurs des processus à arrêter. Notez que le `ParameterSetName` mot clé Attribute de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le `ProcessId` jeu de paramètres.
 
 ```csharp
 [Parameter(
@@ -122,7 +115,7 @@ Notez également que l’alias « ProcessId » est donné à ce paramètre.
 
 ### <a name="declaring-the-inputobject-parameter"></a>Déclaration du paramètre InputObject
 
-Ce paramètre d’entrée permet à l’utilisateur de spécifier un objet d’entrée qui contient des informations sur les processus à arrêter. Notez que le mot clé `ParameterSetName` attribut de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le jeu de paramètres `InputObject` pour ce paramètre.
+Ce paramètre d’entrée permet à l’utilisateur de spécifier un objet d’entrée qui contient des informations sur les processus à arrêter. Notez que le `ParameterSetName` mot clé Attribute de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) spécifie le `InputObject` jeu de paramètres pour ce paramètre.
 
 ```csharp
 [Parameter(
@@ -213,7 +206,7 @@ Les méthodes d’assistance appelées par l’instruction SELECT ne sont pas d�
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour obtenir l' C# exemple de code complet, consultez [exemple StopProcessSample04](./stopprocesssample04-sample.md).
+Pour obtenir l’exemple de code C# complet, consultez [exemple StopProcessSample04](./stopprocesssample04-sample.md).
 
 ## <a name="defining-object-types-and-formatting"></a>Définition des types d’objets et de la mise en forme
 
@@ -225,9 +218,9 @@ Après l’implémentation d’une applet de commande, vous devez l’inscrire a
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, testez-la en l’exécutant sur la ligne de commande. Voici quelques tests qui montrent comment les paramètres `ProcessId` et `InputObject` peuvent être utilisés pour tester leurs jeux de paramètres afin d’arrêter un processus.
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, testez-la en l’exécutant sur la ligne de commande. Voici quelques tests qui montrent comment les `ProcessId` paramètres et `InputObject` peuvent être utilisés pour tester leurs jeux de paramètres afin d’arrêter un processus.
 
-- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `ProcessId` défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le jeu de paramètres `ProcessId` pour arrêter le processus.
+- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le `ProcessId` paramètre défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le `ProcessId` paramètre défini pour arrêter le processus.
 
   ```
   PS> stop-proc -Id 444
@@ -237,7 +230,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le paramètre `InputObject` défini sur arrêter les processus sur l’objet Notepad récupéré par la commande `Get-Process`.
+- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le `InputObject` paramètre défini sur arrêter les processus sur l’objet Notepad récupéré par la `Get-Process` commande.
 
   ```
   PS> get-process notepad | stop-proc
