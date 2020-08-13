@@ -5,12 +5,12 @@ helpviewer_keywords:
 - action names [PowerShell SDK]
 - verb names [PowerShell SDK]
 - cmdlets [PowerShell SDK], verb names
-ms.openlocfilehash: 1cdfed5727c0b93bd1d4008fd0d6c03c448c6aed
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: f065610b6e54c9a6a927948bc6b2ffe5a1671e0c
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782393"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162475"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Verbes approuvés pour les commandes PowerShell
 
@@ -18,6 +18,14 @@ PowerShell utilise une paire verbe-nom pour les noms des applets de commande et 
 
 > [!NOTE]
 > PowerShell utilise le terme _verbe_ pour décrire un mot qui implique une action même si ce mot n’est pas un verbe standard dans la langue anglaise. Par exemple, le terme _nouveau_ est un nom de verbe PowerShell valide, car il implique une action, même s’il ne s’agit pas d’un verbe dans la langue anglaise.
+
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+Un _préfixe d’alias_ correspondant est défini pour chaque verbe approuvé.
+Ce préfixe d’alias est couramment utilisé pour nommer des alias pour les commandes qui utilisent ce verbe.
+Par exemple, le préfixe d’alias pour `Import` est `ip` et, en conséquence, l’alias pour `Import-Module` est `ipmo` .  Il s’agit d’une recommandation, mais pas d’une règle ; en particulier, il n’est pas nécessaire de respecter les alias de commande en imitant les commandes bien connues d’autres environnements.
 
 ## <a name="verb-naming-rules"></a>Règles d’affectation des noms de verbe
 
@@ -75,7 +83,7 @@ PowerShell utilise la classe d’énumération [System. Management. Automation. 
 |--------------------|------------|--------------|
 |[Ajouter](/dotnet/api/System.Management.Automation.VerbsCommon.Add) (a)|Ajoute une ressource à un conteneur ou attache un élément à un autre élément. Par exemple, l' `Add-Content` applet de commande ajoute du contenu à un fichier. Ce verbe est associé à `Remove` .|Pour cette action, n’utilisez pas de verbes tels que Append, Attach, Concatenate ou Insert.|
 |[Clear](/dotnet/api/System.Management.Automation.VerbsCommon.Clear) (CL)|Supprime toutes les ressources d’un conteneur, mais ne supprime pas le conteneur. Par exemple, l' `Clear-Content` applet de commande supprime le contenu d’un fichier, mais ne supprime pas le fichier.|Pour cette action, n’utilisez pas de verbes tels que Flush, Erase, Release, UNMARK, unset ou annuler.|
-|[Fermer](/dotnet/api/System.Management.Automation.VerbsCommon.Close) (CS)|Modifie l’état d’une ressource pour la rendre inaccessible, non disponible ou inutilisable. Ce verbe est associé à`Open.`||
+|[Fermer](/dotnet/api/System.Management.Automation.VerbsCommon.Close) (CS)|Modifie l’état d’une ressource pour la rendre inaccessible, non disponible ou inutilisable. Ce verbe est associé à `Open.`||
 |[Copier](/dotnet/api/System.Management.Automation.VerbsCommon.Copy) (CP)|Copie une ressource vers un autre nom ou un autre conteneur. Par exemple, l' `Copy-Item` applet de commande utilisée pour accéder aux données stockées copie un élément d’un emplacement dans le magasin de données vers un autre emplacement.|Pour cette action, n’utilisez pas de verbes tels que le doublon, le clonage, la réplication ou la synchronisation.|
 |[Entrée](/dotnet/api/System.Management.Automation.VerbsCommon.Enter) (et)|Spécifie une action qui permet à l’utilisateur de se déplacer dans une ressource. Par exemple, l' `Enter-PSSession` applet de commande place l’utilisateur dans une session interactive. Ce verbe est associé à `Exit` .|Pour cette action, n’utilisez pas de verbes tels que Push ou into.|
 |[Quitter](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (ex)|Définit l’environnement ou le contexte actuel sur le dernier contexte utilisé. Par exemple, l' `Exit-PSSession` applet de commande place l’utilisateur dans la session qui a été utilisée pour démarrer la session interactive. Ce verbe est associé à `Enter` .|Pour cette action, n’utilisez pas de verbes tels que POP ou out.|
