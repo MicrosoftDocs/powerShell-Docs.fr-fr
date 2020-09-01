@@ -1,16 +1,16 @@
 ---
 title: Prise en charge de l’aide actualisable
 ms.date: 10/28/2012
-ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
-ms.translationtype: MT
+ms.openlocfilehash: bc5f08d2989b1031806c91acf43dd6a3b2646f04
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893337"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236337"
 ---
 # <a name="supporting-updatable-help"></a>Prise en charge de l’aide actualisable
 
-Le *système d’aide actualisable de Windows PowerShell*, introduit dans Windows 8 et windows server 2012, est conçu pour s’assurer que les utilisateurs disposent toujours des dernières rubriques d’aide à l’invite de commandes sur leur ordinateur local. Avec l’aide en ligne de Windows PowerShell, l’aide actualisable fournit une solution d’aide complète pour les utilisateurs. Cette section décrit le système d’aide actualisable et explique comment les auteurs de modules peuvent prendre en charge l’aide actualisable pour leurs modules.
+Le *Système d’aide actualisable Windows PowerShell*, introduit dans Windows 8 et Windows Server 2012, est conçu pour s’assurer que les utilisateurs disposent toujours des rubriques d’aide les plus récentes via l’invite de commandes sur leur ordinateur local. Avec l’aide en ligne de Windows PowerShell, l’aide actualisable fournit une solution d’aide complète aux utilisateurs. Cette section décrit le système d’aide actualisable et explique comment les auteurs de modules peuvent prendre en charge l’aide actualisable pour leurs modules.
 
 Cette section comprend les rubriques suivantes.
 
@@ -32,4 +32,4 @@ Cette section comprend les rubriques suivantes.
 
 [Prise en charge de l’aide en ligne](./supporting-online-help.md)
 
-[Table d’état de l’aide actualisable](https://www.microsoft.com/en-us/itpro/windows)
+[Table d’état de l’aide actualisable](/windows/deployment/deploy-whats-new)
