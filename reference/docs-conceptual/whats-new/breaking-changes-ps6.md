@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76995464"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158188"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Modifications avec rupture dans PowerShell 6.x
 
@@ -35,8 +35,8 @@ En raison du manque de support pour Windows Workflow Foundation dans .NET Core, 
 
 S’il est nécessaire d’utiliser des points de contrôle pour reprendre un script après le redémarrage du système d’exploitation, nous vous recommandons d’utiliser Planificateur de tâches pour exécuter un script au démarrage du système d’exploitation, mais le script doit conserver son propre état (par exemple, le rendre persistant dans un fichier).
 
-[workflow]: /powershell/scripting/components/workflows-guide
-[workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
+[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
+[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>Composants logiciels enfichables personnalisés
 
@@ -46,7 +46,7 @@ En raison de la complexité de la prise en charge des composants logiciels enfic
 
 Aujourd’hui, cela arrête les modules `ActiveDirectory` et `DnsClient` dans Windows et Windows Server.
 
-[snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
+[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
 
 ### <a name="wmi-v1-cmdlets"></a>Cmdlets WMI v1
 
@@ -246,8 +246,8 @@ Les fonctionnalités suivantes ont été supprimées car elles ne sont pas prise
 
 Auparavant, lors de la création d’une instance d’exécution PowerShell par programmation à l’aide de l’API, vous pouviez utiliser [`RunspaceConfiguration`][runspaceconfig] hérité ou [`InitialSessionState`][iss] plus récent. Cette modification supprime la prise en charge de `RunspaceConfiguration` et prend uniquement en charge `InitialSessionState`.
 
-[runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
+[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 
 ### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923"></a>`CommandInvocationIntrinsics.InvokeScript` lie les arguments à `$input` au lieu de `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 

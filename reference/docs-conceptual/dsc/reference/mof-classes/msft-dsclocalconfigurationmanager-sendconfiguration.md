@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: SendConfiguration, méthode
-ms.openlocfilehash: 4feba090bc58844659c2329a304dd9805255564f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: afd6e8d7acc969df16fad1d0ba15c9fe0b1a26fd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953386"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463939"
 ---
 # <a name="sendconfiguration-method"></a>SendConfiguration, méthode
 
@@ -24,9 +24,9 @@ uint32 SendConfiguration(
 
 ## <a name="parameters"></a>Paramètres
 
-*ConfigurationData* \[in\] Les données d’environnement pour la configuration.
+**ConfigurationData** \[in\] Les données d’environnement pour la configuration.
 
-*force* \[in\] **true** pour forcer l’arrêt de la configuration.
+**force** \[in\] **true** pour forcer l’arrêt de la configuration.
 
 ## <a name="return-value"></a>Valeur retournée
 

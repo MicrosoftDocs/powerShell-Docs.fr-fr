@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource nxScript dans DSC pour Linux
-ms.openlocfilehash: a7f2114aba47bb581cdd19168e784b79dfc5b6ad
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: e39808e110d5ee4bf9d0ccd418ca3b15ac9fe420
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953186"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463650"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>Ressource nxScript dans DSC pour Linux
 

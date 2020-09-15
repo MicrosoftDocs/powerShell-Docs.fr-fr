@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: ResourceGet, méthode
-ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: aa7671989db6f4a98d879fd449d09503eddbeda3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954996"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463956"
 ---
 # <a name="resourceget-method"></a>ResourceGet, méthode
 
@@ -26,13 +26,13 @@ uint32 ResourceGet(
 
 ## <a name="parameters"></a>Paramètres
 
-*ResourceType* \[in\] Nom de la ressource à appeler.
+**ResourceType** \[in\] Nom de la ressource à appeler.
 
-*ModuleName* \[in\] Nom du module qui contient la ressource à appeler.
+**ModuleName** \[in\] Nom du module qui contient la ressource à appeler.
 
-*resourceProperty* \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
+**resourceProperty** \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
 
-*configurations* \[out\] En retour, contient une instance incorporée des configurations.
+**configurations** \[out\] En retour, contient une instance incorporée des configurations.
 
 ## <a name="return-value"></a>Valeur retournée
 

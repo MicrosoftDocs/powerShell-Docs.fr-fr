@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 keywords: powershell,applet de commande
 title: Raccourcis clavier pour Windows PowerShell ISE
-ms.openlocfilehash: ee1b5961f8528d44330345bc49368e61970861ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809765"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092114"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
@@ -75,7 +75,7 @@ Lors du débogage de scripts, vous pouvez utiliser les raccourcis clavier suivan
 | **Exécuter/continuer**           | <kbd>F5</kbd>                                  | Volet Script, lors du débogage d’un script |
 | **Pas à pas détaillé**              | <kbd>F11</kbd>                                 | Volet Script, lors du débogage d’un script |
 | **Pas à pas principal**              | <kbd>F10</kbd>                                 | Volet Script, lors du débogage d’un script |
-| **Pas à pas sortant**               | <kbd>MAJ</kbd>+<kbd><kbd>F11</kbd></kbd>     | Volet Script, lors du débogage d’un script |
+| **Pas à pas sortant**               | <kbd>MAJ</kbd>+<kbd>F11</kbd>                | Volet Script, lors du débogage d’un script |
 | **Afficher la pile des appels**     | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>D</kbd>  | Volet Script, lors du débogage d’un script |
 | **Afficher la liste des points d’arrêt**       | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>L</kbd>  | Volet Script, lors du débogage d’un script |
 | **Basculer le point d’arrêt**      | <kbd>F9</kbd>                                  | Volet Script, lors du débogage d’un script |

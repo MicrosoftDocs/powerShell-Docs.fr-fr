@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource nxUser dans DSC pour Linux
-ms.openlocfilehash: 4cf8080fbfa58e082ed007d42d6aa2648d1cf58a
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 30c9d4efb5bcbce9f18652b6f34e9a1b060cece4
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557173"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463905"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Ressource nxUser dans DSC pour Linux
 

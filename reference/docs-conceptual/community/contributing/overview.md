@@ -3,12 +3,12 @@ title: Contribution à la documentation de PowerShell
 description: Cet article explique dans les grandes lignes comment bien démarrer en tant que contributeur de la documentation de PowerShell.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5f9efbff500b1fd0c11e9b43ca0a7feb77684c6a
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560659"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158154"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Contribution à la documentation de PowerShell
 
@@ -80,6 +80,6 @@ Ressources supplémentaires
 [docs]: https://docs.microsoft.com/
 [file-an-issue]: file-an-issue.md
 [posh-git]: https://www.powershellgallery.com/packages/posh-git
-[psdocs]: https://docs.microsoft.com/powershell
-[style-guide]: https://docs.microsoft.com/style-guide/welcome/
-[terms-of-use]: https://docs.microsoft.com/legal/termsofuse
+[psdocs]: /powershell
+[style-guide]: /style-guide/welcome/
+[terms-of-use]: /legal/termsofuse

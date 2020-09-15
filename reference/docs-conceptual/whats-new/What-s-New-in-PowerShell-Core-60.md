@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.0
 description: Nouvelles fonctionnalités et modifications publiées dans PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 68060356b2ec79a81a822a256db8e50812f9d738
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500485"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158205"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Nouveautés de PowerShell Core 6.0
 
@@ -342,22 +342,21 @@ Nous avons également résolu un certain nombre de bogues dans PowerShell Core. 
 
 Si vous souhaitez désactiver cette télémétrie, créez simplement une variable d’environnement `POWERSHELL_TELEMETRY_OPTOUT` avec l’une des valeurs suivantes : `true`, `1` ou `yes`. La création de la variable permet d’ignorer toutes les données de télémétrie avant même la première exécution de PowerShell. Nous prévoyons également d’exposer ces données de télémétrie et les insights tirés de la télémétrie dans le [tableau de bord de la communauté][community-dashboard]. Vous trouverez plus d’informations sur la façon dont nous utilisons ces données dans ce [billet de blog][telemetry-blog].
 
-[github]: https://github.com/PowerShell/PowerShell
-[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[os_log]: https://developer.apple.com/documentation/os/logging
-[Syslog]: https://en.wikipedia.org/wiki/Syslog
-[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[Blog .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[.NET Core 2.0]: /dotnet/core/
+[.NET Standard]: /dotnet/standard/net-standard
 [breaking-changes]: breaking-changes-ps6.md
+[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [journal des modifications]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
-[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
-[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[Blog .NET]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
-[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[FORUM AUX QUESTIONS]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
+[Questions fréquentes (FAQ)]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[github]: https://github.com/PowerShell/PowerShell
+[os_log]: https://developer.apple.com/documentation/os/logging
+[semi-annual]: /windows-server/get-started/semi-annual-channel-overview
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[Syslog]: https://en.wikipedia.org/wiki/Syslog
+[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
+[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY

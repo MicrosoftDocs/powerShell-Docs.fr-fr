@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource nxEnvironment dans DSC pour Linux
-ms.openlocfilehash: 64de54fbde15f9d4d7fac425af27b6ef11347dce
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560893"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463684"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>Ressource nxEnvironment dans DSC pour Linux
 

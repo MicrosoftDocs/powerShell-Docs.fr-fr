@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: GetMetaConfiguration, méthode
-ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5111cb3b15e0fba0bf71b412580efdd3cd95b2dc
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953406"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463973"
 ---
 # <a name="getmetaconfiguration-method"></a>GetMetaConfiguration, méthode
 
@@ -23,7 +23,7 @@ uint32 GetMetaConfiguration(
 
 ## <a name="parameters"></a>Paramètres
 
-*MetaConfiguration* \[out\] En retour, contient une instance incorporée de la classe **MSFT_DSCMetaConfiguration** qui définit les paramètres.
+**MetaConfiguration** \[out\] En retour, contient une instance incorporée de la classe **MSFT_DSCMetaConfiguration** qui définit les paramètres.
 
 ## <a name="return-value"></a>Valeur retournée
 

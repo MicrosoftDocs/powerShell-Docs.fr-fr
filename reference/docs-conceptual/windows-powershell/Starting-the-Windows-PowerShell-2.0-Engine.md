@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation du moteur Windows PowerShell 2.0
-ms.openlocfilehash: e00fb71c7fc32f5b48bc17ef5b25f910a846c893
-ms.sourcegitcommit: 1748b2bdfae81d98097962c6c25c25df4bced1d8
+ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262611"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216020"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>Utilisation du moteur Windows PowerShell 2.0
 
@@ -89,7 +89,7 @@ Pour plus d’informations sur les tâches en arrière-plan, consultez [about_Jo
 [Installation de Windows PowerShell]: install/Installing-Windows-PowerShell.md
 [Installer et configurer WMF]: wmf/setup/install-configure.md
 [Register-PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration
-[New-PSSessionConfigurationFile]: /powershell/module/Microsoft.PowerShell.Core/New-PSSessionConfiguration
+[New-PSSessionConfigurationFile]: /powershell/module/Microsoft.PowerShell.Core/New-PSSessionConfigurationFile
 [Set-PSSessionConfiguration]: /powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration
 [about_Session_Configuration_Files]: /powershell/module/Microsoft.PowerShell.Core/about/about_Session_Configuration_Files
 [about_Session_Configurations]: /powershell/module/Microsoft.PowerShell.Core/about/about_Session_Configurations

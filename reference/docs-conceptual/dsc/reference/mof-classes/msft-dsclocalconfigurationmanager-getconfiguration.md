@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: GetConfiguration, méthode
-ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 989aeef4cd9aa5d55741b48c8565c657c4b6512c
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71955046"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463820"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration, méthode
 
@@ -24,9 +24,9 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>Paramètres
 
-*configurationData* \[in\] Spécifie les données de configuration à envoyer.
+**configurationData** \[in\] Spécifie les données de configuration à envoyer.
 
-*configurations* \[out\] En retour, contient une instance incorporée des configurations.
+**configurations** \[out\] En retour, contient une instance incorporée des configurations.
 
 ## <a name="return-value"></a>Valeur retournée
 
