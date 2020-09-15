@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 description: Fournit un mécanisme permettant de gérer des groupes locaux sur le nœud cible.
 title: Ressources GroupSet dans DSC
-ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560336"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464193"
 ---
 # <a name="dsc-groupset-resource"></a>Ressources GroupSet dans DSC
 
@@ -24,8 +24,6 @@ Utilisez cette ressource quand vous souhaitez ajouter ou supprimer la même list
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Members = [string[]] ]
-    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
@@ -41,7 +39,6 @@ Group [string] #ResourceName
 |---|---|
 |GroupName |Noms des groupes pour lesquels vous souhaitez garantir un état spécifique. |
 |Membres |Utilisez cette propriété pour remplacer l’appartenance à un groupe actuelle avec les membres spécifiés. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas les propriétés **MembersToExclude** et **MembersToInclude**. Cela générera une erreur. |
-|Description |La description du groupe. |
 |MembersToInclude |Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur. |
 |MembersToExclude |Utilisez cette propriété pour supprimer des membres de l’appartenance existante des groupes. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur. |
 |Informations d'identification |Les informations d’identification devant être fournies pour accéder aux ressources distantes. Ce compte doit disposer des autorisations Active Directory appropriées pour ajouter tous les comptes non locaux au groupe. Dans le cas contraire, une erreur se produit. |
@@ -57,7 +54,7 @@ Group [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-## <a name="example-1-ensuring-groups-are-present"></a>Exemple 1 : S’assurer que des groupes sont présents
+## <a name="example-1-ensuring-groups-are-present"></a>Exemple 1 : S’assurer que les groupes sont présents
 
 L’exemple suivant montre comment s’assurer que les deux groupes « myGroup » et « myOtherGroup » sont présents.
 

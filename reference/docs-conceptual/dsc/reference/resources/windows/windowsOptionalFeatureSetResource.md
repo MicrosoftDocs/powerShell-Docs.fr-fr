@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsOptionalFeatureSet dans DSC
-ms.openlocfilehash: 0930bd0c6d1955005ea607b610e004818c0ad06f
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560149"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464160"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>Ressource WindowsOptionalFeatureSet dans DSC
 
@@ -23,7 +23,6 @@ Utilisez cette ressource quand vous voulez configurer certaines fonctionnalités
 WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
@@ -39,7 +38,6 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Nom |Indique le nom des fonctionnalités que vous souhaitez voir activées ou désactivées. |
-|Source |Non implémenté. |
 |NoWindowsUpdateCheck |Indique si DISM contacte Windows Update (WU) lors de la recherche des fichiers sources pour activer les fonctionnalités. Si la valeur est `$true`, DISM ne contacte pas Windows Update. |
 |RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés aux fonctionnalités quand **Ensure** est défini sur **Absent**. |
 |LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly**, **ErrorsAndWarning** et **ErrorsAndWarningAndInformation**. |

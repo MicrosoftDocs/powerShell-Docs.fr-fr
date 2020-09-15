@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Flux d’informations
-ms.openlocfilehash: 39cb3c36a70530b3ff9777edc74b88d276cbbb7c
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
+ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808925"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86567839"
 ---
 # <a name="information-stream"></a>Flux d’informations
 
@@ -41,7 +41,7 @@ function OutputGusher {
 Les exemples suivants montrent les résultats de cette fonction.
 
 ```powershell
-$r = c:\temp\OutputGusher
+$r = OutputGusher
 ```
 
 ```Output

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: ResourceSet, méthode
-ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954956"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464047"
 ---
 # <a name="resourceset-method"></a>ResourceSet, méthode
 
@@ -26,13 +26,13 @@ uint32 ResourceSet(
 
 ## <a name="parameters"></a>Paramètres
 
-*ResourceType* \[in\] Nom de la ressource à appeler.
+**ResourceType** \[in\] Nom de la ressource à appeler.
 
-*ModuleName* \[in\] Nom du module qui contient la ressource à appeler.
+**ModuleName** \[in\] Nom du module qui contient la ressource à appeler.
 
-*resourceProperty* \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
+**resourceProperty** \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
 
-*RebootRequired* \[out\] En retour, cette propriété prend la valeur **true** si le nœud cible doit être redémarré.
+**RebootRequired** \[out\] En retour, cette propriété prend la valeur **true** si le nœud cible doit être redémarré.
 
 ## <a name="return-value"></a>Valeur retournée
 

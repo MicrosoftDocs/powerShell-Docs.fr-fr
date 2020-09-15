@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsFeature dans DSC
-ms.openlocfilehash: 7f9b200b4d10aef6c8a3f76c497f4d60e8062cb5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557395"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464109"
 ---
 # <a name="dsc-windowsfeature-resource"></a>Ressource WindowsFeature dans DSC
 
@@ -24,7 +24,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -39,7 +38,6 @@ WindowsFeature [string] #ResourceName
 |Informations d'identification |Indique les informations d’identification à utiliser pour ajouter ou supprimer le rôle ou la fonctionnalité. |
 |IncludeAllSubFeature |Définissez cette propriété sur `$true` pour faire en sorte que l’état de toutes les sous-fonctionnalités nécessaires soit l’état de la fonctionnalité que vous spécifiez avec la propriété **Name**. |
 |LogPath |Indique le chemin d’un fichier journal dans lequel le fournisseur de ressources doit enregistrer l’opération. |
-|Source |Indique l’emplacement du fichier source à utiliser pour l’installation, si nécessaire. |
 
 ## <a name="common-properties"></a>Propriétés communes
 

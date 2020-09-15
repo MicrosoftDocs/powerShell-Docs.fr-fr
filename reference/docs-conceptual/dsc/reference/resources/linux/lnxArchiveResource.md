@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource nxArchive dans DSC pour Linux
-ms.openlocfilehash: 56f8df65945f16a93c69407ea30f51878a201b63
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 386378fa6e1608117d6934b983dcebe23e55d60d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560914"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464245"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>Ressource nxArchive dans DSC pour Linux
 

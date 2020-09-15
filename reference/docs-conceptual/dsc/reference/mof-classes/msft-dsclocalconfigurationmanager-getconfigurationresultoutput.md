@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: GetConfigurationResultOutput, méthode
-ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9c81082c28b2ffcc329264d29784782deaa9779d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953416"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464075"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput, méthode
 
@@ -25,11 +25,11 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>Paramètres
 
-*jobId* \[in\] ID du travail pour lequel obtenir les données de sortie.
+**jobId** \[in\] ID du travail pour lequel obtenir les données de sortie.
 
-*resumeOutputBookmark* \[in\] Spécifie que la sortie doit être une continuation à partir d’un signet précédent.
+**resumeOutputBookmark** \[in\] Spécifie que la sortie doit être une continuation à partir d’un signet précédent.
 
-*output* \[out\] Sortie pour le travail spécifié.
+**output** \[out\] Sortie pour le travail spécifié.
 
 ## <a name="return-value"></a>Valeur retournée
 

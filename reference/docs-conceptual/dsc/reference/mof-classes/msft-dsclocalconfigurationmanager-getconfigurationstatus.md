@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: GetConfigurationStatus, méthode
-ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c2c478151428052d656832fb4079f12d666a910d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71955016"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464046"
 ---
 # <a name="getconfigurationstatus-method"></a>GetConfigurationStatus, méthode
 
@@ -24,9 +24,9 @@ uint32 GetConfigurationStatus(
 
 ## <a name="parameters"></a>Paramètres
 
-*All* \[in\] **true** si cette méthode doit retourner des informations sur toutes les exécutions de configuration sur l’ordinateur, dont l’application de la configuration et la vérification de cohérence.
+**All** \[in\] **true** si cette méthode doit retourner des informations sur toutes les exécutions de configuration sur l’ordinateur, dont l’application de la configuration et la vérification de cohérence.
 
-*configurationStatus* \[out\] En retour, contient une instance incorporée de la classe **MSFT_DSCConfigurationStatus** qui définit les paramètres.
+**configurationStatus** \[out\] En retour, contient une instance incorporée de la classe **MSFT_DSCConfigurationStatus** qui définit les paramètres.
 
 ## <a name="return-value"></a>Valeur retournée
 

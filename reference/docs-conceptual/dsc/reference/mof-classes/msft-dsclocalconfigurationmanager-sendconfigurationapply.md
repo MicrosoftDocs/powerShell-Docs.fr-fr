@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: SendConfigurationApply, méthode
-ms.openlocfilehash: 11b9d435bbaac1600d25ff074b6c55b236a8378b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9b684790e5a7d6c7bdf074caca6040e13807f1ca
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954886"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464313"
 ---
 # <a name="sendconfigurationapply-method"></a>SendConfigurationApply, méthode
 
@@ -24,9 +24,9 @@ uint32 SendConfigurationApply(
 
 ## <a name="parameters"></a>Paramètres
 
-*ConfigurationData* \[in\] Les données d’environnement pour la configuration.
+**ConfigurationData** \[in\] Les données d’environnement pour la configuration.
 
-*force* \[in\] **true** pour forcer l’arrêt de la configuration.
+**force** \[in\] **true** pour forcer l’arrêt de la configuration.
 
 ## <a name="return-value"></a>Valeur retournée
 
