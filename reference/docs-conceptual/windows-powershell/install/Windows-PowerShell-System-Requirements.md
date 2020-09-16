@@ -2,12 +2,12 @@
 ms.date: 12/06/2019
 keywords: powershell,applet de commande
 title: Configuration requise pour Windows PowerShell
-ms.openlocfilehash: 7c6e055cda8493651a7838b4ffc9a933032d9c0f
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 883da2f91c4a0b46e4bccbacd9933a52f8f476f6
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808505"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236082"
 ---
 # <a name="windows-powershell-system-requirements"></a>Configuration requise pour Windows PowerShell
 
@@ -57,8 +57,8 @@ Windows PowerShell 4.0 s’exécute sur les versions suivantes de Windows. Pour
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | Installé par défaut                                                                                       |
 | Windows Server 2012 R2                      | Installé par défaut                                                                                       |
-| Windows® 7 avec Service Pack 1              | Installer [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
-| Windows Server® 2008 R2 avec Service Pack 1 | Installer [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) |
+| Windows® 7 avec Service Pack 1              | Installer [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows Server® 2008 R2 avec Service Pack 1 | Installer [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
 
 ### <a name="windows-powershell-30"></a>Windows PowerShell 3.0
 
@@ -68,9 +68,9 @@ Windows PowerShell 3.0 s’exécute sur les versions suivantes de Windows. Pour
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | Installé par défaut                                                                                       |
 | Windows Server 2012                         | Installé par défaut                                                                                       |
-| Windows® 7 avec Service Pack 1              | Installer [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
-| Windows Server® 2008 R2 avec Service Pack 1 | Installer [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
-| Windows Server 2008 avec Service Pack 2     | Installer [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) |
+| Windows® 7 avec Service Pack 1              | Installer [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server® 2008 R2 avec Service Pack 1 | Installer [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server 2008 avec Service Pack 2     | Installer [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## <a name="microsoft-net-framework-requirements"></a>Configuration requise pour Microsoft .NET Framework
 
@@ -88,7 +88,7 @@ Utilisez les liens suivants pour télécharger Microsoft .NET Framework à parti
 |                     Version                      |                                                     Lien                                                     |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | .NET Framework 4.5 (`dotNetFx45_Full_setup.exe`) | [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919)                               |
-| .NET Framework 4 (`dotNetFx40_Full_setup.exe`)   | [Microsoft .NET Framework 4 (programme d’installation web)](https://www.microsoft.com/en-us/download/details.aspx?id=17851) |
+| .NET Framework 4 (`dotNetFx40_Full_setup.exe`)   | [Microsoft .NET Framework 4 (programme d’installation web)](https://www.microsoft.com/download/details.aspx?id=17851) |
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 

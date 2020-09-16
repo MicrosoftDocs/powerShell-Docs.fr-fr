@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,configuration
 title: Désinstaller WMF 5.0
-ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808675"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236303"
 ---
 # <a name="uninstallation-instructions"></a>Instructions de désinstallation
 
 ## <a name="using-command-prompt"></a>Utilisation de l’invite de commandes
 
 1. Ouvrez une **invite de commandes.**
-2. Exécutez le [Lanceur autonome Windows Update](https://support.microsoft.com/en-us/kb/934307) comme indiqué ci-dessous :
+2. Exécutez le [Lanceur autonome Windows Update](https://support.microsoft.com/kb/934307) comme indiqué ci-dessous :
 
 Sur Windows Server 2012 R2 et Windows 8.1 :
 

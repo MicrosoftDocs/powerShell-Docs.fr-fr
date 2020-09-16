@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692257"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236252"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
@@ -64,7 +64,7 @@ En plus de l’installation de contenu le plus récent à partir de Windows Upda
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 inclut une fonctionnalité appelée « Service DSC ». Service DSC fournit les fonctionnalités de serveur collecteur, notamment les fichiers binaires qui prennent en charge le point de terminaison OData. WMF est inclus dans Windows Server et est mis à jour en continu entre les versions de Windows Server.
-Les [nouvelles versions de WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) peuvent inclure des mises à jour de la fonctionnalité Service DSC. C’est pourquoi il est recommandé de télécharger la dernière version de WMF et de consulter les notes de publication afin de déterminer si la version inclut une mise à jour de la fonctionnalité Service DSC. Vous devez également examiner la section des notes de publication qui indique si l’état de conception d’un scénario ou d’une mise à jour est répertorié comme stable ou expérimental. Pour avoir un cycle de versions en continu, des fonctionnalités peuvent être déclarées stables, ce qui signifie qu’elles sont prêtes à être utilisées dans un environnement de production, même si WMF est publié en préversion. Autres fonctionnalités qui ont déjà été mises à jour par des versions de WMF (voir les Notes de publication de WMF pour plus d’informations) :
+Les [nouvelles versions de WMF 5.0](https://www.microsoft.com/download/details.aspx?id=54616) peuvent inclure des mises à jour de la fonctionnalité Service DSC. C’est pourquoi il est recommandé de télécharger la dernière version de WMF et de consulter les notes de publication afin de déterminer si la version inclut une mise à jour de la fonctionnalité Service DSC. Vous devez également examiner la section des notes de publication qui indique si l’état de conception d’un scénario ou d’une mise à jour est répertorié comme stable ou expérimental. Pour avoir un cycle de versions en continu, des fonctionnalités peuvent être déclarées stables, ce qui signifie qu’elles sont prêtes à être utilisées dans un environnement de production, même si WMF est publié en préversion. Autres fonctionnalités qui ont déjà été mises à jour par des versions de WMF (voir les Notes de publication de WMF pour plus d’informations) :
 
 - Windows PowerShell Environnement d’écriture de scripts intégré (ISE) de Windows PowerShell
 - Services web Windows PowerShell (Extension IIS Management OData)
