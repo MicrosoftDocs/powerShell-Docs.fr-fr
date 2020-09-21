@@ -7,35 +7,17 @@ metadata:
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 04/29/2020
-  ms.openlocfilehash: 42d8de8ffedf9ac1b0bd7ee5df1483f8d1316da7
-  ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+  ms.date: 06/11/2020
+  ms.openlocfilehash: 5a09f71c912b4facf02cf1094674ef39da8df23c
+  ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82630885"
+  ms.lasthandoff: 08/03/2020
+  ms.locfileid: "87538648"
 landingContent:
-- title: Ressources communautaires
+- title: Soyez impliqué !
   linkLists:
-  - linkListType: overview
-    links:
-    - text: Support de la communauté pour les objets blob
-      url: community-support.md
-    - text: Art numérique
-      url: digital-art.md
-    - text: Panthéon des contributeurs
-      url: hall-of-fame.md
-- title: Nouveautés de PowerShell-Docs
-  linkLists:
-  - linkListType: whats-new
-    links:
-    - text: 2020-T2
-      url: ./2020-Q2.md
-    - text: 2020-T1
-      url: ./2020-Q1.md
-- title: Participer - Contribuer aux documents PowerShell
-  linkLists:
-  - linkListType: overview
+  - linkListType: get-started
     links:
     - text: Guide du contributeur PowerShell
       url: contributing/overview.md
@@ -59,3 +41,41 @@ landingContent:
       url: contributing/managing-issues.md
     - text: Processus de gestion des demandes de tirage
       url: contributing/managing-pull-requests.md
+- title: Nouveautés
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 2020-T3
+      url: ./2020-Q3.md
+    - text: 2020-T2
+      url: ./2020-Q2.md
+    - text: 2020-T1
+      url: ./2020-Q1.md
+    - text: Panthéon des contributeurs
+      url: hall-of-fame.md
+- title: Ressources communautaires
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Support de la communauté pour les objets blob
+      url: community-support.md
+  - linkListType: learn
+    links:
+    - text: Notions de base de PowerShell
+      url: ../learn/ps101/00-introduction.md
+    - text: Présentations approfondies
+      url: ../learn/deep-dives/overview.md
+  - linkListType: download
+    links:
+    - text: Art numérique
+      url: digital-art.md
+  - linkListType: video
+    links:
+    - text: TheShow, par Jason Helmick
+      url: https://www.youtube.com/user/JasonHelmick/videos
+    - text: Canal PSConfEU
+      url: https://www.youtube.com/channel/UCxgrI58XiKnDDByjhRJs5fg
+    - text: Canal PowerShell.org
+      url: https://www.youtube.com/user/powershellorg
+    - text: 'Channel 9 : vidéos sur PowerShell'
+      url: https://channel9.msdn.com/Tags/powershell

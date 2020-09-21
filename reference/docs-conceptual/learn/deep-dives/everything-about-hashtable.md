@@ -3,33 +3,33 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
-ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
+ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307127"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85353819"
 ---
-# <a name="everything-you-wanted-to-know-about-hashtables"></a><span data-ttu-id="20155-103">Tout ce que vous avez toujours voulu savoir sur les tables de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-103">Everything you wanted to know about hashtables</span></span>
+# <a name="everything-you-wanted-to-know-about-hashtables"></a><span data-ttu-id="4ada6-103">Tout ce que vous avez toujours voulu savoir sur les tables de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-103">Everything you wanted to know about hashtables</span></span>
 
-<span data-ttu-id="20155-104">Revenons en arrière pour parler des [tables de hachage][].</span><span class="sxs-lookup"><span data-stu-id="20155-104">I want to take a step back and talk about [hashtables][].</span></span> <span data-ttu-id="20155-105">Je les utilise tout le temps maintenant.</span><span class="sxs-lookup"><span data-stu-id="20155-105">I use them all the time now.</span></span> <span data-ttu-id="20155-106">Je les expliquais hier soir à quelqu’un, après la réunion de notre groupe d'utilisateurs, et je me suis rendu compte que j’avais les mêmes lacunes que lui.</span><span class="sxs-lookup"><span data-stu-id="20155-106">I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them as he had.</span></span> <span data-ttu-id="20155-107">Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.</span><span class="sxs-lookup"><span data-stu-id="20155-107">Hashtables are really important in PowerShell so it's good to have a solid understanding of them.</span></span>
+<span data-ttu-id="4ada6-104">Revenons en arrière pour parler des [tables de hachage][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-104">I want to take a step back and talk about [hashtables][].</span></span> <span data-ttu-id="4ada6-105">Je les utilise tout le temps maintenant.</span><span class="sxs-lookup"><span data-stu-id="4ada6-105">I use them all the time now.</span></span> <span data-ttu-id="4ada6-106">Je les expliquais hier soir à quelqu’un, après la réunion de notre groupe d'utilisateurs, et je me suis rendu compte que j’avais les mêmes lacunes que lui.</span><span class="sxs-lookup"><span data-stu-id="4ada6-106">I was teaching someone about them after our user group meeting last night and I realized I had the same confusion about them as he had.</span></span> <span data-ttu-id="4ada6-107">Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.</span><span class="sxs-lookup"><span data-stu-id="4ada6-107">Hashtables are really important in PowerShell so it's good to have a solid understanding of them.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="20155-108">La [Version d’origine][] de cet article est parue sur le blog écrit par [@KevinMarquette][].</span><span class="sxs-lookup"><span data-stu-id="20155-108">The [original version][] of this article appeared on the blog written by [@KevinMarquette][].</span></span> <span data-ttu-id="20155-109">L’équipe PowerShell remercie Kevin d’avoir partagé ce contenu.</span><span class="sxs-lookup"><span data-stu-id="20155-109">The PowerShell team thanks Kevin for sharing this content with us.</span></span> <span data-ttu-id="20155-110">Consultez son blog à l’adresse [PowerShellExplained.com][].</span><span class="sxs-lookup"><span data-stu-id="20155-110">Please check out his blog at [PowerShellExplained.com][].</span></span>
+> <span data-ttu-id="4ada6-108">La [Version d’origine][] de cet article est parue sur le blog écrit par [@KevinMarquette][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-108">The [original version][] of this article appeared on the blog written by [@KevinMarquette][].</span></span> <span data-ttu-id="4ada6-109">L’équipe PowerShell remercie Kevin d’avoir partagé ce contenu.</span><span class="sxs-lookup"><span data-stu-id="4ada6-109">The PowerShell team thanks Kevin for sharing this content with us.</span></span> <span data-ttu-id="4ada6-110">Consultez son blog à l’adresse [PowerShellExplained.com][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-110">Please check out his blog at [PowerShellExplained.com][].</span></span>
 
-## <a name="hashtable-as-a-collection-of-things"></a><span data-ttu-id="20155-111">Table de hachage comme collection d’objets</span><span class="sxs-lookup"><span data-stu-id="20155-111">Hashtable as a collection of things</span></span>
+## <a name="hashtable-as-a-collection-of-things"></a><span data-ttu-id="4ada6-111">Table de hachage comme collection d’objets</span><span class="sxs-lookup"><span data-stu-id="4ada6-111">Hashtable as a collection of things</span></span>
 
-<span data-ttu-id="20155-112">J’aimerais vous présenter tout d’abord le concept de **table de hachage** comme collection dans la définition traditionnelle d’une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-112">I want you to first see a **Hashtable** as a collection in the traditional definition of a hashtable.</span></span> <span data-ttu-id="20155-113">Cette définition vous donne une compréhension fondamentale de la façon dont les tables de hachage fonctionnent quand elles sont utilisées ultérieurement pour des éléments plus avancés.</span><span class="sxs-lookup"><span data-stu-id="20155-113">This definition gives you a fundamental understanding of how they work when they get used for more advanced stuff later.</span></span> <span data-ttu-id="20155-114">Omettre cette définition constitue souvent une source de confusion.</span><span class="sxs-lookup"><span data-stu-id="20155-114">Skipping this understanding is often a source of confusion.</span></span>
+<span data-ttu-id="4ada6-112">J’aimerais vous présenter tout d’abord le concept de **table de hachage** comme collection dans la définition traditionnelle d’une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-112">I want you to first see a **Hashtable** as a collection in the traditional definition of a hashtable.</span></span> <span data-ttu-id="4ada6-113">Cette définition vous donne une compréhension fondamentale de la façon dont les tables de hachage fonctionnent quand elles sont utilisées ultérieurement pour des éléments plus avancés.</span><span class="sxs-lookup"><span data-stu-id="4ada6-113">This definition gives you a fundamental understanding of how they work when they get used for more advanced stuff later.</span></span> <span data-ttu-id="4ada6-114">Omettre cette définition constitue souvent une source de confusion.</span><span class="sxs-lookup"><span data-stu-id="4ada6-114">Skipping this understanding is often a source of confusion.</span></span>
 
-## <a name="what-is-an-array"></a><span data-ttu-id="20155-115">Qu’est-ce qu’un tableau ?</span><span class="sxs-lookup"><span data-stu-id="20155-115">What is an array?</span></span>
+## <a name="what-is-an-array"></a><span data-ttu-id="4ada6-115">Qu’est-ce qu’un tableau ?</span><span class="sxs-lookup"><span data-stu-id="4ada6-115">What is an array?</span></span>
 
-<span data-ttu-id="20155-116">Avant de passer à la définition d’une **table de hachage**, examinons d’abord les [tableaux][].</span><span class="sxs-lookup"><span data-stu-id="20155-116">Before I jump into what a **Hashtable** is, I need to mention [arrays][] first.</span></span> <span data-ttu-id="20155-117">Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.</span><span class="sxs-lookup"><span data-stu-id="20155-117">For the purpose of this discussion, an array is a list or collection of values or objects.</span></span>
+<span data-ttu-id="4ada6-116">Avant de passer à la définition d’une **table de hachage**, examinons d’abord les [tableaux][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-116">Before I jump into what a **Hashtable** is, I need to mention [arrays][] first.</span></span> <span data-ttu-id="4ada6-117">Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.</span><span class="sxs-lookup"><span data-stu-id="4ada6-117">For the purpose of this discussion, an array is a list or collection of values or objects.</span></span>
 
 ```powershell
 $array = @(1,2,3,5,7,11)
 ```
 
-<span data-ttu-id="20155-118">Une fois que vous avez placé vos éléments dans un tableau, vous pouvez utiliser `foreach` pour effectuer une itération au sein de la liste, ou utiliser un index pour accéder à des éléments individuels du tableau.</span><span class="sxs-lookup"><span data-stu-id="20155-118">Once you have your items into an array, you can either use `foreach` to iterate over the list or use an index to access individual elements in the array.</span></span>
+<span data-ttu-id="4ada6-118">Une fois que vous avez placé vos éléments dans un tableau, vous pouvez utiliser `foreach` pour effectuer une itération au sein de la liste, ou utiliser un index pour accéder à des éléments individuels du tableau.</span><span class="sxs-lookup"><span data-stu-id="4ada6-118">Once you have your items into an array, you can either use `foreach` to iterate over the list or use an index to access individual elements in the array.</span></span>
 
 ```powershell
 foreach($item in $array)
@@ -40,25 +40,25 @@ foreach($item in $array)
 Write-Output $array[3]
 ```
 
-<span data-ttu-id="20155-119">Vous pouvez de la même façon mettre à jour les valeurs à l’aide d’un index.</span><span class="sxs-lookup"><span data-stu-id="20155-119">You can also update values using an index in the same way.</span></span>
+<span data-ttu-id="4ada6-119">Vous pouvez de la même façon mettre à jour les valeurs à l’aide d’un index.</span><span class="sxs-lookup"><span data-stu-id="4ada6-119">You can also update values using an index in the same way.</span></span>
 
 ```powershell
 $array[2] = 13
 ```
 
-<span data-ttu-id="20155-120">Je n’ai fait qu’effleurer le concept des tableaux, mais cela devrait les placer dans le contexte approprié au moment d’aborder les tables de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-120">I just scratched the surface on arrays but that should put them into the right context as I move onto hashtables.</span></span>
+<span data-ttu-id="4ada6-120">Je n’ai fait qu’effleurer le concept des tableaux, mais cela devrait les placer dans le contexte approprié au moment d’aborder les tables de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-120">I just scratched the surface on arrays but that should put them into the right context as I move onto hashtables.</span></span>
 
-## <a name="what-is-a-hashtable"></a><span data-ttu-id="20155-121">Qu’est-ce qu’une table de hachage ?</span><span class="sxs-lookup"><span data-stu-id="20155-121">What is a hashtable?</span></span>
+## <a name="what-is-a-hashtable"></a><span data-ttu-id="4ada6-121">Qu’est-ce qu’une table de hachage ?</span><span class="sxs-lookup"><span data-stu-id="4ada6-121">What is a hashtable?</span></span>
 
-<span data-ttu-id="20155-122">Je commencerai par une description technique de base de ce que sont les tables de hachage, d’une manière générale, avant de passer aux autres méthodes utilisées par PowerShell.</span><span class="sxs-lookup"><span data-stu-id="20155-122">I'm going to start with a basic technical description of what hashtables are, in the general sense, before I shift into the other ways PowerShell uses them.</span></span>
+<span data-ttu-id="4ada6-122">Je commencerai par une description technique de base de ce que sont les tables de hachage, d’une manière générale, avant de passer aux autres méthodes utilisées par PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4ada6-122">I'm going to start with a basic technical description of what hashtables are, in the general sense, before I shift into the other ways PowerShell uses them.</span></span>
 
-<span data-ttu-id="20155-123">Une table de hachage est une structure de données, à l’instar d’un tableau, sauf que vous stockez chaque valeur (objet) à l’aide d’une clé.</span><span class="sxs-lookup"><span data-stu-id="20155-123">A hashtable is a data structure, much like an array, except you store each value (object) using a key.</span></span> <span data-ttu-id="20155-124">Il s’agit d’un magasin de clés/valeurs de base.</span><span class="sxs-lookup"><span data-stu-id="20155-124">It's a basic key/value store.</span></span> <span data-ttu-id="20155-125">Commençons par créer une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="20155-125">First, we create an empty hashtable.</span></span>
+<span data-ttu-id="4ada6-123">Une table de hachage est une structure de données, à l’instar d’un tableau, sauf que vous stockez chaque valeur (objet) à l’aide d’une clé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-123">A hashtable is a data structure, much like an array, except you store each value (object) using a key.</span></span> <span data-ttu-id="4ada6-124">Il s’agit d’un magasin de clés/valeurs de base.</span><span class="sxs-lookup"><span data-stu-id="4ada6-124">It's a basic key/value store.</span></span> <span data-ttu-id="4ada6-125">Commençons par créer une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="4ada6-125">First, we create an empty hashtable.</span></span>
 
 ```powershell
 $ageList = @{}
 ```
 
-<span data-ttu-id="20155-126">Notez que des accolades, et non des parenthèses, servent à définir une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-126">Notice that braces, instead of parentheses, are used to define a hashtable.</span></span> <span data-ttu-id="20155-127">Ajoutons ensuite un élément à l’aide d’une clé comme celle-ci :</span><span class="sxs-lookup"><span data-stu-id="20155-127">Then we add an item using a key like this:</span></span>
+<span data-ttu-id="4ada6-126">Notez que des accolades, et non des parenthèses, servent à définir une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-126">Notice that braces, instead of parentheses, are used to define a hashtable.</span></span> <span data-ttu-id="4ada6-127">Ajoutons ensuite un élément à l’aide d’une clé comme celle-ci :</span><span class="sxs-lookup"><span data-stu-id="4ada6-127">Then we add an item using a key like this:</span></span>
 
 ```powershell
 $key = 'Kevin'
@@ -68,18 +68,18 @@ $ageList.add( $key, $value )
 $ageList.add( 'Alex', 9 )
 ```
 
-<span data-ttu-id="20155-128">Le nom de la personne représente la clé, et son âge correspond à la valeur que je souhaite enregistrer.</span><span class="sxs-lookup"><span data-stu-id="20155-128">The person's name is the key and their age is the value that I want to save.</span></span>
+<span data-ttu-id="4ada6-128">Le nom de la personne représente la clé, et son âge correspond à la valeur que je souhaite enregistrer.</span><span class="sxs-lookup"><span data-stu-id="4ada6-128">The person's name is the key and their age is the value that I want to save.</span></span>
 
-## <a name="using-the-brackets-for-access"></a><span data-ttu-id="20155-129">Utilisation de crochets pour l’accès</span><span class="sxs-lookup"><span data-stu-id="20155-129">Using the brackets for access</span></span>
+## <a name="using-the-brackets-for-access"></a><span data-ttu-id="4ada6-129">Utilisation de crochets pour l’accès</span><span class="sxs-lookup"><span data-stu-id="4ada6-129">Using the brackets for access</span></span>
 
-<span data-ttu-id="20155-130">Après avoir ajouté vos valeurs à la table de hachage, vous pouvez les extraire à l’aide de cette même clé (au lieu d’utiliser un index numérique comme vous le feriez pour un tableau).</span><span class="sxs-lookup"><span data-stu-id="20155-130">Once you add your values to the hashtable, you can pull them back out using that same key (instead of using a numeric index like you would have for an array).</span></span>
+<span data-ttu-id="4ada6-130">Après avoir ajouté vos valeurs à la table de hachage, vous pouvez les extraire à l’aide de cette même clé (au lieu d’utiliser un index numérique comme vous le feriez pour un tableau).</span><span class="sxs-lookup"><span data-stu-id="4ada6-130">Once you add your values to the hashtable, you can pull them back out using that same key (instead of using a numeric index like you would have for an array).</span></span>
 
 ```powershell
 $ageList['Kevin']
 $ageList['Alex']
 ```
 
-<span data-ttu-id="20155-131">Pour connaître l’âge de Kevin, j’utilise son nom pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="20155-131">When I want Kevin's age, I use his name to access it.</span></span> <span data-ttu-id="20155-132">Nous pouvons également utiliser cette approche pour ajouter ou mettre à jour des valeurs dans la table de hachage,</span><span class="sxs-lookup"><span data-stu-id="20155-132">We can use this approach to add or update values into the hashtable too.</span></span> <span data-ttu-id="20155-133">exactement comme si vous utilisiez la fonction `add()` ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="20155-133">This is just like using the `add()` function above.</span></span>
+<span data-ttu-id="4ada6-131">Pour connaître l’âge de Kevin, j’utilise son nom pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="4ada6-131">When I want Kevin's age, I use his name to access it.</span></span> <span data-ttu-id="4ada6-132">Nous pouvons également utiliser cette approche pour ajouter ou mettre à jour des valeurs dans la table de hachage,</span><span class="sxs-lookup"><span data-stu-id="4ada6-132">We can use this approach to add or update values into the hashtable too.</span></span> <span data-ttu-id="4ada6-133">exactement comme si vous utilisiez la fonction `add()` ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="4ada6-133">This is just like using the `add()` function above.</span></span>
 
 ```powershell
 $ageList = @{}
@@ -91,11 +91,11 @@ $ageList[$key] = $value
 $ageList['Alex'] = 9
 ```
 
-<span data-ttu-id="20155-134">Vous pouvez utiliser une autre syntaxe pour accéder et mettre à jour les valeurs que je couvrirai dans une section ultérieure.</span><span class="sxs-lookup"><span data-stu-id="20155-134">There's another syntax you can use for accessing and updating values that I'll cover in a later section.</span></span> <span data-ttu-id="20155-135">Si vous passez à PowerShell à partir d’un autre langage, ces exemples devraient vous rappeler la façon dont vous utilisiez les tables de hachage auparavant.</span><span class="sxs-lookup"><span data-stu-id="20155-135">If you're coming to PowerShell from another language, these examples should fit in with how you may have used hashtables before.</span></span>
+<span data-ttu-id="4ada6-134">Vous pouvez utiliser une autre syntaxe pour accéder et mettre à jour les valeurs que je couvrirai dans une section ultérieure.</span><span class="sxs-lookup"><span data-stu-id="4ada6-134">There's another syntax you can use for accessing and updating values that I'll cover in a later section.</span></span> <span data-ttu-id="4ada6-135">Si vous passez à PowerShell à partir d’un autre langage, ces exemples devraient vous rappeler la façon dont vous utilisiez les tables de hachage auparavant.</span><span class="sxs-lookup"><span data-stu-id="4ada6-135">If you're coming to PowerShell from another language, these examples should fit in with how you may have used hashtables before.</span></span>
 
-### <a name="creating-hashtables-with-values"></a><span data-ttu-id="20155-136">Création de tables de hachage avec des valeurs</span><span class="sxs-lookup"><span data-stu-id="20155-136">Creating hashtables with values</span></span>
+### <a name="creating-hashtables-with-values"></a><span data-ttu-id="4ada6-136">Création de tables de hachage avec des valeurs</span><span class="sxs-lookup"><span data-stu-id="4ada6-136">Creating hashtables with values</span></span>
 
-<span data-ttu-id="20155-137">Jusqu’à présent, j’ai créé une table de hachage vide pour ces exemples.</span><span class="sxs-lookup"><span data-stu-id="20155-137">So far I've created an empty hashtable for these examples.</span></span> <span data-ttu-id="20155-138">Vous pouvez préremplir les clés et les valeurs lors de leur création.</span><span class="sxs-lookup"><span data-stu-id="20155-138">You can pre-populate the keys and values when you create them.</span></span>
+<span data-ttu-id="4ada6-137">Jusqu’à présent, j’ai créé une table de hachage vide pour ces exemples.</span><span class="sxs-lookup"><span data-stu-id="4ada6-137">So far I've created an empty hashtable for these examples.</span></span> <span data-ttu-id="4ada6-138">Vous pouvez préremplir les clés et les valeurs lors de leur création.</span><span class="sxs-lookup"><span data-stu-id="4ada6-138">You can pre-populate the keys and values when you create them.</span></span>
 
 ```powershell
 $ageList = @{
@@ -104,9 +104,9 @@ $ageList = @{
 }
 ```
 
-### <a name="as-a-lookup-table"></a><span data-ttu-id="20155-139">Comme table de recherche</span><span class="sxs-lookup"><span data-stu-id="20155-139">As a lookup table</span></span>
+### <a name="as-a-lookup-table"></a><span data-ttu-id="4ada6-139">Comme table de recherche</span><span class="sxs-lookup"><span data-stu-id="4ada6-139">As a lookup table</span></span>
 
-<span data-ttu-id="20155-140">Ce type de table de hachage est particulièrement utile en tant que table de recherche.</span><span class="sxs-lookup"><span data-stu-id="20155-140">The real value of this type of a hashtable is that you can use them as a lookup table.</span></span> <span data-ttu-id="20155-141">Voici un exemple simple.</span><span class="sxs-lookup"><span data-stu-id="20155-141">Here is a simple example.</span></span>
+<span data-ttu-id="4ada6-140">Ce type de table de hachage est particulièrement utile en tant que table de recherche.</span><span class="sxs-lookup"><span data-stu-id="4ada6-140">The real value of this type of a hashtable is that you can use them as a lookup table.</span></span> <span data-ttu-id="4ada6-141">Voici un exemple simple.</span><span class="sxs-lookup"><span data-stu-id="4ada6-141">Here is a simple example.</span></span>
 
 ```powershell
 $environments = @{
@@ -118,15 +118,15 @@ $environments = @{
 $server = $environments[$env]
 ```
 
-<span data-ttu-id="20155-142">Dans cet exemple, vous spécifiez un environnement pour la variable `$env`, et celle-ci choisit le serveur approprié.</span><span class="sxs-lookup"><span data-stu-id="20155-142">In this example, you specify an environment for the `$env` variable and it will pick the correct server.</span></span> <span data-ttu-id="20155-143">Vous pouvez utiliser un élément `switch($env){...}` pour une sélection comme celle-ci, mais une table de hachage est une option intéressante.</span><span class="sxs-lookup"><span data-stu-id="20155-143">You could use a `switch($env){...}` for a selection like this but a hashtable is a nice option.</span></span>
+<span data-ttu-id="4ada6-142">Dans cet exemple, vous spécifiez un environnement pour la variable `$env`, et celle-ci choisit le serveur approprié.</span><span class="sxs-lookup"><span data-stu-id="4ada6-142">In this example, you specify an environment for the `$env` variable and it will pick the correct server.</span></span> <span data-ttu-id="4ada6-143">Vous pouvez utiliser un élément `switch($env){...}` pour une sélection comme celle-ci, mais une table de hachage est une option intéressante.</span><span class="sxs-lookup"><span data-stu-id="4ada6-143">You could use a `switch($env){...}` for a selection like this but a hashtable is a nice option.</span></span>
 
-<span data-ttu-id="20155-144">Les avantages sont encore plus visibles quand vous générez dynamiquement la table de recherche en vue d’une utilisation ultérieure.</span><span class="sxs-lookup"><span data-stu-id="20155-144">This gets even better when you dynamically build the lookup table to use it later.</span></span> <span data-ttu-id="20155-145">Par conséquent, privilégiez cette approche lorsque vous avez besoin de référencer quelque chose.</span><span class="sxs-lookup"><span data-stu-id="20155-145">So think about using this approach when you need to cross reference something.</span></span> <span data-ttu-id="20155-146">Je pense que les résultats seraient encore plus évidents si PowerShell ne filtrait pas de façon si efficace le canal avec `Where-Object`.</span><span class="sxs-lookup"><span data-stu-id="20155-146">I think we would see this even more if PowerShell wasn't so good at filtering on the pipe with `Where-Object`.</span></span> <span data-ttu-id="20155-147">Si vous vous retrouvez dans une situation où les performances sont importantes, cette approche doit être prise en compte.</span><span class="sxs-lookup"><span data-stu-id="20155-147">If you're ever in a situation where performance matters, this approach needs to be considered.</span></span>
+<span data-ttu-id="4ada6-144">Les avantages sont encore plus visibles quand vous générez dynamiquement la table de recherche en vue d’une utilisation ultérieure.</span><span class="sxs-lookup"><span data-stu-id="4ada6-144">This gets even better when you dynamically build the lookup table to use it later.</span></span> <span data-ttu-id="4ada6-145">Par conséquent, privilégiez cette approche lorsque vous avez besoin de référencer quelque chose.</span><span class="sxs-lookup"><span data-stu-id="4ada6-145">So think about using this approach when you need to cross reference something.</span></span> <span data-ttu-id="4ada6-146">Je pense que les résultats seraient encore plus évidents si PowerShell ne filtrait pas de façon si efficace le canal avec `Where-Object`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-146">I think we would see this even more if PowerShell wasn't so good at filtering on the pipe with `Where-Object`.</span></span> <span data-ttu-id="4ada6-147">Si vous vous retrouvez dans une situation où les performances sont importantes, cette approche doit être prise en compte.</span><span class="sxs-lookup"><span data-stu-id="4ada6-147">If you're ever in a situation where performance matters, this approach needs to be considered.</span></span>
 
-<span data-ttu-id="20155-148">Je ne dis pas qu’elle est plus rapide, mais elle s’adapte à la règle [Si les performances l’exigent, effectuez un test][].</span><span class="sxs-lookup"><span data-stu-id="20155-148">I won't say that it's faster, but it does fit into the rule of [If performance matters, test it][].</span></span>
+<span data-ttu-id="4ada6-148">Je ne dis pas qu’elle est plus rapide, mais elle s’adapte à la règle [Si les performances l’exigent, effectuez un test][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-148">I won't say that it's faster, but it does fit into the rule of [If performance matters, test it][].</span></span>
 
-#### <a name="multiselection"></a><span data-ttu-id="20155-149">Sélection multiple</span><span class="sxs-lookup"><span data-stu-id="20155-149">Multiselection</span></span>
+#### <a name="multiselection"></a><span data-ttu-id="4ada6-149">Sélection multiple</span><span class="sxs-lookup"><span data-stu-id="4ada6-149">Multiselection</span></span>
 
-<span data-ttu-id="20155-150">En général, considérez une table de hachage comme une paire clé/valeur dans laquelle vous fournissez une clé pour obtenir une valeur.</span><span class="sxs-lookup"><span data-stu-id="20155-150">Generally, you think of a hashtable as a key/value pair, where you provide one key and get one value.</span></span> <span data-ttu-id="20155-151">PowerShell vous permet de fournir un tableau de clés pour obtenir plusieurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-151">PowerShell allows you to provide an array of keys to get multiple values.</span></span>
+<span data-ttu-id="4ada6-150">En général, considérez une table de hachage comme une paire clé/valeur dans laquelle vous fournissez une clé pour obtenir une valeur.</span><span class="sxs-lookup"><span data-stu-id="4ada6-150">Generally, you think of a hashtable as a key/value pair, where you provide one key and get one value.</span></span> <span data-ttu-id="4ada6-151">PowerShell vous permet de fournir un tableau de clés pour obtenir plusieurs valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-151">PowerShell allows you to provide an array of keys to get multiple values.</span></span>
 
 ```powershell
 $environments[@('QA','DEV')]
@@ -134,27 +134,27 @@ $environments[('QA','DEV')]
 $environments['QA','DEV']
 ```
 
-<span data-ttu-id="20155-152">Dans cet exemple, j’utilise la même table de hachage de recherche que ci-dessus et je fournis trois styles de tableaux différents pour obtenir les correspondances.</span><span class="sxs-lookup"><span data-stu-id="20155-152">In this example, I use the same lookup hashtable from above and provide three different array styles to get the matches.</span></span> <span data-ttu-id="20155-153">Il s’agit d’une fonction secrète de PowerShell que la plupart des utilisateurs ignorent.</span><span class="sxs-lookup"><span data-stu-id="20155-153">This is a hidden gem in PowerShell that most people aren't aware of.</span></span>
+<span data-ttu-id="4ada6-152">Dans cet exemple, j’utilise la même table de hachage de recherche que ci-dessus et je fournis trois styles de tableaux différents pour obtenir les correspondances.</span><span class="sxs-lookup"><span data-stu-id="4ada6-152">In this example, I use the same lookup hashtable from above and provide three different array styles to get the matches.</span></span> <span data-ttu-id="4ada6-153">Il s’agit d’une fonction secrète de PowerShell que la plupart des utilisateurs ignorent.</span><span class="sxs-lookup"><span data-stu-id="4ada6-153">This is a hidden gem in PowerShell that most people aren't aware of.</span></span>
 
-## <a name="iterating-hashtables"></a><span data-ttu-id="20155-154">Itérations de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-154">Iterating hashtables</span></span>
+## <a name="iterating-hashtables"></a><span data-ttu-id="4ada6-154">Itérations de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-154">Iterating hashtables</span></span>
 
-<span data-ttu-id="20155-155">Étant donné qu’une table de hachage est une collection de paires clé/valeur, vous pouvez effectuer une itération différemment de celle d’un tableau ou d’une liste d’éléments standard.</span><span class="sxs-lookup"><span data-stu-id="20155-155">Because a hashtable is a collection of key/value pairs, you iterate over it differently than you do for an array or a normal list of items.</span></span>
+<span data-ttu-id="4ada6-155">Étant donné qu’une table de hachage est une collection de paires clé/valeur, vous pouvez effectuer une itération différemment de celle d’un tableau ou d’une liste d’éléments standard.</span><span class="sxs-lookup"><span data-stu-id="4ada6-155">Because a hashtable is a collection of key/value pairs, you iterate over it differently than you do for an array or a normal list of items.</span></span>
 
-<span data-ttu-id="20155-156">La première chose à noter est que si vous dirigez votre table de hachage, le canal le traite comme un objet,</span><span class="sxs-lookup"><span data-stu-id="20155-156">The first thing to notice is that if you pipe your hashtable, the pipe treats it like one object.</span></span>
+<span data-ttu-id="4ada6-156">La première chose à noter est que si vous dirigez votre table de hachage, le canal le traite comme un objet,</span><span class="sxs-lookup"><span data-stu-id="4ada6-156">The first thing to notice is that if you pipe your hashtable, the pipe treats it like one object.</span></span>
 
 ```powershell
 PS> $ageList | Measure-Object
 count : 1
 ```
 
-<span data-ttu-id="20155-157">même si la propriété `.count` vous indique le nombre de valeurs qu’elle contient.</span><span class="sxs-lookup"><span data-stu-id="20155-157">Even though the `.count` property tells you how many values it contains.</span></span>
+<span data-ttu-id="4ada6-157">même si la propriété `.count` vous indique le nombre de valeurs qu’elle contient.</span><span class="sxs-lookup"><span data-stu-id="4ada6-157">Even though the `.count` property tells you how many values it contains.</span></span>
 
 ```powershell
 PS> $ageList.count
 2
 ```
 
-<span data-ttu-id="20155-158">Pour résoudre ce problème, utilisez la propriété `.values` si vous n’avez besoin que des valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-158">You get around this issue by using the `.values` property if all you need is just the values.</span></span>
+<span data-ttu-id="4ada6-158">Pour résoudre ce problème, utilisez la propriété `.values` si vous n’avez besoin que des valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-158">You get around this issue by using the `.values` property if all you need is just the values.</span></span>
 
 ```powershell
 PS> $ageList.values | Measure-Object -Average
@@ -162,7 +162,7 @@ Count   : 2
 Average : 22.5
 ```
 
-<span data-ttu-id="20155-159">Il est souvent plus utile d’énumérer les clés et de les utiliser pour accéder aux valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-159">It's often more useful to enumerate the keys and use them to access the values.</span></span>
+<span data-ttu-id="4ada6-159">Il est souvent plus utile d’énumérer les clés et de les utiliser pour accéder aux valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-159">It's often more useful to enumerate the keys and use them to access the values.</span></span>
 
 ```powershell
 PS> $ageList.keys | ForEach-Object{
@@ -173,7 +173,7 @@ Kevin is 36 years old
 Alex is 9 years old
 ```
 
-<span data-ttu-id="20155-160">Voici le même exemple avec une boucle `foreach(){...}`.</span><span class="sxs-lookup"><span data-stu-id="20155-160">Here is the same example with a `foreach(){...}` loop.</span></span>
+<span data-ttu-id="4ada6-160">Voici le même exemple avec une boucle `foreach(){...}`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-160">Here is the same example with a `foreach(){...}` loop.</span></span>
 
 ```powershell
 foreach($key in $ageList.keys)
@@ -183,11 +183,11 @@ foreach($key in $ageList.keys)
 }
 ```
 
-<span data-ttu-id="20155-161">Nous allons parcourir chaque clé de la table de hachage, puis l’utiliser pour accéder à la valeur.</span><span class="sxs-lookup"><span data-stu-id="20155-161">We are walking each key in the hashtable and then using it to access the value.</span></span> <span data-ttu-id="20155-162">Il s’agit d’un modèle courant lors de l’utilisation de tables de hachage en tant que collection.</span><span class="sxs-lookup"><span data-stu-id="20155-162">This is a common pattern when working with hashtables as a collection.</span></span>
+<span data-ttu-id="4ada6-161">Nous allons parcourir chaque clé de la table de hachage, puis l’utiliser pour accéder à la valeur.</span><span class="sxs-lookup"><span data-stu-id="4ada6-161">We are walking each key in the hashtable and then using it to access the value.</span></span> <span data-ttu-id="4ada6-162">Il s’agit d’un modèle courant lors de l’utilisation de tables de hachage en tant que collection.</span><span class="sxs-lookup"><span data-stu-id="4ada6-162">This is a common pattern when working with hashtables as a collection.</span></span>
 
-### <a name="getenumerator"></a><span data-ttu-id="20155-163">GetEnumerator()</span><span class="sxs-lookup"><span data-stu-id="20155-163">GetEnumerator()</span></span>
+### <a name="getenumerator"></a><span data-ttu-id="4ada6-163">GetEnumerator()</span><span class="sxs-lookup"><span data-stu-id="4ada6-163">GetEnumerator()</span></span>
 
-<span data-ttu-id="20155-164">Cela nous amène à l’instruction `GetEnumerator()`, qui permet d’effectuer une itération dans notre table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-164">That brings us to `GetEnumerator()` for iterating over our hashtable.</span></span>
+<span data-ttu-id="4ada6-164">Cela nous amène à l’instruction `GetEnumerator()`, qui permet d’effectuer une itération dans notre table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-164">That brings us to `GetEnumerator()` for iterating over our hashtable.</span></span>
 
 ```powershell
 $ageList.GetEnumerator() | ForEach-Object{
@@ -196,11 +196,11 @@ $ageList.GetEnumerator() | ForEach-Object{
 }
 ```
 
-<span data-ttu-id="20155-165">L’énumérateur vous fournit chaque paire clé/valeur, l’une après l’autre.</span><span class="sxs-lookup"><span data-stu-id="20155-165">The enumerator gives you each key/value pair one after another.</span></span> <span data-ttu-id="20155-166">Il a été conçu spécifiquement pour ce cas d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="20155-166">It was designed specifically for this use case.</span></span> <span data-ttu-id="20155-167">Je tiens à remercier [Mark Kraus](https://get-PowerShellblog.blogspot.com) de m’avoir rappelé ce point.</span><span class="sxs-lookup"><span data-stu-id="20155-167">Thank you to [Mark Kraus](https://get-PowerShellblog.blogspot.com) for reminding me of this one.</span></span>
+<span data-ttu-id="4ada6-165">L’énumérateur vous fournit chaque paire clé/valeur, l’une après l’autre.</span><span class="sxs-lookup"><span data-stu-id="4ada6-165">The enumerator gives you each key/value pair one after another.</span></span> <span data-ttu-id="4ada6-166">Il a été conçu spécifiquement pour ce cas d’utilisation.</span><span class="sxs-lookup"><span data-stu-id="4ada6-166">It was designed specifically for this use case.</span></span> <span data-ttu-id="4ada6-167">Je tiens à remercier [Mark Kraus](https://get-PowerShellblog.blogspot.com) de m’avoir rappelé ce point.</span><span class="sxs-lookup"><span data-stu-id="4ada6-167">Thank you to [Mark Kraus](https://get-PowerShellblog.blogspot.com) for reminding me of this one.</span></span>
 
-### <a name="badenumeration"></a><span data-ttu-id="20155-168">BadEnumeration</span><span class="sxs-lookup"><span data-stu-id="20155-168">BadEnumeration</span></span>
+### <a name="badenumeration"></a><span data-ttu-id="4ada6-168">BadEnumeration</span><span class="sxs-lookup"><span data-stu-id="4ada6-168">BadEnumeration</span></span>
 
-<span data-ttu-id="20155-169">Un détail important est que vous ne pouvez pas modifier une opération de hachage pendant son énumération.</span><span class="sxs-lookup"><span data-stu-id="20155-169">One important detail is that you can't modify a hashtable while it's being enumerated.</span></span> <span data-ttu-id="20155-170">Si nous commençons par notre exemple `$environments` de base :</span><span class="sxs-lookup"><span data-stu-id="20155-170">If we start with our basic `$environments` example:</span></span>
+<span data-ttu-id="4ada6-169">Un détail important est que vous ne pouvez pas modifier une opération de hachage pendant son énumération.</span><span class="sxs-lookup"><span data-stu-id="4ada6-169">One important detail is that you can't modify a hashtable while it's being enumerated.</span></span> <span data-ttu-id="4ada6-170">Si nous commençons par notre exemple `$environments` de base :</span><span class="sxs-lookup"><span data-stu-id="4ada6-170">If we start with our basic `$environments` example:</span></span>
 
 ```powershell
 $environments = @{
@@ -210,7 +210,7 @@ $environments = @{
 }
 ```
 
-<span data-ttu-id="20155-171">Toute tentative de définition de chaque clé avec la même valeur de serveur échoue.</span><span class="sxs-lookup"><span data-stu-id="20155-171">And trying to set every key to the same server value fails.</span></span>
+<span data-ttu-id="4ada6-171">Toute tentative de définition de chaque clé avec la même valeur de serveur échoue.</span><span class="sxs-lookup"><span data-stu-id="4ada6-171">And trying to set every key to the same server value fails.</span></span>
 
 ```powershell
 $environments.Keys | ForEach-Object {
@@ -222,7 +222,7 @@ An error occurred while enumerating through a collection: Collection was modifie
 + FullyQualifiedErrorId : BadEnumeration
 ```
 
-<span data-ttu-id="20155-172">C’est également le cas même s’il semble que l’opération va réussir :</span><span class="sxs-lookup"><span data-stu-id="20155-172">This will also fail even though it looks like it should also be fine:</span></span>
+<span data-ttu-id="4ada6-172">C’est également le cas même s’il semble que l’opération va réussir :</span><span class="sxs-lookup"><span data-stu-id="4ada6-172">This will also fail even though it looks like it should also be fine:</span></span>
 
 ```powershell
 foreach($key in $environments.keys) {
@@ -234,7 +234,7 @@ Collection was modified; enumeration operation may not execute.
     + FullyQualifiedErrorId : System.InvalidOperationException
 ```
 
-<span data-ttu-id="20155-173">dans cette situation, l’astuce consiste à cloner les clés avant d’effectuer l’énumération.</span><span class="sxs-lookup"><span data-stu-id="20155-173">The trick to this situation is to clone the keys before doing the enumeration.</span></span>
+<span data-ttu-id="4ada6-173">dans cette situation, l’astuce consiste à cloner les clés avant d’effectuer l’énumération.</span><span class="sxs-lookup"><span data-stu-id="4ada6-173">The trick to this situation is to clone the keys before doing the enumeration.</span></span>
 
 ```powershell
 $environments.Keys.Clone() | ForEach-Object {
@@ -242,13 +242,13 @@ $environments.Keys.Clone() | ForEach-Object {
 }
 ```
 
-## <a name="hashtable-as-a-collection-of-properties"></a><span data-ttu-id="20155-174">Table de hachage comme collection de propriétés</span><span class="sxs-lookup"><span data-stu-id="20155-174">Hashtable as a collection of properties</span></span>
+## <a name="hashtable-as-a-collection-of-properties"></a><span data-ttu-id="4ada6-174">Table de hachage comme collection de propriétés</span><span class="sxs-lookup"><span data-stu-id="4ada6-174">Hashtable as a collection of properties</span></span>
 
-<span data-ttu-id="20155-175">Jusqu’à présent, tous les types d’objets que nous avons placés dans la table de hachage étaient identiques.</span><span class="sxs-lookup"><span data-stu-id="20155-175">So far the type of objects we placed in our hashtable were all the same type of object.</span></span> <span data-ttu-id="20155-176">J’ai utilisé des âges dans tous ces exemples, et la clé était le nom de la personne.</span><span class="sxs-lookup"><span data-stu-id="20155-176">I used ages in all those examples and the key was the person's name.</span></span> <span data-ttu-id="20155-177">C’est une excellente méthode lorsque les objets de votre collection portent tous un nom.</span><span class="sxs-lookup"><span data-stu-id="20155-177">This is a great way to look at it when your collection of objects each have a name.</span></span> <span data-ttu-id="20155-178">Une autre façon courante d’utiliser des tables de hachage dans PowerShell consiste à conserver une collection de propriétés où la clé est le nom de la propriété.</span><span class="sxs-lookup"><span data-stu-id="20155-178">Another common way to use hashtables in PowerShell is to hold a collection of properties where the key is the name of the property.</span></span> <span data-ttu-id="20155-179">Nous allons aborder ce concept dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="20155-179">I'll step into that idea in this next example.</span></span>
+<span data-ttu-id="4ada6-175">Jusqu’à présent, tous les types d’objets que nous avons placés dans la table de hachage étaient identiques.</span><span class="sxs-lookup"><span data-stu-id="4ada6-175">So far the type of objects we placed in our hashtable were all the same type of object.</span></span> <span data-ttu-id="4ada6-176">J’ai utilisé des âges dans tous ces exemples, et la clé était le nom de la personne.</span><span class="sxs-lookup"><span data-stu-id="4ada6-176">I used ages in all those examples and the key was the person's name.</span></span> <span data-ttu-id="4ada6-177">C’est une excellente méthode lorsque les objets de votre collection portent tous un nom.</span><span class="sxs-lookup"><span data-stu-id="4ada6-177">This is a great way to look at it when your collection of objects each have a name.</span></span> <span data-ttu-id="4ada6-178">Une autre façon courante d’utiliser des tables de hachage dans PowerShell consiste à conserver une collection de propriétés où la clé est le nom de la propriété.</span><span class="sxs-lookup"><span data-stu-id="4ada6-178">Another common way to use hashtables in PowerShell is to hold a collection of properties where the key is the name of the property.</span></span> <span data-ttu-id="4ada6-179">Nous allons aborder ce concept dans l’exemple suivant.</span><span class="sxs-lookup"><span data-stu-id="4ada6-179">I'll step into that idea in this next example.</span></span>
 
-### <a name="property-based-access"></a><span data-ttu-id="20155-180">Accès basé sur les propriétés</span><span class="sxs-lookup"><span data-stu-id="20155-180">Property-based access</span></span>
+### <a name="property-based-access"></a><span data-ttu-id="4ada6-180">Accès basé sur les propriétés</span><span class="sxs-lookup"><span data-stu-id="4ada6-180">Property-based access</span></span>
 
-<span data-ttu-id="20155-181">L’utilisation de l’accès basé sur les propriétés modifie la dynamique des tables de hachage et la manière dont vous pouvez les utiliser dans PowerShell.</span><span class="sxs-lookup"><span data-stu-id="20155-181">The use of property-based access changes the dynamics of hashtables and how you can use them in PowerShell.</span></span> <span data-ttu-id="20155-182">Voici un exemple standard dans lequel les clés sont traitées comme des propriétés.</span><span class="sxs-lookup"><span data-stu-id="20155-182">Here is our usual example from above treating the keys as properties.</span></span>
+<span data-ttu-id="4ada6-181">L’utilisation de l’accès basé sur les propriétés modifie la dynamique des tables de hachage et la manière dont vous pouvez les utiliser dans PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4ada6-181">The use of property-based access changes the dynamics of hashtables and how you can use them in PowerShell.</span></span> <span data-ttu-id="4ada6-182">Voici un exemple standard dans lequel les clés sont traitées comme des propriétés.</span><span class="sxs-lookup"><span data-stu-id="4ada6-182">Here is our usual example from above treating the keys as properties.</span></span>
 
 ```powershell
 $ageList = @{}
@@ -256,7 +256,7 @@ $ageList.Kevin = 35
 $ageList.Alex = 9
 ```
 
-<span data-ttu-id="20155-183">Comme les exemples ci-dessus, cet exemple ajoute ces clés s’ils n’existent pas déjà dans la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-183">Just like the examples above, this example adds those keys if they don't exist in the hashtable already.</span></span> <span data-ttu-id="20155-184">Selon la façon dont vous avez défini vos clés et ce que représentent vos valeurs, cette méthode peut générer un résultat quelque peu étrange ou parfait.</span><span class="sxs-lookup"><span data-stu-id="20155-184">Depending on how you defined your keys and what your values are, this is either a little strange or a perfect fit.</span></span> <span data-ttu-id="20155-185">L’exemple de liste d’âges a fonctionné jusqu’à ce stade.</span><span class="sxs-lookup"><span data-stu-id="20155-185">The age list example has worked great up until this point.</span></span> <span data-ttu-id="20155-186">Nous avons besoin d’un nouvel exemple pour que cela continue de fonctionner.</span><span class="sxs-lookup"><span data-stu-id="20155-186">We need a new example for this to feel right going forward.</span></span>
+<span data-ttu-id="4ada6-183">Comme les exemples ci-dessus, cet exemple ajoute ces clés s’ils n’existent pas déjà dans la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-183">Just like the examples above, this example adds those keys if they don't exist in the hashtable already.</span></span> <span data-ttu-id="4ada6-184">Selon la façon dont vous avez défini vos clés et ce que représentent vos valeurs, cette méthode peut générer un résultat quelque peu étrange ou parfait.</span><span class="sxs-lookup"><span data-stu-id="4ada6-184">Depending on how you defined your keys and what your values are, this is either a little strange or a perfect fit.</span></span> <span data-ttu-id="4ada6-185">L’exemple de liste d’âges a fonctionné jusqu’à ce stade.</span><span class="sxs-lookup"><span data-stu-id="4ada6-185">The age list example has worked great up until this point.</span></span> <span data-ttu-id="4ada6-186">Nous avons besoin d’un nouvel exemple pour que cela continue de fonctionner.</span><span class="sxs-lookup"><span data-stu-id="4ada6-186">We need a new example for this to feel right going forward.</span></span>
 
 ```powershell
 $person = @{
@@ -265,66 +265,66 @@ $person = @{
 }
 ```
 
-<span data-ttu-id="20155-187">Nous pouvons ajouter des attributs et y accéder au niveau de `$person`.</span><span class="sxs-lookup"><span data-stu-id="20155-187">And we can add and access attributes on the `$person` like this.</span></span>
+<span data-ttu-id="4ada6-187">Nous pouvons ajouter des attributs et y accéder au niveau de `$person`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-187">And we can add and access attributes on the `$person` like this.</span></span>
 
 ```powershell
 $person.city = 'Austin'
 $person.state = 'TX'
 ```
 
-<span data-ttu-id="20155-188">Et soudain, cette table de hachage commence à ressembler à un véritable objet.</span><span class="sxs-lookup"><span data-stu-id="20155-188">All of a sudden this hashtable starts to feel and act like an object.</span></span> <span data-ttu-id="20155-189">Mais il s’agit toujours d’un ensemble de choses, et tous les exemples ci-dessus continueront donc de s’appliquer.</span><span class="sxs-lookup"><span data-stu-id="20155-189">It's still a collection of things, so all the examples above still apply.</span></span> <span data-ttu-id="20155-190">Nous nous plaçons simplement d’un autre point de vue.</span><span class="sxs-lookup"><span data-stu-id="20155-190">We just approach it from a different point of view.</span></span>
+<span data-ttu-id="4ada6-188">Et soudain, cette table de hachage commence à ressembler à un véritable objet.</span><span class="sxs-lookup"><span data-stu-id="4ada6-188">All of a sudden this hashtable starts to feel and act like an object.</span></span> <span data-ttu-id="4ada6-189">Mais il s’agit toujours d’un ensemble de choses, et tous les exemples ci-dessus continueront donc de s’appliquer.</span><span class="sxs-lookup"><span data-stu-id="4ada6-189">It's still a collection of things, so all the examples above still apply.</span></span> <span data-ttu-id="4ada6-190">Nous nous plaçons simplement d’un autre point de vue.</span><span class="sxs-lookup"><span data-stu-id="4ada6-190">We just approach it from a different point of view.</span></span>
 
-### <a name="checking-for-keys-and-values"></a><span data-ttu-id="20155-191">Recherche de clés et de valeurs</span><span class="sxs-lookup"><span data-stu-id="20155-191">Checking for keys and values</span></span>
+### <a name="checking-for-keys-and-values"></a><span data-ttu-id="4ada6-191">Recherche de clés et de valeurs</span><span class="sxs-lookup"><span data-stu-id="4ada6-191">Checking for keys and values</span></span>
 
-<span data-ttu-id="20155-192">Dans la plupart des cas, vous pouvez simplement tester la valeur avec un nom semblable à celui-ci :</span><span class="sxs-lookup"><span data-stu-id="20155-192">In most cases, you can just test for the value with something like this:</span></span>
+<span data-ttu-id="4ada6-192">Dans la plupart des cas, vous pouvez simplement tester la valeur avec un nom semblable à celui-ci :</span><span class="sxs-lookup"><span data-stu-id="4ada6-192">In most cases, you can just test for the value with something like this:</span></span>
 
 ```powershell
 if( $person.age ){...}
 ```
 
-<span data-ttu-id="20155-193">Bien que simple, cette méthode est une source de nombreuses erreurs pour moi car j’ai négligé un détail important dans ma logique.</span><span class="sxs-lookup"><span data-stu-id="20155-193">It's simple but has been the source of many bugs for me because I was overlooking one important detail in my logic.</span></span> <span data-ttu-id="20155-194">J’ai commencé à l’utiliser pour vérifier la présence d’une clé.</span><span class="sxs-lookup"><span data-stu-id="20155-194">I started to use it to test if a key was present.</span></span> <span data-ttu-id="20155-195">Lorsque la valeur était `$false` ou égale à zéro, cette instruction retournait `$false` de manière inattendue.</span><span class="sxs-lookup"><span data-stu-id="20155-195">When the value was `$false` or zero, that statement would return `$false` unexpectedly.</span></span>
+<span data-ttu-id="4ada6-193">Bien que simple, cette méthode est une source de nombreuses erreurs pour moi car j’ai négligé un détail important dans ma logique.</span><span class="sxs-lookup"><span data-stu-id="4ada6-193">It's simple but has been the source of many bugs for me because I was overlooking one important detail in my logic.</span></span> <span data-ttu-id="4ada6-194">J’ai commencé à l’utiliser pour vérifier la présence d’une clé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-194">I started to use it to test if a key was present.</span></span> <span data-ttu-id="4ada6-195">Lorsque la valeur était `$false` ou égale à zéro, cette instruction retournait `$false` de manière inattendue.</span><span class="sxs-lookup"><span data-stu-id="4ada6-195">When the value was `$false` or zero, that statement would return `$false` unexpectedly.</span></span>
 
 ```powershell
 if( $person.age -ne $null ){...}
 ```
 
-<span data-ttu-id="20155-196">Cette méthode contourne ce problème pour les valeurs zéro, mais pas pour les clés $null et inexistantes.</span><span class="sxs-lookup"><span data-stu-id="20155-196">This works around that issue for zero values but not $null vs non-existent keys.</span></span> <span data-ttu-id="20155-197">La plupart du temps, vous n’avez pas besoin de faire cette distinction, mais il existe des fonctions où cela est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="20155-197">Most of the time you don't need to make that distinction but there are functions for when you do.</span></span>
+<span data-ttu-id="4ada6-196">Cette méthode contourne ce problème pour les valeurs zéro, mais pas pour les clés $null et inexistantes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-196">This works around that issue for zero values but not $null vs non-existent keys.</span></span> <span data-ttu-id="4ada6-197">La plupart du temps, vous n’avez pas besoin de faire cette distinction, mais il existe des fonctions où cela est nécessaire.</span><span class="sxs-lookup"><span data-stu-id="4ada6-197">Most of the time you don't need to make that distinction but there are functions for when you do.</span></span>
 
 ```powershell
 if( $person.ContainsKey('age') ){...}
 ```
 
-<span data-ttu-id="20155-198">Nous disposons également d’une instruction `ContainsValue()` pour le cas où vous devez tester une valeur sans connaître la clé ou itérer l’intégralité de la collection.</span><span class="sxs-lookup"><span data-stu-id="20155-198">We also have a `ContainsValue()` for the situation where you need to test for a value without knowing the key or iterating the whole collection.</span></span>
+<span data-ttu-id="4ada6-198">Nous disposons également d’une instruction `ContainsValue()` pour le cas où vous devez tester une valeur sans connaître la clé ou itérer l’intégralité de la collection.</span><span class="sxs-lookup"><span data-stu-id="4ada6-198">We also have a `ContainsValue()` for the situation where you need to test for a value without knowing the key or iterating the whole collection.</span></span>
 
-### <a name="removing-and-clearing-keys"></a><span data-ttu-id="20155-199">Suppression et effacement de clés</span><span class="sxs-lookup"><span data-stu-id="20155-199">Removing and clearing keys</span></span>
+### <a name="removing-and-clearing-keys"></a><span data-ttu-id="4ada6-199">Suppression et effacement de clés</span><span class="sxs-lookup"><span data-stu-id="4ada6-199">Removing and clearing keys</span></span>
 
-<span data-ttu-id="20155-200">Vous pouvez supprimer des clés à l’aide de la fonction `.Remove()`.</span><span class="sxs-lookup"><span data-stu-id="20155-200">You can remove keys with the `.Remove()` function.</span></span>
+<span data-ttu-id="4ada6-200">Vous pouvez supprimer des clés à l’aide de la fonction `.Remove()`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-200">You can remove keys with the `.Remove()` function.</span></span>
 
 ```powershell
 $person.remove('age')
 ```
 
-<span data-ttu-id="20155-201">L’attribution d’une valeur `$null` a des clés vous laisse une seule clé avec une valeur `$null`.</span><span class="sxs-lookup"><span data-stu-id="20155-201">Assigning them a `$null` value just leaves you with a key that has a `$null` value.</span></span>
+<span data-ttu-id="4ada6-201">L’attribution d’une valeur `$null` a des clés vous laisse une seule clé avec une valeur `$null`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-201">Assigning them a `$null` value just leaves you with a key that has a `$null` value.</span></span>
 
-<span data-ttu-id="20155-202">Une méthode courante pour effacer une table de hachage consiste à l’initialiser simplement afin d’obtenir une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="20155-202">A common way to clear a hashtable is to just initialize it to an empty hashtable.</span></span>
+<span data-ttu-id="4ada6-202">Une méthode courante pour effacer une table de hachage consiste à l’initialiser simplement afin d’obtenir une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="4ada6-202">A common way to clear a hashtable is to just initialize it to an empty hashtable.</span></span>
 
 ```powershell
 $person = @{}
 ```
 
-<span data-ttu-id="20155-203">Bien que cela fonctionne, essayez plutôt d’utiliser la fonction `clear()`.</span><span class="sxs-lookup"><span data-stu-id="20155-203">While that does work, try to use the `clear()` function instead.</span></span>
+<span data-ttu-id="4ada6-203">Bien que cela fonctionne, essayez plutôt d’utiliser la fonction `clear()`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-203">While that does work, try to use the `clear()` function instead.</span></span>
 
 ```powershell
 $person.clear()
 ```
 
-<span data-ttu-id="20155-204">Il s’agit de l’une des instances où l’utilisation de la fonction crée du code autodocumenté et rend les intentions du code très claires.</span><span class="sxs-lookup"><span data-stu-id="20155-204">This is one of those instances where using the function creates self-documenting code and it makes the intentions of the code very clean.</span></span>
+<span data-ttu-id="4ada6-204">Il s’agit de l’une des instances où l’utilisation de la fonction crée du code autodocumenté et rend les intentions du code très claires.</span><span class="sxs-lookup"><span data-stu-id="4ada6-204">This is one of those instances where using the function creates self-documenting code and it makes the intentions of the code very clean.</span></span>
 
-## <a name="all-the-fun-stuff"></a><span data-ttu-id="20155-205">Amusons-nous un peu</span><span class="sxs-lookup"><span data-stu-id="20155-205">All the fun stuff</span></span>
+## <a name="all-the-fun-stuff"></a><span data-ttu-id="4ada6-205">Amusons-nous un peu</span><span class="sxs-lookup"><span data-stu-id="4ada6-205">All the fun stuff</span></span>
 
-### <a name="ordered-hashtables"></a><span data-ttu-id="20155-206">Tables de hachage ordonnées</span><span class="sxs-lookup"><span data-stu-id="20155-206">Ordered hashtables</span></span>
+### <a name="ordered-hashtables"></a><span data-ttu-id="4ada6-206">Tables de hachage ordonnées</span><span class="sxs-lookup"><span data-stu-id="4ada6-206">Ordered hashtables</span></span>
 
-<span data-ttu-id="20155-207">Par défaut, les tables de hachage ne sont pas ordonnées (ou triées).</span><span class="sxs-lookup"><span data-stu-id="20155-207">By default, hashtables aren't ordered (or sorted).</span></span> <span data-ttu-id="20155-208">Dans le contexte traditionnel, l’ordre n’a pas d’importance lorsque vous utilisez toujours une clé pour accéder aux valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-208">In the traditional context, the order doesn't matter when you always use a key to access values.</span></span> <span data-ttu-id="20155-209">Vous souhaiterez peut-être conserver les propriétés dans l’ordre dans lequel vous les définissez.</span><span class="sxs-lookup"><span data-stu-id="20155-209">You may find that you want the properties to stay in the order that you define them.</span></span> <span data-ttu-id="20155-210">Heureusement, il existe un moyen de le faire grâce au mot clé `ordered`.</span><span class="sxs-lookup"><span data-stu-id="20155-210">Thankfully, there's a way to do that with the `ordered` keyword.</span></span>
+<span data-ttu-id="4ada6-207">Par défaut, les tables de hachage ne sont pas ordonnées (ou triées).</span><span class="sxs-lookup"><span data-stu-id="4ada6-207">By default, hashtables aren't ordered (or sorted).</span></span> <span data-ttu-id="4ada6-208">Dans le contexte traditionnel, l’ordre n’a pas d’importance lorsque vous utilisez toujours une clé pour accéder aux valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-208">In the traditional context, the order doesn't matter when you always use a key to access values.</span></span> <span data-ttu-id="4ada6-209">Vous souhaiterez peut-être conserver les propriétés dans l’ordre dans lequel vous les définissez.</span><span class="sxs-lookup"><span data-stu-id="4ada6-209">You may find that you want the properties to stay in the order that you define them.</span></span> <span data-ttu-id="4ada6-210">Heureusement, il existe un moyen de le faire grâce au mot clé `ordered`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-210">Thankfully, there's a way to do that with the `ordered` keyword.</span></span>
 
 ```powershell
 $person = [ordered]@{
@@ -333,21 +333,21 @@ $person = [ordered]@{
 }
 ```
 
-<span data-ttu-id="20155-211">Désormais, lorsque vous énumérez les clés et les valeurs, elles restent dans cet ordre.</span><span class="sxs-lookup"><span data-stu-id="20155-211">Now when you enumerate the keys and values, they stay in that order.</span></span>
+<span data-ttu-id="4ada6-211">Désormais, lorsque vous énumérez les clés et les valeurs, elles restent dans cet ordre.</span><span class="sxs-lookup"><span data-stu-id="4ada6-211">Now when you enumerate the keys and values, they stay in that order.</span></span>
 
-### <a name="inline-hashtables"></a><span data-ttu-id="20155-212">Tables de hachage en ligne</span><span class="sxs-lookup"><span data-stu-id="20155-212">Inline hashtables</span></span>
+### <a name="inline-hashtables"></a><span data-ttu-id="4ada6-212">Tables de hachage en ligne</span><span class="sxs-lookup"><span data-stu-id="4ada6-212">Inline hashtables</span></span>
 
-<span data-ttu-id="20155-213">Lorsque vous définissez une table de hachage sur une ligne, vous pouvez séparer les paires clé/valeur par un point-virgule.</span><span class="sxs-lookup"><span data-stu-id="20155-213">When you're defining a hashtable on one line, you can separate the key/value pairs with a semicolon.</span></span>
+<span data-ttu-id="4ada6-213">Lorsque vous définissez une table de hachage sur une ligne, vous pouvez séparer les paires clé/valeur par un point-virgule.</span><span class="sxs-lookup"><span data-stu-id="4ada6-213">When you're defining a hashtable on one line, you can separate the key/value pairs with a semicolon.</span></span>
 
 ```powershell
 $person = @{ name = 'kevin'; age = 36; }
 ```
 
-<span data-ttu-id="20155-214">Cela s’avère pratique si vous les créez sur le canal.</span><span class="sxs-lookup"><span data-stu-id="20155-214">This will come in handy if you're creating them on the pipe.</span></span>
+<span data-ttu-id="4ada6-214">Cela s’avère pratique si vous les créez sur le canal.</span><span class="sxs-lookup"><span data-stu-id="4ada6-214">This will come in handy if you're creating them on the pipe.</span></span>
 
-### <a name="custom-expressions-in-common-pipeline-commands"></a><span data-ttu-id="20155-215">Expressions personnalisées dans les commandes de pipeline courantes</span><span class="sxs-lookup"><span data-stu-id="20155-215">Custom expressions in common pipeline commands</span></span>
+### <a name="custom-expressions-in-common-pipeline-commands"></a><span data-ttu-id="4ada6-215">Expressions personnalisées dans les commandes de pipeline courantes</span><span class="sxs-lookup"><span data-stu-id="4ada6-215">Custom expressions in common pipeline commands</span></span>
 
-<span data-ttu-id="20155-216">Il existe quelques applets de commande qui prennent en charge l’utilisation de tables de hachage pour créer des propriétés personnalisées ou calculées.</span><span class="sxs-lookup"><span data-stu-id="20155-216">There are a few cmdlets that support the use of hashtables to create custom or calculated properties.</span></span> <span data-ttu-id="20155-217">C’est généralement le cas avec `Select-Object` et `Format-Table`.</span><span class="sxs-lookup"><span data-stu-id="20155-217">You commonly see this with `Select-Object` and `Format-Table`.</span></span> <span data-ttu-id="20155-218">Les tables de hachage comportent une syntaxe spéciale qui ressemble à celle-ci lorsqu’elle est entièrement développée.</span><span class="sxs-lookup"><span data-stu-id="20155-218">The hashtables have a special syntax that looks like this when fully expanded.</span></span>
+<span data-ttu-id="4ada6-216">Il existe quelques applets de commande qui prennent en charge l’utilisation de tables de hachage pour créer des propriétés personnalisées ou calculées.</span><span class="sxs-lookup"><span data-stu-id="4ada6-216">There are a few cmdlets that support the use of hashtables to create custom or calculated properties.</span></span> <span data-ttu-id="4ada6-217">C’est généralement le cas avec `Select-Object` et `Format-Table`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-217">You commonly see this with `Select-Object` and `Format-Table`.</span></span> <span data-ttu-id="4ada6-218">Les tables de hachage comportent une syntaxe spéciale qui ressemble à celle-ci lorsqu’elle est entièrement développée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-218">The hashtables have a special syntax that looks like this when fully expanded.</span></span>
 
 ```powershell
 $property = @{
@@ -356,7 +356,7 @@ $property = @{
 }
 ```
 
-<span data-ttu-id="20155-219">`name` correspond à la façon dont l’applet de commande étiquetterait cette colonne.</span><span class="sxs-lookup"><span data-stu-id="20155-219">The `name` is what the cmdlet would label that column.</span></span> <span data-ttu-id="20155-220">`expression` est un bloc de script exécuté où `$_` est la valeur de l’objet sur le canal.</span><span class="sxs-lookup"><span data-stu-id="20155-220">The `expression` is a script block that is executed where `$_` is the value of the object on the pipe.</span></span> <span data-ttu-id="20155-221">Voici ce script en action :</span><span class="sxs-lookup"><span data-stu-id="20155-221">Here is that script in action:</span></span>
+<span data-ttu-id="4ada6-219">`name` correspond à la façon dont l’applet de commande étiquetterait cette colonne.</span><span class="sxs-lookup"><span data-stu-id="4ada6-219">The `name` is what the cmdlet would label that column.</span></span> <span data-ttu-id="4ada6-220">`expression` est un bloc de script exécuté où `$_` est la valeur de l’objet sur le canal.</span><span class="sxs-lookup"><span data-stu-id="4ada6-220">The `expression` is a script block that is executed where `$_` is the value of the object on the pipe.</span></span> <span data-ttu-id="4ada6-221">Voici ce script en action :</span><span class="sxs-lookup"><span data-stu-id="4ada6-221">Here is that script in action:</span></span>
 
 ```powershell
 $drives = Get-PSDrive | Where Used
@@ -367,27 +367,27 @@ Name     totalSpaceGB
 C    238.472652435303
 ```
 
-<span data-ttu-id="20155-222">Je l’ai placé dans une variable, mais il peut être facilement défini en ligne et vous pouvez raccourcir `name` en `n` et `expression` en `e` à cette étape.</span><span class="sxs-lookup"><span data-stu-id="20155-222">I placed that in a variable but it could easily be defined inline and you can shorten `name` to `n` and `expression` to `e` while you're at it.</span></span>
+<span data-ttu-id="4ada6-222">Je l’ai placé dans une variable, mais il peut être facilement défini en ligne et vous pouvez raccourcir `name` en `n` et `expression` en `e` à cette étape.</span><span class="sxs-lookup"><span data-stu-id="4ada6-222">I placed that in a variable but it could easily be defined inline and you can shorten `name` to `n` and `expression` to `e` while you're at it.</span></span>
 
 ```powershell
 $drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
-<span data-ttu-id="20155-223">Personnellement, je trouve ces commandes un peut trop longues et sources de comportements erronés sur lesquels je ne m’étendrai pas.</span><span class="sxs-lookup"><span data-stu-id="20155-223">I personally don't like how long that makes commands and it often promotes some bad behaviors that I won't get into.</span></span> <span data-ttu-id="20155-224">Je préfère créer une table de hachage ou `pscustomobject` avec tous les champs et propriétés souhaités, au lieu d’utiliser cette approche dans les scripts.</span><span class="sxs-lookup"><span data-stu-id="20155-224">I'm more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts.</span></span> <span data-ttu-id="20155-225">Mais il existe beaucoup de codes capables de le faire, et je tenais à vous en informer.</span><span class="sxs-lookup"><span data-stu-id="20155-225">But there's a lot of code out there that does this so I wanted you to be aware of it.</span></span> <span data-ttu-id="20155-226">Je parlerai de la création d’un objet `pscustomobject` un peu plus tard.</span><span class="sxs-lookup"><span data-stu-id="20155-226">I talk about creating a `pscustomobject` later on.</span></span>
+<span data-ttu-id="4ada6-223">Personnellement, je trouve ces commandes un peut trop longues et sources de comportements erronés sur lesquels je ne m’étendrai pas.</span><span class="sxs-lookup"><span data-stu-id="4ada6-223">I personally don't like how long that makes commands and it often promotes some bad behaviors that I won't get into.</span></span> <span data-ttu-id="4ada6-224">Je préfère créer une table de hachage ou `pscustomobject` avec tous les champs et propriétés souhaités, au lieu d’utiliser cette approche dans les scripts.</span><span class="sxs-lookup"><span data-stu-id="4ada6-224">I'm more likely to create a new hashtable or `pscustomobject` with all the fields and properties that I want instead of using this approach in scripts.</span></span> <span data-ttu-id="4ada6-225">Mais il existe beaucoup de codes capables de le faire, et je tenais à vous en informer.</span><span class="sxs-lookup"><span data-stu-id="4ada6-225">But there's a lot of code out there that does this so I wanted you to be aware of it.</span></span> <span data-ttu-id="4ada6-226">Je parlerai de la création d’un objet `pscustomobject` un peu plus tard.</span><span class="sxs-lookup"><span data-stu-id="4ada6-226">I talk about creating a `pscustomobject` later on.</span></span>
 
-### <a name="custom-sort-expression"></a><span data-ttu-id="20155-227">Expression de tri personnalisée</span><span class="sxs-lookup"><span data-stu-id="20155-227">Custom sort expression</span></span>
+### <a name="custom-sort-expression"></a><span data-ttu-id="4ada6-227">Expression de tri personnalisée</span><span class="sxs-lookup"><span data-stu-id="4ada6-227">Custom sort expression</span></span>
 
-<span data-ttu-id="20155-228">Vous pouvez facilement trier une collection si les objets contiennent les données que vous souhaitez trier.</span><span class="sxs-lookup"><span data-stu-id="20155-228">It's easy to sort a collection if the objects have the data that you want to sort on.</span></span> <span data-ttu-id="20155-229">Vous pouvez soit ajouter les données à l’objet avant de les trier, soit créer une expression personnalisée pour `Sort-Object`.</span><span class="sxs-lookup"><span data-stu-id="20155-229">You can either add the data to the object before you sort it or create a custom expression for `Sort-Object`.</span></span>
+<span data-ttu-id="4ada6-228">Vous pouvez facilement trier une collection si les objets contiennent les données que vous souhaitez trier.</span><span class="sxs-lookup"><span data-stu-id="4ada6-228">It's easy to sort a collection if the objects have the data that you want to sort on.</span></span> <span data-ttu-id="4ada6-229">Vous pouvez soit ajouter les données à l’objet avant de les trier, soit créer une expression personnalisée pour `Sort-Object`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-229">You can either add the data to the object before you sort it or create a custom expression for `Sort-Object`.</span></span>
 
 ```powershell
 Get-ADUser | Sort-Object -Parameter @{ e={ Get-TotalSales $_.Name } }
 ```
 
-<span data-ttu-id="20155-230">Dans cet exemple, je prends une liste d’utilisateurs et j’utilise une applet de commande personnalisée pour obtenir des informations supplémentaires uniquement à des fins de tri.</span><span class="sxs-lookup"><span data-stu-id="20155-230">In this example I'm taking a list of users and using some custom cmdlet to get additional information just for the sort.</span></span>
+<span data-ttu-id="4ada6-230">Dans cet exemple, je prends une liste d’utilisateurs et j’utilise une applet de commande personnalisée pour obtenir des informations supplémentaires uniquement à des fins de tri.</span><span class="sxs-lookup"><span data-stu-id="4ada6-230">In this example I'm taking a list of users and using some custom cmdlet to get additional information just for the sort.</span></span>
 
-#### <a name="sort-a-list-of-hashtables"></a><span data-ttu-id="20155-231">Trier une liste de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-231">Sort a list of Hashtables</span></span>
+#### <a name="sort-a-list-of-hashtables"></a><span data-ttu-id="4ada6-231">Trier une liste de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-231">Sort a list of Hashtables</span></span>
 
-<span data-ttu-id="20155-232">Si vous souhaitez trier une liste de tables de hachage, vous constaterez que `Sort-Object` ne traite pas vos clés comme des propriétés.</span><span class="sxs-lookup"><span data-stu-id="20155-232">If you have a list of hashtables that you want to sort, you'll find that the `Sort-Object` doesn't treat your keys as properties.</span></span> <span data-ttu-id="20155-233">Nous pouvons contourner ce problème à l’aide d’une expression de tri personnalisée.</span><span class="sxs-lookup"><span data-stu-id="20155-233">We can get a round that by using a custom sort expression.</span></span>
+<span data-ttu-id="4ada6-232">Si vous souhaitez trier une liste de tables de hachage, vous constaterez que `Sort-Object` ne traite pas vos clés comme des propriétés.</span><span class="sxs-lookup"><span data-stu-id="4ada6-232">If you have a list of hashtables that you want to sort, you'll find that the `Sort-Object` doesn't treat your keys as properties.</span></span> <span data-ttu-id="4ada6-233">Nous pouvons contourner ce problème à l’aide d’une expression de tri personnalisée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-233">We can get a round that by using a custom sort expression.</span></span>
 
 ```powershell
 $data = @(
@@ -402,17 +402,17 @@ $data = @(
 $data | Sort-Object -Property @{e={$_.name}}
 ```
 
-## <a name="splatting-hashtables-at-cmdlets"></a><span data-ttu-id="20155-234">Projection de tables de hachage au niveau d’applets de commande</span><span class="sxs-lookup"><span data-stu-id="20155-234">Splatting hashtables at cmdlets</span></span>
+## <a name="splatting-hashtables-at-cmdlets"></a><span data-ttu-id="4ada6-234">Projection de tables de hachage au niveau d’applets de commande</span><span class="sxs-lookup"><span data-stu-id="4ada6-234">Splatting hashtables at cmdlets</span></span>
 
-<span data-ttu-id="20155-235">C’est l’un de mes aspects préférés concernant les tables de hachage, et beaucoup d’utilisateurs n’en sont pas tout de suite conscients.</span><span class="sxs-lookup"><span data-stu-id="20155-235">This is one of my favorite things about hashtables that many people don't discover early on.</span></span>
-<span data-ttu-id="20155-236">L’idée est que, au lieu de fournir toutes les propriétés à une applet de commande sur une seule ligne, vous pouvez d’abord les empaqueter dans une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-236">The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first.</span></span> <span data-ttu-id="20155-237">Vous pouvez ensuite fournir la table de hachage à la fonction d’une façon spéciale.</span><span class="sxs-lookup"><span data-stu-id="20155-237">Then you can give the hashtable to the function in a special way.</span></span>
-<span data-ttu-id="20155-238">Voici un exemple de création d’une étendue DHCP de manière normale.</span><span class="sxs-lookup"><span data-stu-id="20155-238">Here is an example of creating a DHCP scope the normal way.</span></span>
+<span data-ttu-id="4ada6-235">C’est l’un de mes aspects préférés concernant les tables de hachage, et beaucoup d’utilisateurs n’en sont pas tout de suite conscients.</span><span class="sxs-lookup"><span data-stu-id="4ada6-235">This is one of my favorite things about hashtables that many people don't discover early on.</span></span>
+<span data-ttu-id="4ada6-236">L’idée est que, au lieu de fournir toutes les propriétés à une applet de commande sur une seule ligne, vous pouvez d’abord les empaqueter dans une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-236">The idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack them into a hashtable first.</span></span> <span data-ttu-id="4ada6-237">Vous pouvez ensuite fournir la table de hachage à la fonction d’une façon spéciale.</span><span class="sxs-lookup"><span data-stu-id="4ada6-237">Then you can give the hashtable to the function in a special way.</span></span>
+<span data-ttu-id="4ada6-238">Voici un exemple de création d’une étendue DHCP de manière normale.</span><span class="sxs-lookup"><span data-stu-id="4ada6-238">Here is an example of creating a DHCP scope the normal way.</span></span>
 
 ```powershell
 Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 ```
 
-<span data-ttu-id="20155-239">Si vous n’utilisez aucune [projection][], tous ces éléments doivent être définis sur une seule ligne.</span><span class="sxs-lookup"><span data-stu-id="20155-239">Without using [splatting][], all those things need to be defined on a single line.</span></span> <span data-ttu-id="20155-240">Cela permet de faire défiler l’écran ou d’encapsuler les éléments là où vous le souhaitez.</span><span class="sxs-lookup"><span data-stu-id="20155-240">It either scrolls off the screen or will wrap where ever it feels like.</span></span> <span data-ttu-id="20155-241">Comparez maintenant cela à une commande qui utilise la projection.</span><span class="sxs-lookup"><span data-stu-id="20155-241">Now compare that to a command that uses splatting.</span></span>
+<span data-ttu-id="4ada6-239">Si vous n’utilisez aucune [projection][], tous ces éléments doivent être définis sur une seule ligne.</span><span class="sxs-lookup"><span data-stu-id="4ada6-239">Without using [splatting][], all those things need to be defined on a single line.</span></span> <span data-ttu-id="4ada6-240">Cela permet de faire défiler l’écran ou d’encapsuler les éléments là où vous le souhaitez.</span><span class="sxs-lookup"><span data-stu-id="4ada6-240">It either scrolls off the screen or will wrap where ever it feels like.</span></span> <span data-ttu-id="4ada6-241">Comparez maintenant cela à une commande qui utilise la projection.</span><span class="sxs-lookup"><span data-stu-id="4ada6-241">Now compare that to a command that uses splatting.</span></span>
 
 ```powershell
 $DHCPScope = @{
@@ -427,15 +427,15 @@ $DHCPScope = @{
 Add-DhcpServerv4Scope @DHCPScope
 ```
 
-<span data-ttu-id="20155-242">L’utilisation du signe `@` à la place de `$` appelle l’opération de projection.</span><span class="sxs-lookup"><span data-stu-id="20155-242">The use of the `@` sign instead of the `$` is what invokes the splat operation.</span></span>
+<span data-ttu-id="4ada6-242">L’utilisation du signe `@` à la place de `$` appelle l’opération de projection.</span><span class="sxs-lookup"><span data-stu-id="4ada6-242">The use of the `@` sign instead of the `$` is what invokes the splat operation.</span></span>
 
-<span data-ttu-id="20155-243">Prenez quelques instants pour apprécier la lisibilité de cet exemple.</span><span class="sxs-lookup"><span data-stu-id="20155-243">Just take a moment to appreciate how easy that example is to read.</span></span> <span data-ttu-id="20155-244">Cette commande est identique pour toutes les valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-244">They are the exact same command with all the same values.</span></span> <span data-ttu-id="20155-245">La deuxième est plus facile à comprendre et à gérer à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="20155-245">The second one is easier to understand and maintain going forward.</span></span>
+<span data-ttu-id="4ada6-243">Prenez quelques instants pour apprécier la lisibilité de cet exemple.</span><span class="sxs-lookup"><span data-stu-id="4ada6-243">Just take a moment to appreciate how easy that example is to read.</span></span> <span data-ttu-id="4ada6-244">Cette commande est identique pour toutes les valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-244">They are the exact same command with all the same values.</span></span> <span data-ttu-id="4ada6-245">La deuxième est plus facile à comprendre et à gérer à l’avenir.</span><span class="sxs-lookup"><span data-stu-id="4ada6-245">The second one is easier to understand and maintain going forward.</span></span>
 
-<span data-ttu-id="20155-246">J’utilise la projection chaque fois que la commande devient trop longue.</span><span class="sxs-lookup"><span data-stu-id="20155-246">I use splatting anytime the command gets too long.</span></span> <span data-ttu-id="20155-247">Trop longue signifie que je dois faire défiler la fenêtre vers la droite.</span><span class="sxs-lookup"><span data-stu-id="20155-247">I define too long as causing my window to scroll right.</span></span> <span data-ttu-id="20155-248">Si j’atteins trois propriétés pour une fonction, il est probable que je les réécrive à l’aide d’une table de hachage projetée.</span><span class="sxs-lookup"><span data-stu-id="20155-248">If I hit three properties for a function, odds are that I'll rewrite it using a splatted hashtable.</span></span>
+<span data-ttu-id="4ada6-246">J’utilise la projection chaque fois que la commande devient trop longue.</span><span class="sxs-lookup"><span data-stu-id="4ada6-246">I use splatting anytime the command gets too long.</span></span> <span data-ttu-id="4ada6-247">Trop longue signifie que je dois faire défiler la fenêtre vers la droite.</span><span class="sxs-lookup"><span data-stu-id="4ada6-247">I define too long as causing my window to scroll right.</span></span> <span data-ttu-id="4ada6-248">Si j’atteins trois propriétés pour une fonction, il est probable que je les réécrive à l’aide d’une table de hachage projetée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-248">If I hit three properties for a function, odds are that I'll rewrite it using a splatted hashtable.</span></span>
 
-### <a name="splatting-for-optional-parameters"></a><span data-ttu-id="20155-249">Projection de paramètres optionnels</span><span class="sxs-lookup"><span data-stu-id="20155-249">Splatting for optional parameters</span></span>
+### <a name="splatting-for-optional-parameters"></a><span data-ttu-id="4ada6-249">Projection de paramètres optionnels</span><span class="sxs-lookup"><span data-stu-id="4ada6-249">Splatting for optional parameters</span></span>
 
-<span data-ttu-id="20155-250">L’une des méthodes les plus courantes d’utilisation de la projection consiste à gérer des paramètres facultatifs provenant d’autres emplacements dans mon script.</span><span class="sxs-lookup"><span data-stu-id="20155-250">One of the most common ways I use splatting is to deal with optional parameters that come from some place else in my script.</span></span> <span data-ttu-id="20155-251">Imaginons une fonction qui encapsule un appel `Get-CIMInstance` avec un argument `$Credential` facultatif.</span><span class="sxs-lookup"><span data-stu-id="20155-251">Let's say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.</span></span>
+<span data-ttu-id="4ada6-250">L’une des méthodes les plus courantes d’utilisation de la projection consiste à gérer des paramètres facultatifs provenant d’autres emplacements dans mon script.</span><span class="sxs-lookup"><span data-stu-id="4ada6-250">One of the most common ways I use splatting is to deal with optional parameters that come from some place else in my script.</span></span> <span data-ttu-id="4ada6-251">Imaginons une fonction qui encapsule un appel `Get-CIMInstance` avec un argument `$Credential` facultatif.</span><span class="sxs-lookup"><span data-stu-id="4ada6-251">Let's say I have a function that wraps a `Get-CIMInstance` call that has an optional `$Credential` argument.</span></span>
 
 ```powershell
 $CIMParams = @{
@@ -451,14 +451,14 @@ if($Credential)
 Get-CIMInstance @CIMParams
 ```
 
-<span data-ttu-id="20155-252">Je commence par créer ma table de hachage avec des paramètres communs.</span><span class="sxs-lookup"><span data-stu-id="20155-252">I start by creating my hashtable with common parameters.</span></span> <span data-ttu-id="20155-253">Puis j’ajoute l’élément `$Credential`, s’il existe.</span><span class="sxs-lookup"><span data-stu-id="20155-253">Then I add the `$Credential` if it exists.</span></span>
-<span data-ttu-id="20155-254">Comme j’utilise ici la projection, je n’ai besoin de l’appel à `Get-CIMInstance` dans mon code qu’une seule fois.</span><span class="sxs-lookup"><span data-stu-id="20155-254">Because I'm using splatting here, I only need to have the call to `Get-CIMInstance` in my code once.</span></span> <span data-ttu-id="20155-255">Ce modèle de conception est très clair et permet de gérer facilement un grand nombre de paramètres facultatifs.</span><span class="sxs-lookup"><span data-stu-id="20155-255">This design pattern is very clean and can handle lots of optional parameters easily.</span></span>
+<span data-ttu-id="4ada6-252">Je commence par créer ma table de hachage avec des paramètres communs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-252">I start by creating my hashtable with common parameters.</span></span> <span data-ttu-id="4ada6-253">Puis j’ajoute l’élément `$Credential`, s’il existe.</span><span class="sxs-lookup"><span data-stu-id="4ada6-253">Then I add the `$Credential` if it exists.</span></span>
+<span data-ttu-id="4ada6-254">Comme j’utilise ici la projection, je n’ai besoin de l’appel à `Get-CIMInstance` dans mon code qu’une seule fois.</span><span class="sxs-lookup"><span data-stu-id="4ada6-254">Because I'm using splatting here, I only need to have the call to `Get-CIMInstance` in my code once.</span></span> <span data-ttu-id="4ada6-255">Ce modèle de conception est très clair et permet de gérer facilement un grand nombre de paramètres facultatifs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-255">This design pattern is very clean and can handle lots of optional parameters easily.</span></span>
 
-<span data-ttu-id="20155-256">Pour être honnête, vous pouvez écrire vos commandes et autoriser ainsi des valeurs `$null` dans les paramètres.</span><span class="sxs-lookup"><span data-stu-id="20155-256">To be fair, you could write your commands to allow `$null` values for parameters.</span></span> <span data-ttu-id="20155-257">Vous n’avez tout simplement pas le contrôle sur les autres commandes que vous appelez.</span><span class="sxs-lookup"><span data-stu-id="20155-257">You just don't always have control over the other commands you're calling.</span></span>
+<span data-ttu-id="4ada6-256">Pour être honnête, vous pouvez écrire vos commandes et autoriser ainsi des valeurs `$null` dans les paramètres.</span><span class="sxs-lookup"><span data-stu-id="4ada6-256">To be fair, you could write your commands to allow `$null` values for parameters.</span></span> <span data-ttu-id="4ada6-257">Vous n’avez tout simplement pas le contrôle sur les autres commandes que vous appelez.</span><span class="sxs-lookup"><span data-stu-id="4ada6-257">You just don't always have control over the other commands you're calling.</span></span>
 
-### <a name="multiple-splats"></a><span data-ttu-id="20155-258">Projections multiples</span><span class="sxs-lookup"><span data-stu-id="20155-258">Multiple splats</span></span>
+### <a name="multiple-splats"></a><span data-ttu-id="4ada6-258">Projections multiples</span><span class="sxs-lookup"><span data-stu-id="4ada6-258">Multiple splats</span></span>
 
-<span data-ttu-id="20155-259">Vous pouvez projeter plusieurs tables de hachage dans la même applet de commande.</span><span class="sxs-lookup"><span data-stu-id="20155-259">You can splat multiple hashtables to the same cmdlet.</span></span> <span data-ttu-id="20155-260">Si nous revenons à notre exemple de projection d’origine :</span><span class="sxs-lookup"><span data-stu-id="20155-260">If we revisit our original splatting example:</span></span>
+<span data-ttu-id="4ada6-259">Vous pouvez projeter plusieurs tables de hachage dans la même applet de commande.</span><span class="sxs-lookup"><span data-stu-id="4ada6-259">You can splat multiple hashtables to the same cmdlet.</span></span> <span data-ttu-id="4ada6-260">Si nous revenons à notre exemple de projection d’origine :</span><span class="sxs-lookup"><span data-stu-id="4ada6-260">If we revisit our original splatting example:</span></span>
 
 ```powershell
 $Common = @{
@@ -477,41 +477,41 @@ $DHCPScope = @{
 Add-DhcpServerv4Scope @DHCPScope @Common
 ```
 
-<span data-ttu-id="20155-261">Je vais utiliser cette méthode avec un ensemble commun de paramètres que je passe à un grand nombre de commandes.</span><span class="sxs-lookup"><span data-stu-id="20155-261">I'll use this method when I have a common set of parameters that I'm passing to lots of commands.</span></span>
+<span data-ttu-id="4ada6-261">Je vais utiliser cette méthode avec un ensemble commun de paramètres que je passe à un grand nombre de commandes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-261">I'll use this method when I have a common set of parameters that I'm passing to lots of commands.</span></span>
 
-### <a name="splatting-for-clean-code"></a><span data-ttu-id="20155-262">Projection pour un code propre</span><span class="sxs-lookup"><span data-stu-id="20155-262">Splatting for clean code</span></span>
+### <a name="splatting-for-clean-code"></a><span data-ttu-id="4ada6-262">Projection pour un code propre</span><span class="sxs-lookup"><span data-stu-id="4ada6-262">Splatting for clean code</span></span>
 
-<span data-ttu-id="20155-263">Vous pouvez tout à fait effectuer une projection d’un seul paramètre si vous améliorez le code.</span><span class="sxs-lookup"><span data-stu-id="20155-263">There's nothing wrong with splatting a single parameter if makes you code cleaner.</span></span>
+<span data-ttu-id="4ada6-263">Vous pouvez tout à fait effectuer une projection d’un seul paramètre si vous améliorez le code.</span><span class="sxs-lookup"><span data-stu-id="4ada6-263">There's nothing wrong with splatting a single parameter if makes you code cleaner.</span></span>
 
 ```powershell
 $log = @{Path = '.\logfile.log'}
 Add-Content "logging this command" @log
 ```
 
-### <a name="splatting-executables"></a><span data-ttu-id="20155-264">Projection d’exécutables</span><span class="sxs-lookup"><span data-stu-id="20155-264">Splatting executables</span></span>
+### <a name="splatting-executables"></a><span data-ttu-id="4ada6-264">Projection d’exécutables</span><span class="sxs-lookup"><span data-stu-id="4ada6-264">Splatting executables</span></span>
 
-<span data-ttu-id="20155-265">La projection fonctionne également sur certains exécutables qui utilisent une syntaxe de type `/param:value`.</span><span class="sxs-lookup"><span data-stu-id="20155-265">Splatting also works on some executables that use a `/param:value` syntax.</span></span> <span data-ttu-id="20155-266">`Robocopy.exe`, par exemple, possède des paramètres tels que celui-ci.</span><span class="sxs-lookup"><span data-stu-id="20155-266">`Robocopy.exe`, for example, has some parameters like this.</span></span>
+<span data-ttu-id="4ada6-265">La projection fonctionne également sur certains exécutables qui utilisent une syntaxe de type `/param:value`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-265">Splatting also works on some executables that use a `/param:value` syntax.</span></span> <span data-ttu-id="4ada6-266">`Robocopy.exe`, par exemple, possède des paramètres tels que celui-ci.</span><span class="sxs-lookup"><span data-stu-id="4ada6-266">`Robocopy.exe`, for example, has some parameters like this.</span></span>
 
 ```powershell
 $robo = @{R=1;W=1;MT=8}
 robocopy source destination @robo
 ```
 
-<span data-ttu-id="20155-267">J’ignore si tout cela est vraiment utile, mais c’est assez intéressant.</span><span class="sxs-lookup"><span data-stu-id="20155-267">I don't know that this is all that useful, but I found it interesting.</span></span>
+<span data-ttu-id="4ada6-267">J’ignore si tout cela est vraiment utile, mais c’est assez intéressant.</span><span class="sxs-lookup"><span data-stu-id="4ada6-267">I don't know that this is all that useful, but I found it interesting.</span></span>
 
-## <a name="adding-hashtables"></a><span data-ttu-id="20155-268">Ajout de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-268">Adding hashtables</span></span>
+## <a name="adding-hashtables"></a><span data-ttu-id="4ada6-268">Ajout de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-268">Adding hashtables</span></span>
 
-<span data-ttu-id="20155-269">Les tables de hachage prennent en charge l’opérateur d’addition pour combiner deux tables de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-269">Hashtables support the addition operator to combine two hashtables.</span></span>
+<span data-ttu-id="4ada6-269">Les tables de hachage prennent en charge l’opérateur d’addition pour combiner deux tables de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-269">Hashtables support the addition operator to combine two hashtables.</span></span>
 
 ```powershell
 $person += @{Zip = '78701'}
 ```
 
-<span data-ttu-id="20155-270">Cette approche fonctionne uniquement si les deux tables de hachage ne partagent aucune clé.</span><span class="sxs-lookup"><span data-stu-id="20155-270">This only works if the two hashtables don't share a key.</span></span>
+<span data-ttu-id="4ada6-270">Cette approche fonctionne uniquement si les deux tables de hachage ne partagent aucune clé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-270">This only works if the two hashtables don't share a key.</span></span>
 
-## <a name="nested-hashtables"></a><span data-ttu-id="20155-271">Tables de hachage imbriquées</span><span class="sxs-lookup"><span data-stu-id="20155-271">Nested hashtables</span></span>
+## <a name="nested-hashtables"></a><span data-ttu-id="4ada6-271">Tables de hachage imbriquées</span><span class="sxs-lookup"><span data-stu-id="4ada6-271">Nested hashtables</span></span>
 
-<span data-ttu-id="20155-272">Nous pouvons utiliser des tables de hachage comme valeurs à l’intérieur d’une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-272">We can use hashtables as values inside a hashtable.</span></span>
+<span data-ttu-id="4ada6-272">Nous pouvons utiliser des tables de hachage comme valeurs à l’intérieur d’une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-272">We can use hashtables as values inside a hashtable.</span></span>
 
 ```powershell
 $person = @{
@@ -523,7 +523,7 @@ $person.location.city = 'Austin'
 $person.location.state = 'TX'
 ```
 
-<span data-ttu-id="20155-273">J’ai commencé avec une table de hachage de base contenant deux clés.</span><span class="sxs-lookup"><span data-stu-id="20155-273">I started with a basic hashtable containing two keys.</span></span> <span data-ttu-id="20155-274">J’ai ajouté une clé nommée `location` avec une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="20155-274">I added a key called `location` with an empty hashtable.</span></span> <span data-ttu-id="20155-275">J’ai ensuite ajouté les deux derniers éléments à cette table de hachage `location`.</span><span class="sxs-lookup"><span data-stu-id="20155-275">Then I added the last two items to that `location` hashtable.</span></span> <span data-ttu-id="20155-276">Nous pouvons également effectuer toute cette procédure en ligne.</span><span class="sxs-lookup"><span data-stu-id="20155-276">We can do this all inline too.</span></span>
+<span data-ttu-id="4ada6-273">J’ai commencé avec une table de hachage de base contenant deux clés.</span><span class="sxs-lookup"><span data-stu-id="4ada6-273">I started with a basic hashtable containing two keys.</span></span> <span data-ttu-id="4ada6-274">J’ai ajouté une clé nommée `location` avec une table de hachage vide.</span><span class="sxs-lookup"><span data-stu-id="4ada6-274">I added a key called `location` with an empty hashtable.</span></span> <span data-ttu-id="4ada6-275">J’ai ensuite ajouté les deux derniers éléments à cette table de hachage `location`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-275">Then I added the last two items to that `location` hashtable.</span></span> <span data-ttu-id="4ada6-276">Nous pouvons également effectuer toute cette procédure en ligne.</span><span class="sxs-lookup"><span data-stu-id="4ada6-276">We can do this all inline too.</span></span>
 
 ```powershell
 $person = @{
@@ -536,14 +536,14 @@ $person = @{
 }
 ```
 
-<span data-ttu-id="20155-277">Cela crée la même table de hachage que celle que nous étudiée ci-dessus et nous pouvons accéder aux propriétés de la même façon.</span><span class="sxs-lookup"><span data-stu-id="20155-277">This creates the same hashtable that we saw above and can access the properties the same way.</span></span>
+<span data-ttu-id="4ada6-277">Cela crée la même table de hachage que celle que nous étudiée ci-dessus et nous pouvons accéder aux propriétés de la même façon.</span><span class="sxs-lookup"><span data-stu-id="4ada6-277">This creates the same hashtable that we saw above and can access the properties the same way.</span></span>
 
 ```powershell
 $person.location.city
 Austin
 ```
 
-<span data-ttu-id="20155-278">Il existe de nombreuses façons d’aborder la structure de vos objets.</span><span class="sxs-lookup"><span data-stu-id="20155-278">There are many ways to approach the structure of your objects.</span></span> <span data-ttu-id="20155-279">Voici une deuxième façon de regarder une table de hachage imbriquée.</span><span class="sxs-lookup"><span data-stu-id="20155-279">Here is a second way to look at a nested hashtable.</span></span>
+<span data-ttu-id="4ada6-278">Il existe de nombreuses façons d’aborder la structure de vos objets.</span><span class="sxs-lookup"><span data-stu-id="4ada6-278">There are many ways to approach the structure of your objects.</span></span> <span data-ttu-id="4ada6-279">Voici une deuxième façon de regarder une table de hachage imbriquée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-279">Here is a second way to look at a nested hashtable.</span></span>
 
 ```powershell
 $people = @{
@@ -558,7 +558,7 @@ $people = @{
 }
 ```
 
-<span data-ttu-id="20155-280">Cette méthode combine le concept d’utilisation de tables de hachage comme une collection d’objets et une collection de propriétés.</span><span class="sxs-lookup"><span data-stu-id="20155-280">This mixes the concept of using hashtables as a collection of objects and a collection of properties.</span></span> <span data-ttu-id="20155-281">Les valeurs restent facilement accessibles, même lorsqu’elles sont imbriquées à l’aide de l’approche de votre choix.</span><span class="sxs-lookup"><span data-stu-id="20155-281">The values are still easy to access even when they're nested using whatever approach you prefer.</span></span>
+<span data-ttu-id="4ada6-280">Cette méthode combine le concept d’utilisation de tables de hachage comme une collection d’objets et une collection de propriétés.</span><span class="sxs-lookup"><span data-stu-id="4ada6-280">This mixes the concept of using hashtables as a collection of objects and a collection of properties.</span></span> <span data-ttu-id="4ada6-281">Les valeurs restent facilement accessibles, même lorsqu’elles sont imbriquées à l’aide de l’approche de votre choix.</span><span class="sxs-lookup"><span data-stu-id="4ada6-281">The values are still easy to access even when they're nested using whatever approach you prefer.</span></span>
 
 ```powershell
 PS> $people.kevin.age
@@ -571,7 +571,7 @@ PS> $people['Alex']['City']
 Austin
 ```
 
-<span data-ttu-id="20155-282">J’ai tendance à utiliser la propriété dot lorsque je la traite comme une propriété.</span><span class="sxs-lookup"><span data-stu-id="20155-282">I tend to use the dot property when I'm treating it like a property.</span></span> <span data-ttu-id="20155-283">Il s’agit généralement d’éléments qui me viennent à l’esprit et que j’ai définis de manière statique dans mon code.</span><span class="sxs-lookup"><span data-stu-id="20155-283">Those are generally things I've defined statically in my code and I know them off the top of my head.</span></span> <span data-ttu-id="20155-284">Si je dois parcourir la liste ou accéder par programmation aux clés, j’utilise les crochets pour fournir le nom de la clé.</span><span class="sxs-lookup"><span data-stu-id="20155-284">If I need to walk the list or programmatically access the keys, I use the brackets to provide the key name.</span></span>
+<span data-ttu-id="4ada6-282">J’ai tendance à utiliser la propriété dot lorsque je la traite comme une propriété.</span><span class="sxs-lookup"><span data-stu-id="4ada6-282">I tend to use the dot property when I'm treating it like a property.</span></span> <span data-ttu-id="4ada6-283">Il s’agit généralement d’éléments qui me viennent à l’esprit et que j’ai définis de manière statique dans mon code.</span><span class="sxs-lookup"><span data-stu-id="4ada6-283">Those are generally things I've defined statically in my code and I know them off the top of my head.</span></span> <span data-ttu-id="4ada6-284">Si je dois parcourir la liste ou accéder par programmation aux clés, j’utilise les crochets pour fournir le nom de la clé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-284">If I need to walk the list or programmatically access the keys, I use the brackets to provide the key name.</span></span>
 
 ```powershell
 foreach($name in $people.keys)
@@ -581,11 +581,11 @@ foreach($name in $people.keys)
 }
 ```
 
-<span data-ttu-id="20155-285">La possibilité d’imbriquer des tables de hachage vous offre beaucoup de flexibilité et d’options.</span><span class="sxs-lookup"><span data-stu-id="20155-285">Having the ability to nest hashtables gives you a lot of flexibility and options.</span></span>
+<span data-ttu-id="4ada6-285">La possibilité d’imbriquer des tables de hachage vous offre beaucoup de flexibilité et d’options.</span><span class="sxs-lookup"><span data-stu-id="4ada6-285">Having the ability to nest hashtables gives you a lot of flexibility and options.</span></span>
 
-### <a name="looking-at-nested-hashtables"></a><span data-ttu-id="20155-286">Examen des tables de hachage imbriquées</span><span class="sxs-lookup"><span data-stu-id="20155-286">Looking at nested hashtables</span></span>
+### <a name="looking-at-nested-hashtables"></a><span data-ttu-id="4ada6-286">Examen des tables de hachage imbriquées</span><span class="sxs-lookup"><span data-stu-id="4ada6-286">Looking at nested hashtables</span></span>
 
-<span data-ttu-id="20155-287">Dès que vous commencez à imbriquer des tables de hachage, vous aurez besoin d’une méthode simple pour les examiner à partir de la console.</span><span class="sxs-lookup"><span data-stu-id="20155-287">As soon as you start nesting hashtables, you're going to need an easy way to look at them from the console.</span></span> <span data-ttu-id="20155-288">Si je sélectionne la dernière table de hachage, j’obtiens une sortie semblable à celle-ci :</span><span class="sxs-lookup"><span data-stu-id="20155-288">If I take that last hashtable, I get an output that looks like this and it only goes so deep:</span></span>
+<span data-ttu-id="4ada6-287">Dès que vous commencez à imbriquer des tables de hachage, vous aurez besoin d’une méthode simple pour les examiner à partir de la console.</span><span class="sxs-lookup"><span data-stu-id="4ada6-287">As soon as you start nesting hashtables, you're going to need an easy way to look at them from the console.</span></span> <span data-ttu-id="4ada6-288">Si je sélectionne la dernière table de hachage, j’obtiens une sortie semblable à celle-ci :</span><span class="sxs-lookup"><span data-stu-id="4ada6-288">If I take that last hashtable, I get an output that looks like this and it only goes so deep:</span></span>
 
 ```powershell
 PS> $people
@@ -595,7 +595,7 @@ Kevin                          {age, city}
 Alex                           {age, city}
 ```
 
-<span data-ttu-id="20155-289">Ma commande préférée pour examiner ces éléments est `ConvertTo-JSON` car elle est très claire, et j’utilise fréquemment JSON pour d’autres choses.</span><span class="sxs-lookup"><span data-stu-id="20155-289">My go to command for looking at these things is `ConvertTo-JSON` because it's very clean and I frequently use JSON on other things.</span></span>
+<span data-ttu-id="4ada6-289">Ma commande préférée pour examiner ces éléments est `ConvertTo-JSON` car elle est très claire, et j’utilise fréquemment JSON pour d’autres choses.</span><span class="sxs-lookup"><span data-stu-id="4ada6-289">My go to command for looking at these things is `ConvertTo-JSON` because it's very clean and I frequently use JSON on other things.</span></span>
 
 ```powershell
 PS> $people | ConvertTo-Json
@@ -611,11 +611,11 @@ PS> $people | ConvertTo-Json
 }
 ```
 
-<span data-ttu-id="20155-290">Même si vous ne connaissez pas JSON, vous devriez trouver ce que vous recherchez.</span><span class="sxs-lookup"><span data-stu-id="20155-290">Even if you don't know JSON, you should be able to see what you're looking for.</span></span> <span data-ttu-id="20155-291">Il existe une commande `Format-Custom` pour les données structurées comme celle-ci, mais je préfère néanmoins la méthode JSON.</span><span class="sxs-lookup"><span data-stu-id="20155-291">There's a `Format-Custom` command for structured data like this but I still like the JSON view better.</span></span>
+<span data-ttu-id="4ada6-290">Même si vous ne connaissez pas JSON, vous devriez trouver ce que vous recherchez.</span><span class="sxs-lookup"><span data-stu-id="4ada6-290">Even if you don't know JSON, you should be able to see what you're looking for.</span></span> <span data-ttu-id="4ada6-291">Il existe une commande `Format-Custom` pour les données structurées comme celle-ci, mais je préfère néanmoins la méthode JSON.</span><span class="sxs-lookup"><span data-stu-id="4ada6-291">There's a `Format-Custom` command for structured data like this but I still like the JSON view better.</span></span>
 
-## <a name="creating-objects"></a><span data-ttu-id="20155-292">Création d'objets</span><span class="sxs-lookup"><span data-stu-id="20155-292">Creating objects</span></span>
+## <a name="creating-objects"></a><span data-ttu-id="4ada6-292">Création d'objets</span><span class="sxs-lookup"><span data-stu-id="4ada6-292">Creating objects</span></span>
 
-<span data-ttu-id="20155-293">Parfois, vous n’avez besoin que d’un objet, et utiliser une table de hachage pour y conserver des propriétés ne répond pas à vos besoins.</span><span class="sxs-lookup"><span data-stu-id="20155-293">Sometimes you just need to have an object and using a hashtable to hold properties just isn't getting the job done.</span></span> <span data-ttu-id="20155-294">Le plus souvent, vous souhaitez afficher les clés en tant que noms de colonne.</span><span class="sxs-lookup"><span data-stu-id="20155-294">Most commonly you want to see the keys as column names.</span></span> <span data-ttu-id="20155-295">C’est facile avec l’élément `pscustomobject`.</span><span class="sxs-lookup"><span data-stu-id="20155-295">A `pscustomobject` makes that easy.</span></span>
+<span data-ttu-id="4ada6-293">Parfois, vous n’avez besoin que d’un objet, et utiliser une table de hachage pour y conserver des propriétés ne répond pas à vos besoins.</span><span class="sxs-lookup"><span data-stu-id="4ada6-293">Sometimes you just need to have an object and using a hashtable to hold properties just isn't getting the job done.</span></span> <span data-ttu-id="4ada6-294">Le plus souvent, vous souhaitez afficher les clés en tant que noms de colonne.</span><span class="sxs-lookup"><span data-stu-id="4ada6-294">Most commonly you want to see the keys as column names.</span></span> <span data-ttu-id="4ada6-295">C’est facile avec l’élément `pscustomobject`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-295">A `pscustomobject` makes that easy.</span></span>
 
 ```powershell
 $person = [pscustomobject]@{
@@ -630,7 +630,7 @@ name  age
 Kevin  36
 ```
 
-<span data-ttu-id="20155-296">Même si vous ne le créez pas en tant que `pscustomobject` initialement, vous pouvez toujours le convertir ultérieurement si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="20155-296">Even if you don't create it as a `pscustomobject` initially, you can always cast it later when needed.</span></span>
+<span data-ttu-id="4ada6-296">Même si vous ne le créez pas en tant que `pscustomobject` initialement, vous pouvez toujours le convertir ultérieurement si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="4ada6-296">Even if you don't create it as a `pscustomobject` initially, you can always cast it later when needed.</span></span>
 
 ```powershell
 $person = @{
@@ -645,32 +645,32 @@ name  age
 Kevin  36
 ```
 
-<span data-ttu-id="20155-297">J’ai déjà écrit un article détaillé concernant [pscustomobject][], que vous je vous conseille de lire après celui-ci.</span><span class="sxs-lookup"><span data-stu-id="20155-297">I already have detailed write-up for [pscustomobject][] that you should go read after this one.</span></span> <span data-ttu-id="20155-298">Il s’appuie sur un grand nombre des éléments appris ici.</span><span class="sxs-lookup"><span data-stu-id="20155-298">It builds on a lot of the things learned here.</span></span>
+<span data-ttu-id="4ada6-297">J’ai déjà écrit un article détaillé concernant [pscustomobject][], que vous je vous conseille de lire après celui-ci.</span><span class="sxs-lookup"><span data-stu-id="4ada6-297">I already have detailed write-up for [pscustomobject][] that you should go read after this one.</span></span> <span data-ttu-id="4ada6-298">Il s’appuie sur un grand nombre des éléments appris ici.</span><span class="sxs-lookup"><span data-stu-id="4ada6-298">It builds on a lot of the things learned here.</span></span>
 
-## <a name="reading-and-writing-hashtables-to-file"></a><span data-ttu-id="20155-299">Lecture et écriture de tables de hachage dans un fichier</span><span class="sxs-lookup"><span data-stu-id="20155-299">Reading and writing hashtables to file</span></span>
+## <a name="reading-and-writing-hashtables-to-file"></a><span data-ttu-id="4ada6-299">Lecture et écriture de tables de hachage dans un fichier</span><span class="sxs-lookup"><span data-stu-id="4ada6-299">Reading and writing hashtables to file</span></span>
 
-### <a name="saving-to-csv"></a><span data-ttu-id="20155-300">Enregistrement au format CSV</span><span class="sxs-lookup"><span data-stu-id="20155-300">Saving to CSV</span></span>
+### <a name="saving-to-csv"></a><span data-ttu-id="4ada6-300">Enregistrement au format CSV</span><span class="sxs-lookup"><span data-stu-id="4ada6-300">Saving to CSV</span></span>
 
-<span data-ttu-id="20155-301">L’utilisation d’une table de hachage pour l’enregistrement au format CSV est l’un des problèmes auquel je faisais référence ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="20155-301">Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above.</span></span> <span data-ttu-id="20155-302">Convertissez votre table de hachage en un objet `pscustomobject` afin de l’enregistrer correctement au format CSV.</span><span class="sxs-lookup"><span data-stu-id="20155-302">Convert your hashtable to a `pscustomobject` and it will save correctly to CSV.</span></span> <span data-ttu-id="20155-303">Cela vous permet de commencer avec un objet `pscustomobject` en préservant l’ordre des colonnes.</span><span class="sxs-lookup"><span data-stu-id="20155-303">It helps if you start with a `pscustomobject` so the column order is preserved.</span></span> <span data-ttu-id="20155-304">Mais vous pouvez le convertir en un objet `pscustomobject` en ligne, si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="20155-304">But you can cast it to a `pscustomobject` inline if needed.</span></span>
+<span data-ttu-id="4ada6-301">L’utilisation d’une table de hachage pour l’enregistrement au format CSV est l’un des problèmes auquel je faisais référence ci-dessus.</span><span class="sxs-lookup"><span data-stu-id="4ada6-301">Struggling with getting a hashtable to save to a CSV is one of the difficulties that I was referring to above.</span></span> <span data-ttu-id="4ada6-302">Convertissez votre table de hachage en un objet `pscustomobject` afin de l’enregistrer correctement au format CSV.</span><span class="sxs-lookup"><span data-stu-id="4ada6-302">Convert your hashtable to a `pscustomobject` and it will save correctly to CSV.</span></span> <span data-ttu-id="4ada6-303">Cela vous permet de commencer avec un objet `pscustomobject` en préservant l’ordre des colonnes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-303">It helps if you start with a `pscustomobject` so the column order is preserved.</span></span> <span data-ttu-id="4ada6-304">Mais vous pouvez le convertir en un objet `pscustomobject` en ligne, si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="4ada6-304">But you can cast it to a `pscustomobject` inline if needed.</span></span>
 
 ```powershell
 $person | ForEach-Object{ [pscustomobject]$_ } | Export-CSV -Path $path
 ```
 
-<span data-ttu-id="20155-305">Là encore, consultez mon article sur utilisation d’un objet [pscustomobject][].</span><span class="sxs-lookup"><span data-stu-id="20155-305">Again, check out my write-up on using a [pscustomobject][].</span></span>
+<span data-ttu-id="4ada6-305">Là encore, consultez mon article sur utilisation d’un objet [pscustomobject][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-305">Again, check out my write-up on using a [pscustomobject][].</span></span>
 
-### <a name="saving-a-nested-hashtable-to-file"></a><span data-ttu-id="20155-306">Enregistrement d’une table de hachage imbriquée dans un fichier</span><span class="sxs-lookup"><span data-stu-id="20155-306">Saving a nested hashtable to file</span></span>
+### <a name="saving-a-nested-hashtable-to-file"></a><span data-ttu-id="4ada6-306">Enregistrement d’une table de hachage imbriquée dans un fichier</span><span class="sxs-lookup"><span data-stu-id="4ada6-306">Saving a nested hashtable to file</span></span>
 
-<span data-ttu-id="20155-307">Si j’ai besoin d’enregistrer une table de hachage imbriquée dans un fichier, puis de la lire à nouveau, j’utilise pour cela les applets de commande JSON.</span><span class="sxs-lookup"><span data-stu-id="20155-307">If I need to save a nested hashtable to a file and then read it back in again, I use the JSON cmdlets to do it.</span></span>
+<span data-ttu-id="4ada6-307">Si j’ai besoin d’enregistrer une table de hachage imbriquée dans un fichier, puis de la lire à nouveau, j’utilise pour cela les applets de commande JSON.</span><span class="sxs-lookup"><span data-stu-id="4ada6-307">If I need to save a nested hashtable to a file and then read it back in again, I use the JSON cmdlets to do it.</span></span>
 
 ```powershell
 $people | ConvertTo-JSON | Set-Content -Path $path
 $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 ```
 
-<span data-ttu-id="20155-308">Il existe deux points importants à noter concernant cette méthode.</span><span class="sxs-lookup"><span data-stu-id="20155-308">There are two important points about this method.</span></span> <span data-ttu-id="20155-309">Tout d’abord, l’objet JSON est écrit en mode multiligne et je dois donc utiliser l’option `-Raw` pour le relire dans une chaîne unique.</span><span class="sxs-lookup"><span data-stu-id="20155-309">First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string.</span></span> <span data-ttu-id="20155-310">Deuxièmement, l’objet importé n’est plus un objet `[hashtable]`.</span><span class="sxs-lookup"><span data-stu-id="20155-310">The Second is that the imported object is no longer a `[hashtable]`.</span></span> <span data-ttu-id="20155-311">C’est maintenant un objet `[pscustomobject]` et cela peut provoquer des problèmes si vous ne vous y attendiez pas.</span><span class="sxs-lookup"><span data-stu-id="20155-311">It's now a `[pscustomobject]` and that can cause issues if you don't expect it.</span></span>
+<span data-ttu-id="4ada6-308">Il existe deux points importants à noter concernant cette méthode.</span><span class="sxs-lookup"><span data-stu-id="4ada6-308">There are two important points about this method.</span></span> <span data-ttu-id="4ada6-309">Tout d’abord, l’objet JSON est écrit en mode multiligne et je dois donc utiliser l’option `-Raw` pour le relire dans une chaîne unique.</span><span class="sxs-lookup"><span data-stu-id="4ada6-309">First is that the JSON is written out multiline so I need to use the `-Raw` option to read it back into a single string.</span></span> <span data-ttu-id="4ada6-310">Deuxièmement, l’objet importé n’est plus un objet `[hashtable]`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-310">The Second is that the imported object is no longer a `[hashtable]`.</span></span> <span data-ttu-id="4ada6-311">C’est maintenant un objet `[pscustomobject]` et cela peut provoquer des problèmes si vous ne vous y attendiez pas.</span><span class="sxs-lookup"><span data-stu-id="4ada6-311">It's now a `[pscustomobject]` and that can cause issues if you don't expect it.</span></span>
 
-<span data-ttu-id="20155-312">Observez les tables de hachage profondément imbriquées.</span><span class="sxs-lookup"><span data-stu-id="20155-312">Watch for deeply-nested hashtables.</span></span> <span data-ttu-id="20155-313">Lorsque vous les convertissez en JSON, vous risquez de ne pas obtenir les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="20155-313">When you convert it to JSON you might not get the results you expect.</span></span>
+<span data-ttu-id="4ada6-312">Observez les tables de hachage profondément imbriquées.</span><span class="sxs-lookup"><span data-stu-id="4ada6-312">Watch for deeply-nested hashtables.</span></span> <span data-ttu-id="4ada6-313">Lorsque vous les convertissez en JSON, vous risquez de ne pas obtenir les résultats attendus.</span><span class="sxs-lookup"><span data-stu-id="4ada6-313">When you convert it to JSON you might not get the results you expect.</span></span>
 
 ```powershell
 @{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
@@ -684,7 +684,7 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 }
 ```
 
-<span data-ttu-id="20155-314">Utilisez le paramètre **Depth** pour vous assurer que vous avez développé toutes les tables de hachage imbriquées.</span><span class="sxs-lookup"><span data-stu-id="20155-314">Use **Depth** parameter to ensure that you have expanded all the nested hashtables.</span></span>
+<span data-ttu-id="4ada6-314">Utilisez le paramètre **Depth** pour vous assurer que vous avez développé toutes les tables de hachage imbriquées.</span><span class="sxs-lookup"><span data-stu-id="4ada6-314">Use **Depth** parameter to ensure that you have expanded all the nested hashtables.</span></span>
 
 ```powershell
 @{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
@@ -700,11 +700,11 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 }
 ```
 
-<span data-ttu-id="20155-315">Si vous avez besoin d’un objet `[hashtable]` lors de l’importation, vous devez utiliser les commandes `Export-CliXml` et `Import-CliXml`.</span><span class="sxs-lookup"><span data-stu-id="20155-315">If you need it to be a `[hashtable]` on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.</span></span>
+<span data-ttu-id="4ada6-315">Si vous avez besoin d’un objet `[hashtable]` lors de l’importation, vous devez utiliser les commandes `Export-CliXml` et `Import-CliXml`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-315">If you need it to be a `[hashtable]` on import, then you need to use the `Export-CliXml` and `Import-CliXml` commands.</span></span>
 
-### <a name="converting-json-to-hashtable"></a><span data-ttu-id="20155-316">Conversion d’un objet JSON en table de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-316">Converting JSON to Hashtable</span></span>
+### <a name="converting-json-to-hashtable"></a><span data-ttu-id="4ada6-316">Conversion d’un objet JSON en table de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-316">Converting JSON to Hashtable</span></span>
 
-<span data-ttu-id="20155-317">Si vous avez besoin de convertir un objet JSON en `[hashtable]`, vous pouvez utiliser [JavaScriptSerializer][] dans .NET.</span><span class="sxs-lookup"><span data-stu-id="20155-317">If you need to convert JSON to a `[hashtable]`, there's one way that I know of to do it with the [JavaScriptSerializer][] in .NET.</span></span>
+<span data-ttu-id="4ada6-317">Si vous avez besoin de convertir un objet JSON en `[hashtable]`, vous pouvez utiliser [JavaScriptSerializer][] dans .NET.</span><span class="sxs-lookup"><span data-stu-id="4ada6-317">If you need to convert JSON to a `[hashtable]`, there's one way that I know of to do it with the [JavaScriptSerializer][] in .NET.</span></span>
 
 ```powershell
 [Reflection.Assembly]::LoadWithPartialName("System.Web.Script.Serialization")
@@ -712,7 +712,7 @@ $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
 
-<span data-ttu-id="20155-318">À compter de PowerShell v6, la prise en charge de JSON utilise JSON.NET NewtonSoft et ajoute la prise en charge de la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-318">Beginning in PowerShell v6, JSON support uses the NewtonSoft JSON.NET and adds hashtable support.</span></span>
+<span data-ttu-id="4ada6-318">À compter de PowerShell v6, la prise en charge de JSON utilise JSON.NET NewtonSoft et ajoute la prise en charge de la table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-318">Beginning in PowerShell v6, JSON support uses the NewtonSoft JSON.NET and adds hashtable support.</span></span>
 
 ```powershell
 '{ "a": "b" }' | ConvertFrom-Json -AsHashtable
@@ -722,11 +722,11 @@ Name      Value
 a         b
 ```
 
-<span data-ttu-id="20155-319">PowerShell 6.2 a ajouté le paramètre **Depth** à `ConvertFrom-Json`.</span><span class="sxs-lookup"><span data-stu-id="20155-319">PowerShell 6.2 added the **Depth** parameter to `ConvertFrom-Json`.</span></span> <span data-ttu-id="20155-320">La valeur par défaut de **Depth** est 1024.</span><span class="sxs-lookup"><span data-stu-id="20155-320">The default **Depth** is 1024.</span></span>
+<span data-ttu-id="4ada6-319">PowerShell 6.2 a ajouté le paramètre **Depth** à `ConvertFrom-Json`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-319">PowerShell 6.2 added the **Depth** parameter to `ConvertFrom-Json`.</span></span> <span data-ttu-id="4ada6-320">La valeur par défaut de **Depth** est 1024.</span><span class="sxs-lookup"><span data-stu-id="4ada6-320">The default **Depth** is 1024.</span></span>
 
-### <a name="reading-directly-from-a-file"></a><span data-ttu-id="20155-321">Lecture directe à partir d’un fichier</span><span class="sxs-lookup"><span data-stu-id="20155-321">Reading directly from a file</span></span>
+### <a name="reading-directly-from-a-file"></a><span data-ttu-id="4ada6-321">Lecture directe à partir d’un fichier</span><span class="sxs-lookup"><span data-stu-id="4ada6-321">Reading directly from a file</span></span>
 
-<span data-ttu-id="20155-322">Si vous utilisez un fichier contenant une table de hachage avec la syntaxe PowerShell, il existe un moyen de l’importer directement.</span><span class="sxs-lookup"><span data-stu-id="20155-322">If you have a file that contains a hashtable using PowerShell syntax, there's a way to import it directly.</span></span>
+<span data-ttu-id="4ada6-322">Si vous utilisez un fichier contenant une table de hachage avec la syntaxe PowerShell, il existe un moyen de l’importer directement.</span><span class="sxs-lookup"><span data-stu-id="4ada6-322">If you have a file that contains a hashtable using PowerShell syntax, there's a way to import it directly.</span></span>
 
 ```powershell
 $content = Get-Content -Path $Path -Raw -ErrorAction Stop
@@ -735,13 +735,13 @@ $scriptBlock.CheckRestrictedLanguage( $allowedCommands, $allowedVariables, $true
 $hashtable = ( & $scriptBlock )
 ```
 
-<span data-ttu-id="20155-323">Cette procédure importe le contenu du fichier dans un objet `scriptblock`, puis vérifie s’il n’existe pas d’autres commandes PowerShell avant de l’exécuter.</span><span class="sxs-lookup"><span data-stu-id="20155-323">It imports the contents of the file into a `scriptblock`, then checks to make sure it doesn't have any other PowerShell commands in it before it executes it.</span></span>
+<span data-ttu-id="4ada6-323">Cette procédure importe le contenu du fichier dans un objet `scriptblock`, puis vérifie s’il n’existe pas d’autres commandes PowerShell avant de l’exécuter.</span><span class="sxs-lookup"><span data-stu-id="4ada6-323">It imports the contents of the file into a `scriptblock`, then checks to make sure it doesn't have any other PowerShell commands in it before it executes it.</span></span>
 
-<span data-ttu-id="20155-324">Saviez-vous qu’un manifeste de module (fichier psd1) n’est en fait qu’une simple table de hachage ?</span><span class="sxs-lookup"><span data-stu-id="20155-324">On that note, did you know that a module manifest (the psd1 file) is just a hashtable?</span></span>
+<span data-ttu-id="4ada6-324">Saviez-vous qu’un manifeste de module (fichier psd1) n’est en fait qu’une simple table de hachage ?</span><span class="sxs-lookup"><span data-stu-id="4ada6-324">On that note, did you know that a module manifest (the psd1 file) is just a hashtable?</span></span>
 
-## <a name="keys-can-be-any-object"></a><span data-ttu-id="20155-325">Les clés peuvent être n’importe quel objet</span><span class="sxs-lookup"><span data-stu-id="20155-325">Keys can be any object</span></span>
+## <a name="keys-can-be-any-object"></a><span data-ttu-id="4ada6-325">Les clés peuvent être n’importe quel objet</span><span class="sxs-lookup"><span data-stu-id="4ada6-325">Keys can be any object</span></span>
 
-<span data-ttu-id="20155-326">La plupart du temps, les clés sont simplement des chaînes.</span><span class="sxs-lookup"><span data-stu-id="20155-326">Most of the time, the keys are just strings.</span></span> <span data-ttu-id="20155-327">Nous pouvons donc entourer de guillemets l’élément de notre choix pour le transformer en clé.</span><span class="sxs-lookup"><span data-stu-id="20155-327">So we can put quotes around anything and make it a key.</span></span>
+<span data-ttu-id="4ada6-326">La plupart du temps, les clés sont simplement des chaînes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-326">Most of the time, the keys are just strings.</span></span> <span data-ttu-id="4ada6-327">Nous pouvons donc entourer de guillemets l’élément de notre choix pour le transformer en clé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-327">So we can put quotes around anything and make it a key.</span></span>
 
 ```powershell
 $person = @{
@@ -751,7 +751,7 @@ $person = @{
 $person['full name']
 ```
 
-<span data-ttu-id="20155-328">Vous pouvez ainsi créer des éléments très particuliers dont vous n’aviez probablement même pas idée.</span><span class="sxs-lookup"><span data-stu-id="20155-328">You can do some odd things that you may not have realized you could do.</span></span>
+<span data-ttu-id="4ada6-328">Vous pouvez ainsi créer des éléments très particuliers dont vous n’aviez probablement même pas idée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-328">You can do some odd things that you may not have realized you could do.</span></span>
 
 ```powershell
 $person.'full name'
@@ -760,9 +760,9 @@ $key = 'full name'
 $person.$key
 ```
 
-<span data-ttu-id="20155-329">Mais ce n’est pas parce que vous pouvez réaliser quelque chose que vous devez nécessaire le faire.</span><span class="sxs-lookup"><span data-stu-id="20155-329">Just because you can do something, it doesn't mean that you should.</span></span> <span data-ttu-id="20155-330">Ce dernier exemple semble clairement annoncer qu’une erreur va se produire et risque d’être facilement mal interprété par quiconque lira votre code.</span><span class="sxs-lookup"><span data-stu-id="20155-330">That last one just looks like a bug waiting to happen and would be easily misunderstood by anyone reading your code.</span></span>
+<span data-ttu-id="4ada6-329">Mais ce n’est pas parce que vous pouvez réaliser quelque chose que vous devez nécessaire le faire.</span><span class="sxs-lookup"><span data-stu-id="4ada6-329">Just because you can do something, it doesn't mean that you should.</span></span> <span data-ttu-id="4ada6-330">Ce dernier exemple semble clairement annoncer qu’une erreur va se produire et risque d’être facilement mal interprété par quiconque lira votre code.</span><span class="sxs-lookup"><span data-stu-id="4ada6-330">That last one just looks like a bug waiting to happen and would be easily misunderstood by anyone reading your code.</span></span>
 
-<span data-ttu-id="20155-331">Techniquement, votre clé ne doit pas nécessairement être une chaîne, mais les opérations sont bien plus simples à réaliser si vous utilisez uniquement des chaînes.</span><span class="sxs-lookup"><span data-stu-id="20155-331">Technically your key doesn't have to be a string but they're easier to think about if you only use strings.</span></span> <span data-ttu-id="20155-332">Toutefois, l’indexation ne fonctionne pas correctement avec les clés complexes.</span><span class="sxs-lookup"><span data-stu-id="20155-332">However, indexing doesn't work well with the complex keys.</span></span>
+<span data-ttu-id="4ada6-331">Techniquement, votre clé ne doit pas nécessairement être une chaîne, mais les opérations sont bien plus simples à réaliser si vous utilisez uniquement des chaînes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-331">Technically your key doesn't have to be a string but they're easier to think about if you only use strings.</span></span> <span data-ttu-id="4ada6-332">Toutefois, l’indexation ne fonctionne pas correctement avec les clés complexes.</span><span class="sxs-lookup"><span data-stu-id="4ada6-332">However, indexing doesn't work well with the complex keys.</span></span>
 
 ```powershell
 $ht = @{ @(1,2,3) = "a" }
@@ -773,61 +773,62 @@ Name                           Value
 {1, 2, 3}                      a
 ```
 
-<span data-ttu-id="20155-333">L’accès à une valeur dans la table de hachage par sa clé ne fonctionne pas toujours.</span><span class="sxs-lookup"><span data-stu-id="20155-333">Accessing a value in the hashtable by its key doesn't always work.</span></span> <span data-ttu-id="20155-334">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="20155-334">For example:</span></span>
+<span data-ttu-id="4ada6-333">L’accès à une valeur dans la table de hachage par sa clé ne fonctionne pas toujours.</span><span class="sxs-lookup"><span data-stu-id="4ada6-333">Accessing a value in the hashtable by its key doesn't always work.</span></span> <span data-ttu-id="4ada6-334">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="4ada6-334">For example:</span></span>
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-<span data-ttu-id="20155-335">L’utilisation de la notation d’accès membre (`.`) ne retourne rien.</span><span class="sxs-lookup"><span data-stu-id="20155-335">Using the member access (`.`) notation returns nothing.</span></span> <span data-ttu-id="20155-336">Toutefois, l’utilisation de la notation d’index de tableau (`[]`) fonctionne.</span><span class="sxs-lookup"><span data-stu-id="20155-336">But using the array index (`[]`) notation works.</span></span>
+<span data-ttu-id="4ada6-335">Quand la clé est un tableau, vous devez wrapper la variable `$key` dans une sous-expression afin qu’elle puisse être utilisée avec la notation d’accès au membre (`.`).</span><span class="sxs-lookup"><span data-stu-id="4ada6-335">When the key is an array, you must wrap the `$key` variable in a subexpression so that it can be used with member access (`.`) notation.</span></span> <span data-ttu-id="4ada6-336">Vous pouvez utiliser la notation d’index de tableau (`[]`).</span><span class="sxs-lookup"><span data-stu-id="4ada6-336">Or, you can use array index (`[]`) notation.</span></span>
 
-## <a name="use-in-automatic-variables"></a><span data-ttu-id="20155-337">Utilisation dans des variables automatiques</span><span class="sxs-lookup"><span data-stu-id="20155-337">Use in automatic variables</span></span>
+## <a name="use-in-automatic-variables"></a><span data-ttu-id="4ada6-337">Utilisation dans des variables automatiques</span><span class="sxs-lookup"><span data-stu-id="4ada6-337">Use in automatic variables</span></span>
 
-### <a name="psboundparameters"></a><span data-ttu-id="20155-338">$PSBoundParameters</span><span class="sxs-lookup"><span data-stu-id="20155-338">$PSBoundParameters</span></span>
+### <a name="psboundparameters"></a><span data-ttu-id="4ada6-338">$PSBoundParameters</span><span class="sxs-lookup"><span data-stu-id="4ada6-338">$PSBoundParameters</span></span>
 
-<span data-ttu-id="20155-339">[$PSBoundParameters][] est une variable automatique qui n’existe que dans le contexte d’une fonction.</span><span class="sxs-lookup"><span data-stu-id="20155-339">[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function.</span></span>
-<span data-ttu-id="20155-340">Elle contient tous les paramètres avec lesquels la fonction a été appelée.</span><span class="sxs-lookup"><span data-stu-id="20155-340">It contains all the parameters that the function was called with.</span></span> <span data-ttu-id="20155-341">Il ne s’agit pas exactement d’une table de hachage, mais elle y ressemble suffisamment pour la traiter en tant que telle.</span><span class="sxs-lookup"><span data-stu-id="20155-341">This isn't exactly a hashtable but close enough that you can treat it like one.</span></span>
+<span data-ttu-id="4ada6-339">[$PSBoundParameters][] est une variable automatique qui n’existe que dans le contexte d’une fonction.</span><span class="sxs-lookup"><span data-stu-id="4ada6-339">[$PSBoundParameters][] is an automatic variable that only exists inside the context of a function.</span></span>
+<span data-ttu-id="4ada6-340">Elle contient tous les paramètres avec lesquels la fonction a été appelée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-340">It contains all the parameters that the function was called with.</span></span> <span data-ttu-id="4ada6-341">Il ne s’agit pas exactement d’une table de hachage, mais elle y ressemble suffisamment pour la traiter en tant que telle.</span><span class="sxs-lookup"><span data-stu-id="4ada6-341">This isn't exactly a hashtable but close enough that you can treat it like one.</span></span>
 
-<span data-ttu-id="20155-342">Cela comprend la suppression des clés et leur projection dans d’autres fonctions.</span><span class="sxs-lookup"><span data-stu-id="20155-342">That includes removing keys and splatting it to other functions.</span></span> <span data-ttu-id="20155-343">Si vous écrivez des fonctions de proxy, examinez cette variable plus en détail.</span><span class="sxs-lookup"><span data-stu-id="20155-343">If you find yourself writing proxy functions, take a closer look at this one.</span></span>
+<span data-ttu-id="4ada6-342">Cela comprend la suppression des clés et leur projection dans d’autres fonctions.</span><span class="sxs-lookup"><span data-stu-id="4ada6-342">That includes removing keys and splatting it to other functions.</span></span> <span data-ttu-id="4ada6-343">Si vous écrivez des fonctions de proxy, examinez cette variable plus en détail.</span><span class="sxs-lookup"><span data-stu-id="4ada6-343">If you find yourself writing proxy functions, take a closer look at this one.</span></span>
 
-<span data-ttu-id="20155-344">Pour plus d'informations, consultez [about_Automatic_Variables][].</span><span class="sxs-lookup"><span data-stu-id="20155-344">See [about_Automatic_Variables][] for more details.</span></span>
+<span data-ttu-id="4ada6-344">Pour plus d'informations, consultez [about_Automatic_Variables][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-344">See [about_Automatic_Variables][] for more details.</span></span>
 
-### <a name="psboundparameters-gotcha"></a><span data-ttu-id="20155-345">Astuce PSBoundParameters</span><span class="sxs-lookup"><span data-stu-id="20155-345">PSBoundParameters gotcha</span></span>
+### <a name="psboundparameters-gotcha"></a><span data-ttu-id="4ada6-345">Astuce PSBoundParameters</span><span class="sxs-lookup"><span data-stu-id="4ada6-345">PSBoundParameters gotcha</span></span>
 
-<span data-ttu-id="20155-346">Une chose importante à retenir est que cette variable comprend uniquement les valeurs passées en tant que paramètres.</span><span class="sxs-lookup"><span data-stu-id="20155-346">One important thing to remember is that this only includes the values that are passed in as parameters.</span></span> <span data-ttu-id="20155-347">Si vous utilisez également des paramètres avec des valeurs par défaut, mais qui ne sont pas transmises par l’appelant, `$PSBoundParameters` ne contient pas ces valeurs.</span><span class="sxs-lookup"><span data-stu-id="20155-347">If you also have parameters with default values but aren't passed in by the caller, `$PSBoundParameters` doesn't contain those values.</span></span> <span data-ttu-id="20155-348">Cet aspect est souvent négligé.</span><span class="sxs-lookup"><span data-stu-id="20155-348">This is commonly overlooked.</span></span>
+<span data-ttu-id="4ada6-346">Une chose importante à retenir est que cette variable comprend uniquement les valeurs passées en tant que paramètres.</span><span class="sxs-lookup"><span data-stu-id="4ada6-346">One important thing to remember is that this only includes the values that are passed in as parameters.</span></span> <span data-ttu-id="4ada6-347">Si vous utilisez également des paramètres avec des valeurs par défaut, mais qui ne sont pas transmises par l’appelant, `$PSBoundParameters` ne contient pas ces valeurs.</span><span class="sxs-lookup"><span data-stu-id="4ada6-347">If you also have parameters with default values but aren't passed in by the caller, `$PSBoundParameters` doesn't contain those values.</span></span> <span data-ttu-id="4ada6-348">Cet aspect est souvent négligé.</span><span class="sxs-lookup"><span data-stu-id="4ada6-348">This is commonly overlooked.</span></span>
 
-### <a name="psdefaultparametervalues"></a><span data-ttu-id="20155-349">$PSDefaultParameterValues</span><span class="sxs-lookup"><span data-stu-id="20155-349">$PSDefaultParameterValues</span></span>
+### <a name="psdefaultparametervalues"></a><span data-ttu-id="4ada6-349">$PSDefaultParameterValues</span><span class="sxs-lookup"><span data-stu-id="4ada6-349">$PSDefaultParameterValues</span></span>
 
-<span data-ttu-id="20155-350">Cette variable automatique vous permet d’attribuer des valeurs par défaut à une applet de commande sans la modifier.</span><span class="sxs-lookup"><span data-stu-id="20155-350">This automatic variable lets you assign default values to any cmdlet without changing the cmdlet.</span></span>
-<span data-ttu-id="20155-351">Prenons cet exemple :</span><span class="sxs-lookup"><span data-stu-id="20155-351">Take a look at this example.</span></span>
+<span data-ttu-id="4ada6-350">Cette variable automatique vous permet d’attribuer des valeurs par défaut à une applet de commande sans la modifier.</span><span class="sxs-lookup"><span data-stu-id="4ada6-350">This automatic variable lets you assign default values to any cmdlet without changing the cmdlet.</span></span>
+<span data-ttu-id="4ada6-351">Prenons cet exemple :</span><span class="sxs-lookup"><span data-stu-id="4ada6-351">Take a look at this example.</span></span>
 
 ```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
 ```
 
-<span data-ttu-id="20155-352">Cette variable ajoute une entrée à la table de hachage `$PSDefaultParameterValues` qui définit `UTF8` comme valeur par défaut pour le paramètre `Out-File -Encoding`.</span><span class="sxs-lookup"><span data-stu-id="20155-352">This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default value for the `Out-File -Encoding` parameter.</span></span> <span data-ttu-id="20155-353">Ceci est spécifique à la session et vous devez donc la placer dans votre `$profile`.</span><span class="sxs-lookup"><span data-stu-id="20155-353">This is session-specific so you should place it in your `$profile`.</span></span>
+<span data-ttu-id="4ada6-352">Cette variable ajoute une entrée à la table de hachage `$PSDefaultParameterValues` qui définit `UTF8` comme valeur par défaut pour le paramètre `Out-File -Encoding`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-352">This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default value for the `Out-File -Encoding` parameter.</span></span> <span data-ttu-id="4ada6-353">Ceci est spécifique à la session et vous devez donc la placer dans votre `$profile`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-353">This is session-specific so you should place it in your `$profile`.</span></span>
 
-<span data-ttu-id="20155-354">Je l’utilise souvent pour préattribuer des valeurs que je saisis très souvent.</span><span class="sxs-lookup"><span data-stu-id="20155-354">I use this often to pre-assign values that I type quite often.</span></span>
+<span data-ttu-id="4ada6-354">Je l’utilise souvent pour préattribuer des valeurs que je saisis très souvent.</span><span class="sxs-lookup"><span data-stu-id="4ada6-354">I use this often to pre-assign values that I type quite often.</span></span>
 
 ```powershell
 $PSDefaultParameterValues[ "Connect-VIServer:Server" ] = 'VCENTER01.contoso.local'
 ```
 
-<span data-ttu-id="20155-355">Cette méthode accepte également les caractères génériques, ce qui vous permet de définir des valeurs en bloc.</span><span class="sxs-lookup"><span data-stu-id="20155-355">This also accepts wildcards so you can set values in bulk.</span></span> <span data-ttu-id="20155-356">Voici d’autres exemples d’utilisation :</span><span class="sxs-lookup"><span data-stu-id="20155-356">Here are some ways you can use that:</span></span>
+<span data-ttu-id="4ada6-355">Cette méthode accepte également les caractères génériques, ce qui vous permet de définir des valeurs en bloc.</span><span class="sxs-lookup"><span data-stu-id="4ada6-355">This also accepts wildcards so you can set values in bulk.</span></span> <span data-ttu-id="4ada6-356">Voici d’autres exemples d’utilisation :</span><span class="sxs-lookup"><span data-stu-id="4ada6-356">Here are some ways you can use that:</span></span>
 
 ```powershell
 $PSDefaultParameterValues[ "Get-*:Verbose" ] = $true
 $PSDefaultParameterValues[ "*:Credential" ] = Get-Credential
 ```
 
-<span data-ttu-id="20155-357">Pour une analyse plus approfondie, reportez-vous à cet article très intéressant sur [Valeurs automatiques par défaut][], écrit par [Michael Sorens][].</span><span class="sxs-lookup"><span data-stu-id="20155-357">For a more in-depth breakdown, see this great article on [Automatic Defaults][] by [Michael Sorens][].</span></span>
+<span data-ttu-id="4ada6-357">Pour une analyse plus approfondie, reportez-vous à cet article très intéressant sur [Valeurs automatiques par défaut][], écrit par [Michael Sorens][].</span><span class="sxs-lookup"><span data-stu-id="4ada6-357">For a more in-depth breakdown, see this great article on [Automatic Defaults][] by [Michael Sorens][].</span></span>
 
-## <a name="regex-matches"></a><span data-ttu-id="20155-358">Regex $Matches</span><span class="sxs-lookup"><span data-stu-id="20155-358">Regex $Matches</span></span>
+## <a name="regex-matches"></a><span data-ttu-id="4ada6-358">Regex $Matches</span><span class="sxs-lookup"><span data-stu-id="4ada6-358">Regex $Matches</span></span>
 
-<span data-ttu-id="20155-359">Lorsque vous utilisez l’opérateur `-match`, une variable automatique appelée `$matches` est créée avec les résultats de la correspondance.</span><span class="sxs-lookup"><span data-stu-id="20155-359">When you use the `-match` operator, an automatic variable called `$matches` is created with the results of the match.</span></span> <span data-ttu-id="20155-360">Si votre expression régulière contient des sous-expressions, ces sous-correspondances sont également répertoriées.</span><span class="sxs-lookup"><span data-stu-id="20155-360">If you have any sub expressions in your regex, those sub matches are also listed.</span></span>
+<span data-ttu-id="4ada6-359">Lorsque vous utilisez l’opérateur `-match`, une variable automatique appelée `$matches` est créée avec les résultats de la correspondance.</span><span class="sxs-lookup"><span data-stu-id="4ada6-359">When you use the `-match` operator, an automatic variable called `$matches` is created with the results of the match.</span></span> <span data-ttu-id="4ada6-360">Si votre expression régulière contient des sous-expressions, ces sous-correspondances sont également répertoriées.</span><span class="sxs-lookup"><span data-stu-id="4ada6-360">If you have any sub expressions in your regex, those sub matches are also listed.</span></span>
 
 ```powershell
 $message = 'My SSN is 123-45-6789.'
@@ -837,9 +838,9 @@ $Matches[0]
 $Matches[1]
 ```
 
-### <a name="named-matches"></a><span data-ttu-id="20155-361">Correspondances nommées</span><span class="sxs-lookup"><span data-stu-id="20155-361">Named matches</span></span>
+### <a name="named-matches"></a><span data-ttu-id="4ada6-361">Correspondances nommées</span><span class="sxs-lookup"><span data-stu-id="4ada6-361">Named matches</span></span>
 
-<span data-ttu-id="20155-362">C’est l’une de mes fonctionnalités préférées, et que la plupart des utilisateurs ignorent.</span><span class="sxs-lookup"><span data-stu-id="20155-362">This is one of my favorite features that most people don't know about.</span></span> <span data-ttu-id="20155-363">Si vous utilisez une correspondance regex nommée, vous pouvez accéder à cette correspondance en recherchant son nom.</span><span class="sxs-lookup"><span data-stu-id="20155-363">If you use a named regex match, then you can access that match by name on the matches.</span></span>
+<span data-ttu-id="4ada6-362">C’est l’une de mes fonctionnalités préférées, et que la plupart des utilisateurs ignorent.</span><span class="sxs-lookup"><span data-stu-id="4ada6-362">This is one of my favorite features that most people don't know about.</span></span> <span data-ttu-id="4ada6-363">Si vous utilisez une correspondance regex nommée, vous pouvez accéder à cette correspondance en recherchant son nom.</span><span class="sxs-lookup"><span data-stu-id="4ada6-363">If you use a named regex match, then you can access that match by name on the matches.</span></span>
 
 ```powershell
 $message = 'My Name is Kevin and my SSN is 123-45-6789.'
@@ -851,25 +852,25 @@ if($message -match 'My Name is (?<Name>.+) and my SSN is (?<SSN>.+)\.')
 }
 ```
 
-<span data-ttu-id="20155-364">Dans l’exemple ci-dessus, `(?<Name>.*)` est une sous-expression nommée.</span><span class="sxs-lookup"><span data-stu-id="20155-364">In the example above, the `(?<Name>.*)` is a named sub expression.</span></span> <span data-ttu-id="20155-365">Cette valeur est ensuite placée dans la propriété `$Matches.Name`.</span><span class="sxs-lookup"><span data-stu-id="20155-365">This value is then placed in the `$Matches.Name` property.</span></span>
+<span data-ttu-id="4ada6-364">Dans l’exemple ci-dessus, `(?<Name>.*)` est une sous-expression nommée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-364">In the example above, the `(?<Name>.*)` is a named sub expression.</span></span> <span data-ttu-id="4ada6-365">Cette valeur est ensuite placée dans la propriété `$Matches.Name`.</span><span class="sxs-lookup"><span data-stu-id="4ada6-365">This value is then placed in the `$Matches.Name` property.</span></span>
 
-## <a name="group-object--ashashtable"></a><span data-ttu-id="20155-366">Group-Object -AsHashtable</span><span class="sxs-lookup"><span data-stu-id="20155-366">Group-Object -AsHashtable</span></span>
+## <a name="group-object--ashashtable"></a><span data-ttu-id="4ada6-366">Group-Object -AsHashtable</span><span class="sxs-lookup"><span data-stu-id="4ada6-366">Group-Object -AsHashtable</span></span>
 
-<span data-ttu-id="20155-367">L’une des fonctionnalités les moins connues de `Group-Object` est sa capacité à convertir des jeux de données en une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-367">One little known feature of `Group-Object` is that it can turn some datasets into a hashtable for you.</span></span>
+<span data-ttu-id="4ada6-367">L’une des fonctionnalités les moins connues de `Group-Object` est sa capacité à convertir des jeux de données en une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-367">One little known feature of `Group-Object` is that it can turn some datasets into a hashtable for you.</span></span>
 
 ```powershell
 Import-CSV $Path | Group-Object -AsHashtable -Property email
 ```
 
-<span data-ttu-id="20155-368">Cette opération ajoute chaque ligne à une table de hachage et utilise la propriété spécifiée comme clé pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="20155-368">This will add each row into a hashtable and use the specified property as the key to access it.</span></span>
+<span data-ttu-id="4ada6-368">Cette opération ajoute chaque ligne à une table de hachage et utilise la propriété spécifiée comme clé pour y accéder.</span><span class="sxs-lookup"><span data-stu-id="4ada6-368">This will add each row into a hashtable and use the specified property as the key to access it.</span></span>
 
-## <a name="copying-hashtables"></a><span data-ttu-id="20155-369">Copie de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="20155-369">Copying Hashtables</span></span>
+## <a name="copying-hashtables"></a><span data-ttu-id="4ada6-369">Copie de tables de hachage</span><span class="sxs-lookup"><span data-stu-id="4ada6-369">Copying Hashtables</span></span>
 
-<span data-ttu-id="20155-370">Il est important de savoir que les tables de hachage sont des objets.</span><span class="sxs-lookup"><span data-stu-id="20155-370">One important thing to know is that hashtables are objects.</span></span> <span data-ttu-id="20155-371">Et chaque variable est simplement une référence à un objet.</span><span class="sxs-lookup"><span data-stu-id="20155-371">And each variable is just a reference to an object.</span></span> <span data-ttu-id="20155-372">Cela signifie qu’une copie valide d’une table de hachage demande plus de travail.</span><span class="sxs-lookup"><span data-stu-id="20155-372">This means that it takes more work to make a valid copy of a hashtable.</span></span>
+<span data-ttu-id="4ada6-370">Il est important de savoir que les tables de hachage sont des objets.</span><span class="sxs-lookup"><span data-stu-id="4ada6-370">One important thing to know is that hashtables are objects.</span></span> <span data-ttu-id="4ada6-371">Et chaque variable est simplement une référence à un objet.</span><span class="sxs-lookup"><span data-stu-id="4ada6-371">And each variable is just a reference to an object.</span></span> <span data-ttu-id="4ada6-372">Cela signifie qu’une copie valide d’une table de hachage demande plus de travail.</span><span class="sxs-lookup"><span data-stu-id="4ada6-372">This means that it takes more work to make a valid copy of a hashtable.</span></span>
 
-### <a name="assigning-reference-types"></a><span data-ttu-id="20155-373">Attribution de types de références</span><span class="sxs-lookup"><span data-stu-id="20155-373">Assigning reference types</span></span>
+### <a name="assigning-reference-types"></a><span data-ttu-id="4ada6-373">Attribution de types de références</span><span class="sxs-lookup"><span data-stu-id="4ada6-373">Assigning reference types</span></span>
 
-<span data-ttu-id="20155-374">Quand vous avez une table de hachage et que vous l’attribuez à une deuxième variable, les deux variables pointent vers la même table de hachage.</span><span class="sxs-lookup"><span data-stu-id="20155-374">When you have one hashtable and assign it to a second variable, both variables point to the same hashtable.</span></span>
+<span data-ttu-id="4ada6-374">Quand vous avez une table de hachage et que vous l’attribuez à une deuxième variable, les deux variables pointent vers la même table de hachage.</span><span class="sxs-lookup"><span data-stu-id="4ada6-374">When you have one hashtable and assign it to a second variable, both variables point to the same hashtable.</span></span>
 
 ```powershell
 PS> $orig = @{name='orig'}
@@ -882,11 +883,11 @@ Copy: [copy]
 Orig: [copy]
 ```
 
-<span data-ttu-id="20155-375">Cela a pour effet de les rendre identiques, car la modification des valeurs dans l’une modifie également les valeurs de l’autre.</span><span class="sxs-lookup"><span data-stu-id="20155-375">This highlights that they're the same because altering the values in one will also alter the values in the other.</span></span> <span data-ttu-id="20155-376">Cela s’applique également lors du passage de tables de hachage dans d’autres fonctions.</span><span class="sxs-lookup"><span data-stu-id="20155-376">This also applies when passing hashtables into other functions.</span></span> <span data-ttu-id="20155-377">Si ces fonctions apportent des modifications à cette table de hachage, votre table d’origine est également modifiée.</span><span class="sxs-lookup"><span data-stu-id="20155-377">If those functions make changes to that hashtable, your original is also altered.</span></span>
+<span data-ttu-id="4ada6-375">Cela a pour effet de les rendre identiques, car la modification des valeurs dans l’une modifie également les valeurs de l’autre.</span><span class="sxs-lookup"><span data-stu-id="4ada6-375">This highlights that they're the same because altering the values in one will also alter the values in the other.</span></span> <span data-ttu-id="4ada6-376">Cela s’applique également lors du passage de tables de hachage dans d’autres fonctions.</span><span class="sxs-lookup"><span data-stu-id="4ada6-376">This also applies when passing hashtables into other functions.</span></span> <span data-ttu-id="4ada6-377">Si ces fonctions apportent des modifications à cette table de hachage, votre table d’origine est également modifiée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-377">If those functions make changes to that hashtable, your original is also altered.</span></span>
 
-### <a name="shallow-copies-single-level"></a><span data-ttu-id="20155-378">Copies superficielles, niveau unique</span><span class="sxs-lookup"><span data-stu-id="20155-378">Shallow copies, single level</span></span>
+### <a name="shallow-copies-single-level"></a><span data-ttu-id="4ada6-378">Copies superficielles, niveau unique</span><span class="sxs-lookup"><span data-stu-id="4ada6-378">Shallow copies, single level</span></span>
 
-<span data-ttu-id="20155-379">Si nous utilisons une simple table de hachage telle que notre exemple ci-dessus, nous pouvons utiliser `.Clone()` pour effectuer une copie superficielle.</span><span class="sxs-lookup"><span data-stu-id="20155-379">If we have a simple hashtable like our example above, we can use `.Clone()` to make a shallow copy.</span></span>
+<span data-ttu-id="4ada6-379">Si nous utilisons une simple table de hachage telle que notre exemple ci-dessus, nous pouvons utiliser `.Clone()` pour effectuer une copie superficielle.</span><span class="sxs-lookup"><span data-stu-id="4ada6-379">If we have a simple hashtable like our example above, we can use `.Clone()` to make a shallow copy.</span></span>
 
 ```powershell
 PS> $orig = @{name='orig'}
@@ -899,11 +900,11 @@ Copy: [copy]
 Orig: [orig]
 ```
 
-<span data-ttu-id="20155-380">Nous pourrons ainsi apporter des modifications de base dans l’une mais sans impacter l’autre.</span><span class="sxs-lookup"><span data-stu-id="20155-380">This will allow us to make some basic changes to one that don't impact the other.</span></span>
+<span data-ttu-id="4ada6-380">Nous pourrons ainsi apporter des modifications de base dans l’une mais sans impacter l’autre.</span><span class="sxs-lookup"><span data-stu-id="4ada6-380">This will allow us to make some basic changes to one that don't impact the other.</span></span>
 
-### <a name="shallow-copies-nested"></a><span data-ttu-id="20155-381">Copies superficielles, imbriquées</span><span class="sxs-lookup"><span data-stu-id="20155-381">Shallow copies, nested</span></span>
+### <a name="shallow-copies-nested"></a><span data-ttu-id="4ada6-381">Copies superficielles, imbriquées</span><span class="sxs-lookup"><span data-stu-id="4ada6-381">Shallow copies, nested</span></span>
 
-<span data-ttu-id="20155-382">La raison pour laquelle cette copie est dite superficielle vient du fait qu’elle copie uniquement les propriétés de niveau de base.</span><span class="sxs-lookup"><span data-stu-id="20155-382">The reason why it's called a shallow copy is because it only copies the base level properties.</span></span> <span data-ttu-id="20155-383">Si l’une de ces propriétés est un type de référence (par exemple, une autre table de hachage), ces objets imbriqués pointent quand même les uns vers les autres.</span><span class="sxs-lookup"><span data-stu-id="20155-383">If one of those properties is a reference type (like another hashtable), then those nested objects will still point to each other.</span></span>
+<span data-ttu-id="4ada6-382">La raison pour laquelle cette copie est dite superficielle vient du fait qu’elle copie uniquement les propriétés de niveau de base.</span><span class="sxs-lookup"><span data-stu-id="4ada6-382">The reason why it's called a shallow copy is because it only copies the base level properties.</span></span> <span data-ttu-id="4ada6-383">Si l’une de ces propriétés est un type de référence (par exemple, une autre table de hachage), ces objets imbriqués pointent quand même les uns vers les autres.</span><span class="sxs-lookup"><span data-stu-id="4ada6-383">If one of those properties is a reference type (like another hashtable), then those nested objects will still point to each other.</span></span>
 
 ```powershell
 PS> $orig = @{
@@ -920,12 +921,12 @@ Copy: [copy]
 Orig: [copy]
 ```
 
-<span data-ttu-id="20155-384">Vous pouvez constater que même si j’ai cloné la table de hachage, la référence à `person` n’a pas été clonée.</span><span class="sxs-lookup"><span data-stu-id="20155-384">So you can see that even though I cloned the hashtable, the reference to `person` wasn't cloned.</span></span> <span data-ttu-id="20155-385">Nous devons effectuer une copie complète pour obtenir véritablement une seconde table de hachage non liée à la première.</span><span class="sxs-lookup"><span data-stu-id="20155-385">We need to make a deep copy to truly have a second hashtable that isn't linked to the first.</span></span>
+<span data-ttu-id="4ada6-384">Vous pouvez constater que même si j’ai cloné la table de hachage, la référence à `person` n’a pas été clonée.</span><span class="sxs-lookup"><span data-stu-id="4ada6-384">So you can see that even though I cloned the hashtable, the reference to `person` wasn't cloned.</span></span> <span data-ttu-id="4ada6-385">Nous devons effectuer une copie complète pour obtenir véritablement une seconde table de hachage non liée à la première.</span><span class="sxs-lookup"><span data-stu-id="4ada6-385">We need to make a deep copy to truly have a second hashtable that isn't linked to the first.</span></span>
 
-### <a name="deep-copies"></a><span data-ttu-id="20155-386">Copies complètes</span><span class="sxs-lookup"><span data-stu-id="20155-386">Deep copies</span></span>
+### <a name="deep-copies"></a><span data-ttu-id="4ada6-386">Copies complètes</span><span class="sxs-lookup"><span data-stu-id="4ada6-386">Deep copies</span></span>
 
-<span data-ttu-id="20155-387">Au moment de rédiger cet article, je ne connaissais aucune solution efficace d’effectuer une copie complète d’une table de hachage (et de la conserver en tant que telle).</span><span class="sxs-lookup"><span data-stu-id="20155-387">At the time of writing this, I'm not aware of any clever ways to just make a deep copy of a hashtable (and keep it as a hashtable).</span></span> <span data-ttu-id="20155-388">Et ces informations devaient être écrites noir sur blanc.</span><span class="sxs-lookup"><span data-stu-id="20155-388">That's just one of those things that someone needs to write.</span></span>
-<span data-ttu-id="20155-389">Voici une méthode rapide pour cela.</span><span class="sxs-lookup"><span data-stu-id="20155-389">Here is a quick method to do that.</span></span>
+<span data-ttu-id="4ada6-387">Au moment de rédiger cet article, je ne connaissais aucune solution efficace d’effectuer une copie complète d’une table de hachage (et de la conserver en tant que telle).</span><span class="sxs-lookup"><span data-stu-id="4ada6-387">At the time of writing this, I'm not aware of any clever ways to just make a deep copy of a hashtable (and keep it as a hashtable).</span></span> <span data-ttu-id="4ada6-388">Et ces informations devaient être écrites noir sur blanc.</span><span class="sxs-lookup"><span data-stu-id="4ada6-388">That's just one of those things that someone needs to write.</span></span>
+<span data-ttu-id="4ada6-389">Voici une méthode rapide pour cela.</span><span class="sxs-lookup"><span data-stu-id="4ada6-389">Here is a quick method to do that.</span></span>
 
 ```powershell
 function Get-DeepClone
@@ -950,11 +951,11 @@ function Get-DeepClone
 }
 ```
 
-<span data-ttu-id="20155-390">Elle ne gère aucun un autre type de référence ou tableau, mais il s’agit d’un bon point de départ.</span><span class="sxs-lookup"><span data-stu-id="20155-390">It doesn't handle any other reference types or arrays, but it's a good starting point.</span></span>
+<span data-ttu-id="4ada6-390">Elle ne gère aucun un autre type de référence ou tableau, mais il s’agit d’un bon point de départ.</span><span class="sxs-lookup"><span data-stu-id="4ada6-390">It doesn't handle any other reference types or arrays, but it's a good starting point.</span></span>
 
-## <a name="anything-else"></a><span data-ttu-id="20155-391">Autre chose ?</span><span class="sxs-lookup"><span data-stu-id="20155-391">Anything else?</span></span>
+## <a name="anything-else"></a><span data-ttu-id="4ada6-391">Autre chose ?</span><span class="sxs-lookup"><span data-stu-id="4ada6-391">Anything else?</span></span>
 
-<span data-ttu-id="20155-392">J’ai abordé beaucoup de concepts dans cet article.</span><span class="sxs-lookup"><span data-stu-id="20155-392">I covered a lot of ground quickly.</span></span> <span data-ttu-id="20155-393">Mon espoir est que vous puissiez apprendre quelque chose de nouveau ou approfondir vos connaissances à chaque lecture de cet article.</span><span class="sxs-lookup"><span data-stu-id="20155-393">My hope is that you walk away leaning something new or understanding it better every time you read this.</span></span> <span data-ttu-id="20155-394">Comme j’ai abordé le spectre complet de cette fonctionnalité, certains aspects ne s’appliquent pas à votre cas pour le moment.</span><span class="sxs-lookup"><span data-stu-id="20155-394">Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now.</span></span> <span data-ttu-id="20155-395">C’est tout à fait normal et attendu en fonction du volume du travail que vous effectuez avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="20155-395">That is perfectly OK and is kind of expected depending on how much you work with PowerShell.</span></span>
+<span data-ttu-id="4ada6-392">J’ai abordé beaucoup de concepts dans cet article.</span><span class="sxs-lookup"><span data-stu-id="4ada6-392">I covered a lot of ground quickly.</span></span> <span data-ttu-id="4ada6-393">Mon espoir est que vous puissiez apprendre quelque chose de nouveau ou approfondir vos connaissances à chaque lecture de cet article.</span><span class="sxs-lookup"><span data-stu-id="4ada6-393">My hope is that you walk away leaning something new or understanding it better every time you read this.</span></span> <span data-ttu-id="4ada6-394">Comme j’ai abordé le spectre complet de cette fonctionnalité, certains aspects ne s’appliquent pas à votre cas pour le moment.</span><span class="sxs-lookup"><span data-stu-id="4ada6-394">Because I covered the full spectrum of this feature, there are aspects that just may not apply to you right now.</span></span> <span data-ttu-id="4ada6-395">C’est tout à fait normal et attendu en fonction du volume du travail que vous effectuez avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="4ada6-395">That is perfectly OK and is kind of expected depending on how much you work with PowerShell.</span></span>
 
 <!-- link references -->
 [Version d’origine]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
@@ -965,8 +966,8 @@ function Get-DeepClone
 [hashtables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [Tableaux]: /powershell/module/microsoft.powershell.core/about/about_arrays
 [arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[Si les performances l’exigent, effectuez un test]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
-[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[Si les performances l’exigent, effectuez un test]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
+[If performance matters, test it]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [Projection]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [splatting]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
