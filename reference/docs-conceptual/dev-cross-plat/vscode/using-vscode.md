@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: b492e59f340f4cec92c177ad44bbab9dc95da5da
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808855"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782529"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
@@ -54,7 +54,7 @@ Pour les charges de travail Windows PowerShell classiques, consultez [Installati
    1. La vue **Extensions** s’ouvre dans la barre latérale. Sélectionnez l’extension de PowerShell de Microsoft.
       Un écran Visual Studio Code semblable à l’image suivante apparaît :
 
-      ![Visual Studio Code](media/using-vscode/vscode.png)
+      ![Visual Studio Code - vue de l’extension PowerShell](media/using-vscode/vscode.png)
 
    1. Cliquez sur le bouton **Installer** sur l’extension PowerShell de Microsoft.
    1. Après l’installation, si vous voyez le bouton **Installer** se changer en **Recharger**, cliquez sur **Recharger**.
@@ -190,7 +190,7 @@ L’extension PowerShell actuelle ne prend pas en charge [PowerShell v3 et v4][i
 
 Tout d’abord, ouvrez le volet Extension et recherchez `PowerShell`. Cliquez ensuite sur l’engrenage, puis sélectionnez **Installer une autre version...** .
 
-![Installer une autre version...](media/using-vscode/install-another-version.png)
+![Élément de menu - Installer une autre version...](media/using-vscode/install-another-version.png)
 
 Sélectionnez ensuite la version **2020.1.0**. Cette version de l’extension était la dernière version à prendre en charge v3 et v4. Veillez à ajouter le paramètre suivant afin que la version de votre extension ne soit pas mise à jour automatiquement :
 

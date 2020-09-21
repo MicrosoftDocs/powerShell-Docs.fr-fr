@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809215"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216003"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 
@@ -187,7 +187,7 @@ Plusieurs mises à jour et améliorations de la configuration d’état souhait�
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Nouvelles fonctionnalités dans Windows PowerShell ISE
 
-- Vous pouvez maintenant modifier des scripts et fichiers Windows PowerShell distants dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers à modifier, puis en exécutant **PSEdit \<chemin et nom de fichier sur l’ordinateur distant\>** . Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
+- Vous pouvez maintenant modifier des scripts et des fichiers Windows PowerShell distants dans une copie locale de Windows PowerShell ISE, en exécutant Enter-PSSession pour démarrer une session à distance sur l’ordinateur qui stocke les fichiers à modifier, puis en exécutant **PSEdit \<path and file name on the remote computer\>** . Cette fonctionnalité facilite la modification de fichiers Windows PowerShell stockés sur l’option d’installation minimale de Windows Server, où Windows PowerShell ISE ne peut pas s’exécuter.
 - L’applet de commande Start-Transcript est maintenant prise en charge dans Windows PowerShell ISE.
 - Vous pouvez maintenant déboguer des scripts à distance dans Windows PowerShell ISE.
 - Une nouvelle option de menu, **Interrompre tout** (Ctrl+B) arrête le débogueur pour les scripts s’exécutant tant en local qu’à distance.
@@ -353,7 +353,7 @@ Les avantages de Windows PowerShell Workflow sont les suivants :
 
 Accès Web Windows PowerShell est une fonctionnalité Windows Server 2012 qui permet aux utilisateurs d’exécuter des commandes et des scripts Windows PowerShell dans une console web. Les appareils qui utilisent la console web ne nécessitent ni Windows PowerShell, ni un logiciel de gestion à distance, ni l’installation d’un plug-in de navigateur. Il suffit de disposer d’une passerelle Accès Web Windows PowerShell correctement configurée, et d’un navigateur d’appareil client prenant en charge JavaScript et acceptant les cookies.
 
-Pour plus d’informations, voir [Déployer un Accès Windows PowerShell Web](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
+Pour plus d’informations, voir [Déployer un Accès Windows PowerShell Web](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
 
 ### <a name="new-windows-powershell-ise-features"></a>Nouvelles fonctionnalités de Windows PowerShell ISE
 

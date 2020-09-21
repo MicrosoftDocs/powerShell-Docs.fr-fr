@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
-ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 64657dda04fa2df97fa2ad7c7a5c2d15b66a270a
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73933848"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301333"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 
@@ -15,25 +15,14 @@ Cette rubrique explique comment prendre en main la fonctionnalité DSC (Desired 
 
 ## <a name="supported-linux-operation-system-versions"></a>Versions du système d’exploitation Linux prises en charge
 
-Les versions suivantes du système d’exploitation Linux prennent en charge DSC pour Linux.
+Les versions suivantes du système d’exploitation Linux sont prises en charge par DSC pour Linux.
 
 - CentOS 5, 6 et 7 (x86/x64)
 - Debian GNU/Linux 6, 7 et 8 (x86/x64)
 - Oracle Linux 5, 6 et 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 et 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 et 12 (x86/x64)
-- Ubuntu Server 12.04 LTS, 14.04 LTS et 16.04 LTS (x86/x64)
-
-Le tableau suivant décrit les dépendances de package nécessaires pour utiliser DSC pour Linux.
-
-|  Package requis |  Description |  Version minimale |
-|---|---|---|
-| glibc| Bibliothèque GNU| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
-| omiserver| Infrastructure de gestion ouverte| 1.0.8.1|
-| openssl| Bibliothèques OpenSSL| 0.9.8 ou 1.0|
-| ctypes| Bibliothèque CTypes Python| Identique à la version Python|
-| libcurl| Bibliothèque client http cURL| 7.15.1|
+- Ubuntu Server 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>Installation de DSC pour Linux
 
@@ -41,7 +30,7 @@ Vous devez installer [Open Management Infrastructure (OMI)](https://github.com/M
 
 ### <a name="installing-omi"></a>Installation d’OMI
 
-DSC pour Linux nécessite le serveur CIM d’Open Management Infrastructure (OMI), version 1.0.8.1 ou ultérieure. Vous pouvez télécharger OMI à partir de The Open Group : [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
+DSC pour Linux nécessite le serveur CIM d’Open Management Infrastructure (OMI), version 1.0.8.1 ou ultérieure. Vous pouvez télécharger OMI à partir de The Open Group : [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
 
 Pour installer OMI, installez le package approprié pour le système Linux (.rpm ou .deb), la version d’OpenSSL (ssl_098 ou ssl_100) et l’architecture (x64/x86) que vous utilisez. Les packages RPM sont conçus pour les systèmes CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server et Oracle Linux. Les packages DEB sont conçus pour les systèmes Debian GNU/Linux et Ubuntu Server. Les packages ssl_098 et les packages ssl_100 sont conçus pour les ordinateurs avec OpenSSL 0.9.8 et les ordinateurs avec OpenSSL 1.0, respectivement.
 
@@ -109,7 +98,7 @@ Le mot clé Windows PowerShell « Configuration » permet de créer une config
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Transmission de la configuration en mode Push à l’ordinateur Linux.
 
-Vous pouvez effectuer une transmission Push des documents de configuration (fichiers MOF) vers l’ordinateur Linux à l’aide de l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Pour utiliser cette applet de commande avec les applets de commande [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) ou [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) à distance sur un ordinateur Linux, vous devez utiliser une session CIMSession. L’applet de commande [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) permet de créer une session CIMSession sur l’ordinateur Linux.
+Vous pouvez envoyer des documents de configuration (fichiers MOF) à l’ordinateur Linux à l’aide de l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Pour utiliser cette applet de commande avec les applets de commande [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) ou [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) à distance sur un ordinateur Linux, vous devez utiliser une session CIMSession. L’applet de commande [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) permet de créer une session CIMSession sur l’ordinateur Linux.
 
 Le code suivant crée une session CIMSession pour DSC pour Linux.
 
@@ -129,7 +118,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 > En mode « Push », les informations d’identification de l’utilisateur doivent correspondre à l’utilisateur racine sur l’ordinateur Linux.
 > Seules les connexions SSL/TLS sont prises en charge pour DSC pour Linux. L’applet de commande `New-CimSession` doit être utilisée avec le paramètre –UseSSL défini sur $true.
 > Le certificat SSL utilisé par OMI (pour DSC) est spécifié dans le fichier `/etc/opt/omi/conf/omiserver.conf` avec les propriétés pemfile et keyfile.
-> Si ce certificat n’est pas approuvé par l’ordinateur Windows où l’applet de commande [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) est exécutée, vous pouvez choisir d’ignorer la validation des certificats en spécifiant les options CIMSession suivantes : `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
+> Si ce certificat n’est pas approuvé par l’ordinateur Windows sur lequel vous exécutez l’applet de commande [New-CimSession](/powershell/module/CimCmdlets/New-CimSession), vous pouvez choisir d’ignorer la validation des certificats en spécifiant les options CIMSession suivantes : `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Exécutez la commande suivante pour transmettre en mode Push la configuration DSC vers le nœud Linux.
 
@@ -137,7 +126,7 @@ Exécutez la commande suivante pour transmettre en mode Push la configuration DS
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>Distribution de la configuration à l’aide d’un serveur collecteur
 
-Vous pouvez utiliser un serveur collecteur pour distribuer des configurations sur un ordinateur Linux, de la même manière que sur un ordinateur Windows. Pour obtenir des conseils d’utilisation d’un serveur collecteur, consultez [Serveurs collecteurs dans DSC Windows PowerShell](../pull-server/pullServer.md). Pour obtenir plus d’informations et connaître les limitations relatives à l’utilisation d’ordinateurs Linux avec un serveur collecteur, consultez les notes de publication concernant DSC pour Linux.
+Vous pouvez utiliser un serveur collecteur pour distribuer des configurations sur un ordinateur Linux, de la même manière que sur un ordinateur Windows. Pour obtenir des conseils sur l’utilisation d’un serveur collecteur, consultez [Serveurs collecteurs dans DSC Windows PowerShell](../pull-server/pullServer.md). Pour obtenir plus d’informations et connaître les limitations relatives à l’utilisation d’ordinateurs Linux avec un serveur collecteur, consultez les notes de publication concernant DSC pour Linux.
 
 ### <a name="working-with-configurations-locally"></a>Utilisation de configurations locales
 

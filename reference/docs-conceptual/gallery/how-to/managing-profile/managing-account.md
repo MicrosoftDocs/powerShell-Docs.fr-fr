@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Paramètres de compte PowerShell Gallery
-ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560455"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771785"
 ---
 # <a name="powershell-gallery-account-settings"></a>Paramètres de compte PowerShell Gallery
 
@@ -36,7 +36,7 @@ PowerShell Gallery propose les options de notification suivantes :
 - Les utilisateurs peuvent me contacter via PowerShell Gallery
 - M’avertir quand un package est envoyé (push) sur PowerShell Gallery avec mon compte
 
-![Changement d’adresse e-mail](media/managing-account/PSGallery_AccountEmailOptions.png)
+![Sélectionner les options d’adresse e-mail](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 Comme indiqué dans la page, les notifications critiques de PowerShell Gallery ne peuvent pas être désactivées.
 notamment :
@@ -49,20 +49,20 @@ notamment :
 
 Pour modifier le compte de connexion, vous devez être connecté avec le compte actif. Effectuez les étapes suivantes pour effectuer la modification.
 
-![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountSettings.png)
+![Modifier les paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. Cliquez sur **Changer de compte**. Une fenêtre contextuelle explique que la modification du compte de connexion s’applique à toutes les utilisations de ce compte dans PowerShell Gallery. Vérifiez les informations, puis cliquez sur **OK** pour continuer.
 
-   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-1.png)
+   ![Confirmation de modification - OK/Annuler](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. Vous êtes ensuite invité à vous connecter en utilisant le _nouveau compte_.
 
-   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-2.png)
+   ![Se connecter avec le nouveau compte](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. Quand vous cliquez sur **Suivant**, un message s’affiche pour vous indiquer que vous êtes connecté avec le compte actif.
    Cliquez sur **Se déconnecter et se connecter avec un autre compte**.
 
-   ![Paramètres de compte de connexion](media/managing-account/PSGallery_LoginAccountChange-3.png)
+   ![Se déconnecter et se connecter avec un autre compte](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Entrez le mot de passe du nouveau compte. Après avoir entré le mot de passe, la page Paramètres du compte s’affiche à nouveau et vous indique que le compte de connexion a été mis à jour.
 

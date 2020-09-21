@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource Archive DSC
-ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560370"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463786"
 ---
 # <a name="dsc-archive-resource"></a>Ressource Archive DSC
 
@@ -23,6 +23,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -35,11 +36,12 @@ Archive [string] #ResourceName
 
 |Propriété |Description |
 |---|---|
-|Destination |Spécifie l’emplacement où le contenu de l’archive doit être extrait. |
-|Path |Spécifie le chemin source du fichier d’archive. |
-|Somme de contrôle |Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. |
-|Force |Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **False**. |
-|Valider| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. Si vous spécifiez **Validate** sans **Checksum**, une **somme de contrôle** _SHA-256_ est utilisée par défaut. |
+| Destination | Spécifie l’emplacement où le contenu de l’archive doit être extrait. |
+| Path | Spécifie le chemin source du fichier d’archive. |
+| Somme de contrôle | Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. |
+| Informations d'identification | Informations d’identification d’un compte d’utilisateur disposant des autorisations nécessaires pour accéder au chemin et à la destination de l’archive spécifiée, si nécessaire. |
+| Force | Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **False**. |
+| Valider| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. Si vous spécifiez **Validate** sans **Checksum**, la valeur _SHA-256 est utilisée par défaut pour _ **Checksum**. |
 
 ## <a name="common-properties"></a>Propriétés communes
 
@@ -52,7 +54,7 @@ Archive [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser la ressource Archive pour vérifier que le contenu d’un fichier d’archive appelé `Test.zip` existe et qu’il est extrait à une destination donnée.
 

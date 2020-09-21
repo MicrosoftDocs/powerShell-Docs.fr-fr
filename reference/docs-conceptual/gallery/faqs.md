@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
-ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500591"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777819"
 ---
-# <a name="frequently-asked-questions"></a>Forum Aux Questions (FAQ)
+# <a name="frequently-asked-questions"></a>Forum Aux Questions
 
-## <a name="what-is-a-powershell-module"></a>Qu’est-ce qu’un module PowerShell ?
+## <a name="what-is-a-powershell-module"></a>Qu’est-ce qu’un module PowerShell ?
 
 Un module PowerShell est un package réutilisable contenant des fonctionnalités PowerShell. Tous les éléments de PowerShell (fonctions, variables, ressources DSC, etc.) peuvent être empaquetés dans des modules. En règle générale, les modules sont des dossiers qui contiennent des types spécifiques de fichiers stockés dans un chemin spécifique. Il existe différents types de modules PowerShell.
 
-## <a name="what-is-a-powershell-script"></a>Qu’est-ce qu’un script PowerShell ?
+## <a name="what-is-a-powershell-script"></a>Qu’est-ce qu’un script PowerShell ?
 
 Un script PowerShell est une série de commandes qui sont stockées dans un fichier .ps1 pour permettre la réutilisation et le partage. Les workflows PowerShell sont également des scripts PowerShell, qui présentent une série de tâches et donnent le séquencement de ces tâches. Pour plus d’informations, visitez le site [Présentation du workflow Windows PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
 
@@ -24,7 +24,7 @@ Un script PowerShell est une série de commandes qui sont stockées dans un fich
 
 Les modules conviennent généralement mieux pour le partage, mais nous allons permettre le partage de scripts pour que vous puissiez facilement fournir des workflows et des scripts à la communauté. Pour plus d’informations, voir les blogs suivants :
 
-- [Don’t Write Scripts, Write PowerShell Modules](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [Don't Write Scripts, Write PowerShell Modules](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
 - [Understanding PowerShell Modules](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Comment puis-je publier dans PowerShell Gallery ?
@@ -36,7 +36,7 @@ Une fois que vous êtes inscrit dans PowerShell Gallery, utilisez les applets de
 
 **Il est inutile de s’inscrire ou de se connecter à PowerShell Gallery pour installer ou enregistrer des packages.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur de type : (403) Refusé. Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu'est-ce que cela signifie ?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>J’ai reçu un message de type « Échec du traitement de la demande. La clé API spécifiée n’est pas valide ou n’est pas autorisée à accéder au package spécifié ». Le serveur distant a retourné une erreur de type : (403) Refusé. Erreur quand j’ai essayé de publier un package dans PowerShell Gallery. Qu’est-ce que cela signifie ?
 
 Cette erreur peut se produire pour les raisons suivantes :
 
@@ -84,7 +84,7 @@ Tout type de script PowerShell (scripts ou workflows) peut être publié dans la
 
 Tapez ce que vous recherchez dans la zone de texte. Par exemple, si vous souhaitez rechercher les modules qui sont liés à SQL Azure, tapez simplement « sql azure ». Notre moteur de recherche recherche ces mots clés dans tous les packages publiés, dont les titres, les descriptions et les métadonnées. Ensuite, selon un score de qualité pondéré, il affiche les correspondances les plus proches. Vous pouvez également effectuer des recherches par champ spécifique à l’aide de la syntaxe field:"value" dans la requête de recherche pour les champs suivants :
 
-- Balises
+- Étiquettes
 - Fonctions
 - Applets de commande
 - DscResources
@@ -114,7 +114,7 @@ PackageManagement est une interface commune permettant de travailler avec n’im
 
 PowerShellGet est le gestionnaire de package pour les packages PowerShell. Il existe un fournisseur de package PSModule qui expose les fonctionnalités PowerShellGet via PackageManagement. Pour cette raison, vous pouvez exécuter [Install-Module][] ou Install-Package -Provider PSModule pour installer un module à partir de PowerShell Gallery. Certaines fonctionnalités PowerShellGet, dont [Update-Module][] et [Publish-Module][], ne sont pas accessibles via les commandes PackageManagement.
 
-En résumé, PowerShellGet a pour unique objectif de réussir une expérience de gestion des packages pour le contenu PowerShell. PackageManagement se concentre sur l’exposition de toutes les expériences de gestion des packages via un ensemble général d’outils. Si cette réponse ne vous satisfait pas, vous en trouverez une plus détaillée à la fin de ce document, dans la section **Quelle est la relation réelle entre PackageManagement et PowerShellGet ?** .
+En résumé, PowerShellGet a pour unique objectif de réussir une expérience de gestion des packages pour le contenu PowerShell. PackageManagement se concentre sur l’exposition de toutes les expériences de gestion des packages via un ensemble général d’outils. Si cette réponse ne vous satisfait pas, vous en trouverez une plus détaillée à la fin de ce document, dans la section **Quelle est la relation réelle entre PackageManagement et PowerShellGet ?**.
 
 Pour plus d’informations, visitez la [page de projet PackageManagement](https://oneget.org/).
 
@@ -137,7 +137,7 @@ Dans la couche d’applet de commande PowerShell, [Install-Module][] est en fait
 
 Dans la couche de fournisseur de package PackageManagement, le fournisseur de package PSModule appelle en fait d’autres fournisseurs de package PackageManagement. Par exemple, quand vous utilisez des galeries NuGet (telles que PowerShell Gallery), le fournisseur de package PSModule utilise le fournisseur de package NuGet pour travailler avec le référentiel.
 
-![Architecture PowerShellGet](media/faqs/powershellgetArchitecture.png)
+![Diagramme de l’architecture PowerShellGet](media/faqs/powershellgetArchitecture.png)
 
 Figure 1 : Architecture PowerShellGet
 
@@ -150,8 +150,8 @@ Le module **PowerShellGet** nécessite **PowerShell 3.0 ou ultérieur**.
 Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitation suivants :
 
 - Windows 10
-- Windows 8.1 Pro
-- Windows 8.1 Entreprise
+- Windows 8.1 Professionnel
+- Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
 - Windows Server 2012 R2

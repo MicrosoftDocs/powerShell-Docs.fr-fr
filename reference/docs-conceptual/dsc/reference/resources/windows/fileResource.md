@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource File DSC
-ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560472"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799602"
 ---
 # <a name="dsc-file-resource"></a>Ressource File DSC
 
@@ -46,7 +46,7 @@ File [string] #ResourceName
 |Contents |Valide uniquement si utilisé avec **Type** **File**. Indique le contenu dont la présence ou l’absence doivent être garanties à partir du fichier cible avec **Ensure** et les valeurs **Present** ou **Absent**. |
 |Informations d'identification |Les informations d’identification nécessaires pour accéder aux ressources, telles que des fichiers sources. |
 |Force |Remplace les opérations d’accès qui entraîneraient une erreur (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire qui n’est pas vide). La valeur par défaut est `$false`. |
-|Recurse |Valide uniquement si utilisé avec **Type** **Directory**. Exécute l’opération d’état de manière récursive sur tous les sous-répertoires. La valeur par défaut est `$false`. |
+|Recurse |Valide uniquement si utilisé avec **Type** **Directory**. Effectue l’opération d’état de manière récursive sur tout le contenu du répertoire, les sous-répertoires et le contenu des sous-répertoires. La valeur par défaut est `$false`. |
 |SourcePath |Chemin à partir duquel copier la ressource de fichier ou de dossier. |
 |Type |Le type de ressource en cours de configuration. Les valeurs valides sont **Directory** et **File**. La valeur par défaut est **File**. |
 |MatchSource |Détermine si la ressource doit contrôler les nouveaux fichiers ajoutés au répertoire source après la copie initiale. La valeur `$true` indique que, après la copie initiale, les nouveaux fichiers source doivent être copiés dans la destination. Si la valeur est définie sur `$false`, la ressource met en cache le contenu du répertoire source et ignore les fichiers ajoutés après la copie initiale. La valeur par défaut est `$false`. |
@@ -69,9 +69,10 @@ File [string] #ResourceName
 
 - Quand vous spécifiez uniquement un **DestinationPath**, la ressource vérifie que le chemin existe si la valeur définie est **Present** ou qu’il n’existe pas si la valeur définie est **Absent**.
 - Quand vous spécifiez un **SourcePath** et un **DestinationPath** et que **Type** a la valeur **Directory**, la ressource copie le répertoire source sur le chemin de destination. Les propriétés **Recurse**, **Force** et **MatchSource** modifient le type d’opération de copie effectuée, tandis que **Credential** détermine le compte à utiliser pour accéder au répertoire source.
+- Si vous ne définissez pas la propriété **Recurse** sur `$true` lors de la copie d’un répertoire, aucun contenu du répertoire existant ne sera copié. Seul le répertoire spécifié sera copié.
 - Si vous avez spécifié la valeur **ReadOnly** pour la propriété **Attributes** avec un **DestinationPath**, **Ensure** **Present** crée le chemin spécifié, tandis que **Contents** définit le contenu du fichier. Un paramètre **Ensure** **Absent** ignore entièrement la propriété **Attributes** et supprime les fichiers situés sur le chemin spécifié.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant copie un répertoire et ses sous-répertoires d’un serveur Pull vers à un nœud cible à l’aide de la ressource File. Si l’opération réussit, la ressource Log consigne un message de confirmation dans le journal des événements.
 

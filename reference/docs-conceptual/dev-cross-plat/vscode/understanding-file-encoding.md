@@ -2,12 +2,12 @@
 title: Présentation de l’encodage de fichier dans VS Code et PowerShell
 description: Configuration de l’encodage de fichier dans VS Code et PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 1333c5aedd5abd16078ac32979f19f38818a26c8
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: a4b13bcfbe5cffc4e015a37a5fd64fbb8b91f949
+ms.sourcegitcommit: 01a1c253f48b61c943f6d6aca4e603118014015f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809895"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87900012"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>Présentation de l’encodage de fichier dans VS Code et PowerShell
 
@@ -17,7 +17,7 @@ Quand vous utilisez Visual Studio Code pour créer et modifier des scripts Power
 
 VS Code gère l’interface entre un utilisateur qui entre des chaînes de caractères dans une mémoire tampon et la lecture/écriture de blocs d’octets dans le système de fichiers. Quand VS Code enregistre un fichier, il utilise un encodage de texte pour décider des octets attribués à chaque caractère.
 
-De même, quand PowerShell exécute un script, il doit convertir les octets d’un fichier en caractères afin de reconstruire le fichier dans un programme PowerShell. Comme VS Code écrit le fichier et que PowerShell le lit, ils doivent utiliser le même système d’encodage. Ce processus d’analyse d’un script PowerShell est le suivant : *octets* -> *caractères* -> *jetons* ->  *arborescence de syntaxe abstraite* -> *exécution*.
+De même, quand PowerShell exécute un script, il doit convertir les octets d’un fichier en caractères afin de reconstruire le fichier dans un programme PowerShell. Comme VS Code écrit le fichier et que PowerShell le lit, ils doivent utiliser le même système d’encodage. Ce processus d’analyse d’un script PowerShell est le suivant : _octets_ -> _caractères_ -> _jetons_ ->  _arborescence de syntaxe abstraite_ -> _exécution_.
 
 VS Code et PowerShell sont tous deux installés avec une configuration d’encodage par défaut adéquate. Toutefois, l’encodage par défaut utilisée par PowerShell a changé avec la publication de PowerShell Core (v6.x). Pour être sûr de n’avoir aucun problème lors de l’utilisation de PowerShell ou de l’extension PowerShell dans VS Code, vous devez configurer vos paramètres VS Code et PowerShell correctement.
 
@@ -41,27 +41,27 @@ Les causes courantes des problèmes d’encodage sont les suivantes :
 
 ### <a name="how-to-tell-when-you-have-encoding-issues"></a>Comment savoir quand vous avez des problèmes d’encodage ?
 
-Souvent, les erreurs d’encodage se présentent sous forme d’erreurs d’analyse dans les scripts. Si vous remarquez des séquences de caractères étranges dans votre script, il peut s’agir de ce type de problème. Dans l’exemple ci-dessous, les caractères `â&euro;"` apparaissent à la place d’un tiret demi-cadratin (`–`) :
+Souvent, les erreurs d’encodage se présentent sous forme d’erreurs d’analyse dans les scripts. Si vous remarquez des séquences de caractères étranges dans votre script, il peut s’agir de ce type de problème. Dans l’exemple ci-dessous, les caractères `â€"` apparaissent à la place d’un tiret demi-cadratin (`–`) :
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
++ Send-MailMessage â€"From $from â€"To $recipient1 â€"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
 ```
 
-Ce problème se produit car VS Code encode le caractère `–` en UTF-8 en tant qu’octets `0xE2 0x80 0x93`. Quand ces octets sont décodés au format Windows-1252, ils sont interprétées en tant que caractères `â&euro;"`.
+Ce problème se produit car VS Code encode le caractère `–` en UTF-8 en tant qu’octets `0xE2 0x80 0x93`. Quand ces octets sont décodés au format Windows-1252, ils sont interprétées en tant que caractères `â€"`.
 
 Voici quelques séquences de caractères étranges susceptibles d’apparaître :
 
 <!-- markdownlint-disable MD038 -->
-- `â&euro;"` au lieu de `–`
-- `â&euro;"` au lieu de `—`
+- `â€"` au lieu de `–`
+- `â€"` au lieu de `—`
 - `Ã„2` au lieu de `Ä`
 - `Â` au lieu de ` ` (espace insécable)
-- `Ã&copy;` au lieu de `é`
+- `Ã©` au lieu de `é`
 <!-- markdownlint-enable MD038 -->
 
 Cette [référence](https://www.i18nqa.com/debug/utf8-debug.html) très pratique liste les modèles courants qui indiquent un problème d’encodage UTF-8/Windows-1252.
@@ -71,8 +71,8 @@ Cette [référence](https://www.i18nqa.com/debug/utf8-debug.html) très pratique
 L’extension PowerShell interagit avec les scripts de plusieurs façons :
 
 1. Quand les scripts sont modifiés dans VS Code, le contenu est envoyé par VS Code à l’extension. Le [protocole de serveur de langage][] impose que ce contenu soit transféré en UTF-8. Par conséquent, il n’est pas possible pour l’extension d’obtenir l’encodage incorrect.
-2. Quand les scripts sont exécutés directement dans la console intégrée, ils sont lus directement à partir du fichier par PowerShell. Si l’encodage de PowerShell est différent de celui de VS Code, les choses peuvent mal tourner.
-3. Quand un script ouvert dans VS Code référence un autre script qui n’est pas ouvert dans VS Code, l’extension charge le contenu de ce script à partir du système de fichiers. L’extension PowerShell utilise par défaut l’encodage UTF-8, mais elle utilise la détection de [marque d’ordre d’octet][] pour sélectionner l’encodage correct.
+1. Quand les scripts sont exécutés directement dans la console intégrée, ils sont lus directement à partir du fichier par PowerShell. Si l’encodage de PowerShell est différent de celui de VS Code, les choses peuvent mal tourner.
+1. Quand un script ouvert dans VS Code référence un autre script qui n’est pas ouvert dans VS Code, l’extension charge le contenu de ce script à partir du système de fichiers. L’extension PowerShell utilise par défaut l’encodage UTF-8, mais elle utilise la détection de [marque d’ordre d’octet][] pour sélectionner l’encodage correct.
 
 Le problème se produit en cas d’encodage des formats sans marque d’ordre d’octet (comme [UTF-8][] sans marque d’ordre d’octet et [Windows-1252][]). L’extension PowerShell utilise par défaut UTF-8. L’extension ne peut pas modifier les paramètres d’encodage de VS Code. Pour plus d’informations, consultez le [problème n°824](https://github.com/Microsoft/VSCode/issues/824).
 
@@ -187,7 +187,7 @@ Voir les articles suivants :
 - La réponse de [@mklement0] concernant l’[encodage PowerShell sur StackOverflow](https://stackoverflow.com/a/40098904).
 - Le billet de blog de [@rkeithhill] concernant le [traitement de l’entrée UTF-8 sans marque d’ordre d’octet dans PowerShell](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/).
 
-Il n’est pas possible de forcer PowerShell à utiliser un encodage d’entrée spécifique. PowerShell 5.1 et antérieur utilisent par défaut l’encodage Windows-1252 quand il n’y a pas de marque d’ordre d’octet. Pour des raisons d’interopérabilité, il est préférable d’enregistrer les scripts dans un format Unicode avec une marque d’ordre d’octet.
+Il n’est pas possible de forcer PowerShell à utiliser un encodage d’entrée spécifique. PowerShell 5.1 et versions antérieures, s’exécutant sur Windows avec les paramètres régionaux définis sur en-US, utilise par défaut le codage Windows-1252 en l’absence de marque d’ordre d’octet. D’autres paramètres régionaux peuvent utiliser un codage différent. Pour garantir leur interopérabilité, il est préférable d’enregistrer les scripts dans un format Unicode avec une marque d’ordre d’octet.
 
 > [!IMPORTANT]
 > Tout autre outil qui traite des scripts PowerShell est susceptible d’être affecté par vos options d’encodage ou de ré-encoder vos scripts en un autre encodage.
@@ -261,7 +261,7 @@ Il existe quelques autres billets intéressants sur l’encodage et sa configura
   - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
-- [Article classique de *Joel on Software* concernant Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [Article classique de _Joel on Software_ concernant Unicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [Encodage dans .NET Standard](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 [@mklement0]: https://github.com/mklement0

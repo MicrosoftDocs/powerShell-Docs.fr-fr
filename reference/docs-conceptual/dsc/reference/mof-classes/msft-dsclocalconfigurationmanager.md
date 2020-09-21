@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: dsc,powershell,configuration,installation
 title: MSFT_DSCLocalConfigurationManager, classe
-ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953266"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464279"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager, classe
 
@@ -34,12 +34,12 @@ La classe **MSFT_DSCLocalConfigurationManager** comprend les membres suivants :
 
 La classe **MSFT_DSCLocalConfigurationManager** comprend les méthodes suivantes.
 
-|Méthode |Description |
+|Méthodes |Description |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Utilise l’agent de configuration pour appliquer la configuration en attente.|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Désactive le débogage des ressources DSC.|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Active le débogage des ressources DSC.|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| Envoie le document de configuration au nœud géré et utilise la méthode **Get** de l’agent de configuration pour appliquer la configuration.|
+| [ApplyConfiguration(boolean)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| Utilise l’agent de configuration pour appliquer la configuration en attente.|
+| [DisableDebugConfiguration()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| Désactive le débogage des ressources DSC.|
+| [EnableDebugConfiguration(boolean)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| Active le débogage des ressources DSC.|
+| [GetConfiguration()](msft-dsclocalconfigurationmanager-getconfiguration.md)| Envoie le document de configuration au nœud géré et utilise la méthode **Get** de l’agent de configuration pour appliquer la configuration.|
 | [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| Obtient la sortie de l’agent de configuration associée à un travail spécifique.|
 | [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| Obtenez l’historique des états de la configuration.|
 | [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| Obtient les paramètres du Gestionnaire de configuration local qui permettent de contrôler l’agent de configuration.|

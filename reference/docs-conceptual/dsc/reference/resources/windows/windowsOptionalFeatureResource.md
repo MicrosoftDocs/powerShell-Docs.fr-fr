@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 08/28/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource WindowsOptionalFeature dans DSC
-ms.openlocfilehash: bca6294db74c92a2c1940cfbe00305542a1c5d19
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
+ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565364"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89093248"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Ressource WindowsOptionalFeature dans DSC
 
@@ -15,13 +15,15 @@ ms.locfileid: "83565364"
 
 La ressource **WindowsOptionalFeature** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour garantir que des fonctionnalités facultatives sont activées sur un nœud cible.
 
+> [!NOTE]
+> **WindowsOptionalFeature** fonctionne uniquement sur les ordinateurs clients Windows, comme Windows 10.
+
 ## <a name="syntax"></a>Syntaxe
 
 ```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string[]] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
@@ -36,8 +38,7 @@ WindowsOptionalFeature [string] #ResourceName
 
 |Propriété |Description |
 |---|---|
-|Nom |Indique le nom de la fonctionnalité que vous souhaitez voir activée ou désactivée. |
-|Source |Non implémenté. |
+|Name |Indique le nom de la fonctionnalité que vous souhaitez voir activée ou désactivée. |
 |NoWindowsUpdateCheck |Indique si DISM contacte Windows Update (WU) lors de la recherche des fichiers sources pour activer une fonctionnalité. Si la valeur est `$true`, DISM ne contacte pas Windows Update. |
 |RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés à la fonctionnalité quand **Ensure** est défini sur **Absent**. |
 |LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly**, **ErrorsAndWarning** et **ErrorsAndWarningAndInformation**. |

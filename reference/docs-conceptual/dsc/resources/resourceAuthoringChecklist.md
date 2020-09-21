@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Liste de vérification de création de ressources
-ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500623"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217642"
 ---
 # <a name="resource-authoring-checklist"></a>Liste de vérification de création de ressources
 
@@ -35,7 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>La ressource et le schéma sont corrects
 
-Vérifiez le fichier de schéma de ressource (*.schema.mof). Vous pouvez utiliser le [Concepteur de ressources DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) pour développer et tester votre schéma. Assurez-vous que :
+Vérifiez le fichier de schéma de ressource (`*.schema.mof`). Vous pouvez utiliser le [Concepteur de ressources DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) pour développer et tester votre schéma. Assurez-vous que :
 
 - Les types de propriétés sont corrects (par exemple, n’utilisez pas String pour les propriétés qui acceptent des valeurs numériques ; utilisez à la place UInt32 ou d’autres types numériques).
 - Les attributs de propriétés sont spécifiés correctement en tant que ([key], [required], [write], [read])
@@ -55,7 +55,7 @@ Vérifiez le fichier de schéma de ressource (*.schema.mof). Vous pouvez utilise
 
 - Chaque champ a une description explicite. Le dépôt GitHub de PowerShell présente des exemples intéressants, tel que [.schema.mof for xRemoteFile](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof)
 
-Vous devez aussi utiliser les applets de commande **Test-xDscResource** et **Test-xDscSchema** à partir du [Concepteur de ressources DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) pour vérifier automatiquement la ressource et le schéma :
+Vous devez aussi utiliser les applets de commande `Test-xDscResource` et `Test-xDscSchema` à partir du [Concepteur de ressources DSC](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) pour vérifier automatiquement la ressource et le schéma :
 
 ```
 Test-xDscResource <Resource_folder>
@@ -99,29 +99,29 @@ Après une première application, le fichier test.txt doit apparaître dans le d
 En changeant l’état de l’ordinateur, puis en réexécutant DSC, vous pouvez vérifier que `Set-TargetResource` et `Test-TargetResource` fonctionnent correctement. Voici les étapes à suivre :
 
 1. Commencez avec la ressource qui n’est pas à l’état souhaité.
-2. Exécutez la configuration avec votre ressource.
-3. Vérifiez que `Test-DscConfiguration` retourne la valeur True.
-4. Modifiez l’élément configuré pour qu’il ne soit plus dans l’état souhaité
-5. Vérifiez que `Test-DscConfiguration` retourne la valeur False.
+1. Exécutez la configuration avec votre ressource.
+1. Vérifiez que `Test-DscConfiguration` retourne la valeur True.
+1. Modifiez l’élément configuré pour qu’il ne soit plus dans l’état souhaité
+1. Vérifiez que `Test-DscConfiguration` retourne la valeur False.
 
 Voici un exemple plus concret utilisant la ressource de Registre :
 
 1. Commencez avec la clé de Registre qui n’est pas à l’état souhaité.
-2. Exécutez `Start-DscConfiguration` avec une configuration pour la faire basculer à l’état souhaité et vérifiez que l’opération réussit.
-3. Exécutez `Test-DscConfiguration` et vérifiez qu’elle retourne la valeur True.
-4. Modifiez la valeur de la clé pour qu’elle ne soit pas à l’état souhaité.
-5. Exécutez `Test-DscConfiguration` et vérifiez qu’elle retourne la valeur False.
-6. La fonctionnalité `Get-TargetResource` a été vérifiée à l’aide de `Get-DscConfiguration`.
+1. Exécutez `Start-DscConfiguration` avec une configuration pour la faire basculer à l’état souhaité et vérifiez que l’opération réussit.
+1. Exécutez `Test-DscConfiguration` et vérifiez qu’elle retourne la valeur True.
+1. Modifiez la valeur de la clé pour qu’elle ne soit pas à l’état souhaité.
+1. Exécutez `Test-DscConfiguration` et vérifiez qu’elle retourne la valeur False.
+1. La fonctionnalité `Get-TargetResource` a été vérifiée à l’aide de `Get-DscConfiguration`.
 
 `Get-TargetResource` doit retourner des détails sur l’état actuel de la ressource. Testez-la en appelant `Get-DscConfiguration` après avoir appliqué la configuration et en vérifiant que la sortie reflète fidèlement l’état actuel de l’ordinateur. Il est important de la tester séparément, car les problèmes dans cette zone ne s’affichent pas lors de l’appel de `Start-DscConfiguration`.
 
 ## <a name="call-getsettest-targetresource-functions-directly"></a>Appelez les fonctions **Get/Set/Test-TargetResource** directement
 
-Testez les fonctions **Get/Set/Test-TargetResource** implémentées dans votre ressource en les appelant directement et en vérifiant qu’elles fonctionnent comme prévu.
+Testez les fonctions `Get/Set/Test-TargetResource` implémentées dans votre ressource en les appelant directement et en vérifiant qu’elles fonctionnent comme prévu.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Effectuez une vérification de bout en bout à l’aide de **Start-DscConfiguration**
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Effectuez une vérification de bout en bout à l’aide de Start-DscConfiguration
 
-Le test des fonctions **Get/Set/Test-TargetResource** en les appelant directement est important, mais les problèmes ne sont pas tous découverts de cette façon. Vous devez axer une partie importante de vos tests sur l’utilisation de `Start-DscConfiguration` ou du serveur collecteur. En fait, c’est de cette manière que les utilisateurs se serviront de la ressource. Ne sous-estimez donc pas l’importance de ce type de test. Types de problèmes possibles :
+Le test des fonctions `Get/Set/Test-TargetResource` en les appelant directement est important, mais les problèmes ne sont pas tous découverts de cette façon. Vous devez axer une partie importante de vos tests sur l’utilisation de `Start-DscConfiguration` ou du serveur collecteur. En fait, c’est de cette manière que les utilisateurs se serviront de la ressource. Ne sous-estimez donc pas l’importance de ce type de test. Types de problèmes possibles :
 
 - Les informations d’identification ou la session peuvent se comporter différemment, car l’agent DSC s’exécute en tant que service. Veillez à tester ici toutes les fonctionnalités de bout en bout.
 - Les erreurs générées par `Start-DscConfiguration` peuvent être différentes de celles affichées quand vous appelez directement la fonction `Set-TargetResource`.
@@ -148,9 +148,9 @@ La création d’exemples de qualité aidera les autres à comprendre comment l�
 - Les exemples suivants doivent reposer sur ces exemples (création d’une machine virtuelle à partir d’un disque dur virtuel, suppression de machine virtuelle, modification de machines virtuelles, etc.) et illustrer les fonctionnalités avancées (comme la création d’une machine virtuelle avec mémoire dynamique).
 - Les exemples de configuration doivent être paramétrés (toutes les valeurs doivent être passées à la configuration comme paramètres et il ne doit y avoir aucune valeur codée en dur) :
 
-  ```powershell
-  configuration Sample_xRemoteFile_DownloadFile
-  {
+```powershell
+configuration Sample_xRemoteFile_DownloadFile
+{
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -180,23 +180,23 @@ La création d’exemples de qualité aidera les autres à comprendre comment l�
             Headers = $headers
         }
     }
-  }
-  ```
+}
+```
 
 - Il est recommandé d’inclure un exemple (en commentaire) montrant comment appeler la configuration avec les valeurs réelles à la fin de l’exemple de script. Par exemple, dans la configuration ci-dessus, il n’est pas évident pour tout le monde que le meilleur moyen de spécifier UserAgent est :
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` Dans ce cas, un commentaire peut clarifier l’exécution prévue de la configuration :
 
-  ```powershell
-  <#
-  Sample use (parameter values need to be changed according to your scenario):
+```powershell
+<#
+Sample use (parameter values need to be changed according to your scenario):
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
-  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-  #>
-  ```
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+-userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+#>
+```
 
 - Pour chaque exemple, rédigez une brève description qui explique ce qu’il fait et la signification des paramètres.
 - Vérifiez que les exemples couvrent la plupart des scénarios importants pour votre ressource et, si aucun élément ne manque, vérifiez qu’ils s’exécutent tous et qu’ils placent l’ordinateur à l’état souhaité.
@@ -271,7 +271,7 @@ Si votre ressource prend des informations d’identification en tant que paramè
 
 ## <a name="resource-does-not-require-interactive-input"></a>La ressource ne nécessite pas d’entrée interactive
 
-Les fonctions **Get/Set/Test-TargetResource** doivent être exécutées automatiquement et ne doivent à aucun moment de l’exécution attendre une entrée utilisateur (par exemple, vous ne devez pas utiliser `Get-Credential` à l’intérieur de ces fonctions). Si vous avez besoin de fournir une entrée utilisateur, vous devez la passer à la configuration en tant que paramètre pendant la phase de compilation.
+Les fonctions `Get/Set/Test-TargetResource` doivent être exécutées automatiquement et ne doivent à aucun moment de l’exécution attendre une entrée utilisateur (par exemple, vous ne devez pas utiliser `Get-Credential` à l’intérieur de ces fonctions). Si vous avez besoin de fournir une entrée utilisateur, vous devez la passer à la configuration en tant que paramètre pendant la phase de compilation.
 
 ## <a name="resource-functionality-was-thoroughly-tested"></a>La fonctionnalité de la ressource a été testée de manière approfondie
 
@@ -279,27 +279,11 @@ Cette liste de vérification contient des éléments qu’il est important de te
 
 ## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bonne pratique : le module de ressources contient un dossier Tests avec un script ResourceDesignerTests.ps1
 
-Il est conseillé de créer un dossier « Tests » à l’intérieur du module de ressources, de créer un fichier `ResourceDesignerTests.ps1` et d’ajouter des tests à l’aide de **Test-xDscResource** et **Test-xDscSchema** pour toutes les ressources d’un module donné. De cette façon, vous pouvez valider rapidement les schémas de toutes les ressources des modules donnés et effectuer des tests d’intégrité avant la publication. Pour xRemoteFile, `ResourceTests.ps1` pourrait être aussi simple que ceci :
+Il est conseillé de créer un dossier « Tests » à l’intérieur du module de ressources, de créer un fichier `ResourceDesignerTests.ps1` et d’ajouter des tests à l’aide de `Test-xDscResource` et `Test-xDscSchema` pour toutes les ressources d’un module donné. De cette façon, vous pouvez valider rapidement les schémas de toutes les ressources des modules donnés et effectuer des tests d’intégrité avant la publication. Pour xRemoteFile, `ResourceTests.ps1` pourrait être aussi simple que ceci :
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
-```
-
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bonne pratique : le dossier de ressources contient un script de concepteur de ressources pour générer le schéma
-
-Chaque ressource doit contenir un script de concepteur de ressources qui génère un schéma mof de la ressource. Ce fichier doit être placé dans `<ResourceName>\ResourceDesignerScripts` et nommé Generate`<ResourceName>Schema.ps1`. Pour la ressource xRemoteFile, ce fichier se nommerait `GenerateXRemoteFileSchema.ps1` et contiendrait :
-
-```powershell
-$DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
-$Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
-$Headers = New-xDscResourceProperty -Name Headers -Type Hashtable[] -Attribute Write -Description 'Headers of the web request.'
-$UserAgent = New-xDscResourceProperty -Name UserAgent -Type String -Attribute Write -Description 'User agent for the web request.'
-$Ensure = New-xDscResourceProperty -Name Ensure -Type String -Attribute Read -ValidateSet "Present", "Absent" -Description 'Says whether DestinationPath exists on the machine'
-$Credential = New-xDscResourceProperty -Name Credential -Type PSCredential -Attribute Write -Description 'Specifies a user account that has permission to send the request.'
-$CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -Type String -Attribute Write -Description 'Digital public key certificate that is used to send the request.'
-
-New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
 ## <a name="best-practice-resource-supports--whatif"></a>Bonne pratique : la ressource prend en charge -WhatIf

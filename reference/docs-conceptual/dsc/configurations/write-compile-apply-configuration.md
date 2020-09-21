@@ -1,20 +1,20 @@
 ---
-ms.date: 12/12/2018
+ms.date: 06/22/2020
 keywords: dsc,powershell,configuration,service,installation
 title: Écrire, compiler et appliquer une configuration
-ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
+ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808297"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295673"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>Écrire, compiler et appliquer une configuration
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Cet exercice vous guide dans la création et l’application d’une configuration DSC (Configuration d’état souhaité) du début à la fin.
-Dans l’exemple suivant, vous allez apprendre à écrire et à appliquer une configuration très simple. La configuration vérifiera qu’il existe un fichier « HelloWorld.txt » sur votre ordinateur local. Si vous supprimez le fichier, DSC le recréera lors de sa prochaine fois mise à jour.
+Cet exercice vous guide dans la création et l’application d’une configuration DSC (Configuration d’état souhaité) du début à la fin. Dans l’exemple suivant, vous allez apprendre à écrire et à appliquer une configuration très simple. La configuration vérifiera qu’il existe un fichier « HelloWorld.txt » sur votre ordinateur local.
+Si vous supprimez le fichier, DSC le recréera lors de sa prochaine fois mise à jour.
 
 Pour obtenir une vue d’ensemble de DSC et de son fonctionnement, consultez [Présentation de Desired State Configuration pour les développeurs](../overview/overview.md).
 
@@ -34,10 +34,12 @@ Configuration HelloWorld {
     # Import the module that contains the File resource.
     Import-DscResource -ModuleName PsDesiredStateConfiguration
 
-    # The Node statement specifies which targets to compile MOF files for, when this configuration is executed.
+    # The Node statement specifies which targets to compile MOF files for, when
+    # this configuration is executed.
     Node 'localhost' {
 
-        # The File resource can ensure the state of files, or copy them from a source to a destination with persistent updates.
+        # The File resource can ensure the state of files, or copy them from a
+        # source to a destination with persistent updates.
         File HelloWorld {
             DestinationPath = "C:\Temp\HelloWorld.txt"
             Ensure = "Present"
@@ -47,8 +49,8 @@ Configuration HelloWorld {
 }
 ```
 
-> Important ! Dans les scénarios plus avancés où plusieurs modules doivent être importés afin que vous puissiez utiliser de nombreuses ressources DSC dans la même configuration, veillez à placer chaque module sur une ligne distincte à l’aide de `Import-DscResource`.
-> Cela est plus facile à gérer dans le contrôle de code source et requis lors de l’utilisation de DSC dans Azure State Configuration.
+> [!IMPORTANT]
+> Dans les scénarios plus avancés où plusieurs modules doivent être importés afin que vous puissiez utiliser de nombreuses ressources DSC dans la même configuration, veillez à placer chaque module sur une ligne distincte à l’aide de `Import-DscResource`. Cela est plus facile à gérer dans le contrôle de code source et requis lors de l’utilisation de DSC dans Azure State Configuration.
 >
 > ```powershell
 >  Configuration HelloWorld {
@@ -67,13 +69,10 @@ La configuration appelle une [ressource](../resources/resources.md), la ressourc
 
 ## <a name="compile-the-configuration"></a>Compiler la configuration
 
-Pour qu’une configuration DSC soit appliquée à un nœud, elle doit tout d’abord être compilée dans un fichier MOF.
-L’exécution de la configuration, comme une fonction, compilera un fichier « .mof » pour chaque nœud défini par le bloc `Node`.
-Pour exécuter la configuration, vous devez *dot sourcer* votre script « HelloWorld.ps1 » dans la portée actuelle.
-Pour plus d’informations, consultez [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
+Pour qu’une configuration DSC soit appliquée à un nœud, elle doit tout d’abord être compilée dans un fichier MOF. L’exécution de la configuration, comme une fonction, compilera un fichier `.mof` pour chaque nœud défini par le bloc `Node`. Pour exécuter la configuration, vous devez _dot sourcer_ votre script `HelloWorld.ps1` dans la portée actuelle. Pour plus d’informations, consultez [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
-*Dot sourcez* votre script « HelloWorld.ps1 » en tapant le chemin où vous l’avez stocké, après le `. ` (point, espace). Vous pouvez ensuite exécuter votre configuration en l’appelant comme une fonction.
+_Dot sourcez_ votre script `HelloWorld.ps1` en tapant le chemin où vous l’avez stocké, après le `. ` (point, espace). Vous pouvez ensuite exécuter votre configuration en l’appelant comme une fonction. Vous pouvez également appeler la fonction de configuration au bas du script afin de ne pas avoir à dot sourcer.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -83,7 +82,7 @@ HelloWorld
 
 Cela génère la sortie suivante :
 
-```output
+```Output
 Directory: C:\Scripts\HelloWorld
 
 
@@ -96,10 +95,9 @@ Mode                LastWriteTime         Length Name
 
 Maintenant que vous disposez du fichier MOF compilé, vous pouvez appliquer la configuration au nœud cible (dans ce cas, l’ordinateur local) en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 
-L’applet de commande `Start-DscConfiguration` indique au [Gestionnaire de configuration local](../managing-nodes/metaConfig.md), le moteur de DSC, qu’il doit appliquer la configuration.
-Le LCM est chargé d’appeler les ressources DSC pour appliquer la configuration.
+L’applet de commande `Start-DscConfiguration` indique au [Gestionnaire de configuration local](../managing-nodes/metaConfig.md), le moteur de DSC, qu’il doit appliquer la configuration. Le LCM est chargé d’appeler les ressources DSC pour appliquer la configuration.
 
-Utilisez le code ci-dessous pour exécuter l’applet de commande `Start-DSCConfiguration`. Spécifiez le chemin du répertoire où est stocké votre fichier « localhost.mof » au paramètre `-Path`. L’applet de commande `Start-DSCConfiguration` recherche dans le répertoire spécifié pour tout fichier « \<nom_ordinateur\>.mof ». L’applet de commande `Start-DSCConfiguration` tente d’appliquer chaque fichier « .mof » trouvé au nom d’ordinateur spécifié par le nom de fichier (« localhost », « server01 », « dc-02 », etc.).
+Utilisez le code ci-dessous pour exécuter l’applet de commande `Start-DSCConfiguration`. Spécifiez le chemin du répertoire où est stocké votre fichier `localhost.mof` au paramètre **Path**. L’applet de commande `Start-DSCConfiguration` recherche tous les fichiers `<computername>.mof` dans le répertoire spécifié. L’applet de commande `Start-DSCConfiguration` tente d’appliquer chaque fichier `.mof` trouvé au `computername` spécifié par le nom de fichier (« localhost », « server01 », « dc-02 », etc.).
 
 > [!NOTE]
 > Si le paramètre `-Wait` n’est pas spécifié, `Start-DSCConfiguration` crée une tâche en arrière-plan pour exécuter l’opération. Le fait de spécifier le paramètre `-Verbose` vous permet de regarder la sortie **détaillée** de l’opération. `-Wait` et `-Verbose` sont tous deux des paramètres facultatifs.
@@ -110,17 +108,17 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>Tester la configuration
 
-Une fois l’applet de commande `Start-DSCConfiguration` terminée, vous devriez voir un fichier « HelloWorld.txt » à l’emplacement spécifié. Vous pouvez vérifier le contenu avec l’applet de commande [Get-Content](/powershell/module/microsoft.powershell.management/get-content).
+Une fois l’applet de commande `Start-DSCConfiguration` terminée, vous devez voir un fichier `HelloWorld.txt` à l’emplacement spécifié. Vous pouvez vérifier le contenu avec l’applet de commande [Get-Content](/powershell/module/microsoft.powershell.management/get-content).
 
-Vous pouvez également *tester* l’état actuel à l’aide de [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
+Vous pouvez également _tester_ l’état actuel à l’aide de [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
 
-La sortie doit être « True » si le nœud est actuellement conforme à la configuration appliquée.
+La sortie doit être `True` si le nœud est actuellement conforme à la configuration appliquée.
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-```output
+```Output
 True
 ```
 
@@ -128,7 +126,7 @@ True
 Get-Content -Path C:\Temp\HelloWorld.txt
 ```
 
-```output
+```Output
 Hello World from DSC!
 ```
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Empaqueter et charger des ressources vers un serveur Pull
-ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278497"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782886"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Empaqueter et charger des ressources vers un serveur Pull
 
@@ -20,14 +20,14 @@ Chaque nœud cible peut être configuré pour télécharger les configurations e
 
 ## <a name="package-resource-modules"></a>Modules Resource Package
 
-Chaque ressource disponible pour un client à télécharger doit être stockée dans un fichier « .zip ». L’exemple ci-dessous montre les étapes nécessaires en utilisant la ressource [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0).
+Chaque ressource disponible pour un client à télécharger doit être stockée dans un fichier `.zip`. L’exemple ci-dessous montre les étapes nécessaires en utilisant la ressource [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0).
 
 > [!NOTE]
-> Si vous avez tous les clients à l’aide de PowerShell 4.0, vous devez aplanir la structure de dossiers de ressources et supprimez tous les dossiers version. Pour plus d’informations, consultez [Plusieurs versions de ressources](../configurations/import-dscresource.md#multiple-resource-versions).
+> Si vous avez des clients qui utilisent PowerShell 4.0, vous devez aplatir la structure de dossiers des ressources et supprimer tous les dossiers de version. Pour plus d’informations, consultez [Plusieurs versions de ressources](../configurations/import-dscresource.md#multiple-resource-versions).
 
-Vous pouvez compresser le répertoire des ressources à l’aide de l’utilitaire, du script ou de la méthode de votre choix. Dans Windows, *cliquez avec le bouton droit* sur le répertoire « xPSDesiredStateConfiguration », puis sélectionnez « Envoyer vers », puis « Dossier compressé ».
+Vous pouvez compresser le répertoire des ressources à l’aide de l’utilitaire, du script ou de la méthode de votre choix. Dans Windows, vous pouvez _cliquer avec le bouton droit_ sur le répertoire `xPSDesiredStateConfiguration`, sélectionner **Envoyer vers**, puis **Dossier compressé**.
 
-![Cliquer avec le bouton droit](media/package-upload-resources/right-click.gif)
+![Clic droit - Envoyer vers - Dossier compressé](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>Nommer l’archive de ressources
 
@@ -37,11 +37,11 @@ L’archive de ressources doit être nommée avec le format suivant :
 {ModuleName}_{Version}.zip
 ```
 
-Dans l’exemple ci-dessus, le fichier « xPSDesiredStateConfiguration.zip » doit être renommé « xPSDesiredStateConfiguration_8.4.4.0.zip ».
+Dans l’exemple ci-dessus, `xPSDesiredStateConfiguration.zip` doit être renommé `xPSDesiredStateConfiguration_8.4.4.0.zip`.
 
 ### <a name="create-checksums"></a>Créer des sommes de contrôle
 
-Une fois le module de ressources compressé et renommé, vous devez créer une **somme de contrôle**.  La **somme de contrôle** est utilisée par le gestionnaire de configuration local sur le client pour déterminer si la ressource a été modifiée et doit être téléchargée à nouveau. Vous pouvez créer une **somme de contrôle** avec l’applet de commande [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum), comme indiqué dans l’exemple ci-dessous.
+Une fois le module de ressources compressé et renommé, vous devez créer une **somme de contrôle**. La **somme de contrôle** est utilisée par le gestionnaire de configuration local sur le client pour déterminer si la ressource a été modifiée et doit être téléchargée à nouveau. Vous pouvez créer une **somme de contrôle** avec l’applet de commande [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum), comme indiqué dans l’exemple ci-dessous.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

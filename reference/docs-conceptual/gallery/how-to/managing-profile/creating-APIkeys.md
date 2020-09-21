@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des clés API
-ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278287"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777584"
 ---
 # <a name="managing-api-keys"></a>Gestion des clés API
 
@@ -59,7 +59,7 @@ Ces paramètres ne peuvent pas être modifiés une fois que la clé est créée.
 
 Vous pouvez modifier certains paramètres d’une clé existante. Comme indiqué précédemment, vous ne pouvez ni modifier l’étendue de sécurité d’une clé API existante, ni modifier son délai d’expiration. Les options que vous pouvez modifier figurent dans la capture d’écran suivante :
 
-![Obtention d’une nouvelle valeur de clé API](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![Modification de la valeur de votre clé API](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Pour modifier les packages contrôlés par une clé, vous pouvez choisir individuellement les packages dans la liste ou modifier le modèle Glob.
 

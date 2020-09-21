@@ -3,16 +3,16 @@ title: Processus de gestion des demandes de tirage
 description: Cet article explique comment l’équipe PowerShell-Docs gère les demandes de tirage (pull request).
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060384"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158171"
 ---
 # <a name="managing-pull-requests"></a>Gestion des demandes de tirage
 
-Cet article explique comment nous gérons les demandes de tirage (pull request) dans le référentiel PowerShell-Docs. Cet article est conçu pour servir d’aide-mémoire aux membres de l’équipe PowerShell-Docs. Il est publié ici dans un souci de transparence des processus pour nos contributeurs publics.
+Cet article explique comment nous gérons les demandes de tirage (pull request) dans le dépôt PowerShell-Docs. Cet article est conçu pour servir d’aide-mémoire aux membres de l’équipe PowerShell-Docs. Il est publié ici dans un souci de transparence des processus pour nos contributeurs publics.
 
 ## <a name="best-practices"></a>Meilleures pratiques
 

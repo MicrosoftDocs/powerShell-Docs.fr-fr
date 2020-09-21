@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,configuration,installation
 title: TestConfiguration, méthode
-ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954866"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464296"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration, méthode
 
@@ -26,13 +26,13 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>Paramètres
 
-*configurationData* \[in\] Les données d’environnement pour la configuration.
+**configurationData** \[in\] Données d’environnement pour la configuration.
 
-*InDesiredState* \[out\] En retour, indique si le nœud géré est dans l’état spécifié par le document de configuration.
+**InDesiredState** \[out\] En retour, indique si le nœud géré est dans l’état spécifié par le document de configuration.
 
-*ResourcesInDesiredState* \[out\] En retour, contient une instance incorporée de la classe **MSFT_ResourceInDesiredState** qui spécifie les ressources qui sont dans l’état souhaité.
+**ResourcesInDesiredState** \[out\] En retour, contient une instance incorporée de la classe **MSFT_ResourceInDesiredState** qui spécifie les ressources qui sont dans l’état souhaité.
 
-*ResourcesNotInDesiredState* \[out\] En retour, contient une instance incorporée de la classe **MSFT_ResourceNotInDesiredState** qui spécifie les ressources qui ne sont pas dans l’état souhaité.
+**ResourcesNotInDesiredState** \[out\] En retour, contient une instance incorporée de la classe **MSFT_ResourceNotInDesiredState** qui spécifie les ressources qui ne sont pas dans l’état souhaité.
 
 ## <a name="return-value"></a>Valeur retournée
 

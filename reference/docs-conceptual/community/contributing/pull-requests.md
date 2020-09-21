@@ -3,12 +3,12 @@ title: Guide pratique pour envoyer des demandes de tirage
 description: Cet article explique comment envoyer des demandes de tirage au référentiel PowerShell-Docs.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690945"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782648"
 ---
 # <a name="how-to-submit-pull-requests"></a>Guide pratique pour envoyer des demandes de tirage
 
@@ -56,9 +56,9 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 Le comportement se présente ainsi :
 
 1. Vous soumettez une demande de tirage.
-1. Le commentaire GitHub indiquant l’état de votre demande de tirage présente l’état des « vérifications » activées sur le référentiel. Dans cet exemple, deux vérifications sont activées, « Commit Validation » (Validation commit) et « OpenPublishing.Build » :
+1. Le commentaire GitHub indiquant l’état de votre demande de tirage présente l’état des « vérifications » activées sur le dépôt. Dans cet exemple, deux vérifications sont activées, « Commit Validation » (Validation commit) et « OpenPublishing.Build » :
 
-   ![Certaines vérifications ont échoué](media/pull-requests/validation-failed.png)
+   ![État de validation : certaines vérifications ont échoué](media/pull-requests/validation-failed.png)
 
    Le build peut aboutir même si la validation commit échoue.
 
@@ -66,7 +66,7 @@ Le comportement se présente ainsi :
 1. Sur la page Détails figurent tous les contrôles de validation qui ont échoué, avec des informations indiquant comment résoudre les problèmes.
 1. Une fois la validation réussie, le commentaire suivant est ajouté à la demande de tirage :
 
-   ![Validation du build](media/pull-requests/build-validation.png)
+   ![État de validation : réussite](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > Si vous êtes un contributeur externe (et non un employé Microsoft), vous n’avez pas accès aux rapports de build détaillés ni aux liens d’aperçu.

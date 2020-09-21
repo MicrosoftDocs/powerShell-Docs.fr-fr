@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les exceptions
 description: La gestion des erreurs fait partie intégrante du travail dès lors qu’il s’agit d’écrire du code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
-ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
+ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
+ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337180"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90012559"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Tout ce que vous avez toujours voulu savoir sur les exceptions
 
@@ -82,7 +82,7 @@ Comme nous l’avons vu, `Write-Error` ne génère pas d’erreur bloquante par 
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 ```
 
-Merci à Lee Daily d’avoir rappelé cette utilisation de `-ErrorAction Stop`.
+Merci à Lee Dailey d’avoir rappelé cette utilisation de `-ErrorAction Stop`.
 
 #### <a name="cmdlet--erroraction-stop"></a>Cmdlet -ErrorAction Stop
 
@@ -583,5 +583,5 @@ Maintenant que j’ai pris le temps d’écrire sur la gestion des exceptions da
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Communauté Reddit/r/PowerShell]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
 [La grande liste des exceptions .NET]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
-[FileNotFoundException]: https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException
-[Documentation .NET]: https://docs.microsoft.com/dotnet/api
+[FileNotFoundException]: /dotnet/api/System.IO.FileNotFoundException
+[Documentation .NET]: /dotnet/api

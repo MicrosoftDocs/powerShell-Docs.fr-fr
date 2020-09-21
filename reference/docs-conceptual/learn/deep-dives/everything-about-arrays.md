@@ -1,14 +1,14 @@
 ---
 title: Tout ce que vous avez toujours voulu savoir sur les tableaux
 description: Les tableaux constituent une fonctionnalité fondamentale de la plupart des langages de programmation.
-ms.date: 05/23/2020
+ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 5cab354a99b122401f8f8119de24e075cf9d21f8
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149602"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092097"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Tout ce que vous avez toujours voulu savoir sur les tableaux
 
@@ -241,6 +241,8 @@ Lee Dailey a également indiqué que l’on peut utiliser `$data.GetUpperBound(0
 
 ```powershell
 PS> $data.GetUpperBound(0)
+3
+PS> $data[ $data.GetUpperBound(0) ]
 Three
 ```
 
@@ -586,7 +588,7 @@ True
 
 ### <a name="-in"></a>-in
 
-Pour vérifier la correspondance entre une valeur unique et différentes valeurs, vous pouvez utiliser l’opérateur `-in`. La valeur se trouve du côté gauche et le tableau du côté droit de l’opération.
+Pour vérifier la correspondance entre une valeur unique et différentes valeurs, vous pouvez utiliser l’opérateur `-in`. La valeur se trouve du côté gauche et le tableau du côté droit de l’opérateur.
 
 ```powershell
 PS> $data = @('red','green','blue')
@@ -850,7 +852,7 @@ La présence de `[void]` au début de la ligne permet de supprimer le code de re
 
 Si les seules données du tableau sont des chaînes, examinez également [StringBuilder][]. Il s’agit presque de la même chose, mais certaines de ses méthodes servent uniquement à traiter les chaînes. `StringBuilder` est spécialement conçu pour optimiser les performances.
 
-Il est courant de voir des gens abandonner les tableaux pour passer aux `ArrayList`. Cependant, cette pratique provient de l’époque où C# ne bénéficiait pas d’une prise en charge générique. `ArrayList` est déconseillé en faveur de la `List[]` générique.
+Il est courant de voir des gens abandonner les tableaux pour passer aux `ArrayList`. Cependant, cette pratique provient de l’époque où C# ne bénéficiait pas d’une prise en charge générique. `ArrayList` est déprécié en faveur de la `List[]` générique.
 
 ### <a name="generic-list"></a>List générique
 
@@ -898,7 +900,7 @@ PS> $myList[-1]
 
 #### <a name="listpsobject"></a>List[PSObject]
 
-Une liste peut être de n’importe quel type ; cependant, si vous ne connaissez pas le type d’objets, vous pouvez utiliser `[List[PSObject]]` pour les contenir.
+Une liste peut être de n’importe quel type. Cependant, si vous ne connaissez pas le type des objets, vous pouvez utiliser `[List[PSObject]]` pour les contenir.
 
 ```powershell
 $list = [List[PSObject]]::new()

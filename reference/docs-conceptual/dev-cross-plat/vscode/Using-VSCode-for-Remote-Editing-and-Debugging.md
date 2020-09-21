@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 description: Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 ms.date: 06/13/2019
-ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 0394348b4dfbe813549c02035e9d3b035cba72e4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809275"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784637"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Utilisation de Visual Studio Code pour le débogage et l’édition à distance
 
@@ -47,11 +47,11 @@ Après avoir lancé l’extension PowerShell pour VSCode et ouvert la console Po
 
 - ajouter des points d’arrêt à la marge
 
-  ![ajout de points d’arrêt à la marge](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![Ajout d’un point d’arrêt à la marge](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Appuyez sur F5 pour déboguer le script PowerShell.
 
-  ![débogage du script local PowerShell](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![débogage du script PowerShell local](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Pendant le débogage, vous pouvez interagir avec la console de débogage, consultez les variables dans l’étendue à gauche, et exécutez tous les autres outils de débogage standard.
 
@@ -73,20 +73,20 @@ Comme nous passons de macOS à une machine virtuelle Ubuntu dans Azure, nous uti
 
 Tout d’abord, dans la console intégrée, exécutez `Enter-PSSession`. Vous êtes connecté à la session à distance lorsque `[<hostname>]` s’affiche à gauche de votre invite.
 
-![L’appel à Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Appeler Enter-PSSession pour se connecter à une session à distance](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Maintenant, nous pouvons effectuer les mêmes étapes que si nous modifiions un script local.
 
 1. Exécutez `Open-EditorFile test.ps1` ou `psedit test.ps1` pour ouvrir le fichier `test.ps1` distant
 
-  ![Fichier Open-EditorFile the test.ps1](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Modifier le script sur le système distant](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Modifier le fichier/définir des points d’arrêt
 
-   ![modifier et définir des points d’arrêt](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![Modifier et définir des points d’arrêt](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Démarrer le débogage (F5) du fichier distant
 
-   ![débogage du fichier distant](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![Débogage du script distant](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 Si vous rencontrez des problèmes, vous pouvez ouvrir des tickets dans le [référentiel GitHub](https://github.com/powershell/vscode-powershell).

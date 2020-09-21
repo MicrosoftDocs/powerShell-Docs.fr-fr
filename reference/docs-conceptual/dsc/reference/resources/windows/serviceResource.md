@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,installation
 title: Ressource Service dans DSC
-ms.openlocfilehash: acd0710fb4b131876e3edece15b07cff8e9a8a9e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557003"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463582"
 ---
 # <a name="dsc-service-resource"></a>Ressource Service dans DSC
 
@@ -23,14 +23,18 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
+    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
+    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
+    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -41,11 +45,15 @@ Service [string] #ResourceName
 |Nom |Indique le nom du service Notez qu’il peut être différent du nom d’affichage. Vous pouvez obtenir une liste des services et leur état actuel avec l’applet de commande `Get-Service`. |
 |BuiltInAccount |Indique le compte de connexion à utiliser pour le service. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService**, **LocalSystem** et **NetworkService**. |
 |Informations d'identification |Indique les informations d’identification pour le compte sous lequel s’exécute le service. Cette propriété et la propriété **BuiltinAccount** ne peuvent pas être utilisées ensemble. |
+|StartupTimeout | Délai d’attente de l’exécution du service en millisecondes.|
 |StartupType |Indique le type de démarrage du service. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic**, **Disabled** et **Manual**. |
 |State |Indique l’état que vous voulez assurer pour le service. Les valeurs sont : **Running** ou **Stopped**. |
+|TerminateTimeout |Délai d’attente de l’arrêt du service en millisecondes.|
+|Les dépendances | Tableau des noms des dépendances que le service doit avoir. |
 |Description |Indique la description du service cible. |
+|DesktopInteract | Indique si le service doit être en mesure de communiquer avec une fenêtre sur le bureau. Doit avoir la valeur false pour les services qui ne s’exécutent pas en tant que LocalSystem.|
 |DisplayName |Indique le nom complet du service cible. |
-|Path |Indique le chemin du fichier binaire d’un nouveau service. |
+|Chemin d’accès |Indique le chemin du fichier binaire d’un nouveau service. |
 
 ## <a name="common-properties"></a>Propriétés communes
 

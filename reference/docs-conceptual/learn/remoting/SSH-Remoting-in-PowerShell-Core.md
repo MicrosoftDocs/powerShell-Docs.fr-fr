@@ -1,13 +1,13 @@
 ---
 title: Accès distant à PowerShell via SSH
 description: Accès distant dans PowerShell Core à l’aide de SSH
-ms.date: 09/30/2019
-ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
-ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
+ms.date: 07/23/2020
+ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
+ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82174129"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133467"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
 
@@ -25,7 +25,7 @@ Les cmdlets `New-PSSession``Enter-PSSession` et `Invoke-Command` ont maintenant 
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Pour créer une session distante, vous devez spécifier l’ordinateur cible avec le paramètre `HostName` et indiquer le nom d’utilisateur avec `UserName`. Lors de l’exécution des cmdlets de manière interactive, vous êtes invité à entrer un mot de passe. Vous pouvez également utiliser l’authentification par clé SSH à l’aide d’un fichier de clé privée avec le paramètre `KeyFilePath`.
+Pour créer une session distante, vous devez spécifier l’ordinateur cible avec le paramètre **HostName**, et indiquer le nom d’utilisateur avec **UserName**. Lors de l’exécution des cmdlets de manière interactive, vous êtes invité à entrer un mot de passe. Vous pouvez également utiliser l’authentification par clé SSH à l’aide d’un fichier de clé privée avec le paramètre **KeyFilePath**.
 
 ## <a name="general-setup-information"></a>Informations générales sur l’installation
 
@@ -64,7 +64,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Créez le sous-système SSH destiné à héberger un processus PowerShell sur l’ordinateur distant :
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -122,7 +122,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Ajoutez une entrée de sous-système PowerShell :
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -168,7 +168,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    Ajoutez une entrée de sous-système PowerShell :
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -191,12 +191,14 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
 
 L’accès distant PowerShell via SSH repose sur l’échange d’authentification entre le client SSH et le service SSH et n’implémente aucun schéma d’authentification par lui-même. Résultat : les schémas d’authentification éventuellement configurés, comme l’authentification multifacteur, sont gérés par SSH et sont indépendants de PowerShell. Par exemple, vous pouvez configurer le service SSH pour exiger une authentification par clé publique et un mot de passe à usage unique pour une sécurité renforcée. La configuration de l’authentification multifacteur sort du cadre de cette documentation. Reportez-vous à la documentation SSH pour savoir comment configurer correctement l’authentification multifacteur et vérifier qu’elle fonctionne en dehors de PowerShell avant d’essayer de l’utiliser avec l’accès distant PowerShell.
 
+> [!NOTE]
+> Les utilisateurs conservent les mêmes privilèges dans les sessions à distance. Cela signifie que les administrateurs ont accès à un interpréteur de commandes avec élévation de privilèges, contrairement aux utilisateurs normaux.
+
 ## <a name="powershell-remoting-example"></a>Exemple d’accès distant PowerShell
 
 Le moyen le plus simple de tester l’accès distant est de l’essayer sur un seul ordinateur. Dans cet exemple, nous créons une session distante avec le même ordinateur Linux. Comme nous utilisons des applets de commande PowerShell de manière interactive, des invites SSH s’affichent pour demander de vérifier l’ordinateur hôte et de fournir un mot de passe. Vous pouvez faire la même chose sur un ordinateur Windows pour vérifier que l’accès distant fonctionne. Ensuite, établissez une communication à distance entre les ordinateurs en changeant le nom d’hôte.
 
 ```powershell
-#
 # Linux to Linux
 #
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
@@ -249,7 +251,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```Output
+```
 PTestName@WinVM1s password:
 ```
 
@@ -318,9 +320,13 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a>Problèmes connus
+### <a name="limitations"></a>Limites
 
-La commande **sudo** ne fonctionne pas dans une session distante sur un ordinateur Linux.
+- La commande **sudo** ne fonctionne pas dans une session distante sur un ordinateur Linux.
+
+- PSRemoting sur SSH ne prend pas en charge les profils et n’a pas accès à `$PROFILE`. Une fois que vous avez ouvert une session, vous pouvez charger un profil en le « dot sourçant » avec le chemin de fichier complet. Cela n’a pas de rapports avec les profils SSH. Vous pouvez configurer le serveur SSH pour utiliser PowerShell comme interpréteur de commandes par défaut et charger un profil par le biais du SSH. Pour plus d’informations, consultez la documentation SSH.
+
+- Avant PowerShell 7.1, la communication à distance via SSH ne prenait pas en charge les sessions à distance de deuxième saut. Cette fonctionnalité était limitée aux sessions qui utilisaient WinRM. PowerShell 7.1 permet à `Enter-PSSession` et `Enter-PSHostProcess` de fonctionner dans n’importe quelle session à distance interactive.
 
 ## <a name="see-also"></a>Voir aussi
 

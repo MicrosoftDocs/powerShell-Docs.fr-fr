@@ -1,13 +1,13 @@
 ---
-ms.date: 02/28/2020
+ms.date: 07/23/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressources DSC
-ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692204"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777917"
 ---
 # <a name="dsc-resources"></a>Ressources DSC
 
@@ -22,11 +22,11 @@ Une ressource peut modéliser un élément générique comme un fichier ou spéc
 Chaque ressource comporte un *schéma qui détermine la syntaxe nécessaire pour utiliser la ressource dans une [configuration](../configurations/configurations.md).
 Le schéma d’une ressource peut être défini comme suit :
 
-- Fichier `Schema.Mof` : La plupart des ressources définissent leur _schéma_ dans un fichier « Schema.MOF » à l’aide de [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- Fichier `<Resource Name>.schema.psm1` : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur *schéma* dans un fichier `<ResourceName>.schema.psm1` à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- Fichier `Schema.Mof` : La plupart des ressources définissent leur _schéma_ dans un fichier `schema.mof` à l’aide de [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
+- Fichier `<Resource Name>.schema.psm1` : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur _schéma_ dans un fichier `<ResourceName>.schema.psm1` à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
 - Fichier `<Resource Name>.psm1` : Les ressources DSC basées sur la classe définissent leur _schéma_ dans la définition de classe. Les éléments de syntaxe sont signalés en tant que propriétés de classe. Pour plus d’informations, consultez [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
-Pour récupérer la syntaxe d’une ressource DSC, utilisez l’applet de commande [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) avec le paramètre `-Syntax`. Cette méthode est similaire à l’utilisation de [Get-Command](/powershell/module/microsoft.powershell.core/get-command) avec le paramètre `-Syntax` pour obtenir la syntaxe de l’applet de commande. Le résultat affichera le modèle utilisé pour un bloc de ressources correspondant à la ressource que vous spécifiez.
+Pour récupérer la syntaxe d’une ressource DSC, utilisez l’applet de commande [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) avec le paramètre **Syntax**. Cette méthode est similaire à l’utilisation de [Get-Command](/powershell/module/microsoft.powershell.core/get-command) avec le paramètre **Syntax** pour obtenir la syntaxe de l’applet de commande. Le résultat affichera le modèle utilisé pour un bloc de ressources correspondant à la ressource que vous spécifiez.
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -54,6 +54,9 @@ Service [String] #ResourceName
     [State = [string]{ Running | Stopped }]
 }
 ```
+
+> [!NOTE]
+> Dans les versions de PowerShell inférieures à 7.0, `Get-DscResource` ne trouve pas les ressources DSC basées sur une classe.
 
 Dans une configuration, un bloc de ressources **Service** peut ressembler à ceci pour **garantir** que le service Spooler est en cours d’exécution.
 
@@ -106,7 +109,7 @@ Configuration TestConfig
 > [!NOTE]
 > À compter de PowerShell 5.0, IntelliSense a été ajouté pour DSC. Cette nouvelle fonctionnalité permet d’utiliser les touches <kbd>Tab</kbd> et <kbd>Ctrl</kbd>+<kbd>Espace</kbd> pour l’autocomplétion des noms de clés.
 
-![Saisie semi-automatique des ressources via la touche Tab](media/resources/resource-tabcompletion.png)
+![Ressource IntelliSense qui utilise la complétion avec la touche Tab](media/resources/resource-tabcompletion.png)
 
 ## <a name="types-of-resources"></a>Types de ressources
 

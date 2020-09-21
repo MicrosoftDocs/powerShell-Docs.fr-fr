@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery
 title: Téléchargement manuel de package
-ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 3e29437c4e35e47ab2028a7eea9f408daf1a59e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278707"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782852"
 ---
 # <a name="manual-package-download"></a>Téléchargement manuel de package
 
@@ -22,7 +22,7 @@ PowerShell Gallery permet de télécharger un package directement à partir du s
 
 Chaque page comporte un lien Téléchargement manuel, comme illustré ici :
 
-![Téléchargement manuel](media/manual-download/packagedisplaypagewithpseditions.png)
+![Page de présentation du package avec des options d’installation](media/manual-download/packagedisplaypagewithpseditions.png)
 
 Pour télécharger manuellement, cliquez sur **Télécharger le fichier nupkg brut**. Une copie du package est copiée dans le dossier de téléchargement de votre navigateur sous le nom `<name>.<version>.nupkg`.
 

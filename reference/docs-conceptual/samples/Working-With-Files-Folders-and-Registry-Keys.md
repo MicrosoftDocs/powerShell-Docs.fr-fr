@@ -1,21 +1,22 @@
 ---
-ms.date: 06/05/2017
+ms.date: 07/28/2020
 keywords: powershell,applet de commande
 title: Utilisation des fichiers, dossiers et clés de Registre
-ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7ead5d0e82feb852845468fb3a012a0908a4ce75
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030760"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410187"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Utilisation des fichiers, dossiers et clés de Registre
 
-Windows PowerShell utilise le substantif **Item** pour faire référence aux éléments figurant sur un lecteur Windows PowerShell. En relation avec le fournisseur FileSystem de Windows PowerShell, le terme **Item** peut désigner un fichier, un dossier ou le lecteur Windows PowerShell. Nous allons examiner en détail comment répertorier et utiliser ces éléments, ces tâches étant essentielles dans la plupart des environnements d'administration.
+Windows PowerShell utilise le substantif **Item** pour faire référence aux éléments figurant sur un lecteur Windows PowerShell.
+En relation avec le fournisseur FileSystem de Windows PowerShell, le terme **Item** peut désigner un fichier, un dossier ou le lecteur Windows PowerShell. Nous allons examiner en détail comment répertorier et utiliser ces éléments, ces tâches étant essentielles dans la plupart des environnements d'administration.
 
 ## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Énumération des fichiers, des dossiers et des clés de Registre (Get-ChildItem)
 
-L’obtention d’une collection d’éléments à partir d’un emplacement particulier étant une tâche très courante, l’applet de commande **Get-ChildItem** est conçue pour retourner tous les éléments figurant dans un conteneur tel qu’un dossier.
+L’obtention d’une collection d’éléments à partir d’un emplacement particulier étant une tâche très courante, l’applet de commande `Get-ChildItem` est conçue pour retourner tous les éléments figurant dans un conteneur tel qu’un dossier.
 
 Pour retourner tous les fichiers et dossiers contenus directement dans le dossier C:\\Windows, tapez ce qui suit :
 
@@ -31,9 +32,9 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-La liste ressemble à celle qui s’affiche quand vous entrez la commande **dir** dans **Cmd.exe**, ou la commande **ls** dans un interpréteur de commandes UNIX.
+La liste ressemble à celle qui s’affiche quand vous entrez la commande `dir` dans **Cmd.exe**, ou la commande `ls` dans un interpréteur de commandes UNIX.
 
-Vous pouvez effectuer des recherches très complexes à l’aide des paramètres de l’applet de commande **Get-ChildItem**. Nous examinerons quelques scénarios dans les sections suivantes. Pour afficher la syntaxe de l’applet de commande **Get-ChildItem**, tapez ce qui suit :
+Vous pouvez effectuer des recherches très complexes à l’aide des paramètres de l’applet de commande `Get-ChildItem`. Nous examinerons quelques scénarios dans les sections suivantes. Pour voir la syntaxe de l’applet de commande `Get-ChildItem`, tapez ce qui suit :
 
 ```powershell
 Get-Command -Name Get-ChildItem -Syntax
@@ -43,7 +44,7 @@ Vous pouvez combiner ces paramètres pour personnaliser davantage les sorties.
 
 ### <a name="listing-all-contained-items--recurse"></a>Affichage de la liste de tous les éléments contenus (-Recurse)
 
-Pour afficher à la fois les éléments d’un dossier Windows et ceux contenus dans ses sous-dossiers, utilisez le paramètre **Recurse** de l’applet de commande **Get-ChildItem**. La liste affiche tous les éléments contenus dans le dossier Windows et ses sous-dossiers. Par exemple :
+Pour voir à la fois les éléments d’un dossier Windows et ceux contenus dans ses sous-dossiers, utilisez le paramètre **Recurse** de l’applet de commande `Get-ChildItem`. La liste affiche tous les éléments contenus dans le dossier Windows et ses sous-dossiers. Par exemple :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -58,7 +59,7 @@ Mode                LastWriteTime     Length Name
 
 ### <a name="filtering-items-by-name--name"></a>Filtrage des éléments par nom (-Name)
 
-Pour afficher uniquement les noms des éléments, utilisez le paramètre **Name** de l’applet de commande **Get-Childitem** :
+Pour voir uniquement les noms des éléments, utilisez le paramètre **Name** de l’applet de commande `Get-Childitem` :
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Name
@@ -70,29 +71,30 @@ assembly
 
 ### <a name="forcibly-listing-hidden-items--force"></a>Affichage forcé de la liste des éléments cachés (-Force)
 
-Les éléments normalement invisibles dans l’Explorateur de fichiers ou dans Cmd.exe n’apparaissent pas dans la sortie d’une commande **Get-ChildItem**. Pour afficher les éléments masqués, utilisez le paramètre **Force** de l’applet de commande **Get-ChildItem**. Par exemple :
+Les éléments normalement invisibles dans l’Explorateur de fichiers ou dans Cmd.exe ne figurent pas dans la sortie d’une commande `Get-ChildItem`. Pour voir les éléments masqués, utilisez le paramètre **Force** de `Get-ChildItem`.
+Par exemple :
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
-Ce paramètre est nommé Force, car il permet de remplacer de force le comportement normal de la commande **Get-ChildItem**. Force est un paramètre couramment employé qui force une action dont l'exécution n'est généralement pas assurée par une applet de commande. Notez toutefois qu'il n'exécute aucune action susceptible de compromettre la sécurité du système.
+Ce paramètre est nommé Force, car il permet de remplacer de force le comportement habituel de la commande `Get-ChildItem`. Force est un paramètre couramment employé qui force une action dont l'exécution n'est généralement pas assurée par une applet de commande. Notez toutefois qu'il n'exécute aucune action susceptible de compromettre la sécurité du système.
 
 ### <a name="matching-item-names-with-wildcards"></a>Recherche de noms d'éléments avec des caractères génériques
 
-La commande **Get-ChildItem** accepte les caractères génériques dans le chemin d’accès des éléments à répertorier.
+La commande `Get-ChildItem` accepte les caractères génériques dans le chemin des éléments à lister.
 
 La mise en correspondance des caractères génériques étant gérée par le moteur Windows PowerShell, toutes les applets de commande qui acceptent des caractères génériques utilisent la même notation et suivent le même comportement de mise en correspondance. Parmi les caractères génériques disponibles dans la notation Windows PowerShell, citons les suivants :
 
-- L’astérisque (\*) correspond à zéro ou plusieurs occurrences d’un caractère quelconque.
+- L’astérisque (`*`) correspond à zéro ou plusieurs occurrences d’un caractère quelconque.
 
-- Le point d'interrogation (?) correspond à exactement un caractère.
+- Le point d’interrogation (`?`) correspond à exactement un caractère.
 
-- Le crochet gauche (\[) et le crochet droit (]) entourent un ensemble de caractères à mettre en correspondance.
+- Le crochet gauche (`[`) et le crochet droit (`]`) entourent un ensemble de caractères à mettre en correspondance.
 
 Voici quelques exemples qui illustrent l'utilisation des caractères génériques.
 
-Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe  **.log** et exactement cinq caractères dans le nom de base, entrez la commande suivante :
+Pour trouver tous les fichiers contenus dans le répertoire Windows avec le suffixe `.log` et exactement cinq caractères dans le nom de base, entrez la commande suivante :
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
@@ -109,46 +111,47 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-Pour rechercher tous les fichiers qui commencent par la lettre **x** dans le répertoire Windows, tapez ce qui suit :
+Pour rechercher tous les fichiers qui commencent par la lettre `x` dans le répertoire Windows, tapez ce qui suit :
 
 ```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
-Pour rechercher tous les fichiers dont le nom commence par **x** ou **z**, tapez ce qui suit :
+Pour rechercher tous les fichiers dont le nom commence par x ou z, tapez ce qui suit :
 
 ```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
+Pour plus d’informations sur les caractères génériques, consultez [À propos des caractères génériques](/powershell/module/microsoft.powershell.core/about/about_wildcards).
+
 ### <a name="excluding-items--exclude"></a>Exclusion d'éléments (-Exclude)
 
-Vous pouvez exclure des éléments spécifiques à l’aide du paramètre **Exclude** de l’applet de commande Get-ChildItem. Vous pouvez ainsi effectuer des opérations de filtrage complexes à l'aide d'une seule instruction.
+Vous pouvez exclure des éléments spécifiques à l’aide du paramètre **Exclude** de l’applet de commande `Get-ChildItem`. Vous pouvez ainsi effectuer des opérations de filtrage complexes à l'aide d'une seule instruction.
 
-Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier System32. Tout ce dont vous souvenez, c'est que le nom de la DLL commence par la lettre « W » et qu'il contient le nombre « 32 ».
+Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier **System32**. Tout ce dont vous vous souvenez, c’est que le nom de la DLL commence par la lettre « W » et qu’il contient le nombre « 32 ».
 
-Une expression telle que **w\&#42;32\&#42;.dll** permet de trouver toutes les DLL qui répondent aux conditions, mais peut également retourner les DLL de compatibilité avec Windows 95 et Windows 16 bits qui comprennent « 95 » ou « 16 » dans leur nom. Pour omettre les fichiers contenant l’un de ces nombres dans leur nom, utilisez le paramètre **Exclude** selon le modèle **\&#42;\[9516]\&#42;**  :
+Une expression comme `w*32*.dll` recherchera toutes les DLL qui répondent aux critères. Toutefois, vous pouvez affiner le filtrage des fichiers pour omettre les fichiers Win32. Vous pouvez omettre ces fichiers à l’aide du paramètre **Exclude** en suivant le modèle `win*` :
 
 ```
-PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude win*
 
-Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        2004-08-04   8:00 AM     174592 w32time.dll
--a---        2004-08-04   8:00 AM      22016 w32topl.dll
--a---        2004-08-04   8:00 AM     101888 win32spl.dll
--a---        2004-08-04   8:00 AM     172032 wldap32.dll
--a---        2004-08-04   8:00 AM     264192 wow32.dll
--a---        2004-08-04   8:00 AM      82944 ws2_32.dll
--a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
--a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
+    Directory: C:\WINDOWS\System32
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           3/18/2019  9:43 PM         495616 w32time.dll
+-a---           3/18/2019  9:44 PM          35328 w32topl.dll
+-a---           1/24/2020  5:44 PM         401920 Wldap32.dll
+-a---          10/10/2019  5:40 PM         442704 ws2_32.dll
+-a---           3/18/2019  9:44 PM          66048 wsnmp32.dll
+-a---           3/18/2019  9:44 PM          18944 wsock32.dll
+-a---           3/18/2019  9:44 PM          64792 wtsapi32.dll
 ```
 
 ### <a name="mixing-get-childitem-parameters"></a>Combinaison de paramètres Get-ChildItem
 
-Vous pouvez utiliser plusieurs paramètres de l’applet de commande **Get-ChildItem** dans la même commande. Avant de combiner des paramètres, assurez-vous de bien comprendre à quoi correspondent les caractères génériques. Par exemple, la commande suivante ne retourne aucun résultat :
+Vous pouvez utiliser plusieurs paramètres de l’applet de commande `Get-ChildItem` dans la même commande. Avant de combiner des paramètres, assurez-vous de bien comprendre à quoi correspondent les caractères génériques. Par exemple, la commande suivante ne retourne aucun résultat :
 
 ```powershell
 Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
@@ -156,9 +159,9 @@ Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 
 Aucun résultat n'est disponible, même s'il existe deux DLL qui commencent par la lettre « z » dans le dossier Windows.
 
-Aucun résultat n'est retourné, car nous avons spécifié le caractère générique comme faisant partie du chemin d'accès. Bien que la commande soit récursive, l’applet de commande **Get-ChildItem** limite le résultat aux éléments qui se trouvent dans le dossier Windows et dont le nom se termine par « .dll ».
+Aucun résultat n'est retourné, car nous avons spécifié le caractère générique comme faisant partie du chemin d'accès. Même si la commande est récursive, l’applet de commande `Get-ChildItem` limite les résultats aux éléments qui se trouvent dans le dossier Windows et dont le nom se termine par `.dll`.
 
-Pour spécifier une recherche récursive des fichiers dont le nom correspond à un modèle particulier, utilisez le paramètre **-Include**.
+Pour spécifier une recherche récursive des fichiers dont le nom correspond à un modèle particulier, utilisez le paramètre **Include**.
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll

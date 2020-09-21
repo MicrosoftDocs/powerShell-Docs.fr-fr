@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Création d’une ressource DSC en C#
-ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4652d5d99c32685e124f2cd1b718f973380ab16a
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417700"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217506"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Création d’une ressource DSC en C\#
 
@@ -18,6 +18,7 @@ En règle générale, une ressource DSC Windows PowerShell personnalisée est i
 À part l’implémentation de la ressource en tant qu’applets de commande en langage C#, les processus de création du schéma MOF, de création de la structure de dossiers, et de l’importation et de l’utilisation de votre ressource DSC personnalisée, sont les mêmes que ceux décrits dans [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md).
 
 ## <a name="writing-a-cmdlet-based-resource"></a>Écriture d’une ressource basée sur une applet de commande
+
 Pour cet exemple, nous implémenterons une ressource simple qui gère un fichier texte et son contenu.
 
 ### <a name="writing-the-mof-schema"></a>Écriture du schéma MOF
@@ -35,6 +36,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ```
 
 ### <a name="setting-up-the-visual-studio-project"></a>Configuration du projet Visual Studio
+
 #### <a name="setting-up-a-cmdlet-project"></a>Configuration d’un projet d’applet de commande
 
 1. Ouvrez Visual Studio.
@@ -46,11 +48,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 
 ### <a name="writing-the-cmdlet-code"></a>Écriture du code de l’applet de commande
 
-Le code C# suivant implémente les applets de commande **Get-TargetResource**, **Set-TargetResource** et **Test-TargetResource**.
+Le code C# suivant implémente les applets de commande `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource`.
 
 ```C#
-
-
 namespace cSharpDSCResourceExample
 {
     using System;
@@ -278,7 +278,11 @@ $env: psmodulepath (folder)
 ```
 
 ### <a name="see-also"></a>Voir aussi
+
 #### <a name="concepts"></a>Concepts
+
 [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md)
+
 #### <a name="other-resources"></a>Autres ressources
+
 [Écriture d’une applet de commande Windows PowerShell](/powershell/scripting/developer/windows-powershell)

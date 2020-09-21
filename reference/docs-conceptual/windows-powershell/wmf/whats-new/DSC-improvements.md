@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809095"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771547"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -80,7 +80,7 @@ Consultez les captures instantanées ci-dessous :
 
 - « ConfigurationName » incorporé dans le fichier MOF généré
 
-  ![Exemple de fichier mof généré](media/DSC-improvements/PartialGeneratedMof.png)
+  ![Exemple de fichier MOF généré](media/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName dans le référentiel de configuration de tirage (pull)
 
@@ -345,12 +345,12 @@ Une configuration fournie à l’aide d’une transmission de type push peut êt
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
+  ![Erreur : Un fichier MOF non signé a été envoyé (push)](media/DSC-improvements/PushUnsignedMof.png)
 
 - Signez le fichier de configuration avec un certificat de signature de code.
 
-  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
+  ![Signer le fichier MOF](media/DSC-improvements/SignMofFile.png)
 
 - Essayez de transmettre par push le fichier MOF signé.
 
-  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
+  ![Envoyer (push) le fichier MOF signé](media/DSC-improvements/PushSignedMof.png)

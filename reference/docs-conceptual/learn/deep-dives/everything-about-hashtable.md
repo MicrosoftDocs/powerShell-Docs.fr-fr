@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
-ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
+ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307127"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85353819"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 
@@ -777,12 +777,13 @@ L’accès à une valeur dans la table de hachage par sa clé ne fonctionne pas 
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-L’utilisation de la notation d’accès membre (`.`) ne retourne rien. Toutefois, l’utilisation de la notation d’index de tableau (`[]`) fonctionne.
+Quand la clé est un tableau, vous devez wrapper la variable `$key` dans une sous-expression afin qu’elle puisse être utilisée avec la notation d’accès au membre (`.`). Vous pouvez utiliser la notation d’index de tableau (`[]`).
 
 ## <a name="use-in-automatic-variables"></a>Utilisation dans des variables automatiques
 
@@ -962,7 +963,7 @@ J’ai abordé beaucoup de concepts dans cet article. Mon espoir est que vous pu
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Tables de hachage]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [Tableaux]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[Si les performances l’exigent, effectuez un test]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[Si les performances l’exigent, effectuez un test]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [Projection]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8

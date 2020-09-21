@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,installation
 title: Application des configurations
-ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277890"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783073"
 ---
 # <a name="enacting-configurations"></a>Application des configurations
 
@@ -17,7 +17,7 @@ Il existe deux façons de promulguer des configurations DSC PowerShell : le mo
 
 ## <a name="push-mode"></a>Mode par envoi
 
-![Mode par envoi](media/enactingConfigurations/pushModel.png "Fonctionnement du mode par envoi (push)")
+![Vue d’ensemble du mode par envoi](media/enactingConfigurations/pushModel.png "Fonctionnement du mode par envoi (push)")
 
 Avec le mode par envoi, l’utilisateur applique activement une configuration à un nœud cible en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 
@@ -28,7 +28,7 @@ Après la création et la compilation d’une configuration, vous pouvez la prom
 
 ## <a name="pull-mode"></a>Mode par extraction
 
-![Mode par extraction](media/enactingConfigurations/pullModel.png "Fonctionnement du mode par extraction (pull)")
+![Vue d’ensemble du mode par extraction](media/enactingConfigurations/pullModel.png "Fonctionnement du mode par extraction (pull)")
 
 Avec le mode par extraction, les clients d’extraction sont configurés de façon à obtenir leurs configurations d’état souhaité à partir d’un service d’extraction distant. De même, le serveur a été configuré pour héberger le service DSC et approvisionné avec les configurations et les ressources requises par les clients d’extraction. Chacun des clients d’extraction est associé à un événement planifié qui effectue une vérification de conformité à intervalles réguliers sur la configuration du nœud. Quand l’événement est déclenché pour la première fois, le gestionnaire de configuration local sur le client d’extraction envoie une requête au service d’extraction pour obtenir la configuration spécifiée dans le gestionnaire de configuration local. Si cette configuration existe sur le service d’extraction et si les vérifications de validation initiales renvoient un résultat positif, la configuration est téléchargée sur le client d’extraction, où elle est ensuite exécutée par le gestionnaire de configuration local.
 
@@ -40,6 +40,6 @@ Pour plus d’informations sur la configuration d’un service d’extraction su
 
 Les rubriques suivantes expliquent les clients et les services d’extraction :
 
-- [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Vue d’ensemble d’Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Configuration d’un serveur collecteur SMB](pullServerSMB.md)
 - [Configuration d’un client d’extraction](pullClientConfigID.md)

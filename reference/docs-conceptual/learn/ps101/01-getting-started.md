@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 0f72fb5baf5b829142b18ed774261e9b3b66291b
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438020"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786745"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Chapitre 1 - Bien démarrer avec PowerShell
 
@@ -29,7 +29,7 @@ Toutes les versions actuelles des systèmes d’exploitation Windows sont livré
 
 Le moyen le plus simple de rechercher PowerShell sur Windows 10 est de taper **PowerShell** dans la barre de recherche, comme le montre la figure 1-1.
 
-![Figure 1-1](media/figure1-1.png)
+![Figure 1-1 - Recherche de PowerShell dans le menu Démarrer](media/figure1-1.png)
 
 Notez que la figure 1-1 montre quatre raccourcis différents pour PowerShell. Dans ce livre, l’ordinateur utilisé à des fins de démonstration exécute la version 64 bits de Windows 10. Vous avez donc une version 64 bits de la console PowerShell et de PowerShell ISE (environnement de script intégré), ainsi qu’une version 32 bits pour chacun, comme l’indique le suffixe (x86) dans les raccourcis. Si vous exécutez une version 32 bits de Windows 10, vous n’aurez que deux raccourcis. Ces éléments n’ont pas le suffixe (x86), mais il s’agit de la version 32 bits. Si vous disposez d’un système d’exploitation 64 bits, je vous recommande d’exécuter la version 64 bits de PowerShell, sauf si vous avez une raison particulière d’exécuter la version 32 bits.
 
@@ -41,7 +41,7 @@ Dans les environnements d’entreprise de production dont j’ai la charge, j’
 
 J’ai lancé la console PowerShell en cliquant sur le raccourci « Windows PowerShell », comme illustré dans la figure 1-1.
 
-![Figure 1-4](media/figure1-4.png)
+![Figure 1-4 - Barre de titre de la fenêtre PowerShell](media/figure1-4.png)
 
 Notez que la barre de titre de la console PowerShell indique « Windows PowerShell », comme dans la figure 1-4. Certaines commandes s’exécutent bien, toutefois, PowerShell ne peut pas participer au contrôle de compte d’utilisateur (UAC). Cela signifie qu’il ne peut pas demander une élévation des privilèges pour les tâches qui nécessitent l’approbation d’un administrateur.
 Le message d’erreur suivant est généré :
@@ -66,7 +66,7 @@ Voici la configuration de mon deuxième compte d’utilisateur de domaine. Si j�
 
 Fermez PowerShell. Relancez la console PowerShell, mais cette fois-ci, cliquez avec le bouton droit sur le raccourci **Windows PowerShell**, puis sélectionnez **Exécuter en tant qu’administrateur**, comme indiqué dans la figure 1-5.
 
-![Figure 1-5](media/figure1-5.png)
+![Figure 1-5 - Menu contextuel -Exécuter en tant qu’administrateur](media/figure1-5.png)
 
 Si vous êtes connecté à Windows en tant qu’utilisateur normal, vous êtes invité à entrer vos informations d’identification. Je vais entrer les informations d’identification de mon compte d’utilisateur, qui est un compte d’utilisateur de domaine et d’administrateur local, comme le montre la figure 1-6.
 
@@ -86,11 +86,11 @@ Recherchez de nouveau PowerShell, mais cette fois-ci, cliquez dessus avec le bou
 
 Cliquez avec le bouton droit sur le raccourci PowerShell qui est maintenant épinglé à la barre des tâches, puis sélectionnez Propriétés, comme indiqué dans la figure 1-9.
 
-![Figure 1-9](media/figure1-9.png)
+![Figure 1-9 - Contrôle de compte d’utilisateur - Entrer les informations d’identification](media/figure1-9.png)
 
 Cliquez sur « Avancé », comme indiqué par le « 1 » dans la figure 1-10, cochez la case « Exécuter en tant qu’administrateur », comme indiqué par le « 2 » dans la figure 1-10, puis cliquez deux fois sur OK pour accepter les modifications et quitter les deux boîtes de dialogue.
 
-![Figure 1-10](media/figure1-10.png)
+![Figure 1-10 - Barre de titre affichant « Administrateur »](media/figure1-10.png)
 
 Vous n’aurez plus à rechercher PowerShell ni à le configurer pour être exécuté en tant qu’administrateur.
 
@@ -217,13 +217,15 @@ Dans ce chapitre, vous avez vu comment rechercher et lancer PowerShell, et comme
 Si vous souhaitez en savoir plus sur les sujets abordés dans ce chapitre, je vous conseille de lire les rubriques d’aide PowerShell suivantes.
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 Dans le chapitre suivant, vous allez découvrir la détectabilité des commandes dans PowerShell. L’un des sujets abordés sera la mise à jour de PowerShell dans le but de rendre les rubriques d’aide consultables directement dans PowerShell au lieu d’avoir à les lire sur Internet.
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [Mise à niveau des instances Windows PowerShell existantes]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [Installation de PowerShell]: /powershell/scripting/install/installing-powershell
 [Démarrage de Windows PowerShell]: /powershell/scripting/windows-powershell/starting-windows-powershell

@@ -1,19 +1,19 @@
 ---
-ms.date: 08/14/2018
+ms.date: 08/21/2020
 keywords: powershell,applet de commande
 title: Exécution de commandes à distance
-ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030319"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799619"
 ---
 # <a name="running-remote-commands"></a>Exécution de commandes à distance
 
 Vous pouvez exécuter des commandes sur un ordinateur ou plusieurs centaines au moyen d'une seule commande PowerShell. Pour communiquer à distance, Windows PowerShell fait appel à différentes technologies, notamment WMI, RPC et WS-Management.
 
-PowerShell Core prend en charge WMI, WS-Management et la communication à distance SSH. RPC n’est plus pris en charge.
+PowerShell Core prend en charge WMI, WS-Management et la communication à distance SSH. Dans PowerShell 6, RPC n’est plus pris en charge. Dans PowerShell 7 et versions ultérieures, RPC est pris en charge uniquement dans Windows.
 
 Pour plus d’informations sur la communication à distance dans PowerShell Core, consultez les articles suivants :
 
@@ -55,8 +55,7 @@ Cet article en répertorie quelques-unes. Pour plus d’informations, consultez 
 
 ### <a name="start-an-interactive-session"></a>Démarrer une session interactive
 
-Pour démarrer une session interactive avec un seul ordinateur distant, utilisez l’applet de commande [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
-Par exemple, pour démarrer une session interactive avec l'ordinateur distant Server01, tapez :
+Pour démarrer une session interactive avec un seul ordinateur distant, utilisez l'applet de commande [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession). Par exemple, pour démarrer une session interactive avec l'ordinateur distant Server01, tapez :
 
 ```powershell
 Enter-PSSession Server01
@@ -77,7 +76,7 @@ Pour plus d’informations sur les cmdlets Enter-PSSession et Exit-PSSession, co
 
 ### <a name="run-a-remote-command"></a>Exécuter une commande à distance
 
-Pour exécuter une commande sur un ou plusieurs ordinateurs, utilisez la cmdlet [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command). Par exemple, pour exécuter une commande [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) sur les ordinateurs distants Serveur01 et Serveur02, tapez :
+Pour exécuter une commande sur un ou plusieurs ordinateurs, utilisez la cmdlet [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command). Par exemple, pour exécuter une commande [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) sur les ordinateurs distants Server01 et Server02, tapez :
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -118,7 +117,7 @@ Par exemple, la commande suivante exécute une commande Get-Hotfix dans les sess
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-Vous pouvez désormais utiliser les données dans la variable `$h` avec d’autres commandes dans la même session. Les résultats sont affichés sur l'ordinateur local. Par exemple :
+Vous pouvez désormais utiliser les données dans la variable `$h` avec d’autres commandes dans la même session. Les résultats sont affichés sur l'ordinateur local. Exemple :
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -134,11 +133,11 @@ Pour plus d’informations sur le fournisseur WSMan, consultez [Fournisseur WSMa
 
 Pour plus d'informations, consultez les pages suivantes :
 
-- [About_Remote_FAQ](https://technet.microsoft.com/library/dd315359.aspx)
+- [about_Remote](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-Pour obtenir de l’aide sur les erreurs de communication à distance, voir [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
+Pour obtenir de l'aide sur les erreurs de communication à distance, consultez [about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx).
 
 ## <a name="see-also"></a>Voir aussi
 

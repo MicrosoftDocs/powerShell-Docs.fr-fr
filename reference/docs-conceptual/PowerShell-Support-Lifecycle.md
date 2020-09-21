@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Politiques régissant le support de PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560727"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236201"
 ---
 # <a name="powershell-support-lifecycle"></a>Cycle de vie du support de PowerShell
 
@@ -34,7 +34,7 @@ Les versions actuelles sont les versions publiées entre les versions LTS. Elles
 
 PowerShell Core suivait la [stratégie de cycle de vie moderne de Microsoft][modern]. Cette politique de support est destinée à maintenir les clients à jour avec les dernières versions.
 
-La branche de la version 6.x de PowerShell Core était mise à jour tous les six mois environ (par exemple, 6.0, 6.1, 6.2, etc.). Toutefois, avec la sortie de PowerShell 7, il n’y aura plus de versions mineures 6.x. PowerShell 6.2.x recevra des mises à jour de maintenance tant qu’il sera pris en charge.
+La branche de la version 6.x de PowerShell Core était mise à jour tous les six mois environ (par exemple, 6.0, 6.1, 6.2, etc.). Toutefois, avec la sortie de PowerShell 7, il n’y aura plus de versions mineures de 6.x. PowerShell 6.2.x recevra des mises à jour de maintenance tant qu’il sera pris en charge.
 
 > [!IMPORTANT]
 > Vous devez effectuer la mise à jour dans les six mois après la publication de chaque nouvelle version mineure pour continuer à recevoir un support.
@@ -96,6 +96,9 @@ Sur la base du [cycle de vie de PowerShell](#lifecycle-of-powershell-7), le tabl
 |   6.2   | 4 septembre 2020  |
 |   6.1   | 28 septembre 2019 |
 |   6.0   | 13 février 2019  |
+
+> [!NOTE]
+> Ce document concerne la prise en charge de PowerShell Core 6 et de PowerShell 7. Windows PowerShell (1.0-5.1) est un composant du système d’exploitation Windows. Les composants reçoivent la même prise en charge que leur produit ou plateforme parent. Pour plus d’informations, consultez [Informations sur le cycle de vie des produits et des services](/lifecycle/products/).
 
 ## <a name="unsupported-platforms"></a>Plateformes non prises en charge
 
@@ -183,4 +186,4 @@ Le tableau suivant contient une chronologie des versions majeures de PowerShell.
 [Liste de compatibilité des modules]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Fonctionnalités expérimentales]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
-[Critères de maintenance de la sécurité de Microsoft pour Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
+[Critères de maintenance de la sécurité de Microsoft pour Windows]: https://www.microsoft.com/msrc/windows-security-servicing-criteria

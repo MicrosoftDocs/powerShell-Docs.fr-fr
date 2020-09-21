@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: dsc,powershell,configuration,installation
 title: ApplyConfiguration, méthode
-ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953456"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463837"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration, méthode
 
@@ -25,17 +25,19 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>Paramètres
 
-*force* \[in\] Si la valeur est **true**, la configuration actuelle est de nouveau appliquée, même s’il existe une configuration en attente.
+### <a name="force"></a>force
+
+Si la valeur est **true**, la configuration actuelle est de nouveau appliquée, même s’il existe une configuration en attente.
 
 ## <a name="return-value"></a>Valeur retournée
 
 Retourne zéro en cas de réussite ; sinon, retourne un code d’erreur.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Il s’agit d’une méthode statique.
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 **MOF :** DscCore.mof
 

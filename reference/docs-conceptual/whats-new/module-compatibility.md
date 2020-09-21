@@ -1,12 +1,12 @@
 ---
 title: Compatibilité des modules PowerShell 7
 ms.date: 02/03/2020
-ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565061"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722811"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibilité des modules PowerShell 7
 
@@ -69,13 +69,14 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | Nom du module                        | Statut                               | Systèmes d’exploitation pris en charge                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | Active Directory                    | Compatible nativement                  | Windows Server 1809 (et versions ultérieures) avec RSAT-AD-PowerShell<br>Windows 10 1809 (et versions ultérieures) avec Rsat.ActiveDirectory.DS-LDS.Tools |
+| ADDSDeployment                     | Fonctionne avec la couche de compatibilité       |  Windows Server 2019 1809+         |
 | ADFS                               | Non testé avec la couche de compatibilité    |                                    |
 | AppBackgroundTask                  | Compatible nativement                  | Windows 10 1903 (et versions ultérieures)                   |
 | AppLocker                          | Non testé avec la couche de compatibilité    |                                    |
 | AppvClient                         | Non testé avec la couche de compatibilité    |                                    |
 | Appx                               | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures) |
 | AssignedAccess                     | Compatible nativement                  | Windows 10 1809 (et versions ultérieures)                   |
-| BestPractices                      | Non testé avec la couche de compatibilité    |                                    |
+| BestPractices                      | Non pris en charge par la couche de compatibilité |                                    |
 | BitLocker                          | Compatible nativement                  | Windows Server 1809 (et versions ultérieures) avec BitLocker<br>Windows 10 1809 (et versions ultérieures) |
 | BitsTransfer                       | Compatible nativement                  | Windows Server 20H1<br>Windows 10 20H1 |
 | BootEventCollector                 | Non testé avec la couche de compatibilité    |                                        |
@@ -148,7 +149,7 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | Approvisionnement                       | Non testé avec la couche de compatibilité    |                                               |
 | PSDesiredStateConfiguration        | Partiellement                            | Intégré à PowerShell 7                       |
 | PSDiagnostics                      | Compatible nativement                  | Intégré à PowerShell 7                       |
-| PSScheduledJob                     | Non fonctionnel avec la couche de compatibilité | Intégré à PowerShell 5.1                     |
+| PSScheduledJob                     | Non pris en charge par la couche de compatibilité | Intégré à PowerShell 5.1                     |
 | PSWorkflow                         | Non testé avec la couche de compatibilité    |                                               |
 | PSWorkflowUtility                  | Non testé avec la couche de compatibilité    |                                               |
 | RemoteAccess                       | Non testé avec la couche de compatibilité    |                                               |
@@ -156,7 +157,7 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | ScheduledTasks                     | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | SecureBoot                         | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | ServerCore                         | Non testé avec la couche de compatibilité    |                                               |
-| ServerManager                      | Non testé avec la couche de compatibilité    |                                               |
+| ServerManager                      | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures) avec Rsat.ServerManager.Tools<br>_Voir les remarques ci-dessous_ |
 | ServerManagerTasks                 | Non testé avec la couche de compatibilité    |                                               |
 | ShieldedVMDataFile                 | Compatible nativement                  | Windows Server 1903 (et versions ultérieures) avec RSAT-Shielded-VM-Tools<br>Windows 10 1903 (et versions ultérieures) avec Rsat.Shielded.VM.Tools |
 | ShieldedVMProvisioning             | Compatible nativement                  | Windows Server 1809 (et versions ultérieures) avec HostGuardian<br>Windows 10 1809 (et versions ultérieures) avec HostGuardian  |
@@ -164,7 +165,7 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | SmbShare                           | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | SmbWitness                         | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | SMISConfig                         | Compatible nativement                  | Windows Server 1903 (et versions ultérieures) avec WindowsStorageManagementService |
-| sms                                | Non testé avec la couche de compatibilité    |                                               |
+| SMS                                | Non testé avec la couche de compatibilité    |                                               |
 | SoftwareInventoryLogging           | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)                          |
 | StartLayout                        | Compatible nativement                  | Windows Server 1809 (et versions ultérieures) avec Desktop Experience<br>Windows 10 1809 (et versions ultérieures) |
 | Stockage                            | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
@@ -178,7 +179,7 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | TroubleshootingPack                | Compatible nativement                  | Windows 10 1903 (et versions ultérieures)                              |
 | TrustedPlatformModule              | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | UEV                                | Compatible nativement                  | Windows Server ? Version future de Server avec Expérience utilisateur ?<br>Windows 10 1903 (et versions ultérieures) |
-| UpdateServices                     | Non fonctionnel avec la couche de compatibilité |                                               |
+| UpdateServices                     | Non pris en charge par la couche de compatibilité |                                               |
 | VpnClient                          | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | Wdac                               | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)      |
 | WebAdministration                  | Non testé avec la couche de compatibilité    |                                               |
@@ -189,3 +190,10 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | WindowsServerBackup                | Compatible nativement                  | Windows Server 19H2 avec Windows-Server-Backup |
 | WindowsUpdate                      | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)       |
 | WindowsUpdateProvider              | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)       |
+
+## <a name="notes"></a>Notes
+
+### <a name="servermanager-module"></a>Module ServerManager
+
+Le module présente des problèmes de compatibilité mineurs avec la sortie mise en forme de PowerShell 7. Par exemple, l’applet de commande `Get-WindowsFeature` retourne l’objet approprié avec toutes les propriétés, mais la mise en forme par défaut fait que certaines propriétés paraissent vides. Vous pouvez accéder aux valeurs dans les propriétés de l’objet à l’aide de `Select-Object` ou par un accès membre direct.
+

@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressource Environment DSC
-ms.openlocfilehash: 5670646b6e94019f436d85296deff4de8da920f6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560353"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464415"
 ---
 # <a name="dsc-environment-resource"></a>Ressource Environment DSC
 
@@ -22,6 +22,7 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -35,6 +36,7 @@ Environment [string] #ResourceName
 |---|---|
 |Name |Spécifie le nom de la variable d’environnement pour laquelle vous voulez garantir un état spécifique. |
 |Path |Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur `$true` si la variable est une variable **Path** ; sinon, affectez-lui la valeur `$false`. Par défaut, il s’agit de `$false`. Si la variable actuellement configurée est une variable **Path**, la valeur fournie par la propriété **Value** est adjointe à la valeur existante. |
+|Cible| Indique où récupérer la variable : Sur l’ordinateur ou le processus. Si les deux sont indiqués, seule la valeur de l’ordinateur est retournée. La valeur par défaut correspond aux deux, car il s’agit de la valeur par défaut du reste de la ressource. |
 |Valeur |Valeur à attribuer à la variable d’environnement. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -48,7 +50,7 @@ Environment [string] #ResourceName
 > [!NOTE]
 > La propriété commune **PsDscRunAsCredential** a été ajoutée à WMF 5.0 pour permettre l’exécution d’une ressource DSC dans le contexte d’autres informations d’identification. Pour plus d’informations, consultez [Utiliser des informations d’identification avec des ressources DSC](../../../configurations/runasuser.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant vérifie que TestEnvironmentVariable est présent et que sa valeur est _TestValue_. S’il n’est pas présent, il le crée.
 

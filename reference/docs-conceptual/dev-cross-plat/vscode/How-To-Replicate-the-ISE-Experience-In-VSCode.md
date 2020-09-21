@@ -2,12 +2,12 @@
 title: Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 description: Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6b0b8ce054695d6cc0fc578290c554e2dc1472bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809595"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784620"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Guide pratique de réplication de l’expérience ISE dans Visual Studio Code
 
@@ -25,7 +25,7 @@ Pour cela, ouvrez la palette de commandes (<kbd>F1</kbd> ou <kbd>Ctrl</kbd>+<kbd
 
 Cette commande applique automatiquement les paramètres décrits ci-dessous. Le résultat ressemble à ceci :
 
-![Mode ISE](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![Visual Studio Code en mode ISE](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 ## <a name="ise-mode-configuration-settings"></a>Paramètres de configuration du mode ISE
 
@@ -53,7 +53,7 @@ Le mode ISE apporte les modifications suivantes aux paramètres de VS Code.
 
   Ces paramètres masquent les sections « Barre d’activité » et « Barre latérale de débogage » indiquées ci-dessous dans l’encadré rouge :
 
-  ![la section en surbrillance comprend une barre d’activité et une barre latérale de débogage](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  ![La section en surbrillance comprend une barre d’activité et une barre latérale de débogage](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
   Le résultat final ressemble à ceci :
 
@@ -122,7 +122,7 @@ Le mode ISE apporte les modifications suivantes aux paramètres de VS Code.
 
 - 4sysops propose un [excellent article][4sysops] qui explique comment configurer VS Code comme ISE.
 - Mike F Robbins a publié un [remarquable billet][mikefrobbins] sur la configuration de VS Code.
-- Learn PowerShell fait un [compte rendu brillant][learnpwsh] de la configuration pour PowerShell.
+<!-- - Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell. -->
 
 ## <a name="vs-code-tips"></a>Conseils relatifs à VS Code
 
@@ -145,7 +145,7 @@ Les PR et les contributions sont également les bienvenues, comme toujours !
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [Palette de commandes]: #vs-code-tips
-[signalez le problème]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[ouvrir un problème]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/

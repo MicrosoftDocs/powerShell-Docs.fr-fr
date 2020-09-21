@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell 7.0
 description: Nouvelles fonctionnalités et modifications de PowerShell 7.0
 ms.date: 03/04/2020
-ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808399"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162458"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nouveautés de PowerShell 7.0
 
@@ -284,7 +284,7 @@ Si l’erreur se produit pendant l’exécution du script ou s’il s’agit d�
 ![Affichage d’erreur à partir d’un script](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 L’affichage par défaut dans PowerShell 7 est **ConciseView**. L’affichage par défaut précédent était **NormalView** et vous pouvez le sélectionner en définissant la variable de préférence `$ErrorView`.
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -357,11 +357,12 @@ La cmdlet `Invoke-DscResource` exécute une méthode d’une ressource Desired S
 
 Cette cmdlet appelle directement une ressource DSC sans créer de document de configuration. À l’aide de cette cmdlet, les produits de gestion de la configuration peuvent gérer Windows ou Linux à l’aide de ressources DSC. Cette cmdlet de commande permet également de déboguer des ressources lorsque le moteur DSC s’exécute avec le débogage activé.
 
-Cette commande appelle la méthode **Set** d’une ressource nommée Log et spécifie une propriété **Message**.
+Cette commande appelle la méthode **Set** d’une ressource nommée **WindowsProcess** et fournit les propriétés obligatoires **Path** et **Arguments** pour démarrer le processus Windows spécifié.
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 

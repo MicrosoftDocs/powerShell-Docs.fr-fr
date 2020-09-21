@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Présentation du rôle de DSC dans un pipeline CI/CD
-ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500824"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783107"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>Présentation du rôle de DSC dans un pipeline CI/CD
 
 Cet article décrit les différents types d’approches disponibles pour combiner des configurations et des ressources.
 Dans chaque scénario, l’objectif est le même : réduire la complexité quand plusieurs configurations préférées existent pour parvenir à un état de fin de déploiement de serveur. Pour illustrer cela, citons par exemple un déploiement de serveur auquel participent plusieurs équipes, avec un propriétaire d’application qui gère l’état de l’application et une équipe centrale chargée de publier les modifications apportées aux bases de référence de sécurité. Les nuances de chaque approche, notamment les avantages et les risques qui leur sont associés, sont détaillés ici.
 
-![Pipeline](media/authoringAdvanced/Pipeline.jpg)
+![Flux de processus d’un pipeline CI/CD](media/authoringAdvanced/Pipeline.jpg)
 
 ## <a name="types-of-collaborative-authoring-techniques"></a>Types de techniques de création collaborative
 
@@ -33,7 +33,7 @@ Chacune de ces solutions permet de gérer l’issue d’un déploiement de serve
 
 Quand vous utilisez des configurations partielles, le gestionnaire de configuration local est configuré pour gérer plusieurs configurations de manière indépendante. Les configurations sont compilées de manière indépendante avant d’être affectées au nœud. Le gestionnaire de configuration local doit pour cela être configuré à l’avance avec le nom de chaque configuration.
 
-![PartialConfiguration](media/authoringAdvanced/PartialConfiguration.jpg)
+![Diagramme des configurations partielles](media/authoringAdvanced/PartialConfiguration.jpg)
 
 Les configurations partielles permettent à deux équipes ou plus de contrôler entièrement la configuration d’un serveur, souvent sans l’avantage de la communication ou de la collaboration.
 
@@ -45,7 +45,7 @@ De plus, en utilisant ce modèle, les modifications de configuration des équipe
 
 Dans l’illustration ci-dessous, l’équipe B transmet sa configuration partielle à l’équipe A. L’équipe A exécute alors ses tests sur un serveur en appliquant les deux configurations. Dans ce modèle, une seule autorité est autorisée à apporter des modifications en production.
 
-![PartialSinglePipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
+![Diagramme d’un pipeline unique partiel](media/authoringAdvanced/PartialSinglePipeline.jpg)
 
 Quand l’équipe B réclame des modifications, elle doit envoyer une demande de tirage (pull request) à l’environnement de contrôle de code source de l’équipe A. L’équipe A examine alors les modifications à l’aide de l’automation de test et les met en production dès qu’elle a l’assurance que les modifications n’entraîneront pas d’erreurs dans les applications ou les services hébergés par le serveur.
 
@@ -53,7 +53,7 @@ Quand l’équipe B réclame des modifications, elle doit envoyer une demande d
 
 Une ressource composite consiste simplement en une configuration DSC empaquetée comme ressource. Il n’existe aucune exigence de configuration particulière pour faire accepter les ressources composites au gestionnaire de configuration local. Celle-ci sont utilisées dans une nouvelle configuration et chaque compilation génère un fichier MOF.
 
-![CompositeResource](media/authoringAdvanced/CompositeResource.jpg)
+![Diagramme d’une ressource composite](media/authoringAdvanced/CompositeResource.jpg)
 
 Il existe deux scénarios courants pour les ressources composites. Le premier vise à réduire la complexité et les concepts uniques et abstraits. Le deuxième vise à permettre l’empaquetage des bases de référence pour que l’équipe d’une application puisse la déployer en toute sécurité via son pipeline de mise en production une fois que tous les tests ont réussi.
 

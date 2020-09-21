@@ -1,14 +1,14 @@
 ---
 title: Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 description: PSCustomObject est un moyen simple de créer des données structurées.
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149492"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410136"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 
@@ -71,7 +71,7 @@ Cette façon de faire est un peu lente, mais elle peut être votre meilleure opt
 
 ### <a name="saving-to-a-file"></a>Enregistrement dans un fichier
 
-Je trouve que la meilleure façon d’enregistrer une table de hachage dans un fichier est de l’enregistrer au format JSON. Vous pouvez la réimporter dans un `[PSCusomObject]`
+Je trouve que la meilleure façon d’enregistrer une table de hachage dans un fichier est de l’enregistrer au format JSON. Vous pouvez la réimporter dans un `[PSCustomObject]`
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -139,7 +139,7 @@ $myObject.$property
 
 Je sais que ça paraît étrange, mais cela fonctionne.
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a>Convertir pscustomboject en table de hachage
+### <a name="convert-pscustombobject-into-a-hashtable"></a>Convertir PSCustombObject en une table de hachage
 
 Pour continuer à partir de la dernière section, vous pouvez parcourir dynamiquement les propriétés et créer une table de hachage à partir de celles-ci.
 
@@ -254,6 +254,9 @@ $myObject = [PSCustomObject]@{
 ```
 
 J’aime bien la façon dont cela s’intègre parfaitement dans le langage. Maintenant que nous disposons d’un objet avec un nom de type correct, nous pouvons effectuer d’autres opérations.
+
+> [!NOTE]
+> Vous pouvez également créer des types PowerShell personnalisés à l’aide de classes PowerShell. Pour plus d’informations, consultez [Présentation des classes PowerShell](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).
 
 ## <a name="using-defaultpropertyset-the-long-way"></a>Utilisation de DefaultPropertySet (la méthode longue)
 

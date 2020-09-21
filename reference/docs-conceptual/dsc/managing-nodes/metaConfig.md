@@ -2,37 +2,32 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Configuration du Gestionnaire de configuration local
-ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b4766157bca72a7c2bb385ab2255c9780846830a
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691992"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837560"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Configuration du Gestionnaire de configuration local
 
 > S’applique à : Windows PowerShell 5.0
 
-Le Gestionnaire de configuration local est le moteur de la fonctionnalité DSC (Desired State Configuration).
-Le LCM s’exécute sur chaque nœud cible pour analyser et appliquer les configurations transmises au nœud.
-Il a également en charge plusieurs autres opérations liées à DSC, notamment les suivantes.
+Le Gestionnaire de configuration local est le moteur de la fonctionnalité DSC (Desired State Configuration). Le LCM s’exécute sur chaque nœud cible pour analyser et appliquer les configurations transmises au nœud. Il a également en charge plusieurs autres opérations liées à DSC, notamment les suivantes.
 
 - Déterminer le mode d’actualisation (push ou pull).
 - Spécifier la fréquence à laquelle un nœud extrait et applique les configurations.
 - Associer le nœud à un service d’extraction.
 - Spécifier des configurations partielles.
 
-Un type spécial de configuration vous permet de configurer le LCM pour définir chacun de ces comportements.
-Les sections qui suivent décrivent comment configurer le LCM.
+Un type spécial de configuration vous permet de configurer le LCM pour définir chacun de ces comportements. Les sections qui suivent décrivent comment configurer le LCM.
 
-Windows PowerShell 5.0 a introduit de nouveaux paramètres permettant de gérer le Gestionnaire de configuration local.
-Pour plus d’informations sur la configuration du Gestionnaire de configuration local dans Windows PowerShell 4.0, consultez [Configuration du Gestionnaire de configuration local dans les versions précédentes de Windows PowerShell](metaconfig4.md).
+Windows PowerShell 5.0 a introduit de nouveaux paramètres permettant de gérer le Gestionnaire de configuration local. Pour plus d’informations sur la configuration du Gestionnaire de configuration local dans Windows PowerShell 4.0, consultez [Configuration du Gestionnaire de configuration local dans les versions précédentes de Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Création et application d’une configuration du LCM
 
 Pour configurer le LCM, vous devez créer et exécuter un type spécial de configuration appliquant les paramètres du LCM.
-Pour spécifier une configuration du LCM, utilisez l’attribut DscLocalConfigurationManager.
-L’exemple ci-dessous montre une configuration simple qui définit le LCM en mode par envoi.
+Pour spécifier une configuration du LCM, utilisez l’attribut DscLocalConfigurationManager. L’exemple ci-dessous montre une configuration simple qui définit le LCM en mode par envoi.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,27 +43,20 @@ configuration LCMConfig
 }
 ```
 
-Le processus d’application des paramètres au Gestionnaire de configuration local est similaire à l’application d’une configuration DSC.
-Vous allez créer une configuration du LCM, la compiler dans un fichier MOF, puis l’appliquer au nœud.
-À la différence des configurations DSC, vous n’appliquez pas de configuration du gestionnaire de configuration local en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
-Au lieu de cela, vous appelez [DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) en spécifiant le chemin du fichier MOF de configuration du LCM comme paramètre.
-Après avoir appliqué la configuration du LCM, vous pouvez afficher ses propriétés en appelant l’applet de commande [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
+Le processus d’application des paramètres au Gestionnaire de configuration local est similaire à l’application d’une configuration DSC. Vous allez créer une configuration du LCM, la compiler dans un fichier MOF, puis l’appliquer au nœud. À la différence des configurations DSC, vous n’appliquez pas de configuration du gestionnaire de configuration local en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Au lieu de cela, vous appelez [DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) en spécifiant le chemin du fichier MOF de configuration du LCM comme paramètre. Après avoir appliqué la configuration du LCM, vous pouvez afficher ses propriétés en appelant l’applet de commande [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).
 
-Une configuration du LCM peut contenir des blocs pour un ensemble limité de ressources uniquement.
-Dans l’exemple précédent, **Settings** est la seule ressource appelée.
-Voici les autres ressources disponibles :
+Une configuration du LCM peut contenir des blocs pour un ensemble limité de ressources uniquement. Dans l’exemple précédent, **Settings** est la seule ressource appelée. Voici les autres ressources disponibles :
 
-* **ConfigurationRepositoryWeb** : spécifie un service d’extraction HTTP pour les configurations.
-* **ConfigurationRepositoryShare** : spécifie un partage SMB pour les configurations.
-* **ResourceRepositoryWeb** : spécifie un service d’extraction HTTP pour les modules.
-* **ResourceRepositoryShare** : spécifie un partage SMB pour les modules.
-* **ReportServerWeb** : spécifie un service d’extraction HTTP auquel les rapports sont envoyés.
-* **PartialConfiguration** : fournit des données pour activer des configurations partielles.
+- **ConfigurationRepositoryWeb** : spécifie un service d’extraction HTTP pour les configurations.
+- **ConfigurationRepositoryShare** : spécifie un partage SMB pour les configurations.
+- **ResourceRepositoryWeb** : spécifie un service d’extraction HTTP pour les modules.
+- **ResourceRepositoryShare** : spécifie un partage SMB pour les modules.
+- **ReportServerWeb** : spécifie un service d’extraction HTTP auquel les rapports sont envoyés.
+- **PartialConfiguration** : fournit des données pour activer des configurations partielles.
 
 ## <a name="basic-settings"></a>Paramètres de base
 
-À la différence de la spécification de points de terminaison/de chemins et de configurations partielles du service d’extraction, toutes les propriétés du Gestionnaire de configuration local sont configurées dans un bloc **Paramètres**.
-Un bloc **Settings** définit les propriétés suivantes.
+À la différence de la spécification de points de terminaison/de chemins et de configurations partielles du service d’extraction, toutes les propriétés du Gestionnaire de configuration local sont configurées dans un bloc **Paramètres**. Un bloc **Settings** définit les propriétés suivantes.
 
 |  Propriété  |  Type  |  Description   |
 |----------- |------- |--------------- |
@@ -91,13 +79,10 @@ Un bloc **Settings** définit les propriétés suivantes.
 > [!NOTE]
 > Le Gestionnaire de configuration local démarre le cycle **ConfigurationModeFrequencyMins** d’après les critères suivants :
 >
-> - Une nouvelle métaconfiguration est appliquée à l’aide de `Set-DscLocalConfigurationManager`
+> - Un nouvelle métaconfiguration avec une modification de **ConfigurationModeFrequencyMins** est appliquée à l’aide de `Set-DscLocalConfigurationManager`
 > - Un redémarrage de l’ordinateur est effectué
 >
-> Pour toute condition où le processus du minuteur plante, le problème est détecté dans les 30 secondes et le cycle est redémarré.
-> Une opération simultanée pourrait retarder le démarrage du cycle. Si la durée de cette opération dépasse la fréquence du cycle configurée, le minuteur suivant ne démarrera pas.
->
-> Par exemple, la métaconfiguration est configurée à une fréquence d’extraction de 15 minutes et une opération d’extraction a lieu à T1.  Le nœud ne termine pas le travail avant 16 minutes.  Le premier cycle de 15 minutes est ignoré, et l’extraction suivante aura lieu à T1+15+15.
+> Pour toute condition où le processus du minuteur plante, le problème est détecté dans les 30 secondes et le cycle est redémarré. Une opération simultanée pourrait retarder le démarrage du cycle. Si la durée de cette opération dépasse la fréquence du cycle configurée, le minuteur suivant ne démarrera pas. Par exemple, la métaconfiguration est configurée à une fréquence d’extraction de 15 minutes et une opération d’extraction a lieu à T1. Le nœud ne termine pas le travail avant 16 minutes. Le premier cycle de 15 minutes est ignoré, et l’extraction suivante aura lieu à T1+15+15.
 
 ## <a name="pull-service"></a>Service d’extraction
 
@@ -111,8 +96,7 @@ Pour plus d’informations sur le service collecteur, consultez [Service collect
 
 ## <a name="configuration-server-blocks"></a>Blocs de serveur de configuration
 
-Pour définir un serveur de configuration web, créez un bloc **ConfigurationRepositoryWeb**.
-Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
+Pour définir un serveur de configuration web, créez un bloc **ConfigurationRepositoryWeb**. Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 
 |Propriété|Type|Description|
 |---|---|---|
@@ -125,38 +109,35 @@ Un bloc **ConfigurationRepositoryWeb** définit les propriétés suivantes.
 |ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
 
 > [!NOTE]
->
-> * Pris en charge dans Windows 1809 et ultérieur.
+> Pris en charge dans Windows 1809 et ultérieur.
 
-Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de configurations DSC](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
-Pour définir un serveur de configuration SMB, créez un bloc **ConfigurationRepositoryShare**.
-Un bloc **ConfigurationRepositoryShare** définit les propriétés suivantes.
+Pour définir un serveur de configuration SMB, créez un bloc **ConfigurationRepositoryShare**. Un bloc **ConfigurationRepositoryShare** définit les propriétés suivantes.
 
-|Propriété|Type|Description|
-|---|---|---|
-|Informations d'identification|MSFT_Credential|Informations d’identification utilisées pour l’authentification auprès du partage SMB.|
-|SourcePath|string|Chemin du partage SMB.|
+|  Propriété  |      Type       |                      Description                      |
+| ---------- | --------------- | ----------------------------------------------------- |
+| Informations d'identification | MSFT_Credential | Informations d’identification utilisées pour l’authentification auprès du partage SMB. |
+| SourcePath | string          | Chemin du partage SMB.                            |
 
 ## <a name="resource-server-blocks"></a>Blocs de serveur de ressources
 
 Pour définir un serveur de ressources web, créez un bloc **ResourceRepositoryWeb**.
 Un bloc **ResourceRepositoryWeb** définit les propriétés suivantes.
 
-|Propriété|Type|Description|
-|---|---|---|
-|AllowUnsecureConnection|bool|Définissez cette propriété sur **$TRUE** pour autoriser le nœud à se connecter au serveur sans authentification. Définissez-la sur **$FALSE** pour rendre l’authentification obligatoire.|
-|CertificateID|string|Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.|
-|RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
-|ServerURL|string|URL du serveur de configuration.|
-|ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
-|ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
+|        Propriété         |     Type     |                                                              Description                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | bool         | Définissez cette propriété sur **$TRUE** pour autoriser le nœud à se connecter au serveur sans authentification. Définissez-la sur **$FALSE** pour rendre l’authentification obligatoire. |
+| CertificateID           | string       | Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.                                                                    |
+| RegistrationKey         | string       | Un GUID qui identifie le nœud inscrit auprès du service d’extraction.                                                                                   |
+| ServerURL               | string       | URL du serveur de configuration.                                                                                                   |
+| ProxyURL*               | string       | URL du proxy http à utiliser lors de la communication avec le service de configuration.                                                    |
+| ProxyCredential*        | pscredential | Informations d’identification à utiliser pour le proxy http.                                                                                                  |
 
 > [!NOTE]
->
-> * Pris en charge dans Windows 1809 et ultérieur.
+> Pris en charge dans Windows 1809 et ultérieur.
 
-Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la configuration de la valeur ConfigurationRepositoryWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 Pour définir un serveur de ressources SMB, créez un bloc **ResourceRepositoryShare**.
 Un bloc **ResourceRepositoryShare** définit les propriétés suivantes.
@@ -168,29 +149,25 @@ Un bloc **ResourceRepositoryShare** définit les propriétés suivantes.
 
 ## <a name="report-server-blocks"></a>Blocs de serveur de rapports
 
-Pour définir un serveur de rapports, créez un bloc **ReportServerWeb**.
-Le rôle de serveur de rapports n’est pas compatible avec le service d’extraction basé sur SMB.
-Un bloc **ReportServerWeb** définit les propriétés suivantes.
+Pour définir un serveur de rapports, créez un bloc **ReportServerWeb**. Le rôle de serveur de rapports n’est pas compatible avec le service d’extraction basé sur SMB. Un bloc **ReportServerWeb** définit les propriétés suivantes.
 
-|Propriété|Type|Description|
-|---|---|---|
-|AllowUnsecureConnection|bool|Définissez cette propriété sur **$TRUE** pour autoriser le nœud à se connecter au serveur sans authentification. Définissez-la sur **$FALSE** pour rendre l’authentification obligatoire.|
-|CertificateID|string|Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.|
-|RegistrationKey|string|Un GUID qui identifie le nœud inscrit auprès du service d’extraction.|
-|ServerURL|string|URL du serveur de configuration.|
-|ProxyURL*|string|URL du proxy http à utiliser lors de la communication avec le service de configuration.|
-|ProxyCredential*|pscredential|Informations d’identification à utiliser pour le proxy http.|
+|        Propriété         |     Type     |                                                              Description                                                               |
+| ----------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| AllowUnsecureConnection | bool         | Définissez cette propriété sur **$TRUE** pour autoriser le nœud à se connecter au serveur sans authentification. Définissez-la sur **$FALSE** pour rendre l’authentification obligatoire. |
+| CertificateID           | string       | Empreinte d’un certificat utilisée pour l’authentification auprès du serveur.                                                                    |
+| RegistrationKey         | string       | Un GUID qui identifie le nœud inscrit auprès du service d’extraction.                                                                                   |
+| ServerURL               | string       | URL du serveur de configuration.                                                                                                   |
+| ProxyURL*               | string       | URL du proxy http à utiliser lors de la communication avec le service de configuration.                                                    |
+| ProxyCredential*        | pscredential | Informations d’identification à utiliser pour le proxy http.                                                                                                  |
 
 > [!NOTE]
->
-> * Pris en charge dans Windows 1809 et ultérieur.
+> Pris en charge dans Windows 1809 et ultérieur.
 
-Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
+Un exemple de script pour simplifier la configuration de la valeur ReportServerWeb pour des nœuds locaux est disponible – consultez [Génération de métaconfigurations DSC](/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
 ## <a name="partial-configurations"></a>Configurations partielles
 
-Pour définir une configuration partielle, créez un bloc **PartialConfiguration**.
-Pour plus d’informations sur les configurations partielles, consultez [Configurations partielles DSC](../pull-server/partialConfigs.md).
+Pour définir une configuration partielle, créez un bloc **PartialConfiguration**. Pour plus d’informations sur les configurations partielles, consultez [Configurations partielles DSC](../pull-server/partialConfigs.md).
 Un bloc **PartialConfiguration** définit les propriétés suivantes.
 
 |Propriété|Type|Description|
@@ -199,17 +176,19 @@ Un bloc **PartialConfiguration** définit les propriétés suivantes.
 |DependsOn|string{}|Liste des noms des autres configurations à exécuter avant l’application de cette configuration partielle.|
 |Description|string|Texte qui décrit la configuration partielle.|
 |ExclusiveResources|string[]|Tableau des ressources exclusives de cette configuration partielle.|
-|RefreshMode|string|Spécifie de quelle façon le gestionnaire de configuration local obtient cette configuration partielle. Les valeurs possibles sont __Disabled__, __Push__ et __Pull__. <ul><li>__Disabled__ : désactive cette configuration partielle.</li><li> __Push__ : la configuration partielle est transmise au nœud en appelant l’applet de commande [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration). Une fois que toutes les configurations partielles pour le nœud ont été obtenues d’un service en mode push ou pull, la configuration peut être démarrée en appelant `Start-DscConfiguration –UseExisting`. Il s’agit de la valeur par défaut.</li><li>__Pull :__ configure le nœud pour vérifier régulièrement si la configuration partielle est disponible sur un service d’extraction. Si cette propriété a la valeur __Pull__, vous devez spécifier un service d’extraction dans une propriété __ConfigurationSource__. Pour plus d’informations sur le service d’extraction Azure Automation, consultez [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Spécifie de quelle façon le gestionnaire de configuration local obtient cette configuration partielle. Les valeurs possibles sont __Disabled__, __Push__ et __Pull__. <ul><li>__Disabled__ : désactive cette configuration partielle.</li><li> __Push__ : la configuration partielle est transmise au nœud en appelant l’applet de commande [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration). Une fois que toutes les configurations partielles pour le nœud ont été obtenues d’un service en mode push ou pull, la configuration peut être démarrée en appelant `Start-DscConfiguration –UseExisting`. Il s’agit de la valeur par défaut.</li><li>__Pull :__ configure le nœud pour vérifier régulièrement si la configuration partielle est disponible sur un service d’extraction. Si cette propriété a la valeur __Pull__, vous devez spécifier un service d’extraction dans une propriété __ConfigurationSource__. Pour plus d’informations sur le service d’extraction Azure Automation, consultez [Vue d’ensemble d’Azure Automation DSC](/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|Tableau des noms des serveurs de ressources à partir desquels télécharger les ressources nécessaires pour cette configuration partielle. Ces noms doivent être ceux des points de terminaison du service définis précédemment dans les blocs **ResourceRepositoryWeb** et **ResourceRepositoryShare**.|
 
-__Remarque :__ les configurations partielles sont prises en charge avec Azure Automation DSC, mais une seule configuration peut être extraite du compte Automation de chaque nœud.
+> [!NOTE]
+> Les configurations partielles sont prises en charge avec Azure Automation DSC, mais une seule configuration peut être extraite du compte Automation de chaque nœud.
 
 ## <a name="see-also"></a>Voir aussi
 
 ### <a name="concepts"></a>Concepts
+
 [Vue d’ensemble de la configuration d'état souhaité](../overview/overview.md)
 
-[Bien démarrer avec Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
+[Bien démarrer avec Azure Automation DSC](/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Autres ressources
 

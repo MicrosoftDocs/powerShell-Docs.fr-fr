@@ -1,21 +1,20 @@
 ---
-ms.date: 12/12/2018
+ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Get-Test-Set
-ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f7b7e947a85832365a783e40c25a25bfaa9fff8d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278413"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771513"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Méthodes Get, Test et Set](media/get-test-set/get-test-set.png)
-
-PowerShell Desired State Configuration est construit autour d’un processus **Get**, **Test** et **Set**. Chaque [ressource](resources.md) DSC contient des méthodes pour effectuer chacune de ces opérations. Dans une [configuration](../configurations/configurations.md), vous définissez des blocs de ressources pour renseigner des clés qui deviennent des paramètres pour les méthodes **Get**, **Test** et **Set** d’une ressource.
+PowerShell Desired State Configuration est construit autour d’un processus **Get**, **Test** et **Set**. Chaque [ressource](resources.md) DSC contient des méthodes pour effectuer chacune de ces opérations.
+Dans une [configuration](../configurations/configurations.md), vous définissez des blocs de ressources pour renseigner des clés qui deviennent des paramètres pour les méthodes **Get**, **Test** et **Set** d’une ressource.
 
 Voici la syntaxe d’un bloc de ressources **Service**. La ressource **Service** configure les services Windows.
 
@@ -40,49 +39,49 @@ Service [String] #ResourceName
 Les méthodes **Get**, **Test** et **Set** de la ressource **Service** incluront des blocs de paramètres qui acceptent ces valeurs.
 
 ```powershell
-    param
-    (
-        [parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [System.String]
-        $Name,
+param
+(
+    [parameter(Mandatory = $true)]
+    [ValidateNotNullOrEmpty()]
+    [System.String]
+    $Name,
 
-        [System.String]
-        [ValidateSet("Automatic", "Manual", "Disabled")]
-        $StartupType,
+    [System.String]
+    [ValidateSet("Automatic", "Manual", "Disabled")]
+    $StartupType,
 
-        [System.String]
-        [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
-        $BuiltInAccount,
+    [System.String]
+    [ValidateSet("LocalSystem", "LocalService", "NetworkService")]
+    $BuiltInAccount,
 
-        [System.Management.Automation.PSCredential]
-        [ValidateNotNull()]
-        $Credential,
+    [System.Management.Automation.PSCredential]
+    [ValidateNotNull()]
+    $Credential,
 
-        [System.String]
-        [ValidateSet("Running", "Stopped")]
-        $State="Running",
+    [System.String]
+    [ValidateSet("Running", "Stopped")]
+    $State="Running",
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $DisplayName,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $DisplayName,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Description,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Description,
 
-        [System.String]
-        [ValidateNotNullOrEmpty()]
-        $Path,
+    [System.String]
+    [ValidateNotNullOrEmpty()]
+    $Path,
 
-        [System.String[]]
-        [ValidateNotNullOrEmpty()]
-        $Dependencies,
+    [System.String[]]
+    [ValidateNotNullOrEmpty()]
+    $Dependencies,
 
-        [System.String]
-        [ValidateSet("Present", "Absent")]
-        $Ensure="Present"
-    )
+    [System.String]
+    [ValidateSet("Present", "Absent")]
+    $Ensure="Present"
+)
 ```
 
 > [!NOTE]
@@ -104,7 +103,7 @@ Configuration TestConfig
 }
 ```
 
-Lorsque vous compilez la configuration ci-dessus, les valeurs que vous spécifiez pour une clé sont stockées dans le fichier « .mof » généré. Pour plus d’informations, consultez [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
+Lorsque vous compilez la configuration ci-dessus, les valeurs que vous spécifiez pour une clé sont stockées dans le fichier `.mof` généré. Pour plus d’informations, consultez [MOF](/windows/desktop/wmisdk/managed-object-format--mof-).
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,13 +120,14 @@ ModuleVersion = "1.0";
 };
 ```
 
-Lorsqu’il est utilisé, le [gestionnaire de configuration local](../managing-nodes/metaConfig.md) lit la valeur « Spooler » du fichier « .mof » et la transmet au paramètre `-Name` des méthodes **Get**, **Test** et **Set** pour l’instance « MyService » de la ressource **Service**.
+Lorsqu’il est utilisé, le [gestionnaire de configuration local](../managing-nodes/metaConfig.md) lit la valeur « Spooler » du fichier `.mof` et la transmet au paramètre **Name** des méthodes **Get**, **Test** et **Set** pour l’instance « MyService » de la ressource **Service**.
 
 ## <a name="get"></a>Obtenir
 
-La méthode **Get** d’une ressource récupère l’état de la ressource telle qu’elle est configurée sur le nœud cible. Cet état est retourné sous la forme d’une [table de hachage](/powershell/module/microsoft.powershell.core/about/about_hash_tables). Les clés de la **table de hachage** sont les valeurs configurables, ou paramètres, que la ressource accepte.
+La méthode **Get** d’une ressource récupère l’état de la ressource telle qu’elle est configurée sur le nœud cible. Cet état est retourné sous la forme d’une [table de hachage](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+Les clés de la **table de hachage** sont les valeurs configurables, ou paramètres, que la ressource accepte.
 
-La méthode **Get** est directement mappée à l’applet de commande [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration). Lorsque vous appelez `Get-DSCConfiguration`, le LCM exécute la méthode **Get** de chaque ressource dans la configuration actuellement appliquée. Le LCM utilise les valeurs de clé stockées dans le fichier « .mof » comme paramètres pour chaque instance de ressource correspondante.
+La méthode **Get** est directement mappée à l’applet de commande [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration). Lorsque vous appelez `Get-DSCConfiguration`, le LCM exécute la méthode **Get** de chaque ressource dans la configuration actuellement appliquée. Le LCM utilise les valeurs de clé stockées dans le fichier `.mof` comme paramètres pour chaque instance de ressource correspondante.
 
 Voici un exemple de résultat provenant d’une ressource **Service** qui configure le service « Spooler ».
 
@@ -177,10 +177,9 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Test
 
-La méthode **Test** d’une ressource détermine si le nœud cible est actuellement conforme à l’*état souhaité* de la ressource. La méthode **Test** retourne `$True` ou `$False` uniquement pour indiquer si le nœud est conforme.
-Lorsque vous appelez [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), le LCM appelle la méthode **Test** de chaque ressource dans la configuration actuellement appliquée. Le LCM utilise les valeurs de clé stockées dans le fichier « .mof » comme paramètres pour chaque instance de ressource correspondante.
+La méthode **Test** d’une ressource détermine si le nœud cible est actuellement conforme à l’_état souhaité_ de la ressource. La méthode **Test** retourne `$true` ou `$false` uniquement pour indiquer si le nœud est conforme. Lorsque vous appelez [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration), le LCM appelle la méthode **Test** de chaque ressource dans la configuration actuellement appliquée. Le LCM utilise les valeurs de clé stockées dans le fichier « .mof » comme paramètres pour chaque instance de ressource correspondante.
 
-Si le résultat du **test** d’une ressource individuelle affiche `$False`, `Test-DSCConfiguration` retourne `$False` indiquant que le nœud n’est pas conforme. Si toutes les méthodes **Test** d’une ressource retournent `$True`, `Test-DSCConfiguration` retourne `$True` pour indiquer que le nœud est conforme.
+Si le résultat du **test** d’une ressource individuelle affiche `$false`, `Test-DSCConfiguration` retourne `$false` indiquant que le nœud n’est pas conforme. Si toutes les méthodes **Test** d’une ressource retournent `$true`, `Test-DSCConfiguration` retourne `$true` pour indiquer que le nœud est conforme.
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +189,7 @@ Test-DSCConfiguration
 True
 ```
 
-À compter de PowerShell 5.0, le paramètre `-Detailed` a été ajouté. En spécifiant `-Detailed`, `Test-DSCConfiguration` retourne un objet contenant des ensembles de résultats pour les ressources conformes et non conformes.
+À compter de PowerShell 5.0, le paramètre **Detailed** a été ajouté. En spécifiant **Detailed**, `Test-DSCConfiguration` retourne un objet contenant des ensembles de résultats pour les ressources conformes et non conformes.
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -206,9 +205,9 @@ Pour plus d’informations, consultez [Test-DSCConfiguration](/powershell/module
 
 ## <a name="set"></a>Définissez
 
-La méthode **Set** d’une ressource tente de forcer le nœud à être conforme avec l’*état souhaité* de la ressource. La méthode **Set** est prévue pour être **idempotente**, ce qui signifie que **Set** peut être exécutée plusieurs fois et générer toujours le même résultat sans erreurs.  Lorsque vous exécutez [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), le LCM est appliqué en boucle sur chaque ressource dans la configuration actuellement appliquée. Le LCM récupère les valeurs des clés pour l’instance actuelle de la ressource à partir du fichier « .mof » et les utilise comme paramètres pour la méthode **Test**. Si la méthode **Test** retourne `$True`, le nœud est conforme à la ressource actuelle et la méthode **Set** est ignorée. Si le **test** retourne `$False`, le nœud n’est pas conforme.  Le LCM transmet les valeurs de clés de l’instance la ressource en tant que paramètres à la méthode **Set** de la ressource, restaurant ainsi la conformité du nœud.
+La méthode **Set** d’une ressource tente de forcer le nœud à être conforme avec l’*état souhaité* de la ressource. La méthode **Set** est prévue pour être **idempotente**, ce qui signifie que **Set** peut être exécutée plusieurs fois et générer toujours le même résultat sans erreurs. Lorsque vous exécutez [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration), le LCM est appliqué en boucle sur chaque ressource dans la configuration actuellement appliquée. Le LCM récupère les valeurs des clés pour l’instance actuelle de la ressource à partir du fichier « .mof » et les utilise comme paramètres pour la méthode **Test**. Si la méthode **Test** retourne `$true`, le nœud est conforme à la ressource actuelle et la méthode **Set** est ignorée. Si le **test** retourne `$false`, le nœud n’est pas conforme. Le LCM transmet les valeurs de clés de l’instance la ressource en tant que paramètres à la méthode **Set** de la ressource, restaurant ainsi la conformité du nœud.
 
-En spécifiant les paramètres `-Verbose` et `-Wait`, vous pouvez surveiller la progression de l’applet de commande `Start-DSCConfiguration`. Dans cet exemple, le nœud est déjà conforme. Le résultat `Verbose` indique que la méthode **Set** a été ignorée.
+En spécifiant les paramètres **Verbose** et **Wait**, vous pouvez surveiller la progression de l’applet de commande `Start-DSCConfiguration`. Dans cet exemple, le nœud est déjà conforme. Le résultat `Verbose` indique que la méthode **Set** a été ignorée.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -237,6 +236,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Vue d’ensemble d’Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Configuration d’un serveur collecteur SMB](../pull-server/pullServerSMB.md)
 - [Configuration d’un client d’extraction](../pull-server/pullClientConfigID.md)

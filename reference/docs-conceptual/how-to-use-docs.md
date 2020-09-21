@@ -1,13 +1,13 @@
 ---
-ms.date: 05/22/2020
+ms.date: 07/29/2020
 keywords: powershell,applet de commande
 title: Guide pratique pour utiliser la documentation PowerShell
-ms.openlocfilehash: 259eb1eea1dc7e8b5ae5730f97c938b838a320bf
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 1cfeb9eea564e7618062e1b8ada4948bd9e22969
+ms.sourcegitcommit: 9f9eb95bc859e9e0fed48101327a602b2ced351d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808263"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87821527"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Guide pratique pour utiliser la documentation PowerShell
 
@@ -25,7 +25,7 @@ Par défaut, ce site affiche la documentation de la dernière version publiée d
 
 Utilisez le sélecteur de version en haut de la page pour sélectionner la version souhaitée de PowerShell.
 
-![sélecteur de version](media/how-to-use-docs/version-search.gif)
+![Utilisation du sélecteur de version](media/how-to-use-docs/version-search.gif)
 
 Vous pouvez vérifier la version de PowerShell que vous utilisez en inspectant la valeur `$PSversionTable.PSVersion`. L’exemple suivant montre la sortie pour Windows PowerShell 5.1.
 
@@ -36,8 +36,10 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      18362  145
+5      1      19041  1
 ```
+
+Si vous débutez avec PowerShell et avez besoin d’aide pour comprendre la syntaxe des commandes, consultez [À propos de la syntaxe des commandes](/powershell/module/microsoft.powershell.core/about/about_command_syntax).
 
 ## <a name="finding-articles-for-previous-versions"></a>Recherche d’articles pour les versions précédentes
 

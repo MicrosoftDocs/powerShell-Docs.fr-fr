@@ -1,24 +1,26 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/11/2020
 keywords: dsc,powershell,configuration,installation
 title: Appel direct de méthodes de ressources DSC
-ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692401"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162492"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Appel direct de méthodes de ressources DSC
 
 >S’applique à : Windows PowerShell 5.0
 
-Vous pouvez utiliser l’applet de commande [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) pour appeler directement les fonctions ou méthodes d’une ressource DSC (les fonctions **Get-TargetResource**, **Set-TargetResource** et **Test-TargetResource** d’une ressource basée sur MOF, ou les méthodes **Get**, **Set** et **Test** d’une ressource basée sur la classe).
-Elle peut être utilisée par des tiers qui veulent utiliser des ressources DSC, ou comme un outil très utile lors du développement de ressources.
+Vous pouvez utiliser l’applet de commande [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) pour appeler directement les fonctions ou méthodes d’une ressource DSC (les fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource` d’une ressource basée sur MOF ou les méthodes **Get**, **Set** et **Test** d’une ressource basée sur la classe). Elle peut être utilisée par des tiers qui veulent utiliser des ressources DSC, ou comme un outil très utile lors du développement de ressources.
+
+> [!NOTE]
+> Dans PowerShell 7.0+, `Invoke-DscResource` ne prend plus en charge l’appel des ressources DSC WMI. Sont incluses les ressources **File** et **Log** dans **PSDesiredStateConfiguration**.
 
 Cette applet de commande est généralement utilisée avec une propriété de métaconfiguration `refreshMode = 'Disabled'`, mais vous pouvez l’utiliser quelle que soit la valeur de **refreshMode**.
 
-Lors de l’appel de l’applet de commande **Invoke-DscResource**, vous spécifiez la méthode ou fonction à appeler à l’aide du paramètre **Method**. Vous spécifiez les propriétés de la ressource en passant une table de hachage comme valeur du paramètre **Property**.
+Lors de l’appel de l’applet de commande `Invoke-DscResource`, vous spécifiez la méthode ou fonction à appeler à l’aide du paramètre **Method**. Vous spécifiez les propriétés de la ressource en passant une table de hachage comme valeur du paramètre **Property**.
 
 Voici quelques exemples d’appels directs de méthodes de ressources :
 
@@ -49,7 +51,8 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->**Remarque :** l’appel direct de méthodes de ressources composites n’est pas pris en charge. Appelez plutôt les ressources sous-jacentes qui forment la ressource composite.
+>[!NOTE]
+> l’appel direct de méthodes de ressources composites n’est pas pris en charge. Appelez plutôt les ressources sous-jacentes qui forment la ressource composite.
 
 ## <a name="see-also"></a>Voir aussi
 

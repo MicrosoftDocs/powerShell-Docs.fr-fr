@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur la substitution de variab
 description: Il existe de nombreuses façons d’utiliser des variables dans des chaînes pour créer du texte mis en forme.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1e65e90ffa09b34f62bc49ad64b062d429483c33
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 786526fb98dbf1b3ec7c5c6c985ac95b85a96259
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149462"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301316"
 ---
 # <a name="everything-you-wanted-to-know-about-variable-substitution-in-strings"></a>Tout ce que vous avez toujours voulu savoir sur la substitution de variable dans les chaînes
 

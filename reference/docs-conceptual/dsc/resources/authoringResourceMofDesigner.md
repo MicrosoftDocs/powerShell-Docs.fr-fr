@@ -1,31 +1,33 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Utilisation du Concepteur de ressources
-ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 04fd2fbcc5afd9f1c7cbfaa44d6bdfde93bca399
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692183"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217489"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md). Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory. Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
+L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md).
+Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory. Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
 
 ## <a name="creating-resource-properties"></a>Création de propriétés de ressource
+
 La première chose à faire est de décider des propriétés que doit exposer la ressource. Pour cet exemple, nous allons définir un utilisateur Active Directory avec les propriétés suivantes.
 
 Nom du paramètre  Description
 
-* **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
-* **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
-* **DomainCredential** : mot de passe de l’utilisateur.
-* **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
+- **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
+- **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
+- **DomainCredential** : mot de passe de l’utilisateur.
+- **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
 
-Pour créer les propriétés, nous utilisons l’applet de commande **New-xDscResourceProperty**. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.
+Pour créer les propriétés, nous utilisons l’applet de commande `New-xDscResourceProperty`. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
@@ -36,15 +38,15 @@ $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attrib
 
 ## <a name="create-the-resource"></a>Créer la ressource
 
-Maintenant que les propriétés de la ressource ont été créées, nous pouvons appeler l’applet de commande **New-xDscResource** pour créer la ressource. L’applet de commande **New-xDscResource** prend la liste des propriétés comme paramètres. Elle prend également le chemin de l’emplacement auquel le module doit être créé, le nom de la nouvelle ressource et le nom du module dans lequel elle est contenue. La commande PowerShell suivante crée la ressource.
+Maintenant que les propriétés de la ressource ont été créées, nous pouvons appeler l’applet de commande `New-xDscResource` pour créer la ressource. L’applet de commande `New-xDscResource` prend la liste des propriétés comme paramètres. Elle prend également le chemin de l’emplacement auquel le module doit être créé, le nom de la nouvelle ressource et le nom du module dans lequel elle est contenue. La commande PowerShell suivante crée la ressource.
 
 ```powershell
 New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path 'C:\Program Files\WindowsPowerShell\Modules' –ModuleName Demo_DSCModule
 ```
 
-L’applet de commande **New-xDscResource** crée le schéma MOF, un script de ressource squelette, la structure de répertoires nécessaire pour votre nouvelle ressource et un manifeste pour le module qui expose la nouvelle ressource.
+L’applet de commande `New-xDscResource` crée le schéma MOF, un script de ressource squelette, la structure de répertoires nécessaire pour votre nouvelle ressource et un manifeste pour le module qui expose la nouvelle ressource.
 
-Le fichier de schéma MOF se trouve à l’emplacement **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof**, et son contenu est le suivant.
+Le fichier du schéma MOF se trouve dans `C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof` et son contenu est le suivant.
 
 ```
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
@@ -57,7 +59,7 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-Le script de la ressource se trouve à l’emplacement **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**.
+Le script de la ressource se trouve dans `C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1`.
 Il ne comprend pas la logique permettant d’implémenter la ressource. Vous devrez l’ajouter vous-même. Voici le contenu du script squelette.
 
 ```powershell
@@ -76,7 +78,6 @@ function Get-TargetResource
 
   #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-
   <#
   $returnValue = @{
   UserName = [System.String]
@@ -88,7 +89,6 @@ function Get-TargetResource
   $returnValue
   #>
 }
-
 
 function Set-TargetResource
 {
@@ -116,10 +116,7 @@ function Set-TargetResource
 
   #Include this line if the resource requires a system reboot.
   #$global:DSCMachineStatus = 1
-
-
 }
-
 
 function Test-TargetResource
 {
@@ -146,7 +143,6 @@ function Test-TargetResource
 
   #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-
   <#
   $result = [System.Boolean]
 
@@ -154,15 +150,14 @@ function Test-TargetResource
   #>
 }
 
-
 Export-ModuleMember -Function *-TargetResource
 ```
 
 ## <a name="updating-the-resource"></a>Mise à jour de la ressource
 
-Si vous avez besoin d’ajouter ou de modifier la liste des paramètres de la ressource, vous pouvez appeler l’applet de commande **Update-xDscResource**. L’applet de commande met à jour la ressource avec une nouvelle liste de paramètres. Si vous avez déjà ajouté une logique au script de votre ressource, celle-ci reste inchangée.
+Si vous avez besoin d’ajouter ou de modifier la liste des paramètres de la ressource, vous pouvez appeler l’applet de commande `Update-xDscResource`. L’applet de commande met à jour la ressource avec une nouvelle liste de paramètres. Si vous avez déjà ajouté une logique au script de votre ressource, celle-ci reste inchangée.
 
-Supposons, par exemple, que vous vouliez inclure le dernier journal en date dans votre ressource pour l’utilisateur. Plutôt que de réécrire complètement la ressource, vous pouvez appeler **New-xDscResourceProperty** pour créer la nouvelle propriété, puis appeler **Update-xDscResource** et ajouter votre nouvelle propriété à la liste des propriétés.
+Supposons, par exemple, que vous vouliez inclure le dernier journal en date dans votre ressource pour l’utilisateur. Au lieu de réécrire complètement la ressource, vous pouvez appeler `New-xDscResourceProperty` pour créer la nouvelle propriété, puis appeler `Update-xDscResource` et ajouter votre nouvelle propriété à la liste des propriétés.
 
 ```powershell
 $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description "For mapping users to their last log on time"
@@ -171,12 +166,14 @@ Update-xDscResource –Name 'Demo_ADUser' –Property $UserName, $Ensure, $Domai
 
 ## <a name="testing-a-resource-schema"></a>Test d’un schéma de ressource
 
-L’outil Concepteur de ressources expose une applet de commande supplémentaire qui peut être utilisée pour tester la validité d’un schéma MOF que vous avez écrit manuellement. Appelez l’applet de commande **Test-xDscSchema** en passant le chemin d’un schéma de ressource MOF comme paramètre. C’est dans ce schéma que l’applet de commande affiche les éventuelles erreurs.
+L’outil Concepteur de ressources expose une applet de commande supplémentaire qui peut être utilisée pour tester la validité d’un schéma MOF que vous avez écrit manuellement. Appelez l’applet de commande `Test-xDscSchema` en passant le chemin d’un schéma de ressource MOF comme paramètre. C’est dans ce schéma que l’applet de commande affiche les éventuelles erreurs.
 
 ### <a name="see-also"></a>Voir aussi
 
 #### <a name="concepts"></a>Concepts
+
 [Création de ressources personnalisées de configuration d’état souhaité Windows PowerShell](authoringResource.md)
 
 #### <a name="other-resources"></a>Autres ressources
+
 [Module xDscResourceDesigner](https://www.powershellgallery.com/packages/xDscResourceDesigner/1.12.0.0)

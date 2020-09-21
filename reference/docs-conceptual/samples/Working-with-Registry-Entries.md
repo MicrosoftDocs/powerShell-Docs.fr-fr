@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation des entrées de Registre
-ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f8ee87cebb8b220570bcb969445071a72a68526
+ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030718"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87758480"
 ---
 # <a name="working-with-registry-entries"></a>Utilisation des entrées de Registre
 
@@ -111,7 +111,7 @@ DevicePath   : C:\WINDOWS\inf
 Cette commande retourne les propriétés Windows PowerShell standard, ainsi que la propriété **DevicePath**.
 
 > [!NOTE]
-> Bien que `Get-ItemProperty` dispose des paramètres **Filter**, **Include** et **Exclude**, vous ne pouvez pas les utiliser pour filtrer par nom de propriété. Ces paramètres font référence aux clés de Registre (qui sont des chemins d’accès à des éléments) et non à des entrées de Registre. Les entrées de Registre sont des propriétés d’élément.
+> Bien que `Get-ItemProperty` dispose des paramètres **Filter**, **Include** et **Exclude**, vous ne pouvez pas les utiliser pour filtrer par nom de propriété. Ces paramètres référencent des clés de Registre qui sont des chemins d’éléments, et non des entrées de Registre, qui sont des propriétés d’éléments.
 
 Une autre option consiste à utiliser l'outil en ligne de commande Reg.exe. Pour obtenir de l’aide sur reg.exe, tapez `reg.exe /?` à l’invite de commandes. Pour rechercher l'entrée DevicePath, utilisez reg.exe comme indiqué dans la commande suivante :
 
@@ -188,7 +188,7 @@ PSProvider     : Microsoft.PowerShell.Core\Registry
 PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 ```
 
-**PropertyType** doit être le nom d’un membre d’énumération **Microsoft.Win32.RegistryValueKind** figurant dans le tableau suivant :
+**PropertyType** doit être le nom d'un membre d'énumération **Microsoft.Win32.RegistryValueKind** figurant dans le tableau suivant :
 
 |Valeur PropertyType|Signification|
 |----------------------|-----------|

@@ -3,12 +3,12 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: gallery, powershell, applet de commande, psgallery, psget
 title: Travailler avec des PSRepository locaux
-ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415820"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837577"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Utilisation des référentiels PowerShellGet privés
 
@@ -109,16 +109,16 @@ Exemples :
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> Pour des raisons de sécurité, les clés API ne doivent pas être codées en dur dans les scripts. Utilisez un système de gestion de clés sécurisé. Quand vous exécutez une commande manuellement, les clés API ne doivent pas être transmises en texte brut pour éviter qu’il soit journalisé. L’applet de commande `Read-Host` peut être utilisée pour transmettre en toute sécurité la valeur de la clé API.
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> Pour des raisons de sécurité, les clés API ne doivent pas être codées en dur dans les scripts. Utilisez un système de gestion de clés sécurisé.
 
 ### <a name="publishing-a-module-from-the-psgallery"></a>Publier un module provenant de PSGallery
 
@@ -179,18 +179,20 @@ Une fois que vous avez exécuté ces commandes, vous pouvez publier PowerShellGe
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> Pour des raisons de sécurité, les clés API ne doivent pas être codées en dur dans les scripts. Utilisez un système de gestion de clés sécurisé. Quand vous exécutez une commande manuellement, les clés API ne doivent pas être transmises en texte brut pour éviter qu’il soit journalisé. L’applet de commande `Read-Host` peut être utilisée pour transmettre en toute sécurité la valeur de la clé API.
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
 ## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Utiliser des solutions de packaging pour héberger des référentiels PowerShellGet
 
-Vous pouvez également utiliser des solutions de packaging comme Azure Artifacts pour héberger un référentiel PowerShellGet privé ou public. Pour obtenir des informations complémentaires et des instructions, consultez la [documentation Azure Artifacts](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
-
-> [!IMPORTANT]
-> Pour des raisons de sécurité, les clés API ne doivent pas être codées en dur dans les scripts. Utilisez un système de gestion de clés sécurisé.
+Vous pouvez également utiliser des solutions de packaging comme Azure Artifacts pour héberger un référentiel PowerShellGet privé ou public. Pour obtenir des informations complémentaires et des instructions, consultez la [documentation Azure Artifacts](/azure/devops/artifacts/tutorials/private-powershell-library).
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
