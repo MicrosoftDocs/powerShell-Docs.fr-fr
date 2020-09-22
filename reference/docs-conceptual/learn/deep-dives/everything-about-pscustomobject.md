@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 description: PSCustomObject est un moyen simple de créer des données structurées.
 ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
+ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410136"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804778"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 
@@ -139,7 +139,7 @@ $myObject.$property
 
 Je sais que ça paraît étrange, mais cela fonctionne.
 
-### <a name="convert-pscustombobject-into-a-hashtable"></a>Convertir PSCustombObject en une table de hachage
+### <a name="convert-pscustomobject-into-a-hashtable"></a>Convertir PSCustomObject en table de hachage
 
 Pour continuer à partir de la dernière section, vous pouvez parcourir dynamiquement les propriétés et créer une table de hachage à partir de celles-ci.
 
