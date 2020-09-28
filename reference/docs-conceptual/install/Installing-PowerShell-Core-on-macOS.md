@@ -1,146 +1,146 @@
 ---
 title: Installation de PowerShell sur macOS
 description: Informations sur l’installation de PowerShell sur macOS
-ms.date: 08/24/2020
-ms.openlocfilehash: 8f38d573d9d67276dbc95cfb70f1fde80af62bb6
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.date: 09/23/2020
+ms.openlocfilehash: 86647888910fb27528fb78c46a457fa1da856eb0
+ms.sourcegitcommit: 51104c7932a185b4d3293dbca306625369687468
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88857906"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91224682"
 ---
-# <a name="installing-powershell-on-macos"></a><span data-ttu-id="cd3d1-103">Installation de PowerShell sur macOS</span><span class="sxs-lookup"><span data-stu-id="cd3d1-103">Installing PowerShell on macOS</span></span>
+# <a name="installing-powershell-on-macos"></a><span data-ttu-id="9a4ac-103">Installation de PowerShell sur macOS</span><span class="sxs-lookup"><span data-stu-id="9a4ac-103">Installing PowerShell on macOS</span></span>
 
-<span data-ttu-id="cd3d1-104">PowerShell Core prend en charge la version 10.12 et les versions ultérieures de macOS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-104">PowerShell supports macOS 10.12 and higher.</span></span> <span data-ttu-id="cd3d1-105">PowerShell 7.0.3 ou ultérieur et PowerShell 7.1.0 en préversion ou version ultérieure nécessitent macOS 10.13 et ultérieur.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-105">PowerShell 7.0.3 or higher and PowerShell Preview 7.1.0 or higher require macOS 10.13 and higher.</span></span> <span data-ttu-id="cd3d1-106">Tous les packages sont disponibles dans notre page de [versions][] GitHub.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-106">All packages are available on our GitHub [releases][] page.</span></span> <span data-ttu-id="cd3d1-107">Une fois le package installé, exécutez `pwsh` à partir d’un terminal.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-107">After the package is installed, run `pwsh` from a terminal.</span></span>
+<span data-ttu-id="9a4ac-104">PowerShell Core prend en charge la version 10.12 et les versions ultérieures de macOS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-104">PowerShell supports macOS 10.12 and higher.</span></span> <span data-ttu-id="9a4ac-105">PowerShell 7.0.3 ou ultérieur et PowerShell 7.1.0 en préversion ou version ultérieure nécessitent macOS 10.13 et ultérieur.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-105">PowerShell 7.0.3 or higher and PowerShell Preview 7.1.0 or higher require macOS 10.13 and higher.</span></span> <span data-ttu-id="9a4ac-106">Tous les packages sont disponibles dans notre page de [versions][] GitHub.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-106">All packages are available on our GitHub [releases][] page.</span></span> <span data-ttu-id="9a4ac-107">Une fois le package installé, exécutez `pwsh` à partir d’un terminal.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-107">After the package is installed, run `pwsh` from a terminal.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-108">PowerShell 7 est une mise à niveau sur place qui supprime PowerShell Core 6.x.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-108">PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.</span></span>
+> <span data-ttu-id="9a4ac-108">PowerShell 7 est une mise à niveau sur place qui supprime PowerShell Core 6.x.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-108">PowerShell 7 is an in-place upgrade that removes PowerShell Core 6.x.</span></span>
 >
-> <span data-ttu-id="cd3d1-109">Le dossier `/usr/local/microsoft/powershell/6` est remplacé par `/usr/local/microsoft/powershell/7`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-109">The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.</span></span>
+> <span data-ttu-id="9a4ac-109">Le dossier `/usr/local/microsoft/powershell/6` est remplacé par `/usr/local/microsoft/powershell/7`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-109">The `/usr/local/microsoft/powershell/6` folder is replaced by `/usr/local/microsoft/powershell/7`.</span></span>
 >
-> <span data-ttu-id="cd3d1-110">Si vous devez exécuter PowerShell 6 côte à côte avec PowerShell 7, réinstallez PowerShell 6 suivant la méthode [Archive binaire](#binary-archives).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-110">If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the [binary archive](#binary-archives) method.</span></span>
+> <span data-ttu-id="9a4ac-110">Si vous devez exécuter PowerShell 6 côte à côte avec PowerShell 7, réinstallez PowerShell 6 suivant la méthode [Archive binaire](#binary-archives).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-110">If you need to run PowerShell 6 side-by-side with PowerShell 7, reinstall PowerShell 6 using the [binary archive](#binary-archives) method.</span></span>
 
-<span data-ttu-id="cd3d1-111">Il existe plusieurs façons d’installer PowerShell sur macOS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-111">There are several ways to install PowerShell on macOS.</span></span> <span data-ttu-id="cd3d1-112">Choisissez l’une des méthodes suivantes :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-112">Choose one of the following methods:</span></span>
+<span data-ttu-id="9a4ac-111">Il existe plusieurs façons d’installer PowerShell sur macOS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-111">There are several ways to install PowerShell on macOS.</span></span> <span data-ttu-id="9a4ac-112">Choisissez l’une des méthodes suivantes :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-112">Choose one of the following methods:</span></span>
 
-- <span data-ttu-id="cd3d1-113">Installation avec Homebrew.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-113">Install using Homebrew.</span></span> <span data-ttu-id="cd3d1-114">Homebrew est le gestionnaire de package préféré pour macOS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-114">Homebrew is the preferred package manager for macOS.</span></span>
-- <span data-ttu-id="cd3d1-115">Installation de PowerShell par [téléchargement direct](#installation-via-direct-download).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-115">Install PowerShell via [Direct Download](#installation-via-direct-download)</span></span>
-- <span data-ttu-id="cd3d1-116">Installation à partir d’[archives binaires](#binary-archives).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-116">Install from [binary archives](#binary-archives).</span></span>
+- <span data-ttu-id="9a4ac-113">Installation avec Homebrew.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-113">Install using Homebrew.</span></span> <span data-ttu-id="9a4ac-114">Homebrew est le gestionnaire de package préféré pour macOS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-114">Homebrew is the preferred package manager for macOS.</span></span>
+- <span data-ttu-id="9a4ac-115">Installation de PowerShell par [téléchargement direct](#installation-via-direct-download).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-115">Install PowerShell via [Direct Download](#installation-via-direct-download)</span></span>
+- <span data-ttu-id="9a4ac-116">Installation à partir d’[archives binaires](#binary-archives).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-116">Install from [binary archives](#binary-archives).</span></span>
 
-<span data-ttu-id="cd3d1-117">Après avoir installé PowerShell, vous devez installer [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-117">After installing PowerShell, you should install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="cd3d1-118">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-118">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
+<span data-ttu-id="9a4ac-117">Après avoir installé PowerShell, vous devez installer [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-117">After installing PowerShell, you should install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="9a4ac-118">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-118">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1013-or-higher"></a><span data-ttu-id="cd3d1-119">Installation de la dernière version stable par le biais de Homebrew sur macOS 10.13 ou ultérieur</span><span class="sxs-lookup"><span data-stu-id="cd3d1-119">Installation of latest stable release via Homebrew on macOS 10.13 or higher</span></span>
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1013-or-higher"></a><span data-ttu-id="9a4ac-119">Installation de la dernière version stable par le biais de Homebrew sur macOS 10.13 ou ultérieur</span><span class="sxs-lookup"><span data-stu-id="9a4ac-119">Installation of latest stable release via Homebrew on macOS 10.13 or higher</span></span>
 
-<span data-ttu-id="cd3d1-120">Si la commande `brew` est introuvable, vous devez installer Homebrew en suivant [ces instructions][brew].</span><span class="sxs-lookup"><span data-stu-id="cd3d1-120">If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].</span></span>
+<span data-ttu-id="9a4ac-120">Si la commande `brew` est introuvable, vous devez installer Homebrew en suivant [ces instructions][brew].</span><span class="sxs-lookup"><span data-stu-id="9a4ac-120">If the `brew` command is not found, you need to install Homebrew following [their instructions][brew].</span></span>
 
-<span data-ttu-id="cd3d1-121">Maintenant, vous pouvez installer PowerShell :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-121">Now, you can install PowerShell:</span></span>
+<span data-ttu-id="9a4ac-121">Maintenant, vous pouvez installer PowerShell :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-121">Now, you can install PowerShell:</span></span>
 
 ```sh
 brew cask install powershell
 ```
 
-<span data-ttu-id="cd3d1-122">Enfin, vérifiez que votre installation fonctionne correctement :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-122">Finally, verify that your install is working properly:</span></span>
+<span data-ttu-id="9a4ac-122">Enfin, vérifiez que votre installation fonctionne correctement :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-122">Finally, verify that your install is working properly:</span></span>
 
 ```sh
 pwsh
 ```
 
-<span data-ttu-id="cd3d1-123">Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-123">When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:</span></span>
+<span data-ttu-id="9a4ac-123">Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-123">When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:</span></span>
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade powershell --cask
 ```
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-124">Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter et redémarrer l’interpréteur de commandes PowerShell pour terminer la mise à niveau et actualiser les valeurs indiquées dans `$PSVersionTable`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-124">The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell shell must be exited and restarted to complete the upgrade and refresh the values shown in `$PSVersionTable`.</span></span>
+> <span data-ttu-id="9a4ac-124">Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter et redémarrer l’interpréteur de commandes PowerShell pour terminer la mise à niveau et actualiser les valeurs indiquées dans `$PSVersionTable`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-124">The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell shell must be exited and restarted to complete the upgrade and refresh the values shown in `$PSVersionTable`.</span></span>
 
 [brew]: https://brew.sh/
 
-## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1013-or-higher"></a><span data-ttu-id="cd3d1-125">Installation de la dernière préversion par le biais de Homebrew sur macOS 10.13 ou ultérieur</span><span class="sxs-lookup"><span data-stu-id="cd3d1-125">Installation of latest preview release via Homebrew on macOS 10.13 or higher</span></span>
+## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1013-or-higher"></a><span data-ttu-id="9a4ac-125">Installation de la dernière préversion par le biais de Homebrew sur macOS 10.13 ou ultérieur</span><span class="sxs-lookup"><span data-stu-id="9a4ac-125">Installation of latest preview release via Homebrew on macOS 10.13 or higher</span></span>
 
-<span data-ttu-id="cd3d1-126">Une fois Homebrew installé, vous pouvez installer PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-126">After you've installed Homebrew, you can install PowerShell.</span></span> <span data-ttu-id="cd3d1-127">Tout d’abord, installez le package [Cask-Versions][cask-versions], ce qui va vous permettre d’installer d’autres versions de packages cask :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-127">First, install the [Cask-Versions][cask-versions] package that lets you install alternative versions of cask packages:</span></span>
+<span data-ttu-id="9a4ac-126">Une fois Homebrew installé, vous pouvez installer PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-126">After you've installed Homebrew, you can install PowerShell.</span></span> <span data-ttu-id="9a4ac-127">Tout d’abord, installez le package [Cask-Versions][cask-versions], ce qui va vous permettre d’installer d’autres versions de packages cask :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-127">First, install the [Cask-Versions][cask-versions] package that lets you install alternative versions of cask packages:</span></span>
 
 ```sh
 brew tap homebrew/cask-versions
 ```
 
-<span data-ttu-id="cd3d1-128">Maintenant, vous pouvez installer PowerShell :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-128">Now, you can install PowerShell:</span></span>
+<span data-ttu-id="9a4ac-128">Maintenant, vous pouvez installer PowerShell :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-128">Now, you can install PowerShell:</span></span>
 
 ```sh
 brew cask install powershell-preview
 ```
 
-<span data-ttu-id="cd3d1-129">Enfin, vérifiez que votre installation fonctionne correctement :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-129">Finally, verify that your install is working properly:</span></span>
+<span data-ttu-id="9a4ac-129">Enfin, vérifiez que votre installation fonctionne correctement :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-129">Finally, verify that your install is working properly:</span></span>
 
 ```sh
 pwsh-preview
 ```
 
-<span data-ttu-id="cd3d1-130">Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-130">When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:</span></span>
+<span data-ttu-id="9a4ac-130">Quand de nouvelles versions de PowerShell sont publiées, mettez à jour les formules de Homebrew et mettez à niveau PowerShell :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-130">When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:</span></span>
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade powershell-preview --cask
 ```
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-131">Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter l’interpréteur de commandes PowerShell, puis le redémarrer pour terminer la mise à niveau</span><span class="sxs-lookup"><span data-stu-id="cd3d1-131">The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell shell must be exited and restarted to complete the upgrade.</span></span>
-> <span data-ttu-id="cd3d1-132">et actualiser les valeurs indiquées dans `$PSVersionTable`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-132">and refresh the values shown in `$PSVersionTable`.</span></span>
+> <span data-ttu-id="9a4ac-131">Les commandes ci-dessus peuvent être appelées à partir d’un ordinateur hôte PowerShell (pwsh). Dans ce cas, vous devez quitter l’interpréteur de commandes PowerShell, puis le redémarrer pour terminer la mise à niveau</span><span class="sxs-lookup"><span data-stu-id="9a4ac-131">The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell shell must be exited and restarted to complete the upgrade.</span></span>
+> <span data-ttu-id="9a4ac-132">et actualiser les valeurs indiquées dans `$PSVersionTable`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-132">and refresh the values shown in `$PSVersionTable`.</span></span>
 
-<span data-ttu-id="cd3d1-133">L’installation de PowerShell avec la méthode tap Homebrew est également prise en charge pour les versions stables et LTS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-133">Installing PowerShell using the Homebrew tap method is also supported for stable and LTS versions.</span></span>
+<span data-ttu-id="9a4ac-133">L’installation de PowerShell avec la méthode tap Homebrew est également prise en charge pour les versions stables et LTS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-133">Installing PowerShell using the Homebrew tap method is also supported for stable and LTS versions.</span></span>
 
 ```sh
 brew install powershell/tap/powershell
 ```
 
-<span data-ttu-id="cd3d1-134">Vous pouvez maintenant vérifier votre installation.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-134">You can now verify your install</span></span>
+<span data-ttu-id="9a4ac-134">Vous pouvez maintenant vérifier votre installation.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-134">You can now verify your install</span></span>
 
 ```sh
 pwsh
 ```
 
-<span data-ttu-id="cd3d1-135">Quand de nouvelles versions de PowerShell sont publiées, exécutez simplement la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-135">When new versions of PowerShell are released, simply run the following command.</span></span>
+<span data-ttu-id="9a4ac-135">Quand de nouvelles versions de PowerShell sont publiées, exécutez simplement la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-135">When new versions of PowerShell are released, simply run the following command.</span></span>
 
 ```sh
 brew upgrade powershell
 ```
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-136">Que vous utilisiez la méthode cask ou tap, lors de la mise à jour vers une version plus récente de PowerShell, utilisez la même méthode que celle utilisée pour l’installation initiale de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-136">Whether you use the cask or the tap method, when updating to a newer version of PowerShell, use the same method you used to initially install PowerShell.</span></span> <span data-ttu-id="cd3d1-137">Si vous utilisez une autre méthode, l’ouverture d’une nouvelle session pwsh continuera à utiliser l’ancienne version de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-137">If you use a different method, opening a new pwsh session will continue to use the older version of PowerShell.</span></span>
+> <span data-ttu-id="9a4ac-136">Que vous utilisiez la méthode cask ou tap, lors de la mise à jour vers une version plus récente de PowerShell, utilisez la même méthode que celle utilisée pour l’installation initiale de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-136">Whether you use the cask or the tap method, when updating to a newer version of PowerShell, use the same method you used to initially install PowerShell.</span></span> <span data-ttu-id="9a4ac-137">Si vous utilisez une autre méthode, l’ouverture d’une nouvelle session pwsh continuera à utiliser l’ancienne version de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-137">If you use a different method, opening a new pwsh session will continue to use the older version of PowerShell.</span></span>
 >
-> <span data-ttu-id="cd3d1-138">Si vous décidez d’utiliser d’autres méthodes, vous pouvez corriger le problème à l’aide de la [méthode link Homebrew](https://docs.brew.sh/Manpage#link-ln-options-formula).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-138">If you do decide to use different methods, there are ways to correct the issue using the [Homebrew link method](https://docs.brew.sh/Manpage#link-ln-options-formula).</span></span>
+> <span data-ttu-id="9a4ac-138">Si vous décidez d’utiliser d’autres méthodes, vous pouvez corriger le problème à l’aide de la [méthode link Homebrew](https://docs.brew.sh/Manpage#link-ln-options-formula).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-138">If you do decide to use different methods, there are ways to correct the issue using the [Homebrew link method](https://docs.brew.sh/Manpage#link-ln-options-formula).</span></span>
 
-## <a name="installation-via-direct-download"></a><span data-ttu-id="cd3d1-139">Installation par téléchargement direct</span><span class="sxs-lookup"><span data-stu-id="cd3d1-139">Installation via Direct Download</span></span>
+## <a name="installation-via-direct-download"></a><span data-ttu-id="9a4ac-139">Installation par téléchargement direct</span><span class="sxs-lookup"><span data-stu-id="9a4ac-139">Installation via Direct Download</span></span>
 
-<span data-ttu-id="cd3d1-140">Téléchargez le package PKG `powershell-lts-7.0.3-osx-x64.pkg` à partir de la page de [versions][] sur votre ordinateur macOS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-140">Download the PKG package `powershell-lts-7.0.3-osx-x64.pkg` from the [releases][] page onto your macOS machine.</span></span>
+<span data-ttu-id="9a4ac-140">Téléchargez le package PKG `powershell-lts-7.0.3-osx-x64.pkg` à partir de la page de [versions][] sur votre ordinateur macOS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-140">Download the PKG package `powershell-lts-7.0.3-osx-x64.pkg` from the [releases][] page onto your macOS machine.</span></span>
 
-<span data-ttu-id="cd3d1-141">Vous pouvez double-cliquer sur le fichier et suivre les invites ou l’installer à partir du terminal :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-141">You can double-click the file and follow the prompts, or install it from the terminal:</span></span>
+<span data-ttu-id="9a4ac-141">Vous pouvez double-cliquer sur le fichier et suivre les invites ou l’installer à partir du terminal :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-141">You can double-click the file and follow the prompts, or install it from the terminal:</span></span>
 
 ```sh
 sudo installer -pkg powershell-lts-7.0.3-osx-x64.pkg -target /
 ```
 
-<span data-ttu-id="cd3d1-142">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-142">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="cd3d1-143">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-143">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
+<span data-ttu-id="9a4ac-142">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-142">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="9a4ac-143">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-143">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
 
-## <a name="install-as-a-net-global-tool"></a><span data-ttu-id="cd3d1-144">Installation en tant qu’outil global .NET</span><span class="sxs-lookup"><span data-stu-id="cd3d1-144">Install as a .NET Global tool</span></span>
+## <a name="install-as-a-net-global-tool"></a><span data-ttu-id="9a4ac-144">Installation en tant qu’outil global .NET</span><span class="sxs-lookup"><span data-stu-id="9a4ac-144">Install as a .NET Global tool</span></span>
 
-<span data-ttu-id="cd3d1-145">Si vous avez déjà installé le [kit SDK .NET Core](/dotnet/core/sdk), il est facile d’installer PowerShell en tant [qu’outil global .NET](/dotnet/core/tools/global-tools).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-145">If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).</span></span>
+<span data-ttu-id="9a4ac-145">Si vous avez déjà installé le [kit SDK .NET Core](/dotnet/core/sdk), il est facile d’installer PowerShell en tant [qu’outil global .NET](/dotnet/core/tools/global-tools).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-145">If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell as a [.NET Global tool](/dotnet/core/tools/global-tools).</span></span>
 
 ```
 dotnet tool install --global PowerShell
 ```
 
-<span data-ttu-id="cd3d1-146">Le programme d’installation de l’outil dotnet ajoute `~/.dotnet/tools` à votre variable d’environnement `PATH`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-146">The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable.</span></span> <span data-ttu-id="cd3d1-147">Toutefois, le `PATH` de l’interpréteur de commandes en cours d’exécution n’a pas été mis à jour.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-147">However, the currently running shell does not have the updated `PATH`.</span></span> <span data-ttu-id="cd3d1-148">Vous devez pouvoir démarrer PowerShell à partir d’un nouvel interpréteur de commandes en tapant `pwsh`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-148">You should be able to start PowerShell from a new shell by typing `pwsh`.</span></span>
+<span data-ttu-id="9a4ac-146">Le programme d’installation de l’outil dotnet ajoute `~/.dotnet/tools` à votre variable d’environnement `PATH`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-146">The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable.</span></span> <span data-ttu-id="9a4ac-147">Toutefois, le `PATH` de l’interpréteur de commandes en cours d’exécution n’a pas été mis à jour.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-147">However, the currently running shell does not have the updated `PATH`.</span></span> <span data-ttu-id="9a4ac-148">Vous devez pouvoir démarrer PowerShell à partir d’un nouvel interpréteur de commandes en tapant `pwsh`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-148">You should be able to start PowerShell from a new shell by typing `pwsh`.</span></span>
 
-<span data-ttu-id="cd3d1-149">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-149">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="cd3d1-150">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-150">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
+<span data-ttu-id="9a4ac-149">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-149">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="9a4ac-150">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-150">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
 
-## <a name="binary-archives"></a><span data-ttu-id="cd3d1-151">Archives binaires</span><span class="sxs-lookup"><span data-stu-id="cd3d1-151">Binary Archives</span></span>
+## <a name="binary-archives"></a><span data-ttu-id="9a4ac-151">Archives binaires</span><span class="sxs-lookup"><span data-stu-id="9a4ac-151">Binary Archives</span></span>
 
-<span data-ttu-id="cd3d1-152">Les archives `tar.gz` binaires PowerShell sont fournies pour la plateforme macOS pour permettre des scénarios de déploiement avancés.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-152">PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced deployment scenarios.</span></span> <span data-ttu-id="cd3d1-153">Quand vous installez avec cette méthode, vous devez également installer manuellement toutes les dépendances.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-153">When you install using this method you must also manually install any dependencies.</span></span>
+<span data-ttu-id="9a4ac-152">Les archives `tar.gz` binaires PowerShell sont fournies pour la plateforme macOS pour permettre des scénarios de déploiement avancés.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-152">PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced deployment scenarios.</span></span> <span data-ttu-id="9a4ac-153">Quand vous installez avec cette méthode, vous devez également installer manuellement toutes les dépendances.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-153">When you install using this method you must also manually install any dependencies.</span></span>
 
-<span data-ttu-id="cd3d1-154">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-154">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="cd3d1-155">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-155">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
+<span data-ttu-id="9a4ac-154">Installez [OpenSSL](#installing-dependencies).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-154">Install [OpenSSL](#installing-dependencies).</span></span> <span data-ttu-id="9a4ac-155">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-155">OpenSSL is needed for PowerShell remoting and CIM operations.</span></span>
 
-### <a name="installing-binary-archives-on-macos"></a><span data-ttu-id="cd3d1-156">Installation des archives binaires sur macOS</span><span class="sxs-lookup"><span data-stu-id="cd3d1-156">Installing binary archives on macOS</span></span>
+### <a name="installing-binary-archives-on-macos"></a><span data-ttu-id="9a4ac-156">Installation des archives binaires sur macOS</span><span class="sxs-lookup"><span data-stu-id="9a4ac-156">Installing binary archives on macOS</span></span>
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -159,74 +159,74 @@ sudo chmod +x /usr/local/microsoft/powershell/7.0.3/pwsh
 sudo ln -s /usr/local/microsoft/powershell/7.0.3/pwsh /usr/local/bin/pwsh
 ```
 
-## <a name="installing-dependencies"></a><span data-ttu-id="cd3d1-157">Installer les dépendances</span><span class="sxs-lookup"><span data-stu-id="cd3d1-157">Installing dependencies</span></span>
+## <a name="installing-dependencies"></a><span data-ttu-id="9a4ac-157">Installer les dépendances</span><span class="sxs-lookup"><span data-stu-id="9a4ac-157">Installing dependencies</span></span>
 
-<span data-ttu-id="cd3d1-158">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-158">OpenSSL is required for PowerShell remoting and CIM operations.</span></span> <span data-ttu-id="cd3d1-159">Vous pouvez installer OpenSSL par le biais de MacPorts si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-159">You can install OpenSSL via MacPorts if needed.</span></span>
+<span data-ttu-id="9a4ac-158">OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-158">OpenSSL is required for PowerShell remoting and CIM operations.</span></span> <span data-ttu-id="9a4ac-159">Vous pouvez installer OpenSSL par le biais de MacPorts si nécessaire.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-159">You can install OpenSSL via MacPorts if needed.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-160">Utilisés ensemble sur le même système, MacPorts et Homebrew peuvent rencontrer des problèmes.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-160">MacPorts and Homebrew can have problems when used to together on the same system.</span></span> <span data-ttu-id="cd3d1-161">En revanche, Homebrew n’a pas de package pour OpenSSL 1.0.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-161">However, Homebrew does not have a package for OpenSSL 1.0.</span></span> <span data-ttu-id="cd3d1-162">Pour plus d’informations, consultez les [questions fréquentes (FAQ) sur MacPorts](https://trac.macports.org/wiki/FAQ).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-162">For more information, see the [MacPorts FAQ](https://trac.macports.org/wiki/FAQ).</span></span>
+> <span data-ttu-id="9a4ac-160">Utilisés ensemble sur le même système, MacPorts et Homebrew peuvent rencontrer des problèmes.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-160">MacPorts and Homebrew can have problems when used to together on the same system.</span></span> <span data-ttu-id="9a4ac-161">En revanche, Homebrew n’a pas de package pour OpenSSL 1.0.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-161">However, Homebrew does not have a package for OpenSSL 1.0.</span></span> <span data-ttu-id="9a4ac-162">Pour plus d’informations, consultez les [questions fréquentes (FAQ) sur MacPorts](https://trac.macports.org/wiki/FAQ).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-162">For more information, see the [MacPorts FAQ](https://trac.macports.org/wiki/FAQ).</span></span>
 
-1. <span data-ttu-id="cd3d1-163">Installez les outils en ligne de commande Xcode.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-163">Install the Xcode command-line tools.</span></span> <span data-ttu-id="cd3d1-164">Les outils Xcode sont une exigence de MacPorts.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-164">The Xcode tools are required by MacPorts.</span></span>
+1. <span data-ttu-id="9a4ac-163">Installez les outils en ligne de commande Xcode.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-163">Install the Xcode command-line tools.</span></span> <span data-ttu-id="9a4ac-164">Les outils Xcode sont une exigence de MacPorts.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-164">The Xcode tools are required by MacPorts.</span></span>
 
    ```sh
    xcode-select --install
    ```
 
-1. <span data-ttu-id="cd3d1-165">Installez MacPorts.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-165">Install MacPorts.</span></span> <span data-ttu-id="cd3d1-166">Pour connaître les instructions à suivre, reportez-vous au [guide d’installation](https://www.macports.org/install.php).</span><span class="sxs-lookup"><span data-stu-id="cd3d1-166">If you need instructions, refer to the [installation guide](https://www.macports.org/install.php).</span></span>
-1. <span data-ttu-id="cd3d1-167">Mettez à jour MacPorts en exécutant `sudo port selfupdate`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-167">Update MacPorts by running `sudo port selfupdate`.</span></span>
-1. <span data-ttu-id="cd3d1-168">Mettez à niveau les packages MacPorts en exécutant `sudo port upgrade outdated`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-168">Upgrade MacPorts packages by running `sudo port upgrade outdated`.</span></span>
-1. <span data-ttu-id="cd3d1-169">Installez OpenSSL en exécutant `sudo port install openssl10`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-169">Install OpenSSL by running `sudo port install openssl10`.</span></span>
-1. <span data-ttu-id="cd3d1-170">Liez les bibliothèques pour les mettre à la disposition de PowerShell :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-170">Link the libraries to make them available to PowerShell:</span></span>
+1. <span data-ttu-id="9a4ac-165">Installez MacPorts.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-165">Install MacPorts.</span></span> <span data-ttu-id="9a4ac-166">Pour connaître les instructions à suivre, reportez-vous au [guide d’installation](https://www.macports.org/install.php).</span><span class="sxs-lookup"><span data-stu-id="9a4ac-166">If you need instructions, refer to the [installation guide](https://www.macports.org/install.php).</span></span>
+1. <span data-ttu-id="9a4ac-167">Mettez à jour MacPorts en exécutant `sudo port selfupdate`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-167">Update MacPorts by running `sudo port selfupdate`.</span></span>
+1. <span data-ttu-id="9a4ac-168">Mettez à niveau les packages MacPorts en exécutant `sudo port upgrade outdated`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-168">Upgrade MacPorts packages by running `sudo port upgrade outdated`.</span></span>
+1. <span data-ttu-id="9a4ac-169">Installez OpenSSL en exécutant `sudo port install openssl10`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-169">Install OpenSSL by running `sudo port install openssl10`.</span></span>
+1. <span data-ttu-id="9a4ac-170">Liez les bibliothèques pour les mettre à la disposition de PowerShell :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-170">Link the libraries to make them available to PowerShell:</span></span>
 
    ```sh
    sudo mkdir -p /usr/local/opt/openssl
    sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
    ```
 
-## <a name="uninstalling-powershell"></a><span data-ttu-id="cd3d1-171">Désinstallation de PowerShell</span><span class="sxs-lookup"><span data-stu-id="cd3d1-171">Uninstalling PowerShell</span></span>
+## <a name="uninstalling-powershell"></a><span data-ttu-id="9a4ac-171">Désinstallation de PowerShell</span><span class="sxs-lookup"><span data-stu-id="9a4ac-171">Uninstalling PowerShell</span></span>
 
-<span data-ttu-id="cd3d1-172">Si vous avez installé PowerShell avec Homebrew, utilisez la commande suivante pour le désinstaller :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-172">If you installed PowerShell with Homebrew, use the following command to uninstall:</span></span>
+<span data-ttu-id="9a4ac-172">Si vous avez installé PowerShell avec Homebrew, utilisez la commande suivante pour le désinstaller :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-172">If you installed PowerShell with Homebrew, use the following command to uninstall:</span></span>
 
 ```sh
 brew cask uninstall powershell
 ```
 
-<span data-ttu-id="cd3d1-173">Si vous avez installé PowerShell par téléchargement direct, PowerShell doit être supprimé manuellement :</span><span class="sxs-lookup"><span data-stu-id="cd3d1-173">If you installed PowerShell via direct download, PowerShell must be removed manually:</span></span>
+<span data-ttu-id="9a4ac-173">Si vous avez installé PowerShell par téléchargement direct, PowerShell doit être supprimé manuellement :</span><span class="sxs-lookup"><span data-stu-id="9a4ac-173">If you installed PowerShell via direct download, PowerShell must be removed manually:</span></span>
 
 ```sh
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-<span data-ttu-id="cd3d1-174">Pour supprimer les chemins d’accès PowerShell supplémentaires, reportez-vous à la section sur les [chemins d’accès](#paths) dans ce document et supprimez les chemins d’accès avec `sudo rm`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-174">To remove the additional PowerShell paths, refer to the [paths](#paths) section in this document and remove the paths using `sudo rm`.</span></span>
+<span data-ttu-id="9a4ac-174">Pour supprimer les chemins d’accès PowerShell supplémentaires, reportez-vous à la section sur les [chemins d’accès](#paths) dans ce document et supprimez les chemins d’accès avec `sudo rm`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-174">To remove the additional PowerShell paths, refer to the [paths](#paths) section in this document and remove the paths using `sudo rm`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="cd3d1-175">Cela est inutile si vous avez installé PowerShell avec Homebrew.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-175">This is not necessary if you installed with Homebrew.</span></span>
+> <span data-ttu-id="9a4ac-175">Cela est inutile si vous avez installé PowerShell avec Homebrew.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-175">This is not necessary if you installed with Homebrew.</span></span>
 
-## <a name="paths"></a><span data-ttu-id="cd3d1-176">Chemins</span><span class="sxs-lookup"><span data-stu-id="cd3d1-176">Paths</span></span>
+## <a name="paths"></a><span data-ttu-id="9a4ac-176">Chemins</span><span class="sxs-lookup"><span data-stu-id="9a4ac-176">Paths</span></span>
 
-- <span data-ttu-id="cd3d1-177">`$PSHOME` est `/usr/local/microsoft/powershell/7.0.3/`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-177">`$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`</span></span>
-- <span data-ttu-id="cd3d1-178">Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-178">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
-- <span data-ttu-id="cd3d1-179">Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-179">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
-- <span data-ttu-id="cd3d1-180">Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-180">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
-- <span data-ttu-id="cd3d1-181">Les modules partagés sont lus à partir de `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-181">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
-- <span data-ttu-id="cd3d1-182">Les modules par défaut sont lus à partir de `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-182">Default modules will be read from `$PSHOME/Modules`</span></span>
-- <span data-ttu-id="cd3d1-183">L’historique PSReadline est enregistré dans `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="cd3d1-183">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
+- <span data-ttu-id="9a4ac-177">`$PSHOME` est `/usr/local/microsoft/powershell/7.0.3/`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-177">`$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`</span></span>
+- <span data-ttu-id="9a4ac-178">Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-178">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
+- <span data-ttu-id="9a4ac-179">Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-179">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
+- <span data-ttu-id="9a4ac-180">Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-180">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
+- <span data-ttu-id="9a4ac-181">Les modules partagés sont lus à partir de `/usr/local/share/powershell/Modules`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-181">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
+- <span data-ttu-id="9a4ac-182">Les modules par défaut sont lus à partir de `$PSHOME/Modules`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-182">Default modules will be read from `$PSHOME/Modules`</span></span>
+- <span data-ttu-id="9a4ac-183">L’historique PSReadline est enregistré dans `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="9a4ac-183">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
 
-<span data-ttu-id="cd3d1-184">Les profils respectent la configuration par hôte de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-184">The profiles respect PowerShell's per-host configuration.</span></span> <span data-ttu-id="cd3d1-185">Donc, le profil spécifique à l’hôte par défaut existe dans `Microsoft.PowerShell_profile.ps1` aux mêmes emplacements.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-185">So the default host-specific profile exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
+<span data-ttu-id="9a4ac-184">Les profils respectent la configuration par hôte de PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-184">The profiles respect PowerShell's per-host configuration.</span></span> <span data-ttu-id="9a4ac-185">Donc, le profil spécifique à l’hôte par défaut existe dans `Microsoft.PowerShell_profile.ps1` aux mêmes emplacements.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-185">So the default host-specific profile exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
 
-<span data-ttu-id="cd3d1-186">PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur macOS.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-186">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.</span></span>
+<span data-ttu-id="9a4ac-186">PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur macOS.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-186">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on macOS.</span></span>
 
-<span data-ttu-id="cd3d1-187">Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-187">Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.</span></span> <span data-ttu-id="cd3d1-188">`$PSHOME` est donc `/usr/local/microsoft/powershell/7.0.3/` ; le lien symbolique se trouve à l’emplacement `/usr/local/bin/pwsh`.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-188">So, `$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.</span></span>
+<span data-ttu-id="9a4ac-187">Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-187">Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of `/opt`.</span></span> <span data-ttu-id="9a4ac-188">`$PSHOME` est donc `/usr/local/microsoft/powershell/7.0.3/` ; le lien symbolique se trouve à l’emplacement `/usr/local/bin/pwsh`.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-188">So, `$PSHOME` is `/usr/local/microsoft/powershell/7.0.3/`, and the symbolic link is placed at `/usr/local/bin/pwsh`.</span></span>
 
-## <a name="installation-support"></a><span data-ttu-id="cd3d1-189">Prise en charge de l’installation</span><span class="sxs-lookup"><span data-stu-id="cd3d1-189">Installation support</span></span>
+## <a name="installation-support"></a><span data-ttu-id="9a4ac-189">Prise en charge de l’installation</span><span class="sxs-lookup"><span data-stu-id="9a4ac-189">Installation support</span></span>
 
-<span data-ttu-id="cd3d1-190">Microsoft prend en charge les méthodes d’installation mentionnées dans ce document.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-190">Microsoft supports the installation methods in this document.</span></span> <span data-ttu-id="cd3d1-191">D’autres méthodes d’installation peuvent être disponibles à partir d’autres sources.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-191">There may be other methods of installation available from other sources.</span></span> <span data-ttu-id="cd3d1-192">Même s’il est possible que ces outils et méthodes fonctionnent, Microsoft ne peut pas prendre en charge ces méthodes.</span><span class="sxs-lookup"><span data-stu-id="cd3d1-192">While those tools and methods may work, Microsoft cannot support those methods.</span></span>
+<span data-ttu-id="9a4ac-190">Microsoft prend en charge les méthodes d’installation mentionnées dans ce document.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-190">Microsoft supports the installation methods in this document.</span></span> <span data-ttu-id="9a4ac-191">D’autres méthodes d’installation peuvent être disponibles à partir d’autres sources.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-191">There may be other methods of installation available from other sources.</span></span> <span data-ttu-id="9a4ac-192">Même s’il est possible que ces outils et méthodes fonctionnent, Microsoft ne peut pas prendre en charge ces méthodes.</span><span class="sxs-lookup"><span data-stu-id="9a4ac-192">While those tools and methods may work, Microsoft cannot support those methods.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="cd3d1-193">Ressources supplémentaires</span><span class="sxs-lookup"><span data-stu-id="cd3d1-193">Additional Resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="9a4ac-193">Ressources supplémentaires</span><span class="sxs-lookup"><span data-stu-id="9a4ac-193">Additional Resources</span></span>
 
-- <span data-ttu-id="cd3d1-194">[Site web d’Homebrew][brew]</span><span class="sxs-lookup"><span data-stu-id="cd3d1-194">[Homebrew Web][brew]</span></span>
-- <span data-ttu-id="cd3d1-195">[Dépôt GitHub d’Homebrew][GitHub]</span><span class="sxs-lookup"><span data-stu-id="cd3d1-195">[Homebrew Github Repository][GitHub]</span></span>
-- <span data-ttu-id="cd3d1-196">[Homebrew-Cask][cask]</span><span class="sxs-lookup"><span data-stu-id="cd3d1-196">[Homebrew-Cask][cask]</span></span>
+- <span data-ttu-id="9a4ac-194">[Site web d’Homebrew][brew]</span><span class="sxs-lookup"><span data-stu-id="9a4ac-194">[Homebrew Web][brew]</span></span>
+- <span data-ttu-id="9a4ac-195">[Dépôt GitHub d’Homebrew][GitHub]</span><span class="sxs-lookup"><span data-stu-id="9a4ac-195">[Homebrew Github Repository][GitHub]</span></span>
+- <span data-ttu-id="9a4ac-196">[Homebrew-Cask][cask]</span><span class="sxs-lookup"><span data-stu-id="9a4ac-196">[Homebrew-Cask][cask]</span></span>
 
 [brew]: http://brew.sh/
 [Cask]: https://github.com/Homebrew/homebrew-cask
