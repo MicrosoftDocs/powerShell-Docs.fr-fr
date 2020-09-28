@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell Core 6.1
 description: Nouvelles fonctionnalités et modifications de PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 7a50bc3a909df38d21a604399d590a2805359593
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837542"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846913"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Nouveautés de PowerShell Core 6.1
 
@@ -48,8 +48,8 @@ Par exemple, la vitesse d’exécution de `Group-Object` a augmenté de 66 % :
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Métrique    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Durée (s)   | 25,178                 | 19,653              | 6,641               |
 | Accélération (en %) | N/A                    | 21,9 %               | 66,2 %               |
 
@@ -59,8 +59,8 @@ De même, les scénarios de tri similaires à celui-ci ont connu une améliorati
 Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Object }
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
-|--------------|------------------------|---------------------|---------------------|
+|    Métrique    | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
+| ------------ | ---------------------- | ------------------- | ------------------- |
 | Durée (s)   | 12,170                 | 8,493               | 7,08                |
 | Accélération (en %) | N/A                    | 30,2 %               | 16,6 %               |
 
@@ -71,8 +71,8 @@ L’exemple suivant utilise un fichier CSV de test contenant 26 616 lignes et si
 Measure-Command {$a = Import-Csv foo.csv}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Métrique    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Durée (s)   | 0,441                  | 1,069               | 0,268                  |
 | Accélération (en %) | N/A                    | -142,4 %             | 74,9 % (39,2 % sur WPS) |
 
@@ -83,8 +83,8 @@ L’exemple suivant utilise un fichier JSON de test d’environ 2 Mo :
 Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 ```
 
-|              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
-|--------------|------------------------|---------------------|------------------------|
+|    Métrique    | Windows PowerShell 5.1 | PowerShell Core 6.0 |  PowerShell Core 6.1   |
+| ------------ | ---------------------- | ------------------- | ---------------------- |
 | Durée (s)   | 0,259                  | 0,577               | 0,125                  |
 | Accélération (en %) | N/A                    | -122,8 %             | 78,3 % (51,7 % sur WPS) |
 

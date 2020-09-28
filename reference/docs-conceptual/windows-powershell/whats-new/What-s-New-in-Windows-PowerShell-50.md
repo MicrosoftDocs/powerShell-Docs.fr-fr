@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Nouveautés dans Windows PowerShell 5.0
-ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+ms.openlocfilehash: 59ccc83c7d4736181f13b72c4d3725694f80c1c8
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216003"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90847032"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Nouveautés dans Windows PowerShell 5.0
 
@@ -470,36 +470,70 @@ Windows PowerShell 3.0 comprend de nombreuses fonctionnalités conçues non seu
 
 De nouvelles applets de commande ont été ajoutées à l'installation de Windows PowerShell Core, notamment pour gérer les tâches planifiées, les sessions déconnectées, l'intégration CIM et le système d'aide actualisable.
 
-|                           |                                 |
-| ------------------------- | ------------------------------- |
-| Add-JobTrigger            | New-JobTrigger                  |
-| Connect-PSSession         | New-PSSessionConfigurationFile  |
-| ConvertFrom-Json          | New-PSTransportOption           |
-| ConvertTo-Json            | New-PSWorkflowExecutionOption   |
-| Disable-JobTrigger        | New-PSWorkflowSession           |
-| Disable-ScheduledJob      | New-ScheduledJobOption          |
-| Disconnect-PSSession      | New-WinEvent                    |
-| Enable-JobTrigger         | Receive-PSSession               |
-| Enable-ScheduledJob       | Register-CimIndicationEvent     |
-| Get-CimAssociatedInstance | Register-ScheduledJob           |
-| Get-CimClass              | Remove-CimInstance              |
-| Get-CimInstance           | Remove-CimSession               |
-| Get-CimSession            | Remove-TypeData                 |
-| Get-ControlPanelItem      | Rename-Computer                 |
-| Get-IseSnippet            | Resume-Job                      |
-| Get-JobTrigger            | Save-Help                       |
-| Get-ScheduledJob          | Set-CimInstance                 |
-| Get-ScheduledJobOption    | Set-JobTrigger                  |
-| Get-TypeData              | Set-ScheduledJob                |
-| Import-IseSnippet         | Set-ScheduledJobOption          |
-| Invoke-AsWorkflow         | Show-Command                    |
-| Invoke-CimMethod          | Show-ControlPanelItem           |
-| Invoke-RestMethod         | Suspend-Job                     |
-| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
-| New-CimInstance           | Unblock-File                    |
-| New-CimSession            | Unregister-ScheduledJob         |
-| New-CimSessionOption      | Update-Help                     |
-| New-IseSnippet            |                                 |
+- CimCmdlets
+  - Get-CimAssociatedInstance
+  - Get-CimClass
+  - Get-CimInstance
+  - Get-CimSession
+  - Invoke-CimMethod
+  - New-CimInstance
+  - New-CimSession
+  - New-CimSessionOption
+  - Register-CimIndicationEvent
+  - Remove-CimInstance
+  - Remove-CimSession
+  - Set-CimInstance
+- Microsoft.PowerShell.Core
+  - Connect-PSSession
+  - Disconnect-PSSession
+  - New-PSSessionConfigurationFile
+  - New-PSTransportOption
+  - Receive-PSSession
+  - Resume-Job
+  - Save-Help
+  - Suspend-Job
+  - Test-PSSessionConfigurationFile
+  - Update-Help
+- Microsoft.PowerShell.Diagnostics
+  - New-WinEvent
+- Microsoft.PowerShell.Management
+  - Get-ControlPanelItem
+  - Rename-Computer
+  - Show-ControlPanelItem
+- Microsoft.PowerShell.Utility
+  - ConvertFrom-Json
+  - ConvertTo-Json
+  - Get-TypeData
+  - Invoke-RestMethod
+  - Invoke-WebRequest
+  - Remove-TypeData
+  - Show-Command
+  - Unblock-File
+- PSScheduledJob
+  - Add-JobTrigger
+  - Disable-JobTrigger
+  - Disable-ScheduledJob
+  - Enable-JobTrigger
+  - Enable-ScheduledJob
+  - Get-JobTrigger
+  - Get-ScheduledJob
+  - Get-ScheduledJobOption
+  - New-JobTrigger
+  - New-ScheduledJobOption
+  - Register-ScheduledJob
+  - Set-JobTrigger
+  - Set-ScheduledJob
+  - Set-ScheduledJobOption
+  - Unregister-ScheduledJob
+- PSWorkflow
+  - New-PSWorkflowExecutionOption
+  - New-PSWorkflowSession
+- PSWorkflowUtility
+  - Invoke-AsWorkflow
+- ISE
+  - Get-IseSnippet
+  - Import-IseSnippet
+  - New-IseSnippet
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Améliorations apportées aux applets de commande et aux fournisseurs Core existants
 
