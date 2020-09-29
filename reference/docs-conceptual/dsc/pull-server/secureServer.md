@@ -1,13 +1,14 @@
 ---
 ms.date: 06/12/2017
+description: Ce document fournit les meilleures pratiques pour aider les ingénieurs qui déploient le serveur collecteur DSC.
 keywords: dsc,powershell,configuration,installation
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
+ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236252"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90846947"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
@@ -18,11 +19,9 @@ S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Résumé : Ce document vise à fournir une procédure et une extensibilité pour aider les ingénieurs qui préparent la solution. Les informations qu’il contient indiquent les bonnes pratiques identifiées par les clients puis validées par l’équipe du produit qui garantit que les recommandations sont innovantes et considérées comme stables.
 
-|           |                      Informations sur le document                      |
-| :-------- | :------------------------------------------------- |
-| Auteur    | Michael Greene                                     |
-| Réviseurs | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic |
-| Publié | Avril 2015                                        |
+- Auteur : Michael Greene
+- Réviseurs : Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
+- Date de publication : Avril 2015
 
 ## <a name="abstract"></a>Résumé
 
@@ -59,7 +58,7 @@ Pour déployer un serveur collecteur, la fonctionnalité Service DSC de Windows
 
 ### <a name="software-downloads"></a>Téléchargements de logiciels
 
-En plus de l’installation de contenu le plus récent à partir de Windows Update, il existe deux téléchargements qu’il est préférable d’utiliser pour déployer un serveur collecteur DSC : La dernière version de Windows Management Framework et un module DSC pour automatiser le provisionnement des serveurs collecteurs.
+Outre l’installation du contenu le plus récent à partir de Windows Update, deux téléchargements sont considérés comme une bonne pratique pour déployer un serveur collecteur DSC : la dernière version de Windows Management Framework et un module DSC permettant d’automatiser la configuration des serveurs collecteurs.
 
 ### <a name="wmf"></a>WMF
 
@@ -97,10 +96,10 @@ Tâche de planification
 
 Les déploiements de serveurs collecteurs sont pris en charge sur les serveurs physiques et virtuels. La configuration requise du serveur collecteur s’aligne sur celle de Windows Server 2012 R2.
 
-- Processeur : Processeur 1,4 GHz 64 bits
-- Mémoire : 512 MO
-- Espace disque : 32 Go
-- Réseau : carte Gigabit Ethernet
+- Unité centrale : processeur 1,4 GHz 64 bits
+- Mémoire : 512 Mo
+- Espace disque : 32 Go
+- Réseau : Carte Gigabit Ethernet
 
 Tâche de planification
 
@@ -248,7 +247,7 @@ La commande vous demande votre approbation avant de télécharger le module.
 
 La meilleure méthode pour déployer un serveur collecteur DSC consiste à utiliser un script de configuration DSC. Ce document présente les scripts, notamment les paramètres de base permettant de configurer uniquement le service web DSC et les paramètres avancés permettant de configurer de bout en bout Windows Server comprenant un service web DSC.
 
-Remarque :  Actuellement, le module DSC `xPSDesiredStateConfiguration` exige que le serveur utilise les paramètres régionaux en-US.
+Remarque : Actuellement, le module DSC `xPSDesiredStateConfiguration` exige que le serveur utilise les paramètres régionaux en-US.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Configuration de base pour Windows Server 2012
 
