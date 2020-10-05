@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tableaux
 description: Les tableaux constituent une fonctionnalité fondamentale de la plupart des langages de programmation.
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
+ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092097"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91543370"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Tout ce que vous avez toujours voulu savoir sur les tableaux
 
@@ -752,7 +752,10 @@ if ( -not ( $results -ne 'Passed') )
 
 ## <a name="adding-to-arrays"></a>Ajout d’éléments à des tableaux
 
-La question est maintenant de savoir comment ajouter des éléments à un tableau. La réponse rapide est que ce n’est pas possible. Un tableau a une taille fixe en mémoire. Pour l’agrandir ou y ajouter un seul élément, il faut créer un nouveau tableau et copier toutes les valeurs de l’ancien tableau. Cette opération semble coûteuse et chronophage. Cependant, PowerShell masque la complexité liée à la création du nouveau tableau.
+La question est maintenant de savoir comment ajouter des éléments à un tableau. La réponse rapide est que ce n’est pas possible. Un tableau a une taille fixe en mémoire. Pour l’agrandir ou y ajouter un seul élément, il faut créer un nouveau tableau et copier toutes les valeurs de l’ancien tableau. On pourrait croire que c’est beaucoup de travail, mais en fait PowerShell masque la complexité liée à la création du nouveau tableau. PowerShell implémente l’opérateur d’addition (`+`) pour les tableaux.
+
+> [!NOTE]
+> PowerShell n’implémente pas d’opération de soustraction. Si vous voulez une alternative flexible à un tableau, vous devez utiliser un objet [générique `List`](#generic-list).
 
 ### <a name="array-addition"></a>Ajout de tableaux
 
@@ -814,8 +817,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-En assignant les résultats de `foreach` à une variable, nous capturons tous les objets et créons un tableau unique.
 
 ## <a name="array-types"></a>Types de tableaux
 
