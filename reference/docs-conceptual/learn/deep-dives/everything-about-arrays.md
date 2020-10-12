@@ -1,14 +1,14 @@
 ---
 title: Tout ce que vous avez toujours voulu savoir sur les tableaux
 description: Les tableaux constituent une fonctionnalité fondamentale de la plupart des langages de programmation.
-ms.date: 07/07/2020
+ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
+ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91543370"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852559"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Tout ce que vous avez toujours voulu savoir sur les tableaux
 
@@ -706,7 +706,7 @@ Un tableau `$null` n’est pas la même chose qu’un tableau vide. Si vous save
 ```powershell
 if ( $array.count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -724,7 +724,7 @@ Si c’est votre cas, vous pouvez encapsuler l’objet dans un tableau avant de 
 ```powershell
 if ( @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -733,7 +733,7 @@ Pour jouer la sécurité totale, vérifiez si le tableau est `$null`, puis compt
 ```powershell
 if ( $null -ne $array -and @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 

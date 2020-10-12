@@ -2,12 +2,12 @@
 ms.date: 08/21/2020
 keywords: powershell,applet de commande
 title: Exécution de commandes à distance
-ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
+ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799619"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814733"
 ---
 # <a name="running-remote-commands"></a>Exécution de commandes à distance
 
@@ -129,7 +129,7 @@ Dans Windows PowerShell, la gestion à distance n'est qu'un début. Grâce aux a
 
 Windows PowerShell inclut un fournisseur WSMan. Le fournisseur crée un lecteur `WSMAN:` qui vous permet de parcourir une hiérarchie de paramètres de configuration sur l'ordinateur local et les ordinateurs distants.
 
-Pour plus d’informations sur le fournisseur WSMan, consultez [Fournisseur WSMan](https://technet.microsoft.com/library/dd819476.aspx) et [À propos des cmdlets WS-Management](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets) ou tapez `Get-Help wsman` dans la console Windows PowerShell.
+Pour plus d’informations sur le fournisseur WSMan, consultez [Fournisseur WSMan](https://technet.microsoft.com/library/dd819476.aspx) et [À propos des cmdlets WS-Management](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets) ou tapez `Get-Help wsman` dans la console Windows PowerShell.
 
 Pour plus d'informations, consultez les pages suivantes :
 
