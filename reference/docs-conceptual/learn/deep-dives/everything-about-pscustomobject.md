@@ -1,14 +1,14 @@
 ---
 title: Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 description: PSCustomObject est un moyen simple de créer des données structurées.
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
-ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
+ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804778"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772318"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 
@@ -159,10 +159,10 @@ Si vous avez besoin de savoir si une propriété existe, vous pouvez simplement 
 if( $null -ne $myObject.ID )
 ```
 
-Cependant, si la valeur peut être `$null` et que vous devez néanmoins la vérifier, vous pouvez vérifier `psobject.properties` pour celle-ci.
+Toutefois, comme la valeur peut être `$null`, vous pouvez vérifier si elle existe en la recherchant dans `psobject.properties`.
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## <a name="adding-object-methods"></a>Ajout de méthodes d’objet
@@ -264,7 +264,7 @@ PowerShell décide pour nous des propriétés à afficher par défaut. Un grand 
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```

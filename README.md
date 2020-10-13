@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0d91230aa063e58106b35a4ada1d577f316f8f27
-ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
+ms.openlocfilehash: f46b14e44c32ce31b4da1a14580fe03564bf9946
+ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840990"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91899264"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Code de conduite Microsoft Open Source
 
@@ -21,27 +21,37 @@ Ce projet a adopté le [Code de conduite Open Source de Microsoft](https://opens
 
 ## <a name="powershell-documentation"></a>Documentation de PowerShell
 
-Bienvenue dans le référentiel de documents de PowerShell, qui héberge la documentation officielle de PowerShell.
+Bienvenue dans le dépôt PowerShell-Docs, qui héberge la documentation officielle de PowerShell.
 
 ## <a name="repository-structure"></a>Structure du dépôt
 
-Chacun des dossiers de premier niveau suivants dans ce référentiel contient un ensemble de documents qui sont publiés dans [Microsoft Docs](https://docs.microsoft.com/powershell).
+La liste suivante décrit les principaux dossiers de ce dépôt.
 
-- [/reference/](https://docs.microsoft.com/powershell/scripting/) correspond aux sujets conceptuels et à la référence de module PowerShell dans les versions 5.1, 6.0 et 7.0. Ce contenu est également la source de contenu d’aide récupéré par la cmdlet `Get-Help`.
-  - [docs-conceptual/](https://docs.microsoft.com/powershell) : ce dossier contient la documentation conceptuelle et les jeux de documents suivants :
-    - [developer/](https://docs.microsoft.com/powershell/scripting/developer/) correspond à la documentation du SDK PowerShell (migrée depuis MSDN).
-    - [dsc/](https://docs.microsoft.com/powershell/scripting/dsc/) correspond à la fonctionnalité de configuration d’état souhaité.
-    - [gallery/](https://docs.microsoft.com/powershell/scripting/gallery) correspond à la [PowerShell Gallery](https://www.powershellgallery.com/)
-    - [jea/](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) correspond à la fonctionnalité JEA (Just Enough Administration)
-    - [wmf/](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview) contient les notes de publication pour Windows Management Framework, le package utilisé pour distribuer les nouvelles versions de PowerShell aux versions antérieures de Windows.
+- `.github` - contient les paramètres de configuration utilisés par GitHub pour ce dépôt
+- `.vscode` - contient les paramètres de configuration et les extensions recommandées pour Visual Studio Code (VS Code)
+- `assets` - contient les fichiers téléchargeables liés dans la documentation
+- `reference` - contient la documentation publiée sur [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/). Cela comprend à la fois les informations de référence et le contenu conceptuel.
+  - `5.1` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 5.1
+  - `6` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 6
+  - `7.0` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 7.0
+  - `7.1` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 7.1
+  - `bread` - contient la table des matières à explorer à l’aide de la barre de navigation
+  - `docs-conceptual` - contient les articles conceptuels qui sont publiés sur le site Docs. En général, la structure de dossiers reflète la table des matières.
+  - `mapping` - contient la configuration de mappage de version utilisée par le système de génération
+  - `media` - contient les fichiers image utilisés dans la documentation. Des dossiers multimédias se trouvent dans l’ensemble du contenu `docs-conceptual`. Pour plus d’informations sur l’utilisation des images dans la documentation, consultez le Guide du contributeur.
+  - `module` - contient la source markdown pour la page de navigateur de module
+- `tests` - contient les tests Pester utilisés par le système de génération
+- `tools` - contient d’autres outils utilisés par le système de génération
+
+> REMARQUE : Le contenu de référence (dans les dossiers numérotés) est utilisé pour créer les pages web sur le site Docs, ainsi que l’aide modifiable utilisée par PowerShell.
+> Les articles du dossier `docs-conceptual` sont uniquement publiés sur le site web Docs.
 
 ## <a name="contributing"></a>Contribution
 
-Nous fusionnons activement les contributions dans ce dépôt via des [demandes Pull](https://help.github.com/articles/using-pull-requests/) dans la branche de _préproduction_.
-Notez qu’avant d’envoyer une demande Pull, vous devez signer un [contrat de licence de contribution](https://cla.microsoft.com/) pour garantir que la communauté est libre d’utiliser vos envois.
+Les contributions publiques sont les bienvenues dans ce dépôt via des [demandes de tirage](https://help.github.com/articles/using-pull-requests/) (pull request) dans la branche _intermédiaire_.
+Notez qu’avant de pouvoir accepter votre demande de tirage, vous devez signer notre [contrat de licence Contribution](https://cla.microsoft.com/). Vous n’avez à le faire qu’une seule fois.
 
-Pour plus d’informations sur la contribution, lisez notre [guide du contributeur](https://docs.microsoft.com/powershell/scripting/community/contributing/overview).
-Le guide du contributeur contient des informations détaillées sur la manière de contribuer à la documentation, les outils, ainsi que sur les exigences concernant le style et la mise en forme. Utilisez les modèles « Issue » et « Pull Request » afin que la documentation soit cohérente entre les versions.
+Pour plus d’informations sur la contribution, lisez notre [guide du contributeur](https://aka.ms/PSDocsContributor). Le guide du contributeur contient des informations détaillées sur la manière de contribuer à la documentation, les outils, ainsi que sur les exigences concernant le style et la mise en forme. Utilisez les modèles « Issue » et « Pull Request » afin que la documentation soit cohérente entre les versions.
 
 ## <a name="licenses"></a>Licences
 

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560421"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772301"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
@@ -33,8 +33,8 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **Copyright** | Il s’agit du champ Copyright dans le manifeste du module, et identifié par .COPYRIGHT dans un manifeste de script. | Oui | Oui |
 | **FileList** | La liste des fichiers est extraite du package lors de sa publication dans PowerShell Gallery. Elle n’est pas contrôlable par les informations du manifeste. Remarque : un fichier .nuspec supplémentaire est répertorié avec chaque package dans PowerShell Gallery, mais n’est pas présent après l’installation du package sur un système. Il s’agit du manifeste du package Nuget pour le package, et il peut être ignoré. | Non | Non |
 | **Balises** | Pour les modules, les balises sont incluses sous PSData\PrivateData. Pour les scripts, la section est intitulée .TAGS. Notez que les balises ne peuvent pas contenir d’espaces, même si elles sont entourées de guillemets. Les balises comportent des exigences et des significations supplémentaires, décrites plus loin dans cette rubrique, à la section Détails de la balise. | Oui | Oui |
-| **Applets de commande** | Ces informations sont spécifiées dans le manifeste du module à l’aide de CmdletsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
-| **Fonctions** | Ces informations sont spécifiées dans le manifeste du module à l’aide de FunctionsToExport. Notez que la meilleure pratique consiste à répertorier explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
+| **Applets de commande** | Ces informations sont spécifiées dans le manifeste du module à l’aide de CmdletsToExport. Notez que la bonne pratique consiste à lister explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
+| **Fonctions** | Ces informations sont spécifiées dans le manifeste du module à l’aide de FunctionsToExport. Notez que la bonne pratique consiste à lister explicitement les éléments plutôt que d’utiliser le caractère générique « * », car cela améliore les performances du module de chargement pour les utilisateurs. | Oui | Non |
 | **Ressources DSC** | Pour les modules qui seront utilisés dans PowerShell version 5.0 et ultérieures, ces informations sont fournies dans le manifeste à l’aide de DscResourcesToExport. Si le module sera utilisé dans PowerShell 4, DSCResourcesToExport ne doit pas être utilisé car il ne s’agit pas d’une clé de manifeste prise en charge. (DSC n’était pas disponible avant PowerShell 4.) | Oui | Non |
 | **Flux de travail** | Les flux de travail sont publiés dans PowerShell Gallery en tant que scripts et identifiés en tant que flux de travail dans le code (voir [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) pour obtenir un exemple). Ces informations ne sont pas contrôlées par le manifeste. | Non | Non |
 | **Fonctionnalités de rôle** | Ces informations apparaissent lorsque le module publié dans PowerShell Gallery contient un ou plusieurs fichiers de capacité (.psrc) de rôle, utilisés par JEA. Consultez la documentation de JEA pour plus d’informations sur les [capacités de rôle](/powershell/scripting/learn/remoting/jea/role-capabilities). | Oui | Non |
@@ -44,7 +44,7 @@ Le tableau ci-dessous présente les packages de l’interface utilisateur PowerS
 | **Historique des versions** | L’historique des versions reflète les mises à jour apportées à un module dans PowerShell Gallery. Si une version d’un package est masquée à l’aide de la fonctionnalité de suppression, elle n’apparaît pas dans l’historique des versions, sauf pour les propriétaires du package. | Non | Non |
 | **Site du projet** | Le site du projet est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur ProjectURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .PROJECTURI. | Oui | Oui |
 | **License** | Le lien de la licence est indiqué pour les modules dans la section Privatedata\PSData du manifeste du module en spécifiant une valeur LicenseURI. Dans le manifeste de script, cette information est contrôlée en spécifiant une valeur .LICENSEURI. Il est important de noter que si une licence n’est pas fournie via LicenseURI ou dans un module, les conditions d’utilisation de PowerShell Gallery précisent les conditions d’utilisation du package. Pour plus d’informations, consultez les conditions d’utilisation. | Oui | Oui |
-| **Icône** | Il est possible de spécifier une icône pour tout package figurant dans PowerShell Gallery en fournissant l’indicateur IconURI dans le manifeste de script ou dans la section Privatedata-PSData du manifeste de module. IconURI doit pointer vers une image de 32 x 32 avec un arrière-plan transparent. L’URI **doit** être une URL d’image directe et **ne doit pas** accéder à une page web contenant l’image ou à un fichier du package PowerShell Gallery. | Oui | Oui |
+| **Icône** | Il est possible de spécifier une icône pour tout package figurant dans PowerShell Gallery en fournissant l’indicateur IconURI dans le manifeste de script ou dans la section Privatedata-PSData du manifeste de module. IconURI doit pointer vers une image de 85 x 85 avec un arrière-plan transparent. L’URI **doit** être une URL d’image directe et **ne doit pas** accéder à une page web contenant l’image ou à un fichier du package PowerShell Gallery. | Oui | Oui |
 
 ## <a name="editing-package-details"></a>Modification des détails du package
 
