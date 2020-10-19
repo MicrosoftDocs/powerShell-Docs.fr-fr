@@ -1,13 +1,13 @@
 ---
-ms.date: 09/14/2020
+ms.date: 10/15/2020
 title: Utilisation des fonctionnalités expérimentales dans PowerShell
 description: Répertorie les fonctionnalités expérimentales actuellement disponibles et leur mode d’utilisation.
-ms.openlocfilehash: 74623240bfb19022ae342a5d23e2ed4f455afa45
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
+ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574468"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156573"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Utilisation des fonctionnalités expérimentales dans PowerShell
 
@@ -34,9 +34,10 @@ Cet article décrit les fonctionnalités expérimentales disponibles et leur mod
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (standard dans PS 7.1+)         |         | &check; |         |
 | PSUnixFileStat (non-Windows uniquement)                          |         | &check; | &check; |
-| PSNativePSPathResolution (standard dans PS 7.1+)           |         |         |         |
+| PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -153,9 +154,6 @@ En outre, sur Windows, si le chemin commence par `~`, il est résolu en chemin d
 - Si le chemin n’est pas PSDrive ou `~` (sur Windows), la normalisation de chemin d’accès ne se produit pas
 - Si le chemin est placé entre guillemets simples, il n’est pas résolu et traité comme littéral
 
-> [!NOTE]
-> Cette fonctionnalité a été déplacée de la phase expérimentale et est une fonctionnalité standard de PowerShell 7.1 et versions ultérieures.
-
 ## <a name="psnotapplyerroractiontostderr"></a>PSNotApplyErrorActionToStderr
 
 Lorsque cette fonctionnalité expérimentale est activée, les enregistrements d’erreurs redirigés à partir de commandes natives, par exemple lors de l’utilisation d’opérateurs de redirection (`2>&1`), ne sont pas écrits dans la variable `$Error` et la variable de préférence `$ErrorActionPreference` n’affecte pas la sortie redirigée.
@@ -228,3 +226,11 @@ Cela ne fonctionne que pour la saisie semi-automatique par tabulation (utilisati
 
 > [!NOTE]
 > Cette fonctionnalité a été déplacée de la phase expérimentale et est une fonctionnalité standard de PowerShell 7 et versions ultérieures.
+
+## <a name="pssubsystempluginmodel"></a>PSSubsystemPluginModel
+
+Cette fonctionnalité active le modèle de plug-in de sous-système dans PowerShell. La fonctionnalité permet de diviser les composants de `System.Management.Automation.dll` en sous-systèmes individuels qui résident dans leur propre assembly. Cette division réduit l’encombrement de disque du moteur PowerShell principal et permet à ces composants de devenir des fonctionnalités facultatives pour une installation PowerShell minimale.
+
+Actuellement, seul le sous-système **CommandPredictor** est pris en charge. Ce sous-système est utilisé avec le module PSReadLine pour fournir des plug-ins de prédiction personnalisés. À l’avenir, **Job**, **CommandCompleter**, **Remoting** et d’autres composants pourraient être divisés en assemblys de sous-système en dehors de `System.Management.Automation.dll`.
+
+La fonctionnalité expérimentale comprend une nouvelle applet de commande, [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem). Cette applet de commande est disponible uniquement lorsque la fonctionnalité est activée. Cette applet de commande retourne des informations sur les sous-systèmes disponibles sur le système.
