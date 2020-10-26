@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Conditions préalables pour JEA
-ms.openlocfilehash: 5083a9ad4aa87c753799d36f55540342225ecddd
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+description: Cet article décrit les prérequis à satisfaire pour pouvoir commencer à utiliser JEA.
+ms.openlocfilehash: 5cc70a06887a2d0a840cc83117f865d3148056e1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556867"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501726"
 ---
 # <a name="prerequisites"></a>Prérequis
 
@@ -82,14 +83,14 @@ Les étapes suivantes activent la journalisation de toutes les actions PowerShel
 Vous pouvez configurer la stratégie de journalisation des modules PowerShell à l’aide de la stratégie de groupe.
 
 1. Ouvrez l’éditeur d'objets de stratégie de groupe local sur une station de travail ou un objet de stratégie de groupe dans la console de gestion des stratégies de groupe sur un contrôleur de domaine Active Directory
-2. Accédez à **Configuration ordinateur\\Modèles d’administration\\Composants Windows\\Windows PowerShell**.
-3. Double cliquez sur **Activer l’enregistrement des modules**.
-4. Cliquez sur **Activé**.
+2. Accédez à **Configuration ordinateur\\Modèles d’administration\\Composants Windows\\Windows PowerShell** .
+3. Double cliquez sur **Activer l’enregistrement des modules** .
+4. Cliquez sur **Activé** .
 5. Dans la section Options, cliquez sur **Afficher** en regard des noms de module.
 6. Tapez `*` dans la fenêtre contextuelle pour journaliser les commandes de tous les modules.
 7. Cliquez sur **OK** pour définir la stratégie.
 8. Double-cliquez sur **Activer la journalisation de blocs de scripts PowerShell**
-9. Cliquez sur **Activé**.
+9. Cliquez sur **Activé** .
 10. Cliquez sur **OK** pour définir la stratégie.
 11. (Sur les ordinateurs joints à un domaine uniquement) Exécutez `gpupdate` ou attendez que la stratégie de groupe traite la stratégie mise à jour et applique les paramètres.
 

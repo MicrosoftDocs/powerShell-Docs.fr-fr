@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Audit et création de rapports sur JEA
-ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: L’audit vous aide à évaluer si les personnes adéquates ont accès au point de terminaison JEA et si leurs rôles sont toujours appropriés.
+ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017790"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500009"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Audit et création de rapports sur JEA
 
@@ -31,7 +32,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
                 CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-Les droits effectifs pour le point de terminaison sont listés dans la propriété **Permission**. Ces utilisateurs ont le droit de se connecter au point de terminaison JEA. Cependant, les rôles et les commandes auxquels ils ont accès sont déterminés par la propriété **RoleDefinitions** dans le [fichier de configuration de session](session-configurations.md) qui a été utilisé pour inscrire le point de terminaison. Développez la propriété **RoleDefinitions** pour évaluer les correspondances de rôles dans un point de terminaison JEA inscrit.
+Les droits effectifs pour le point de terminaison sont listés dans la propriété **Permission** . Ces utilisateurs ont le droit de se connecter au point de terminaison JEA. Cependant, les rôles et les commandes auxquels ils ont accès sont déterminés par la propriété **RoleDefinitions** dans le [fichier de configuration de session](session-configurations.md) qui a été utilisé pour inscrire le point de terminaison. Développez la propriété **RoleDefinitions** pour évaluer les correspondances de rôles dans un point de terminaison JEA inscrit.
 
 ```powershell
 # Get the desired session configuration
@@ -83,11 +84,11 @@ Si vos utilisateurs ne sont pas des membres permanents de groupes qui leur accor
 
 ## <a name="powershell-event-logs"></a>Journaux des événements PowerShell
 
-Si vous avez activé la journalisation de module ou de bloc de script sur le système, vous pouvez voir des événements dans les journaux des événements Windows pour chaque commande exécutée par un utilisateur dans une session JEA. Pour trouver ces événements, ouvrez le journal des événements **Microsoft-Windows-PowerShell/Operational** et recherchez des événements avec l’ID **4104**.
+Si vous avez activé la journalisation de module ou de bloc de script sur le système, vous pouvez voir des événements dans les journaux des événements Windows pour chaque commande exécutée par un utilisateur dans une session JEA. Pour trouver ces événements, ouvrez le journal des événements **Microsoft-Windows-PowerShell/Operational** et recherchez des événements avec l’ID **4104** .
 
-Chaque entrée du journal des événements comprend des informations sur la session dans laquelle la commande a été exécutée. Pour les sessions JEA, l’événement contient des informations sur **ConnectedUser** et **RunAsUser**. **ConnectedUser** est l’utilisateur réel qui a créé la session JEA. **RunAsUser** est le compte JEA utilisé pour exécuter la commande.
+Chaque entrée du journal des événements comprend des informations sur la session dans laquelle la commande a été exécutée. Pour les sessions JEA, l’événement contient des informations sur **ConnectedUser** et **RunAsUser** . **ConnectedUser** est l’utilisateur réel qui a créé la session JEA. **RunAsUser** est le compte JEA utilisé pour exécuter la commande.
 
-Les journaux des événements d’applications montrent les changements effectués par **RunAsUser**. L’activation de la journalisation des modules et des scripts est donc nécessaire pour retracer l’appel d’une commande spécifique jusqu’à **ConnectedUser**.
+Les journaux des événements d’applications montrent les changements effectués par **RunAsUser** . L’activation de la journalisation des modules et des scripts est donc nécessaire pour retracer l’appel d’une commande spécifique jusqu’à **ConnectedUser** .
 
 ## <a name="application-event-logs"></a>Journaux des événements de l’application
 
@@ -133,8 +134,8 @@ Running  Dns                DNS Server
 
 Une ligne **CommandInvocation** est écrite pour chaque commande exécutée par un utilisateur. **ParameterBindings** enregistre chaque paramètre et chaque valeur fournis avec la commande. Dans l’exemple précédent, vous pouvez voir que le paramètre **Name** a été fourni avec la valeur **Dns** pour l’applet de commande `Get-Service`.
 
-Le résultat de chaque commande déclenche également une **CommandInvocation**, généralement pour `Out-Default`. Le **InputObject** de `Out-Default` est l’objet PowerShell retourné par la commande. Les détails de cet objet sont indiqués ci-dessous. Ils imitent étroitement ce que l’utilisateur a pu observer.
+Le résultat de chaque commande déclenche également une **CommandInvocation** , généralement pour `Out-Default`. Le **InputObject** de `Out-Default` est l’objet PowerShell retourné par la commande. Les détails de cet objet sont indiqués ci-dessous. Ils imitent étroitement ce que l’utilisateur a pu observer.
 
 ## <a name="see-also"></a>Voir aussi
 
-[*PowerShell ♥ the Blue Team*, billet de blog sur la sécurité](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[*PowerShell ♥ the Blue Team* , billet de blog sur la sécurité](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

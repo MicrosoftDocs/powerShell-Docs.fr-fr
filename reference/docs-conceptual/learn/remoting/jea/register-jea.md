@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Inscription de configurations JEA
-ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cette inscription auprès du système a pour effet de mettre le point de terminaison à la disposition des utilisateurs et des moteurs d’automatisation.
+ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706204"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499907"
 ---
 # <a name="registering-jea-configurations"></a>Inscription de configurations JEA
 
@@ -104,7 +105,7 @@ Configuration JEAMaintenance
 
 Ensuite, cette configuration est appliquée à un système en appelant directement le [Gestionnaire de configuration local](/powershell/scripting/dsc/managing-nodes/metaConfig) ou en mettant à jour la [configuration du serveur Pull](/powershell/scripting/dsc/pull-server/pullServer).
 
-La ressource DSC vous permet également de remplacer le point de terminaison **Microsoft.PowerShell** par défaut. Après le remplacement, la ressource inscrit automatiquement un point de terminaison de sauvegarde nommé **Microsoft.PowerShell.Restricted**. Le point de terminaison de sauvegarde a la liste de contrôle d’accès WinRM par défaut, qui permet aux utilisateurs de la gestion à distance et aux membres du groupe Administrateurs locaux d’y accéder.
+La ressource DSC vous permet également de remplacer le point de terminaison **Microsoft.PowerShell** par défaut. Après le remplacement, la ressource inscrit automatiquement un point de terminaison de sauvegarde nommé **Microsoft.PowerShell.Restricted** . Le point de terminaison de sauvegarde a la liste de contrôle d’accès WinRM par défaut, qui permet aux utilisateurs de la gestion à distance et aux membres du groupe Administrateurs locaux d’y accéder.
 
 ## <a name="unregistering-jea-configurations"></a>Désinscription de configurations JEA
 

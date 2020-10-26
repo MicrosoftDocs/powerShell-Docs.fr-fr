@@ -2,12 +2,13 @@
 ms.date: 08/03/2020
 keywords: powershell,applet de commande
 title: 'Annexe 1 : Alias de compatibilité'
-ms.openlocfilehash: e5bd170fea6b6109d2ef4fd58863d6cc8a0e3ae1
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: PowerShell a plusieurs alias qui permettent aux utilisateurs UNIX et cmd.exe d’utiliser des commandes familières.
+ms.openlocfilehash: 8cbbd5a358de9018fcb5c840e711cd76f7a9a353
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758497"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500740"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>Annexe 1 - Alias de compatibilité
 
@@ -16,10 +17,10 @@ Les commandes, ainsi que leurs applets de commande PowerShell et alias PowerShel
 
 |            commande cmd.exe            | Commande UNIX | Applet de commande PowerShell | Alias PowerShell |
 | ------------------------------------- | ------------ | ----------------- | ---------------- |
-| **cd**, **chdir**                     | **cd**       | `Set-Location`    | `sl`             |
+| **cd** , **chdir**                     | **cd**       | `Set-Location`    | `sl`             |
 | **cls**                               | **clear**    | `Clear-Host`      | `cls`            |
 | **copy**                              | **cp**       | `Copy-Item`       | `cpi`            |
-| **del**, **erase**, **rd**, **rmdir** | **rm**       | `Remove-Item`     | `ri`             |
+| **del** , **erase** , **rd** , **rmdir** | **rm**       | `Remove-Item`     | `ri`             |
 | **dir**                               | **ls**       | `Get-ChildItem`   | `gci`            |
 | **echo**                              | **echo**     | `Write-Output`    | `write`          |
 | **md**                                | **mkdir**    | `New-Item`        | `ni`             |

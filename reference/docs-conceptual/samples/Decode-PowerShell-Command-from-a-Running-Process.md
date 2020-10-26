@@ -3,12 +3,13 @@ ms.date: 11/13/2018
 keywords: powershell,applet de commande
 title: Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 author: randomnote1
-ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment décoder un bloc de script exécuté par un processus PowerShell.
+ms.openlocfilehash: 95b4b806665bf8137712ebb183329039bc1e1deb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "66470966"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500485"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Décoder une commande PowerShell à partir d’un processus en cours d’exécution
 
@@ -81,7 +82,7 @@ $commandDetails[0]
 
 Il est maintenant possible de consulter la commande décodée en sélectionnant la propriété DecodedCommand.
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP
