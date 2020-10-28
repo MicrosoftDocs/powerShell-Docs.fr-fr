@@ -1,12 +1,14 @@
 ---
-title: Définition des fonctionnalités de configuration communes | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 710099489bdefdf90b899442ac31b6dbfacc9eda
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
-ms.translationtype: MT
+ms.topic: reference
+title: Définition des fonctionnalités de configuration courantes
+description: Définition des fonctionnalités de configuration courantes
+ms.openlocfilehash: 4102df14959e9fa505229dd031df7df6aaf91ead
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787714"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666703"
 ---
 # <a name="defining-common-configuration-features"></a>Définition des fonctionnalités de configuration courantes
 
