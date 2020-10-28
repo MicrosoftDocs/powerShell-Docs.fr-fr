@@ -1,12 +1,14 @@
 ---
-title: Installation d’un module PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
-ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
+ms.topic: reference
+title: Installation d’un module PowerShell
+description: Installation d’un module PowerShell
+ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92197823"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645334"
 ---
 # <a name="installing-a-powershell-module"></a>Installation d’un module PowerShell
 
