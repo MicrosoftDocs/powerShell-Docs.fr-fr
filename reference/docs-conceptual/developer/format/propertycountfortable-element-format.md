@@ -1,21 +1,23 @@
 ---
-title: Élément PropertyCountForTable (format) | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 71e1ee9d3de6d06f512181ee50b69a377130bbe2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
-ms.translationtype: MT
+ms.topic: reference
+title: PropertyCountForTable, élément (Format)
+description: PropertyCountForTable, élément (Format)
+ms.openlocfilehash: bb78507d21fc6acd36ddaa97607a302d290426be
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780902"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666295"
 ---
-# <a name="propertycountfortable-element-format"></a><span data-ttu-id="72c05-102">PropertyCountForTable, élément (Format)</span><span class="sxs-lookup"><span data-stu-id="72c05-102">PropertyCountForTable Element (Format)</span></span>
+# <a name="propertycountfortable-element-format"></a><span data-ttu-id="54359-103">PropertyCountForTable, élément (Format)</span><span class="sxs-lookup"><span data-stu-id="54359-103">PropertyCountForTable Element (Format)</span></span>
 
-<span data-ttu-id="72c05-103">Insérez l'introduction ici.</span><span class="sxs-lookup"><span data-stu-id="72c05-103">Insert introduction here.</span></span>
+<span data-ttu-id="54359-104">Insérez l'introduction ici.</span><span class="sxs-lookup"><span data-stu-id="54359-104">Insert introduction here.</span></span>
 
-## <a name="section-heading"></a><span data-ttu-id="72c05-104">Titre de section</span><span class="sxs-lookup"><span data-stu-id="72c05-104">Section Heading</span></span>
+## <a name="section-heading"></a><span data-ttu-id="54359-105">Titre de section</span><span class="sxs-lookup"><span data-stu-id="54359-105">Section Heading</span></span>
 
-<span data-ttu-id="72c05-105">Insérez le corps de la section ici.</span><span class="sxs-lookup"><span data-stu-id="72c05-105">Insert section body here.</span></span>
+<span data-ttu-id="54359-106">Insérez le corps de la section ici.</span><span class="sxs-lookup"><span data-stu-id="54359-106">Insert section body here.</span></span>
 
-### <a name="subsection-heading"></a><span data-ttu-id="72c05-106">Titre de la sous-section</span><span class="sxs-lookup"><span data-stu-id="72c05-106">Subsection Heading</span></span>
+### <a name="subsection-heading"></a><span data-ttu-id="54359-107">Titre de la sous-section</span><span class="sxs-lookup"><span data-stu-id="54359-107">Subsection Heading</span></span>
 
-<span data-ttu-id="72c05-107">Insérez le corps de la sous-section ici.</span><span class="sxs-lookup"><span data-stu-id="72c05-107">Insert subsection body here.</span></span>
+<span data-ttu-id="54359-108">Insérez le corps de la sous-section ici.</span><span class="sxs-lookup"><span data-stu-id="54359-108">Insert subsection body here.</span></span>
