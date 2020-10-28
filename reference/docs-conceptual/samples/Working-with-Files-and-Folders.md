@@ -2,20 +2,21 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de fichiers et dossiers
-ms.openlocfilehash: 8876ff70adbd10c9019f6d80ce7ad327f2932c74
-ms.sourcegitcommit: 08acbea14c69a347f2f46aafcb215a5233c7d830
+description: Cet article explique comment effectuer certaines tâches de manipulation de fichiers et de dossiers à l’aide de PowerShell.
+ms.openlocfilehash: c0c3abb082b05296daa480ac06bcbfa3a784e0c9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82691486"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500026"
 ---
 # <a name="working-with-files-and-folders"></a>Utilisation de fichiers et dossiers
 
-La navigation dans des lecteurs Windows PowerShell et la manipulation des éléments qu’ils contiennent sont similaires à la manipulation de fichiers et dossiers sur des lecteurs de disques physiques Windows. Cette section explique comment effectuer certaines tâches de manipulation de fichiers et dossiers à l’aide de PowerShell.
+La navigation dans des lecteurs Windows PowerShell et la manipulation des éléments qu’ils contiennent sont similaires à la manipulation de fichiers et dossiers sur des lecteurs de disques physiques Windows. Cet article explique comment effectuer certaines tâches de manipulation de fichiers et de dossiers à l’aide de PowerShell.
 
 ## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Affichage de la liste de tous les fichiers et dossiers figurant dans un dossier
 
-Vous pouvez obtenir tous les éléments figurant directement dans un dossier à l’aide de `Get-ChildItem`. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche le contenu direct du lecteur C de Windows PowerShell (qui est le même que le lecteur physique C de Windows) :
+Vous pouvez obtenir tous les éléments figurant directement dans un dossier à l’aide de `Get-ChildItem`. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force** . Par exemple, cette commande affiche le contenu direct du lecteur C de Windows PowerShell (qui est le même que le lecteur physique C de Windows) :
 
 ```powershell
 Get-ChildItem -Path C:\ -Force
@@ -27,7 +28,7 @@ La commande répertorie uniquement les éléments contenus directement, de mani�
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-`Get-ChildItem` peut filtrer les éléments avec ses paramètres **Path**, **Filter**, **Include** et **Exclude**, mais ceux-ci sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de `Where-Object`.
+`Get-ChildItem` peut filtrer les éléments avec ses paramètres **Path** , **Filter** , **Include** et **Exclude** , mais ceux-ci sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de `Where-Object`.
 
 La commande suivante recherche dans le dossier Program Files tous les exécutables modifiés après le 1er octobre 2005, dont la taille n’est pas inférieure à 1 Mo ou supérieure à 10 Mo :
 
@@ -63,7 +64,7 @@ Vous pouvez également copier une sélection d’éléments. La commande suivant
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du système de fichiers. Les objets XCOPY, ROBOCOPY et COM, tels que **Scripting.FileSystemObject**, fonctionnent tous dans Windows PowerShell. Par exemple, vous pouvez utiliser la classe Windows Script Host **Scripting.FileSystem COM** pour sauvegarder `C:\boot.ini` dans `C:\boot.bak` :
+Vous pouvez toujours utiliser d’autres outils pour effectuer des copies du système de fichiers. Les objets XCOPY, ROBOCOPY et COM, tels que **Scripting.FileSystemObject** , fonctionnent tous dans Windows PowerShell. Par exemple, vous pouvez utiliser la classe Windows Script Host **Scripting.FileSystem COM** pour sauvegarder `C:\boot.ini` dans `C:\boot.bak` :
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -103,7 +104,7 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-Si vous ne souhaitez pas être invité à confirmer la suppression de chaque élément contenu, spécifiez le paramètre **Recurse**:
+Si vous ne souhaitez pas être invité à confirmer la suppression de chaque élément contenu, spécifiez le paramètre **Recurse** :
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse
@@ -135,7 +136,7 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-`Get-Content` traite déjà les données lues à partir du fichier en tant que tableau, avec un élément par ligne de contenu du fichier. Vous pouvez vous en assurer en vérifiant la longueur (**longueur**) du contenu retourné :
+`Get-Content` traite déjà les données lues à partir du fichier en tant que tableau, avec un élément par ligne de contenu du fichier. Vous pouvez vous en assurer en vérifiant la longueur ( **longueur** ) du contenu retourné :
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length

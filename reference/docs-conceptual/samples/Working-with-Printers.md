@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation d’imprimantes
-ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment gérer des imprimantes dans Windows à l’aide d’objets WMI et d’interfaces COM.
+ms.openlocfilehash: 2606753783043eeae8e9d461e56f0901149cb8e3
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935207"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501080"
 ---
 # <a name="working-with-printers-in-windows"></a>Utilisation d’imprimantes sur Windows
 
@@ -15,7 +16,7 @@ Vous pouvez utiliser PowerShell pour gérer des imprimantes à l’aide de WMI e
 
 ## <a name="listing-printer-connections"></a>Affichage de la liste des connexions d’imprimante
 
-La manière la plus simple de répertorier les imprimantes installées sur un ordinateur consiste à utiliser la classe WMI **Win32_Printer** :
+La manière la plus simple de répertorier les imprimantes installées sur un ordinateur consiste à utiliser la classe WMI **Win32_Printer**  :
 
 ```powershell
 Get-CimInstance -Class Win32_Printer
@@ -31,7 +32,7 @@ Cette commande retournant une simple collection de chaînes correspondant à des
 
 ## <a name="adding-a-network-printer"></a>Ajout d’une imprimante réseau
 
-Pour ajouter une nouvelle imprimante réseau, utilisez l’objet COM **WScript.Network** :
+Pour ajouter une nouvelle imprimante réseau, utilisez l’objet COM **WScript.Network**  :
 
 ```powershell
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
@@ -39,7 +40,7 @@ Pour ajouter une nouvelle imprimante réseau, utilisez l’objet COM **WScript.N
 
 ## <a name="setting-a-default-printer"></a>Définition d’une imprimante par défaut
 
-Pour utiliser WMI afin de définir l’imprimante par défaut, recherchez l’imprimante dans la collection **Win32_Printer**, puis appelez la méthode **SetDefaultPrinter** :
+Pour utiliser WMI afin de définir l’imprimante par défaut, recherchez l’imprimante dans la collection **Win32_Printer** , puis appelez la méthode **SetDefaultPrinter**  :
 
 ```powershell
 $printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
@@ -54,7 +55,7 @@ L’objet COM **WScript.Network** est un peu plus simple à utiliser, car il dis
 
 ## <a name="removing-a-printer-connection"></a>Suppression d’une connexion d’imprimante
 
-Pour supprimer une connexion d’imprimante, utilisez la méthode **WScript.Network RemovePrinterConnection**:
+Pour supprimer une connexion d’imprimante, utilisez la méthode **WScript.Network RemovePrinterConnection** :
 
 ```powershell
 (New-Object -ComObject WScript.Network).RemovePrinterConnection("\\Printserver01\Xerox5")

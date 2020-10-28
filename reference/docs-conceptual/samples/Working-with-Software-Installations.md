@@ -2,16 +2,17 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation des installations de logiciels
-ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment utiliser WMI pour gérer les logiciels installés dans Windows.
+ms.openlocfilehash: 3cf8e3c58e9f2814e2551b3602bd7b47b375aed8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996120"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500876"
 ---
 # <a name="working-with-software-installations"></a>Utilisation des installations de logiciels
 
-Les applications conçues pour utiliser Windows Installer sont accessibles via la classe WMI **Win32_Product**. Toutefois, certaines applications ne font pas appel à Windows Installer.
+Les applications conçues pour utiliser Windows Installer sont accessibles via la classe WMI **Win32_Product** . Toutefois, toutes les applications ne font pas appel à Windows Installer.
 En général, les applications qui utilisent d'autres routines d'installation ne sont pas gérées par Windows Installer.
 Les techniques spécifiques à employer avec ces applications dépendent du programme d'installation et des décisions prises par le développeur de l'application. Par exemple, les applications installées par copie des fichiers dans un dossier sur l'ordinateur ne peuvent généralement pas être gérées au moyen des techniques présentées ici. Vous pouvez gérer ces applications en tant que fichiers et dossiers en utilisant les techniques présentées dans la section [Utilisation des fichiers et dossiers](Working-with-Files-and-Folders.md).
 
@@ -33,7 +34,7 @@ Name             Caption                   Vendor                    Version    
 Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
-Pour afficher toutes les propriétés de l’objet **Win32_Product**, utilisez le paramètre **Property** des applets de commande de mise en forme, telle l’applet de commande `Format-List`, avec la valeur `*` (all).
+Pour afficher toutes les propriétés de l’objet **Win32_Product** , utilisez le paramètre **Property** des applets de commande de mise en forme, telle l’applet de commande `Format-List`, avec la valeur `*` (all).
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
@@ -199,13 +200,13 @@ Les applications qui n'utilisent pas la technologie Windows Installer peuvent fa
 
 ## <a name="removing-applications"></a>Suppression d'applications
 
-La procédure de suppression d'un package Installer à l'aide de Windows PowerShell est semblable à la procédure d'installation. Voici un exemple qui sélectionne le package à désinstaller d’après son nom. Dans certains cas, il peut être plus facile d’utiliser un filtre avec **IdentifyingNumber** :
+La procédure de suppression d'un package Installer à l'aide de Windows PowerShell est semblable à la procédure d'installation. Voici un exemple qui sélectionne le package à désinstaller d'après son nom. Dans certains cas, il peut être plus facile d'utiliser un filtre avec **IdentifyingNumber**  :
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall
 ```
 
-La suppression d'autres applications n'est pas aussi simple, même si vous travaillez localement. Pour obtenir les chaînes de désinstallation pour ces applications à partir de la ligne de commande, extrayez la propriété **UninstallString**.
+La suppression d'autres applications n'est pas aussi simple, même si vous travaillez localement. Pour obtenir les chaînes de désinstallation à partir de la ligne de commande pour ces applications, extrayez la propriété **UninstallString** .
 Cette méthode fonctionne pour les applications Windows Installer et les programmes plus anciens qui apparaissent sous la clé de Uninstall :
 
 ```powershell

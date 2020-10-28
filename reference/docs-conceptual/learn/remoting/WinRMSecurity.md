@@ -1,15 +1,16 @@
 ---
 ms.date: 06/11/2020
 keywords: powershell,applet de commande
-title: WinRMSecurity
-ms.openlocfilehash: ee7e5f2c9c9a863e29c9278c40703a05c1943246
-ms.sourcegitcommit: fd223afa50092839c74d8d5fbba791869665455f
+title: Considérations de sécurité concernant l’accès distant à PowerShell avec WinRM
+description: Ce document couvre les questions de sécurité, les recommandations et les bonnes pratiques lors de l’utilisation de la communication à distance PowerShell.
+ms.openlocfilehash: 48167bd297905883b3d75caf9a07d06e6a9fc467
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353836"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501471"
 ---
-# <a name="powershell-remoting-security-considerations"></a>Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell
+# <a name="security-considerations-for-powershell-remoting-using-winrm"></a>Considérations de sécurité concernant l’accès distant à PowerShell avec WinRM
 
 La communication à distance PowerShell est la méthode recommandée pour gérer les systèmes Windows. La communication à distance PowerShell est activée par défaut dans Windows Server 2012 R2. Ce document couvre les questions de sécurité, les recommandations et les bonnes pratiques lors de l’utilisation de la communication à distance PowerShell.
 

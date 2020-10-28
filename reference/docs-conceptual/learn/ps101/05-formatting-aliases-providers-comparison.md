@@ -4,12 +4,13 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: eb23b048a50f10ea83d156c0499772b1be439336
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: Ce chapitre présente les concepts relatifs à la mise en forme de la sortie, aux alias de commandes, aux fournisseurs et aux opérations de comparaison.
+ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438000"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501607"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>Chapitre 5 - Mise en forme, alias, fournisseurs, comparaison
 
@@ -170,7 +171,7 @@ CommandType     Name                                               Version    So
 Alias           gcm -> Get-Command
 ```
 
-Vous pouvez spécifier plusieurs alias pour la valeur du paramètre **Name**.
+Vous pouvez spécifier plusieurs alias pour la valeur du paramètre **Name** .
 
 ```powershell
 Get-Alias -Name gcm, gm
@@ -195,7 +196,7 @@ CommandType     Name                                               Version    So
 Alias           gm -> Get-Member
 ```
 
-Si vous voulez rechercher des alias pour une commande, vous devez utiliser le paramètre **Definition**.
+Si vous voulez rechercher des alias pour une commande, vous devez utiliser le paramètre **Definition** .
 
 ```powershell
 Get-Alias -Definition Get-Command, Get-Member
@@ -574,7 +575,7 @@ Notez que le mot « Saturday » n’a pas été remplacé dans l’exemple pr�
 SQL Sat - Baton Rouge
 ```
 
-Soyez prudent quand vous utilisez des méthodes pour transformer des données, car vous pouvez rencontrer des problèmes imprévus, comme l’échec du Test de Turquie (_Turkey Test_). Pour obtenir un exemple, consultez l’article de blog intitulé [Using Pester to Test PowerShell Code with Other Cultures][] (Utilisation de Pester pour tester du code PowerShell avec d’autres cultures). Je vous recommande d’utiliser autant que possible un opérateur plutôt qu’une méthode afin d’éviter ces types de problèmes.
+Soyez prudent quand vous utilisez des méthodes pour transformer des données, car vous pouvez rencontrer des problèmes imprévus, comme l’échec du Test de Turquie ( _Turkey Test_ ). Pour obtenir un exemple, consultez l’article de blog intitulé [Using Pester to Test PowerShell Code with Other Cultures][] (Utilisation de Pester pour tester du code PowerShell avec d’autres cultures). Je vous recommande d’utiliser autant que possible un opérateur plutôt qu’une méthode afin d’éviter ces types de problèmes.
 
 Alors que les opérateurs de comparaison peuvent être utilisés comme indiqué dans les exemples précédents, je les utilise normalement avec l’applet de commande `Where-Object` pour effectuer un certain type de filtrage.
 

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Gestion des processus avec les applets de commande Process
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell fournit plusieurs applets de commande qui permettent de gérer les processus sur des ordinateurs locaux et distants.
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870742"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500434"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Gestion des processus avec les applets de commande Process
 
@@ -121,7 +122,7 @@ At line:1 char:13
 + Stop-Process  <<<< -Name Idle
 ```
 
-Vous pouvez également forcer l’affichage d’une invite avec le paramètre **Confirm**. Ce paramètre est particulièrement utile si vous utilisez un caractère générique quand vous spécifiez le nom du processus, car vous pouvez accidentellement établir une correspondance avec des processus que vous ne souhaitez pas arrêter :
+Vous pouvez également forcer l’affichage d’une invite avec le paramètre **Confirm** . Ce paramètre est particulièrement utile si vous utilisez un caractère générique quand vous spécifiez le nom du processus, car vous pouvez accidentellement établir une correspondance avec des processus que vous ne souhaitez pas arrêter :
 
 ```
 PS> Stop-Process -Name t*,e* -Confirm
@@ -143,7 +144,7 @@ Une manipulation de processus complexes est possible en utilisant certaines appl
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-Vous pouvez utiliser la même approche dans d’autres situations. Par exemple, supposons qu’une application de zone de notification secondaire s’exécute automatiquement quand des utilisateurs démarrent une autre application. Il est possible que vous constatiez que cela ne fonctionne pas correctement dans les sessions des services Terminal Server, mais que vous souhaitiez conserver cette approche dans les sessions qui s’exécutent sur la console de l’ordinateur physique. Les sessions connectées au bureau de l’ordinateur physique ayant toujours un ID de session 0, vous pouvez arrêter toutes les instances du processus figurant dans d’autres sessions à l’aide de l’applet de commande **Where-Object** et du processus **SessionId** :
+Vous pouvez utiliser la même approche dans d’autres situations. Par exemple, supposons qu’une application de zone de notification secondaire s’exécute automatiquement quand des utilisateurs démarrent une autre application. Il est possible que vous constatiez que cela ne fonctionne pas correctement dans les sessions des services Terminal Server, mais que vous souhaitiez conserver cette approche dans les sessions qui s’exécutent sur la console de l’ordinateur physique. Les sessions connectées au bureau de l’ordinateur physique ayant toujours un ID de session 0, vous pouvez arrêter toutes les instances du processus figurant dans d’autres sessions à l’aide de l’applet de commande **Where-Object** et du processus **SessionId**  :
 
 ```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
@@ -159,7 +160,7 @@ Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 
 Il est parfois utile de pouvoir arrêter toutes les sessions Windows PowerShell en cours d’exécution autres que la session active. Si une session utilise trop de ressources ou n’est pas accessible (par exemple, si elle s’exécute à distance ou dans une autre session de bureau), il se peut que vous ne puissiez pas l’arrêter directement. Toutefois, si vous essayez d’arrêter toutes les sessions en cours d’exécution, il se peut que la session active s’arrête à la place.
 
-Chaque session Windows PowerShell a un PID de variable d’environnement qui contient l’ID du processus Windows PowerShell. Vous pouvez contrôler la valeur de $PID par rapport à l’ID de chaque session, et arrêter uniquement les sessions Windows PowerShell dont l’ID diffère. La commande de pipeline suivante effectue cette opération et retourne la liste des sessions terminées (en raison de l’utilisation du paramètre **PassThru**) :
+Chaque session Windows PowerShell a un PID de variable d’environnement qui contient l’ID du processus Windows PowerShell. Vous pouvez contrôler la valeur de $PID par rapport à l’ID de chaque session, et arrêter uniquement les sessions Windows PowerShell dont l’ID diffère. La commande de pipeline suivante effectue cette opération et retourne la liste des sessions terminées (en raison de l’utilisation du paramètre **PassThru** ) :
 
 ```
 PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -PassThru

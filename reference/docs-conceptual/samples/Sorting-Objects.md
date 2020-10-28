@@ -2,21 +2,23 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Tri d’objets
-ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: L’applet de commande Sort-Object vous permet de trier une collection d’objets selon une ou plusieurs propriétés.
+ms.openlocfilehash: 836207adfc566003e9714e45920d9b4e24a677e9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030773"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501012"
 ---
 # <a name="sorting-objects"></a>Tri d’objets
 
-Vous pouvez organiser des données affichées pour faciliter leur analyse en utilisant l’applet de commande `Sort-Object`. L’applet de commande `Sort-Object` prend le nom d’une ou plusieurs propriétés pour trier et retourner les données triées sur les valeurs de ces propriétés.
+Vous pouvez organiser des données affichées pour faciliter leur analyse en utilisant l’applet de commande `Sort-Object`.
+L’applet de commande `Sort-Object` prend le nom d’une ou plusieurs propriétés pour trier et retourner les données triées sur les valeurs de ces propriétés.
 
 ## <a name="basic-sorting"></a>Tri de base
 
 Prenez le problème d’affichage des sous-répertoires et fichiers du répertoire actif.
-Si vous souhaitez trier sur l’état (**LastWriteTime**), puis sur le nom (**Name**), vous pouvez taper ce qui suit :
+Si vous souhaitez trier sur l’état ( **LastWriteTime** ), puis sur le nom ( **Name** ), vous pouvez taper ce qui suit :
 
 ```powershell
 Get-ChildItem |
@@ -39,7 +41,7 @@ LastWriteTime          Name
 ...
 ```
 
-Vous pouvez également trier les objets dans l’ordre inverse en spécifiant le paramètre de commutateur **Descending**.
+Vous pouvez également trier les objets dans l’ordre inverse en spécifiant le paramètre de commutateur **Descending** .
 
 ```powershell
 Get-ChildItem |
@@ -71,7 +73,7 @@ Chaque table de hachage utilise une clé **Expression** pour spécifier le nom d
 La clé **Expression** est obligatoire.
 La clé **Ascending** (Croissant) ou **Descending** (Décroissant) est facultative.
 
-L’exemple suivant trie les objets par ordre décroissant **LastWriteTime** et par ordre croissant **Name**.
+L’exemple suivant trie les objets par ordre décroissant **LastWriteTime** et par ordre croissant **Name** .
 
 ```powershell
 Get-ChildItem |
@@ -91,10 +93,10 @@ LastWriteTime          Name
 ...
 ```
 
-Vous pouvez également définir un bloc de script avec la clé **Expression**.
+Vous pouvez également définir un bloc de script avec la clé **Expression** .
 Lorsque vous exécutez l’applet de commande `Sort-Object`, le bloc de script est exécuté et le résultat sert pour le tri.
 
-L’exemple suivant trie les objets par ordre décroissant en fonction de l’intervalle de temps entre **CreationTime** et **LastWriteTime**.
+L’exemple suivant trie les objets par ordre décroissant en fonction de l’intervalle de temps entre **CreationTime** et **LastWriteTime** .
 
 ```powershell
 Get-ChildItem |
@@ -136,7 +138,7 @@ Les clés de tri figurant dans les tables de hachage peuvent être abrégées co
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-Dans cet exemple, la lettre **e** signifie **Expression**, **d** signifie **Descending** (décroissant) et **a** signifie **Ascending** (croissant).
+Dans cet exemple, la lettre **e** signifie **Expression** , **d** signifie **Descending** (décroissant) et **a** signifie **Ascending** (croissant).
 
 Pour améliorer la lisibilité, vous pouvez placer les tables de hachage dans une variable distincte :
 

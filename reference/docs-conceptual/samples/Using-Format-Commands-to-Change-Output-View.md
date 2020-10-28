@@ -2,12 +2,13 @@
 ms.date: 11/22/2019
 keywords: powershell,applet de commande
 title: Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
-ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell dispose d’un système de mise en forme extensible qui vous permet de présenter la sortie sous forme de listes, de tables ou de dispositions personnalisées.
+ms.openlocfilehash: ebb285a19c7fe1bc80608385f9e2842469e95817
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417587"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500944"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Utilisation des commandes de mise en forme pour modifier l’affichage d’une sortie
 
@@ -128,7 +129,7 @@ Id          : 21748
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Obtention d’informations détaillées en utilisant l’applet de commande Format-List avec des caractères génériques
 
-L’applet de commande `Format-List` permet d’utiliser un caractère générique comme valeur de son paramètre **Property**. Cela permet d’afficher des informations détaillées. Souvent, les objets contiennent plus d’informations qu’il n’en faut. C’est pourquoi, par défaut, PowerShell n’affiche pas les valeurs de toutes les propriétés. Pour afficher toutes les propriétés d’un objet, utilisez la commande `Format-List -Property *`. La commande suivante génère plus de 60 lignes de sortie pour un seul processus :
+L’applet de commande `Format-List` permet d’utiliser un caractère générique comme valeur de son paramètre **Property** . Cela permet d’afficher des informations détaillées. Souvent, les objets contiennent plus d’informations qu’il n’en faut. C’est pourquoi, par défaut, PowerShell n’affiche pas les valeurs de toutes les propriétés. Pour afficher toutes les propriétés d’un objet, utilisez la commande `Format-List -Property *`. La commande suivante génère plus de 60 lignes de sortie pour un seul processus :
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *
@@ -186,11 +187,11 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-La commande `Format-Table` part du principe que les propriétés sont listées par ordre d’importance. Elle tente donc d’afficher entièrement les propriétés les plus proches du début. Si la commande `Format-Table` ne peut pas afficher toutes les propriétés, elle supprime certaines colonnes de l’affichage. Vous pouvez observer ce comportement dans l’exemple précédent de la propriété **DependentServices**.
+La commande `Format-Table` part du principe que les propriétés sont listées par ordre d’importance. Elle tente donc d’afficher entièrement les propriétés les plus proches du début. Si la commande `Format-Table` ne peut pas afficher toutes les propriétés, elle supprime certaines colonnes de l’affichage. Vous pouvez observer ce comportement dans l’exemple précédent de la propriété **DependentServices** .
 
 ### <a name="wrapping-format-table-output-in-columns-wrap"></a>Retour automatique à la ligne de la sortie de l’applet de commande Format-Table dans les colonnes (Wrap)
 
-Vous pouvez forcer le retour automatique à la ligne des données `Format-Table` retournées en nombre dans leur colonne d’affichage en utilisant le paramètre **Wrap**. L’utilisation du paramètre **Wrap** ne produit pas nécessairement le résultat escomptés, car si vous ne spécifiez pas **AutoSize**, les paramètres par défaut sont utilisés :
+Vous pouvez forcer le retour automatique à la ligne des données `Format-Table` retournées en nombre dans leur colonne d’affichage en utilisant le paramètre **Wrap** . L’utilisation du paramètre **Wrap** ne produit pas nécessairement le résultat escomptés, car si vous ne spécifiez pas **AutoSize** , les paramètres par défaut sont utilisés :
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
@@ -210,9 +211,9 @@ Winmgmt             Running Automatic Windows Management Instrumentation        
 WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-L’utilisation du paramètre **Wrap** par lui-même ne ralentit considérablement le traitement. Cependant, si vous voulez mettre en forme une liste récursive de fichiers d’une structure d’annuaire volumineuse en utilisant le paramètre **AutoSize**, celui-ci tardera à afficher les premiers éléments de sortie et mobilisera beaucoup de mémoire.
+L’utilisation du paramètre **Wrap** par lui-même ne ralentit considérablement le traitement. Cependant, si vous voulez mettre en forme une liste récursive de fichiers d’une structure d’annuaire volumineuse en utilisant le paramètre **AutoSize** , celui-ci tardera à afficher les premiers éléments de sortie et mobilisera beaucoup de mémoire.
 
-Si vous n’êtes pas préoccupé par la charge du système, **AutoSize** fonctionne bien avec le paramètre **Wrap**.
+Si vous n’êtes pas préoccupé par la charge du système, **AutoSize** fonctionne bien avec le paramètre **Wrap** .
 Les premières colonnes continuent d’utiliser la largeur nécessaire à l’affichage des éléments sur une même ligne, mais la colonne finale est réduite, si nécessaire.
 
 > [!NOTE]
@@ -240,7 +241,7 @@ FileVersion                          Path                                       
 
 ### <a name="organizing-table-output--groupby"></a>Organisation de la sortie de table (-GroupBy)
 
-Un autre paramètre utile pour le contrôle de la sortie tabulaire est **GroupBy**. Des listes tabulaires plus longues en particulier peuvent être difficiles à comparer. Le paramètre **GroupBy** groupe la sortie en fonction d’une valeur de propriété. Par exemple, nous pouvons grouper les services en fonction du paramètre **StartType** pour faciliter l’inspection, en omettant la valeur de **StartType** de la liste des propriétés :
+Un autre paramètre utile pour le contrôle de la sortie tabulaire est **GroupBy** . Des listes tabulaires plus longues en particulier peuvent être difficiles à comparer. Le paramètre **GroupBy** groupe la sortie en fonction d’une valeur de propriété. Par exemple, nous pouvons grouper les services en fonction du paramètre **StartType** pour faciliter l’inspection, en omettant la valeur de **StartType** de la liste des propriétés :
 
 ```powershell
 Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType

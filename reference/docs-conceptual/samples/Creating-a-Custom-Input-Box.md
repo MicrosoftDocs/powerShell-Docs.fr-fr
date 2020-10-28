@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Création d'une zone d'entrée personnalisée
-ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment créer une zone d’entrée personnalisée à l’aide des fonctionnalités de création de formulaires .NET Framework dans Windows PowerShell.
+ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706187"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500553"
 ---
 # <a name="creating-a-custom-input-box"></a>Création d'une zone d'entrée personnalisée
 
@@ -65,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**. Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form**. Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
+Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms** . Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form** . Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -78,7 +79,7 @@ Après avoir créé une instance de la classe Form, affectez des valeurs à troi
 - **Size.** Il s'agit de la taille du formulaire en pixels. Le script précédent crée un formulaire de 300 pixels de largeur par 200 pixels de hauteur.
 
 - **StartingPosition.** Cette propriété facultative a la valeur **CenterScreen** dans le script précédent.
-  Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert. Si vous affectez à **StartingPosition** la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.
+  Si vous n’ajoutez pas cette propriété, Windows sélectionne un emplacement lors de l’ouverture du formulaire. Si vous affectez à **StartingPosition** la valeur **CenterScreen** , le formulaire s’affichera automatiquement au milieu de l’écran à chaque chargement.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -86,7 +87,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK**. Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
+Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK** . Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
 
 ```powershell
 $okButton = New-Object System.Windows.Forms.Button
@@ -98,7 +99,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-De la même façon, créez un bouton **Annuler**. Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
+De la même façon, créez un bouton **Annuler** . Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
 
 ```powershell
 $cancelButton = New-Object System.Windows.Forms.Button
@@ -120,7 +121,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-Ajoutez le contrôle (dans ce cas, une zone de texte) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](/dotnet/api/system.windows.forms) sur MSDN.
+Ajoutez le contrôle (dans ce cas, une zone de texte) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d’étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](/dotnet/api/system.windows.forms) sur MSDN.
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -147,17 +148,17 @@ Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.
 $result = $form.ShowDialog()
 ```
 
-Enfin, le code à l’intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur entre du texte dans la zone de texte, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.
+Enfin, le code à l'intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur entre du texte dans la zone de texte, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée** .
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $textBox.Text
-    $x
+    $x = $textBox.Text
+    $x
 }
 ```
 
 ## <a name="see-also"></a>Voir aussi
 
 - [GitHub: Dave Wyatt’s WinFormsExampleUpdates](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
-- [Astuce Windows PowerShell de la semaine : création d’une zone d’entrée personnalisée](https://technet.microsoft.com/library/ff730941.aspx)
+- [Astuce Windows PowerShell de la semaine : Création d’une zone d’entrée personnalisée](https://technet.microsoft.com/library/ff730941.aspx)

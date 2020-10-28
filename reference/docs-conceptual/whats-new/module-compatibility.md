@@ -1,12 +1,13 @@
 ---
 title: Compatibilité des modules PowerShell 7
 ms.date: 02/03/2020
-ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+description: Cet article liste l’état de PowerShell 7 avec les modules PowerShell publiés pour d’autres produits Microsoft.
+ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722811"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501624"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibilité des modules PowerShell 7
 
@@ -24,7 +25,7 @@ Sur Windows Server, utilisez le nom de la fonctionnalité avec la cmdlet [Instal
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fonctionnalités Windows facultatives** ou **fonctionnalités Windows**. Les commandes suivantes doivent être exécutées **en tant qu’administrateur** dans une session avec élévation de privilèges.
+Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fonctionnalités Windows facultatives** ou **fonctionnalités Windows** . Les commandes suivantes doivent être exécutées **en tant qu’administrateur** dans une session avec élévation de privilèges.
 
 - Pour les fonctionnalités Windows facultatives
 

@@ -2,18 +2,19 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Affichage de structure d’objet Get Member
-ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Get-Member est un outil puissant qui permet de voir le type et la structure des objets dans PowerShell.
+ms.openlocfilehash: 3c294fe47294e2cf8daf125aac55661dd38cf9bb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030700"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501216"
 ---
 # <a name="viewing-object-structure-get-member"></a>Affichage de structure d’objet (Get-Member)
 
-Étant donné que les objets jouent un rôle central dans Windows PowerShell, il existe plusieurs commandes natives conçues pour fonctionner avec des types d’objets arbitraires. La plus importante est l’applet de commande **Get-Member**.
+Étant donné que les objets jouent un rôle central dans Windows PowerShell, il existe plusieurs commandes natives conçues pour fonctionner avec des types d’objets arbitraires. La plus importante est l’applet de commande **Get-Member** .
 
-La technique la plus simple pour analyser les objets qu’une commande retourne consiste à diriger sa sortie vers l’applet de commande **Get-Member**. L’applet de commande **Get-Member** affiche le nom formel du type d’objet et la liste complète de ses membres. Le nombre d’éléments retournés est parfois écrasant. Par exemple, un objet de processus peut avoir plus de 100 membres.
+La technique la plus simple pour analyser les objets qu’une commande retourne consiste à diriger sa sortie vers l’applet de commande **Get-Member** . L’applet de commande **Get-Member** affiche le nom formel du type d’objet et la liste complète de ses membres. Le nombre d’éléments retournés est parfois écrasant. Par exemple, un objet de processus peut avoir plus de 100 membres.
 
 Pour afficher tous les membres d’un objet de processus et paginer la sortie afin de pouvoir les afficher tous, tapez ce qui suit :
 
@@ -23,7 +24,7 @@ Get-Process | Get-Member | Out-Host -Paging
 
 La sortie de cette commande ressemble à ceci :
 
-```output
+```Output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -38,7 +39,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-Vous pouvez rendre cette longue liste d’informations plus utilisable en filtrant les éléments que vous souhaitez voir. La commande **Get-Member** permet de répertorier uniquement les membres qui sont des propriétés. Il existe plusieurs formes de propriétés. Si vous définissez le paramètre **Get-MemberMemberType** sur la valeur **Properties**, l’applet de commande affiche tous les types de propriétés. La liste obtenue reste très longue, mais est un peu plus gérable :
+Vous pouvez rendre cette longue liste d’informations plus utilisable en filtrant les éléments que vous souhaitez voir. La commande **Get-Member** permet de répertorier uniquement les membres qui sont des propriétés. Il existe plusieurs formes de propriétés. Si vous définissez le paramètre **Get-MemberMemberType** sur la valeur **Properties** , l’applet de commande affiche tous les types de propriétés. La liste obtenue reste très longue, mais est un peu plus gérable :
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties

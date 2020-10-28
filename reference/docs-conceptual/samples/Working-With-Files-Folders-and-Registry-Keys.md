@@ -2,12 +2,13 @@
 ms.date: 07/28/2020
 keywords: powershell,applet de commande
 title: Utilisation des fichiers, dossiers et clés de Registre
-ms.openlocfilehash: 7ead5d0e82feb852845468fb3a012a0908a4ce75
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: Cet article explique comment gérer les tâches de manipulation des clés de Registre à l’aide de PowerShell.
+ms.openlocfilehash: 6f653c1fb409a238aa05658e89261a12e96f6fe1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410187"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499975"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Utilisation des fichiers, dossiers et clés de Registre
 
@@ -32,7 +33,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-La liste ressemble à celle qui s’affiche quand vous entrez la commande `dir` dans **Cmd.exe**, ou la commande `ls` dans un interpréteur de commandes UNIX.
+La liste ressemble à celle qui s’affiche quand vous entrez la commande `dir` dans **Cmd.exe** , ou la commande `ls` dans un interpréteur de commandes UNIX.
 
 Vous pouvez effectuer des recherches très complexes à l’aide des paramètres de l’applet de commande `Get-ChildItem`. Nous examinerons quelques scénarios dans les sections suivantes. Pour voir la syntaxe de l’applet de commande `Get-ChildItem`, tapez ce qui suit :
 
@@ -129,7 +130,7 @@ Pour plus d’informations sur les caractères génériques, consultez [À propo
 
 Vous pouvez exclure des éléments spécifiques à l’aide du paramètre **Exclude** de l’applet de commande `Get-ChildItem`. Vous pouvez ainsi effectuer des opérations de filtrage complexes à l'aide d'une seule instruction.
 
-Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier **System32**. Tout ce dont vous vous souvenez, c’est que le nom de la DLL commence par la lettre « W » et qu’il contient le nombre « 32 ».
+Par exemple, supposons que vous essayiez de trouver la DLL Windows Time Service dans le dossier **System32** . Tout ce dont vous vous souvenez, c’est que le nom de la DLL commence par la lettre « W » et qu’il contient le nombre « 32 ».
 
 Une expression comme `w*32*.dll` recherchera toutes les DLL qui répondent aux critères. Toutefois, vous pouvez affiner le filtrage des fichiers pour omettre les fichiers Win32. Vous pouvez omettre ces fichiers à l’aide du paramètre **Exclude** en suivant le modèle `win*` :
 
@@ -161,7 +162,7 @@ Aucun résultat n'est disponible, même s'il existe deux DLL qui commencent par 
 
 Aucun résultat n'est retourné, car nous avons spécifié le caractère générique comme faisant partie du chemin d'accès. Même si la commande est récursive, l’applet de commande `Get-ChildItem` limite les résultats aux éléments qui se trouvent dans le dossier Windows et dont le nom se termine par `.dll`.
 
-Pour spécifier une recherche récursive des fichiers dont le nom correspond à un modèle particulier, utilisez le paramètre **Include**.
+Pour spécifier une recherche récursive des fichiers dont le nom correspond à un modèle particulier, utilisez le paramètre **Include** .
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll

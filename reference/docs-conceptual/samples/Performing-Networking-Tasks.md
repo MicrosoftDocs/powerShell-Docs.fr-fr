@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Exécution de tâches de mise en réseau
-ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment utiliser les classes WMI dans PowerShell pour gérer les paramètres de configuration réseau dans Windows.
+ms.openlocfilehash: 95b05c193f4168cdcdf8414399c4f8c569bff754
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737200"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500247"
 ---
 # <a name="performing-networking-tasks"></a>Exécution de tâches de mise en réseau
 
@@ -38,7 +39,7 @@ fe80::60ea:29a7:a233:7cb7
 2601:600:a27f:a470::2ec1
 ```
 
-Pour comprendre pourquoi des accolades s’affichent, utilisez la cmdlet `Get-Member` pour examiner la propriété **IPAddress** :
+Pour comprendre pourquoi des accolades s’affichent, utilisez la cmdlet `Get-Member` pour examiner la propriété **IPAddress**  :
 
 ```powershell
  Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -52,7 +53,7 @@ Name      MemberType Definition
 IPAddress Property   string[] IPAddress {get;}
 ```
 
-La propriété IPAddress pour chaque carte réseau est en réalité un tableau. Les accolades dans la définition indiquent qu’**IPAddress** n’est pas une valeur **System.String**, mais un tableau de valeurs **System.String**.
+La propriété IPAddress pour chaque carte réseau est en réalité un tableau. Les accolades dans la définition indiquent qu’ **IPAddress** n’est pas une valeur **System.String** , mais un tableau de valeurs **System.String** .
 
 ## <a name="listing-ip-configuration-data"></a>Affichage de la liste des données de configuration IP
 
@@ -75,7 +76,7 @@ Cette commande retourne des informations détaillées sur DHCP, DNS, le routage 
 
 ## <a name="pinging-computers"></a>Test ping des ordinateurs
 
-Vous pouvez effectuer un simple test ping sur un ordinateur à l’aide de la méthode **Win32_PingStatus**. La commande suivante exécute le test ping, mais retourne un résultat assez long :
+Vous pouvez effectuer un simple test ping sur un ordinateur à l’aide de la méthode **Win32_PingStatus** . La commande suivante exécute le test ping, mais retourne un résultat assez long :
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
@@ -125,7 +126,7 @@ $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 
 ## <a name="retrieving-network-adapter-properties"></a>Récupération des propriétés d’une carte réseau
 
-Nous avons mentionné ci-dessus, qu’il est possible de récupérer des propriétés de configuration générale à l’aide de la classe **Win32_NetworkAdapterConfiguration**. Bien qu’il ne s’agisse pas strictement d’informations TCP/IP, les informations de carte réseau telles que les adresses MAC et les types de cartes peuvent être utiles pour comprendre ce qui se passe sur un ordinateur. Pour obtenir un résumé de ces informations, utilisez la commande suivante :
+Nous avons mentionné ci-dessus, qu’il est possible de récupérer des propriétés de configuration générale à l’aide de la classe **Win32_NetworkAdapterConfiguration** . Bien qu’il ne s’agisse pas strictement d’informations TCP/IP, les informations de carte réseau telles que les adresses MAC et les types de cartes peuvent être utiles pour comprendre ce qui se passe sur un ordinateur. Pour obtenir un résumé de ces informations, utilisez la commande suivante :
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
@@ -133,7 +134,7 @@ Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 
 ## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>Attribution de domaine DNS pour une carte réseau
 
-Pour attribuer le domaine DNS pour une résolution de noms automatique, utilisez la méthode **SetDNSDomain** de **Win32_NetworkAdapterConfiguration**. Étant donné que vous attribuez le domaine DNS indépendamment pour chaque configuration de carte réseau, vous devez utiliser une instruction `ForEach-Object` pour attribuer le domaine à chaque carte :
+Pour attribuer le domaine DNS pour une résolution de noms automatique, utilisez la méthode **SetDNSDomain** de **Win32_NetworkAdapterConfiguration** . Étant donné que vous attribuez le domaine DNS indépendamment pour chaque configuration de carte réseau, vous devez utiliser une instruction `ForEach-Object` pour attribuer le domaine à chaque carte :
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -186,11 +187,11 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
   ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-Vous pouvez utiliser l’instruction **Filtre** `IPEnabled=$true and DHCPEnabled=$false` pour éviter d’activer le protocole DHCP là où il est déjà activé, mais l’omission de cette étape ne génère pas d’erreurs.
+Vous pouvez utiliser l’instruction **Filtre**`IPEnabled=$true and DHCPEnabled=$false` pour éviter d’activer le protocole DHCP là où il est déjà activé, mais l’omission de cette étape ne génère pas d’erreurs.
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>Résiliation et renouvellement de baux DHCP sur des cartes spécifiques
 
-La classe **Win32_NetworkAdapterConfiguration** dispose des méthodes **ReleaseDHCPLease** et **RenewDHCPLease**. Toutes deux sont utilisées de la même façon. En règle générale, utilisez ces méthodes si vous devez uniquement résilier ou renouveler des adresses pour une carte sur un sous-réseau spécifique. La manière la plus simple de filtrer des cartes sur un sous-réseau consiste à choisir uniquement les configurations de carte qui utilisent la passerelle pour ce sous-réseau. Par exemple, la commande suivante libère tous les baux DHCP sur les cartes de l’ordinateur local qui obtiennent des baux DHCP à partir de 192.168.1.254 :
+La classe **Win32_NetworkAdapterConfiguration** dispose des méthodes **ReleaseDHCPLease** et **RenewDHCPLease** . Toutes deux sont utilisées de la même façon. En règle générale, utilisez ces méthodes si vous devez uniquement résilier ou renouveler des adresses pour une carte sur un sous-réseau spécifique. La manière la plus simple de filtrer des cartes sur un sous-réseau consiste à choisir uniquement les configurations de carte qui utilisent la passerelle pour ce sous-réseau. Par exemple, la commande suivante libère tous les baux DHCP sur les cartes de l’ordinateur local qui obtiennent des baux DHCP à partir de 192.168.1.254 :
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
@@ -198,7 +199,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
     ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-Le seul changement pour le renouvellement d’un bail DHCP consiste à utiliser la méthode **RenewDHCPLease** plutôt que la méthode **ReleaseDHCPLease** :
+Le seul changement pour le renouvellement d’un bail DHCP consiste à utiliser la méthode **RenewDHCPLease** plutôt que la méthode **ReleaseDHCPLease**  :
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
@@ -211,23 +212,23 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>Résiliation et renouvellement de baux DHCP sur toutes les cartes
 
-Vous pouvez effectuer des résiliations ou renouvellements d’adresse DHCP sur toutes les cartes en utilisant les méthodes **Win32_NetworkAdapterConfiguration**, **ReleaseDHCPLeaseAll** et **RenewDHCPLeaseAll**.
+Vous pouvez effectuer des résiliations ou renouvellements d’adresse DHCP sur toutes les cartes en utilisant les méthodes **Win32_NetworkAdapterConfiguration** , **ReleaseDHCPLeaseAll** et **RenewDHCPLeaseAll** .
 Toutefois, la commande doit s’appliquer à la classe WMI, plutôt qu’à une carte particulière, car la résiliation et le renouvellement de baux de façon globale sont effectuées sur la classe, et non sur une carte spécifique.
 
-Vous pouvez obtenir une référence à une classe WMI plutôt qu’à des instances de classe, en répertoriant toutes les classes WMI, puis en sélectionnant uniquement la classe souhaitée par son nom. Par exemple, la commande suivante retourne la classe **Win32_NetworkAdapterConfiguration** :
+Vous pouvez obtenir une référence à une classe WMI plutôt qu’à des instances de classe, en répertoriant toutes les classes WMI, puis en sélectionnant uniquement la classe souhaitée par son nom. Par exemple, la commande suivante retourne la classe **Win32_NetworkAdapterConfiguration**  :
 
 ```powershell
 Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
 ```
 
-Vous pouvez traiter la commande entière comme la classe, puis appeler dessus la méthode **ReleaseDHCPAdapterLease**. Dans la commande suivante, les parenthèses entourant les éléments de pipeline `Get-CimInstance` et `Where-Object` indiquent à PowerShell de les évaluer en priorité :
+Vous pouvez traiter la commande entière comme la classe, puis appeler dessus la méthode **ReleaseDHCPAdapterLease** . Dans la commande suivante, les parenthèses entourant les éléments de pipeline `Get-CimInstance` et `Where-Object` indiquent à PowerShell de les évaluer en priorité :
 
 ```powershell
 (Get-CimInstance -List |
   Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}).ReleaseDHCPLeaseAll()
 ```
 
-Vous pouvez utiliser le même format de commande pour appeler la méthode **RenewDHCPLeaseAll**:
+Vous pouvez utiliser le même format de commande pour appeler la méthode **RenewDHCPLeaseAll** :
 
 ```powershell
 (Get-CimInstance -List |
@@ -236,7 +237,7 @@ Vous pouvez utiliser le même format de commande pour appeler la méthode **Rene
 
 ## <a name="creating-a-network-share"></a>Création d’un partage réseau
 
-Pour créer un partage réseau, utilisez la méthode **Créer** de **Win32_Share** :
+Pour créer un partage réseau, utilisez la méthode **Créer** de **Win32_Share**  :
 
 ```powershell
 (Get-CimInstance -List |
@@ -253,7 +254,7 @@ net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 
 ## <a name="removing-a-network-share"></a>Suppression d’un partage réseau
 
-Vous pouvez supprimer un partage réseau avec la commande **Win32_Share**, mais le processus diffère légèrement de la création d’un partage, car vous devez récupérer le partage spécifique à supprimer, plutôt que la classe **Win32_Share**. L’instruction suivante supprime le partage **TempShare** :
+Vous pouvez supprimer un partage réseau avec la commande **Win32_Share** , mais le processus diffère légèrement de la création d’un partage, car vous devez récupérer le partage spécifique à supprimer, plutôt que la classe **Win32_Share** . L’instruction suivante supprime le partage **TempShare**  :
 
 ```powershell
 (Get-CimInstance -Class Win32_Share -Filter "Name='TempShare'").Delete()
@@ -271,7 +272,7 @@ tempshare was deleted successfully.
 
 ## <a name="connecting-a-windows-accessible-network-drive"></a>Connexion d’un lecteur réseau accessible à Windows
 
-Les cmdlets `New-PSDrive` créent un lecteur PowerShell, mais les lecteurs créés de cette façon sont disponibles uniquement pour PowerShell. Pour créer un lecteur réseau, vous pouvez utiliser l’objet COM **WScript.Network**. La commande suivante mappe le partage `\\FPS01\users` au lecteur local `B:`,
+Les cmdlets `New-PSDrive` créent un lecteur PowerShell, mais les lecteurs créés de cette façon sont disponibles uniquement pour PowerShell. Pour créer un lecteur réseau, vous pouvez utiliser l’objet COM **WScript.Network** . La commande suivante mappe le partage `\\FPS01\users` au lecteur local `B:`,
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')

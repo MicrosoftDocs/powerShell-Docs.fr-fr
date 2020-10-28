@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Autres objets de script utiles
-ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article décrit les objets qui fournissent des fonctionnalités de script supplémentaires dans Windows PowerShell ISE.
+ms.openlocfilehash: c20daa0045bc07b1f21aafa42a80ce7c47ee7331
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325158"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500264"
 ---
 # <a name="other-useful-scripting-objects"></a>Autres objets de script utiles
 
-Les objets suivants fournissent des fonctionnalités de script supplémentaires dans Windows PowerShell ISE. Ils ne sont pas inclus dans la hiérarchie **$psISE**.
+Les objets suivants fournissent des fonctionnalités de script supplémentaires dans Windows PowerShell ISE. Ils ne sont pas inclus dans la hiérarchie **$psISE** .
 
 ## <a name="useful-scripting-objects"></a>Objets de script utiles
 
@@ -39,7 +40,7 @@ Il s’agit d’un objet de dictionnaire qui gère un mappage sensible au contex
 $psLocalHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
@@ -61,7 +62,7 @@ Il s’agit d’un objet de dictionnaire qui gère un mappage sensible au contex
 $psOnlineHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 

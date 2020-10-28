@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Modifications avec rupture dans PowerShell 6.0
-ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: Cet article liste les différences entre Windows PowerShell 5.1 et PowerShell 6.0.
+ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158188"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501692"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>Modifications avec rupture dans PowerShell 6.x
 
@@ -279,7 +280,7 @@ En raison d’API non prises en charge, le module `LocalAccounts` et les cmdlets
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>L’exécution du script PowerShell avec un paramètre bool ne fonctionne pas [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Auparavant, l’utilisation de **powershell.exe** (désormais **pwsh.exe**) pour exécuter un script PowerShell à l’aide de `-File` ne fournissait aucun moyen de transmettre `$true`/`$false` comme valeurs de paramètre. La prise en charge de `$true`/`$false` comme valeurs analysées des paramètres a été ajoutée. Les valeurs de commutateur sont également prises en charge, car la syntaxe actuellement documentée ne fonctionne pas.
+Auparavant, l’utilisation de **powershell.exe** (désormais **pwsh.exe** ) pour exécuter un script PowerShell à l’aide de `-File` ne fournissait aucun moyen de transmettre `$true`/`$false` comme valeurs de paramètre. La prise en charge de `$true`/`$false` comme valeurs analysées des paramètres a été ajoutée. Les valeurs de commutateur sont également prises en charge, car la syntaxe actuellement documentée ne fonctionne pas.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027"></a>Supprimer la propriété `ClrVersion` de `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 

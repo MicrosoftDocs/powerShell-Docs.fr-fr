@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Zones de liste à sélection multiple
-ms.openlocfilehash: 7bf71fb76a11f88c4ad4790bf3a2b383d0babb81
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: Cet article explique comment créer un contrôle de zone de liste multisélection à l’aide des fonctionnalités de création de formulaires .NET Framework dans Windows PowerShell.
+ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216071"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500281"
 ---
 # <a name="multiple-selection-list-boxes"></a>Zones de liste à sélection multiple
 
@@ -73,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**. Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form**. Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
+Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms** . Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form** . Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -85,7 +86,7 @@ Après avoir créé une instance de la classe Form, affectez des valeurs à troi
 
 - **Size.** Il s'agit de la taille du formulaire en pixels. Le script précédent crée un formulaire de 300 pixels de largeur par 200 pixels de hauteur.
 
-- **StartingPosition.** Cette propriété facultative a la valeur **CenterScreen** dans le script précédent. Si vous n'ajoutez pas cette propriété, Windows sélectionne un emplacement quand le formulaire est ouvert. Si vous affectez à **StartingPosition** la valeur **CenterScreen**, le formulaire s’affiche automatiquement au milieu de l’écran à chaque chargement.
+- **StartingPosition.** Cette propriété facultative a la valeur **CenterScreen** dans le script précédent. Si vous n’ajoutez pas cette propriété, Windows sélectionne un emplacement lors de l’ouverture du formulaire. Si vous affectez à **StartingPosition** la valeur **CenterScreen** , le formulaire s’affichera automatiquement au milieu de l’écran à chaque chargement.
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -93,7 +94,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK**. Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
+Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK** . Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -105,7 +106,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-De la même façon, créez un bouton **Annuler**. Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
+De la même façon, créez un bouton **Annuler** . Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -127,7 +128,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d'étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
+Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans votre texte d’étiquette. Hormis les zones de texte, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) sur MSDN.
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -157,7 +158,7 @@ Spécifiez la hauteur maximale du contrôle de zone de liste.
 $listBox.Height = 70
 ```
 
-Ajoutez le contrôle de zone de liste à votre formulaire, puis indiquez à Windows d'ouvrir le formulaire au-dessus des autres fenêtres et boîtes de dialogue.
+Ajoutez le contrôle de zone de liste à votre formulaire, puis indiquez à Windows d’ouvrir le formulaire au-dessus des autres fenêtres et boîtes de dialogue.
 
 ```powershell
 $form.Controls.Add($listBox)
@@ -170,7 +171,7 @@ Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.
 $result = $form.ShowDialog()
 ```
 
-Enfin, le code à l’intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur sélectionne une ou plusieurs options dans la zone de liste, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.
+Enfin, le code à l’intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur sélectionne une ou plusieurs options dans la zone de liste, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée** .
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)

@@ -2,12 +2,13 @@
 ms.date: 05/22/2020
 keywords: powershell,applet de commande
 title: Qu’est-ce que PowerShell ?
-ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
-ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
+description: Cet article présente l’environnement de script PowerShell et ses fonctionnalités.
+ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83868477"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500774"
 ---
 # <a name="what-is-powershell"></a>Qu’est-ce que PowerShell ?
 
@@ -44,7 +45,7 @@ Si vous avez utilisé des outils de traitement de texte pour traiter des donnée
 
 Les interfaces comme `cmd.exe` n’offrent aucun moyen d’étendre directement le jeu de commandes intégré. Vous pouvez créer des outils en ligne de commande externes qui s’exécutent dans `cmd.exe`. Mais ces outils externes ne proposent pas de services comme l’intégration de l’aide. `cmd.exe` ne sait pas automatiquement que ces outils externes sont des commandes valides.
 
-Dans PowerShell, les commandes sont appelées des _cmdlets_. Vous pouvez utiliser chaque cmdlet séparément, mais leur puissance s’exprime pleinement quand vous les combinez pour effectuer des tâches complexes. Comme de nombreux interpréteurs de commandes, PowerShell permet d’accéder au système de fichiers sur l’ordinateur. Les _fournisseurs_ PowerShell permettent d’accéder à d’autres magasins de données, tels que le Registre et les magasins de certificats, aussi facilement qu’au système de fichiers.
+Dans PowerShell, les commandes sont appelées des _cmdlets_ . Vous pouvez utiliser chaque cmdlet séparément, mais leur puissance s’exprime pleinement quand vous les combinez pour effectuer des tâches complexes. Comme de nombreux interpréteurs de commandes, PowerShell permet d’accéder au système de fichiers sur l’ordinateur. Les _fournisseurs_ PowerShell permettent d’accéder à d’autres magasins de données, tels que le Registre et les magasins de certificats, aussi facilement qu’au système de fichiers.
 
 Vous pouvez créer vos propres modules de fonction et de cmdlet à l’aide de code ou de scripts compilés. Les modules peuvent ajouter des cmdlets et des fournisseurs à l’interpréteur de commandes. PowerShell prend également en charge des scripts analogues à ceux de l’interpréteur de commande UNIX et aux fichiers de traitement `cmd.exe`.
 

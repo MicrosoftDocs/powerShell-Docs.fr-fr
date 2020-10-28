@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Utilisation de clés de Registre
-ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment gérer les clés de Registre à l’aide de PowerShell.
+ms.openlocfilehash: 90e8417fc3454b959dc2a86fc63e722832bdab23
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736843"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501386"
 ---
 # <a name="working-with-registry-keys"></a>Utilisation de clés de Registre
 
@@ -15,7 +16,7 @@ ms.locfileid: "75736843"
 
 ## <a name="listing-all-subkeys-of-a-registry-key"></a>Affichage de la liste de toutes les sous-clés d’une clé de Registre
 
-Vous pouvez afficher tous les éléments figurant directement à l’intérieur d’une clé de registre à l’aide de `Get-ChildItem`. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force**. Par exemple, cette commande affiche les éléments figurant directement dans le lecteur PowerShell `HKCU:`, qui correspond au hive du registre `HKEY_CURRENT_USER` :
+Vous pouvez afficher tous les éléments figurant directement à l’intérieur d’une clé de registre à l’aide de `Get-ChildItem`. Pour afficher les fichiers ou éléments système masqués, ajoutez le paramètre facultatif **Force** . Par exemple, cette commande affiche les éléments figurant directement dans le lecteur PowerShell `HKCU:`, qui correspond au hive du registre `HKEY_CURRENT_USER` :
 
 ```powershell
 Get-ChildItem -Path HKCU:\ | Select-Object Name
@@ -57,13 +58,13 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-Ces commandes répertorient uniquement les éléments contenus directement, de manière très similaire à l’utilisation de `DIR` dans **cmd.exe** ou `ls` dans un interpréteur de commandes UNIX. Pour afficher les éléments contenus, vous devez spécifier le paramètre **Recurse**. Pour répertorier toutes les clés de registre dans `HKCU:`, utilisez la commande suivante.
+Ces commandes répertorient uniquement les éléments contenus directement, de manière très similaire à l’utilisation de `DIR` dans **cmd.exe** ou `ls` dans un interpréteur de commandes UNIX. Pour afficher les éléments contenus, vous devez spécifier le paramètre **Recurse** . Pour répertorier toutes les clés de registre dans `HKCU:`, utilisez la commande suivante.
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem` peut exécuter des fonctionnalités de filtrage complexes via ses paramètres **Chemin d'accès**, **Filtre**, **Inclure** et **Exclure**, mais ces paramètres sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de la cmdlet `Where-Object`. La commande suivante recherche dans `HKCU:\Software` toutes les clés qui n’ont pas plus d’une sous-clé et ont aussi exactement quatre valeurs :
+`Get-ChildItem` peut exécuter des fonctionnalités de filtrage complexes via ses paramètres **Chemin d'accès** , **Filtre** , **Inclure** et **Exclure** , mais ces paramètres sont généralement basés uniquement sur le nom. Vous pouvez effectuer un filtrage complexe basé sur d’autres propriétés d’éléments à l’aide de la cmdlet `Where-Object`. La commande suivante recherche dans `HKCU:\Software` toutes les clés qui n’ont pas plus d’une sous-clé et ont aussi exactement quatre valeurs :
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -78,13 +79,13 @@ La copie s’effectue avec `Copy-Item`. L’exemple suivant copie la sous-clé `
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:
 ```
 
-Si vous examinez cette nouvelle clé dans l’Éditeur du registre ou en utilisant `Get-ChildItem`, vous remarquerez que vous n’avez pas de copies des sous-clés contenues dans le nouvel emplacement. Pour copier tout le contenu d’un conteneur, vous devez spécifier le paramètre **Recurse**. Pour rendre la commande de copie précédente récursive, vous devez utiliser la commande suivante :
+Si vous examinez cette nouvelle clé dans l’Éditeur du registre ou en utilisant `Get-ChildItem`, vous remarquerez que vous n’avez pas de copies des sous-clés contenues dans le nouvel emplacement. Pour copier tout le contenu d’un conteneur, vous devez spécifier le paramètre **Recurse** . Pour rendre la commande de copie précédente récursive, vous devez utiliser la commande suivante :
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
 ```
 
-Vous pouvez toujours utiliser d’autres outils déjà disponibles pour effectuer des copies du système de fichiers. Les outils d’édition du registre (dont **reg.exe**, **regini.exe** et **regedit.exe**) et les objets COM qui prennent en charge l’édition du registre (par exemple, **WScript.Shell** et la classe **StdRegProv** de WM) peuvent être utilisés à partir de Windows PowerShell.
+Vous pouvez toujours utiliser d’autres outils déjà disponibles pour effectuer des copies du système de fichiers. Les outils d’édition du registre (dont **reg.exe** , **regini.exe** et **regedit.exe** ) et les objets COM qui prennent en charge l’édition du registre (par exemple, **WScript.Shell** et la classe **StdRegProv** de WM) peuvent être utilisés à partir de Windows PowerShell.
 
 ## <a name="creating-keys"></a>Création de clés
 
@@ -125,7 +126,7 @@ the item. Are you sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Pour supprimer des éléments contenus sans invite de confirmation, spécifiez le paramètre **Recurse** :
+Pour supprimer des éléments contenus sans invite de confirmation, spécifiez le paramètre **Recurse**  :
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion -Recurse

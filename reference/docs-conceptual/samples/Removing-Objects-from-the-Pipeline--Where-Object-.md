@@ -2,22 +2,23 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Suppression d’objets du pipeline Where Object
-ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: L’applet de commande Where-Object vous permet de filtrer les objets qui sont passés sur le pipeline.
+ms.openlocfilehash: e744dc671303711f1cbe8cc724a97c3327c1da85
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737183"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500111"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Suppression d’objets du pipeline (Where-Object)
 
 Dans PowerShell, vous générez et transmettez souvent à un pipeline plus d’objets que souhaité. Vous pouvez spécifier les propriétés d’objets particuliers à afficher à l’aide des cmdlets `Format-*`, mais cela ne résout pas le problème de la suppression d’objets entiers de l’affichage. Il se peut que vous souhaitiez filtrer des objets avant la fin d’un pipeline afin de pouvoir effectuer des actions uniquement sur un sous-ensemble des objets générés initialement.
 
-PowerShell inclut une cmdlet `Where-Object` qui permet de tester chaque objet dans le pipeline et de le transmettre dans le pipeline uniquement s’il répond à une condition de test particulière. Les objets qui ne passent pas le test sont supprimés du pipeline. Vous fournissez la condition de test comme valeur du paramètre **FilterScript**.
+PowerShell inclut une cmdlet `Where-Object` qui permet de tester chaque objet dans le pipeline et de le transmettre dans le pipeline uniquement s’il répond à une condition de test particulière. Les objets qui ne passent pas le test sont supprimés du pipeline. Vous fournissez la condition de test comme valeur du paramètre **FilterScript** .
 
 ## <a name="performing-simple-tests-with-where-object"></a>Exécution de tests simples avec l’applet de commande Where-objet
 
-La valeur de **FilterScript** est un *bloc de script* : une ou plusieurs commandes PowerShell entourées d’accolades (`{}`) qui prend la valeur true ou false. Ces blocs de script peuvent être très simples, mais leur création nécessite de connaître un autre concept de PowerShell, à savoir les opérateurs de comparaison. Un opérateur de comparaison compare les éléments figurant de part et d’autre de celui-ci. Les opérateurs de comparaison commencent par un caractère (`-`) suivi d’un nom. Les opérateurs de comparaison de base fonctionnent sur pratiquement tout type d’objet. Certains opérateurs de comparaison plus avancés fonctionnent uniquement sur du texte ou des tableaux.
+La valeur de **FilterScript** est un *bloc de script*  : une ou plusieurs commandes PowerShell entourées d’accolades (`{}`) qui prend la valeur true ou false. Ces blocs de script peuvent être très simples, mais leur création nécessite de connaître un autre concept de PowerShell, à savoir les opérateurs de comparaison. Un opérateur de comparaison compare les éléments figurant de part et d’autre de celui-ci. Les opérateurs de comparaison commencent par un caractère (`-`) suivi d’un nom. Les opérateurs de comparaison de base fonctionnent sur pratiquement tout type d’objet. Certains opérateurs de comparaison plus avancés fonctionnent uniquement sur du texte ou des tableaux.
 
 > [!NOTE]
 > Par défaut, lorsque vous travaillez sur du texte, les opérateurs de comparaison PowerShell ne respectent pas la casse.
@@ -49,14 +50,14 @@ Les blocs de script `Where-Object` utilisent la variable spéciale `$_` pour fai
 
 Comme `$_` fait référence à l’objet de pipeline actif, nous pouvons accéder à ses propriétés pour nos tests.
 
-Par exemple, nous pouvons examiner la classe **Win32_SystemDriver** dans WMI. Il peut y avoir des centaines de pilotes système sur un système particulier, mais il se peut que vous vous intéressiez uniquement à certains pilotes, par exemple, à ceux qui sont en cours d’exécution. Pour la classe **Win32_SystemDriver** la propriété appropriée est **État**. Vous pouvez filtrer les pilotes du système afin de sélectionner uniquement ceux qui sont en cours d’exécution, en tapant ce qui suit :
+Par exemple, nous pouvons examiner la classe **Win32_SystemDriver** dans WMI. Il peut y avoir des centaines de pilotes système sur un système particulier, mais il se peut que vous vous intéressiez uniquement à certains pilotes, par exemple, à ceux qui sont en cours d’exécution. Pour la classe **Win32_SystemDriver** la propriété appropriée est **État** . Vous pouvez filtrer les pilotes du système afin de sélectionner uniquement ceux qui sont en cours d’exécution, en tapant ce qui suit :
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |
   Where-Object {$_.State -eq 'Running'}
 ```
 
-Cela génère toujours une longue liste. Il se peut que vouliez filtrer afin de sélectionner uniquement les pilotes configurés pour démarrer automatiquement, en testant également la valeur **StartMode** :
+Cela génère toujours une longue liste. Il se peut que vouliez filtrer afin de sélectionner uniquement les pilotes configurés pour démarrer automatiquement, en testant également la valeur **StartMode**  :
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

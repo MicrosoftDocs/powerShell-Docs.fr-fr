@@ -1,12 +1,13 @@
 ---
 title: En profondeur
 ms.date: 05/23/2020
-ms.openlocfilehash: 9ba687c81f5bdc64881fa78a6e4ebbe051320358
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+description: La section Présentations approfondies de la documentation contient des articles qui fournissent plus de détails et d’exemples que la documentation de référence sur l’applet de commande.
+ms.openlocfilehash: da42df8ff4590d12be88132ebc98278821d4f9ee
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149402"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501063"
 ---
 # <a name="deep-dive-articles"></a>Articles approfondis
 

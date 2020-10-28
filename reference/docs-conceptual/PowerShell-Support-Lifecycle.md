@@ -1,20 +1,19 @@
 ---
 title: Cycle de vie de support de PowerShell Core
-description: Politiques régissant le support de PowerShell Core
+description: Détaille les stratégies régissant le support pour PowerShell
 ms.date: 03/09/2020
-ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236201"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501743"
 ---
 # <a name="powershell-support-lifecycle"></a>Cycle de vie du support de PowerShell
 
 PowerShell est un ensemble d’outils et de composants livré, installé et configuré séparément de Windows PowerShell. PowerShell n’est pas inclus dans les contrats de licence Windows.
 
-PowerShell est pris en charge dans les contrats de support Microsoft classiques, notamment le [support payant][], les [Contrats Microsoft Entreprise][enterprise-agreement] et [Microsoft Software Assurance][assurance].
-Vous pouvez également payer afin d’obtenir un [support assisté][] pour PowerShell en envoyant une demande de support relative à votre problème.
+PowerShell est pris en charge dans les contrats de support Microsoft classiques, notamment le [support payant][], les [Contrats Microsoft Entreprise][enterprise-agreement] et [Microsoft Software Assurance][assurance]. Vous pouvez également payer afin d’obtenir un [support assisté][] pour PowerShell en envoyant une demande de support relative à votre problème.
 
 ## <a name="community-support"></a>Support de la communauté
 

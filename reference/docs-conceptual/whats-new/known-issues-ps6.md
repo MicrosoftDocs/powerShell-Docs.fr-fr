@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Problèmes connus de PowerShell 6.0
-ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Voici un récapitulatif des problèmes connus ou des limitations dans PowerShell 6.
+ms.openlocfilehash: 528315eff660167513045542227dce335355a7b8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996101"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501675"
 ---
 # <a name="known-issues-for-powershell-60"></a>Problèmes connus de PowerShell 6.0
 
@@ -15,7 +16,7 @@ ms.locfileid: "76996101"
 
 Les versions alpha de PowerShell sous Linux et macOS sont globalement fonctionnelles, mais présentent d’importantes limitations et quelques problèmes d’utilisation. Les versions bêta de PowerShell sous Linux et macOS sont plus fonctionnelles et stables que les versions alpha, mais elles sont susceptibles de comporter des bogues et des fonctionnalités manquantes. Dans certains cas, ces problèmes sont tout simplement des bogues qui n’ont pas encore été corrigés. Dans d’autres (par exemple, les alias par défaut de ls, cp, etc.), nous attendons les commentaires de la communauté au sujet des choix que nous avons faits.
 
-Remarque : en raison des similitudes que présentent de nombreux sous-systèmes sous-jacents, PowerShell sur Linux et PowerShell sur macOS tendent à partagent le même niveau de maturité pour les fonctionnalités comme pour les bogues. Sauf mention contraire, les problèmes mentionnés dans cette section s’appliquent aux deux systèmes d’exploitation.
+Remarque : En raison des similitudes que présentent de nombreux sous-systèmes sous-jacents, PowerShell sous Linux et PowerShell sous macOS tendent à partagent le même niveau de maturité pour les fonctionnalités comme pour les bogues. Sauf mention contraire, les problèmes mentionnés dans cette section s’appliquent aux deux systèmes d’exploitation.
 
 ### <a name="case-sensitivity-in-powershell"></a>Respect de la casse dans PowerShell
 
@@ -98,7 +99,7 @@ Ce problème fait l’objet d’un suivi dans le ticket [#3232](https://github.c
 
 De nombreuses commandes (applets de commande) normalement disponibles dans PowerShell ne sont pas disponibles sous Linux/macOS. Dans la plupart des cas, elles ne sont pas pertinentes sur ces plateformes (par exemple, les fonctionnalités propres à Windows, comme le Registre). D’autres commandes, comme le contrôle de service (Get/Start/Stop-Service) sont présentes, mais non fonctionnelles. Les versions à venir sont susceptibles de corriger ces problèmes, en réparant les cmdlets non fonctionnelles et en en ajoutant de nouvelles au fur et à mesure.
 
-### <a name="command-availability"></a>Disponibilité des commandes
+### <a name="command-availability"></a>Disponibilité de commande
 
 Le tableau suivant répertorie les commandes dont on sait qu’elles ne fonctionnent pas dans PowerShell sous Linux/macOS.
 

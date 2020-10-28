@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,applet de commande
 title: Obtention d’objets WMI - Get-CimInstance
-ms.openlocfilehash: 4ff47844fd367a49f554c7c05c491bdddf28eabc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article présente plusieurs exemples montrant comment récupérer des instances d’objets WMI à partir d’un système informatique.
+ms.openlocfilehash: f7a005bbf39cf141e6474815d3e050314830453c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77002649"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500451"
 ---
 # <a name="getting-wmi-objects-get-ciminstance"></a>Obtention d’objets WMI (Get-CimInstance)
 
@@ -43,7 +44,7 @@ Win32_ThreadStopTrace
 ...
 ```
 
-Vous pouvez récupérer les mêmes informations à partir d’un ordinateur distant à l’aide du paramètre **ComputerName**, en spécifiant une adresse IP ou un nom d’ordinateur :
+Vous pouvez récupérer les mêmes informations à partir d’un ordinateur distant à l’aide du paramètre **ComputerName** , en spécifiant une adresse IP ou un nom d’ordinateur :
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
@@ -57,7 +58,7 @@ La liste de classes retournée par des ordinateurs distants peut varier selon le
 
 ### <a name="displaying-wmi-class-details"></a>Affichage des détails de classe WMI
 
-Si vous connaissez déjà le nom d’une classe WMI, vous pouvez l’utiliser pour obtenir des informations immédiatement. Par exemple, une des classes WMI couramment utilisées pour récupérer des informations sur un ordinateur est **Win32_OperatingSystem**.
+Si vous connaissez déjà le nom d’une classe WMI, vous pouvez l’utiliser pour obtenir des informations immédiatement. Par exemple, une des classes WMI couramment utilisées pour récupérer des informations sur un ordinateur est **Win32_OperatingSystem** .
 
 ```powershell
 Get-CimInstance -Class Win32_OperatingSystem
@@ -70,7 +71,7 @@ C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA
 ```
 
 Bien que nous montrions tous les paramètres, la commande peut être exprimée de façon plus concise.
-Le paramètre **ComputerName** n’est pas nécessaire lors de la connexion au système local. Nous le montrons pour illustrer le cas le plus général, et vous rappeler la disponibilité de ce paramètre. Par défaut, l’**espace de noms** passe à `root/CIMV2`. Vous pouvez également l’omettre. Enfin, la plupart des applets de commande permettent l’omission du nom de paramètres communs. Avec `Get-CimInstance`, si aucun nom n’est spécifié pour le premier paramètre, PowerShell traite celui-ci en tant que paramètre **Classe**. Cela signifie que la dernière commande pourrait avoir été émise en tapant ce qui suit :
+Le paramètre **ComputerName** n’est pas nécessaire lors de la connexion au système local. Nous le montrons pour illustrer le cas le plus général, et vous rappeler la disponibilité de ce paramètre. Par défaut, l’ **espace de noms** passe à `root/CIMV2`. Vous pouvez également l’omettre. Enfin, la plupart des applets de commande permettent l’omission du nom de paramètres communs. Avec `Get-CimInstance`, si aucun nom n’est spécifié pour le premier paramètre, PowerShell traite celui-ci en tant que paramètre **Classe** . Cela signifie que la dernière commande pourrait avoir été émise en tapant ce qui suit :
 
 ```powershell
 Get-CimInstance Win32_OperatingSystem
@@ -104,7 +105,7 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>Affichage de propriétés autres que par défaut avec les applets de commande Format
 
-Si vous souhaitez des informations contenues dans la classe **Win32_OperatingSystem** qui ne sont pas affichées par défaut, vous pouvez les afficher à l’aide des applets de commande **Format**. Par exemple, si vous souhaitez afficher les données de la mémoire disponible, tapez :
+Si vous souhaitez des informations contenues dans la classe **Win32_OperatingSystem** qui ne sont pas affichées par défaut, vous pouvez les afficher à l’aide des applets de commande **Format** . Par exemple, si vous souhaitez afficher les données de la mémoire disponible, tapez :
 
 ```powershell
 Get-CimInstance -Class Win32_OperatingSystem |

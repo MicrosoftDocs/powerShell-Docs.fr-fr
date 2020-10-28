@@ -2,27 +2,22 @@
 title: Accès distant à WS-Management (WSMan) dans PowerShell Core
 description: Accès distant dans PowerShell Core à l’aide de WSMan
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b090e1463808ab10758bbd417d52fcc16c31366
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564511"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501301"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>Accès distant à WS-Management (WSMan) dans PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Instructions pour créer un point de terminaison de communication à distance
 
-Le package PowerShell Core pour Windows inclut un plug-in WinRM (`pwrshplugin.dll`) et un script d’installation (`Install-PowerShellRemoting.ps1`) dans `$PSHome`.
-Ces fichiers permettent à PowerShell d’accepter les connexions à distance PowerShell entrantes quand son point de terminaison est spécifié.
+Le package PowerShell Core pour Windows inclut un plug-in WinRM (`pwrshplugin.dll`) et un script d’installation (`Install-PowerShellRemoting.ps1`) dans `$PSHome`. Ces fichiers permettent à PowerShell d’accepter les connexions à distance PowerShell entrantes quand son point de terminaison est spécifié.
 
 ### <a name="motivation"></a>Motivation
 
-Une installation de PowerShell peut établir des sessions PowerShell sur des ordinateurs distants avec `New-PSSession` et `Enter-PSSession`.
-Pour lui permettre d’accepter les connexions à distance PowerShell, l’utilisateur doit créer un point de terminaison d’accès distant WinRM.
-Il s’agit d’un scénario à choisir explicitement là où l’utilisateur exécute Install-PowerShellRemoting.ps1 pour créer le point de terminaison WinRM.
-Le script d’installation est une solution à court terme jusqu’à ce que nous ajoutions une fonctionnalité supplémentaire à `Enable-PSRemoting` pour effectuer la même action.
-Pour plus d’informations, reportez-vous au problème [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
+Une installation de PowerShell peut établir des sessions PowerShell sur des ordinateurs distants avec `New-PSSession` et `Enter-PSSession`. Pour lui permettre d’accepter les connexions à distance PowerShell, l’utilisateur doit créer un point de terminaison d’accès distant WinRM. Il s’agit d’un scénario à choisir explicitement là où l’utilisateur exécute Install-PowerShellRemoting.ps1 pour créer le point de terminaison WinRM. Le script d’installation est une solution à court terme jusqu’à ce que nous ajoutions une fonctionnalité supplémentaire à `Enable-PSRemoting` pour effectuer la même action. Pour plus d’informations, reportez-vous au problème [#1193](https://github.com/PowerShell/PowerShell/issues/1193).
 
 ### <a name="script-actions"></a>Actions de script
 
@@ -56,7 +51,8 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**REMARQUE :** Le script d’inscription de l’accès distant doit redémarrer WinRM : toutes les sessions PSRP existantes seront donc terminées immédiatement après l’exécution du script. S’il est exécuté pendant une session à distance, ceci mettra fin à la connexion.
+> [!NOTE]
+> Le script d’inscription de l’accès distant redémarre WinRM. Toutes les sessions PSRP existantes sont arrêtées immédiatement après l’exécution du script. S’il est exécuté pendant une session à distance, le script mettra fin à la connexion.
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>Comment se connecter à un nouveau point de terminaison
 

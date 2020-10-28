@@ -2,18 +2,19 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Manipulation d'éléments de manière directe
-ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell fournit plusieurs applets de commande qui permettent de gérer des éléments sur des ordinateurs locaux et distants. Les éléments sont des objets exposés par les fournisseurs PowerShell tels que le système de fichiers, le registre, les certificats, etc.
+ms.openlocfilehash: 20132b63a8ff4ef24b1d8346066315dbb053e59c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030128"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500315"
 ---
 # <a name="manipulating-items-directly"></a>Manipulation d'éléments de manière directe
 
-Dans Windows PowerShell, le terme *éléments* est utilisé pour désigner ce que vous voyez dans les lecteurs Windows PowerShell, comme les fichiers et les dossiers dans les lecteurs du système de fichiers, ainsi que les clés de Registre dans les lecteurs de Registre Windows PowerShell. Les applets de commande associées à l’utilisation de ces éléments comportent le mot **Item** dans leur intitulé.
+Dans Windows PowerShell, le terme *élément* est utilisé pour désigner ce que vous voyez dans les lecteurs Windows PowerShell, comme les fichiers et les dossiers dans les lecteurs du système de fichiers ainsi que les clés de Registre dans les lecteurs de Registre Windows PowerShell. Les applets de commande associées à ces éléments comportent le nom **Item** dans leur intitulé.
 
-La sortie de la commande **Get-Command -Noun Item** montre qu’il existe neuf applets de commande Windows PowerShell relatives aux éléments.
+La sortie de la commande **Get-Command -Noun Item** montre qu'il existe neuf applets de commande Windows PowerShell relatives aux éléments.
 
 ```
 PS> Get-Command -Noun Item
@@ -33,7 +34,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 
 ## <a name="creating-new-items-new-item"></a>Création d'éléments (New-Item)
 
-Pour créer un élément dans le système de fichiers, utilisez l’applet de commande **New-Item**. Indiquez le chemin d’accès à l’élément dans le paramètre **Path**, et la valeur « File » ou « Directory » dans le paramètre **ItemType**.
+Pour créer un élément dans le système de fichiers, utilisez l'applet de commande **New-Item** . Indiquez le chemin d'accès à l'élément dans le paramètre **Path** , et la valeur « File » ou « Directory » dans le paramètre **ItemType** .
 
 Par exemple, pour créer un répertoire nommé « New.Directory » dans le répertoire C:\\Temp, tapez :
 
@@ -72,15 +73,15 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-Quand vous tapez un chemin d’accès au Registre, veillez à inclure le signe deux-points ( **:** ) dans les noms de lecteur Windows PowerShell (HKLM: et HKCU:). Sans les deux-points, Windows PowerShell ne reconnaît pas le nom du lecteur dans le chemin d'accès.
+Quand vous tapez un chemin d'accès au Registre, veillez à inclure le signe deux-points ( **:** ) dans les noms de lecteur Windows PowerShell (HKLM: et HKCU:). Sans les deux-points, Windows PowerShell ne reconnaît pas le nom du lecteur dans le chemin d'accès.
 
 ## <a name="why-registry-values-are-not-items"></a>Pourquoi les valeurs de Registre ne sont pas des éléments
 
-Quand vous utilisez l’applet de commande **Get-ChildItem** pour rechercher les éléments dans une clé de Registre, ni les entrées de Registre ni leurs valeurs n’apparaissent.
+Quand vous utilisez l'applet de commande **Get-ChildItem** pour rechercher les éléments dans une clé de Registre, ni les entrées de Registre ni leurs valeurs n'apparaissent.
 
 Par exemple, la clé de Registre **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** contient généralement plusieurs entrées de Registre qui représentent des applications qui s’exécutent au démarrage du système.
 
-Toutefois, quand vous utilisez **Get-ChildItem** pour rechercher les éléments enfants dans la clé, la sous-clé **OptionalComponents** de la clé est la seule chose qui s’affiche :
+Toutefois, quand vous utilisez **Get-ChildItem** pour rechercher les éléments enfants dans la clé, la sous-clé **OptionalComponents** de la clé est la seule chose qui s'affiche :
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
@@ -92,17 +93,17 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run**. Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse ( **\\** ), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
+Bien qu'il serait pratique de traiter les entrées de Registre en tant qu'éléments, vous ne pouvez pas spécifier un chemin d'accès à une entrée de Registre d'une façon qui garantit son unicité. La notation de chemin d’accès ne fait pas la distinction entre la sous-clé de Registre nommée **Run** et l’entrée de Registre **(Default)** dans la sous-clé **Run** . Par ailleurs, si les entrées de Registre étaient des éléments, du fait que les noms des entrées de Registre peuvent contenir une barre oblique inverse ( **\\** ), vous ne pourriez pas faire la distinction entre une entrée de Registre nommée **Windows\\CurrentVersion\\Run** et la sous-clé située dans ce chemin d’accès.
 
 ## <a name="renaming-existing-items-rename-item"></a>Affectation d'un nouveau nom à des éléments existants (Rename-Item)
 
-Pour modifier le nom d’un fichier ou d’un dossier, utilisez l’applet de commande **Rename-Item**. La commande suivante remplace le nom du fichier **file1.txt** par **fileOne.txt**.
+Pour modifier le nom d'un fichier ou d'un dossier, utilisez l'applet de commande **Rename-Item** . La commande suivante remplace le nom du fichier **file1.txt** par **fileOne.txt** .
 
 ```powershell
 Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
-L’applet de commande **Rename-Item** peut modifier le nom d’un fichier ou d’un dossier, mais elle ne peut pas déplacer un élément. La commande suivante échoue, car elle tente de déplacer le fichier du répertoire New.Directory vers le répertoire Temp.
+L'applet de commande **Rename-Item** peut modifier le nom d'un fichier ou d'un dossier, mais elle ne peut pas déplacer un élément. La commande suivante échoue, car elle tente de déplacer le fichier du répertoire New.Directory vers le répertoire Temp.
 
 ```
 PS> Rename-Item -Path C:\temp\New.Directory\fileOne.txt c:\temp\fileOne.txt
@@ -113,9 +114,9 @@ At line:1 char:12
 
 ## <a name="moving-items-move-item"></a>Déplacement d'éléments (Move-Item)
 
-Pour déplacer un fichier ou un dossier, utilisez l’applet de commande **Move-Item**.
+Pour déplacer un fichier ou un dossier, utilisez l'applet de commande **Move-Item** .
 
-Par exemple, la commande suivante déplace le répertoire New.Directory du répertoire C:\\temp vers la racine du lecteur C:. Pour vérifier que l’élément a bien été déplacé, incluez le paramètre **PassThru** de l’applet de commande **Move-Item**. Sans le paramètre **Passthru**, l’applet de commande **Move-Item** n’affiche aucun résultat.
+Par exemple, la commande suivante déplace le répertoire New.Directory du répertoire C:\\temp vers la racine du lecteur C:. Pour vérifier que l'élément a bien été déplacé, incluez le paramètre **PassThru** de l'applet de commande **Move-Item** . Sans le paramètre **Passthru** , l'applet de commande **Move-Item** n'affiche aucun résultat.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -129,7 +130,7 @@ d----        2006-05-18  12:14 PM            New.Directory
 
 ## <a name="copying-items-copy-item"></a>Copie d'éléments (Copy-Item)
 
-Si vous avez déjà effectué des opérations de copie dans d’autres interpréteurs de commandes, le comportement de l’applet de commande **Copy-Item** dans Windows PowerShell peut vous sembler inhabituel. Quand vous copiez un élément d'un emplacement vers un autre, Copy-Item ne copie pas par défaut son contenu.
+Si vous avez déjà effectué des opérations de copie dans d'autres interpréteurs de commandes, le comportement de l'applet de commande **Copy-Item** dans Windows PowerShell peut vous sembler inhabituel. Quand vous copiez un élément d'un emplacement vers un autre, Copy-Item ne copie pas par défaut son contenu.
 
 Par exemple, si vous copiez le répertoire **New.Directory** du lecteur C: vers le répertoire C:\\temp, la commande aboutit, mais les fichiers du répertoire New.Directory ne sont pas copiés.
 
@@ -137,18 +138,18 @@ Par exemple, si vous copiez le répertoire **New.Directory** du lecteur C: vers
 Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Si vous affichez le contenu du dossier **C:\\temp\\New.Directory**, vous pouvez constater qu’il ne comprend aucun fichier :
+Si vous affichez le contenu du dossier **C:\\temp\\New.Directory** , vous pouvez constater qu’il ne comprend aucun fichier :
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
 PS>
 ```
 
-Pourquoi l’applet de commande **Copy-Item** ne copie-t-elle pas le contenu vers le nouvel emplacement ?
+Pourquoi l'applet de commande **Copy-Item** ne copie-t-elle pas le contenu vers le nouvel emplacement ?
 
-L’applet de commande **Copy-Item** a été conçue de manière générique, c’est-à-dire qu’elle ne sert pas simplement à copier des fichiers et des dossiers. En outre, même si vous copiez des fichiers et des dossiers, vous pouvez être amené à copier uniquement le conteneur et non les éléments qu'il contient.
+L'applet de commande **Copy-Item** a été conçue de manière générique, c'est-à-dire qu'elle ne sert pas simplement à copier des fichiers et des dossiers. En outre, même si vous copiez des fichiers et des dossiers, vous pouvez être amené à copier uniquement le conteneur et non les éléments qu'il contient.
 
-Pour copier tout le contenu d’un dossier, incluez le paramètre **Recurse** de l’applet de commande **Copy-Item** dans la commande. Si vous avez déjà copié le répertoire sans son contenu, ajoutez le paramètre **Force** pour remplacer le dossier vide.
+Pour copier tout le contenu d'un dossier, incluez le paramètre **Recurse** de l'applet de commande **Copy-Item** dans la commande. Si vous avez déjà copié le répertoire sans son contenu, ajoutez le paramètre **Force** pour remplacer le dossier vide.
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
@@ -168,7 +169,7 @@ Mode                LastWriteTime     Length Name
 
 ## <a name="deleting-items-remove-item"></a>Suppression d'éléments (Remove-Item)
 
-Pour supprimer des fichiers et des dossiers, utilisez l’applet de commande **Remove-Item**. Les applets de commande Windows PowerShell telles que **Remove-Item**, qui effectuent des modifications importantes et irréversibles, affichent souvent une invite de confirmation quand vous entrez leurs commandes. Par exemple, si vous essayez de supprimer le dossier **New.Directory** qui contient des fichiers, vous êtes invité à confirmer la commande :
+Pour supprimer des fichiers et des dossiers, utilisez l'applet de commande **Remove-Item** . À l'instar de **Remove-Item** , les applets de commande Windows PowerShell qui effectuent des modifications importantes et irréversibles affichent souvent une invite de confirmation quand vous entrez les commandes. Par exemple, si vous essayez de supprimer le dossier **New.Directory** qui contient des fichiers, vous serez invité à confirmer la commande :
 
 ```
 PS> Remove-Item C:\New.Directory
@@ -181,7 +182,7 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-**Yes** étant la réponse par défaut, pour supprimer le dossier et ses fichiers, appuyez sur la touche **Entrée**. Pour supprimer le dossier sans confirmation, utilisez le paramètre **-Recurse**.
+**Yes** étant la réponse par défaut, appuyez sur la touche **Entrée** pour supprimer le dossier et ses fichiers. Pour supprimer le dossier sans confirmation, utilisez le paramètre **-Recurse** .
 
 ```powershell
 Remove-Item C:\temp\New.Directory -Recurse
@@ -189,7 +190,7 @@ Remove-Item C:\temp\New.Directory -Recurse
 
 ## <a name="executing-items-invoke-item"></a>Exécution d'éléments (Invoke-Item)
 
-Windows PowerShell utilise l’applet de commande **Invoke-Item** pour effectuer une action par défaut pour un fichier ou un dossier. Cette action par défaut est déterminée par le gestionnaire d'application par défaut dans le Registre. Vous obtenez le même résultat qu'en double-cliquant sur l'élément dans l'Explorateur de fichiers.
+Windows PowerShell utilise l'applet de commande **Invoke-Item** pour effectuer une action par défaut pour un fichier ou un dossier. Cette action par défaut est déterminée par le gestionnaire d'application par défaut dans le Registre. Vous obtenez le même résultat qu'en double-cliquant sur l'élément dans l'Explorateur de fichiers.
 
 Par exemple, imaginez que vous exécutiez la commande suivante :
 

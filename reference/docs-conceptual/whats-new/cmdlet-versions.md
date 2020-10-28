@@ -2,16 +2,17 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Historique des versions des modules et des cmdlets
-ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
-ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
+description: Cet article liste les modules et les applets de commande qui sont inclus dans les différentes versions de PowerShell.
+ms.openlocfilehash: cefd84c5d3785d19670ee649f5af951d5975912c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83751325"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501658"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Historique des versions des modules et des cmdlets
 
-Cet article répertorie les modules et les cmdlets fournis avec différentes versions de PowerShell. C’est un résumé des informations contenues dans les notes de publication. Vous trouverez des informations plus détaillées dans les notes de publication :
+Cet article liste les modules et les applets de commande qui sont inclus dans les différentes versions de PowerShell. C’est un résumé des informations contenues dans les notes de publication. Vous trouverez des informations plus détaillées dans les notes de publication :
 
 - [Nouveautés de PowerShell Core 6.2](what-s-new-in-powershell-core-62.md)
 - [Nouveautés de PowerShell Core 6.1](what-s-new-in-powershell-core-61.md)

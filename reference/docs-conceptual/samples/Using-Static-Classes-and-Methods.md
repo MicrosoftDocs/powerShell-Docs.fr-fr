@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation de classes et méthodes statiques
-ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment identifier et utiliser les propriétés et les méthodes des classes statiques .NET.
+ms.openlocfilehash: 2e83fe442f7b3fdf62ceaab587450251ac4e7958
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030738"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501250"
 ---
 # <a name="using-static-classes-and-methods"></a>Utilisation de classes et méthodes statiques
 
-Certaines classes de .NET Framework ne peuvent pas être créées à l’aide de l’applet de commande **New-Object**. Par exemple, si vous essayez de créer un objet **System.Environment** ou **System.Math** avec l’applet de commande **New-Object**, vous obtenez les messages d’erreur suivants :
+Certaines classes de .NET Framework ne peuvent pas être créées à l’aide de l’applet de commande **New-Object** . Par exemple, si vous essayez de créer un objet **System.Environment** ou **System.Math** avec l’applet de commande **New-Object** , vous obtenez les messages d’erreur suivants :
 
 ```
 PS> New-Object System.Environment
@@ -27,7 +28,7 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-Ces erreurs se produisent parce qu’il n’existe aucun moyen de créer un objet à partir de ces classes. Ces classes sont des bibliothèques de référence de méthodes et propriétés qui ne changent pas d’état. Vous n’avez pas besoin de les créer. Vous les utilisez simplement. Les classes et méthodes telles que celles-ci sont appelées *classes statiques*, car elles ne sont pas créées, détruites ou modifiées. Par souci de clarté, nous fournirons des exemples qui utilisent des classes statiques.
+Ces erreurs se produisent parce qu’il n’existe aucun moyen de créer un objet à partir de ces classes. Ces classes sont des bibliothèques de référence de méthodes et propriétés qui ne changent pas d’état. Vous n’avez pas besoin de les créer. Vous les utilisez simplement. Les classes et méthodes telles que celles-ci sont appelées *classes statiques* , car elles ne sont pas créées, détruites ou modifiées. Par souci de clarté, nous fournirons des exemples qui utilisent des classes statiques.
 
 ## <a name="getting-environment-data-with-systemenvironment"></a>Obtention de données d’environnement avec System.Environment
 
@@ -46,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Comme mentionné précédemment, Windows PowerShell ajoute automatiquement « **System.**  » aux noms de type lorsque vous utilisez l’applet de commande **New-Object**. La même chose se produisant en cas d’utilisation d’un nom de type entre crochets, vous pouvez spécifier **\[System.Environment]** en tant que **\[Environment]** .
+> Comme mentionné précédemment, Windows PowerShell ajoute automatiquement «  **System.**  » aux noms de type lorsque vous utilisez l’applet de commande **New-Object** . La même chose se produisant en cas d’utilisation d’un nom de type entre crochets, vous pouvez spécifier **\[System.Environment]** en tant que **\[Environment]** .
 
 La classe **System.Environment** contient des informations générales sur l’environnement de travail pour le processus actuel, c’est-à-dire powershell.exe lorsque vous travaillez dans Windows PowerShell.
 
-Si vous essayez d’afficher les détails de cette classe en tapant **\[System.Environment] | Get-Member**, le type d’objet est signalé comme étant **System.RuntimeType**, pas **System.Environment** :
+Si vous essayez d’afficher les détails de cette classe en tapant **\[System.Environment] | Get-Member** , le type d’objet est signalé comme étant **System.RuntimeType** , pas **System.Environment**  :
 
 ```
 PS> [System.Environment] | Get-Member
@@ -110,7 +111,7 @@ PS> [System.Environment]::OSVersion
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
 ```
 
-Nous pouvons vérifier si l’ordinateur est en cours d’arrêt en affichant la propriété **HasShutdownStarted** :
+Nous pouvons vérifier si l’ordinateur est en cours d’arrêt en affichant la propriété **HasShutdownStarted**  :
 
 ```
 PS> [System.Environment]::HasShutdownStarted
@@ -119,12 +120,12 @@ False
 
 ## <a name="doing-math-with-systemmath"></a>Opérations mathématiques avec System.Math
 
-La classe statique System.Math est utile pour effectuer certaines opérations mathématiques. Les membres importants de **System.Math** sont essentiellement des méthodes que nous pouvons afficher à l’aide de l’applet de commande **Get-Member**.
+La classe statique System.Math est utile pour effectuer certaines opérations mathématiques. Les membres importants de **System.Math** sont essentiellement des méthodes que nous pouvons afficher à l’aide de l’applet de commande **Get-Member** .
 
 > [!NOTE]
 > System.Math dispose de plusieurs méthodes portant le même nom, mais qui se distinguent par le type de leurs paramètres.
 
-Tapez la commande suivante pour répertorier les méthodes de la classe **System.Math**.
+Tapez la commande suivante pour répertorier les méthodes de la classe **System.Math** .
 
 ```
 PS> [System.Math] | Get-Member -Static -MemberType Methods

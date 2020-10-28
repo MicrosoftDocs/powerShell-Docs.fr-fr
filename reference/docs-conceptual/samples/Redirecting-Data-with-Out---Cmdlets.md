@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Redirection de données à l’aide d’applets de commande Out
-ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment utiliser les applets de commande qui gèrent la sortie dans PowerShell.
+ms.openlocfilehash: 3a9e3b1ac06f5be4e6f3bbc52a15c4afb5b12cef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030080"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500213"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Redirection de données à l’aide d’applets de commande Out-*
 
@@ -15,7 +16,7 @@ Windows PowerShell fournit plusieurs applets de commande qui vous permettent de 
 
 Tout d’abord, elles transforment généralement les données en une forme de texte. Elles opèrent de la sorte, car elles envoient les données à des composants système qui requièrent une entrée de texte. Cela signifie qu’elles doivent représenter les objets sous forme de texte. C’est pourquoi le texte est mis en forme tel qu’il apparaît dans la fenêtre de la console Windows PowerShell.
 
-Ensuite, ces applets de commande utilisent le verbe Windows PowerShell **Out**, car elles envoient des informations de Windows PowerShell vers un autre emplacement. L’applet de commande **Out-Host** ne fait pas exception : l’affichage de la fenêtre hôte se trouve en dehors de Windows PowerShell. Ceci est important car, lorsque des données sont envoyées hors de Windows PowerShell, elles sont réellement supprimées. Vous pouvez le constater si vous tentez de créer un pipeline qui pagine les données vers la fenêtre hôte, puis tentez d’appliquer une mise en forme de liste, comme illustré ici :
+Ensuite, ces applets de commande utilisent le verbe Windows PowerShell **Out** , car elles envoient des informations de Windows PowerShell vers un autre emplacement. L’applet de commande **Out-Host** ne fait pas exception : l’affichage de la fenêtre hôte se trouve en dehors de Windows PowerShell. Ceci est important car, lorsque des données sont envoyées hors de Windows PowerShell, elles sont réellement supprimées. Vous pouvez le constater si vous tentez de créer un pipeline qui pagine les données vers la fenêtre hôte, puis tentez d’appliquer une mise en forme de liste, comme illustré ici :
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
@@ -62,7 +63,7 @@ Name    : explorer
 ...
 ```
 
-Cela s’applique à toutes les applets de commande **Out**. Une applet de commande **Out** doit toujours apparaître à la fin du pipeline.
+Cela s’applique à toutes les applets de commande **Out** . Une applet de commande **Out** doit toujours apparaître à la fin du pipeline.
 
 > [!NOTE]
 > Toutes les applets de commande **Out** restituent la sortie en tant que texte, en utilisant la mise en forme applicable à la fenêtre de console, y compris les limites de longueur de ligne.
@@ -75,7 +76,7 @@ Par défaut, Windows PowerShell envoie les données à la fenêtre hôte, ce qui
 Get-Command | Out-Host -Paging
 ```
 
-Vous pouvez également utiliser la fonction **more** pour paginer les données. Dans Windows PowerShell, la fonction **more** appelle l’applet de commande **Out-Host -Paging**. La commande suivante illustre l’utilisation de la fonction **more** pour paginer la sortie de l’applet de commande Get-Command :
+Vous pouvez également utiliser la fonction **more** pour paginer les données. Dans Windows PowerShell, la fonction **more** appelle l’applet de commande **Out-Host -Paging** . La commande suivante illustre l’utilisation de la fonction **more** pour paginer la sortie de l’applet de commande Get-Command :
 
 ```powershell
 Get-Command | more
@@ -120,15 +121,15 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>Enregistrement de données (Out-File)
 
-Vous pouvez envoyer une sortie vers un fichier plutôt que vers la fenêtre de console en utilisant l’applet de commande **Out-File**. La ligne de commande suivante envoie une liste de processus au fichier **C:\\temp\\processlist.txt** :
+Vous pouvez envoyer une sortie vers un fichier plutôt que vers la fenêtre de console en utilisant l’applet de commande **Out-File** . La ligne de commande suivante envoie une liste de processus au fichier **C:\\temp\\processlist.txt**  :
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-Les résultats de l’utilisation de l’applet de commande **Out-File** peuvent différer de ce que vous attendez si vous êtes habitué à la redirection de sortie traditionnelle. Pour comprendre le comportement de l’applet de commande **Out-File**, vous devez connaître le contexte dans lequel elle opère.
+Les résultats de l’utilisation de l’applet de commande **Out-File** peuvent différer de ce que vous attendez si vous êtes habitué à la redirection de sortie traditionnelle. Pour comprendre le comportement de l’applet de commande **Out-File** , vous devez connaître le contexte dans lequel elle opère.
 
-Par défaut, l’applet de commande **Out-File** crée un fichier Unicode. Il s’agit de la meilleure option par défaut sur le long terme, mais elle signifie que les outils qui attendent des fichiers ASCII ne fonctionnent pas correctement avec le format de sortie par défaut. Vous pouvez modifier le format de sortie par défaut en ASCII à l’aide du paramètre **Encoding**:
+Par défaut, l’applet de commande **Out-File** crée un fichier Unicode. Il s’agit de la meilleure option par défaut sur le long terme, mais elle signifie que les outils qui attendent des fichiers ASCII ne fonctionnent pas correctement avec le format de sortie par défaut. Vous pouvez modifier le format de sortie par défaut en ASCII à l’aide du paramètre **Encoding** :
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
