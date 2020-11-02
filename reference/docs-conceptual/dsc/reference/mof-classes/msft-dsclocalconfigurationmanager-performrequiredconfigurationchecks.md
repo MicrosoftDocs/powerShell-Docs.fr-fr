@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: PerformRequiredConfigurationChecks, méthode
-ms.openlocfilehash: ea4294ffdcb2580fa7b39b18966b642d58073eb6
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: PerformRequiredConfigurationChecks, méthode
+ms.openlocfilehash: c5e847cda6376f4266cc771dc947032a279e25f4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464449"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650826"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks, méthode
 
@@ -17,7 +18,7 @@ Commence une vérification de cohérence à l’aide du Planificateur de tâches
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
-  [in] uint32 Flags
+  [in] uint32 Flags
 );
 ```
 
@@ -29,7 +30,7 @@ uint32 PerformRequiredConfigurationChecks(
 |:--- |:---|
 |**1** | Vérification de cohérence normale. |
 |**2** | Poursuite d’une vérification de cohérence après un redémarrage. Cette valeur ne doit pas être combinée avec d’autres valeurs. |
-|**4** | La configuration doit être extraite du serveur collecteur spécifié dans la métaconfiguration du nœud. Cette valeur doit toujours être combinée avec **1** avec une valeur de **5**. |
+|**4** | La configuration doit être extraite du serveur collecteur spécifié dans la métaconfiguration du nœud. Cette valeur doit toujours être combinée avec **1** avec une valeur de **5** . |
 |**8** | Envoyez l’état au serveur de rapports. |
 
 ## <a name="return-value"></a>Valeur retournée
@@ -44,7 +45,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

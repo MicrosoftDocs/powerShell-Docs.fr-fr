@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource nxEnvironment dans DSC pour Linux
-ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource nxEnvironment dans DSC pour Linux
+ms.openlocfilehash: 86ed538732254967cb4a3bb55af4f6b179947e52
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463684"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644678"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>Ressource nxEnvironment dans DSC pour Linux
 
@@ -32,14 +33,14 @@ nxEnvironment <string> #ResourceName
 |---|---|
 |Name |Spécifie le nom de la variable d’environnement pour laquelle vous voulez garantir un état spécifique. |
 |Valeur |Valeur à attribuer à la variable d’environnement. |
-|Path |Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur `$true` si la variable est une variable **Path** ; sinon, affectez-lui la valeur `$false`. Par défaut, il s’agit de `$false`. Si la variable actuellement configurée est une variable **Path**, la valeur fournie par la propriété **Value** est adjointe à la valeur existante. |
+|Path |Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur `$true` si la variable est une variable **Path**  ; sinon, affectez-lui la valeur `$false`. Par défaut, il s’agit de `$false`. Si la variable actuellement configurée est une variable **Path** , la valeur fournie par la propriété **Value** est adjointe à la valeur existante. |
 
 ## <a name="common-properties"></a>Propriétés communes
 
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine si l’existence de la variable doit être vérifiée. Définissez cette propriété sur **Present** pour vous assurer que la variable existe. Définissez la propriété sur **Absent** pour vous assurer que la variable n’existe pas. La valeur par défaut est **Present**. |
+|Ensure |Détermine si l’existence de la variable doit être vérifiée. Définissez cette propriété sur **Present** pour vous assurer que la variable existe. Définissez la propriété sur **Absent** pour vous assurer que la variable n’existe pas. La valeur par défaut est **Present** . |
 
 ## <a name="additional-information"></a>Informations supplémentaires
 

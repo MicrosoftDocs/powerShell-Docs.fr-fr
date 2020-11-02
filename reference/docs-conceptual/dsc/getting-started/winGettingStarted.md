@@ -2,23 +2,23 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,configuration,installation
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Windows
-ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Cette rubrique explique comment prendre en main la fonctionnalité DSC (Desired State Configuration) PowerShell pour Windows.
+ms.openlocfilehash: 2b9ddba2023a3933e3ad70d7bfee798ff07f0484
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236320"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662811"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Windows
 
-Cette rubrique explique comment prendre en main la fonctionnalité DSC (Desired State Configuration) PowerShell pour Windows.
-Pour obtenir des informations générales sur DSC, consultez [Prendre en main la fonctionnalité DSC (Desired State Configuration) Windows PowerShell](../overview/overview.md).
+Cette rubrique explique comment prendre en main la fonctionnalité DSC (Desired State Configuration) PowerShell pour Windows. Pour obtenir des informations générales sur DSC, consultez [Prendre en main la fonctionnalité DSC (Desired State Configuration) Windows PowerShell](../overview/overview.md).
 
 ## <a name="supported-windows-operation-system-versions"></a>Versions du système d’exploitation Windows prises en charge
 
 Les versions suivantes sont prises en charge :
 
-- Windows Server 2019
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
@@ -115,8 +115,7 @@ Remove-DscConfigurationDocument -Stage Current -Verbose
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>Configurer les paramètres dans le Configuration Manager Manager local
 
-Appliquez un fichier MOF de méta-configuration à l’ordinateur à l’aide de la cmdlet [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager).
-Doit spécifier le chemin du fichier MOF de métaconfiguration.
+Appliquez un fichier MOF de méta-configuration à l’ordinateur à l’aide de la cmdlet [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager). Doit spécifier le chemin du fichier MOF de métaconfiguration.
 
 ```powershell
 Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose

@@ -1,14 +1,13 @@
 ---
 ms.date: 11/06/2018
-contributor: JKeithB
-keywords: gallery, powershell, applet de commande, psgallery, psget
 title: Travailler avec des PSRepository locaux
-ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: Le module PowerShellGet prend en charge des référentiels autres que PowerShell Gallery. Cet article explique comment configurer un référentiel PowerShell local.
+ms.openlocfilehash: 24a2fd23124b3897952d64a347d103d9ee10248f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837577"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662359"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>Utilisation des référentiels PowerShellGet privés
 
@@ -62,7 +61,7 @@ Dans le cas d’un référentiel sur partage de fichiers, vérifiez que vos util
 ## <a name="registering-a-local-repository"></a>Inscrire un référentiel local
 
 Un référentiel doit être inscrit à l’aide de la commande `Register-PSRepository` pour être utilisable.
-Dans les exemples ci-dessous, **InstallationPolicy** a pour valeur *Trusted*, partant du principe que vous faites confiance à votre propre référentiel.
+Dans les exemples ci-dessous, **InstallationPolicy** a pour valeur *Trusted* , partant du principe que vous faites confiance à votre propre référentiel.
 
 ```powershell
 # Register a NuGet-based server
@@ -72,7 +71,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-Remarquez la différence entre les deux commandes en matière de gestion de **ScriptSourceLocation**. Pour les référentiels sur partage de fichiers, **SourceLocation** et **ScriptSourceLocation** doivent correspondre. Dans le cas d’un référentiel web, ils doivent être différents : dans cet exemple, une barre oblique « / » de fin est ajoutée à **SourceLocation**.
+Remarquez la différence entre les deux commandes en matière de gestion de **ScriptSourceLocation** . Pour les référentiels sur partage de fichiers, **SourceLocation** et **ScriptSourceLocation** doivent correspondre. Dans le cas d’un référentiel web, ils doivent être différents : dans cet exemple, une barre oblique « / » de fin est ajoutée à **SourceLocation** .
 
 Pour que le nouveau PSRepository soit le référentiel par défaut, il faut annuler l’inscription de tous les autres PSRepository. Par exemple :
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 12/19/2019
-keywords: powershell,applet de commande
 title: Accessibilité dans Windows PowerShell ISE
-ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Cette rubrique décrit les fonctionnalités d’accessibilité de Windows PowerShell Integrated Scripting Environment (ISE) qui peuvent s’avérer utiles.
+ms.openlocfilehash: 18acf447965eaaa7f93bb4c443a304b37216a9ba
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808515"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663846"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Accessibilité dans Windows PowerShell ISE
 
@@ -46,15 +46,15 @@ Pour modifier la taille et l’emplacement des volets Console et Script, vous po
 
 Effectuez l’une des actions suivantes :
 
-- Pour déplacer le volet Script au-dessus du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>1</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script en haut** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script en haut**.
+- Pour déplacer le volet Script au-dessus du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>1</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script en haut** ou encore, dans le menu **Affichage** , cliquez sur **Afficher le volet Script en haut** .
 
-- Pour déplacer le volet Script à droite du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>2</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script à droite** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script à droite**.
+- Pour déplacer le volet Script à droite du volet Console, appuyez sur <kbd>CTRL</kbd>+<kbd>2</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script à droite** ou encore, dans le menu **Affichage** , cliquez sur **Afficher le volet Script à droite** .
 
-- Pour agrandir le volet Script, appuyez sur <kbd>CTRL</kbd>+<kbd>3</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script agrandi** ou encore, dans le menu **Affichage**, cliquez sur **Afficher le volet Script agrandi**.
+- Pour agrandir le volet Script, appuyez sur <kbd>CTRL</kbd>+<kbd>3</kbd> ou, dans la barre d’outils, cliquez sur l’icône **Afficher le volet Script agrandi** ou encore, dans le menu **Affichage** , cliquez sur **Afficher le volet Script agrandi** .
 
-- Pour agrandir le volet Console et masquer le volet Script, sur le bord de droit de la ligne d’onglets, cliquez sur l’icône **Masquer le volet Script**, ou, dans le menu **Affichage**, cliquez pour désactiver l’option de menu **Afficher le volet Script**.
+- Pour agrandir le volet Console et masquer le volet Script, sur le bord de droit de la ligne d’onglets, cliquez sur l’icône **Masquer le volet Script** , ou, dans le menu **Affichage** , cliquez pour désactiver l’option de menu **Afficher le volet Script** .
 
-- Pour afficher le volet Script quand le volet Console est agrandi, sur le bord de droit de la ligne d’onglets, cliquez sur l’icône **Afficher le volet Script**, ou, dans le menu **Affichage**, cliquez pour activer l’option de menu **Afficher le volet Script**.
+- Pour afficher le volet Script quand le volet Console est agrandi, sur le bord de droit de la ligne d’onglets, cliquez sur l’icône **Afficher le volet Script** , ou, dans le menu **Affichage** , cliquez pour activer l’option de menu **Afficher le volet Script** .
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Raccourcis clavier pour l’édition de texte
 
@@ -129,7 +129,7 @@ Lors du débogage de scripts, vous pouvez utiliser les raccourcis clavier suivan
 | **Pas à pas détaillé**                           | <kbd>S</kbd>                 | Volet Console, lors du débogage d’un script |
 | **Pas à pas principal**                           | <kbd>V</kbd>                 | Volet Console, lors du débogage d’un script |
 | **Pas à pas sortant**                            | <kbd>O</kbd>                 | Volet Console, lors du débogage d’un script |
-| **Répéter la dernière commande**(effectuer un pas à pas détaillé/principal) | <kbd>ENTRÉE</kbd>             | Volet Console, lors du débogage d’un script |
+| **Répéter la dernière commande** (effectuer un pas à pas détaillé/principal) | <kbd>ENTRÉE</kbd>             | Volet Console, lors du débogage d’un script |
 | **Afficher la pile des appels**                  | <kbd>K</kbd>                 | Volet Console, lors du débogage d’un script |
 | **Arrêter le débogage**                      | <kbd>Q</kbd>                 | Volet Console, lors du débogage d’un script |
 | **Afficher le script**                     | <kbd>L</kbd>                 | Volet Console, lors du débogage d’un script |
@@ -148,7 +148,7 @@ Lorsque vous utilisez les onglets Windows PowerShell, vous pouvez utiliser les r
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Raccourcis clavier pour le démarrage et la fermeture
 
-Pour démarrer la console Windows PowerShell (**PowerShell.exe**) ou pour quitter Windows PowerShell ISE, vous pouvez utiliser les raccourcis clavier suivants.
+Pour démarrer la console Windows PowerShell ( **PowerShell.exe** ) ou pour quitter Windows PowerShell ISE, vous pouvez utiliser les raccourcis clavier suivants.
 
 |                        Action                         |               Raccourci clavier               |
 | ----------------------------------------------------- | --------------------------------------------- |

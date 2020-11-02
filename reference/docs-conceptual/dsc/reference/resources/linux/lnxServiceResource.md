@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource nxService dans DSC pour Linux
-ms.openlocfilehash: 2aec8b943d386fad33dfc1cfdd916c5e18039eaa
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource nxService dans DSC pour Linux
+ms.openlocfilehash: 4eefe491c491c9245732def1cc85260f368ef9e1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463633"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648784"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Ressource nxService dans DSC pour Linux
 
@@ -47,7 +48,7 @@ La ressource **nxService** ne crée pas de fichier de définition ni de script p
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant configure le service 'httpd' (pour Apache HTTP Server) qui est inscrit auprès du contrôleur de service **SystemD**.
+L’exemple suivant configure le service 'httpd' (pour Apache HTTP Server) qui est inscrit auprès du contrôleur de service **SystemD** .
 
 ```powershell
 Import-DSCResource -Module nx

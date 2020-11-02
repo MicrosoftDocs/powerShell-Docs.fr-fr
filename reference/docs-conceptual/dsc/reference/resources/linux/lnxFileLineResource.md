@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource nxFileLine dans DSC pour Linux
-ms.openlocfilehash: c87054ec7039923bcb5e7c5c5d58f9221a12c9ca
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource nxFileLine dans DSC pour Linux
+ms.openlocfilehash: b342021176e4d8584afec82173f31bf5191ad264
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463667"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644758"
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>Ressource nxFileLine dans DSC pour Linux
 

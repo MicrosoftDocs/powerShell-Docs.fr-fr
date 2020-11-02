@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: EnableDebugConfiguration, méthode
-ms.openlocfilehash: be75b1012f49db79eb75a68c6912ffd5772bf16f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: EnableDebugConfiguration, méthode
+ms.openlocfilehash: 536366e6e1627a249f3bc2dc19bfd8ff3de42117
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464092"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644779"
 ---
 # <a name="enabledebugconfiguration-method"></a>EnableDebugConfiguration, méthode
 
@@ -17,7 +18,7 @@ Active le débogage des ressources DSC.
 
 ```mof
 uint32 EnableDebugConfiguration(
-  [in] boolean BreakAll
+  [in] boolean BreakAll
 );
 ```
 
@@ -37,7 +38,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

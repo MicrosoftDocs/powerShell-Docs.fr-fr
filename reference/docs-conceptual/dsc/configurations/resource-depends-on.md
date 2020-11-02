@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Dépendances de ressources utilisant DependsOn
-ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: À mesure que votre configuration augmente en taille et en complexité, vous pouvez utiliser la clé `DependsOn` pour changer l’ordre appliqué de vos ressources en spécifiant qu’une ressource dépend d’une autre ressource.
+ms.openlocfilehash: 18f19a3606834ede0737213930e6af0e251225ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954476"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645100"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Dépendances de ressources utilisant DependsOn
 

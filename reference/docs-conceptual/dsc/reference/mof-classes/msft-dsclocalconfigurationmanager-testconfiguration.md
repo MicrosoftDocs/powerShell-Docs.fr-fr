@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: TestConfiguration, méthode
-ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: TestConfiguration, méthode
+ms.openlocfilehash: ed26fcad2286ca753fb4b1845b8c6ad0741d491b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464296"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648918"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration, méthode
 
@@ -17,10 +18,10 @@ Envoie le document de configuration au nœud géré et vérifie la configuration
 
 ```mof
 uint32 TestConfiguration(
-  [in]  uint8                          configurationData[],
-  [out] boolean                        InDesiredState,
-  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
-  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
+  [in]  uint8                          configurationData[],
+  [out] boolean                        InDesiredState,
+  [out] MSFT_ResourceInDesiredState    ResourcesInDesiredState[],
+  [out] MSFT_ResourceNotInDesiredState ResourcesNotInDesiredState[]
 );
 ```
 
@@ -46,7 +47,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

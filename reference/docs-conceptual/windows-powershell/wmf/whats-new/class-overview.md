@@ -1,12 +1,13 @@
 ---
 ms.date: 07/29/2020
 title: Nouvelles fonctionnalités de langage dans PowerShell 5.0
-ms.openlocfilehash: dada39c4121a810c7ce87a642f232934152104e5
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: PowerShell 5.0 offre la possibilité de définir des classes et d’autres types définis par l’utilisateur suivant une syntaxe et une sémantique formelles similaires à celles des autres langages de programmation orientés objet.
+ms.openlocfilehash: 31ff54ba6f2800a0680c1a2db3832ca97246973d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410170"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663313"
 ---
 # <a name="new-language-features-in-powershell-50"></a>Nouvelles fonctionnalités de langage dans PowerShell 5.0
 
@@ -57,11 +58,11 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 ### <a name="import-dscresource"></a>Import-DscResource
 
-`Import-DscResource` est maintenant un mot clé véritablement dynamique. PowerShell analyse le module racine du module spécifié et recherche les classes qui contiennent l’attribut **DscResource**.
+`Import-DscResource` est maintenant un mot clé véritablement dynamique. PowerShell analyse le module racine du module spécifié et recherche les classes qui contiennent l’attribut **DscResource** .
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 
-Un nouveau champ, **ImplementingAssembly**, a été ajouté à **ModuleInfo**. Elle a comme valeur l’assembly dynamique créé pour un module de script si le script définit des classes, ou l’assembly chargé pour les modules binaires. Il n’est pas défini quand **ModuleType** a la valeur **Manifest**.
+Un nouveau champ, **ImplementingAssembly** , a été ajouté à **ModuleInfo** . Elle a comme valeur l’assembly dynamique créé pour un module de script si le script définit des classes, ou l’assembly chargé pour les modules binaires. Il n’est pas défini quand **ModuleType** a la valeur **Manifest** .
 
 La réflexion sur le champ **ImplementingAssembly** découvre des ressources dans un module. Cela signifie que vous pouvez découvrir des ressources écrites en PowerShell ou d’autres langages managés.
 

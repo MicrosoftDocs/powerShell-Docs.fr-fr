@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,applet de commande
 title: Objet ISEFileCollection
-ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: L’objet ISEFileCollection est une collection d’objets ISEFile.
+ms.openlocfilehash: 2feef1200c611d5181bcbc55d5464a0bd390084e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809335"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646751"
 ---
 # <a name="the-isefilecollection-object"></a>Objet ISEFileCollection
 
-L’objet **ISEFileCollection** est une collection d’objets **ISEFile**. La collection `$psISE.CurrentPowerShellTab.Files` en est un exemple.
+L’objet **ISEFileCollection** est une collection d’objets **ISEFile** . La collection `$psISE.CurrentPowerShellTab.Files` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
@@ -37,7 +37,7 @@ Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
 Supprime un fichier spécifié dans l’onglet PowerShell actuel.
 
-**File** : chaîne. Fichier ISEFile que vous souhaitez supprimer de la collection. Si le fichier n’a pas été enregistré, cette méthode lève une exception. Utilisez le paramètre booléen **Force** pour forcer la suppression d’un fichier non enregistré.
+**File**  : chaîne. Fichier ISEFile que vous souhaitez supprimer de la collection. Si le fichier n’a pas été enregistré, cette méthode lève une exception. Utilisez le paramètre booléen **Force** pour forcer la suppression d’un fichier non enregistré.
 
 **\[Force\]**  : valeur booléenne facultative. Si la valeur est `$true`, le fichier peut être supprimé même s’il n’a pas été enregistré depuis sa dernière utilisation. Par défaut, il s’agit de `$false`.
 
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Sélectionne le fichier spécifié par le paramètre **SelectedFile**.
+Sélectionne le fichier spécifié par le paramètre **SelectedFile** .
 
-**SelectedFile** : Microsoft.PowerShell.Host.ISE.ISEFile. Fichier ISEFile que vous souhaitez sélectionner.
+**SelectedFile**  : Microsoft.PowerShell.Host.ISE.ISEFile. Fichier ISEFile que vous souhaitez sélectionner.
 
 ```powershell
 # Selects the specified file.

@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: wmf,powershell,configuration
 title: Problèmes connus dans WMF 5.1
-ms.openlocfilehash: 4f4c85e1f4984d9e91ea74ba65fdbf7188c5c7ab
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Problèmes connus dans WMF 5.1
+ms.openlocfilehash: 7d27bc570108a0ae1470ae06f5bdf5fcd7849d16
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808705"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663328"
 ---
 # <a name="known-issues-in-wmf-51"></a>Problèmes connus dans WMF 5.1
 
@@ -20,7 +20,7 @@ Lors de l’installation de WMF, si vous essayez de démarrer PowerShell en tant
 
 Dans cette version, vous devez savoir qu’il existe deux problèmes quand vous utilisez Pester sur Nano Server :
 
-- L’exécution des tests directement sur Pester peut entraîner des échecs en raison des différences entre la version CLR complète et la version CLR de base. En particulier, la méthode **Validate** n’est pas disponible sur le type **XmlDocument**. Six tests qui tentent de valider le schéma des journaux de sortie NUnit échouent systématiquement.
+- L’exécution des tests directement sur Pester peut entraîner des échecs en raison des différences entre la version CLR complète et la version CLR de base. En particulier, la méthode **Validate** n’est pas disponible sur le type **XmlDocument** . Six tests qui tentent de valider le schéma des journaux de sortie NUnit échouent systématiquement.
 - Un test de couverture du code échoue, car la ressource DSC **WindowsFeature** n’existe pas dans Nano Server. Toutefois, ces échecs sont généralement sans conséquence et peuvent être ignorés.
 
 ## <a name="operation-validation"></a>Validation de l’opération

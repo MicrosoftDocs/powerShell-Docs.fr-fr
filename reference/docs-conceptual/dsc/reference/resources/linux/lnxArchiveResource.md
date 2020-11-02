@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource nxArchive dans DSC pour Linux
-ms.openlocfilehash: 386378fa6e1608117d6934b983dcebe23e55d60d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource nxArchive dans DSC pour Linux
+ms.openlocfilehash: 2705829ccae0c1baa27324030433340e7f3949c1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464245"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648860"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>Ressource nxArchive dans DSC pour Linux
 
@@ -33,7 +34,7 @@ nxArchive <string> #ResourceName
 |---|---|
 |SourcePath |Spécifie le chemin source du fichier d’archive. Ce fichier doit être au format .tar, .zip ou .tar.gz. |
 |DestinationPath |Spécifie l’emplacement où le contenu de l’archive doit être extrait. |
-|Somme de contrôle |Définit le type à utiliser pour déterminer si l’archive source a été mise à jour. Les valeurs sont **ctime**, **mtime** ou **md5**. La valeur par défaut est **md5**. |
+|Somme de contrôle |Définit le type à utiliser pour déterminer si l’archive source a été mise à jour. Les valeurs sont **ctime** , **mtime** ou **md5** . La valeur par défaut est **md5** . |
 |Force |Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est `$false`. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -41,7 +42,7 @@ nxArchive <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine s’il faut vérifier que le contenu de l’archive se trouve à la **Destination** donnée. Définissez cette propriété sur **Present** pour vous assurer que le contenu se trouve à l’emplacement donné. Définissez la propriété sur **Absent** pour vous assurer que le contenu ne se trouve pas à l’emplacement donné. La valeur par défaut est **Present**. |
+|Ensure |Détermine s’il faut vérifier que le contenu de l’archive se trouve à la **Destination** donnée. Définissez cette propriété sur **Present** pour vous assurer que le contenu se trouve à l’emplacement donné. Définissez la propriété sur **Absent** pour vous assurer que le contenu ne se trouve pas à l’emplacement donné. La valeur par défaut est **Present** . |
 
 ## <a name="example"></a>Exemple
 

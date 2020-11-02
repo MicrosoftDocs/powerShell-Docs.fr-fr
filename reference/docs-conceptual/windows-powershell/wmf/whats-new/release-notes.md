@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,configuration
 title: Notes de publication de WMF 5.x
-ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Notes de publication de WMF 5.x
+ms.openlocfilehash: d783592104262b08815b12bd8de01adf13b60372
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809875"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655844"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Notes de publication de Windows Management Framework (WMF) 5.x
 
@@ -92,7 +91,7 @@ Auparavant, vous n’aviez aucun moyen de spécifier une version de module parti
 
 Dans WMF 5.1 :
 
-- Vous pouvez utiliser [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
+- Vous pouvez utiliser [ModuleSpecification Constructor (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
   Cette table de hachage a le même format que `Get-Module -FullyQualifiedName`.
 

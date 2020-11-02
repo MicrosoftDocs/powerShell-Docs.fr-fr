@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
-ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article montre comment charger des ressources afin qu’elles soient disponibles pour être téléchargées, et comment configurer les clients pour télécharger automatiquement des ressources.
+ms.openlocfilehash: 20e12e3cac6b6e4a86563576f4a915429b18aadb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500760"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646828"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Publier sur un serveur Pull à l’aide d’ID de configuration (v4/v5)
 
@@ -37,7 +38,7 @@ Une fois que vous avez compilé votre configuration générique, vous deez dispo
 
 ## <a name="renaming-the-mof-file"></a>Renommer le fichier MOF
 
-Vous pouvez stocker des fichiers de configuration `.mof` sur un serveur Pull à l’aide de **ConfigurationName** ou de **ConfigurationID**. Selon la façon dont vous souhaitez configurer vos clients Pull, vous pouvez choisir une section ci-dessous afin de renommer correctement vos fichiers `.mof` compilés.
+Vous pouvez stocker des fichiers de configuration `.mof` sur un serveur Pull à l’aide de **ConfigurationName** ou de **ConfigurationID** . Selon la façon dont vous souhaitez configurer vos clients Pull, vous pouvez choisir une section ci-dessous afin de renommer correctement vos fichiers `.mof` compilés.
 
 ### <a name="configuration-ids-guid"></a>ID (GUID) de configuration
 
@@ -89,7 +90,7 @@ Aucune sortie ne s’affiche, mais vous devez maintenant voir un fichier `<GUID 
 
 ### <a name="on-a-dsc-http-pull-server"></a>Sur un serveur Pull HTTP DSC
 
-Lorsque vous configurez votre serveur Pull HTTP, comme expliqué dans la section [Configurer un serveur Pull HTTP DSC](pullServer.md), vous spécifiez des répertoires pour les clés **ModulePath** et **ConfigurationPath**. La clé **ModulePath** indique l’emplacement de stockage des fichiers `.zip` empaquetés d’un module. La clé **ConfigurationPath** indique l’emplacement où tous les fichiers `.mof` et `.checksum` doivent être stockés.
+Lorsque vous configurez votre serveur Pull HTTP, comme expliqué dans la section [Configurer un serveur Pull HTTP DSC](pullServer.md), vous spécifiez des répertoires pour les clés **ModulePath** et **ConfigurationPath** . La clé **ModulePath** indique l’emplacement de stockage des fichiers `.zip` empaquetés d’un module. La clé **ConfigurationPath** indique l’emplacement où tous les fichiers `.mof` et `.checksum` doivent être stockés.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -104,8 +105,8 @@ Lorsque vous configurez votre serveur Pull HTTP, comme expliqué dans la section
 
 ### <a name="on-an-smb-share"></a>Sur un partage SMB
 
-Lorsque vous configurez un client Pull pour utiliser un partage SMB, vous spécifiez une clé **ConfigurationRepositoryShare**.
-Tous les fichiers `.mof` et `.checksum` doivent alors être stockés dans le répertoire **SourcePath** du bloc **ConfigurationRepositoryShare**.
+Lorsque vous configurez un client Pull pour utiliser un partage SMB, vous spécifiez une clé **ConfigurationRepositoryShare** .
+Tous les fichiers `.mof` et `.checksum` doivent alors être stockés dans le répertoire **SourcePath** du bloc **ConfigurationRepositoryShare** .
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer

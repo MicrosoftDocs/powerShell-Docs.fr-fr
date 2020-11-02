@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,applet de commande
 title: Objet ISESnippet
-ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Un objet ISESnippet est une instance de la classe Microsoft.PowerShell.Host.ISE.ISESnippet.
+ms.openlocfilehash: 602b344686cbcfb1e994914d4e26438ff7e4b1de
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809575"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663412"
 ---
 # <a name="the-isesnippetobject"></a>Objet ISESnippet
 
-Un objet **ISESnippet** est une instance de la classe Microsoft.PowerShell.Host.ISE.ISESnippet. Les membres de la collection `$psISE.CurrentPowerShellTab.Snippets` sont tous des exemples d’objets **ISESnippet**. La façon la plus simple de créer un extrait de code est d’utiliser la cmdlet [New-IseSnippet](/powershell/module/ISE/New-IseSnippet).
+Un objet **ISESnippet** est une instance de la classe Microsoft.PowerShell.Host.ISE.ISESnippet. Les membres de la collection `$psISE.CurrentPowerShellTab.Snippets` sont tous des exemples d’objets **ISESnippet** . La façon la plus simple de créer un extrait de code est d’utiliser la cmdlet [New-IseSnippet](/powershell/module/ISE/New-IseSnippet).
 
 ## <a name="properties"></a>Propriétés
 

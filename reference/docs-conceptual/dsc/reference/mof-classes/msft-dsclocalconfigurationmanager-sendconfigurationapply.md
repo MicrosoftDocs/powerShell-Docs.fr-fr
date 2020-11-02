@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: SendConfigurationApply, méthode
-ms.openlocfilehash: 9b684790e5a7d6c7bdf074caca6040e13807f1ca
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendConfigurationApply, méthode
+ms.openlocfilehash: 9bd63220644e096b348f71ee9d4ac216af6a7ccc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464313"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648972"
 ---
 # <a name="sendconfigurationapply-method"></a>SendConfigurationApply, méthode
 
@@ -17,8 +18,8 @@ Envoie le document de configuration au nœud géré et utilise l’agent de conf
 
 ```mof
 uint32 SendConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
@@ -40,7 +41,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

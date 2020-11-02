@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: ResourceSet, méthode
-ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceSet, méthode
+ms.openlocfilehash: 2554ff5805d7ed9518bd283565dc879a0fdfdfd0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464047"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650697"
 ---
 # <a name="resourceset-method"></a>ResourceSet, méthode
 
@@ -17,10 +18,10 @@ Appelle directement la méthode **Set** d’une ressource DSC.
 
 ```mof
 uint32 ResourceSet(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean RebootRequired
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean RebootRequired
 );
 ```
 
@@ -46,7 +47,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

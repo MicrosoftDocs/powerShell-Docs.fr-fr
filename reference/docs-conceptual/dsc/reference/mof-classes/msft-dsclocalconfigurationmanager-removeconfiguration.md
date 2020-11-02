@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: RemoveConfiguration, méthode
-ms.openlocfilehash: ef15c873d8dfaf28e5cdeb611b72a70921c099be
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: RemoveConfiguration, méthode
+ms.openlocfilehash: d5988ac014c457407c56a097c9a376427376eb3f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464347"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650726"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration, méthode
 
@@ -17,8 +18,8 @@ Supprime les fichiers de configuration.
 
 ```mof
 uint32 RemoveConfiguration(
-  [in] uint32  Stage,
-  [in] boolean Force
+  [in] uint32  Stage,
+  [in] boolean Force
 );
 ```
 
@@ -46,7 +47,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

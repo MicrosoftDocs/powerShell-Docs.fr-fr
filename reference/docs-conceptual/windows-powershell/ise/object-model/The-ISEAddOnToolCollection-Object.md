@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,applet de commande
 title: Objet ISEAddOnToolCollection
-ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: L’objet ISEAddOnToolCollection est une collection d’objets **ISEAddOnTool** .
+ms.openlocfilehash: ba08ffd82a7ff2fa469540a5ea542abee8d4dc82
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809715"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658310"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Objet ISEAddOnToolCollection
 
-L’objet **ISEAddOnToolCollection** est une collection d’objets **ISEAddOnTool**. L’objet `$psISE.CurrentPowerShellTab.VerticalAddOnTools` en est un exemple.
+L’objet **ISEAddOnToolCollection** est une collection d’objets **ISEAddOnTool** . L’objet `$psISE.CurrentPowerShellTab.VerticalAddOnTools` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
@@ -21,9 +21,9 @@ Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne f
 
 Ajoute un nouvel outil complémentaire à la collection. Elle retourne l’outil complémentaire qui vient d’être ajouté. Avant d’exécuter cette commande, vous devez installer l’outil complémentaire sur l’ordinateur local et charger l’assembly.
 
-**Name** : chaîne. Spécifie le nom complet de l’outil complémentaire qui est ajouté à Windows PowerShell ISE.
+**Name**  : chaîne. Spécifie le nom complet de l’outil complémentaire qui est ajouté à Windows PowerShell ISE.
 
-**ControlType** : type. Spécifie le contrôle qui est ajouté.
+**ControlType**  : type. Spécifie le contrôle qui est ajouté.
 
 **\[IsVisible\]**  : valeur booléenne facultative. Si la valeur définie est `$true`, l’outil de module complémentaire est immédiatement visible dans le volet d’outils associé.
 
@@ -39,7 +39,7 @@ Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne f
 
 Supprime l’outil complémentaire spécifié de la collection.
 
-**Item** : Microsoft.PowerShell.Host.ISE.ISEAddOnTool. Spécifie l’objet à supprimer de Windows PowerShell ISE.
+**Item**  : Microsoft.PowerShell.Host.ISE.ISEAddOnTool. Spécifie l’objet à supprimer de Windows PowerShell ISE.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
@@ -51,9 +51,9 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Sélectionne l’onglet PowerShell spécifié par le paramètre **psTab**.
+Sélectionne l’onglet PowerShell spécifié par le paramètre **psTab** .
 
-**psTab** : Microsoft.PowerShell.Host.ISE.PowerShellTab. Onglet PowerShell à sélectionner.
+**psTab**  : Microsoft.PowerShell.Host.ISE.PowerShellTab. Onglet PowerShell à sélectionner.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -65,9 +65,9 @@ $newTab.DisplayName = 'Brand New Tab'
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Supprime l’onglet PowerShell spécifié par le paramètre **psTab**.
+Supprime l’onglet PowerShell spécifié par le paramètre **psTab** .
 
-**psTab** : Microsoft.PowerShell.Host.ISE.PowerShellTab. Onglet PowerShell à supprimer.
+**psTab**  : Microsoft.PowerShell.Host.ISE.PowerShellTab. Onglet PowerShell à supprimer.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
