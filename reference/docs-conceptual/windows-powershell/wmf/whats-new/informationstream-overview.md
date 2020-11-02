@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Flux d’informations
-ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
-ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
+description: PowerShell 5.0 ajoute un nouveau flux **d’informations** structuré pour transmettre des données structurées entre un script et son hôte.
+ms.openlocfilehash: 818c99ce281f5ada596ff92cd7bafb8b7cacf709
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567839"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646713"
 ---
-# <a name="information-stream"></a><span data-ttu-id="a1312-103">Flux d’informations</span><span class="sxs-lookup"><span data-stu-id="a1312-103">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="4a8d1-103">Flux d’informations</span><span class="sxs-lookup"><span data-stu-id="4a8d1-103">Information Stream</span></span>
 
-<span data-ttu-id="a1312-104">PowerShell 5.0 ajoute un nouveau flux **d’informations** structuré pour transmettre des données structurées entre un script et son hôte.</span><span class="sxs-lookup"><span data-stu-id="a1312-104">PowerShell 5.0 adds a new structured **Information** stream to transmit structured data between a script and its host.</span></span> <span data-ttu-id="a1312-105">`Write-Host` a également été mis à jour pour envoyer sa sortie vers le flux **d’informations**, où elle peut être capturée ou passée sous silence.</span><span class="sxs-lookup"><span data-stu-id="a1312-105">`Write-Host` has also been updated to emit its output to the **Information** stream where you can now capture or silence it.</span></span> <span data-ttu-id="a1312-106">Utilisée avec les paramètres communs `Write-Information`InformationVariable**et**InformationAction **, la nouvelle cmdlet**  offre davantage de souplesse et de fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="a1312-106">The new `Write-Information` cmdlet used with **InformationVariable** and **InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="4a8d1-104">PowerShell 5.0 ajoute un nouveau flux **d’informations** structuré pour transmettre des données structurées entre un script et son hôte.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-104">PowerShell 5.0 adds a new structured **Information** stream to transmit structured data between a script and its host.</span></span> <span data-ttu-id="4a8d1-105">`Write-Host` a également été mis à jour pour envoyer sa sortie vers le flux **d’informations** , où elle peut être capturée ou passée sous silence.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-105">`Write-Host` has also been updated to emit its output to the **Information** stream where you can now capture or silence it.</span></span> <span data-ttu-id="4a8d1-106">Utilisée avec les paramètres communs `Write-Information`InformationVariable **et** InformationAction **, la nouvelle cmdlet**  offre davantage de souplesse et de fonctionnalités.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-106">The new `Write-Information` cmdlet used with **InformationVariable** and **InformationAction** common parameters enables more flexibility and capability.</span></span>
 
-<span data-ttu-id="a1312-107">La fonction suivante utilise des cmdlets qui exploitent le nouveau flux **d’informations**.</span><span class="sxs-lookup"><span data-stu-id="a1312-107">The following function uses cmdlets that take advantage of the new **Information** stream.</span></span>
+<span data-ttu-id="4a8d1-107">La fonction suivante utilise des cmdlets qui exploitent le nouveau flux **d’informations** .</span><span class="sxs-lookup"><span data-stu-id="4a8d1-107">The following function uses cmdlets that take advantage of the new **Information** stream.</span></span>
 
 ```powershell
 function OutputGusher {
@@ -38,7 +38,7 @@ function OutputGusher {
 }
 ```
 
-<span data-ttu-id="a1312-108">Les exemples suivants montrent les résultats de cette fonction.</span><span class="sxs-lookup"><span data-stu-id="a1312-108">The following examples show the results of running this function.</span></span>
+<span data-ttu-id="4a8d1-108">Les exemples suivants montrent les résultats de cette fonction.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-108">The following examples show the results of running this function.</span></span>
 
 ```powershell
 $r = OutputGusher
@@ -53,14 +53,14 @@ I <3 Output
 SCRIPT COMPLETE!!
 ```
 
-<span data-ttu-id="a1312-109">La variable `$r` a capturé les informations de processus dans la variable de script `$p`.</span><span class="sxs-lookup"><span data-stu-id="a1312-109">The `$r` variable has captured the process information in the script variable `$p`.</span></span>
+<span data-ttu-id="4a8d1-109">La variable `$r` a capturé les informations de processus dans la variable de script `$p`.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-109">The `$r` variable has captured the process information in the script variable `$p`.</span></span>
 
 ```powershell
 $r.Id
 4008
 ```
 
-<span data-ttu-id="a1312-110">Contrairement à la cmdlet `Write-Host`, le paramètre **InformationVariable**`Write-Information` permet de capturer la sortie dans une variable.</span><span class="sxs-lookup"><span data-stu-id="a1312-110">Unlike the `Write-Host` cmdlet, using the **InformationVariable** parameter of `Write-Information` allows you to capture the output in a variable.</span></span> <span data-ttu-id="a1312-111">Avec **Tags**, vous pouvez créer des canaux distincts pour le message envoyé au flux **d’informations**.</span><span class="sxs-lookup"><span data-stu-id="a1312-111">Using the **Tag**, you can create separate channels for message sent to the **Information** stream.</span></span>
+<span data-ttu-id="4a8d1-110">Contrairement à la cmdlet `Write-Host`, le paramètre **InformationVariable**`Write-Information` permet de capturer la sortie dans une variable.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-110">Unlike the `Write-Host` cmdlet, using the **InformationVariable** parameter of `Write-Information` allows you to capture the output in a variable.</span></span> <span data-ttu-id="4a8d1-111">Avec **Tags** , vous pouvez créer des canaux distincts pour le message envoyé au flux **d’informations** .</span><span class="sxs-lookup"><span data-stu-id="4a8d1-111">Using the **Tag** , you can create separate channels for message sent to the **Information** stream.</span></span>
 
 ```powershell
 $r = OutputGusher -InformationVariable iv
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-<span data-ttu-id="a1312-112">Lorsque vous envoyez un message au flux **d’informations** avec un tag, ce message ne s’affiche pas dans l’application hôte, mais reste récupérable avec le nom du tag.</span><span class="sxs-lookup"><span data-stu-id="a1312-112">When you send a message to the **Information** stream with a tag, that message is not displayed in the host application but can be retrieved using the tag name.</span></span> <span data-ttu-id="a1312-113">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="a1312-113">For example:</span></span>
+<span data-ttu-id="4a8d1-112">Lorsque vous envoyez un message au flux **d’informations** avec un tag, ce message ne s’affiche pas dans l’application hôte, mais reste récupérable avec le nom du tag.</span><span class="sxs-lookup"><span data-stu-id="4a8d1-112">When you send a message to the **Information** stream with a tag, that message is not displayed in the host application but can be retrieved using the tag name.</span></span> <span data-ttu-id="4a8d1-113">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="4a8d1-113">For example:</span></span>
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'
