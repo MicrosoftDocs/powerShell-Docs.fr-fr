@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource WindowsOptionalFeatureSet dans DSC
-ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource WindowsOptionalFeatureSet dans DSC
+ms.openlocfilehash: f72cc27bfc8847d2c87cfb289f3e2c729a21d1f4
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464160"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143039"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>Ressource WindowsOptionalFeatureSet dans DSC
 
 > S’applique à : Windows PowerShell 5.x
 
-La ressource **WindowsOptionalFeatureSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour garantir que des fonctionnalités facultatives sont activées sur un nœud cible. Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la [ressource WindowsOptionalFeature](windowsOptionalFeatureResource.md) pour chaque fonctionnalité spécifiée dans la propriété **Name**.
+La ressource **WindowsOptionalFeatureSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour garantir que des fonctionnalités facultatives sont activées sur un nœud cible. Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la [ressource WindowsOptionalFeature](windowsOptionalFeatureResource.md) pour chaque fonctionnalité spécifiée dans la propriété **Name** .
 
 Utilisez cette ressource quand vous voulez configurer certaines fonctionnalités facultatives de Windows au même état.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,8 +42,8 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |---|---|
 |Nom |Indique le nom des fonctionnalités que vous souhaitez voir activées ou désactivées. |
 |NoWindowsUpdateCheck |Indique si DISM contacte Windows Update (WU) lors de la recherche des fichiers sources pour activer les fonctionnalités. Si la valeur est `$true`, DISM ne contacte pas Windows Update. |
-|RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés aux fonctionnalités quand **Ensure** est défini sur **Absent**. |
-|LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly**, **ErrorsAndWarning** et **ErrorsAndWarningAndInformation**. |
+|RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés aux fonctionnalités quand **Ensure** est défini sur **Absent** . |
+|LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly** , **ErrorsAndWarning** et **ErrorsAndWarningAndInformation** . |
 |LogPath |Chemin d’un fichier journal dans lequel le fournisseur de ressources doit enregistrer l’opération. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -48,7 +51,7 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Spécifie si les fonctionnalités sont activées. Pour faire en sorte que les fonctionnalités soient activées, affectez à cette propriété la valeur **Enable**. Pour faire en sorte que les fonctionnalités soient désactivées, affectez à cette propriété la valeur **Disable**. La valeur par défaut est **Enable**. |
+|Ensure |Spécifie si les fonctionnalités sont activées. Pour faire en sorte que les fonctionnalités soient activées, affectez à cette propriété la valeur **Enable** . Pour faire en sorte que les fonctionnalités soient désactivées, affectez à cette propriété la valeur **Disable** . La valeur par défaut est **Enable** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

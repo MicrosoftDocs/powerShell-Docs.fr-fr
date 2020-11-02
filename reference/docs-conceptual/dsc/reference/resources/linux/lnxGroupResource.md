@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource nxGroup dans DSC pour Linux
-ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource nxGroup dans DSC pour Linux
+ms.openlocfilehash: 3544bee763c0a4456002f9a02fde38de5d4fb65c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464432"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664262"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Ressource nxGroup dans DSC pour Linux
 
@@ -43,7 +44,7 @@ nxGroup <string> #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine si l’existence du groupe doit être vérifiée. Définissez cette propriété sur **Present** pour vous assurer que le groupe existe. Définissez la propriété sur **Absent** pour vous assurer que le groupe n’existe pas. La valeur par défaut est **Present**. |
+|Ensure |Détermine si l’existence du groupe doit être vérifiée. Définissez cette propriété sur **Present** pour vous assurer que le groupe existe. Définissez la propriété sur **Absent** pour vous assurer que le groupe n’existe pas. La valeur par défaut est **Present** . |
 
 ## <a name="example"></a>Exemple
 

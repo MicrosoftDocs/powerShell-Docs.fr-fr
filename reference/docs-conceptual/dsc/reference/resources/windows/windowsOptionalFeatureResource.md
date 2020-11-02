@@ -1,13 +1,14 @@
 ---
 ms.date: 08/28/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource WindowsOptionalFeature dans DSC
-ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
-ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
+description: Ressource WindowsOptionalFeature dans DSC
+ms.openlocfilehash: 1c7e888ea49b0d1710cc22c975cb618999238f67
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89093248"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143056"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>Ressource WindowsOptionalFeature dans DSC
 
@@ -17,6 +18,8 @@ La ressource **WindowsOptionalFeature** dans la configuration d’état souhait�
 
 > [!NOTE]
 > **WindowsOptionalFeature** fonctionne uniquement sur les ordinateurs clients Windows, comme Windows 10.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,8 +43,8 @@ WindowsOptionalFeature [string] #ResourceName
 |---|---|
 |Name |Indique le nom de la fonctionnalité que vous souhaitez voir activée ou désactivée. |
 |NoWindowsUpdateCheck |Indique si DISM contacte Windows Update (WU) lors de la recherche des fichiers sources pour activer une fonctionnalité. Si la valeur est `$true`, DISM ne contacte pas Windows Update. |
-|RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés à la fonctionnalité quand **Ensure** est défini sur **Absent**. |
-|LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly**, **ErrorsAndWarning** et **ErrorsAndWarningAndInformation**. |
+|RemoveFilesOnDisable |Affectez la valeur `$true` pour supprimer tous les fichiers associés à la fonctionnalité quand **Ensure** est défini sur **Absent** . |
+|LogLevel |Niveau de sortie maximal affiché dans les journaux. Les valeurs acceptées sont les suivantes : **ErrorsOnly** , **ErrorsAndWarning** et **ErrorsAndWarningAndInformation** . |
 |LogPath |Chemin d’un fichier journal dans lequel le fournisseur de ressources doit enregistrer l’opération. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -49,7 +52,7 @@ WindowsOptionalFeature [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si la fonctionnalité est activée. Pour faire en sorte que la fonctionnalité soit activée, affectez à cette propriété la valeur _Enable_. Pour faire en sorte que la fonctionnalité soit désactivée, affectez à cette propriété la valeur _Disable_. La valeur par défaut est _Enable_. |
+|Ensure |Indique si la fonctionnalité est activée. Pour faire en sorte que la fonctionnalité soit activée, affectez à cette propriété la valeur _Enable_ . Pour faire en sorte que la fonctionnalité soit désactivée, affectez à cette propriété la valeur _Disable_ . La valeur par défaut est _Enable_ . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

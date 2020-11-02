@@ -1,13 +1,14 @@
 ---
 ms.date: 07/15/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource DSC PackageManagement
-ms.openlocfilehash: 983a288398f710ecc5d2bc557028282ccd58561b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource DSC PackageManagement
+ms.openlocfilehash: 83839adbef8bd8d3265a06b44a3101108b2a4486
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464262"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142903"
 ---
 # <a name="dsc-packagemanagement-resource"></a>Ressource DSC PackageManagement
 
@@ -17,6 +18,8 @@ La ressource **PackageManagement** dans la configuration d’état souhaité (DS
 
 > [!IMPORTANT]
 > Le module **PackageManagement** doit être au moins de version 1.1.7.0 pour que les informations de propriétés suivantes soient correctes.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,9 +47,9 @@ PackageManagement [string] #ResourceName
 |Nom |Spécifie le nom du package à installer ou à désinstaller. |
 |AdditionalParameters |Table de hachage spécifique du fournisseur, contenant les paramètres passés à `Get-Package -AdditionalArguments`. Par exemple, pour le fournisseur NuGet, vous pouvez passer des paramètres supplémentaires tels que DestinationPath. |
 |MaximumVersion |Spécifie la version maximale autorisée du package à rechercher. Si vous n’ajoutez pas ce paramètre, la ressource recherche la version disponible la plus récente du package. |
-|MinimumVersion |Spécifie la version minimale autorisée du package à rechercher. Si vous n’ajoutez pas ce paramètre, la ressource recherche la version la plus élevée du package parmi celles disponibles, sans toutefois dépasser la version maximale spécifiée par le paramètre **MaximumVersion**. |
+|MinimumVersion |Spécifie la version minimale autorisée du package à rechercher. Si vous n’ajoutez pas ce paramètre, la ressource recherche la version la plus élevée du package parmi celles disponibles, sans toutefois dépasser la version maximale spécifiée par le paramètre **MaximumVersion** . |
 |ProviderName |Spécifie un nom de fournisseur de package auquel vous souhaitez limiter votre recherche de package. Vous obtenez les noms des fournisseurs de package en exécutant l’applet de commande `Get-PackageProvider`. |
-|RequiredVersion |Spécifie la version exacte du package à installer. Si vous ne spécifiez pas ce paramètre, cette ressource DSC installe la version la plus récente du package parmi celles disponibles, sans toutefois dépasser la version maximale spécifiée par le paramètre **MaximumVersion**. |
+|RequiredVersion |Spécifie la version exacte du package à installer. Si vous ne spécifiez pas ce paramètre, cette ressource DSC installe la version la plus récente du package parmi celles disponibles, sans toutefois dépasser la version maximale spécifiée par le paramètre **MaximumVersion** . |
 |Source |Spécifie le nom de la source du package où se trouve le package. Il peut s’agir d’un URI ou d’une source inscrite avec `Register-PackageSource` ou une ressource DSC PackageManagementSource. |
 |SourceCredential |Spécifie un compte d’utilisateur disposant des droits nécessaires pour installer un package pour une source ou un fournisseur de package spécifié. |
 
@@ -57,14 +60,14 @@ Le tableau suivant répertorie les options de la propriété AdditionalParameter
 |Paramètre |Description |
 |---|---|
 |DestinationPath |Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Spécifie un emplacement de fichier où vous souhaitez installer le package. |
-|InstallationPolicy |Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Détermine si vous faites confiance à la source du package. Valeurs possibles : **Untrusted** ou **Trusted**. |
+|InstallationPolicy |Utilisé par les fournisseurs, notamment le fournisseur Nuget intégré. Détermine si vous faites confiance à la source du package. Valeurs possibles : **Untrusted** ou **Trusted** . |
 
 ## <a name="common-properties"></a>Propriétés communes
 
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine si le package doit être installé ou désinstallé. La valeur par défaut est **Present**. |
+|Ensure |Détermine si le package doit être installé ou désinstallé. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]
@@ -72,7 +75,7 @@ Le tableau suivant répertorie les options de la propriété AdditionalParameter
 
 ## <a name="example"></a>Exemple
 
-Cet exemple installe le package NuGet **JQuery** et le module PowerShell **GistProvider** à l’aide de la ressource DSC **PackageManagement**. Cet exemple vérifie d’abord que les sources de package nécessaires sont disponibles, puis définit l’état attendu des packages **JQuery** et **GistProvider** (NuGet et PowerShell, respectivement).
+Cet exemple installe le package NuGet **JQuery** et le module PowerShell **GistProvider** à l’aide de la ressource DSC **PackageManagement** . Cet exemple vérifie d’abord que les sources de package nécessaires sont disponibles, puis définit l’état attendu des packages **JQuery** et **GistProvider** (NuGet et PowerShell, respectivement).
 
 ```powershell
 Configuration PackageTest

@@ -2,19 +2,20 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,installation
 title: Configuration d’un serveur collecteur SMB DSC
-ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Un serveur collecteur SMB DSC est un ordinateur qui héberge des partages de fichiers SMB qui fournissent des fichiers de configuration DSC et des ressources DSC aux nœuds cibles quand ces derniers les demandent.
+ms.openlocfilehash: 4ac1b0db719fa124d6fa9a654acb64ec24d9ea41
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500704"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658433"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Configuration d’un serveur collecteur SMB DSC
 
-S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC* ) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
 Un serveur collecteur [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) DSC est un ordinateur qui héberge des partages de fichiers SMB qui fournissent des fichiers de configuration DSC et des ressources DSC aux nœuds cibles quand ces derniers les demandent.
 
@@ -29,7 +30,7 @@ Il existe plusieurs façons de configurer un partage de fichiers SMB, mais nous 
 
 ### <a name="install-the-xsmbshare-resource"></a>Installer la ressource xSmbShare
 
-Appelez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xSmbShare**.
+Appelez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xSmbShare** .
 
 > [!NOTE]
 > `Install-Module` est inclus dans le module **PowerShellGet** de PowerShell 5.0.
@@ -76,7 +77,7 @@ La configuration crée le répertoire `C:\DscSmbShare`, s’il n’existe pas, e
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Donner accès au système de fichiers pour le client collecteur
 
-L’autorisation **ReadAccess** accordée à un nœud client permet à ce dernier d’accéder au partage SMB, mais pas aux fichiers et dossiers dans ce partage. Vous devez accorder explicitement aux nœuds clients l’accès au dossier et aux sous-dossiers du partage SMB. Vous pouvez le faire avec DSC à l’aide de la ressource **cNtfsPermissionEntry**, qui est contenue dans le module [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0).
+L’autorisation **ReadAccess** accordée à un nœud client permet à ce dernier d’accéder au partage SMB, mais pas aux fichiers et dossiers dans ce partage. Vous devez accorder explicitement aux nœuds clients l’accès au dossier et aux sous-dossiers du partage SMB. Vous pouvez le faire avec DSC à l’aide de la ressource **cNtfsPermissionEntry** , qui est contenue dans le module [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0).
 La configuration suivante ajoute un bloc **cNtfsPermissionEntry** qui accorde un accès ReadAndExecute au client collecteur :
 
 ```powershell
@@ -131,7 +132,7 @@ Configuration DSCSMB
 
 Enregistrez les fichiers MOF de configuration et/ou les ressources DSC que les nœuds clients doivent extraire dans le dossier de partage SMB.
 
-Les fichiers MOF de configuration doivent être nommés *ConfigurationID*.mof, où *ConfigurationID* est la valeur de la propriété **ConfigurationID** du gestionnaire de configuration local du nœud cible. Pour plus d’informations sur la configuration des clients collecteurs, consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration](pullClientConfigID.md).
+Les fichiers MOF de configuration doivent être nommés *ConfigurationID* .mof, où *ConfigurationID* est la valeur de la propriété **ConfigurationID** du gestionnaire de configuration local du nœud cible. Pour plus d’informations sur la configuration des clients collecteurs, consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration](pullClientConfigID.md).
 
 > [!NOTE]
 > Vous devez utiliser les ID de configuration si vous utilisez un serveur collecteur SMB. Les noms de configuration ne sont pas pris en charge pour SMB.
@@ -159,7 +160,7 @@ Pour configurer un client qui extrait des configurations et/ou des ressources à
 Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration](pullClientConfigID.md).
 
 > [!NOTE]
-> Par souci de simplicité, cet exemple utilise **PSDscAllowPlainTextPassword** pour autoriser la transmission d’un mot de passe en texte clair au paramètre **Informations d’identification**. Pour plus d’informations sur la transmission plus sécurisée d’informations d’identification, consultez [Options d’informations d’identification dans les données de configuration](../configurations/configDataCredentials.md). Vous **DEVEZ** spécifier un **ConfigurationID** dans le bloc **Paramètres** d’une métaconfiguration pour un serveur d’extraction SMB, même si vous ne faites qu’extraire des ressources.
+> Par souci de simplicité, cet exemple utilise **PSDscAllowPlainTextPassword** pour autoriser la transmission d’un mot de passe en texte clair au paramètre **Informations d’identification** . Pour plus d’informations sur la transmission plus sécurisée d’informations d’identification, consultez [Options d’informations d’identification dans les données de configuration](../configurations/configDataCredentials.md). Vous **DEVEZ** spécifier un **ConfigurationID** dans le bloc **Paramètres** d’une métaconfiguration pour un serveur d’extraction SMB, même si vous ne faites qu’extraire des ressources.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force
@@ -208,7 +209,7 @@ $ConfigurationData = @{
 Un remerciement particulier aux personnes suivantes :
 
 - Mike F. Robbins, dont les billets sur l’utilisation de SMB pour DSC ont permis de documenter le contenu de cette rubrique. Son blog : [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, qui a créé le module **cNtfsAccessControl**. La source de ce module se trouve dans [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
+- Serge Nikalaichyk, qui a créé le module **cNtfsAccessControl** . La source de ce module se trouve dans [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
 ## <a name="see-also"></a>Voir aussi
 

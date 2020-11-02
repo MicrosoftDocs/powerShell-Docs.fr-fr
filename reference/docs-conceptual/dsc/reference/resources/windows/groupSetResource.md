@@ -1,14 +1,14 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,installation
-description: Fournit un mécanisme permettant de gérer des groupes locaux sur le nœud cible.
+ms.topic: reference
 title: Ressources GroupSet dans DSC
-ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressources GroupSet dans DSC
+ms.openlocfilehash: a9d1803aca40ac3571d42a5fd762489c03ed274e
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464193"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142886"
 ---
 # <a name="dsc-groupset-resource"></a>Ressources GroupSet dans DSC
 
@@ -18,10 +18,12 @@ La ressource **GroupSet** dans la configuration d’état souhaité (DSC) Window
 
 Utilisez cette ressource quand vous souhaitez ajouter ou supprimer la même liste de membres dans plusieurs groupes, supprimer plusieurs groupes, ou ajouter plusieurs groupes avec la même liste de membres.
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## <a name="syntax"></a>Syntaxe
 
 ```Syntax
-Group [string] #ResourceName
+GroupSet [string] #ResourceName
 {
     GroupName = [string[]]
     [ MembersToInclude = [string[]] ]
@@ -38,9 +40,9 @@ Group [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |GroupName |Noms des groupes pour lesquels vous souhaitez garantir un état spécifique. |
-|Membres |Utilisez cette propriété pour remplacer l’appartenance à un groupe actuelle avec les membres spécifiés. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas les propriétés **MembersToExclude** et **MembersToInclude**. Cela générera une erreur. |
-|MembersToInclude |Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur. |
-|MembersToExclude |Utilisez cette propriété pour supprimer des membres de l’appartenance existante des groupes. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur. |
+|Membres |Utilisez cette propriété pour remplacer l’appartenance à un groupe actuelle avec les membres spécifiés. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas les propriétés **MembersToExclude** et **MembersToInclude** . Cela générera une erreur. |
+|MembersToInclude |Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members** . Cela générera une erreur. |
+|MembersToExclude |Utilisez cette propriété pour supprimer des membres de l’appartenance existante des groupes. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members** . Cela générera une erreur. |
 |Informations d'identification |Les informations d’identification devant être fournies pour accéder aux ressources distantes. Ce compte doit disposer des autorisations Active Directory appropriées pour ajouter tous les comptes non locaux au groupe. Dans le cas contraire, une erreur se produit. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -48,7 +50,7 @@ Group [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si les groupes existent. Définissez cette propriété sur **Absent** pour faire en sorte que les groupes n’existent pas. La valeur **Present** garantit l’existence du groupe. La valeur par défaut est **Present**. |
+|Ensure |Indique si les groupes existent. Définissez cette propriété sur **Absent** pour faire en sorte que les groupes n’existent pas. La valeur **Present** garantit l’existence du groupe. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

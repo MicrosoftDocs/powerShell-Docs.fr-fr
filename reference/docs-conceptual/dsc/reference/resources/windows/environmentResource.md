@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Environment DSC
-ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Environment DSC
+ms.openlocfilehash: c7995fc5e7efdfb9a1dbae3da9f824d33c67085c
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464415"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142580"
 ---
 # <a name="dsc-environment-resource"></a>Ressource Environment DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Environment** dans DSC Windows PowerShell fournit un mécanisme permettant de gérer les variables d’environnement système.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,7 +25,6 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
-    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -35,8 +37,7 @@ Environment [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Name |Spécifie le nom de la variable d’environnement pour laquelle vous voulez garantir un état spécifique. |
-|Path |Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur `$true` si la variable est une variable **Path** ; sinon, affectez-lui la valeur `$false`. Par défaut, il s’agit de `$false`. Si la variable actuellement configurée est une variable **Path**, la valeur fournie par la propriété **Value** est adjointe à la valeur existante. |
-|Cible| Indique où récupérer la variable : Sur l’ordinateur ou le processus. Si les deux sont indiqués, seule la valeur de l’ordinateur est retournée. La valeur par défaut correspond aux deux, car il s’agit de la valeur par défaut du reste de la ressource. |
+|Path |Définit la variable d’environnement actuellement configurée. Définissez cette propriété sur `$true` si la variable est une variable **Path**  ; sinon, affectez-lui la valeur `$false`. Par défaut, il s’agit de `$false`. Si la variable actuellement configurée est une variable **Path** , la valeur fournie par la propriété **Value** est adjointe à la valeur existante. |
 |Valeur |Valeur à attribuer à la variable d’environnement. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -52,7 +53,7 @@ Environment [string] #ResourceName
 
 ## <a name="example"></a> Exemple
 
-L’exemple suivant vérifie que TestEnvironmentVariable est présent et que sa valeur est _TestValue_. S’il n’est pas présent, il le crée.
+L’exemple suivant vérifie que TestEnvironmentVariable est présent et que sa valeur est _TestValue_ . S’il n’est pas présent, il le crée.
 
 ```powershell
 Environment EnvironmentExample

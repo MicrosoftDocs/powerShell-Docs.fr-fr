@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Group DSC
-ms.openlocfilehash: 5570d46d872e205917eef49bfa869419b20a77b0
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Group DSC
+ms.openlocfilehash: 8e2d1139c9573d7e310fec2410b14df04b79e1b2
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464211"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142444"
 ---
 # <a name="dsc-group-resource"></a>Ressource Group DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Group** dans DSC Windows PowerShell propose un mécanisme qui permet de gérer des groupes locaux sur le nœud cible.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,16 +42,16 @@ Group [string] #ResourceName
 |GroupName |Le nom du groupe pour lequel vous souhaitez garantir un état spécifique. |
 |Informations d'identification |Les informations d’identification devant être fournies pour accéder aux ressources distantes. Ce compte doit disposer des autorisations Active Directory appropriées pour ajouter tous les comptes non locaux au groupe. Dans le cas contraire, une erreur se produit quand la configuration est exécutée sur le nœud cible.
 |Description |La description du groupe. |
-|Membres |Utilisez cette propriété pour remplacer l’appartenance à un groupe actuelle avec les membres spécifiés. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas les propriétés **MembersToExclude** et **MembersToInclude**. Sinon, une erreur se produit. |
-|MembersToExclude |Utilisez cette propriété pour supprimer des appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Sinon, une erreur se produit. |
-|MembersToInclude |Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members**. Cela générera une erreur. |
+|Membres |Utilisez cette propriété pour remplacer l’appartenance à un groupe actuelle avec les membres spécifiés. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas les propriétés **MembersToExclude** et **MembersToInclude** . Sinon, une erreur se produit. |
+|MembersToExclude |Utilisez cette propriété pour supprimer des appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members** . Sinon, une erreur se produit. |
+|MembersToInclude |Utilisez cette propriété pour ajouter des membres aux appartenances existantes du groupe. La valeur de cette propriété est un tableau de chaînes au format `Domain\UserName`. Si vous définissez cette propriété dans une configuration, n’utilisez pas la propriété **Members** . Cela générera une erreur. |
 
 ## <a name="common-properties"></a>Propriétés communes
 
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si le groupe existe. Définissez cette propriété sur **Absent** pour faire en sorte que le groupe n’existe pas. Définissez-la sur **Present** pour faire en sorte que le groupe existe. La valeur par défaut est **Present**. |
+|Ensure |Indique si le groupe existe. Définissez cette propriété sur **Absent** pour faire en sorte que le groupe n’existe pas. Définissez-la sur **Present** pour faire en sorte que le groupe existe. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

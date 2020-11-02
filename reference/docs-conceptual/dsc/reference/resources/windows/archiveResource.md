@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Archive DSC
-ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Archive DSC
+ms.openlocfilehash: 28e2436683d7cb3b69f894ac75bb1a58b8eb1e8a
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463786"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142399"
 ---
 # <a name="dsc-archive-resource"></a>Ressource Archive DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource Archive de la configuration d’état souhaité (DSC) de Windows PowerShell fournit un mécanisme permettant de décompresser les fichiers d’archive (.zip) à un emplacement spécifique.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,17 +41,17 @@ Archive [string] #ResourceName
 |---|---|
 | Destination | Spécifie l’emplacement où le contenu de l’archive doit être extrait. |
 | Path | Spécifie le chemin source du fichier d’archive. |
-| Somme de contrôle | Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. |
+| Somme de contrôle | Définit le type à utiliser pour déterminer si deux fichiers sont identiques. Si **Checksum** n’est pas spécifié, seul le nom du fichier ou du répertoire est utilisé pour la comparaison. Les valeurs valides sont les suivantes : **SHA-1** , **SHA-256** , **SHA-512** , **createdDate** , **modifiedDate** . Si vous spécifiez **Checksum** sans **Validate** , la configuration échoue. |
 | Informations d'identification | Informations d’identification d’un compte d’utilisateur disposant des autorisations nécessaires pour accéder au chemin et à la destination de l’archive spécifiée, si nécessaire. |
-| Force | Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **False**. |
-| Valider| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate**, la configuration échoue. Si vous spécifiez **Validate** sans **Checksum**, la valeur _SHA-256 est utilisée par défaut pour _ **Checksum**. |
+| Force | Certaines opérations de fichier (par exemple, le remplacement d’un fichier ou la suppression d’un répertoire non vide) entraînent une erreur. La propriété **Force** permet d’ignorer ces erreurs. La valeur par défaut est **False** . |
+| Valider| Utilise la propriété **Checksum** pour déterminer si l’archive correspond à la signature. Si vous spécifiez **Checksum** sans **Validate** , la configuration échoue. Si vous spécifiez **Validate** sans **Checksum** , la valeur _SHA-256 est utilisée par défaut pour_ **Checksum** . |
 
 ## <a name="common-properties"></a>Propriétés communes
 
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Détermine s’il faut vérifier que le contenu de l’archive se trouve à la **Destination** donnée. Définissez cette propriété sur **Present** pour vous assurer que le contenu se trouve à l’emplacement donné. Définissez la propriété sur **Absent** pour vous assurer que le contenu ne se trouve pas à l’emplacement donné. La valeur par défaut est **Present**. |
+|Ensure |Détermine s’il faut vérifier que le contenu de l’archive se trouve à la **Destination** donnée. Définissez cette propriété sur **Present** pour vous assurer que le contenu se trouve à l’emplacement donné. Définissez la propriété sur **Absent** pour vous assurer que le contenu ne se trouve pas à l’emplacement donné. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

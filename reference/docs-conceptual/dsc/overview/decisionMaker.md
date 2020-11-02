@@ -2,12 +2,13 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,configuration,installation
 title: Présentation de la configuration de l’état souhaité pour les décideurs
-ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 'Ce document décrit les avantages de l’utilisation de la configuration de l’état souhaité (DSC) PowerShell en entreprise : il ne s’agit pas d’un guide technique.'
+ms.openlocfilehash: fc28c9290c993131fc7bf2046eb64b144d3da609
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870793"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654137"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Présentation de la configuration de l’état souhaité pour les décideurs
 

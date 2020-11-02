@@ -1,19 +1,22 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Service dans DSC
-ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Service dans DSC
+ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463582"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142622"
 ---
 # <a name="dsc-service-resource"></a>Ressource Service dans DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Service** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer des services sur un nœud cible.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -23,18 +26,15 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Ignore | Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
-    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
-    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -43,15 +43,12 @@ Service [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Nom |Indique le nom du service Notez qu’il peut être différent du nom d’affichage. Vous pouvez obtenir une liste des services et leur état actuel avec l’applet de commande `Get-Service`. |
-|BuiltInAccount |Indique le compte de connexion à utiliser pour le service. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService**, **LocalSystem** et **NetworkService**. |
+|BuiltInAccount |Indique le compte de connexion à utiliser pour le service. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService** , **LocalSystem** et **NetworkService** . |
 |Informations d'identification |Indique les informations d’identification pour le compte sous lequel s’exécute le service. Cette propriété et la propriété **BuiltinAccount** ne peuvent pas être utilisées ensemble. |
-|StartupTimeout | Délai d’attente de l’exécution du service en millisecondes.|
-|StartupType |Indique le type de démarrage du service. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic**, **Disabled** et **Manual**. |
-|State |Indique l’état que vous voulez assurer pour le service. Les valeurs sont : **Running** ou **Stopped**. |
-|TerminateTimeout |Délai d’attente de l’arrêt du service en millisecondes.|
+|StartupType |Indique le type de démarrage du service. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic** , **Disabled** et **Manual** . |
+|State |Indique l’état que vous voulez assurer pour le service. Les valeurs sont : **Running** ou **Stopped** . |
 |Les dépendances | Tableau des noms des dépendances que le service doit avoir. |
 |Description |Indique la description du service cible. |
-|DesktopInteract | Indique si le service doit être en mesure de communiquer avec une fenêtre sur le bureau. Doit avoir la valeur false pour les services qui ne s’exécutent pas en tant que LocalSystem.|
 |DisplayName |Indique le nom complet du service cible. |
 |Chemin d’accès |Indique le chemin du fichier binaire d’un nouveau service. |
 
@@ -60,7 +57,7 @@ Service [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si le service cible existe sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que le service cible n’existe pas. Définissez-la sur **Present** pour être assuré que le service cible n’existe pas. La valeur par défaut est **Present**. |
+|Ensure |Indique si le service cible existe sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que le service cible n’existe pas. Définissez-la sur **Present** pour être assuré que le service cible n’existe pas. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,applet de commande
 title: Objet ISEEditor
-ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Un objet ISEEditor est une instance de la classe Microsoft.PowerShell.Host.ISE.ISEEditor. Le volet de la console est un objet ISEEditor.
+ms.openlocfilehash: ffcb6e35e1160beab6efb29cc84847fa9ffd012b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809695"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654057"
 ---
 # <a name="the-iseeditor-object"></a>Objet ISEEditor
 
-Un objet **ISEEditor** est une instance de la classe Microsoft.PowerShell.Host.ISE.ISEEditor. Le volet de la console est un objet **ISEEditor**. Chaque objet [ISEFile](The-ISEFile-Object.md) est associé à un objet **ISEEditor**. Les sections suivantes répertorient les méthodes et propriétés d’un objet **ISEEditor**.
+Un objet **ISEEditor** est une instance de la classe Microsoft.PowerShell.Host.ISE.ISEEditor. Le volet de la console est un objet **ISEEditor** . Chaque objet [ISEFile](The-ISEFile-Object.md) est associé à un objet **ISEEditor** . Les sections suivantes répertorient les méthodes et propriétés d’un objet **ISEEditor** .
 
 ## <a name="methods"></a>Méthodes
 
@@ -82,7 +82,7 @@ Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
 Remplace la sélection par du texte ou insère du texte à la position actuelle du point d’insertion.
 
-**text** : chaîne Texte à insérer.
+**text**  : chaîne Texte à insérer.
 
 Consultez l’[exemple de script](#scripting-example) plus loin dans cette rubrique.
 
@@ -90,15 +90,15 @@ Consultez l’[exemple de script](#scripting-example) plus loin dans cette rubri
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Sélectionne le texte spécifié par les paramètres **startLine**, **startColumn**, **endLine** et **endColumn**.
+Sélectionne le texte spécifié par les paramètres **startLine** , **startColumn** , **endLine** et **endColumn** .
 
-**startLine** : entier Ligne où commence la sélection.
+**startLine**  : entier Ligne où commence la sélection.
 
-**startColumn** : entier Colonne dans la ligne de début où commence la sélection.
+**startColumn**  : entier Colonne dans la ligne de début où commence la sélection.
 
-**endLine** : entier Ligne où se termine la sélection.
+**endLine**  : entier Ligne où se termine la sélection.
 
-**endColumn** : entier Colonne dans la ligne de fin où se termine la sélection.
+**endColumn**  : entier Colonne dans la ligne de fin où se termine la sélection.
 
 Consultez l’[exemple de script](#scripting-example) plus loin dans cette rubrique.
 
@@ -121,9 +121,9 @@ Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
 Définit la position du point d’insertion en fonction du numéro de ligne et du numéro de colonne spécifiés. Elle lève une exception si le numéro de ligne du point d’insertion ou le numéro de colonne du point d’insertion sont en dehors de leurs plages valides respectives.
 
-**lineNumber** : entier Numéro de ligne du point d’insertion.
+**lineNumber**  : entier Numéro de ligne du point d’insertion.
 
-**columnNumber** : entier Numéro de colonne du point d’insertion.
+**columnNumber**  : entier Numéro de colonne du point d’insertion.
 
 ```powershell
 # Set the CaretPosition.

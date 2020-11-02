@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Registry dans DSC
-ms.openlocfilehash: da4be9152a58d9945051f9c811270e871612ca0d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Registry dans DSC
+ms.openlocfilehash: 075f64abffb429b83958d859b0328b4eeec4cee6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463616"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142495"
 ---
 # <a name="dsc-registry-resource"></a>Ressource Registry dans DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Registry** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer les clés et les valeurs de Registre sur un nœud cible.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,7 +40,7 @@ Registry [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Clé |Indique le chemin de la clé de Registre pour laquelle vous voulez garantir un état spécifique. Ce chemin doit inclure la ruche. |
-|ValueName |Indique le nom de la valeur de Registre. Pour ajouter ou supprimer une clé de Registre, spécifiez cette propriété en tant que chaîne vide sans définir **ValueType** ou **ValueData**. Pour modifier ou supprimer la valeur par défaut d’une clé de Registre, spécifiez cette propriété en tant que chaîne vide tout en définissant également **ValueType** ou **ValueData**. |
+|ValueName |Indique le nom de la valeur de Registre. Pour ajouter ou supprimer une clé de Registre, spécifiez cette propriété en tant que chaîne vide sans définir **ValueType** ou **ValueData** . Pour modifier ou supprimer la valeur par défaut d’une clé de Registre, spécifiez cette propriété en tant que chaîne vide tout en définissant également **ValueType** ou **ValueData** . |
 |Force |Si la clé de Registre spécifiée est présente, **Force** la remplace par la nouvelle valeur. Si vous supprimez une clé de Registre avec des sous-clés, la valeur doit être `$true`. |
 |Hex |Indique si les données sont exprimées au format hexadécimal. Si elles sont spécifiées, les données de valeur DWORD/QWORD sont présentées au format hexadécimal. Non valide pour les autres types. La valeur par défaut est `$false`. |
 |ValueData |Les données de la valeur de Registre. |
@@ -48,7 +51,7 @@ Registry [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si la clé et la valeur existent. Pour faire en sorte qu’elles existent, définissez cette propriété sur **Present**. Pour faire en sorte qu’elles n’existent pas, définissez la propriété sur **Absent**. La valeur par défaut est **Present**. |
+|Ensure |Indique si la clé et la valeur existent. Pour faire en sorte qu’elles existent, définissez cette propriété sur **Present** . Pour faire en sorte qu’elles n’existent pas, définissez la propriété sur **Absent** . La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]
@@ -75,7 +78,7 @@ Configuration RegistryTest
 
 ### <a name="example-2-ensure-specified-registry-key-exists"></a>Exemple 2 : Vérifier l’existence d’une clé de Registre spécifiée
 
-Cet exemple vérifie qu’une clé nommée « ExampleKey2 » est présente dans la ruche **HKEY\_LOCAL\_MACHINE**.
+Cet exemple vérifie qu’une clé nommée « ExampleKey2 » est présente dans la ruche **HKEY\_LOCAL\_MACHINE** .
 
 ```powershell
 Configuration RegistryTest

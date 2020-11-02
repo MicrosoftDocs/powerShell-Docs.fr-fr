@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,applet de commande
 title: Objet PowerShellTabCollection
-ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: L’objet collection PowerShellTab est une collection d’objets PowerShellTab. Chaque objet PowerShellTab fonctionne comme un environnement d’exécution distinct.
+ms.openlocfilehash: 60f8001f096b50bd8433a5685f1f70a350f07f61
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808565"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658268"
 ---
 # <a name="the-powershelltabcollection-object"></a>Objet PowerShellTabCollection
 
-L’objet collection **PowerShellTab** est une collection d’objets **PowerShellTab**. Chaque objet **PowerShellTab** fonctionne comme un environnement d’exécution distinct. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.PowerShellTabs. L’objet `$psISE.PowerShellTabs` en est un exemple.
+L’objet collection **PowerShellTab** est une collection d’objets **PowerShellTab** . Chaque objet **PowerShellTab** fonctionne comme un environnement d’exécution distinct. Il s’agit d’une instance de la classe Microsoft.PowerShell.Host.ISE.PowerShellTabs. L’objet `$psISE.PowerShellTabs` en est un exemple.
 
 ## <a name="methods"></a>Méthodes
 
@@ -30,7 +30,7 @@ $newTab.DisplayName = 'Brand New Tab'
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Supprime l’onglet spécifié par le paramètre **psTab**.
+Supprime l’onglet spécifié par le paramètre **psTab** .
 
 **psTab** Onglet PowerShell à supprimer.
 

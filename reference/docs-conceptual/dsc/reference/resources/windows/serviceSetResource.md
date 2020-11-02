@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressources ServiceSet dans DSC
-ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressources ServiceSet dans DSC
+ms.openlocfilehash: bcb8382440d80c37179cdc1d1e17376b2511c3f3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464398"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142954"
 ---
 # <a name="dsc-serviceset-resource"></a>Ressources ServiceSet dans DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
-La ressource **ServiceSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer des services sur un nœud cible. Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la [ressource Service](serviceResource.md) pour chaque service spécifié dans la propriété **Name**.
+La ressource **ServiceSet** dans la configuration d’état souhaité (DSC) Windows PowerShell fournit un mécanisme pour gérer des services sur un nœud cible. Cette ressource est une [ressource composite](../../../resources/authoringResourceComposite.md) qui appelle la [ressource Service](serviceResource.md) pour chaque service spécifié dans la propriété **Name** .
 
 Utilisez cette ressource quand vous voulez configurer certains services au même état.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,9 +41,9 @@ ServiceSet [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Nom |Indique les noms des services. Notez qu’ils peuvent être différents des noms d’affichages. Vous pouvez obtenir une liste des services et leur état actuel avec l’applet de commande `Get-Service`. |
-|StartupType |Indique le type de démarrage pour les services. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic**, **Disabled** et **Manual**. |
-|BuiltInAccount |Indique le compte de connexion à utiliser pour les services. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService**, **LocalSystem** et **NetworkService**. |
-|State |Indique l’état que vous voulez assurer pour les services : **Arrêté** ou **Exécution en cours**. |
+|StartupType |Indique le type de démarrage pour les services. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic** , **Disabled** et **Manual** . |
+|BuiltInAccount |Indique le compte de connexion à utiliser pour les services. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService** , **LocalSystem** et **NetworkService** . |
+|State |Indique l’état que vous voulez assurer pour les services : **Arrêté** ou **Exécution en cours** . |
 |Informations d'identification |Indique les informations d’identification pour le compte sous lequel s’exécute la ressource de service. Cette propriété et la propriété **BuiltinAccount** ne peuvent pas être utilisées ensemble. |
 
 ## <a name="common-properties"></a>Propriétés communes
@@ -48,7 +51,7 @@ ServiceSet [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si les services existent sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que les services n’existent pas. Définissez-la sur **Present** pour faire en sorte que les services cibles n’existent pas. La valeur par défaut est **Present**. |
+|Ensure |Indique si les services existent sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que les services n’existent pas. Définissez-la sur **Present** pour faire en sorte que les services cibles n’existent pas. La valeur par défaut est **Present** . |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

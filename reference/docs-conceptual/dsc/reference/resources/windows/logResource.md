@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: Ressource Log dans DSC
-ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Ressource Log dans DSC
+ms.openlocfilehash: 281d1f8aeeb4d075f073419ac02a0f81888ed2b5
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464024"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142461"
 ---
 # <a name="dsc-log-resource"></a>Ressource Log dans DSC
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.x
 
 La ressource **Log** dans DSC (Desired State Configuration) Windows PowerShell fournit un mécanisme permettant d’écrire des messages dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -50,7 +53,7 @@ Log [string] #ResourceName
 L’exemple suivant écrit un message dans le journal des événements Microsoft-Windows-Desired State Configuration/Analytic.
 
 > [!NOTE]
-> Si vous exécutez [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) avec cette ressource configurée, elle retourne toujours la valeur **$false**.
+> Si vous exécutez [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration) avec cette ressource configurée, elle retourne toujours la valeur **$false** .
 
 ```powershell
 Configuration logResourceTest

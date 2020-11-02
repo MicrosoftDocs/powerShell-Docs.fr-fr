@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: ApplyConfiguration, méthode
-ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ApplyConfiguration, méthode
+ms.openlocfilehash: aa99221b33d39c3ecc70156a11eaee10b540e2dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463837"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664277"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration, méthode
 
@@ -19,7 +20,7 @@ S’il n’existe aucune configuration en attente, cette méthode applique de no
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -27,7 +28,7 @@ uint32 ApplyConfiguration(
 
 ### <a name="force"></a>force
 
-Si la valeur est **true**, la configuration actuelle est de nouveau appliquée, même s’il existe une configuration en attente.
+Si la valeur est **true** , la configuration actuelle est de nouveau appliquée, même s’il existe une configuration en attente.
 
 ## <a name="return-value"></a>Valeur retournée
 
@@ -41,7 +42,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 
