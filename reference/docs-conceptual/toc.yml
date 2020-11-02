@@ -75,6 +75,8 @@
           href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Utilisation de Write-Progress lors du multithreading
           href: learn/deep-dives/write-progress-across-multiple-threads.md
+        - name: Ajout de la prise en charge des informations d’identification aux fonctions PowerShell
+          href: learn/deep-dives/add-credentials-to-powershell-functions.md
     - name: Communication à distance PowerShell
       items:
         - name: Just Enough Administration (JEA)
@@ -564,6 +566,8 @@
       href: community/hall-of-fame.md
     - name: Nouveautés dans la documentation
       items:
+        - name: 2020-T4
+          href: community/2020-Q4.md
         - name: 2020-T3
           href: community/2020-Q3.md
         - name: 2020-T2
