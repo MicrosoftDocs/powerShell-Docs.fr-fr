@@ -1,0 +1,218 @@
+---
+external help file: PSDiagnostics-help.xml
+keywords: powershell,applet de commande
+Locale: en-US
+Module Name: PSDiagnostics
+ms.date: 11/27/2018
+online version: https://docs.microsoft.com/powershell/module/psdiagnostics/start-trace?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Start-Trace
+ms.openlocfilehash: 646d186b34e31aa2572aeefa12cc73d941076a13
+ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "93201394"
+---
+# <span data-ttu-id="6d454-103">Start-Trace</span><span class="sxs-lookup"><span data-stu-id="6d454-103">Start-Trace</span></span>
+
+## <span data-ttu-id="6d454-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="6d454-104">SYNOPSIS</span></span>
+<span data-ttu-id="6d454-105">Démarrez une session de journalisation de suivi des événements.</span><span class="sxs-lookup"><span data-stu-id="6d454-105">Start an Event Trace logging session.</span></span>
+
+## <span data-ttu-id="6d454-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="6d454-106">SYNTAX</span></span>
+
+```
+Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>]
+ [-ETS] [-Format <String>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>]
+ [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="6d454-107">Description</span><span class="sxs-lookup"><span data-stu-id="6d454-107">DESCRIPTION</span></span>
+<span data-ttu-id="6d454-108">Cette applet de commande démarre une session de journalisation de suivi d’événements Windows.</span><span class="sxs-lookup"><span data-stu-id="6d454-108">This cmdlet starts a Windows Event Trace logging session.</span></span>
+
+<span data-ttu-id="6d454-109">Cette applet de commande est utilisée par les applets de commande suivantes :</span><span class="sxs-lookup"><span data-stu-id="6d454-109">This cmdlet is used by the following cmdlets:</span></span>
+
+- `Enable-PSWSManCombinedTrace`
+- `Enable-WSManTrace`
+
+<span data-ttu-id="6d454-110">Vous devez exécuter cette applet de commande à partir d’une session PowerShell avec élévation de privilèges.</span><span class="sxs-lookup"><span data-stu-id="6d454-110">You must run this cmdlet from an elevated PowerShell session.</span></span>
+
+## <span data-ttu-id="6d454-111">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="6d454-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="6d454-112">Exemple 1 : démarrer une session de journalisation de suivi WSMan</span><span class="sxs-lookup"><span data-stu-id="6d454-112">Example 1: Start a WSMan Trace logging session</span></span>
+
+```powershell
+Start-Trace -SessionName 'wsmlog' -ETS -OutputFilePath "$env:windir\system32\wsmtraces.log" -Format 'bincirc' -MinBuffers 16 -MaxBuffers 256 -BufferSizeInKb 64 -MaxLogFileSizeInMB 256 -ProviderFilePath "$env:windir\system32\wsmtraceproviders.txt"
+```
+
+## <span data-ttu-id="6d454-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="6d454-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="6d454-114">-BufferSizeInKB</span><span class="sxs-lookup"><span data-stu-id="6d454-114">-BufferSizeInKB</span></span>
+<span data-ttu-id="6d454-115">Taille de la mémoire tampon de la session de suivi d’événements en kilo-octets (Ko).</span><span class="sxs-lookup"><span data-stu-id="6d454-115">Event Trace Session buffer size in kilobytes (KB).</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-116">-ETS</span><span class="sxs-lookup"><span data-stu-id="6d454-116">-ETS</span></span>
+<span data-ttu-id="6d454-117">Envoyer des commandes aux sessions de suivi d’événements directement sans enregistrement ou planification.</span><span class="sxs-lookup"><span data-stu-id="6d454-117">Send commands to Event Trace Sessions directly without saving or scheduling.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-118">-Format</span><span class="sxs-lookup"><span data-stu-id="6d454-118">-Format</span></span>
+<span data-ttu-id="6d454-119">Spécifie le format du journal pour le collecteur de données.</span><span class="sxs-lookup"><span data-stu-id="6d454-119">Specifies the log format for the data collector.</span></span> <span data-ttu-id="6d454-120">Pour le format de base de données SQL, vous devez utiliser l’option **OutputFilePath** dans la ligne de commande avec la `dsn!log` valeur.</span><span class="sxs-lookup"><span data-stu-id="6d454-120">For SQL database format, you must use the **OutputFilePath** option in the command line with the `dsn!log` value.</span></span> <span data-ttu-id="6d454-121">La valeur par défaut est Binary (bin).</span><span class="sxs-lookup"><span data-stu-id="6d454-121">The default is binary (bin).</span></span> <span data-ttu-id="6d454-122">Les valeurs possibles sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="6d454-122">The possible values are:</span></span>
+
+- <span data-ttu-id="6d454-123">bin-binaire</span><span class="sxs-lookup"><span data-stu-id="6d454-123">bin - binary</span></span>
+- <span data-ttu-id="6d454-124">bincirc-binaire avec journalisation circulaire</span><span class="sxs-lookup"><span data-stu-id="6d454-124">bincirc - binary with circular logging</span></span>
+- <span data-ttu-id="6d454-125">CSV-valeurs séparées par des virgules</span><span class="sxs-lookup"><span data-stu-id="6d454-125">csv - Comma-separated values</span></span>
+- <span data-ttu-id="6d454-126">valeurs séparées par des tabulations TSV</span><span class="sxs-lookup"><span data-stu-id="6d454-126">tsv - Tab-separated values</span></span>
+- <span data-ttu-id="6d454-127">SQL-SQL Database</span><span class="sxs-lookup"><span data-stu-id="6d454-127">sql - SQL database</span></span>
+
+```yaml
+Type: System.Object
+Parameter Sets: (All)
+Aliases:
+Accepted values: bin, bincirc, csv, tsv, sql
+
+Required: False
+Position: Named
+Default value: bin
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-128">-MaxBuffers</span><span class="sxs-lookup"><span data-stu-id="6d454-128">-MaxBuffers</span></span>
+<span data-ttu-id="6d454-129">Définit le nombre maximal de mémoires tampons de session de suivi d’événements.</span><span class="sxs-lookup"><span data-stu-id="6d454-129">Sets the maximum number of Event Trace Session buffers.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 256
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-130">-MaxLogFileSizeInMB</span><span class="sxs-lookup"><span data-stu-id="6d454-130">-MaxLogFileSizeInMB</span></span>
+<span data-ttu-id="6d454-131">Définit la taille maximale du fichier journal en mégaoctets (Mo) ou le nombre d’enregistrements pour les journaux SQL.</span><span class="sxs-lookup"><span data-stu-id="6d454-131">Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0 (no limit)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-132">-MinBuffers</span><span class="sxs-lookup"><span data-stu-id="6d454-132">-MinBuffers</span></span>
+<span data-ttu-id="6d454-133">Définit le nombre minimal de mémoires tampons de session de suivi d’événements.</span><span class="sxs-lookup"><span data-stu-id="6d454-133">Sets the minimum number of Event Trace Session buffers.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-134">-OutputFilePath</span><span class="sxs-lookup"><span data-stu-id="6d454-134">-OutputFilePath</span></span>
+<span data-ttu-id="6d454-135">Chemin d’accès du fichier journal de sortie ou nom de l’ensemble de journaux et du journal dans une base de données SQL.</span><span class="sxs-lookup"><span data-stu-id="6d454-135">Path of the output log file or the DSN and log set name in a SQL database.</span></span> <span data-ttu-id="6d454-136">Le chemin d’accès par défaut est : `$env:systemdrive\PerfLogs\Admin`.</span><span class="sxs-lookup"><span data-stu-id="6d454-136">The default path is `$env:systemdrive\PerfLogs\Admin`.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: $env:systemdrive\PerfLogs\Admin
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-137">-ProviderFilePath</span><span class="sxs-lookup"><span data-stu-id="6d454-137">-ProviderFilePath</span></span>
+<span data-ttu-id="6d454-138">Fichier répertoriant plusieurs fournisseurs de suivi d’événements à activer.</span><span class="sxs-lookup"><span data-stu-id="6d454-138">File listing multiple Event Trace providers to enable.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-139">-Nom_session</span><span class="sxs-lookup"><span data-stu-id="6d454-139">-SessionName</span></span>
+<span data-ttu-id="6d454-140">Nom de la session de suivi d’événements.</span><span class="sxs-lookup"><span data-stu-id="6d454-140">The name of the Event Trace session.</span></span> <span data-ttu-id="6d454-141">Pour arrêter une session de trace, vous devez connaître le nom de la session.</span><span class="sxs-lookup"><span data-stu-id="6d454-141">To stop a trace session you must know the session name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6d454-142">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6d454-142">CommonParameters</span></span>
+
+<span data-ttu-id="6d454-143">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6d454-143">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6d454-144">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="6d454-144">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="6d454-145">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="6d454-145">INPUTS</span></span>
+
+### <span data-ttu-id="6d454-146">Aucun</span><span class="sxs-lookup"><span data-stu-id="6d454-146">None</span></span>
+
+## <span data-ttu-id="6d454-147">SORTIES</span><span class="sxs-lookup"><span data-stu-id="6d454-147">OUTPUTS</span></span>
+
+### <span data-ttu-id="6d454-148">Aucun</span><span class="sxs-lookup"><span data-stu-id="6d454-148">None</span></span>
+
+## <span data-ttu-id="6d454-149">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="6d454-149">NOTES</span></span>
+
+## <span data-ttu-id="6d454-150">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="6d454-150">RELATED LINKS</span></span>
+
+[<span data-ttu-id="6d454-151">Suivi d’événements</span><span class="sxs-lookup"><span data-stu-id="6d454-151">Event Tracing</span></span>](/windows/desktop/ETW/event-tracing-portal)
+
+[<span data-ttu-id="6d454-152">Stop-Trace</span><span class="sxs-lookup"><span data-stu-id="6d454-152">Stop-Trace</span></span>](stop-trace.md)
+
+[<span data-ttu-id="6d454-153">Disable-PSWSManCombinedTrace</span><span class="sxs-lookup"><span data-stu-id="6d454-153">Disable-PSWSManCombinedTrace</span></span>](Disable-PSWSManCombinedTrace.md)
+
+[<span data-ttu-id="6d454-154">Disable-WSManTrace</span><span class="sxs-lookup"><span data-stu-id="6d454-154">Disable-WSManTrace</span></span>](Disable-WSManTrace.md)
+
+[<span data-ttu-id="6d454-155">Enable-PSWSManCombinedTrace</span><span class="sxs-lookup"><span data-stu-id="6d454-155">Enable-PSWSManCombinedTrace</span></span>](Enable-PSWSManCombinedTrace.md)
+
+[<span data-ttu-id="6d454-156">Enable-WSManTrace</span><span class="sxs-lookup"><span data-stu-id="6d454-156">Enable-WSManTrace</span></span>](Enable-WSManTrace.md)

@@ -1,0 +1,401 @@
+---
+external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+keywords: powershell,applet de commande
+Locale: en-US
+Module Name: Microsoft.PowerShell.Management
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Split-Path
+ms.openlocfilehash: b0366e9d84826d84dcdc341a9e83e4ed7dc45059
+ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "93201593"
+---
+# <span data-ttu-id="636ad-103">Split-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-103">Split-Path</span></span>
+
+## <span data-ttu-id="636ad-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="636ad-104">SYNOPSIS</span></span>
+<span data-ttu-id="636ad-105">Retourne la partie spécifiée d'un chemin d'accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-105">Returns the specified part of a path.</span></span>
+
+## <span data-ttu-id="636ad-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="636ad-106">SYNTAX</span></span>
+
+### <span data-ttu-id="636ad-107">ParentSet (par défaut)</span><span class="sxs-lookup"><span data-stu-id="636ad-107">ParentSet (Default)</span></span>
+
+```
+Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-108">LeafSet</span><span class="sxs-lookup"><span data-stu-id="636ad-108">LeafSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [-Leaf] [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-109">LeafBaseSet</span><span class="sxs-lookup"><span data-stu-id="636ad-109">LeafBaseSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [-LeafBase] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-110">ExtensionSet</span><span class="sxs-lookup"><span data-stu-id="636ad-110">ExtensionSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [-Extension] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-111">QualifierSet</span><span class="sxs-lookup"><span data-stu-id="636ad-111">QualifierSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [[-Qualifier]] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-112">NoQualifierSet</span><span class="sxs-lookup"><span data-stu-id="636ad-112">NoQualifierSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [-NoQualifier] [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-113">IsAbsoluteSet</span><span class="sxs-lookup"><span data-stu-id="636ad-113">IsAbsoluteSet</span></span>
+
+```
+Split-Path [-Path] <String[]> [-Resolve] [-IsAbsolute] [-Credential <PSCredential>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="636ad-114">LiteralPathSet</span><span class="sxs-lookup"><span data-stu-id="636ad-114">LiteralPathSet</span></span>
+
+```
+Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="636ad-115">Description</span><span class="sxs-lookup"><span data-stu-id="636ad-115">DESCRIPTION</span></span>
+
+<span data-ttu-id="636ad-116">L’applet de commande **Split-Path** retourne uniquement la partie spécifiée d’un chemin d’accès, par exemple le dossier parent, un sous-dossier ou un nom de fichier.</span><span class="sxs-lookup"><span data-stu-id="636ad-116">The **Split-Path** cmdlet returns only the specified part of a path, such as the parent folder, a subfolder, or a file name.</span></span>
+<span data-ttu-id="636ad-117">Elle peut également obtenir des éléments qui sont référencés par le chemin d’accès fractionné et indiquer si le chemin d’accès est relatif ou absolu.</span><span class="sxs-lookup"><span data-stu-id="636ad-117">It can also get items that are referenced by the split path and tell whether the path is relative or absolute.</span></span>
+
+<span data-ttu-id="636ad-118">Vous pouvez utiliser cette applet de commande pour obtenir ou envoyer uniquement une partie sélectionnée d’un chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-118">You can use this cmdlet to get or submit only a selected part of a path.</span></span>
+
+## <span data-ttu-id="636ad-119">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="636ad-119">EXAMPLES</span></span>
+
+### <span data-ttu-id="636ad-120">Exemple 1 : obtenir le qualificateur d’un chemin d’accès</span><span class="sxs-lookup"><span data-stu-id="636ad-120">Example 1: Get the qualifier of a path</span></span>
+
+```
+PS C:\> Split-Path -Path "HKCU:\Software\Microsoft" -Qualifier
+HKCU:
+```
+
+<span data-ttu-id="636ad-121">Cette commande retourne uniquement le qualificateur du chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-121">This command returns only the qualifier of the path.</span></span>
+<span data-ttu-id="636ad-122">Le qualificateur est le lecteur.</span><span class="sxs-lookup"><span data-stu-id="636ad-122">The qualifier is the drive.</span></span>
+
+### <span data-ttu-id="636ad-123">Exemple 2 : afficher les noms de fichiers</span><span class="sxs-lookup"><span data-stu-id="636ad-123">Example 2: Display file names</span></span>
+
+```
+PS C:\> Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
+Pass1.log
+Pass2.log
+...
+```
+
+<span data-ttu-id="636ad-124">Cette commande affiche les fichiers qui sont référencés par le chemin d’accès fractionné.</span><span class="sxs-lookup"><span data-stu-id="636ad-124">This command displays the files that are referenced by the split path.</span></span>
+<span data-ttu-id="636ad-125">Étant donné que ce chemin d’accès est fractionné au dernier élément, également connu sous le nom de feuille, la commande affiche uniquement les noms de fichiers.</span><span class="sxs-lookup"><span data-stu-id="636ad-125">Because this path is split to the last item, also known as the leaf, the command displays only the file names.</span></span>
+
+<span data-ttu-id="636ad-126">Le paramètre *Resolve* indique à **Split-Path** d’afficher les éléments référencés par le chemin d’accès de fractionnement, au lieu d’afficher le chemin d’accès de fractionnement.</span><span class="sxs-lookup"><span data-stu-id="636ad-126">The *Resolve* parameter tells **Split-Path** to display the items that the split path references, instead of displaying the split path.</span></span>
+
+<span data-ttu-id="636ad-127">Comme toutes les commandes **Split-Path** , cette commande retourne des chaînes.</span><span class="sxs-lookup"><span data-stu-id="636ad-127">Like all **Split-Path** commands, this command returns strings.</span></span>
+<span data-ttu-id="636ad-128">Elle ne retourne pas d’objets **FileInfo** représentant les fichiers.</span><span class="sxs-lookup"><span data-stu-id="636ad-128">It does not return **FileInfo** objects that represent the files.</span></span>
+
+### <span data-ttu-id="636ad-129">Exemple 3 : récupération du conteneur parent</span><span class="sxs-lookup"><span data-stu-id="636ad-129">Example 3: Get the parent container</span></span>
+
+```
+PS C:\> Split-Path -Path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
+C:\WINDOWS\system32\WindowsPowerShell\V1.0
+```
+
+<span data-ttu-id="636ad-130">Cette commande retourne uniquement les conteneurs parents du chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-130">This command returns only the parent containers of the path.</span></span>
+<span data-ttu-id="636ad-131">Comme il n’inclut pas de paramètres pour spécifier le fractionnement, **Split-Path** utilise la valeur par défaut de l’emplacement de fractionnement, qui est le *parent* .</span><span class="sxs-lookup"><span data-stu-id="636ad-131">Because it does not include any parameters to specify the split, **Split-Path** uses the split location default, which is *Parent* .</span></span>
+
+### <span data-ttu-id="636ad-132">Exemple 4 : détermine si un chemin d’accès est absolu</span><span class="sxs-lookup"><span data-stu-id="636ad-132">Example 4: Determines whether a path is absolute</span></span>
+
+```
+PS C:\> Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
+False
+```
+
+<span data-ttu-id="636ad-133">Cette commande détermine si le chemin d’accès est relatif ou absolu.</span><span class="sxs-lookup"><span data-stu-id="636ad-133">This command determines whether the path is relative or absolute.</span></span>
+<span data-ttu-id="636ad-134">Dans ce cas, étant donné que le chemin d’accès est relatif au dossier actif, représenté par un point (.), il retourne $False.</span><span class="sxs-lookup"><span data-stu-id="636ad-134">In this case, because the path is relative to the current folder, which is represented by a dot (.), it returns $False.</span></span>
+
+### <span data-ttu-id="636ad-135">Exemple 5 : modifier l’emplacement d’un chemin d’accès spécifié</span><span class="sxs-lookup"><span data-stu-id="636ad-135">Example 5: Change location to a specified path</span></span>
+
+```
+PS C:\> Set-Location (Split-Path -Path $profile)
+PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
+```
+
+<span data-ttu-id="636ad-136">Cette commande remplace votre emplacement par le dossier qui contient le profil PowerShell.</span><span class="sxs-lookup"><span data-stu-id="636ad-136">This command changes your location to the folder that contains the PowerShell profile.</span></span>
+
+<span data-ttu-id="636ad-137">La commande entre parenthèses utilise **Split-Path** pour retourner uniquement le parent du chemin d’accès stocké dans la variable $profile intégrée.</span><span class="sxs-lookup"><span data-stu-id="636ad-137">The command in parentheses uses **Split-Path** to return only the parent of the path stored in the built-in $Profile variable.</span></span>
+<span data-ttu-id="636ad-138">Le paramètre *parent* est le paramètre d’emplacement de fractionnement par défaut.</span><span class="sxs-lookup"><span data-stu-id="636ad-138">The *Parent* parameter is the default split location parameter.</span></span>
+<span data-ttu-id="636ad-139">Par conséquent, vous pouvez l’omettre de la commande.</span><span class="sxs-lookup"><span data-stu-id="636ad-139">Therefore, you can omit it from the command.</span></span>
+<span data-ttu-id="636ad-140">Les parenthèses indiquent à PowerShell d’exécuter la commande en premier.</span><span class="sxs-lookup"><span data-stu-id="636ad-140">The parentheses direct PowerShell to run the command first.</span></span>
+<span data-ttu-id="636ad-141">Il s’agit d’une méthode utile pour vous déplacer vers un dossier qui a un nom de chemin d’accès long.</span><span class="sxs-lookup"><span data-stu-id="636ad-141">This is a useful way to move to a folder that has a long path name.</span></span>
+
+### <span data-ttu-id="636ad-142">Exemple 6 : fractionner un chemin d’accès à l’aide du pipeline</span><span class="sxs-lookup"><span data-stu-id="636ad-142">Example 6: Split a path by using the pipeline</span></span>
+
+```
+PS C:\> 'C:\Documents and Settings\User01\My Documents\My Pictures' | Split-Path
+C:\Documents and Settings\User01\My Documents
+```
+
+<span data-ttu-id="636ad-143">Cette commande utilise un opérateur de pipeline (|) pour envoyer un chemin d’accès à **Split-Path** .</span><span class="sxs-lookup"><span data-stu-id="636ad-143">This command uses a pipeline operator (|) to send a path to **Split-Path** .</span></span>
+<span data-ttu-id="636ad-144">Le chemin d’accès figure entre guillemets pour indiquer qu’il s’agit d’un jeton unique.</span><span class="sxs-lookup"><span data-stu-id="636ad-144">The path is enclosed in quotation marks to indicate that it is a single token.</span></span>
+
+## <span data-ttu-id="636ad-145">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="636ad-145">PARAMETERS</span></span>
+
+### <span data-ttu-id="636ad-146">-Credential</span><span class="sxs-lookup"><span data-stu-id="636ad-146">-Credential</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="636ad-147">Ce paramètre n’est pas pris en charge par les fournisseurs installés avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="636ad-147">This parameter is not supported by any providers installed with PowerShell.</span></span>
+> <span data-ttu-id="636ad-148">Pour emprunter l’identité d’un autre utilisateur ou élever vos informations d’identification lors de l’exécution de cette applet de commande, utilisez [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span><span class="sxs-lookup"><span data-stu-id="636ad-148">To impersonate another user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span></span>
+
+```yaml
+Type: System.Management.Automation.PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-149">-Extension</span><span class="sxs-lookup"><span data-stu-id="636ad-149">-Extension</span></span>
+
+<span data-ttu-id="636ad-150">Indique que cette applet de commande retourne uniquement l’extension de la feuille.</span><span class="sxs-lookup"><span data-stu-id="636ad-150">Indicates that this cmdlet returns only the extension of the leaf.</span></span>
+<span data-ttu-id="636ad-151">Par exemple, dans le chemin d’accès `C:\Test\Logs\Pass1.log` , elle retourne uniquement `.log` .</span><span class="sxs-lookup"><span data-stu-id="636ad-151">For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `.log`.</span></span>
+
+<span data-ttu-id="636ad-152">Ce paramètre a été introduit dans PowerShell 6,0.</span><span class="sxs-lookup"><span data-stu-id="636ad-152">This parameter was introduced in PowerShell 6.0.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ExtensionSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-153">-IsAbsolute</span><span class="sxs-lookup"><span data-stu-id="636ad-153">-IsAbsolute</span></span>
+
+<span data-ttu-id="636ad-154">Indique que cette applet de commande retourne $True si le chemin d’accès est absolu et $False s’il est relatif.</span><span class="sxs-lookup"><span data-stu-id="636ad-154">Indicates that this cmdlet returns $True if the path is absolute and $False if it is relative.</span></span>
+<span data-ttu-id="636ad-155">Un chemin d’accès absolu a une longueur supérieure à zéro et n’utilise pas de point (.) pour indiquer le chemin d’accès actuel.</span><span class="sxs-lookup"><span data-stu-id="636ad-155">An absolute path has a length greater than zero and does not use a dot (.) to indicate the current path.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: IsAbsoluteSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-156">-Feuille</span><span class="sxs-lookup"><span data-stu-id="636ad-156">-Leaf</span></span>
+
+<span data-ttu-id="636ad-157">Indique que cette applet de commande retourne uniquement le dernier élément ou conteneur dans le chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-157">Indicates that this cmdlet returns only the last item or container in the path.</span></span>
+<span data-ttu-id="636ad-158">Par exemple, dans le chemin d’accès `C:\Test\Logs\Pass1.log` , elle retourne uniquement PASS1. log.</span><span class="sxs-lookup"><span data-stu-id="636ad-158">For example, in the path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: LeafSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-159">-LeafBase</span><span class="sxs-lookup"><span data-stu-id="636ad-159">-LeafBase</span></span>
+
+<span data-ttu-id="636ad-160">Indique que cette applet de commande retourne uniquement le nom de base de la feuille.</span><span class="sxs-lookup"><span data-stu-id="636ad-160">Indicates that this cmdlet returns only base name of the leaf.</span></span>
+<span data-ttu-id="636ad-161">Par exemple, dans le chemin d’accès `C:\Test\Logs\Pass1.log` , elle retourne uniquement `Pass1` .</span><span class="sxs-lookup"><span data-stu-id="636ad-161">For example, in the path `C:\Test\Logs\Pass1.log`, it returns only `Pass1`.</span></span>
+
+<span data-ttu-id="636ad-162">Ce paramètre a été introduit dans PowerShell 6,0.</span><span class="sxs-lookup"><span data-stu-id="636ad-162">This parameter was introduced in PowerShell 6.0.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: LeafBaseSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-163">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="636ad-163">-LiteralPath</span></span>
+
+<span data-ttu-id="636ad-164">Spécifie les chemins d’accès à fractionner.</span><span class="sxs-lookup"><span data-stu-id="636ad-164">Specifies the paths to be split.</span></span>
+<span data-ttu-id="636ad-165">Contrairement au paramètre *Path* , la valeur de *LiteralPath* est utilisée exactement telle qu'elle est tapée.</span><span class="sxs-lookup"><span data-stu-id="636ad-165">Unlike *Path* , the value of *LiteralPath* is used exactly as it is typed.</span></span>
+<span data-ttu-id="636ad-166">Aucun caractère n'est interprété en tant que caractère générique.</span><span class="sxs-lookup"><span data-stu-id="636ad-166">No characters are interpreted as wildcard characters.</span></span>
+<span data-ttu-id="636ad-167">Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples.</span><span class="sxs-lookup"><span data-stu-id="636ad-167">If the path includes escape characters, enclose it in single quotation marks.</span></span>
+<span data-ttu-id="636ad-168">Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.</span><span class="sxs-lookup"><span data-stu-id="636ad-168">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: LiteralPathSet
+Aliases: PSPath, LP
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-169">-NoQualifier</span><span class="sxs-lookup"><span data-stu-id="636ad-169">-NoQualifier</span></span>
+
+<span data-ttu-id="636ad-170">Indique que cette applet de commande retourne le chemin d’accès sans le qualificateur.</span><span class="sxs-lookup"><span data-stu-id="636ad-170">Indicates that this cmdlet returns the path without the qualifier.</span></span>
+<span data-ttu-id="636ad-171">Pour les fournisseurs de système de fichiers ou de Registre, le qualificateur est le lecteur du chemin d’accès du fournisseur (C: ou HKCU:, par exemple).</span><span class="sxs-lookup"><span data-stu-id="636ad-171">For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.</span></span>
+<span data-ttu-id="636ad-172">Par exemple, dans le chemin d’accès `C:\Test\Logs\Pass1.log` , elle retourne uniquement \Test\Logs\Pass1.log.</span><span class="sxs-lookup"><span data-stu-id="636ad-172">For example, in the path `C:\Test\Logs\Pass1.log`, it returns only \Test\Logs\Pass1.log.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: NoQualifierSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-173">-Parent</span><span class="sxs-lookup"><span data-stu-id="636ad-173">-Parent</span></span>
+
+<span data-ttu-id="636ad-174">Indique que cette applet de commande retourne uniquement les conteneurs parents de l’élément ou du conteneur spécifié par le chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-174">Indicates that this cmdlet returns only the parent containers of the item or of the container specified by the path.</span></span>
+<span data-ttu-id="636ad-175">Par exemple, dans le chemin d’accès `C:\Test\Logs\Pass1.log` , elle retourne C:\Test\Logs.</span><span class="sxs-lookup"><span data-stu-id="636ad-175">For example, in the path `C:\Test\Logs\Pass1.log`, it returns C:\Test\Logs.</span></span>
+<span data-ttu-id="636ad-176">Le paramètre *parent* est le paramètre d’emplacement de fractionnement par défaut.</span><span class="sxs-lookup"><span data-stu-id="636ad-176">The *Parent* parameter is the default split location parameter.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ParentSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-177">-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-177">-Path</span></span>
+
+<span data-ttu-id="636ad-178">Spécifie les chemins d’accès à fractionner.</span><span class="sxs-lookup"><span data-stu-id="636ad-178">Specifies the paths to be split.</span></span>
+<span data-ttu-id="636ad-179">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="636ad-179">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="636ad-180">Si le chemin d’accès inclut des espaces, mettez-le entre guillemets.</span><span class="sxs-lookup"><span data-stu-id="636ad-180">If the path includes spaces, enclose it in quotation marks.</span></span>
+<span data-ttu-id="636ad-181">Vous pouvez également diriger un chemin vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="636ad-181">You can also pipe a path to this cmdlet.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: ParentSet, LeafSet, LeafBaseSet, ExtensionSet, QualifierSet, NoQualifierSet, IsAbsoluteSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="636ad-182">-Qualificateur</span><span class="sxs-lookup"><span data-stu-id="636ad-182">-Qualifier</span></span>
+
+<span data-ttu-id="636ad-183">Indique que cette applet de commande retourne uniquement le qualificateur du chemin d’accès spécifié.</span><span class="sxs-lookup"><span data-stu-id="636ad-183">Indicates that this cmdlet returns only the qualifier of the specified path.</span></span>
+<span data-ttu-id="636ad-184">Pour les fournisseurs de système de fichiers ou de Registre, le qualificateur est le lecteur du chemin d’accès du fournisseur (C: ou HKCU:, par exemple).</span><span class="sxs-lookup"><span data-stu-id="636ad-184">For the FileSystem or registry providers, the qualifier is the drive of the provider path, such as C: or HKCU:.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: QualifierSet
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-185">-Résoudre</span><span class="sxs-lookup"><span data-stu-id="636ad-185">-Resolve</span></span>
+
+<span data-ttu-id="636ad-186">Indique que cette applet de commande affiche les éléments qui sont référencés par le chemin d’accès de fractionnement résultant au lieu d’afficher les éléments de chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-186">Indicates that this cmdlet displays the items that are referenced by the resulting split path instead of displaying the path elements.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="636ad-187">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="636ad-187">CommonParameters</span></span>
+
+<span data-ttu-id="636ad-188">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="636ad-188">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="636ad-189">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="636ad-189">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="636ad-190">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="636ad-190">INPUTS</span></span>
+
+### <span data-ttu-id="636ad-191">System.String</span><span class="sxs-lookup"><span data-stu-id="636ad-191">System.String</span></span>
+
+<span data-ttu-id="636ad-192">Vous pouvez diriger une chaîne qui contient un chemin d’accès vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="636ad-192">You can pipe a string that contains a path to this cmdlet.</span></span>
+
+## <span data-ttu-id="636ad-193">SORTIES</span><span class="sxs-lookup"><span data-stu-id="636ad-193">OUTPUTS</span></span>
+
+### <span data-ttu-id="636ad-194">System. String, System. Boolean</span><span class="sxs-lookup"><span data-stu-id="636ad-194">System.String, System.Boolean</span></span>
+
+<span data-ttu-id="636ad-195">**Split-Path retourne des chaînes de** texte.</span><span class="sxs-lookup"><span data-stu-id="636ad-195">**Split-Path** returns text strings.</span></span>
+<span data-ttu-id="636ad-196">Lorsque vous spécifiez le paramètre *Resolve* , **Split-Path** retourne une chaîne qui décrit l’emplacement des éléments. elle ne retourne pas d’objets qui représentent les éléments, tels qu’un objet **FileInfo** ou **RegistryKey** .</span><span class="sxs-lookup"><span data-stu-id="636ad-196">When you specify the *Resolve* parameter, **Split-Path** returns a string that describes the location of the items; it does not return objects that represent the items, such as a **FileInfo** or **RegistryKey** object.</span></span>
+
+<span data-ttu-id="636ad-197">Lorsque vous spécifiez le paramètre *IsAbsolute* , **Split-Path** retourne une valeur **booléenne** .</span><span class="sxs-lookup"><span data-stu-id="636ad-197">When you specify the *IsAbsolute* parameter, **Split-Path** returns a **Boolean** value.</span></span>
+
+## <span data-ttu-id="636ad-198">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="636ad-198">NOTES</span></span>
+
+* <span data-ttu-id="636ad-199">Les paramètres d’emplacement de fractionnement ( *qualifier* , *parent* , *extension* , *feuille* , *LeafBase* et *NoQualifier* ) sont exclusifs.</span><span class="sxs-lookup"><span data-stu-id="636ad-199">The split location parameters ( *Qualifier* , *Parent* , *Extension* , *Leaf* , *LeafBase* , and *NoQualifier* ) are exclusive.</span></span> <span data-ttu-id="636ad-200">Autrement dit, vous ne pouvez utiliser qu’un seul de ces paramètres dans chaque commande.</span><span class="sxs-lookup"><span data-stu-id="636ad-200">You can use only one in each command.</span></span>
+
+  <span data-ttu-id="636ad-201">Les applets de commande qui contiennent le nom de **chemin** d’accès (les applets de commande **path** ) fonctionnent avec des noms de chemins d’accès et retournent les noms dans un format concis que tous les fournisseurs PowerShell peuvent interpréter.</span><span class="sxs-lookup"><span data-stu-id="636ad-201">The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return the names in a concise format that all PowerShell providers can interpret.</span></span>
+<span data-ttu-id="636ad-202">Elles sont conçues pour être utilisées dans des programmes et des scripts dans lesquels vous voulez afficher l’intégralité ou une partie d’un nom de chemin d’accès dans un format particulier.</span><span class="sxs-lookup"><span data-stu-id="636ad-202">They are designed for use in programs and scripts where you want to display all or part of a path name in a particular format.</span></span>
+<span data-ttu-id="636ad-203">Utilisez-les de la même façon que vous utilisez **dirname** , **Normpath** , **realpath** , **join** ou d’autres manipulateurs de chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="636ad-203">Use them in the way that you would use **Dirname** , **Normpath** , **Realpath** , **Join** , or other path manipulators.</span></span>
+
+  <span data-ttu-id="636ad-204">Vous pouvez utiliser les applets de commande **path** avec plusieurs fournisseurs.</span><span class="sxs-lookup"><span data-stu-id="636ad-204">You can use the **Path** cmdlets together with several providers.</span></span>
+<span data-ttu-id="636ad-205">Il s’agit notamment des fournisseurs de système de fichiers, de Registre et de certificats.</span><span class="sxs-lookup"><span data-stu-id="636ad-205">These include the FileSystem, Registry, and Certificate providers.</span></span>
+
+  <span data-ttu-id="636ad-206">**Split-Path** est conçu pour fonctionner avec les données exposées par n’importe quel fournisseur.</span><span class="sxs-lookup"><span data-stu-id="636ad-206">**Split-Path** is designed to work with the data exposed by any provider.</span></span>
+<span data-ttu-id="636ad-207">Pour répertorier les fournisseurs disponibles dans votre session, tapez `Get-PSProvider` .</span><span class="sxs-lookup"><span data-stu-id="636ad-207">To list the providers available in your session, type `Get-PSProvider`.</span></span>
+<span data-ttu-id="636ad-208">Pour plus d'informations, consultez about_Providers.</span><span class="sxs-lookup"><span data-stu-id="636ad-208">For more information, see about_Providers.</span></span>
+
+## <span data-ttu-id="636ad-209">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="636ad-209">RELATED LINKS</span></span>
+
+[<span data-ttu-id="636ad-210">Convert-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-210">Convert-Path</span></span>](Convert-Path.md)
+
+[<span data-ttu-id="636ad-211">Join-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-211">Join-Path</span></span>](Join-Path.md)
+
+[<span data-ttu-id="636ad-212">Resolve-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-212">Resolve-Path</span></span>](Resolve-Path.md)
+
+[<span data-ttu-id="636ad-213">Test-Path</span><span class="sxs-lookup"><span data-stu-id="636ad-213">Test-Path</span></span>](Test-Path.md)
