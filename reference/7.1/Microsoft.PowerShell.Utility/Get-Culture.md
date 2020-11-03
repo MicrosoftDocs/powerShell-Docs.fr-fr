@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/28/2019
+ms.date: 11/01/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Culture
-ms.openlocfilehash: 2c987376524291ab3a51e8182de8f9842cf7d003
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6cadebfbcdc8cc7a333d62c3c7b9ff5fb6635168
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202837"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239830"
 ---
 # Get-Culture
 
@@ -41,25 +41,29 @@ Get-Culture [-ListAvailable] [<CommonParameters>]
 
 ## Description
 
-L' `Get-Culture` applet de commande obtient des informations sur les paramètres de culture actuels.
-Ces informations incluent celles sur les paramètres de langue actuels du système, tels que la disposition du clavier et le format d'affichage d'éléments comme les nombres, les devises et les dates.
+L' `Get-Culture` applet de commande obtient des informations sur les paramètres de culture actuels. Ces informations incluent celles sur les paramètres de langue actuels du système, tels que la disposition du clavier et le format d'affichage d'éléments comme les nombres, les devises et les dates.
 
-Vous pouvez également utiliser l' `Get-UICulture` applet de commande, qui obtient la culture d’interface utilisateur actuelle sur le système, et l’applet de commande [Set-culture](/powershell/module/international/set-culture?view=win10-ps) dans le module international.
-La culture d'interface utilisateur détermine les chaînes de texte utilisées pour les éléments d'interface utilisateur, tels que les menus et les messages.
+Vous pouvez également utiliser l' `Get-UICulture` applet de commande, qui obtient la culture d’interface utilisateur actuelle sur le système, et l’applet de commande [Set-culture](/powershell/module/international/set-culture) dans le module international. La culture d'interface utilisateur détermine les chaînes de texte utilisées pour les éléments d'interface utilisateur, tels que les menus et les messages.
 
 ## EXEMPLES
 
 ### Exemple 1 : récupérer les paramètres de culture
 
+```powershell
+Get-Culture
 ```
-PS C:\> Get-Culture
+
+```Output
+LCID             Name             DisplayName
+----             ----             -----------
+1033             en-US            English (United States)
 ```
 
 Cette commande affiche des informations sur les paramètres régionaux de l'ordinateur.
 
 ### Exemple 2 : mettre en forme les propriétés d’un objet culture
 
-```
+```powershell
 PS C:\> $C = Get-Culture
 PS C:\> $C | Format-List -Property *
 Parent                         : en
@@ -82,14 +86,18 @@ DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
 Calendar                       : System.Globalization.GregorianCalendar
 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : False PS C:\> $C.Calendar
+IsReadOnly                     : False
+
+PS C:\> $C.Calendar
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
 AlgorithmType        : SolarCalendar
 CalendarType         : Localized
 Eras                 : {1}
 TwoDigitYearMax      : 2029
-IsReadOnly           : False PS C:\> $C.DateTimeFormat
+IsReadOnly           : False
+
+PS C:\> $C.DateTimeFormat
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -115,43 +123,39 @@ MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
-MonthGenitiveNames               : {January, February, March, April...} PS C:\> $C.DateTimeFormat.FirstDayOfWeek
+MonthGenitiveNames               : {January, February, March, April...}
+
+PS C:\> $C.DateTimeFormat.FirstDayOfWeek
 Sunday
 ```
 
-Cet exemple illustre la vaste quantité de données dans l'objet de culture.
-Il montre comment afficher les propriétés et les sous-propriétés de l'objet.
+Cet exemple illustre la vaste quantité de données dans l'objet de culture. Il montre comment afficher les propriétés et les sous-propriétés de l'objet.
 
-La première commande utilise l’applet de commande **obten-culture** pour récupérer les paramètres de culture actuels sur l’ordinateur.
-Elle stocke l’objet de culture résultant dans la variable $C.
+La première commande utilise l' `Get-Culture` applet de commande pour récupérer les paramètres de culture actuels sur l’ordinateur.
+Elle stocke l’objet de culture résultant dans la `$C` variable.
 
-La deuxième commande affiche toutes les propriétés de l'objet de culture.
-Elle utilise un opérateur de pipeline (|) pour envoyer l’objet de culture dans `$C` l’applet de commande `Format-List` .
-Elle utilise le paramètre **Property** pour afficher toutes les \* Propriétés () de l’objet.
-Cette commande peut être abrégée comme `$c | fl *` .
+La deuxième commande affiche toutes les propriétés de l'objet de culture. Elle utilise un opérateur de pipeline ( `|` ) pour envoyer l’objet de culture dans `$C` l’applet de commande `Format-List` . Elle utilise le paramètre **Property** pour afficher toutes les `*` Propriétés () de l’objet. Cette commande peut être abrégée comme `$c | fl *` .
 
-Les commandes restantes explorent les propriétés de l'objet de culture à l'aide de la notation par point pour afficher les valeurs des propriétés de l'objet.
-Vous pouvez utiliser cette notation pour afficher la valeur d'une propriété de l'objet.
+Les commandes restantes explorent les propriétés de l'objet de culture à l'aide de la notation par point pour afficher les valeurs des propriétés de l'objet. Vous pouvez utiliser cette notation pour afficher la valeur d'une propriété de l'objet.
 
 La troisième commande utilise la notation par points pour afficher la valeur de la propriété **Calendar** de l’objet culture.
 
 La quatrième commande utilise la notation par points pour afficher la valeur de la propriété **DataTimeFormat** de l’objet culture.
 
-Plusieurs propriétés de l'objet ont des propriétés.
-La cinquième commande utilise la notation par points pour afficher la valeur de la propriété **FirstDayOfWeek** de la propriété **DateTimeFormat** .
+Plusieurs propriétés de l'objet ont des propriétés. La cinquième commande utilise la notation par points pour afficher la valeur de la propriété **FirstDayOfWeek** de la propriété **DateTimeFormat** .
 
 ### Exemple 3 : obtenir une culture spécifique
 
-Obtient l’objet CultureInfo pour l’anglais dans le États-Unis.
+Obtenir l’objet CultureInfo pour le français en France.
 
 ```powershell
-Get-Culture -Name en-US
+Get-Culture -Name fr-FR
 ```
 
-```output
+```Output
 LCID             Name             DisplayName
 ----             ----             -----------
-1033             en-US            English (United States)
+1036             fr-FR            French (France)
 ```
 
 ## PARAMETERS
@@ -232,7 +236,6 @@ Vous pouvez également utiliser les `$PsCulture` `$PsUICulture` variables et. La
 
 ## LIENS CONNEXES
 
-[Définir-culture](/powershell/module/international/set-culture?view=win10-ps)
+[Définir-culture](/powershell/module/international/set-culture)
 
 [Get-UICulture](Get-UICulture.md)
-

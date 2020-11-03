@@ -7,12 +7,12 @@ ms.date: 08/09/2019
 online version: https://go.microsoft.com/fwlink/?linkid=526220
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: e610678f0d6db62ccbdedf96f1315aa2e88eb5e2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6fbe7b1e5534b1227bcfd73fd58f3602186ef8c5
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202217"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239670"
 ---
 # Set-Clipboard
 
@@ -29,7 +29,7 @@ Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [<CommonParameter
 
 L' `Set-Clipboard` applet de commande définit le contenu du presse-papiers.
 
-[!NOTE]
+> [!NOTE]
 > Sur Linux, cette applet de commande requiert que l' `xclip` utilitaire se trouve dans le chemin d’accès.
 
 ## EXEMPLES

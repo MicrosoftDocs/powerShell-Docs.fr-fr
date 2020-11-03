@@ -7,18 +7,17 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: ba17b526de91e470149e90913814ecfac0f75392
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202177"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239890"
 ---
 # Set-Variable
 
 ## SYNOPSIS
-Définit la valeur d'une variable.
-Crée la variable si celle avec le nom demandé n'existe pas.
+Définit la valeur d'une variable. Crée la variable si celle avec le nom demandé n'existe pas.
 
 ## SYNTAX
 
@@ -30,41 +29,47 @@ Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Excl
 
 ## Description
 
-L’applet de commande **Set-variable** affecte une valeur à une variable spécifiée ou modifie la valeur actuelle.
-Si la variable n'existe pas, l'applet de commande la crée.
+L' `Set-Variable` applet de commande attribue une valeur à une variable spécifiée ou modifie la valeur actuelle. Si la variable n'existe pas, l'applet de commande la crée.
 
 ## EXEMPLES
 
 ### Exemple 1 : définir une variable et obtenir sa valeur
 
-```
-PS C:\> Set-Variable -Name "desc" -Value "A description"
-PS C:\> Get-Variable -Name "desc"
+Ces commandes définissent la valeur de la `$desc` variable sur `A description` , puis obtient la valeur de la variable.
+
+```powershell
+Set-Variable -Name "desc" -Value "A description"
+Get-Variable -Name "desc"
 ```
 
-Ces commandes définissent la valeur de la variable DESC sur une description, puis obtient la valeur de la variable.
+```Output
+Name                           Value
+----                           -----
+desc                           A description
+```
 
 ### Exemple 2 : définir une variable globale en lecture seule
 
+Cet exemple crée une variable globale en lecture seule qui contient tous les processus sur le système, puis affiche toutes les propriétés de la variable.
+
+```powershell
+Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+    Format-List -Property *
 ```
-PS C:\> Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru | Format-List -Property *
-```
 
-Cette commande crée une variable globale, variable en lecture seule qui contient tous les processus sur le système, puis affiche toutes les propriétés de la variable.
+La commande utilise l' `Set-Variable` applet de commande pour créer la variable. Elle utilise le paramètre **PassThru** pour créer un objet représentant la nouvelle variable, et elle utilise l’opérateur de pipeline ( `|` ) pour passer l’objet à l’applet de commande `Format-List` . Elle utilise le paramètre **Property** de `Format-List` avec la valeur All ( `*` ) pour afficher toutes les propriétés de la variable nouvellement créée.
 
-La commande utilise l’applet de commande **Set-variable** pour créer la variable.
-Elle utilise le paramètre *PassThru* pour créer un objet représentant la nouvelle variable, et elle utilise l’opérateur de pipeline (|) pour passer l’objet à l’applet de commande Format-List.
-Elle utilise le paramètre *Property* de Format-List avec la valeur All (*) pour afficher toutes les propriétés de la variable nouvellement créée.
-
-La valeur, « (Get-Process) », est placée entre parenthèses pour qu'elle soit exécutée avant d'être stockée dans la variable.
-Sinon, la variable contient les mots « Get-Process ».
+La valeur, `(Get-Process)` , est placée entre parenthèses pour s’assurer qu’elle est exécutée avant d’être stockée dans la variable. Sinon, la variable contient les mots « **obtien-process** ».
 
 ### Exemple 3 : comprendre les variables publiques et les variables privées
+
+Cet exemple montre comment modifier la visibilité d’une variable en `Private` . Cette variable peut être lue et modifiée par les scripts avec les autorisations requises, mais elle n'est pas visible par l'utilisateur.
 
 ```
 PS C:\> New-Variable -Name "counter" -Visibility Public -Value 26
 PS C:\> $Counter
 26
+
 PS C:\> Get-Variable c*
 
 Name                  Value
@@ -73,7 +78,7 @@ Culture               en-US
 ConsoleFileName
 ConfirmPreference     High
 CommandLineParameters {}
-Counter               26 
+Counter               26
 
 PS C:\> Set-Variable -Name "counter" -Visibility Private
 PS C:\> Get-Variable c*
@@ -85,17 +90,14 @@ ConsoleFileName
 ConfirmPreference     High
 CommandLineParameters {}
 
- PS C:\> $counter
+PS C:\> $counter
 "Cannot access the variable '$counter' because it is a private variable"
 
 PS C:\> .\use-counter.ps1
 #Commands completed successfully.
 ```
 
-Cette commande montre comment modifier la visibilité d’une variable en private.
-Cette variable peut être lue et modifiée par les scripts avec les autorisations requises, mais elle n'est pas visible par l'utilisateur.
-
-L'exemple de sortie montre la différence de comportement entre les variables publiques et les variables privées.
+Cette commande montre comment modifier la visibilité d’une variable en private. Cette variable peut être lue et modifiée par les scripts avec les autorisations requises, mais elle n'est pas visible par l'utilisateur.
 
 ## PARAMETERS
 
@@ -117,9 +119,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Spécifie un tableau d’éléments que cette applet de commande exclut de l’opération.
-La valeur de ce paramètre qualifie le paramètre *Path* .
-Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .
+Spécifie un tableau d’éléments que cette applet de commande exclut de l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .
 Les caractères génériques sont autorisés.
 
 ```yaml
@@ -138,8 +138,7 @@ Accept wildcard characters: True
 
 Vous permet de créer une variable portant le même nom qu'une variable en lecture seule existante ou de modifier la valeur d'une variable en lecture seule.
 
-Par défaut, vous pouvez remplacer une variable, sauf si la variable a la valeur d’option ReadOnly ou constant.
-Pour plus d’informations, consultez le paramètre *option* .
+Par défaut, vous pouvez remplacer une variable, sauf si la variable a une valeur d’option de `ReadOnly` ou `Constant` . Pour plus d’informations, consultez le paramètre **option** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,10 +154,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie un tableau d’éléments que cette applet de commande comprend dans l’opération.
-La valeur de ce paramètre qualifie le paramètre *Name* .
-Entrez un nom ou un modèle de nom, tel que `c*` .
-Les caractères génériques sont autorisés.
+Spécifie un tableau d’éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Name** . Entrez un nom ou un modèle de nom, tel que `c*` . Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -194,13 +190,11 @@ Spécifie la valeur de la propriété **options** de la variable.
 
 Les valeurs autorisées sont :
 
-- None : ne définit aucune option. (« None » est la valeur par défaut.)
-- ReadOnly : peut être supprimé. Ne peut pas être modifié, sauf en utilisant le paramètre force.
-- Constante : ne peut pas être supprimé ou modifié. « Constant » est valide uniquement quand vous créez une variable. Vous ne pouvez pas remplacer les options d'une variable existante par « Constant ».
-- Privé : la variable est disponible uniquement dans l’étendue actuelle.
-- Options AllScope : la variable est copiée vers toutes les nouvelles étendues créées.
-
-Pour afficher la propriété **options** de toutes les variables dans la session, tapez `Get-Variable | Format-Table -Property name, options -Autosize` .
+- `None`: Ne définit aucune option. (« None » est la valeur par défaut.)
+- `ReadOnly`: Peut être supprimé. Ne peut pas être modifié, sauf en utilisant le paramètre force.
+- `Constant`: Ne peut pas être supprimé ou modifié. `Constant` est valide uniquement lorsque vous créez une variable. Vous ne pouvez pas remplacer les options d’une variable existante par `Constant` .
+- `Private`: La variable est disponible uniquement dans l’étendue actuelle.
+- `AllScope`: La variable est copiée vers toutes les nouvelles étendues créées.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions
@@ -216,8 +210,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Retourne un objet représentant la nouvelle variable.
-Par défaut, cette applet de commande ne génère aucun résultat.
+
+Retourne un objet représentant la nouvelle variable. Par défaut, cette applet de commande ne génère aucun résultat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,17 +269,14 @@ Accept wildcard characters: False
 
 ### -Visibilité
 
-Détermine si la variable est visible en dehors de la session dans laquelle elle a été créée.
-Ce paramètre est conçu pour une utilisation dans les scripts et les commandes qui seront remis à d'autres utilisateurs.
+Détermine si la variable est visible en dehors de la session dans laquelle elle a été créée. Ce paramètre est conçu pour être utilisé dans les scripts et les commandes qui seront remis à d’autres utilisateurs.
 
 Les valeurs autorisées sont :
 
 - Public : la variable est visible. (« Public » est la valeur par défaut.)
 - Privé : la variable n’est pas visible.
 
-Quand une variable est privée, elle n'apparaît pas dans les listes de variables, telles que celles retournées par Get-Variable, ni dans les affichages du lecteur Variable:.
-Les commandes pour lire ou modifier la valeur d'une variable privée retournent une erreur.
-Toutefois, l'utilisateur peut exécuter des commandes qui utilisent une variable privée si les commandes ont été écrites dans la session dans laquelle la variable a été définie.
+Quand une variable est privée, elle n’apparaît pas dans les listes de variables, telles que celles retournées par `Get-Variable` , ou dans les affichages du lecteur **variable :** . Les commandes pour lire ou modifier la valeur d'une variable privée retournent une erreur. Toutefois, l'utilisateur peut exécuter des commandes qui utilisent une variable privée si les commandes ont été écrites dans la session dans laquelle la variable a été définie.
 
 ```yaml
 Type: System.Management.Automation.SessionStateEntryVisibility
@@ -301,6 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Vous demande une confirmation avant d’exécuter l’applet de commande.
 
 ```yaml
@@ -317,8 +309,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -340,13 +331,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### System.Object
 
-Vous pouvez diriger un objet qui représente la valeur de la variable vers **Set-variable** .
+Vous pouvez diriger un objet qui représente la valeur de la variable vers `Set-Variable` .
 
 ## SORTIES
 
 ### None ou System. Management. Automation. PSVariable
 
-Quand vous utilisez le paramètre *PassThru* , **Set-variable** génère un objet **System. Management. Automation. PSVariable** qui représente la variable nouvelle ou modifiée.
+Quand vous utilisez le paramètre **PassThru** , `Set-Variable` génère un objet **System. Management. Automation. PSVariable** représentant la variable nouvelle ou modifiée.
 Sinon, cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
@@ -360,4 +351,3 @@ Sinon, cette applet de commande ne génère aucune sortie.
 [New-Variable](New-Variable.md)
 
 [Remove-Variable](Remove-Variable.md)
-
