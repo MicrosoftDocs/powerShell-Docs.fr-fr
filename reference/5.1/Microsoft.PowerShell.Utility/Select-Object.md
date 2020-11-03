@@ -14,14 +14,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/25/2020
 ms.locfileid: "93206337"
 ---
-# <span data-ttu-id="e2c31-103">Select-Object</span><span class="sxs-lookup"><span data-stu-id="e2c31-103">Select-Object</span></span>
+# Select-Object
 
-## <span data-ttu-id="e2c31-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e2c31-104">SYNOPSIS</span></span>
-<span data-ttu-id="e2c31-105">Sélectionne des objets ou des propriétés d'objet.</span><span class="sxs-lookup"><span data-stu-id="e2c31-105">Selects objects or object properties.</span></span>
+## SYNOPSIS
+Sélectionne des objets ou des propriétés d'objet.
 
-## <span data-ttu-id="e2c31-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="e2c31-106">SYNTAX</span></span>
+## SYNTAX
 
-### <span data-ttu-id="e2c31-107">DefaultParameter (par défaut)</span><span class="sxs-lookup"><span data-stu-id="e2c31-107">DefaultParameter (Default)</span></span>
+### DefaultParameter (par défaut)
 
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
@@ -29,48 +29,48 @@ Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProper
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e2c31-108">SkipLastParameter</span><span class="sxs-lookup"><span data-stu-id="e2c31-108">SkipLastParameter</span></span>
+### SkipLastParameter
 
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
  [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e2c31-109">IndexParameter</span><span class="sxs-lookup"><span data-stu-id="e2c31-109">IndexParameter</span></span>
+### IndexParameter
 
 ```
 Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="e2c31-110">Description</span><span class="sxs-lookup"><span data-stu-id="e2c31-110">DESCRIPTION</span></span>
+## Description
 
-<span data-ttu-id="e2c31-111">L' `Select-Object` applet de commande sélectionne les propriétés spécifiées d’un objet ou d’un ensemble d’objets.</span><span class="sxs-lookup"><span data-stu-id="e2c31-111">The `Select-Object` cmdlet selects specified properties of an object or set of objects.</span></span> <span data-ttu-id="e2c31-112">Elle peut également sélectionner des objets uniques, un nombre spécifié d'objets ou des objets à une position spécifiée dans un tableau.</span><span class="sxs-lookup"><span data-stu-id="e2c31-112">It can also select unique objects, a specified number of objects, or objects in a specified position in an array.</span></span>
+L' `Select-Object` applet de commande sélectionne les propriétés spécifiées d’un objet ou d’un ensemble d’objets. Elle peut également sélectionner des objets uniques, un nombre spécifié d'objets ou des objets à une position spécifiée dans un tableau.
 
-<span data-ttu-id="e2c31-113">Pour sélectionner des objets dans une collection, utilisez les paramètres **First** , **Last** , **Unique** , **Skip** et **Index** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-113">To select objects from a collection, use the **First** , **Last** , **Unique** , **Skip** , and **Index** parameters.</span></span> <span data-ttu-id="e2c31-114">Pour sélectionner des propriétés d'objet, utilisez le paramètre **Property** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-114">To select object properties, use the **Property** parameter.</span></span> <span data-ttu-id="e2c31-115">Lorsque vous sélectionnez Propriétés, `Select-Object` retourne de nouveaux objets qui ont uniquement les propriétés spécifiées.</span><span class="sxs-lookup"><span data-stu-id="e2c31-115">When you select properties, `Select-Object` returns new objects that have only the specified properties.</span></span>
+Pour sélectionner des objets dans une collection, utilisez les paramètres **First** , **Last** , **Unique** , **Skip** et **Index** . Pour sélectionner des propriétés d'objet, utilisez le paramètre **Property** . Lorsque vous sélectionnez Propriétés, `Select-Object` retourne de nouveaux objets qui ont uniquement les propriétés spécifiées.
 
-<span data-ttu-id="e2c31-116">À compter de Windows PowerShell 3,0, `Select-Object` comprend une fonctionnalité d’optimisation qui empêche les commandes de créer et de traiter des objets qui ne sont pas utilisés.</span><span class="sxs-lookup"><span data-stu-id="e2c31-116">Beginning in Windows PowerShell 3.0, `Select-Object` includes an optimization feature that prevents commands from creating and processing objects that are not used.</span></span>
+À compter de Windows PowerShell 3,0, `Select-Object` comprend une fonctionnalité d’optimisation qui empêche les commandes de créer et de traiter des objets qui ne sont pas utilisés.
 
-<span data-ttu-id="e2c31-117">Quand vous incluez une `Select-Object` commande avec le **premier** paramètre ou les paramètres d' **index** dans un pipeline de commande, PowerShell arrête la commande qui génère les objets dès que le nombre d’objets sélectionné est généré, même lorsque la commande qui génère les objets apparaît avant la `Select-Object` commande dans le pipeline.</span><span class="sxs-lookup"><span data-stu-id="e2c31-117">When you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated, even when the command that generates the objects appears before the `Select-Object` command in the pipeline.</span></span> <span data-ttu-id="e2c31-118">Pour désactiver ce comportement d'optimisation, utilisez le paramètre **Wait** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-118">To turn off this optimizing behavior, use the **Wait** parameter.</span></span>
+Quand vous incluez une `Select-Object` commande avec le **premier** paramètre ou les paramètres d' **index** dans un pipeline de commande, PowerShell arrête la commande qui génère les objets dès que le nombre d’objets sélectionné est généré, même lorsque la commande qui génère les objets apparaît avant la `Select-Object` commande dans le pipeline. Pour désactiver ce comportement d'optimisation, utilisez le paramètre **Wait** .
 
-## <span data-ttu-id="e2c31-119">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="e2c31-119">EXAMPLES</span></span>
+## EXEMPLES
 
-### <span data-ttu-id="e2c31-120">Exemple 1 : sélectionner des objets par propriété</span><span class="sxs-lookup"><span data-stu-id="e2c31-120">Example 1: Select objects by property</span></span>
+### Exemple 1 : sélectionner des objets par propriété
 
-<span data-ttu-id="e2c31-121">Cet exemple crée des objets qui ont les propriétés **Name** , **ID** et Working Set ( **WS** ) des objets Process.</span><span class="sxs-lookup"><span data-stu-id="e2c31-121">This example creates objects that have the **Name** , **ID** , and working set ( **WS** ) properties of process objects.</span></span>
+Cet exemple crée des objets qui ont les propriétés **Name** , **ID** et Working Set ( **WS** ) des objets Process.
 
 ```powershell
 Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
-### <span data-ttu-id="e2c31-122">Exemple 2 : sélectionner des objets par propriété et mettre en forme les résultats</span><span class="sxs-lookup"><span data-stu-id="e2c31-122">Example 2: Select objects by property and format the results</span></span>
+### Exemple 2 : sélectionner des objets par propriété et mettre en forme les résultats
 
-<span data-ttu-id="e2c31-123">Cet exemple obtient des informations sur les modules utilisés par les processus sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="e2c31-123">This example gets information about the modules used by the processes on the computer.</span></span> <span data-ttu-id="e2c31-124">Elle utilise l' `Get-Process` applet de commande pour récupérer le processus sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="e2c31-124">It uses `Get-Process` cmdlet to get the process on the computer.</span></span>
+Cet exemple obtient des informations sur les modules utilisés par les processus sur l’ordinateur. Elle utilise l' `Get-Process` applet de commande pour récupérer le processus sur l’ordinateur.
 
-<span data-ttu-id="e2c31-125">Elle utilise l' `Select-Object` applet de commande pour générer un tableau d' `[System.Diagnostics.ProcessModule]` instances, tel qu’il est contenu dans la propriété **modules** de chaque instance de `System.Diagnostics.Process` sortie de `Get-Process` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-125">It uses the `Select-Object` cmdlet to output an array of `[System.Diagnostics.ProcessModule]` instances as contained in the **Modules** property of each `System.Diagnostics.Process` instance output by `Get-Process`.</span></span>
+Elle utilise l' `Select-Object` applet de commande pour générer un tableau d' `[System.Diagnostics.ProcessModule]` instances, tel qu’il est contenu dans la propriété **modules** de chaque instance de `System.Diagnostics.Process` sortie de `Get-Process` .
 
-<span data-ttu-id="e2c31-126">Le paramètre **Property** de l' `Select-Object` applet de commande sélectionne les noms des processus.</span><span class="sxs-lookup"><span data-stu-id="e2c31-126">The **Property** parameter of the `Select-Object` cmdlet selects the process names.</span></span> <span data-ttu-id="e2c31-127">Cela ajoute un `ProcessName` **NoteProperty** à chaque `[System.Diagnostics.ProcessModule]` instance et le remplit avec la valeur de la propriété **ProcessName** du processus actuel.</span><span class="sxs-lookup"><span data-stu-id="e2c31-127">This adds a `ProcessName` **NoteProperty** to every `[System.Diagnostics.ProcessModule]` instance and populates it with the value of current process's **ProcessName** property.</span></span>
+Le paramètre **Property** de l' `Select-Object` applet de commande sélectionne les noms des processus. Cela ajoute un `ProcessName` **NoteProperty** à chaque `[System.Diagnostics.ProcessModule]` instance et le remplit avec la valeur de la propriété **ProcessName** du processus actuel.
 
-<span data-ttu-id="e2c31-128">Enfin, `Format-List` l’applet de commande est utilisée pour afficher le nom et les modules de chaque processus dans une liste.</span><span class="sxs-lookup"><span data-stu-id="e2c31-128">Finally, `Format-List` cmdlet is used to display the name and modules of each process in a list.</span></span>
+Enfin, `Format-List` l’applet de commande est utilisée pour afficher le nom et les modules de chaque processus dans une liste.
 
 ```powershell
 Get-Process Explorer | Select-Object -Property ProcessName -ExpandProperty Modules | Format-List
@@ -93,11 +93,11 @@ FileVersionInfo   : File:             C:\WINDOWS\explorer.exe
 ...
 ```
 
-### <span data-ttu-id="e2c31-129">Exemple 3 : sélectionner les processus utilisant le plus de mémoire</span><span class="sxs-lookup"><span data-stu-id="e2c31-129">Example 3: Select processes using the most memory</span></span>
+### Exemple 3 : sélectionner les processus utilisant le plus de mémoire
 
-<span data-ttu-id="e2c31-130">Cet exemple obtient les cinq processus qui utilisent le plus de mémoire.</span><span class="sxs-lookup"><span data-stu-id="e2c31-130">This example gets the five processes that are using the most memory.</span></span> <span data-ttu-id="e2c31-131">L' `Get-Process` applet de commande obtient les processus sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="e2c31-131">The `Get-Process` cmdlet gets the processes on the computer.</span></span> <span data-ttu-id="e2c31-132">L' `Sort-Object` applet de commande trie les processus en fonction de l’utilisation de la mémoire (plage de travail), et l’applet de commande `Select-Object` sélectionne uniquement les cinq derniers membres du tableau d’objets résultant.</span><span class="sxs-lookup"><span data-stu-id="e2c31-132">The `Sort-Object` cmdlet sorts the processes according to memory (working set) usage, and the `Select-Object` cmdlet selects only the last five members of the resulting array of objects.</span></span>
+Cet exemple obtient les cinq processus qui utilisent le plus de mémoire. L' `Get-Process` applet de commande obtient les processus sur l’ordinateur. L' `Sort-Object` applet de commande trie les processus en fonction de l’utilisation de la mémoire (plage de travail), et l’applet de commande `Select-Object` sélectionne uniquement les cinq derniers membres du tableau d’objets résultant.
 
-<span data-ttu-id="e2c31-133">Le paramètre **Wait** n’est pas requis dans les commandes qui incluent l’applet de commande `Sort-Object` , car `Sort-Object` traite tous les objets, puis retourne une collection.</span><span class="sxs-lookup"><span data-stu-id="e2c31-133">The **Wait** parameter is not required in commands that include the `Sort-Object` cmdlet because `Sort-Object` processes all objects and then returns a collection.</span></span> <span data-ttu-id="e2c31-134">L' `Select-Object` optimisation est disponible uniquement pour les commandes qui retournent des objets individuellement au fur et à mesure de leur traitement.</span><span class="sxs-lookup"><span data-stu-id="e2c31-134">The `Select-Object` optimization is available only for commands that return objects individually as they are processed.</span></span>
+Le paramètre **Wait** n’est pas requis dans les commandes qui incluent l’applet de commande `Sort-Object` , car `Sort-Object` traite tous les objets, puis retourne une collection. L' `Select-Object` optimisation est disponible uniquement pour les commandes qui retournent des objets individuellement au fur et à mesure de leur traitement.
 
 ```powershell
 Get-Process | Sort-Object -Property WS | Select-Object -Last 5
@@ -113,9 +113,9 @@ Handles  NPM(K)    PM(K)      WS(K) VS(M)   CPU(s)     Id ProcessName
 1612     44        66080      92780   380   900.59   6132 INFOPATH
 ```
 
-### <span data-ttu-id="e2c31-135">Exemple 4 : sélectionner des caractères uniques d’un tableau</span><span class="sxs-lookup"><span data-stu-id="e2c31-135">Example 4: Select unique characters from an array</span></span>
+### Exemple 4 : sélectionner des caractères uniques d’un tableau
 
-<span data-ttu-id="e2c31-136">Cet exemple utilise le paramètre **unique** de `Select-Object` pour récupérer des caractères uniques à partir d’un tableau de caractères.</span><span class="sxs-lookup"><span data-stu-id="e2c31-136">This example uses the **Unique** parameter of `Select-Object` to get unique characters from an array of characters.</span></span>
+Cet exemple utilise le paramètre **unique** de `Select-Object` pour récupérer des caractères uniques à partir d’un tableau de caractères.
 
 ```powershell
 "a","b","c","a","a","a" | Select-Object -Unique
@@ -127,35 +127,35 @@ b
 c
 ```
 
-### <span data-ttu-id="e2c31-137">Exemple 5 : sélectionner les événements les plus récents et les plus anciens dans le journal des événements</span><span class="sxs-lookup"><span data-stu-id="e2c31-137">Example 5: Select newest and oldest events in the event log</span></span>
+### Exemple 5 : sélectionner les événements les plus récents et les plus anciens dans le journal des événements
 
-<span data-ttu-id="e2c31-138">Cet exemple obtient le premier (dernier) et le dernier événement (le plus ancien) dans le journal des événements Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="e2c31-138">This example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.</span></span>
+Cet exemple obtient le premier (dernier) et le dernier événement (le plus ancien) dans le journal des événements Windows PowerShell.
 
-<span data-ttu-id="e2c31-139">`Get-EventLog` Obtient tous les événements dans le journal Windows PowerShell et les enregistre dans la `$a` variable.</span><span class="sxs-lookup"><span data-stu-id="e2c31-139">`Get-EventLog` gets all events in the Windows PowerShell log and saves them in the `$a` variable.</span></span>
-<span data-ttu-id="e2c31-140">Ensuite, `$a` est dirigé vers l' `Select-Object` applet de commande.</span><span class="sxs-lookup"><span data-stu-id="e2c31-140">Then, `$a` is piped to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="e2c31-141">La `Select-Object` commande utilise le paramètre **index** pour sélectionner des événements dans le tableau d’événements de la `$a` variable.</span><span class="sxs-lookup"><span data-stu-id="e2c31-141">The `Select-Object` command uses the **Index** parameter to select events from the array of events in the `$a` variable.</span></span> <span data-ttu-id="e2c31-142">L'index du premier événement est 0.</span><span class="sxs-lookup"><span data-stu-id="e2c31-142">The index of the first event is 0.</span></span> <span data-ttu-id="e2c31-143">L’index du dernier événement est le nombre d’éléments dans `$a` moins 1.</span><span class="sxs-lookup"><span data-stu-id="e2c31-143">The index of the last event is the number of items in `$a` minus 1.</span></span>
+`Get-EventLog` Obtient tous les événements dans le journal Windows PowerShell et les enregistre dans la `$a` variable.
+Ensuite, `$a` est dirigé vers l' `Select-Object` applet de commande. La `Select-Object` commande utilise le paramètre **index** pour sélectionner des événements dans le tableau d’événements de la `$a` variable. L'index du premier événement est 0. L’index du dernier événement est le nombre d’éléments dans `$a` moins 1.
 
 ```powershell
 $a = Get-EventLog -LogName "Windows PowerShell"
 $a | Select-Object -Index 0, ($A.count - 1)
 ```
 
-### <span data-ttu-id="e2c31-144">Exemple 6 : sélectionner tout, sauf le premier objet</span><span class="sxs-lookup"><span data-stu-id="e2c31-144">Example 6: Select all but the first object</span></span>
+### Exemple 6 : sélectionner tout, sauf le premier objet
 
-<span data-ttu-id="e2c31-145">Cet exemple crée une session PSSession sur chacun des ordinateurs figurant dans les fichiers de Servers.txt, à l’exception du premier.</span><span class="sxs-lookup"><span data-stu-id="e2c31-145">This example creates a new PSSession on each of the computers listed in the Servers.txt files, except for the first one.</span></span>
+Cet exemple crée une session PSSession sur chacun des ordinateurs figurant dans les fichiers de Servers.txt, à l’exception du premier.
 
-<span data-ttu-id="e2c31-146">`Select-Object` sélectionne tous les ordinateurs sauf le premier dans une liste de noms d’ordinateurs.</span><span class="sxs-lookup"><span data-stu-id="e2c31-146">`Select-Object` selects all but the first computer in a list of computer names.</span></span> <span data-ttu-id="e2c31-147">La liste des ordinateurs qui en résulte est définie en tant que valeur du paramètre **ComputerName** de l’applet de commande `New-PSSession` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-147">The resulting list of computers is set as the value of the **ComputerName** parameter of the `New-PSSession` cmdlet.</span></span>
+`Select-Object` sélectionne tous les ordinateurs sauf le premier dans une liste de noms d’ordinateurs. La liste des ordinateurs qui en résulte est définie en tant que valeur du paramètre **ComputerName** de l’applet de commande `New-PSSession` .
 
 ```powershell
 New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
 
-### <span data-ttu-id="e2c31-148">Exemple 7 : renommer des fichiers et en sélectionner plusieurs à examiner</span><span class="sxs-lookup"><span data-stu-id="e2c31-148">Example 7: Rename files and select several to review</span></span>
+### Exemple 7 : renommer des fichiers et en sélectionner plusieurs à examiner
 
-<span data-ttu-id="e2c31-149">Cet exemple ajoute un suffixe « -RO » aux noms de base des fichiers texte qui ont l’attribut de lecture seule, puis affiche les cinq premiers fichiers pour que l’utilisateur puisse voir un exemple de l’effet.</span><span class="sxs-lookup"><span data-stu-id="e2c31-149">This example adds a "-ro" suffix to the base names of text files that have the read-only attribute and then displays the first five files so the user can see a sample of the effect.</span></span>
+Cet exemple ajoute un suffixe « -RO » aux noms de base des fichiers texte qui ont l’attribut de lecture seule, puis affiche les cinq premiers fichiers pour que l’utilisateur puisse voir un exemple de l’effet.
 
-<span data-ttu-id="e2c31-150">`Get-ChildItem` utilise le paramètre dynamique **ReadOnly** pour obtenir les fichiers en lecture seule.</span><span class="sxs-lookup"><span data-stu-id="e2c31-150">`Get-ChildItem` uses the **ReadOnly** dynamic parameter to get read-only files.</span></span> <span data-ttu-id="e2c31-151">Les fichiers résultants sont dirigés vers l’applet de commande `Rename-Item` , qui renomme le fichier.</span><span class="sxs-lookup"><span data-stu-id="e2c31-151">The resulting files are piped to the `Rename-Item` cmdlet, which renames the file.</span></span> <span data-ttu-id="e2c31-152">Elle utilise le paramètre **PassThru** de `Rename-Item` pour envoyer les fichiers renommés à l' `Select-Object` applet de commande, qui sélectionne les 5 premiers à afficher.</span><span class="sxs-lookup"><span data-stu-id="e2c31-152">It uses the **Passthru** parameter of `Rename-Item` to send the renamed files to the `Select-Object` cmdlet, which selects the first 5 for display.</span></span>
+`Get-ChildItem` utilise le paramètre dynamique **ReadOnly** pour obtenir les fichiers en lecture seule. Les fichiers résultants sont dirigés vers l’applet de commande `Rename-Item` , qui renomme le fichier. Elle utilise le paramètre **PassThru** de `Rename-Item` pour envoyer les fichiers renommés à l' `Select-Object` applet de commande, qui sélectionne les 5 premiers à afficher.
 
-<span data-ttu-id="e2c31-153">Le paramètre **Wait** de `Select-Object` empêche PowerShell d’arrêter l' `Get-ChildItem` applet de commande après avoir extrait les cinq premiers fichiers texte en lecture seule.</span><span class="sxs-lookup"><span data-stu-id="e2c31-153">The **Wait** parameter of `Select-Object` prevents PowerShell from stopping the `Get-ChildItem` cmdlet after it gets the first five read-only text files.</span></span> <span data-ttu-id="e2c31-154">Sans ce paramètre, seuls les cinq premiers fichiers en lecture seule seraient renommés.</span><span class="sxs-lookup"><span data-stu-id="e2c31-154">Without this parameter, only the first five read-only files would be renamed.</span></span>
+Le paramètre **Wait** de `Select-Object` empêche PowerShell d’arrêter l' `Get-ChildItem` applet de commande après avoir extrait les cinq premiers fichiers texte en lecture seule. Sans ce paramètre, seuls les cinq premiers fichiers en lecture seule seraient renommés.
 
 ```powershell
 Get-ChildItem *.txt -ReadOnly |
@@ -163,11 +163,11 @@ Get-ChildItem *.txt -ReadOnly |
     Select-Object -First 5 -Wait
 ```
 
-### <span data-ttu-id="e2c31-155">Exemple 8 : illustrer les subtilités du paramètre-ExpandProperty</span><span class="sxs-lookup"><span data-stu-id="e2c31-155">Example 8: Demonstrate the intricacies of the -ExpandProperty parameter</span></span>
+### Exemple 8 : illustrer les subtilités du paramètre-ExpandProperty
 
-<span data-ttu-id="e2c31-156">Cet exemple illustre les subtilités du paramètre **ExpandProperty** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-156">This example demonstrates the intricacies of the **ExpandProperty** parameter.</span></span>
+Cet exemple illustre les subtilités du paramètre **ExpandProperty** .
 
-<span data-ttu-id="e2c31-157">Notez que la sortie générée était un tableau d' `[System.Int32]` instances.</span><span class="sxs-lookup"><span data-stu-id="e2c31-157">Note that the output generated was an array of `[System.Int32]` instances.</span></span> <span data-ttu-id="e2c31-158">Les instances sont conformes aux règles de mise en forme standard de la **vue sortie** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-158">The instances conform to standard formatting rules of the **Output View** .</span></span> <span data-ttu-id="e2c31-159">Cela est vrai pour toutes les propriétés *développées* .</span><span class="sxs-lookup"><span data-stu-id="e2c31-159">This is true for any *Expanded* properties.</span></span> <span data-ttu-id="e2c31-160">Si les objets en sortie ont un format standard spécifique, la propriété développée peut ne pas être visible.</span><span class="sxs-lookup"><span data-stu-id="e2c31-160">If the outputted objects have a specific standard format, the expanded property might not be visible.</span></span>
+Notez que la sortie générée était un tableau d' `[System.Int32]` instances. Les instances sont conformes aux règles de mise en forme standard de la **vue sortie** . Cela est vrai pour toutes les propriétés *développées* . Si les objets en sortie ont un format standard spécifique, la propriété développée peut ne pas être visible.
 
 ```powershell
 # Create a custom object to use for the Select-Object example.
@@ -219,10 +219,10 @@ ToUInt64    Method       uint64 IConvertible.ToUInt64(System.IFormatProvider pro
 Name        NoteProperty string Name=CustomObject
 ```
 
-### <span data-ttu-id="e2c31-161">Exemple 9 : créer des propriétés personnalisées sur des objets</span><span class="sxs-lookup"><span data-stu-id="e2c31-161">Example 9: Create custom properties on objects</span></span>
+### Exemple 9 : créer des propriétés personnalisées sur des objets
 
-<span data-ttu-id="e2c31-162">L’exemple suivant illustre l’utilisation `Select-Object` de pour ajouter une propriété personnalisée à n’importe quel objet.</span><span class="sxs-lookup"><span data-stu-id="e2c31-162">The following example demonstrates using `Select-Object` to add a custom property to any object.</span></span>
-<span data-ttu-id="e2c31-163">Lorsque vous spécifiez un nom de propriété qui n’existe pas, `Select-Object` crée cette propriété en tant que **NoteProperty** sur chaque objet passé.</span><span class="sxs-lookup"><span data-stu-id="e2c31-163">When you specify a property name that does not exist, `Select-Object` creates that property as a **NoteProperty** on each object passed.</span></span>
+L’exemple suivant illustre l’utilisation `Select-Object` de pour ajouter une propriété personnalisée à n’importe quel objet.
+Lorsque vous spécifiez un nom de propriété qui n’existe pas, `Select-Object` crée cette propriété en tant que **NoteProperty** sur chaque objet passé.
 
 ```powershell
 $customObject = 1 | Select-Object -Property MyCustomProperty
@@ -236,11 +236,11 @@ MyCustomProperty
 New Custom Property
 ```
 
-### <span data-ttu-id="e2c31-164">Exemple 10 : créer des propriétés calculées pour chaque InputObject</span><span class="sxs-lookup"><span data-stu-id="e2c31-164">Example 10: Create calculated properties for each InputObject</span></span>
+### Exemple 10 : créer des propriétés calculées pour chaque InputObject
 
-<span data-ttu-id="e2c31-165">Cet exemple montre comment utiliser `Select-Object` pour ajouter des propriétés calculées à votre entrée.</span><span class="sxs-lookup"><span data-stu-id="e2c31-165">This example demonstrates using `Select-Object` to add calculated properties to your input.</span></span> <span data-ttu-id="e2c31-166">Le passage d’un **scriptblock** au paramètre **Property** entraîne l' `Select-Object` évaluation de l’expression sur chaque objet passé et l’ajout des résultats à la sortie.</span><span class="sxs-lookup"><span data-stu-id="e2c31-166">Passing a **ScriptBlock** to the **Property** parameter causes `Select-Object` to evaluate the expression on each object passed and add the results to the output.</span></span> <span data-ttu-id="e2c31-167">Dans le **scriptblock** , vous pouvez utiliser la `$_` variable pour référencer l’objet actuel dans le pipeline.</span><span class="sxs-lookup"><span data-stu-id="e2c31-167">Within the **ScriptBlock** , you can use the `$_` variable to reference the current object in the pipeline.</span></span>
+Cet exemple montre comment utiliser `Select-Object` pour ajouter des propriétés calculées à votre entrée. Le passage d’un **scriptblock** au paramètre **Property** entraîne l' `Select-Object` évaluation de l’expression sur chaque objet passé et l’ajout des résultats à la sortie. Dans le **scriptblock** , vous pouvez utiliser la `$_` variable pour référencer l’objet actuel dans le pipeline.
 
-<span data-ttu-id="e2c31-168">Par défaut, `Select-Object` utilise la chaîne **scriptblock** comme nom de la propriété.</span><span class="sxs-lookup"><span data-stu-id="e2c31-168">By default, `Select-Object` will use the **ScriptBlock** string as the name of the property.</span></span> <span data-ttu-id="e2c31-169">À l’aide d’une **Hashtable** , vous pouvez étiqueter la sortie de votre **scriptblock** en tant que propriété personnalisée ajoutée à chaque objet.</span><span class="sxs-lookup"><span data-stu-id="e2c31-169">Using a **Hashtable** , you can label the output of your **ScriptBlock** as a custom property added to each object.</span></span> <span data-ttu-id="e2c31-170">Vous pouvez ajouter plusieurs propriétés calculées à chaque objet passé à `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-170">You can add multiple calculated properties to each object passed to `Select-Object`.</span></span>
+Par défaut, `Select-Object` utilise la chaîne **scriptblock** comme nom de la propriété. À l’aide d’une **Hashtable** , vous pouvez étiqueter la sortie de votre **scriptblock** en tant que propriété personnalisée ajoutée à chaque objet. Vous pouvez ajouter plusieurs propriétés calculées à chaque objet passé à `Select-Object` .
 
 ```powershell
 # Create a calculated property called $_.StartTime.DayOfWeek
@@ -275,11 +275,11 @@ Diagnostics.Format.ps1xml   4.955078125     223
 DotNetTypes.format.ps1xml   134.9833984375  223
 ```
 
-## <span data-ttu-id="e2c31-171">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e2c31-171">PARAMETERS</span></span>
+## PARAMETERS
 
-### <span data-ttu-id="e2c31-172">-ExcludeProperty</span><span class="sxs-lookup"><span data-stu-id="e2c31-172">-ExcludeProperty</span></span>
+### -ExcludeProperty
 
-<span data-ttu-id="e2c31-173">Spécifie les propriétés que cette applet de commande exclut de l’opération.</span><span class="sxs-lookup"><span data-stu-id="e2c31-173">Specifies the properties that this cmdlet excludes from the operation.</span></span> <span data-ttu-id="e2c31-174">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="e2c31-174">Wildcards are permitted.</span></span> <span data-ttu-id="e2c31-175">Ce paramètre est effectif seulement quand la commande comprend également le paramètre **Property** .</span><span class="sxs-lookup"><span data-stu-id="e2c31-175">This parameter is effective only when the command also includes the **Property** parameter.</span></span>
+Spécifie les propriétés que cette applet de commande exclut de l’opération. Les caractères génériques sont autorisés. Ce paramètre est effectif seulement quand la commande comprend également le paramètre **Property** .
 
 ```yaml
 Type: System.String[]
@@ -293,24 +293,24 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="e2c31-176">-ExpandProperty</span><span class="sxs-lookup"><span data-stu-id="e2c31-176">-ExpandProperty</span></span>
+### -ExpandProperty
 
-<span data-ttu-id="e2c31-177">Spécifie une propriété à sélectionner et indique qu'une tentative doit être effectuée pour développer cette propriété.</span><span class="sxs-lookup"><span data-stu-id="e2c31-177">Specifies a property to select, and indicates that an attempt should be made to expand that property.</span></span>
+Spécifie une propriété à sélectionner et indique qu'une tentative doit être effectuée pour développer cette propriété.
 
-- <span data-ttu-id="e2c31-178">Si la propriété spécifiée est un tableau, chaque valeur du tableau est incluse dans la sortie.</span><span class="sxs-lookup"><span data-stu-id="e2c31-178">If the specified property is an array, each value of the array is included in the output.</span></span>
-- <span data-ttu-id="e2c31-179">Si la propriété spécifiée est un objet, les propriétés des objets sont développées pour chaque **InputObject**</span><span class="sxs-lookup"><span data-stu-id="e2c31-179">If the specified property is an object, the objects properties are expanded for every **InputObject**</span></span>
+- Si la propriété spécifiée est un tableau, chaque valeur du tableau est incluse dans la sortie.
+- Si la propriété spécifiée est un objet, les propriétés des objets sont développées pour chaque **InputObject**
 
-<span data-ttu-id="e2c31-180">Dans les deux cas, le **type** de sortie d’objets correspondra au **type** de la propriété développée.</span><span class="sxs-lookup"><span data-stu-id="e2c31-180">In either case, the **Type** of objects output will match the **Type** of the expanded property.</span></span>
+Dans les deux cas, le **type** de sortie d’objets correspondra au **type** de la propriété développée.
 
-<span data-ttu-id="e2c31-181">Si le paramètre **Property** est spécifié, `Select-Object` tente d’ajouter chaque propriété sélectionnée en tant que **NoteProperty** à chaque objet sorti.</span><span class="sxs-lookup"><span data-stu-id="e2c31-181">If the **Property** parameter is specified, `Select-Object` will attempt to add each selected property as a **NoteProperty** to every outputted object.</span></span>
+Si le paramètre **Property** est spécifié, `Select-Object` tente d’ajouter chaque propriété sélectionnée en tant que **NoteProperty** à chaque objet sorti.
 
 > [!WARNING]
-> <span data-ttu-id="e2c31-182">Si vous recevez l’erreur : la propriété Select : ne peut pas être traitée, car la propriété `<PropertyName>` existe déjà, prenez en compte les éléments suivants.</span><span class="sxs-lookup"><span data-stu-id="e2c31-182">If you receive the error: Select : Property cannot be processed because property `<PropertyName>` already exists, consider the following.</span></span>
-> <span data-ttu-id="e2c31-183">Notez que, lors de l’utilisation `-ExpandProperty` de, `Select-Object` ne peut pas remplacer une propriété existante.</span><span class="sxs-lookup"><span data-stu-id="e2c31-183">Note that when using `-ExpandProperty`, `Select-Object` can not replace an existing property.</span></span>
-> <span data-ttu-id="e2c31-184">La procédure est la suivante :</span><span class="sxs-lookup"><span data-stu-id="e2c31-184">This means:</span></span>
+> Si vous recevez l’erreur : la propriété Select : ne peut pas être traitée, car la propriété `<PropertyName>` existe déjà, prenez en compte les éléments suivants.
+> Notez que, lors de l’utilisation `-ExpandProperty` de, `Select-Object` ne peut pas remplacer une propriété existante.
+> La procédure est la suivante :
 >
-> - <span data-ttu-id="e2c31-185">Si l’objet développé a une propriété du même nom, une erreur se produit.</span><span class="sxs-lookup"><span data-stu-id="e2c31-185">If the expanded object has a property of the same name, an error will occur.</span></span>
-> - <span data-ttu-id="e2c31-186">Si l’objet *sélectionné* a une propriété du même nom qu’une propriété d’objets *développés* , une erreur se produit.</span><span class="sxs-lookup"><span data-stu-id="e2c31-186">If the *Selected* object has a property of the same name as an *Expanded* objects property, an error will occur.</span></span>
+> - Si l’objet développé a une propriété du même nom, une erreur se produit.
+> - Si l’objet *sélectionné* a une propriété du même nom qu’une propriété d’objets *développés* , une erreur se produit.
 
 ```yaml
 Type: System.String
@@ -324,9 +324,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-187">-First</span><span class="sxs-lookup"><span data-stu-id="e2c31-187">-First</span></span>
+### -First
 
-<span data-ttu-id="e2c31-188">Spécifie le nombre d'objets à sélectionner à partir du début d'un tableau d'objets d'entrée.</span><span class="sxs-lookup"><span data-stu-id="e2c31-188">Specifies the number of objects to select from the beginning of an array of input objects.</span></span>
+Spécifie le nombre d'objets à sélectionner à partir du début d'un tableau d'objets d'entrée.
 
 ```yaml
 Type: System.Int32
@@ -340,9 +340,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-189">-Index</span><span class="sxs-lookup"><span data-stu-id="e2c31-189">-Index</span></span>
+### -Index
 
-<span data-ttu-id="e2c31-190">Sélectionne des objets dans un tableau en fonction de leurs valeurs d'index.</span><span class="sxs-lookup"><span data-stu-id="e2c31-190">Selects objects from an array based on their index values.</span></span> <span data-ttu-id="e2c31-191">Entrez les index dans une liste séparée par des virgules.</span><span class="sxs-lookup"><span data-stu-id="e2c31-191">Enter the indexes in a comma-separated list.</span></span> <span data-ttu-id="e2c31-192">Les index d'un tableau commencent à 0, où 0 représente la première valeur et (n-1) représente la dernière valeur.</span><span class="sxs-lookup"><span data-stu-id="e2c31-192">Indexes in an array begin with 0, where 0 represents the first value and (n-1) represents the last value.</span></span>
+Sélectionne des objets dans un tableau en fonction de leurs valeurs d'index. Entrez les index dans une liste séparée par des virgules. Les index d'un tableau commencent à 0, où 0 représente la première valeur et (n-1) représente la dernière valeur.
 
 ```yaml
 Type: System.Int32[]
@@ -356,11 +356,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-193">-InputObject</span><span class="sxs-lookup"><span data-stu-id="e2c31-193">-InputObject</span></span>
+### -InputObject
 
-<span data-ttu-id="e2c31-194">Spécifie des objets à envoyer à l'applet de commande via le pipeline.</span><span class="sxs-lookup"><span data-stu-id="e2c31-194">Specifies objects to send to the cmdlet through the pipeline.</span></span> <span data-ttu-id="e2c31-195">Ce paramètre vous permet de diriger des objets vers `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-195">This parameter enables you to pipe objects to `Select-Object`.</span></span>
+Spécifie des objets à envoyer à l'applet de commande via le pipeline. Ce paramètre vous permet de diriger des objets vers `Select-Object` .
 
-<span data-ttu-id="e2c31-196">Lorsque vous transmettez des objets au paramètre **InputObject** , au lieu d’utiliser le pipeline, `Select-Object` traite l' **InputObject** comme un objet unique, même si la valeur est une collection.</span><span class="sxs-lookup"><span data-stu-id="e2c31-196">When you pass objects to the **InputObject** parameter, instead of using the pipeline, `Select-Object` treats the **InputObject** as a single object, even if the value is a collection.</span></span> <span data-ttu-id="e2c31-197">Il est recommandé d’utiliser le pipeline lors du passage de collections à `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-197">It is recommended that you use the pipeline when passing collections to `Select-Object`.</span></span>
+Lorsque vous transmettez des objets au paramètre **InputObject** , au lieu d’utiliser le pipeline, `Select-Object` traite l' **InputObject** comme un objet unique, même si la valeur est une collection. Il est recommandé d’utiliser le pipeline lors du passage de collections à `Select-Object` .
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -374,9 +374,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-198">-Dernier</span><span class="sxs-lookup"><span data-stu-id="e2c31-198">-Last</span></span>
+### -Dernier
 
-<span data-ttu-id="e2c31-199">Spécifie le nombre d'objets à sélectionner à partir de la fin d'un tableau d'objets d'entrée.</span><span class="sxs-lookup"><span data-stu-id="e2c31-199">Specifies the number of objects to select from the end of an array of input objects.</span></span>
+Spécifie le nombre d'objets à sélectionner à partir de la fin d'un tableau d'objets d'entrée.
 
 ```yaml
 Type: System.Int32
@@ -390,18 +390,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-200">-Propriété</span><span class="sxs-lookup"><span data-stu-id="e2c31-200">-Property</span></span>
+### -Propriété
 
-<span data-ttu-id="e2c31-201">Spécifie les propriétés à sélectionner.</span><span class="sxs-lookup"><span data-stu-id="e2c31-201">Specifies the properties to select.</span></span> <span data-ttu-id="e2c31-202">Ces propriétés sont ajoutées en tant que membres **NoteProperty** aux objets de sortie.</span><span class="sxs-lookup"><span data-stu-id="e2c31-202">These properties are added as **NoteProperty** members to the output objects.</span></span> <span data-ttu-id="e2c31-203">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="e2c31-203">Wildcards are permitted.</span></span>
+Spécifie les propriétés à sélectionner. Ces propriétés sont ajoutées en tant que membres **NoteProperty** aux objets de sortie. Les caractères génériques sont autorisés.
 
-<span data-ttu-id="e2c31-204">La valeur du paramètre **Property** peut être une nouvelle propriété calculée.</span><span class="sxs-lookup"><span data-stu-id="e2c31-204">The value of the **Property** parameter can be a new calculated property.</span></span> <span data-ttu-id="e2c31-205">Pour créer une propriété calculée, utilisez une table de hachage.</span><span class="sxs-lookup"><span data-stu-id="e2c31-205">To create a calculated, property, use a hash table.</span></span>
+La valeur du paramètre **Property** peut être une nouvelle propriété calculée. Pour créer une propriété calculée, utilisez une table de hachage.
 
-<span data-ttu-id="e2c31-206">Les clés valides sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="e2c31-206">Valid keys are:</span></span>
+Les clés valides sont les suivantes :
 
-- <span data-ttu-id="e2c31-207">Nom (ou étiquette)- `<string>`</span><span class="sxs-lookup"><span data-stu-id="e2c31-207">Name (or Label) - `<string>`</span></span>
-- <span data-ttu-id="e2c31-208">Expression `<string>` ou `<script block>`</span><span class="sxs-lookup"><span data-stu-id="e2c31-208">Expression - `<string>` or `<script block>`</span></span>
+- Nom (ou étiquette)- `<string>`
+- Expression `<string>` ou `<script block>`
 
-<span data-ttu-id="e2c31-209">Pour plus d’informations, consultez [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).</span><span class="sxs-lookup"><span data-stu-id="e2c31-209">For more information, see [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).</span></span>
+Pour plus d’informations, consultez [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml
 Type: System.Object[]
@@ -415,11 +415,11 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="e2c31-210">-Ignorer</span><span class="sxs-lookup"><span data-stu-id="e2c31-210">-Skip</span></span>
+### -Ignorer
 
-<span data-ttu-id="e2c31-211">Ignore (ne sélectionne pas) le nombre spécifié d'éléments.</span><span class="sxs-lookup"><span data-stu-id="e2c31-211">Skips (does not select) the specified number of items.</span></span> <span data-ttu-id="e2c31-212">Par défaut, le paramètre **Skip** est compté à partir du début du tableau ou de la liste d’objets, mais si la commande utilise le **dernier** paramètre, elle est comptabilisée à partir de la fin de la liste ou du tableau.</span><span class="sxs-lookup"><span data-stu-id="e2c31-212">By default, the **Skip** parameter counts from the beginning of the array or list of objects, but if the command uses the **Last** parameter, it counts from the end of the list or array.</span></span>
+Ignore (ne sélectionne pas) le nombre spécifié d'éléments. Par défaut, le paramètre **Skip** est compté à partir du début du tableau ou de la liste d’objets, mais si la commande utilise le **dernier** paramètre, elle est comptabilisée à partir de la fin de la liste ou du tableau.
 
-<span data-ttu-id="e2c31-213">Contrairement au paramètre **Index** , qui commence le comptage à 0, le paramètre **Skip** commence à 1.</span><span class="sxs-lookup"><span data-stu-id="e2c31-213">Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.</span></span>
+Contrairement au paramètre **Index** , qui commence le comptage à 0, le paramètre **Skip** commence à 1.
 
 ```yaml
 Type: System.Int32
@@ -433,11 +433,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-214">-SkipLast</span><span class="sxs-lookup"><span data-stu-id="e2c31-214">-SkipLast</span></span>
+### -SkipLast
 
-<span data-ttu-id="e2c31-215">Ignore (ne sélectionne pas) le nombre spécifié d’éléments à partir de la fin de la liste ou du tableau.</span><span class="sxs-lookup"><span data-stu-id="e2c31-215">Skips (does not select) the specified number of items from the end of the list or array.</span></span> <span data-ttu-id="e2c31-216">Fonctionne de la même façon que l’utilisation de **Skip** avec le **dernier** paramètre.</span><span class="sxs-lookup"><span data-stu-id="e2c31-216">Works in the same way as using **Skip** together with **Last** parameter.</span></span>
+Ignore (ne sélectionne pas) le nombre spécifié d’éléments à partir de la fin de la liste ou du tableau. Fonctionne de la même façon que l’utilisation de **Skip** avec le **dernier** paramètre.
 
-<span data-ttu-id="e2c31-217">Contrairement au paramètre **index** , qui commence à compter à 0, le paramètre **SkipLast** commence à 1.</span><span class="sxs-lookup"><span data-stu-id="e2c31-217">Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.</span></span>
+Contrairement au paramètre **index** , qui commence à compter à 0, le paramètre **SkipLast** commence à 1.
 
 ```yaml
 Type: System.Int32
@@ -451,11 +451,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-218">-Unique</span><span class="sxs-lookup"><span data-stu-id="e2c31-218">-Unique</span></span>
+### -Unique
 
-<span data-ttu-id="e2c31-219">Spécifie que si un sous-ensemble des objets d'entrée a des propriétés et des valeurs identiques, un seul membre du sous-ensemble est sélectionné.</span><span class="sxs-lookup"><span data-stu-id="e2c31-219">Specifies that if a subset of the input objects has identical properties and values, only a single member of the subset will be selected.</span></span>
+Spécifie que si un sous-ensemble des objets d'entrée a des propriétés et des valeurs identiques, un seul membre du sous-ensemble est sélectionné.
 
-<span data-ttu-id="e2c31-220">Ce paramètre respecte la casse.</span><span class="sxs-lookup"><span data-stu-id="e2c31-220">This parameter is case-sensitive.</span></span> <span data-ttu-id="e2c31-221">Par conséquent, les chaînes qui diffèrent uniquement par la casse sont considérées comme uniques.</span><span class="sxs-lookup"><span data-stu-id="e2c31-221">As a result, strings that differ only in character casing are considered to be unique.</span></span>
+Ce paramètre respecte la casse. Par conséquent, les chaînes qui diffèrent uniquement par la casse sont considérées comme uniques.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -469,11 +469,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-222">-Wait</span><span class="sxs-lookup"><span data-stu-id="e2c31-222">-Wait</span></span>
+### -Wait
 
-<span data-ttu-id="e2c31-223">Indique que l’applet de commande désactive l’optimisation.</span><span class="sxs-lookup"><span data-stu-id="e2c31-223">Indicates that the cmdlet turns off optimization.</span></span> <span data-ttu-id="e2c31-224">PowerShell exécute les commandes dans l’ordre dans lequel elles apparaissent dans le pipeline de commande et leur permet de générer tous les objets.</span><span class="sxs-lookup"><span data-stu-id="e2c31-224">PowerShell runs commands in the order that they appear in the command pipeline and lets them generate all objects.</span></span> <span data-ttu-id="e2c31-225">Par défaut, si vous incluez une `Select-Object` commande avec les paramètres **First** ou **index** dans un pipeline de commande, PowerShell arrête la commande qui génère les objets dès que le nombre d’objets sélectionné est généré.</span><span class="sxs-lookup"><span data-stu-id="e2c31-225">By default, if you include a `Select-Object` command with the **First** or **Index** parameters in a command pipeline, PowerShell stops the command that generates the objects as soon as the selected number of objects is generated.</span></span>
+Indique que l’applet de commande désactive l’optimisation. PowerShell exécute les commandes dans l’ordre dans lequel elles apparaissent dans le pipeline de commande et leur permet de générer tous les objets. Par défaut, si vous incluez une `Select-Object` commande avec les paramètres **First** ou **index** dans un pipeline de commande, PowerShell arrête la commande qui génère les objets dès que le nombre d’objets sélectionné est généré.
 
-<span data-ttu-id="e2c31-226">Ce paramètre a été introduit dans Windows PowerShell 3.0.</span><span class="sxs-lookup"><span data-stu-id="e2c31-226">This parameter was introduced in Windows PowerShell 3.0.</span></span>
+Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -487,32 +487,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2c31-227">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e2c31-227">CommonParameters</span></span>
+### CommonParameters
 
-<span data-ttu-id="e2c31-228">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e2c31-228">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e2c31-229">Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span><span class="sxs-lookup"><span data-stu-id="e2c31-229">For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span></span>
+Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
-## <span data-ttu-id="e2c31-230">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="e2c31-230">INPUTS</span></span>
+## ENTRÉES
 
-### <span data-ttu-id="e2c31-231">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="e2c31-231">System.Management.Automation.PSObject</span></span>
+### System. Management. Automation. PSObject
 
-<span data-ttu-id="e2c31-232">Vous pouvez diriger n’importe quel objet vers `Select-Object` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-232">You can pipe any object to `Select-Object`.</span></span>
+Vous pouvez diriger n’importe quel objet vers `Select-Object` .
 
-## <span data-ttu-id="e2c31-233">SORTIES</span><span class="sxs-lookup"><span data-stu-id="e2c31-233">OUTPUTS</span></span>
+## SORTIES
 
-### <span data-ttu-id="e2c31-234">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="e2c31-234">System.Management.Automation.PSObject</span></span>
+### System. Management. Automation. PSObject
 
-## <span data-ttu-id="e2c31-235">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="e2c31-235">NOTES</span></span>
+## REMARQUES
 
-- <span data-ttu-id="e2c31-236">Vous pouvez également faire référence à l’applet de commande `Select-Object` par son alias intégré, `select` .</span><span class="sxs-lookup"><span data-stu-id="e2c31-236">You can also refer to the `Select-Object` cmdlet by its built-in alias, `select`.</span></span> <span data-ttu-id="e2c31-237">Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span><span class="sxs-lookup"><span data-stu-id="e2c31-237">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
+- Vous pouvez également faire référence à l’applet de commande `Select-Object` par son alias intégré, `select` . Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
-- <span data-ttu-id="e2c31-238">La fonctionnalité d’optimisation de `Select-Object` est disponible uniquement pour les commandes qui écrivent des objets dans le pipeline au fur et à mesure de leur traitement.</span><span class="sxs-lookup"><span data-stu-id="e2c31-238">The optimization feature of `Select-Object` is available only for commands that write objects to the pipeline as they are processed.</span></span> <span data-ttu-id="e2c31-239">Elle n'a pas d'effet sur les commandes qui placent les objets traités dans une mémoire tampon et les écrivent sous forme de collection.</span><span class="sxs-lookup"><span data-stu-id="e2c31-239">It has no effect on commands that buffer processed objects and write them as a collection.</span></span> <span data-ttu-id="e2c31-240">Écrire immédiatement les objets est une pratique recommandée dans la conception des applets de commande.</span><span class="sxs-lookup"><span data-stu-id="e2c31-240">Writing objects immediately is a cmdlet design best practice.</span></span> <span data-ttu-id="e2c31-241">Pour plus d’informations, consultez _écrire des enregistrements uniques dans le pipeline_ dans [conseils de développement fortement encouragés](/powershell/scripting/developer/windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="e2c31-241">For more information, see _Write Single Records to the Pipeline_ in [Strongly Encouraged Development Guidelines](/powershell/scripting/developer/windows-powershell).</span></span>
+- La fonctionnalité d’optimisation de `Select-Object` est disponible uniquement pour les commandes qui écrivent des objets dans le pipeline au fur et à mesure de leur traitement. Elle n'a pas d'effet sur les commandes qui placent les objets traités dans une mémoire tampon et les écrivent sous forme de collection. Écrire immédiatement les objets est une pratique recommandée dans la conception des applets de commande. Pour plus d’informations, consultez _écrire des enregistrements uniques dans le pipeline_ dans [conseils de développement fortement encouragés](/powershell/scripting/developer/windows-powershell).
 
-## <span data-ttu-id="e2c31-242">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="e2c31-242">RELATED LINKS</span></span>
+## LIENS CONNEXES
 
-[<span data-ttu-id="e2c31-243">about_Calculated_Properties</span><span class="sxs-lookup"><span data-stu-id="e2c31-243">about_Calculated_Properties</span></span>](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
+[about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md)
 
-[<span data-ttu-id="e2c31-244">Group-Object</span><span class="sxs-lookup"><span data-stu-id="e2c31-244">Group-Object</span></span>](Group-Object.md)
+[Group-Object](Group-Object.md)
 
-[<span data-ttu-id="e2c31-245">Sort-Object</span><span class="sxs-lookup"><span data-stu-id="e2c31-245">Sort-Object</span></span>](Sort-Object.md)
+[Sort-Object](Sort-Object.md)
 
-[<span data-ttu-id="e2c31-246">Where-Object</span><span class="sxs-lookup"><span data-stu-id="e2c31-246">Where-Object</span></span>](../Microsoft.PowerShell.Core/Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
