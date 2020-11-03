@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 750204ed64c18b123d858abdb3edd7b1fe869e47
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8177b1ed45f6d6cdabf13670e36be4fcbb55a77b
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201493"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239950"
 ---
 # New-ModuleManifest
 
@@ -229,7 +229,7 @@ Cet exemple montre comment utiliser les formats de table de hachage et de chaîn
 
 ### Exemple 4 : créer un manifeste qui prend en charge l’aide actualisable
 
-Cet exemple utilise le paramètre **HelpInfoUri** pour créer une clé **HelpInfoUri** dans le manifeste de module. La valeur du paramètre et de la clé doit commencer par **http** ou **https** . Cette valeur indique au système d'aide actualisable où trouver le fichier XML d'informations HelpInfo sur l'aide actualisable du module.
+Cet exemple utilise le paramètre **HelpInfoUri** pour créer une clé **HelpInfoUri** dans le manifeste de module. La valeur du paramètre et de la clé doit commencer par **http** ou **https**. Cette valeur indique au système d'aide actualisable où trouver le fichier XML d'informations HelpInfo sur l'aide actualisable du module.
 
 ```powershell
 $moduleSettings = @{
@@ -337,7 +337,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CLRVersion
+### -ClrVersion
 
 Spécifie la version minimale du Common Language Runtime (CLR) de Microsoft .NET Framework dont le module a besoin.
 
@@ -589,7 +589,7 @@ Accept wildcard characters: False
 
 ### -HelpInfoUri
 
-Spécifie l’adresse Internet du fichier XML HelpInfo du module. Entrez un Uniform Resource Identifier (URI) qui commence par **http** ou **https** .
+Spécifie l’adresse Internet du fichier XML HelpInfo du module. Entrez un Uniform Resource Identifier (URI) qui commence par **http** ou **https**.
 
 Le fichier XML HelpInfo prend en charge la fonctionnalité d’aide actualisable qui a été introduite dans PowerShell 3,0. Il contient des informations sur l'emplacement des fichiers d'aide téléchargeables pour le module, et les numéros de version des fichiers d'aide les plus récents pour chacun des paramètres régionaux pris en charge.
 
@@ -646,7 +646,7 @@ Accept wildcard characters: False
 
 Répertorie tous les modules qui sont inclus dans ce module.
 
-Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion** . La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
+Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion**. La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
 
 Cette clé est conçue pour agir en tant qu'inventaire de module. Les modules répertoriés dans la valeur de cette clé ne sont pas traités automatiquement.
 
@@ -684,7 +684,7 @@ Accept wildcard characters: False
 
 Spécifie les modules de script ( `.psm1` ) et les modules binaires ( `.dll` ) qui sont importés dans l’état de session du module. Les fichiers de la clé **NestedModules** s’exécutent dans l’ordre dans lequel ils sont listés dans la valeur.
 
-Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion** . La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
+Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion**. La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
 
 En règle générale, les modules imbriqués contiennent les commandes dont le module racine a besoin pour son traitement interne.
 Par défaut, les commandes dans les modules imbriqués sont exportées de l’état de session du module vers l’état de session de l’appelant, mais le module racine peut restreindre les commandes qu’il exporte. Par exemple, à l’aide d’une `Export-ModuleMember` commande.
@@ -746,7 +746,7 @@ Accept wildcard characters: False
 
 ### -PowerShellHostName
 
-Spécifie le nom du programme hôte PowerShell requis par le module. Entrez le nom du programme hôte, par exemple **Windows PowerShell ISE hôte** ou **ConsoleHost** . Les caractères génériques ne sont pas autorisés.
+Spécifie le nom du programme hôte PowerShell requis par le module. Entrez le nom du programme hôte, par exemple **Windows PowerShell ISE hôte** ou **ConsoleHost**. Les caractères génériques ne sont pas autorisés.
 
 Pour rechercher le nom d’un programme hôte, dans le programme, tapez `$Host.Name` .
 
@@ -880,7 +880,7 @@ Accept wildcard characters: False
 Spécifie les fichiers d’assembly ( `.dll` ) dont le module a besoin. Entrez les noms de fichiers d'assembly.
 PowerShell charge les assemblys spécifiés avant de mettre à jour des types ou des formats, d’importer des modules imbriqués ou d’importer le fichier de module spécifié dans la valeur de la clé **RootModule** .
 
-Utilisez ce paramètre pour répertorier tous les assemblys dont le module a besoin, y compris les assemblys qui doivent être chargés pour mettre à jour les fichiers de mise en forme ou de type répertoriés dans les clés **FormatsToProcess** ou **TypesToProcess** , même si ces assemblys sont également répertoriés en tant que modules binaires dans la clé **NestedModules** .
+Utilisez ce paramètre pour répertorier tous les assemblys dont le module a besoin, y compris les assemblys qui doivent être chargés pour mettre à jour les fichiers de mise en forme ou de type répertoriés dans les clés **FormatsToProcess** ou **TypesToProcess** , même si ces assemblys sont également répertoriés en tant que modules binaires dans la clé **NestedModules**.
 
 ```yaml
 Type: System.String[]
@@ -898,7 +898,7 @@ Accept wildcard characters: False
 
 Spécifie les modules qui doivent être dans l'état de session global. Si les modules requis ne sont pas dans l’état de session global, PowerShell les importe. Si les modules requis ne sont pas disponibles, la `Import-Module` commande échoue.
 
-Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion** . La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
+Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion**. La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
 
 Dans PowerShell 2,0, `Import-Module` n’importe pas automatiquement les modules requis. Elle vérifie simplement que les modules obligatoires se trouvent dans l'état de session global.
 
@@ -939,7 +939,7 @@ Si un module a un fichier manifeste et qu’aucun fichier racine n’a été dé
 Pour exporter des membres à partir de `.psm1` `.dll` fichiers ou dans un module qui a un manifeste, les noms de ces fichiers doivent être spécifiés dans les valeurs des clés **RootModule** ou **NestedModules** dans le manifeste. Dans le cas contraire, leurs membres ne sont pas exportés.
 
 > [!NOTE]
-> Dans PowerShell 2,0, cette clé était appelée **ModuleToProcess** . Vous pouvez utiliser le nom du paramètre **RootModule** ou son alias **ModuleToProcess** .
+> Dans PowerShell 2,0, cette clé était appelée **ModuleToProcess**. Vous pouvez utiliser le nom du paramètre **RootModule** ou son alias **ModuleToProcess** .
 
 ```yaml
 Type: System.String
@@ -958,7 +958,7 @@ Accept wildcard characters: False
 Spécifie les fichiers de script ( `.ps1` ) qui s’exécutent dans l’état de session de l’appelant lors de l’importation du module.
 Vous pouvez utiliser ces scripts pour préparer un environnement, tout comme vous pouvez utiliser un script de connexion.
 
-Pour spécifier les scripts qui s'exécutent dans l'état de session du module, utilisez la clé **NestedModules** .
+Pour spécifier les scripts qui s'exécutent dans l'état de session du module, utilisez la clé **NestedModules**.
 
 ```yaml
 Type: System.String[]
@@ -1060,6 +1060,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
@@ -1076,11 +1077,14 @@ Par défaut, `New-ModuleManifest` ne génère pas de sortie. Toutefois, si vous 
 
 ## REMARQUES
 
-`New-ModuleManifest` l’exécution sur des plateformes Windows et non Windows crée des fichiers de manifeste de module ( `.psd1` ) encodés en tant que **UTF8NoBOM** .
+`New-ModuleManifest` l’exécution sur des plateformes Windows et non Windows crée des fichiers de manifeste de module ( `.psd1` ) encodés en tant que **UTF8NoBOM**.
 
 Les manifestes de module sont généralement facultatifs. Toutefois, un manifeste de module est nécessaire pour exporter un assembly installé dans le Global Assembly Cache.
 
 Pour ajouter ou modifier des fichiers dans le `$pshome\Modules` répertoire, démarrez PowerShell avec l’option **exécuter en tant qu’administrateur** .
+
+> [!NOTE]
+> À compter de PowerShell 6,2, PowerShell tente de charger tous les fichiers DLL listés dans la propriété **filelist** du manifeste de module. Le chargement des DLL natives dans la **filelist** échoue dans le processus et l’erreur est ignorée. Toutes les DLL managées sont chargées dans le processus. Ce comportement a été supprimé dans PowerShell 7,1.
 
 Dans PowerShell 2,0, de nombreux paramètres de `New-ModuleManifest` étaient obligatoires, même s’ils n’étaient pas requis dans un manifeste de module. À compter de PowerShell 3,0, seul le paramètre **path** est obligatoire.
 
