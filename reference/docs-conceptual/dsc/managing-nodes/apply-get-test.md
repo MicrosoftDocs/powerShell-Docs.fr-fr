@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Appliquer, obtenir et tester des configurations sur un nœud
-ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Ce guide vous explique comment utiliser des configurations sur un nœud cible.
+ms.openlocfilehash: 6bc9262bc0e2ce8eea7b85bd46ecc0c0a691276d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953836"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92651015"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>Appliquer, obtenir et tester des configurations sur un nœud
 
@@ -38,14 +39,14 @@ Sample -OutputPath "C:\Temp\"
 
 La compilation de cette configuration générera deux fichiers « .mof ».
 
-```output
+```Output
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a----       11/27/2018   7:29 AM     2.13KB localhost.mof
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-Pour appliquer une configuration, utilisez l’applet de commande [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Le paramètre `-Path` spécifie un répertoire où se trouvent les fichiers « .mof ». Si aucune valeur `-Computername` n’est spécifiée, `Start-DSCConfiguration` tentera d’appliquer chaque configuration au nom d’ordinateur spécifié par le nom du fichier « .mof » (\<computername\>.mof). Définissez `-Verbose` sur `Start-DSCConfiguration` pour afficher un résultat plus détaillé.
+Pour appliquer une configuration, utilisez l’applet de commande [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration). Le paramètre `-Path` spécifie un répertoire où se trouvent les fichiers « .mof ». Si aucune valeur `-Computername` n’est spécifiée, `Start-DSCConfiguration` tentera d’appliquer chaque configuration au nom d’ordinateur spécifié par le nom du fichier « .mof » (`<computername>.mof`). Définissez `-Verbose` sur `Start-DSCConfiguration` pour afficher un résultat plus détaillé.
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
@@ -53,7 +54,7 @@ Start-DSCConfiguration -Path C:\Temp\ -Verbose
 
 Si la valeur `-Wait` n’est pas spécifiée, une tâche est créée. La tâche créée aura une propriété **ChildJob** pour chaque fichier « .mof » traité par `Start-DSCConfiguration`.
 
-```output
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
@@ -72,22 +73,23 @@ $job = Get-Job
 $job.ChildJobs
 ```
 
-```output
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 49     Job49           Configuratio... Completed     True            localhost            Start-DSCConfiguration...
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-Pour afficher le résultat **Détaillé**, utilisez les commandes suivantes pour afficher le flux **Détaillé** pour chaque **ChildJob**. Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+Pour afficher le résultat **Détaillé** , utilisez les commandes suivantes pour afficher le flux **Détaillé** pour chaque **ChildJob**. Pour plus d’informations sur les tâches PowerShell, consultez [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
 $job.ChildJobs[0].Verbose
 ```
 
-```output
-Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
+```Output
+Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,
+'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-124525095-708259637-1543119021-1282804.
 [SERVER01]: LCM:  [ Start  Set      ]
 [SERVER01]: LCM:  [ Start  Resource ]  [[File]SampleFile]
@@ -109,7 +111,8 @@ Start-DSCConfiguration -UseExisting -Verbose -Wait
 
 ## <a name="test-a-configuration"></a>Tester une configuration
 
-Vous pouvez tester une configuration actuellement appliquée à l’aide de [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration). `Test-DSCConfiguration` retournera `True` si le nœud est conforme, et `False` dans le cas contraire.
+Vous pouvez tester une configuration actuellement appliquée à l’aide de [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
+`Test-DSCConfiguration` retournera `True` si le nœud est conforme, et `False` dans le cas contraire.
 
 ```powershell
 Test-DSCConfiguration
@@ -133,7 +136,7 @@ Get-DSCConfiguration
 
 Le résultat de notre exemple de configuration ressemblerait à ceci si cette configuration est appliquée avec succès.
 
-```output
+```Output
 ConfigurationName    : Sample
 DependsOn            :
 ModuleName           : PSDesiredStateConfiguration
@@ -168,7 +171,7 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 Get-DSCConfigurationStatus
 ```
 
-```output
+```Output
 Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
 ------     ---------                 ----            ----  ---------------      -----------------
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
@@ -183,7 +186,7 @@ Utilisez le paramètre `-All` pour afficher tout l’historique des états de la
 Get-DSCConfigurationStatus -All
 ```
 
-```output
+```Output
 Status     StartDate                 Type            Mode  RebootRequested      NumberOfResources
 ------     ---------                 ----            ----  ---------------      -----------------
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
@@ -200,7 +203,7 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 ## <a name="manage-configuration-documents"></a>Gérer des documents de configuration
 
-Le LCM gère la configuration du nœud à l’aide de **documents de configuration**. Ces fichiers « .mof » se trouvent dans le répertoire "C:\Windows\System32\Configuration".
+Le LCM gère la configuration du nœud à l’aide de **documents de configuration**. Ces fichiers « .mof » se trouvent dans le répertoire `C:\Windows\System32\Configuration`.
 
 À compter de PowerShell 5.0, [Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) vous permet de supprimer les fichiers « .mof » pour arrêter les futures vérifications de cohérence ou pour supprimer une configuration dont l’application entraîne des erreurs. Le paramètre `-Stage` permet de spécifier le fichier « .mof » que vous souhaitez supprimer.
 

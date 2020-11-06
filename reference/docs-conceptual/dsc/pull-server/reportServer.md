@@ -2,30 +2,32 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Utilisation d’un serveur de rapports DSC
-ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Le gestionnaire de configuration local d’un nœud peut être configuré pour envoyer des rapports sur son état de configuration à un serveur collecteur, qui peut alors être interrogé pour récupérer ces données.
+ms.openlocfilehash: 58ff1684bbe1d23fa68296aa56dd94ba6bc5b148
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953576"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653721"
 ---
 # <a name="using-a-dsc-report-server"></a>Utilisation d’un serveur de rapports DSC
 
 S’applique à : Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC* ) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 >
 > [!NOTE]
 > Le serveur de rapports décrit dans cette rubrique n’est pas disponible dans PowerShell 4.0.
 
-Le gestionnaire de configuration local d’un nœud peut être configuré pour envoyer des rapports sur son état de configuration à un serveur collecteur, qui peut alors être interrogé pour récupérer ces données. Chaque fois, le nœud vérifie et applique une configuration, il envoie un rapport au serveur de rapports. Ces rapports sont stockés dans une base de données sur le serveur et peuvent être récupérés en appelant le service web de création de rapports. Chaque rapport contient des informations telles que les configurations qui ont été appliquées et si l’opération a réussi, les ressources utilisées, les erreurs qui ont été levées et les heures de début et de fin.
+Le gestionnaire de configuration local d’un nœud peut être configuré pour envoyer des rapports sur son état de configuration à un serveur collecteur, qui peut alors être interrogé pour récupérer ces données. Chaque fois, le nœud vérifie et applique une configuration, il envoie un rapport au serveur de rapports. Ces rapports sont stockés dans une base de données sur le serveur et peuvent être récupérés en appelant le service web de création de rapports.
+Chaque rapport contient des informations telles que les configurations qui ont été appliquées et si l’opération a réussi, les ressources utilisées, les erreurs qui ont été levées et les heures de début et de fin.
 
 ## <a name="configuring-a-node-to-send-reports"></a>Configuration d’un nœud pour envoyer des rapports
 
 Vous indiquez à un nœud d’envoyer des rapports à un serveur en utilisant un bloc **ReportServerWeb** dans la configuration du gestionnaire de configuration local du nœud (pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuration du gestionnaire de configuration local](../managing-nodes/metaConfig.md)). Le serveur auquel le nœud envoie des rapports doit être configuré comme un serveur web collecteur (vous ne pouvez pas envoyer de rapports à un partage SMB). Pour plus d’informations sur la configuration d’un serveur collecteur, consultez [Configuration d’un serveur collecteur web DSC](pullServer.md). Le serveur de rapports peut être le même service duquel le nœud extrait des configurations et obtient des ressources, mais il peut également être un service différent.
 
-Dans le bloc **ReportServerWeb**, vous spécifiez l’URL du service d’extraction et une clé d’inscription connue du serveur.
+Dans le bloc **ReportServerWeb** , vous spécifiez l’URL du service d’extraction et une clé d’inscription connue du serveur.
 
 La configuration suivante configure un nœud de façon à extraire des configurations d’un seul service et à envoyer des rapports à un service sur un autre serveur.
 
@@ -98,8 +100,11 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>Obtention des données du rapport
 
-Les rapports envoyés au serveur collecteur sont entrés dans une base de données sur le serveur. Les rapports sont disponibles par le biais d’appels au service web. Pour récupérer les rapports d’un nœud spécifique, envoyez une requête HTTP au service web de rapports sous la forme suivante : `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
-où `MyNodeAgentId` est l’ID de l’agent du nœud pour lequel vous voulez obtenir des rapports. Vous pouvez obtenir l’ID de l’agent d’un nœud en appelant [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) sur ce nœud.
+Les rapports envoyés au serveur collecteur sont entrés dans une base de données sur le serveur. Les rapports sont disponibles par le biais d’appels au service web. Pour récupérer les rapports d’un nœud spécifique, envoyez une requête HTTP au service web de rapports sous la forme suivante : 
+
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+
+Où `MyNodeAgentId` est l’ID de l’agent du nœud pour lequel vous voulez obtenir des rapports. Vous pouvez obtenir l’ID de l’agent d’un nœud en appelant [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) sur ce nœud.
 
 Les rapports sont retournés sous forme de tableau d’objets JSON.
 
@@ -110,7 +115,7 @@ function GetReport
 {
     param
     (
-        $AgentId = "$((glcm).AgentId)", 
+        $AgentId = "$((glcm).AgentId)",
         $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
     )
 
@@ -125,7 +130,7 @@ function GetReport
 
 ## <a name="viewing-report-data"></a>Affichage des données du rapport
 
-Si vous définissez une variable sur le résultat de la fonction **GetReport**, vous pouvez afficher les champs individuels dans un élément du tableau retourné :
+Si vous définissez une variable sur le résultat de la fonction **GetReport** , vous pouvez afficher les champs individuels dans un élément du tableau retourné :
 
 ```powershell
 $reports = GetReport
@@ -166,14 +171,14 @@ StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Ad
 AdditionalData       : {}
 ```
 
-Par défaut, les rapports sont triés par **JobID**. Pour obtenir le rapport le plus récent, vous pouvez trier les rapports dans l’ordre décroissant de la valeur de la propriété **StartTime**, puis obtenir le premier élément du tableau :
+Par défaut, les rapports sont triés par **JobID**. Pour obtenir le rapport le plus récent, vous pouvez trier les rapports dans l’ordre décroissant de la valeur de la propriété **StartTime** , puis obtenir le premier élément du tableau :
 
 ```powershell
 $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Notez que la propriété **StatusData** est un objet avec un certain nombre de propriétés. C’est là que figurent une bonne partie des données de création de rapports. Examinons les différents champs de la propriété**StatusData** pour le rapport le plus récent :
+Notez que la propriété **StatusData** est un objet avec un certain nombre de propriétés. C’est là que figurent une bonne partie des données de création de rapports. Examinons les différents champs de la propriété **StatusData** pour le rapport le plus récent :
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -213,7 +218,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Cela indique, entre autres, que la configuration la plus récente a appelé deux ressources, et que l’une d’elles était dans l’état souhaité, tandis que l’autre pas. Vous pouvez obtenir une sortie plus lisible uniquement de la propriété **ResourcesNotInDesiredState**:
+Cela indique, entre autres, que la configuration la plus récente a appelé deux ressources, et que l’une d’elles était dans l’état souhaité, tandis que l’autre pas. Vous pouvez obtenir une sortie plus lisible uniquement de la propriété **ResourcesNotInDesiredState** :
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -233,11 +238,11 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Notez que ces exemples ont pour but de vous donner une idée de ce que vous pouvez faire avec les données du rapport. Pour obtenir une présentation de l’utilisation de JSON dans PowerShell, voir [Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Notez que ces exemples ont pour but de vous donner une idée de ce que vous pouvez faire avec les données du rapport. Pour obtenir une présentation de l’utilisation de JSON dans PowerShell, voir [Playing with JSON and PowerShell](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Voir aussi
 
-[Configuration du gestionnaire de configuration local](../managing-nodes/metaConfig.md)
+[Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md)
 
 [Configuration d’un serveur collecteur web DSC](pullServer.md)
 

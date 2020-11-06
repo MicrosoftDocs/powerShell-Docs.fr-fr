@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Écriture d’une ressource DSC personnalisée avec les classes PowerShell
-ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Cet article vous explique comment créer une ressource simple qui gère un fichier situé dans un chemin spécifié.
+ms.openlocfilehash: 72a828795c29e10ff66f164b8871b0fea7a1e0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217557"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667315"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Écriture d’une ressource DSC personnalisée avec les classes PowerShell
 
@@ -17,7 +18,7 @@ Grâce à l’introduction des classes PowerShell dans Windows PowerShell 5.0, 
 
 Dans une ressource DSC basée sur une classe, le schéma est défini comme propriétés de la classe qui peuvent être modifiées à l’aide d’attributs pour spécifier le type de la propriété. La ressource est implémentée par les méthodes `Get()` , `Set()` et `Test()` (équivalentes aux fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource` d’une ressource de script).
 
-Dans cette rubrique, nous allons créer une ressource simple nommée **FileResource** qui gère un fichier situé dans un chemin spécifié.
+Dans cet article, nous allons créer une ressource simple nommée **FileResource** qui gère un fichier situé dans un chemin spécifié.
 
 Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md)
 

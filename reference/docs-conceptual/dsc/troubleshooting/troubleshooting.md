@@ -2,18 +2,19 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,installation
 title: Résolution des problèmes liés à DSC
-ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Cet article fournit une instruction de dépannage des erreurs courantes.
+ms.openlocfilehash: 2ac86689fa2695add247995bfb91c0ea85e22d60
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692309"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656258"
 ---
 # <a name="troubleshooting-dsc"></a>Résolution des problèmes liés à DSC
 
-_S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0_
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Cette rubrique décrit comment résoudre les problèmes liés à DSC quand ils se produisent.
+Cet article fournit une instruction de dépannage des erreurs courantes.
 
 ## <a name="winrm-dependency"></a>Dépendance de WinRM
 
@@ -82,8 +83,8 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mon script ne s’exécute pas : Utilisation des journaux DSC pour diagnostiquer les erreurs de script
 
-Comme tous les logiciels Windows, DSC enregistre les erreurs et les événements dans des [journaux](/windows/desktop/EventLog/about-event-logging) qui peuvent être consultés dans l’[Observateur d’événements](https://support.microsoft.com/hub/4338813/windows-help).
-L’examen de ces journaux peut vous aider à comprendre pourquoi une opération particulière a échoué et comment éviter que cela se reproduise. L’écriture de scripts de configuration peut être compliquée. Ainsi, pour faciliter le suivi des erreurs pendant le processus de création, utilisez la ressource Log dans DSC pour suivre la progression de votre configuration dans le journal des événements d’analyse DSC.
+Comme tous les logiciels Windows, DSC enregistre les erreurs et les événements dans des [journaux](/windows/desktop/EventLog/about-event-logging) qui peuvent être consultés dans l’[Observateur d’événements](https://support.microsoft.com/hub/4338813/windows-help). L’examen de ces journaux peut vous aider à comprendre pourquoi une opération particulière a échoué et comment éviter que cela se reproduise.
+L’écriture de scripts de configuration peut être compliquée. Ainsi, pour faciliter le suivi des erreurs pendant le processus de création, utilisez la ressource Log dans DSC pour suivre la progression de votre configuration dans le journal des événements d’analyse DSC.
 
 ## <a name="where-are-dsc-event-logs"></a>Où se trouvent les journaux des événements DSC ?
 
@@ -101,8 +102,9 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Comme indiqué ci-dessus, le nom du journal DSC principal est **Microsoft->Windows->DSC** (les autres noms de journaux dans Windows ne sont pas cités ici, par souci de concision). Le nom principal est ajouté au nom du canal pour créer le nom complet du journal. Le moteur DSC écrit principalement dans trois types de journaux : [les journaux des opérations, d’analyse et de débogage](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Les journaux d’analyse et de débogage étant désactivés par défaut, vous devez les activer dans l’Observateur d’événements. Pour ce faire, ouvrez l’Observateur d’événements en tapant Show-EventLog dans Windows PowerShell ou cliquez sur le bouton **Démarrer**, sur **Panneau de configuration**, **Outils d’administration**, puis **Observateur d’événements**.
-Dans le menu **Affichage** de l’Observateur d’événements, cliquez sur **Afficher les journaux d’analyse et de débogage**. Le nom du journal du canal d’analyse est **Microsoft-Windows-Dsc/Analytic** et celui du canal de débogage est **Microsoft-Windows-Dsc/Debug**. Vous pouvez également utiliser l’utilitaire [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) pour activer les journaux, comme l’illustre l’exemple suivant.
+Comme indiqué ci-dessus, le nom du journal DSC principal est **Microsoft->Windows->DSC** (les autres noms de journaux dans Windows ne sont pas cités ici, par souci de concision). Le nom principal est ajouté au nom du canal pour créer le nom complet du journal. Le moteur DSC écrit principalement dans trois types de journaux : [les journaux des opérations, d’analyse et de débogage](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).
+Les journaux d’analyse et de débogage étant désactivés par défaut, vous devez les activer dans l’Observateur d’événements.
+Pour ce faire, ouvrez l’Observateur d’événements en tapant Show-EventLog dans Windows PowerShell ou cliquez sur le bouton **Démarrer** , sur **Panneau de configuration** , **Outils d’administration** , puis **Observateur d’événements**. Dans le menu **Affichage** de l’Observateur d’événements, cliquez sur **Afficher les journaux d’analyse et de débogage**. Le nom du journal du canal d’analyse est **Microsoft-Windows-Dsc/Analytic** et celui du canal de débogage est **Microsoft-Windows-Dsc/Debug**. Vous pouvez également utiliser l’utilitaire [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) pour activer les journaux, comme l’illustre l’exemple suivant.
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -254,8 +256,8 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
@@ -489,7 +491,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>Utilisation de DebugMode
 
-Vous pouvez configurer le gestionnaire de configuration local DSC de façon à utiliser `DebugMode` pour toujours effacer le cache lors du redémarrage du processus hôte. Quand la valeur est **TRUE**, elle force le moteur à toujours recharger la ressource DSC PowerShell. Une fois que vous avez écrit votre ressource, vous pouvez la redéfinir avec la valeur **FALSE** pour que le moteur mette de nouveau en cache les modules.
+Vous pouvez configurer le gestionnaire de configuration local DSC de façon à utiliser `DebugMode` pour toujours effacer le cache lors du redémarrage du processus hôte. Quand la valeur est **TRUE** , elle force le moteur à toujours recharger la ressource DSC PowerShell. Une fois que vous avez écrit votre ressource, vous pouvez la redéfinir avec la valeur **FALSE** pour que le moteur mette de nouveau en cache les modules.
 
 La démonstration suivante explique comment `DebugMode` peut actualiser le cache de façon automatique. Tout d’abord, examinons la configuration par défaut :
 
@@ -602,7 +604,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-Ce script génère un nombre aléatoire et met à jour le code du fournisseur en conséquence. Quand `DebugMode` a la valeur false, le contenu du fichier «  **$env :SystemDrive\OutputFromTestProviderDebugMode.txt** » est toujours le même.
+Ce script génère un nombre aléatoire et met à jour le code du fournisseur en conséquence. Si `DebugMode` a la valeur false, le contenu du fichier `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` n’est jamais modifié.
 
 À présent, définissez `DebugMode` sur **« ForceModuleImport »** dans votre script de configuration :
 
@@ -633,16 +635,15 @@ onlyProperty                            PSComputerName
 
 Lorsque vous appliquez une métaconfiguration à un serveur pour l’inscrire auprès d’une instance de serveur Pull Windows, vous risquez de rencontrer l’erreur suivante.
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
     + PSComputerName        : <computername>
 ```
 
-Ce cas peut se produire lorsque le certificat utilisé sur le serveur pour chiffrer le trafic a un nom commun (CN) qui est différent du nom DNS utilisé par le nœud pour résoudre l’URL.
-Mettez à jour l’instance du serveur Pull Windows pour utiliser un certificat avec un nom correct.
+Ce cas peut se produire lorsque le certificat utilisé sur le serveur pour chiffrer le trafic a un nom commun (CN) qui est différent du nom DNS utilisé par le nœud pour résoudre l’URL. Mettez à jour l’instance du serveur Pull Windows pour utiliser un certificat avec un nom correct.
 
 ## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Erreur lors de l’exécution de Sysprep après l’application d’une configuration DSC
 
@@ -652,7 +653,7 @@ Lorsque vous tentez d’exécuter Sysprep pour généraliser un serveur Windows 
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-La généralisation d’un serveur une fois qu’il a été configuré avec Windows PowerShell Desired State Configuration n’est pas prise en charge.  Appliquez plutôt des configurations à Windows à l’issue de la phase Spécialiser du programme d’installation Windows.
+La généralisation d’un serveur une fois qu’il a été configuré avec Windows PowerShell Desired State Configuration n’est pas prise en charge. Appliquez plutôt des configurations à Windows à l’issue de la phase Spécialiser du programme d’installation Windows.
 
 ## <a name="see-also"></a> Voir aussi
 

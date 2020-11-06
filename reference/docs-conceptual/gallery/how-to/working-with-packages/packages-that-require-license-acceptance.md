@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-contributor: Farehar
-keywords: gallery,powershell,psgallery
 title: Exiger l’acceptation de la licence
-ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Procédure d’affichage de la licence de package sur la page des détails de l’élément
+ms.openlocfilehash: 0d8a9ed671f7993726bc3fa41d11159b366e5a28
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278644"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662308"
 ---
 # <a name="require-license-acceptance"></a>Exiger l’acceptation de la licence
 
-Le texte d’acceptation de la licence s’affiche sur la page des détails de l’article pour les modules qui nécessitent l’acceptation de la licence. La licence pour le module peut être affichée en cliquant sur le lien « View License.txt ».
+Le texte d’acceptation de la licence s’affiche sur la page des détails de l’article pour les modules qui nécessitent l’acceptation de la licence. La licence pour le module peut être affichée en cliquant sur le lien **View License.txt**.
 
 ![Exiger l’acceptation de la licence](media/packages-that-require-license-acceptance/RequireLicenseAcceptance.png)
 

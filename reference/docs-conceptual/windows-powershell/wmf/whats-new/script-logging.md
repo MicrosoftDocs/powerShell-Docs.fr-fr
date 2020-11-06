@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Traçage et journalisation de script
-ms.openlocfilehash: dd18453c041428d5a6537c413c3ebe324a62dfee
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5. x ajoute une nouvelle journalisation des événements qui vous permet d’auditer l’exécution d’un bloc de script.
+ms.openlocfilehash: d47fb6fdd1ee4b9372fab7b81e6dc94fb45b8880
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809865"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663119"
 ---
 # <a name="script-tracing-and-logging"></a>Traçage et journalisation de script
 

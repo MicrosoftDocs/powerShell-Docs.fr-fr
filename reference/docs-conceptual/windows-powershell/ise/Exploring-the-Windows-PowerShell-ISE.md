@@ -1,24 +1,24 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,applet de commande
 title: Découverte de Windows PowerShell ISE
-ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Cet article offre une vue d’ensemble des fonctionnalités de l’environnement Windows PowerShell ISE
+ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809825"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663819"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Découverte de Windows PowerShell ISE
 
-Vous pouvez utiliser l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell® pour créer, exécuter et déboguer des commandes et des scripts. Windows PowerShell ISE se compose d’une barre de menus, d’onglets Windows PowerShell, d’une barre d’outils, d’onglets de script, d’un volet Script, d’un volet Console, d’une barre d’état, d’un curseur de taille de texte et d’une aide contextuelle.
+Vous pouvez utiliser l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell&reg; pour créer, exécuter et déboguer des commandes et des scripts. Windows PowerShell ISE se compose d’une barre de menus, d’onglets Windows PowerShell, d’une barre d’outils, d’onglets de script, d’un volet Script, d’un volet Console, d’une barre d’état, d’un curseur de taille de texte et d’une aide contextuelle.
 
 > [!NOTE]
 > Depuis Windows PowerShell ISE 3.0, les volets Commande et Sortie ont été combinés en un seul volet Console.
 
 ## <a name="menu-bar"></a>Barre de menus
 
-La barre de menus contient les menus **Fichier**, **Modifier**, **Affichage**, **Outils**, **Débogage**, **Modules complémentaires** et **Aide**. Les boutons dans les menus permettent d’effectuer des tâches liées à l’écriture et à l’exécution de scripts, ainsi qu’à l’exécution de commandes dans Windows PowerShell ISE. En outre, il est possible de placer un [outil complémentaire](object-model/The-ISEAddOnTool-Object.md) sur la barre de menus en exécutant des scripts qui utilisent la [Hiérarchie du modèle objet ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
+La barre de menus contient les menus **Fichier** , **Modifier** , **Affichage** , **Outils** , **Débogage** , **Modules complémentaires** et **Aide**. Les boutons dans les menus permettent d’effectuer des tâches liées à l’écriture et à l’exécution de scripts, ainsi qu’à l’exécution de commandes dans Windows PowerShell ISE. En outre, il est possible de placer un [outil complémentaire](object-model/The-ISEAddOnTool-Object.md) sur la barre de menus en exécutant des scripts qui utilisent la [Hiérarchie du modèle objet ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 > [!NOTE]
 > Dans Windows PowerShell ISE 2.0, les menus **Outils** et **Modules complémentaires** n’étaient pas présents.

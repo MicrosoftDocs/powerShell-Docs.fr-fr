@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Installer des ressources DSC supplémentaires
-ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article répertorie les ressources DSC incluses dans le module PSDesiredStateConfiguration. Il explique également comment rechercher et installer des ressources à partir de PowerShell Gallery.
+ms.openlocfilehash: e75561ed539e06716c9a103f905b9d1e4f3e71d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417795"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645129"
 ---
 # <a name="install-additional-dsc-resources"></a>Installer des ressources DSC supplémentaires
 
@@ -18,20 +19,20 @@ Il s’agit d’une liste des ressources OOB incluses dans PowerShell 4.0 et d�
 > [!NOTE]
 > Cette liste est incomplète car le nombre de ressources OOB a augmenté avec chaque version de PowerShell.
 
-|Ressource  |Description  |
-|---------|---------|
-|**File**|Contrôle l’état des fichiers et des répertoires. Copie les fichiers d’une **source** vers une **destination** et les met à jour à chaque modification de la **source** en comparant les dates, les sommes de contrôle et les hachages.|
-|**Archive**|Décompresse les archives et un emplacement spécifié. Valide les archives avec une **somme de contrôle** spécifiée.|
-|**Environment**|Gère les variables d’environnement.|
-|**Groupe**|Gère les groupes locaux et contrôle l’appartenance au groupe.|
-|**Journal**|Consigne des messages dans le journal des événements `Microsoft-Windows-Desired State Configuration/Analytic`.|
-|**Package**|Installe ou désinstalle des packages à l’aide des paramètres **Arguments**, **LogPath**, **ReturnCode**, entre autres.|
-|**Registre**|Gère les valeurs et clés de Registre.|
-|**Script**|Vous permet de concevoir vos propres blocs de script [get-test-set](../resources/get-test-set.md).|
-|**Service**|Configure les services Windows.|
-|**Utilisateur** |Gère les attributs et les utilisateurs locaux.|
-|**WindowsFeature**|Supprime des rôles et des fonctionnalités.|
-|**WindowsProcess**|Configure les processus Windows.|
+|      Ressource      |                                                                                       Description                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **File**           | Contrôle l’état des fichiers et des répertoires. Copie les fichiers d’une **source** vers une **destination** et les met à jour à chaque modification de la **source** en comparant les dates, les sommes de contrôle et les hachages. |
+| **Archive**        | Décompresse les archives et un emplacement spécifié. Valide les archives avec une **somme de contrôle** spécifiée.                                                                                         |
+| **Environment**    | Gère les variables d’environnement.                                                                                                                                                           |
+| **Groupe**          | Gère les groupes locaux et contrôle l’appartenance au groupe.                                                                                                                                      |
+| **Journal**            | Consigne des messages dans le journal des événements `Microsoft-Windows-Desired State Configuration/Analytic`.                                                                                               |
+| **Package**        | Installe ou désinstalle des packages à l’aide des paramètres **Arguments** , **LogPath** , **ReturnCode** , entre autres.                                                                                        |
+| **Registre**       | Gère les valeurs et clés de Registre.                                                                                                                                                        |
+| **Script**         | Vous permet de concevoir vos propres blocs de script [get-test-set](../resources/get-test-set.md).                                                                                                |
+| **Service**        | Configure les services Windows.                                                                                                                                                             |
+| **Utilisateur**           | Gère les attributs et les utilisateurs locaux.                                                                                                                                                      |
+| **WindowsFeature** | Supprime des rôles et des fonctionnalités.                                                                                                                                                              |
+| **WindowsProcess** | Configure les processus Windows.                                                                                                                                                            |
 
 Les ressources OOB constituent un bon point de départ pour les opérations courantes. Si les ressources OOB ne répondent pas à vos besoins, vous pouvez écrire votre propre [ressource personnalisée](../resources/authoringResource.md). Avant d’écrire une ressource personnalisée pour résoudre votre problème, vous devriez consulter les nombreuses ressources DSC déjà créées par Microsoft et la Communauté PowerShell.
 
@@ -39,7 +40,7 @@ Vous trouverez des ressources DSC dans [PowerShell Gallery](https://www.powershe
 
 ## <a name="installing-powershellget"></a>Installation de PowerShellGet
 
-Pour déterminer si vous disposez déjà de **PowerShellGet**, ou pour obtenir de l’aide sur son installation, consultez le guide suivant : [Installation de PowerShellGet](/powershell/scripting/gallery/installing-psget).
+Pour déterminer si vous disposez déjà de **PowerShellGet** , ou pour obtenir de l’aide sur son installation, consultez le guide suivant : [Installation de PowerShellGet](/powershell/scripting/gallery/installing-psget).
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>Recherche de ressources DSC à l’aide de PowerShellGet
 
@@ -51,11 +52,11 @@ Tout d’abord, utilisez l’applet de commande [Find-DSCResource](/powershell/m
 PS> Find-DSCResource
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The
-NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider
- by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
-install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+or 'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install
+the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201
+-Force'. Do you want PowerShellGet to install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
@@ -115,9 +116,9 @@ La ressource « TimeZone » existe dans le module « ComputerManagementDSC �
 PS> Install-Module -Name ComputerManagementDSC
 
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to
+install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 

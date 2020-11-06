@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,ressource,galerie,configuration
 title: Ajouter des paramètres à une configuration
-ms.openlocfilehash: 9aa4c746042e89d7767e1b326233dcca1e5c4c24
-ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
+description: Les configurations DSC peuvent être paramétrées pour offrir des configurations plus dynamiques selon les données entrées par l’utilisateur.
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141398"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656811"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Ajouter des paramètres à une configuration
 
@@ -119,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>Paramètres avancés dans les configurations
 
 Outre un paramètre `-ComputerName`, nous pouvons ajouter des paramètres pour le nom du service et l’état.
-L’exemple suivant ajoute un bloc de paramètres avec un paramètre `-ServiceName` et l’utilise pour définir dynamiquement le bloc de ressources **Service**. Il ajoute également un paramètre `-State` pour définir dynamiquement l’**état** dans le bloc de ressources **Service**.
+L’exemple suivant ajoute un bloc de paramètres avec un paramètre `-ServiceName` et l’utilise pour définir dynamiquement le bloc de ressources **Service**. Il ajoute également un paramètre `-State` pour définir dynamiquement l’ **état** dans le bloc de ressources **Service**.
 
 ```powershell
 Configuration TestConfig
@@ -178,7 +179,7 @@ Vous pouvez spécifier des arguments pour chaque attribut `parameter` afin de co
 $ServiceName
 ```
 
-Pour le paramètre `$State`, nous aimerions empêcher l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’attribut `ValidationSet*` empêche l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’exemple suivant ajoute l’attribut `ValidationSet` au paramètre `$State`. Comme nous ne souhaitons pas rendre le paramètre `$State`**obligatoire**, nous devrons lui ajouter une valeur par défaut.
+Pour le paramètre `$State`, nous aimerions empêcher l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’attribut `ValidationSet*` empêche l’utilisateur de spécifier des valeurs en dehors d’un ensemble prédéfini, par exemple Running (en cours d’exécution) ou Stopped (arrêté). L’exemple suivant ajoute l’attribut `ValidationSet` au paramètre `$State`. Comme nous ne souhaitons pas rendre le paramètre `$State`**obligatoire** , nous devrons lui ajouter une valeur par défaut.
 
 ```powershell
 [ValidateSet("Running", "Stopped")]

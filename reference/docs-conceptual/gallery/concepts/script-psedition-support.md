@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
-keywords: gallery,powershell,cmdlet,psget
 title: Écrire des scripts avec des éditions de PowerShell compatibles
-ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment les applets de commande PowerShellGet prennent en charge les éditions Desktop et Core des scripts PowerShell.
+ms.openlocfilehash: c9d8af24be8138283027263c62140b3fd04d6b24
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328060"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656054"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Écrire des scripts avec des éditions de PowerShell compatibles
 

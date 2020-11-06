@@ -1,16 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: FAQ PowerShell Gallery
-ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Questions fréquentes sur PowerShell Gallery
+ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777819"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654159"
 ---
-# <a name="frequently-asked-questions"></a>Forum Aux Questions
+# <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Questions fréquentes sur PowerShell Gallery
 
 ## <a name="what-is-a-powershell-module"></a>Qu’est-ce qu’un module PowerShell ?
 
@@ -65,7 +64,7 @@ Tout type de module PowerShell (modules de script, modules binaires ou modules d
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Comment créer un manifeste de module correctement mis en forme ?
 
-La façon la plus simple de créer un manifeste de module consiste à exécuter l’applet de commande [New-ModuleManifest][]. Dans PowerShell 5.0 ou version ultérieure, New-ModuleManifest génère un manifeste de module correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri**, **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le manifeste généré comme un exemple de mise en forme correcte.
+La façon la plus simple de créer un manifeste de module consiste à exécuter l’applet de commande [New-ModuleManifest][]. Dans PowerShell 5.0 ou version ultérieure, New-ModuleManifest génère un manifeste de module correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri** , **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le manifeste généré comme un exemple de mise en forme correcte.
 
 Pour vérifier que tous les champs de métadonnées obligatoires ont été correctement remplis, utilisez l’applet de commande [Test-ModuleManifest][].
 
@@ -94,7 +93,7 @@ Ainsi, par exemple, quand vous recherchez PowerShellVersion:"2.0", seuls les ré
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Comment créer un fichier de script correctement mis en forme ?
 
-La façon la plus simple de créer un fichier de script correctement mis en forme consiste à exécuter l’applet de commande [New-ScriptFileInfo][]. Dans PowerShell 5.0, New-ScriptFileInfo génère un fichier de script correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri**, **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le fichier de script généré comme un exemple de mise en forme correcte.
+La façon la plus simple de créer un fichier de script correctement mis en forme consiste à exécuter l’applet de commande [New-ScriptFileInfo][]. Dans PowerShell 5.0, New-ScriptFileInfo génère un fichier de script correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri** , **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le fichier de script généré comme un exemple de mise en forme correcte.
 
 Pour vérifier que tous les champs de métadonnées obligatoires ont été correctement remplis, utilisez l’applet de commande [Test-ScriptFileInfo][].
 

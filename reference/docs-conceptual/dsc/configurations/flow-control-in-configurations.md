@@ -2,19 +2,19 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Boucles et instructions conditionnelles dans les configurations
-ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article vous explique comment utiliser des instructions et des boucles conditionnelles pour rendre votre configuration plus dynamique. La combinaison d’instructions et de boucles conditionnelles avec des paramètres et des Données de configuration vous offre plus de souplesse et de contrôle lors de la compilation de votre configuration.
+ms.openlocfilehash: 7af8a360c17a0842fa2b95d1d1fb288323c327ef
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736894"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658456"
 ---
 # <a name="conditional-statements-and-loops-in-a-configuration"></a>Boucles et instructions conditionnelles dans une configuration
 
 Vous pouvez rendre votre [configuration](configurations.md) plus dynamique à l’aide de mots clés de contrôle de flux de PowerShell. Cet article vous explique comment utiliser des instructions et des boucles conditionnelles pour rendre vos `Configuration` plus dynamiques. La combinaison d’instructions et de boucles conditionnelles avec des [paramètres](add-parameters-to-a-configuration.md) et des [Données de configuration](configData.md) vous offre plus de souplesse et de contrôle lors de la compilation de vos `Configuration`.
 
-Comme pour une fonction ou un bloc de script, vous pouvez utiliser n’importe quelle fonctionnalité de langage PowerShell au sein d’une `Configuration`.
-Les instructions que vous utilisez seront évaluées uniquement lorsque vous appelez votre `Configuration` pour compiler un fichier `.mof`. Les exemples ci-dessous montrent des scénarios pour illustrer des concepts. Les instructions et les boucles conditionnelles sont plus souvent utilisées avec des paramètres et des Données de configuration.
+Comme pour une fonction ou un bloc de script, vous pouvez utiliser n’importe quelle fonctionnalité de langage PowerShell au sein d’une `Configuration`. Les instructions que vous utilisez seront évaluées uniquement lorsque vous appelez votre `Configuration` pour compiler un fichier `.mof`. Les exemples ci-dessous montrent des scénarios pour illustrer des concepts. Les instructions et les boucles conditionnelles sont plus souvent utilisées avec des paramètres et des Données de configuration.
 
 Dans cet exemple simple, le bloc de ressources **Service** récupère l’état actuel d’un service au moment de la compilation pour générer un fichier `.mof` qui conserve son état actuel.
 
@@ -104,7 +104,7 @@ Cela inclut des éléments tels que :
 - Communication à distance
 - WMI et CIM
 - Objets ActiveDirectory
-- et plus...
+- Etc.
 
 Tout code PowerShell défini dans une `Configuration` sera évalué lors d’une compilation, mais vous pouvez également placer le code dans le script contenant votre `Configuration`. Tout code en dehors du bloc `Configuration` est exécuté lorsque vous importez votre `Configuration`.
 

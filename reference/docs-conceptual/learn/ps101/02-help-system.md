@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
+ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
+ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493655"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93143312"
 ---
 # <a name="chapter-2---the-help-system"></a>Chapitre 2 – Le système d’aide
 
@@ -94,7 +94,7 @@ Chacun des paramètres suivants se trouve dans des jeux de paramètres différen
 - Parameter
 - ShowWindow
 
-Toute la syntaxe énigmatique comme les crochets et les accolades figurant dans la section syntaxe a une signification, mais ce point sera abordé dans l’Annexe A de ce livre. Bien qu’il soit important d’apprendre ce à quoi correspond cette syntaxe énigmatique, il est souvent difficile de s’en rappeler pour une personne qui débute sur PowerShell et qui ne l’utilise pas forcément tous les jours.
+Toute la syntaxe énigmatique comme les crochets et les accolades figurant dans la section syntaxe a une signification, mais ce point sera abordé dans l’Annexe A de ce livre. Bien qu’il soit important d’apprendre ce à quoi correspond cette syntaxe énigmatique, il est souvent difficile de s’en souvenir pour une personne qui débute sur PowerShell et qui ne l’utilise pas forcément tous les jours.
 
 Pour plus d’informations sur la syntaxe énigmatique, consultez l’[Annexe A][].
 
@@ -194,7 +194,7 @@ Get-Help -Name Get-Command -Parameter Noun
 Get-Help -Name Get-Command -ShowWindow
 ```
 
-En général, j’utilise `help <command name>` avec le paramètre **Full** ou **Online**. Si je suis intéressé uniquement par les exemples, j’utilise le paramètre **Examples** ; si je suis intéressé uniquement par un paramètre spécifique, j’utilise le paramètre **Parameter**. Le paramètre **ShowWindow** ouvre la rubrique d’aide dans une fenêtre de recherche distincte qui peut être affichée sur un autre écran, le cas échéant. J’ai évité le paramètre **ShowWindow**, car un bogue connu l’empêche d’afficher l’intégralité de la rubrique d’aide.
+En général, j’utilise `help <command name>` avec le paramètre **Full** ou **Online**. Si je suis intéressé uniquement par les exemples, j’utilise le paramètre **Examples**  ; si je suis intéressé uniquement par un paramètre spécifique, j’utilise le paramètre **Parameter**. Le paramètre **ShowWindow** ouvre la rubrique d’aide dans une fenêtre de recherche distincte qui peut être affichée sur un autre écran, le cas échéant. J’ai évité le paramètre **ShowWindow** , car un bogue connu l’empêche d’afficher l’intégralité de la rubrique d’aide.
 
 Si vous souhaitez afficher l’aide dans une fenêtre distincte, il est préférable d’utiliser le paramètre **Online** ou **Full** et de canaliser les résultats vers `Out-GridView`, comme dans l’exemple suivant.
 
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 Notez que dans l’exemple précédent où `Get-Command` est exécuté, le paramètre **Noun** est utilisé et `Process` est spécifié comme valeur du paramètre **Noun**. Et si vous n’aviez pas su utiliser l’applet de commande `Get-Command` ? Vous auriez pu utiliser `Get-Help` pour afficher la rubrique d’aide pour `Get-Command`.
 
-Les paramètres **Name**, **Noun** et **Verb** acceptent les caractères génériques. Dans l’exemple suivant, des caractères génériques sont utilisés avec le paramètre **Name** :
+Les paramètres **Name** , **Noun** et **Verb** acceptent les caractères génériques. Dans l’exemple suivant, des caractères génériques sont utilisés avec le paramètre **Name**  :
 
 ```Output
 Get-Command -Name *service*
@@ -463,7 +463,7 @@ Application     TieringEngineService.exe                           10.0.14... C:
 
 Je ne suis pas très favorable à l’utilisation de caractères génériques avec le paramètre **Name** de `Get-Command`, car celui-ci retourne aussi les fichiers exécutables qui ne sont pas des commandes PowerShell natives.
 
-Si vous envisagez d’utiliser des caractères génériques avec le paramètre **Name**, je vous recommande de limiter les résultats avec le paramètre **CommandType**.
+Si vous envisagez d’utiliser des caractères génériques avec le paramètre **Name** , je vous recommande de limiter les résultats avec le paramètre **CommandType**.
 
 ```powershell
 Get-Command -Name *service* -CommandType Cmdlet, Function, Alias

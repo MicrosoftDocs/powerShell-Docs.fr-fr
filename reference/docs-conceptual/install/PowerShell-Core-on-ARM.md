@@ -1,21 +1,22 @@
 ---
 title: Installation de PowerShell Core sous ARM
 description: Installation de PowerShell Core sur les systèmes ARM
-ms.date: 08/06/2018
-ms.openlocfilehash: d59fa943d3e24ea70da85793021f11537b3b879e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 10/30/2020
+ms.openlocfilehash: 843c90c1a00ba96eedbb7f86ce89f372c51f6880
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80977452"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142767"
 ---
 # <a name="powershell-core-on-arm"></a>PowerShell Core sur ARM
 
-Aujourd'hui, PowerShell Core fonctionne sur certains appareils ARM, notamment Windows 10 ARM32/ARM64 et Raspbian.
-PowerShell Core pour ARM est une version expérimentale non prise en charge.
+La prise en charge de PowerShell sur ARM est basée sur la [stratégie de cycle de vie du système d’exploitation .NET Core pris en charge](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).
+PowerShell est pris en charge sur la plateforme prise en charge dans le cadre de cette stratégie.
 
-Pour plus d’informations sur l’installation de ces builds expérimentales, consultez les instructions d’installation pour [Windows 10 IoT Entreprise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise), [Windows 10 IoT](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core) et [Raspbian](installing-powershell-core-on-linux.md#raspbian).
+Pour obtenir des instructions d’installation, consultez les articles suivants :
 
-Nous vous informerons de la progression de la prise en charge ARM64.
-
-Restez connecté !
+- [Windows 10 sur ARM](installing-powershell-core-on-windows.md#installing-the-zip-package)
+- [Windows 10 IoT Entreprise](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
+- [Windows 10 IoT Standard](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
+- [Raspbian](installing-powershell-core-on-linux.md#raspbian)

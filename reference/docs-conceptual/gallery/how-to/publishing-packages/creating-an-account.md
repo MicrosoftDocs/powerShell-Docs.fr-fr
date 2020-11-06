@@ -1,14 +1,13 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Création d’un compte PowerShell Gallery
-ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article décrit la configuration requise du compte d’utilisateur pour PowerShell Gallery
+ms.openlocfilehash: 24c7531e61128415a284d1b438b43f3af0d1053a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278776"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662608"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>Création d’un compte PowerShell Gallery
 
@@ -19,7 +18,7 @@ Pour créer un compte PowerShell Gallery, accédez à [https://PowerShellGallery
 
 ![Créer un nouveau compte](media/creating-an-account/CreateAccount-Register.png)
 
-Pour utiliser un compte Azure Active Directory, sélectionnez **Compte professionnel ou scolaire**, puis connectez-vous avec votre compte. Pour utiliser un ID Microsoft, choisissez **Compte personnel** et connectez-vous.
+Pour utiliser un compte Azure Active Directory, sélectionnez **Compte professionnel ou scolaire** , puis connectez-vous avec votre compte. Pour utiliser un ID Microsoft, choisissez **Compte personnel** et connectez-vous.
 
 Vous êtes ensuite invité à créer un nom d’utilisateur pour PowerShell Gallery. Examinez les conditions d’utilisation et la politique de confidentialité, entrez un nom d’utilisateur, puis cliquez sur **S’inscrire**.
 

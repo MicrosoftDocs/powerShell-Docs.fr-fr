@@ -1,14 +1,13 @@
 ---
 ms.date: 09/05/2018
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Paramètres de compte PowerShell Gallery
-ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Cet article décrit les paramètres de votre profil de compte dans PowerShell Gallery
+ms.openlocfilehash: ab0e09aae6fea26ac6d85a35e30c8d06f31b121a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771785"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662742"
 ---
 # <a name="powershell-gallery-account-settings"></a>Paramètres de compte PowerShell Gallery
 
@@ -59,7 +58,7 @@ Pour modifier le compte de connexion, vous devez être connecté avec le compte 
 
    ![Se connecter avec le nouveau compte](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
-3. Quand vous cliquez sur **Suivant**, un message s’affiche pour vous indiquer que vous êtes connecté avec le compte actif.
+3. Quand vous cliquez sur **Suivant** , un message s’affiche pour vous indiquer que vous êtes connecté avec le compte actif.
    Cliquez sur **Se déconnecter et se connecter avec un autre compte**.
 
    ![Se déconnecter et se connecter avec un autre compte](media/managing-account/PSGallery_LoginAccountChange-3.png)

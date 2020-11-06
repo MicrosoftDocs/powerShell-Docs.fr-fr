@@ -1,14 +1,13 @@
 ---
 ms.date: 09/26/2017
-contributor: keithb
-keywords: gallery,powershell,cmdlet,psget
 title: Préversions de module
-ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Le module PowerShellGet prend en charge le balisage de modules avec des versions supérieures à 1.0.0 en tant que version préliminaire utilisant le contrôle de version sémantique.
+ms.openlocfilehash: f794722f0a89f98f8f445ecd45dad9d3d2d7f3cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328140"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661517"
 ---
 # <a name="prerelease-module-versions"></a>Préversions de module
 

@@ -2,16 +2,17 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Configurations partielles du service de configuration d’état souhaité PowerShell
-ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC permet de distribuer des fragments de configuration provenant de plusieurs sources. Le gestionnaire de configuration local (LCM) sur le nœud cible réunit les fragments avant de les appliquer sous forme de configuration unique.
+ms.openlocfilehash: 3afe5d684cabec9c8ab528347610b6dd00c5d4e9
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500772"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661608"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>Configurations partielles du service de configuration d’état souhaité PowerShell
 
-_S’applique à : Windows PowerShell 5.0 et les versions ultérieures_
+> S’applique à : Windows PowerShell 5.0 et ultérieur.
 
 Dans PowerShell 5.0, la configuration d’état souhaité (DSC) permet de distribuer des fragments de configuration provenant de plusieurs sources. Le gestionnaire de configuration local sur le nœud cible réunit les fragments avant de les appliquer sous forme de configuration unique. Cette fonctionnalité permet de partager le contrôle de la configuration entre plusieurs personnes ou équipes. Par exemple, si deux équipes ou plus de développeurs collaborent sur un service, elles peuvent avoir besoin de créer des configurations propres pour gérer leur partie du service. Chacune de ces configurations peut être extraite de différents serveurs collecteurs et ajoutée à différents stades de développement. Les configurations partielles permettent également à différents utilisateurs ou équipes de contrôler les divers aspects de la configuration des nœuds sans avoir à coordonner la modification d’un document de configuration unique. Par exemple, une équipe peut être chargée de déployer une machine virtuelle et un système d’exploitation, tandis qu’une autre peut déployer d’autres applications et services sur cette machine virtuelle. Avec les configurations partielles, chaque équipe peut créer sa propre configuration, sans qu’elle soit inutilement compliquée.
 
@@ -19,11 +20,11 @@ Vous pouvez utiliser des configurations partielles en mode par envoi ou par extr
 
 ## <a name="partial-configurations-in-push-mode"></a>Configurations partielles en mode par envoi
 
-Pour utiliser des configurations partielles en mode par envoi, vous configurez le gestionnaire de configuration local sur le nœud cible de façon à recevoir les configurations partielles. Chaque configuration partielle doit être envoyée à la cible à l’aide de l’applet de commande `Publish-DSCConfiguration`. Le nœud cible combine ensuite la configuration partielle en une configuration unique, que vous pouvez appliquer en appelant l’applet de commande [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
+Pour utiliser des configurations partielles en mode par envoi, vous configurez le gestionnaire de configuration local sur le nœud cible de façon à recevoir les configurations partielles. Chaque configuration partielle doit être envoyée à la cible à l’aide de l’applet de commande `Publish-DSCConfiguration`. Le nœud cible associe ensuite la configuration partielle à une configuration unique, que vous pouvez appliquer en appelant l’applet de commande [Start-DscConfigurationxt](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Configuration du gestionnaire de configuration local pour les configurations partielles en mode par émission
 
-Pour configurer le gestionnaire de configuration local pour les configurations partielles en mode par envoi, vous créez une configuration **DSCLocalConfigurationManager** avec un bloc **PartialConfiguration** pour chaque configuration partielle. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md). L’exemple suivant montre une configuration de gestionnaire de configuration local avec deux configurations partielles : une qui déploie le système d’exploitation, et l’autre qui déploie et configure SharePoint.
+Pour configurer le gestionnaire de configuration local pour les configurations partielles en mode par envoi, vous créez une configuration **DSCLocalConfigurationManager** avec un bloc **PartialConfiguration** pour chaque configuration partielle. Pour plus d’informations sur la configuration du gestionnaire de configuration local, consultez [Configuring the Local Configuration Manager](../managing-nodes/metaConfig.md) (Configuration du gestionnaire de configuration local). L’exemple suivant montre une configuration de gestionnaire de configuration local avec deux configurations partielles : une qui déploie le système d’exploitation, et l’autre qui déploie et configure SharePoint.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -48,7 +49,7 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-Le paramètre **RefreshMode** pour chaque configuration partielle est défini sur « Émission ». Les noms des blocs **PartialConfiguration** (dans le cas présent, « ServiceAccountConfig » et « SharePointConfig ») doivent correspondre exactement aux noms des configurations envoyées au nœud cible.
+Le paramètre **RefreshMode** pour chaque configuration partielle est défini sur « Émission ». Les noms des blocs **PartialConfiguration** (dans le cas présent, « ServiceAccountConfig » et « SharePointConfig ») doivent correspondre exactement aux noms des configurations envoyées au nœud cible.
 
 > [!Note]
 > Le nom de chaque bloc **PartialConfiguration** doit correspondre au nom réel de la configuration tel qu’il est spécifié dans le script de configuration, et non pas au nom du fichier MOF, qui doit être le nom du nœud cible ou de l’hôte local (`localhost`).
@@ -109,7 +110,7 @@ Les configurations partielles peuvent être extraites d’un ou plusieurs serveu
 
 Pour configurer le gestionnaire de configuration local de façon à extraire les configurations partielles d’un serveur collecteur, vous définissez le serveur collecteur dans un bloc **ConfigurationRepositoryWeb** (pour un serveur collecteur HTTP) ou **ConfigurationRepositoryShare** (pour un serveur collecteur SMB). Vous créez ensuite des blocs **PartialConfiguration** qui font référence au serveur collecteur à l’aide de la propriété **ConfigurationSource**. Vous devez également créer un bloc **Settings** pour spécifier que le gestionnaire de configuration local utilise le mode par extraction, et pour indiquer le paramètre **ConfigurationNames** ou **ConfigurationID** utilisé par le serveur collecteur et le nœud cible pour identifier les configurations. La métaconfiguration suivante définit un serveur collecteur HTTP nommé CONTOSO-PullSrv et deux configurations partielles qui l’utilisent.
 
-Pour plus d’informations sur la configuration du gestionnaire de configuration local à l’aide de **ConfigurationNames**, consultez [Configuration d’un client collecteur à l’aide de noms de configuration](pullClientConfigNames.md). Pour plus d’informations sur la configuration du gestionnaire de configuration local à l’aide de **ConfigurationID**, consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration](pullClientConfigID.md).
+Pour plus d’informations sur la configuration du gestionnaire de configuration local à l’aide de **ConfigurationNames** , consultez [Configuration d’un client collecteur à l’aide de noms de configuration](pullClientConfigNames.md). Pour plus d’informations sur la configuration du gestionnaire de configuration local à l’aide de **ConfigurationID** , consultez [Configuration d’un client collecteur à l’aide de l’ID de configuration](pullClientConfigID.md).
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>Configuration du gestionnaire de configuration local pour les configurations en mode par extraction à l’aide de noms de configuration
 
@@ -375,6 +376,6 @@ SharePointConfig
 
 ## <a name="see-also"></a>Voir aussi
 
-[Serveurs Pull Desired State Configuration (DSC) PowerShell Windows](pullServer.md)
+[Serveurs collecteurs de la configuration d’état souhaité Windows PowerShell](pullServer.md)
 
 [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md)

@@ -2,27 +2,27 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Spécification de dépendances entre nœuds
-ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC fournit des ressources spéciales, utilisées dans les configurations pour spécifier les dépendances sur les configurations sur d’autres nœuds.
+ms.openlocfilehash: a9fc09af922839b37db476c24c113efc5e3e8cb1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954106"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658495"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Spécification de dépendances entre nœuds
 
 > S’applique à : Windows PowerShell 5.0
 
-DSC fournit des ressources spéciales, **WaitForAll**, **WaitForAny** et **WaitForSome**, qui peuvent être utilisées dans les configurations pour spécifier les dépendances sur les configurations sur d’autres nœuds. Le comportement de ces ressources est le suivant :
+DSC fournit des ressources spéciales, **WaitForAll** , **WaitForAny** et **WaitForSome** , qui peuvent être utilisées dans les configurations pour spécifier les dépendances sur les configurations sur d’autres nœuds. Le comportement de ces ressources est le suivant :
 
-- **WaitForAll** : réussit si la ressource spécifiée est dans l’état souhaité sur tous les nœuds cibles définis dans la propriété **NodeName**.
-- **WaitForAny** : réussit si la ressource spécifiée est dans l’état souhaité sur au moins l’un des nœuds cibles définis dans la propriété **NodeName**.
-- **WaitForSome** : spécifie une propriété **NodeCount** en plus d’une propriété **NodeName**. La ressource réussit si elle est dans l’état souhaité sur un nombre minimal de nœuds (spécifié par **NodeCount**) défini par la propriété **NodeName**.
+- **WaitForAll**  : réussit si la ressource spécifiée est dans l’état souhaité sur tous les nœuds cibles définis dans la propriété **NodeName**.
+- **WaitForAny**  : réussit si la ressource spécifiée est dans l’état souhaité sur au moins l’un des nœuds cibles définis dans la propriété **NodeName**.
+- **WaitForSome**  : spécifie une propriété **NodeCount** en plus d’une propriété **NodeName**. La ressource réussit si elle est dans l’état souhaité sur un nombre minimal de nœuds (spécifié par **NodeCount** ) défini par la propriété **NodeName**.
 
-## <a name="syntax"></a>Syntaxe
+## <a name="syntax"></a>Syntax
 
-Les ressources **WaitForAll** et **WaitForAny** partagent la même syntaxe. Remplacez \<ResourceType\> dans l’exemple ci-dessous par **WaitForAny** ou **WaitForAll**.
-Comme pour le mot clé **DependsOn**, vous devrez appliquer au nom le format "[ResourceType]ResourceName". Si la ressource appartient à une [configuration](configurations.md) distincte, incluez **ConfigurationName** dans la chaîne mise en forme "[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]". **NodeName** représente l’ordinateur ou le nœud sur lequel la ressource actuelle doit attendre.
+Les ressources **WaitForAll** et **WaitForAny** partagent la même syntaxe. Dans l’exemple ci-dessous, remplacez `<ResourceType>` par **WaitForAny** ou **WaitForAll**. Comme pour le mot clé **DependsOn** , vous devrez appliquer au nom le format `[ResourceType]ResourceName`. Si la ressource appartient à une [configuration](configurations.md) distincte, incluez **ConfigurationName** dans la chaîne mise en forme `[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]`. **NodeName** représente l’ordinateur ou le nœud sur lequel la ressource actuelle doit attendre.
 
 ```
 <ResourceType> [string] #ResourceName
@@ -55,13 +55,13 @@ WaitForSome [String] #ResourceName
 
 Toutes les ressources **WaitForXXXX** partagent les clés de syntaxe suivantes.
 
-|Propriété|  Description   |
-|---------|---------------------|
-| RetryIntervalSec| Le nombre de secondes avant la nouvelle tentative. Le minimum est 1.|
-| RetryCount| Le nombre maximum de nouvelles tentatives.|
-| ThrottleLimit| Le nombre de machines à connecter simultanément. La valeur par défaut est `New-CimSession` par défaut.|
-| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Pour plus d’informations, consultez [DependsOn](resource-depends-on.md).|
-| PsDscRunAsCredential | Voir [Exécution de DSC avec les informations d’identification de l’utilisateur](./runAsUser.md) |
+|       Property       |                                                                           Description                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RetryIntervalSec     | Le nombre de secondes avant la nouvelle tentative. Le minimum est 1.                                                                                                            |
+| RetryCount           | Le nombre maximum de nouvelles tentatives.                                                                                                                           |
+| ThrottleLimit        | Le nombre de machines à connecter simultanément. La valeur par défaut est `New-CimSession` par défaut.                                                                              |
+| DependsOn            | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Pour plus d’informations, consultez [DependsOn](resource-depends-on.md). |
+| PsDscRunAsCredential | Voir [Exécution de DSC avec les informations d’identification de l’utilisateur](./runAsUser.md)                                                                                                           |
 
 ## <a name="using-waitforxxxx-resources"></a>Utilisation de ressources WaitForXXXX
 
@@ -120,8 +120,7 @@ Configuration JoinDomain
 Lorsque vous compilez la configuration, deux fichiers « .mof » sont générés. Appliquez ces deux fichiers « .mof » aux nœuds cibles à l’aide de l’applet de commande [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 
 > [!NOTE]
-> Les ressources **WaitForXXX** utilisent Windows Remote Management pour vérifier l’état d’autres nœuds.
-> Pour plus d’informations sur la configuration requise des ports et de la sécurité pour WinRM, consultez [Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
+> Les ressources **WaitForXXX** utilisent Windows Remote Management pour vérifier l’état d’autres nœuds. Pour plus d’informations sur la configuration requise des ports et de la sécurité pour WinRM, consultez [Éléments à prendre en compte en matière de sécurité de la communication à distance PowerShell](/powershell/scripting/learn/remoting/winrmsecurity).
 
 ## <a name="see-also"></a>Voir aussi
 

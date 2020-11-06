@@ -1,14 +1,13 @@
 ---
 ms.date: 09/19/2019
-contributor: manikb
-keywords: gallery,powershell,cmdlet,psget
 title: Installation de PowerShellGet
-ms.openlocfilehash: 4a10699be9ff2b64e5848c6749bdd3dedf55e3c7
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: Cet article explique comment installer le module PowerShell dans différentes versions de PowerShell.
+ms.openlocfilehash: 06ec331446849784bb8464912fbce0e5a940823f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162509"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662144"
 ---
 # <a name="installing-powershellget"></a>Installation de PowerShellGet
 
@@ -21,7 +20,7 @@ ms.locfileid: "88162509"
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>Obtenir la dernière version de PowerShell Gallery
 
-Avant d’effectuer la mise à jour de **PowerShellGet**, vous devez toujours installer le dernier fournisseur **NuGet**. À partir d’une session PowerShell avec élévation de privilèges, exécutez la commande suivante.
+Avant d’effectuer la mise à jour de **PowerShellGet** , vous devez toujours installer le dernier fournisseur **NuGet**. À partir d’une session PowerShell avec élévation de privilèges, exécutez la commande suivante.
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
@@ -56,7 +55,7 @@ Pour plus d’informations, consultez [Save-Module](/powershell/module/Powershel
 #### <a name="preparatory-step-on-computers-running-powershell-30"></a>Étape préparatoire sur les ordinateurs exécutant PowerShell 3.0
 
 Les instructions fournies dans les sections ci-dessous permettent d’installer les modules dans le répertoire `$env:ProgramFiles\WindowsPowerShell\Modules`.
-Dans PowerShell 3.0, ce répertoire n’est pas listé dans `$env:PSModulePath` par défaut. Vous devez donc l’ajouter pour que les modules se chargent automatiquement. 
+Dans PowerShell 3.0, ce répertoire n’est pas listé dans `$env:PSModulePath` par défaut. Vous devez donc l’ajouter pour que les modules se chargent automatiquement.
 
 Ouvrez une session PowerShell avec élévation de privilèges et exécutez la commande suivante (qui prendra effet dans les sessions ultérieures) :
 
@@ -70,7 +69,7 @@ Ouvrez une session PowerShell avec élévation de privilèges et exécutez la co
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Ordinateurs sur lesquels la préversion de PackageManagement est installée
 
-> [!NOTE] 
+> [!NOTE]
 > La préversion de PackageManagement était un composant téléchargeable qui rendait PowerShellGet disponible pour les versions 3 et 4 de PowerShell, mais ce composant n’est plus disponible.
 > Pour déterminer s’il a été installé sur un ordinateur donné, exécutez `Get-Module -ListAvailable PowerShellGet`.
 
@@ -85,7 +84,7 @@ Ouvrez une session PowerShell avec élévation de privilèges et exécutez la co
 1. Rouvrez la console PowerShell avec élévation de privilèges, puis exécutez les commandes suivantes.
 
    ```powershell
-   'PowerShellGet', 'PackageManagement' | % { 
+   'PowerShellGet', 'PackageManagement' | % {
      $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
      Remove-Item $targetDir\* -Recurse -Force
      Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
@@ -103,7 +102,7 @@ Les ordinateurs qui ne disposent d’aucune version de **PowerShellGet** (utilis
    ```
 
 1. Copiez le sous-dossier `<version>` respectif dans les dossiers **PowerShellGet** et **PackageManagement** sur l’ordinateur sur lequel **PowerShellGet** n’est pas installé, dans les dossiers `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` et `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` respectivement, ce qui nécessite une session avec élévation de privilèges.
-   
+
 1. Par exemple, si vous pouvez accéder au dossier de téléchargement sur l’autre ordinateur, par exemple `ws1`, à partir de l’ordinateur cible par le biais d’un chemin UNC, par exemple `\\ws1\C$\LocalFolder`, ouvrez une console PowerShell avec des autorisations élevées et exécutez la commande suivante :
 
    ```powershell

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Cmdlets nouvelles et mises à jour
-ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.1 comprend de nombreuses applets de commande, nouvelles ou mises à jour.
+ms.openlocfilehash: bdfbe5a263864a172aefb0aa5731f59b95ab43ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809115"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663226"
 ---
 # <a name="new-and-updated-cmdlets"></a>Cmdlets nouvelles et mises à jour
 
@@ -41,7 +41,7 @@ Pour plus d'informations, consultez les pages suivantes :
 
 Les applets de commande Cryptographic Message Syntax prennent en charge le chiffrement et le déchiffrement de contenu au format IETF pour la protection par chiffrement des messages comme documenté dans la [RFC5652](https://tools.ietf.org/html/rfc5652.html).
 
-Le standard CMS implémente un chiffrement à clé publique, selon lequel la clé servant à chiffrer le contenu (la *clé publique*) et la clé servant à le déchiffrer (la *clé privée*) sont distinctes.
+Le standard CMS implémente un chiffrement à clé publique, selon lequel la clé servant à chiffrer le contenu (la *clé publique* ) et la clé servant à le déchiffrer (la *clé privée* ) sont distinctes.
 
 La clé publique, qui ne constitue pas une donnée sensible, est partageable à grande échelle. Le contenu chiffré avec la clé publique ne peut être déchiffré qu’avec la clé privée. Pour plus d’informations, consultez [Cryptographie asymétrique](https://en.wikipedia.org/wiki/Public-key_cryptography).
 
@@ -102,7 +102,7 @@ Pour plus d’informations, voir [Format-Hex](/powershell/module/microsoft.power
 
 ## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem a un paramètre -Depth
 
-`Get-ChildItem` comporte maintenant un paramètre **Depth** qui permet de limiter la récursivité lorsqu’il est utilisé avec **Recurse** :
+`Get-ChildItem` comporte maintenant un paramètre **Depth** qui permet de limiter la récursivité lorsqu’il est utilisé avec **Recurse**  :
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Prise en charge des modules pour la déclaration des plages de versions (1.*, etc.)
 
@@ -151,7 +151,7 @@ Get-Content .\Example.txt
 This is a single sentence.
 ```
 
-Sans **NoNewline**, chacun des fragments serait sur une ligne distincte :
+Sans **NoNewline** , chacun des fragments serait sur une ligne distincte :
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt
@@ -297,7 +297,7 @@ Export-ODataEndpointProxy -Uri $uri -OutputModule $generatedProxyModuleDir -Forc
 
 Dans l’exemple suivant, nous récupérons les meilleurs produits et capturons la sortie dans la variable `$infoStream`.
 
-En spécifiant le paramètre **IncludeTotalResponseCount**, nous obtenons le nombre total d’enregistrements **Product** disponibles sur le serveur.
+En spécifiant le paramètre **IncludeTotalResponseCount** , nous obtenons le nombre total d’enregistrements **Product** disponibles sur le serveur.
 
 ```powershell
 Import-Module $generatedProxyModuleDir -Force
@@ -318,7 +318,7 @@ while($skipCount -le $additionalInfo['odata.count'])
 }
 ```
 
-Les cmdlets de proxy générées prennent en charge le paramètre**Select**, qui sert de filtre pour ne recevoir que les propriétés d’enregistrements nécessaires au client. Le filtrage s’effectue sur le serveur, ce qui réduit la quantité de données transférées sur le réseau.
+Les cmdlets de proxy générées prennent en charge le paramètre **Select** , qui sert de filtre pour ne recevoir que les propriétés d’enregistrements nécessaires au client. Le filtrage s’effectue sur le serveur, ce qui réduit la quantité de données transférées sur le réseau.
 
 ```powershell
 Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name

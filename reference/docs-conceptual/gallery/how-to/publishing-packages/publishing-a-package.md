@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Création et publication d’un élément
-ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article décrit les mécanismes et les principales étapes de la préparation d’un script ou d’un module, et sa publication dans PowerShell Gallery
+ms.openlocfilehash: be846799aff71d38bdd0c98b3f43eaee5aef7798
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71327920"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662514"
 ---
 # <a name="creating-and-publishing-an-item"></a>Création et publication d’un élément
 
@@ -67,7 +66,8 @@ Il existe certains outils que vous devez exécuter sur votre code avant de publi
 
 [L’analyseur de script PowerShell](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) est un outil d’analyse de code statique qui analyse votre code pour vous assurer qu’il répond aux consignes de base en matière de codage pour PowerShell. Cet outil identifie les problèmes courants et critiques dans votre code, et doit être exécuté régulièrement pendant le développement pour vous aider à préparer votre élément pour la publication. L’analyseur de script PowerShell fournit la liste des problèmes identifiés en tant qu’erreurs, avertissements et informations. Toutes les erreurs doivent être traitées avant de publier dans PowerShell Gallery. Les avertissements doivent être passés en revue, et la plupart doivent être traités. L’analyseur de script PowerShell est exécuté chaque fois qu’un article est publié ou mis à jour dans PowerShell Gallery. L’équipe des opérations de PowerShell Gallery contacte les propriétaires de l’élément pour corriger les erreurs qui ont été identifiées.
 
-Si les informations de manifeste dans votre élément ne peuvent pas être lues par l’infrastructure de PowerShell Gallery, vous ne pourrez pas publier. [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) intercepte les problèmes courants qui rendraient le module inutilisable lorsqu’il est installé. Il doit être exécuté pour chaque module avant sa publication dans PowerShell Gallery.
+Si les informations de manifeste dans votre élément ne peuvent pas être lues par l’infrastructure de PowerShell Gallery, vous ne pourrez pas publier.
+[Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) intercepte les problèmes courants qui rendraient le module inutilisable lorsqu’il est installé. Il doit être exécuté pour chaque module avant sa publication dans PowerShell Gallery.
 
 De même, [Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) valide les métadonnées dans un script et doit être exécuté sur chaque script (publié séparément à partir d’un module) avant sa publication dans PowerShell Gallery.
 
@@ -94,4 +94,3 @@ Tous les éléments qui sont publiés dans PowerShell Gallery font l’objet d�
 Une fois que vous avez publié un élément dans PowerShell Gallery, vous devez consulter les commentaires sur votre élément.
 
 - Veillez à surveiller l’adresse de messagerie associée au compte utilisé pour publier. Les utilisateurs et l’équipe des opérations de PowerShell Gallery fournissent des commentaires via ce compte, y compris sur les problèmes de la PSSA ou des analyses antivirus. Si le compte de messagerie n’est pas valide, ou si des problèmes graves sont signalés pour le compte sans être résolus pendant un certain temps, les éléments peuvent être considérés comme abandonnés et être supprimés de PowerShell Gallery comme décrit dans nos [conditions d’utilisation](https://www.powershellgallery.com/policies/Terms).
-- Nous vous recommandons de vous abonner aux commentaires pour chaque élément de PowerShell Gallery que vous publiez. Cela vous permet d’être averti si quelqu’un publie des commentaires sur vos éléments dans PowerShell Gallery. Cela est facultatif, car cela nécessite la création d’un compte avec LiveFyre.

@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Options relatives aux informations d’identification dans les données de configuration
-ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC vous permet de fournir des informations d’identification afin que les paramètres de configuration puissent être appliqués dans le contexte d’un compte d’utilisateur spécifique plutôt que dans le compte système local.
+ms.openlocfilehash: 41478dc042ca59fb70aa033de81b589a4a8c09c7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870555"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658625"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Options relatives aux informations d’identification dans les données de configuration
 
@@ -205,9 +206,9 @@ ModuleVersion = "1.0";
 ### <a name="credentials-in-transit-and-at-rest"></a>Informations d’identification en transit et au repos
 
 - L’indicateur **PSDscAllowPlainTextPassword** permet la compilation de fichiers MOF contenant les mots de passe en texte clair. Prenez des précautions lorsque vous stockez des fichiers MOF contenant des mots de passe de texte clair.
-- Lorsque le fichier MOF est transmis à un nœud en mode **Push**, WinRM chiffre la communication pour protéger le mot de passe de texte en clair, sauf si vous remplacez la valeur par défaut par le paramètre **AllowUnencrypted**.
+- Lorsque le fichier MOF est transmis à un nœud en mode **Push** , WinRM chiffre la communication pour protéger le mot de passe de texte en clair, sauf si vous remplacez la valeur par défaut par le paramètre **AllowUnencrypted**.
   - Le chiffrement du fichier MOF avec un certificat protège le fichier MOF au repos avant qu’il soit appliqué à un nœud.
-- En mode **Pull**, vous pouvez configurer un serveur Pull Windows afin d’utiliser HTTPS pour chiffrer le trafic à l’aide du protocole spécifié dans Internet Information Server. Pour plus d’informations, consultez les articles [Configuration d’un client Pull DSC](../pull-server/pullclient.md) et [Sécurisation des fichiers MOF avec des certificats](../pull-server/secureMOF.md).
+- En mode **Pull** , vous pouvez configurer un serveur Pull Windows afin d’utiliser HTTPS pour chiffrer le trafic à l’aide du protocole spécifié dans Internet Information Server. Pour plus d’informations, consultez les articles [Configuration d’un client Pull DSC](../pull-server/pullclient.md) et [Sécurisation des fichiers MOF avec des certificats](../pull-server/secureMOF.md).
   - Dans le service [Azure Automation State Configuration](/azure/automation/automation-dsc-overview), le trafic Pull est toujours chiffré.
 - Sur le nœud, les fichiers MOF sont chiffrés au repos à compter de PowerShell 5.0.
   - Dans PowerShell 4.0, les fichiers MOF ne sont pas chiffrés au repos, sauf s’ils sont chiffrés avec un certificat lorsqu’ils sont envoyés (Push) au nœud ou extraits (Pull) de celui-ci.

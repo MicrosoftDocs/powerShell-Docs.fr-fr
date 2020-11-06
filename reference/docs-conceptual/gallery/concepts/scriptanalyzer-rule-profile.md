@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Profil de règle ScriptAnalyzer pour la galerie
-ms.openlocfilehash: 939f01dece56b283dbe6e03c888f42ff866707af
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Explique comment ScriptAnalyzer PowerShell est intégré à PowerShell Gallery.
+ms.openlocfilehash: 3af710e8811f0fabfb02f5317d5b4ff9c320f29a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328470"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646757"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>Profil de règle ScriptAnalyzer pour la galerie
 

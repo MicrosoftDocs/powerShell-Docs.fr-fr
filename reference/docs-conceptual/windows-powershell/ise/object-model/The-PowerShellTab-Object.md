@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,applet de commande
 title: Objet PowerShellTab
-ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: L’objet PowerShellTab représente un environnement d’exécution Windows PowerShell.
+ms.openlocfilehash: ac89875e408a41a92d7e3d1a83a849466296c3c6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809555"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663390"
 ---
 # <a name="the-powershelltab-object"></a>Objet PowerShellTab
 
@@ -169,7 +169,7 @@ $psISE.CurrentPowerShellTab.output.clear()
 
 Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
-Propriété en lecture seule qui obtient le texte d’invite actuel. Remarque : La fonction **Prompt** peut être remplacée par le profil utilisateur. Si le résultat n’est pas une chaîne simple, cette propriété ne renvoie rien.
+Propriété en lecture seule qui obtient le texte d’invite actuel. Remarque : la fonction **Prompt** peut être remplacée par le profil utilisateur &trade;. Si le résultat n’est pas une chaîne simple, cette propriété ne renvoie rien.
 
 ```powershell
 # Gets the current prompt text.

@@ -2,12 +2,13 @@
 ms.date: 06/22/2020
 keywords: dsc,powershell,configuration,service,installation
 title: Écrire, compiler et appliquer une configuration
-ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
-ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
+description: Cet exercice vous guide dans la création et l’application d’une configuration DSC du début à la fin. Dans l’exemple suivant, vous allez apprendre à écrire et à appliquer une configuration très simple
+ms.openlocfilehash: f173fe0dc6cd73e2b49bb8c44a9ee1a53eab475f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295673"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645026"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>Écrire, compiler et appliquer une configuration
 
@@ -69,7 +70,7 @@ La configuration appelle une [ressource](../resources/resources.md), la ressourc
 
 ## <a name="compile-the-configuration"></a>Compiler la configuration
 
-Pour qu’une configuration DSC soit appliquée à un nœud, elle doit tout d’abord être compilée dans un fichier MOF. L’exécution de la configuration, comme une fonction, compilera un fichier `.mof` pour chaque nœud défini par le bloc `Node`. Pour exécuter la configuration, vous devez _dot sourcer_ votre script `HelloWorld.ps1` dans la portée actuelle. Pour plus d’informations, consultez [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
+Pour qu’une configuration DSC soit appliquée à un nœud, elle doit tout d’abord être compilée dans un fichier MOF. L’exécution de la configuration, comme une fonction, compilera un fichier `.mof` pour chaque nœud défini par le bloc `Node`. Pour exécuter la configuration, vous devez _dot sourcer_ votre script `HelloWorld.ps1` dans la portée actuelle. Pour plus d’informations, consultez [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing).
 
 <!-- markdownlint-disable MD038 -->
 _Dot sourcez_ votre script `HelloWorld.ps1` en tapant le chemin où vous l’avez stocké, après le `. ` (point, espace). Vous pouvez ensuite exécuter votre configuration en l’appelant comme une fonction. Vous pouvez également appeler la fonction de configuration au bas du script afin de ne pas avoir à dot sourcer.

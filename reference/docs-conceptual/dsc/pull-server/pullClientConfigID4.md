@@ -2,19 +2,20 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 4.0
-ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment configurer un client Pull à l’aide d’ID de configuration dans PowerShell 4.0
+ms.openlocfilehash: 2a3d7b79f29030620cddc2b2131cb4432e41e4eb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71955146"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92649012"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 4.0
 
->S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+>S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC* ) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
 Avant de configurer un client Pull, vous devez configurer un serveur Pull. Bien que cet ordre ne soit pas obligatoire, il facilite le dépannage et vous permet de vous assurer que l’inscription a réussi. Pour configurer un serveur Pull, vous pouvez utiliser les guides suivants :
 
@@ -27,7 +28,7 @@ Chaque nœud cible peut être configuré pour télécharger les configurations e
 
 L’exécution de l’un des exemples ci-dessous crée un dossier de sortie nommé **PullClientConfigID** et y place un fichier MOF de métaconfiguration. Dans ce cas, le fichier MOF de métaconfiguration est nommé `localhost.meta.mof`.
 
-Pour appliquer la configuration, appelez l’applet de commande **Set-DscLocalConfigurationManager** avec le paramètre **Path** défini sur l’emplacement du fichier MOF de métaconfiguration. Par exemple :
+Pour appliquer la configuration, appelez l’applet de commande **Set-DscLocalConfigurationManager** avec le paramètre **Path** défini sur l’emplacement du fichier MOF de métaconfiguration. Exemple :
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
@@ -49,7 +50,7 @@ Chaque client doit être configuré en mode **Pull** et il faut lui fournir l’
 
 ## <a name="http-dsc-pull-server"></a>Serveur Pull DSC HTTP
 
-Si le serveur Pull est configuré comme un service web, définissez **DownloadManagerName** sur **WebDownloadManager**. **WebDownloadManager** requiert que vous spécifiiez une propriété **ServerUrl** pour la clé **DownloadManagerCustomData**. Vous pouvez également spécifier une valeur pour **AllowUnsecureConnection**, comme dans l’exemple ci-dessous. Le script suivant configure le gestionnaire de configuration local de façon à extraire des configurations d’un serveur nommé « PullServer ».
+Si le serveur Pull est configuré comme un service web, définissez **DownloadManagerName** sur **WebDownloadManager**. **WebDownloadManager** requiert que vous spécifiiez une propriété **ServerUrl** pour la clé **DownloadManagerCustomData**. Vous pouvez également spécifier une valeur pour **AllowUnsecureConnection** , comme dans l’exemple ci-dessous. Le script suivant configure le gestionnaire de configuration local de façon à extraire des configurations d’un serveur nommé « PullServer ».
 
 ```powershell
 Configuration PullClientConfigId
@@ -96,7 +97,7 @@ PullClientConfigId -Output "."
 Une fois le client Pull configuré, vous pouvez utiliser les guides suivants pour effectuer les étapes suivantes :
 
 - [Publier des configurations vers un serveur Pull (v4/v5)](publishConfigs.md)
-- [Empaqueter et charger des ressources vers un serveur Pull (v4)](package-upload-resources.md)
+- [Empaqueter et charger des ressources dans un serveur Pull (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: Modules exigeant l’acceptation de la licence
-ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: L’article explique comment utiliser les modules publiés dans PowerShell Gallery, qui requièrent l’acceptation d’une licence utilisateur final.
+ms.openlocfilehash: a9486e10b10569ce8bcde47d5c8acf0796a93851
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082815"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656118"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Modules exigeant l’acceptation de la licence
 
@@ -28,7 +27,7 @@ Les modules demandant aux utilisateurs d’accepter une licence doivent répondr
 ## <a name="impact-on-installsaveupdate-module"></a>Impact sur Install/Save/Update-Module
 
 - Les applets de commande Install/Save/Update prennent en charge un nouveau paramètre **AcceptLicense** qui se comporte comme si l’utilisateur avait vu la licence.
-- Si **RequiredLicenseAcceptance** est défini sur True et qu’**AcceptLicense** n’est pas spécifié, l’utilisateur voit le fichier `license.txt` et est invité à répondre à la question suivante : `Do you accept these license terms
+- Si **RequiredLicenseAcceptance** est défini sur True et qu’ **AcceptLicense** n’est pas spécifié, l’utilisateur voit le fichier `license.txt` et est invité à répondre à la question suivante : `Do you accept these license terms
   (Yes/No/YesToAll/NoToAll)`
   - Si la licence est acceptée
     - **Save-Module :** le module est copié sur le système de l’utilisateur
@@ -36,7 +35,7 @@ Les modules demandant aux utilisateurs d’accepter une licence doivent répondr
     - **Update-Module :** le module est mis à jour.
   - Si la licence a été refusée.
     - L'opération est annulée.
-    - Toutes les applets de commande vérifient les métadonnées (**requireLicenseAcceptance** et version du format) qui indiquent que l’acceptation de la licence est nécessaire
+    - Toutes les applets de commande vérifient les métadonnées ( **requireLicenseAcceptance** et version du format) qui indiquent que l’acceptation de la licence est nécessaire
     - Si la version de format est antérieure à 2.0, l’opération échoue et l’utilisateur est invité à mettre à jour le client.
     - Si le module a été publié avec une version de format antérieure à 2.0, l’indicateur requireLicenseAcceptance est ignoré.
 
@@ -138,7 +137,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Exemple 6 : installation d’un module avec des dépendances nécessitant l’acceptation de la licence et AcceptLicense
 
-Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**. L’utilisateur n’est pas invité à accepter la licence, puisqu’**AcceptLicense** est spécifié.
+Le module **ModuleWithDependency** dépend du module **ModuleRequireLicenseAcceptance**. L’utilisateur n’est pas invité à accepter la licence, puisqu’ **AcceptLicense** est spécifié.
 
 ```powershell
 Install-Module -Name ModuleWithDependency -AcceptLicense

@@ -2,12 +2,13 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,installation
 title: Application des configurations
-ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 'Il existe deux façons de promulguer des configurations DSC PowerShell : le mode par envoi et le mode par extraction.'
+ms.openlocfilehash: 466eb43cd266ceb4ae81cc997a7b338e041f8a15
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783073"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661717"
 ---
 # <a name="enacting-configurations"></a>Application des configurations
 

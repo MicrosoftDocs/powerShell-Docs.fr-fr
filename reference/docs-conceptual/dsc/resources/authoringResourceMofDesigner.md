@@ -2,19 +2,19 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Utilisation du Concepteur de ressources
-ms.openlocfilehash: 04fd2fbcc5afd9f1c7cbfaa44d6bdfde93bca399
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module xDscResourceDesigner qui facilite la création de ressources DSC PowerShell.
+ms.openlocfilehash: efe36d045ac3fba3823cb1f812bb5761d238fdf1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656485"
 ---
 # <a name="using-the-resource-designer-tool"></a>Utilisation du Concepteur de ressources
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md).
-Dans cette rubrique, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory. Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
+L’outil Concepteur de ressources est un ensemble d’applets de commande exposées par le module **xDscResourceDesigner** qui facilite la création de ressources DSC Windows PowerShell. Les applets de commande de cette ressource vous aident à créer le schéma MOF, le module de script et la structure de répertoires de votre nouvelle ressource. Pour plus d’informations sur les ressources DSC, consultez [Création de ressources DSC Windows PowerShell personnalisées](authoringResource.md). Dans cet article, nous allons créer une ressource DSC qui gère les utilisateurs Active Directory. Utilisez l’applet de commande [Install-Module](/powershell/module/PowershellGet/Install-Module) pour installer le module **xDscResourceDesigner**.
 
 ## <a name="creating-resource-properties"></a>Création de propriétés de ressource
 
@@ -22,10 +22,10 @@ La première chose à faire est de décider des propriétés que doit exposer la
 
 Nom du paramètre  Description
 
-- **UserName** : propriété de clé qui identifie de façon unique un utilisateur.
-- **Ensure** : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
-- **DomainCredential** : mot de passe de l’utilisateur.
-- **Password** : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
+- **UserName**  : propriété de clé qui identifie de façon unique un utilisateur.
+- **Ensure**  : spécifie si le compte d’utilisateur doit être Present ou Absent. Ce paramètre a seulement deux valeurs possibles.
+- **DomainCredential**  : mot de passe de l’utilisateur.
+- **Password**  : mot de passe souhaité pour que l’utilisateur autorise une configuration à modifier le mot de passe si nécessaire.
 
 Pour créer les propriétés, nous utilisons l’applet de commande `New-xDscResourceProperty`. Les commandes PowerShell suivantes créent les propriétés décrites ci-dessus.
 

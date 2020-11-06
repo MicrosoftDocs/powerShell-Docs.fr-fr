@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,configuration
 title: État de compatibilité des produits
-ms.openlocfilehash: c740b2560162ecdab40daac2f9ae36c29811ac13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Cet article répertorie les logiciels compatibles avec WMF 5.1.
+ms.openlocfilehash: 5610c668059b07f7c2f6e832b6ed1bd2eb9719b2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808995"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660652"
 ---
 # <a name="product-compatibility-status"></a>État de compatibilité des produits
 
@@ -17,7 +16,7 @@ ms.locfileid: "83808995"
 Les systèmes qui exécutent les applications serveur suivantes **peuvent exécuter** Windows Management Framework 5.1 :
 
 - Microsoft SharePoint Server 2013
-- Skype Entreprise Server 2015
+- Skype Entreprise Server 2015
 - Microsoft Lync Server 2013
 - System Center 2012 Configuration Manager
 

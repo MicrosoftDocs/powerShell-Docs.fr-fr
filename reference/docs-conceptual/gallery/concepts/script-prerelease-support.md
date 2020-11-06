@@ -1,14 +1,14 @@
 ---
 ms.date: 10/17/2017
-contributor: keithb
-keywords: gallery,powershell,cmdlet,psget
 title: Préversions des scripts
-ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Le module PowerShellGet prend en charge le balisage de scripts avec des versions supérieures à 1.0.0 en tant que version préliminaire utilisant le contrôle de version sémantique.
+ms.openlocfilehash: e9873a69148fd80553e566b31c7455a4ecaee5ce
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328480"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661472"
+---
 ---
 # <a name="prerelease-versions-of-scripts"></a>Préversions des scripts
 

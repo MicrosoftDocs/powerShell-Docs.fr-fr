@@ -2,12 +2,13 @@
 ms.date: 07/09/2019
 keywords: DSC,gpo,powershell,configuration,installation
 title: Démarrage rapide - Convertir la stratégie de groupe en DSC
-ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Ce guide de démarrage rapide montre les étapes nécessaires pour convertir une stratégie de groupe Windows en une configuration DSC.
+ms.openlocfilehash: b67f6dd2cf6c91d90fa6ac5b6367f9efc7f40ee0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236235"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644706"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>Démarrage rapide : Convertir la stratégie de groupe en DSC
 
@@ -16,7 +17,7 @@ ms.locfileid: "89236235"
 Vous pouvez générer une configuration DSC à partir d’une base de référence de stratégie de groupe ou Azure Security Center. Le module [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) inclut les commandes suivantes pour accomplir cette tâche.
 
 - `ConvertFrom-GPO` - Convertit des stratégies de groupe stockées sous forme de fichiers. Vous pouvez également spécifier un répertoire contenant plusieurs stratégies qui seront combinées en une seule configuration.
-  - Pour exporter des stratégies de groupe dans votre environnement, utilisez l’applet de commande [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) ou suivez les instructions dans [Exporter un objet de stratégie de groupe dans un fichier](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
+  - Pour exporter des stratégies de groupe dans votre environnement, utilisez l’applet de commande [Backup-GPO](/powershell/module/grouppolicy/backup-gpo) ou suivez les instructions dans [Exporter un objet de stratégie de groupe dans un fichier](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file).
 - `ConvertFrom-SCM` - Convertit les bases de référence du gestionnaire de conformité de la sécurité, stockées sous forme de fichiers `.xml`.
 - `ConvertFrom-ASC` - Convertit les bases de référence d’Azure Security Center, stockées sous forme de fichiers `.json`.
 - `Merge-GPOs` - Convertit des stratégies de groupe appliquées à un ordinateur cible.

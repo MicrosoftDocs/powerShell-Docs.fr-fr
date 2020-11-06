@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,applet de commande
 title: Objet ISEMenuItem
-ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Un objet ISEMenuItem est une instance de la classe Microsoft.PowerShell.Host.ISE.ISEMenuItem. Tous les objets du menu **Modules complémentaires** sont des instances de la classe ISEMenuItem.
+ms.openlocfilehash: 15036e3551687a21dfbe50834a89247c80949656
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809315"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663434"
 ---
 # <a name="the-isemenuitem-object"></a>Objet ISEMenuItem
 
@@ -81,7 +81,7 @@ Pour mieux comprendre l’utilisation du menu Modules complémentaires et ses pr
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)

@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Imbrication des configurations
-ms.openlocfilehash: e74c0fe1d7f7b198c2d6f796c0bf120eb0ec21d9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+description: DSC vous permet de créer des configurations composites en imbriquant une configuration à l’intérieur d’une autre configuration.
+ms.openlocfilehash: d7a81cb9673126e92e9185aacf19c5c7c17da8ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564020"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667417"
 ---
 # <a name="nesting-dsc-configurations"></a>Imbrication des configurations DSC
 
@@ -49,7 +50,7 @@ Configuration NestedFileConfig
 }
 ```
 
-Dans cet exemple, `FileConfig` accepte deux paramètres obligatoires, **CopyFrom** et **CopyTo**, tous deux utilisés comme valeurs pour les propriétés **SourcePath** et **DestinationPath** du bloc de ressources `File`. La configuration `NestedConfig` appelle `FileConfig` comme s’il s’agissait d’une ressource. Les propriétés du bloc de ressources `NestedConfig` (**CopyFrom** et **CopyTo**) sont les paramètres de la configuration `FileConfig`.
+Dans cet exemple, `FileConfig` accepte deux paramètres obligatoires, **CopyFrom** et **CopyTo** , tous deux utilisés comme valeurs pour les propriétés **SourcePath** et **DestinationPath** du bloc de ressources `File`. La configuration `NestedConfig` appelle `FileConfig` comme s’il s’agissait d’une ressource. Les propriétés du bloc de ressources `NestedConfig` ( **CopyFrom** et **CopyTo** ) sont les paramètres de la configuration `FileConfig`.
 
 DSC ne prend pas actuellement en charge l’imbrication de configurations dans des configurations imbriquées. Vous pouvez uniquement imbriquer une configuration d’une profondeur de couche.
 

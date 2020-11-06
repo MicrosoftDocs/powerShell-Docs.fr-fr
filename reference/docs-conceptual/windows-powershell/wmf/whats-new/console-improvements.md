@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Améliorations de la console dans WMF 5.1
-ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.1 ajoute de nouvelles fonctionnalités à l’expérience de la console pour Windows PowerShell 5.1.
+ms.openlocfilehash: 9a86a2ed4787554e7255bedf1c2ae6e798fefa45
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808985"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660756"
 ---
 # <a name="console-improvements-in-wmf-51"></a>Améliorations de la console dans WMF 5.1
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Améliorations de Just Enough Administration (JEA)
-ms.openlocfilehash: 9bb45ad2ddd459b99fc58610dfd8145992093624
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: JEA est une nouvelle fonctionnalité de WMF 5.0 qui autorise l’administration basée sur des rôles par le biais de l’accès distant PowerShell. Elle étend l’infrastructure de point de terminaison contrainte existante en autorisant les utilisateurs non administrateurs à exécuter des commandes, des scripts et des exécutables spécifiques en tant qu’administrateur,
+ms.openlocfilehash: f255d0ecbd4bbd9a5ade4b6e19f066cc007481fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808915"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654032"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Améliorations de Just Enough Administration (JEA)
 

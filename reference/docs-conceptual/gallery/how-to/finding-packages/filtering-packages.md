@@ -1,21 +1,19 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Filtrage des résultats de la recherche
-ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: Cet article décrit l’interface utilisateur utilisée pour filtrer le contenu dans PowerShell Gallery.
+ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691464"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661401"
 ---
 # <a name="filtering-search-results"></a>Filtrage des résultats de la recherche
 
 [L’onglet Packages](https://www.powershellgallery.com/packages) affiche tous les packages disponibles sur PowerShell Gallery.
 
-Il existe plusieurs moyens de filtrer, de trier et de parcourir les packages.
-Pour afficher des informations sur un package en particulier, cliquez dessus.
+Il existe plusieurs moyens de filtrer, de trier et de parcourir les packages. Pour afficher des informations sur un package en particulier, cliquez dessus.
 
 ## <a name="filter-by"></a>Filtrer par
 
@@ -38,15 +36,10 @@ Les cases à cocher sous la liste déroulante permettent aux utilisateurs de fil
   - Fonctionnalité Rôle
   - Workflow
 
-Pour afficher uniquement les modules de PowerShell Gallery, cochez Module dans Types de packages.
-De même, pour afficher uniquement les scripts de PowerShell Gallery, cochez Script dans Types de packages.
+Pour afficher uniquement les modules de PowerShell Gallery, cochez Module dans Types de packages. De même, pour afficher uniquement les scripts de PowerShell Gallery, cochez Script dans Types de packages.
 
 > [!NOTE]
-> Les filtres sont inclusifs.
-> Exemple : un package contenant à la fois des cmdlets et des fonctions s’affiche si la case Cmdlet ou la case Function (ou les deux) sont cochées.
-> Si aucune des deux n’est sélectionnée, le package n’apparaît pas.
-> De même, si toutes les catégories sont sélectionnées, seuls les packages contenant l’une de ces catégories s’affichent.
-> **Les packages qui n’appartiennent à aucune de ces catégories n’apparaissent pas.**
+> Les filtres sont inclusifs. Exemple : un package contenant à la fois des cmdlets et des fonctions s’affiche si la case Cmdlet ou la case Function (ou les deux) sont cochées. Si aucune des deux n’est sélectionnée, le package n’apparaît pas. De même, si toutes les catégories sont sélectionnées, seuls les packages contenant l’une de ces catégories s’affichent. **Les packages qui n’appartiennent à aucune de ces catégories n’apparaissent pas.**
 
 ## <a name="sort-by"></a>Trier par
 

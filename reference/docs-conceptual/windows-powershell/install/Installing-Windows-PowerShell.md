@@ -1,13 +1,13 @@
 ---
 ms.date: 08/09/2017
-keywords: powershell, applet de commande, télécharger, installer, installation, programme d’installation, windows 10, windows 8.1, windows 8.0, windows 7
 title: Installation de Windows PowerShell
-ms.openlocfilehash: 26675eb0b213818eaa72e148f0814545ee9f960e
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: Cet article explique comment installer Windows PowerShell sur différentes versions de Windows.
+ms.openlocfilehash: 04e6d791e6895dd50825c58c905ff9cf8fa86ca8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236218"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663987"
 ---
 # <a name="installing-windows-powershell"></a>Installation de Windows PowerShell
 
@@ -39,7 +39,7 @@ Les tableaux suivants devraient vous aider à trouver PowerShell dans votre vers
 
 ## <a name="finding-powershell-in-windows-server-versions"></a>Recherche de PowerShell dans les versions de Windows Server
 
-À compter de Windows Server 2008 R2, le système d’exploitation Windows peut être installé sans l’interface graphique utilisateur (GUI). Les éditions de Windows Server sans GUI sont appelées **Core**, tandis que les éditions avec GUI sont appelées **Desktop**.
+À compter de Windows Server 2008 R2, le système d’exploitation Windows peut être installé sans l’interface graphique utilisateur (GUI). Les éditions de Windows Server sans GUI sont appelées **Core** , tandis que les éditions avec GUI sont appelées **Desktop**.
 
 ### <a name="windows-server-core-editions"></a>Éditions Windows Server Core
 
@@ -75,7 +75,7 @@ Si vous devez mettre à jour votre version existante de PowerShell dans Windows,
 
 ## <a name="need-azure-powershell"></a>Pour Azure PowerShell
 
-Si vous recherchez **Azure PowerShell**, vous pouvez commencer par [Vue d’ensemble d’Azure PowerShell](/powershell/azure/overview).
+Si vous recherchez **Azure PowerShell** , vous pouvez commencer par [Vue d’ensemble d’Azure PowerShell](/powershell/azure/overview).
 
 Sinon, vous voudrez peut-être [Installer et configurer Azure PowerShell](/powershell/azure/install-az-ps)
 

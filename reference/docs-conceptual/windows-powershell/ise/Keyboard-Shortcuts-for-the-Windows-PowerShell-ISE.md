@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,applet de commande
 title: Raccourcis clavier pour Windows PowerShell ISE
-ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+description: Cet article représente une liste des raccourcis clavier utilisés dans PowerShell ISE.
+ms.openlocfilehash: b7749f49d3ac2923b097e2ab94488263436980bd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092114"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663466"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
-Pour effectuer des actions dans l’environnement d’écriture de scripts intégré de Windows PowerShell®, utilisez les raccourcis clavier suivants. Windows PowerShell ISE est intégré aux systèmes d’exploitation Windows Server et Windows Client, mais peut également être installé sur certains systèmes d’exploitation Windows plus anciens comme composant du [package de téléchargement de Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881).
+Pour effectuer des actions dans l’environnement d’écriture de scripts intégré de Windows PowerShell&reg;, utilisez les raccourcis clavier suivants. Windows PowerShell ISE est intégré aux systèmes d’exploitation Windows Server et Windows Client, mais peut également être installé sur certains systèmes d’exploitation Windows plus anciens comme composant du [package de téléchargement de Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881).
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Raccourcis clavier pour l’édition de texte
 
@@ -19,7 +19,7 @@ Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suiva
 
 |              Action              |       Raccourcis clavier       |                                                                                                                                                 Utiliser dans                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Aide**                         | <kbd>F1</kbd>                  | Volet Script **Important :** vous pouvez spécifier que l’aide <kbd>F1</kbd> provient de la Bibliothèque TechNet sur le web ou de l’aide téléchargée (voir `Update-Help`). Pour opérer votre choix, cliquez sur **Outils**, **Options**, sur l’onglet **Paramètres généraux**, puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.** |
+| **Aide**                         | <kbd>F1</kbd>                  | Volet Script **Important :** vous pouvez spécifier que l’aide <kbd>F1</kbd> provient de la Bibliothèque TechNet sur le web ou de l’aide téléchargée (voir `Update-Help`). Pour opérer votre choix, cliquez sur **Outils** , **Options** , sur l’onglet **Paramètres généraux** , puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.** |
 | **Copy**                         | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Volets Script, Commande et Sortie                                                                                                                                                                                                                                                                 |
 | **Couper**                          | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Volets Script et Commande                                                                                                                                                                                                                                                                              |
 | **Développer ou réduire le plan** | <kbd>CTRL</kbd>+<kbd>M</kbd>   | Volet Script                                                                                                                                                                                                                                                                                            |
@@ -115,7 +115,7 @@ Pour démarrer la console Windows PowerShell (PowerShell.exe) ou pour quitter Wi
 |                        Action                        |               Raccourci clavier               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Quitter**                                             | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Start PowerShell.exe**(Console Windows PowerShell) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>P</kbd> |
+| **Start PowerShell.exe** (Console Windows PowerShell) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>P</kbd> |
 
 ## <a name="see-also"></a>Voir aussi
 

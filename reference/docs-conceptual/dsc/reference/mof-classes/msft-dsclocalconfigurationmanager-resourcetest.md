@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,configuration,installation
+ms.topic: reference
 title: ResourceTest, méthode
-ms.openlocfilehash: 7ef65227342091cb2a5063aaf95a2780d217f85a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceTest, méthode
+ms.openlocfilehash: cbac53ea96a59ec92fa840f75cd264a3125b965a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463803"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650679"
 ---
 # <a name="resourcetest-method"></a>ResourceTest, méthode
 
@@ -17,10 +18,10 @@ Appelle directement la méthode **Test** d’une ressource DSC.
 
 ```mof
 uint32 ResourceTest(
-  [in]  string  ResourceType,
-  [in]  string  ModuleName,
-  [in]  uint8   resourceProperty[],
-  [out] boolean InDesiredState
+  [in]  string  ResourceType,
+  [in]  string  ModuleName,
+  [in]  uint8   resourceProperty[],
+  [out] boolean InDesiredState
 );
 ```
 
@@ -30,7 +31,7 @@ uint32 ResourceTest(
 
 **ModuleName** \[in\] Nom du module qui contient la ressource à appeler.
 
-***resourceProperty** \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
+**_resourceProperty_* \[in\] Spécifie le nom de propriété de ressource et sa valeur dans une table de hachage comme clé et valeur, respectivement. Utilisez l’applet de commande [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) pour découvrir les propriétés de ressources et leurs types.
 
 *InDesiredState** \[out\] En retour, cette propriété est définie avec la valeur **true** si le nœud cible est dans l’état souhaité.
 
@@ -46,7 +47,7 @@ Il s’agit d’une méthode statique.
 
 **MOF :** DscCore.mof
 
-**Espace de noms** : Root\Microsoft\Windows\DesiredStateConfiguration
+**Espace de noms**  : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Voir aussi
 

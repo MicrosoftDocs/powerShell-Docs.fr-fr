@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery, powershell, applet de commande, psgallery, psget
 title: PowerShell Gallery
-ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell Gallery est le référentiel central pour les modules PowerShell, les scripts et les ressources DSC.
+ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500565"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662108"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Gallery
 
@@ -36,6 +35,6 @@ Dans la mesure où **PowerShell Core** est multiplateforme et qu’il fonctionne
 De nombreux modules hébergés dans la galerie prendront en charge différents systèmes d’exploitation en imposant des exigences supplémentaires.
 Pour plus d’informations, voir la documentation des modules.
 
-## <a name="got-a-question-have-feedback"></a>Vous avez une question ? Vous avez des commentaires ?
+## <a name="got-a-question-have-feedback"></a>Vous avez une question ? Vous voulez donner votre avis ?
 
 Des informations supplémentaires relatives à PowerShell Gallery et PowerShellGet sont disponibles dans la page [Getting Started](getting-started.md). Envoyez vos commentaires et signalez les problèmes à l’aide de [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

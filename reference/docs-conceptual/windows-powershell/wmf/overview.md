@@ -2,12 +2,13 @@
 ms.date: 04/19/2019
 keywords: wmf,powershell,configuration
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF est un composant requis pour Windows PowerShell. Cet article présente l’historique des versions de WMF et fournit des informations sur la façon de rechercher et d’installer WMF.
+ms.openlocfilehash: 339b140325befea0b28aa470d4249170937f2c37
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808685"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654036"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -52,7 +53,7 @@ Pour en savoir plus sur les diverses améliorations apportées à PowerShell et 
 | Windows XP<br>*Hors support*          |              |                             |              | Oui          | Oui          |
 
 - **Fourni par défaut** : les fonctionnalités de la version spécifiée de WMF ont été fournies dans la version indiquée du client Windows ou de Windows Server.
-- **Hors support** : ces produits ne sont plus pris en charge par Microsoft. Vous devez effectuer une mise à niveau vers une nouvelle version prise en charge. Pour plus d’informations, consultez la page [Stratégie de cycle de vie Microsoft][].
+- **Hors support**  : ces produits ne sont plus pris en charge par Microsoft. Vous devez effectuer une mise à niveau vers une nouvelle version prise en charge. Pour plus d’informations, consultez la page [Stratégie de cycle de vie Microsoft][].
 
 > [!NOTE]
 > Le programme d’installation de WMF 5.0 n’est plus disponible ou pris en charge. Il a été remplacé par WMF 5.1.

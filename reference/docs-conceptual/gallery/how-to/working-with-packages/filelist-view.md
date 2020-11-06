@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
-title: Fonctionnalité FileList dans la galerie
-ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Utilisation de la fonctionnalité FileList dans PowerShell Gallery
+description: Utilisation de la fonctionnalité FileList dans PowerShell Gallery
+ms.openlocfilehash: 45e39cb3f2620228be9ad16c2bb697f23642195d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328240"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662270"
 ---
 # <a name="filelist-feature-in-the-gallery"></a>Fonctionnalité FileList dans la galerie
 
@@ -18,6 +17,7 @@ Cette fonctionnalité est en deux parties : lister les fichiers du package et a
 
 ## <a name="where-to-find-filelist"></a>Où trouver la fonctionnalité FileList ?
 
-Sur la page de chaque package se trouvent une section Liste de fichiers et un lien **Afficher**. Cliquez sur Afficher pour obtenir la liste complète des éléments contenus dans le package.
+Sur la page de chaque package se trouvent une section Liste de fichiers et un lien **Afficher**.
+Cliquez sur Afficher pour obtenir la liste complète des éléments contenus dans le package.
 
 Chaque type de fichier pris en charge est affiché sous la forme d’un lien hypertexte. Cliquez sur ce lien pour accéder à une nouvelle page présentant le contenu des fichiers affiché dans la syntaxe PowerShell sélectionnée. Pour revenir à la page de détails du package, cliquez sur le titre ou la version du package en haut de l’écran.

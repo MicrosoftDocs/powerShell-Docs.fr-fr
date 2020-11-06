@@ -1,13 +1,13 @@
 ---
 title: Installation de PowerShell sur Windows
 description: Informations sur l’installation de PowerShell sur Windows
-ms.date: 09/14/2020
-ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.date: 10/30/2020
+ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574451"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142784"
 ---
 # <a name="installing-powershell-on-windows"></a>Installation de PowerShell sur Windows
 
@@ -95,7 +95,16 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installation du package ZIP
 
-Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Contrairement aux packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Téléchargez l’archive ZIP à partir de la page des [mises en production][releases]. Selon la façon dont vous téléchargez le fichier, vous devrez peut-être débloquer le fichier avec l’applet de commande `Unblock-File`. Décompressez le contenu à l’emplacement de votre choix et exécutez `pwsh.exe` à partir de celui-ci. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
+Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Téléchargez l’une des archives ZIP suivantes à partir de la page des [versions][releases].
+
+- PowerShell-7.0.3-win-x64.zip
+- PowerShell-7.0.3-win-x86.zip
+- PowerShell-7.0.3-win-arm64.zip
+- PowerShell-7.0.3-win-arm32.zip
+
+Selon la façon dont vous téléchargez le fichier, vous devrez peut-être débloquer le fichier avec l’applet de commande `Unblock-File`. Décompressez le contenu à l’emplacement de votre choix et exécutez `pwsh.exe` à partir de celui-ci. Contrairement à l’installation des packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
+
+Utilisez cette méthode pour installer la version ARM de PowerShell sur des ordinateurs comme Microsoft Surface Pro X. Pour de meilleurs résultats, installez PowerShell dans le dossier `$env:ProgramFiles\PowerShell\7`.
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>Déploiement sur Windows 10 IoT Entreprise
 
@@ -132,26 +141,25 @@ Windows 10 IoT Entreprise contient Windows PowerShell, que l’on peut utiliser
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. Connectez-vous au point de terminaison PowerShell 7 sur l’appareil
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-windows-10-iot-core"></a>Déploiement sur Windows 10 IoT Core
 
-Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité *IOT_POWERSHELL*, que nous pouvons utiliser pour déployer PowerShell 7.
-Les étapes définies ci-dessus pour Windows 10 IoT Entreprise peuvent également être suivies pour IoT Core.
+Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité _IOT_POWERSHELL_ , que nous pouvons utiliser pour déployer PowerShell 7. Les étapes définies ci-dessus pour Windows 10 IoT Entreprise peuvent également être suivies pour IoT Core.
 
-Pour ajouter la dernière version de PowerShell dans l’image d’expédition, utilisez la commande [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) pour inclure le package dans la zone de travail et ajouter la fonctionnalité *OPENSRC_POWERSHELL* à votre image.
+Pour ajouter la dernière version de PowerShell dans l’image d’expédition, utilisez la commande [Import-PSCoreRelease][] pour inclure le package dans la zone de travail et ajouter la fonctionnalité _OPENSRC_POWERSHELL_ à votre image.
 
 > [!NOTE]
-> Pour l’architecture ARM64, Windows PowerShell n’est pas ajouté lorsque vous incluez *IOT_POWERSHELL*. L’installation basée sur zip ne fonctionne donc pas.
-> Vous devrez utiliser la commande Import-PSCoreRelease pour l’ajouter dans l’image.
+> Pour l’architecture ARM64, Windows PowerShell n’est pas ajouté lorsque vous incluez _IOT_POWERSHELL_. L’installation basée sur zip ne fonctionne donc pas. Vous devrez utiliser la commande `Import-PSCoreRelease` pour l’ajouter dans l’image.
 
 ## <a name="deploying-on-nano-server"></a>Déploiement sur Nano Server
 
@@ -169,7 +177,7 @@ Dans les deux cas, vous avez besoin du package ZIP de la version de Windows 10 x
 1. Utilisez votre utilitaire zip favori pour décompresser le package dans un répertoire au sein de l’image Nano Server montée.
 1. Démontez l’image et démarrez-la.
 1. Connectez-vous à l’instance intégrée de Windows PowerShell.
-1. Suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+1. Suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »][].
 
 ### <a name="online-deployment-of-powershell"></a>Déploiement en ligne de PowerShell
 
@@ -200,7 +208,7 @@ Déployez PowerShell sur Nano Server en procédant comme suit.
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
-- Si vous voulez une communication à distance via WSMan, suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register).
+- Si vous voulez une communication à distance via WSMan, suivez les instructions pour créer un point de terminaison de communication à distance à l’aide de la [« technique d’une autre instance »][].
 
 ## <a name="install-as-a-net-global-tool"></a>Installation en tant qu’outil global .NET
 
@@ -218,7 +226,7 @@ L’outil de ligne de commande `winget` permet aux développeurs de découvrir, 
 
 > [!NOTE]
 > L’outil `winget` est actuellement une préversion. Toutes les fonctionnalités planifiées ne sont pas disponibles pour l’instant.
-> Les options et les fonctionnalités de l’outil sont sujettes à modification. Vous ne devriez pas utiliser cette méthode dans un scénario de déploiement de production. Pour obtenir la liste des configurations requises et des instructions d’installation, consultez la documentation [winget].
+> Vous ne devriez pas utiliser cette méthode dans un scénario de déploiement de production. Pour obtenir la liste des configurations requises et des instructions d’installation, consultez la documentation [winget].
 
 Les commandes suivantes peuvent être utilisées pour installer PowerShell à l’aide des packages `winget` publiés :
 
@@ -249,6 +257,10 @@ PowerShell prend en charge le protocole de communication à distance PowerShell 
 - [Communication à distance SSH dans PowerShell Core][ssh-remoting]
 - [Communication à distance WSMan dans PowerShell Core][wsman-remoting]
 
+## <a name="upgrading-an-existing-installation"></a>Mise à niveau d’une installation existante
+
+Pour obtenir de meilleurs résultats lors de la mise à niveau, vous devez utiliser la même méthode d’installation que celle utilisée lors de la première installation de PowerShell. Chaque méthode d’installation installe PowerShell à un autre emplacement. Si vous n’êtes pas sûr de la façon dont PowerShell a été installé, vous pouvez comparer l’emplacement installé avec les informations du package fournies dans cet article. Si vous avez installé PowerShell via le package MSI, ces informations s’affichent dans le panneau de configuration **Programmes et fonctionnalités**.
+
 ## <a name="installation-support"></a>Prise en charge de l’installation
 
 Microsoft prend en charge les méthodes d’installation mentionnées dans ce document. D’autres méthodes d’installation peuvent être disponibles à partir d’autres sources. Même s’il est possible que ces outils et méthodes fonctionnent, Microsoft ne peut pas prendre en charge ces méthodes.
@@ -260,3 +272,5 @@ Microsoft prend en charge les méthodes d’installation mentionnées dans ce do
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+[« technique d’une autre instance »]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease

@@ -2,18 +2,20 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Écriture d’une ressource DSC personnalisée avec MOF
-ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Cet article définit le schéma d’une ressource DSC personnalisée dans un fichier MOF et implémente la ressource dans un fichier de script PowerShell.
+ms.openlocfilehash: e79a37699c468b2c55c307c96f1c193a2c1595b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217523"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667179"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Écriture d’une ressource DSC personnalisée avec MOF
 
 > S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Dans cette rubrique, nous allons définir le schéma d’une ressource DSC Windows PowerShell personnalisée dans un fichier MOF et implémenter cette ressource dans un fichier de script Windows PowerShell. Cette ressource personnalisée permet de créer et de gérer un site web.
+Dans cet article, nous allons définir le schéma d’une ressource DSC Windows PowerShell personnalisée dans un fichier MOF et implémenter cette ressource dans un fichier de script Windows PowerShell.
+Cette ressource personnalisée permet de créer et de gérer un site web.
 
 ## <a name="creating-the-mof-schema"></a>Création du schéma MOF
 
@@ -68,8 +70,7 @@ Notez les éléments suivants concernant le code ci-dessus :
 
 ### <a name="writing-the-resource-script"></a>Écriture du script de la ressource
 
-Le script de la ressource implémente la logique de la ressource. Dans ce module, vous devez inclure les trois fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource`. Les trois fonctions doivent accepter un jeu de paramètres identique à l’ensemble de propriétés définies dans le schéma MOF que vous avez créé pour votre ressource. Dans ce document, nous appelons cet ensemble de propriétés « propriétés de ressource ». Stockez ces trois fonctions dans un fichier appelé `<ResourceName>.psm1`.
-Dans l’exemple suivant, les fonctions sont stockées dans un fichier appelé `Demo_IISWebsite.psm1`.
+Le script de la ressource implémente la logique de la ressource. Dans ce module, vous devez inclure les trois fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource`. Les trois fonctions doivent accepter un jeu de paramètres identique à l’ensemble de propriétés définies dans le schéma MOF que vous avez créé pour votre ressource. Dans ce document, nous appelons cet ensemble de propriétés « propriétés de ressource ». Stockez ces trois fonctions dans un fichier appelé `<ResourceName>.psm1`. Dans l’exemple suivant, les fonctions sont stockées dans un fichier appelé `Demo_IISWebsite.psm1`.
 
 > [!NOTE]
 > Quand vous exécutez le même script de configuration plusieurs fois sur votre ressource, vous ne devez pas obtenir d’erreur et la ressource doit avoir le même état que lorsque le script n’est exécuté qu’une seule fois. Pour cela, assurez-vous que vos fonctions `Get-TargetResource` et `Test-TargetResource` ne modifient pas la ressource, et que le fait d’appeler la fonction `Set-TargetResource` plusieurs fois de suite avec les mêmes valeurs de paramètres équivaut toujours à un appel unique.
@@ -77,7 +78,8 @@ Dans l’exemple suivant, les fonctions sont stockées dans un fichier appelé `
 Dans l’implémentation de la fonction `Get-TargetResource`, utilisez les valeurs de propriétés de ressource de clé qui sont fournies comme paramètres pour vérifier l’état de l’instance de la ressource spécifiée. Cette fonction doit retourner une table de hachage comprenant toutes les propriétés de ressource comme clés, ainsi que les valeurs réelles de ces propriétés comme valeurs correspondantes. Le code suivant montre un exemple.
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -105,8 +107,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -161,10 +166,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -208,18 +217,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > Pour faciliter le débogage, utilisez l’applet de commande `Write-Verbose` dans l’implémentation des trois fonctions précédentes. Cette applet de commande écrit du texte dans le flux de message détaillé. Par défaut, le flux de message détaillé n’est pas affiché, mais vous pouvez l’afficher en modifiant la valeur de la variable **$VerbosePreference** ou en utilisant le paramètre **Verbose** dans DSC cmdlets = new.
 
 ### <a name="creating-the-module-manifest"></a>Création du manifeste de module
@@ -307,4 +317,4 @@ $global:DSCMachineStatus = 1
 ```
 
 Pour que le Gestionnaire de configuration local redémarre le nœud, il faut que l’indicateur **RebootNodeIfNeeded** ait la valeur `$true`.
-Le paramètre **ActionAfterReboot** doit également être défini sur **ContinueConfiguration**, qui est la valeur par défaut. Pour plus d’informations sur la configuration du Gestionnaire de configuration local, consultez [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md) ou [Configuration du Gestionnaire de configuration local (v4)](../managing-nodes/metaConfig4.md).
+Le paramètre **ActionAfterReboot** doit également être défini sur **ContinueConfiguration** , qui est la valeur par défaut. Pour plus d’informations sur la configuration du Gestionnaire de configuration local, consultez [Configuration du Gestionnaire de configuration local](../managing-nodes/metaConfig.md) ou [Configuration du Gestionnaire de configuration local (v4)](../managing-nodes/metaConfig4.md).

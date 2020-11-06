@@ -1,14 +1,13 @@
 ---
 ms.date: 09/10/2018
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Gestion des clés API
-ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: PowerShell Gallery utilise des clés API pour authentifier l’accès à Gallery pour les éditeurs de contenu.
+ms.openlocfilehash: 4b70ac7d56fc1d63719c2acf93da3dd4ac22abed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777584"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661122"
 ---
 # <a name="managing-api-keys"></a>Gestion des clés API
 
@@ -63,9 +62,9 @@ Vous pouvez modifier certains paramètres d’une clé existante. Comme indiqué
 
 Pour modifier les packages contrôlés par une clé, vous pouvez choisir individuellement les packages dans la liste ou modifier le modèle Glob.
 
-En cliquant sur **Regénérer**, vous créez une nouvelle valeur de clé. Comme à l’étape initiale de création de la clé, vous devez **Copier** la valeur de la clé de suite après l’avoir mise à jour. L’option **Copier** n’est plus disponible une fois que vous quittez cette page.
+En cliquant sur **Regénérer** , vous créez une nouvelle valeur de clé. Comme à l’étape initiale de création de la clé, vous devez **Copier** la valeur de la clé de suite après l’avoir mise à jour. L’option **Copier** n’est plus disponible une fois que vous quittez cette page.
 
-Quand vous cliquez sur **Supprimer**, un message de confirmation s’affiche. Dès lors qu’une clé est supprimée, elle ne peut plus être utilisée.
+Quand vous cliquez sur **Supprimer** , un message de confirmation s’affiche. Dès lors qu’une clé est supprimée, elle ne peut plus être utilisée.
 
 ## <a name="key-expiration"></a>Expiration des clés
 

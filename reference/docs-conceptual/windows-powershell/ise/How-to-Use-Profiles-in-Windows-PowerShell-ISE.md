@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,applet de commande
 title: Comment utiliser des profils dans Windows PowerShell ISE
-ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Cet article explique comment utiliser des profils dans Windows PowerShell ISE.
+ms.openlocfilehash: e677a4aaa3b2b8b76f289b0797aaa75c80c2b370
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808815"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663748"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Comment utiliser des profils dans Windows PowerShell ISE
 
-Cette rubrique explique comment utiliser des profils dans l’environnement d’écriture de scripts intégré de Windows PowerShell®. Avant d’effectuer les tâches décrites dans cette section, nous vous recommandons de consulter [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) ou, dans le volet Console, tapez `Get-Help about_Profiles` et appuyez sur <kbd>Entrée</kbd>.
+Cet article explique comment utiliser des profils dans l’environnement d’écriture de scripts intégré de Windows PowerShell&reg;. Avant d’effectuer les tâches décrites dans cette section, nous vous recommandons de consulter [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) ou, dans le volet Console, tapez `Get-Help about_Profiles` et appuyez sur <kbd>Entrée</kbd>.
 
 Un profil est un script Windows PowerShell ISE qui s’exécute automatiquement quand vous démarrez une nouvelle session.
 Vous pouvez créer un ou plusieurs profils Windows PowerShell pour Windows PowerShell ISE, et les utiliser pour ajouter la configuration à l’environnement Windows PowerShell ou Windows PowerShell ISE, en le préparant pour votre utilisation, avec les variables, alias, fonctions et préférences de police et de couleur dont vous voulez disposer. Un profil affecte chaque session Windows PowerShell ISE que vous démarrez.
@@ -80,7 +80,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
    - Pour modifier la taille de police en 20, dans le type de fichier de profil : `$psISE.Options.FontSize =20`
 
-3. Pour enregistrer votre fichier de profil, dans le menu **Fichier**, cliquez sur **Enregistrer**. À l’ouverture suivante de Windows PowerShell ISE, vos personnalisations sont appliquées.
+3. Pour enregistrer votre fichier de profil, dans le menu **Fichier** , cliquez sur **Enregistrer**. À l’ouverture suivante de Windows PowerShell ISE, vos personnalisations sont appliquées.
 
 ## <a name="see-also"></a>Voir aussi
 

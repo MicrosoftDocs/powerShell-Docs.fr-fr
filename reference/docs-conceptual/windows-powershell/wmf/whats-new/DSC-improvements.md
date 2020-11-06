@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,configuration
 title: Améliorations de DSC dans WMF 5.1
-ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Cet article répertorie les améliorations apportées à la configuration de l’état souhaité (DSC) et incluses dans WMF 5.1
+ms.openlocfilehash: 564cf0e8321b6b2b2e5d856acd4d3644d6566100
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771547"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667226"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Améliorations de la configuration de l’état souhaité (DSC) dans WMF 5.1
 
@@ -149,7 +148,7 @@ Consultez les captures instantanées ci-dessous :
 
 Nous avons ajouté la prise en charge de [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) avec des ressources [composites](/powershell/scripting/dsc/resources/authoringresourcecomposite) DSC.
 
-Il est maintenant possible de spécifier une valeur pour **PsDscRunAsCredential** tout en utilisant des ressources composites dans les configurations. Le cas échéant, toutes les ressources sont exécutées dans une ressource composite en tant qu’utilisateur RunAs. Si une ressource composite en appelle d’autres, toutes ces ressources sont également exécutées en tant qu’utilisateur RunAs. Les informations d’identification RunAs sont propagées à tout niveau de la hiérarchie des ressources composites. Si une ressource située à l’intérieur d’une ressource composite spécifie sa propre valeur de **PsDscRunAsCredential**, une erreur de fusion se produit pendant la compilation de la configuration.
+Il est maintenant possible de spécifier une valeur pour **PsDscRunAsCredential** tout en utilisant des ressources composites dans les configurations. Le cas échéant, toutes les ressources sont exécutées dans une ressource composite en tant qu’utilisateur RunAs. Si une ressource composite en appelle d’autres, toutes ces ressources sont également exécutées en tant qu’utilisateur RunAs. Les informations d’identification RunAs sont propagées à tout niveau de la hiérarchie des ressources composites. Si une ressource située à l’intérieur d’une ressource composite spécifie sa propre valeur de **PsDscRunAsCredential** , une erreur de fusion se produit pendant la compilation de la configuration.
 
 Cet exemple illustre l’utilisation de la ressource composite [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) incluse dans le module PSDesiredStateConfiguration.
 

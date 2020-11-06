@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Problèmes connus liés à la Configuration d’état souhaité (DSC)
-ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Problèmes connus et limitations de DSC dans Windows PowerShell 5.x
+ms.openlocfilehash: 1163ed9e130430f6bbca98405a8993bb054dd1a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808695"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662047"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Problèmes connus liés à la Configuration d’état souhaité (DSC)
 
@@ -56,7 +56,7 @@ Si vous tentez d’arrêter une opération lancée par `Get-DscConfiguration` al
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Aucun message d’erreur détaillé n’est affiché en DebugMode
 
-Si le gestionnaire de configuration local est en **DebugMode**, aucun message d’erreur détaillé ne s’affiche à partir des ressources DSC.
+Si le gestionnaire de configuration local est en **DebugMode** , aucun message d’erreur détaillé ne s’affiche à partir des ressources DSC.
 
 **Résolution :** Désactivez **DebugMode** pour afficher les messages détaillés à partir de la ressource
 
@@ -117,7 +117,7 @@ Pour plusieurs configurations partielles déployées sur un même nœud, des nom
 
 ## <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting ne fonctionne pas avec -Credential
 
-Si `Start-DscConfiguration` est utilisé avec le paramètre **UseExisting**, le paramètre **Credential** est ignoré. DSC utilise l’identité de processus par défaut pour continuer l’opération. Cela provoque une erreur quand des informations d’identification différentes sont nécessaires pour continuer sur le nœud distant.
+Si `Start-DscConfiguration` est utilisé avec le paramètre **UseExisting** , le paramètre **Credential** est ignoré. DSC utilise l’identité de processus par défaut pour continuer l’opération. Cela provoque une erreur quand des informations d’identification différentes sont nécessaires pour continuer sur le nœud distant.
 
 **Résolution :** Utilisez une session CIM pour les opérations DSC à distance :
 

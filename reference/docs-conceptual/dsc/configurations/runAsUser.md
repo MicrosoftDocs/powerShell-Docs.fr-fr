@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,installation
 title: Utiliser des informations d’identification avec des ressources DSC
-ms.openlocfilehash: fea2e3cad8d081c17853e127203f1d40d98c5de2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC vous permet de fournir des informations d’identification à une configuration afin que les paramètres de configuration puissent être appliqués dans le contexte d’un compte d’utilisateur spécifique plutôt que dans le compte système local.
+ms.openlocfilehash: e4ca39e099afacd7cb06c4d9ef889f94deb73cee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953976"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645080"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>Utiliser des informations d’identification avec des ressources DSC
 

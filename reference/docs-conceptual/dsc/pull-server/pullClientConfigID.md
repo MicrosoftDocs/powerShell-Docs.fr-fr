@@ -2,19 +2,20 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
-ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
+ms.openlocfilehash: 601858c08ce9a893a8941823d27fef3a60882b48
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500736"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664310"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>Configurer un client Pull à l’aide d’ID de configuration dans PowerShell 5.0 et ultérieur
 
 > S’applique à : Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC* ) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
 Avant de configurer un client Pull, vous devez configurer un serveur Pull. Bien que cet ordre ne soit pas obligatoire, il facilite le dépannage et vous permet de vous assurer que l’inscription a réussi. Pour configurer un serveur Pull, vous pouvez utiliser les guides suivants :
 
@@ -30,7 +31,7 @@ Chaque nœud cible peut être configuré pour télécharger les configurations e
 
 L’exécution de l’un des exemples ci-dessous crée un dossier de sortie nommé **PullClientConfigID** et y place un fichier MOF de métaconfiguration. Dans ce cas, le fichier MOF de métaconfiguration est nommé `localhost.meta.mof`.
 
-Pour appliquer la configuration, appelez l’applet de commande **Set-DscLocalConfigurationManager** avec le paramètre **Path** défini sur l’emplacement du fichier MOF de métaconfiguration. Par exemple :
+Pour appliquer la configuration, appelez l’applet de commande **Set-DscLocalConfigurationManager** avec le paramètre **Path** défini sur l’emplacement du fichier MOF de métaconfiguration. Exemple :
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.
@@ -116,7 +117,7 @@ Dans le script, le bloc **ConfigurationRepositoryShare** définit le serveur Pul
 Si vous spécifiez uniquement un bloc **ConfigurationRepositoryWeb** ou **ConfigurationRepositoryShare** dans votre configuration du Gestionnaire de configuration local (comme dans les exemples précédents), le client Pull extrait les ressources à partir du même emplacement que celui où il récupère ses configurations. Vous pouvez également spécifier des emplacements distincts pour les ressources. Pour spécifier un emplacement de ressources en tant que serveur distinct, utilisez le bloc **ResourceRepositoryWeb**. Pour spécifier un emplacement de ressources en tant que partage SMB, utilisez le bloc **ResourceRepositoryShare**.
 
 > [!NOTE]
-> Vous pouvez combiner **ConfigurationRepositoryWeb** avec **ResourceRepositoryShare**, ou **ConfigurationRepositoryShare** avec **ResourceRepositoryWeb**. Aucun exemple de ce type de combinaison n’est fourni ci-dessous.
+> Vous pouvez combiner **ConfigurationRepositoryWeb** avec **ResourceRepositoryShare** , ou **ConfigurationRepositoryShare** avec **ResourceRepositoryWeb**. Aucun exemple de ce type de combinaison n’est fourni ci-dessous.
 
 ### <a name="http-dsc-pull-server"></a>Serveur Pull DSC HTTP
 
@@ -185,7 +186,7 @@ PullClientConfigID
 
 #### <a name="automatically-download-resources-in-push-mode"></a>Télécharger automatiquement les ressources en mode Push
 
-À compter de PowerShell 5.0, vos clients Pull peuvent télécharger des modules à partir d’un partage SMB, même quand ils sont configurés pour le mode **Push**. C’est particulièrement utile dans les scénarios où vous ne souhaitez pas configurer de serveur Pull. Le bloc **ResourceRepositoryShare** peut être utilisé sans spécifier de **ConfigurationRepositoryShare**. L’exemple suivant montre une métaconfiguration qui configure un client pour extraire des ressources à partir d’un partage SMB `\\SMBPullServer\Resources`. Quand une configuration est fournie au nœud par le biais d’une opération **PUSH**, il télécharge automatiquement toutes les ressources requises à partir du partage spécifié.
+À compter de PowerShell 5.0, vos clients Pull peuvent télécharger des modules à partir d’un partage SMB, même quand ils sont configurés pour le mode **Push**. C’est particulièrement utile dans les scénarios où vous ne souhaitez pas configurer de serveur Pull. Le bloc **ResourceRepositoryShare** peut être utilisé sans spécifier de **ConfigurationRepositoryShare**. L’exemple suivant montre une métaconfiguration qui configure un client pour extraire des ressources à partir d’un partage SMB `\\SMBPullServer\Resources`. Quand une configuration est fournie au nœud par le biais d’une opération **PUSH** , il télécharge automatiquement toutes les ressources requises à partir du partage spécifié.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -244,7 +245,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-Pour spécifier un serveur de rapports, vous utilisez un bloc **ReportRepositoryWeb**. Un serveur de rapports ne peut pas être un serveur SMB. La métaconfiguration suivante configure un client collecteur de façon à obtenir sa configuration de **CONTOSO-PullSrv** et ses ressources de **CONTOSO-ResourceSrv**, et à envoyer des rapports d’état à **CONTOSO-ReportSrv** :
+Pour spécifier un serveur de rapports, vous utilisez un bloc **ReportRepositoryWeb**. Un serveur de rapports ne peut pas être un serveur SMB. La métaconfiguration suivante configure un client collecteur de façon à obtenir sa configuration de **CONTOSO-PullSrv** et ses ressources de **CONTOSO-ResourceSrv** , et à envoyer des rapports d’état à **CONTOSO-ReportSrv** :
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -289,8 +290,8 @@ Un serveur de rapports ne peut pas être un partage SMB.
 Une fois le client Pull configuré, vous pouvez utiliser les guides suivants pour effectuer les étapes suivantes :
 
 - [Publier des configurations vers un serveur Pull (v4/v5)](publishConfigs.md)
-- [Empaqueter et charger des ressources vers un serveur Pull (v4)](package-upload-resources.md)
+- [Empaqueter et charger des ressources dans un serveur Pull (v4)](package-upload-resources.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Configuration d’un client collecteur à l’aide du nom de configuration](pullClientConfigNames.md)
+- [Configuration d’un client collecteur à l’aide du nom de configuration](pullClientConfigNames.md)

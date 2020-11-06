@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
 title: Prendre en main PowerShell Gallery
-ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Cet article explique comment prendre en main PowerShell Gallery et les applets de commande PowerShellGet
+ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81219691"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661422"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Bien démarrer avec PowerShell Gallery
 
@@ -23,7 +22,7 @@ Pour rechercher des packages sur PowerShell Gallery, vous pouvez utiliser le con
 
 Vous pouvez filtrer les résultats de la galerie avec les paramètres suivants :
 
-- Nom
+- Name
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -70,7 +69,7 @@ Par défaut, [Install-Module][] et [Install-Script][] installent la dernière ve
 
 ### <a name="deploy"></a>Déployer
 
-Pour déployer un package de PowerShell Gallery sur Azure Automation, cliquez sur **Azure Automation**, puis sur **Déployer sur Azure Automation** sur la page de détails du package. Le Portail de gestion Azure s’affiche : connectez-vous à l’aide de vos informations d’identification de compte Azure. Sachez que le déploiement de packages comportant des dépendances a pour effet de déployer toutes les dépendances sur Azure Automation. Pour désactiver le bouton « Déployer sur Azure Automation », ajoutez la balise **AzureAutomationNotSupported** aux métadonnées du package.
+Pour déployer un package de PowerShell Gallery sur Azure Automation, cliquez sur **Azure Automation** , puis sur **Déployer sur Azure Automation** sur la page de détails du package. Le Portail de gestion Azure s’affiche : connectez-vous à l’aide de vos informations d’identification de compte Azure. Sachez que le déploiement de packages comportant des dépendances a pour effet de déployer toutes les dépendances sur Azure Automation. Pour désactiver le bouton « Déployer sur Azure Automation », ajoutez la balise **AzureAutomationNotSupported** aux métadonnées du package.
 
 Pour plus d’informations sur Azure Automation, consultez la documentation [Azure Automation](/azure/automation).
 

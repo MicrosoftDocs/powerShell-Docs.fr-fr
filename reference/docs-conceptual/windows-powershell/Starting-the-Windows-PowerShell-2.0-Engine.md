@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation du moteur Windows PowerShell 2.0
-ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: Le moteur Windows PowerShell 2.0 est destiné à être utilisé uniquement quand un script ou un programme hôte existant ne peut pas s’exécuter, car les programmes hôtes écrits pour Windows PowerShell 2.0 et compilés avec CLR 2.0 ne peuvent pas être exécutés sans modification.
+ms.openlocfilehash: 214b87b7314f31974801bb07f98ddea3b68008f0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216020"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663995"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>Utilisation du moteur Windows PowerShell 2.0
 
@@ -40,7 +41,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>Comment démarrer une session à distance avec le moteur Windows PowerShell 2.0
 
-Pour exécuter le moteur Windows PowerShell 2.0 dans une session à distance, créez une configuration de session (également appelée _point de terminaison_) sur l’ordinateur distant qui charge le moteur Windows PowerShell 2.0. La configuration de session est enregistrée sur l’ordinateur distant et peut être utilisée par toute personne autorisée à créer des sessions faisant appel au moteur Windows PowerShell 2.0.
+Pour exécuter le moteur Windows PowerShell 2.0 dans une session à distance, créez une configuration de session (également appelée _point de terminaison_ ) sur l’ordinateur distant qui charge le moteur Windows PowerShell 2.0. La configuration de session est enregistrée sur l’ordinateur distant et peut être utilisée par toute personne autorisée à créer des sessions faisant appel au moteur Windows PowerShell 2.0.
 
 Il s’agit d’une tâche avancée généralement effectuée par un administrateur système.
 

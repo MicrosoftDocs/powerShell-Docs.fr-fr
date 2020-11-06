@@ -1,14 +1,13 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: gallery,powershell,psgallery
 title: Téléchargement manuel de package
-ms.openlocfilehash: 3e29437c4e35e47ab2028a7eea9f408daf1a59e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Décrit comment télécharger manuellement un package à partir de PowerShell Gallery.
+ms.openlocfilehash: 50cd51d970bf21f8e957e60ceed2e98f306b57ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782852"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662293"
 ---
 # <a name="manual-package-download"></a>Téléchargement manuel de package
 
@@ -47,10 +46,10 @@ Pour obtenir la liste des éléments spécifiques NuGet, consultez [Utilisation 
 La procédure comporte trois étapes :
 
 1. Débloquez le fichier du package NuGet téléchargé par Internet (`.nupkg`), par exemple avec la cmdlet `Unblock-File -Path C:\Downloads\module.nupkg`.
-2. Extrayez le contenu du package NuGet dans un dossier local.
-2. Supprimez les éléments spécifiques NuGet du dossier.
-3. Renommez le dossier. Le nom de dossier par défaut est généralement `<name>.<version>`. La version peut inclure `-prerelease` si le module est marqué comme étant une version préliminaire. Renommez le dossier en conservant uniquement le nom du module. Par exemple, `azurerm.storage.5.0.4-preview` devient `azurerm.storage`.
-4. Copiez le dossier dans l’un des dossiers dans `$env:PSModulePath value`. `$env:PSModulePath` est un ensemble de chemins délimités par des points-virgules, où PowerShell doit rechercher les modules.
+1. Extrayez le contenu du package NuGet dans un dossier local.
+1. Supprimez les éléments spécifiques NuGet du dossier.
+1. Renommez le dossier. Le nom de dossier par défaut est généralement `<name>.<version>`. La version peut inclure `-prerelease` si le module est marqué comme étant une version préliminaire. Renommez le dossier en conservant uniquement le nom du module. Par exemple, `azurerm.storage.5.0.4-preview` devient `azurerm.storage`.
+1. Copiez le dossier dans l’un des dossiers dans `$env:PSModulePath value`. `$env:PSModulePath` est un ensemble de chemins délimités par des points-virgules, où PowerShell doit rechercher les modules.
 
 > [!IMPORTANT]
 > Le téléchargement manuel n’inclut pas les dépendances nécessaires au module. Si le package a des dépendances, elles doivent être installées sur le système pour permettre à ce module de fonctionner correctement. PowerShell Gallery affiche toutes les dépendances nécessaires au package.
@@ -65,9 +64,9 @@ L’approche la plus simple consiste à extraire le package NuGet, puis à utili
 La procédure comporte trois étapes :
 
 1. Débloquez le fichier du package NuGet téléchargé par Internet (`.nupkg`), par exemple avec la cmdlet `Unblock-File -Path C:\Downloads\package.nupkg`.
-2. Extrayez le contenu du package NuGet.
-2. Le fichier `.PS1` contenu dans le dossier peut être utilisé directement à partir de cet emplacement.
-3. Vous pouvez supprimer les éléments spécifiques NuGet du dossier.
+1. Extrayez le contenu du package NuGet.
+1. Le fichier `.PS1` contenu dans le dossier peut être utilisé directement à partir de cet emplacement.
+1. Vous pouvez supprimer les éléments spécifiques NuGet du dossier.
 
 Pour obtenir la liste des éléments spécifiques NuGet, consultez [Utilisation du téléchargement manuel pour acquérir un package](#using-manual-download-to-acquire-a-package).
 

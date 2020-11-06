@@ -2,18 +2,18 @@
 ms.date: 01/17/2019
 keywords: dsc,powershell,configuration,installation
 title: Redémarrer un nœud
-ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: De nombreux paramètres de configuration peuvent nécessiter le redémarrage de l’ordinateur pour finaliser la modification de la configuration. Cet article explique comment gérer les redémarrages dans une configuration.
+ms.openlocfilehash: d2b0f77c34ebcb006821da1f4f8d7c4b046f7a95
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954026"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645119"
 ---
 # <a name="reboot-a-node"></a>Redémarrer un nœud
 
 > [!NOTE]
-> Cette rubrique explique comment redémarrer un nœud. Pour que le redémarrage réussisse, les paramètres **ActionAfterReboot** et **RebootNodeIfNeeded** du Gestionnaire de configuration local doivent être configurés correctement.
-> Pour en savoir plus sur les paramètres du Gestionnaire de configuration local, consultez [Configurer le Gestionnaire de configuration local](../managing-nodes/metaConfig.md) ou [Configurer le Gestionnaire de configuration local (v4)](../managing-nodes/metaConfig4.md).
+> Cette rubrique explique comment redémarrer un nœud. Pour que le redémarrage réussisse, les paramètres **ActionAfterReboot** et **RebootNodeIfNeeded** du Gestionnaire de configuration local doivent être configurés correctement. Pour en savoir plus sur les paramètres du Gestionnaire de configuration local, consultez [Configurer le Gestionnaire de configuration local](../managing-nodes/metaConfig.md) ou [Configurer le Gestionnaire de configuration local (v4)](../managing-nodes/metaConfig4.md).
 
 Les nœuds peuvent être redémarrés à partir d’une ressource, à l’aide de l’indicateur `$global:DSCMachineStatus`. L’affectation de la valeur `1` à cet indicateur dans la fonction `Set-TargetResource` force le Gestionnaire de configuration local à redémarrer le nœud juste après la méthode **Set** de la ressource actuelle. Grâce à cet indicateur, la ressource **PendingReboot** dans le module de la ressource DSC [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) détecte si un redémarrage est en attente en dehors de DSC.
 
@@ -56,12 +56,11 @@ PendingReboot [String] #ResourceName
 | SkipCcmClientSDK | Ignorer les redémarrages déclenchés par le client ConfigMgr. |
 | SkipComputerRename | Ignorer les redémarrages déclenchés par un renommage d’ordinateur. |
 | PSDSCRunAsCredential | Prise en charge dans v5. Exécute la ressource en tant que l’utilisateur spécifié. |
-| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType**, la syntaxe pour utiliser cette propriété est `DependsOn = "[ResourceType]ResourceName"`. Pour plus d’informations, consultez [Utilisation de DependsOn](resource-depends-on.md).|
+| DependsOn | Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource **ResourceName** de type **ResourceType** , la syntaxe pour utiliser cette propriété est `DependsOn = "[ResourceType]ResourceName"`. Pour plus d’informations, consultez [Utilisation de DependsOn](resource-depends-on.md).|
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant installe Microsoft Exchange à l’aide de la ressource [xExchange](https://github.com/PowerShell/xExchange).
-Tout au long de l’installation, la ressource **PendingReboot** est utilisée pour redémarrer le nœud.
+L’exemple suivant installe Microsoft Exchange à l’aide de la ressource [xExchange](https://github.com/PowerShell/xExchange). Tout au long de l’installation, la ressource **PendingReboot** est utilisée pour redémarrer le nœud.
 
 > [!NOTE]
 > Cet exemple nécessite les informations d’identification d’un compte disposant des droits nécessaires pour ajouter un serveur Exchange à la forêt. Pour plus d’informations sur l’utilisation des informations d’identification dans DSC, consultez [Gestion des informations d’identification dans DSC](../configurations/configDataCredentials.md).

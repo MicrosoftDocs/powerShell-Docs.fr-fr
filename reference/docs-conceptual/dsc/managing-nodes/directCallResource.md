@@ -2,18 +2,19 @@
 ms.date: 08/11/2020
 keywords: dsc,powershell,configuration,installation
 title: Appel direct de méthodes de ressources DSC
-ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: L’applet de commande Invoke-DscResource peut être utilisée pour appeler les fonctions ou méthodes d’une ressource DSC. Elle peut être utilisée par des tiers qui veulent utiliser des ressources DSC, ou comme un outil très utile lors du développement de ressources.
+ms.openlocfilehash: 5ccf0f589b60cef4ec197d1e0a583af9ed60d5e7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162492"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650997"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Appel direct de méthodes de ressources DSC
 
->S’applique à : Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 5.0
 
-Vous pouvez utiliser l’applet de commande [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) pour appeler directement les fonctions ou méthodes d’une ressource DSC (les fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource` d’une ressource basée sur MOF ou les méthodes **Get**, **Set** et **Test** d’une ressource basée sur la classe). Elle peut être utilisée par des tiers qui veulent utiliser des ressources DSC, ou comme un outil très utile lors du développement de ressources.
+Vous pouvez utiliser l’applet de commande [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) pour appeler directement les fonctions ou méthodes d’une ressource DSC (les fonctions `Get-TargetResource`, `Set-TargetResource` et `Test-TargetResource` d’une ressource basée sur MOF ou les méthodes **Get** , **Set** et **Test** d’une ressource basée sur la classe). Elle peut être utilisée par des tiers qui veulent utiliser des ressources DSC, ou comme un outil très utile lors du développement de ressources.
 
 > [!NOTE]
 > Dans PowerShell 7.0+, `Invoke-DscResource` ne prend plus en charge l’appel des ressources DSC WMI. Sont incluses les ressources **File** et **Log** dans **PSDesiredStateConfiguration**.
@@ -51,7 +52,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->[!NOTE]
+> [!NOTE]
 > l’appel direct de méthodes de ressources composites n’est pas pris en charge. Appelez plutôt les ressources sous-jacentes qui forment la ressource composite.
 
 ## <a name="see-also"></a>Voir aussi

@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
 title: Liste de vérification de création de ressources
-ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: Cet article contient une liste de vérification des meilleures pratiques à utiliser lors de la création d’une ressource DSC.
+ms.openlocfilehash: 5b618511f730c80104620c84e693c13ae4f536ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217642"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656329"
 ---
 # <a name="resource-authoring-checklist"></a>Liste de vérification de création de ressources
 
@@ -16,7 +17,7 @@ Cette liste de vérification est une liste de bonnes pratiques lors de la créat
 ## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Le module de ressources contient le fichier .psd1 et schema.mof pour chaque ressource
 
 Vérifiez que votre ressource a une structure correcte et qu’elle contient tous les fichiers nécessaires. Chaque module de ressources doit contenir un fichier .psd1 et toutes les ressources non composites doivent avoir un fichier schema.mof.
-Les ressources qui ne contiennent pas de schéma ne seront pas répertoriées par `Get-DscResource` et les utilisateurs ne pourront pas utiliser Intellisense lors de l’écriture de code impliquant ces modules dans ISE. La structure de répertoires de la ressource xRemoteFile, qui fait partie du [module de ressources xPSDesiredStateConfiguration](https://github.com/PowerShell/xPSDesiredStateConfiguration), se présente comme suit :
+Les ressources qui ne contiennent pas de schéma ne seront pas répertoriées par `Get-DscResource` et les utilisateurs ne pourront pas utiliser IntelliSense lors de l’écriture de code impliquant ces modules dans ISE. La structure de répertoires de la ressource xRemoteFile, qui fait partie du [module de ressources xPSDesiredStateConfiguration](https://github.com/PowerShell/xPSDesiredStateConfiguration), se présente comme suit :
 
 ```
 xPSDesiredStateConfiguration

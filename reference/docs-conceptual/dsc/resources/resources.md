@@ -2,12 +2,13 @@
 ms.date: 07/23/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressources DSC
-ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Les ressources DSC fournissent les éléments de base d’une configuration DSC. Une ressource expose les propriétés qui peuvent être configurées (schéma) et contient les fonctions de script PowerShell utilisées par le Gestionnaire de configuration local (LCM) pour appliquer la configuration.
+ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777917"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658448"
 ---
 # <a name="dsc-resources"></a>Ressources DSC
 
@@ -19,11 +20,10 @@ Les ressources de configuration de l’état souhaité (DSC) fournissent les él
 
 Une ressource peut modéliser un élément générique comme un fichier ou spécifique comme un paramètre de serveur IIS. Les groupes de ce type de ressources sont combinés dans un module DSC qui organise tous les fichiers nécessaires dans une structure portable incluant les métadonnées permettant d’identifier la façon dont sont utilisées les ressources.
 
-Chaque ressource comporte un *schéma qui détermine la syntaxe nécessaire pour utiliser la ressource dans une [configuration](../configurations/configurations.md).
-Le schéma d’une ressource peut être défini comme suit :
+Chaque ressource comporte un *schéma qui détermine la syntaxe nécessaire pour utiliser la ressource dans une [configuration](../configurations/configurations.md). Le schéma d’une ressource peut être défini comme suit :
 
 - Fichier `Schema.Mof` : La plupart des ressources définissent leur _schéma_ dans un fichier `schema.mof` à l’aide de [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- Fichier `<Resource Name>.schema.psm1` : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur _schéma_ dans un fichier `<ResourceName>.schema.psm1` à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- Fichier `<Resource Name>.schema.psm1` : Les [ressources composites](../configurations/compositeConfigs.md) définissent leur _schéma_ dans un fichier `<ResourceName>.schema.psm1` à l’aide d’un [bloc de paramètres](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters).
 - Fichier `<Resource Name>.psm1` : Les ressources DSC basées sur la classe définissent leur _schéma_ dans la définition de classe. Les éléments de syntaxe sont signalés en tant que propriétés de classe. Pour plus d’informations, consultez [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
 Pour récupérer la syntaxe d’une ressource DSC, utilisez l’applet de commande [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) avec le paramètre **Syntax**. Cette méthode est similaire à l’utilisation de [Get-Command](/powershell/module/microsoft.powershell.core/get-command) avec le paramètre **Syntax** pour obtenir la syntaxe de l’applet de commande. Le résultat affichera le modèle utilisé pour un bloc de ressources correspondant à la ressource que vous spécifiez.
@@ -66,11 +66,13 @@ Dans une configuration, un bloc de ressources **Service** peut ressembler à cec
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as l
+        # ong as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
@@ -85,18 +87,21 @@ Les configurations peuvent contenir plusieurs instances du même type de ressour
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as
+        # long as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
             State = "Running"
         }
 
-        # To configure a second service resource block, add another Service resource block and use a unique name.
+        # To configure a second service resource block, add another Service
+        # resource block and use a unique name.
         Service "DHCP:Running"
         {
             Name = "DHCP"

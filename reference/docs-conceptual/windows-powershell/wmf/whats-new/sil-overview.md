@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Journalisation de l’inventaire logiciel
-ms.openlocfilehash: b12cfc4ae1e505bbc4d47596bed9352ce53a98f2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5. x ajoute des fonctionnalités de journalisation de l’inventaire logiciel qui vous permettent de collecter des informations sur les logiciels installés dans un emplacement central pour faciliter la gestion et l’audit.
+ms.openlocfilehash: 85e261782a3df5fe5561a80529ba699d686a8779
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808465"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646614"
 ---
 # <a name="software-inventory-logging-sil"></a>Journalisation de l’inventaire logiciel
 

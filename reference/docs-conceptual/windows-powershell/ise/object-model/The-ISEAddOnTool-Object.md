@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,applet de commande
 title: Objet ISEAddOnTool
-ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Un objet ISEAddonTool représente un outil complémentaire installé qui apporte des fonctionnalités supplémentaires à Windows PowerShell ISE.
+ms.openlocfilehash: cc2d50881b7d0033e08de9af5d4cc9e1a9aa55db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809725"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667128"
 ---
 # <a name="the-iseaddontool-object"></a>Objet ISEAddOnTool
 
-Un objet **ISEAddonTool** représente un outil complémentaire installé qui apporte des fonctionnalités supplémentaires à Windows PowerShell ISE. L’outil **Commandes** en est un exemple. Vous pouvez l’afficher en cliquant sur **Affichage**, puis sur **Afficher le composant additionnel de commande**. Vous pouvez ensuite utiliser cet outil par le biais des différents objets **ISEAddOnTool** disponibles.
+Un objet **ISEAddonTool** représente un outil complémentaire installé qui apporte des fonctionnalités supplémentaires à Windows PowerShell ISE. L’outil **Commandes** en est un exemple. Vous pouvez l’afficher en cliquant sur **Affichage** , puis sur **Afficher le composant additionnel de commande**. Vous pouvez ensuite utiliser cet outil par le biais des différents objets **ISEAddOnTool** disponibles.
 
 Chaque outil complémentaire peut être associé au volet vertical ou horizontal. Le volet vertical est ancré sur le bord droit de Windows PowerShell ISE. Le volet horizontal est ancré sur le bord inférieur.
 
@@ -146,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 Prise en charge dans Windows PowerShell ISE 3.0 et versions ultérieures, ne figure pas dans les versions antérieures.
 
-Propriété booléenne qui indique si l’outil complémentaire est actuellement visible dans le volet associé. Si elle est visible, vous pouvez définir la propriété **IsVisible** sur la valeur `$false` pour masquer l’outil ou définir la propriété **IsVisible** à la valeur `$true` pour afficher un outil de module complémentaire dans son onglet PowerShell. Notez qu’un outil complémentaire masqué n’est plus accessible via l’objet **CurrentVisibleHorizontalTool** ou **CurrentVisibleVerticalTool**, et qu’il ne peut donc pas être affiché en définissant cette propriété sur cet objet.
+Propriété booléenne qui indique si l’outil complémentaire est actuellement visible dans le volet associé. Si elle est visible, vous pouvez définir la propriété **IsVisible** sur la valeur `$false` pour masquer l’outil ou définir la propriété **IsVisible** à la valeur `$true` pour afficher un outil de module complémentaire dans son onglet PowerShell. Notez qu’un outil complémentaire masqué n’est plus accessible via l’objet **CurrentVisibleHorizontalTool** ou **CurrentVisibleVerticalTool** , et qu’il ne peut donc pas être affiché en définissant cette propriété sur cet objet.
 
 ```powershell
 # Hide the current tool in the vertical tool pane

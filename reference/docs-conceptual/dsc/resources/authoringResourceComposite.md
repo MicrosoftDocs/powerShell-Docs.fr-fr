@@ -1,17 +1,18 @@
 ---
 ms.date: 07/08/2020
 keywords: dsc,powershell,configuration,installation
-title: 'Ressources composites : utilisation d’une configuration DSC comme ressource'
-ms.openlocfilehash: 1baa5e4ca5dfa808edc4452db4874a83aa78107e
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+title: Ressources composites - utilisation d’une configuration DSC comme ressource
+description: Cet article décrit comment créer et utiliser une ressource composite.
+ms.openlocfilehash: c1f0e3b45c3a393c04700b5a4bc88be365794820
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217540"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667298"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Ressources composites : utilisation d’une configuration DSC comme ressource
 
-> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
+> S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Les configurations peuvent parfois s’avérer longues et complexes, faire appel à de nombreuses ressources différentes et définir un grand nombre de propriétés. Pour vous faciliter la vie, vous pouvez utiliser une configuration DSC Windows PowerShell comme ressource pour d’autres configurations. Nous l’appelons ressource composite. Une ressource composite est une configuration DSC qui accepte des paramètres. Les paramètres de la configuration font office de propriétés de la ressource.
 La configuration est enregistrée en tant que fichier avec une extension de `.schema.psm1`. Elle remplace à la fois le schéma MOF et le script de ressource dans une ressource DSC classique. Pour plus d’informations sur les ressources DSC, consultez [Ressources Desired State Configuration Windows PowerShell](resources.md).
@@ -237,4 +238,4 @@ if ($PsDscContext.RunAsUser) {
 ### <a name="concepts"></a>Concepts
 
 - [Écriture d’une ressource DSC personnalisée avec MOF](authoringResourceMOF.md)
-- [Get Started with Windows PowerShell Desired State Configuration](../overview/overview.md)
+- [Prendre en main la fonctionnalité DSC (Desired State Configuration) Windows PowerShell](../overview/overview.md)

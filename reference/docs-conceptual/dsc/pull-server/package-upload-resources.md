@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,installation
 title: Empaqueter et charger des ressources vers un serveur Pull
-ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Cet article explique comment charger des ressources sur un serveur Pull afin qu’elles puissent être téléchargées par des configurations sur les nœuds gérés par DSC.
+ms.openlocfilehash: a19d04346a0ae546cfcaf70701fde870d3839f65
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782886"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661691"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Empaqueter et charger des ressources vers un serveur Pull
 
@@ -25,7 +26,7 @@ Chaque ressource disponible pour un client à télécharger doit être stockée 
 > [!NOTE]
 > Si vous avez des clients qui utilisent PowerShell 4.0, vous devez aplatir la structure de dossiers des ressources et supprimer tous les dossiers de version. Pour plus d’informations, consultez [Plusieurs versions de ressources](../configurations/import-dscresource.md#multiple-resource-versions).
 
-Vous pouvez compresser le répertoire des ressources à l’aide de l’utilitaire, du script ou de la méthode de votre choix. Dans Windows, vous pouvez _cliquer avec le bouton droit_ sur le répertoire `xPSDesiredStateConfiguration`, sélectionner **Envoyer vers**, puis **Dossier compressé**.
+Vous pouvez compresser le répertoire des ressources à l’aide de l’utilitaire, du script ou de la méthode de votre choix. Dans Windows, vous pouvez _cliquer avec le bouton droit_ sur le répertoire `xPSDesiredStateConfiguration`, sélectionner **Envoyer vers** , puis **Dossier compressé**.
 
 ![Clic droit - Envoyer vers - Dossier compressé](media/package-upload-resources/right-click.gif)
 
@@ -68,7 +69,7 @@ Lorsque vous configurez votre serveur Pull HTTP, comme expliqué dans la section
 
 #### <a name="on-an-smb-share"></a>Sur un partage SMB
 
-Si vous avez spécifié une clé **ResourceRepositoryShare**, lors de la configuration de votre client Pull, stockez les archives et les sommes de contrôle dans le répertoire **SourcePath** du bloc **ResourceRepositoryShare**.
+Si vous avez spécifié une clé **ResourceRepositoryShare** , lors de la configuration de votre client Pull, stockez les archives et les sommes de contrôle dans le répertoire **SourcePath** du bloc **ResourceRepositoryShare**.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +83,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-Si vous n’avez spécifié qu’une clé **ConfigurationRepositoryShare**, lors de la configuration de votre client Pull, stockez les archives et les sommes de contrôle dans le répertoire **SourcePath** du bloc **ConfigurationRepositoryShare**.
+Si vous n’avez spécifié qu’une clé **ConfigurationRepositoryShare** , lors de la configuration de votre client Pull, stockez les archives et les sommes de contrôle dans le répertoire **SourcePath** du bloc **ConfigurationRepositoryShare**.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer

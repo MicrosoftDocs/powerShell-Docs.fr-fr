@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
-ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
-ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
+description: Cet article documente les valeurs du manifeste de module qui sont utilisées par PowerShell Gallery.
+ms.openlocfilehash: c59f65e72874a8a4ef946c954e1e8f12aad62b29
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772301"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664137"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Valeurs de manifeste de package qui impactent l’interface utilisateur de PowerShell Gallery
 
