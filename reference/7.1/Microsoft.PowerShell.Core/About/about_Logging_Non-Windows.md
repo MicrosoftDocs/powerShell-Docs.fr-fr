@@ -6,17 +6,16 @@ ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
-ms.openlocfilehash: 5face386a479a0264f5ff2ba3f6665cb1e218a4a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f70e2cb2c04287e36ecdf21a97dd099fcfd23d65
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206517"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355491"
 ---
 # <a name="about-logging-non-windows"></a>À propos de la journalisation non-Windows
 
 ## <a name="short-description"></a>Description courte
-
 PowerShell journalise les opérations internes à partir du moteur, des fournisseurs et des applets de commande.
 
 ## <a name="long-description"></a>Description longue
@@ -56,7 +55,7 @@ TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
 
 ### <a name="filtering-powershell-log-entries-using-rsyslog"></a>Filtrage des entrées de journal PowerShell à l’aide de rsyslog
 
-Normalement, les entrées de journal PowerShell sont écrites dans la valeur par défaut `location/file` pour **syslog** . Toutefois, il est possible de rediriger les entrées vers un fichier personnalisé.
+Normalement, les entrées de journal PowerShell sont écrites dans la valeur par défaut `location/file` pour **syslog**. Toutefois, il est possible de rediriger les entrées vers un fichier personnalisé.
 
 1. Créez une configuration de journal conf pour PowerShell et fournissez un nombre inférieur à 50 (pour `50-default.conf` ), par exemple `40-powershell.conf` . Le fichier doit être placé sous `/etc/rsyslog.d` .
 
@@ -79,7 +78,7 @@ Normalement, les entrées de journal PowerShell sont écrites dans la valeur par
    -rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
    ```
 
-1. Définissez la propriété sur **root** .
+1. Définissez la propriété sur **root**.
 
    ```
    chown root:root /etc/rsyslog.d/40-powershell.conf
@@ -96,7 +95,7 @@ Normalement, les entrées de journal PowerShell sont écrites dans la valeur par
 La méthode la plus simple pour afficher la sortie de journal PowerShell sur macOS est l’utilisation de l’application **console** .
 
 1. Recherchez l’application **console** et lancez-la.
-1. Sélectionnez le nom de l’ordinateur sous **appareils** .
+1. Sélectionnez le nom de l’ordinateur sous **appareils**.
 1. Dans le champ de **recherche** , entrez `pwsh` pour le binaire principal PowerShell.
 1. Remplacez le filtre de recherche `Any` par `Process` .
 1. Effectuez les opérations.
@@ -224,7 +223,7 @@ Les propriétés de configuration de la journalisation PowerShell sont répertor
 |           |Pipeline      |à des composants spécifiques dans PowerShell. par |
 |           |Protocole      |par défaut, tous les mots clés sont activés et modifiés |
 |           |Transport     |Cette valeur est utile uniquement pour les           |
-|           |Hôte          |résolution des problèmes spécialisés.                |
+|           |Host          |résolution des problèmes spécialisés.                |
 |           |Applets de commande       |                                             |
 |           |serializer    |                                             |
 |           |session       |                                             |
@@ -242,4 +241,3 @@ Pour plus d’informations sur le **Os_log** MacOS, consultez [os_log documentat
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

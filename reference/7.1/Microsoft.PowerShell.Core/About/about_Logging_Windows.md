@@ -1,23 +1,22 @@
 ---
-description: PowerShell journalise les opérations internes à partir du moteur, des fournisseurs et des applets de commande.
+description: PowerShell journalise les opérations internes du moteur, des fournisseurs et des applets de commande dans le journal des événements Windows.
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
-ms.openlocfilehash: dbc11e15642673d3159d4f02a40147e68fbf1d7d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 960394838097e4bfad1af5f4f0af7a813a50e761
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206514"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355015"
 ---
 # <a name="about-logging-windows"></a>À propos des fenêtres de journalisation
 
 ## <a name="short-description"></a>Description courte
-
-PowerShell journalise les opérations internes à partir du moteur, des fournisseurs et des applets de commande.
+PowerShell journalise les opérations internes du moteur, des fournisseurs et des applets de commande dans le journal des événements Windows.
 
 ## <a name="long-description"></a>Description longue
 
@@ -32,14 +31,14 @@ Les journaux PowerShell peuvent être affichés à l’aide de Windows observate
 
 Lorsque la journalisation de blocs de script est activée, PowerShell enregistre les événements suivants dans le `PowerShellCore/Operational` Journal :
 
-|Champ| Valeur|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|Channel|`Operational`|
-|Level|`Verbose`|
-|Opcode|`Create`|
-|Tâche|`CommandStart`|
-|Mot clé|`Runspace`|
+|  Champ  |       Valeur       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| Channel | `Operational`     |
+| Level   | `Verbose`         |
+| Opcode  | `Create`          |
+| Tâche    | `CommandStart`    |
+| Mot clé | `Runspace`        |
 
 ### <a name="registering-the-powershell-event-provider-on-windows"></a>Inscription du fournisseur d’événements PowerShell sur Windows
 
@@ -144,4 +143,3 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

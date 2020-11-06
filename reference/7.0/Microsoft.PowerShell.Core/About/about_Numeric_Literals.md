@@ -5,12 +5,12 @@ ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos des littéraux numériques
-ms.openlocfilehash: 8e26e8c67b1acadc75a67cd51bd6adb07fb7daf3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f9d23a37c06c8285c23328ea8ddcebf8d6caae9e
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206778"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354726"
 ---
 # <a name="about-numeric-literals"></a>À propos des littéraux numériques
 
@@ -141,7 +141,7 @@ PowerShell prend en charge les accélérateurs de type suivants :
 
 Le tableau suivant contient plusieurs exemples de littéraux numériques et répertorie leur type et leur valeur :
 
-|   Number     |  Type      |    Valeur     |
+|   Nombre     |  Type      |    Valeur     |
 | -----------: | ---------- | -----------: |
 |         100  | Int32      |          100 |
 |        100u  | UInt32     |          100 |
@@ -175,7 +175,7 @@ Les littéraux binaires ou hexadécimaux trop grands peuvent retourner au `[bigi
 La spécification d’un suffixe non signé sur des littéraux binaires et hexadécimaux ignore les bits de signe. Par exemple, `0xFFFFFFFF` retourne `-1` , mais `0xFFFFFFFFu` retourne le `[uint]::MaxValue` de 4294967295.
 
 Le préfixe du littéral avec un `0` contournera cette opération et sera traité comme non signé.
-Par exemple : `0b011111111`. Cela peut être nécessaire lors de l’utilisation de littéraux dans la `[bigint]` plage, car les `u` `n` suffixes et ne peuvent pas être combinés.
+Par exemple : `0b011111111`. Cela peut être nécessaire lors de l’utilisation de littéraux dans la `[bigint]` plage, car les `u` `n` suffixes et ne peuvent pas être combinés.
 
 Vous pouvez également nier les littéraux binaires et hexadécimaux à l’aide du `-` préfixe. Cela peut entraîner un nombre positif, car les bits de signe sont autorisés.
 
@@ -291,4 +291,4 @@ PS> 111111111111111111111111111111111111111111111111111111n
 En outre, les valeurs comprises entre `[ulong]::MaxValue` et `[decimal]::MaxValue` doivent être dénotées à l’aide du suffixe décimal `D` pour assurer la précision. Sans le suffixe, ces valeurs sont analysées comme `[Double]` utilisant le mode d’analyse réelle.
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

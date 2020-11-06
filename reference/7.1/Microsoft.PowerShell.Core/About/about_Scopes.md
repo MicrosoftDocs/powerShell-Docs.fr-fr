@@ -2,16 +2,16 @@
 description: Explique le concept de portée dans PowerShell et montre comment définir et modifier l’étendue des éléments.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
-ms.openlocfilehash: 8bf35e1309f027e1cf0061a95bdede0926d39ee0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6dc416632a6948c60c8016df6066694ce01a8b5d
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207281"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354964"
 ---
 # <a name="about-scopes"></a>À propos des étendues
 
@@ -36,22 +36,26 @@ Si vous créez un élément dans une étendue et que l’élément partage son n
 
 PowerShell prend en charge les étendues suivantes :
 
-- Global : étendue en vigueur au démarrage de PowerShell. Les variables et les fonctions qui sont présentes au démarrage de PowerShell ont été créées dans la portée globale, telles que les variables automatiques et les variables de préférence. Les variables, les alias et les fonctions de vos profils PowerShell sont également créés dans l’étendue globale.
+- Global : portée en vigueur au démarrage de PowerShell ou lorsque vous créez une nouvelle session ou une instance d’exécution. Les variables et les fonctions qui sont présentes au démarrage de PowerShell ont été créées dans la portée globale, telles que les variables automatiques et les variables de préférence. Les variables, les alias et les fonctions de vos profils PowerShell sont également créés dans l’étendue globale. La portée globale est l’étendue parente racine dans une session.
 
 - Local : étendue actuelle. La portée locale peut être la portée globale ou toute autre étendue.
 
 - Script : étendue créée pendant l’exécution d’un fichier de script. Seules les commandes du script s’exécutent dans l’étendue du script. Pour les commandes dans un script, la portée de script est l’étendue locale.
 
 > [!NOTE]
-> **Private** n’est pas une étendue. Il s’agit d’une [option](#private-option) qui modifie la visibilité d’un élément en dehors de l’étendue dans laquelle l’élément est défini.
+> **Private** n’est pas une étendue. Il s’agit d’une [option](#private-option) qui modifie la visibilité d’un élément en dehors de la portée dans laquelle l’élément est défini.
 
 ## <a name="parent-and-child-scopes"></a>Étendues parent et enfant
 
-Vous pouvez créer une nouvelle étendue en exécutant un script ou une fonction, en créant une session ou en démarrant une nouvelle instance de PowerShell. Lorsque vous créez une étendue, le résultat est une étendue parente (étendue d’origine) et une étendue enfant (l’étendue que vous avez créée).
-
-Dans PowerShell, toutes les étendues sont des étendues enfants de l’étendue globale, mais vous pouvez créer de nombreuses étendues et de nombreuses étendues récursives.
+Vous pouvez créer une étendue enfant en appelant un script ou une fonction. La portée d’appel est l’étendue parente. La fonction ou le script appelé est la portée enfant.
+Les fonctions ou les scripts que vous appelez peuvent appeler d’autres fonctions, créant ainsi une hiérarchie d’étendues enfants dont l’étendue racine est la portée globale.
 
 Sauf si vous rendez explicitement les éléments privés, les éléments de l’étendue parente sont disponibles pour l’étendue enfant. Toutefois, les éléments que vous créez et modifiez dans l’étendue enfant n’affectent pas l’étendue parente, sauf si vous spécifiez explicitement l’étendue lors de la création des éléments.
+
+> [!NOTE]
+> Les fonctions d’un module ne s’exécutent pas dans une étendue enfant de la portée d’appel.
+> Les modules ont leur propre état de session lié à la portée globale.
+> L’ensemble du code de module s’exécute dans une hiérarchie spécifique à un module d’étendues ayant sa propre étendue racine.
 
 ## <a name="inheritance"></a>Héritage
 
@@ -181,7 +185,7 @@ Les instances de tous les autres types sont des instances **PSObject** . La prop
 
 ### <a name="the-allscope-option"></a>Option Options AllScope
 
-Les variables et les alias ont une propriété **option** qui peut prendre la valeur **options AllScope** . Les éléments qui ont la propriété **options AllScope** deviennent partie intégrante des portées enfants que vous créez, bien qu’elles ne soient pas héritées rétroactivement par les étendues parentes.
+Les variables et les alias ont une propriété **option** qui peut prendre la valeur **options AllScope**. Les éléments qui ont la propriété **options AllScope** deviennent partie intégrante des portées enfants que vous créez, bien qu’elles ne soient pas héritées rétroactivement par les étendues parentes.
 
 Un élément qui a la propriété **options AllScope** est visible dans la portée enfant et fait partie de cette étendue. Les modifications apportées à l’élément dans toute portée affectent toutes les étendues dans lesquelles la variable est définie.
 
@@ -278,7 +282,7 @@ function foo {
 }
 ```
 
-Maintenant, nous créons une variable globale `$a` , lui attribuons une valeur et appelons la fonction **foo** .
+Maintenant, nous créons une variable globale `$a` , lui attribuons une valeur et appelons la fonction **foo**.
 
 ```powershell
 $a = "Goodbye"
@@ -300,7 +304,7 @@ Les scripts ont leur propre étendue. Si vous déboguez un script et que vous at
 
 ### <a name="private-option"></a>Option privée
 
-Les alias et les variables ont une propriété **option** qui peut prendre la valeur **Private** . Les éléments qui ont l’option **Private** peuvent être affichés et modifiés dans l’étendue dans laquelle ils sont créés, mais ils ne peuvent pas être affichés ou modifiés en dehors de cette étendue.
+Les alias et les variables ont une propriété **option** qui peut prendre la valeur **Private**. Les éléments qui ont l’option **Private** peuvent être affichés et modifiés dans l’étendue dans laquelle ils sont créés, mais ils ne peuvent pas être affichés ou modifiés en dehors de cette étendue.
 
 Par exemple, si vous créez une variable qui a une option privée dans l’étendue globale, puis exécutez un script, `Get-Variable` les commandes du script n’affichent pas la variable privée. L’utilisation du modificateur de portée globale dans cette instance n’affiche pas la variable privée.
 
@@ -416,7 +420,7 @@ Local
 
 ### <a name="example-4-creating-a-private-variable"></a>Exemple 4 : création d’une variable privée
 
-Une variable privée est une variable qui a une propriété **option** dont la valeur est *Private* . Les variables *privées* sont héritées par l’étendue enfant, mais elles ne peuvent être affichées ou modifiées que dans l’étendue dans laquelle elles ont été créées.
+Une variable privée est une variable qui a une propriété **option** dont la valeur est *Private*. Les variables *privées* sont héritées par l’étendue enfant, mais elles ne peuvent être affichées ou modifiées que dans l’étendue dans laquelle elles ont été créées.
 
 La commande suivante crée une variable privée appelée `$ptest` dans l’étendue locale.
 
@@ -489,4 +493,3 @@ Invoke-Command $s {
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
-
