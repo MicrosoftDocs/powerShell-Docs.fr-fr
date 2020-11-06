@@ -1,26 +1,26 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,configuration
 title: Améliorations de la console dans WMF 5.1
-ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.1 ajoute de nouvelles fonctionnalités à l’expérience de la console pour Windows PowerShell 5.1.
+ms.openlocfilehash: 9a86a2ed4787554e7255bedf1c2ae6e798fefa45
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808985"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660756"
 ---
-# <a name="console-improvements-in-wmf-51"></a><span data-ttu-id="24b57-103">Améliorations de la console dans WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="24b57-103">Console Improvements in WMF 5.1</span></span>
+# <a name="console-improvements-in-wmf-51"></a><span data-ttu-id="20388-103">Améliorations de la console dans WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="20388-103">Console Improvements in WMF 5.1</span></span>
 
-## <a name="powershell-console-improvements"></a><span data-ttu-id="24b57-104">Améliorations de la console PowerShell</span><span class="sxs-lookup"><span data-stu-id="24b57-104">PowerShell console improvements</span></span>
+## <a name="powershell-console-improvements"></a><span data-ttu-id="20388-104">Améliorations de la console PowerShell</span><span class="sxs-lookup"><span data-stu-id="20388-104">PowerShell console improvements</span></span>
 
-<span data-ttu-id="24b57-105">Les modifications suivantes ont été apportées à powershell.exe dans WMF 5.1 pour améliorer l’expérience de la console :</span><span class="sxs-lookup"><span data-stu-id="24b57-105">The following changes have been made to powershell.exe in WMF 5.1 to improve the console experience:</span></span>
+<span data-ttu-id="20388-105">Les modifications suivantes ont été apportées à powershell.exe dans WMF 5.1 pour améliorer l’expérience de la console :</span><span class="sxs-lookup"><span data-stu-id="20388-105">The following changes have been made to powershell.exe in WMF 5.1 to improve the console experience:</span></span>
 
-### <a name="vt100-support"></a><span data-ttu-id="24b57-106">Prise en charge de VT100</span><span class="sxs-lookup"><span data-stu-id="24b57-106">VT100 support</span></span>
+### <a name="vt100-support"></a><span data-ttu-id="20388-106">Prise en charge de VT100</span><span class="sxs-lookup"><span data-stu-id="20388-106">VT100 support</span></span>
 
-<span data-ttu-id="24b57-107">Ajout dans Windows 10 de la prise en charge des [séquences d’échappement VT100](/windows/console/console-virtual-terminal-sequences).</span><span class="sxs-lookup"><span data-stu-id="24b57-107">Windows 10 added support for [VT100 escape sequences](/windows/console/console-virtual-terminal-sequences).</span></span>
-<span data-ttu-id="24b57-108">PowerShell ignore certaines séquences d’échappement de mise en forme VT100 lors du calcul des largeurs de tableaux.</span><span class="sxs-lookup"><span data-stu-id="24b57-108">PowerShell will ignore certain VT100 formatting escape sequences when calculating table widths.</span></span>
+<span data-ttu-id="20388-107">Ajout dans Windows 10 de la prise en charge des [séquences d’échappement VT100](/windows/console/console-virtual-terminal-sequences).</span><span class="sxs-lookup"><span data-stu-id="20388-107">Windows 10 added support for [VT100 escape sequences](/windows/console/console-virtual-terminal-sequences).</span></span>
+<span data-ttu-id="20388-108">PowerShell ignore certaines séquences d’échappement de mise en forme VT100 lors du calcul des largeurs de tableaux.</span><span class="sxs-lookup"><span data-stu-id="20388-108">PowerShell will ignore certain VT100 formatting escape sequences when calculating table widths.</span></span>
 
-<span data-ttu-id="24b57-109">Ajout dans PowerShell d’une nouvelle API que vous pouvez utiliser dans le code de mise en forme pour déterminer si VT100 est pris en charge.</span><span class="sxs-lookup"><span data-stu-id="24b57-109">PowerShell also added a new API that can be used in formatting code to determine if VT100 is supported.</span></span> <span data-ttu-id="24b57-110">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="24b57-110">For example:</span></span>
+<span data-ttu-id="20388-109">Ajout dans PowerShell d’une nouvelle API que vous pouvez utiliser dans le code de mise en forme pour déterminer si VT100 est pris en charge.</span><span class="sxs-lookup"><span data-stu-id="20388-109">PowerShell also added a new API that can be used in formatting code to determine if VT100 is supported.</span></span> <span data-ttu-id="20388-110">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="20388-110">For example:</span></span>
 
 ```powershell
 if ($host.UI.SupportsVirtualTerminal)
@@ -34,19 +34,19 @@ else
 }
 ```
 
-<span data-ttu-id="24b57-111">Voici un [exemple](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) complet que vous pouvez utiliser pour mettre en surbrillance des correspondances à partir de `Select-String`.</span><span class="sxs-lookup"><span data-stu-id="24b57-111">Here is a complete [example](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) that can be used to highlight matches from `Select-String`.</span></span> <span data-ttu-id="24b57-112">Enregistrez l’exemple dans un fichier nommé `MatchInfo.format.ps1xml` puis, pour l’utiliser, dans votre profil ou ailleurs, exécutez `Update-FormatData -Prepend MatchInfo.format.ps1xml`.</span><span class="sxs-lookup"><span data-stu-id="24b57-112">Save the example in a file named `MatchInfo.format.ps1xml`, then to use it, in your profile or elsewhere, run `Update-FormatData -Prepend MatchInfo.format.ps1xml`.</span></span>
+<span data-ttu-id="20388-111">Voici un [exemple](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) complet que vous pouvez utiliser pour mettre en surbrillance des correspondances à partir de `Select-String`.</span><span class="sxs-lookup"><span data-stu-id="20388-111">Here is a complete [example](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7) that can be used to highlight matches from `Select-String`.</span></span> <span data-ttu-id="20388-112">Enregistrez l’exemple dans un fichier nommé `MatchInfo.format.ps1xml` puis, pour l’utiliser, dans votre profil ou ailleurs, exécutez `Update-FormatData -Prepend MatchInfo.format.ps1xml`.</span><span class="sxs-lookup"><span data-stu-id="20388-112">Save the example in a file named `MatchInfo.format.ps1xml`, then to use it, in your profile or elsewhere, run `Update-FormatData -Prepend MatchInfo.format.ps1xml`.</span></span>
 
-<span data-ttu-id="24b57-113">Notez que les séquences d’échappement VT100 ne sont prises en charge qu’à compter de la Mise à jour anniversaire Windows 10.</span><span class="sxs-lookup"><span data-stu-id="24b57-113">Note that VT100 escape sequences are only supported starting with the Windows 10 Anniversary update.</span></span>
-<span data-ttu-id="24b57-114">Elles ne sont pas prises en charge sur les systèmes antérieurs.</span><span class="sxs-lookup"><span data-stu-id="24b57-114">They are not supported on earlier systems.</span></span>
+<span data-ttu-id="20388-113">Notez que les séquences d’échappement VT100 ne sont prises en charge qu’à compter de la Mise à jour anniversaire Windows 10.</span><span class="sxs-lookup"><span data-stu-id="20388-113">Note that VT100 escape sequences are only supported starting with the Windows 10 Anniversary update.</span></span>
+<span data-ttu-id="20388-114">Elles ne sont pas prises en charge sur les systèmes antérieurs.</span><span class="sxs-lookup"><span data-stu-id="20388-114">They are not supported on earlier systems.</span></span>
 
-### <a name="vi-mode-support-in-psreadline"></a><span data-ttu-id="24b57-115">Prise en charge du mode vi dans PSReadline</span><span class="sxs-lookup"><span data-stu-id="24b57-115">Vi mode support in PSReadline</span></span>
+### <a name="vi-mode-support-in-psreadline"></a><span data-ttu-id="20388-115">Prise en charge du mode vi dans PSReadline</span><span class="sxs-lookup"><span data-stu-id="20388-115">Vi mode support in PSReadline</span></span>
 
-<span data-ttu-id="24b57-116">Ajout de la prise en charge du mode vi dans [PSReadline](https://github.com/PowerShell/PSReadLine).</span><span class="sxs-lookup"><span data-stu-id="24b57-116">[PSReadline](https://github.com/PowerShell/PSReadLine) adds support for vi mode.</span></span> <span data-ttu-id="24b57-117">Pour utiliser le mode vi, exécutez `Set-PSReadlineOption -EditMode Vi`.</span><span class="sxs-lookup"><span data-stu-id="24b57-117">To use vi mode, run `Set-PSReadlineOption -EditMode Vi`.</span></span>
+<span data-ttu-id="20388-116">Ajout de la prise en charge du mode vi dans [PSReadline](https://github.com/PowerShell/PSReadLine).</span><span class="sxs-lookup"><span data-stu-id="20388-116">[PSReadline](https://github.com/PowerShell/PSReadLine) adds support for vi mode.</span></span> <span data-ttu-id="20388-117">Pour utiliser le mode vi, exécutez `Set-PSReadlineOption -EditMode Vi`.</span><span class="sxs-lookup"><span data-stu-id="20388-117">To use vi mode, run `Set-PSReadlineOption -EditMode Vi`.</span></span>
 
-### <a name="redirected-stdin-with-interactive-input"></a><span data-ttu-id="24b57-118">Stdin redirigé avec entrée interactive</span><span class="sxs-lookup"><span data-stu-id="24b57-118">Redirected stdin with interactive input</span></span>
+### <a name="redirected-stdin-with-interactive-input"></a><span data-ttu-id="20388-118">Stdin redirigé avec entrée interactive</span><span class="sxs-lookup"><span data-stu-id="20388-118">Redirected stdin with interactive input</span></span>
 
-<span data-ttu-id="24b57-119">Dans les versions antérieures, vous deviez démarrer PowerShell avec `powershell -File -` quand stdin était redirigé et que vous souhaitiez entrer des commandes de manière interactive.</span><span class="sxs-lookup"><span data-stu-id="24b57-119">In earlier versions, starting PowerShell with `powershell -File -` was required when stdin was redirected and you wanted to enter commands interactively.</span></span>
+<span data-ttu-id="20388-119">Dans les versions antérieures, vous deviez démarrer PowerShell avec `powershell -File -` quand stdin était redirigé et que vous souhaitiez entrer des commandes de manière interactive.</span><span class="sxs-lookup"><span data-stu-id="20388-119">In earlier versions, starting PowerShell with `powershell -File -` was required when stdin was redirected and you wanted to enter commands interactively.</span></span>
 
-<span data-ttu-id="24b57-120">Avec WMF 5.1, cette option difficile à découvrir n’est plus nécessaire.</span><span class="sxs-lookup"><span data-stu-id="24b57-120">With WMF 5.1, this hard to discover option is no longer necessary.</span></span> <span data-ttu-id="24b57-121">Il est possible de lancer PowerShell sans aucune option.</span><span class="sxs-lookup"><span data-stu-id="24b57-121">You can start PowerShell without any options.</span></span>
+<span data-ttu-id="20388-120">Avec WMF 5.1, cette option difficile à découvrir n’est plus nécessaire.</span><span class="sxs-lookup"><span data-stu-id="20388-120">With WMF 5.1, this hard to discover option is no longer necessary.</span></span> <span data-ttu-id="20388-121">Il est possible de lancer PowerShell sans aucune option.</span><span class="sxs-lookup"><span data-stu-id="20388-121">You can start PowerShell without any options.</span></span>
 
-<span data-ttu-id="24b57-122">Notez que PSReadline ne prend pas en charge le flux STDIN redirigé et que l’expérience de modification de ligne de commande intégrée avec flux STDIN redirigé est très limitée (par exemple, les touches de direction ne fonctionnent pas).</span><span class="sxs-lookup"><span data-stu-id="24b57-122">Note that PSReadline does not support redirected stdin, and the built-in command-line editing experience with redirected stdin is extremely limited, for example, arrow keys don't work.</span></span> <span data-ttu-id="24b57-123">Une version ultérieure de PSReadline doit résoudre ce problème.</span><span class="sxs-lookup"><span data-stu-id="24b57-123">A future release of PSReadline should address this issue.</span></span>
+<span data-ttu-id="20388-122">Notez que PSReadline ne prend pas en charge le flux STDIN redirigé et que l’expérience de modification de ligne de commande intégrée avec flux STDIN redirigé est très limitée (par exemple, les touches de direction ne fonctionnent pas).</span><span class="sxs-lookup"><span data-stu-id="20388-122">Note that PSReadline does not support redirected stdin, and the built-in command-line editing experience with redirected stdin is extremely limited, for example, arrow keys don't work.</span></span> <span data-ttu-id="20388-123">Une version ultérieure de PSReadline doit résoudre ce problème.</span><span class="sxs-lookup"><span data-stu-id="20388-123">A future release of PSReadline should address this issue.</span></span>

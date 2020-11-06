@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,applet de commande,psgallery
-title: Fonctionnalité FileList dans la galerie
-ms.openlocfilehash: 5f372c943c73fa8e1014657394e40eaedef5d045
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: Utilisation de la fonctionnalité FileList dans PowerShell Gallery
+description: Utilisation de la fonctionnalité FileList dans PowerShell Gallery
+ms.openlocfilehash: 45e39cb3f2620228be9ad16c2bb697f23642195d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328240"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662270"
 ---
-# <a name="filelist-feature-in-the-gallery"></a><span data-ttu-id="47cf2-103">Fonctionnalité FileList dans la galerie</span><span class="sxs-lookup"><span data-stu-id="47cf2-103">FileList feature in the Gallery</span></span>
+# <a name="filelist-feature-in-the-gallery"></a><span data-ttu-id="95422-103">Fonctionnalité FileList dans la galerie</span><span class="sxs-lookup"><span data-stu-id="95422-103">FileList feature in the Gallery</span></span>
 
-<span data-ttu-id="47cf2-104">Vous pouvez afficher le contenu de tous les packages publiés dans la galerie.</span><span class="sxs-lookup"><span data-stu-id="47cf2-104">You are able to view the contents in all packages published in the gallery.</span></span>
+<span data-ttu-id="95422-104">Vous pouvez afficher le contenu de tous les packages publiés dans la galerie.</span><span class="sxs-lookup"><span data-stu-id="95422-104">You are able to view the contents in all packages published in the gallery.</span></span>
 
-<span data-ttu-id="47cf2-105">Cette fonctionnalité est en deux parties : lister les fichiers du package et afficher le contenu des fichiers dont le type est pris en charge.</span><span class="sxs-lookup"><span data-stu-id="47cf2-105">This feature includes two parts: listing the files within the package, and displaying file contents for supported file types.</span></span> <span data-ttu-id="47cf2-106">Nous prenons actuellement en charge l’affichage du contenu des extensions de fichier suivantes : .ps1, .psm1, .psd1, .ps1xml, .xml et .txt.</span><span class="sxs-lookup"><span data-stu-id="47cf2-106">Currently we support displaying the contents of the following file extensions: .ps1, .psm1, .psd1, .ps1xml, .xml and .txt.</span></span> <span data-ttu-id="47cf2-107">Dans les prochaines versions, nous prendrons en charge davantage d’extensions de fichier.</span><span class="sxs-lookup"><span data-stu-id="47cf2-107">We will be supporting more file extensions in the next releases.</span></span>
+<span data-ttu-id="95422-105">Cette fonctionnalité est en deux parties : lister les fichiers du package et afficher le contenu des fichiers dont le type est pris en charge.</span><span class="sxs-lookup"><span data-stu-id="95422-105">This feature includes two parts: listing the files within the package, and displaying file contents for supported file types.</span></span> <span data-ttu-id="95422-106">Nous prenons actuellement en charge l’affichage du contenu des extensions de fichier suivantes : .ps1, .psm1, .psd1, .ps1xml, .xml et .txt.</span><span class="sxs-lookup"><span data-stu-id="95422-106">Currently we support displaying the contents of the following file extensions: .ps1, .psm1, .psd1, .ps1xml, .xml and .txt.</span></span> <span data-ttu-id="95422-107">Dans les prochaines versions, nous prendrons en charge davantage d’extensions de fichier.</span><span class="sxs-lookup"><span data-stu-id="95422-107">We will be supporting more file extensions in the next releases.</span></span>
 
-## <a name="where-to-find-filelist"></a><span data-ttu-id="47cf2-108">Où trouver la fonctionnalité FileList ?</span><span class="sxs-lookup"><span data-stu-id="47cf2-108">Where to Find FileList</span></span>
+## <a name="where-to-find-filelist"></a><span data-ttu-id="95422-108">Où trouver la fonctionnalité FileList ?</span><span class="sxs-lookup"><span data-stu-id="95422-108">Where to Find FileList</span></span>
 
-<span data-ttu-id="47cf2-109">Sur la page de chaque package se trouvent une section Liste de fichiers et un lien **Afficher**.</span><span class="sxs-lookup"><span data-stu-id="47cf2-109">On each individual package page, you will be able to find FileList section and a **Show** link.</span></span> <span data-ttu-id="47cf2-110">Cliquez sur Afficher pour obtenir la liste complète des éléments contenus dans le package.</span><span class="sxs-lookup"><span data-stu-id="47cf2-110">Click on the Show and you will find a complete list of items contained in the package.</span></span>
+<span data-ttu-id="95422-109">Sur la page de chaque package se trouvent une section Liste de fichiers et un lien **Afficher**.</span><span class="sxs-lookup"><span data-stu-id="95422-109">On each individual package page, you will be able to find FileList section and a **Show** link.</span></span>
+<span data-ttu-id="95422-110">Cliquez sur Afficher pour obtenir la liste complète des éléments contenus dans le package.</span><span class="sxs-lookup"><span data-stu-id="95422-110">Click on the Show and you will find a complete list of items contained in the package.</span></span>
 
-<span data-ttu-id="47cf2-111">Chaque type de fichier pris en charge est affiché sous la forme d’un lien hypertexte. Cliquez sur ce lien pour accéder à une nouvelle page présentant le contenu des fichiers affiché dans la syntaxe PowerShell sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="47cf2-111">Each supported file type is displayed as a hyperlink, and clicking it will take you to a new page with file contents displayed in PowerShell syntax highlighting.</span></span> <span data-ttu-id="47cf2-112">Pour revenir à la page de détails du package, cliquez sur le titre ou la version du package en haut de l’écran.</span><span class="sxs-lookup"><span data-stu-id="47cf2-112">Clicking on the title or the version of the package, which is displayed at the top of the screen, will bring you back to package detail page.</span></span>
+<span data-ttu-id="95422-111">Chaque type de fichier pris en charge est affiché sous la forme d’un lien hypertexte. Cliquez sur ce lien pour accéder à une nouvelle page présentant le contenu des fichiers affiché dans la syntaxe PowerShell sélectionnée.</span><span class="sxs-lookup"><span data-stu-id="95422-111">Each supported file type is displayed as a hyperlink, and clicking it will take you to a new page with file contents displayed in PowerShell syntax highlighting.</span></span> <span data-ttu-id="95422-112">Pour revenir à la page de détails du package, cliquez sur le titre ou la version du package en haut de l’écran.</span><span class="sxs-lookup"><span data-stu-id="95422-112">Clicking on the title or the version of the package, which is displayed at the top of the screen, will bring you back to package detail page.</span></span>
