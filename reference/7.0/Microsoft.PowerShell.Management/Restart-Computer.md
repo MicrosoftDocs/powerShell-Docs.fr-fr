@@ -7,19 +7,19 @@ ms.date: 6/17/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
-ms.openlocfilehash: ce9e19140cb0bb8fd9172fa7ca7929fb696f9c65
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 623b7bb0084c7fe7822509081d141ddcccf0057a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205502"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347327"
 ---
 # Restart-Computer
 
 ## SYNOPSIS
 Redémarre le système d’exploitation sur les ordinateurs locaux et distants.
 
-## SYNTAX
+## SYNTAXE
 
 ### DefaultSet (par défaut)
 
@@ -29,7 +29,7 @@ Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
  [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Restart-Computer` applet de commande redémarre le système d’exploitation sur les ordinateurs locaux et distants.
 
@@ -63,7 +63,7 @@ Restart-Computer -ComputerName Server01, Server02, localhost
 Get-Content -Path C:\Domain01.txt | Restart-Computer
 ```
 
-`Get-Content` utilise le paramètre **path** pour obtenir une liste de noms d’ordinateurs à partir d’un fichier texte, **Domain01.txt** . Les noms d’ordinateur sont envoyés dans le pipeline. `Restart-Computer` redémarre chaque ordinateur.
+`Get-Content` utilise le paramètre **path** pour obtenir une liste de noms d’ordinateurs à partir d’un fichier texte, **Domain01.txt**. Les noms d’ordinateur sont envoyés dans le pipeline. `Restart-Computer` redémarre chaque ordinateur.
 
 ### Exemple 4 : forcer le redémarrage des ordinateurs listés dans un fichier texte
 
@@ -75,7 +75,7 @@ $Creds = Get-Credential
 Restart-Computer -ComputerName $Names -Credential $Creds -Force
 ```
 
-`Get-Content` utilise le paramètre **path** pour obtenir une liste de noms d’ordinateurs à partir d’un fichier texte, **Domain01.txt** . Les noms des ordinateurs sont stockés dans la variable `$Names` . `Get-Credential` vous invite à entrer un nom d’utilisateur et un mot de passe, et stocke les valeurs dans la variable `$Creds` . `Restart-Computer` utilise les paramètres **ComputerName** et **Credential** avec leurs variables. Le paramètre **force** provoque un redémarrage immédiat de chaque ordinateur.
+`Get-Content` utilise le paramètre **path** pour obtenir une liste de noms d’ordinateurs à partir d’un fichier texte, **Domain01.txt**. Les noms des ordinateurs sont stockés dans la variable `$Names` . `Get-Credential` vous invite à entrer un nom d’utilisateur et un mot de passe, et stocke les valeurs dans la variable `$Creds` . `Restart-Computer` utilise les paramètres **ComputerName** et **Credential** avec leurs variables. Le paramètre **force** provoque un redémarrage immédiat de chaque ordinateur.
 
 ### Exemple 6 : redémarrer un ordinateur distant et attendre PowerShell
 
@@ -85,7 +85,7 @@ Restart-Computer -ComputerName $Names -Credential $Creds -Force
 Restart-Computer -ComputerName Server01 -Wait -For PowerShell -Timeout 300 -Delay 2
 ```
 
-`Restart-Computer` utilise le paramètre **ComputerName** pour spécifier **SERVEUR01** . Le paramètre **Wait** attend la fin du redémarrage. **Pour** spécifie que PowerShell peut exécuter des commandes sur l’ordinateur distant. Le paramètre **timeout** spécifie une attente de cinq minutes. Le paramètre **delay** interroge l’ordinateur distant toutes les deux secondes pour déterminer s’il est redémarré.
+`Restart-Computer` utilise le paramètre **ComputerName** pour spécifier **SERVEUR01**. Le paramètre **Wait** attend la fin du redémarrage. **Pour** spécifie que PowerShell peut exécuter des commandes sur l’ordinateur distant. Le paramètre **timeout** spécifie une attente de cinq minutes. Le paramètre **delay** interroge l’ordinateur distant toutes les deux secondes pour déterminer s’il est redémarré.
 
 ### Exemple 7 : redémarrer un ordinateur à l’aide de WsmanAuthentication
 
@@ -96,10 +96,10 @@ L’authentification Kerberos détermine si l’utilisateur actuel est autorisé
 Restart-Computer -ComputerName Server01 -WsmanAuthentication Kerberos
 ```
 
-`Restart-Computer` utilise le paramètre **ComputerName** pour spécifier l’ordinateur distant **SERVEUR01** .
-Le paramètre **WsmanAuthentication** spécifie la méthode d’authentification comme **Kerberos** .
+`Restart-Computer` utilise le paramètre **ComputerName** pour spécifier l’ordinateur distant **SERVEUR01**.
+Le paramètre **WsmanAuthentication** spécifie la méthode d’authentification comme **Kerberos**.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ComputerName
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 Spécifie le mécanisme utilisé pour authentifier les informations d’identification de l’utilisateur. Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
-Les valeurs acceptables pour ce paramètre sont les suivantes : de **base** , **CredSSP** , **par défaut** , **Digest** , **Kerberos** et **Negotiate** .
+Les valeurs acceptables pour ce paramètre sont les suivantes : de **base** , **CredSSP** , **par défaut** , **Digest** , **Kerberos** et **Negotiate**.
 
 Pour plus d’informations, consultez [AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
@@ -325,6 +325,8 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 `Restart-Computer` ne génère aucune sortie.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 - `Restart-Computer` fonctionne uniquement sur les ordinateurs exécutant Windows et requiert WinRM et WMI pour arrêter un système, y compris le système local.
 - `Restart-Computer` utilise la [méthode Win32Shutdown](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem) de la classe [WIN32_OPERATINGSYSTEM](/windows/desktop/CIMWin32Prov/win32-operatingsystem) Windows Management Instrumentation (WMI). Cette méthode requiert l’activation du privilège **SeShutdownPrivilege** pour le compte d’utilisateur utilisé pour redémarrer l’ordinateur.

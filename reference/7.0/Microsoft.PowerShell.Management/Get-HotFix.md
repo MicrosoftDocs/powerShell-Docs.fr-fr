@@ -7,19 +7,19 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: 355257d0e403143d6983886de592d491241c6253
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 277dd2678b54c9e708d09f6ca27d82ab9afd4c1c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202525"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347616"
 ---
 # Get-HotFix
 
 ## SYNOPSIS
 Obtient les correctifs logiciels installés sur les ordinateurs locaux ou distants.
 
-## SYNTAX
+## SYNTAXE
 
 ### Valeur par défaut (par défaut)
 
@@ -35,7 +35,7 @@ Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PS
 [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-Hotfix` applet de commande obtient les correctifs logiciels, ou les mises à jour, qui sont installés sur l’ordinateur local ou les ordinateurs distants spécifiés. Les mises à jour peuvent être installées par Windows Update, Microsoft Update, Windows Server Update Services ou installées manuellement.
 
@@ -89,7 +89,7 @@ Cet exemple obtient le correctif logiciel le plus récent installé sur un ordin
 
 `Get-Hotfix` envoie les objets dans le pipeline à l’applet de commande `Sort-Object` . `Sort-Object` trie les objets par ordre croissant et utilise le paramètre **Property** pour évaluer chaque date **InstalledOn** . La notation de tableau `[-1]` sélectionne le correctif logiciel le plus récent installé.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ComputerName
 
@@ -184,7 +184,9 @@ Vous pouvez diriger un ou plusieurs noms d’ordinateur vers le correctif logici
 
 ## REMARQUES
 
-La **Win32_QuickFixEngineering** [classe WMI](/windows/desktop/WmiSdk/retrieving-a-class) Win32_QuickFixEngineering représente une petite mise à jour à l’échelle du système, communément appelée mise à jour du correctif QFE (rapide), appliquée au système d’exploitation actuel. Cette classe retourne uniquement les mises à jour fournies par la fonction de maintenance basée sur les composants (CBS). Ces mises à jour ne sont pas répertoriées dans le registre. Les mises à jour fournies par Microsoft Windows Installer (MSI) ou le site [Windows Update](https://update.microsoft.com) ne sont pas retournées par **Win32_QuickFixEngineering** . Pour plus d’informations, consultez [Win32_QuickFixEngineering classe](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
+La **Win32_QuickFixEngineering** [classe WMI](/windows/desktop/WmiSdk/retrieving-a-class) Win32_QuickFixEngineering représente une petite mise à jour à l’échelle du système, communément appelée mise à jour du correctif QFE (rapide), appliquée au système d’exploitation actuel. Cette classe retourne uniquement les mises à jour fournies par la fonction de maintenance basée sur les composants (CBS). Ces mises à jour ne sont pas répertoriées dans le registre. Les mises à jour fournies par Microsoft Windows Installer (MSI) ou le site [Windows Update](https://update.microsoft.com) ne sont pas retournées par **Win32_QuickFixEngineering**. Pour plus d’informations, consultez [Win32_QuickFixEngineering classe](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
 
 La `Get-HotFix` sortie peut varier selon les systèmes d’exploitation.
 

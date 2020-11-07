@@ -7,19 +7,19 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: c34c581b9af74f3199437b26971b902f6b39620f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202082"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347429"
 ---
 # New-Service
 
 ## SYNOPSIS
 Crée un service Windows.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
@@ -27,7 +27,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
  [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `New-Service` applet de commande crée une entrée pour un service Windows dans le registre et dans la base de données du service. Un nouveau service nécessite un fichier exécutable qui s’exécute pendant le service.
 
@@ -95,7 +95,7 @@ New-Service @params
 
 Le **SecurityDescriptor** est stocké dans la `$SDDLToSet` variable. Le paramètre **SecurityDescriptorSddl** utilise `$SDDL` pour définir la valeur **SecurityDescriptor** du nouveau service.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -BinaryPathName
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Spécifie le nom du service.
-Ce paramètre est obligatoire.
+Spécifie le nom du service. Ce paramètre est obligatoire.
 
 ```yaml
 Type: System.String
@@ -212,7 +211,7 @@ Définit le type de démarrage du service. Les valeurs valides pour ce paramètr
 - **InvalidValue** : cette valeur n’est pas prise en charge. L’utilisation de cette valeur génère une erreur.
 - **Manuel** : le service est démarré uniquement manuellement, par un utilisateur, à l’aide du gestionnaire de contrôle des services ou par une application.
 
- La valeur par défaut est **automatique** .
+ La valeur par défaut est **automatique**.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ServiceStartupType
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +292,9 @@ Cette applet de commande retourne un objet qui représente le nouveau service.
 
 ## REMARQUES
 
-Pour exécuter cette applet de commande sur Windows Vista et les versions ultérieures du système d’exploitation Windows, démarrez PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
+Pour exécuter cette applet de commande, démarrez PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 ## LIENS CONNEXES
 
@@ -313,4 +313,3 @@ Pour exécuter cette applet de commande sur Windows Vista et les versions ultér
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

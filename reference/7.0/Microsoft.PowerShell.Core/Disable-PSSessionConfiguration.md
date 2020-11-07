@@ -7,26 +7,26 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
-ms.openlocfilehash: 37925cb1dfa7d588c38df46ec00ad2bfdc7cf9a2
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9970c21748d49d258c1704f4a550d0a997a92af8
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201782"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346613"
 ---
 # Disable-PSSessionConfiguration
 
 ## SYNOPSIS
 Désactive les configurations de session sur l'ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Disable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Disable-PSSessionConfiguration` applet de commande désactive les configurations de session sur l’ordinateur local, ce qui empêche tous les utilisateurs d’utiliser les configurations de session pour créer des sessions gérées par l’utilisateur ( **sessions PSSession** ) sur l’ordinateur local. Il s'agit d'une applet de commande avancée conçue pour être utilisée par les administrateurs système pour gérer des configurations de sessions personnalisées pour leurs utilisateurs.
 
@@ -105,7 +105,7 @@ For more information, see the about_Remote_Troubleshooting Help topic.
 > [!NOTE]
 > La désactivation de la configuration ne vous empêche pas de modifier la configuration à l’aide de l’applet de commande `Set-PSSessionConfiguration` . Elle empêche uniquement l’utilisation de la configuration.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Force
 
@@ -206,6 +206,8 @@ Vous pouvez diriger un objet de configuration de session ou une chaîne qui cont
 Cette applet de commande ne retourne pas d'objets.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Pour exécuter cette applet de commande, vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 

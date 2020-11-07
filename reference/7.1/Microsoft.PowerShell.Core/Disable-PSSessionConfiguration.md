@@ -7,26 +7,26 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
-ms.openlocfilehash: ce8b77d9d3de16e16302fc7846ca8a45852511bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 71c5425d6377f8c4a2ee02354f6c34eed9afe28a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205169"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346970"
 ---
 # Disable-PSSessionConfiguration
 
 ## SYNOPSIS
 Désactive les configurations de session sur l'ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Disable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Disable-PSSessionConfiguration` applet de commande désactive les configurations de session sur l’ordinateur local, ce qui empêche tous les utilisateurs d’utiliser les configurations de session pour créer des sessions gérées par l’utilisateur ( **sessions PSSession** ) sur l’ordinateur local. Il s'agit d'une applet de commande avancée conçue pour être utilisée par les administrateurs système pour gérer des configurations de sessions personnalisées pour leurs utilisateurs.
 
@@ -105,7 +105,7 @@ For more information, see the about_Remote_Troubleshooting Help topic.
 > [!NOTE]
 > La désactivation de la configuration ne vous empêche pas de modifier la configuration à l’aide de l’applet de commande `Set-PSSessionConfiguration` . Elle empêche uniquement l’utilisation de la configuration.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Force
 
@@ -207,6 +207,8 @@ Cette applet de commande ne retourne pas d'objets.
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Pour exécuter cette applet de commande, vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 ## LIENS CONNEXES
@@ -230,4 +232,3 @@ Pour exécuter cette applet de commande, vous devez démarrer PowerShell à l’
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

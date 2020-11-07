@@ -7,25 +7,25 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-computerinfo?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ComputerInfo
-ms.openlocfilehash: 876ce5ff32863281ba9bc1ae94ece8b0a12c9efd
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e9170a8023977f485a99e5e7fc59fb2280a8081e
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201473"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347582"
 ---
 # Get-ComputerInfo
 
 ## SYNOPSIS
 Obtient un objet consolidé des propriétés système et du système d’exploitation.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Get-ComputerInfo [[-Property] <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-ComputerInfo` applet de commande obtient un objet consolidé des propriétés système et du système d’exploitation.
 Cette applet de commande a été introduite dans Windows PowerShell 5,1.
@@ -48,7 +48,7 @@ Get-ComputerInfo -Property "os*"
 
 Cette commande obtient toutes les propriétés du système d’exploitation de l’ordinateur.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Propriété
 
@@ -79,5 +79,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### Microsoft. PowerShell. Management. ComputerInfo
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES

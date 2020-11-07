@@ -7,19 +7,19 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: fa3ea8f965ea8089defa5fde7b88b18f00cd83bc
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 44608ba9fa2324f9d6d381801876c831ed8b3db8
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205049"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347293"
 ---
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
 Obtient des informations sur la signature Authenticode d’un fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByPath (par défaut)
 
@@ -39,7 +39,7 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets. Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
 
@@ -83,7 +83,7 @@ Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePa
 
 Cette commande obtient des informations sur la signature Authenticode pour le contenu d’un fichier. Dans cet exemple, l’extension de fichier est spécifiée en même temps que le contenu du fichier.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
@@ -167,6 +167,8 @@ Vous pouvez diriger une chaîne qui contient un chemin d’accès de fichier ver
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Pour plus d’informations sur les signatures Authenticode dans PowerShell, consultez [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 
 ## LIENS CONNEXES
@@ -180,4 +182,3 @@ Pour plus d’informations sur les signatures Authenticode dans PowerShell, cons
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

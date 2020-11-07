@@ -7,26 +7,26 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
-ms.openlocfilehash: 0d0e9701bdc67b2a48fb0f8f25e0ac9269cb74d8
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 842b30951f24b0cc4211ddf45892d9e430e2dc82
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205617"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347463"
 ---
 # Unregister-PSSessionConfiguration
 
 ## SYNOPSIS
 Supprime les configurations de sessions inscrites de l'ordinateur.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Unregister-PSSessionConfiguration` applet de commande supprime les configurations de session inscrites de l’ordinateur. Cette applet de commande est conçue pour permettre aux administrateurs système de gérer les configurations de session personnalisées pour les utilisateurs.
 
@@ -100,13 +100,13 @@ L' `New-PSSession` applet de commande crée une session à l’aide de la config
 
 Enfin, l' `New-PSSession` applet de commande tente de créer une session qui utilise la configuration **MaintenanceShell** . Cette fois-ci, la session échoue car la configuration **MaintenanceShell** a été supprimée lors du redémarrage du service WinRM.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Force
 
 Indique que l’applet de commande ne vous invite pas à confirmer et à redémarrer le service **WinRM** sans demander confirmation. Le redémarrage du service permet d'appliquer la modification de configuration.
 
-Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart** .
+Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,6 +208,8 @@ Vous pouvez diriger un objet de configuration de session de `Get-PSSessionConfig
 Cette applet de commande ne retourne pas d'objets.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Pour exécuter cette applet de commande, vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 

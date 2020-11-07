@@ -7,19 +7,19 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
-ms.openlocfilehash: d33961d9c0b1980d84d35a33c45d965e84231914
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 347ffa733068d4e7f4896eb18358c7a852c88d0a
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205034"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347276"
 ---
 # Get-ExecutionPolicy
 
 ## SYNOPSIS
 Obtient les stratégies d'exécution pour la session active.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -27,7 +27,7 @@ Obtient les stratégies d'exécution pour la session active.
 Get-ExecutionPolicy [[-Scope] <ExecutionPolicyScope>] [-List] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Pour afficher les stratégies d’exécution pour chaque étendue dans l’ordre de priorité, utilisez `Get-ExecutionPolicy -List` . Pour afficher la stratégie d’exécution effective pour votre session PowerShell `Get-ExecutionPolicy` , utilisez sans paramètres.
 
@@ -76,7 +76,7 @@ MachinePolicy       Undefined
  LocalMachine    RemoteSigned
 ```
 
-L' `Set-ExecutionPolicy` applet de commande utilise le paramètre **ExecutionPolicy** pour spécifier la stratégie **RemoteSigned** . Le paramètre **scope** spécifie la valeur de portée par défaut, **LocalMachine** . Pour afficher les paramètres de stratégie d’exécution, utilisez l' `Get-ExecutionPolicy` applet de commande avec le paramètre **List** .
+L' `Set-ExecutionPolicy` applet de commande utilise le paramètre **ExecutionPolicy** pour spécifier la stratégie **RemoteSigned** . Le paramètre **scope** spécifie la valeur de portée par défaut, **LocalMachine**. Pour afficher les paramètres de stratégie d’exécution, utilisez l' `Get-ExecutionPolicy` applet de commande avec le paramètre **List** .
 
 ### Exemple 3 : récupération de la stratégie d’exécution en vigueur
 
@@ -98,7 +98,7 @@ PS> Get-ExecutionPolicy
 AllSigned
 ```
 
-L' `Get-ExecutionPolicy` applet de commande utilise le paramètre **List** pour afficher la stratégie d’exécution de chaque étendue. L' `Get-ExecutionPolicy` applet de commande est exécutée sans paramètre pour afficher la stratégie d’exécution effective, **AllSigned** .
+L' `Get-ExecutionPolicy` applet de commande utilise le paramètre **List** pour afficher la stratégie d’exécution de chaque étendue. L' `Get-ExecutionPolicy` applet de commande est exécutée sans paramètre pour afficher la stratégie d’exécution effective, **AllSigned**.
 
 ### Exemple 4 : débloquer un script pour l’exécuter sans modifier la stratégie d’exécution
 
@@ -136,7 +136,7 @@ PS> .\Start-ActivityTracker.ps1
 Task 1:
 ```
 
-`Set-ExecutionPolicy`Utilise le paramètre **ExecutionPolicy** pour spécifier la stratégie **RemoteSigned** . La stratégie est définie pour l’étendue par défaut, **LocalMachine** .
+`Set-ExecutionPolicy`Utilise le paramètre **ExecutionPolicy** pour spécifier la stratégie **RemoteSigned** . La stratégie est définie pour l’étendue par défaut, **LocalMachine**.
 
 L' `Get-ExecutionPolicy` applet de commande montre que **RemoteSigned** est la stratégie d’exécution effective pour la session PowerShell active.
 
@@ -144,11 +144,11 @@ Le script **Start-ActivityTracker.ps1** est exécuté à partir du répertoire a
 
 Pour cet exemple, le code du script a été révisé et vérifié comme étant sécurisé pour l’exécution. L' `Unblock-File` applet de commande utilise le paramètre **path** pour débloquer le script.
 
-Pour vérifier que `Unblock-File` la stratégie d’exécution n’a pas été modifiée, `Get-ExecutionPolicy` affiche la stratégie d’exécution effective, **RemoteSigned** .
+Pour vérifier que `Unblock-File` la stratégie d’exécution n’a pas été modifiée, `Get-ExecutionPolicy` affiche la stratégie d’exécution effective, **RemoteSigned**.
 
 Le script **Start-ActivityTracker.ps1** est exécuté à partir du répertoire actif. Le script commence à s’exécuter, car il a été débloqué par l’applet de commande `Unblock-File` .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -List
 
@@ -172,11 +172,11 @@ Spécifie l’étendue qui est affectée par une stratégie d’exécution.
 
 La stratégie d’exécution effective est déterminée par l’ordre de priorité comme suit :
 
-- **MachinePolicy** . Défini par un stratégie de groupe pour tous les utilisateurs de l’ordinateur.
-- **UserPolicy** . Défini par un stratégie de groupe pour l’utilisateur actuel de l’ordinateur.
-- **Processus** . Affecte uniquement la session PowerShell active.
-- **CurrentUser** . Affecte uniquement l’utilisateur actuel.
-- **LocalMachine** . Étendue par défaut qui affecte tous les utilisateurs de l’ordinateur.
+- **MachinePolicy**. Défini par un stratégie de groupe pour tous les utilisateurs de l’ordinateur.
+- **UserPolicy**. Défini par un stratégie de groupe pour l’utilisateur actuel de l’ordinateur.
+- **Processus**. Affecte uniquement la session PowerShell active.
+- **CurrentUser**. Affecte uniquement l’utilisateur actuel.
+- **LocalMachine**. Étendue par défaut qui affecte tous les utilisateurs de l’ordinateur.
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicyScope
@@ -205,6 +205,8 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
+L’applet de commande retourne toujours les plateformes non **restreintes** sur les plateformes Linux et MacOS.
+
 ## REMARQUES
 
 Une stratégie d’exécution fait partie de la stratégie de sécurité PowerShell. Les stratégies d’exécution déterminent si vous pouvez charger des fichiers de configuration, tels que votre profil PowerShell, ou exécuter des scripts. Et si les scripts doivent être signés numériquement avant leur exécution.
@@ -220,4 +222,3 @@ Une stratégie d’exécution fait partie de la stratégie de sécurité PowerSh
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
 
 [Set-ExecutionPolicy](Set-ExecutionPolicy.md)
-

@@ -7,19 +7,19 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CmsMessage
-ms.openlocfilehash: b90059cd735e26eceb66d211533abbe25894d0ec
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bbb4fe84a1c41afa6d16f4b127475b3405c7f81d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201190"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347089"
 ---
 # Get-CmsMessage
 
 ## SYNOPSIS
 Obtient le contenu qui a été chiffré à l’aide du format de syntaxe de message de chiffrement.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByContent
 
@@ -39,7 +39,7 @@ Get-CmsMessage [-Path] <String> [<CommonParameters>]
 Get-CmsMessage [-LiteralPath] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-CmsMessage` applet de commande obtient le contenu qui a été chiffré à l’aide du format CMS (Cryptographic Message Syntax).
 
@@ -89,7 +89,7 @@ Try the new Break All command
 
 Cette commande envoie les résultats de l' `Get-CmsMessage` applet de commande de l’exemple 1 à `Unprotect-CmsMessage` , pour déchiffrer le message et le lire en texte brut. Dans ce cas, la valeur du paramètre **to** est la valeur de la ligne subject du certificat de chiffrement. Le message déchiffré « essayez la nouvelle commande Break All » est le résultat.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
@@ -149,6 +149,8 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ## SORTIES
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES
 

@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Service
-ms.openlocfilehash: b23e263c2d6ff64ca2a799614d213f1e549cdfe3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: dbe084b553587ba09a2ce4b76b0c662915c59808
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202058"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347344"
 ---
 # Remove-Service
 
 ## SYNOPSIS
 Supprime un service Windows.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -33,7 +33,7 @@ Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Remove-Service` applet de commande supprime un service Windows dans le registre et dans la base de données du service.
 
@@ -57,7 +57,7 @@ Cet exemple supprime un service nommé TestService. La commande utilise `Get-Ser
 Get-Service -DisplayName "Test Service" | Remove-Service
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -InputObject
 
@@ -141,6 +141,8 @@ Cette applet de commande ne retourne aucune sortie.
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Pour exécuter cette applet de commande, démarrez PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 ## LIENS CONNEXES
@@ -158,4 +160,3 @@ Pour exécuter cette applet de commande, démarrez PowerShell à l’aide de l�
 [Stop-Service](Stop-Service.md)
 
 [Suspend-Service](Suspend-Service.md)
-

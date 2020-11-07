@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Event
-ms.openlocfilehash: 2ef1125320141d0a16a2a0120560efbe65017b4a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 101732472611943a52c54e6517f42f523b513cfa
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202749"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347650"
 ---
 # Remove-Event
 
 ## SYNOPSIS
 Supprime les événements de la file d'attente des événements.
 
-## SYNTAX
+## SYNTAXE
 
 ### BySource (par défaut)
 
@@ -33,11 +33,11 @@ Remove-Event [-SourceIdentifier] <String> [-WhatIf] [-Confirm] [<CommonParameter
 Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
-L’applet de commande **Remove-Event** supprime les événements de la file d’attente d’événements dans la session active.
+## DESCRIPTION
 
-Cette applet de commande ne supprime que les événements actuellement dans la file d'attente.
-Pour annuler les inscriptions d'événement ou annuler votre abonnement, utilisez l'applet de commande Unregister-Event.
+L' `Remove-Event` applet de commande supprime les événements de la file d’attente d’événements dans la session active.
+
+Cette applet de commande ne supprime que les événements actuellement dans la file d'attente. Pour annuler les inscriptions d’événements ou vous désabonner, utilisez l’applet de commande `Unregister-Event` .
 
 ## EXEMPLES
 
@@ -65,11 +65,11 @@ PS C:\> Get-Event | Remove-Event
 
 Cette commande supprime tous les événements de la file d'attente des événements.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -EventIdentifier
-Spécifie l’identificateur d’événement pour lequel l’applet de commande est supprimée.
-Un paramètre *EventIdentifier* ou *SourceIdentifier* est requis dans chaque commande.
+
+Spécifie l’identificateur d’événement pour lequel l’applet de commande est supprimée. Un paramètre **EventIdentifier** ou **SourceIdentifier** est requis dans chaque commande.
 
 ```yaml
 Type: System.Int32
@@ -84,9 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-Spécifie l’identificateur source pour lequel cette applet de commande supprime les événements.
-Les caractères génériques ne sont pas autorisés.
-Un paramètre *EventIdentifier* ou *SourceIdentifier* est requis dans chaque commande.
+
+Spécifie l’identificateur source pour lequel cette applet de commande supprime les événements. Les caractères génériques ne sont pas autorisés. Un paramètre **EventIdentifier** ou **SourceIdentifier** est requis dans chaque commande.
 
 ```yaml
 Type: System.String
@@ -101,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Vous demande une confirmation avant d’exécuter l’applet de commande.
 
 ```yaml
@@ -116,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,23 +132,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
 
 ### System. Management. Automation. PSEventArgs
-Vous pouvez diriger les événements de Get-Event vers **Remove-Event** .
+
+Vous pouvez diriger les événements de `Get-Event` vers `Remove-Event` .
 
 ## SORTIES
 
 ### Aucun
+
 L'applet de commande ne génère pas de résultat.
 
 ## REMARQUES
 
-* Les événements, les abonnements aux événements et la file d'attente d'événements existent uniquement dans la session active. Si vous fermez cette session, la file d'attente d'événements est ignorée et l'abonnement aux événements est annulé.
+Aucune source d’événements disponible sur les plateformes Linux ou macOS.
 
-*
+Les événements, les abonnements aux événements et la file d'attente d'événements existent uniquement dans la session active. Si vous fermez cette session, la file d'attente d'événements est ignorée et l'abonnement aux événements est annulé.
 
 ## LIENS CONNEXES
 
@@ -165,4 +168,3 @@ L'applet de commande ne génère pas de résultat.
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

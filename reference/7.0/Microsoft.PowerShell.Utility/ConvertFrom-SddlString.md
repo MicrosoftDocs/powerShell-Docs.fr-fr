@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SddlString
-ms.openlocfilehash: c3968640fba37a392ed8f43bea91b1160d189e1f
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 9c864ec46af9584f36eef3f3ba879cf314e0ca1c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "93206178"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347310"
 ---
 # ConvertFrom-SddlString
 
 ## SYNOPSIS
 Convertit une chaîne SDDL en objet personnalisé.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -27,7 +27,7 @@ Convertit une chaîne SDDL en objet personnalisé.
 ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `ConvertFrom-SddlString` applet de commande convertit une chaîne de langage de définition de descripteur de sécurité en objet **PSCustomObject** personnalisé avec les propriétés suivantes : Owner, Group, DiscretionaryAcl, SystemAcl et RawDescriptor.
 
@@ -83,7 +83,7 @@ Il n’utilise pas le `-Type` paramètre, de sorte que les droits d’accès ind
 
 La troisième commande utilise l' `ConvertFrom-SddlString` applet de commande avec le `-Type` paramètre, de sorte que les droits d’accès retournés sont pour Registry.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -SDDL
 
@@ -145,6 +145,8 @@ Vous pouvez diriger une chaîne SDDL vers `ConvertFrom-SddlString` .
 ## SORTIES
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES
 

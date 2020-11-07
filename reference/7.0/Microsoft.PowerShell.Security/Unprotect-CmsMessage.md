@@ -7,19 +7,19 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.openlocfilehash: 63d979f1d48da4805111b77c5d1c68d7fc4d0fac
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 394e8c1b18d7ba0f4b65e1681faffe795592b97d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201894"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347667"
 ---
 # Unprotect-CmsMessage
 
 ## SYNOPSIS
 Déchiffre le contenu qui a été chiffré à l’aide du format de syntaxe de message de chiffrement.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByWinEvent (par défaut)
 
@@ -47,7 +47,7 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Unprotect-CmsMessage` applet de commande déchiffre le contenu qui a été chiffré à l’aide du format CMS (Cryptographic Message Syntax).
 
@@ -78,7 +78,7 @@ Unprotect-CmsMessage -LiteralPath @parameters
 Try the new Break All command
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
@@ -197,6 +197,8 @@ Vous pouvez diriger un objet contenant du contenu chiffré vers `Unprotect-CmsMe
 Message non chiffré.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES
 

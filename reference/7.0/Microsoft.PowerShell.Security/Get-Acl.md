@@ -7,19 +7,19 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: cb38b327920fc56817c5c8ec73f548ffba8bdd7a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: d9adce420ff8904fa40c7689a8b2ab5a3b5e945f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93202021"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347208"
 ---
 # Get-Acl
 
 ## SYNOPSIS
 Obtient le descripteur de sécurité d'une ressource, comme une clé de Registre ou un fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByPath (par défaut)
 
@@ -42,7 +42,7 @@ Get-Acl [-LiteralPath <String[]>] [-Audit] [-Filter <String>] [-Include <String[
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-Acl` applet de commande obtient les objets qui représentent le descripteur de sécurité d’un fichier ou d’une ressource. Le descripteur de sécurité contient les listes de contrôle d'accès (ACL) de la ressource. La liste ACL spécifie les autorisations dont disposent les utilisateurs et les groupes d'utilisateurs pour accéder à la ressource.
 
@@ -101,7 +101,7 @@ Cet exemple utilise le paramètre **InputObject** de `Get-Acl` pour obtenir le d
 Get-Acl -InputObject (Get-StorageSubSystem -Name S087)
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Audit
 
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Omet les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
+Omet les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -137,7 +137,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Spécifie un filtre dans le format ou le langage du fournisseur. La valeur de ce paramètre qualifie le paramètre **Path** . La syntaxe du filtre, notamment l'utilisation de caractères génériques, dépend du fournisseur. Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lors de l’obtention des objets, plutôt que de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
+Spécifie un filtre dans le format ou le langage du fournisseur. La valeur de ce paramètre qualifie le paramètre **Path**. La syntaxe du filtre, notamment l'utilisation de caractères génériques, dépend du fournisseur. Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lors de l’obtention des objets, plutôt que de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-Obtient uniquement les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
+Obtient uniquement les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -240,6 +240,8 @@ Vous pouvez diriger une chaîne qui contient un chemin d’accès vers `Get-Acl`
 `Get-Acl` retourne un objet qui représente les listes de contrôle d’accès qu’il obtient. Le type d'objet varie selon le type d'ACL.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Par défaut, `Get-Acl` affiche le chemin d’accès PowerShell à la ressource ( `<provider>::<resource-path>` ), le propriétaire de la ressource et « Access », une liste (tableau) des entrées de contrôle d’accès dans la liste de contrôle d’accès discrétionnaire (DACL) de la ressource. La liste DACL est contrôlée par le propriétaire de la ressource.
 

@@ -7,19 +7,19 @@ ms.date: 09/18/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TimeZone
-ms.openlocfilehash: e1b004604fe216149dc3b309310282def53139ea
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 0253461f7c16a464e4054ba2656821709bf8b965
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201594"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346664"
 ---
 # Set-TimeZone
 
 ## SYNOPSIS
 Définit le fuseau horaire système sur un fuseau horaire spécifié.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -39,7 +39,7 @@ Set-TimeZone -Id <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 Set-TimeZone [-InputObject] <TimeZoneInfo> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-TimeZone` applet de commande définit le fuseau horaire système sur un fuseau horaire spécifié.
 
@@ -73,7 +73,7 @@ Set-TimeZone -Name "Russia TZ 2 Standard Time"
 Comme nous l’avons vu dans l’exemple précédent, l' **ID** et le **nom** du fuseau horaire ne correspondent pas toujours.
 Le paramètre **Name** doit correspondre aux propriétés **StandardName** ou **DaylightName** de l’objet **TimeZoneInfo** .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Id
 
@@ -182,6 +182,8 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ## SORTIES
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES
 

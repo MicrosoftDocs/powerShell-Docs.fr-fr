@@ -7,19 +7,19 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 723b374d8623ff8437a27a48933057e457108eb1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 6e205efe91f453d00f29a95f418eff89063acea8
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93202018"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347140"
 ---
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
 Obtient des informations sur la signature Authenticode d’un fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByPath (par défaut)
 
@@ -39,7 +39,7 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets. Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
 
@@ -83,7 +83,7 @@ Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePa
 
 Cette commande obtient des informations sur la signature Authenticode pour le contenu d’un fichier. Dans cet exemple, l’extension de fichier est spécifiée en même temps que le contenu du fichier.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
@@ -166,6 +166,8 @@ Vous pouvez diriger une chaîne qui contient un chemin d’accès de fichier ver
 `Get-AuthenticodeSignature` retourne un objet de signature pour chaque signature qu’il obtient.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Pour plus d’informations sur les signatures Authenticode dans PowerShell, consultez [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md).
 

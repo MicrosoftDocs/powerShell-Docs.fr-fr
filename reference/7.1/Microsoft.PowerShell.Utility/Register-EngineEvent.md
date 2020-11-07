@@ -7,26 +7,26 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 2adcbcc9e3c933e5c28521f26ec3ae2db03e50f7
-ms.sourcegitcommit: f58e4a04240e3419772f9eaa031b626800b615d7
+ms.openlocfilehash: 968cea73cd31bb5bf7b0341e5dbf40e297bb5edd
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93205806"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347684"
 ---
 # Register-EngineEvent
 
 ## SYNOPSIS
 S’abonne aux événements qui sont générés par le moteur PowerShell et par l’applet de commande `New-Event` .
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Register-EngineEvent [-SourceIdentifier] <String> [[-Action] <ScriptBlock>] [-MessageData <PSObject>]
  [-SupportEvent] [-Forward] [-MaxTriggerCount <Int32>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Register-EngineEvent` applet de commande s’abonne aux événements générés par le moteur PowerShell et l’applet de commande `New-Event` . Utilisez le paramètre **SourceIdentifier** pour spécifier l'événement.
 
@@ -66,7 +66,7 @@ Le paramètre **SupportEvent** est ajouté pour masquer l’abonnement aux évé
 
 ### Exemple 3 : créer et s’abonner à un événement défini par l’utilisateur
 
-Cet exemple crée un abonnement pour les événements à partir de la source **MyEventSource** . Il s’agit d’une source arbitraire que nous allons utiliser pour surveiller la progression d’un travail. `Register-EngineEvent` est utilisé pour créer l’abonnement. Le bloc de script du paramètre **action** enregistre les données d’événement dans un fichier texte.
+Cet exemple crée un abonnement pour les événements à partir de la source **MyEventSource**. Il s’agit d’une source arbitraire que nous allons utiliser pour surveiller la progression d’un travail. `Register-EngineEvent` est utilisé pour créer l’abonnement. Le bloc de script du paramètre **action** enregistre les données d’événement dans un fichier texte.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier MyEventSource -Action {
@@ -132,7 +132,7 @@ Event: 2/18/2020 2:36:31 PM -  Work done...
 
 L' `Unregister-Event` applet de commande arrête le travail associé à l’abonnement aux événements (ID de tâche 18). L’ID de tâche 19 est toujours en cours d’exécution et crée des événements. Nous utilisons les applets de commande **Job** pour arrêter la tâche et supprimer les objets de travail inutiles. `Get-Content` affiche le contenu du fichier journal.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Action
 
@@ -209,7 +209,7 @@ Spécifie l'identificateur source de l'événement auquel vous vous abonnez. L'i
 
 La valeur de ce paramètre apparaît dans la valeur de la propriété **SourceIdentifier** de l'objet d'abonné et de tous les objets d'événements associés à cet abonnement.
 
-La valeur est spécifique à la source de l’événement. Il peut s’agir d’une valeur arbitraire que vous avez créée à utiliser avec l’applet de commande `New-Event` . Le moteur PowerShell prend en charge les valeurs **EngineEvent** **PowerShell. Exiting** et **PowerShell. OnIdle** .
+La valeur est spécifique à la source de l’événement. Il peut s’agir d’une valeur arbitraire que vous avez créée à utiliser avec l’applet de commande `New-Event` . Le moteur PowerShell prend en charge les valeurs **EngineEvent** **PowerShell. Exiting** et **PowerShell. OnIdle**.
 
 ```yaml
 Type: System.String
@@ -259,6 +259,8 @@ Si vous utilisez le paramètre **action** , `Register-EngineEvent` retourne un o
 
 ## REMARQUES
 
+Aucune source d’événements disponible sur les plateformes Linux ou macOS.
+
 Les événements, les abonnements aux événements et la file d'attente d'événements existent uniquement dans la session active. Si vous fermez cette session, la file d'attente d'événements est ignorée et l'abonnement aux événements est annulé.
 
 ## LIENS CONNEXES
@@ -274,4 +276,3 @@ Les événements, les abonnements aux événements et la file d'attente d'évén
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

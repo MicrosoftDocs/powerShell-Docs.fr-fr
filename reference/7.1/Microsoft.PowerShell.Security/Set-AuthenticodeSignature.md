@@ -7,19 +7,19 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
-ms.openlocfilehash: d4bddfb506a86cb36e61f94cabf6e24fadaed527
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 78589c8dba23c1e27dc6ebcc384ab113bcbf67ee
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202446"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346460"
 ---
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
 Ajoute une signature [Authenticode](/windows-hardware/drivers/install/authenticode) à un script PowerShell ou à un autre fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByPath (par défaut)
 
@@ -45,7 +45,7 @@ Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <Stri
  -Content <Byte[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-AuthenticodeSignature` applet de commande ajoute une signature Authenticode à n’importe quel fichier qui prend en charge le package d’interface de sujet (SIP).
 
@@ -95,7 +95,7 @@ Set-AuthenticodeSignature -FilePath c:\scripts\Remodel.ps1 -Certificate $cert -I
 La commande utilise le paramètre **filePath** pour spécifier le script en cours de signature et le paramètre **Certificate** pour spécifier le certificat qui est enregistré dans la `$cert` variable. Elle utilise le paramètre **IncludeChain** pour inclure toutes les signatures dans la chaîne d’approbation, y compris l’autorité racine. Elle utilise également le paramètre **TimeStampServer** pour ajouter un horodatage à la signature.
 Cela empêche l'échec du script quand le certificat expire.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Certificat
 
@@ -304,6 +304,8 @@ Vous pouvez diriger une chaîne qui contient le chemin d’accès du fichier ver
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 ## LIENS CONNEXES
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
@@ -317,4 +319,3 @@ Vous pouvez diriger une chaîne qui contient le chemin d’accès du fichier ver
 [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)
-

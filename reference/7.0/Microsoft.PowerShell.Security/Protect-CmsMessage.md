@@ -7,19 +7,19 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Protect-CmsMessage
-ms.openlocfilehash: bca0f75ac371fe18d5a35f5c57572f415922d890
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: de72454f4c50746ca22853dd51e2ec0447bed101
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201373"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347633"
 ---
 # Protect-CmsMessage
 
 ## SYNOPSIS
 Chiffre le contenu à l’aide du format de syntaxe de message de chiffrement.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByContent (par défaut)
 
@@ -41,7 +41,7 @@ Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutF
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Protect-CmsMessage` applet de commande chiffre le contenu à l’aide du format CMS (Cryptographic Message Syntax).
 
@@ -109,7 +109,7 @@ PS Cert:\CurrentUser\My> Get-ChildItem -DocumentEncryptionCert
 
 Pour afficher les certificats de chiffrement de document dans le fournisseur de certificats, vous pouvez ajouter le paramètre dynamique **DocumentEncryptionCert** de l’opérateur [« obtenir-ChildItem »](../Microsoft.PowerShell.Management/Get-ChildItem.md), disponible uniquement lorsque le fournisseur de certificats est chargé.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
@@ -206,6 +206,8 @@ Cette applet de commande prend en charge les paramètres communs : `-Debug` , `
 ## SORTIES
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES
 

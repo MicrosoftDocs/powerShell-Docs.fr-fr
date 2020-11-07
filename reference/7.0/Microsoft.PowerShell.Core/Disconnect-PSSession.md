@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.openlocfilehash: b3ee9ce8f699e66a091a017eb8c1b0c49f1b7636
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: e4036924c45a5fd1b031fa33c8b9226aa5a66c30
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205542"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347395"
 ---
 # Disconnect-PSSession
 
 ## SYNOPSIS
 Se déconnecte d'une session.
 
-## SYNTAX
+## SYNTAXE
 
 ### Session (par défaut)
 
@@ -50,7 +50,7 @@ Disconnect-PSSession [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBuff
  [-ThrottleLimit <Int32>] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Disconnect-PSSession` applet de commande déconnecte une session PowerShell (« PSSession »), telle qu’une session démarrée à l’aide `New-PSSession` de l’applet de commande, à partir de la session active. Par conséquent, la session PSSession est dans un état déconnecté. Vous pouvez vous connecter à la session PSSession déconnectée à partir de la session active ou d'une autre session sur l'ordinateur local ou sur un autre ordinateur.
 
@@ -58,7 +58,7 @@ L' `Disconnect-PSSession` applet de commande déconnecte uniquement les sessions
 
 Pour vous reconnecter à une session PSSession déconnectée, utilisez les `Connect-PSSession` applets de commande ou `Receive-PSSession` .
 
-Quand une session PSSession est déconnectée, les commandes de la session continuent à s'exécuter jusqu'à ce qu'elles se terminent, sauf si la session PSSession arrive à expiration ou que les commandes de la session PSSession sont bloquées par une mémoire tampon de sortie saturée. Pour modifier le délai d'inactivité, utilisez le paramètre **IdleTimeoutSec** . Pour modifier le mode de mise en mémoire tampon de sortie, utilisez le paramètre **OutputBufferingMode** . vous pouvez également utiliser le paramètre **InDisconnectedSession** de l' `Invoke-Command` applet de commande pour exécuter une commande dans une session déconnectée.
+Quand une session PSSession est déconnectée, les commandes de la session continuent à s'exécuter jusqu'à ce qu'elles se terminent, sauf si la session PSSession arrive à expiration ou que les commandes de la session PSSession sont bloquées par une mémoire tampon de sortie saturée. Pour modifier le délai d'inactivité, utilisez le paramètre **IdleTimeoutSec**. Pour modifier le mode de mise en mémoire tampon de sortie, utilisez le paramètre **OutputBufferingMode** . vous pouvez également utiliser le paramètre **InDisconnectedSession** de l' `Invoke-Command` applet de commande pour exécuter une commande dans une session déconnectée.
 
 Pour plus d'informations sur la fonctionnalité Sessions déconnectées, consultez [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
 
@@ -92,7 +92,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 1  ITTask          Server12        Disconnected  ITTasks               None
 ```
 
-La `Disconnect-PSSession` commande utilise le paramètre **OutputBufferingMode** pour définir le mode de sortie sur **Drop** . Ce paramètre garantit que le script qui s'exécute dans la session peut continuer de s'exécuter même si la mémoire tampon de la sortie de session est saturée. Comme le script écrit sa sortie dans un rapport sur un partage de fichiers, une autre sortie peut être perdue sans conséquence.
+La `Disconnect-PSSession` commande utilise le paramètre **OutputBufferingMode** pour définir le mode de sortie sur **Drop**. Ce paramètre garantit que le script qui s'exécute dans la session peut continuer de s'exécuter même si la mémoire tampon de la sortie de session est saturée. Comme le script écrit sa sortie dans un rapport sur un partage de fichiers, une autre sortie peut être perdue sans conséquence.
 
 La commande utilise également le paramètre **IdleTimeoutSec** pour étendre le délai d'inactivité de la session à 24 heures. Ce paramètre laisse le temps à cet administrateur ou à d'autres administrateurs de se reconnecter à la session pour vérifier que le script s'est exécuté et résoudre les problèmes si nécessaire.
 
@@ -144,7 +144,7 @@ Le gestionnaire utilise la `MkDir` fonction pour créer le répertoire, puis il 
 
 Cet exemple montre comment corriger la valeur de la propriété **IdleTimeout** d'une session pour pouvoir la déconnecter.
 
-La propriété du délai d'inactivité d'une session est essentielle pour les sessions déconnectées, car elle détermine la durée pendant laquelle une session déconnectée est conservée avant sa suppression. Vous pouvez définir l'option de délai d'inactivité quand vous créez une session et quand vous la déconnectez. Les valeurs par défaut pour le délai d’inactivité d’une session sont définies dans la `$PSSessionOption` variable de préférence sur l’ordinateur local et dans la configuration de session sur l’ordinateur distant. Les valeurs définies pour la session sont prioritaires sur les valeurs définies dans la configuration de session, mais les valeurs de session ne peuvent pas dépasser les quotas définis dans la configuration de la session, tels que la valeur **MaxIdleTimeoutMs** .
+La propriété du délai d'inactivité d'une session est essentielle pour les sessions déconnectées, car elle détermine la durée pendant laquelle une session déconnectée est conservée avant sa suppression. Vous pouvez définir l'option de délai d'inactivité quand vous créez une session et quand vous la déconnectez. Les valeurs par défaut pour le délai d’inactivité d’une session sont définies dans la `$PSSessionOption` variable de préférence sur l’ordinateur local et dans la configuration de session sur l’ordinateur distant. Les valeurs définies pour la session sont prioritaires sur les valeurs définies dans la configuration de session, mais les valeurs de session ne peuvent pas dépasser les quotas définis dans la configuration de la session, tels que la valeur **MaxIdleTimeoutMs**.
 
 ```
 PS> $Timeout = New-PSSessionOption -IdleTimeout 172800000
@@ -249,7 +249,7 @@ La sixième commande déconnecte la session. Elle utilise le paramètre **IdleTi
 
 La septième commande obtient la valeur de la propriété **IdleTimeout** de la session déconnectée, qui est mesurée en millisecondes. La sortie confirme que la commande a réussi.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Id
 
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 
 ### -OutputBufferingMode
 
-Détermine comment la sortie de la commande est gérée dans la session déconnectée quand la mémoire tampon de la sortie est saturée. La valeur par défaut est **Block** .
+Détermine comment la sortie de la commande est gérée dans la session déconnectée quand la mémoire tampon de la sortie est saturée. La valeur par défaut est **Block**.
 
 Si la commande de la session déconnectée retourne une sortie et que la mémoire tampon de la sortie se remplit, la valeur de ce paramètre détermine en réalité si la commande continue de s'exécuter pendant que la session est déconnectée. La valeur **Block** suspend la commande jusqu'à ce que la session soit rouverte. La valeur **Drop** permet l'exécution de la commande, même si des données peuvent être perdues. Quand vous utilisez la valeur **Drop** , redirigez la sortie de la commande vers un fichier sur disque.
 
@@ -444,12 +444,14 @@ Vous pouvez diriger une session vers `Disconnect-PSSession` .
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 - L' `Disconnect-PSSession` applet de commande fonctionne uniquement lorsque les ordinateurs locaux et distants exécutent PowerShell 3,0 ou une version ultérieure.
 - Si vous utilisez l' `Disconnect-PSSession` applet de commande sur une session déconnectée, la commande n’a aucun effet sur la session et elle ne génère pas d’erreurs.
 - Les sessions de bouclage déconnectées ayant des jetons de sécurité interactifs (ceux créés avec le paramètre **EnableNetworkAccess** ) peuvent être reconnectées uniquement à partir de l'ordinateur sur lequel la session a été créée. Cette restriction protège l'ordinateur contre tout accès malveillant.
-- Quand vous déconnectez une session PSSession, l'état de session est **Disconnected** et la disponibilité est **None** .
+- Quand vous déconnectez une session PSSession, l'état de session est **Disconnected** et la disponibilité est **None**.
 
-  La valeur de la propriété **State** dépend de la session active. Par conséquent, la valeur **Disconnected** signifie que la session PSSession n'est pas connectée à la session active. Toutefois, cela ne signifie pas que la session PSSession est déconnectée de toutes les sessions. Elle peut être connectée à une autre session. Pour déterminer si vous pouvez vous connecter ou vous reconnecter à la session, utilisez la propriété **Availability** .
+  La valeur de la propriété **State** dépend de la session active. Par conséquent, la valeur **Disconnected** signifie que la session PSSession n'est pas connectée à la session active. Toutefois, cela ne signifie pas que la session PSSession est déconnectée de toutes les sessions. Elle peut être connectée à une autre session. Pour déterminer si vous pouvez vous connecter ou vous reconnecter à la session, utilisez la propriété **Availability**.
 
   Une propriété **Availability** avec la valeur **None** signifie que vous pouvez vous connecter à la session. La valeur **Busy** indique que vous ne pouvez pas vous connecter à la session PSSession, car elle est connectée à une autre session.
 

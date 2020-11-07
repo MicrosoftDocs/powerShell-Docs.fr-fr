@@ -7,19 +7,19 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
-ms.openlocfilehash: 73a2685947ac5980adab99a3f101a0c1f7f809d2
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 37b5349c8ed39ff70453b59fe6758c57880f0087
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201453"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346936"
 ---
 # Out-GridView
 
 ## SYNOPSIS
 Envoie la sortie vers un tableau interactif dans une fenêtre distincte.
 
-## SYNTAX
+## SYNTAXE
 
 ### PassThru (par défaut)
 
@@ -40,7 +40,7 @@ Out-GridView [-InputObject <PSObject>] [-Title <String>] [-OutputMode <OutputMod
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Out-GridView` applet de commande envoie la sortie d’une commande à une fenêtre d’affichage de grille dans laquelle la sortie est affichée dans un tableau interactif.
 
@@ -130,7 +130,7 @@ Cet exemple vous permet de sélectionner plusieurs processus dans la `Out-GridVi
 Get-Process | Out-GridView -PassThru | Export-Csv -Path .\ProcessLog.csv
 ```
 
-Le paramètre **PassThru** de `Out-GridView` vous permet d’envoyer plusieurs éléments vers le dessous du pipeline. Le paramètre **PassThru** équivaut à l'utilisation de la valeur **Multiple** du paramètre **OutputMode** .
+Le paramètre **PassThru** de `Out-GridView` vous permet d’envoyer plusieurs éléments vers le dessous du pipeline. Le paramètre **PassThru** équivaut à l'utilisation de la valeur **Multiple** du paramètre **OutputMode**.
 
 ### Exemple 8 : créer un raccourci Windows vers `Out-GridView`
 
@@ -142,13 +142,13 @@ pwsh -Command "Get-Service | Out-GridView -Wait"
 
 Cette ligne de commande peut être utilisée dans un raccourci Windows. Sans le paramètre **Wait** , PowerShell s’arrête dès que la fenêtre s’est `Out-GridView` ouverte, ce qui ferme la `Out-GridView` fenêtre presque immédiatement.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -InputObject
 
 Spécifie l’objet que l’applet de commande accepte comme entrée pour `Out-GridView` .
 
-Quand vous utilisez le paramètre **InputObject** pour envoyer une collection d’objets à `Out-GridView` , `Out-GridView` traite la collection comme un objet de collection et affiche une ligne qui représente la collection. Pour afficher chaque objet de la collection, utilisez un opérateur de pipeline (|) pour envoyer des objets à `Out-GridView` .
+Quand vous utilisez le paramètre **InputObject** pour envoyer une collection d’objets à `Out-GridView` , `Out-GridView` traite la collection comme un objet de collection et affiche une ligne qui représente la collection. Pour afficher chaque objet de la collection, utilisez un opérateur de pipeline ( `|` ) pour envoyer des objets à `Out-GridView` .
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -171,7 +171,7 @@ Les valeurs de ce paramètre déterminent le nombre d'éléments que vous pouvez
 
 - Aucun.  aucun élément. Il s’agit de la valeur par défaut.
 - Unique. zéro ou un élément. Utilisez cette valeur lorsque la commande suivante ne peut prendre qu'un seul objet en entrée.
-- Plusieurs. zéro, un ou plusieurs éléments. Utilisez cette valeur lorsque la commande suivante peut prendre plusieurs objets en entrée. Cette valeur est équivalente au paramètre **Passthru** .
+- Plusieurs. zéro, un ou plusieurs éléments. Utilisez cette valeur lorsque la commande suivante peut prendre plusieurs objets en entrée. Cette valeur est équivalente au paramètre **Passthru**.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutputModeOption
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Indique que l’applet de commande envoie les éléments à partir de la fenêtre interactive dans le pipeline en tant qu’entrée d’autres commandes. Par défaut, cette applet de commande ne génère aucun résultat. Ce paramètre est équivalent à l'utilisation de la valeur **Multiple** du paramètre **OutputMode** .
+Indique que l’applet de commande envoie les éléments à partir de la fenêtre interactive dans le pipeline en tant qu’entrée d’autres commandes. Par défaut, cette applet de commande ne génère aucun résultat. Ce paramètre est équivalent à l'utilisation de la valeur **Multiple** du paramètre **OutputMode**.
 
 Pour envoyer des éléments depuis la fenêtre interactive dans le pipeline, cliquez pour sélectionner les éléments, puis cliquez sur OK. MAJ+clic et Ctrl+clic sont pris en charge.
 
@@ -256,6 +256,8 @@ Normalement, `Out-GridView` ne retourne pas d’objets. Lors de l’utilisation 
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Vous ne pouvez pas utiliser une commande distante pour ouvrir une fenêtre d'affichage de grille sur un autre ordinateur.
 
 La sortie de commande que vous envoyez à `Out-GridView` ne peut pas être mise en forme à l’aide des `Format` applets de commande, telles que `Format-Table` ou `Format-Wide` cmdlets. Pour sélectionner des propriétés, utilisez l’applet de commande `Select-Object` .
@@ -278,14 +280,14 @@ La sortie désérialisée à partir des commandes distantes ne peut pas être co
 
 **Pour masquer ou afficher une colonne :**
 
-1. Cliquez avec le bouton droit sur un en-tête de colonne et cliquez sur **Sélectionner les colonnes** .
+1. Cliquez avec le bouton droit sur un en-tête de colonne et cliquez sur **Sélectionner les colonnes**.
 2. Dans la boîte de dialogue **Sélectionner les colonnes** , utilisez les touches de direction pour déplacer les colonnes entre les colonnes sélectionnées dans les zones colonnes disponibles. Seules les colonnes de la zone **Sélectionner les colonnes** s’affichent dans la fenêtre d’affichage de grille.
 
 **Pour réorganiser les colonnes :**
 
 Vous pouvez faire glisser et déposer des colonnes à l’emplacement souhaité. Ou procédez comme suit :
 
-1. Cliquez avec le bouton droit sur un en-tête de colonne et cliquez sur **Sélectionner les colonnes** .
+1. Cliquez avec le bouton droit sur un en-tête de colonne et cliquez sur **Sélectionner les colonnes**.
 2. Dans la boîte de dialogue **Sélectionner les colonnes** , utilisez les boutons **monter** **et descendre pour** réorganiser les colonnes. Les colonnes en haut de la liste apparaissent à gauche des colonnes au bas de la liste dans la fenêtre d'affichage de grille.
 
 **Comment trier les données de tableau**
@@ -336,7 +338,7 @@ Chaque critère a le format suivant :
 
 `<column> <operator> <value>`
 
-Les critères des différentes propriétés sont connectés par **et** . Les critères de la même propriété sont connectés par **ou** . Vous ne pouvez pas modifier les connecteurs logiques.
+Les critères des différentes propriétés sont connectés par **et**. Les critères de la même propriété sont connectés par **ou**. Vous ne pouvez pas modifier les connecteurs logiques.
 
 Les critères affectent uniquement l'affichage. Ils ne suppriment pas des éléments du tableau.
 
@@ -346,7 +348,7 @@ Les critères affectent uniquement l'affichage. Ils ne suppriment pas des élém
 2. Cliquez sur le bouton de menu **Ajouter des critères** .
 3. Cliquez pour sélectionner les colonnes (propriétés). Vous pouvez sélectionner une ou plusieurs propriétés.
 4. Lorsque vous avez fini de sélectionner les propriétés, cliquez sur le bouton **Ajouter** .
-5. Pour annuler les ajouts, cliquez sur **Annuler** .
+5. Pour annuler les ajouts, cliquez sur **Annuler**.
 6. Pour ajouter d’autres critères, cliquez de nouveau sur le bouton **Ajouter des critères** .
 
 **Comment modifier un critère**

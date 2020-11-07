@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
-ms.openlocfilehash: a4c25d199b97be24277092bcb815a640a09360dd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 314734957eea971338ac886ad82e9ce9eeb6a242
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202466"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346562"
 ---
 # Set-Acl
 
 ## SYNOPSIS
 Change le descripteur de sécurité de l'élément spécifié, par exemple un fichier ou une clé de Registre.
 
-## SYNTAX
+## SYNTAXE
 
 ### ByPath (par défaut)
 
@@ -42,11 +42,11 @@ Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy
  [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-Acl` applet de commande modifie le descripteur de sécurité d’un élément spécifié, tel qu’un fichier ou une clé de Registre, pour qu’il corresponde aux valeurs d’un descripteur de sécurité que vous fournissez.
 
-Pour utiliser `Set-Acl` , utilisez le paramètre **path** ou **InputObject** pour identifier l’élément dont vous souhaitez modifier le descripteur de sécurité. Utilisez ensuite les paramètres **AclObject** ou **SecurityDescriptor** pour fournir un descripteur de sécurité contenant les valeurs à appliquer. `Set-Acl` applique le descripteur de sécurité fourni. Cette applet de commande utilise la valeur du paramètre **AclObject** comme modèle, puis change les valeurs du descripteur de sécurité de l'élément pour qu'elles correspondent aux valeurs du paramètre **AclObject** .
+Pour utiliser `Set-Acl` , utilisez le paramètre **path** ou **InputObject** pour identifier l’élément dont vous souhaitez modifier le descripteur de sécurité. Utilisez ensuite les paramètres **AclObject** ou **SecurityDescriptor** pour fournir un descripteur de sécurité contenant les valeurs à appliquer. `Set-Acl` applique le descripteur de sécurité fourni. Cette applet de commande utilise la valeur du paramètre **AclObject** comme modèle, puis change les valeurs du descripteur de sécurité de l'élément pour qu'elles correspondent aux valeurs du paramètre **AclObject**.
 
 ## EXEMPLES
 
@@ -135,13 +135,11 @@ Cette commande accorde au groupe **BUILTIN\Administrators** le contrôle total d
 
 La première commande utilise l' `Get-Acl` applet de commande pour récupérer le descripteur de sécurité du fichier Dog.txt.
 
-Les variables suivantes sont créées pour accorder au groupe **BUILTIN\Administrators** le contrôle total du fichier Dog.txt. La `$identity` variable définie sur le nom d’un [compte d’utilisateur](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor).
-La `$fileSystemRights` variable a la valeur FullControl et peut être l’une des valeurs [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) qui spécifie le type d’opération associé à la règle d’accès. La `$type` variable a la valeur « Allow » pour spécifier s’il faut autoriser ou refuser l’opération. La `$fileSystemAccessRuleArgumentList` variable est une liste d’arguments qui doit être passée lors de la création du nouvel objet **FileSystemAccessRule** . Un nouvel objet **FileSystemAccessRule** est créé, et l’objet **FileSystemAccessRule** est passé à la méthode **SetAccessRule ()** , ajoute la nouvelle règle d’accès.
+Les variables suivantes sont créées pour accorder au groupe **BUILTIN\Administrators** le contrôle total du fichier Dog.txt. La `$identity` variable définie sur le nom d’un [compte d’utilisateur](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor). La `$fileSystemRights` variable a la valeur FullControl et peut être l’une des valeurs [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) qui spécifie le type d’opération associé à la règle d’accès. La `$type` variable a la valeur « Allow » pour spécifier s’il faut autoriser ou refuser l’opération. La `$fileSystemAccessRuleArgumentList` variable est une liste d’arguments qui doit être passée lors de la création du nouvel objet **FileSystemAccessRule** . Un nouvel objet **FileSystemAccessRule** est créé, et l’objet **FileSystemAccessRule** est passé à la méthode **SetAccessRule ()** , ajoute la nouvelle règle d’accès.
 
-La dernière commande utilise `Set-Acl` pour appliquer le descripteur de sécurité de à Dog.txt.
-Une fois la commande terminée, le groupe **BUILTIN\Administrateurs** disposera du contrôle total de la Dog.txt.
+La dernière commande utilise `Set-Acl` pour appliquer le descripteur de sécurité de à Dog.txt. Une fois la commande terminée, le groupe **BUILTIN\Administrateurs** disposera du contrôle total de la Dog.txt.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AclObject
 
@@ -183,7 +181,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Omet les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
+Omet les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -199,7 +197,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Spécifie un filtre dans le format ou le langage du fournisseur. La valeur de ce paramètre qualifie le paramètre **Path** . La syntaxe du filtre, notamment l'utilisation de caractères génériques, dépend du fournisseur. Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lors de la récupération des objets, plutôt que de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
+Spécifie un filtre dans le format ou le langage du fournisseur. La valeur de ce paramètre qualifie le paramètre **Path**. La syntaxe du filtre, notamment l'utilisation de caractères génériques, dépend du fournisseur. Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lors de la récupération des objets, plutôt que de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
 
 ```yaml
 Type: System.String
@@ -215,7 +213,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-Modifie uniquement les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path** .
+Modifie uniquement les éléments spécifiés. La valeur de ce paramètre qualifie le paramètre **Path**.
 Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés.
 
 ```yaml
@@ -349,13 +347,13 @@ Vous pouvez diriger un objet ACL ou un descripteur de sécurité vers `Set-Acl` 
 
 ### System. Security. AccessControl. FileSecurity
 
-Par défaut, `Set-Acl` ne génère pas de sortie.
-Toutefois, si vous utilisez le paramètre **Passthru** , elle génère un objet de sécurité.
-Le type de l'objet de sécurité dépend du type de l'élément.
+Par défaut, `Set-Acl` ne génère pas de sortie. Toutefois, si vous utilisez le paramètre **Passthru** , elle génère un objet de sécurité. Le type de l'objet de sécurité dépend du type de l'élément.
 
 ## REMARQUES
 
- L' `Set-Acl` applet de commande est prise en charge par le système de fichiers PowerShell et les fournisseurs de registre. Ainsi, vous pouvez l'utiliser pour changer les descripteurs de sécurité des fichiers, des répertoires et des clés de Registre.
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
+L' `Set-Acl` applet de commande est prise en charge par le système de fichiers PowerShell et les fournisseurs de registre. Ainsi, vous pouvez l'utiliser pour changer les descripteurs de sécurité des fichiers, des répertoires et des clés de Registre.
 
 ## LIENS CONNEXES
 

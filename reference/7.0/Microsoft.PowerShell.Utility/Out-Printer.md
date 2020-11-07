@@ -7,25 +7,25 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: 552ccc39cc19d625c5173df360fa20a10c6040c1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bd9a141537c7f075d3c02827af4694813d6f0db6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201442"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346919"
 ---
 # Out-Printer
 
 ## SYNOPSIS
 Envoie la sortie vers une imprimante.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Out-Printer` applet de commande envoie la sortie vers l’imprimante par défaut ou vers une autre imprimante, si celle-ci est spécifiée.
 
@@ -65,7 +65,7 @@ Out-Printer -InputObject $H
 
 `Get-Help` Obtient la version complète de la rubrique d’aide de `Get-CimInstance` et la stocke dans la `$H` variable. Le paramètre **InputObject** passe la valeur de `$H` à `Out-Printer` .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -InputObject
 
@@ -116,6 +116,8 @@ Vous pouvez diriger n’importe quel objet vers `Out-Printer` .
 `Out-Printer` ne retourne aucun objet.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Les applets de commande qui contiennent le `Out` verbe ne mettent pas en forme les objets. Ils les affichent et les envoient à la destination d’affichage spécifiée. Si vous envoyez un objet non mis en forme à une applet de commande `Out` , l’applet de commande l’envoie à une applet de commande de mise en forme avant de le restituer.
 

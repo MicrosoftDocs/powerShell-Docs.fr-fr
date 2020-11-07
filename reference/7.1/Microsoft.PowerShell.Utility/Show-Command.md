@@ -7,26 +7,26 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 86253a8a0bd02a60980cc3655af7bb961acf88ac
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b5758fdb9fc3e8f604b24fb9c64cad3f95047ec3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202169"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347769"
 ---
 # Show-Command
 
 ## SYNOPSIS
 Affiche des informations de commande PowerShell dans une fenêtre graphique.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonParameter]
  [-ErrorPopup] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Show-Command` applet de commande vous permet de créer une commande PowerShell dans une fenêtre de commande. Vous pouvez utiliser les fonctionnalités de la fenêtre de commandes pour qu'elle exécute la commande, ou pour qu'elle vous la retourne.
 
@@ -40,7 +40,7 @@ Quand vous êtes prêt, cliquez sur **Copy** pour copier la commande que vous av
 
 Dans l’environnement d’écriture de scripts intégré (ISE) de PowerShell, une variante de la `Show-Command` fenêtre s’affiche par défaut. Pour plus d’informations sur l’utilisation de cette fenêtre de commande, consultez les rubriques d’aide de PowerShell ISE.
 
-Cette applet de commande a été réintroduite dans PowerShell 7. 
+Cette applet de commande a été réintroduite dans PowerShell 7.
 
 Étant donné que cette applet de commande nécessite une interface utilisateur, elle ne fonctionne pas sur Windows Server Core ou Windows nano Server. Cette applet de commande est uniquement disponible sur les systèmes Windows qui prennent en charge le bureau Windows.
 
@@ -154,7 +154,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Outre l'affichage des erreurs dans une fenêtre, **ErrorPopup** retourne la sortie de commande dans la commande actuelle, au lieu de créer une commande. Lorsque vous exécutez cette commande, la `Show-Command` fenêtre s’ouvre. Vous pouvez utiliser les fonctionnalités de la fenêtre pour définir les valeurs de paramètre. Pour exécuter la commande, cliquez sur le bouton **exécuter** dans la `Show-Command` fenêtre.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ErrorPopup
 
@@ -272,7 +272,8 @@ Quand vous utilisez le paramètre **PassThru** , `Show-Command` retourne une cha
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 `Show-Command` ne fonctionne pas dans les sessions à distance.
 
 ## LIENS CONNEXES
-

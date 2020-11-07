@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
-ms.openlocfilehash: d5a7588022331aac6315b1e37159bdbd6994b64a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 02c0b7e699b386a36b962517901a381d45ccaeff
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201585"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346358"
 ---
 # Start-Service
 
 ## SYNOPSIS
 Démarre un ou plusieurs services arrêtés.
 
-## SYNTAX
+## SYNTAXE
 
 ### InputObject (valeur par défaut)
 
@@ -42,7 +42,7 @@ Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclud
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Start-Service` applet de commande envoie un message de démarrage au contrôleur de services Windows pour chacun des services spécifiés. Si un service est déjà en cours d'exécution, le message est ignoré sans erreur. Vous pouvez spécifier les services par leur nom de service ou leur nom d’affichage, ou vous pouvez utiliser le paramètre **InputObject** pour fournir un objet de service qui représente les services que vous souhaitez démarrer.
 
@@ -79,7 +79,7 @@ Tout d’abord, nous utilisons `Get-Service` pour récupérer un objet qui repr�
 
 ### Exemple 4 : démarrer un service désactivé
 
-Cet exemple montre comment démarrer un service lorsque le type de démarrage du service est **désactivé** .
+Cet exemple montre comment démarrer un service lorsque le type de démarrage du service est **désactivé**.
 
 ```
 PS> Start-Service tlntsvr
@@ -99,9 +99,9 @@ PS> Set-Service tlntsvr -StartupType manual
 PS> Start-Service tlntsvr
 ```
 
-La première tentative de démarrage du service Telnet (tlntsvr) échoue. La `Get-CimInstance` commande indique que la propriété **startMode** du service tlntsvr est **désactivée** . L' `Set-Service` applet de commande change le type de démarrage en **Manuel** . Nous pouvons à présent soumettre à nouveau la `Start-Service` commande. Cette fois, elle réussit. Pour vérifier que la commande a réussi, exécutez `Get-Service` .
+La première tentative de démarrage du service Telnet (tlntsvr) échoue. La `Get-CimInstance` commande indique que la propriété **startMode** du service tlntsvr est **désactivée**. L' `Set-Service` applet de commande change le type de démarrage en **Manuel**. Nous pouvons à présent soumettre à nouveau la `Start-Service` commande. Cette fois, elle réussit. Pour vérifier que la commande a réussi, exécutez `Get-Service` .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -DisplayName
 
@@ -248,16 +248,18 @@ Vous pouvez diriger les objets qui représentent les services ou les chaînes qu
 
 ### Aucun, System. ServiceProcess. ServiceController
 
-Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service, si vous spécifiez **PassThru** . Sinon, cette applet de commande ne génère aucune sortie.
+Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service, si vous spécifiez **PassThru**. Sinon, cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
 
-* Vous pouvez également faire référence à `Start-Service` par son alias intégré, `sasv` . Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-* `Start-Service` peut contrôler les services uniquement si l’utilisateur actuel est autorisé à le faire. Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.
-* Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez `Get-Service` .
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
+- Vous pouvez également faire référence à `Start-Service` par son alias intégré, `sasv` . Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+- `Start-Service` peut contrôler les services uniquement si l’utilisateur actuel est autorisé à le faire. Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.
+- Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez `Get-Service` .
   Les noms de service s’affichent dans la colonne **nom** , et les noms d’affichage apparaissent dans la colonne **DisplayName** .
-* Vous pouvez uniquement démarrer les services dont le type de démarrage est manuel, automatique ou automatique (début différé). Vous ne pouvez pas démarrer les services dont le type de démarrage est désactivé. Si une `Start-Service` commande échoue avec le message `Cannot start service \<service-name\> on computer` , utilisez `Get-CimInstance` pour rechercher le type de démarrage du service et, si nécessaire, utilisez la `Set-Service` cmdlet pour modifier le type de démarrage du service.
-* Certains services, tels le service Journaux et alertes de performance (Sysmonlog), s'arrêtent automatiquement lorsqu'ils n'ont aucune tâche à exécuter. Lorsque PowerShell démarre un service qui s’arrête presque immédiatement, il affiche le message suivant : `Service \<display-name\> start failed.`
+- Vous pouvez uniquement démarrer les services dont le type de démarrage est manuel, automatique ou automatique (début différé). Vous ne pouvez pas démarrer les services dont le type de démarrage est désactivé. Si une `Start-Service` commande échoue avec le message `Cannot start service \<service-name\> on computer` , utilisez `Get-CimInstance` pour rechercher le type de démarrage du service et, si nécessaire, utilisez la `Set-Service` cmdlet pour modifier le type de démarrage du service.
+- Certains services, tels le service Journaux et alertes de performance (Sysmonlog), s'arrêtent automatiquement lorsqu'ils n'ont aucune tâche à exécuter. Lorsque PowerShell démarre un service qui s’arrête presque immédiatement, il affiche le message suivant : `Service \<display-name\> start failed.`
 
 ## LIENS CONNEXES
 
