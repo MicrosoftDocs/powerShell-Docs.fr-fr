@@ -7,91 +7,82 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
-ms.openlocfilehash: 6bffe41f1efd42c686d06f59cf86b374b596d80d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 77ce507d0eaf476e2c24f41e433bd69fdcb416bb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203462"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342567"
 ---
-# <span data-ttu-id="f08a4-103">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-103">Stop-Service</span></span>
+# <span data-ttu-id="f7d6e-103">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-103">Stop-Service</span></span>
 
-## <span data-ttu-id="f08a4-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f08a4-104">SYNOPSIS</span></span>
-<span data-ttu-id="f08a4-105">Arrête un ou plusieurs services en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="f08a4-105">Stops one or more running services.</span></span>
+## <span data-ttu-id="f7d6e-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f7d6e-104">SYNOPSIS</span></span>
+<span data-ttu-id="f7d6e-105">Arrête un ou plusieurs services en cours d'exécution.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-105">Stops one or more running services.</span></span>
 
-## <span data-ttu-id="f08a4-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="f08a4-106">SYNTAX</span></span>
+## <span data-ttu-id="f7d6e-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="f7d6e-106">SYNTAX</span></span>
 
-### <span data-ttu-id="f08a4-107">InputObject (valeur par défaut)</span><span class="sxs-lookup"><span data-stu-id="f08a4-107">InputObject (Default)</span></span>
+### <span data-ttu-id="f7d6e-107">InputObject (valeur par défaut)</span><span class="sxs-lookup"><span data-stu-id="f7d6e-107">InputObject (Default)</span></span>
 
 ```
 Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
  [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="f08a4-108">Default</span><span class="sxs-lookup"><span data-stu-id="f08a4-108">Default</span></span>
+### <span data-ttu-id="f7d6e-108">Default</span><span class="sxs-lookup"><span data-stu-id="f7d6e-108">Default</span></span>
 
 ```
 Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="f08a4-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="f08a4-109">DisplayName</span></span>
+### <span data-ttu-id="f7d6e-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="f7d6e-109">DisplayName</span></span>
 
 ```
 Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="f08a4-110">Description</span><span class="sxs-lookup"><span data-stu-id="f08a4-110">DESCRIPTION</span></span>
+## <span data-ttu-id="f7d6e-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="f7d6e-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="f08a4-111">L’applet de commande **Stop-service** envoie un message d’arrêt au contrôleur de services Windows pour chacun des services spécifiés.</span><span class="sxs-lookup"><span data-stu-id="f08a4-111">The **Stop-Service** cmdlet sends a stop message to the Windows Service Controller for each of the specified services.</span></span>
-<span data-ttu-id="f08a4-112">Vous pouvez spécifier les services par leur nom de service ou leur nom d’affichage, ou vous pouvez utiliser le paramètre **InputObject** pour passer un objet de service qui représente le service que vous souhaitez arrêter.</span><span class="sxs-lookup"><span data-stu-id="f08a4-112">You can specify the services by their service names or display names, or you can use the **InputObject** parameter to pass a service object that represents the service that you want to stop.</span></span>
+<span data-ttu-id="f7d6e-111">L' `Stop-Service` applet de commande envoie un message d’arrêt au contrôleur de services Windows pour chacun des services spécifiés.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-111">The `Stop-Service` cmdlet sends a stop message to the Windows Service Controller for each of the specified services.</span></span> <span data-ttu-id="f7d6e-112">Vous pouvez spécifier les services par leur nom de service ou leur nom d’affichage, ou vous pouvez utiliser le paramètre **InputObject** pour passer un objet de service qui représente le service que vous souhaitez arrêter.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-112">You can specify the services by their service names or display names, or you can use the **InputObject** parameter to pass a service object that represents the service that you want to stop.</span></span>
 
-## <span data-ttu-id="f08a4-113">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="f08a4-113">EXAMPLES</span></span>
+## <span data-ttu-id="f7d6e-113">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="f08a4-114">Exemple 1 : arrêter un service sur l’ordinateur local</span><span class="sxs-lookup"><span data-stu-id="f08a4-114">Example 1: Stop a service on the local computer</span></span>
+### <span data-ttu-id="f7d6e-114">Exemple 1 : arrêter un service sur l’ordinateur local</span><span class="sxs-lookup"><span data-stu-id="f7d6e-114">Example 1: Stop a service on the local computer</span></span>
 
 ```
 PS C:\> Stop-Service -Name "sysmonlog"
 ```
 
-<span data-ttu-id="f08a4-115">Cette commande arrête le service Journaux et alertes de performance (SysmonLog) sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f08a4-115">This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.</span></span>
+<span data-ttu-id="f7d6e-115">Cette commande arrête le service Journaux et alertes de performance (SysmonLog) sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-115">This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.</span></span>
 
-### <span data-ttu-id="f08a4-116">Exemple 2 : arrêter un service à l’aide du nom complet</span><span class="sxs-lookup"><span data-stu-id="f08a4-116">Example 2: Stop a service by using the display name</span></span>
+### <span data-ttu-id="f7d6e-116">Exemple 2 : arrêter un service à l’aide du nom complet</span><span class="sxs-lookup"><span data-stu-id="f7d6e-116">Example 2: Stop a service by using the display name</span></span>
 
 ```
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
-<span data-ttu-id="f08a4-117">Cette commande arrête le service Telnet sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f08a4-117">This command stops the Telnet service on the local computer.</span></span>
-<span data-ttu-id="f08a4-118">La commande utilise la commande de **service** pour récupérer un objet représentant le service Telnet.</span><span class="sxs-lookup"><span data-stu-id="f08a4-118">The command uses **Get-Service** to get an object that represents the Telnet service.</span></span>
-<span data-ttu-id="f08a4-119">L’opérateur de pipeline (|) dirige l’objet vers **Stop-service** , ce qui arrête le service.</span><span class="sxs-lookup"><span data-stu-id="f08a4-119">The pipeline operator (|) pipes the object to **Stop-Service** , which stops the service.</span></span>
+<span data-ttu-id="f7d6e-117">Cette commande arrête le service Telnet sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-117">This command stops the Telnet service on the local computer.</span></span> <span data-ttu-id="f7d6e-118">La commande utilise `Get-Service` pour récupérer un objet qui représente le service Telnet.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-118">The command uses `Get-Service` to get an object that represents the Telnet service.</span></span> <span data-ttu-id="f7d6e-119">L’opérateur de pipeline ( `|` ) dirige l’objet vers `Stop-Service` , qui arrête le service.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-119">The pipeline operator (`|`) pipes the object to `Stop-Service`, which stops the service.</span></span>
 
-### <span data-ttu-id="f08a4-120">Exemple 3 : arrêter un service qui a des services dépendants</span><span class="sxs-lookup"><span data-stu-id="f08a4-120">Example 3: Stop a service that has dependent services</span></span>
+### <span data-ttu-id="f7d6e-120">Exemple 3 : arrêter un service qui a des services dépendants</span><span class="sxs-lookup"><span data-stu-id="f7d6e-120">Example 3: Stop a service that has dependent services</span></span>
 
 ```
 PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
-<span data-ttu-id="f08a4-121">Cet exemple arrête le service IISAdmin sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f08a4-121">This example stops the IISAdmin service on the local computer.</span></span>
-<span data-ttu-id="f08a4-122">Étant donné que l’arrêt de ce service arrête également les services qui dépendent du service IISAdmin, il est préférable de faire précéder le service **Stop-service** d’une commande qui répertorie les services qui dépendent du service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f08a4-122">Because stopping this service also stops the services that depend on the IISAdmin service, it is best to precede **Stop-Service** with a command that lists the services that depend on the IISAdmin service.</span></span>
+<span data-ttu-id="f7d6e-121">Cet exemple arrête le service IISAdmin sur l’ordinateur local.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-121">This example stops the IISAdmin service on the local computer.</span></span> <span data-ttu-id="f7d6e-122">Étant donné que l’arrêt de ce service arrête également les services qui dépendent du service IISAdmin, il est préférable de faire précéder d' `Stop-Service` une commande qui répertorie les services qui dépendent du service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-122">Because stopping this service also stops the services that depend on the IISAdmin service, it is best to precede `Stop-Service` with a command that lists the services that depend on the IISAdmin service.</span></span>
 
-<span data-ttu-id="f08a4-123">La première commande répertorie les services qui dépendent d’IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f08a4-123">The first command lists the services that depend on IISAdmin.</span></span>
-<span data-ttu-id="f08a4-124">Elle utilise le **service d’accès aux services** pour récupérer un objet qui représente le service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f08a4-124">It uses **Get-Service** to get an object that represents the IISAdmin service.</span></span>
-<span data-ttu-id="f08a4-125">L’opérateur de pipeline (|) passe le résultat à l’applet de commande Format-List.</span><span class="sxs-lookup"><span data-stu-id="f08a4-125">The pipeline operator (|) passes the result to the Format-List cmdlet.</span></span>
-<span data-ttu-id="f08a4-126">La commande utilise le paramètre *Property* de **format-list** pour répertorier uniquement les propriétés **Name** et **DependentServices** du service.</span><span class="sxs-lookup"><span data-stu-id="f08a4-126">The command uses the *Property* parameter of **Format-List** to list only the **Name** and **DependentServices** properties of the service.</span></span>
+<span data-ttu-id="f7d6e-123">La première commande répertorie les services qui dépendent d’IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-123">The first command lists the services that depend on IISAdmin.</span></span> <span data-ttu-id="f7d6e-124">Elle utilise `Get-Service` pour récupérer un objet qui représente le service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-124">It uses `Get-Service` to get an object that represents the IISAdmin service.</span></span> <span data-ttu-id="f7d6e-125">L’opérateur de pipeline ( `|` ) transmet le résultat à l’applet de commande `Format-List` .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-125">The pipeline operator (`|`) passes the result to the `Format-List` cmdlet.</span></span> <span data-ttu-id="f7d6e-126">La commande utilise le paramètre **Property** de `Format-List` pour répertorier uniquement les propriétés **Name** et **DependentServices** du service.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-126">The command uses the **Property** parameter of `Format-List` to list only the **Name** and **DependentServices** properties of the service.</span></span>
 
-<span data-ttu-id="f08a4-127">La deuxième commande arrête le service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f08a4-127">The second command stops the IISAdmin service.</span></span>
-<span data-ttu-id="f08a4-128">Le paramètre *force* est requis pour arrêter un service qui a des services dépendants.</span><span class="sxs-lookup"><span data-stu-id="f08a4-128">The *Force* parameter is required to stop a service that has dependent services.</span></span>
-<span data-ttu-id="f08a4-129">La commande utilise le paramètre *Confirm* pour demander la confirmation de l’utilisateur avant d’arrêter chaque service.</span><span class="sxs-lookup"><span data-stu-id="f08a4-129">The command uses the *Confirm* parameter to request confirmation from the user before it stops each service.</span></span>
+<span data-ttu-id="f7d6e-127">La deuxième commande arrête le service IISAdmin.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-127">The second command stops the IISAdmin service.</span></span> <span data-ttu-id="f7d6e-128">Le paramètre **force** est requis pour arrêter un service qui a des services dépendants.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-128">The **Force** parameter is required to stop a service that has dependent services.</span></span> <span data-ttu-id="f7d6e-129">La commande utilise le paramètre **Confirm** pour demander la confirmation de l’utilisateur avant d’arrêter chaque service.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-129">The command uses the **Confirm** parameter to request confirmation from the user before it stops each service.</span></span>
 
-## <span data-ttu-id="f08a4-130">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="f08a4-130">PARAMETERS</span></span>
+## <span data-ttu-id="f7d6e-130">PARAMÈTRES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-130">PARAMETERS</span></span>
 
-### <span data-ttu-id="f08a4-131">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="f08a4-131">-DisplayName</span></span>
+### <span data-ttu-id="f7d6e-131">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="f7d6e-131">-DisplayName</span></span>
 
-<span data-ttu-id="f08a4-132">Spécifie les noms d’affichage des services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f08a4-132">Specifies the display names of the services to stop.</span></span>
-<span data-ttu-id="f08a4-133">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f08a4-133">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="f7d6e-132">Spécifie les noms d’affichage des services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-132">Specifies the display names of the services to stop.</span></span>
+<span data-ttu-id="f7d6e-133">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-133">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -105,12 +96,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="f08a4-134">-Exclude</span><span class="sxs-lookup"><span data-stu-id="f08a4-134">-Exclude</span></span>
+### <span data-ttu-id="f7d6e-134">-Exclude</span><span class="sxs-lookup"><span data-stu-id="f7d6e-134">-Exclude</span></span>
 
-<span data-ttu-id="f08a4-135">Spécifie les services que cette applet de commande omet.</span><span class="sxs-lookup"><span data-stu-id="f08a4-135">Specifies services that this cmdlet omits.</span></span>
-<span data-ttu-id="f08a4-136">La valeur de ce paramètre qualifie le paramètre *Name* .</span><span class="sxs-lookup"><span data-stu-id="f08a4-136">The value of this parameter qualifies the *Name* parameter.</span></span>
-<span data-ttu-id="f08a4-137">Entrez un élément ou un modèle de nom, tel que s \*.</span><span class="sxs-lookup"><span data-stu-id="f08a4-137">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="f08a4-138">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f08a4-138">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="f7d6e-135">Spécifie les services que cette applet de commande omet.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-135">Specifies services that this cmdlet omits.</span></span> <span data-ttu-id="f7d6e-136">La valeur de ce paramètre qualifie le paramètre **Name** .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-136">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="f7d6e-137">Entrez un élément ou un modèle de nom, tel que s \*.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-137">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="f7d6e-138">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-138">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -124,9 +112,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="f08a4-139">-Force</span><span class="sxs-lookup"><span data-stu-id="f08a4-139">-Force</span></span>
+### <span data-ttu-id="f7d6e-139">-Force</span><span class="sxs-lookup"><span data-stu-id="f7d6e-139">-Force</span></span>
 
-<span data-ttu-id="f08a4-140">Force l’applet de commande à arrêter un service même si ce service a des services dépendants.</span><span class="sxs-lookup"><span data-stu-id="f08a4-140">Forces the cmdlet to stop a service even if that service has dependent services.</span></span>
+<span data-ttu-id="f7d6e-140">Force l’applet de commande à arrêter un service même si ce service a des services dépendants.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-140">Forces the cmdlet to stop a service even if that service has dependent services.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,12 +128,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f08a4-141">-Include</span><span class="sxs-lookup"><span data-stu-id="f08a4-141">-Include</span></span>
+### <span data-ttu-id="f7d6e-141">-Include</span><span class="sxs-lookup"><span data-stu-id="f7d6e-141">-Include</span></span>
 
-<span data-ttu-id="f08a4-142">Spécifie les services que cette applet de commande arrête.</span><span class="sxs-lookup"><span data-stu-id="f08a4-142">Specifies services that this cmdlet stops.</span></span>
-<span data-ttu-id="f08a4-143">La valeur de ce paramètre qualifie le paramètre *Name* .</span><span class="sxs-lookup"><span data-stu-id="f08a4-143">The value of this parameter qualifies the *Name* parameter.</span></span>
-<span data-ttu-id="f08a4-144">Entrez un élément ou un modèle de nom, tel que s \*.</span><span class="sxs-lookup"><span data-stu-id="f08a4-144">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="f08a4-145">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f08a4-145">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="f7d6e-142">Spécifie les services que cette applet de commande arrête.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-142">Specifies services that this cmdlet stops.</span></span> <span data-ttu-id="f7d6e-143">La valeur de ce paramètre qualifie le paramètre **Name** .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-143">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="f7d6e-144">Entrez un élément ou un modèle de nom, tel que s \*.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-144">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="f7d6e-145">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-145">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -159,10 +144,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="f08a4-146">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f08a4-146">-InputObject</span></span>
+### <span data-ttu-id="f7d6e-146">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f7d6e-146">-InputObject</span></span>
 
-<span data-ttu-id="f08a4-147">Spécifie les objets **ServiceController** qui représentent les services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f08a4-147">Specifies **ServiceController** objects that represent the services to stop.</span></span>
-<span data-ttu-id="f08a4-148">Entrez une variable contenant les objets, ou tapez une commande ou une expression qui obtient ces objets.</span><span class="sxs-lookup"><span data-stu-id="f08a4-148">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="f7d6e-147">Spécifie les objets **ServiceController** qui représentent les services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-147">Specifies **ServiceController** objects that represent the services to stop.</span></span> <span data-ttu-id="f7d6e-148">Entrez une variable contenant les objets, ou tapez une commande ou une expression qui obtient ces objets.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-148">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -176,10 +160,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f08a4-149">-Name</span><span class="sxs-lookup"><span data-stu-id="f08a4-149">-Name</span></span>
+### <span data-ttu-id="f7d6e-149">-Name</span><span class="sxs-lookup"><span data-stu-id="f7d6e-149">-Name</span></span>
 
-<span data-ttu-id="f08a4-150">Spécifie les noms des services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f08a4-150">Specifies the service names of the services to stop.</span></span>
-<span data-ttu-id="f08a4-151">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f08a4-151">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="f7d6e-150">Spécifie les noms des services à arrêter.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-150">Specifies the service names of the services to stop.</span></span> <span data-ttu-id="f7d6e-151">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-151">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -193,26 +176,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="f08a4-152">-NOWAIT</span><span class="sxs-lookup"><span data-stu-id="f08a4-152">-NoWait</span></span>
+### <span data-ttu-id="f7d6e-152">-NOWAIT</span><span class="sxs-lookup"><span data-stu-id="f7d6e-152">-NoWait</span></span>
 
-<span data-ttu-id="f08a4-153">Indique que cette applet de commande utilise l’option no Wait.</span><span class="sxs-lookup"><span data-stu-id="f08a4-153">Indicates that this cmdlet uses the no wait option.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="f08a4-154">-PassThru</span><span class="sxs-lookup"><span data-stu-id="f08a4-154">-PassThru</span></span>
-
-<span data-ttu-id="f08a4-155">Retourne un objet qui représente le nouveau service.</span><span class="sxs-lookup"><span data-stu-id="f08a4-155">Returns an object that represents the service.</span></span>
-<span data-ttu-id="f08a4-156">Par défaut, cette applet de commande ne génère aucun résultat.</span><span class="sxs-lookup"><span data-stu-id="f08a4-156">By default, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="f7d6e-153">Indique que cette applet de commande utilise l’option no Wait.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-153">Indicates that this cmdlet uses the no wait option.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,9 +192,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f08a4-157">-Confirm</span><span class="sxs-lookup"><span data-stu-id="f08a4-157">-Confirm</span></span>
+### <span data-ttu-id="f7d6e-154">-PassThru</span><span class="sxs-lookup"><span data-stu-id="f7d6e-154">-PassThru</span></span>
 
-<span data-ttu-id="f08a4-158">Vous demande une confirmation avant d’exécuter l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f08a4-158">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="f7d6e-155">Retourne un objet qui représente le nouveau service.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-155">Returns an object that represents the service.</span></span> <span data-ttu-id="f7d6e-156">Par défaut, cette applet de commande ne génère aucun résultat.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-156">By default, this cmdlet does not generate any output.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f7d6e-157">-Confirm</span><span class="sxs-lookup"><span data-stu-id="f7d6e-157">-Confirm</span></span>
+
+<span data-ttu-id="f7d6e-158">Vous demande une confirmation avant d’exécuter l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-158">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,10 +224,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f08a4-159">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f08a4-159">-WhatIf</span></span>
+### <span data-ttu-id="f7d6e-159">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f7d6e-159">-WhatIf</span></span>
 
-<span data-ttu-id="f08a4-160">Montre ce qui se passe en cas d’exécution de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f08a4-160">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="f08a4-161">L’applet de commande n’est pas exécutée.</span><span class="sxs-lookup"><span data-stu-id="f08a4-161">The cmdlet is not run.</span></span>
+<span data-ttu-id="f7d6e-160">Montre ce qui se passe en cas d’exécution de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-160">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="f7d6e-161">L’applet de commande n’est pas exécutée.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-161">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -259,47 +240,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="f08a4-162">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f08a4-162">CommonParameters</span></span>
+### <span data-ttu-id="f7d6e-162">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f7d6e-162">CommonParameters</span></span>
 
-<span data-ttu-id="f08a4-163">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f08a4-163">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f08a4-164">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="f08a4-164">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="f7d6e-163">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-163">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f7d6e-164">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="f7d6e-164">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="f08a4-165">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="f08a4-165">INPUTS</span></span>
+## <span data-ttu-id="f7d6e-165">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-165">INPUTS</span></span>
 
-### <span data-ttu-id="f08a4-166">System. ServiceProcess. ServiceController, System. String</span><span class="sxs-lookup"><span data-stu-id="f08a4-166">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="f7d6e-166">System. ServiceProcess. ServiceController, System. String</span><span class="sxs-lookup"><span data-stu-id="f7d6e-166">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="f08a4-167">Vous pouvez diriger un objet de service ou une chaîne qui contient le nom d’un service vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f08a4-167">You can pipe a service object or a string that contains the name of a service to this cmdlet.</span></span>
+<span data-ttu-id="f7d6e-167">Vous pouvez diriger un objet de service ou une chaîne qui contient le nom d’un service vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-167">You can pipe a service object or a string that contains the name of a service to this cmdlet.</span></span>
 
-## <span data-ttu-id="f08a4-168">SORTIES</span><span class="sxs-lookup"><span data-stu-id="f08a4-168">OUTPUTS</span></span>
+## <span data-ttu-id="f7d6e-168">SORTIES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-168">OUTPUTS</span></span>
 
-### <span data-ttu-id="f08a4-169">Aucun, System. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="f08a4-169">None, System.ServiceProcess.ServiceController</span></span>
+### <span data-ttu-id="f7d6e-169">Aucun, System. ServiceProcess. ServiceController</span><span class="sxs-lookup"><span data-stu-id="f7d6e-169">None, System.ServiceProcess.ServiceController</span></span>
 
-<span data-ttu-id="f08a4-170">Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service, si vous utilisez le paramètre *PassThru* .</span><span class="sxs-lookup"><span data-stu-id="f08a4-170">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the service, if you use the *PassThru* parameter.</span></span>
-<span data-ttu-id="f08a4-171">Sinon, cette applet de commande ne génère aucune sortie.</span><span class="sxs-lookup"><span data-stu-id="f08a4-171">Otherwise, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="f7d6e-170">Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service, si vous utilisez le paramètre **PassThru** .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-170">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the service, if you use the **PassThru** parameter.</span></span> <span data-ttu-id="f7d6e-171">Sinon, cette applet de commande ne génère aucune sortie.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-171">Otherwise, this cmdlet does not generate any output.</span></span>
 
-## <span data-ttu-id="f08a4-172">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="f08a4-172">NOTES</span></span>
+## <span data-ttu-id="f7d6e-172">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-172">NOTES</span></span>
 
-* <span data-ttu-id="f08a4-173">Vous pouvez également faire référence à **Stop-service** par son alias intégré, **spsv** .</span><span class="sxs-lookup"><span data-stu-id="f08a4-173">You can also refer to **Stop-Service** by its built-in alias, **spsv** .</span></span> <span data-ttu-id="f08a4-174">Pour plus d'informations, consultez about_Aliases.</span><span class="sxs-lookup"><span data-stu-id="f08a4-174">For more information, see about_Aliases.</span></span>
+<span data-ttu-id="f7d6e-173">Vous pouvez également faire référence à `Stop-Service` par son alias intégré, **spsv**.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-173">You can also refer to `Stop-Service` by its built-in alias, **spsv**.</span></span> <span data-ttu-id="f7d6e-174">Pour plus d'informations, consultez about_Aliases.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-174">For more information, see about_Aliases.</span></span>
 
-  <span data-ttu-id="f08a4-175">**Stop-service** peut contrôler les services uniquement lorsque l’utilisateur actuel est autorisé à le faire.</span><span class="sxs-lookup"><span data-stu-id="f08a4-175">**Stop-Service** can control services only when the current user has permission to do this.</span></span>
-<span data-ttu-id="f08a4-176">Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.</span><span class="sxs-lookup"><span data-stu-id="f08a4-176">If a command does not work correctly, you might not have the required permissions.</span></span>
+<span data-ttu-id="f7d6e-175">`Stop-Service` peut contrôler les services uniquement lorsque l’utilisateur actuel est autorisé à le faire.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-175">`Stop-Service` can control services only when the current user has permission to do this.</span></span> <span data-ttu-id="f7d6e-176">Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.</span><span class="sxs-lookup"><span data-stu-id="f7d6e-176">If a command does not work correctly, you might not have the required permissions.</span></span>
 
-  <span data-ttu-id="f08a4-177">Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="f08a4-177">To find the service names and display names of the services on your system, type `Get-Service`.</span></span>
-<span data-ttu-id="f08a4-178">Les noms de service s’affichent dans la colonne **nom** et les noms d’affichage apparaissent dans la colonne **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="f08a4-178">The service names appear in the **Name** column and the display names appear in the **DisplayName** column.</span></span>
+<span data-ttu-id="f7d6e-177">Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez `Get-Service` .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-177">To find the service names and display names of the services on your system, type `Get-Service`.</span></span> <span data-ttu-id="f7d6e-178">Les noms de service s’affichent dans la colonne **nom** et les noms d’affichage apparaissent dans la colonne **DisplayName** .</span><span class="sxs-lookup"><span data-stu-id="f7d6e-178">The service names appear in the **Name** column and the display names appear in the **DisplayName** column.</span></span>
 
-*
+## <span data-ttu-id="f7d6e-179">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="f7d6e-179">RELATED LINKS</span></span>
 
-## <span data-ttu-id="f08a4-179">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="f08a4-179">RELATED LINKS</span></span>
+[<span data-ttu-id="f7d6e-180">Get-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-180">Get-Service</span></span>](Get-Service.md)
 
-[<span data-ttu-id="f08a4-180">Get-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-180">Get-Service</span></span>](Get-Service.md)
+[<span data-ttu-id="f7d6e-181">New-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-181">New-Service</span></span>](New-Service.md)
 
-[<span data-ttu-id="f08a4-181">New-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-181">New-Service</span></span>](New-Service.md)
+[<span data-ttu-id="f7d6e-182">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-182">Restart-Service</span></span>](Restart-Service.md)
 
-[<span data-ttu-id="f08a4-182">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-182">Restart-Service</span></span>](Restart-Service.md)
+[<span data-ttu-id="f7d6e-183">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-183">Resume-Service</span></span>](Resume-Service.md)
 
-[<span data-ttu-id="f08a4-183">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-183">Resume-Service</span></span>](Resume-Service.md)
+[<span data-ttu-id="f7d6e-184">Set-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-184">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="f08a4-184">Set-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-184">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="f7d6e-185">Start-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-185">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="f08a4-185">Start-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-185">Start-Service</span></span>](Start-Service.md)
-
-[<span data-ttu-id="f08a4-186">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="f08a4-186">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="f7d6e-186">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="f7d6e-186">Suspend-Service</span></span>](Suspend-Service.md)
