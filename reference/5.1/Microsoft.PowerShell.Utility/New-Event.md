@@ -7,36 +7,34 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: 9ab8ff192b150811b3cef7035c60f509e1fb5570
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c822711b7fda94dd6a2a391560100758ee41d233
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203197"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344641"
 ---
 # New-Event
 
 ## SYNOPSIS
 Crée un événement.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments] <PSObject[]>]
  [[-MessageData] <PSObject>] [<CommonParameters>]
 ```
 
-## Description
-L’applet **de commande New-Event** crée un événement personnalisé.
+## DESCRIPTION
+
+L' `New-Event` applet de commande crée un nouvel événement personnalisé.
 
 Vous pouvez utiliser des événements personnalisés pour informer les utilisateurs des changements d'état dans votre programme et de toute modification que votre programme peut détecter, y compris des conditions liées au matériel ou au système, de l'état de l'application, de l'état du disque, de l'état du réseau ou de l'achèvement d'une tâche en arrière-plan.
 
-Les événements personnalisés sont automatiquement ajoutés à la file d'attente des événements dans votre session chaque fois qu'ils sont déclenchés. Vous n'avez pas besoin de vous y abonner.
-Toutefois, si vous souhaitez transférer un événement à la session locale ou spécifier une action pour répondre à l'événement, utilisez l'applet de commande Register-EngineEvent pour vous abonner à l'événement personnalisé.
+Les événements personnalisés sont automatiquement ajoutés à la file d'attente des événements dans votre session chaque fois qu'ils sont déclenchés. Vous n'avez pas besoin de vous y abonner. Toutefois, si vous souhaitez transférer un événement à la session locale ou spécifier une action pour répondre à l’événement, utilisez l' `Register-EngineEvent` applet de commande pour vous abonner à l’événement personnalisé.
 
-Quand vous vous abonnez à un événement personnalisé, l'abonné aux événements est ajouté à votre session.
-Si vous annulez l'abonnement aux événements en utilisant l'applet de commande Unregister-Event, l'abonné aux événements et l'événement personnalisé sont supprimés de la session.
-Si vous ne vous abonnez pas à l'événement personnalisé, vous devez modifier les conditions du programme ou fermer la session Windows PowerShell pour supprimer l'événement.
+Quand vous vous abonnez à un événement personnalisé, l'abonné aux événements est ajouté à votre session. Si vous annulez l’abonnement à un événement à l’aide de l’applet de commande `Unregister-Event` , l’abonné aux événements et l’événement personnalisé sont supprimés de la session. Si vous ne vous abonnez pas à l’événement personnalisé, vous devez modifier les conditions du programme ou fermer la session PowerShell pour supprimer l’événement.
 
 ## EXEMPLES
 
@@ -46,8 +44,7 @@ Si vous ne vous abonnez pas à l'événement personnalisé, vous devez modifier 
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-Cette commande crée un nouvel événement dans la file d'attente d'événements de Windows PowerShell.
-Elle utilise un objet **Windows. Timer** pour envoyer l’événement.
+Cette commande crée un nouvel événement dans la file d’attente des événements PowerShell. Elle utilise un objet **Windows. Timer** pour envoyer l’événement.
 
 ### Exemple 2 : déclencher un événement en réponse à un autre événement
 
@@ -64,15 +61,14 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-Cet exemple de fonction utilise l’applet de commande **New-Event** pour déclencher un événement en réponse à un autre événement.
-La commande utilise l'applet de commande Register ObjectEvent pour s'abonner à l'événement Windows Management Instrumentation (WMI) qui est déclenché quand un nouveau processus est créé.
-La commande utilise le paramètre *action* de l’applet de commande pour appeler l’applet de commande **New-Event** , qui crée le nouvel événement.
+Cet exemple de fonction utilise l' `New-Event` applet de commande pour déclencher un événement en réponse à un autre événement. La commande utilise l' `Register-ObjectEvent` applet de commande pour s’abonner à l’événement Windows Management Instrumentation (WMI) qui est déclenché lors de la création d’un nouveau processus. La commande utilise le paramètre **action** de l’applet de commande pour appeler l’applet de commande `New-Event` , qui crée le nouvel événement.
 
-Étant donné que les événements déclenchés par **New-Event** sont automatiquement ajoutés à la file d’attente PowerShellevent Windows, vous n’avez pas besoin de vous inscrire pour cet événement.
+Étant donné que les événements `New-Event` déclenchés sont automatiquement ajoutés à la file d’attente des événements PowerShell, vous n’avez pas besoin de vous inscrire à cet événement.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Arguments
+
 Spécifie un objet qui contient des options relatives à l'événement.
 
 ```yaml
@@ -88,8 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -MessageData
-Spécifie des données supplémentaires associées à l'événement.
-La valeur de ce paramètre apparaît dans la propriété **MessageData** de l'objet d'événement.
+
+Spécifie des données supplémentaires associées à l'événement. La valeur de ce paramètre apparaît dans la propriété **MessageData** de l'objet d'événement.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -104,8 +100,8 @@ Accept wildcard characters: False
 ```
 
 ### -Expéditeur
-Spécifie l'objet qui déclenche l'événement.
-La valeur par défaut est le moteur Windows PowerShell.
+
+Spécifie l'objet qui déclenche l'événement. La valeur par défaut est le moteur PowerShell.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -120,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-Spécifie un nom pour le nouvel événement.
-Ce paramètre est obligatoire et il doit être unique dans la session.
+
+Spécifie un nom pour le nouvel événement. Ce paramètre est obligatoire et il doit être unique dans la session.
 
 La valeur de ce paramètre apparaît dans la propriété **SourceIdentifier** des événements.
 
@@ -138,11 +134,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
 
 ### Aucun
+
 Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ## SORTIES
@@ -151,7 +149,8 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ## REMARQUES
 
-Le nouvel événement personnalisé, l'abonnement aux événements et la file d'attente d'événements existent uniquement dans la session active. Si vous fermez cette session, la file d'attente d'événements est ignorée et l'abonnement aux événements est annulé.
+Le nouvel événement personnalisé, l'abonnement aux événements et la file d'attente d'événements existent uniquement dans la session active.
+Si vous fermez cette session, la file d'attente d'événements est ignorée et l'abonnement aux événements est annulé.
 
 ## LIENS CONNEXES
 

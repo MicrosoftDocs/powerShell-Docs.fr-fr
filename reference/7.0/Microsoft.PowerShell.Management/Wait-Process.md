@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
-ms.openlocfilehash: 07986e4c7e8ead25e99ffc67ff8f9ffa2241af9b
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 1325b1e604bc450f0aaec3ec4e99afa281aa1d91
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201157"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346173"
 ---
 # Wait-Process
 
 ## SYNOPSIS
 Attend l'arrêt des processus avant d'accepter une autre entrée.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -39,11 +39,11 @@ Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
 Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L’applet de commande **Wait-Process** attend l’arrêt d’un ou de plusieurs processus en cours d’exécution avant d’accepter l’entrée.
 Dans la console PowerShell, cette applet de commande supprime l’invite de commandes jusqu’à ce que les processus soient arrêtés.
-Vous pouvez spécifier un processus par nom de processus ou ID de processus (PID), ou diriger un objet processus vers **Wait-Process** .
+Vous pouvez spécifier un processus par nom de processus ou ID de processus (PID), ou diriger un objet processus vers **Wait-Process**.
 
 **Wait-Process** fonctionne uniquement sur les processus qui s’exécutent sur l’ordinateur local.
 
@@ -76,7 +76,7 @@ PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
 ```
 
-Ces commandes indiquent trois méthodes différentes pour spécifier un processus à **attendre** .
+Ces commandes indiquent trois méthodes différentes pour spécifier un processus à **attendre**.
 La première commande obtient le processus Notepad et le stocke dans la variable $p.
 
 La deuxième commande utilise le paramètre *ID* , la troisième commande utilise le paramètre *Name* et la quatrième commande utilise le paramètre *InputObject* .
@@ -92,7 +92,7 @@ PS C:\> Wait-Process -Name outlook, winword -Timeout 30
 Cette commande attend l’arrêt des processus Outlook et Winword pendant 30 secondes.
 Si les deux processus ne se sont pas arrêtés, l’applet de commande affiche une erreur sans fin d’exécution et l’invite de commandes.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Id
 
@@ -183,9 +183,9 @@ Cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
 
-* Cette applet de commande utilise la méthode **WaitForExit** de la classe System. Diagnostics. Process. Pour plus d’informations sur cette méthode, consultez le Kit de développement Microsoft .NET Framework SDK.
+L’applet de commande est uniquement prise en charge sur les plateformes Windows.
 
-*
+Cette applet de commande utilise la méthode **WaitForExit** de la classe **System. Diagnostics. Process** .
 
 ## LIENS CONNEXES
 

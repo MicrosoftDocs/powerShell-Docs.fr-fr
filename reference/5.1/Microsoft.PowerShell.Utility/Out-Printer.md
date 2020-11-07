@@ -7,25 +7,25 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: ec8d080da133310270d022b00f7f92d08ea3ca41
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: babe054f6ee643bc721b210556c46ed15dcdc00c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203177"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344658"
 ---
 # Out-Printer
 
 ## SYNOPSIS
 Envoie la sortie vers une imprimante.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Out-Printer` applet de commande envoie la sortie vers l’imprimante par défaut ou vers une autre imprimante, si celle-ci est spécifiée.
 
@@ -65,7 +65,7 @@ Out-Printer -InputObject $H
 
 `Get-Help` Obtient la version complète de la rubrique d’aide de `Get-CimInstance` et la stocke dans la `$H` variable. Le paramètre **InputObject** passe la valeur de `$H` à `Out-Printer` .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -InputObject
 

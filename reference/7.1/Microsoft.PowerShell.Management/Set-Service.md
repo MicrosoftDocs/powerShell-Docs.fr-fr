@@ -7,19 +7,19 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
-ms.openlocfilehash: 9881dccb78aab973cc6031e28308bbdd27b4da57
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cf9c44fecde650ab0b4747aea5910da49638f297
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205225"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344318"
 ---
 # Set-Service
 
 ## SYNOPSIS
 Démarre, arrête et interrompt un service, puis modifie ses propriétés.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -37,9 +37,9 @@ Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credent
  [-Status <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L' `Set-Service` applet de commande modifie les propriétés d’un service, telles que l' **État** , la **Description** , **DisplayName** et **startupType** . `Set-Service` permet de démarrer, d’arrêter, de suspendre ou de suspendre un service. Pour identifier un service, entrez son nom de service ou envoyez un objet de service. Ou, envoyez un nom de service ou un objet de service dans le pipeline à `Set-Service` .
+L' `Set-Service` applet de commande modifie les propriétés d’un service, telles que l' **État** , la **Description** , **DisplayName** et **startupType**. `Set-Service` permet de démarrer, d’arrêter, de suspendre ou de suspendre un service. Pour identifier un service, entrez son nom de service ou envoyez un objet de service. Ou, envoyez un nom de service ou un objet de service dans le pipeline à `Set-Service` .
 
 ## EXEMPLES
 
@@ -51,7 +51,7 @@ Dans cet exemple, le nom complet d’un service est modifié. Pour afficher le n
 Set-Service -Name LanmanWorkstation -DisplayName "LanMan Workstation"
 ```
 
-`Set-Service` utilise le paramètre **Name** pour spécifier le nom du service, **LanmanWorkstation** . Le paramètre **DisplayName** spécifie le nouveau nom complet, la **station de travail LanMan** .
+`Set-Service` utilise le paramètre **Name** pour spécifier le nom du service, **LanmanWorkstation**. Le paramètre **DisplayName** spécifie le nouveau nom complet, la **station de travail LanMan**.
 
 ### Exemple 2 : modifier le type de démarrage des services
 
@@ -68,7 +68,7 @@ Name  StartType   Status
 BITS  Automatic  Running
 ```
 
-`Set-Service` utilise le paramètre **Name** pour spécifier le nom du service, **bits** . Le paramètre **startupType** définit le service sur **Automatic** .
+`Set-Service` utilise le paramètre **Name** pour spécifier le nom du service, **bits**. Le paramètre **startupType** définit le service sur **Automatic**.
 
 `Get-Service` utilise le paramètre **Name** pour spécifier le service **bits** et envoie l’objet vers le pipeline. `Select-Object` utilise le paramètre **Property** pour afficher l’état du service **bits** .
 
@@ -117,7 +117,7 @@ Status   Name               DisplayName
 Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-`Set-Service` utilise le paramètre **Name** pour spécifier le service, **WinRM** . Le paramètre **Status** utilise la valeur **en cours d’exécution** pour démarrer le service. Le paramètre **PassThru** génère un objet **ServiceController** qui affiche les résultats.
+`Set-Service` utilise le paramètre **Name** pour spécifier le service, **WinRM**. Le paramètre **Status** utilise la valeur **en cours d’exécution** pour démarrer le service. Le paramètre **PassThru** génère un objet **ServiceController** qui affiche les résultats.
 
 ### Exemple 5 : suspendre un service
 
@@ -127,7 +127,7 @@ Cet exemple utilise le pipeline pour suspendre le service.
 Get-Service -Name Schedule | Set-Service -Status Paused
 ```
 
-`Get-Service` utilise le paramètre **Name** pour spécifier le service de **planification** et envoie l’objet dans le pipeline. `Set-Service` utilise le paramètre **Status** pour définir le service comme étant **suspendu** .
+`Get-Service` utilise le paramètre **Name** pour spécifier le service de **planification** et envoie l’objet dans le pipeline. `Set-Service` utilise le paramètre **Status** pour définir le service comme étant **suspendu**.
 
 ### Exemple 6 : arrêter un service
 
@@ -138,7 +138,7 @@ $S = Get-Service -Name Schedule
 Set-Service -InputObject $S -Status Stopped
 ```
 
-`Get-Service` utilise le paramètre **Name** pour spécifier le service, **Schedule** . L’objet est stocké dans la variable, `$S` . `Set-Service` utilise le paramètre **InputObject** et spécifie l’objet stocké `$S` . Le paramètre **Status** définit le service sur **Stopped** .
+`Get-Service` utilise le paramètre **Name** pour spécifier le service, **Schedule**. L’objet est stocké dans la variable, `$S` . `Set-Service` utilise le paramètre **InputObject** et spécifie l’objet stocké `$S` . Le paramètre **Status** définit le service sur **Stopped**.
 
 ### Exemple 7 : arrêter un service sur un système distant
 
@@ -155,7 +155,7 @@ Invoke-Command -ComputerName server01.contoso.com -Credential $Cred -ScriptBlock
 
 `Get-Credential` demande un nom d’utilisateur et un mot de passe, puis stocke les informations d’identification dans la `$Cred` variable. `Get-Service` utilise le paramètre **Name** pour spécifier le service de **planification** . L’objet est stocké dans la variable, `$S` .
 
-`Invoke-Command` utilise le paramètre **ComputerName** pour spécifier un ordinateur distant. Le paramètre **Credential** utilise la `$Cred` variable pour se connecter à l’ordinateur. Le **scriptblock** appelle `Set-Service` . Le paramètre **InputObject** spécifie l’objet de service stocké `$S` . Le paramètre **Status** définit le service sur **Stopped** .
+`Invoke-Command` utilise le paramètre **ComputerName** pour spécifier un ordinateur distant. Le paramètre **Credential** utilise la `$Cred` variable pour se connecter à l’ordinateur. Le **scriptblock** appelle `Set-Service` . Le paramètre **InputObject** spécifie l’objet de service stocké `$S` . Le paramètre **Status** définit le service sur **Stopped**.
 
 ### Exemple 8 : modifier les informations d’identification d’un service
 
@@ -179,7 +179,7 @@ Set-Service -Name "BITS" -SecurityDescriptorSddl $SDDL
 
 Le **SecurityDescriptor** est stocké dans la `$SDDL` variable. `Set-Service` utilise le paramètre **Name** pour spécifier le service **bits** . Le paramètre **SecurityDescriptorSddl** utilise `$SDDL` pour modifier le **SecurityDescriptor** du service **bits** .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Confirm
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 
 Spécifie une nouvelle description pour le service.
 
-La description du service s’affiche dans gestion de l' **ordinateur, services** . La **Description** n’est pas une propriété de l' `Get-Service` objet **ServiceController** . Pour afficher la description du service, utilisez `Get-CimInstance` qui retourne un objet **Win32_Service** qui représente le service.
+La description du service s’affiche dans gestion de l' **ordinateur, services**. La **Description** n’est pas une propriété de l' `Get-Service` objet **ServiceController** . Pour afficher la description du service, utilisez `Get-CimInstance` qui retourne un objet **Win32_Service** qui représente le service.
 
 ```yaml
 Type: System.String
@@ -352,9 +352,9 @@ Spécifie l’état du service.
 
 Les valeurs acceptables pour ce paramètre sont les suivantes :
 
-- **Suspendu** . suspend le service.
-- **Exécution en cours** . démarre le service.
-- **Arrêté** . arrête le service.
+- **Suspendu**. suspend le service.
+- **Exécution en cours**. démarre le service.
+- **Arrêté**. arrête le service.
 
 ```yaml
 Type: System.String
@@ -419,6 +419,8 @@ Par défaut, `Set-Service` ne retourne aucun objet. Utilisez le paramètre **Pas
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 `Set-Service` requiert des autorisations élevées. Utilisez l’option **exécuter en tant qu’administrateur** .
 
 `Set-Service` ne peut contrôler des services que si l’utilisateur actuel dispose des autorisations nécessaires pour gérer les services. Si une commande ne fonctionne pas correctement, vous ne disposez peut-être pas des autorisations requises.
@@ -442,4 +444,3 @@ Pour rechercher le nom de service ou le nom d’affichage d’un service, utilis
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

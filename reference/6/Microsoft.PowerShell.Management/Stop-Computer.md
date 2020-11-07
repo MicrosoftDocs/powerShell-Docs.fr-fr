@@ -7,19 +7,19 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
-ms.openlocfilehash: e7732c1eb243c0a4737c3f08a413fd20bbf2bf38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 8c6d70622f48183ed2f6bcd4526c305c70fe6eb2
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205593"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345083"
 ---
 # Stop-Computer
 
 ## SYNOPSIS
 Arrête les ordinateurs locaux et distants.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -28,7 +28,7 @@ Stop-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
  [[-Credential] <PSCredential>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Stop-Computer` applet de commande arrête l’ordinateur local et les ordinateurs distants.
 
@@ -96,7 +96,7 @@ Stop-Computer -ComputerName $s -Force -Credential $c
 
 `Stop-Computer` arrête les ordinateurs spécifiés avec la liste des ordinateurs du paramètre **ComputerName** dans la `$s` variable. Le paramètre **force** force un arrêt immédiat. Le paramètre **Credential** envoie les informations d’identification enregistrées dans la `$c` variable.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ComputerName
 
@@ -175,11 +175,11 @@ Accept wildcard characters: False
 
 ### -WsmanAuthentication
 
-Spécifie le mécanisme utilisé pour authentifier les informations d’identification de l’utilisateur lorsque cette applet de commande utilise le protocole WSMan. La valeur par défaut est **Default** .
+Spécifie le mécanisme utilisé pour authentifier les informations d’identification de l’utilisateur lorsque cette applet de commande utilise le protocole WSMan. La valeur par défaut est **Default**.
 
 Les valeurs valides pour ce paramètre sont :
 
-- Basic
+- De base
 - CredSSP
 - Default
 - Digest
@@ -237,6 +237,8 @@ Vous ne pouvez pas diriger d’entrée vers cette applet de commande.
 ### Aucun
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Cette applet de commande fonctionne uniquement sur Windows et utilise la méthode **Win32Shutdown** de la classe WMI **Win32_OperatingSystem** . Cette méthode requiert l’activation du privilège **SeShutdownPrivilege** pour le compte d’utilisateur utilisé pour redémarrer l’ordinateur.
 

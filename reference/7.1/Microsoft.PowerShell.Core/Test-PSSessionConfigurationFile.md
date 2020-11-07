@@ -7,25 +7,25 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-PSSessionConfigurationFile
-ms.openlocfilehash: 625611246ea5a07fba16ecb86a2c8c48345d9ea5
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6786210fb2b89102c6193c755168af4264fae58c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202621"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345797"
 ---
 # Test-PSSessionConfigurationFile
 
 ## SYNOPSIS
 Vérifie les clés et les valeurs d'un fichier de configuration de session.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Test-PSSessionConfigurationFile [-Path] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 Cette applet de commande vérifie qu’un fichier de configuration de session contient des clés valides et que les valeurs sont de type correct. Pour les valeurs énumérées, l'applet de commande vérifie que les valeurs spécifiées sont valides.
 
@@ -90,9 +90,9 @@ True
 
 La propriété **ConfigFilePath** d’une configuration de session contient le chemin d’accès du fichier de configuration de session utilisé dans la configuration de session, le cas échéant.
 
-Si la valeur de la propriété **ConfigFilePath** est remplie (vraie), la commande obtient (affiche) la valeur de la propriété **ConfigFilePath** . Elle utilise ensuite l' `Test-PSSessionConfigurationFile` applet de commande pour tester le fichier dans la valeur **ConfigFilePath** . Le paramètre **Verbose** retourne l'erreur de fichier en cas d'échec du test du fichier.
+Si la valeur de la propriété **ConfigFilePath** est remplie (vraie), la commande obtient (affiche) la valeur de la propriété **ConfigFilePath**. Elle utilise ensuite l' `Test-PSSessionConfigurationFile` applet de commande pour tester le fichier dans la valeur **ConfigFilePath** . Le paramètre **Verbose** retourne l'erreur de fichier en cas d'échec du test du fichier.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Path
 
@@ -126,6 +126,8 @@ Vous pouvez diriger un chemin d’accès de fichier de configuration de session 
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 ## LIENS CONNEXES
 
 [Disable-PSSessionConfiguration](Disable-PSSessionConfiguration.md)
@@ -151,4 +153,3 @@ Vous pouvez diriger un chemin d’accès de fichier de configuration de session 
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

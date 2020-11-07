@@ -7,19 +7,19 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: ce52714d93cfce55ca36f89f16e37092b35c6b24
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6417881880cb7f317e7a42d6749b8b7f2cb712fb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204878"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345474"
 ---
 # Register-PSSessionConfiguration
 
 ## SYNOPSIS
 Crée et enregistre une configuration de session.
 
-## SYNTAX
+## SYNTAXE
 
 ### NameParameterSet (par défaut)
 
@@ -56,7 +56,7 @@ Register-PSSessionConfiguration [-ProcessorArchitecture <String>] [-Name] <Strin
  [-TransportOption <PSTransportOption>] -Path <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Register-PSSessionConfiguration` applet de commande crée et enregistre une nouvelle configuration de session sur l’ordinateur local. Il s’agit d’une applet de commande avancée que vous pouvez utiliser pour créer des sessions personnalisées pour les utilisateurs distants.
 
@@ -157,7 +157,7 @@ Le script contient une commande unique qui utilise l'appel de source de type «�
 
 Pour plus d'informations sur les profils, consultez [about_Profiles](./About/about_Profiles.md). Pour plus d'informations sur l'appel de source de type « dot sourcing », consultez [about_Scopes](./About/about_Scopes.md).
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AccessMode
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 
 ### -ConfigurationTypeName
 
-Spécifie le nom qualifié complet du type Microsoft .NET Framework qui est utilisé pour cette configuration. Le type que vous spécifiez doit implémenter la classe **System.Management.Automation.Remoting.PSSessionConfiguration** .
+Spécifie le nom qualifié complet du type Microsoft .NET Framework qui est utilisé pour cette configuration. Le type que vous spécifiez doit implémenter la classe **System.Management.Automation.Remoting.PSSessionConfiguration**.
 
 Pour spécifier le fichier d’assembly ( \* . dll) qui implémente le type de configuration, spécifiez les paramètres **AssemblyName** et **ApplicationBase** .
 
@@ -547,7 +547,7 @@ Spécifie la manière dont les threads sont créés et utilisés lors de l’ex�
 - UseCurrentThread
 - UseNewThread
 
-La valeur par défaut est **UseCurrentThread** .
+La valeur par défaut est **UseCurrentThread**.
 
 Pour plus d’informations, consultez [énumération PSThreadOptions](/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=powershellsdk-1.1.0).
 
@@ -647,6 +647,8 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 ### Microsoft. WSMan. Management. WSManConfigContainerElement
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 Pour exécuter cette applet de commande, vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 

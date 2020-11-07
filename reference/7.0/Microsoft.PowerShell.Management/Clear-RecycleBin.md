@@ -7,19 +7,19 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 85e4ac857135a6df8215dcfe415057dd8aacde86
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 4131232e7afb2e0a213bbe11f5da7ee3a0071a59
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201481"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344301"
 ---
 # Clear-RecycleBin
 
 ## SYNOPSIS
 Efface le contenu d’une corbeille.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -27,7 +27,7 @@ Efface le contenu d’une corbeille.
 Clear-RecycleBin [[-DriveLetter] <String[]>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Clear-RecycleBin` applet de commande supprime le contenu de la corbeille d’un ordinateur. Cette action est semblable à l’utilisation de la **Corbeille vide** Windows.
 
@@ -74,7 +74,7 @@ Clear-RecycleBin -Force
 
 Une alternative consiste à remplacer `-Force` par `-Confirm:$false` .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -LettreLecteur
 
@@ -151,5 +151,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### Aucun
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 ## LIENS CONNEXES

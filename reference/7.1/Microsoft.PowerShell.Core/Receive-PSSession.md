@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 71a17d71cf7bfdbc6ef14d0eb6949a366cb8c233
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: e9b99b824a0ffe59e4572a57998010667788b59d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205677"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345933"
 ---
 # Receive-PSSession
 
@@ -20,7 +20,7 @@ ms.locfileid: "93205677"
 
 Obtient les résultats des commandes dans des sessions déconnectées
 
-## SYNTAX
+## SYNTAXE
 
 ### Session (par défaut)
 
@@ -86,7 +86,7 @@ Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Receive-PSSession` applet de commande obtient les résultats des commandes qui s’exécutent dans les sessions PowerShell ( **PSSession** ) qui ont été déconnectées. Si la session est actuellement connectée, `Receive-PSSession` obtient les résultats des commandes qui étaient en cours d’exécution lorsque la session a été déconnectée. Si la session est encore déconnectée, `Receive-PSSession` se connecte à la session, reprend toutes les commandes qui ont été interrompues et obtient les résultats des commandes en cours d’exécution dans la session.
 
@@ -207,7 +207,7 @@ L' `Invoke-Command` applet de commande exécute un script dans la session de la 
 
 Lorsque l’ordinateur redémarre, l’utilisateur démarre PowerShell et exécute une `Get-PSSession` commande pour obtenir les sessions sur l’ordinateur SERVEUR01. La sortie indique que la session **Active Directory** existe toujours sur l’ordinateur SERVEUR01. L' **État** indique que la session **Active Directory** est déconnectée. La valeur de **disponibilité** None indique que la session n’est connectée à aucune session cliente.
 
-L' `Receive-PSSession` applet de commande se reconnecte à la session **ad** et obtient les résultats du script qui s’est exécuté dans la session. La commande utilise le paramètre **distarget** pour demander les résultats dans un travail nommé **ADJob** . La commande retourne un objet de traitement et la sortie indique que le script est toujours en cours d’exécution.
+L' `Receive-PSSession` applet de commande se reconnecte à la session **ad** et obtient les résultats du script qui s’est exécuté dans la session. La commande utilise le paramètre **distarget** pour demander les résultats dans un travail nommé **ADJob**. La commande retourne un objet de traitement et la sortie indique que le script est toujours en cours d’exécution.
 
 L' `Get-PSSession` applet de commande est utilisée pour vérifier l’état de la tâche. La sortie confirme que l' `Receive-PSSession` applet de commande s’est reconnectée à la session **ad** , qui est désormais ouverte et disponible pour les commandes. Et, le script a repris l’exécution et obtient les résultats du script.
 
@@ -323,7 +323,7 @@ L' `Connect-PSSession` applet de commande est exécutée dans la même session c
 
 L' `Receive-PSSession` applet de commande obtient les résultats du travail qui s’exécutait dans la session. Étant donné que la commande est exécutée dans la même session, `Receive-PSSession` retourne les résultats sous la forme d’un travail par défaut et réutilise le même objet de traitement. La commande enregistre la tâche dans la `$j2` variable. L' `Receive-Job` applet de commande obtient les résultats de la tâche dans la `$j` variable.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AllowRedirection
 
@@ -331,7 +331,7 @@ Indique que cette applet de commande autorise la redirection de cette connexion 
 
 Quand vous utilisez le paramètre **ConnectionURI** , la destination distante peut retourner une instruction pour effectuer une redirection vers un autre URI. Par défaut, PowerShell ne redirige pas les connexions, mais vous pouvez utiliser ce paramètre pour lui permettre de rediriger la connexion.
 
-Vous pouvez également limiter le nombre de fois où la connexion est redirigée en modifiant la valeur de l'option de session **MaximumConnectionRedirectionCount** . Utilisez le paramètre **MaximumRedirection** de l' `New-PSSessionOption` applet de commande ou définissez la propriété **MaximumConnectionRedirectionCount** de la `$PSSessionOption` variable de préférence. La valeur par défaut est 5.
+Vous pouvez également limiter le nombre de fois où la connexion est redirigée en modifiant la valeur de l'option de session **MaximumConnectionRedirectionCount**. Utilisez le paramètre **MaximumRedirection** de l' `New-PSSessionOption` applet de commande ou définissez la propriété **MaximumConnectionRedirectionCount** de la `$PSSessionOption` variable de préférence. La valeur par défaut est 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -372,7 +372,7 @@ Accept wildcard characters: False
 Spécifie le mécanisme utilisé pour authentifier les informations d’identification de l’utilisateur dans la commande pour se reconnecter à une session déconnectée. Les valeurs valides pour ce paramètre sont :
 
 - Default
-- Basic
+- De base
 - CredSSP
 - Digest
 - Kerberos
@@ -537,7 +537,7 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Spécifie l'ID d'instance de la session déconnectée. L’ID d’instance est un GUID qui identifie de façon unique une **session PSSession** sur un ordinateur local ou distant. L’ID d’instance est stocké dans la propriété **InstanceID** de la **session PSSession** .
+Spécifie l'ID d'instance de la session déconnectée. L’ID d’instance est un GUID qui identifie de façon unique une **session PSSession** sur un ordinateur local ou distant. L’ID d’instance est stocké dans la propriété **InstanceID** de la **session PSSession**.
 
 ```yaml
 Type: System.Guid
@@ -595,8 +595,8 @@ Accept wildcard characters: False
 
 Détermine la façon dont les résultats de la session sont retournés. Les valeurs valides pour ce paramètre sont :
 
-- **Travail** . retourne les résultats de façon asynchrone dans un objet de traitement. Vous pouvez utiliser le paramètre **JobName** pour spécifier un nom ou un nouveau nom pour la tâche.
-- **Hôte** . retourne les résultats dans la ligne de commande (synchrone). Si la commande est reprise ou si les résultats se composent d'un grand nombre d'objets, la réponse peut être retardée.
+- **Travail**. retourne les résultats de façon asynchrone dans un objet de traitement. Vous pouvez utiliser le paramètre **JobName** pour spécifier un nom ou un nouveau nom pour la tâche.
+- **Hôte**. retourne les résultats dans la ligne de commande (synchrone). Si la commande est reprise ou si les résultats se composent d'un grand nombre d'objets, la réponse peut être retardée.
 
 La valeur par défaut du paramètre de **précible** est host. Si la commande qui est reçue dans une session déconnectée a été démarrée dans la session active, la valeur par défaut du paramètre de la **cible** est le formulaire dans lequel la commande a été démarrée. Si la commande a été démarrée en tant que tâche, elle est retournée par défaut en tant que tâche. Dans le cas contraire, elle est retournée au programme hôte par défaut.
 
@@ -759,6 +759,8 @@ Cette applet de commande retourne les résultats des commandes exécutées dans 
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 `Receive-PSSession` Obtient les résultats uniquement à partir des sessions qui ont été déconnectées. Seules les sessions connectées à, ou qui se terminent à, les ordinateurs qui exécutent PowerShell 3,0 ou des versions ultérieures peuvent être déconnectés et reconnectés.
 
 Si les commandes qui étaient en cours d’exécution dans la session déconnectée n’ont pas généré de résultats ou si les résultats ont déjà été retournés à une autre session, `Receive-PSSession` ne génère aucune sortie.
@@ -767,7 +769,7 @@ Le mode de mise en mémoire tampon de sortie d’une session détermine la mani�
 
 Vous ne pouvez pas modifier la valeur du délai d’inactivité d’une **session PSSession** quand vous vous connectez à la **session PSSession** ou recevez des résultats. Le paramètre **SessionOption** de `Receive-PSSession` prend un objet **SessionOption** qui a une valeur **IdleTimeout** . Toutefois, la valeur **IdleTimeout** de l’objet **SessionOption** et la valeur **IdleTimeout** de la `$PSSessionOption` variable sont ignorées lorsqu’il se connecte à une **session PSSession** ou reçoit des résultats.
 
-- Vous pouvez définir et modifier le délai d’inactivité d’une **session PSSession** quand vous créez la **session PSSession** , à l’aide des `New-PSSession` applets de commande ou `Invoke-Command` , et lorsque vous vous déconnectez de la **session PSSession** .
+- Vous pouvez définir et modifier le délai d’inactivité d’une **session PSSession** quand vous créez la **session PSSession** , à l’aide des `New-PSSession` applets de commande ou `Invoke-Command` , et lorsque vous vous déconnectez de la **session PSSession**.
 - La propriété **IdleTimeout** d’une session **PSSession** est critique pour les sessions déconnectées, car elle détermine la durée pendant laquelle une session déconnectée est conservée sur l’ordinateur distant. Une session déconnectée est considérée comme inactive dès qu'elle est déconnectée, même si elle comprend des commandes en cours d'exécution.
 
 Si vous démarrez un travail démarrer un travail dans une session à distance à l’aide du paramètre **AsJob** de l’applet de commande `Invoke-Command` , l’objet de traitement est créé dans la session active, même si la tâche est exécutée dans la session à distance. Si vous déconnectez la session à distance, l’objet de traitement de la session active est déconnecté du travail. L’objet de traitement contient tous les résultats qui lui ont été retournés, mais ne reçoit pas les nouveaux résultats de la tâche dans la session déconnectée.
@@ -785,7 +787,7 @@ Quand une session qui contient un travail en cours d’exécution est déconnect
 Lorsque vous déconnectez une session **PSSession** , l’état de session est disconnected et la disponibilité est None.
 
 - La valeur de la propriété **State** dépend de la session active. La valeur Disconnected signifie que la session **PSSession** n’est pas connectée à la session active. Toutefois, cela ne signifie pas que la **session PSSession** est déconnectée de toutes les sessions. Elle peut être connectée à une autre session.
-  Pour déterminer si vous pouvez vous connecter ou vous reconnecter à la session, utilisez la propriété **Availability** .
+  Pour déterminer si vous pouvez vous connecter ou vous reconnecter à la session, utilisez la propriété **Availability**.
 - Une propriété **Availability** avec la valeur None signifie que vous pouvez vous connecter à la session. La valeur Busy indique que vous ne pouvez pas vous connecter à la session **PSSession** , car elle est connectée à une autre session.
 - Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) dans MSDN Library.
 - Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).

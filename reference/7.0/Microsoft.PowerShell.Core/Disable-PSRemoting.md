@@ -7,25 +7,25 @@ ms.date: 01/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
-ms.openlocfilehash: b51d5c2d21734a8db31a6e257579cca68809ebc5
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f4fe65ec687ca39c1356dd5c9a590899c8b3789c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201785"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346001"
 ---
 # Disable-PSRemoting
 
 ## SYNOPSIS
 Empêche les points de terminaison PowerShell de recevoir des connexions à distance.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Disable-PSRemoting [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Disable-PSRemoting` applet de commande bloque l’accès à distance à toutes les configurations de point de terminaison de session PowerShell version 6 et ultérieures sur l’ordinateur local. Elle n’affecte pas les configurations de point de terminaison Windows PowerShell. Pour désactiver les configurations de point de terminaison de session Windows PowerShell, exécutez `Disable-PSRemoting` la commande à partir d’une session Windows PowerShell.
 
@@ -407,7 +407,7 @@ PowerShell.6         NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrat
 PowerShell.6.2.0     NT AUTHORITY\NETWORK AccessDenied, NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Adm ...
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Confirm
 
@@ -474,6 +474,8 @@ Vous ne pouvez pas diriger d’objets vers cette applet de commande.
 Cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 - La désactivation des configurations de session n’annule pas toutes les modifications apportées par les `Enable-PSRemoting` applets de commande ou `Enable-PSSessionConfiguration` . Vous devrez peut-être annuler manuellement les modifications suivantes.
 

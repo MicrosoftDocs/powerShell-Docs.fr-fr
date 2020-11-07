@@ -7,19 +7,19 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
-ms.openlocfilehash: 8a769959295de0eed7776cc972b007514cfe8734
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 30950cb31a6d70b61416883a16603262c297f0d1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205613"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345406"
 ---
 # Set-PSSessionConfiguration
 
 ## SYNOPSIS
 Modifie les propriétés d'une configuration de session enregistrée.
 
-## SYNTAX
+## SYNTAXE
 
 ### NameParameterSet (par défaut)
 
@@ -55,7 +55,7 @@ Set-PSSessionConfiguration [-Name] <String> [-RunAsCredential <PSCredential>]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-PSSessionConfiguration` applet de commande modifie les propriétés des configurations de session sur l’ordinateur local.
 
@@ -74,7 +74,7 @@ Pour afficher les propriétés d’une configuration de session, utilisez l’ap
 
 Cet exemple montre comment ajouter et supprimer un script de démarrage d’une configuration.
 
-La première commande crée la configuration **AdminShell** . La deuxième commande ajoute le `AdminConfig.ps1` script à la configuration. La modification est effective quand vous redémarrez **WinRM** .
+La première commande crée la configuration **AdminShell** . La deuxième commande ajoute le `AdminConfig.ps1` script à la configuration. La modification est effective quand vous redémarrez **WinRM**.
 La troisième commande supprime le `AdminConfig.ps1` script de la configuration.
 
 ```powershell
@@ -158,7 +158,7 @@ PSVersion     2.0
 startupscript c:\ps-test\Maintenance.ps1
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AccessMode
 
@@ -169,7 +169,7 @@ Active et désactive la configuration de session et détermine si elle peut êtr
   Les utilisateurs de l’ordinateur local peuvent utiliser la configuration de session pour créer une session de bouclage locale sur le même ordinateur, mais l’accès est refusé aux utilisateurs distants.
 - Distant. supprime les entrées **Deny_All** et **Network_Deny_All** des descripteurs de sécurité de la configuration de session. Les utilisateurs des ordinateurs locaux et distants peuvent utiliser la configuration de session pour créer des sessions et exécuter des commandes sur cet ordinateur.
 
-La valeur par défaut est **Remote** .
+La valeur par défaut est **Remote**.
 
 D’autres applets de commande peuvent remplacer la valeur de ce paramètre ultérieurement. Par exemple, l' `Enable-PSRemoting` applet de commande active toutes les configurations de session sur l’ordinateur et autorise l’accès à distance à celles-ci, et l’applet de commande `Disable-PSRemoting` autorise uniquement l’accès local à toutes les configurations de session sur l’ordinateur.
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 
 ### -ConfigurationTypeName
 
-Spécifie le type de la configuration de session définie dans l'assembly dans le paramètre **AssemblyName** . Le type que vous spécifiez doit implémenter la classe **System.Management.Automation.Remoting.PSSessionConfiguration** .
+Spécifie le type de la configuration de session définie dans l'assembly dans le paramètre **AssemblyName**. Le type que vous spécifiez doit implémenter la classe **System.Management.Automation.Remoting.PSSessionConfiguration**.
 
 Ce paramètre est obligatoire quand vous spécifiez un nom d'assembly.
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 
 Supprime toutes les invites utilisateur et redémarre le service **WinRM** sans demander confirmation. Le redémarrage du service permet d'appliquer la modification de configuration.
 
-Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart** .
+Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -506,7 +506,7 @@ Spécifie le paramètre des options de thread dans la configuration. Ce paramèt
 - UseCurrentThread
 - UseNewThread
 
-La valeur par défaut est **UseCurrentThread** .
+La valeur par défaut est **UseCurrentThread**.
 
 Pour plus d’informations, consultez [énumération PSThreadOptions](/dotnet/api/system.management.automation.runspaces.psthreadoptions).
 
@@ -610,6 +610,8 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Pour exécuter cette applet de commande, démarrez PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
 
 L' `Set-PSSessionConfiguration` applet de commande ne modifie pas le nom de la configuration et le fournisseur **WSMan** ne prend pas en charge l’applet de commande `Rename-Item` . Pour modifier le nom d’une configuration de session, utilisez l' `Unregister-PSSessionConfiguration` applet de commande pour supprimer la configuration, puis utilisez l' `Register-PSSessionConfiguration` applet de commande pour créer et inscrire une nouvelle configuration de session.
@@ -619,7 +621,7 @@ Vous pouvez utiliser l' `Set-PSSessionConfiguration` applet de commande pour mod
 Les propriétés d'un objet de configuration de session varient selon les options définies pour la configuration de session et les valeurs de ces options. En outre, les configurations de sessions qui utilisent un fichier de configuration de session ont des propriétés supplémentaires.
 
 Vous pouvez utiliser les commandes du lecteur WSMan pour modifier les propriétés des configurations de session.
-Toutefois, vous ne pouvez pas utiliser le lecteur WSMan : dans PowerShell 2,0 pour modifier les propriétés de configuration de session introduites dans PowerShell 3,0, telles que **OutputBufferingMode** . Les commandes Windows PowerShell 2.0 ne génèrent pas d'erreur, mais elles sont inefficaces. Pour modifier les propriétés introduites dans PowerShell 3,0, utilisez le lecteur WSMan : dans PowerShell 3,0.
+Toutefois, vous ne pouvez pas utiliser le lecteur WSMan : dans PowerShell 2,0 pour modifier les propriétés de configuration de session introduites dans PowerShell 3,0, telles que **OutputBufferingMode**. Les commandes Windows PowerShell 2.0 ne génèrent pas d'erreur, mais elles sont inefficaces. Pour modifier les propriétés introduites dans PowerShell 3,0, utilisez le lecteur WSMan : dans PowerShell 3,0.
 
 ## LIENS CONNEXES
 

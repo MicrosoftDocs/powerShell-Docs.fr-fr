@@ -7,19 +7,19 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 8c10e9e97c3371e8de46ed76e4c8a1195bc21513
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 425b5e56286c22b6595954916d8aa66eec807d83
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203809"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345253"
 ---
 # Get-Service
 
 ## SYNOPSIS
 Obtient les services sur l’ordinateur.
 
-## SYNTAX
+## SYNTAXE
 
 ### Valeur par défaut (par défaut)
 
@@ -42,7 +42,7 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exc
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-Service` applet de commande obtient les objets qui représentent les services sur un ordinateur, y compris les services en cours d’exécution et arrêtés. Par défaut, lorsque `Get-Service` est exécuté sans paramètres, tous les services de l’ordinateur local sont retournés.
 
@@ -165,7 +165,7 @@ Cet exemple obtient le service WinRM sur l’ordinateur local. La chaîne de nom
 "WinRM" | Get-Service
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -DependentServices
 
@@ -297,6 +297,8 @@ Vous pouvez diriger un objet de service ou un nom de service vers cette applet d
 Cette applet de commande retourne des objets qui représentent les services sur l’ordinateur.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 À compter de PowerShell 6,0, les propriétés suivantes sont ajoutées aux objets **ServiceController** : **nom d’utilisateur** , **Description** , **DelayedAutoStart** , **BinaryPathName** et **startupType** .
 
