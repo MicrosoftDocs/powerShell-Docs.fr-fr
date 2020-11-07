@@ -7,26 +7,26 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSSessionConfiguration
-ms.openlocfilehash: 212a745276a51fce2ec3b00ef59629d4480d8661
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5bc167bdffee4ae7f75d4c18e31110d9291cc53e
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205157"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342193"
 ---
 # Enable-PSSessionConfiguration
 
 ## SYNOPSIS
 Active les configurations de session sur l'ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Enable-PSSessionConfiguration [[-Name] <String[]>] [-Force] [-SecurityDescriptorSddl <String>]
  [-SkipNetworkProfileCheck] [-NoServiceRestart] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Enable-PSSessionConfiguration` applet de commande active les configurations de session inscrites qui ont été désactivées, par exemple à l’aide des `Disable-PSSessionConfiguration` `Disable-PSRemoting` applets de commande ou, ou le paramètre **AccessMode** de `Register-PSSessionConfiguration` . Il s'agit d'une applet de commande avancée conçue pour être utilisée par les administrateurs système pour gérer des configurations de sessions personnalisées pour leurs utilisateurs.
 
@@ -73,13 +73,13 @@ $sddl = "O:NSG:BAD:P(A;;GXGWGR;;;BA)(A;;GAGR;;;S-1-5-21-123456789-188441444-3100
 Enable-PSSessionConfiguration -Name MaintenanceShell -SecurityDescriptorSDDL $sddl
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Force
 
 Indique que l’applet de commande ne vous invite pas à confirmer et à redémarrer le service WinRM sans demander confirmation. Le redémarrage du service permet d'appliquer la modification de configuration.
 
-Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart** .
+Pour éviter un redémarrage et supprimer l'invite de redémarrage, utilisez le paramètre **NoServiceRestart**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -220,6 +220,8 @@ Cette applet de commande ne retourne pas d'objets.
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Pour utiliser cette applet de commande, vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 ## LIENS CONNEXES
@@ -245,4 +247,3 @@ Pour utiliser cette applet de commande, vous devez démarrer PowerShell à l’a
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

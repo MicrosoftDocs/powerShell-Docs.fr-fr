@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
-ms.openlocfilehash: edbe7f93a3bef4b82adbba6b8a39b761fa54c28e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 44d9ba20bfc8a9423b8a1e67477e95da424c43a7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202438"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343774"
 ---
 # Restart-Service
 
 ## SYNOPSIS
 Arrête, puis démarre un ou plusieurs services.
 
-## SYNTAX
+## SYNTAXE
 
 ### InputObject (valeur par défaut)
 
@@ -42,11 +42,9 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L’applet de commande **Restart-Service** envoie un message d’arrêt, puis un message de démarrage au contrôleur de services Windows pour un service spécifié.
-Si un service est déjà arrêté, il est démarré sans notification d'erreur.
-Vous pouvez spécifier les services par leur nom de service ou leur nom d’affichage, ou vous pouvez utiliser le paramètre *InputObject* pour passer un objet qui représente chaque service que vous souhaitez redémarrer.
+L' `Restart-Service` applet de commande envoie un message d’arrêt, puis un message de démarrage au contrôleur de services Windows pour un service spécifié. Si un service est déjà arrêté, il est démarré sans notification d'erreur. Vous pouvez spécifier les services par leur nom de service ou leur nom d’affichage, ou vous pouvez utiliser le paramètre **InputObject** pour passer un objet qui représente chaque service que vous souhaitez redémarrer.
 
 ## EXEMPLES
 
@@ -74,18 +72,15 @@ PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Rest
 
 Cette commande démarre tous les services réseau arrêtés sur l'ordinateur.
 
-Cette commande utilise l’applet de commande Get-Service pour récupérer des objets qui représentent les services dont le nom de service commence par net.
-L’opérateur de pipeline (|) envoie l’objet de services à l’applet de commande Where-Object, qui sélectionne uniquement les services dont l’État est arrêté.
-Un autre opérateur de pipeline envoie les services sélectionnés à **Restart-Service** .
+Cette commande utilise la `Get-Service` cmdlet pour récupérer des objets qui représentent les services dont le nom de service commence par net. L’opérateur de pipeline ( `|` ) envoie l’objet de services à l’applet de commande `Where-Object` , qui sélectionne uniquement les services dont l’État est arrêté. Un autre opérateur de pipeline envoie les services sélectionnés à `Restart-Service` .
 
-Dans la pratique, vous utiliseriez le paramètre *WhatIf* pour déterminer l’effet de la commande avant de l’exécuter.
+Dans la pratique, vous utiliseriez le paramètre **WhatIf** pour déterminer l’effet de la commande avant de l’exécuter.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -DisplayName
 
-Spécifie les noms d’affichage des services à redémarrer.
-Les caractères génériques sont autorisés.
+Spécifie les noms d’affichage des services à redémarrer. Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -101,10 +96,7 @@ Accept wildcard characters: True
 
 ### -Exclude
 
-Spécifie les services que cette applet de commande omet.
-La valeur de ce paramètre qualifie le paramètre *Name* .
-Entrez un élément ou un modèle de nom, tel que s *.
-Les caractères génériques sont autorisés.
+Spécifie les services que cette applet de commande omet. La valeur de ce paramètre qualifie le paramètre **Name** . Entrez un élément ou un modèle de nom, tel que s *. Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -136,10 +128,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie les services redémarrés par cette applet de commande.
-La valeur de ce paramètre qualifie le paramètre *Name* .
-Entrez un élément ou un modèle de nom, tel que s *.
-Les caractères génériques sont autorisés.
+Spécifie les services redémarrés par cette applet de commande. La valeur de ce paramètre qualifie le paramètre **Name** . Entrez un élément ou un modèle de nom, tel que s *. Les caractères génériques sont autorisés.
 
 ```yaml
 Type: System.String[]
@@ -155,8 +144,7 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-Spécifie les objets **ServiceController** qui représentent les services à redémarrer.
-Entrez une variable contenant les objets, ou tapez une commande ou une expression qui obtient ces objets.
+Spécifie les objets **ServiceController** qui représentent les services à redémarrer. Entrez une variable contenant les objets, ou tapez une commande ou une expression qui obtient ces objets.
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -188,8 +176,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-Retourne un objet qui représente le nouveau service.
-Par défaut, cette applet de commande ne génère aucun résultat.
+Retourne un objet qui représente le nouveau service. Par défaut, cette applet de commande ne génère aucun résultat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,8 +208,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,13 +236,15 @@ Vous pouvez diriger un objet de service ou une chaîne qui contient un nom de se
 
 ### Aucun, System. ServiceProcess. ServiceController
 
-Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service redémarré, si vous spécifiez le paramètre *PassThru* .
-Sinon, cette applet de commande ne génère aucune sortie.
+Cette applet de commande génère un objet **System. ServiceProcess. ServiceController** qui représente le service redémarré, si vous spécifiez le paramètre **PassThru** . Sinon, cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
 
-* **Restart-Service** peut contrôler les services uniquement lorsque l’utilisateur actuel est autorisé à le faire. Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.
-* Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez « **obtenir-service** ». Les noms de service s’affichent dans la colonne **nom** , et les noms d’affichage apparaissent dans la colonne **DisplayName** .
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
+- `Restart-Service` peut contrôler les services uniquement lorsque l’utilisateur actuel est autorisé à le faire. Si une commande ne fonctionne pas correctement, cela signifie peut-être que vous ne disposez pas des autorisations requises.
+- Pour rechercher les noms de service et les noms d’affichage des services sur votre système, tapez `Get-Service` «».
+  Les noms de service s’affichent dans la colonne **nom** , et les noms d’affichage apparaissent dans la colonne **DisplayName** .
 
 ## LIENS CONNEXES
 

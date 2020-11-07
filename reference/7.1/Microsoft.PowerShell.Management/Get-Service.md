@@ -7,19 +7,19 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 7f44f1d363c5fae79722fdfb5bd894cb24e00d0c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1cbecd37217c4c0113079dfa9ac7008dd0d91823
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205226"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342227"
 ---
 # Get-Service
 
 ## SYNOPSIS
 Obtient les services sur l’ordinateur.
 
-## SYNTAX
+## SYNTAXE
 
 ### Valeur par défaut (par défaut)
 
@@ -42,7 +42,7 @@ Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exc
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-Service` applet de commande obtient les objets qui représentent les services sur un ordinateur, y compris les services en cours d’exécution et arrêtés. Par défaut, lorsque `Get-Service` est exécuté sans paramètres, tous les services de l’ordinateur local sont retournés.
 
@@ -165,7 +165,7 @@ Cet exemple obtient le service WinRM sur l’ordinateur local. La chaîne de nom
 "WinRM" | Get-Service
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -DependentServices
 
@@ -298,6 +298,8 @@ Cette applet de commande retourne des objets qui représentent les services sur 
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 À compter de PowerShell 6,0, les propriétés suivantes sont ajoutées aux objets **ServiceController** : **nom d’utilisateur** , **Description** , **DelayedAutoStart** , **BinaryPathName** et **startupType** .
 
 Vous pouvez également faire référence à `Get-Service` par son alias intégré, `gsv` . Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
@@ -325,4 +327,3 @@ Lorsque vous triez par ordre croissant selon la valeur de la propriété **Statu
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

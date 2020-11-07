@@ -7,19 +7,19 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: 1045c22cdaadb9fe1a45ec01ea86d5d8a276b05a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e393916f00e3670cd1ed3b5772bf165c43cc3a2f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204493"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343944"
 ---
 # New-PSSessionConfigurationFile
 
 ## SYNOPSIS
 Crée un fichier qui définit une configuration de session.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Guid <Guid>]
@@ -36,7 +36,7 @@ New-PSSessionConfigurationFile [-Path] <String> [-SchemaVersion <Version>] [-Gui
  [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [-Full] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `New-PSSessionConfigurationFile` applet de commande crée un fichier de paramètres qui définissent une configuration de session et l’environnement des sessions créées à l’aide de la configuration de session.
 Pour utiliser le fichier dans une configuration de session, utilisez le paramètre **path** des `Register-PSSessionConfiguration` applets de commande ou `Set-PSSessionConfiguration` .
@@ -85,7 +85,7 @@ The syntax is not supported by this runspace. This might be because it is in no-
     + PSComputerName        : localhost
 ```
 
-Dans cet exemple, le `Invoke-Command` échoue car **LanguageMode** a la valeur **nolanguage** .
+Dans cet exemple, le `Invoke-Command` échoue car **LanguageMode** a la valeur **nolanguage**.
 
 ### Exemple 2 : création et utilisation d’une session RestrictedLanguage
 
@@ -113,7 +113,7 @@ Invoke-Command -Session $RestrictedSession -ScriptBlock {
 Before
 ```
 
-Dans cet exemple, le `Invoke-Command` fonctionne, car **LanguageMode** a la valeur **RestrictedLanguage** .
+Dans cet exemple, le `Invoke-Command` fonctionne, car **LanguageMode** a la valeur **RestrictedLanguage**.
 
 ### Exemple 3 : modification d’un fichier de configuration de session
 
@@ -295,7 +295,7 @@ AssembliesToLoad = 'System.Web.Services', 'FSharp.Compiler.CodeDom.dll'
 }
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AliasDefinitions
 
@@ -304,7 +304,7 @@ Ajoute les alias spécifiés aux sessions qui utilisent la configuration de sess
 - Nom : nom de l’alias. Cette clé est obligatoire.
 - Value : commande représentée par l’alias. Cette clé est obligatoire.
 - Description : chaîne de texte qui décrit l’alias. Cette clé est facultative.
-- Options-options d’alias. Cette clé est facultative. La valeur par défaut est **None** . Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
+- Options-options d’alias. Cette clé est facultative. La valeur par défaut est **None**. Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
 
 Par exemple : `@{Name='hlp';Value='Get-Help';Description='Gets help';Options='ReadOnly'}`
 
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 
 ### -CompanyName
 
-Spécifie la société qui a créé la configuration de session ou le fichier de configuration. La valeur par défaut est **Unknown** . La valeur de ce paramètre est visible dans le fichier de configuration de session, mais il ne s'agit pas d'une propriété de l'objet de configuration de session.
+Spécifie la société qui a créé la configuration de session ou le fichier de configuration. La valeur par défaut est **Unknown**. La valeur de ce paramètre est visible dans le fichier de configuration de session, mais il ne s'agit pas d'une propriété de l'objet de configuration de session.
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 
 ### -ExecutionPolicy
 
-Spécifie la stratégie d'exécution des sessions qui utilisent la configuration de session. Si vous omettez ce paramètre, la valeur de la clé **ExecutionPolicy** dans le fichier de configuration de session est **Restricted** . Pour plus d’informations sur les stratégies d’exécution dans PowerShell, consultez [about_Execution_Policies](about/about_Execution_Policies.md).
+Spécifie la stratégie d'exécution des sessions qui utilisent la configuration de session. Si vous omettez ce paramètre, la valeur de la clé **ExecutionPolicy** dans le fichier de configuration de session est **Restricted**. Pour plus d’informations sur les stratégies d’exécution dans PowerShell, consultez [about_Execution_Policies](about/about_Execution_Policies.md).
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicy
@@ -476,7 +476,7 @@ Ajoute les fonctions spécifiées aux sessions qui utilisent la configuration de
 
 - Nom : nom de la fonction. Cette clé est obligatoire.
 - ScriptBlock : corps de la fonction. Entrez un bloc de script. Cette clé est obligatoire.
-- Options-options de fonction. Cette clé est facultative. La valeur par défaut est **None** . Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
+- Options-options de fonction. Cette clé est facultative. La valeur par défaut est **None**. Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
 
 Par exemple : `@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
 
@@ -535,7 +535,7 @@ Les valeurs valides pour ce paramètre sont :
 - Nolanguage : les utilisateurs peuvent exécuter des applets de commande et des fonctions, mais ils ne sont pas autorisés à utiliser des éléments de langage, tels que des blocs de script, des variables ou des opérateurs.
 - RestrictedLanguage : les utilisateurs peuvent exécuter des applets de commande et des fonctions, mais ils ne sont pas autorisés à utiliser des blocs de script ou des variables, à l’exception des variables autorisées suivantes : `$PSCulture` , `$PSUICulture` ,, `$True` `$False` et `$Null` . Les utilisateurs peuvent utiliser uniquement les opérateurs de comparaison de base ( `-eq` , `-gt` , `-lt` ). Les instructions d'assignation, les références de propriété et les appels de méthode ne sont pas autorisés.
 
-La valeur par défaut du paramètre **LanguageMode** dépend de la valeur du paramètre **SessionType** .
+La valeur par défaut du paramètre **LanguageMode** dépend de la valeur du paramètre **SessionType**.
 
 - Vide-nolanguage
 - RestrictedRemoteServer-nolanguage
@@ -797,7 +797,7 @@ Accept wildcard characters: False
 Spécifie la taille maximale des lecteurs utilisateur exposés dans les sessions qui utilisent cette configuration de session.
 En cas d’omission, la taille par défaut de chaque `User:` racine de lecteur est de 50 Mo.
 
-Ce paramètre doit être utilisé avec **MountUserDrive** .
+Ce paramètre doit être utilisé avec **MountUserDrive**.
 
 ```yaml
 Type: System.Int64
@@ -817,7 +817,7 @@ Ajoute les variables spécifiées aux sessions qui utilisent la configuration de
 
 - Nom : nom de la variable. Cette clé est obligatoire.
 - Valeur de variable de valeur. Cette clé est obligatoire.
-- Options-options de variable. Cette clé est facultative. La valeur par défaut est **None** . Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
+- Options-options de variable. Cette clé est facultative. La valeur par défaut est **None**. Les valeurs acceptables pour ce paramètre sont : None, ReadOnly, constant, Private ou options AllScope.
 
 Par exemple : `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`
 
@@ -835,7 +835,7 @@ Accept wildcard characters: False
 
 ### -VisibleAliases
 
-Limite les alias de la session à ceux spécifiés dans la valeur de ce paramètre, ainsi qu'à tous les alias que vous définissez dans le paramètre **AliasDefinition** . Les caractères génériques sont pris en charge. Par défaut, tous les alias définis par le moteur PowerShell et tous les alias que les modules exportent sont visibles dans la session.
+Limite les alias de la session à ceux spécifiés dans la valeur de ce paramètre, ainsi qu'à tous les alias que vous définissez dans le paramètre **AliasDefinition**. Les caractères génériques sont pris en charge. Par défaut, tous les alias définis par le moteur PowerShell et tous les alias que les modules exportent sont visibles dans la session.
 
 Par exemple : `VisibleAliases='gcm', 'gp'`
 
@@ -895,7 +895,7 @@ Accept wildcard characters: True
 
 ### -VisibleFunctions
 
-Limite les fonctions de la session à celles spécifiées dans la valeur de ce paramètre, ainsi qu'à toutes les fonctions que vous définissez dans le paramètre **FunctionDefinition** . Les caractères génériques sont pris en charge.
+Limite les fonctions de la session à celles spécifiées dans la valeur de ce paramètre, ainsi qu'à toutes les fonctions que vous définissez dans le paramètre **FunctionDefinition**. Les caractères génériques sont pris en charge.
 
 Par défaut, toutes les fonctions que les modules de la session exportent sont visibles dans la session. Utilisez les paramètres **SessionType** et **ModulesToImport** pour déterminer quels modules et composants logiciels enfichables sont importés dans la session.
 
@@ -951,6 +951,8 @@ Vous ne pouvez pas diriger d’objets vers cette applet de commande.
 Cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
+
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
 
 - Les paramètres, tels que **VisibleCmdlets** et **VisibleProviders** , n’importent pas d’éléments dans la session. À la place, ils sélectionnent les éléments importés dans la session. Par exemple, si la valeur du paramètre **VisibleProviders** est le fournisseur de certificats, mais que le paramètre **ModulesToImport** ne spécifie pas le module **Microsoft. PowerShell. Security** qui contient le fournisseur de certificats, le fournisseur de certificats n’est pas visible dans la session.
 - `New-PSSessionConfigurationFile` crée un fichier de configuration de session qui a une extension de nom de fichier. PSSC dans le chemin d’accès que vous spécifiez dans le paramètre **path** . Lorsque vous utilisez le fichier de configuration de session pour créer une configuration de session, l’applet de commande `Register-PSSessionConfiguration` copie le fichier de configuration et enregistre une copie active du fichier dans le sous-répertoire **SessionConfig** du `$PSHOME` répertoire.

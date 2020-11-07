@@ -3,31 +3,31 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pshostprocess?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSHostProcess
-ms.openlocfilehash: 29a72bac55dd4aabca52673a192b13f75b88f308
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 6b6d95484ee2aec6fba60f5528a6ef6089d888a0
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93200802"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342312"
 ---
 # Exit-PSHostProcess
 
 ## SYNOPSIS
 Ferme une session interactive avec un processus local.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Exit-PSHostProcess [<CommonParameters>]
 ```
 
-## Description
-L’applet de commande **Exit-PSHostProcess** ferme une session interactive avec un processus local que vous avez ouvert en exécutant l’applet de commande Enter-PSHostProcess.
-Vous exécutez l’applet de commande **Exit-PSHostProcess** à partir du processus, lorsque vous avez terminé le débogage ou que vous dépannez un script qui s’exécute dans un processus.
+## DESCRIPTION
+
+L' `Exit-PSHostProcess` applet de commande ferme une session interactive avec un processus local que vous avez ouvert en exécutant l’applet de commande `Enter-PSHostProcess` . Vous exécutez l' `Exit-PSHostProcess` applet de commande à partir du processus, lorsque vous avez terminé le débogage ou que vous dépannez un script qui s’exécute dans un processus. À compter de PowerShell 6,2, cette applet de commande est prise en charge sur les plateformes non-Windows.
 
 ## EXEMPLES
 
@@ -38,13 +38,13 @@ PS C:\> [Process:1520]: PS C:\>  Exit-PSHostProcess
 PS C:\>
 ```
 
-Dans cet exemple, vous avez travaillé dans un processus actif pour déboguer un script qui s’exécute dans une instance d’exécution dans le processus, comme décrit dans Enter-PSHostProcess.
-Une fois que vous avez tapé la commande **Exit** pour quitter le débogueur, exécutez l’applet de commande **Exit-PSHostProcess** pour fermer votre session interactive avec le processus.
-L’applet de commande ferme votre session dans le processus et vous renvoie à l’invite PS C : \\ \> .
+Dans cet exemple, vous avez travaillé dans un processus actif pour déboguer un script qui s’exécute dans une instance d’exécution dans le processus, comme décrit dans `Enter-PSHostProcess` . Une fois que vous avez tapé la `exit` commande pour quitter le débogueur, exécutez l' `Exit-PSHostProcess` applet de commande pour fermer votre session interactive avec le processus.
+L’applet de commande ferme votre session dans le processus et vous renvoie à l' `PS C:\>` invite.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES

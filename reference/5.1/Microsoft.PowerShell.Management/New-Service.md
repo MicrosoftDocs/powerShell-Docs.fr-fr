@@ -7,19 +7,19 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 3249ce91a63417f2790997d37e2420c6fcb374d8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5647f9bfa909cba9740e7be17f262b6be0e5c8e9
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203589"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342924"
 ---
 # New-Service
 
 ## SYNOPSIS
 Crée un service Windows.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
@@ -27,7 +27,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
  [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `New-Service` applet de commande crée une entrée pour un service Windows dans le registre et dans la base de données du service. Un nouveau service nécessite un fichier exécutable qui s’exécute pendant le service.
 
@@ -86,7 +86,7 @@ sc.exe delete TestService
 
 Cet exemple montre deux façons de supprimer le service TestService. La première commande utilise l’option DELETE de `Sc.exe` . La deuxième commande utilise la méthode **Delete** des objets **Win32_Service** qui `Get-CimInstance` retourne.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -BinaryPathName
 
@@ -177,8 +177,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Spécifie le nom du service.
-Ce paramètre est obligatoire.
+Spécifie le nom du service. Ce paramètre est obligatoire.
 
 ```yaml
 Type: System.String
@@ -203,7 +202,7 @@ Définit le type de démarrage du service. Les valeurs valides pour ce paramètr
 - **Démarrage** -indique que le service est un pilote de périphérique Démarré par le chargeur du système. Cette valeur est valide uniquement pour les pilotes de périphérique.
 - **Système** : indique que le service est un pilote de périphérique Démarré par la fonction « IOInitSystem () ». Cette valeur est valide uniquement pour les pilotes de périphérique.
 
- La valeur par défaut est **automatique** .
+ La valeur par défaut est **automatique**.
 
 ```yaml
 Type: System.ServiceProcess.ServiceStartMode
@@ -236,8 +235,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -269,7 +267,7 @@ Cette applet de commande retourne un objet qui représente le nouveau service.
 
 ## REMARQUES
 
-Pour exécuter cette applet de commande sur Windows Vista et les versions ultérieures du système d’exploitation Windows, démarrez PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
+Pour exécuter cette applet de commande, démarrez PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 Pour supprimer un service, utilisez Sc.exe ou utilisez l' `Get-CimInstance` applet de commande pour obtenir l’objet **Win32_Service** qui représente le service, puis utilisez la méthode **Delete** pour supprimer le service. L’objet qui `Get-Service` retourne n’a pas de méthode Delete.
 

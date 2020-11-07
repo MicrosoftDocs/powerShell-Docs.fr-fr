@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TimeZone
-ms.openlocfilehash: 6e0ed432713cabc4db23f3b070a3e925639a60fb
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 973aa99e8194d98a289b822b8232de0ed6d0405b
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202106"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342873"
 ---
 # Get-TimeZone
 
 ## SYNOPSIS
 Obtient le fuseau horaire actuel ou une liste de fuseaux horaires disponibles.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -39,7 +39,7 @@ Get-TimeZone -Id <String[]> [<CommonParameters>]
 Get-TimeZone [-ListAvailable] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L’applet de commande **« obtenir-TimeZone »** obtient le fuseau horaire actuel ou une liste des fuseaux horaires disponibles.
 
@@ -83,7 +83,7 @@ PS C:\> Get-TimeZone -ListAvailable
 
 Cette commande obtient tous les fuseaux horaires disponibles.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Id
 
@@ -147,7 +147,8 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 ## LIENS CONNEXES
 
 [Set-TimeZone](Set-TimeZone.md)
-

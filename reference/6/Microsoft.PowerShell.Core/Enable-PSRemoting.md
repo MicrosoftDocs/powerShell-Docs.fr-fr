@@ -7,25 +7,25 @@ ms.date: 07/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
-ms.openlocfilehash: 2e05348e3741b84b8ad40bcb6ad542a54354176f
-ms.sourcegitcommit: 0e0f45d0d8deb8c9088a4f4a32218edde052b686
+ms.openlocfilehash: 6dd0b6a997551aba0df2da666eb21dddeb2e1fcf
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "93205298"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344080"
 ---
 # Enable-PSRemoting
 
 ## SYNOPSIS
 Configure l'ordinateur pour recevoir des commandes à distance.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Enable-PSRemoting` applet de commande configure l’ordinateur pour qu’il reçoive les commandes PowerShell à distance qui sont envoyées à l’aide de la technologie WS-Management. La communication à distance PowerShell basée sur WS-Management n’est actuellement prise en charge que sur la plateforme Windows.
 
@@ -33,12 +33,12 @@ La communication à distance PowerShell est activée par défaut sur les platefo
 
 Vous ne devez exécuter cette commande qu’une seule fois sur chaque ordinateur qui recevra des commandes. Vous n’avez pas besoin de l’exécuter sur les ordinateurs qui envoient uniquement des commandes. Étant donné que la configuration démarre les écouteurs pour accepter les connexions à distance, il est prudent de l’exécuter uniquement lorsque cela est nécessaire.
 
-L’activation de la communication à distance PowerShell sur les versions client de Windows lorsque l’ordinateur se trouve sur un réseau public est normalement interdite, mais vous pouvez ignorer cette restriction à l’aide du paramètre **SkipNetworkProfileCheck** . Pour plus d'informations, consultez la description du paramètre **SkipNetworkProfileCheck** .
+L’activation de la communication à distance PowerShell sur les versions client de Windows lorsque l’ordinateur se trouve sur un réseau public est normalement interdite, mais vous pouvez ignorer cette restriction à l’aide du paramètre **SkipNetworkProfileCheck** . Pour plus d'informations, consultez la description du paramètre **SkipNetworkProfileCheck**.
 
 Plusieurs installations PowerShell peuvent coexister côte à côte sur un seul ordinateur. L’exécution `Enable-PSRemoting` configure un point de terminaison de communication à distance pour la version d’installation spécifique dans laquelle vous exécutez l’applet de commande. Par conséquent, si vous exécutez `Enable-PSRemoting` en exécutant powershell 6,2, un point de terminaison de communication à distance sera configuré pour exécuter powershell 6,2. Si vous exécutez `Enable-PSRemoting` en exécutant PowerShell 7-Preview, un point de terminaison de communication à distance sera configuré pour exécuter PowerShell 7-preview.
 
-`Enable-PSRemoting` crée deux configurations de point de terminaison de communication à distance si nécessaire. Si les configurations de point de terminaison existent déjà, elles sont simplement vérifiées pour être activées. Les configurations créées sont identiques, mais ont des noms différents. Un nom simple correspondant à la version PowerShell qui héberge la session est utilisé. L’autre nom de configuration contient des informations plus détaillées sur la version de PowerShell qui héberge la session. Par exemple, lors `Enable-PSRemoting` de l’exécution dans powershell 6,2, vous obtiendrez deux points de terminaison configurés nommés **PowerShell. 6** , **PowerShell. 6.2.2** .
-Cela vous permet de créer une connexion à la dernière version de l’hôte PowerShell 6 en utilisant le nom simple **PowerShell. 6** . Vous pouvez ou vous connecter à une version spécifique de l’hôte PowerShell en utilisant le nom plus long **PowerShell. 6.2.2** .
+`Enable-PSRemoting` crée deux configurations de point de terminaison de communication à distance si nécessaire. Si les configurations de point de terminaison existent déjà, elles sont simplement vérifiées pour être activées. Les configurations créées sont identiques, mais ont des noms différents. Un nom simple correspondant à la version PowerShell qui héberge la session est utilisé. L’autre nom de configuration contient des informations plus détaillées sur la version de PowerShell qui héberge la session. Par exemple, lors `Enable-PSRemoting` de l’exécution dans powershell 6,2, vous obtiendrez deux points de terminaison configurés nommés **PowerShell. 6** , **PowerShell. 6.2.2**.
+Cela vous permet de créer une connexion à la dernière version de l’hôte PowerShell 6 en utilisant le nom simple **PowerShell. 6**. Vous pouvez ou vous connecter à une version spécifique de l’hôte PowerShell en utilisant le nom plus long **PowerShell. 6.2.2**.
 
 Pour utiliser les points de terminaison de communication à distance récemment activés, vous devez les spécifier par leur nom avec le paramètre **ConfigurationName** lors de la création d’une connexion à distance à l’aide des `Invoke-Command` applets de commande, `New-PSSession` , `Enter-PSSession` . Pour plus d’informations, consultez l’exemple 4.
 
@@ -177,7 +177,7 @@ OS                             Microsoft Windows 10.0.18363
 > [!NOTE]
 > Le nom de la règle de pare-feu peut être différent selon la version de Windows. Utilisez l' `Get-NetFirewallRule` applet de commande pour répertorier les noms des règles sur votre système.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Confirm
 
@@ -268,9 +268,11 @@ Cette applet de commande retourne des chaînes qui décrivent ses résultats.
 
 ## REMARQUES
 
+Cette applet de commande est disponible uniquement sur les plateformes Windows.
+
 Sur les versions serveur du système d’exploitation Windows, `Enable-PSRemoting` crée des règles de pare-feu pour les réseaux privés et de domaine qui autorisent l’accès à distance, et crée une règle de pare-feu pour les réseaux publics qui autorise l’accès à distance uniquement à partir d’ordinateurs situés dans le même sous-réseau local.
 
-Sur les versions clientes du système d’exploitation Windows, `Enable-PSRemoting` crée des règles de pare-feu pour les réseaux privés et de domaine qui autorisent l’accès à distance illimité. Pour créer une règle de pare-feu pour les réseaux publics qui autorise l'accès à distance à partir du même sous-réseau local, utilisez le paramètre **SkipNetworkProfileCheck** .
+Sur les versions clientes du système d’exploitation Windows, `Enable-PSRemoting` crée des règles de pare-feu pour les réseaux privés et de domaine qui autorisent l’accès à distance illimité. Pour créer une règle de pare-feu pour les réseaux publics qui autorise l'accès à distance à partir du même sous-réseau local, utilisez le paramètre **SkipNetworkProfileCheck**.
 
 Sur les versions client ou serveur du système d’exploitation Windows, pour créer une règle de pare-feu pour les réseaux publics qui supprime la restriction de sous-réseau local et autorise l’accès à distance, utilisez l' `Set-NetFirewallRule` applet de commande dans le module netsecurity pour exécuter la commande suivante : `Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any`
 

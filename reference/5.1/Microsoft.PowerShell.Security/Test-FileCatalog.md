@@ -7,34 +7,30 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 128405fdbcf0c1d059287191850ffdca53278ec1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8f5e11fca51bf92386c19a77fa9a66503b2d47a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203386"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343240"
 ---
 # Test-FileCatalog
 
 ## SYNOPSIS
-
 `Test-FileCatalog` valide si les hachages contenus dans un fichier catalogue (. cat) correspondent aux hachages des fichiers réels afin de valider leur authenticité.
 
 Cette applet de commande est uniquement prise en charge sur Windows.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <String> [[-Path] <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-`Test-FileCatalog` valide l’authenticité des fichiers en comparant les hachages de fichier d’un fichier catalogue (. cat) avec les hachages des fichiers réels sur le disque.
-Si elle détecte des incompatibilités, elle retourne l’État ValidationFailed. Les utilisateurs peuvent récupérer toutes ces informations à l’aide du paramètre -Detailed.
-Il affiche également l’état de signature du catalogue dans la propriété signature, ce qui revient à appeler `Get-AuthenticodeSignature` l’applet de commande sur le fichier catalogue.
-Les utilisateurs peuvent également ignorer des fichiers lors de la validation à l’aide du paramètre -FilesToSkip.
+`Test-FileCatalog` valide l’authenticité des fichiers en comparant les hachages de fichier d’un fichier catalogue (. cat) avec les hachages des fichiers réels sur le disque. Si elle détecte des incompatibilités, elle retourne l’État ValidationFailed. Les utilisateurs peuvent récupérer toutes ces informations à l’aide du paramètre -Detailed. Il affiche également l’état de signature du catalogue dans la propriété signature, ce qui revient à appeler `Get-AuthenticodeSignature` l’applet de commande sur le fichier catalogue. Les utilisateurs peuvent également ignorer des fichiers lors de la validation à l’aide du paramètre -FilesToSkip.
 
 Cette applet de commande est uniquement prise en charge sur Windows.
 
@@ -70,7 +66,7 @@ PathItems     : {[Microsoft.PowerShell.Utility.psd1,
 Signature     : System.Management.Automation.Signature
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -CatalogFilePath
 
@@ -154,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -7,19 +7,19 @@ ms.date: 5/1/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Computer
-ms.openlocfilehash: 860a5ec4f75136bd53fa5c9621504b1613e9c511
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4028978b7d2d5353b7250acac3a3454b2f9d8ee1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203550"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343213"
 ---
 # Rename-Computer
 
 ## SYNOPSIS
 Renomme un ordinateur.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
@@ -27,7 +27,7 @@ Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCrede
  [-Protocol <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Rename-Computer` applet de commande renomme l’ordinateur local ou un ordinateur distant.
 Elle renomme un ordinateur dans chaque commande.
@@ -56,7 +56,7 @@ Le paramètre **force** supprime l’invite de confirmation.
 Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ComputerName
 
@@ -90,7 +90,7 @@ Tapez un nom d’utilisateur, tel que `User01` ou `Domain01\User01` , ou entrez 
 
 Si vous tapez un nom d’utilisateur, cette applet de commande vous invite à entrer un mot de passe.
 
-Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur spécifié par le paramètre **ComputerName** , utilisez le paramètre **LocalCredential** .
+Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur spécifié par le paramètre **ComputerName** , utilisez le paramètre **LocalCredential**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -122,13 +122,13 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-Spécifie un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur spécifié par le paramètre **ComputerName** . La valeur par défaut est l’utilisateur actuel.
+Spécifie un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur spécifié par le paramètre **ComputerName**. La valeur par défaut est l’utilisateur actuel.
 
 Tapez un nom d’utilisateur, tel que `User01` ou `Domain01\User01` , ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential` .
 
 Si vous tapez un nom d’utilisateur, cette applet de commande vous invite à entrer un mot de passe.
 
-Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter au domaine, utilisez le paramètre **DomainCredential** .
+Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter au domaine, utilisez le paramètre **DomainCredential**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -227,7 +227,7 @@ Spécifie le mécanisme utilisé pour authentifier les informations d’identifi
 - **Kerberos**
 - **Prescrit**
 
-La valeur par défaut est **Default** .
+La valeur par défaut est **Default**.
 
 Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
@@ -292,8 +292,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### Aucun
 
-Cette applet de commande n’a pas de paramètres qui acceptent une entrée par valeur.
-Toutefois, vous pouvez diriger les valeurs des propriétés **ComputerName** et **NewName** des objets vers cette applet de commande.
+Cette applet de commande n’a pas de paramètres qui acceptent une entrée par valeur. Toutefois, vous pouvez diriger les valeurs des propriétés **ComputerName** et **NewName** des objets vers cette applet de commande.
 
 ## SORTIES
 
