@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353819"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354420"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 
@@ -23,7 +23,7 @@ J’aimerais vous présenter tout d’abord le concept de **table de hachage** c
 
 ## <a name="what-is-an-array"></a>Qu’est-ce qu’un tableau ?
 
-Avant de passer à la définition d’une **table de hachage**, examinons d’abord les [tableaux][]. Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.
+Avant de passer à la définition d’une **table de hachage** , examinons d’abord les [tableaux][]. Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -966,7 +966,7 @@ J’ai abordé beaucoup de concepts dans cet article. Mon espoir est que vous pu
 [Si les performances l’exigent, effectuez un test]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [Projection]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [Valeurs automatiques par défaut]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

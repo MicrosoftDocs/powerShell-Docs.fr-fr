@@ -3,12 +3,12 @@ title: Ajout de la prise en charge des informations d’identification aux fonct
 description: Ajout des paramètres d’informations d’identification à vos scripts, fonctions et applets de commande PowerShell.
 ms.date: 10/29/2020
 ms.custom: contributor-JoshDuffney
-ms.openlocfilehash: fb85d47121dc106ae04742254f418e2c727f6157
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 3e4a3f41ccbca1cf97f2e96fd60f22d89be7bc5a
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93143144"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354624"
 ---
 # <a name="add-credential-support-to-powershell-functions"></a>Ajout de la prise en charge des informations d’identification aux fonctions PowerShell
 
@@ -292,7 +292,7 @@ La création et le stockage d’objets d’informations d’identification de fa
 [BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
 [Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
 [Vault Project]: https://www.vaultproject.io/
-[Splatting Parameters Inside Advanced Functions]: http://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[Splatting Parameters Inside Advanced Functions]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
 [Automating with Jenkins and PowerShell on Windows - Part 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
 [PSCredential]: /dotnet/api/system.management.automation.pscredential
 [The Pester Book]: https://leanpub.com/the-pester-book
