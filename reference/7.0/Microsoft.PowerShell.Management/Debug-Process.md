@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/debug-process?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Process
-ms.openlocfilehash: 9d2b9ce8d9aa0a1e75c0af0f2ed57aca41ec7791
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 7a439cc3f15b319f5f56709260035ffa8fc03c12
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201129"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391372"
 ---
 # Debug-Process
 
 ## SYNOPSIS
 Débogue un ou plusieurs processus en cours d'exécution sur l'ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -39,13 +39,12 @@ Debug-Process [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 Debug-Process -InputObject <Process[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L’applet de commande **Debug-Process** joint un débogueur à un ou plusieurs processus en cours d’exécution sur un ordinateur local.
+L' `Debug-Process` applet de commande joint un débogueur à un ou plusieurs processus en cours d’exécution sur un ordinateur local.
 Vous pouvez spécifier les processus en fonction de leur nom de processus ou de leur ID de processus (PID), ou vous pouvez diriger les objets de processus vers cette applet de commande.
 
-Cette applet de commande attache le débogueur actuellement inscrit pour le processus.
-Avant d'utiliser cette applet de commande, vérifiez qu'un débogueur est téléchargé et correctement configuré.
+Cette applet de commande attache le débogueur actuellement inscrit pour le processus. Avant d'utiliser cette applet de commande, vérifiez qu'un débogueur est téléchargé et correctement configuré.
 
 ## EXEMPLES
 
@@ -87,10 +86,9 @@ Cette commande joint un débogueur aux processus dont les identificateurs sont 
 PS C:\> Get-Process "Windows PowerShell" | Debug-Process
 ```
 
-Cette commande joint un débogueur aux processus PowerShell sur l'ordinateur.
-Elle utilise l’applet de commande **obtenir-process** pour obtenir les processus PowerShell sur l’ordinateur, et elle utilise un opérateur de pipeline (|) pour envoyer les processus à l’applet de commande **Debug-Process** .
+Cette commande joint un débogueur aux processus PowerShell sur l'ordinateur. Elle utilise l' `Get-Process` applet de commande pour obtenir les processus PowerShell sur l’ordinateur, et elle utilise un opérateur de pipeline ( `|` ) pour envoyer les processus à l’applet de commande `Debug-Process` .
 
-Pour spécifier un processus PowerShell particulier, utilisez le paramètre ID de la **méthode « obtenir un processus »** .
+Pour spécifier un processus PowerShell particulier, utilisez le paramètre ID de `Get-Process` .
 
 ### Exemple 6 : attacher un débogueur à un processus en cours sur l’ordinateur local
 
@@ -100,10 +98,9 @@ PS C:\> $PID | Debug-Process
 
 Cette commande joint un débogueur aux processus PowerShell actifs sur l'ordinateur.
 
-La commande utilise la variable automatique $PID, qui contient l’ID du processus PowerShell en cours.
-Ensuite, il utilise un opérateur de pipeline (|) pour envoyer l’ID de processus à l’applet de commande **Debug-Process** .
+La commande utilise la `$PID` variable automatique, qui contient l’ID de processus du processus PowerShell en cours. Ensuite, il utilise un opérateur de pipeline ( `|` ) pour envoyer l’ID de processus à l’applet de commande `Debug-Process` .
 
-Pour plus d’informations sur la variable automatique $PID, consultez about_Automatic_Variables.
+Pour plus d’informations sur la `$PID` variable automatique, consultez about_Automatic_Variables.
 
 ### Exemple 7 : attacher un débogueur à un processus qui utilise le paramètre InputObject
 
@@ -114,17 +111,15 @@ PS C:\> Debug-Process -InputObject $P
 
 Cette commande joint un débogueur aux processus PowerShell sur l'ordinateur local.
 
-La première commande utilise l’applet de commande **« obten-process »** pour récupérer les processus PowerShell sur l’ordinateur.
-Elle enregistre l’objet processus résultant dans la variable nommée $P.
+La première commande utilise l' `Get-Process` applet de commande pour récupérer les processus PowerShell sur l’ordinateur. Elle enregistre l’objet processus résultant dans la variable nommée `$P` .
 
-La deuxième commande utilise le paramètre *InputObject* de l’applet de commande **Debug-Process** pour envoyer l’objet processus dans la variable $P.
+La deuxième commande utilise le paramètre **InputObject** de l' `Debug-Process` applet de commande pour envoyer l’objet processus dans la `$P` variable.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Id
 
-Spécifie l'identificateur des processus à déboguer.
-Le nom du paramètre *ID* est facultatif.
+Spécifie l'identificateur des processus à déboguer. Le nom du paramètre **ID** est facultatif.
 
 Pour Rechercher l’ID de processus d’un processus, tapez `Get-Process` .
 
@@ -142,9 +137,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Spécifie les objets processus qui représentent les processus à déboguer.
-Entrez une variable qui contient les objets processus ou une commande qui obtient les objets processus, tels que l’applet de commande Get-Process.
-Vous pouvez également diriger les objets de processus vers cette applet de commande.
+Spécifie les objets processus qui représentent les processus à déboguer. Entrez une variable qui contient les objets processus ou une commande qui obtient les objets processus, tels que l' `Get-Process` applet de commande. Vous pouvez également diriger les objets de processus vers cette applet de commande.
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -160,9 +153,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Spécifie le nom des processus à déboguer.
-S’il existe plusieurs processus portant le même nom, cette applet de commande joint un débogueur à tous les processus portant ce nom.
-Le paramètre *Name* est facultatif.
+Spécifie le nom des processus à déboguer. S’il existe plusieurs processus portant le même nom, cette applet de commande joint un débogueur à tous les processus portant ce nom. Le paramètre **Name** est facultatif.
 
 ```yaml
 Type: System.String[]
@@ -194,8 +185,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Montre ce qui se passe en cas d’exécution de l’applet de commande.
-L’applet de commande n’est pas exécutée.
+Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,7 +217,7 @@ Cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
 
-* Cette applet de commande utilise la méthode AttachDebugger de la classe WMI (Windows Management Instrumentation) Win32_Process. Pour plus d’informations sur cette méthode, consultez la [méthode AttachDebugger](https://go.microsoft.com/fwlink/?LinkId=143640) dans MSDN Library.
+Cette applet de commande utilise la méthode AttachDebugger de la classe WMI (Windows Management Instrumentation) Win32_Process. Pour plus d’informations sur cette méthode, consultez la [méthode AttachDebugger](https://go.microsoft.com/fwlink/?LinkId=143640) dans MSDN Library.
 
 ## LIENS CONNEXES
 

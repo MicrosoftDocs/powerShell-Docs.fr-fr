@@ -7,19 +7,19 @@ ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: ef80c2c63855bffcd23f51474009b241f8f4b3ba
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201218"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391338"
 ---
 # Set-StrictMode
 
 ## SYNOPSIS
 Établit et applique des règles de codage dans les expressions, les scripts et les blocs de script.
 
-## SYNTAX
+## SYNTAXE
 
 ### Version (par défaut)
 
@@ -33,7 +33,7 @@ Set-StrictMode -Version <Version> [<CommonParameters>]
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-StrictMode` applet de commande configure le mode strict pour l’étendue actuelle et toutes les étendues enfants, puis l’active et la désactive. Lorsque le mode strict est activé, PowerShell génère une erreur de fin lorsque le contenu d’une expression, d’un script ou d’un bloc de script enfreint les règles de codage de base recommandées.
 
@@ -67,12 +67,7 @@ $a -gt 5
 ```
 
 ```Output
-The variable $a cannot be retrieved because it has not been set yet.
-
-At line:1 char:3
-+ $a <<<<  -gt 5
-+ CategoryInfo          : InvalidOperation: (a:Token) [], RuntimeException
-+ FullyQualifiedErrorId : VariableIsUndefined
+InvalidOperation: The variable '$a' cannot be retrieved because it has not been set.
 ```
 
 Si le mode strict est défini sur la version 1,0, les tentatives de référencement des variables qui ne sont pas initialisées échouent.
@@ -111,18 +106,13 @@ add(3,4)
 ```
 
 ```Output
-The function or command was called like a method. Parameters should be separated by spaces,
-as described in 'Get-Help about_Parameter.'
-At line:1 char:4
-+ add <<<< (3,4)
-+ CategoryInfo          : InvalidOperation: (:) [], RuntimeException
-+ FullyQualifiedErrorId : StrictModeFunctionCallWithParens
+InvalidOperation: The function or command was called as if it were a method. Parameters should be separated by spaces. For information about parameters, see the about_Parameters Help topic.
 ```
 
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -132,15 +122,11 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
-Property 'Month' cannot be found on this object; make sure it exists.
-At line:1 char:9
-+ $string. <<<< month
-+ CategoryInfo          : InvalidOperation: (.:OperatorToken) [], RuntimeException
-+ FullyQualifiedErrorId : PropertyNotFoundStrict
+PropertyNotFoundException: The property 'Month' cannot be found on this object. Verify that the property exists.
 ```
 
 Cette commande active le mode strict sur et lui affecte la version 2,0. Par conséquent, PowerShell retourne une erreur si vous utilisez la syntaxe de méthode, qui utilise des parenthèses et des virgules pour un appel de fonction ou référence des variables non initialisées ou des propriétés inexistantes.
@@ -158,8 +144,8 @@ Si le mode strict est défini sur **off** , les index non valides ou hors limite
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -170,29 +156,19 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
-Index was outside the bounds of the array.
-At line:1 char:1
-+ $a[2] -eq $null
-+ ~~~~~~~~~~~~~~~
-    + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
-    + FullyQualifiedErrorId : System.IndexOutOfRangeException
+OperationStopped: Index was outside the bounds of the array.
 
-Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
-At line:1 char:1
-+ $a['abc'] -eq $null
-+ ~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
-    + FullyQualifiedErrorId : InvalidCastFromStringToInteger
+InvalidArgument: Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 ```
 
 Si le mode strict est défini sur la version 3 ou une version ultérieure, les index non valides ou hors limites génèrent des erreurs.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Désactivé
 
@@ -212,7 +188,7 @@ Accept wildcard characters: False
 
 ### -Version
 
-Spécifie les conditions qui provoquent une erreur en mode strict. Ce paramètre accepte tout numéro de version PowerShell valide. Toute valeur supérieure à 3 est traitée comme la **dernière version** .
+Spécifie les conditions qui provoquent une erreur en mode strict. Ce paramètre accepte tout numéro de version PowerShell valide. Toute valeur supérieure à 3 est traitée comme la **dernière version**.
 
 Les valeurs effectives pour ce paramètre sont les suivantes :
 
