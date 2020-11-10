@@ -2,12 +2,12 @@
 title: Nouveautés de PowerShell 7.0
 description: Nouvelles fonctionnalités et modifications de PowerShell 7.0
 ms.date: 03/04/2020
-ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+ms.openlocfilehash: 3a5a1aaa0bd9dd1e0df7d6f5e6021678ed21dce4
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162458"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355270"
 ---
 # <a name="whats-new-in-powershell-70"></a>Nouveautés de PowerShell 7.0
 
@@ -42,14 +42,14 @@ PowerShell 7 prend actuellement en charge les systèmes d’exploitation suivant
 
 En outre, PowerShell 7.0 prend en charge les versions ARM32 et ARM64 de Debian, Ubuntu et ARM64 Alpine Linux.
 
-Consultez les instructions d’installation pour votre système d’exploitation par défaut [Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7), [macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) ou [Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7).
+Consultez les instructions d’installation pour votre système d’exploitation par défaut [Windows](/powershell/scripting/install/installing-powershell-core-on-windows), [macOS](/powershell/scripting/install/installing-powershell-core-on-macos) ou [Linux](/powershell/scripting/install/installing-powershell-core-on-linux).
 
 Bien qu’ils ne soit pas officiellement pris en charge, la communauté a également fourni des packages pour [Arch](https://aur.archlinux.org/packages/powershell/) et Kali Linux.
 
 > [!NOTE]
-> Debian 10 et CentOS 8 ne prennent actuellement pas en charge la communication à distance WinRM. Pour plus d’informations sur la configuration de la communication à distance basée sur SSH, consultez [Communication à distance PowerShell via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7).
+> Debian 10 et CentOS 8 ne prennent actuellement pas en charge la communication à distance WinRM. Pour plus d’informations sur la configuration de la communication à distance basée sur SSH, consultez [Communication à distance PowerShell via SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-Pour plus d’informations à jour sur les systèmes d’exploitation pris en charge et le cycle de vie de support, consultez le [cycle de vie du support PowerShell](/powershell/scripting/powershell-support-lifecycle?view=powershell-7).
+Pour plus d’informations à jour sur les systèmes d’exploitation pris en charge et le cycle de vie de support, consultez le [cycle de vie du support PowerShell](/powershell/scripting/powershell-support-lifecycle).
 
 ## <a name="running-powershell-7"></a>Exécution de PowerShell 7
 
@@ -72,7 +72,7 @@ Le package d’installation PowerShell 7 met à niveau les versions précédente
 
 PowerShell 7.0 marque un passage à .NET Core 3.1, ce qui permet d’améliorer significativement la compatibilité descendante avec les modules Windows PowerShell existants. Ceci inclut de nombreux modules sur Windows qui nécessitent une fonctionnalité GUI comme `Out-GridView` et `Show-Command`, ainsi que de nombreux modules de gestion des rôles fournis avec Windows.
 
-Pour Windows, un nouveau paramètre de commutateur **UseWindowsPowerShell** est ajouté à `Import-Module`. Ce commutateur crée un module proxy dans PowerShell 7, qui utilise un processus Windows PowerShell local pour exécuter implicitement toutes les cmdlets contenues dans ce module. Pour plus d’informations sur [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7).
+Pour Windows, un nouveau paramètre de commutateur **UseWindowsPowerShell** est ajouté à `Import-Module`. Ce commutateur crée un module proxy dans PowerShell 7, qui utilise un processus Windows PowerShell local pour exécuter implicitement toutes les cmdlets contenues dans ce module. Pour plus d’informations sur [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&preserve-view=true).
 
 Pour plus d’informations sur les modules Microsoft fonctionnant avec PowerShell 7.0, consultez le [tableau de compatibilité des modules](https://aka.ms/PSModuleCompat).
 
@@ -102,7 +102,7 @@ Le nouveau paramètre **ThrottleLimit** limite le nombre de blocs de scripts ex�
 
 Utilisez la variable `$_` pour représenter l'objet d’entrée actuel dans le bloc de script. Utilisez l’étendue `$using:` pour transférer des références de variable vers le bloc de script en cours d’exécution.
 
-Pour plus d’informations sur [ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7).
+Pour plus d’informations sur [ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&preserve-view=true).
 
 ## <a name="ternary-operator"></a>Opérateur ternaire
 
@@ -126,11 +126,11 @@ $message = (Test-Path $path) ? "Path exists" : "Path not found"
 
 Dans cet exemple, si le chemin existe, **Le chemin existe** s’affiche. Si le chemin n’existe pas, **Chemin introuvable** s’affiche.
 
-Pour plus d’informations [À propos de Si](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7).
+Pour plus d’informations [À propos de Si](/powershell/module/microsoft.powershell.core/about/about_if).
 
 ## <a name="pipeline-chain-operators"></a>Opérateurs de chaîne de pipeline
 
-PowerShell 7 implémente les opérateurs `&&` et `||` pour attacher des pipelines de manière conditionnelle. Ces opérateurs sont connus dans PowerShell en tant qu’« opérateurs de chaîne de pipeline » et sont similaires à des listes AND et OR dans des interpréteurs de commandes tels que **Bash** et **Zsh**, de même que des symboles de traitement conditionnel dans l’interface de commande Windows (**cmd.exe**).
+PowerShell 7 implémente les opérateurs `&&` et `||` pour attacher des pipelines de manière conditionnelle. Ces opérateurs sont connus dans PowerShell en tant qu’« opérateurs de chaîne de pipeline » et sont similaires à des listes AND et OR dans des interpréteurs de commandes tels que **Bash** et **Zsh** , de même que des symboles de traitement conditionnel dans l’interface de commande Windows ( **cmd.exe** ).
 
 L’opérateur `&&` exécute le pipeline droit si l’exécution du pipeline gauche a réussi. Inversement, l’opérateur `||` exécute le pipeline droit si l’exécution du pipeline gauche a échoué.
 
@@ -179,7 +179,7 @@ Write-Error 'Bad'
 Second
 ```
 
-Pour plus d'informations [À propos des opérateurs de chaîne de pipeline](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7).
+Pour plus d'informations [À propos des opérateurs de chaîne de pipeline](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7&preserve-view=true).
 
 ## <a name="null-coalescing-assignment-and-conditional-operators"></a>Coalesence Null, assignation et opérateurs conditionnels
 
@@ -226,7 +226,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### <a name="null-conditional-member-access-operators--and--experimental"></a>Opérateurs d’accès conditionnel des membres Null ?. et ?[] (Expérimental)
 
 > [!NOTE]
-> Il s’agit d’une fonctionnalité expérimentale nommée **PSNullConditionalOperators**. En savoir plus [À Propos des fonctionnalités expérimentales](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Il s’agit d’une fonctionnalité expérimentale nommée **PSNullConditionalOperators**. Pour plus d’informations, consultez [Utilisation des fonctionnalités expérimentales](/powershell/scripting/learn/experimental-features).
 
 Un opérateur conditionnel Null n’autorise les membres, `?.`, ou les éléments, `?[]`, à accéder à son opérande que si cet opérande a la valeur non Null ; sinon, il retourne la valeur Null.
 
@@ -241,7 +241,7 @@ ${Service}?.status
 Stopped
 ```
 
-L’exemple suivant retourne la valeur Null, sans essayer d’accéder au nom du membre **État** :
+L’exemple suivant retourne la valeur Null, sans essayer d’accéder au nom du membre **État**  :
 
 ```powershell
 $service = $Null
@@ -263,13 +263,13 @@ $a = $null
 ${a}?[0]
 ```
 
-Pour plus d’informations [About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7).
+Pour plus d’informations [About_Operators](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&preserve-view=true).
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>Nouvelle vue ConciseView et cmdlet Get-Error
 
 PowerShell 7.0 optimise l’affichage des messages d’erreur pour améliorer la lisibilité des erreurs de script et interactives avec un nouvel affichage par défaut **ConciseView**. Les affichages peuvent être sélectionnées par l’utilisateur via la variable de préférence `$ErrorView`.
 
-Avec **ConciseView**, si une erreur ne provient pas d’un script ou d’un analyseur, le message d’erreur a une seule ligne :
+Avec **ConciseView** , si une erreur ne provient pas d’un script ou d’un analyseur, le message d’erreur a une seule ligne :
 
 ```powershell
 Get-Childitem -Path c:\NotReal
@@ -305,13 +305,13 @@ La cmdlet `Get-Error` prend en charge l’entrée du pipeline à l’aide de la 
 $Error | Get-Error
 ```
 
-La cmdlet `Get-Error` prend en charge le paramètre **le plus récent**, ce qui vous permet de spécifier le nombre d’erreurs de la session active que vous souhaitez afficher.
+La cmdlet `Get-Error` prend en charge le paramètre **le plus récent** , ce qui vous permet de spécifier le nombre d’erreurs de la session active que vous souhaitez afficher.
 
 ```powershell
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-Pour plus d’informations sur [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7).
+Pour plus d’informations sur [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7&preserve-view=true).
 
 ## <a name="new-version-notification"></a>Notification en cas de nouvelle version
 
@@ -346,12 +346,12 @@ Pour définir la notification de version pour le comportement `Default` uniqueme
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-Pour plus d'informations [À propos des notifications de mise à jour](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
+Pour plus d'informations [À propos des notifications de mise à jour](/powershell/module/microsoft.powershell.core/about/about_update_notifications).
 
 ## <a name="new-dsc-resource-support-with-invoke-dscresource-experimental"></a>Nouvelle prise en charge des ressources DSC avec Invoke-DSCResource (expérimental)
 
 > [!NOTE]
-> Il s’agit d’une fonctionnalité expérimentale nommée **PSDesiredStateConfiguration.InvokeDscResource**. En savoir plus [À Propos des fonctionnalités expérimentales](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7).
+> Il s’agit d’une fonctionnalité expérimentale nommée **PSDesiredStateConfiguration.InvokeDscResource**. Pour plus d’informations, consultez [Utilisation des fonctionnalités expérimentales](/powershell/scripting/learn/experimental-features).
 
 La cmdlet `Invoke-DscResource` exécute une méthode d’une ressource Desired State Configuration (DSC) PowerShell spécifiée.
 
@@ -366,7 +366,7 @@ Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateCo
 }
 ```
 
-Pour plus d’informations sur [Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7).
+Pour plus d’informations sur [Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&preserve-view=true).
 
 ## <a name="breaking-changes-and-improvements"></a>Dernières modifications et améliorations
 

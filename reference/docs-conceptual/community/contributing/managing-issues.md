@@ -1,14 +1,14 @@
 ---
 title: Processus de gestion des problèmes
-description: Cet article explique comment l’équipe PowerShell-Docs gère les demandes de tirage (pull request).
+description: Cet article explique comment l’équipe PowerShell-Docs gère les problèmes.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692536"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354590"
 ---
 # <a name="how-we-manage-issues"></a>Processus de gestion des problèmes
 
