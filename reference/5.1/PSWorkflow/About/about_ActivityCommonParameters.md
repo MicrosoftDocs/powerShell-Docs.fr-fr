@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ActivityCommonParameters
-ms.openlocfilehash: b745bf17e4ae26156042ecdc25211830177bc692
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 93fdcdb9c5afe0b73e843baf2474ec7d3f96a6cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207245"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387802"
 ---
 # <a name="about-activitycommonparameters"></a>À propos de ActivityCommonParameters
 
@@ -150,7 +150,7 @@ Le service WinRM utilise le nom de l'application pour sélectionner un port d'é
 
 Spécifie le mécanisme utilisé pour authentifier les informations d’identification de l’utilisateur lors de la connexion aux ordinateurs cibles. Les valeurs valides sont Default, Basic, Credssp, Digest, Kerberos, Negotiate et NegotiateWithImplicitCredential. La valeur par défaut est Default. Ce paramètre commun d’activité est également un paramètre commun de Workflow.
 
-Pour plus d'informations sur les valeurs de ce paramètre, consultez la description de l'énumération **System.Management.Automation.Runspaces.AuthenticationMechanism** sur MSDN.
+Pour plus d’informations sur les valeurs de ce paramètre, consultez la description de l’énumération **System. Management. Automation. instances d’exécution. AuthenticationMechanism** dans le kit de développement logiciel (SDK) PowerShell.
 
 > [!WARNING]
 > L'authentification CredSSP (Credential Security Service Provider), au cours de laquelle les informations d'identification de l'utilisateur sont passées à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui requièrent une authentification sur plusieurs ressources, telles que l'accès à un partage réseau distant. Ce mécanisme augmente le risque de sécurité lié à l'opération distante. Si l'ordinateur distant n'est pas fiable, les informations d'identification qui lui sont passées peuvent être utilisées pour contrôler la session réseau.

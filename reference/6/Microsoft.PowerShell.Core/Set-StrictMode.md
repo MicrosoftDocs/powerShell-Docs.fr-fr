@@ -7,19 +7,19 @@ ms.date: 04/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: d28ff57c864847658072c9b7a1979b2b513c04b3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f1cb30b34dcb86049c7818a2f8dd9b789f686cd9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204870"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387241"
 ---
 # Set-StrictMode
 
 ## SYNOPSIS
 Établit et applique des règles de codage dans les expressions, les scripts et les blocs de script.
 
-## SYNTAX
+## SYNTAXE
 
 ### Version (par défaut)
 
@@ -33,7 +33,7 @@ Set-StrictMode -Version <Version> [<CommonParameters>]
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-StrictMode` applet de commande configure le mode strict pour l’étendue actuelle et toutes les étendues enfants, puis l’active et la désactive. Lorsque le mode strict est activé, PowerShell génère une erreur de fin lorsque le contenu d’une expression, d’un script ou d’un bloc de script enfreint les règles de codage de base recommandées.
 
@@ -122,7 +122,7 @@ At line:1 char:4
 ```powershell
 Set-StrictMode -Off
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -132,7 +132,7 @@ True
 ```powershell
 Set-StrictMode -Version 2.0
 $string = "This is a string."
-$string.Month -eq $null
+$null -eq $string.Month
 ```
 
 ```Output
@@ -158,8 +158,8 @@ Si le mode strict est défini sur **off** , les index non valides ou hors limite
 ```powershell
 # Strict mode is off by default.
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
@@ -170,21 +170,21 @@ True
 ```powershell
 Set-StrictMode -Version 3
 $a = @(1)
-$a[2] -eq $null
-$a['abc'] -eq $null
+$null -eq $a[2]
+$null -eq $a['abc']
 ```
 
 ```Output
 Index was outside the bounds of the array.
 At line:1 char:1
-+ $a[2] -eq $null
++ $null -eq $a[2]
 + ~~~~~~~~~~~~~~~
     + CategoryInfo          : OperationStopped: (:) [], IndexOutOfRangeException
     + FullyQualifiedErrorId : System.IndexOutOfRangeException
 
 Cannot convert value "abc" to type "System.Int32". Error: "Input string was not in a correct format."
 At line:1 char:1
-+ $a['abc'] -eq $null
++ $null -eq $a['abc']
 + ~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [], RuntimeException
     + FullyQualifiedErrorId : InvalidCastFromStringToInteger
@@ -192,7 +192,7 @@ At line:1 char:1
 
 Si le mode strict est défini sur la version 3 ou une version ultérieure, les index non valides ou hors limites génèrent des erreurs.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Désactivé
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 
 ### -Version
 
-Spécifie les conditions qui provoquent une erreur en mode strict. Ce paramètre accepte tout numéro de version PowerShell valide. Toute valeur supérieure à 3 est traitée comme la **dernière version** .
+Spécifie les conditions qui provoquent une erreur en mode strict. Ce paramètre accepte tout numéro de version PowerShell valide. Toute valeur supérieure à 3 est traitée comme la **dernière version**.
 
 Les valeurs effectives pour ce paramètre sont les suivantes :
 

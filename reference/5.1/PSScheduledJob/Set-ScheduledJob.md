@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
-ms.openlocfilehash: 99dbdc84430c0a8b5cf505a22b139cd07236e160
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6144d9f19b86727bc09d07e94f4bcf158e3b7071
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202970"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387904"
 ---
 # Set-ScheduledJob
 
 ## SYNOPSIS
 Modifie les tâches planifiées.
 
-## SYNTAX
+## SYNTAXE
 
 ### ScriptBlock (valeur par défaut)
 
@@ -48,7 +48,7 @@ Set-ScheduledJob [-InputObject] <ScheduledJobDefinition> [-ClearExecutionHistory
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 L'applet de commande **Set-ScheduledJob** modifie les propriétés des tâches planifiées, telles que les commandes exécutées par les tâches ou les informations d'identification requises pour exécuter la tâche.
 Vous pouvez également l'utiliser pour effacer l'historique d'exécution de la tâche planifiée.
 
@@ -120,10 +120,10 @@ La commande utilise l’applet de commande Invoke-Command pour exécuter une com
 La commande distante commence par une commande Get-ScheduledJob qui obtient toutes les tâches planifiées sur l’ordinateur.
 Les tâches planifiées sont dirigées vers l’applet de commande **Set-ScheduledJob** , qui modifie le script d’initialisation en SetForRun.ps1.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ArgumentList
-Spécifie des valeurs pour les paramètres du script spécifié par le paramètre *FilePath* ou pour la commande spécifiée par le paramètre *ScriptBlock* .
+Spécifie des valeurs pour les paramètres du script spécifié par le paramètre *FilePath* ou pour la commande spécifiée par le paramètre *ScriptBlock*.
 
 ```yaml
 Type: System.Object[]
@@ -142,15 +142,14 @@ Spécifie le mécanisme permettant d'authentifier les informations d'identificat
 Les valeurs valides pour ce paramètre sont :
 
 - Default
-- Basic
+- De base
 - CredSSP
 - Digest
 - Kerberos
 - Negotiate
 - NegotiateWithImplicitCredential
 
-La valeur par défaut est Default.
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [AuthenticationMechanism, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) dans MSDN Library.
+La valeur par défaut est Default. Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism) dans le kit de développement logiciel (SDK) PowerShell.
 
 ATTENTION : l’authentification CredSSP (Credential Security Support Provider), dans laquelle les informations d’identification de l’utilisateur sont transmises à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui requièrent une authentification sur plusieurs ressources, telles que l’accès à un partage réseau distant.
 Ce mécanisme augmente le risque de sécurité lié à l'opération distante.
@@ -177,7 +176,7 @@ Pour afficher l’historique d’exécution, utilisez l’applet de commande Get
 Pour obtenir les résultats de la tâche, utilisez l'applet de commande Receive-Job.
 
 Ce paramètre n'affecte pas les événements écrits par le Planificateur de tâches dans les journaux des événements Windows et n'empêche pas Windows PowerShell d'enregistrer les résultats de la tâche.
-Pour gérer le nombre de résultats de la tâche qui sont enregistrés, utilisez le paramètre *MaxResultCount* .
+Pour gérer le nombre de résultats de la tâche qui sont enregistrés, utilisez le paramètre *MaxResultCount*.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -213,8 +212,8 @@ Accept wildcard characters: False
 ### -FilePath
 Spécifie un script exécuté par la tâche planifiée.
 Entrez le chemin d'accès à un fichier .ps1 sur l'ordinateur local.
-Pour spécifier les valeurs par défaut des paramètres de script, utilisez le paramètre *ArgumentList* .
-Chaque tâche planifiée doit avoir une valeur *ScriptBlock* ou *FilePath* .
+Pour spécifier les valeurs par défaut des paramètres de script, utilisez le paramètre *ArgumentList*.
+Chaque tâche planifiée doit avoir une valeur *ScriptBlock* ou *FilePath*.
 
 ```yaml
 Type: System.String
@@ -230,10 +229,10 @@ Accept wildcard characters: False
 
 ### -InitializationScript
 Spécifie le chemin d'accès complet à un script Windows PowerShell (.ps1).
-Le script d'initialisation s'exécute dans la session créée pour la tâche en arrière-plan avant les commandes spécifiées par le paramètre *ScriptBlock* ou le script spécifié par le paramètre *FilePath* .
+Le script d'initialisation s'exécute dans la session créée pour la tâche en arrière-plan avant les commandes spécifiées par le paramètre *ScriptBlock* ou le script spécifié par le paramètre *FilePath*.
 Vous pouvez utiliser le script d'initialisation pour configurer la session, par exemple, pour ajouter des fichiers, des fonctions ou des alias, pour créer des répertoires ou pour vérifier des conditions préalables.
 
-Pour spécifier un script qui exécute les commandes de tâche principales, utilisez le paramètre *FilePath* .
+Pour spécifier un script qui exécute les commandes de tâche principales, utilisez le paramètre *FilePath*.
 
 Si le script d’initialisation génère une erreur, y compris une erreur sans fin d’exécution, l’instance actuelle de la tâche planifiée ne s’exécute pas et son état est failed.
 
@@ -252,7 +251,7 @@ Accept wildcard characters: False
 ### -InputObject
 Spécifie la tâche planifiée à modifier.
 Entrez une variable qui contient des objets **ScheduledJobDefinition** ou tapez une commande ou une expression qui obtient des objets **ScheduledJobDefinition** , par exemple une commande Get-ScheduledJob.
-Vous pouvez également diriger un objet **ScheduledJobDefinition** vers **Set-ScheduledJob** .
+Vous pouvez également diriger un objet **ScheduledJobDefinition** vers **Set-ScheduledJob**.
 
 Si vous spécifiez plusieurs tâches planifiées, **Set-ScheduledJob** apporte les mêmes modifications à toutes les tâches.
 
@@ -282,7 +281,7 @@ Pour obtenir les résultats de la tâche, utilisez l'applet de commande Receive-
 
 Le paramètre *MaxResultCount* définit la valeur de la propriété ExecutionHistoryLength de la tâche planifiée.
 
-Pour supprimer l'historique d'exécution actuel et les résultats des tâches, utilisez le paramètre *ClearExecutionHistory* .
+Pour supprimer l'historique d'exécution actuel et les résultats des tâches, utilisez le paramètre *ClearExecutionHistory*.
 
 ```yaml
 Type: System.Int32
@@ -300,7 +299,7 @@ Accept wildcard characters: False
 Spécifie un nouveau nom pour la tâche planifiée et les instances de la tâche planifiée.
 Le nom doit être unique sur l'ordinateur local.
 
-Pour identifier la tâche planifiée à modifier, utilisez le paramètre *InputObject* ou dirigez une tâche planifiée à partir de Get-ScheduledJob vers **Set-ScheduledJob** .
+Pour identifier la tâche planifiée à modifier, utilisez le paramètre *InputObject* ou dirigez une tâche planifiée à partir de Get-ScheduledJob vers **Set-ScheduledJob**.
 
 Ce paramètre ne modifie pas les noms des instances de tâche sur le disque.
 Il affecte uniquement les instances de tâche qui sont démarrées à l'issue de cette commande.
@@ -410,9 +409,9 @@ Accept wildcard characters: False
 ### -ScriptBlock
 Spécifie les commandes exécutées par la tâche planifiée.
 Placez les commandes entre accolades ( { } ) pour créer un bloc de script.
-Pour spécifier les valeurs par défaut des paramètres de commande, utilisez le paramètre *ArgumentList* .
+Pour spécifier les valeurs par défaut des paramètres de commande, utilisez le paramètre *ArgumentList*.
 
-Chaque commande Register-ScheduledJob doit utiliser les paramètres *ScriptBlock* ou *FilePath* .
+Chaque commande Register-ScheduledJob doit utiliser les paramètres *ScriptBlock* ou *FilePath*.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -460,7 +459,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ## ENTRÉES
 
 ### Microsoft. PowerShell. ScheduledJob. ScheduledJobDefinition
-Vous pouvez diriger les tâches planifiées vers **Set-ScheduledJob** .
+Vous pouvez diriger les tâches planifiées vers **Set-ScheduledJob**.
 
 ## SORTIES
 

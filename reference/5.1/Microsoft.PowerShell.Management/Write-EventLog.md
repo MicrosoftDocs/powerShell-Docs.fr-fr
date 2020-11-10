@@ -7,32 +7,31 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: cae34c4cf942d9aa4abb9a2d716ef9854f70de2e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203434"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388244"
 ---
 # Write-EventLog
 
 ## SYNOPSIS
 Écrit un événement dans un journal des événements.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEntryType>] [-Category <Int16>]
  [-EventId] <Int32> [-Message] <String> [-RawData <Byte[]>] [-ComputerName <String>] [<CommonParameters>]
 ```
 
-## Description
-L’applet de commande **Write-EventLog** écrit un événement dans un journal des événements.
+## DESCRIPTION
+L' `Write-EventLog` applet de commande écrit un événement dans un journal des événements.
 
 Pour écrire un événement dans un journal des événements, le journal des événements doit exister sur l'ordinateur et la source du journal des événements doit être inscrite.
 
-Les applets de commande qui contiennent le nom **EventLog** (les applets de commande **EventLog** ) fonctionnent uniquement sur les journaux des événements classiques.
-Pour récupérer des événements à partir des journaux qui utilisent la technologie du journal des événements Windows dans Windows Vista et les versions ultérieures du système d’exploitation Windows, utilisez l’applet de commande Get-WinEvent.
+Les applets de commande qui contiennent le nom **EventLog** (les applets de commande **EventLog** ) fonctionnent uniquement sur les journaux des événements classiques. Pour récupérer des événements à partir des journaux qui utilisent la technologie du journal des événements Windows dans Windows Vista et les versions ultérieures du système d’exploitation Windows, utilisez l’applet de commande `Get-WinEvent` .
 
 ## EXEMPLES
 
@@ -52,11 +51,11 @@ PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "My
 
 Cette commande écrit un événement à partir de la source MyApp dans le journal des événements Application sur l'ordinateur distant Server01.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Catégorie
-Spécifie une catégorie de tâche pour l'événement.
-Entrez un entier qui est associé aux chaînes figurant dans le fichier de messages des catégories pour le journal des événements.
+
+Spécifie une catégorie de tâche pour l'événement. Entrez un entier qui est associé aux chaînes figurant dans le fichier de messages des catégories pour le journal des événements.
 
 ```yaml
 Type: System.Int16
@@ -71,13 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-Spécifie un ordinateur distant.
-La valeur par défaut est l'ordinateur local.
+
+Spécifie un ordinateur distant. La valeur par défaut est l'ordinateur local.
 
 Tapez le nom NetBIOS, une adresse IP ou un nom de domaine complet d'un ordinateur distant.
 
-Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell.
-Vous pouvez utiliser le paramètre *ComputerName* de l’applet de commande Get-EventLog même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
+Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell. Vous pouvez utiliser le paramètre **ComputerName** de l' `Get-EventLog` applet de commande même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
 
 ```yaml
 Type: System.String
@@ -92,11 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -EntryType
-Spécifie le type d'entrée de l'événement.
-Les valeurs acceptables pour ce paramètre sont les suivantes : Error, Warning, information, SuccessAudit et FailureAudit.
-La valeur par défaut est Information.
 
-Pour obtenir une description des valeurs, consultez [EventLogEntryType, énumération](https://go.microsoft.com/fwlink/?LinkId=143599) dans MSDN Library.
+Spécifie le type d'entrée de l'événement. Les valeurs acceptables pour ce paramètre sont les suivantes : Error, Warning, information, SuccessAudit et FailureAudit. La valeur par défaut est Information.
+
+Pour obtenir une description des valeurs, consultez [énumération EventLogEntryType](/dotnet/api/system.diagnostics.eventlogentrytype).
 
 ```yaml
 Type: System.Diagnostics.EventLogEntryType
@@ -112,9 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
-Spécifie l'identificateur de l'événement.
-Ce paramètre est obligatoire.
-La valeur maximale du paramètre *eventID* est 65535.
+
+Spécifie l'identificateur de l'événement. Ce paramètre est obligatoire. La valeur maximale du paramètre **eventID** est 65535.
 
 ```yaml
 Type: System.Int32
@@ -129,10 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
-Spécifie le nom du journal dans lequel l'événement est écrit.
-Entrez le nom du journal.
-Le nom du journal est la valeur de la propriété **log** , et non **et non LogDisplayName** .
-Les caractères génériques ne sont pas autorisés.
+
+Spécifie le nom du journal dans lequel l'événement est écrit. Entrez le nom du journal. Le nom du journal est la valeur de la propriété **log** , et non **et non LogDisplayName**. Les caractères génériques ne sont pas autorisés.
 Ce paramètre est obligatoire.
 
 ```yaml
@@ -148,8 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Message
-Spécifie le message de l'événement.
-Ce paramètre est obligatoire.
+
+Spécifie le message de l'événement. Ce paramètre est obligatoire.
 
 ```yaml
 Type: System.String
@@ -164,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -RawData
+
 Spécifie les données binaires qui sont associées à l'événement (en octets).
 
 ```yaml
@@ -179,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 Spécifie la source d'événement, qui correspond en général au nom de l'application qui écrit l'événement dans le journal.
 
 ```yaml
@@ -194,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
@@ -208,9 +205,7 @@ Cette applet de commande retourne des objets qui représentent les événements 
 
 ## REMARQUES
 
-* Pour utiliser **Write-EventLog** , démarrez Windows PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
-
-*
+Pour utiliser `Write-EventLog` , démarrez Windows PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
 
 ## LIENS CONNEXES
 

@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSSnapins
-ms.openlocfilehash: cc22f8de0b9d8a55dcfa12f3b47f3852d891e67b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 494b3275e4fe8a3aacdc358317950542962957cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207618"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388890"
 ---
 # <a name="about-pssnapins"></a>À propos de PSSnapins
 
@@ -57,7 +57,7 @@ Les composants logiciels enfichables intégrés sont enregistrés dans le systè
 
 Un composant logiciel enfichable Windows PowerShell est un programme écrit dans un langage de .NET Framework qui est compilé dans un fichier. dll. Pour utiliser les fournisseurs et les applets de commande dans un composant logiciel enfichable, vous devez d’abord inscrire le composant logiciel enfichable (l’ajouter au registre).
 
-La plupart des composants logiciels enfichables incluent un programme d’installation (un fichier. exe ou. msi) qui enregistre le fichier. dll pour vous. Toutefois, si vous recevez un composant logiciel enfichable sous la forme d’un fichier. dll, vous pouvez l’inscrire sur votre système. Pour plus d’informations, voir [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://go.microsoft.com/fwlink/?LinkID=143619) dans MSDN Library.
+La plupart des composants logiciels enfichables incluent un programme d’installation (un fichier. exe ou. msi) qui enregistre le fichier. dll pour vous. Toutefois, si vous recevez un composant logiciel enfichable sous la forme d’un fichier. dll, vous pouvez l’inscrire sur votre système. Pour plus d’informations, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
 
 Pour obtenir tous les composants logiciels enfichables inscrits sur votre système ou pour vérifier qu’un composant logiciel enfichable est inscrit, tapez :
 

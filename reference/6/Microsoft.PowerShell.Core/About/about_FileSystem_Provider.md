@@ -6,23 +6,24 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Fournisseur FileSystem
-ms.openlocfilehash: 24c30e311ba43842e759e884424ce3abfb92aae7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3464dbcbc1a7f357cdbc5368dc7a1e4d21f5ed5e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207118"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387591"
 ---
 # <a name="filesystem-provider"></a>Fournisseur FileSystem
 
 ## <a name="provider-name"></a>Nom du fournisseur
+
 FileSystem
 
 ## <a name="drives"></a>Lecteurs
 
 `C:`, `D:` ...
 
-## <a name="capabilities"></a>Fonctionnalités
+## <a name="capabilities"></a>Fonctions
 
 **Filtre** , **ShouldProcess**
 
@@ -205,7 +206,7 @@ Cette commande retourne un objet [System. Security. AccessControl. FileSecurity]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-Pour plus d’informations sur cet objet, dirigez la commande vers l’applet de commande d' [extraction de membre](xref:Microsoft.PowerShell.Utility.Get-Member) . Ou consultez « classe[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) » dans la bibliothèque MSDN (Microsoft Developer Network).
+Pour plus d’informations sur cet objet, dirigez la commande vers l’applet de commande d' [extraction de membre](xref:Microsoft.PowerShell.Utility.Get-Member) . Ou, consultez la classe [FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) .
 
 ### <a name="modify-the-acl-for-a-file"></a>Modifier la liste de contrôle d’accès d’un fichier
 

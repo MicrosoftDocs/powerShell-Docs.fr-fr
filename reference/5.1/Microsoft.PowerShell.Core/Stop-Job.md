@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Job
-ms.openlocfilehash: 0c26103f47a39cb1dbd0a9f0374f7622389329a6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c581ae593e56716ba92b1be4082ddc994ec2e229
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202650"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388482"
 ---
 # Stop-Job
 
 ## SYNOPSIS
 Arrête une tâche en arrière-plan PowerShell.
 
-## SYNTAX
+## SYNTAXE
 
 ### SessionIdParameterSet (par défaut)
 
@@ -57,21 +57,15 @@ Stop-Job [-PassThru] [-State] <JobState> [-WhatIf] [-Confirm] [<CommonParameters
 Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L’applet de commande **Stop-Job** arrête les tâches en arrière-plan PowerShell en cours.
-Vous pouvez utiliser cette applet de commande pour arrêter toutes les tâches ou arrêter les tâches sélectionnées en fonction de leur nom, ID, ID d’instance ou État, ou en passant un objet de traitement à **Stop-Job** .
+L' `Stop-Job` applet de commande arrête les tâches en arrière-plan PowerShell en cours. Vous pouvez utiliser cette applet de commande pour arrêter toutes les tâches ou arrêter les tâches sélectionnées en fonction de leur nom, ID, ID d’instance ou État, ou en passant un objet de traitement à `Stop-Job` .
 
-Vous pouvez utiliser **Stop-Job** pour arrêter des tâches en arrière-plan, telles que celles qui ont été démarrées à l’aide de l’applet de commande Start-Job ou du paramètre *AsJob* d’une applet de commande.
-Lorsque vous arrêtez une tâche en arrière-plan, PowerShell termine toutes les tâches en attente dans la file d’attente de travaux, puis met fin au travail.
-Aucune nouvelle tâche n'est ajoutée à la file d'attente après que cette commande a été soumise.
+Vous pouvez utiliser `Stop-Job` pour arrêter des tâches en arrière-plan, telles que celles qui ont été démarrées à l’aide `Start-Job` de l’applet de commande ou du paramètre **AsJob** d’une applet de commande. Lorsque vous arrêtez une tâche en arrière-plan, PowerShell termine toutes les tâches en attente dans la file d’attente de travaux, puis met fin au travail. Aucune nouvelle tâche n'est ajoutée à la file d'attente après que cette commande a été soumise.
 
-Cette applet de commande ne supprime pas les tâches en arrière-plan.
-Pour supprimer un travail, utilisez l’applet de commande Remove-Job.
+Cette applet de commande ne supprime pas les tâches en arrière-plan. Pour supprimer un travail, utilisez l' `Remove-Job` applet de commande.
 
-À compter de Windows PowerShell 3,0, **Stop-Job** arrête également les types de tâches personnalisées, tels que les tâches de workflow et les instances de tâches planifiées.
-Pour permettre à **Stop-Job** d’arrêter un travail avec un type de tâche personnalisé, importez le module qui prend en charge le type de tâche personnalisé dans la session avant d’exécuter une commande **Stop-Job** , soit à l’aide de l’applet de commande Import-Module, soit en utilisant ou en obtenant une applet de commande dans le module.
-Pour plus d'informations sur un type de tâche personnalisé particulier, consultez la documentation sur la fonctionnalité de type de tâche personnalisé.
+À compter de Windows PowerShell 3,0, `Stop-Job` arrête également les types de tâches personnalisées, tels que les tâches de workflow et les instances de tâches planifiées. Pour permettre `Stop-Job` à d’arrêter un travail avec un type de tâche personnalisé, importez le module qui prend en charge le type de tâche personnalisé dans la session avant d’exécuter une `Stop-Job` commande, soit à l’aide de l’applet de commande, soit `Import-Module` en utilisant ou en obtenant une applet de commande dans le module. Pour plus d'informations sur un type de tâche personnalisé particulier, consultez la documentation sur la fonctionnalité de type de tâche personnalisé.
 
 ## EXEMPLES
 
@@ -83,25 +77,18 @@ $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventL
 Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 ```
 
-Cet exemple montre comment utiliser l'applet de commande **Stop-Job** pour arrêter une tâche qui s'exécute sur un ordinateur distant.
+Cet exemple montre comment utiliser l' `Stop-Job` applet de commande pour arrêter un travail qui s’exécute sur un ordinateur distant.
 
-Étant donné que la tâche a été démarrée à l’aide de l’applet de commande Invoke-Command pour exécuter une commande **Start-Job** à distance, l’objet de traitement est stocké sur l’ordinateur distant.
-Vous devez utiliser une autre commande **Invoke-Command** pour exécuter une commande **Stop-Job** à distance.
-Pour plus d'informations sur les tâches distantes en arrière-plan, consultez about_Remote_Jobs.
+Étant donné que la tâche a été démarrée à l’aide `Invoke-Command` de l’applet de commande pour exécuter une `Start-Job` commande à distance, l’objet de traitement est stocké sur l’ordinateur distant. Vous devez utiliser une autre `Invoke-Command` commande pour exécuter une `Stop-Job` commande à distance. Pour plus d'informations sur les tâches distantes en arrière-plan, consultez about_Remote_Jobs.
 
-La première commande crée une session PowerShell ( **PSSession** ) sur l’ordinateur Serveur01, puis stocke l’objet de session dans la variable $s.
-La commande utilise les informations d'identification d'un administrateur de domaine.
+La première commande crée une session PowerShell ( **PSSession** ) sur l’ordinateur Serveur01, puis stocke l’objet de session dans la `$s` variable. La commande utilise les informations d'identification d'un administrateur de domaine.
 
-La deuxième commande utilise l'applet de commande **Invoke-Command** pour exécuter une commande **Start-Job** dans la session.
-La commande qui figure dans la tâche obtient tous les événements du journal d'événements système.
-L'objet de traitement qui en résulte est stocké dans la variable $j.
+La deuxième commande utilise l' `Invoke-Command` applet de commande pour exécuter une `Start-Job` commande dans la session. La commande qui figure dans la tâche obtient tous les événements du journal d'événements système. L’objet de traitement résultant est stocké dans la `$j` variable.
 
-La troisième commande arrête la tâche.
-Elle utilise l’applet de **commande Invoke-Command** pour exécuter une commande **Stop-Job** dans la **session PSSession** sur SERVEUR01.
-Comme les objets de traitement sont stockés dans $j, qui est une variable sur l'ordinateur local, la commande utilise le modificateur d'étendue Using pour identifier $j comme une variable locale.
+La troisième commande arrête la tâche. Elle utilise l' `Invoke-Command` applet de commande pour exécuter une `Stop-Job` commande dans la **session PSSession** sur SERVEUR01. Étant donné que les objets de traitement sont stockés dans `$j` , qui est une variable sur l’ordinateur local, la commande utilise le modificateur d’étendue using pour identifier `$j` une variable locale.
 Pour plus d’informations sur le modificateur d’étendue using, consultez [about_Remote_Variables](about/about_Remote_Variables.md).
 
-Une fois la commande terminée, la tâche est arrêtée et la **session PSSession** dans $s peut être utilisée.
+Quand la commande se termine, la tâche est arrêtée et la **session PSSession** dans `$s` peut être utilisée.
 
 ### Exemple 2 : arrêter une tâche en arrière-plan
 
@@ -157,12 +144,9 @@ Stop-Job -InstanceId e3bbfed1-9c53-401a-a2c3-a8db34336adf
 
 Ces commandes montrent comment arrêter une tâche sur la base de son ID d'instance.
 
-La première commande utilise l’applet de commande Get-Job pour récupérer les tâches dans la session active.
-La commande utilise un opérateur de pipeline (|) pour envoyer les tâches à une commande Format-Table, qui affiche une table des propriétés spécifiées de chaque travail.
-Cette table inclut l'ID d'instance de chaque tâche.
-Elle utilise une propriété calculée pour afficher l'état de la tâche.
+La première commande utilise l' `Get-Job` applet de commande pour récupérer les tâches dans la session active. La commande utilise un opérateur de pipeline ( `|` ) pour envoyer les tâches à une `Format-Table` commande, qui affiche une table des propriétés spécifiées de chaque travail. Cette table inclut l'ID d'instance de chaque tâche. Elle utilise une propriété calculée pour afficher l'état de la tâche.
 
-La deuxième commande utilise une commande **Stop-Job** qui a le paramètre *InstanceID* pour arrêter un travail sélectionné.
+La deuxième commande utilise une `Stop-Job` commande qui a le paramètre **InstanceID** pour arrêter un travail sélectionné.
 
 ### Exemple 7 : arrêter un travail sur un ordinateur distant
 
@@ -177,34 +161,27 @@ Id    Name    State      HasMoreData     Location         Command
 5     Job5    Stopped    True            user01-tablet    get-eventlog system
 ```
 
-Cet exemple montre comment utiliser l'applet de commande **Stop-Job** pour arrêter une tâche qui s'exécute sur un ordinateur distant.
+Cet exemple montre comment utiliser l' `Stop-Job` applet de commande pour arrêter un travail qui s’exécute sur un ordinateur distant.
 
-Étant donné que la tâche a été démarrée à l’aide du paramètre *AsJob* de l’applet de **commande Invoke-Command** , l’objet de traitement se trouve sur l’ordinateur local, même si le travail s’exécute sur l’ordinateur distant.
-Par conséquent, vous pouvez utiliser une commande **Stop-Job** locale pour arrêter la tâche.
+Étant donné que la tâche a été démarrée à l’aide du paramètre **AsJob** de l' `Invoke-Command` applet de commande, l’objet de traitement se trouve sur l’ordinateur local, même si le travail s’exécute sur l’ordinateur distant. Par conséquent, vous pouvez utiliser une `Stop-Job` commande locale pour arrêter le travail.
 
-La première commande utilise l'applet de commande **Invoke-Command** pour démarrer une tâche en arrière-plan sur l'ordinateur Server01.
-La commande utilise le paramètre *AsJob* pour exécuter la commande distante en tant que tâche en arrière-plan.
+La première commande utilise l' `Invoke-Command` applet de commande pour démarrer une tâche en arrière-plan sur l’ordinateur SERVEUR01. La commande utilise le paramètre **AsJob** pour exécuter la commande distante en tant que tâche en arrière-plan.
 
-Cette commande retourne un objet de traitement, qui est le même objet de traitement que celui retourné par l’applet de commande **Start-Job** .
-La commande enregistre l'objet de traitement dans la variable $j.
+Cette commande retourne un objet de traitement, qui est le même objet de traitement que celui retourné par l’applet de commande `Start-Job` .
+La commande enregistre l’objet de traitement dans la `$j` variable.
 
-La deuxième commande utilise un opérateur de pipeline pour envoyer la tâche figurant dans la variable $j à Stop-Job.
-La commande utilise le paramètre *PassThru* pour indiquer à **Stop-Job** de retourner un objet de traitement.
-L’affichage de l’objet de traitement confirme que l’état du travail est arrêté.
+La deuxième commande utilise un opérateur de pipeline pour envoyer la tâche dans la `$j` variable à `Stop-Job` . La commande utilise le paramètre **PassThru** pour demander `Stop-Job` à de retourner un objet de traitement. L’affichage de l’objet de traitement confirme que l’état du travail est arrêté.
 
 Pour plus d'informations sur les tâches distantes en arrière-plan, consultez about_Remote_Jobs.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Filter
 
-Spécifie une table de hachage de conditions.
-Cette applet de commande arrête les travaux qui remplissent toutes les conditions.
+Spécifie une table de hachage de conditions. Cette applet de commande arrête les travaux qui remplissent toutes les conditions.
 Entrez une table de hachage où les clés sont les propriétés des travaux et les valeurs celles des propriétés des travaux.
 
-Ce paramètre fonctionne uniquement sur les types de tâches personnalisées, tels que les tâches de workflow et les tâches planifiées.
-Il ne fonctionne pas sur les tâches en arrière-plan standard, telles que celles créées à l’aide de l’applet de commande **Start-Job** .
-Pour plus d'informations sur la prise en charge de ce paramètre, consultez la rubrique d'aide relative au type de tâche.
+Ce paramètre fonctionne uniquement sur les types de tâches personnalisées, tels que les tâches de workflow et les tâches planifiées. Il ne fonctionne pas sur les tâches en arrière-plan standard, telles que celles créées à l’aide de l’applet de commande `Start-Job` . Pour plus d'informations sur la prise en charge de ce paramètre, consultez la rubrique d'aide relative au type de tâche.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -222,13 +199,9 @@ Accept wildcard characters: False
 
 ### -Id
 
-Spécifie les ID des travaux que cette applet de commande arrête.
-La valeur par défaut est toutes les tâches dans la session active.
+Spécifie les ID des travaux que cette applet de commande arrête. La valeur par défaut est toutes les tâches dans la session active.
 
-L’ID est un entier qui identifie de façon unique le travail dans la session active.
-Il est plus facile à mémoriser et à taper que l’ID d’instance, mais il n’est unique que dans la session active.
-Vous pouvez taper un ou plusieurs ID, en les séparant par des virgules.
-Pour Rechercher l’ID d’un travail, tapez `Get-Job` .
+L’ID est un entier qui identifie de façon unique le travail dans la session active. Il est plus facile à mémoriser et à taper que l’ID d’instance, mais il n’est unique que dans la session active. Vous pouvez taper un ou plusieurs ID, en les séparant par des virgules. Pour Rechercher l’ID d’un travail, tapez `Get-Job` .
 
 ```yaml
 Type: System.Int32[]
@@ -244,11 +217,9 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-Spécifie les ID d’instance des travaux que cette applet de commande arrête.
-Par défaut, il s'agit de toutes les tâches.
+Spécifie les ID d’instance des travaux que cette applet de commande arrête. Par défaut, il s'agit de toutes les tâches.
 
-Un ID d'instance est un GUID qui identifie de façon unique la tâche sur l'ordinateur.
-Pour rechercher l'ID d'instance d'une tâche, utilisez Get-Job.
+Un ID d'instance est un GUID qui identifie de façon unique la tâche sur l'ordinateur. Pour Rechercher l’ID d’instance d’un travail, utilisez `Get-Job` .
 
 ```yaml
 Type: System.Guid[]
@@ -264,10 +235,7 @@ Accept wildcard characters: False
 
 ### -Travail
 
-Spécifie les travaux que cette applet de commande arrête.
-Entrez une variable qui contient les tâches ou tapez une commande permettant d'obtenir ces tâches.
-Vous pouvez également utiliser un opérateur de pipeline pour envoyer des travaux à l’applet de commande **Stop-Job** .
-Par défaut, **Stop-Job** supprime toutes les tâches qui ont été démarrées dans la session active.
+Spécifie les travaux que cette applet de commande arrête. Entrez une variable qui contient les tâches ou tapez une commande permettant d'obtenir ces tâches. Vous pouvez également utiliser un opérateur de pipeline pour envoyer des travaux à l’applet de commande `Stop-Job` . Par défaut, `Stop-Job` supprime tous les travaux qui ont été démarrés dans la session active.
 
 ```yaml
 Type: System.Management.Automation.Job[]
@@ -283,11 +251,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-Spécifie les noms conviviaux des travaux que cette applet de commande arrête.
-Entrez les noms de tâches dans une liste séparée par des virgules ou utilisez des caractères génériques (*) pour entrer un modèle de nom de tâche.
-Par défaut, **Stop-Job** arrête toutes les tâches créées dans la session active.
+Spécifie les noms conviviaux des travaux que cette applet de commande arrête. Entrez les noms de tâches dans une liste séparée par des virgules ou utilisez des caractères génériques (*) pour entrer un modèle de nom de tâche. Par défaut, `Stop-Job` arrête tous les travaux créés dans la session active.
 
-Étant donné que le nom convivial n’est pas forcément unique, utilisez les paramètres *WhatIf* et *Confirm* lors de l’arrêt des tâches par nom.
+Étant donné que le nom convivial n’est pas forcément unique, utilisez les paramètres **WhatIf** et **Confirm** lors de l’arrêt des tâches par nom.
 
 ```yaml
 Type: System.String[]
@@ -303,8 +269,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-Retourne un objet représentant l’élément que vous utilisez.
-Par défaut, cette applet de commande ne génère aucun résultat.
+Retourne un objet représentant l’élément que vous utilisez. Par défaut, cette applet de commande ne génère aucun résultat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -320,9 +285,7 @@ Accept wildcard characters: False
 
 ### -État
 
-Spécifie un état de travail.
-Cette applet de commande arrête uniquement les tâches dans l’état spécifié.
-Les valeurs valides pour ce paramètre sont :
+Spécifie un état de travail. Cette applet de commande arrête uniquement les tâches dans l’état spécifié. Les valeurs valides pour ce paramètre sont :
 
 - NotStarted
 - Exécution en cours
@@ -335,7 +298,7 @@ Les valeurs valides pour ce paramètre sont :
 - Suspension
 - En cours d’arrêt
 
-Pour plus d’informations sur les États de travail, consultez [JobState, énumération](https://msdn.microsoft.com/library/system.management.automation.jobstate) dans MSDN Library.
+Pour plus d’informations sur les États de travail, consultez [énumération JobState](/dotnet/api/system.management.automation.jobstate).
 
 ```yaml
 Type: System.Management.Automation.JobState
@@ -397,8 +360,7 @@ Vous pouvez diriger un objet de traitement vers cette applet de commande.
 
 ### Aucun, System. Management. Automation. PSRemotingJob
 
-Cette applet de commande retourne un objet de traitement, si vous spécifiez le paramètre *PassThru* .
-Sinon, cette applet de commande ne génère aucune sortie.
+Cette applet de commande retourne un objet de traitement, si vous spécifiez le paramètre **PassThru** . Sinon, cette applet de commande ne génère aucune sortie.
 
 ## REMARQUES
 

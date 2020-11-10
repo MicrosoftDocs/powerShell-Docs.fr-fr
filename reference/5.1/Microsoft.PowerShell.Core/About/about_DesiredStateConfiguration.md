@@ -6,12 +6,12 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
-ms.openlocfilehash: 2f043104c67078b98355b3e54171a8993e534837
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 5d088934ffc953ad19be401bce72f6287f0fde07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208730"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387020"
 ---
 # <a name="about_desiredstateconfiguration"></a>about_DesiredStateConfiguration
 
@@ -27,12 +27,12 @@ DSC fournit un ensemble d’extensions de langage PowerShell, de nouvelles apple
 
 DSC est introduit dans PowerShell 4,0.
 
-Pour plus d’informations sur DSC, consultez [vue d’ensemble de la configuration de l’état souhaité PowerShell](/powershell/scripting/dsc/overview/overview) dans la bibliothèque TechNet.
+Pour plus d’informations sur DSC, consultez [vue d’ensemble de la configuration de l’état souhaité PowerShell](/powershell/scripting/dsc/overview/overview).
 
 ## <a name="developing-dsc-resources-with-classes"></a>DÉVELOPPEMENT DE RESSOURCES DSC AVEC DES CLASSES
 
 À compter de PowerShell 5,0, vous pouvez développer des ressources DSC à l’aide de classes.
-Pour plus d’informations, consultez [about_Classes](about_Classes.md)et [écriture d’une ressource DSC personnalisée avec les classes PowerShell](/previous-versions//dn948461(v=technet.10)) sur Microsoft TechNet.
+Pour plus d’informations, consultez [about_Classes](about_Classes.md)et [écriture d’une ressource DSC personnalisée avec les classes PowerShell](/powershell/scripting/dsc/resources/authoringresourceclass).
 
 ## <a name="using-dsc"></a>UTILISATION DE DSC
 

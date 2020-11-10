@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
-ms.openlocfilehash: c1527c04d795206b8de968daf62456837627a098
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e3d1c5c071a334bddbfbc547ef2cc07e9e5c90aa
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204097"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388346"
 ---
 # Add-Computer
 
 ## SYNOPSIS
 Ajoutez l’ordinateur local à un domaine ou à un groupe de travail.
 
-## SYNTAX
+## SYNTAXE
 
 ### Domaine (par défaut)
 
@@ -38,14 +38,13 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L' `Add-Computer` applet de commande ajoute l’ordinateur local ou les ordinateurs distants à un domaine ou à un groupe de travail, ou les déplace d’un domaine à un autre.
-Elle crée également un compte de domaine si l’ordinateur est ajouté sans compte au domaine.
+L' `Add-Computer` applet de commande ajoute l’ordinateur local ou les ordinateurs distants à un domaine ou à un groupe de travail, ou les déplace d’un domaine à un autre. Elle crée également un compte de domaine si l’ordinateur est ajouté sans compte au domaine.
 
 Vous pouvez utiliser les paramètres de cette applet de commande pour spécifier une unité d’organisation (OU, Organizational Unit) et un contrôleur de domaine ou pour exécuter une jonction non sécurisée.
 
-Pour obtenir les résultats de la commande, utilisez les paramètres **Verbose** et **PassThru** .
+Pour obtenir les résultats de la commande, utilisez les paramètres **Verbose** et **PassThru**.
 
 ## EXEMPLES
 
@@ -90,10 +89,7 @@ Elle utilise le paramètre OUPath pour spécifier l’unité d’organisation de
 Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
-Cette commande ajoute l’ordinateur Server01 au domaine Domain02.
-Elle utilise le paramètre **LocalCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur Server01.
-Elle utilise le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre des ordinateurs au domaine.
-Elle utilise le paramètre **Restart** pour redémarrer l’ordinateur à la fin de l’opération de jonction et le paramètre **Force** pour supprimer les messages de confirmation de l’utilisateur.
+Cette commande ajoute l’ordinateur Server01 au domaine Domain02. Elle utilise le paramètre **LocalCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à l’ordinateur Server01. Elle utilise le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre des ordinateurs au domaine. Elle utilise le paramètre **Restart** pour redémarrer l’ordinateur à la fin de l’opération de jonction et le paramètre **Force** pour supprimer les messages de confirmation de l’utilisateur.
 
 ### Exemple 6 : déplacer un groupe d’ordinateurs vers un nouveau domaine
 
@@ -103,9 +99,7 @@ Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -L
 
 Cette commande déplace les ordinateurs Server01 et Server02, et l’ordinateur local, de Domain01 vers Domain02.
 
-Elle utilise le paramètre **LocalCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter aux trois ordinateurs concernés.
-Elle utilise le paramètre **UnjoinDomainCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de disjoindre les ordinateurs du domaine Domain01 et le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre les ordinateurs au domaine Domain02.
-Elle utilise le paramètre **Restart** pour redémarrer les trois ordinateurs une fois le déplacement terminé.
+Elle utilise le paramètre **LocalCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter aux trois ordinateurs concernés. Elle utilise le paramètre **UnjoinDomainCredential** pour spécifier un compte d’utilisateur qui a l’autorisation de disjoindre les ordinateurs du domaine Domain01 et le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre les ordinateurs au domaine Domain02. Elle utilise le paramètre **Restart** pour redémarrer les trois ordinateurs une fois le déplacement terminé.
 
 ### Exemple 7 : déplacement d’un ordinateur vers un nouveau domaine et modification du nom de l’ordinateur
 
@@ -115,8 +109,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 
 Cette commande déplace l’ordinateur Server01 vers le domaine Domain02 et remplace le nom d’ordinateur par Server044.
 
-La commande utilise les informations d’identification de l’utilisateur actuel pour se connecter à l’ordinateur Server01 et le disjoindre de son domaine actuel.
-Elle utilise le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre l’ordinateur au domaine Domain02.
+La commande utilise les informations d’identification de l’utilisateur actuel pour se connecter à l’ordinateur Server01 et le disjoindre de son domaine actuel. Elle utilise le paramètre **Credential** pour spécifier un compte d’utilisateur qui a l’autorisation de joindre l’ordinateur au domaine Domain02.
 
 ### Exemple 8 : ajouter des ordinateurs listés dans un fichier à un nouveau domaine
 
@@ -124,9 +117,7 @@ Elle utilise le paramètre **Credential** pour spécifier un compte d’utilisat
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-Cette commande ajoute les ordinateurs qui sont répertoriés dans le fichier Servers.txt au domaine Domain02.
-Elle utilise le paramètre **Options** pour spécifier l’option **Win9xUpgrade** .
-Le paramètre **Restart** redémarre tous les ordinateurs nouvellement ajoutés à la fin de l'opération de jonction.
+Cette commande ajoute les ordinateurs qui sont répertoriés dans le fichier Servers.txt au domaine Domain02. Elle utilise le paramètre **Options** pour spécifier l’option **Win9xUpgrade**. Le paramètre **Restart** redémarre tous les ordinateurs nouvellement ajoutés à la fin de l'opération de jonction.
 
 ### Exemple 9 : ajouter un ordinateur à un domaine à l’aide des informations d’identification prédéfinies de l’ordinateur
 
@@ -144,22 +135,19 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-Cette combinaison de commandes crée un nouveau compte d’ordinateur avec un nom prédéfini et un mot de passe de jointure temporaire dans un domaine à l’aide d’un ordinateur joint à un domaine existant.
-Ensuite, un ordinateur avec le nom prédéfini joint le domaine en utilisant uniquement le nom de l’ordinateur et le mot de passe de jointure temporaire.
+Cette combinaison de commandes crée un nouveau compte d’ordinateur avec un nom prédéfini et un mot de passe de jointure temporaire dans un domaine à l’aide d’un ordinateur joint à un domaine existant. Ensuite, un ordinateur avec le nom prédéfini joint le domaine en utilisant uniquement le nom de l’ordinateur et le mot de passe de jointure temporaire.
 Le mot de passe prédéfini est utilisé uniquement pour prendre en charge l’opération de jointure et est remplacé dans le cadre des procédures de compte d’ordinateur normales une fois que l’ordinateur a terminé la jonction.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ComputerName
 
 Spécifie les ordinateurs à ajouter à un domaine ou à un groupe de travail.
 La valeur par défaut est l'ordinateur local.
 
-Tapez le nom NetBIOS, une adresse IP (Internet Protocol) ou un nom de domaine complet de chacun des ordinateurs distants.
-Pour spécifier l'ordinateur local, tapez le nom de l'ordinateur, un point (.) ou « localhost ».
+Tapez le nom NetBIOS, une adresse IP (Internet Protocol) ou un nom de domaine complet de chacun des ordinateurs distants. Pour spécifier l’ordinateur local, tapez le nom de l’ordinateur, un point ( `.` ) ou « localhost ».
 
-Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell.
-Vous pouvez utiliser le paramètre **ComputerName** de `Add-Computer` même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
+Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell. Vous pouvez utiliser le paramètre **ComputerName** de `Add-Computer` même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -180,11 +168,9 @@ Accept wildcard characters: False
 Spécifie un compte d’utilisateur qui a l’autorisation de joindre les ordinateurs à un nouveau domaine.
 La valeur par défaut est l’utilisateur actuel.
 
-Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`.
-Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
+Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`. Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
 
-Pour spécifier un compte d’utilisateur qui a l’autorisation de supprimer l’ordinateur de son domaine actuel, utilisez le paramètre **UnjoinDomainCredential** .
-Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à un ordinateur distant, utilisez le paramètre **LocalCredential** .
+Pour spécifier un compte d’utilisateur qui a l’autorisation de supprimer l’ordinateur de son domaine actuel, utilisez le paramètre **UnjoinDomainCredential**. Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à un ordinateur distant, utilisez le paramètre **LocalCredential**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -200,8 +186,7 @@ Accept wildcard characters: False
 
 ### -DomainName
 
-Spécifie le domaine auquel les ordinateurs sont ajoutés.
-Ce paramètre est obligatoire lors de l’ajout des ordinateurs à un domaine.
+Spécifie le domaine auquel les ordinateurs sont ajoutés. Ce paramètre est obligatoire lors de l’ajout des ordinateurs à un domaine.
 
 ```yaml
 Type: System.String
@@ -217,8 +202,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Supprime la demande de confirmation de l’utilisateur.
-Sans ce paramètre, `Add-Computer` vous devez confirmer l’ajout de chaque ordinateur.
+Supprime la demande de confirmation de l’utilisateur. Sans ce paramètre, `Add-Computer` vous devez confirmer l’ajout de chaque ordinateur.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -236,14 +220,11 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-Spécifie un compte d’utilisateur qui a l’autorisation de se connecter aux ordinateurs spécifiés par le paramètre **ComputerName** .
-La valeur par défaut est l’utilisateur actuel.
+Spécifie un compte d’utilisateur qui a l’autorisation de se connecter aux ordinateurs spécifiés par le paramètre **ComputerName**. La valeur par défaut est l’utilisateur actuel.
 
-Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`.
-Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
+Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`. Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
 
-Pour spécifier un compte d’utilisateur qui a l’autorisation d’ajouter les ordinateurs à un nouveau domaine, utilisez le paramètre **Credential** .
-Pour spécifier un compte d’utilisateur qui a l’autorisation de supprimer les ordinateurs de leur domaine actuel, utilisez le paramètre **UnjoinDomainCredential** .
+Pour spécifier un compte d’utilisateur qui a l’autorisation d’ajouter les ordinateurs à un nouveau domaine, utilisez le paramètre **Credential**. Pour spécifier un compte d’utilisateur qui a l’autorisation de supprimer les ordinateurs de leur domaine actuel, utilisez le paramètre **UnjoinDomainCredential**.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -261,8 +242,7 @@ Accept wildcard characters: False
 
 ### -NewName
 
-Spécifie un nouveau nom pour l’ordinateur dans le nouveau domaine.
-Ce paramètre n’est valide que lorsqu’un ordinateur est ajouté ou déplacé.
+Spécifie un nouveau nom pour l’ordinateur dans le nouveau domaine. Ce paramètre n’est valide que lorsqu’un ordinateur est ajouté ou déplacé.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -280,8 +260,7 @@ Accept wildcard characters: False
 
 ### -Options
 
-Spécifie les options avancées pour l’opération de jonction **Add-Computer** .
-Entrez une ou plusieurs valeurs dans une chaîne séparée par des virgules.
+Spécifie les options avancées pour l’opération de jonction **Add-Computer** . Entrez une ou plusieurs valeurs dans une chaîne séparée par des virgules.
 
 Les valeurs valides pour ce paramètre sont :
 
@@ -297,7 +276,8 @@ Les valeurs valides pour ce paramètre sont :
 
 - **JoinReadOnly** : utilise un compte d’ordinateur existant pour joindre l’ordinateur à un contrôleur de domaine en lecture seule. Le compte d’ordinateur doit être ajouté à la liste autorisée pour la stratégie de réplication de mot de passe et le mot de passe du compte doit être répliqué sur le contrôleur de domaine en lecture seule avant l’opération de jointure.
 
-- **InstallInvoke** : définit les indicateurs de création (0X2) et de suppression (0x4) du paramètre **FJoinOptions** de la méthode **JoinDomainOrWorkGroup** . Pour plus d’informations sur la méthode **JoinDomainOrWorkGroup** , consultez [méthode JoinDomainOrWorkGroup de la classe Win32_ComputerSystem](https://msdn.microsoft.com/library/aa392154) dans MSDN Library. Pour plus d’informations sur ces options, consultez [fonction NetJoinDomain](https://msdn.microsoft.com/library/aa370433) dans MSDN Library.
+- **InstallInvoke** : définit les indicateurs de création (0X2) et de suppression (0x4) du paramètre **FJoinOptions** de la méthode **JoinDomainOrWorkGroup** . Pour plus d’informations sur la méthode **JoinDomainOrWorkGroup** , consultez [méthode JoinDomainOrWorkGroup de la classe Win32_ComputerSystem](/windows/win32/cimwin32prov/joindomainorworkgroup-method-in-class-win32-computersystem).
+  Pour plus d’informations sur ces options, consultez [fonction NetJoinDomain](/windows/win32/api/lmjoin/nf-lmjoin-netjoindomain).
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -316,9 +296,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 
-Spécifie une unité d’organisation pour le compte de domaine.
-Entrez le nom unique complet de l’unité d’organisation entre guillemets.
-La valeur par défaut est l’unité d’organisation par défaut des objets ordinateur du domaine.
+Spécifie une unité d’organisation pour le compte de domaine. Entrez le nom unique complet de l’unité d’organisation entre guillemets. La valeur par défaut est l’unité d’organisation par défaut des objets ordinateur du domaine.
 
 ```yaml
 Type: System.String
@@ -334,8 +312,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Retourne un objet représentant l’élément que vous utilisez.
-Par défaut, cette applet de commande ne génère aucun résultat.
+Retourne un objet représentant l’élément que vous utilisez. Par défaut, cette applet de commande ne génère aucun résultat.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,8 +328,7 @@ Accept wildcard characters: False
 
 ### -Restart
 
-Redémarre les ordinateurs qui ont été ajoutés au domaine ou au groupe de travail.
-Un redémarrage est souvent nécessaire pour que le changement devienne effectif.
+Redémarre les ordinateurs qui ont été ajoutés au domaine ou au groupe de travail. Un redémarrage est souvent nécessaire pour que le changement devienne effectif.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -370,9 +346,7 @@ Accept wildcard characters: False
 
 ### -Server
 
-Spécifie le nom d’un contrôleur de domaine qui ajoute l’ordinateur au domaine.
-Entrez le nom sous la forme DomainName\ComputerName.
-Par défaut, aucun contrôleur de domaine n’est spécifié.
+Spécifie le nom d’un contrôleur de domaine qui ajoute l’ordinateur au domaine. Entrez le nom sous la forme DomainName\ComputerName. Par défaut, aucun contrôleur de domaine n’est spécifié.
 
 ```yaml
 Type: System.String
@@ -388,15 +362,11 @@ Accept wildcard characters: False
 
 ### -UnjoinDomainCredential
 
-Spécifie un compte d’utilisateur qui a l’autorisation de supprimer les ordinateurs de leurs domaines actuels.
-La valeur par défaut est l’utilisateur actuel.
+Spécifie un compte d’utilisateur qui a l’autorisation de supprimer les ordinateurs de leurs domaines actuels. La valeur par défaut est l’utilisateur actuel.
 
-Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`.
-Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
+Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`. Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
 
-Utilisez ce paramètre lorsque vous déplacez des ordinateurs vers un autre domaine.
-Pour spécifier un compte d’utilisateur qui a l’autorisation de joindre le nouveau domaine, utilisez le paramètre **Credential** .
-Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à un ordinateur distant, utilisez le paramètre **LocalCredential** .
+Utilisez ce paramètre lorsque vous déplacez des ordinateurs vers un autre domaine. Pour spécifier un compte d’utilisateur qui a l’autorisation de joindre le nouveau domaine, utilisez le paramètre **Credential**. Pour spécifier un compte d’utilisateur qui a l’autorisation de se connecter à un ordinateur distant, utilisez le paramètre **LocalCredential**.
 
 Ce paramètre est introduit dans Windows PowerShell 3.0.
 
@@ -430,8 +400,7 @@ Accept wildcard characters: False
 
 ### -WorkgroupName
 
-Spécifie le nom d'un groupe de travail auquel les ordinateurs sont ajoutés.
-La valeur par défaut est « WORKGROUP ».
+Spécifie le nom d'un groupe de travail auquel les ordinateurs sont ajoutés. La valeur par défaut est « WORKGROUP ».
 
 ```yaml
 Type: System.String

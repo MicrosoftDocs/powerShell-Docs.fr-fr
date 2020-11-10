@@ -7,27 +7,27 @@ ms.date: 10/10/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
-ms.openlocfilehash: f2159a2de3432aec14fb395b93ed476f349616a8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e1bab9250269dadf0d899f9e172e8a4a8387271d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203358"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388125"
 ---
 # ConvertFrom-Json
 
 ## SYNOPSIS
 Convertit une chaîne au format JSON en objet personnalisé.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 ConvertFrom-Json [-InputObject] <String> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
-L' `ConvertFrom-Json` applet de commande convertit une chaîne au format JSON (JavaScript Object Notation) en un objet **PSCustomObject** personnalisé qui a une propriété pour chaque champ de la chaîne JSON. JSON est couramment utilisé par les sites web pour fournir une représentation textuelle des objets. La norme JSON n’interdit pas l’utilisation interdite avec un **PSCustomObject** . Par exemple, si la chaîne JSON contient des clés dupliquées, seule la dernière clé est utilisée par cette applet de commande. Consultez les autres exemples ci-dessous.
+L' `ConvertFrom-Json` applet de commande convertit une chaîne au format JSON (JavaScript Object Notation) en un objet **PSCustomObject** personnalisé qui a une propriété pour chaque champ de la chaîne JSON. JSON est couramment utilisé par les sites web pour fournir une représentation textuelle des objets. La norme JSON n’interdit pas l’utilisation interdite avec un **PSCustomObject**. Par exemple, si la chaîne JSON contient des clés dupliquées, seule la dernière clé est utilisée par cette applet de commande. Consultez les autres exemples ci-dessous.
 
 Pour générer une chaîne JSON à partir de n’importe quel objet, utilisez l’applet de commande `ConvertTo-Json` .
 
@@ -40,7 +40,7 @@ Cette applet de commande a été introduite dans PowerShell 3,0.
 
 ### Exemple 1 : convertir un objet DateTime en objet JSON
 
-Cette commande utilise les `ConvertTo-Json` applets de commande et `ConvertFrom-Json` pour convertir un objet **DateTime** de l' `Get-Date` applet de commande en un objet JSON, puis en **PSCustomObject** .
+Cette commande utilise les `ConvertTo-Json` applets de commande et `ConvertFrom-Json` pour convertir un objet **DateTime** de l' `Get-Date` applet de commande en un objet JSON, puis en **PSCustomObject**.
 
 ```powershell
 Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
@@ -88,7 +88,7 @@ Get-Content JsonFile.JSON | ConvertFrom-Json
 
 La commande utilise Get-Content applet de commande pour obtenir les chaînes dans un fichier JSON. Elle utilise ensuite l’opérateur de pipeline pour envoyer la chaîne délimitée à l’applet de commande `ConvertFrom-Json` , qui la convertit en objet personnalisé.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -InputObject
 

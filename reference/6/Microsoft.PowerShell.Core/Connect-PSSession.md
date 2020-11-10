@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 36a03257d8241dbe7e9c851a95eaaa3e3dbbda27
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 8f782a7d1cc4403c3f212ff7973eb2c173be4342
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345542"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387581"
 ---
 # Connect-PSSession
 
@@ -264,7 +264,7 @@ Spécifie le mécanisme utilisé pour authentifier les informations d’identifi
 
 La valeur par défaut est Default.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [AuthenticationMechanism, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) dans MSDN Library.
+Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!CAUTION]
 > l'authentification CredSSP (Credential Security Support Provider), au cours de laquelle les informations d'identification de l'utilisateur sont passées à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui nécessitent une authentification sur plusieurs ressources, telles que l'accès à un partage réseau distant. Ce mécanisme augmente le risque de sécurité lié à l'opération distante. Si l'ordinateur distant n'est pas fiable, les informations d'identification qui lui sont passées peuvent être utilisées pour contrôler la session réseau.
@@ -614,9 +614,9 @@ Cette applet de commande retourne un objet qui représente la session à laquell
 
   Une propriété **Availability** avec la valeur None signifie que vous pouvez vous connecter à la session. La valeur Busy indique que vous ne pouvez pas vous connecter à la session **PSSession** , car elle est connectée à une autre session.
 
-  Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [RunspaceState, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) dans MSDN Library.
+  Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [énumération RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-  Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [RunspaceAvailability, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) dans MSDN Library.
+  Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [énumération RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 - Vous ne pouvez pas modifier la valeur du délai d’inactivité d’une **session PSSession** quand vous vous connectez à la **session PSSession**. Le paramètre **SessionOption** de `Connect-PSSession` prend un objet **SessionOption** qui a une valeur **IdleTimeout** . Toutefois, la valeur **IdleTimeout** de l’objet **SessionOption** et la valeur **IdleTimeout** de la `$PSSessionOption` variable sont ignorées lors de la connexion à une **session PSSession**.
 

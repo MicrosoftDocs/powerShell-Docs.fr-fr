@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-ODataEndpointProxy
-ms.openlocfilehash: 7550e2df319e5f195e65609ae29ebb00830ec8d2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 846aca6974190863a073773fe5148f0c57d77dc3
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203433"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388193"
 ---
 # Export-ODataEndpointProxy
 
 ## SYNOPSIS
 Génère un module qui contient des applets de commande pour gérer un point de terminaison OData.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUri] <String>]
@@ -28,7 +28,7 @@ Export-ODataEndpointProxy [-Uri] <String> [-OutputModule] <String> [[-MetadataUr
  [-AllowClobber] [-AllowUnsecureConnection] [[-Headers] <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Export-ODataEndpointProxy` applet de commande utilise les métadonnées d’un point de terminaison OData pour générer un module qui contient des applets de commande que vous pouvez utiliser pour gérer ce point de terminaison OData. Le module est basé sur CDXML. Une fois que cette applet de commande a généré le module, elle enregistre ce module dans le chemin d’accès et le nom de fichier spécifiés par le paramètre **OutputModule** .
 
@@ -48,7 +48,7 @@ PS C:\> Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1
 
 Cette commande génère un module pour gérer un point de terminaison de service de vente au détail. La commande spécifie l’URI du point de terminaison et l’URI des métadonnées de point de terminaison. La commande fournit également un chemin de sortie et un nom de module de script comme valeur du paramètre **OutputModule** . Pour la valeur du paramètre **ResourceNameMapping** , la commande fournit une Hashtable qui mappe le nom de la collection de ressources au nom souhaité pour le jeu d’applets de commande. Dans cet exemple, Products est le nom de la collection de ressources et la **marchandise** est le substantif. Pour autoriser les connexions à des sites non-SSL, HTTP, par opposition à HTTPs, ajoutez le paramètre **AllowUnsecureConnection** .
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AllowClobber
 
@@ -310,7 +310,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## LIENS CONNEXES
 
-[Bibliothèque OData](https://technet.microsoft.com/windowsserver/hh525392(v=vs.85).aspx?f=255&MSPPError=-2147217396)
+[Bibliothèque OData](/previous-versions/dotnet/wcf-data-services/hh525392(v=vs.103))
 
 [Qu’est-ce que le protocole OData ?](https://www.odata.org/)
 

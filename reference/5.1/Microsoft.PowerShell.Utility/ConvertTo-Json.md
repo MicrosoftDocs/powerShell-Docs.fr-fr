@@ -7,26 +7,26 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: b91d3b7cbf86c7ea827539903b2e8373cdfdac72
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9831249a9f1ffcc65fc275e44da04fde9348ae71
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203334"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388057"
 ---
 # ConvertTo-Json
 
 ## SYNOPSIS
 Convertit un objet en une chaîne au format JSON.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `ConvertTo-Json` applet de commande convertit n’importe quel objet .net en une chaîne au format JavaScript Object Notation (JSON). Les propriétés sont converties en noms de champs et les valeurs de champ en valeurs de propriété, tandis que les méthodes sont supprimées.
 
@@ -41,7 +41,7 @@ Cette applet de commande a été introduite dans Windows PowerShell 3.0.
 ### Exemple 1
 
 ```powershell
-PS C:\> (Get-UICulture).Calendar | ConvertTo-Json
+(Get-UICulture).Calendar | ConvertTo-Json
 ```
 
 ```Output
@@ -140,7 +140,7 @@ Year        : 2018
 
 Cet exemple montre comment utiliser les `ConvertTo-Json` applets de commande et `ConvertFrom-Json` pour convertir un objet en une chaîne JSON et un objet JSON.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Compresser
 

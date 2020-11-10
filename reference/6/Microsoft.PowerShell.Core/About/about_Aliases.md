@@ -6,16 +6,17 @@ ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Aliases
-ms.openlocfilehash: 5595c1595a36ebbc6ae7c77afb45f95996815f8f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 9094e34d4d3cbb8ee951593e15411e8e3234fa1a
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207202"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387768"
 ---
 # <a name="about-aliases"></a>À propos des alias
 
 ## <a name="short-description"></a>DESCRIPTION COURTE
+
 Décrit comment utiliser des noms de remplacement pour les applets de commande et les commandes dans PowerShell.
 
 ## <a name="long-description"></a>DESCRIPTION DÉTAILLÉE
@@ -171,7 +172,7 @@ Get-Help about_Functions
 
 ## <a name="alias-objects"></a>OBJETS ALIAS
 
-Les alias PowerShell sont représentés par des objets qui sont des instances de la classe System. Management. Automation. AliasInfo. Pour plus d’informations sur ce type d’objet, consultez la [classe AliasInfo][aliasinfo] dans la bibliothèque MSDN (Microsoft Developer Network).
+Les alias PowerShell sont représentés par des objets qui sont des instances de la classe System. Management. Automation. AliasInfo. Pour plus d’informations sur ce type d’objet, consultez [AliasInfo, classe][aliasinfo] dans le kit de développement logiciel (SDK) PowerShell.
 
 Pour afficher les propriétés et les méthodes des objets alias, récupérez les alias.
 Ensuite, dirigez-les vers l’applet de commande Get-Member. Par exemple :

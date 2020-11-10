@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: eb5684ed281b3ba05629528bb12b44577f8c050a
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 7e3d02dedb9f7809a8f8e1c657987fef8ec38fa9
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205362"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387989"
 ---
 # Select-Xml
 
 ## SYNOPSIS
 Recherche du texte dans un document ou une chaîne XML.
 
-## SYNTAX
+## SYNTAXE
 
 ### XML (par défaut)
 
@@ -27,7 +27,7 @@ Recherche du texte dans un document ou une chaîne XML.
 Select-Xml [-Xml] <XmlNode[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-### Chemin d’accès
+### Path
 
 ```
 Select-Xml [-Path] <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
@@ -45,7 +45,7 @@ Select-Xml -LiteralPath <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<
 Select-Xml -Content <String[]> [-XPath] <String> [-Namespace <Hashtable>] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L’applet de commande **Select-XML** vous permet d’utiliser des requêtes XPath pour rechercher du texte dans des chaînes et des documents XML.
 Entrez une requête XPath et utilisez le paramètre *content* , *path* ou *XML* pour spécifier le code XML dans lequel effectuer la recherche.
@@ -197,12 +197,12 @@ La valeur de table de hachage est l'URI du schéma XMLNS dans le fichier XML d'e
 Le nom de clé de la table de hachage, capture, est arbitraire.
 Vous pouvez utiliser n’importe quel nom qui n’est pas réservé, mais vous ne pouvez pas utiliser xmlns.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Contenu
 
 Spécifie une chaîne qui contient le code XML dans lequel effectuer des recherches.
-Vous pouvez également diriger des chaînes vers **Select-XML** .
+Vous pouvez également diriger des chaînes vers **Select-XML**.
 
 ```yaml
 Type: System.String[]
@@ -327,7 +327,7 @@ Vous pouvez diriger un chemin d’accès ou un nœud XML vers cette applet de co
 
 ## REMARQUES
 
-* XPath est un langage standard qui est conçu pour identifier les parties d'un document XML. Pour plus d’informations sur le langage XPath, consultez [Référence XPath](https://msdn.microsoft.com/library/ms256115) et la section filtres de sélection de la [sélection d’événements](https://msdn.microsoft.com/library/aa385231) dans MSDN Library.
+XPath est un langage standard qui est conçu pour identifier les parties d'un document XML. Pour plus d’informations sur le langage XPath, consultez [Référence XPath](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation) et la section filtres de sélection de la [sélection d’événements](/previous-versions//aa385231(v=vs.85)).
 
 ## LIENS CONNEXES
 

@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_ISE
-ms.openlocfilehash: ec99dec9ea5012b41c10a56a688b23a6fa2c9dd8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff543024d7c62c70217eeaf3ded192a5a24c4757
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207870"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388839"
 ---
 # <a name="about-windows-powershell-ise"></a>À propos de Windows PowerShell ISE
 
@@ -121,7 +121,7 @@ Windows PowerShell ISE est une fonctionnalité Windows facultative qui est activ
 Étant donné que Windows PowerShell ISE nécessite une interface utilisateur, il ne fonctionne pas sur les installations Server Core de Windows Server. Toutefois, si vous ajoutez la fonctionnalité Windows PowerShell ISE, l’installation se convertit automatiquement en serveur avec une interface graphique utilisateur.
 
 Windows PowerShell ISE repose sur Windows Presentation Foundation (WPF).
-Si les éléments graphiques de Windows PowerShell ISE ne s’affichent pas correctement sur votre système, vous pouvez résoudre le problème en ajoutant ou en ajustant les paramètres de rendu des graphiques « désactiver l’accélération matérielle WPF » sur votre système. Pour plus d’informations, consultez [paramètres du Registre](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings) pour le rendu des graphiques dans MSDN Library.
+Si les éléments graphiques de Windows PowerShell ISE ne s’affichent pas correctement sur votre système, vous pouvez résoudre le problème en ajoutant ou en ajustant les paramètres de rendu des graphiques « désactiver l’accélération matérielle WPF » sur votre système. Pour plus d’informations, consultez [Paramètres du Registre pour le rendu des graphiques](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings).
 
 ## <a name="see-also"></a>VOIR AUSSI
 

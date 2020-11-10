@@ -6,12 +6,12 @@ ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
-ms.openlocfilehash: f033bc36bf67a9d01e3f238645b83df7d75c6963
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: e028ba5f29568c9eb962ee482087ac69a42e84b1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207661"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386891"
 ---
 # <a name="about-functions"></a>À propos des fonctions
 
@@ -182,7 +182,7 @@ function Get-SmallFiles ($Size = 100) {
 
 Si vous tapez `Get-SmallFiles` sans valeur, la fonction assigne 100 à `$size` . Si vous fournissez une valeur, la fonction utilise cette valeur.
 
-Si vous le souhaitez, vous pouvez fournir une courte chaîne d’aide qui décrit la valeur par défaut de votre paramètre, en ajoutant l’attribut **PSDefaultValue** à la description de votre paramètre et en spécifiant la propriété **Help** de **PSDefaultValue** . Pour fournir une chaîne d’aide qui décrit la valeur par défaut (100) du paramètre **Size** dans la `Get-SmallFiles` fonction, ajoutez l’attribut **PSDefaultValue** comme indiqué dans l’exemple suivant.
+Si vous le souhaitez, vous pouvez fournir une courte chaîne d’aide qui décrit la valeur par défaut de votre paramètre, en ajoutant l’attribut **PSDefaultValue** à la description de votre paramètre et en spécifiant la propriété **Help** de **PSDefaultValue**. Pour fournir une chaîne d’aide qui décrit la valeur par défaut (100) du paramètre **Size** dans la `Get-SmallFiles` fonction, ajoutez l’attribut **PSDefaultValue** comme indiqué dans l’exemple suivant.
 
 ```powershell
 function Get-SmallFiles {
@@ -486,7 +486,7 @@ Vous pouvez écrire l’aide d’une fonction à l’aide de l’une des deux m�
 
   Pour associer la fonction à la rubrique d’aide basée sur XML, utilisez le `.ExternalHelp` mot clé d’aide basée sur des commentaires. Sans ce mot clé, `Get-Help` la rubrique d’aide de la fonction est introuvable et les appels à `Get-Help` pour la fonction retournent uniquement l’aide générée automatiquement.
 
-  Pour plus d’informations sur le `ExternalHelp` mot clé, consultez [about_Comment_Based_Help](about_Comment_Based_Help.md). Pour plus d’informations sur l’aide XML, consultez [Comment écrire l’aide sur les applets](https://go.microsoft.com/fwlink/?LinkID=123415) de commande dans MSDN Library.
+  Pour plus d’informations sur le `ExternalHelp` mot clé, consultez [about_Comment_Based_Help](about_Comment_Based_Help.md). Pour plus d’informations sur l’aide XML, consultez [Comment écrire l’aide sur les applets de](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)commande.
 
 ## <a name="see-also"></a>Voir aussi
 

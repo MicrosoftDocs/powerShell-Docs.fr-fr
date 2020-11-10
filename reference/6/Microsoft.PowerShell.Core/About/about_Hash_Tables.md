@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Hash_Tables
-ms.openlocfilehash: ecc4cbb02522766b04414c30c65d4d6acde3bb8a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c48eace3f0b63014e0121d3cbc7a48966d5bcbef
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207073"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387547"
 ---
 # <a name="about-hash-tables"></a>À propos des tables de hachage
 
@@ -245,20 +245,20 @@ Par exemple, pour supprimer la paire clé/valeur de date/heure de la table de ha
 $hash.Remove("Time")
 ```
 
-Vous pouvez utiliser toutes les propriétés et méthodes des objets Hashtable dans PowerShell, y compris Contains, Clear, clone et CopyTo. Pour plus d’informations sur les objets Hashtable, consultez « System. Collections. Hashtable » sur MSDN.
+Vous pouvez utiliser toutes les propriétés et méthodes des objets Hashtable dans PowerShell, y compris Contains, Clear, clone et CopyTo. Pour plus d’informations sur les objets Hashtable, consultez [System. Collections. Hashtable](/dotnet/api/system.collections.hashtable).
 
 ### <a name="object-types-in-hashtables"></a>Types d’objets dans les tables de hachage
 
 Les clés et les valeurs d’une table de hachage peuvent avoir n’importe quel type d’objet .NET, et une seule table de hachage peut avoir des clés et des valeurs de plusieurs types.
 
-L’instruction suivante crée une table de hachage de chaînes de nom de processus et traite les valeurs d’objet et les enregistre dans la \$ variable p.
+L’instruction suivante crée une table de hachage de chaînes de nom de processus et traite les valeurs d’objet et les enregistre dans la `$p` variable.
 
 ```powershell
 $p = @{"PowerShell" = (Get-Process PowerShell);
 "Notepad" = (Get-Process notepad)}
 ```
 
-Vous pouvez afficher la table de hachage dans \$ p et utiliser les propriétés Key-Name pour afficher les valeurs.
+Vous pouvez afficher la table de hachage dans `$p` et utiliser les propriétés Key-Name pour afficher les valeurs.
 
 ```powershell
 C:\PS> $p
@@ -279,7 +279,7 @@ C:\PS> $p.keys | foreach {$p.$_.handles}
 251
 ```
 
-Les clés d’une table de hachage peuvent également être de n’importe quel type .NET. L’instruction suivante ajoute une paire clé/valeur à la table de hachage dans la \$ variable p. La clé est un objet de service qui représente le service WinRM et la valeur est l’état actuel du service.
+Les clés d’une table de hachage peuvent également être de n’importe quel type .NET. L’instruction suivante ajoute une paire clé/valeur à la table de hachage dans la `$p` variable. La clé est un objet de service qui représente le service WinRM et la valeur est l’état actuel du service.
 
 ```powershell
 C:\PS> $p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
@@ -308,7 +308,7 @@ C:\PS> $p.keys | foreach {$_.name}
 winrm
 ```
 
-Les clés et les valeurs d’une table de hachage peuvent également être des objets Hashtable. L’instruction suivante ajoute une paire clé/valeur à la table de hachage dans la \$ variable p, dans laquelle la clé est une chaîne, Hash2, et la valeur est une table de hachage avec trois paires clé/valeur.
+Les clés et les valeurs d’une table de hachage peuvent également être des objets Hashtable. L’instruction suivante ajoute une paire clé/valeur à la table de hachage dans la `$p` variable dans laquelle la clé est une chaîne, Hash2, et la valeur est une table de hachage avec trois paires clé/valeur.
 
 ```powershell
 C:\PS> $p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
@@ -344,7 +344,7 @@ Les éléments d’une table de hachage ne sont pas triés intrinsèquement. Les
 
 Bien que vous ne puissiez pas trier une table de hachage, vous pouvez utiliser la méthode GetEnumerator des tables de hachage pour énumérer les clés et les valeurs, puis utiliser l’applet de commande Sort-Object pour trier les valeurs énumérées à afficher.
 
-Par exemple, les commandes suivantes énumèrent les clés et les valeurs de la table de hachage dans la \$ variable p, puis trient les clés par ordre alphabétique.
+Par exemple, les commandes suivantes énumèrent les clés et les valeurs de la table de hachage dans la `$p` variable, puis trient les clés par ordre alphabétique.
 
 ```powershell
 C:\PS> $p.GetEnumerator() | Sort-Object -Property key

@@ -7,12 +7,12 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 8aff8a2b3962b3bf09d158247c06b36f99eaf527
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3352055e9c77dd944ffd66fa5db9863166ad7e95
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342516"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388805"
 ---
 # Connect-PSSession
 
@@ -213,7 +213,6 @@ Indique que cette applet de commande autorise la redirection de cette connexion 
 Quand vous utilisez le paramètre **ConnectionURI** , la destination distante peut retourner une instruction pour effectuer une redirection vers un autre URI. Par défaut, PowerShell ne redirige pas les connexions, mais vous pouvez utiliser ce paramètre pour lui permettre de rediriger la connexion.
 
 Vous pouvez également limiter le nombre de fois où la connexion est redirigée en modifiant la valeur de l'option de session **MaximumConnectionRedirectionCount**. Utilisez le paramètre **MaximumRedirection** de l' `New-PSSessionOption` applet de commande ou définissez la propriété **MaximumConnectionRedirectionCount** de la variable de préférence **$PSSessionOption** . La valeur par défaut est 5.
-La valeur par défaut est 5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +260,7 @@ Spécifie le mécanisme utilisé pour authentifier les informations d’identifi
 
 La valeur par défaut est Default.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [AuthenticationMechanism, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) dans MSDN Library.
+Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!CAUTION]
 > l'authentification CredSSP (Credential Security Support Provider), au cours de laquelle les informations d'identification de l'utilisateur sont passées à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui nécessitent une authentification sur plusieurs ressources, telles que l'accès à un partage réseau distant. Ce mécanisme augmente le risque de sécurité lié à l'opération distante. Si l'ordinateur distant n'est pas fiable, les informations d'identification qui lui sont passées peuvent être utilisées pour contrôler la session réseau.
@@ -611,9 +610,9 @@ Cette applet de commande retourne un objet qui représente la session à laquell
 
   Une propriété **Availability** avec la valeur None signifie que vous pouvez vous connecter à la session. La valeur Busy indique que vous ne pouvez pas vous connecter à la session **PSSession** , car elle est connectée à une autre session.
 
-  Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [RunspaceState, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) dans MSDN Library.
+  Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [énumération RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-  Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [RunspaceAvailability, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) dans MSDN Library.
+  Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [énumération RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 - Vous ne pouvez pas modifier la valeur du délai d’inactivité d’une **session PSSession** quand vous vous connectez à la **session PSSession**. Le paramètre **SessionOption** de `Connect-PSSession` prend un objet **SessionOption** qui a une valeur **IdleTimeout** . Toutefois, la valeur **IdleTimeout** de l’objet **SessionOption** et la valeur **IdleTimeout** de la `$PSSessionOption` variable sont ignorées lors de la connexion à une **session PSSession**.
 

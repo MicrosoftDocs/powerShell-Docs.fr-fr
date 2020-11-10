@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WorkflowCommonParameters
-ms.openlocfilehash: 386200475c1dab9735921edd60abbde20ee354c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c371666d4f58386848e7ef715b7c804dc1e8f28e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207214"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387785"
 ---
 # <a name="about-workflowcommonparameters"></a>À propos de WorkflowCommonParameters
 
@@ -77,9 +77,9 @@ Les valeurs autorisées sont :
 - **Prescrit**
 - **NegotiateWithImplicitCredential**
 
-La valeur par défaut est **Default** .
+La valeur par défaut est **Default**.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez la description de l' `System.Management.Automation.Runspaces.AuthenticationMechanism` énumération dans MSDN.
+Pour plus d’informations sur les valeurs de ce paramètre, consultez la description de l' `System.Management.Automation.Runspaces.AuthenticationMechanism` énumération dans le kit de développement logiciel (SDK) PowerShell.
 
 > [!WARNING]
 > L'authentification CredSSP (Credential Security Service Provider), au cours de laquelle les informations d'identification de l'utilisateur sont passées à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui requièrent une authentification sur plusieurs ressources, telles que l'accès à un partage réseau distant. Ce mécanisme augmente le risque de sécurité lié à l'opération distante. Si l'ordinateur distant n'est pas fiable, les informations d'identification qui lui sont passées peuvent être utilisées pour contrôler la session réseau.
@@ -87,7 +87,7 @@ Pour plus d’informations sur les valeurs de ce paramètre, consultez la descri
 #### <a name="-psauthenticationlevel-authenticationlevel"></a>-PSAuthenticationLevel \<AuthenticationLevel\>
 
 Spécifie le niveau d’authentification pour les connexions aux ordinateurs cibles.
-La valeur par défaut est **Default** .
+La valeur par défaut est **Default**.
 
 Les valeurs autorisées sont :
 
@@ -147,7 +147,7 @@ La valeur par défaut est `http://localhost:5985/WSMAN`.
 
 Si vous ne spécifiez pas de `PSConnectionURI` , vous pouvez utiliser les `PSUseSSL` paramètres,, `PSComputerName` `PSPort` et `PSApplicationName` pour spécifier les `PSConnectionURI` valeurs.
 
-Les valeurs valides pour le segment de transport de l’URI sont **http** et **https** .
+Les valeurs valides pour le segment de transport de l’URI sont **http** et **https**.
 Si vous spécifiez un URI de connexion avec un segment de transport, mais que vous ne spécifiez pas de port, la session est créée avec les ports standard : 80 pour HTTP et 443 pour HTTPs. Pour utiliser les ports par défaut pour la communication à distance Windows PowerShell, spécifiez le port 5985 pour HTTP ou 5986 pour HTTPS.
 
 #### <a name="-pscredential-pscredential"></a>-PSCredential \<PSCredential\>

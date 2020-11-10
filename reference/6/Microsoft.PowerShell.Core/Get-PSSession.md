@@ -7,19 +7,19 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSSession
-ms.openlocfilehash: 9d4b683764677288b73ebf801cebbf0aedd8898c
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: cee14ce93af87d33b4d9d9665c3ef5aaa2aec1d5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205510"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387445"
 ---
 # Get-PSSession
 
 ## SYNOPSIS
 Obtient les sessions PowerShell sur les ordinateurs locaux et distants.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -117,7 +117,7 @@ Get-PSSession [-InstanceId <Guid[]>] [<CommonParameters>]
 Get-PSSession [-Id] <Int32[]> [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Get-PSSession` applet de commande obtient les sessions PowerShell gérées par l’utilisateur ( **sessions PSSession** ) sur les ordinateurs locaux et distants.
 
@@ -184,7 +184,7 @@ Cet exemple montre comment enregistrer les résultats d’une `Get-PSSession` co
 
 La première commande utilise l' `New-PSSession` applet de commande pour créer des **sessions PSSession** sur trois ordinateurs distants.
 
-La deuxième commande utilise une `Get-PSSession` applet de commande pour obtenir les trois **sessions PSSession** . Il enregistre ensuite chaque **sessions PSSession** dans une variable distincte.
+La deuxième commande utilise une `Get-PSSession` applet de commande pour obtenir les trois **sessions PSSession**. Il enregistre ensuite chaque **sessions PSSession** dans une variable distincte.
 
 Quand PowerShell assigne un tableau d’objets à un tableau de variables, il assigne le premier objet à la première variable, le deuxième à la deuxième variable, et ainsi de suite. S'il y a plus d'objets que de variables, il affecte tous les autres objets à la dernière variable dans le tableau. S'il y a plus de variables que d'objets, les variables supplémentaires ne sont pas utilisées.
 
@@ -196,11 +196,11 @@ $s = Get-PSSession -InstanceID a786be29-a6bb-40da-80fb-782c67f7db0f
 Remove-PSSession -Session $s
 ```
 
-Cet exemple montre comment obtenir une **session PSSession** à l’aide de son ID d’instance, puis comment supprimer la **session PSSession** .
+Cet exemple montre comment obtenir une **session PSSession** à l’aide de son ID d’instance, puis comment supprimer la **session PSSession**.
 
-La première commande obtient toutes les **sessions PSSession** qui ont été créées dans la session active. Elle envoie le **sessions PSSession** à l’applet de commande Format-Table, qui affiche les propriétés **ComputerName** et **InstanceID** de chaque **session PSSession** .
+La première commande obtient toutes les **sessions PSSession** qui ont été créées dans la session active. Elle envoie le **sessions PSSession** à l’applet de commande Format-Table, qui affiche les propriétés **ComputerName** et **InstanceID** de chaque **session PSSession**.
 
-La deuxième commande utilise l' `Get-PSSession` applet de commande pour obtenir une **session PSSession** particulière et l’enregistrer dans la `$s` variable. La commande utilise le paramètre **InstanceID** pour identifier la **session PSSession** .
+La deuxième commande utilise l' `Get-PSSession` applet de commande pour obtenir une **session PSSession** particulière et l’enregistrer dans la `$s` variable. La commande utilise le paramètre **InstanceID** pour identifier la **session PSSession**.
 
 La troisième commande utilise l’applet de commande Remove-PSSession pour supprimer la **session PSSession** dans la `$s` variable.
 
@@ -243,7 +243,7 @@ Get-PSSession -Id 2
 
 Cette commande obtient la **session PSSession** avec l’ID 2. Étant donné que la valeur de la propriété **ID** n’est unique que dans la session active, le paramètre **ID** n’est valide que pour les commandes locales.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AllowRedirection
 
@@ -294,7 +294,7 @@ Ce paramètre configure la connexion temporaire qui est créée pour exécuter u
 Les valeurs valides pour ce paramètre sont :
 
 - Default
-- Basic
+- De base
 - CredSSP
 - Digest
 - Kerberos
@@ -303,7 +303,7 @@ Les valeurs valides pour ce paramètre sont :
 
 La valeur par défaut est Default.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [AuthenticationMechanism, énumération](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) dans MSDN Library.
+Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 ATTENTION : l’authentification CredSSP (Credential Security Support Provider), dans laquelle les informations d’identification de l’utilisateur sont transmises à un ordinateur distant pour être authentifiées, est conçue pour les commandes qui requièrent une authentification sur plusieurs ressources, telles que l’accès à un partage réseau distant. Ce mécanisme augmente le risque de sécurité lié à l'opération distante. Si l'ordinateur distant n'est pas fiable, les informations d'identification qui lui sont passées peuvent être utilisées pour contrôler la session réseau.
 
@@ -693,9 +693,9 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 Une propriété **Availability** avec la valeur **None** signifie que vous pouvez vous connecter à la session. La valeur **Busy** indique que vous ne pouvez pas vous connecter à la session **PSSession** , car elle est connectée à une autre session.
 
-Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [énumération RunspaceState](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate).
+Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [énumération RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 
-Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [énumération RunspaceAvailability](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability).
+Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [énumération RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## LIENS CONNEXES
 

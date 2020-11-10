@@ -7,25 +7,25 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
-ms.openlocfilehash: 5adba912d91369250ee9891ee2bb2ca0f8cba796
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a21c2974fd66a9b02929752ae487c8995579b8a7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202349"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388822"
 ---
 # Add-PSSnapin
 
 ## SYNOPSIS
 Ajoute un ou plusieurs composants logiciels enfichables Windows PowerShell à la session active.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Add-PSSnapin [-Name] <String[]> [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Add-PSSnapin` applet de commande ajoute les composants logiciels enfichables Windows PowerShell inscrits à la session active. Après avoir ajouté les composants logiciels enfichables, vous pouvez utiliser les applets de commande et les fournisseurs pris en charge par les composants logiciels enfichables dans la session active.
 
@@ -83,7 +83,7 @@ PS C:\> (Get-Command Set-Alias).pssnapin
 
 Cet exemple montre le processus d'inscription d'un composant logiciel enfichable sur votre système, puis son ajout à votre session. Elle utilise ManagementFeatures, un composant logiciel enfichable fictif implémenté dans un fichier nommé ManagementCmdlets.dll.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Name
 
@@ -136,15 +136,15 @@ Cette applet de commande retourne un objet PSSnapInInfo qui représente le compo
 
 ## REMARQUES
 
-* À compter de Windows PowerShell 3.0, les commandes de base qui sont installées avec Windows PowerShell sont packagées dans des modules. Dans Windows PowerShell 2,0 et dans les programmes hôtes qui créent des sessions de style plus anciennes dans les versions ultérieures de Windows PowerShell, les commandes de base sont empaquetées dans des composants logiciels enfichables (PSSnapins). L’exception est **Microsoft. PowerShell. Core** , qui est toujours un composant logiciel enfichable. En outre, les sessions à distance, telles que celles démarrées par l’applet de commande New-PSSession, sont des sessions de style plus anciennes qui incluent des composants logiciels enfichables principaux.
+- À compter de Windows PowerShell 3.0, les commandes de base qui sont installées avec Windows PowerShell sont packagées dans des modules. Dans Windows PowerShell 2,0 et dans les programmes hôtes qui créent des sessions de style plus anciennes dans les versions ultérieures de Windows PowerShell, les commandes de base sont empaquetées dans des composants logiciels enfichables (PSSnapins). L’exception est **Microsoft. PowerShell. Core** , qui est toujours un composant logiciel enfichable. En outre, les sessions à distance, telles que celles démarrées par l’applet de commande New-PSSession, sont des sessions de style plus anciennes qui incluent des composants logiciels enfichables principaux.
 
-  Pour plus d’informations sur la méthode **CreateDefault2** qui crée des sessions de style plus récentes avec des modules de base, consultez [méthode CreateDefault2](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) dans MSDN Library.
+  Pour plus d’informations sur la méthode **CreateDefault2** qui crée des sessions de style plus récentes avec des modules de base, consultez [méthode CreateDefault2](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
 
-* Pour plus d’informations sur les composants logiciels enfichables, consultez [about_Pssnapins](About/about_PSSnapins.md) et [comment créer un composant logiciel enfichable Windows PowerShell](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
-* `Add-PSSnapin` Ajoute le composant logiciel enfichable uniquement à la session active. Pour ajouter le composant logiciel enfichable à toutes les sessions Windows PowerShell, ajoutez-le à votre profil Windows PowerShell. Pour plus d'informations, consultez about_Providers.
-* Vous pouvez ajouter n’importe quel composant logiciel enfichable qui a été inscrit à l’aide de l’utilitaire d’installation Microsoft .NET Framework. Pour plus d’informations, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
-* Pour obtenir la liste des composants logiciels enfichables inscrits sur votre ordinateur, tapez `Get-PSSnapin -Registered` .
-* Avant d’ajouter un composant logiciel enfichable, `Add-PSSnapin` vérifie la version du composant logiciel enfichable pour s’assurer qu’il est compatible avec la version actuelle de Windows PowerShell. Si la version du composant logiciel enfichable n'est pas compatible, Windows PowerShell signale une erreur.
+- Pour plus d’informations sur les composants logiciels enfichables, consultez [about_Pssnapins](About/about_PSSnapins.md) et [comment créer un composant logiciel enfichable Windows PowerShell](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
+- `Add-PSSnapin` Ajoute le composant logiciel enfichable uniquement à la session active. Pour ajouter le composant logiciel enfichable à toutes les sessions Windows PowerShell, ajoutez-le à votre profil Windows PowerShell. Pour plus d'informations, consultez about_Providers.
+- Vous pouvez ajouter n’importe quel composant logiciel enfichable qui a été inscrit à l’aide de l’utilitaire d’installation Microsoft .NET Framework. Pour plus d’informations, consultez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
+- Pour obtenir la liste des composants logiciels enfichables inscrits sur votre ordinateur, tapez `Get-PSSnapin -Registered` .
+- Avant d’ajouter un composant logiciel enfichable, `Add-PSSnapin` vérifie la version du composant logiciel enfichable pour s’assurer qu’il est compatible avec la version actuelle de Windows PowerShell. Si la version du composant logiciel enfichable n'est pas compatible, Windows PowerShell signale une erreur.
 
 ## LIENS CONNEXES
 
