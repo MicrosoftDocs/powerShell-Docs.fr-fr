@@ -7,19 +7,19 @@ ms.date: 4/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
-ms.openlocfilehash: 29a39e88d6d39659df1dd9d2e05318351dc47f3a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8c27ebe1c5f1a0c53f5012f1faa17a9fdb1cdcff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201466"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391032"
 ---
 # Add-Member
 
 ## SYNOPSIS
 Ajoute des propriétés et des méthodes personnalisées à une instance d’un objet PowerShell.
 
-## SYNTAX
+## SYNTAXE
 
 ### TypeNameSet (par défaut)
 
@@ -48,7 +48,7 @@ Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String
  [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Add-Member` applet de commande vous permet d’ajouter des membres (propriétés et méthodes) à une instance d’un objet PowerShell. Par exemple, vous pouvez ajouter un membre NoteProperty qui contient une description de l’objet ou un membre **ScriptMethod** qui exécute un script pour modifier l’objet.
 
@@ -63,7 +63,7 @@ Vous pouvez également utiliser l' `Export-Clixml` applet de commande pour enreg
 À compter de Windows PowerShell 3,0, `Add-Member` dispose de nouvelles fonctionnalités qui facilitent l’ajout de propriétés de note aux objets.
 Vous pouvez utiliser les paramètres **NotePropertyName** et **NotePropertyValue** pour définir une propriété de note ou le paramètre **NotePropertyMembers** , qui utilise une table de hachage des noms et valeurs des propriétés de note.
 
-Par ailleurs, à compter de Windows PowerShell 3.0, le paramètre **PassThru** , qui génère un objet de sortie, est moins utile. `Add-Member` Ajoute désormais les nouveaux membres directement à l’objet d’entrée de plus de types. Pour plus d'informations, consultez la description du paramètre **PassThru** .
+Par ailleurs, à compter de Windows PowerShell 3.0, le paramètre **PassThru** , qui génère un objet de sortie, est moins utile. `Add-Member` Ajoute désormais les nouveaux membres directement à l’objet d’entrée de plus de types. Pour plus d'informations, consultez la description du paramètre **PassThru**.
 
 ## EXEMPLES
 
@@ -111,7 +111,7 @@ $A.Size
 Cet exemple ajoute la propriété de note **StringUse** à une chaîne.
 Étant donné que `Add-Member` ne peut pas ajouter de types aux objets d’entrée de **chaîne** , vous pouvez spécifier le paramètre **PassThru** pour générer un objet de sortie. La dernière commande de l'exemple affiche la nouvelle propriété.
 
-Cet exemple utilise le paramètre **NotePropertyMembers** . La valeur du paramètre **NotePropertyMembers** est une table de hachage. La clé est le nom de la propriété de note, **StringUse** , et la valeur est la valeur de la propriété de note, **Display** .
+Cet exemple utilise le paramètre **NotePropertyMembers** . La valeur du paramètre **NotePropertyMembers** est une table de hachage. La clé est le nom de la propriété de note, **StringUse** , et la valeur est la valeur de la propriété de note, **Display**.
 
 ```powershell
 $A = "A string"
@@ -148,7 +148,7 @@ Cette fonction copie toutes les propriétés d'un objet dans un autre objet.
 
 La `foreach` boucle utilise l' `Get-Member` applet de commande pour récupérer chacune des propriétés de l’objet **from** . Les commandes de la `foreach` boucle sont exécutées en série sur chacune des propriétés.
 
-La `Add-Member` commande ajoute la propriété de l’objet **from** à l’objet **to** en tant **que NoteProperty** . La valeur est copiée à l’aide du paramètre **value** . Elle utilise le paramètre **force** pour ajouter des membres avec le même nom de membre.
+La `Add-Member` commande ajoute la propriété de l’objet **from** à l’objet **to** en tant **que NoteProperty**. La valeur est copiée à l’aide du paramètre **value** . Elle utilise le paramètre **force** pour ajouter des membres avec le même nom de membre.
 
 ```powershell
 function Copy-Property ($From, $To)
@@ -165,12 +165,12 @@ function Copy-Property ($From, $To)
 
 Cet exemple crée un objet personnalisé de **ressource** .
 
-L' `New-Object` applet de commande crée un **PSObject** . L’exemple enregistre le **PSObject** dans la `$Asset` variable.
+L' `New-Object` applet de commande crée un **PSObject**. L’exemple enregistre le **PSObject** dans la `$Asset` variable.
 
 La deuxième commande utilise l' `[ordered]` accélérateur de type pour créer un dictionnaire ordonné de noms et de valeurs. La commande enregistre le résultat dans la `$D` variable.
 
-La troisième commande utilise le paramètre **NotePropertyMembers** de l' `Add-Member` applet de commande pour ajouter le dictionnaire dans la `$D` variable au **PSObject** .
-La propriété **TypeName** assigne un nouveau nom, **Asset** , au **PSObject** .
+La troisième commande utilise le paramètre **NotePropertyMembers** de l' `Add-Member` applet de commande pour ajouter le dictionnaire dans la `$D` variable au **PSObject**.
+La propriété **TypeName** assigne un nouveau nom, **Asset** , au **PSObject**.
 
 La dernière commande envoie le nouvel objet **Asset** à l' `Get-Member` applet de commande. La sortie indique que l’objet a un nom de type de **ressource** et les propriétés de note que nous avons définies dans le dictionnaire trié.
 
@@ -195,7 +195,7 @@ PSVersion   NoteProperty System.String PSVersion=4.0
 System      NoteProperty System.String System=Server Core
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Force
 
@@ -244,7 +244,7 @@ Les valeurs valides pour ce paramètre sont :
 - ScriptMethod
 - CodeMethod
 
-Pour plus d’informations sur ces valeurs, consultez [PSMemberTypes, énumération](/dotnet/api/system.management.automation.psmembertypes) dans MSDN Library.
+Pour plus d’informations sur ces valeurs, consultez [énumération PSMemberTypes](/dotnet/api/system.management.automation.psmembertypes) dans le kit de développement logiciel (SDK) PowerShell.
 
 Certains objets n'ont pas chaque type de membre.
 Si vous spécifiez un type de membre que l’objet n’a pas, PowerShell retourne une erreur.
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 
 Spécifie le nom de la propriété de note.
 
-Utilisez ce paramètre avec le paramètre **NotePropertyValue** .
+Utilisez ce paramètre avec le paramètre **NotePropertyValue**.
 Ce paramètre est facultatif.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
@@ -367,10 +367,10 @@ Accept wildcard characters: False
 
 ### -SecondValue
 
-Spécifie des informations supplémentaires facultatives sur les membres **AliasProperty** , **ScriptProperty** , **CodeProperty** ou **CodeMethod** .
+Spécifie des informations supplémentaires facultatives sur les membres **AliasProperty** , **ScriptProperty** , **CodeProperty** ou **CodeMethod**.
 
 S’il est utilisé lors de l’ajout d’un **AliasProperty** , ce paramètre doit être un type de données.
-Une conversion vers le type de données spécifié est ajoutée à la valeur de **AliasProperty** .
+Une conversion vers le type de données spécifié est ajoutée à la valeur de **AliasProperty**.
 
 Par exemple, si vous ajoutez un **AliasProperty** qui fournit un autre nom pour une propriété de type chaîne, vous pouvez également spécifier un paramètre **SecondValue** de **System. Int32** pour indiquer que la valeur de cette propriété de chaîne doit être convertie en entier quand vous y accédez à l’aide du **AliasProperty** correspondant.
 
@@ -410,7 +410,7 @@ Accept wildcard characters: False
 Spécifie un nom pour le type.
 
 Quand le type est une classe dans l’espace de noms **système** ou un type qui a un accélérateur de type, vous pouvez entrer le nom abrégé du type. Sinon, le nom de type complet est obligatoire.
-Ce paramètre est effectif uniquement lorsque l' **InputObject** est un **PSObject** .
+Ce paramètre est effectif uniquement lorsque l' **InputObject** est un **PSObject**.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -450,7 +450,7 @@ Vous pouvez ajouter des membres uniquement aux objets **PSObject** . Pour déter
 Par exemple, pour tester un objet stocké dans la `$obj` variable, tapez `$obj -is [PSObject]` .
 
 Les noms des paramètres **MemberType** , **Name** , **value** et **SecondValue** sont facultatifs.
-Si vous omettez les noms de paramètres, les valeurs des paramètres sans nom doivent apparaître dans cet ordre : **MemberType** , **Name** , **value** et **SecondValue** .
+Si vous omettez les noms de paramètres, les valeurs des paramètres sans nom doivent apparaître dans cet ordre : **MemberType** , **Name** , **value** et **SecondValue**.
 
 Si vous incluez les noms de paramètres, les paramètres peuvent apparaître dans tout ordre.
 

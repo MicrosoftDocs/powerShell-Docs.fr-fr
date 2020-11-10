@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
-ms.openlocfilehash: b4d65b5013ba3e3f172d0780e7c8a3ad31c740a1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: acfeae4025b3a32d2a04307609597cf30332d708
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204218"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389451"
 ---
 # ConvertTo-Json
 
 ## SYNOPSIS
 Convertit un objet en une chaîne au format JSON.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
@@ -27,7 +27,7 @@ ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
 [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `ConvertTo-Json` applet de commande convertit n’importe quel objet .net en une chaîne au format JavaScript Object Notation (JSON). Les propriétés sont converties en noms de champs et les valeurs de champ en valeurs de propriété, tandis que les méthodes sont supprimées.
 
@@ -164,7 +164,7 @@ Year        : 2018
 
 Cet exemple montre comment utiliser les `ConvertTo-Json` applets de commande et `ConvertFrom-Json` pour convertir un objet en une chaîne JSON et un objet JSON.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AsArray
 
@@ -306,4 +306,3 @@ L' `ConvertTo-Json` applet de commande est implémentée à l’aide de [Newtons
 [Invoke-RestMethod](Invoke-RestMethod.md)
 
 [NewtonSoft.Js. StringEscapeHandling](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_StringEscapeHandling.htm)
-

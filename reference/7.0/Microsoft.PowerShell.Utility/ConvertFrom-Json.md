@@ -7,25 +7,25 @@ ms.date: 10/19/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
-ms.openlocfilehash: bddb5b1352f0d28717bb25e6d287989aad7fcad4
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: e3a40fcda5d3fa0acad0b8b435a7b369e1e1ae50
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208838"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389655"
 ---
 # ConvertFrom-Json
 
 ## SYNOPSIS
 Convertit une chaîne au format JSON en un objet personnalisé ou une table de hachage.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `ConvertFrom-Json` applet de commande convertit une chaîne au format JSON (JavaScript Object Notation) en un objet **PSCustomObject** personnalisé qui a une propriété pour chaque champ de la chaîne JSON. JSON est couramment utilisé par les sites web pour fournir une représentation textuelle des objets. La norme JSON n’interdit pas l’utilisation interdite avec un **PSCustomObject**. Par exemple, si la chaîne JSON contient des clés dupliquées, seule la dernière clé est utilisée par cette applet de commande. Consultez les autres exemples ci-dessous.
 
@@ -114,7 +114,7 @@ Without -NoEnumerate: 1
 
 La chaîne JSON contient un tableau avec un seul élément. Sans le commutateur, la conversion de JSON en PSObject, puis sa reconversion avec la `ConvertTo-Json` commande produit un entier unique.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AsHashtable
 

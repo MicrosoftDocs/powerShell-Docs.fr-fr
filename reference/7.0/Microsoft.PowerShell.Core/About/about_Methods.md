@@ -6,12 +6,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 1de1d2f85a878d671669ba632a381f4c2b46f96c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 25056ff8b3c0bc8828be1426463b2d087e23a131
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207377"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390998"
 ---
 # <a name="about-methods"></a>À propos des méthodes
 
@@ -81,7 +81,7 @@ Comme indiqué dans les exemples précédents, vous pouvez appeler une méthode 
 
 ### <a name="learning-about-methods"></a>En savoir plus sur les méthodes
 
-Pour rechercher les définitions des méthodes d’un objet, accédez à la rubrique d’aide relative au type d’objet dans MSDN et recherchez sa page de méthodes. Par exemple, la page suivante décrit les méthodes de traitement des objets [System. Diagnostics. Process](/dotnet/api/system.diagnostics.process#methods).
+Pour rechercher les définitions des méthodes d’un objet, accédez à la rubrique d’aide relative au type d’objet et recherchez sa page de méthodes. Par exemple, la page suivante décrit les méthodes de traitement des objets [System. Diagnostics. Process](/dotnet/api/system.diagnostics.process#methods).
 
 Pour déterminer les arguments d’une méthode, examinez la définition de la méthode, qui est semblable au diagramme de syntaxe d’une applet de commande PowerShell.
 

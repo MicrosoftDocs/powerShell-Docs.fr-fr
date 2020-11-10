@@ -7,19 +7,19 @@ ms.date: 02/07/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
-ms.openlocfilehash: 3a9336fedece67c2c84532f226cec01de14cbb2a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 6002003b413cede3cbdb0eeeb40646facb566f61
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201622"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389757"
 ---
 # New-PSSessionOption
 
 ## SYNOPSIS
 Crée un objet qui contient des options avancées pour une session PSSession.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachineProfile] [-Culture <CultureInfo>]
@@ -31,7 +31,7 @@ New-PSSessionOption [-MaximumRedirection <Int32>] [-NoCompression] [-NoMachinePr
  [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [-IncludePortInSPN] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `New-PSSessionOption` applet de commande crée un objet qui contient des options avancées pour une session gérée par l’utilisateur ( **PSSession** ). Vous pouvez utiliser l’objet comme valeur du paramètre **SessionOption** des applets de commande qui créent une **session PSSession** , comme `New-PSSession` , `Enter-PSSession` et `Invoke-Command` .
 
@@ -216,7 +216,7 @@ Invoke-Command -Session $s {
 Just testing.
 ```
 
-La première commande crée une table de hachage avec deux clés, **Team** et **use** . La commande enregistre la table de hachage dans la `$team` variable. Pour plus d’informations sur les tables de hachage, voir [À propos des tables de hachage](about/about_Hash_Tables.md).
+La première commande crée une table de hachage avec deux clés, **Team** et **use**. La commande enregistre la table de hachage dans la `$team` variable. Pour plus d’informations sur les tables de hachage, voir [À propos des tables de hachage](about/about_Hash_Tables.md).
 
 Ensuite, l' `New-PSSessionOption` applet de commande, à l’aide du paramètre **ApplicationArguments** , crée un objet d’option de session enregistré dans la `$team` variable. Lorsque `New-PSSessionOption` crée l’objet d’option de session, il convertit automatiquement la table de hachage dans la valeur du paramètre **ApplicationArguments** en un dictionnaire primitif afin que les données puissent être transmises de manière fiable à la session à distance.
 
@@ -226,7 +226,7 @@ L' `Invoke-Command` applet de commande montre que les données de la `$team` var
 
 Le dernier `Invoke-Command` montre comment les données peuvent être utilisées.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -ApplicationArguments
 
@@ -495,7 +495,7 @@ Accept wildcard characters: False
 
 Détermine comment la sortie de la commande est gérée dans des sessions déconnectées quand la mémoire tampon de sortie est pleine.
 
-Si le mode de mise en mémoire tampon de sortie n'est pas défini dans la session ni dans la configuration de session, la valeur par défaut est **Block** . Les utilisateurs peuvent également changer le mode de mise en mémoire tampon de sortie lors de la déconnexion de la session.
+Si le mode de mise en mémoire tampon de sortie n'est pas défini dans la session ni dans la configuration de session, la valeur par défaut est **Block**. Les utilisateurs peuvent également changer le mode de mise en mémoire tampon de sortie lors de la déconnexion de la session.
 
 Si vous omettez ce paramètre, la valeur de **OutputBufferingMode** de l’objet d’option de session est None. La valeur **Block** ou **Drop** remplace l'option de transport du mode de mise en mémoire tampon de sortie définie dans la configuration de session. Les valeurs valides pour ce paramètre sont :
 
@@ -532,7 +532,7 @@ Détermine quel mécanisme est utilisé pour résoudre le nom d'hôte. Les valeu
 
 La valeur par défaut est Aucun.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération ProxyAccessType](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération ProxyAccessType](/dotnet/api/system.management.automation.remoting.proxyaccesstype).
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -549,9 +549,9 @@ Accept wildcard characters: False
 
 ### -ProxyAuthentication
 
-Spécifie la méthode d'authentification qui est utilisée pour la résolution du proxy. Les valeurs acceptables pour ce paramètre sont les suivantes : **Basic** , **Digest** et **Negotiate** . La valeur par défaut est **Negotiate** .
+Spécifie la méthode d'authentification qui est utilisée pour la résolution du proxy. Les valeurs acceptables pour ce paramètre sont les suivantes : **Basic** , **Digest** et **Negotiate**. La valeur par défaut est **Negotiate**.
 
-Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0).
+Pour plus d’informations sur les valeurs de ce paramètre, consultez [énumération AuthenticationMechanism](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism

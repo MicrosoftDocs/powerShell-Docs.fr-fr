@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: e9b99b824a0ffe59e4572a57998010667788b59d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3c22bb28357a5dd0a5e402eafe1597cabdc3ed84
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345933"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390692"
 ---
 # Receive-PSSession
 
@@ -789,7 +789,7 @@ Lorsque vous déconnectez une session **PSSession** , l’état de session est d
 - La valeur de la propriété **State** dépend de la session active. La valeur Disconnected signifie que la session **PSSession** n’est pas connectée à la session active. Toutefois, cela ne signifie pas que la **session PSSession** est déconnectée de toutes les sessions. Elle peut être connectée à une autre session.
   Pour déterminer si vous pouvez vous connecter ou vous reconnecter à la session, utilisez la propriété **Availability**.
 - Une propriété **Availability** avec la valeur None signifie que vous pouvez vous connecter à la session. La valeur Busy indique que vous ne pouvez pas vous connecter à la session **PSSession** , car elle est connectée à une autre session.
-- Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) dans MSDN Library.
+- Pour plus d’informations sur les valeurs de la propriété **State** des sessions, consultez [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).
 - Pour plus d’informations sur les valeurs de la propriété **Availability** des sessions, consultez [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).
 
 ## LIENS CONNEXES
@@ -819,4 +819,3 @@ Lorsque vous déconnectez une session **PSSession** , l’état de session est d
 [New-PSTransportOption](New-PSTransportOption.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-

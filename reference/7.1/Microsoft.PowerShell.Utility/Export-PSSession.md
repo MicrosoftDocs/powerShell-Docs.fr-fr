@@ -7,12 +7,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 2fda80c934db3e868f0e49e131e6721c7b899f7c
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 5d5841720c6187863902a929632e15d1687685e1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93205290"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389400"
 ---
 # Export-PSSession
 
@@ -20,7 +20,7 @@ ms.locfileid: "93205290"
 
 Exporte les commandes d’une autre session et les enregistre dans un module PowerShell.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -32,7 +32,7 @@ Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
  [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Export-PSSession` applet de commande obtient les applets de commande, les fonctions, les alias et d’autres types de commandes à partir d’une autre session PowerShell (PSSession) sur un ordinateur local ou distant et les enregistre dans un module PowerShell. Pour ajouter les commandes du module à la session active, utilisez l’applet de commande `Import-Module` .
 
@@ -123,7 +123,7 @@ L' `Remove-PSSession` applet de commande supprime la session PSSession dans la `
 
 L' `New-PSSession` applet de commande crée une session PSSession qui se connecte à l’ordinateur SERVEUR01. Le paramètre **SessionOption** utilise l’objet stocké dans `$Options` . L' `Import-Module` applet de commande importe les commandes à partir du module SERVEUR01. Les commandes du module sont exécutées dans la session PSSession sur l’ordinateur SERVEUR01.
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -AllowClobber
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 
 ### -CommandName
 
-Exporte uniquement les commandes avec les noms ou les modèles de noms spécifiés. Les caractères génériques sont autorisés. Utilisez **CommandName** ou son alias, **Name** .
+Exporte uniquement les commandes avec les noms ou les modèles de noms spécifiés. Les caractères génériques sont autorisés. Utilisez **CommandName** ou son alias, **Name**.
 
 Par défaut, `Export-PSSession` exporte toutes les commandes de la session PSSession, à l’exception des commandes qui ont les mêmes noms que les commandes dans la session active. Cela empêche les commandes d’être masquées ou remplacées par les commandes dans la session active. Pour exporter toutes les commandes, y compris celles qui masquent ou remplacent d’autres commandes, utilisez le paramètre **AllowClobber** .
 
@@ -201,7 +201,7 @@ Accept wildcard characters: True
 
 ### -CommandType
 
-Exporte uniquement les types spécifiés d'objets de commande. Utilisez **CommandType** ou son alias, **Type** .
+Exporte uniquement les types spécifiés d'objets de commande. Utilisez **CommandType** ou son alias, **Type**.
 
 Les valeurs acceptables pour ce paramètre sont les suivantes :
 
@@ -213,7 +213,7 @@ Les valeurs acceptables pour ce paramètre sont les suivantes :
 - ExternalScript. Tous les fichiers. ps1 dans les chemins d’accès figurant dans la variable d’environnement PATH ( `$env:path` ).
 - Filtre et fonction. Toutes les fonctions PowerShell.
 - Script. blocs de script dans la session active.
-- Flux. Un flux de travail PowerShell. Pour plus d’informations, consultez [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1).
+- Flux. Un flux de travail PowerShell. Pour plus d’informations, consultez [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -300,16 +300,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-Spécifie les modules dont les noms sont spécifiés sous la forme d’objets **ModuleSpecification** .
-Consultez la section Notes du [constructeur ModuleSpecification (Hashtable)](https://msdn.microsoft.com/library/jj136290).
+Spécifie les modules dont les noms sont spécifiés sous la forme d’objets **ModuleSpecification** . Consultez la section Notes du [constructeur ModuleSpecification (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_).
 
 Par exemple, le paramètre **FullyQualifiedModule** accepte un nom de module qui est spécifié dans l’un des formats suivants :
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** et **ModuleVersion** sont obligatoires, mais **Guid** est facultatif. Vous ne pouvez pas spécifier le paramètre **FullyQualifiedModule** dans la même commande qu’un paramètre **module** ; les deux paramètres s’excluent mutuellement.
+**ModuleName** et **ModuleVersion** sont obligatoires, mais **Guid** est facultatif. Vous ne pouvez pas spécifier le paramètre **FullyQualifiedModule** dans la même commande qu’un paramètre **module** . les deux paramètres s’excluent mutuellement.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

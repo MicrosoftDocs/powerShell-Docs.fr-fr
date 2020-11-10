@@ -7,19 +7,19 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: 5999dfbba27a8eedbc054edee3ca2b1061dd2adc
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: a1d15dfcbafba2d3f4853b6bcc59e787a022a3ed
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201245"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390148"
 ---
 # Set-Date
 
 ## SYNOPSIS
 Définit l'heure système sur l'ordinateur sur une heure que vous spécifiez.
 
-## SYNTAX
+## SYNTAXE
 
 ### Date (par défaut)
 
@@ -33,7 +33,7 @@ Set-Date [-Date] <DateTime> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm
 Set-Date [-Adjust] <TimeSpan> [-DisplayHint <DisplayHintType>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Description
+## DESCRIPTION
 
 L' `Set-Date` applet de commande remplace la date et l’heure système de l’ordinateur par une date et une heure que vous spécifiez.
 Vous pouvez spécifier une nouvelle date et/ou heure en tapant une chaîne ou en passant un objet **DateTime** ou **TimeSpan** à `Set-Date` . Pour spécifier une nouvelle date ou heure, utilisez le paramètre **Date** .
@@ -89,7 +89,7 @@ $90mins = New-TimeSpan -Minutes 90
 Set-Date -Adjust $90mins
 ```
 
-## PARAMETERS
+## PARAMÈTRES
 
 ### -Ajuster
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 Spécifie les éléments de la date et de l’heure affichés. Les valeurs acceptables pour ce paramètre sont les suivantes :
 
-- Date.
-  affiche uniquement la date.
-- Heure.
-  affiche uniquement l’heure.
-- DateTime.
-  affiche la date et l’heure.
+- **Date** : affiche uniquement la date.
+- **Time** : affiche uniquement l’heure.
+- **DateTime** : affiche la date et l’heure.
 
 Ce paramètre affecte uniquement l'affichage.
 Elle n’affecte pas l’objet **DateTime** que `Get-Date` récupère.
@@ -206,9 +203,9 @@ Vous pouvez diriger une date vers `Set-Date` .
 ## REMARQUES
 
 - Utilisez cette applet de commande avec précaution lors de la modification de la date et de l’heure sur l’ordinateur. la modification peut empêcher l'ordinateur de recevoir des mises à jour et des événements système qui sont déclenchés par une date ou une heure. Utilisez les paramètres **WhatIf** et **Confirm** pour éviter les erreurs.
-- Vous pouvez utiliser des méthodes .NET standard avec les objets **DateTime** et **TimeSpan** utilisés avec `Set-Date` , tels que **AddDays** , **AddMonths** et **FromFileTime** . Pour plus d’informations, consultez [DateTime, méthodes](/dotnet/api/system.datetime) et
+- Vous pouvez utiliser des méthodes .NET standard avec les objets **DateTime** et **TimeSpan** utilisés avec `Set-Date` , tels que **AddDays** , **AddMonths** et **FromFileTime**. Pour plus d’informations, consultez [DateTime, méthodes](/dotnet/api/system.datetime) et
 
-  Les [méthodes TimeSpan](/dotnet/api/system.timespan) dans MSDN Library.
+  Les [méthodes TimeSpan](/dotnet/api/system.timespan) dans le kit de développement logiciel (SDK) .net.
 
 ## LIENS CONNEXES
 
