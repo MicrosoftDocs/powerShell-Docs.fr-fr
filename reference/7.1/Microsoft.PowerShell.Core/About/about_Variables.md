@@ -2,16 +2,16 @@
 description: Décrit comment les variables stockent des valeurs qui peuvent être utilisées dans PowerShell.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 03/19/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Variables
-ms.openlocfilehash: 0865afe69f5f1774e90d2d2dc5827d628cab0f6a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 858015f42ff58baf653d8d0f1502df0f7ed4a63f
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206697"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483098"
 ---
 # <a name="about-variables"></a>À propos des variables
 
@@ -45,7 +45,7 @@ Pour créer une variable, utilisez une instruction d’assignation pour assigner
 
 Pour obtenir la liste de toutes les variables de votre session PowerShell, tapez `Get-Variable` . Les noms de variables s’affichent sans le signe dollar ( `$` ) qui est utilisé pour référencer des variables.
 
-Par exemple :
+Exemple :
 
 ```powershell
 $MyVariable = 1, 2, 3
@@ -55,7 +55,7 @@ $Path = "C:\Windows\System32"
 
 Les variables sont utiles pour stocker les résultats des commandes.
 
-Par exemple :
+Exemple :
 
 ```powershell
 $Processes = Get-Process
@@ -65,7 +65,7 @@ $Today = (Get-Date).DateTime
 
 Pour afficher la valeur d’une variable, tapez le nom de la variable, précédé d’un signe dollar ( `$` ).
 
-Par exemple :
+Exemple :
 
 ```powershell
 $MyVariable
@@ -137,7 +137,7 @@ Les variables PowerShell sont faiblement typées, ce qui signifie qu’elles ne 
 
 Le type de données d’une variable est déterminé par les types .NET des valeurs de la variable. Pour afficher le type d’objet d’une variable, utilisez la valeur de l' [élément obtenir un membre](xref:Microsoft.PowerShell.Utility.Get-Member).
 
-Par exemple :
+Exemple :
 
 ```powershell
 $a = 12                         # System.Int32
@@ -250,7 +250,7 @@ La meilleure pratique est que les noms de variables incluent uniquement des cara
 
 Les noms de variables alphanumériques peuvent contenir les caractères suivants :
 
-- Caractères Unicode de ces catégories : **lu** , **ll** , **lt** , **LM** , **Lo** ou **ND** .
+- Caractères Unicode de ces catégories : **lu** , **ll** , **lt** , **LM** , **Lo** ou **ND**.
 - Caractère de soulignement ( `_` ).
 - Point d’interrogation ( `?` ).
 
@@ -332,7 +332,7 @@ Par exemple, pour modifier la valeur de la `$VerbosePreference` variable dans ch
 $VerbosePreference = "Continue"
 ```
 
-Vous pouvez ajouter cette commande à votre profil PowerShell en ouvrant le `$PROFILE` fichier dans un éditeur de texte, tel que **notepad.exe** . Pour plus d’informations sur les profils PowerShell, voir [about_Profiles](about_Profiles.md).
+Vous pouvez ajouter cette commande à votre profil PowerShell en ouvrant le `$PROFILE` fichier dans un éditeur de texte, tel que **notepad.exe**. Pour plus d’informations sur les profils PowerShell, voir [about_Profiles](about_Profiles.md).
 
 ## <a name="the-variable-drive"></a>Le lecteur variable :
 

@@ -6,12 +6,12 @@ ms.date: 10/28/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: a917afc1499af96f834496c22e5634826c5aeb73
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: a9c589aacfc64495ece2d461687d97f95d885353
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93208933"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483194"
 ---
 # <a name="about-operators"></a>À propos des opérateurs
 
@@ -85,11 +85,11 @@ Les opérateurs spéciaux ont des cas d’usage spécifiques qui ne rentrent dan
 
 #### <a name="grouping-operator--"></a>Opérateur de regroupement `( )`
 
-Comme dans d’autres langages, `(...)` sert à remplacer la priorité des opérateurs dans les expressions. Par exemple : `(1 + 2) / 3`
+Comme dans d’autres langages, `(...)` sert à remplacer la priorité des opérateurs dans les expressions. Par exemple : `(1 + 2) / 3`
 
 Toutefois, dans PowerShell, il existe des comportements supplémentaires.
 
-- `(...)` vous permet de laisser la sortie d’une _commande_ participer à une expression. Par exemple :
+- `(...)` vous permet de laisser la sortie d’une _commande_ participer à une expression. Exemple :
 
   ```powershell
   PS> (Get-Item *.txt).Count -gt 10
@@ -117,6 +117,11 @@ Retourne le résultat d’une ou plusieurs instructions sous la forme d’un tab
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>Syntaxe de littéral de table de hachage `@{}`
+
+Semblable à la sous-expression de tableau, cette syntaxe est utilisée pour déclarer une table de hachage.
+Pour plus d’informations, consultez [about_Hash_Tables](about_Hash_Tables.md).
 
 #### <a name="call-operator-"></a>Opérateur d’appel `&`
 
@@ -535,6 +540,11 @@ Et lorsque l’opérande a la valeur null, l’élément n’est pas accessible 
 $a = $null
 ${a}?[0]
 ```
+
+> [!NOTE]
+> Étant donné que PowerShell permet à `?` de faire partie du nom de la variable, la spécification formelle du nom de la variable est requise pour l’utilisation de ces opérateurs. Il est donc nécessaire d’utiliser `{}` autour des noms de variables comme `${a}` ou lorsque `?` fait partie du nom de la variable `${a?}`.
+>
+> La syntaxe des noms de variables de ne `${<name>}` doit pas être confondue avec l’opérateur de sous- `$()` expression. Pour plus d’informations, consultez la section nom de la variable de [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
 
 ## <a name="see-also"></a>Voir aussi
 
