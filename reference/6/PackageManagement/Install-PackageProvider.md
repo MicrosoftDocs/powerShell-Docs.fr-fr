@@ -7,21 +7,21 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
-ms.openlocfilehash: ceae77cb6ef2e36f62da7872e9592292e6065ada
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 856e82d8166548921531e88488bd45c34d845772
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203698"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524720"
 ---
-# <span data-ttu-id="b2836-103">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b2836-103">Install-PackageProvider</span></span>
+# <span data-ttu-id="1462a-103">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1462a-103">Install-PackageProvider</span></span>
 
-## <span data-ttu-id="b2836-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b2836-104">SYNOPSIS</span></span>
-<span data-ttu-id="b2836-105">Installe un ou plusieurs fournisseurs de packages Package Management.</span><span class="sxs-lookup"><span data-stu-id="b2836-105">Installs one or more Package Management package providers.</span></span>
+## <span data-ttu-id="1462a-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="1462a-104">SYNOPSIS</span></span>
+<span data-ttu-id="1462a-105">Installe un ou plusieurs fournisseurs de packages Package Management.</span><span class="sxs-lookup"><span data-stu-id="1462a-105">Installs one or more Package Management package providers.</span></span>
 
-## <span data-ttu-id="b2836-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="b2836-106">SYNTAX</span></span>
+## <span data-ttu-id="1462a-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="1462a-106">SYNTAX</span></span>
 
-### <span data-ttu-id="b2836-107">PackageBySearch (par défaut)</span><span class="sxs-lookup"><span data-stu-id="b2836-107">PackageBySearch (Default)</span></span>
+### <span data-ttu-id="1462a-107">PackageBySearch (par défaut)</span><span class="sxs-lookup"><span data-stu-id="1462a-107">PackageBySearch (Default)</span></span>
 
 ```
 Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
@@ -30,7 +30,7 @@ Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-Minimum
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b2836-108">PackageByInputObject</span><span class="sxs-lookup"><span data-stu-id="b2836-108">PackageByInputObject</span></span>
+### <span data-ttu-id="1462a-108">PackageByInputObject</span><span class="sxs-lookup"><span data-stu-id="1462a-108">PackageByInputObject</span></span>
 
 ```
 Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-Proxy <Uri>]
@@ -38,80 +38,65 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b2836-109">Description</span><span class="sxs-lookup"><span data-stu-id="b2836-109">DESCRIPTION</span></span>
+## <span data-ttu-id="1462a-109">Description</span><span class="sxs-lookup"><span data-stu-id="1462a-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="b2836-110">L’applet de commande **install-PackageProvider** installe les fournisseurs de Package Management correspondants qui sont disponibles dans les sources de package inscrites auprès de **PowerShellGet** .</span><span class="sxs-lookup"><span data-stu-id="b2836-110">The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet** .</span></span>
-<span data-ttu-id="b2836-111">Par défaut, cela comprend les modules disponibles dans le PowerShell Gallery avec la balise **PackageManagement** .</span><span class="sxs-lookup"><span data-stu-id="b2836-111">By default, this includes modules available in the PowerShell Gallery with the **PackageManagement** tag.</span></span>
-<span data-ttu-id="b2836-112">Le fournisseur de Package Management **PowerShellGet** est utilisé pour rechercher des fournisseurs dans ces dépôts.</span><span class="sxs-lookup"><span data-stu-id="b2836-112">The **PowerShellGet** Package Management provider is used for finding providers in these repositories.</span></span>
+<span data-ttu-id="1462a-110">L' `Install-PackageProvider` applet de commande installe les fournisseurs de Package Management correspondants qui sont disponibles dans les sources de package inscrites auprès de **PowerShellGet**.</span><span class="sxs-lookup"><span data-stu-id="1462a-110">The `Install-PackageProvider` cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.</span></span> <span data-ttu-id="1462a-111">Par défaut, cela comprend les modules disponibles dans le PowerShell Gallery Windows avec la balise **PackageManagement** .</span><span class="sxs-lookup"><span data-stu-id="1462a-111">By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement** tag.</span></span> <span data-ttu-id="1462a-112">Le fournisseur de Package Management **PowerShellGet** est utilisé pour rechercher des fournisseurs dans ces dépôts.</span><span class="sxs-lookup"><span data-stu-id="1462a-112">The **PowerShellGet** Package Management provider is used for finding providers in these repositories.</span></span>
 
-<span data-ttu-id="b2836-113">Cette applet de commande installe également les fournisseurs de Package Management correspondants qui sont disponibles à l’aide de l’application d’amorçage Package Management.</span><span class="sxs-lookup"><span data-stu-id="b2836-113">This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.</span></span>
+<span data-ttu-id="1462a-113">Cette applet de commande installe également les fournisseurs de Package Management correspondants qui sont disponibles à l’aide de l’application d’amorçage Package Management.</span><span class="sxs-lookup"><span data-stu-id="1462a-113">This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.</span></span>
 
-<span data-ttu-id="b2836-114">Cette applet de commande installe également les fournisseurs de Package Management correspondants qui sont disponibles dans le magasin d’objets BLOB Azure Package Management.</span><span class="sxs-lookup"><span data-stu-id="b2836-114">This cmdlet also installs matching Package Management providers that are available in the Package Management Azure Blob store.</span></span>
-<span data-ttu-id="b2836-115">Utilisez le fournisseur du programme d’amorçage pour les Rechercher et les installer.</span><span class="sxs-lookup"><span data-stu-id="b2836-115">Use the bootstrapper provider to find and install them.</span></span>
+<span data-ttu-id="1462a-114">Cette applet de commande installe également les fournisseurs de Package Management correspondants qui sont disponibles dans le magasin d’objets BLOB Azure Package Management.</span><span class="sxs-lookup"><span data-stu-id="1462a-114">This cmdlet also installs matching Package Management providers that are available in the Package Management Azure Blob store.</span></span> <span data-ttu-id="1462a-115">Utilisez le fournisseur du programme d’amorçage pour les Rechercher et les installer.</span><span class="sxs-lookup"><span data-stu-id="1462a-115">Use the bootstrapper provider to find and install them.</span></span>
 
-<span data-ttu-id="b2836-116">Pour pouvoir s’exécuter la première fois, PackageManagement requiert une connexion Internet pour télécharger le fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="b2836-116">In order to execute the first time, PackageManagement requires an internet connection to download the Nuget package provider.</span></span>
-<span data-ttu-id="b2836-117">Toutefois, si votre ordinateur ne dispose pas d’une connexion Internet et que vous devez utiliser le fournisseur NuGet ou PowerShellGet, vous pouvez les télécharger sur un autre ordinateur et les copier sur votre ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="b2836-117">However, if your computer does not have an internet connection and you need to use the Nuget or PowerShellGet provider, you can download them on another computer and copy them to your target computer.</span></span>
-<span data-ttu-id="b2836-118">Utilisez les étapes suivantes pour effectuer cette opération :</span><span class="sxs-lookup"><span data-stu-id="b2836-118">Use the following steps to do this:</span></span>
+<span data-ttu-id="1462a-116">Pour pouvoir s’exécuter la première fois, PackageManagement requiert une connexion Internet pour télécharger le fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="1462a-116">In order to execute the first time, PackageManagement requires an internet connection to download the NuGet package provider.</span></span> <span data-ttu-id="1462a-117">Toutefois, si votre ordinateur ne dispose pas d’une connexion Internet et que vous devez utiliser le fournisseur NuGet ou PowerShellGet, vous pouvez les télécharger sur un autre ordinateur et les copier sur votre ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="1462a-117">However, if your computer does not have an internet connection and you need to use the NuGet or PowerShellGet provider, you can download them on another computer and copy them to your target computer.</span></span> <span data-ttu-id="1462a-118">Utilisez les étapes suivantes pour effectuer cette opération :</span><span class="sxs-lookup"><span data-stu-id="1462a-118">Use the following steps to do this:</span></span>
 
-1.
-<span data-ttu-id="b2836-119">Exécutez `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` pour installer le fournisseur à partir d’un ordinateur disposant d’une connexion Internet.</span><span class="sxs-lookup"><span data-stu-id="b2836-119">Run `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` to install the provider from a computer with an internet connection.</span></span>
+1. <span data-ttu-id="1462a-119">Exécutez `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` pour installer le fournisseur à partir d’un ordinateur disposant d’une connexion Internet.</span><span class="sxs-lookup"><span data-stu-id="1462a-119">Run `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` to install the provider from a computer with an internet connection.</span></span>
+1. <span data-ttu-id="1462a-120">Après l’installation, vous trouverez le fournisseur installé dans `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` ou `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` .</span><span class="sxs-lookup"><span data-stu-id="1462a-120">After the install, you can find the provider installed in `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` or `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>`.</span></span>
+1. <span data-ttu-id="1462a-121">Placez le `<ProviderName>` dossier, qui est dans ce cas le dossier NuGet, à l’emplacement correspondant sur votre ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="1462a-121">Place the `<ProviderName>` folder, which in this case is the NuGet folder, in the corresponding location on your target computer.</span></span> <span data-ttu-id="1462a-122">Si votre ordinateur cible est un serveur nano, vous devez exécuter `Install-PackageProvider` à partir de nano Server pour télécharger les fichiers binaires NuGet appropriés.</span><span class="sxs-lookup"><span data-stu-id="1462a-122">If your target computer is a Nano server, you need to run `Install-PackageProvider` from Nano Server to download the correct NuGet binaries.</span></span>
+1. <span data-ttu-id="1462a-123">Redémarrez PowerShell pour charger automatiquement le fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="1462a-123">Restart PowerShell to auto-load the package provider.</span></span> <span data-ttu-id="1462a-124">Vous pouvez également exécuter `Get-PackageProvider -ListAvailable` pour répertorier tous les fournisseurs de packages disponibles sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="1462a-124">Alternatively, run `Get-PackageProvider -ListAvailable` to list all the package providers available on the computer.</span></span>
+   <span data-ttu-id="1462a-125">Utilisez ensuite `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` pour importer le fournisseur dans la session Windows PowerShell actuelle.</span><span class="sxs-lookup"><span data-stu-id="1462a-125">Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider to the current Windows PowerShell session.</span></span>
 
-2.
-<span data-ttu-id="b2836-120">Après l’installation, vous trouverez le fournisseur installé dans `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` ou `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` .</span><span class="sxs-lookup"><span data-stu-id="b2836-120">After the install, you can find the provider installed in `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` or `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\\\<ProviderName\>\\\<ProviderVersion\>`.</span></span>
+## <span data-ttu-id="1462a-126">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="1462a-126">EXAMPLES</span></span>
 
-3.
-<span data-ttu-id="b2836-121">Placez le \<ProviderName\> dossier, qui est dans ce cas le dossier NuGet, à l’emplacement correspondant sur votre ordinateur cible.</span><span class="sxs-lookup"><span data-stu-id="b2836-121">Place the \<ProviderName\> folder, which in this case is the Nuget folder, in the corresponding location on your target computer.</span></span>
-<span data-ttu-id="b2836-122">Si votre ordinateur cible est un serveur nano, vous devez exécuter **install-PackageProvider** à partir de nano Server pour télécharger les fichiers binaires NuGet appropriés.</span><span class="sxs-lookup"><span data-stu-id="b2836-122">If your target computer is a Nano server, you need to run **Install-PackageProvider** from Nano Server to download the correct Nuget binaries.</span></span>
+### <span data-ttu-id="1462a-127">Exemple 1 : installer un fournisseur de package à partir de la PowerShell Gallery</span><span class="sxs-lookup"><span data-stu-id="1462a-127">Example 1: Install a package provider from the PowerShell Gallery</span></span>
 
-4.
-<span data-ttu-id="b2836-123">Redémarrez PowerShell pour charger automatiquement le fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="b2836-123">Restart PowerShell to auto-load the package provider.</span></span>
-<span data-ttu-id="b2836-124">Vous pouvez également exécuter `Get-PackageProvider -ListAvailable` pour répertorier tous les fournisseurs de packages disponibles sur l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="b2836-124">Alternatively, run `Get-PackageProvider -ListAvailable` to list all the package providers available on the computer.</span></span>
-<span data-ttu-id="b2836-125">Utilisez ensuite `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` pour importer le fournisseur dans la session PowerShell active.</span><span class="sxs-lookup"><span data-stu-id="b2836-125">Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider to the current PowerShell session.</span></span>
+<span data-ttu-id="1462a-128">Cette commande installe le fournisseur de packages GistProvider à partir de l’PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="1462a-128">This command installs the GistProvider package provider from the PowerShell Gallery.</span></span>
 
-## <span data-ttu-id="b2836-126">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="b2836-126">EXAMPLES</span></span>
-
-### <span data-ttu-id="b2836-127">Exemple 1 : installer un fournisseur de package à partir de la PowerShell Gallery</span><span class="sxs-lookup"><span data-stu-id="b2836-127">Example 1: Install a package provider from the PowerShell Gallery</span></span>
-
-```
-PS C:\> Install-PackageProvider -Name "Gistprovider" -Verbose
+```powershell
+Install-PackageProvider -Name "GistProvider" -Verbose
 ```
 
-<span data-ttu-id="b2836-128">Cette commande installe le Gistprovider à partir de la PowerShell Gallery.</span><span class="sxs-lookup"><span data-stu-id="b2836-128">This command installs the Gistprovider from the PowerShell Gallery.</span></span>
+### <span data-ttu-id="1462a-129">Exemple 2 : installer une version spécifiée d’un fournisseur de packages</span><span class="sxs-lookup"><span data-stu-id="1462a-129">Example 2: Install a specified version of a package provider</span></span>
 
-### <span data-ttu-id="b2836-129">Exemple 2 : installer une version spécifiée d’un fournisseur de packages</span><span class="sxs-lookup"><span data-stu-id="b2836-129">Example 2: Install a specified version of a package provider</span></span>
+<span data-ttu-id="1462a-130">Cet exemple installe une version spécifiée du fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="1462a-130">This example installs a specified version of the NuGet package provider.</span></span>
 
-```
-PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
-PS C:\> Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.216" -Force
-```
+<span data-ttu-id="1462a-131">La première commande recherche toutes les versions du fournisseur de package nommé NuGet.</span><span class="sxs-lookup"><span data-stu-id="1462a-131">The first command finds all versions of the package provider named NuGet.</span></span>
+<span data-ttu-id="1462a-132">La deuxième commande installe une version spécifiée du fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="1462a-132">The second command installs a specified version of the NuGet package provider.</span></span>
 
-<span data-ttu-id="b2836-130">Cet exemple installe une version spécifiée du fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="b2836-130">This example installs a specified version of the Nuget package provider.</span></span>
-
-<span data-ttu-id="b2836-131">La première commande recherche toutes les versions du fournisseur de package nommé NuGet.</span><span class="sxs-lookup"><span data-stu-id="b2836-131">The first command finds all versions of the package provider named Nuget.</span></span>
-<span data-ttu-id="b2836-132">La deuxième commande installe une version spécifiée du fournisseur de package NuGet.</span><span class="sxs-lookup"><span data-stu-id="b2836-132">The second command installs a specified version of the Nuget package provider.</span></span>
-
-### <span data-ttu-id="b2836-133">Exemple 3 : Rechercher un fournisseur et l’installer</span><span class="sxs-lookup"><span data-stu-id="b2836-133">Example 3: Find a provider and install it</span></span>
-
-```
-PS C:\> Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Verbose
+```powershell
+Find-PackageProvider -Name "NuGet" -AllVersions
+Install-PackageProvider -Name "NuGet" -RequiredVersion "2.8.5.216" -Force
 ```
 
-<span data-ttu-id="b2836-134">Cette commande utilise **Find-PackageProvider** et le pipeline pour rechercher le fournisseur de l’aide et l’installer.</span><span class="sxs-lookup"><span data-stu-id="b2836-134">This command uses **Find-PackageProvider** and the pipeline to search for the Gist provider and install it.</span></span>
+### <span data-ttu-id="1462a-133">Exemple 3 : Rechercher un fournisseur et l’installer</span><span class="sxs-lookup"><span data-stu-id="1462a-133">Example 3: Find a provider and install it</span></span>
 
-### <span data-ttu-id="b2836-135">Exemple 4 : installer un fournisseur dans le dossier du module de l’utilisateur actuel</span><span class="sxs-lookup"><span data-stu-id="b2836-135">Example 4: Install a provider to the current user's module folder</span></span>
+<span data-ttu-id="1462a-134">Cet exemple utilise `Find-PackageProvider` et le pipeline pour rechercher le fournisseur du Registre et l’installer.</span><span class="sxs-lookup"><span data-stu-id="1462a-134">This example uses `Find-PackageProvider` and the pipeline to search for the Gist provider and install it.</span></span>
 
+```powershell
+Find-PackageProvider -Name "GistProvider" | Install-PackageProvider -Verbose
 ```
-PS C:\> Install-PackageProvider -Name Gistprovider -Verbose -Scope CurrentUser
+
+### <span data-ttu-id="1462a-135">Exemple 4 : installer un fournisseur dans le dossier du module de l’utilisateur actuel</span><span class="sxs-lookup"><span data-stu-id="1462a-135">Example 4: Install a provider to the current user's module folder</span></span>
+
+<span data-ttu-id="1462a-136">Cette commande installe un fournisseur de package pour `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies` que seul l’utilisateur actuel puisse l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="1462a-136">This command installs a package provider to `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies` so that only the current user can use it.</span></span>
+
+```powershell
+Install-PackageProvider -Name GistProvider -Verbose -Scope CurrentUser
 ```
 
-<span data-ttu-id="b2836-136">Cette commande installe un fournisseur de package pour $env : Localappdata\packagemanagement\providerassemblies. afin que seul l’utilisateur actuel puisse l’utiliser.</span><span class="sxs-lookup"><span data-stu-id="b2836-136">This command installs a package provider to $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies so that only the current user can use it.</span></span>
+## <span data-ttu-id="1462a-137">PARAMÈTRES</span><span class="sxs-lookup"><span data-stu-id="1462a-137">PARAMETERS</span></span>
 
-## <span data-ttu-id="b2836-137">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b2836-137">PARAMETERS</span></span>
+### <span data-ttu-id="1462a-138">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="1462a-138">-AllVersions</span></span>
 
-### <span data-ttu-id="b2836-138">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="b2836-138">-AllVersions</span></span>
-
-<span data-ttu-id="b2836-139">Indique que cette applet de commande installe toutes les versions disponibles du fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="b2836-139">Indicates that this cmdlet installs all available versions of the package provider.</span></span>
-<span data-ttu-id="b2836-140">Par défaut, **install-PackageProvider** retourne uniquement la version la plus récente disponible.</span><span class="sxs-lookup"><span data-stu-id="b2836-140">By default, **Install-PackageProvider** only returns the highest available version.</span></span>
+<span data-ttu-id="1462a-139">Indique que cette applet de commande installe toutes les versions disponibles du fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="1462a-139">Indicates that this cmdlet installs all available versions of the package provider.</span></span> <span data-ttu-id="1462a-140">Par défaut, `Install-PackageProvider` retourne uniquement la version la plus récente disponible.</span><span class="sxs-lookup"><span data-stu-id="1462a-140">By default, `Install-PackageProvider` only returns the highest available version.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -125,9 +110,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-141">-Credential</span><span class="sxs-lookup"><span data-stu-id="b2836-141">-Credential</span></span>
+### <span data-ttu-id="1462a-141">-Credential</span><span class="sxs-lookup"><span data-stu-id="1462a-141">-Credential</span></span>
 
-<span data-ttu-id="b2836-142">Spécifie un compte d’utilisateur qui a l’autorisation d’installer des fournisseurs de packages.</span><span class="sxs-lookup"><span data-stu-id="b2836-142">Specifies a user account that has permission to install package providers.</span></span>
+<span data-ttu-id="1462a-142">Spécifie un compte d’utilisateur qui a l’autorisation d’installer des fournisseurs de packages.</span><span class="sxs-lookup"><span data-stu-id="1462a-142">Specifies a user account that has permission to install package providers.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -141,26 +126,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-143">-Force</span><span class="sxs-lookup"><span data-stu-id="b2836-143">-Force</span></span>
+### <span data-ttu-id="1462a-143">-Force</span><span class="sxs-lookup"><span data-stu-id="1462a-143">-Force</span></span>
 
-<span data-ttu-id="b2836-144">Indique que cette applet de commande force toutes les actions avec cette applet de commande qui peuvent être forcées.</span><span class="sxs-lookup"><span data-stu-id="b2836-144">Indicates that this cmdlet forces all actions with this cmdlet that can be forced.</span></span>
-<span data-ttu-id="b2836-145">Actuellement, cela signifie que le paramètre *force* agit de la même façon que le paramètre *ForceBootstrap* .</span><span class="sxs-lookup"><span data-stu-id="b2836-145">Currently, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="b2836-146">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="b2836-146">-ForceBootstrap</span></span>
-
-<span data-ttu-id="b2836-147">Indique que cette applet de commande installe automatiquement le fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="b2836-147">Indicates that this cmdlet automatically installs the package provider.</span></span>
+<span data-ttu-id="1462a-144">Indique que cette applet de commande force toutes les actions avec cette applet de commande qui peuvent être forcées.</span><span class="sxs-lookup"><span data-stu-id="1462a-144">Indicates that this cmdlet forces all actions with this cmdlet that can be forced.</span></span> <span data-ttu-id="1462a-145">Actuellement, cela signifie que le paramètre **force** agit de la même façon que le paramètre **ForceBootstrap** .</span><span class="sxs-lookup"><span data-stu-id="1462a-145">Currently, this means the **Force** parameter acts the same as the **ForceBootstrap** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,10 +142,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-148">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b2836-148">-InputObject</span></span>
+### <span data-ttu-id="1462a-146">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="1462a-146">-ForceBootstrap</span></span>
 
-<span data-ttu-id="b2836-149">Spécifie un objet **SoftwareIdentity** .</span><span class="sxs-lookup"><span data-stu-id="b2836-149">Specifies a **SoftwareIdentity** object.</span></span>
-<span data-ttu-id="b2836-150">Utilisez l’applet de commande **Find-PackageProvider** pour obtenir un objet **SoftwareIdentity** pour canaliser dans **install-PackageProvider** .</span><span class="sxs-lookup"><span data-stu-id="b2836-150">Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object to pipe into **Install-PackageProvider** .</span></span>
+<span data-ttu-id="1462a-147">Indique que cette applet de commande installe automatiquement le fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="1462a-147">Indicates that this cmdlet automatically installs the package provider.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1462a-148">-InputObject</span><span class="sxs-lookup"><span data-stu-id="1462a-148">-InputObject</span></span>
+
+<span data-ttu-id="1462a-149">Spécifie un objet **SoftwareIdentity** .</span><span class="sxs-lookup"><span data-stu-id="1462a-149">Specifies a **SoftwareIdentity** object.</span></span> <span data-ttu-id="1462a-150">Utilisez l' `Find-PackageProvider` applet de commande pour obtenir un objet **SoftwareIdentity** dans lequel canaliser `Install-PackageProvider` .</span><span class="sxs-lookup"><span data-stu-id="1462a-150">Use the `Find-PackageProvider` cmdlet to obtain a **SoftwareIdentity** object to pipe into `Install-PackageProvider`.</span></span>
 
 ```yaml
 Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity[]
@@ -191,27 +174,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-151">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="b2836-151">-MaximumVersion</span></span>
+### <span data-ttu-id="1462a-151">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="1462a-151">-MaximumVersion</span></span>
 
-<span data-ttu-id="b2836-152">Spécifie la version maximale autorisée du fournisseur de package que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="b2836-152">Specifies the maximum allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="b2836-153">Si vous n’ajoutez pas ce paramètre, **install-PackageProvider** installe la version disponible la plus récente du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="b2836-153">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="b2836-154">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="b2836-154">-MinimumVersion</span></span>
-
-<span data-ttu-id="b2836-155">Spécifie la version minimale autorisée du fournisseur de packages que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="b2836-155">Specifies the minimum allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="b2836-156">Si vous n’ajoutez pas ce paramètre, **install-PackageProvider** installe la version disponible la plus élevée du package qui répond également aux exigences spécifiées par le paramètre *MaximumVersion* .</span><span class="sxs-lookup"><span data-stu-id="b2836-156">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.</span></span>
+<span data-ttu-id="1462a-152">Spécifie la version maximale autorisée du fournisseur de package que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="1462a-152">Specifies the maximum allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="1462a-153">Si vous n’ajoutez pas ce paramètre, `Install-PackageProvider` installe la version disponible la plus récente du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="1462a-153">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the provider.</span></span>
 
 ```yaml
 Type: System.String
@@ -225,11 +190,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-157">-Name</span><span class="sxs-lookup"><span data-stu-id="b2836-157">-Name</span></span>
+### <span data-ttu-id="1462a-154">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="1462a-154">-MinimumVersion</span></span>
 
-<span data-ttu-id="b2836-158">Spécifie un ou plusieurs noms de module du fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="b2836-158">Specifies one or more package provider module names.</span></span>
-<span data-ttu-id="b2836-159">Séparez plusieurs noms de packages par des virgules.</span><span class="sxs-lookup"><span data-stu-id="b2836-159">Separate multiple package names with commas.</span></span>
-<span data-ttu-id="b2836-160">Les caractères génériques ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="b2836-160">Wildcard characters are not supported.</span></span>
+<span data-ttu-id="1462a-155">Spécifie la version minimale autorisée du fournisseur de packages que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="1462a-155">Specifies the minimum allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="1462a-156">Si vous n’ajoutez pas ce paramètre, `Install-PackageProvider` installe la version disponible la plus élevée du package qui répond également aux exigences spécifiées par le paramètre *MaximumVersion* .</span><span class="sxs-lookup"><span data-stu-id="1462a-156">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1462a-157">-Name</span><span class="sxs-lookup"><span data-stu-id="1462a-157">-Name</span></span>
+
+<span data-ttu-id="1462a-158">Spécifie un ou plusieurs noms de module du fournisseur de package.</span><span class="sxs-lookup"><span data-stu-id="1462a-158">Specifies one or more package provider module names.</span></span> <span data-ttu-id="1462a-159">Séparez plusieurs noms de packages par des virgules.</span><span class="sxs-lookup"><span data-stu-id="1462a-159">Separate multiple package names with commas.</span></span>
+<span data-ttu-id="1462a-160">Les caractères génériques ne sont pas pris en charge.</span><span class="sxs-lookup"><span data-stu-id="1462a-160">Wildcard characters are not supported.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -243,7 +223,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-161">-Proxy</span><span class="sxs-lookup"><span data-stu-id="b2836-161">-Proxy</span></span>
+### <span data-ttu-id="1462a-161">-Proxy</span><span class="sxs-lookup"><span data-stu-id="1462a-161">-Proxy</span></span>
+
+<span data-ttu-id="1462a-162">Spécifie un serveur proxy pour la demande, au lieu de se connecter directement à la ressource Internet.</span><span class="sxs-lookup"><span data-stu-id="1462a-162">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -257,7 +239,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-162">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="b2836-162">-ProxyCredential</span></span>
+### <span data-ttu-id="1462a-163">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="1462a-163">-ProxyCredential</span></span>
+
+<span data-ttu-id="1462a-164">Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.</span><span class="sxs-lookup"><span data-stu-id="1462a-164">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -271,10 +255,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-163">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="b2836-163">-RequiredVersion</span></span>
+### <span data-ttu-id="1462a-165">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="1462a-165">-RequiredVersion</span></span>
 
-<span data-ttu-id="b2836-164">Spécifie la version exacte du fournisseur de packages que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="b2836-164">Specifies the exact allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="b2836-165">Si vous n’ajoutez pas ce paramètre, **install-PackageProvider** installe la version disponible la plus récente du fournisseur qui satisfait également à toute version maximale spécifiée par le paramètre *MaximumVersion* .</span><span class="sxs-lookup"><span data-stu-id="b2836-165">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.</span></span>
+<span data-ttu-id="1462a-166">Spécifie la version exacte du fournisseur de packages que vous souhaitez installer.</span><span class="sxs-lookup"><span data-stu-id="1462a-166">Specifies the exact allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="1462a-167">Si vous n’ajoutez pas ce paramètre, `Install-PackageProvider` installe la version disponible la plus récente du fournisseur qui satisfait également à toute version maximale spécifiée par le paramètre **MaximumVersion** .</span><span class="sxs-lookup"><span data-stu-id="1462a-167">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the provider that also satisfies any maximum version specified by the **MaximumVersion** parameter.</span></span>
 
 ```yaml
 Type: System.String
@@ -288,16 +271,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-166">-Étendue</span><span class="sxs-lookup"><span data-stu-id="b2836-166">-Scope</span></span>
+### <span data-ttu-id="1462a-168">-Étendue</span><span class="sxs-lookup"><span data-stu-id="1462a-168">-Scope</span></span>
 
-<span data-ttu-id="b2836-167">Spécifie l’étendue d’installation du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="b2836-167">Specifies the installation scope of the provider.</span></span>
-<span data-ttu-id="b2836-168">Les valeurs acceptables pour ce paramètre sont les suivantes : **ALLUSERS** et **CurrentUser** .</span><span class="sxs-lookup"><span data-stu-id="b2836-168">The acceptable values for this parameter are: **AllUsers** and **CurrentUser** .</span></span>
+<span data-ttu-id="1462a-169">Spécifie l’étendue d’installation du fournisseur.</span><span class="sxs-lookup"><span data-stu-id="1462a-169">Specifies the installation scope of the provider.</span></span> <span data-ttu-id="1462a-170">Les valeurs valides pour ce paramètre sont :</span><span class="sxs-lookup"><span data-stu-id="1462a-170">The acceptable values for this parameter are:</span></span>
 
-<span data-ttu-id="b2836-169">L’étendue **ALLUSERS** installe les fournisseurs à un emplacement accessible à tous les utilisateurs de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="b2836-169">The **AllUsers** scope installs providers in a location that is accessible to all users of the computer.</span></span>
-<span data-ttu-id="b2836-170">Par défaut, il s’agit de **$env :P rogramfiles\packagemanagement\providerassemblies.**</span><span class="sxs-lookup"><span data-stu-id="b2836-170">By default, this is **$env:ProgramFiles\PackageManagement\ProviderAssemblies.**</span></span>
+- <span data-ttu-id="1462a-171">**ALLUSERS** -installe les fournisseurs à un emplacement accessible à tous les utilisateurs de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="1462a-171">**AllUsers** - installs providers in a location that is accessible to all users of the computer.</span></span>
+  <span data-ttu-id="1462a-172">Par défaut, il s’agit de **$env :P rogramfiles\packagemanagement\providerassemblies.**</span><span class="sxs-lookup"><span data-stu-id="1462a-172">By default, this is **$env:ProgramFiles\PackageManagement\ProviderAssemblies.**</span></span>
 
-<span data-ttu-id="b2836-171">L’étendue **CurrentUser** installe les fournisseurs à un emplacement où ils sont accessibles uniquement à l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="b2836-171">The **CurrentUser** scope installs providers in a location where they are only accessible to the current user.</span></span>
-<span data-ttu-id="b2836-172">Par défaut, il s’agit de **$env : LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span><span class="sxs-lookup"><span data-stu-id="b2836-172">By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span></span>
+- <span data-ttu-id="1462a-173">**CurrentUser** -installe les fournisseurs à un emplacement où ils sont uniquement accessibles à l’utilisateur actuel.</span><span class="sxs-lookup"><span data-stu-id="1462a-173">**CurrentUser** - installs providers in a location where they are only accessible to the current user.</span></span> <span data-ttu-id="1462a-174">Par défaut, il s’agit de **$env : LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span><span class="sxs-lookup"><span data-stu-id="1462a-174">By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span></span>
 
 ```yaml
 Type: System.String
@@ -312,10 +293,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-173">-Source</span><span class="sxs-lookup"><span data-stu-id="b2836-173">-Source</span></span>
+### <span data-ttu-id="1462a-175">-Source</span><span class="sxs-lookup"><span data-stu-id="1462a-175">-Source</span></span>
 
-<span data-ttu-id="b2836-174">Spécifie une ou plusieurs sources de package.</span><span class="sxs-lookup"><span data-stu-id="b2836-174">Specifies one or more package sources.</span></span>
-<span data-ttu-id="b2836-175">Utilisez l’applet de commande Get-PackageSource pour obtenir la liste des sources de package disponibles.</span><span class="sxs-lookup"><span data-stu-id="b2836-175">Use the Get-PackageSource cmdlet to get a list of available package sources.</span></span>
+<span data-ttu-id="1462a-176">Spécifie une ou plusieurs sources de package.</span><span class="sxs-lookup"><span data-stu-id="1462a-176">Specifies one or more package sources.</span></span> <span data-ttu-id="1462a-177">Utilisez l' `Get-PackageSource` applet de commande pour obtenir la liste des sources de package disponibles.</span><span class="sxs-lookup"><span data-stu-id="1462a-177">Use the `Get-PackageSource` cmdlet to get a list of available package sources.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -329,9 +309,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-176">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b2836-176">-Confirm</span></span>
+### <span data-ttu-id="1462a-178">-Confirm</span><span class="sxs-lookup"><span data-stu-id="1462a-178">-Confirm</span></span>
 
-<span data-ttu-id="b2836-177">Vous demande une confirmation avant d’exécuter l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="b2836-177">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="1462a-179">Vous demande une confirmation avant d’exécuter l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="1462a-179">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -345,10 +325,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-178">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b2836-178">-WhatIf</span></span>
+### <span data-ttu-id="1462a-180">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1462a-180">-WhatIf</span></span>
 
-<span data-ttu-id="b2836-179">Montre ce qui se passe en cas d’exécution de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="b2836-179">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="b2836-180">L’applet de commande n’est pas exécutée.</span><span class="sxs-lookup"><span data-stu-id="b2836-180">The cmdlet is not run.</span></span>
+<span data-ttu-id="1462a-181">Montre ce qui se passe en cas d’exécution de l’applet de commande.</span><span class="sxs-lookup"><span data-stu-id="1462a-181">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="1462a-182">L’applet de commande n’est pas exécutée.</span><span class="sxs-lookup"><span data-stu-id="1462a-182">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -362,25 +341,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b2836-181">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b2836-181">CommonParameters</span></span>
+### <span data-ttu-id="1462a-183">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1462a-183">CommonParameters</span></span>
 
-<span data-ttu-id="b2836-182">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b2836-182">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b2836-183">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="b2836-183">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="1462a-184">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1462a-184">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1462a-185">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="1462a-185">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b2836-184">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="b2836-184">INPUTS</span></span>
+## <span data-ttu-id="1462a-186">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="1462a-186">INPUTS</span></span>
 
-### <span data-ttu-id="b2836-185">Microsoft. PackageManagement. Packaging. SoftwareIdentity</span><span class="sxs-lookup"><span data-stu-id="b2836-185">Microsoft.PackageManagement.Packaging.SoftwareIdentity</span></span>
+### <span data-ttu-id="1462a-187">Microsoft. PackageManagement. Packaging. SoftwareIdentity</span><span class="sxs-lookup"><span data-stu-id="1462a-187">Microsoft.PackageManagement.Packaging.SoftwareIdentity</span></span>
 
-<span data-ttu-id="b2836-186">Vous pouvez diriger un objet **SoftwareIdentity** vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="b2836-186">You can pipe a **SoftwareIdentity** object to this cmdlet.</span></span>
-<span data-ttu-id="b2836-187">Utilisez Find-PackageProvider pour obtenir un objet **SoftwareIdentity** qui peut être dirigé vers **install-PackageProvider** .</span><span class="sxs-lookup"><span data-stu-id="b2836-187">Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped into **Install-PackageProvider** .</span></span>
+<span data-ttu-id="1462a-188">Vous pouvez diriger un objet **SoftwareIdentity** vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="1462a-188">You can pipe a **SoftwareIdentity** object to this cmdlet.</span></span> <span data-ttu-id="1462a-189">Utilisez `Find-PackageProvider` pour obtenir un objet **SoftwareIdentity** qui peut être dirigé vers `Install-PackageProvider` .</span><span class="sxs-lookup"><span data-stu-id="1462a-189">Use `Find-PackageProvider` to get a **SoftwareIdentity** object that can be piped into `Install-PackageProvider`.</span></span>
 
-## <span data-ttu-id="b2836-188">SORTIES</span><span class="sxs-lookup"><span data-stu-id="b2836-188">OUTPUTS</span></span>
+## <span data-ttu-id="1462a-190">SORTIES</span><span class="sxs-lookup"><span data-stu-id="1462a-190">OUTPUTS</span></span>
 
-## <span data-ttu-id="b2836-189">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="b2836-189">NOTES</span></span>
+## <span data-ttu-id="1462a-191">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="1462a-191">NOTES</span></span>
 
-## <span data-ttu-id="b2836-190">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="b2836-190">RELATED LINKS</span></span>
+## <span data-ttu-id="1462a-192">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="1462a-192">RELATED LINKS</span></span>
 
-[<span data-ttu-id="b2836-191">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b2836-191">Find-PackageProvider</span></span>](Find-PackageProvider.md)
+[<span data-ttu-id="1462a-193">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1462a-193">Find-PackageProvider</span></span>](Find-PackageProvider.md)
 
-[<span data-ttu-id="b2836-192">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b2836-192">Get-PackageProvider</span></span>](Get-PackageProvider.md)
+[<span data-ttu-id="1462a-194">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1462a-194">Get-PackageProvider</span></span>](Get-PackageProvider.md)
 
-[<span data-ttu-id="b2836-193">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b2836-193">Import-PackageProvider</span></span>](Import-PackageProvider.md)
+[<span data-ttu-id="1462a-195">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="1462a-195">Import-PackageProvider</span></span>](Import-PackageProvider.md)
