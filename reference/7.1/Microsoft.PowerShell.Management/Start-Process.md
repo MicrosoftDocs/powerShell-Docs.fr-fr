@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: ade80115f85cb241fdf0dc4e829daa5b381644ef
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 75f0b0bed808efbe31254fcd04662ddef2f3a22c
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93205830"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524737"
 ---
 # Start-Process
 
 ## SYNOPSIS
 Démarre un ou plusieurs processus sur l'ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ### Valeur par défaut (par défaut)
 
@@ -111,14 +111,27 @@ L’exemple utilise `New-Object` pour créer un objet **System. Diagnostics. Pro
 ### Exemple 7 : spécification d’arguments pour le processus
 
 Les deux commandes démarrent l’interpréteur de commandes Windows, en émettant une `dir` commande sur le `Program Files` dossier. Étant donné que ce NomDossier contient un espace, la valeur doit être entourée de guillemets avec séquence d’échappement.
-Notez que la première commande spécifie une chaîne en tant que **argumentlist** . La deuxième commande est un tableau de chaînes.
+Notez que la première commande spécifie une chaîne en tant que **argumentlist**. La deuxième commande est un tableau de chaînes.
 
 ```powershell
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
 
-## PARAMETERS
+### Exemple 8 : créer un processus détaché sur Linux
+
+Sur Windows, `Start-Process` crée un processus indépendant qui continue à s’exécuter indépendamment de l’interpréteur de commandes de lancement. Sur les plateformes non-Windows, le processus qui vient d’être démarré est attaché à l’interpréteur de commandes qui a été lancé. Si le shell de lancement est fermé, le processus enfant est terminé.
+
+Pour éviter d’arrêter le processus enfant sur des plateformes de type UNIX, vous pouvez combiner `Start-Process` avec `nohup` . L’exemple suivant lance une instance d’arrière-plan de PowerShell sur Linux qui reste actif même après la fermeture de la session de lancement. La `nohup` commande collecte la sortie dans `nohup.out` le fichier dans le répertoire actif.
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+Dans cet exemple, `Start-Process` exécute la commande Linux `nohup` , qui est lancée `pwsh` en tant que processus détaché. Pour plus d’informations, consultez la page man de [nohup](https://linux.die.net/man/1/nohup).
+
+## PARAMÈTRES
 
 ### -ArgumentList
 
@@ -346,7 +359,7 @@ Accept wildcard characters: False
 
 ### -WindowStyle
 
-Spécifie l'état de la fenêtre utilisée pour le nouveau processus. Les valeurs acceptables pour ce paramètre sont les suivantes : **normal** , **masqué** , **réduit** et **agrandi** . La valeur par défaut est **normal** .
+Spécifie l'état de la fenêtre utilisée pour le nouveau processus. Les valeurs acceptables pour ce paramètre sont les suivantes : **normal** , **masqué** , **réduit** et **agrandi**. La valeur par défaut est **normal**.
 
 Vous ne pouvez pas utiliser les paramètres **WindowStyle** et **NoNewWindow** dans la même commande.
 
@@ -367,7 +380,7 @@ Accept wildcard characters: False
 
 ### -WorkingDirectory
 
-Spécifie l’emplacement dans lequel le nouveau processus doit commencer. La valeur par défaut est l’emplacement du fichier exécutable ou du document en cours de démarrage. Le chemin d’accès fourni est traité comme un chemin d’accès littéral. Les caractères génériques ne sont pas pris en charge. Vous devez placer le chemin d’accès entre guillemets simples ( `'` ) si le nom du chemin d’accès contient des caractères qui seraient interprétés comme des caractères génériques.
+Spécifie l’emplacement dans lequel le nouveau processus doit commencer. La valeur par défaut est l’emplacement du fichier exécutable ou du document en cours de démarrage. Les caractères génériques ne sont pas pris en charge. Le nom du chemin d’accès ne doit pas contenir de caractères qui seraient interprétés comme des caractères génériques.
 
 ```yaml
 Type: System.String

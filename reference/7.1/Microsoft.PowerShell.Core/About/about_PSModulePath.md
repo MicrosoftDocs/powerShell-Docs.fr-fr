@@ -2,20 +2,20 @@
 description: La variable d’environnement PSModulePath contient une liste d’emplacements de dossiers dans lesquels rechercher les modules et les ressources.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
-ms.openlocfilehash: 58aabc4f4821ce41782d3b9837eb67f19f6a07a9
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 580c7a1d61e481448e2f49f62fb7d089922e72b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207309"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524788"
 ---
 # <a name="about-psmodulepath"></a>À propos de PSModulePath
 
-La `$env:PSModulePath` variable d’environnement contient une liste d’emplacements de dossiers dans lesquels rechercher des modules et des ressources.
+La `$env:PSModulePath` variable d’environnement contient une liste d’emplacements de dossiers dans lesquels rechercher des modules et des ressources. PowerShell recherche de manière récursive chaque dossier pour les fichiers de module ( `.psd1` ou `.psm1` ).
 
 Par défaut, les emplacements effectifs affectés à `$env:PSModulePath` sont les suivants :
 
@@ -54,7 +54,7 @@ $newpath = $path + ';C:\Program Files\Fabrikam\Modules'
 [Environment]::SetEnvironmentVariable('PSModulePath', $newpath, 'Machine')
 ```
 
-Pour ajouter un chemin d’accès au paramètre utilisateur, remplacez la valeur cible par **utilisateur** .
+Pour ajouter un chemin d’accès au paramètre utilisateur, remplacez la valeur cible par **utilisateur**.
 
 ```powershell
 $path = [Environment]::GetEnvironmentVariable('PSModulePath', 'User')
@@ -131,8 +131,22 @@ PowerShell Core 6 remplace `$env:PSModulePath` . Aucune modification n’est app
 
 Le démarrage de PowerShell 7 se poursuit comme avec l’ajout de chemins d’accès hérités que PowerShell Core 6 a ajoutés. Étant donné que les chemins d’accès spécifiques à PS7 sont préfixés, il n’y a aucun problème fonctionnel.
 
+## <a name="module-search-behavior"></a>Comportement de recherche de module
+
+PowerShell effectue une recherche récursive dans chaque dossier du **PSModulePath** pour les fichiers de module ( `.psd1` ou `.psm1` ). Ce modèle de recherche permet d’installer plusieurs versions du même module dans des dossiers différents. Par exemple :
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+Par défaut, PowerShell charge le numéro de version le plus élevé d’un module lorsque plusieurs versions sont trouvées. Pour charger une version spécifique, utilisez `Import-Module` avec le paramètre **FullyQualifiedName** . Pour plus d’informations, voir [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module).
+
 ## <a name="see-also"></a>Voir aussi
 
 - [about_Modules](about_Modules.md)
 - [Méthodes d’environnement](/dotnet/api/system.environment)
-

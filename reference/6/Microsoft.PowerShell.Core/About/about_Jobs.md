@@ -2,16 +2,16 @@
 description: Fournit des informations sur la façon dont les travaux en arrière-plan PowerShell exécutent une commande ou une expression en arrière-plan sans interagir avec la session active.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 10/16/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
-ms.openlocfilehash: 6668e8a060c2468a4c7d98f52c7d493e1751970b
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: 6ddb54bac62e7bc11a045874700acb3982a0093b
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "93208573"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524452"
 ---
 # <a name="about-jobs"></a>À propos des travaux
 
@@ -20,21 +20,25 @@ Fournit des informations sur la façon dont les travaux en arrière-plan PowerSh
 
 ## <a name="long-description"></a>Description longue
 
-PowerShell exécute simultanément des commandes et des scripts par le biais de travaux. Il existe trois solutions basées sur les travaux fournies par PowerShell pour prendre en charge l’accès concurrentiel.
+PowerShell exécute simultanément des commandes et des scripts par le biais de travaux. Il existe trois types de travaux fournis par PowerShell pour prendre en charge l’accès concurrentiel.
 
-|Travail            |Description                                                  |
-|---------------|-------------------------------------------------------------|
-|`RemoteJob`    |La commande et le script s’exécutent sur un ordinateur distant.                 |
-|`BackgroundJob`|Commande et script exécutés dans un processus distinct sur l’environnement local    |
-|               |ordinateur virtuel.                                                     |
-|`ThreadJob`    |La commande et le script s’exécutent dans un thread distinct au sein du même  |
-|               |processus sur l’ordinateur local.                                |
+- `RemoteJob` -Les commandes et les scripts s’exécutent sur une session à distance. Pour plus d’informations, consultez [about_Remote_Jobs](about_Remote_Jobs.md).
+- `BackgroundJob` -Les commandes et les scripts s’exécutent dans un processus distinct sur l’ordinateur local.
+- `PSTaskJob` ou `ThreadJob` -les commandes et les scripts s’exécutent dans un thread distinct au sein du même processus sur l’ordinateur local. Pour plus d’informations, consultez [about_Thread_Jobs](/powershell/module/ThreadJob/about_Thread_Jobs).
 
-Chaque type de tâche présente des avantages et des inconvénients. L’exécution d’un script à distance sur un ordinateur distinct ou dans un processus distinct a une grande isolation. Les erreurs n’affectent pas les travaux en cours d’exécution ou le client qui a démarré le travail. Toutefois, la couche de communication à distance ajoute de la surcharge, y compris la sérialisation de l’objet. Tous les objets passés à et à partir de la session distante doivent être sérialisés puis désérialisés lorsqu’ils sont transmis entre le client et la session cible. L’opération de sérialisation peut utiliser de nombreuses ressources de calcul et de mémoire pour les objets de données complexes de grande taille.
+L’exécution de scripts à distance, sur un ordinateur distinct ou dans un processus distinct, offre une grande isolation. Toutes les erreurs qui se produisent dans le travail distant n’affectent pas les autres travaux en cours d’exécution ou la session parente qui a démarré le travail. Toutefois, la couche de communication à distance ajoute de la surcharge, y compris la sérialisation de l’objet. Tous les objets sont sérialisés et désérialisés lorsqu’ils sont transmis entre la session parente et la session distante (travail). La sérialisation d’objets de données complexes volumineux peut consommer de grandes quantités de ressources de calcul et de mémoire et transférer de grandes quantités de données sur le réseau.
 
-Cette rubrique explique comment exécuter des tâches en arrière-plan dans PowerShell sur un ordinateur local. Pour plus d’informations sur l’exécution de tâches en arrière-plan sur des ordinateurs distants, consultez [about_Remote_Jobs](about_Remote_Jobs.md). Pour plus d’informations sur les travaux de thread, consultez [about_Thread_Jobs](about_Thread_Jobs.md).
+Les travaux basés sur les threads ne sont pas aussi robustes que les travaux distants et en arrière-plan, car ils s’exécutent dans le même processus sur des threads différents. Si un travail a une erreur critique qui bloque le processus, alors tous les autres travaux du processus sont terminés.
 
-Lorsque vous démarrez une tâche en arrière-plan, l’invite de commandes est immédiatement retournée, même si le travail prend une durée prolongée. Vous pouvez continuer à travailler dans la session sans interruption pendant l'exécution de la tâche.
+Toutefois, les travaux basés sur les threads nécessitent moins de traitement. Ils n’utilisent pas la couche de communication à distance ou la sérialisation. Les objets de résultats sont retournés en tant que références aux objets actifs dans la session active. Sans cette surcharge, les travaux basés sur les threads s’exécutent plus rapidement et utilisent moins de ressources que les autres types de travaux.
+
+> [!IMPORTANT]
+> La session parente qui a créé le travail surveille également l’état du travail et collecte des données de pipeline. Le processus enfant du travail est terminé par le processus parent une fois que le travail atteint un état terminé. Si la session parente est terminée, toutes les tâches enfants en cours d’exécution sont terminées en même temps que leurs processus enfants.
+
+Il existe deux façons de contourner cette limitation :
+
+1. Utilisez `Invoke-Command` pour créer des travaux qui s’exécutent dans des sessions déconnectées. Pour plus d’informations, consultez [about_Remote_Jobs](about_Remote_Jobs.md).
+1. Utilisez `Start-Process` pour créer un nouveau processus plutôt qu’un travail. Pour plus d’informations, consultez [start-process](xref:Microsoft.PowerShell.Management.Start-Process).
 
 ## <a name="the-job-cmdlets"></a>Applets de commande Job
 
@@ -64,92 +68,76 @@ La commande suivante démarre une tâche en arrière-plan qui exécute une `Get-
 Start-Job -ScriptBlock {Get-Process}
 ```
 
+Lorsque vous démarrez une tâche en arrière-plan, l’invite de commandes est immédiatement retournée, même si le travail prend une durée prolongée. Vous pouvez continuer à travailler dans la session sans interruption pendant l'exécution de la tâche.
+
 La `Start-Job` commande retourne un objet qui représente le travail. L'objet de traitement retourné par Get-Job contient des informations utiles sur la tâche, mais ne contient pas les résultats de la tâche.
 
-Enregistrez l’objet de traitement dans une variable, puis utilisez-le avec les autres applets de commande Job pour gérer la tâche en arrière-plan. La commande suivante démarre un objet de traitement et enregistre l’objet de traitement résultant dans la `$job` variable.
+Vous pouvez enregistrer l’objet de traitement dans une variable, puis l’utiliser avec les autres applets de commande de **tâche** pour gérer la tâche en arrière-plan. La commande suivante démarre un objet de traitement et enregistre l’objet de traitement résultant dans la `$job` variable.
 
 ```powershell
 $job = Start-Job -ScriptBlock {Get-Process}
 ```
 
-À compter de PowerShell 6,0, vous pouvez utiliser un amersand ( `&` ) à la fin d’un pipeline pour démarrer un travail en arrière-plan. La commande suivante est fonctionnellement équivalente à la commande ci-dessus.
+À compter de PowerShell 6,0, vous pouvez utiliser l’opérateur d’arrière-plan ( `&` ) à la fin d’un pipeline pour démarrer un travail en arrière-plan. Pour plus d’informations, consultez [opérateur d’arrière-plan](about_Operators.md#background-operator-).
+
+L’utilisation de l’opérateur d’arrière-plan est fonctionnellement équivalente à l’utilisation `Start-Job` de l’applet de commande dans l’exemple précédent.
 
 ```powershell
 $job = Get-Process &
 ```
 
-La esperluette ( `&` ) est appelée opérateur d’arrière-plan. Pour plus d’informations, consultez [opérateur d’arrière-plan](about_Operators.md#background-operator-).
-
-Vous pouvez également utiliser l' `Get-Job` applet de commande pour récupérer des objets qui représentent les travaux démarrés dans la session active. `Get-Job` retourne le même objet de traitement que celui `Start-Job` retourné par.
-
 ## <a name="getting-job-objects"></a>Obtention d’objets de travail
 
-Pour récupérer l’objet qui représente les tâches en arrière-plan démarrées dans la session active, utilisez l’applet de commande `Get-Job` . Sans paramètres, `Get-Job` retourne toutes les tâches qui ont été démarrées dans la session active.
-
-Par exemple, la commande suivante obtient les tâches de la session active.
-
-```powershell
-PS C:> Get-Job
-
-Id  Name  PSJobTypeName State      HasMoreData  Location   Command
---  ----  ------------- -----      -----------  --------   -------
-1   Job1  BackgroundJob Running    True         localhost  Get-Process
-```
-
-Vous pouvez également enregistrer l’objet de traitement dans une variable et l’utiliser pour représenter la tâche dans une commande ultérieure. La commande suivante obtient la tâche avec l’ID 1 et l’enregistre dans la `$job` variable.
-
-```powershell
-$job = Get-Job -Id 1
-```
-
-L’objet de traitement contient l’état du travail, qui indique si le travail est terminé. L’état d’une tâche terminée est **terminé** ou **a échoué** . Un travail peut également être **bloqué** ou **en cours d’exécution** .
+L' `Get-Job` applet de commande retourne des objets qui représentent les tâches en arrière-plan démarrées dans la session active. Sans paramètres, `Get-Job` retourne toutes les tâches qui ont été démarrées dans la session active.
 
 ```powershell
 Get-Job
+```
 
+L’objet de traitement contient l’état du travail, qui indique si le travail est terminé. L’état d’une tâche terminée est **terminé** ou **a échoué**. Un travail peut également être **bloqué** ou **en cours d’exécution**.
+
+```Output
 Id  Name  PSJobTypeName State      HasMoreData  Location   Command
 --  ----  ------------- -----      -----------  --------   -------
 1   Job1  BackgroundJob Complete   True         localhost  Get-Process
 ```
 
+Vous pouvez enregistrer l’objet de traitement dans une variable et l’utiliser pour représenter la tâche dans une commande ultérieure. La commande suivante obtient la tâche avec l’ID 1 et l’enregistre dans la `$job` variable.
+
+```powershell
+$job = Get-Job -Id 1
+```
+
 ## <a name="getting-the-results-of-a-job"></a>Obtention des résultats d’un travail
 
-Lorsque vous exécutez un travail en arrière-plan, les résultats n’apparaissent pas immédiatement. Au lieu de cela, l’applet de commande `Start-Job` retourne un objet de traitement qui représente le travail, mais il ne contient pas les résultats. Pour obtenir les résultats d’une tâche en arrière-plan, utilisez l’applet de commande `Receive-Job` .
+Lorsque vous exécutez un travail en arrière-plan, les résultats n’apparaissent pas immédiatement. Pour obtenir les résultats d’une tâche en arrière-plan, utilisez l’applet de commande `Receive-Job` .
 
-La commande suivante utilise l' `Receive-Job` applet de commande pour obtenir les résultats du travail. Elle utilise un objet de traitement enregistré dans la `$job` variable pour identifier la tâche.
+Dans l’exemple suivant, l' `Receive-Job` applet de commande obtient les résultats de la tâche à l’aide de l’objet de traitement dans la `$job` variable.
 
 ```powershell
 Receive-Job -Job $job
 ```
 
-L' `Receive-Job` applet de commande retourne les résultats du travail.
-
-```
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)    Id ProcessName
 -------  ------    -----      ----- -----   ------    -- -----------
     103       4    11328       9692    56           1176 audiodg
     804      14    12228      14108   100   101.74  1740 CcmExec
     668       7     2672       6168   104    32.26   488 csrss
-# ...
+...
 ```
 
-Vous pouvez également enregistrer les résultats d’un travail dans une variable. La commande suivante enregistre les résultats de la tâche dans la variable dans la variable `$job` `$results` .
+Vous pouvez enregistrer les résultats d’un travail dans une variable. La commande suivante enregistre les résultats de la tâche dans la variable dans la variable `$job` `$results` .
 
 ```powershell
 $results = Receive-Job -Job $job
 ```
 
-De plus, vous pouvez enregistrer les résultats du travail dans un fichier à l’aide de l’opérateur de redirection ( `>` ) ou de l’applet de commande `Out-File` . La commande suivante utilise l’opérateur de redirection pour enregistrer les résultats de la tâche dans la `$job` variable dans le `Results.txt` fichier.
-
-```powershell
-Receive-Job -Job $job > results.txt
-```
-
-## <a name="getting-and-keeping-partial-job-results"></a>Obtention et conservation des résultats de travaux partiels
+### <a name="getting-and-keeping-partial-job-results"></a>Obtention et conservation des résultats de travaux partiels
 
 L' `Receive-Job` applet de commande obtient les résultats d’une tâche en arrière-plan. Si la tâche est terminée, `Receive-Job` obtient tous les résultats de la tâche. Si le travail est toujours en cours d’exécution, `Receive-Job` obtient les résultats générés jusqu’à présent. Vous pouvez réexécuter `Receive-Job` les commandes pour obtenir les résultats restants.
 
-Lorsque `Receive-Job` retourne les résultats, par défaut, il supprime les résultats du cache où les résultats du travail sont stockés. Si vous exécutez une autre `Receive-Job` commande, vous recevez uniquement les résultats qui n’ont pas encore été reçus.
+Par défaut, `Receive-Job` supprime les résultats du cache où sont stockés les résultats de la tâche. Lorsque vous réexécutez `Receive-Job` , vous recevez uniquement les nouveaux résultats qui arrivent après la première exécution.
 
 Les commandes suivantes affichent les résultats des `Receive-Job` commandes exécutées avant la fin du travail.
 
@@ -171,9 +159,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
   1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-Pour empêcher `Receive-Job` de supprimer les résultats du travail qu’il a renvoyés, utilisez le paramètre **Keep** . Par conséquent, `Receive-Job` retourne tous les résultats qui ont été générés jusqu’à ce moment-là.
-
-Les commandes suivantes montrent l’effet de l’utilisation du paramètre **Keep** sur un travail qui n’est pas encore terminé.
+Utilisez le paramètre **Keep** pour empêcher `Receive-Job` la suppression des résultats de la tâche retournés. Les commandes suivantes montrent l’effet de l’utilisation du paramètre **Keep** sur un travail qui n’est pas encore terminé.
 
 ```powershell
 C:\PS> Receive-Job -Job $job -Keep
@@ -195,7 +181,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
    1121      25    28408      32940   174   430.14   3048 explorer
 ```
 
-## <a name="waiting-for-the-results"></a>En attente des résultats
+### <a name="waiting-for-the-results"></a>En attente des résultats
 
 Si vous exécutez une commande qui prend beaucoup de temps, vous pouvez utiliser les propriétés de l’objet de traitement pour déterminer à quel moment le travail est terminé. La commande suivante utilise l' `Get-Job` objet pour récupérer toutes les tâches en arrière-plan dans la session active.
 
@@ -205,7 +191,7 @@ Get-Job
 
 Les résultats s’affichent dans un tableau. L’état de la tâche s’affiche dans la colonne **État** .
 
-```
+```Output
 Id Name  PSJobTypeName State    HasMoreData Location  Command
 -- ----  ------------- -----    ----------- --------  -------
 1  Job1  BackgroundJob Complete True        localhost Get-Process
@@ -213,14 +199,11 @@ Id Name  PSJobTypeName State    HasMoreData Location  Command
 3  Job3  BackgroundJob Complete True        localhost dir -Path C:\* -Re...
 ```
 
-Dans ce cas, la propriété State indique que le travail 2 est toujours en cours d’exécution. Si vous deviez utiliser l' `Receive-Job` applet de commande pour obtenir les résultats du travail maintenant, les résultats seraient incomplets. Vous pouvez utiliser l' `Receive-Job` applet de commande à plusieurs reprises pour obtenir tous les résultats. Par défaut, chaque fois que vous l’utilisez, vous recevez uniquement les résultats qui n’ont pas encore été reçus, mais vous pouvez utiliser le paramètre **Keep** de l’applet de commande `Receive-Job` pour conserver les résultats, même s’ils ont déjà été reçus.
+Dans ce cas, la propriété **State** indique que le travail 2 est toujours en cours d’exécution. Si vous deviez utiliser l' `Receive-Job` applet de commande pour obtenir les résultats du travail maintenant, les résultats seraient incomplets. Vous pouvez utiliser l' `Receive-Job` applet de commande à plusieurs reprises pour obtenir tous les résultats. Utilisez la propriété **State** pour déterminer à quel moment le travail est terminé.
 
-Vous pouvez écrire les résultats partiels dans un fichier, puis ajouter les résultats les plus récents à mesure qu’ils arrivent, ou vous pouvez attendre et vérifier l’état du travail par la suite.
+Vous pouvez également utiliser le paramètre **Wait** de l' `Receive-Job` applet de commande. Quand vous utilisez ce paramètre, l’applet de commande ne retourne pas l’invite de commandes tant que le travail n’est pas terminé et que tous les résultats sont disponibles.
 
-Vous pouvez utiliser le paramètre **Wait** de l' `Receive-Job` applet de commande, qui ne retourne pas l’invite de commandes jusqu’à ce que le travail soit terminé et que tous les résultats soient disponibles.
-
-Vous pouvez également utiliser l' `Wait-Job` applet de commande pour attendre un ou plusieurs des résultats de la tâche. `Wait-Job` permet d’attendre une tâche particulière, pour tous les travaux, ou pour l’une des tâches à effectuer.
-
+Vous pouvez également utiliser l' `Wait-Job` applet de commande pour attendre un ou plusieurs des résultats de la tâche. `Wait-Job` permet d’attendre une ou plusieurs tâches spécifiques ou pour tous les travaux.
 La commande suivante utilise l' `Wait-Job` applet de commande pour attendre un travail avec l' **ID**
 10.
 
@@ -260,27 +243,28 @@ Remove-Job -Job $job
 
 ## <a name="investigating-a-failed-job"></a>Examen d’un travail ayant échoué
 
-Pour déterminer la raison de l’échec d’un travail, utilisez la propriété **reason** de l’objet de traitement.
+Les travaux peuvent échouer pour de nombreuses raisons. l’objet de traitement contient une propriété **reason** qui contient des informations sur la cause de l’échec.
 
-La commande suivante démarre un travail sans les informations d’identification requises. Elle enregistre l’objet de traitement dans la `$job` variable.
+L’exemple suivant démarre un travail sans les informations d’identification requises.
 
 ```powershell
 $job = Start-Job -ScriptBlock {New-Item -Path HKLM:\Software\MyCompany}
+Get-Job $job
 
 Id Name  PSJobTypeName State  HasMoreData  Location  Command
 -- ----  ------------- -----  -----------  --------  -------
 1  Job1  BackgroundJob Failed False        localhost New-Item -Path HKLM:...
 ```
 
-La commande suivante utilise la propriété Reason pour trouver l’erreur qui a provoqué l’échec du travail.
+Inspectez la propriété **reason** pour trouver l’erreur qui a provoqué l’échec du travail.
 
 ```powershell
 $job.ChildJobs[0].JobStateInfo.Reason
 ```
 
-Dans ce cas, la tâche a échoué, car l’ordinateur distant nécessitait des informations d’identification explicites pour exécuter la commande. La valeur de la propriété **reason** est la suivante :
+Dans ce cas, la tâche a échoué, car l’ordinateur distant nécessitait des informations d’identification explicites pour exécuter la commande. La propriété **reason** contient le message suivant :
 
-La connexion au serveur distant a échoué avec le message d’erreur suivant : « accès refusé ».
+> La connexion au serveur distant a échoué avec le message d’erreur suivant : « accès refusé ».
 
 ## <a name="see-also"></a>Voir aussi
 
