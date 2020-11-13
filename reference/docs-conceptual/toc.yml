@@ -55,24 +55,26 @@
       items:
         - name: Vue d’ensemble
           href: learn/deep-dives/overview.md
-        - name: Tout ce que vous voulez savoir sur les tableaux
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: Tout ce que vous voulez savoir sur les tables de hachage
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: Tout ce que vous voulez savoir sur PSCustomObject
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: Tout ce que vous voulez savoir sur la substitution de chaînes
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: Tout ce que vous voulez savoir sur if/then/else
-          href: learn/deep-dives/everything-about-if.md
-        - name: Tout ce que vous voulez savoir sur switch
-          href: learn/deep-dives/everything-about-switch.md
-        - name: Tout ce que vous voulez savoir sur les exceptions
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: Tout ce que vous voulez savoir sur $null
-          href: learn/deep-dives/everything-about-null.md
-        - name: Tout ce que vous voulez savoir sur ShouldProcess
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: Tout ce que vous voulez savoir sur...
+          items:
+            - name: Tout ce que vous voulez savoir sur les tableaux
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: Tout ce que vous voulez savoir sur les tables de hachage
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: Tout ce que vous voulez savoir sur PSCustomObject
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: Tout ce que vous voulez savoir sur la substitution de chaînes
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: Tout ce que vous voulez savoir sur if/then/else
+              href: learn/deep-dives/everything-about-if.md
+            - name: Tout ce que vous voulez savoir sur switch
+              href: learn/deep-dives/everything-about-switch.md
+            - name: Tout ce que vous voulez savoir sur les exceptions
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: Tout ce que vous voulez savoir sur $null
+              href: learn/deep-dives/everything-about-null.md
+            - name: Tout ce que vous voulez savoir sur ShouldProcess
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: Utilisation de Write-Progress lors du multithreading
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: Ajout de la prise en charge des informations d’identification aux fonctions PowerShell
@@ -120,6 +122,8 @@
   items:
     - name: "Nouveautés de PowerShell\_7.x"
       items:
+        - name: "Nouveautés de PowerShell\_7.1"
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: "Nouveautés de PowerShell\_7.0"
           href: whats-new/what-s-new-in-powershell-70.md
     - name: "Nouveautés de PowerShell Core\_6.x"
