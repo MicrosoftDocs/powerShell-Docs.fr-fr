@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ca48f3020fa306f8a24328bd18648d5954c48a94
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438200"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589126"
 ---
 # <a name="chapter-9---functions"></a>Chapitre 9 : Fonctions
 
@@ -793,4 +793,5 @@ Dans ce chapitre, vous avez appris les bases de l’écriture de fonctions dans 
 [about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
 [about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
-[Vidéo : PowerShell Toolmaking with Advanced Functions and Script Modules] : https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/) [Pascal case] : /dotnet/standard/design-guidelines/capitalization-conventionss
+[Vidéo : PowerShell Toolmaking with Advanced Functions and Script Modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
+[Casse Pascal]: /dotnet/standard/design-guidelines/capitalization-conventions
