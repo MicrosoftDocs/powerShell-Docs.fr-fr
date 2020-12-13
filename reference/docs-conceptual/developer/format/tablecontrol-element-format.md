@@ -1,12 +1,14 @@
 ---
-title: Élément table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 34e20006a7501650f2a22f71a3d7e999fb8b2337
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl, élément (Format)
+description: TableControl, élément (Format)
+ms.openlocfilehash: 93e05e22d61504d7781b6f3c07f9a3fd0b3c9e8a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785130"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651459"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl, élément (Format)
 

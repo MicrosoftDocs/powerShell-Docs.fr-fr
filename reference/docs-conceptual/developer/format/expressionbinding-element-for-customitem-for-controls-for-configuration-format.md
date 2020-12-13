@@ -1,12 +1,14 @@
 ---
-title: Élément ExpressionBinding pour CustomItem pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ad83fa9d915822eaefb490658f8a219defdddf2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)
+description: ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)
+ms.openlocfilehash: 1abcf2173e18d45839161b4c7e59f1ad238f81a1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773910"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655336"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>ExpressionBinding, élément pour CustomItem pour Controls pour Configuration (Format)
 

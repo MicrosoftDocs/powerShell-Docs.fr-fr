@@ -1,12 +1,14 @@
 ---
-title: Extension des propriétés des objets | Microsoft Docs
 ms.date: 08/21/2019
-ms.openlocfilehash: acd20c7e2b6ef84a9c932538eb8e167d68c8a660
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Extension des propriétés pour les objets
+description: Extension des propriétés pour les objets
+ms.openlocfilehash: 37803d9fd87319204565c2abde62f269744481b9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784297"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652883"
 ---
 # <a name="extending-properties-for-objects"></a>Extension des propriétés pour les objets
 
@@ -96,9 +98,9 @@ Dans l’exemple suivant, la propriété **VERSIONINFO** est ajoutée au type [S
 
 Un jeu de propriétés définit un groupe de propriétés étendues qui peuvent être référencées par le nom de l’ensemble.
 Par exemple, le paramètre de propriété [format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) 
- **Property** peut spécifier un jeu de propriétés spécifique à afficher. Quand un jeu de propriétés est spécifié, seules les propriétés qui appartiennent à l’ensemble sont affichées.
+  peut spécifier un jeu de propriétés spécifique à afficher. Quand un jeu de propriétés est spécifié, seules les propriétés qui appartiennent à l’ensemble sont affichées.
 
-Il n’existe aucune restriction sur le nombre de jeux de propriétés qui peuvent être définis pour un objet. Toutefois, les jeux de propriétés utilisés pour définir les propriétés d’affichage par défaut d’un objet doivent être spécifiés dans le jeu de membres **PSStandardMembers** . Dans le `Types.ps1xml` fichier de types, les noms de jeu de propriétés par défaut sont **DefaultDisplayProperty**, **DefaultDisplayPropertySet**et **DefaultKeyPropertySet**. Tous les jeux de propriétés supplémentaires que vous ajoutez au jeu de membres **PSStandardMembers** sont ignorés.
+Il n’existe aucune restriction sur le nombre de jeux de propriétés qui peuvent être définis pour un objet. Toutefois, les jeux de propriétés utilisés pour définir les propriétés d’affichage par défaut d’un objet doivent être spécifiés dans le jeu de membres **PSStandardMembers** . Dans le `Types.ps1xml` fichier de types, les noms de jeu de propriétés par défaut sont **DefaultDisplayProperty**, **DefaultDisplayPropertySet** et **DefaultKeyPropertySet**. Tous les jeux de propriétés supplémentaires que vous ajoutez au jeu de membres **PSStandardMembers** sont ignorés.
 
 Dans l’exemple suivant, le jeu de propriétés **DefaultDisplayPropertySet** est ajouté au jeu de membres **PSStandardMembers** du type [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) . L’élément [PropertySet](/dotnet/api/system.management.automation.pspropertyset) définit le groupe de propriétés. L’élément [Name](/dotnet/api/system.management.automation.psmemberinfo.name) spécifie le nom du jeu de propriétés. Et, l’élément [ReferencedProperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) spécifie les propriétés de l’ensemble. Vous pouvez également ajouter l' `PropertySet` élément aux membres de l’élément [type](/dotnet/api/system.management.automation.pstypename) .
 
@@ -127,6 +129,6 @@ Dans l’exemple suivant, le jeu de propriétés **DefaultDisplayPropertySet** e
 
 [À propos de Types.ps1XML](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
 
-[System. Management. Automation](/dotnet/api/System.Management.Automation)
+[System.Management.Automation](/dotnet/api/System.Management.Automation)
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)

@@ -1,14 +1,14 @@
 ---
-title: Méthodes de traitement d’entrée des applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- virtual methods (PowerShell SDK]
-ms.openlocfilehash: e69c5a366b2d74ddd92c844bda0b1e3a65539c10
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Méthodes de traitement des entrées des applets de commande
+description: Méthodes de traitement des entrées des applets de commande
+ms.openlocfilehash: e1a7b58517d6285250edbf16d14810388c242218
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784450"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653391"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Méthodes de traitement des entrées des applets de commande
 
@@ -81,4 +81,4 @@ protected override void EndProcessing()
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 
-[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)
+[Kit SDK Windows PowerShell](../windows-powershell-reference.md)

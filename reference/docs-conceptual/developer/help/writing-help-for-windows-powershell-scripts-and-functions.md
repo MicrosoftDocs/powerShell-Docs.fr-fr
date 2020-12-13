@@ -1,12 +1,14 @@
 ---
-title: Écriture de l’aide pour les scripts et fonctions PowerShell
 ms.date: 09/13/2016
-ms.openlocfilehash: 381c501d87b7381075f89412f654c6121493856e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Écriture de l’aide pour les scripts et fonctions PowerShell
+description: Écriture de l’aide pour les scripts et fonctions PowerShell
+ms.openlocfilehash: f72742e2a131f41ba8ffdcec4901c7c3ea1da1ad
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892912"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654636"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Écriture de l’aide pour les scripts et fonctions PowerShell
 
@@ -23,7 +25,7 @@ Ce document explique le format et le positionnement correct des rubriques d’ai
 
 La rubrique d’aide qui décrit un script ou une fonction peut être implémentée sous la forme d’un ensemble de commentaires dans le script ou la fonction. Quand vous écrivez une aide basée sur des commentaires pour un script et des fonctions dans un script, faites attention aux règles de placement de l’aide basée sur les commentaires. Le positionnement détermine si l' `Get-Help` applet de commande associe la rubrique d’aide au script ou à une fonction. Pour plus d’informations sur l’écriture de rubriques d’aide basées sur des commentaires, consultez [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>Aide sur les commandes basées sur XML
+### <a name="xml-based-command-help"></a>Aide sur la commande XML-Based
 
 La rubrique d’aide qui décrit un script ou une fonction peut être implémentée dans un fichier XML qui utilise le schéma de l’aide de la commande. Pour associer le script ou la fonction au fichier XML, utilisez le `ExternalHelp` mot clé comment, suivi du chemin d’accès et du nom du fichier XML.
 
@@ -42,10 +44,10 @@ Toutefois, vous pouvez poster des rubriques conceptuelles sur Internet Lister le
 
 - Dans toutes les descriptions, reportez-vous à la commande sous la forme d’un script ou d’une fonction. Ces informations permettent à l’utilisateur de comprendre et de gérer la commande.
 
-  Par exemple, la description détaillée suivante indique que la commande New-topic est un script.
+  Par exemple, la description détaillée suivante indique que la commande New-Topic est un script.
   Cela rappelle aux utilisateurs qu’ils doivent spécifier le chemin d’accès et le nom complet lorsqu’ils l’exécutent.
 
-  > « Le script New-topic crée une rubrique conceptuelle vide pour chaque nom de rubrique dans le fichier d’entrée... »
+  > « Le script New-Topic crée une rubrique conceptuelle vide pour chaque nom de rubrique dans le fichier d’entrée... »
 
   La description détaillée suivante indique qu' `Disable-PSRemoting` il s’agit d’une fonction. Ces informations sont particulièrement utiles aux utilisateurs lorsque la session comprend plusieurs commandes portant le même nom, dont certaines peuvent être masquées par une commande avec une priorité plus élevée.
 
@@ -58,7 +60,7 @@ Toutefois, vous pouvez poster des rubriques conceptuelles sur Internet Lister le
 
 - Dans une rubrique d’aide sur une fonction, Rappelez aux utilisateurs que la fonction existe uniquement dans la session active et, pour l’utiliser dans d’autres sessions, elle doit l’ajouter ou l’ajouter à un profil PowerShell.
 
-- `Get-Help`affiche la rubrique d’aide d’un script ou d’une fonction uniquement lorsque le fichier de script et les fichiers de rubrique d’aide sont enregistrés dans les emplacements appropriés. Par conséquent, il n’est pas utile d’inclure des instructions pour l’installation de PowerShell ou l’enregistrement ou l’installation du script ou de la fonction dans une rubrique d’aide sur un script ou une fonction. Au lieu de cela, incluez toutes les instructions d’installation dans le document que vous utilisez pour distribuer le script ou la fonction.
+- `Get-Help` affiche la rubrique d’aide d’un script ou d’une fonction uniquement lorsque le fichier de script et les fichiers de rubrique d’aide sont enregistrés dans les emplacements appropriés. Par conséquent, il n’est pas utile d’inclure des instructions pour l’installation de PowerShell ou l’enregistrement ou l’installation du script ou de la fonction dans une rubrique d’aide sur un script ou une fonction. Au lieu de cela, incluez toutes les instructions d’installation dans le document que vous utilisez pour distribuer le script ou la fonction.
 
 ## <a name="see-also"></a>Voir aussi
 

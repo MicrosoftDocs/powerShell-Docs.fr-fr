@@ -1,12 +1,14 @@
 ---
-title: Vue d’ensemble des applets de commande
 ms.date: 06/11/2020
-ms.openlocfilehash: 576df03f35dff80479d1fce18cf4306c9219d42f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue d’ensemble des applets de commande
+description: Vue d’ensemble des applets de commande
+ms.openlocfilehash: ed3082e1a821bb9643ea2eef13b7348eb48488e4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784399"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653225"
 ---
 # <a name="cmdlet-overview"></a>Vue d’ensemble des applets de commande
 
@@ -15,7 +17,7 @@ Une applet de commande est une commande légère qui est utilisée dans l’envi
 ## <a name="cmdlets"></a>Applets de commande
 
 Les applets de commande effectuent une action et retournent généralement un objet Microsoft .NET à la commande suivante dans le pipeline. Une applet de commande est une commande unique qui participe à la sémantique de pipeline de PowerShell.
-Cela comprend les applets de commande binaires (C#), les fonctions de script avancées, le CDXML et les flux de travail.
+Cela comprend les applets de commande binaires (C#), les fonctions de script avancées, le CDXML et les workflows.
 
 La documentation de ce kit de développement logiciel (SDK) décrit comment créer des applets de commande binaires écrites en C#. Pour plus d’informations sur les applets de commande basées sur des scripts, consultez :
 

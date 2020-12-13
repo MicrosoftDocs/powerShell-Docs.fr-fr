@@ -1,12 +1,14 @@
 ---
-title: CustomControl, élément de View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 660e8fd6531862790a2af7ab27a82e073c230693
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControl, élément pour View (Format)
+description: CustomControl, élément pour View (Format)
+ms.openlocfilehash: 41352be55f0c03b2eaca0dbe2d7345e7cf804a7c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786048"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655472"
 ---
 # <a name="customcontrol-element-for-view-format"></a>CustomControl, élément pour View (Format)
 

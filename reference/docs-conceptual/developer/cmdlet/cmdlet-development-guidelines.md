@@ -1,15 +1,14 @@
 ---
-title: Instructions de développement d’applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- development guidelines [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], development guidelines
-ms.openlocfilehash: 5dd83b12a9052ff5f146c4c4e077a9358907cbd0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Instructions pour le développement des applets de commande
+description: Instructions pour le développement des applets de commande
+ms.openlocfilehash: 8c31f64da0a3f6d8f03f09539c053fe6c61b9a9c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784484"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653487"
 ---
 # <a name="cmdlet-development-guidelines"></a>Instructions pour le développement des applets de commande
 

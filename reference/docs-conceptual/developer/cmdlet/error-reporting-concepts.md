@@ -1,17 +1,14 @@
 ---
-title: Concepts du rapport d’erreurs | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- non-terminating errors [PowerShell SDK]
-- errors [PowerShell SDK], described
-- terminating errors [PowerShell SDK]
-- errors [PowerShell SDK]
-ms.openlocfilehash: ff010bbe1a87daa351ec13ed249ffc899781a8c3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Concepts des rapports d’erreurs
+description: Concepts des rapports d’erreurs
+ms.openlocfilehash: 353e628c63667a2db010556b2ed9169809b742f4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774505"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653038"
 ---
 # <a name="error-reporting-concepts"></a>Concepts des rapports d’erreurs
 

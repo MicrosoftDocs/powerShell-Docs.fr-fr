@@ -1,12 +1,14 @@
 ---
-title: Erreurs et exceptions dans le système de type étendu
 ms.date: 07/09/2020
-ms.openlocfilehash: f60c53e33c031168eda53726e0d296bf91139fda
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Erreurs et exceptions dans le système de type étendu
+description: Erreurs et exceptions dans le système de type étendu
+ms.openlocfilehash: 295c16ad9abb67b0c4967bf32125bfc7ee0a35da
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786286"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652484"
 ---
 # <a name="errors-and-exceptions-in-the-extended-type-system"></a>Erreurs et exceptions dans le système de type étendu
 
@@ -31,7 +33,7 @@ Toutes les erreurs qui se produisent lors de l’appel d’une méthode ETS entr
 
 ## <a name="casting-errors"></a>Erreurs de conversion
 
-Lors d’une tentative de cast non valide, une **PSInvalidCastException** est levée. Comme cette exception dérive de **System. InvalidCastException**, elle ne peut pas être interceptée directement à partir du script. N’oubliez pas que l’entité qui tente le cast doit encapsuler **PSInvalidCastException** dans un **PSRuntimeException** pour que cela soit récupérable par les scripts. En cas de tentative de définition de la valeur d’un **PSPropertySet**, **PSMemberSet**, **PSMethodInfo**ou d’un membre de **ReadOnlyPSMemberInfoCollection' 1**, une **exception NotSupportedException** est levée.
+Lors d’une tentative de cast non valide, une **PSInvalidCastException** est levée. Comme cette exception dérive de **System. InvalidCastException**, elle ne peut pas être interceptée directement à partir du script. N’oubliez pas que l’entité qui tente le cast doit encapsuler **PSInvalidCastException** dans un **PSRuntimeException** pour que cela soit récupérable par les scripts. En cas de tentative de définition de la valeur d’un **PSPropertySet**, **PSMemberSet**, **PSMethodInfo** ou d’un membre de **ReadOnlyPSMemberInfoCollection' 1**, une **exception NotSupportedException** est levée.
 
 ## <a name="common-runtime-errors"></a>Erreurs d’exécution courantes
 

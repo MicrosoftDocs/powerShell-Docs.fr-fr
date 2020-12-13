@@ -1,12 +1,14 @@
 ---
-title: Sortie de l’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7697db01c8c4d1c831202c07256559bf638aeaef
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Sortie des applets de commande
+description: Sortie des applets de commande
+ms.openlocfilehash: 37606e57d9dff3ed9fa25b2b99eb07efa0147127
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784433"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653259"
 ---
 # <a name="cmdlet-output"></a>Sortie des applets de commande
 

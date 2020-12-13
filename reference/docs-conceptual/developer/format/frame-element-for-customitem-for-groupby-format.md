@@ -1,12 +1,14 @@
 ---
-title: Élément Frame pour CustomItem pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1568236ff7b6142f7e41be70a3ae5e28307cf790
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame, élément pour CustomItem pour GroupBy (Format)
+description: Frame, élément pour CustomItem pour GroupBy (Format)
+ms.openlocfilehash: 86b51766974ebfcae06583ade237a77c6db92866
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785759"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652171"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Frame, élément pour CustomItem pour GroupBy (Format)
 

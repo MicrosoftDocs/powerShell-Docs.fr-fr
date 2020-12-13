@@ -1,14 +1,14 @@
 ---
-title: Conception de votre fournisseur Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- providers [PowerShell Programmer's Guide], designing
-ms.openlocfilehash: dec6c71a2d7bbe5636f96dc140e701213d6f6487
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Conception de votre fournisseur Windows PowerShell
+description: Conception de votre fournisseur Windows PowerShell
+ms.openlocfilehash: 89e1fa9cfc0a2e5928a358aad4244c8e9152fe1a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778935"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654528"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Conception de votre fournisseur Windows PowerShell
 
@@ -20,19 +20,19 @@ Le runtime Windows PowerShell utilise des chemins d’accès Windows PowerShell 
 
 Pour plus d’informations sur les chemins d’accès Windows PowerShell, consultez fonctionnement de Windows PowerShell.
 
-### <a name="defining-a-drive-qualified-path"></a>Définition d’un chemin d’accès complet au lecteur
+### <a name="defining-a-drive-qualified-path"></a>Définition d’un chemin d’accès Drive-Qualified
 
 Pour permettre à l’utilisateur d’accéder aux données situées sur un lecteur physique, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès complet au lecteur. Ce chemin d’accès commence par le nom du lecteur suivi d’un signe deux-points ( :), par exemple, MyDrive : \ abc\bar.
 
-### <a name="defining-a-provider-qualified-path"></a>Définition d’un chemin d’accès qualifié par le fournisseur
+### <a name="defining-a-provider-qualified-path"></a>Définition d’un chemin d’accès Provider-Qualified
 
 Pour permettre au runtime Windows PowerShell d’initialiser et d’initialiser le fournisseur, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès qualifié par le fournisseur. Par exemple, FileSystem :: \\ \uncshare\abc\bar est le chemin d’accès qualifié par le fournisseur pour le fournisseur FileSystem fourni par Windows PowerShell.
 
-### <a name="defining-a-provider-direct-path"></a>Définition d’un chemin d’accès direct au fournisseur
+### <a name="defining-a-provider-direct-path"></a>Définition d’un chemin d’accès Provider-Direct
 
 Pour autoriser l’accès à distance à votre fournisseur Windows PowerShell, il doit prendre en charge un chemin d’accès direct au fournisseur pour passer directement au fournisseur Windows PowerShell pour l’emplacement actuel. Par exemple, le fournisseur Windows PowerShell du Registre peut utiliser \\ \server\regkeypath comme chemin d’accès direct au fournisseur.
 
-### <a name="defining-a-provider-internal-path"></a>Définition d’un chemin d’accès interne au fournisseur
+### <a name="defining-a-provider-internal-path"></a>Définition d’un chemin d’accès Provider-Internal
 
 Pour permettre à l’applet de commande du fournisseur d’accéder aux données à l’aide d’interfaces de programmation d’applications (API) non-Windows PowerShell, votre fournisseur Windows PowerShell doit prendre en charge un chemin d’accès interne au fournisseur. Ce chemin d’accès est indiqué après «  :: » dans le chemin d’accès qualifié du fournisseur. Par exemple, le chemin d’accès interne du fournisseur pour le fournisseur de système de fichiers Windows PowerShell est \\ \uncshare\abc\bar.
 
@@ -101,10 +101,10 @@ La classe [System. Management. Automation. Provider. Navigationcmdletprovider](/
 
 |    Applet de commande    |                                                                      Définition                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Combinaison-chemin | Combine deux chemins d’accès en un seul chemin d’accès, à l’aide d’un délimiteur spécifique au fournisseur entre les chemins d’accès. Cette applet de commande diffuse des chaînes.                               |
+| Combine-Path | Combine deux chemins d’accès en un seul chemin d’accès, à l’aide d’un délimiteur spécifique au fournisseur entre les chemins d’accès. Cette applet de commande diffuse des chaînes.                               |
 | `Move-Item`  | Déplace les éléments à l’emplacement spécifié. Cette applet de commande ne transmet pas d’objet de sortie via le pipeline, à moins que son `PassThru` paramètre ne soit spécifié. |
 
-Une applet de commande associée est l’applet de commande Basic parse-Path fournie par Windows PowerShell. Cette applet de commande peut être utilisée pour analyser un chemin d’accès Windows PowerShell afin de prendre en charge le `Parent` paramètre. Il diffuse en continu la chaîne du chemin d’accès parent.
+Une applet de commande associée est l’applet de Parse-Path de base fournie par Windows PowerShell. Cette applet de commande peut être utilisée pour analyser un chemin d’accès Windows PowerShell afin de prendre en charge le `Parent` paramètre. Il diffuse en continu la chaîne du chemin d’accès parent.
 
 ## <a name="select-provider-interfaces-to-support"></a>Sélectionner les interfaces de fournisseur à prendre en charge
 

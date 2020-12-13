@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour EntrySelectedBy pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 362f7844c09a52494387a62e329adfb309767427
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour EntrySelectedBy pour GroupBy (Format)
+description: SelectionSetName, élément pour EntrySelectedBy pour GroupBy (Format)
+ms.openlocfilehash: 7ebe5d884061243c8b4af196788187d84c15a92e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785283"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651851"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-groupby-format"></a>SelectionSetName, élément pour EntrySelectedBy pour GroupBy (Format)
 

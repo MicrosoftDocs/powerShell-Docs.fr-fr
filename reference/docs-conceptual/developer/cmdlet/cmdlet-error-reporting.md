@@ -1,18 +1,14 @@
 ---
-title: Rapport d’erreurs d’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- error records [PowerShell], terminating
-- non-terminating errors [PowerShell]
-- error records [PowerShell]
-- terminating errors [PowerShell]
-- error records [PowerShell], non-terminating
-ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Rapport d’erreurs des applets de commande
+description: Rapport d’erreurs des applets de commande
+ms.openlocfilehash: f06cf98183d56249080623895bd1f5a3e070cefd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653407"
 ---
 # <a name="cmdlet-error-reporting"></a>Rapport d’erreurs d’applet de commande
 
@@ -73,7 +69,7 @@ Les instructions suivantes doivent être suivies lors de la spécification des i
 
 Les catégories d’erreur sont utilisées pour regrouper les erreurs de l’utilisateur. PowerShell définit ces catégories et ces applets de commande, et les fournisseurs PowerShell doivent choisir entre eux lors de la génération de l’enregistrement d’erreur.
 
-Pour obtenir une description des catégories d’erreurs disponibles, consultez l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . En général, vous devez éviter d’utiliser **NOERROR**, **UndefinedError**et **erreur générique** dans la mesure du possible.
+Pour obtenir une description des catégories d’erreurs disponibles, consultez l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . En général, vous devez éviter d’utiliser **NOERROR**, **UndefinedError** et **erreur générique** dans la mesure du possible.
 
 Les utilisateurs peuvent afficher les erreurs en fonction de la catégorie lorsqu’ils sont définis `$ErrorView` sur **CategoryView**.
 

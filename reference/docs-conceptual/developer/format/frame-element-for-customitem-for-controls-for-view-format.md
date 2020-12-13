@@ -1,12 +1,14 @@
 ---
-title: Élément Frame pour CustomItem pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5ade36c183a026cb9001a2abbe91d31638a87108
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame, élément pour CustomItem pour Controls pour View (Format)
+description: Frame, élément pour CustomItem pour Controls pour View (Format)
+ms.openlocfilehash: 6f26e19a6894ac213b924108a56cb80f9ffd1143
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773451"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652211"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>Frame, élément pour CustomItem pour Controls pour View (Format)
 

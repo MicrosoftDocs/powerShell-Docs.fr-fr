@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour ListEntry (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3666888f149f176126d9a19bdbad62469ca9f064
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)
+description: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)
+ms.openlocfilehash: f3193799e67706eb07f0fe1c2cd42cce83f7af57
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787476"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651541"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format"></a>SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour ListEntry (Format)
 

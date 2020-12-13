@@ -1,16 +1,14 @@
 ---
-title: Déclaration d’attribut d’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Cmdlet attribute, described
-- attributes, Cmdlet
-- Cmdlet attribute
-ms.openlocfilehash: 672609f1f50e4600aebcbb7e6e79bb7353ec867d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de l’attribut Cmdlet
+description: Déclaration de l’attribut Cmdlet
+ms.openlocfilehash: 6bdfe39a4ab9ef4d4cc98daa592f69f7fab95e84
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774828"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653544"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Déclaration de l’attribut Cmdlet
 
@@ -25,19 +23,19 @@ L’attribut d’applet de commande identifie une classe Microsoft .NET Framewor
 
 #### <a name="parameters"></a>Paramètres
 
-`VerbName`([System. String](/dotnet/api/System.String)) requis. Spécifie le verbe d’applet de commande. Ce verbe spécifie l’action effectuée par l’applet de commande. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md) de commande et [instructions de développement requises](./required-development-guidelines.md).
+`VerbName` ([System. String](/dotnet/api/System.String)) requis. Spécifie le verbe d’applet de commande. Ce verbe spécifie l’action effectuée par l’applet de commande. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md) de commande et [instructions de développement requises](./required-development-guidelines.md).
 
-`NounName`([System. String](/dotnet/api/System.String)) requis. Spécifie le nom de l’applet de commande. Ce substantif Spécifie la ressource sur laquelle l’applet de commande agit. Pour plus d’informations sur les noms d’applets de commande, consultez [déclaration d’applet](./cmdlet-class-declaration.md) de commande et [conseils de développement fortement encouragés](./strongly-encouraged-development-guidelines.md).
+`NounName` ([System. String](/dotnet/api/System.String)) requis. Spécifie le nom de l’applet de commande. Ce substantif Spécifie la ressource sur laquelle l’applet de commande agit. Pour plus d’informations sur les noms d’applets de commande, consultez [déclaration d’applet](./cmdlet-class-declaration.md) de commande et [conseils de développement fortement encouragés](./strongly-encouraged-development-guidelines.md).
 
-`SupportsShouldProcess`([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True`indique que l’applet de commande prend en charge les appels à la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , qui fournit à l’applet de commande un moyen d’inviter l’utilisateur avant l’exécution d’une action qui modifie le système. `False`, la valeur par défaut, indique que l’applet de commande ne prend pas en charge les appels à la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) de commande. ShouldProcess. Pour plus d’informations sur les demandes de confirmation, consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md).
+`SupportsShouldProcess` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que l’applet de commande prend en charge les appels à la méthode [System. Management. Automation. cmdlet. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) , qui fournit à l’applet de commande un moyen d’inviter l’utilisateur avant l’exécution d’une action qui modifie le système. `False`, la valeur par défaut, indique que l’applet de commande ne prend pas en charge les appels à la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) de commande. ShouldProcess. Pour plus d’informations sur les demandes de confirmation, consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact`([System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) paramètre nommé facultatif. Spécifie quand l’action de l’applet de commande doit être confirmée par un appel à la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) de commande. ShouldProcess. [System. Management. Automation. applet de commande. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) est appelé uniquement lorsque la valeur ConfirmImpact de l’applet de commande (par défaut, Medium) est supérieure ou égale à la valeur de la `$ConfirmPreference` variable. Ce paramètre doit être spécifié uniquement lorsque le `SupportsShouldProcess` paramètre est spécifié.
+`ConfirmImpact` ([System. Management. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) paramètre nommé facultatif. Spécifie quand l’action de l’applet de commande doit être confirmée par un appel à la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) de commande. ShouldProcess. [System. Management. Automation. applet de commande. ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) est appelé uniquement lorsque la valeur ConfirmImpact de l’applet de commande (par défaut, Medium) est supérieure ou égale à la valeur de la `$ConfirmPreference` variable. Ce paramètre doit être spécifié uniquement lorsque le `SupportsShouldProcess` paramètre est spécifié.
 
-`DefaultParameterSetName`([System. String](/dotnet/api/System.String)) paramètre nommé facultatif. Spécifie le jeu de paramètres par défaut que le runtime Windows PowerShell tente d’utiliser lorsqu’il ne peut pas déterminer le jeu de paramètres à utiliser. Notez que cette situation peut être éliminée en faisant du paramètre unique de chaque paramètre un paramètre obligatoire.
+`DefaultParameterSetName` ([System. String](/dotnet/api/System.String)) paramètre nommé facultatif. Spécifie le jeu de paramètres par défaut que le runtime Windows PowerShell tente d’utiliser lorsqu’il ne peut pas déterminer le jeu de paramètres à utiliser. Notez que cette situation peut être éliminée en faisant du paramètre unique de chaque paramètre un paramètre obligatoire.
 
 Il existe un cas où Windows PowerShell ne peut pas utiliser le jeu de paramètres par défaut même si un nom de jeu de paramètres par défaut est spécifié. Le runtime Windows PowerShell ne peut pas faire la distinction entre les jeux de paramètres basés uniquement sur le type d’objet. Par exemple, si vous avez un jeu de paramètres qui prend une chaîne comme chemin d’accès de fichier, et un autre jeu qui prend directement un objet **FileInfo** , Windows PowerShell ne peut pas déterminer le jeu de paramètres à utiliser en fonction des valeurs transmises à l’applet de commande, pas plus qu’il n’utilise le jeu de paramètres par défaut. Dans ce cas, même si vous spécifiez un nom de jeu de paramètres par défaut, Windows PowerShell génère un message d’erreur de jeu de paramètres ambigu.
 
-`SupportsTransactions`([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True`indique que l’applet de commande peut être utilisée dans une transaction. Lorsque `True` est spécifié, le runtime Windows PowerShell ajoute le `UseTransaction` paramètre à la liste de paramètres de l’applet de commande. `False`, la valeur par défaut, indique que l’applet de commande ne peut pas être utilisée dans une transaction.
+`SupportsTransactions` ([System. Boolean](/dotnet/api/System.Boolean)) paramètre nommé facultatif. `True` indique que l’applet de commande peut être utilisée dans une transaction. Lorsque `True` est spécifié, le runtime Windows PowerShell ajoute le `UseTransaction` paramètre à la liste de paramètres de l’applet de commande. `False`, la valeur par défaut, indique que l’applet de commande ne peut pas être utilisée dans une transaction.
 
 ## <a name="remarks"></a>Notes
 

@@ -1,12 +1,14 @@
 ---
-title: Vue d’ensemble du système de type étendu
 ms.date: 07/09/2020
-ms.openlocfilehash: 5c190f0d9b852a4b5658227085092f33d71453c9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue d’ensemble du système de type étendu
+description: Vue d’ensemble du système de type étendu
+ms.openlocfilehash: f4a789f779fa8a52f0fe524abff7ec3311e93b6c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786218"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655726"
 ---
 # <a name="extended-type-system-overview"></a>Vue d’ensemble du système de type étendu
 
@@ -94,6 +96,6 @@ Lorsqu’un objet de base est un méta-objet, qui contient des données d’une 
 
 En plus des membres rendus disponibles à partir de l’objet de base ou des membres adaptés créés par PowerShell, un **PSObject** peut également définir des membres étendus qui étendent l’objet de base d’origine avec des informations supplémentaires qui sont utiles dans l’environnement de script.
 
-Par exemple, toutes les applets de commande principales fournies par PowerShell, telles que les applets de commande « obtenir-content » et « Set-Content », acceptent un paramètre Path. Pour vous assurer que ces applets de commande, et d’autres, peuvent fonctionner sur des objets de types différents, un membre de chemin d’accès peut être ajouté à ces objets afin qu’ils aient tous l’état de leurs informations de manière courante. Ce membre du chemin d’accès étendu garantit que les applets de commande peuvent fonctionner sur tous ces types, même si une classe de base peut ne pas avoir de membre de chemin d’accès.
+Par exemple, toutes les applets de commande principales fournies par PowerShell, telles que les applets de commande Get-Content et Set-Content, acceptent un paramètre Path. Pour vous assurer que ces applets de commande, et d’autres, peuvent fonctionner sur des objets de types différents, un membre de chemin d’accès peut être ajouté à ces objets afin qu’ils aient tous l’état de leurs informations de manière courante. Ce membre du chemin d’accès étendu garantit que les applets de commande peuvent fonctionner sur tous ces types, même si une classe de base peut ne pas avoir de membre de chemin d’accès.
 
 Les membres étendus, les membres adaptés et les membres d’objet de base sont accessibles via la propriété Members.

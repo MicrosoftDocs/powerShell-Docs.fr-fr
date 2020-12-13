@@ -1,16 +1,18 @@
 ---
-title: Exemple GetProcessSample04 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4858c44302f7315625be02dd0dc1d335b9c3f158
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple GetProcessSample04
+description: Exemple GetProcessSample04
+ms.openlocfilehash: 4b2b7f7ed5fd87711d0d7872caaf75d453de4832
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774420"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652739"
 ---
 # <a name="getprocesssample04-sample"></a>Exemple GetProcessSample04
 
-Cet exemple montre comment implémenter une applet de commande qui récupère les processus sur l’ordinateur local. Elle génère une erreur sans fin d’exécution si une erreur se produit lors de la récupération d’un processus. Cette applet de commande est une version simplifiée de l’applet de commande `Get-Process` fournie par Windows PowerShell 2,0.
+Cet exemple montre comment implémenter une applet de commande qui récupère les processus sur l’ordinateur local. Il génère une erreur sans fin si une erreur se produit lors de la récupération d’un processus. Cette applet de commande est une version simplifiée de l’applet de commande `Get-Process` fournie par Windows PowerShell 2,0.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Comment générer l’exemple à l’aide de Visual Studio.
 

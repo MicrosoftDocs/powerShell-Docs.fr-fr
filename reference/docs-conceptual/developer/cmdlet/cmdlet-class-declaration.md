@@ -1,15 +1,14 @@
 ---
-title: Déclaration de classe d’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], declaring
-- declaring cmdlets [PowerShell SDK]
-ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de classe d’applets de commande
+description: Déclaration de classe d’applets de commande
+ms.openlocfilehash: 854b0a4ca9f6c87c4fad3b71ee726beade585e02
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784501"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653491"
 ---
 # <a name="cmdlet-class-declaration"></a>Déclaration de classe d’applets de commande
 
@@ -19,7 +18,7 @@ Lorsque vous spécifiez l’attribut d' **applet** de commande, vous devez spéc
 > [!NOTE]
 > L’attribut d' **applet** de commande est défini par la classe [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) . Les propriétés de cette classe correspondent aux paramètres de déclaration utilisés lorsque vous déclarez l’attribut.
 
-## <a name="nouns"></a>Noms
+## <a name="nouns"></a>Substantifs
 
 Le nom de l’applet de commande spécifie les ressources sur lesquelles agit l’applet de commande. Le substantif fait la différence entre vos applets de commande et d’autres applets de commande.
 

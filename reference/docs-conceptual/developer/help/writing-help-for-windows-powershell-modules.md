@@ -1,14 +1,16 @@
 ---
-title: Écriture de l’aide pour les modules PowerShell
 ms.date: 04/10/2020
-ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Écriture d’une aide pour les modules PowerShell
+description: Écriture d’une aide pour les modules PowerShell
+ms.openlocfilehash: 3bef45c0dd8a7e63bc419bb3e5a7a1783810105b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893065"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654646"
 ---
-# <a name="writing-help-for-powershell-modules"></a>Écriture de l’aide pour les modules PowerShell
+# <a name="writing-help-for-powershell-modules"></a>Écriture d’une aide pour les modules PowerShell
 
 Les modules PowerShell peuvent inclure des rubriques d’aide sur le module et sur les membres du module, tels que des applets de commande, des fournisseurs, des fonctions et des scripts. L' `Get-Help` applet de commande affiche les rubriques d’aide du module dans le même format qu’il affiche l’aide pour les autres éléments PowerShell, et les utilisateurs utilisent des `Get-Help` commandes standard pour obtenir les rubriques d’aide.
 
@@ -18,7 +20,7 @@ Ce document explique le format et le positionnement correct des rubriques d’ai
 
 Un module peut inclure les types d’aide suivants.
 
-- **Aide sur l’applet**de commande. Les rubriques d’aide qui décrivent les applets de commande d’un module sont des fichiers XML qui utilisent le schéma de l’aide de la commande
+- **Aide sur l’applet** de commande. Les rubriques d’aide qui décrivent les applets de commande d’un module sont des fichiers XML qui utilisent le schéma de l’aide de la commande
 
 - **Aide du fournisseur**. Les rubriques d’aide qui décrivent les fournisseurs dans un module sont des fichiers XML qui utilisent le schéma d’aide du fournisseur.
 

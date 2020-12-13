@@ -1,12 +1,14 @@
 ---
-title: Élément configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 90be02f8e27c0bd391e01da1a08ecd8eeb29b84c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Configuration, élément (Format)
+description: Configuration, élément (Format)
+ms.openlocfilehash: 0524736d40dd7a7acb0b6fb61d1438b75672c240
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783838"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655682"
 ---
 # <a name="configuration-element-format"></a>Configuration, élément (Format)
 

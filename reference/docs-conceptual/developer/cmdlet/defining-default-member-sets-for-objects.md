@@ -1,12 +1,14 @@
 ---
-title: Définition des jeux de membres par défaut pour les objets | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 80e1f54890d3aac1702414699ead16fcf38271e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Définition de jeux de membres par défaut pour les objets
+description: Définition de jeux de membres par défaut pour les objets
+ms.openlocfilehash: 919f7ba65322c6a56a27e046fb211bde151abf7d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774624"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653129"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>Définition de jeux de membres par défaut pour les objets
 

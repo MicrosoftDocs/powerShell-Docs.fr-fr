@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e18c74bb95c658f2c3e7b7454628f78d523f7609
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)
+description: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)
+ms.openlocfilehash: 0c9372113a79f75cfbda67acf869164fde894ee3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787493"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651589"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour EnumerableExpansion (Format)
 

@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour EntrySelectedBy pour CustomControl pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3728a1886d5406b8fa4888125d1c031d0f9b1b03
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour EntrySelectedBy pour CustomControl pour View (Format)
+description: SelectionSetName, élément pour EntrySelectedBy pour CustomControl pour View (Format)
+ms.openlocfilehash: a158c5476fb3a168a146ce67565c0ed6f7859519
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785300"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651918"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>SelectionSetName, élément pour EntrySelectedBy pour CustomControl pour View (Format)
 

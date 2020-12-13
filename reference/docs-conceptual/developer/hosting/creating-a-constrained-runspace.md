@@ -1,12 +1,14 @@
 ---
-title: Création d’une instance d’exécution restreinte | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’une instance d’exécution contrainte
+description: Création d’une instance d’exécution contrainte
+ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779809"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651175"
 ---
 # <a name="creating-a-constrained-runspace"></a>Création d’une instance d’exécution contrainte
 

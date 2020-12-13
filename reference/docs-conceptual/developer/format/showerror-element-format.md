@@ -1,12 +1,14 @@
 ---
-title: Élément ShowError (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4b48e532aeb51a947b1dc4f49c2487bb41e5d0bb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ShowError, élément (Format)
+description: ShowError, élément (Format)
+ms.openlocfilehash: 278d379c55dc768b703bed3938bf556cbfceabb5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785215"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654849"
 ---
 # <a name="showerror-element-format"></a>ShowError, élément (Format)
 

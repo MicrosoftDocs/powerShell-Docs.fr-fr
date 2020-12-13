@@ -1,12 +1,14 @@
 ---
-title: Élément WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b6f19cf94dcb440eeaf53547db407287e5462520
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl, élément (Format)
+description: WideControl, élément (Format)
+ms.openlocfilehash: f88e1ce18f87e5e47de473298b3ecf070b71c192
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784977"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651272"
 ---
 # <a name="widecontrol-element-format"></a>WideControl, élément (Format)
 

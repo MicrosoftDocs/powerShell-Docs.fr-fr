@@ -1,12 +1,14 @@
 ---
-title: Fonctionnement d’un module Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9308ad0fd41aa67ffa8510ae7a3c9cd6a13f4220
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Présentation d’un module Windows PowerShell
+description: Présentation d’un module Windows PowerShell
+ms.openlocfilehash: 882e9db59dc1bc8570676d1da7ce84c808d076e8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779231"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651144"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Présentation d’un module Windows PowerShell
 
@@ -84,7 +86,7 @@ Indépendamment, le chemin d’accès du dossier est appelé *base* du module (M
 
 - Les modules dynamiques créés par l' `New-Module` applet de commande peuvent être nommés à l’aide du `Name` paramètre de l’applet de commande.
 
-- Les modules importés à partir d’objets assembly par la commande ** `Import-Module` -assembly** sont nommés selon la syntaxe suivante : `"dynamic_code_module_" + assembly.GetName()` .
+- Les modules importés à partir d’objets assembly par la commande **`Import-Module` -assembly** sont nommés selon la syntaxe suivante : `"dynamic_code_module_" + assembly.GetName()` .
 
   Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md) et [modification du chemin d’installation de PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 

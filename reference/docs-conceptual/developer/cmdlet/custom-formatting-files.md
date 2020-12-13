@@ -1,12 +1,14 @@
 ---
-title: Fichiers de mise en forme personnalisés | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fichiers de mise en forme personnalisée
+description: Fichiers de mise en forme personnalisée
+ms.openlocfilehash: 16e1c1046e25b35ff346585a5fd930c449c04bf8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784348"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653249"
 ---
 # <a name="custom-formatting-files"></a>Fichiers de mise en forme personnalisée
 

@@ -1,12 +1,14 @@
 ---
-title: Élément FirstLineHanging pour frame pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3def56e918810d9e201d7a9ae73776d90646d8b3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineHanging, élément pour Frame pour GroupBy (Format)
+description: FirstLineHanging, élément pour Frame pour GroupBy (Format)
+ms.openlocfilehash: 6a4ded9cced484440636aee694cd8381b2889ba8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773604"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652273"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>FirstLineHanging, élément pour Frame pour GroupBy (Format)
 

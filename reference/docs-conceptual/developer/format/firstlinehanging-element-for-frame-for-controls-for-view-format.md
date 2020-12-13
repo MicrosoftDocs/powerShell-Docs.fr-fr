@@ -1,12 +1,14 @@
 ---
-title: Élément FirstLineHanging pour frame pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 88c64619715c935089eb6c5a771584e4f69171d3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineHanging, élément pour Frame pour Controls pour View (Format)
+description: FirstLineHanging, élément pour Frame pour Controls pour View (Format)
+ms.openlocfilehash: a7a2aa533a74bd3c347307ab49a467d1f9844fc3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773621"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655221"
 ---
 # <a name="firstlinehanging-element-for-frame-for-controls-for-view-format"></a>FirstLineHanging, élément pour Frame pour Controls pour View (Format)
 

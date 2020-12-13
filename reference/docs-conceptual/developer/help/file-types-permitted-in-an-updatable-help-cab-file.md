@@ -1,12 +1,14 @@
 ---
-title: Types de fichiers autorisés dans un fichier CAB d’aide actualisable
 ms.date: 03/22/2012
-ms.openlocfilehash: 2a8e97edf8daaed915ea1a3e04565d996a2e15fd
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Types de fichiers autorisés dans un fichier CAB d’aide actualisable
+description: Types de fichiers autorisés dans un fichier CAB d’aide actualisable
+ms.openlocfilehash: bb69b8b89a9a3a5c8c00059ec404a4d41a5db9a5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893133"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654746"
 ---
 # <a name="file-types-permitted-in-an-updatable-help-cab-file"></a>Types de fichiers autorisés dans un fichier CAB d’aide actualisable
 

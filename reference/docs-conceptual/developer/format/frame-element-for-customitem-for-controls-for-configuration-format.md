@@ -1,12 +1,14 @@
 ---
-title: Élément Frame pour CustomItem pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fa435b8d6b868d2d7c94b7926321d94edc2ec290
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Frame, élément pour CustomItem pour Controls pour Configuration (Format)
+description: Frame, élément pour CustomItem pour Controls pour Configuration (Format)
+ms.openlocfilehash: 85d095b9b0c25b68b2353bce56b85333aff91b98
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781475"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652234"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>Frame, élément pour CustomItem pour Controls pour Configuration (Format)
 

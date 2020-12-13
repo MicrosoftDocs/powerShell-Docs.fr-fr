@@ -1,12 +1,14 @@
 ---
-title: Paramètres de propriété | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0ded22dcda2b4eb957834ec092466767a4121f0e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Paramètres de propriété
+description: Paramètres de propriété
+ms.openlocfilehash: eff51fcd395e5f9570193ea91684f9e70030bc7d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781832"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652598"
 ---
 # <a name="property-parameters"></a>Paramètres de propriété
 
@@ -27,7 +29,7 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 |**Propriété**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le nom ou les noms des propriétés à utiliser.|
 |**Motif**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la raison pour laquelle cette applet de commande est appelée.|
 |**Regex**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre afin que les expressions régulières soient utilisées lorsque le paramètre est spécifié. Lorsque ce paramètre est spécifié, les caractères génériques ne sont pas résolus.|
-|**Vitesse**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la vitesse en bauds. L’utilisateur définit ce paramètre sur la vitesse de la ressource.|
+|**Temps**<br>Type de données : Int32|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la vitesse en bauds. L’utilisateur définit ce paramètre sur la vitesse de la ressource.|
 |**State**<br>Type de données : tableau de mots clés|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier le nom des États, par exemple keyverse.|
 |**Valeur**<br>Type de données : objet|Implémentez ce paramètre afin que l’utilisateur puisse spécifier une valeur à fournir à l’applet de commande.|
 |**Version**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la version de la propriété.|

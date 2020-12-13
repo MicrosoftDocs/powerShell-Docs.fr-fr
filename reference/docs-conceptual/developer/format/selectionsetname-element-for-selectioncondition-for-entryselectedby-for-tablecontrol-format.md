@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: db751c40b22db52985bc7cd9f8f4296a64a523f0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+description: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+ms.openlocfilehash: 2fb09e27eef1ce5d6e864c72edb595817d91f729
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787459"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655051"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
 

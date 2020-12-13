@@ -1,12 +1,14 @@
 ---
-title: Affichage des informations sur les erreurs | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e542110e9c35a74c5d4c112b0a831f7f8ad9242e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Affichage des informations sur les erreurs
+description: Affichage des informations sur les erreurs
+ms.openlocfilehash: 37a3adb91d0e616a5c7f27bcab866f8da139f969
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774573"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653053"
 ---
 # <a name="displaying-error-information"></a>Affichage des informations sur les erreurs
 

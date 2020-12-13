@@ -1,12 +1,14 @@
 ---
-title: Élément WideEntries pour WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 74383b288c945008c1d7b5119363a166c04802ae
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideEntries, élément pour WideControl (Format)
+description: WideEntries, élément pour WideControl (Format)
+ms.openlocfilehash: 567b8acdd0d2e8d5daaef2c31b4fe4ce38c23a47
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785045"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651231"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideEntries, élément pour WideControl (Format)
 
