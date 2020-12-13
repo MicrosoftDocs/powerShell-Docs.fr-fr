@@ -1,22 +1,24 @@
 ---
-title: Comment prendre en charge les travaux | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour prendre en charge les travaux
+description: Guide pratique pour prendre en charge les travaux
+ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786626"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666975"
 ---
-# <a name="how-to-support-jobs"></a><span data-ttu-id="1a375-102">Guide pratique pour prendre en charge les travaux</span><span class="sxs-lookup"><span data-stu-id="1a375-102">How to Support Jobs</span></span>
+# <a name="how-to-support-jobs"></a><span data-ttu-id="03635-103">Guide pratique pour prendre en charge les travaux</span><span class="sxs-lookup"><span data-stu-id="03635-103">How to Support Jobs</span></span>
 
-<span data-ttu-id="1a375-103">Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez des applets de commande.</span><span class="sxs-lookup"><span data-stu-id="1a375-103">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="1a375-104">Si vous souhaitez que les utilisateurs exécutent votre applet de commande en tant que tâche en arrière-plan, vous devez inclure le code décrit dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="1a375-104">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="1a375-105">Pour plus d’informations sur les tâches en arrière-plan, consultez [travaux en arrière-plan](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="1a375-105">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
+<span data-ttu-id="03635-104">Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez des applets de commande.</span><span class="sxs-lookup"><span data-stu-id="03635-104">This example shows how to support jobs when you write cmdlets.</span></span> <span data-ttu-id="03635-105">Si vous souhaitez que les utilisateurs exécutent votre applet de commande en tant que tâche en arrière-plan, vous devez inclure le code décrit dans la procédure suivante.</span><span class="sxs-lookup"><span data-stu-id="03635-105">If you want users to run your cmdlet as a background job, you must include the code described in the following procedure.</span></span> <span data-ttu-id="03635-106">Pour plus d’informations sur les tâches en arrière-plan, consultez [travaux en arrière-plan](./background-jobs.md).</span><span class="sxs-lookup"><span data-stu-id="03635-106">For more information about background jobs, see [Background Jobs](./background-jobs.md).</span></span>
 
-## <a name="to-support-jobs"></a><span data-ttu-id="1a375-106">Pour prendre en charge les travaux</span><span class="sxs-lookup"><span data-stu-id="1a375-106">To support jobs</span></span>
+## <a name="to-support-jobs"></a><span data-ttu-id="03635-107">Pour prendre en charge les travaux</span><span class="sxs-lookup"><span data-stu-id="03635-107">To support jobs</span></span>
 
-1. <span data-ttu-id="1a375-107">Définissez un `AsJob` paramètre de commutateur afin que l’utilisateur puisse décider d’exécuter l’applet de commande en tant que tâche.</span><span class="sxs-lookup"><span data-stu-id="1a375-107">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
+1. <span data-ttu-id="03635-108">Définissez un `AsJob` paramètre de commutateur afin que l’utilisateur puisse décider d’exécuter l’applet de commande en tant que tâche.</span><span class="sxs-lookup"><span data-stu-id="03635-108">Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a job.</span></span>
 
-    <span data-ttu-id="1a375-108">L’exemple suivant illustre une déclaration de paramètre AsJob.</span><span class="sxs-lookup"><span data-stu-id="1a375-108">The following example shows an AsJob parameter declaration.</span></span>
+    <span data-ttu-id="03635-109">L’exemple suivant illustre une déclaration de paramètre AsJob.</span><span class="sxs-lookup"><span data-stu-id="03635-109">The following example shows an AsJob parameter declaration.</span></span>
 
     ```csharp
     [Parameter()]
@@ -30,9 +32,9 @@ ms.locfileid: "87786626"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. <span data-ttu-id="1a375-109">Créez un objet qui dérive de la classe [System. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) .</span><span class="sxs-lookup"><span data-stu-id="1a375-109">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="1a375-110">Cet objet peut être un objet de traitement personnalisé ou l’un des objets de traitement fournis par Windows PowerShell, tel qu’un objet [System. Management. Automation. PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) .</span><span class="sxs-lookup"><span data-stu-id="1a375-110">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
+2. <span data-ttu-id="03635-110">Créez un objet qui dérive de la classe [System. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) .</span><span class="sxs-lookup"><span data-stu-id="03635-110">Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class.</span></span> <span data-ttu-id="03635-111">Cet objet peut être un objet de traitement personnalisé ou l’un des objets de traitement fournis par Windows PowerShell, tel qu’un objet [System. Management. Automation. PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) .</span><span class="sxs-lookup"><span data-stu-id="03635-111">This object can be a custom job object or one of the job objects provided by Windows PowerShell, such a [System.Management.Automation.Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob) object.</span></span>
 
-    <span data-ttu-id="1a375-111">L’exemple suivant montre un objet de traitement personnalisé.</span><span class="sxs-lookup"><span data-stu-id="1a375-111">The following example shows a custom job object.</span></span>
+    <span data-ttu-id="03635-112">L’exemple suivant montre un objet de traitement personnalisé.</span><span class="sxs-lookup"><span data-stu-id="03635-112">The following example shows a custom job object.</span></span>
 
     ```csharp
     private SampleJob job = new SampleJob("Get-ProcAsJob");
@@ -40,7 +42,7 @@ ms.locfileid: "87786626"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. <span data-ttu-id="1a375-112">Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction pour détecter si l’applet de commande doit s’exécuter en tant que tâche.</span><span class="sxs-lookup"><span data-stu-id="1a375-112">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="1a375-113">Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.</span><span class="sxs-lookup"><span data-stu-id="1a375-113">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
+3. <span data-ttu-id="03635-113">Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction pour détecter si l’applet de commande doit s’exécuter en tant que tâche.</span><span class="sxs-lookup"><span data-stu-id="03635-113">In a record processing method, add an `if` statement to detect whether the cmdlet should run as a job.</span></span> <span data-ttu-id="03635-114">Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.</span><span class="sxs-lookup"><span data-stu-id="03635-114">The following code uses the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span>
 
     ```csharp
     protected override void ProcessRecord()
@@ -67,7 +69,7 @@ ms.locfileid: "87786626"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. <span data-ttu-id="1a375-114">Pour les objets de travail personnalisés, implémentez la classe Job.</span><span class="sxs-lookup"><span data-stu-id="1a375-114">For custom job objects, implement the job class.</span></span>
+4. <span data-ttu-id="03635-115">Pour les objets de travail personnalisés, implémentez la classe Job.</span><span class="sxs-lookup"><span data-stu-id="03635-115">For custom job objects, implement the job class.</span></span>
 
     ```csharp
     private class SampleJob : Job
@@ -124,7 +126,7 @@ ms.locfileid: "87786626"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. <span data-ttu-id="1a375-115">Si l’applet de commande effectue le travail, appelez la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour retourner un objet processus au pipeline.</span><span class="sxs-lookup"><span data-stu-id="1a375-115">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="1a375-116">Si le travail est effectué en tant que tâche, ajoutez la tâche enfant à la tâche.</span><span class="sxs-lookup"><span data-stu-id="1a375-116">If the work is performed as a job, add child job to the job.</span></span>
+5. <span data-ttu-id="03635-116">Si l’applet de commande effectue le travail, appelez la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour retourner un objet processus au pipeline.</span><span class="sxs-lookup"><span data-stu-id="03635-116">If the cmdlet performs the work, call the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method to return a process object to the pipeline.</span></span> <span data-ttu-id="03635-117">Si le travail est effectué en tant que tâche, ajoutez la tâche enfant à la tâche.</span><span class="sxs-lookup"><span data-stu-id="03635-117">If the work is performed as a job, add child job to the job.</span></span>
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -147,9 +149,9 @@ ms.locfileid: "87786626"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06Output](msh_samplesGetProc06#GetProc06Output)]  -->
 
-## <a name="example"></a><span data-ttu-id="1a375-117">Exemple</span><span class="sxs-lookup"><span data-stu-id="1a375-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="03635-118">Exemple</span><span class="sxs-lookup"><span data-stu-id="03635-118">Example</span></span>
 
-<span data-ttu-id="1a375-118">L’exemple de code suivant montre le code d’une applet de commande **« obtenir-proc »** qui peut récupérer des processus en interne ou à l’aide d’une tâche en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="1a375-118">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
+<span data-ttu-id="03635-119">L’exemple de code suivant montre le code d’une applet de commande **« obtenir-proc »** qui peut récupérer des processus en interne ou à l’aide d’une tâche en arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="03635-119">The following sample code shows the code for a **Get-Proc** cmdlet that can retrieve processes internally or by using a background job.</span></span>
 
 ```csharp
 using System;
