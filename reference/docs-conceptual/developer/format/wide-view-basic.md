@@ -1,12 +1,14 @@
 ---
-title: Vue étendue (de base) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d92c29c33c5104b6186ae53ccf544be197d657b1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue large (De base)
+description: Vue large (De base)
+ms.openlocfilehash: bfc647da9b78fcd22aac83cf330e466b6759471c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772397"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667689"
 ---
 # <a name="wide-view-basic"></a>Vue large (De base)
 

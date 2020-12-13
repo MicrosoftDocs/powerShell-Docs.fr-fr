@@ -1,12 +1,14 @@
 ---
-title: Types d’attributs | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 96fdd38ba10eb748ab0762f0c910463dd472494d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Types d’attributs
+description: Types d’attributs
+ms.openlocfilehash: 65640f2f8449887dedb9fae137eb16b6252f1d57
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782376"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667111"
 ---
 # <a name="attribute-types"></a>Types d’attributs
 

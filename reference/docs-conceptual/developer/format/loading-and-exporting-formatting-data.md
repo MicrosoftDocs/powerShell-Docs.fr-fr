@@ -1,12 +1,14 @@
 ---
-title: Chargement et exportation de données de mise en forme | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Chargement et exportation de données de mise en forme
+description: Chargement et exportation de données de mise en forme
+ms.openlocfilehash: 38857526801051bf6d31d300d5be1a3fd2c80391
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781118"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666516"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Chargement et exportation de données de mise en forme
 
@@ -28,7 +30,7 @@ Lorsqu’un fichier de mise en forme est chargé, il est ajouté à une liste in
 
 ## <a name="storing-your-formatting-file"></a>Stockage de votre fichier de mise en forme
 
-L’emplacement de stockage des fichiers de mise en forme sur le disque n’est pas obligatoire. Toutefois, il est fortement recommandé de les stocker dans le dossier suivant :`user\documents\windowspowershell\`
+L’emplacement de stockage des fichiers de mise en forme sur le disque n’est pas obligatoire. Toutefois, il est fortement recommandé de les stocker dans le dossier suivant : `user\documents\windowspowershell\`
 
 #### <a name="loading-a-format-file-using-import-formatdata"></a>Chargement d’un fichier de format à l’aide de Import-FormatData
 

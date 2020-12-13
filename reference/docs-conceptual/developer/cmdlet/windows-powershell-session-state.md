@@ -1,15 +1,14 @@
 ---
-title: État de session Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Cmdlets [PowerShell], session state
-- session state [PowerShell]
-ms.openlocfilehash: 7436e3ebd0e099ead81f9fea01a0a2994b982213
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: État de session Windows PowerShell
+description: État de session Windows PowerShell
+ms.openlocfilehash: 51de92f1f392f708cf49c7ccb4a6808fd628076c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783940"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668131"
 ---
 # <a name="windows-powershell-session-state"></a>État de session Windows PowerShell
 
@@ -21,7 +20,7 @@ Du point de vue du développeur, une session Windows PowerShell fait référence
 
 Les États de session de module sont créés chaque fois que le module ou l’un de ses modules imbriqués est importé dans la session. Lorsqu’un module exporte un élément tel qu’une applet de commande, une fonction ou un script, une référence à cet élément est ajoutée à l’état de session global de la session. Toutefois, lorsque l’élément est exécuté, il est exécuté dans l’état de session du module.
 
-## <a name="session-state-data"></a>Données d’état de session
+## <a name="session-state-data"></a>Données Session-State
 
 Les données d’état de session peuvent être publiques ou privées. Les données publiques sont disponibles pour les appels en dehors de l’état de session, tandis que les données privées sont uniquement disponibles pour les appels à partir de l’état de session. Par exemple, un module peut avoir une fonction privée qui peut être appelée uniquement par le module ou uniquement en interne par un élément public qui a été exporté. Cela est similaire aux membres privés et publics d’un type de .NET Framework.
 
@@ -37,7 +36,7 @@ Les données d’état de session sont stockées par l’instance actuelle du mo
 
 - Informations sur les variables d’état de session
 
-## <a name="accessing-session-state-data-within-cmdlets"></a>Accès aux données d’état de session dans les applets de commande
+## <a name="accessing-session-state-data-within-cmdlets"></a>Accès aux données Session-State dans les applets de commande
 
 Les applets de commande peuvent accéder aux données d’état de session, soit indirectement par le biais de la propriété [System. Management. Automation. PSCmdlet. SessionState *](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) de la classe cmdlet, soit directement via la classe [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) . La classe [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) fournit des propriétés qui peuvent être utilisées pour examiner les différents types de données d’état de session.
 
@@ -51,4 +50,4 @@ Les applets de commande peuvent accéder aux données d’état de session, soit
 
 [Écriture d’une applet de commande Windows PowerShell](./writing-a-windows-powershell-cmdlet.md)
 
-[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)
+[Kit SDK Windows PowerShell](../windows-powershell-reference.md)

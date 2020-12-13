@@ -1,12 +1,14 @@
 ---
-title: Comment demander des confirmations | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ebe928724f1b750afc11c1e3c1207375f4ec8e42
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour demander des confirmations
+description: Guide pratique pour demander des confirmations
+ms.openlocfilehash: 3e29803407bd9fbf13e6db0d0a02239c34e9c4fa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784093"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666992"
 ---
 # <a name="how-to-request-confirmations"></a>Guide pratique pour demander des confirmations
 

@@ -1,12 +1,14 @@
 ---
-title: Membres de classe de système de type étendu
 ms.date: 07/09/2020
-ms.openlocfilehash: 24a57b7fd0b3db47d0d7138859aa0502ca9016f0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Membres de classe de système de type étendu
+description: Membres de classe de système de type étendu
+ms.openlocfilehash: 06488ce423f363a285ab53b21ab45989654346dc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786269"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666839"
 ---
 # <a name="extended-type-system-class-members"></a>Membres de classe de système de type étendu
 
@@ -22,9 +24,9 @@ La classe **PSMemberInfo** sert de classe de base pour tous les types de membres
 
 ## <a name="accessing-members"></a>Accès aux membres
 
-Les collections de membres sont accessibles via les propriétés des **membres**, des **méthodes**et des **Propriétés** de l’objet **PSObject** .
+Les collections de membres sont accessibles via les propriétés des **membres**, des **méthodes** et des **Propriétés** de l’objet **PSObject** .
 
-## <a name="ets-properties"></a>Propriétés de ETS
+## <a name="ets-properties"></a>Propriétés ETS
 
 Les propriétés ETS sont des membres qui peuvent être traités comme une propriété. Pour l’essentiel, ils peuvent apparaître sur le côté gauche d’une expression. Elles incluent des propriétés d’alias, des propriétés de code, des propriétés PowerShell, des propriétés de note et des propriétés de script. Pour plus d’informations sur ces types de propriétés, consultez [Propriétés ETS](properties.md).
 

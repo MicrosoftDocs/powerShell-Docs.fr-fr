@@ -1,12 +1,14 @@
 ---
-title: Nommage des fichiers d’aide
 ms.date: 09/12/2016
-ms.openlocfilehash: ea95e6d6c87e553ed11fe6e3f058fc9a1b3d03f8
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Nommage des fichiers d’aide
+description: Nommage des fichiers d’aide
+ms.openlocfilehash: b77af8f9b9510785a4198fed9da1263184a27b99
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893269"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667587"
 ---
 # <a name="naming-help-files"></a>Nommage des fichiers d’aide
 
@@ -59,6 +61,6 @@ Les workflows de script inclus dans les modules peuvent être documentés dans l
 
 `<ScriptModule>.psm1-help.xml`
 
-Contrairement à d’autres commandes scriptées, les flux de travail de script ne nécessitent pas `.ExternalHelp` de mot clé de commentaire pour les associer à un fichier d’aide. Au lieu de cela, PowerShell recherche dans les sous-répertoires spécifiques à la culture de l’interface utilisateur du répertoire du module des fichiers d’aide basés sur XML et recherche de l’aide pour le workflow de script dans tous les fichiers. `.ExternalHelp`le mot clé de commentaire est ignoré.
+Contrairement à d’autres commandes scriptées, les flux de travail de script ne nécessitent pas `.ExternalHelp` de mot clé de commentaire pour les associer à un fichier d’aide. Au lieu de cela, PowerShell recherche dans les sous-répertoires spécifiques à la culture de l’interface utilisateur du répertoire du module des fichiers d’aide basés sur XML et recherche de l’aide pour le workflow de script dans tous les fichiers. `.ExternalHelp` le mot clé de commentaire est ignoré.
 
 Étant donné que le `.ExternalHelp` mot clé comment est ignoré, l' `Get-Help` applet de commande ne peut trouver de l’aide pour les workflows de script que lorsqu’ils sont inclus dans des modules.

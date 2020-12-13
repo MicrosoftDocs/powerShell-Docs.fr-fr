@@ -1,12 +1,14 @@
 ---
-title: Élément ScriptBlock pour ItemSelectionCondition pour CustomControl pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 31873e886af04f8eedaf859af1d6bc1d5bcfdbf7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
+description: ScriptBlock, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
+ms.openlocfilehash: d762f400f5bb52af314093079fe94223c56d3f31
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772873"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665126"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>ScriptBlock, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
 

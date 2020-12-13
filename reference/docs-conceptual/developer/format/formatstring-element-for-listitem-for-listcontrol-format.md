@@ -1,12 +1,14 @@
 ---
-title: FormatString, élément de ListItem pour ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ec73aa1c2e8180258722627e30344de4e67bda5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FormatString, élément pour ListItem pour ListControl (Format)
+description: FormatString, élément pour ListItem pour ListControl (Format)
+ms.openlocfilehash: 1c16da92928ea632241942f4f2c63390c4fea706
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781577"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667910"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>FormatString, élément pour ListItem pour ListControl (Format)
 

@@ -1,12 +1,14 @@
 ---
-title: Vue étendue (GroupBy) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e53714f0b4240b5fe7f62cccda83af1e5badd33c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue large (GroupBy)
+description: Vue large (GroupBy)
+ms.openlocfilehash: 807bea2a5d44c38e2c9977f792bea2fb9bca0fc3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784994"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667672"
 ---
 # <a name="wide-view-groupby"></a>Vue large (GroupBy)
 

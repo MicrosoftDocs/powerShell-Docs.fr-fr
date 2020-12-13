@@ -1,12 +1,14 @@
 ---
-title: Mise en forme des concepts de fichier | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6849a61ab1796ae49c73550b48e78de6f787274e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Concepts des fichiers de mise en forme
+description: Concepts des fichiers de mise en forme
+ms.openlocfilehash: b88dc177f227b3e5ce8043b46996c002ce879fa9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781492"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667842"
 ---
 # <a name="formatting-file-concepts"></a>Concepts des fichiers de mise en forme
 

@@ -1,12 +1,14 @@
 ---
-title: Élément Alignment pour TableColumnHeader pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Alignment, élément pour TableColumnHeader pour TableControl (Format)
+description: Alignment, élément pour TableColumnHeader pour TableControl (Format)
+ms.openlocfilehash: cf8b90c12c28951283b5870186e2c88d427318a5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783923"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666822"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>Alignment, élément pour TableColumnHeader pour TableControl (Format)
 

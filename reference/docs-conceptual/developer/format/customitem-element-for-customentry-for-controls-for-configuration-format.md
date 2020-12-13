@@ -1,12 +1,14 @@
 ---
-title: Élément CustomItem pour CustomEntry pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomItem, élément pour CustomEntry pour Controls pour Configuration (Format)
+description: CustomItem, élément pour CustomEntry pour Controls pour Configuration (Format)
+ms.openlocfilehash: 06c399e982b6ac0fba9c11e20c468fe8bef6f694
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785861"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666771"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>CustomItem, élément pour CustomEntry pour Controls pour Configuration (Format)
 

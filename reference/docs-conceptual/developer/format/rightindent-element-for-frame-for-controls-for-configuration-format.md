@@ -1,12 +1,14 @@
 ---
-title: RightIndent, élément de frame pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: edd299f4a39a8f2f55385b750b530de50ffff203
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RightIndent, élément pour Frame pour Controls pour Configuration (Format)
+description: RightIndent, élément pour Frame pour Controls pour Configuration (Format)
+ms.openlocfilehash: 99a3653fb744df9b17bbc60b75d4d3932c672106
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772992"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665547"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-configuration-format"></a>RightIndent, élément pour Frame pour Controls pour Configuration (Format)
 

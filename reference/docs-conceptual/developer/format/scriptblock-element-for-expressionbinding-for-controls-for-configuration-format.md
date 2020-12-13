@@ -1,12 +1,14 @@
 ---
-title: Élément ScriptBlock pour ExpressionBinding pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ea7df6f523ad0e1939f4d02b9fbdc9f72eb4bb9b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock, élément pour ExpressionBinding pour Controls pour Configuration (Format)
+description: ScriptBlock, élément pour ExpressionBinding pour Controls pour Configuration (Format)
+ms.openlocfilehash: d984c28a47afe8a998effbb4205c95f3e74411ca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785504"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665344"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-configuration-format"></a>ScriptBlock, élément pour ExpressionBinding pour Controls pour Configuration (Format)
 

@@ -1,12 +1,14 @@
 ---
-title: Comment prendre en charge les transactions | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6fda27394091195b589afef5ee53c6d3bec4efc0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour prendre en charge les transactions
+description: Guide pratique pour prendre en charge les transactions
+ms.openlocfilehash: 5691c246830dab9f4808801c04353ebfb2c3e981
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786609"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666958"
 ---
 # <a name="how-to-support-transactions"></a>Guide pratique pour prendre en charge les transactions
 

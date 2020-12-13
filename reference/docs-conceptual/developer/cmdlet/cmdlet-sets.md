@@ -1,12 +1,14 @@
 ---
-title: Jeux d’applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ensembles d’applets de commande
+description: Ensembles d’applets de commande
+ms.openlocfilehash: b4bcb6548f9d64a8cc5e3fc3a66c671a5566001d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774811"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668233"
 ---
 # <a name="cmdlet-sets"></a>Ensembles d’applets de commande
 
@@ -26,7 +28,7 @@ Gardez les points suivants à l’esprit lors de l’implémentation d’une cla
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant illustre l’implémentation d’une classe de base utilisée par les applets de commande obtenir-proc et Stop-proc qui dérivent de la même classe de base.
+L’exemple suivant illustre l’implémentation d’une classe de base utilisée par Get-Proc et Stop-Proc applet de commande qui dérivent de la même classe de base.
 
 ```csharp
 using System;

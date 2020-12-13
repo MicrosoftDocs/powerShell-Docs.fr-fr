@@ -1,12 +1,14 @@
 ---
-title: Paramètres de ressource | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e618951d57ff1cf303b38f0278858144df31afaf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Paramètres de ressource
+description: Paramètres de ressource
+ms.openlocfilehash: 7533f91b6d5858bcefca289eabc7854d6d5d1f2b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786524"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668148"
 ---
 # <a name="resource-parameters"></a>Paramètres de ressource
 
@@ -19,7 +21,7 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 |**Attribut**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un attribut.|
 |**Classe**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier une classe Microsoft .NET Framework.|
 |**Cluster**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un cluster.|
-|**Culture**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la culture dans laquelle l’applet de commande doit être exécutée.|
+|**Culturel**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier la culture dans laquelle l’applet de commande doit être exécutée.|
 |**Domaine**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le nom de domaine.|
 |**Lecteur**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un nom de lecteur.|
 |**Event**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un nom d’événement.|

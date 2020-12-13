@@ -1,12 +1,14 @@
 ---
-title: Mode liste (étiquettes) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: da45bd8dce7ac2149de6a34c11d5419d6cb4ddb0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue de liste (Étiquettes)
+description: Vue de liste (Étiquettes)
+ms.openlocfilehash: 2d341ae95d025e0f95b5d88b96afb846b62b092f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773383"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666686"
 ---
 # <a name="list-view-labels"></a>Vue de liste (Étiquettes)
 

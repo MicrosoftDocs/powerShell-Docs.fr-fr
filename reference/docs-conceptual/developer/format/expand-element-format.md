@@ -1,12 +1,14 @@
 ---
-title: Expand, élément (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: deee832254bb8a774ee2c1f5bd451d3ced1bd47a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Expand, élément (Format)
+description: Expand, élément (Format)
+ms.openlocfilehash: 518e132e3e74b921d4e51966fc60088a22ef63f1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783651"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667944"
 ---
 # <a name="expand-element-format"></a>Expand, élément (Format)
 
@@ -50,7 +52,7 @@ Spécifiez l'une des valeurs suivantes :
 
 ## <a name="remarks"></a>Notes
 
-Cet élément est utilisé pour définir le mode d’affichage des objets de collection et des objets de la collection. Dans ce cas, un objet de collection fait référence à tout objet qui prend en charge l’interface **System. Collections. ICollection** .
+Cet élément est utilisé pour définir le mode d’affichage des objets de collection et des objets de la collection. Dans ce cas, un objet de collection fait référence à tout objet qui prend en charge l’interface  **System. Collections. ICollection** .
 
 Le comportement par défaut consiste à afficher uniquement les propriétés des objets dans la collection.
 

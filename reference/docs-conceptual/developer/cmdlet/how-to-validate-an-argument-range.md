@@ -1,14 +1,14 @@
 ---
-title: Comment valider une plage d’arguments | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateRange attribute, example
-ms.openlocfilehash: b48b1b87425add51e855c48ec700c78c3ae296c1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour valider une plage d’argument
+description: Guide pratique pour valider une plage d’argument
+ms.openlocfilehash: 1c1c53d43350a38beb2193200de3bd6b689366a4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782070"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666924"
 ---
 # <a name="how-to-validate-an-argument-range"></a>Guide pratique pour valider une plage d’argument
 

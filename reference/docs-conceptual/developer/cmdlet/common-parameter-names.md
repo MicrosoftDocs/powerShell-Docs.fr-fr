@@ -1,12 +1,14 @@
 ---
-title: Noms de paramètres communs | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Noms de paramètres courants
+description: Noms de paramètres courants
+ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782223"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668216"
 ---
 # <a name="common-parameter-names"></a>Noms de paramètres courants
 
@@ -67,7 +69,7 @@ Type de données : Chaîne
 
 Ce paramètre spécifie la variable dans laquelle les messages d’avertissement peuvent être enregistrés. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
 
-## <a name="risk-mitigation-parameters"></a>Paramètres d’atténuation des risques
+## <a name="risk-mitigation-parameters"></a>Paramètres Risk-Mitigation
 
 Les paramètres suivants sont ajoutés aux applets de commande qui demandent une confirmation avant d’exécuter leur action. Pour plus d’informations sur les demandes de confirmation, consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md). Ces paramètres sont définis par la classe [System. Management. Automation. Internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
 

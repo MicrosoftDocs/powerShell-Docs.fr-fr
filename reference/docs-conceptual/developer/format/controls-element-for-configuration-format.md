@@ -1,12 +1,14 @@
 ---
-title: Controls, élément de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 44b9db0d3523e5e9086da9911882b258a2a54ca6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Controls, élément pour Configuration (Format)
+description: Controls, élément pour Configuration (Format)
+ms.openlocfilehash: 53f874ddccf3b4f1f0a23aad608e786524bde830
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783787"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668097"
 ---
 # <a name="controls-element-for-configuration-format"></a>Controls, élément pour Configuration (Format)
 

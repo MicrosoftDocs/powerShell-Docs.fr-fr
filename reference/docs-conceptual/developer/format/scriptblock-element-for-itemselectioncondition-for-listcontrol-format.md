@@ -1,12 +1,14 @@
 ---
-title: Élément ScriptBlock pour ItemSelectionCondition pour ListControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 38dc952bfadd6aed24bae8cbef05adcd22e61dd4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock, élément pour ItemSelectionCondition pour ListControl (Format)
+description: ScriptBlock, élément pour ItemSelectionCondition pour ListControl (Format)
+ms.openlocfilehash: 1e518f898e0e1e62ca64f9897b1323cc6dd89ae9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787629"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665064"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>ScriptBlock, élément pour ItemSelectionCondition pour ListControl (Format)
 

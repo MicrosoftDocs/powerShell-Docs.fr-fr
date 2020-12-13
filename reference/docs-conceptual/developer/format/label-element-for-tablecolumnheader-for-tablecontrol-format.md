@@ -1,12 +1,14 @@
 ---
-title: Élément label pour TableColumnHeader pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Label, élément pour TableColumnHeader pour TableControl (Format)
+description: Label, élément pour TableColumnHeader pour TableControl (Format)
+ms.openlocfilehash: fe4c209903c04e683b44e2bdcbf381adb6874ace
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785742"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667791"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>Label, élément pour TableColumnHeader pour TableControl (Format)
 

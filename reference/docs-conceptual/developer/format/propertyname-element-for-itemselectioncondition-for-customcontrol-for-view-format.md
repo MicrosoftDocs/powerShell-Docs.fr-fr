@@ -1,12 +1,14 @@
 ---
-title: PropertyName, élément de ItemSelectionCondition pour CustomControl pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0131fa86be4be4daec1d9d24b50397fb8529f050
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
+description: PropertyName, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
+ms.openlocfilehash: 5687bb781ce2db27b875f829147ee8b436f04adc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785572"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666125"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format"></a>PropertyName, élément pour ItemSelectionCondition pour CustomControl pour View (Format)
 

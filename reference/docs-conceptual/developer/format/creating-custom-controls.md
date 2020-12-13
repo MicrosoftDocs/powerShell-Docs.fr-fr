@@ -1,12 +1,14 @@
 ---
-title: Création de contrôles personnalisés | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création de contrôles personnalisés
+description: Création de contrôles personnalisés
+ms.openlocfilehash: 78d8cc2970b2b3e493bef25d78404ba1be195bb1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786116"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668046"
 ---
 # <a name="creating-custom-controls"></a>Création de contrôles personnalisés
 

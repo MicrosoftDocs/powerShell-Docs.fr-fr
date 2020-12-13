@@ -1,12 +1,14 @@
 ---
-title: Élément EntrySelectedBy pour CustomEntry pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9467c8c2d80e46c0a47c31569efbddbabe25bb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EntrySelectedBy, élément pour CustomEntry pour Controls pour Configuration (Format)
+description: EntrySelectedBy, élément pour CustomEntry pour Controls pour Configuration (Format)
+ms.openlocfilehash: fadcdb69ac71269ba2f2f80baf139bb363d4acba
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774267"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666669"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>EntrySelectedBy, élément pour CustomEntry pour Controls pour Configuration (Format)
 

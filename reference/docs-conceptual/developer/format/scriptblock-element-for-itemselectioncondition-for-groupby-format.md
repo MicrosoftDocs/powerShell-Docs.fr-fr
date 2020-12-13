@@ -1,12 +1,14 @@
 ---
-title: Élément ScriptBlock pour ItemSelectionCondition pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7738b180f328c7360275058cdb9dea01df6ea285
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock, élément pour ItemSelectionCondition pour GroupBy (Format)
+description: ScriptBlock, élément pour ItemSelectionCondition pour GroupBy (Format)
+ms.openlocfilehash: fe366fa31b93e8d69409cc49c3fe2c350d4d06d9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787646"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665095"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-groupby-format"></a>ScriptBlock, élément pour ItemSelectionCondition pour GroupBy (Format)
 

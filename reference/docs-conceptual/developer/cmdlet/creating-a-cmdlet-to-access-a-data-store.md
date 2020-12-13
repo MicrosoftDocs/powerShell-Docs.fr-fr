@@ -1,18 +1,20 @@
 ---
-title: Création d’une applet de commande pour accéder à un magasin de données
 ms.date: 09/13/2016
-ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’une applet de commande pour accéder à un magasin de données
+description: Création d’une applet de commande pour accéder à un magasin de données
+ms.openlocfilehash: d6ae4779a96b0789f11952a1d66bb96a394c3211
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782138"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668182"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Création d’une applet de commande pour accéder à un magasin de données
 
 Cette section décrit comment créer une applet de commande qui accède aux données stockées au moyen d’un fournisseur Windows PowerShell. Ce type d’applet de commande utilise l’infrastructure du fournisseur Windows PowerShell du runtime Windows PowerShell et, par conséquent, la classe cmdlet doit dériver de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) .
 
-L’applet de commande SELECT-Str décrite ici peut rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiés explicitement par le biais du `Path` paramètre de l’applet de commande ou implicitement via le `Script` paramètre.
+L’applet de commande Select-Str décrite ici peut rechercher et sélectionner des chaînes dans un fichier ou un objet. Les modèles utilisés pour identifier la chaîne peuvent être spécifiés explicitement par le biais du `Path` paramètre de l’applet de commande ou implicitement via le `Script` paramètre.
 
 L’applet de commande est conçue pour utiliser n’importe quel fournisseur Windows PowerShell dérivé de [System. Management. Automation. Provider. Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). Par exemple, l’applet de commande peut spécifier le fournisseur FileSystem ou le fournisseur de variables fourni par Windows PowerShell. Pour plus d’informations sur les fournisseurs aboutWindows PowerShell, consultez [conception de votre fournisseur Windows PowerShell](../prog-guide/designing-your-windows-powershell-provider.md).
 
@@ -22,7 +24,7 @@ La première étape de la création des applets de commande consiste toujours à
 
 La classe .NET pour cette applet de commande doit dériver de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) , car elle fournit la prise en charge requise par le runtime Windows PowerShell pour exposer l’infrastructure du fournisseur Windows PowerShell. Notez que cette applet de commande utilise également les classes d’expressions régulières .NET Framework, telles que [System. Text. RegularExpressions. Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
-Le code suivant est la définition de classe pour cette applet de commande SELECT-Str.
+Le code suivant est la définition de classe pour cette applet de commande Select-Str.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
@@ -170,7 +172,7 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>Déclarer des jeux de paramètres
 
-Cette applet de commande utilise deux jeux `ScriptParameterSet` de paramètres (et `PatternParameterSet` , qui est la valeur par défaut) comme noms de deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet`est le jeu de paramètres par défaut et est utilisé lorsque le `Pattern` paramètre est spécifié. `ScriptParameterSet`est utilisé lorsque l’utilisateur spécifie un autre mécanisme de recherche par le biais du `Script` paramètre. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
+Cette applet de commande utilise deux jeux `ScriptParameterSet` de paramètres (et `PatternParameterSet` , qui est la valeur par défaut) comme noms de deux jeux de paramètres utilisés dans l’accès aux données. `PatternParameterSet` est le jeu de paramètres par défaut et est utilisé lorsque le `Pattern` paramètre est spécifié. `ScriptParameterSet` est utilisé lorsque l’utilisateur spécifie un autre mécanisme de recherche par le biais du `Script` paramètre. Pour plus d’informations sur les jeux de paramètres, consultez [Ajout de jeux de paramètres à une applet](./adding-parameter-sets-to-a-cmdlet.md)de commande.
 
 ## <a name="overriding-input-processing-methods"></a>Substitution des méthodes de traitement d’entrée
 
@@ -368,11 +370,11 @@ protected override void ProcessRecord()
 
 Votre applet de commande doit ouvrir le fournisseur indiqué par le chemin d’accès Windows PowerShell afin qu’il puisse accéder aux données. L’objet [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) pour l’instance d’exécution est utilisé pour l’accès au fournisseur, tandis que la propriété [System. Management. Automation. PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) de l’applet de commande est utilisée pour ouvrir le fournisseur. L’accès au contenu est fourni par la récupération de l’objet [System. Management. Automation. Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) pour le fournisseur ouvert.
 
-Cet exemple d’applet de commande SELECT-Str utilise la propriété [System. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) pour exposer le contenu à analyser. Il peut ensuite appeler la méthode [System. Management. Automation. Contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) , en transmettant le chemin d’accès Windows PowerShell requis.
+Cet exemple d’applet de commande Select-Str utilise la propriété [System. Management. Automation. Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) pour exposer le contenu à analyser. Il peut ensuite appeler la méthode [System. Management. Automation. Contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) , en transmettant le chemin d’accès Windows PowerShell requis.
 
 ## <a name="code-sample"></a>Exemple de code
 
-Le code suivant illustre l’implémentation de cette version de l’applet de commande SELECT-Str. Notez que ce code comprend la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell utilisé pour inscrire l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [génération de l’applet](#defining-the-cmdlet-class)de commande.
+Le code suivant illustre l’implémentation de cette version de cette Select-Str applet de commande. Notez que ce code comprend la classe d’applet de commande, les méthodes privées utilisées par l’applet de commande et le code de composant logiciel enfichable Windows PowerShell utilisé pour inscrire l’applet de commande. Pour plus d’informations sur l’inscription de l’applet de commande, consultez [génération de l’applet](#defining-the-cmdlet-class)de commande.
 
 ```csharp
 //
@@ -1087,7 +1089,7 @@ Après l’implémentation d’une applet de commande, vous devez l’inscrire a
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. La procédure suivante peut être utilisée pour tester l’exemple d’applet de commande SELECT-Str.
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. La procédure suivante peut être utilisée pour tester l’exemple d’applet de commande Select-Str.
 
 1. Démarrez Windows PowerShell et recherchez dans le fichier Notes des occurrences de lignes avec l’expression « .NET ». Notez que les guillemets autour du nom du chemin d’accès sont requis uniquement si le chemin d’accès comprend plusieurs mots.
 

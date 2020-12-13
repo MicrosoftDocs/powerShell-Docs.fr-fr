@@ -1,12 +1,14 @@
 ---
-title: Élément EnumerateCollection pour ExpressionBinding pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72c4528b79569f5065ea87696d1a08e501219ede
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerateCollection, élément pour ExpressionBinding pour Controls pour View (Format)
+description: EnumerateCollection, élément pour ExpressionBinding pour Controls pour View (Format)
+ms.openlocfilehash: c7b15ee701252b310f79d272452f6ffd1c62d268
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773944"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667995"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-view-format"></a>EnumerateCollection, élément pour ExpressionBinding pour Controls pour View (Format)
 

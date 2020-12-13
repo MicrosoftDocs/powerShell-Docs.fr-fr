@@ -1,12 +1,14 @@
 ---
-title: RightIndent, élément de frame pour CustomControl pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6c35215673d118da68274ec91c8294e90879372f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RightIndent, élément pour Frame pour CustomControl pour View (Format)
+description: RightIndent, élément pour Frame pour CustomControl pour View (Format)
+ms.openlocfilehash: 7be87d05dab6de23fc9f66b76655cc4996114818
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780387"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665479"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>RightIndent, élément pour Frame pour CustomControl pour View (Format)
 

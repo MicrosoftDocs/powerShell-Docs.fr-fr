@@ -1,12 +1,14 @@
 ---
-title: PropertyName, élément de SelectionCondition pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7730951a840fcfcd8bf819fff5182049bd6b6c23
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName, élément pour SelectionCondition pour Controls pour Configuration (Format)
+description: PropertyName, élément pour SelectionCondition pour Controls pour Configuration (Format)
+ms.openlocfilehash: 5e4368a9546307c5ff223ae42ecaa1d2872bc587
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773128"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665955"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-configuration-format"></a>PropertyName, élément pour SelectionCondition pour Controls pour Configuration (Format)
 

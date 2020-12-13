@@ -1,12 +1,14 @@
 ---
-title: Comment appeler une applet de commande à partir d’une applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour appeler une applet de commande à partir d’une applet de commande
+description: Guide pratique pour appeler une applet de commande à partir d’une applet de commande
+ms.openlocfilehash: d137ac895f66000329de76a2c16a74b02c0e82ca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784144"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667043"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Guide pratique pour appeler une applet de commande à partir d’une applet de commande
 

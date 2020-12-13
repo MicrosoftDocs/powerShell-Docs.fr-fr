@@ -1,18 +1,20 @@
 ---
-title: Exemples d’aide basée sur les commentaires
 ms.date: 09/12/2016
-ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemples d’aide basée sur les commentaires
+description: Exemples d’aide basée sur les commentaires
+ms.openlocfilehash: 35fe9103a261483c56af629f620dbd6b3c642e68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772295"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667638"
 ---
 # <a name="examples-of-comment-based-help"></a>Exemples d’aide basée sur les commentaires
 
 Cette rubrique contient des exemples qui montrent comment utiliser l’aide basée sur des commentaires pour les scripts et les fonctions.
 
-## <a name="example-1-comment-based-help-for-a-function"></a>Exemple 1 : aide sur les commentaires pour une fonction
+## <a name="example-1-comment-based-help-for-a-function"></a>Exemple 1 : Comment-Based de l’aide pour une fonction
 
  L’exemple de fonction suivant comprend une aide basée sur des commentaires.
 
@@ -134,7 +136,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>Exemple 2 : aide sur les commentaires pour un script
+## <a name="example-2-comment-based-help-for-a-script"></a>Exemple 2 : Comment-Based de l’aide pour un script
 
 L’exemple de fonction suivant comprend une aide basée sur des commentaires.
 
@@ -275,7 +277,7 @@ function Add-Extension
     #>
 ```
 
-Les résultats sont les mêmes que ceux de l’exemple 1. `Get-Help`interprète les descriptions des paramètres comme s’ils étaient accompagnés du `.Parameter` mot clé.
+Les résultats sont les mêmes que ceux de l’exemple 1. `Get-Help` interprète les descriptions des paramètres comme s’ils étaient accompagnés du `.Parameter` mot clé.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Exemple 4 : redirection vers un fichier XML
 
@@ -304,7 +306,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Exemple 5 : redirection vers une autre rubrique d’aide
 
-Le code suivant est un extrait du début de la `Help` fonction intégrée dans PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande obtenir-Help décrit la fonction d’aide, la fonction d’aide utilise les `.ForwardHelpTargetName` `.ForwardHelpCategory` Mots clés et pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande « obtenir-Help ».
+Le code suivant est un extrait du début de la `Help` fonction intégrée dans PowerShell, qui affiche un écran de texte d’aide à la fois. Étant donné que la rubrique d’aide de l’applet de commande Get-Help décrit la fonction Help, la fonction Help utilise les `.ForwardHelpTargetName` `.ForwardHelpCategory` Mots clés et pour rediriger l’utilisateur vers la rubrique d’aide de l’applet de commande Get-Help.
 
 ```powershell
 function help

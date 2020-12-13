@@ -1,12 +1,14 @@
 ---
-title: Guide pratique pour tester l’aide actualisable
 ms.date: 09/12/2016
-ms.openlocfilehash: 0602349f853fddd0cadae545eaf0302c150e3a28
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Guide pratique pour tester l’aide actualisable
+description: Guide pratique pour tester l’aide actualisable
+ms.openlocfilehash: 47873089bfa1b918ea9970915e829a22aa7254c5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892963"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667621"
 ---
 # <a name="how-to-test-updatable-help"></a>Guide pratique pour tester l’aide actualisable
 
