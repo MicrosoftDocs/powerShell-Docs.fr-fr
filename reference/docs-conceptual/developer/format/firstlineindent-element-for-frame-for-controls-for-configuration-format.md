@@ -1,12 +1,14 @@
 ---
-title: Élément FirstLineIndent pour frame pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9ac1d8dc74af12b87f0b490d7c1f75d028e3521f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineIndent, élément pour Frame pour Controls pour Configuration (Format)
+description: FirstLineIndent, élément pour Frame pour Controls pour Configuration (Format)
+ms.openlocfilehash: 59a41410160879c2414819de4d367ecdedd8e182
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773587"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660153"
 ---
 # <a name="firstlineindent-element-for-frame-for-controls-for-configuration-format"></a>FirstLineIndent, élément pour Frame pour Controls pour Configuration (Format)
 

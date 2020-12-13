@@ -1,12 +1,14 @@
 ---
-title: Guide de démarrage rapide du fournisseur Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 048812d1a4765b2ff0069698615453f91ee95409
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Fournisseur Windows PowerShell - Démarrage rapide
+description: Fournisseur Windows PowerShell - Démarrage rapide
+ms.openlocfilehash: f0fe0ad60e9d10efd505cda60af995c597226b92
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783124"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664338"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Fournisseur Windows PowerShell - Démarrage rapide
 
@@ -30,7 +32,7 @@ Dans Visual Studio, créez un projet de bibliothèque de classes nommé AccessDB
 
 2. Cliquez sur **projet > propriétés AccessDBProviderSample > débogage**. Dans **Démarrer le projet**, cliquez sur **Démarrer le programme externe**, puis accédez à l’exécutable Windows PowerShell (généralement c:\Windows\system32\WindowsPowerShell\v1.0 \\.powershell.exe).
 
-3. Sous **options de démarrage**, entrez ce qui suit dans la zone **arguments de ligne de commande** :`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Sous **options de démarrage**, entrez ce qui suit dans la zone **arguments de ligne de commande** : `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>Déclaration de la classe de fournisseur
 

@@ -1,12 +1,14 @@
 ---
-title: Élément ScriptBlock pour SelectionCondition pour EntrySelectedBy pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a23d3515749393e9f5a2053634a44d1a817ebf38
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+description: ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+ms.openlocfilehash: a984bda6b8fba3a5cb9485576ffd847f0d366d3e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783447"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659896"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>ScriptBlock, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
 

@@ -1,12 +1,14 @@
 ---
-title: Modules et composants logiciels enfichables | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 07cdc55fd6d1462130f1a81deb30056623a525e6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Modules et composants logiciels enfichables
+description: Modules et composants logiciels enfichables
+ms.openlocfilehash: de4ff1de9a29b78d7783fe7ed0265f5516db1fb4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787306"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658677"
 ---
 # <a name="modules-and-snap-ins"></a>Modules et composants logiciels enfichables
 

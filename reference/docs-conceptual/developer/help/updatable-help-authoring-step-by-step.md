@@ -1,12 +1,14 @@
 ---
-title: Création d’une aide actualisable-étape par étape
 ms.date: 09/13/2016
-ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Création d’une aide actualisable-étape par étape
+description: Création d’une aide actualisable-étape par étape
+ms.openlocfilehash: c4aecdb801cac16c9cb07853317835fd87e6a0a8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893116"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658810"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Création d’une aide actualisable : procédure pas à pas
 

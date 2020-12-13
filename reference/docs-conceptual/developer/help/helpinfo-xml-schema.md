@@ -1,12 +1,14 @@
 ---
-title: Schéma XML HelpInfo
 ms.date: 09/12/2016
-ms.openlocfilehash: f94d053b8fc558d9efc13e6b9fbd597287970e38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.topic: reference
+title: Schéma XML HelpInfo
+description: Schéma XML HelpInfo
+ms.openlocfilehash: 157fd9c0f47c57efbaa9b7888fa174a34ad9567d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953248"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92662006"
 ---
 # <a name="helpinfo-xml-schema"></a>Schéma XML HelpInfo
 

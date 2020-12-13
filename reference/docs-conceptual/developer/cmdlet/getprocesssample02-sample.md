@@ -1,12 +1,14 @@
 ---
-title: Exemple GetProcessSample02 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fa10774508b70f4aab4546cf4d6fbe8978032f1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple GetProcessSample02
+description: Exemple GetProcessSample02
+ms.openlocfilehash: a0f43806b707359cb454817341f2c4972033c46a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784229"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660523"
 ---
 # <a name="getprocesssample02-sample"></a>Exemple GetProcessSample02
 
@@ -58,7 +60,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple illustre une implémentation de l’applet de commande « obtenir-proc » qui comprend un `Name` paramètre.
+Cet exemple illustre une implémentation de l’applet de commande Get-Proc qui comprend un `Name` paramètre.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

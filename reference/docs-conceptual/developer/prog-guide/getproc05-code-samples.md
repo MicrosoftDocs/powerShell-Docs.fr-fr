@@ -1,12 +1,14 @@
 ---
-title: Exemples de code GetProc05 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 66758028bc964912495d636af90947101dd37923
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemples de code GetProc05
+description: Exemples de code GetProc05
+ms.openlocfilehash: 1280048aeec35512f1e6061bdf58919d83a461cd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778727"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92661844"
 ---
 # <a name="getproc05-code-samples"></a>Exemples de code GetProc05
 

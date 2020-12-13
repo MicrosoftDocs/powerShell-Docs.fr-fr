@@ -1,12 +1,14 @@
 ---
-title: Création d’un fournisseur de navigation Windows PowerShell
 ms.date: 09/13/2016
-ms.openlocfilehash: 0c9714c396a023516cd1c409e598d61bb6cda3ce
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur de navigation Windows PowerShell
+description: Création d’un fournisseur de navigation Windows PowerShell
+ms.openlocfilehash: 73d4971fb91acaef9e1f20226e7b9b883730e394
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778984"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658660"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Création d’un fournisseur de navigation Windows PowerShell
 
@@ -43,7 +45,7 @@ Pour accéder aux éléments enfants, ou à leur nom, du magasin de données, ai
 
 ## <a name="creating-a-windows-powershell-path"></a>Création d’un chemin d’accès Windows PowerShell
 
-Le fournisseur de navigation Windows PowerShell utilise un chemin d’accès Windows PowerShell interne au fournisseur pour parcourir les éléments du magasin de données. Pour créer un chemin d’accès interne au fournisseur, le fournisseur doit implémenter la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) pour prendre en charge les appels à partir de l’applet de commande combine-Path. Cette méthode combine un chemin d’accès parent et enfant dans un chemin d’accès interne au fournisseur, à l’aide d’un séparateur de chemin d’accès spécifique au fournisseur entre les chemins d’accès parent et enfant.
+Le fournisseur de navigation Windows PowerShell utilise un chemin d’accès Windows PowerShell interne au fournisseur pour parcourir les éléments du magasin de données. Pour créer un chemin d’accès interne au fournisseur, le fournisseur doit implémenter la méthode [System. Management. Automation. Provider. Navigationcmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) pour prendre en charge les appels à partir de l’applet de commande Combine-Path. Cette méthode combine un chemin d’accès parent et enfant dans un chemin d’accès interne au fournisseur, à l’aide d’un séparateur de chemin d’accès spécifique au fournisseur entre les chemins d’accès parent et enfant.
 
 L’implémentation par défaut accepte les chemins d’accès avec « / » ou « \\ » comme séparateur de chemin d’accès, normalise le séparateur de chemin d’accès à « \\ », combine les parties de tracé parent et enfant avec le séparateur, puis retourne une chaîne qui contient les chemins d’accès combinés.
 

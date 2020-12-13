@@ -1,39 +1,39 @@
 ---
-title: Comment créer un interpréteur de commandes de console | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Make-Shell [PowerShell Programmer's Guide]
-ms.openlocfilehash: 5d8231363ab804bfd7113ef69f0bdede445149a2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour créer un shell de console
+description: Guide pratique pour créer un shell de console
+ms.openlocfilehash: 9ea67c43b1ee35b1fbfc553b22a1423419317ca2
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771615"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657218"
 ---
 # <a name="how-to-create-a-console-shell"></a>Guide pratique pour créer un shell de console
 
-Windows PowerShell fournit un outil make-shell, également appelé « make-Kit », qui est utilisé pour créer un interpréteur de commandes de console qui n’est pas extensible. Les coques créées avec ce nouvel outil ne peuvent pas être étendues ultérieurement via un composant logiciel enfichable Windows PowerShell.
+Windows PowerShell fournit un outil de Make-Shell, également appelé « make-Kit », qui est utilisé pour créer un interpréteur de commandes de console qui n’est pas extensible. Les coques créées avec ce nouvel outil ne peuvent pas être étendues ultérieurement via un composant logiciel enfichable Windows PowerShell.
 
 ## <a name="syntax"></a>Syntaxe
 
-Voici la syntaxe utilisée pour exécuter make-shell à partir d’un fichier make-file.
+Voici la syntaxe utilisée pour exécuter Make-Shell à partir d’un fichier make-file.
 
 ```
 make-shell
-  -out n.exe
-  -namespace ns
-  [ -lib libdirectory1[,libdirectory2,..] ]
-  [ -reference ca1.dll[,ca2.dll,...] ]
-  [ -formatdata fd1.format.ps1xml[,fd2.format.ps1xml,...] ]
-  [ -typedata td1.type.ps1xml[,td2.type.ps1xml,...] ]
-  [ -source c1.cs [,c2.cs,...] ]
-  [ -authorizationmanager authorizationManagerType ]
-  [ -win32icon i.ico ]
-  [ -initscript p.ps1 ]
-  [ -builtinscript s1.ps1[,s2.ps1,...] ]
-  [ -resource resourcefile.txt ]
-  [ -cscflags cscFlags ]
-  [ -? | -help ]
+  -out n.exe
+  -namespace ns
+  [ -lib libdirectory1[,libdirectory2,..] ]
+  [ -reference ca1.dll[,ca2.dll,...] ]
+  [ -formatdata fd1.format.ps1xml[,fd2.format.ps1xml,...] ]
+  [ -typedata td1.type.ps1xml[,td2.type.ps1xml,...] ]
+  [ -source c1.cs [,c2.cs,...] ]
+  [ -authorizationmanager authorizationManagerType ]
+  [ -win32icon i.ico ]
+  [ -initscript p.ps1 ]
+  [ -builtinscript s1.ps1[,s2.ps1,...] ]
+  [ -resource resourcefile.txt ]
+  [ -cscflags cscFlags ]
+  [ -? | -help ]
 ```
 
 ## <a name="parameters"></a>Paramètres
@@ -45,7 +45,7 @@ Voici une brève description des paramètres de make-shell.
 
 |Paramètre|Description|
 |---------------|-----------------|
-|-out n.exe|Obligatoire. Nom de l’interpréteur de commandes à produire. Le chemin d’accès est spécifié dans le cadre de ce paramètre.<br /><br /> Make-shell ajoute « . exe » à cette valeur, s’il n’est pas spécifié. **Attention :**  Ne créez pas de fichier de sortie portant le même nom que le fichier. dll référencé. Si vous tentez cette opération, l’outil make-shell crée un fichier. cs portant le même nom, ce qui remplace le fichier. cs qui contient le code source de l’applet de commande.|
+|-out n.exe|Obligatoire. Nom de l’interpréteur de commandes à produire. Le chemin d’accès est spécifié dans le cadre de ce paramètre.<br /><br /> Make-shell ajoute « . exe » à cette valeur, s’il n’est pas spécifié. **Attention :**  Ne créez pas de fichier de sortie portant le même nom que le fichier. dll référencé. Si vous tentez cette opération, l’outil Make-Shell crée un fichier. cs portant le même nom, ce qui remplacera le fichier. cs qui contient le code source de votre applet de commande.|
 |-namespace NS|Obligatoire. Espace de noms à utiliser pour la classe [System. Management. Automation. instances d’exécution. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) dérivée que make-Kit génère et compile.|
 |-lib libdirectory1 [, libdirectory2,..]|Les répertoires dans lesquels sont recherchés les assemblys .NET, y compris les assemblys Windows PowerShell, les assemblys spécifiés par le `reference` paramètre, les assemblys indirectement référencés par un autre assembly et les assemblys système .net.|
 |-Reference ca1.dll [, ca2.dll,...]|Liste séparée par des virgules des assemblys à inclure dans l’interpréteur de commandes. Ces assemblys incluent tous les assemblys d’applet de commande et de fournisseur, ainsi que les assemblys de ressource qui doivent être chargés. Si ce paramètre n’est pas spécifié, un interpréteur de commandes qui contient uniquement les applets de commande et les fournisseurs de base fournis par Windows PowerShell est généré.<br /><br /> Les assemblys peuvent être spécifiés à l’aide de leur chemin d’accès complet. dans le cas contraire, ils seront recherchés à l’aide du chemin d’accès spécifié par le `lib` paramètre.|
@@ -58,7 +58,7 @@ Voici une brève description des paramètres de make-shell.
 |-builtinscript s1.ps1 [, s2.ps1,...]|Liste de scripts intégrés pour l’interpréteur de commandes. Ces scripts sont découverts avant les scripts dans le chemin d’accès et leur contenu ne peut pas être modifié une fois l’interpréteur de commandes généré.<br /><br /> Les fichiers sont inclus « en l’absence »; aucune vérification de validité n’est effectuée par make-shell.|
 |-ressource resourcefile.txt|Fichier. txt contenant les ressources d’aide et de bannière pour l’interpréteur de commandes. La première ressource est nommée ShellHelp et contient le texte affiché si l’interpréteur de commandes est appelé avec le `help` paramètre. La deuxième ressource est nommée ShellBanner et contient le texte et les informations de copyright affichés lorsque l’interpréteur de commandes est lancé en mode interactif.<br /><br /> Si ce paramètre n’est pas fourni, ou si ces ressources ne sont pas présentes, une aide et une bannière génériques sont utilisées.|
 |-cscflags cscFlags|Indicateurs qui doivent être passés au compilateur C# (csc.exe). Celles-ci sont transmises sans modification. Si ce paramètre comprend des espaces, il doit être placé entre guillemets doubles.|
-|-?<br /><br /> -help|Affiche les options de ligne de commande message de copyright et make-shell.|
+|-?<br /><br /> -help|Affiche le message de copyright et les options de ligne de commande Make-Shell.|
 |-verbose|Affiche des informations détaillées pendant la création de l’interpréteur de commandes.|
 
 ## <a name="see-also"></a>Voir aussi

@@ -1,12 +1,14 @@
 ---
-title: Inscription des applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 75853a818b119fbd3335e2fe3889f8ab006cc355
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Inscription des applets de commande
+description: Inscription des applets de commande
+ms.openlocfilehash: 4b48aae4bdd358ec39f482f4a1bd29ed0295cbde
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779248"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664529"
 ---
 # <a name="registering-cmdlets"></a>Inscription des applets de commande
 

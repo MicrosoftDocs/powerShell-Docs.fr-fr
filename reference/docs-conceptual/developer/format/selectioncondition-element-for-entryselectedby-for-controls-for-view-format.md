@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionCondition pour EntrySelectedBy pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1c14b2638249bdbfe25f7a96e917d66ea10ed239
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionCondition, élément pour EntrySelectedBy pour Controls pour View (Format)
+description: SelectionCondition, élément pour EntrySelectedBy pour Controls pour View (Format)
+ms.openlocfilehash: 16b048e73195b3d6168724714ff223851dc1b20b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787578"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664850"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>SelectionCondition, élément pour EntrySelectedBy pour Controls pour View (Format)
 

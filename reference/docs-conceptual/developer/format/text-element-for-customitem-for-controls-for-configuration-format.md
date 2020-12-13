@@ -1,12 +1,14 @@
 ---
-title: Élément Text pour CustomItem pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Text, élément pour CustomItem pour Controls pour Configuration (Format)
+description: Text, élément pour CustomItem pour Controls pour Configuration (Format)
+ms.openlocfilehash: 9ea70ade8e86d8278ee95bd4d93dfa5ba9d8160b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787391"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664712"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>Text, élément pour CustomItem pour Controls pour Configuration (Format)
 

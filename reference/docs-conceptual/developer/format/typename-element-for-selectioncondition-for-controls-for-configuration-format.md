@@ -1,12 +1,14 @@
 ---
-title: Élément TypeName pour SelectionCondition pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2db856d1b84dded315204d8c8574ae86acb63515
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName, élément pour SelectionCondition pour Controls pour Configuration (Format)
+description: TypeName, élément pour SelectionCondition pour Controls pour Configuration (Format)
+ms.openlocfilehash: fddb8ddbac7c9292a05cadfa31f98db6439a557d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780064"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659675"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-configuration-format"></a>TypeName, élément pour SelectionCondition pour Controls pour Configuration (Format)
 

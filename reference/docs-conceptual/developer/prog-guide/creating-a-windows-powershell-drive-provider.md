@@ -1,16 +1,14 @@
 ---
-title: Création d’un fournisseur de lecteurs Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- drive providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], drive provider
-- drives [PowerShell Programmer's Guide]
-ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur de lecteur Windows PowerShell
+description: Création d’un fournisseur de lecteur Windows PowerShell
+ms.openlocfilehash: 639518fce27d941b7529b091364c5905c91a5c0c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787187"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92663025"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Création d’un fournisseur de lecteur Windows PowerShell
 
@@ -99,7 +97,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
 
 1. Exécutez l' `Get-PSProvider` applet de commande pour récupérer la liste des fournisseurs afin de vérifier que le fournisseur de lecteurs AccessDB est présent :
 
-   **> PS`Get-PSProvider`**
+   **> PS `Get-PSProvider`**
 
    Vous obtenez la sortie suivante :
 
@@ -130,7 +128,7 @@ Lorsque votre fournisseur Windows PowerShell a été inscrit auprès de Windows 
    mydb     AccessDB     c:\ps\northwind.mdb
    ```
 
-4. Validez la connexion. Étant donné que la connexion est définie en tant que membre du lecteur, vous pouvez la vérifier à l’aide de l’applet de commande PDDrive.
+4. Validez la connexion. Étant donné que la connexion est définie en tant que membre du lecteur, vous pouvez la vérifier à l’aide de l’applet de commande Get-PDDrive.
 
    > [!NOTE]
    > L’utilisateur ne peut pas encore interagir avec le fournisseur en tant que lecteur, car le fournisseur a besoin de la fonctionnalité de conteneur pour cette interaction. Pour plus d’informations, consultez [création d’un fournisseur de conteneurs Windows PowerShell](./creating-a-windows-powershell-container-provider.md).

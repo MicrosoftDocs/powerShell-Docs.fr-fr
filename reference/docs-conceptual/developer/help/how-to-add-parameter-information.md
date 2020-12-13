@@ -1,12 +1,14 @@
 ---
-title: Guide pratique pour ajouter des informations sur les paramètres
 ms.date: 09/12/2016
-ms.openlocfilehash: 15d0194a1d5449c65977703faf245e449d75d176
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Guide pratique pour ajouter des informations sur les paramètres
+description: Guide pratique pour ajouter des informations sur les paramètres
+ms.openlocfilehash: 8f4fc46ef256a77b058df4ba506124f80732cb39
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893388"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92663046"
 ---
 # <a name="how-to-add-parameter-information"></a>Guide pratique pour ajouter des informations sur les paramètres
 
@@ -165,7 +167,7 @@ Voici quelques points à retenir lors de l’ajout de paramètres.
 
 La valeur par défaut du paramètre est la valeur utilisée si le paramètre n’est pas spécifié sur la ligne de commande. Notez que la valeur par défaut est facultative et n’est pas nécessaire pour certains paramètres, tels que les paramètres requis. Toutefois, vous devez spécifier une valeur par défaut pour la plupart des paramètres facultatifs.
 
-La valeur par défaut permet à l’utilisateur de comprendre l’effet de ne pas utiliser le paramètre. Décrivez la valeur par défaut de manière très spécifique, par exemple le « répertoire actif » ou le « répertoire d’installation PowerShell ( `$PSHOME` ) » pour un chemin d’accès facultatif. Vous pouvez également écrire une phrase qui décrit la valeur par défaut, telle que la phrase suivante utilisée pour le paramètre **PassThru** : « si PassThru n’est pas spécifié, l’applet de commande ne passe pas d’objets dans le pipeline ». En outre, étant donné que la valeur est affichée en regard de la **valeur par défaut**du nom de champ, vous n’avez pas besoin d’inclure le terme « valeur par défaut » dans l’entrée.
+La valeur par défaut permet à l’utilisateur de comprendre l’effet de ne pas utiliser le paramètre. Décrivez la valeur par défaut de manière très spécifique, par exemple le « répertoire actif » ou le « répertoire d’installation PowerShell ( `$PSHOME` ) » pour un chemin d’accès facultatif. Vous pouvez également écrire une phrase qui décrit la valeur par défaut, telle que la phrase suivante utilisée pour le paramètre **PassThru** : « si PassThru n’est pas spécifié, l’applet de commande ne passe pas d’objets dans le pipeline ». En outre, étant donné que la valeur est affichée en regard de la **valeur par défaut** du nom de champ, vous n’avez pas besoin d’inclure le terme « valeur par défaut » dans l’entrée.
 
 La valeur par défaut du paramètre n’est pas affichée dans toutes les vues de la rubrique d’aide de l’applet de commande. Toutefois, il est affiché dans une table (avec les attributs de paramètre) qui suit la description du paramètre lorsque l’utilisateur demande la vue **complète** ( `Get-Help <cmdletname> -full` ) ou de **paramètre** ( `Get-Help
 <cmdletname> -parameter` ) de la rubrique.

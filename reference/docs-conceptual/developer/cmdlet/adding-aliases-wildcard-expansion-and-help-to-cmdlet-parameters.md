@@ -1,24 +1,26 @@
 ---
-title: Ajout d’alias, extension de caractère générique et aide aux paramètres d’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 244c50c73972c2760e0029c7fa4f4b5764b066da
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
+description: Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
+ms.openlocfilehash: f0f07796370b4613b1ca0ad17b16c6598bfa438d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774964"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660629"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Ajout d’alias, d’une extension de caractère générique et d’une aide aux paramètres des applets de commande
 
-Cette section décrit comment ajouter des alias, une extension de caractères génériques et des messages d’aide aux paramètres de l’applet de commande Stop-proc (décrit dans [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)).
+Cette section décrit comment ajouter des alias, une extension de caractères génériques et des messages d’aide aux paramètres de l’applet de commande Stop-Proc (décrit dans [création d’une applet de commande qui modifie le système](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-Cette applet de commande Stop-proc tente d’arrêter les processus qui sont récupérés à l’aide de l’applet de commande « obtient-proc » (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande).
+Cette applet de commande Stop-Proc tente d’arrêter les processus qui sont récupérés à l’aide de l’applet de commande Get-Proc (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande).
 
 ## <a name="defining-the-cmdlet"></a>Définition de l’applet de commande
 
 La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Étant donné que vous écrivez une applet de commande pour modifier le système, elle doit être nommée en conséquence. Étant donné que cette applet de commande arrête les processus système, elle utilise le verbe « Stop », défini par la classe [System. Management. Automation. Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) , avec le nom « proc » pour indiquer le processus. Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-Le code suivant est la définition de classe pour cette applet de commande Stop-proc.
+Le code suivant est la définition de classe pour cette applet de commande Stop-Proc.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -63,7 +65,7 @@ Outre l’utilisation de l’attribut [System. Management. Automation. AliasAttr
 
 Windows PowerShell vous permet de créer de l’aide pour les paramètres de l’applet de commande. Procédez ainsi pour tous les paramètres utilisés pour la modification du système et les commentaires des utilisateurs. Pour chaque paramètre permettant de prendre en charge l’aide, vous pouvez définir le `HelpMessage` mot clé attribute dans la déclaration d’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Ce mot clé définit le texte à afficher à l’utilisateur pour obtenir de l’aide sur l’utilisation du paramètre. Vous pouvez également définir le `HelpMessageBaseName` mot clé pour identifier le nom de base d’une ressource à utiliser pour le message. Si vous définissez ce mot clé, vous devez également définir le `HelpMessageResourceId` mot clé pour spécifier l’identificateur de ressource.
 
-Le code suivant de cette applet de commande Stop-proc définit le `HelpMessage` mot clé Attribute pour le `Name` paramètre.
+Le code suivant de cette applet de commande Stop-Proc définit le `HelpMessage` mot clé d’attribut pour le `Name` paramètre.
 
 ```csharp
 /// <summary>
@@ -135,9 +137,9 @@ Après l’implémentation d’une applet de commande, celle-ci doit être inscr
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple d’applet de commande Stop-proc. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple d’applet de commande Stop-Proc. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Démarrez Windows PowerShell et utilisez Stop-proc pour arrêter un processus à l’aide de l’alias ProcessName pour le `Name` paramètre.
+- Démarrez Windows PowerShell et utilisez Stop-Proc pour arrêter un processus à l’aide de l’alias ProcessName pour le `Name` paramètre.
 
     ```powershell
     PS> stop-proc -ProcessName notepad

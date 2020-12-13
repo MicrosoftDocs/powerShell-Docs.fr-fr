@@ -1,12 +1,14 @@
 ---
-title: Définition des conditions d’affichage des données | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 13de078e681708b02e378b2c7d531032b2ffdc05
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Définition de conditions pour l’affichage de données
+description: Définition de conditions pour l’affichage de données
+ms.openlocfilehash: 9a8b7a618da8c64de978c13b527435a2d7793677
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774335"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660311"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>Définition de conditions pour l’affichage de données
 

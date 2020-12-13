@@ -1,14 +1,14 @@
 ---
-title: Écriture d’un composant logiciel enfichable Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], PSSnapin example
-ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Écriture d’un composant logiciel enfichable Windows PowerShell
+description: Écriture d’un composant logiciel enfichable Windows PowerShell
+ms.openlocfilehash: f658c2fa1211bfb77d2e8edd3999ce7f92df13bb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779093"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659445"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell
 
@@ -24,7 +24,7 @@ Avec ce type de composant logiciel enfichable, vous ne sélectionnez pas les app
 
     Dans cet exemple, le nom de la classe est « GetProcPSSnapIn01 ».
 
-3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : `#` ,,,, `.` `,` `(` `)` , `{` , `}` , `[` , `]` , `&` , `-` , `/` , `\` , `$` , `;` , `:` ,,,,,,,,,,,,,,, `"` , `'` ,,, `<` `>` `|` , `?` , `@` , `` ` `` ,`*`
+3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : `#` ,,,, `.` `,` `(` `)` , `{` , `}` , `[` , `]` , `&` , `-` , `/` , `\` , `$` , `;` , `:` ,,,,,,,,,,,,,,, `"` , `'` ,,, `<` `>` `|` , `?` , `@` , `` ` `` , `*`
 
     Dans cet exemple, le nom du composant logiciel enfichable est « GetProcPSSnapIn01 ».
 
@@ -46,7 +46,7 @@ Avec ce type de composant logiciel enfichable, vous ne sélectionnez pas les app
 
 ## <a name="example"></a>Exemple
 
-Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour inscrire l’applet de commande « obtenir-proc » dans le shell Windows PowerShell. Sachez que dans cet exemple, l’assembly complet contient uniquement la classe de composant logiciel enfichable GetProcPSSnapIn01 et la classe d’applet de commande `Get-Proc` .
+Cet exemple montre comment écrire un composant logiciel enfichable Windows PowerShell qui peut être utilisé pour inscrire l’applet de commande Get-Proc dans le shell Windows PowerShell. Sachez que dans cet exemple, l’assembly complet contient uniquement la classe de composant logiciel enfichable GetProcPSSnapIn01 et la classe d’applet de commande `Get-Proc` .
 
 ```csharp
 [RunInstaller(true)]
@@ -123,4 +123,4 @@ public class GetProcPSSnapIn01 : PSSnapIn
 
 [Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85))
 
-[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)
+[Kit SDK Windows PowerShell](../windows-powershell-reference.md)

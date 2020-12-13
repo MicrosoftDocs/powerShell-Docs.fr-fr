@@ -1,16 +1,14 @@
 ---
-title: Déclaration d’attribut ValidateRange | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateRange, described
-- ValidateRange attribute
-- attributes, ValidateRange
-ms.openlocfilehash: 9aeaa6f03c170389ff61a058b505dbcf74df6958
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de l’attribut ValidateRange
+description: Déclaration de l’attribut ValidateRange
+ms.openlocfilehash: 1fec9d1bd36cd21b7f0f23bf6d72338d276dce91
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787782"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660601"
 ---
 # <a name="validaterange-attribute-declaration"></a>Déclaration de l’attribut ValidateRange
 
@@ -24,9 +22,9 @@ L’attribut ValidateRange spécifie les valeurs minimales et maximales (la plag
 
 #### <a name="parameters"></a>Paramètres
 
-`MinRange`([System. Object](/dotnet/api/system.object)) requis. Spécifie la valeur minimale autorisée.
+`MinRange` ([System. Object](/dotnet/api/system.object)) requis. Spécifie la valeur minimale autorisée.
 
-`MaxRange`([System. Object](/dotnet/api/system.object)) requis. Spécifie la valeur maximale autorisée.
+`MaxRange` ([System. Object](/dotnet/api/system.object)) requis. Spécifie la valeur maximale autorisée.
 
 ## <a name="remarks"></a>Notes
 

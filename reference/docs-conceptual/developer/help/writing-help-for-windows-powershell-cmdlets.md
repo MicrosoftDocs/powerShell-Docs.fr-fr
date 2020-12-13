@@ -1,14 +1,16 @@
 ---
-title: Écriture de l’aide pour les applets de commande PowerShell
 ms.date: 09/13/2016
-ms.openlocfilehash: 4e1070e90cf3ed83c1d97a3b620e00f65d09989e
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Écriture d’une aide pour les applets de commande PowerShell
+description: Écriture d’une aide pour les applets de commande PowerShell
+ms.openlocfilehash: b1deaa5998dbc54add93764db785d57afcc0a779
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658108"
 ---
-# <a name="writing-help-for-powershell-cmdlets"></a>Écriture de l’aide pour les applets de commande PowerShell
+# <a name="writing-help-for-powershell-cmdlets"></a>Écriture d’une aide pour les applets de commande PowerShell
 
 Les applets de commande PowerShell peuvent être utiles, mais à moins que vos rubriques d’aide n’expliquent clairement ce que fait l’applet de commande et comment l’utiliser, l’applet de commande peut ne pas être utilisée ou, pire encore, elle risque de nuire aux utilisateurs. Le format de fichier d’aide sur les applets de commande XML améliore la cohérence, mais une grande partie de l’aide est nécessaire.
 
@@ -42,7 +44,7 @@ Répertoriez brièvement tout ce que l’applet de commande peut faire dans la d
 
 ### <a name="use-conventional-syntax"></a>Utiliser la syntaxe conventionnelle
 
-Utilisez le format Backus-Naur standard qui est courant pour l’aide de la ligne de commande Windows et UNIX.
+Utilisez le format de Backus-Naur standard qui est courant pour l’aide de la ligne de commande Windows et UNIX.
 
 ### <a name="use-microsoft-net-types-for-parameter-values"></a>Utiliser des types de Microsoft .NET pour les valeurs de paramètres
 

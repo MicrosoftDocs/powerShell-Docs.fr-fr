@@ -1,12 +1,14 @@
 ---
-title: Types de paramètres d’applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e704aae6e23568be9935e228752f652929863a98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Types de paramètres des applets de commande
+description: Types de paramètres des applets de commande
+ms.openlocfilehash: 8daaa3c778396e06a826de3b93e0610c51160fb4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786371"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660483"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Types de paramètres des applets de commande
 

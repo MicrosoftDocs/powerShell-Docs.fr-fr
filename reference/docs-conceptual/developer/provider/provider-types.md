@@ -1,12 +1,14 @@
 ---
-title: Types de fournisseurs | Microsoft Docs
 ms.date: 08/21/2019
-ms.openlocfilehash: 03b6b2d02d603632399ea455c2832742e0964d62
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Types de fournisseur
+description: Types de fournisseur
+ms.openlocfilehash: 9d3b458d7647a297fcda086db3540a0c15c576db
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778245"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92661753"
 ---
 # <a name="provider-types"></a>Types de fournisseur
 
@@ -112,7 +114,7 @@ L’interface **System. Management. Automation. Provider. IContentCmdletProvider
 ## <a name="property-enabled-providers"></a>Fournisseurs activés pour les propriétés
 
 Les fournisseurs activés pour les propriétés permettent à l’utilisateur de gérer les propriétés des éléments dans le magasin de données.
-Pour créer un fournisseur prenant en charge les propriétés, votre classe de fournisseur doit implémenter les méthodes des interfaces [System. Management. Automation. Provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) et [System. Management. Automation. Provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) . Dans la plupart des cas, pour prendre en charge une applet de commande de fournisseur, vous devez remplacer la méthode appelée par le moteur PowerShell pour appeler l’applet de commande, telle que la `ClearProperty` méthode pour l’applet de commande Clear-Property, et, si vous le souhaitez, vous pouvez remplacer une deuxième méthode, telle que `ClearPropertyDynamicParameters` , pour ajouter des paramètres dynamiques à l’applet de commande.
+Pour créer un fournisseur prenant en charge les propriétés, votre classe de fournisseur doit implémenter les méthodes des interfaces [System. Management. Automation. Provider. IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) et [System. Management. Automation. Provider. IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) . Dans la plupart des cas, pour prendre en charge une applet de commande de fournisseur, vous devez remplacer la méthode appelée par le moteur PowerShell pour appeler l’applet de commande, telle que la `ClearProperty` méthode pour l’applet de commande Clear-Property et, éventuellement, vous pouvez remplacer une deuxième méthode, telle que `ClearPropertyDynamicParameters` , pour ajouter des paramètres dynamiques à l’applet de commande.
 
 L’interface **System. Management. Automation. Provider. IPropertyCmdletProvider** définit les méthodes suivantes pour l’implémentation d’applets de commande de fournisseur spécifiques :
 

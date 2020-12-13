@@ -1,15 +1,14 @@
 ---
-title: Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], custom PSSnapin example
-- cmdlets [PowerShell SDK], specified in snap-ins
-ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé
+description: Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé
+ms.openlocfilehash: e79c0c3db583fa0add9287745e97958a71360592
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779214"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659532"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>Écriture d’un composant logiciel enfichable Windows PowerShell personnalisé
 
@@ -24,7 +23,7 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 
    Dans cet exemple, le nom de la classe est « CustomPSSnapinTest ».
 
-3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : `#` ,,,, `.` `,` `(` `)` , `{` , `}` , `[` , `]` , `&` , `-` , `/` , `\` , `$` , `;` , `:` ,,,,,,,,,,,,,,, `"` , `'` ,,, `<` `>` `|` , `?` , `@` , `` ` `` ,`*`
+3. Ajoutez une propriété publique pour le nom du composant logiciel enfichable (obligatoire). Quand vous nommez des composants logiciels enfichables, n’utilisez pas les caractères suivants : `#` ,,,, `.` `,` `(` `)` , `{` , `}` , `[` , `]` , `&` , `-` , `/` , `\` , `$` , `;` , `:` ,,,,,,,,,,,,,,, `"` , `'` ,,, `<` `>` `|` , `?` , `@` , `` ` `` , `*`
 
    Dans cet exemple, le nom du composant logiciel enfichable est « CustomPSSnapInTest ».
 
@@ -44,11 +43,11 @@ Avec ce type de composant logiciel enfichable, vous spécifiez les applets de co
 
    Dans cet exemple, la ressource Vendor est :
 
-   > CustomPSSnapInTest, il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande test-HelloWorld et test-CustomSnapinTest».
+   > CustomPSSnapInTest, il s’agit d’un composant logiciel enfichable Windows PowerShell personnalisé qui comprend les applets de commande Test-HelloWorld et Test-CustomSnapinTest».
 
 8. Spécifiez les applets de commande qui appartiennent au composant logiciel enfichable personnalisé (facultatif) à l’aide de la classe [System. Management. Automation. instances d’exécution. Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) . Les informations ajoutées ici incluent le nom de l’applet de commande, son type .NET et le nom du fichier d’aide de l’applet de commande (le format du nom du fichier d’aide de l’applet de commande doit être `name.dll-help.xml` ).
 
-   Cet exemple ajoute les applets de commande test-HelloWorld et TestCustomSnapinTest.
+   Cet exemple ajoute les applets de commande Test-HelloWorld et TestCustomSnapinTest.
 
 9. Spécifiez les fournisseurs qui appartiennent au composant logiciel enfichable personnalisé (facultatif).
 
@@ -213,4 +212,4 @@ Pour plus d’informations sur l’inscription des composants logiciels enfichab
 
 [Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions/ms714644(v=vs.85))
 
-[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)
+[Kit SDK Windows PowerShell](../windows-powershell-reference.md)

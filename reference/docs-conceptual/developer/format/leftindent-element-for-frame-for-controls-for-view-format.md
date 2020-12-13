@@ -1,12 +1,14 @@
 ---
-title: LeftIndent, élément de frame pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e190061152b25f1f63ba5d2d9a9970970b419e0d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: LeftIndent, élément pour Frame pour Controls pour View (Format)
+description: LeftIndent, élément pour Frame pour Controls pour View (Format)
+ms.openlocfilehash: 99ed1d93f276800eeaf17d722b13766de5aebde4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783600"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660129"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-view-format"></a>LeftIndent, élément pour Frame pour Controls pour View (Format)
 

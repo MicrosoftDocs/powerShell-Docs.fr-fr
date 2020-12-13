@@ -1,23 +1,25 @@
 ---
-title: Importation d’un module PowerShell | Microsoft Docs
 ms.date: 02/03/2020
-ms.openlocfilehash: 8cd1938d0a7b49b4a594753d8ce5ebe60625025d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Importation d’un module PowerShell
+description: Importation d’un module PowerShell
+ms.openlocfilehash: 688509c0943a9a0289e75b80543f278e16cfedfe
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784875"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658784"
 ---
 # <a name="importing-a-powershell-module"></a>Importation d’un module PowerShell
 
 Une fois que vous avez installé un module sur un système, vous souhaiterez probablement importer le module. L’importation est le processus qui charge le module dans la mémoire active, afin qu’un utilisateur puisse accéder à ce module dans sa session PowerShell. Dans PowerShell 2,0, vous pouvez importer un module PowerShell nouvellement installé à l’aide d’un appel à l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) . Dans PowerShell 3,0, PowerShell est en mesure d’importer implicitement un module lorsque l’une des fonctions ou applets de commande du module est appelée par un utilisateur. Notez que les deux versions supposent que vous installez votre module à un emplacement où PowerShell peut le trouver. Pour plus d’informations, consultez [installation d’un module PowerShell](./installing-a-powershell-module.md).
 Vous pouvez utiliser un manifeste de module pour limiter les parties de votre module qui sont exportées, et vous pouvez utiliser les paramètres de l' `Import-Module` appel pour limiter les parties qui sont importées.
 
-## <a name="importing-a-snap-in-powershell-10"></a>Importation d’un composant logiciel enfichable (PowerShell 1,0)
+## <a name="importing-a-snap-in-powershell-10"></a>Importation d’un Snap-In (PowerShell 1,0)
 
 Les modules n’existaient pas dans PowerShell 1,0 : vous deviez donc inscrire et utiliser les composants logiciels enfichables. Toutefois, il n’est pas recommandé d’utiliser cette technologie à ce stade, car les modules sont généralement plus faciles à installer et à importer. Pour plus d’informations, consultez [comment créer un composant logiciel enfichable Windows PowerShell](../cmdlet/how-to-create-a-windows-powershell-snap-in.md).
 
-## <a name="importing-a-module-with-import-module-powershell-20"></a>Importation d’un module avec import-module (PowerShell 2,0)
+## <a name="importing-a-module-with-import-module-powershell-20"></a>Importation d’un module avec Import-Module (PowerShell 2,0)
 
 PowerShell 2,0 utilise l’applet de commande [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) correctement nommée pour importer des modules. Lorsque cette applet de commande est exécutée, Windows PowerShell recherche le module spécifié dans les répertoires spécifiés dans la `PSModulePath` variable. Lorsque le répertoire spécifié est trouvé, Windows PowerShell recherche les fichiers dans l’ordre suivant : fichiers manifeste de module (. psd1), fichiers de module de script (. psm1), fichiers de module binaire (. dll). Pour plus d’informations sur l’ajout de répertoires à la recherche, consultez [modification du chemin d’installation de PSModulePath](./modifying-the-psmodulepath-installation-path.md).
 Le code suivant décrit comment importer un module :
@@ -66,7 +68,7 @@ Pour restreindre les membres qui sont importés, utilisez les paramètres suivan
 
 - **Fonction**: ce paramètre restreint les fonctions exportées. (Si vous utilisez un manifeste de module, consultez la clé FunctionsToExport.)
 
-- `**Applet**de commande : ce paramètre restreint les applets de commande exportées (si vous utilisez un manifeste de module, consultez la clé CmdletsToExport.)
+- `**Applet** de commande : ce paramètre restreint les applets de commande exportées (si vous utilisez un manifeste de module, consultez la clé CmdletsToExport.)
 
 - **Variable**: ce paramètre restreint les variables exportées (si vous utilisez un manifeste de module, consultez la clé VariablesToExport.)
 

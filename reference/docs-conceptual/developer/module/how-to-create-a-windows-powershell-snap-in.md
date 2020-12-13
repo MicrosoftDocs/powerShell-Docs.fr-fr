@@ -1,14 +1,14 @@
 ---
-title: Comment créer un composant logiciel enfichable Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], examples
-ms.openlocfilehash: 4150ba582544d1daa4a898f0ff20b169c24a0ee0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour créer un composant logiciel enfichable Windows PowerShell
+description: Guide pratique pour créer un composant logiciel enfichable Windows PowerShell
+ms.openlocfilehash: 29394ebcd2f7c4a547aabcb88685ff494b2c381d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787323"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657268"
 ---
 # <a name="how-to-create-a-windows-powershell-snap-in"></a>Guide pratique pour créer un composant logiciel enfichable Windows PowerShell
 
@@ -34,4 +34,4 @@ Toutes les classes de composant logiciel enfichable Windows PowerShell dérivent
 
 [Inscription des applets de commande](./registering-cmdlets.md)
 
-[Kit de développement logiciel Windows PowerShell Shell](../windows-powershell-reference.md)
+[Kit SDK Windows PowerShell](../windows-powershell-reference.md)

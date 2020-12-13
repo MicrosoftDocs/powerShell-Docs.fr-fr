@@ -1,16 +1,18 @@
 ---
-title: Exemple Runspace05 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d274028d2357a26cd75cf70a033abbf907f5c4d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple Runspace05
+description: Exemple Runspace05
+ms.openlocfilehash: 67a372eecba30452587471328412e8a2bdd9ec5a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772159"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657730"
 ---
 # <a name="runspace05-sample"></a>Exemple Runspace05
 
-Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour que l’applet de commande du composant logiciel enfichable soit disponible quand l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour que l’applet de commande du composant logiciel enfichable soit disponible quand l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Get-Proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
 ## <a name="requirements"></a>Spécifications
 
@@ -36,7 +38,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Cet exemple crée une instance d’exécution qui utilise un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour définir les éléments qui sont disponibles lorsque l’instance d’exécution est ouverte. Dans cet exemple, un composant logiciel enfichable qui définit une applet de commande obtenir-proc est ajouté à l’état de session initial.
+Cet exemple crée une instance d’exécution qui utilise un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour définir les éléments qui sont disponibles lorsque l’instance d’exécution est ouverte. Dans cet exemple, un composant logiciel enfichable qui définit une applet de commande Get-Proc est ajouté à l’état de session initial.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

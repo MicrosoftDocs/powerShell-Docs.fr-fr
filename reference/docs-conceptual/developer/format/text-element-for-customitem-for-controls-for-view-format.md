@@ -1,12 +1,14 @@
 ---
-title: Élément Text pour CustomItem pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e611800c0d1e22ac427e9915f18536c995131809
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Text, élément pour CustomItem pour Controls pour View (Format)
+description: Text, élément pour CustomItem pour Controls pour View (Format)
+ms.openlocfilehash: 2fa79353059aa6e63201c5d5ab1cfa1f20038145
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787357"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659782"
 ---
 # <a name="text-element-for-customitem-for-controls-for-view-format"></a>Text, élément pour CustomItem pour Controls pour View (Format)
 

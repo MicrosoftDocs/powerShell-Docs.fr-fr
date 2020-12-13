@@ -1,12 +1,14 @@
 ---
-title: Écriture de rubriques d’aide basée sur les commentaires
 ms.date: 09/13/2016
-ms.openlocfilehash: f29a30d27eba2b84883c4c2bd3cee68349c94e19
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Écriture de rubriques d’aide basée sur les commentaires
+description: Écriture de rubriques d’aide basée sur les commentaires
+ms.openlocfilehash: 11bbadfde27a74bde29d336b91516939e7265b3b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893099"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658803"
 ---
 # <a name="writing-comment-based-help-topics"></a>Écriture de rubriques d’aide basée sur les commentaires
 
@@ -18,10 +20,10 @@ Vous pouvez écrire des rubriques d’aide basées sur des commentaires pour les
 
 ## <a name="in-this-section"></a>Dans cette section
 
- [Syntaxe de l’aide basée sur les commentaires](./syntax-of-comment-based-help.md) Décrit la syntaxe de l’aide basée sur les commentaires.
+ [Syntaxe de l’aide de Comment-Based](./syntax-of-comment-based-help.md) Décrit la syntaxe de l’aide basée sur les commentaires.
 
  [Mots clés d’aide basés sur des commentaires](./comment-based-help-keywords.md) Répertorie les mots clés de l’aide basée sur les commentaires.
 
- [Placement de l’aide basée sur des commentaires dans les fonctions](./placing-comment-based-help-in-functions.md) Indique où placer l’aide basée sur des commentaires pour une fonction.
+ [Placement de Comment-Based aide dans les fonctions](./placing-comment-based-help-in-functions.md) Indique où placer l’aide basée sur des commentaires pour une fonction.
 
- [Placement de l’aide basée sur des commentaires dans les scripts](./placing-comment-based-help-in-scripts.md) Indique où placer l’aide basée sur des commentaires pour un script.
+ [Placement de Comment-Based aide dans des scripts](./placing-comment-based-help-in-scripts.md) Indique où placer l’aide basée sur des commentaires pour un script.

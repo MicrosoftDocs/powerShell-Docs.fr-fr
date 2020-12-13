@@ -1,12 +1,14 @@
 ---
-title: Installation du Kit de développement logiciel Windows PowerShell
 ms.date: 03/30/2020
-ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Installation du Kit de développement logiciel Windows PowerShell
+description: Installation du Kit de développement logiciel Windows PowerShell
+ms.openlocfilehash: 07108ede640b8c6c02bea6d9e2b63116b5b8f969
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771972"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657299"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installation du Kit de développement logiciel Windows PowerShell
 
@@ -74,8 +76,8 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Les sections suivantes fo
 - Runspace02 : indique comment utiliser la classe PowerShell pour exécuter les `Get-Process` applets de commande et de `Sort-Object` façon synchrone. L' `Get-Process` applet de commande retourne les objets de processus pour chaque processus en cours d’exécution sur l’ordinateur local, et `Sort-Object` trie les objets en fonction de leur propriété ID. Le résultat de ces commandes s’affiche au moyen d’un contrôle DataGridView.
 - Runspace03 : montre comment utiliser la classe PowerShell pour exécuter un script de façon synchrone et comment gérer les erreurs sans fin d’exécution. Le script reçoit une liste de noms de processus et récupère ensuite ces processus. Le résultat du script, notamment les erreurs sans fin d’exécution qui ont été générées pendant l’exécution du script, s’affiche dans une fenêtre de console.
 - Runspace04 : indique comment utiliser la classe PowerShell pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. Par conséquent, aucun objet n’est retourné et une erreur avec fin d’exécution est levée.
-- Runspace05 : indique comment ajouter un composant logiciel enfichable à un objet InitialSessionState afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l’exemple GetProcessSample01) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
-- Runspace06 : indique comment ajouter un module à un objet InitialSessionState de sorte que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande Run-proc (définie par l’exemple GetProcessSample02) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
+- Runspace05 : indique comment ajouter un composant logiciel enfichable à un objet InitialSessionState afin que l’applet de commande du composant logiciel enfichable soit disponible lorsque l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Get-Proc (définie par l’exemple GetProcessSample01) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
+- Runspace06 : indique comment ajouter un module à un objet InitialSessionState de sorte que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande Get-Proc (définie par l’exemple GetProcessSample02) qui est exécutée de façon synchrone à l’aide d’un objet PowerShell.
 - Runspace07 : indique comment créer une instance d’exécution, puis utiliser cette instance d’exécution pour exécuter deux applets de commande de façon synchrone à l’aide d’un objet PowerShell.
 - Runspace08 : indique comment ajouter des commandes et des arguments au pipeline d’un objet PowerShell et comment exécuter les commandes de façon synchrone.
 - Runspace09 : montre comment ajouter un script au pipeline d’un objet PowerShell et comment exécuter le script de manière asynchrone. Des événements sont utilisés pour gérer la sortie du script.

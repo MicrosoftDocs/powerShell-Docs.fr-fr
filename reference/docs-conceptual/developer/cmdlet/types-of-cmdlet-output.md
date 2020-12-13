@@ -1,14 +1,14 @@
 ---
-title: Types de sortie de l’applet de commande | Microsoft Docs
 ms.date: 01/18/2019
-helpviewer_keywords:
-- cmdlets [PowerShell SDK], output
-ms.openlocfilehash: 8f761fdddd264b7c580c4a860081fdc5d2776ee7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Types de sortie des applets de commande
+description: Types de sortie des applets de commande
+ms.openlocfilehash: 591b7699e951db9016e48d5ef623265e23791e11
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786354"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660499"
 ---
 # <a name="types-of-cmdlet-output"></a>Types de sortie de l’applet de commande
 

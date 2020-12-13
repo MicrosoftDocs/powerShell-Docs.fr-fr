@@ -1,12 +1,14 @@
 ---
-title: Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
 ms.date: 09/12/2016
-ms.openlocfilehash: 3457341a577b283bf3da5dc010de9bbbb36b78d2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
+description: Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
+ms.openlocfilehash: bcc037d22051c162cd0f70702da17afe7ed9c01a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893048"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659066"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Guide pratique pour ajouter la syntaxe à une rubrique d’aide d’applet de commande
 
@@ -52,7 +54,7 @@ En règle générale, les valeurs de paramètre qui sont des espaces réservés 
    ```
 
 1. Répertorie tous les paramètres de l’applet de commande. Tapez un trait d’Union ( `-` ) (ASCII 45) avant chaque nom de paramètre.
-   Séparez les paramètres en jeux de paramètres (certaines applets de commande ne peuvent avoir qu’un seul jeu de paramètres). Dans cet exemple, l’applet de commande obtient-Tech a deux jeux de paramètres.
+   Séparez les paramètres en jeux de paramètres (certaines applets de commande ne peuvent avoir qu’un seul jeu de paramètres). Dans cet exemple, l’applet de commande Get-Tech a deux jeux de paramètres.
 
    ```
    SYNTAX

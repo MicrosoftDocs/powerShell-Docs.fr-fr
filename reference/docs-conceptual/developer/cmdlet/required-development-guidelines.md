@@ -1,12 +1,14 @@
 ---
-title: Instructions de développement requises | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Instructions dont le suivi est impératif pour le développement
+description: Instructions dont le suivi est impératif pour le développement
+ms.openlocfilehash: 98db075b314eb7f54f2deb56022799d9f830f9ef
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781696"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655766"
 ---
 # <a name="required-development-guidelines"></a>Instructions dont le suivi est impératif pour le développement
 
@@ -52,19 +54,19 @@ Les instructions suivantes doivent être suivies lors de la conception des apple
 
 Le verbe spécifié dans l’attribut d’applet de commande doit provenir du jeu de verbes reconnu fourni par Windows PowerShell. Il ne doit pas s’agir de l’un des synonymes interdits. Utilisez les chaînes constantes définies par les énumérations suivantes pour spécifier des verbes d’applet de commande :
 
-- [System. Management. Automation. VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
+- [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon)
 
-- [System. Management. Automation. VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
+- [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 
-- [System. Management. Automation. VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
+- [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 
-- [System. Management. Automation. VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
+- [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
 
-- [System. Management. Automation. VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
 
-- [System. Management. Automation. VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
+- [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 
-- [System. Management. Automation. VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
+- [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
 Pour plus d’informations sur les noms de verbe approuvés, consultez [verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
@@ -82,7 +84,7 @@ Lorsque vous nommez des applets de commande, n’utilisez pas les caractères sp
 |{}|accolades|
 |[]|crochets|
 |&|reprises|
-|-|Note de trait d’Union **:** le trait d’Union peut être utilisé pour séparer le verbe du nom, mais il ne peut pas être utilisé dans le nom ou dans le verbe.|
+|-|Note de trait d’Union **:**  le trait d’Union peut être utilisé pour séparer le verbe du nom, mais il ne peut pas être utilisé dans le nom ou dans le verbe.|
 |/|barre oblique|
 |\\| barre oblique inverse|
 |$|signe dollar|
@@ -167,7 +169,7 @@ Pour plus d’informations sur la façon de déclarer l’attribut d’applet de
 
 ### <a name="override-an-input-processing-method-rc03"></a>Remplacer une méthode de traitement d’entrée (RC03)
 
-Pour que l’applet de commande participe à l’environnement Windows PowerShell, elle doit remplacer au moins l’une des *méthodes de traitement d’entrée*suivantes.
+Pour que l’applet de commande participe à l’environnement Windows PowerShell, elle doit remplacer au moins l’une des *méthodes de traitement d’entrée* suivantes.
 
 [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) cette méthode est appelée une fois et elle est utilisée pour fournir des fonctionnalités de pré-traitement.
 

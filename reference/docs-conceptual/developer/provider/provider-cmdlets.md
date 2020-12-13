@@ -1,12 +1,14 @@
 ---
-title: Applets de commande du fournisseur | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 24838eeec8e2d59ff3cc549c8659d5afb1c8f92f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Applets de commande de fournisseur
+description: Applets de commande de fournisseur
+ms.openlocfilehash: 522dacfe4d7190c12ea0de148fe83bf6b5fed10f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771683"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92662897"
 ---
 # <a name="provider-cmdlets"></a>Applets de commande de fournisseur
 

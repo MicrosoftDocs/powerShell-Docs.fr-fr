@@ -1,12 +1,14 @@
 ---
-title: Exemples d’instances d’exécution | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f7c11101a570f89657f9ffc4d52fa6ebce3a91e1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemples d’instances d’exécution
+description: Exemples d’instances d’exécution
+ms.openlocfilehash: 0171622f3ade3b341bc226f14398d6d293262f0c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772210"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657946"
 ---
 # <a name="runspace-samples"></a>Exemples d’instances d’exécution
 
@@ -25,9 +27,9 @@ Cette section comprend un exemple de code qui montre comment utiliser différent
 
  [Exemple Runspace04](./runspace04-sample.md) Cet exemple montre comment utiliser la classe [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) pour exécuter des commandes et comment intercepter les erreurs de fin levées lors de l’exécution des commandes. Les commandes exécutées sont au nombre de deux, et la dernière se voit transmettre un argument de paramètre non valide. En conséquence, aucun objet n’est retourné et une erreur de fin est levée.
 
- [Exemple Runspace05](./runspace05-sample.md) Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour que l’applet de commande du composant logiciel enfichable soit disponible quand l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Run-proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace05](./runspace05-sample.md) Cet exemple montre comment ajouter un composant logiciel enfichable à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) pour que l’applet de commande du composant logiciel enfichable soit disponible quand l’instance d’exécution est ouverte. Le composant logiciel enfichable fournit une applet de commande Get-Proc (définie par l' [exemple GetProcessSample01](../cmdlet/getprocesssample01-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
- [Exemple Runspace06](./runspace06-sample.md) Cet exemple montre comment ajouter un module à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) afin que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande « obtenir-proc » (définie par l' [exemple GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
+ [Exemple Runspace06](./runspace06-sample.md) Cet exemple montre comment ajouter un module à un objet [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) afin que le module soit chargé lorsque l’instance d’exécution est ouverte. Le module fournit une applet de commande Get-Proc (définie par l' [exemple GetProcessSample02](../cmdlet/getprocesssample02-sample.md)) qui est exécutée de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 
  [Exemple Runspace07](./runspace07-sample.md) Cet exemple montre comment créer une instance d’exécution, puis utiliser cette instance d’exécution pour exécuter deux applets de commande de façon synchrone à l’aide d’un objet [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) .
 

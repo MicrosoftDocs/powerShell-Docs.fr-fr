@@ -1,16 +1,14 @@
 ---
-title: Validation de l’entrée de paramètre | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- parameters, validation rules
-- validation, examples
-- validation
-ms.openlocfilehash: e12c715cfa24edfff958b12be1f3517b2f545256
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Validation des entrées de paramètre
+description: Validation des entrées de paramètre
+ms.openlocfilehash: a97b5c670e8c36463a85bbef1506f6311bdd5ec3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783991"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660402"
 ---
 # <a name="validating-parameter-input"></a>Validation des entrées de paramètre
 

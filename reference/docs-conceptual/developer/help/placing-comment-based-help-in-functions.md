@@ -1,18 +1,20 @@
 ---
-title: Mise en place de l’aide basée sur les commentaires dans les fonctions
 ms.date: 09/12/2016
-ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Mise en place de l’aide basée sur les commentaires dans les fonctions
+description: Mise en place de l’aide basée sur les commentaires dans les fonctions
+ms.openlocfilehash: 3bd72f0c71d8f6ad54c43c99f044423c072fdeeb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893201"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658206"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Mise en place de l’aide basée sur les commentaires dans les fonctions
 
 Cette rubrique explique où placer l’aide basée sur des commentaires pour une fonction afin que l’applet de commande `Get-Help` associe la rubrique d’aide basée sur les commentaires à la fonction correcte.
 
-## <a name="where-to-place-comment-based-help-for-a-function"></a>Où placer l’aide basée sur les commentaires pour une fonction
+## <a name="where-to-place-comment-based-help-for-a-function"></a>Où placer Comment-Based aide pour une fonction
 
 - Au début du corps de la fonction.
 
