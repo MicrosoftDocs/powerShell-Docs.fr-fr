@@ -1,63 +1,65 @@
 ---
-title: Élément SelectionSetName pour SelectionCondition pour EntrySelectedBy pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: db751c40b22db52985bc7cd9f8f4296a64a523f0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+description: SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)
+ms.openlocfilehash: 2fb09e27eef1ce5d6e864c72edb595817d91f729
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787459"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655051"
 ---
-# <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a><span data-ttu-id="2afbe-102">SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="2afbe-102">SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)</span></span>
+# <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a><span data-ttu-id="07d83-103">SelectionSetName, élément pour SelectionCondition pour EntrySelectedBy pour TableControl (Format)</span><span class="sxs-lookup"><span data-stu-id="07d83-103">SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableControl (Format)</span></span>
 
-<span data-ttu-id="2afbe-103">Spécifie l’ensemble des types .NET qui déclenchent la condition.</span><span class="sxs-lookup"><span data-stu-id="2afbe-103">Specifies the set of .NET types that trigger the condition.</span></span> <span data-ttu-id="2afbe-104">Quand l’un des types de cet ensemble est présent, la condition est remplie et l’objet est affiché à l’aide de cette définition de la vue table.</span><span class="sxs-lookup"><span data-stu-id="2afbe-104">When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.</span></span>
+<span data-ttu-id="07d83-104">Spécifie l’ensemble des types .NET qui déclenchent la condition.</span><span class="sxs-lookup"><span data-stu-id="07d83-104">Specifies the set of .NET types that trigger the condition.</span></span> <span data-ttu-id="07d83-105">Quand l’un des types de cet ensemble est présent, la condition est remplie et l’objet est affiché à l’aide de cette définition de la vue table.</span><span class="sxs-lookup"><span data-stu-id="07d83-105">When any of the types in this set are present, the condition is met, and the object is displayed by using this definition of the table view.</span></span>
 
-<span data-ttu-id="2afbe-105">Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry élément (format) élément EntrySelectedBy pour TableRowEntry (format) élément SelectionCondition pour EntrySelectedBy (format) TableRowEntry élément pour SelectionSetName pour SelectionCondition (format)</span><span class="sxs-lookup"><span data-stu-id="2afbe-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) EntrySelectedBy Element for TableRowEntry (Format) SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format) SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)</span></span>
+<span data-ttu-id="07d83-106">Élément de configuration (format) élément ViewDefinitions (format) View, élément (format) élément table ((format) TableRowEntries, élément (format) TableRowEntry élément (format) élément EntrySelectedBy pour TableRowEntry (format) élément SelectionCondition pour EntrySelectedBy (format) TableRowEntry élément pour SelectionSetName pour SelectionCondition (format)</span><span class="sxs-lookup"><span data-stu-id="07d83-106">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) TableControl Element (Format) TableRowEntries Element (Format) TableRowEntry Element (Format) EntrySelectedBy Element for TableRowEntry (Format) SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format) SelectionSetName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="2afbe-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2afbe-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="07d83-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="07d83-107">Syntax</span></span>
 
 ```xml
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="2afbe-107">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="2afbe-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="07d83-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="07d83-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="2afbe-108">Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionSetName` élément.</span><span class="sxs-lookup"><span data-stu-id="2afbe-108">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
+<span data-ttu-id="07d83-109">Les sections suivantes décrivent les attributs, les éléments enfants et l’élément parent de l' `SelectionSetName` élément.</span><span class="sxs-lookup"><span data-stu-id="07d83-109">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="2afbe-109">Attributs</span><span class="sxs-lookup"><span data-stu-id="2afbe-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="07d83-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="07d83-110">Attributes</span></span>
 
-<span data-ttu-id="2afbe-110">Aucun.</span><span class="sxs-lookup"><span data-stu-id="2afbe-110">None.</span></span>
+<span data-ttu-id="07d83-111">Aucun.</span><span class="sxs-lookup"><span data-stu-id="07d83-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="2afbe-111">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="2afbe-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="07d83-112">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="07d83-112">Child Elements</span></span>
 
-<span data-ttu-id="2afbe-112">Aucun.</span><span class="sxs-lookup"><span data-stu-id="2afbe-112">None.</span></span>
+<span data-ttu-id="07d83-113">Aucun.</span><span class="sxs-lookup"><span data-stu-id="07d83-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="2afbe-113">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="2afbe-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="07d83-114">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="07d83-114">Parent Elements</span></span>
 
-|<span data-ttu-id="2afbe-114">Élément</span><span class="sxs-lookup"><span data-stu-id="2afbe-114">Element</span></span>|<span data-ttu-id="2afbe-115">Description</span><span class="sxs-lookup"><span data-stu-id="2afbe-115">Description</span></span>|
+|<span data-ttu-id="07d83-115">Élément</span><span class="sxs-lookup"><span data-stu-id="07d83-115">Element</span></span>|<span data-ttu-id="07d83-116">Description</span><span class="sxs-lookup"><span data-stu-id="07d83-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="2afbe-116">Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="2afbe-116">SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|<span data-ttu-id="2afbe-117">Définit la condition qui doit exister pour être utilisée pour cette définition de la vue de table.</span><span class="sxs-lookup"><span data-stu-id="2afbe-117">Defines the condition that must exist to use for this definition of the table view.</span></span>|
+|[<span data-ttu-id="07d83-117">Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="07d83-117">SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|<span data-ttu-id="07d83-118">Définit la condition qui doit exister pour être utilisée pour cette définition de la vue de table.</span><span class="sxs-lookup"><span data-stu-id="07d83-118">Defines the condition that must exist to use for this definition of the table view.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="2afbe-118">Valeur texte</span><span class="sxs-lookup"><span data-stu-id="2afbe-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="07d83-119">Valeur texte</span><span class="sxs-lookup"><span data-stu-id="07d83-119">Text Value</span></span>
 
-<span data-ttu-id="2afbe-119">Spécifiez le nom du jeu de sélection.</span><span class="sxs-lookup"><span data-stu-id="2afbe-119">Specify the name of the selection set.</span></span>
+<span data-ttu-id="07d83-120">Spécifiez le nom du jeu de sélection.</span><span class="sxs-lookup"><span data-stu-id="07d83-120">Specify the name of the selection set.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="2afbe-120">Notes</span><span class="sxs-lookup"><span data-stu-id="2afbe-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="07d83-121">Notes</span><span class="sxs-lookup"><span data-stu-id="07d83-121">Remarks</span></span>
 
-<span data-ttu-id="2afbe-121">La condition de sélection peut spécifier un jeu de sélection ou un type .NET, mais ne peut pas spécifier les deux.</span><span class="sxs-lookup"><span data-stu-id="2afbe-121">The selection condition can specify a selection set or .NET type, but cannot specify both.</span></span> <span data-ttu-id="2afbe-122">Pour plus d’informations sur l’utilisation des conditions de sélection, consultez [définition des conditions d’affichage des données](./defining-conditions-for-displaying-data.md).</span><span class="sxs-lookup"><span data-stu-id="2afbe-122">For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).</span></span>
+<span data-ttu-id="07d83-122">La condition de sélection peut spécifier un jeu de sélection ou un type .NET, mais ne peut pas spécifier les deux.</span><span class="sxs-lookup"><span data-stu-id="07d83-122">The selection condition can specify a selection set or .NET type, but cannot specify both.</span></span> <span data-ttu-id="07d83-123">Pour plus d’informations sur l’utilisation des conditions de sélection, consultez [définition des conditions d’affichage des données](./defining-conditions-for-displaying-data.md).</span><span class="sxs-lookup"><span data-stu-id="07d83-123">For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).</span></span>
 
-<span data-ttu-id="2afbe-123">Les jeux de sélection sont des groupes communs d’objets .NET qui peuvent être utilisés par n’importe quelle vue définie par le fichier de mise en forme.</span><span class="sxs-lookup"><span data-stu-id="2afbe-123">Selection sets are common groups of .NET objects that can be used by any view that the formatting file defines.</span></span> <span data-ttu-id="2afbe-124">Pour plus d’informations sur la création et le référencement des jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).</span><span class="sxs-lookup"><span data-stu-id="2afbe-124">For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).</span></span>
+<span data-ttu-id="07d83-124">Les jeux de sélection sont des groupes communs d’objets .NET qui peuvent être utilisés par n’importe quelle vue définie par le fichier de mise en forme.</span><span class="sxs-lookup"><span data-stu-id="07d83-124">Selection sets are common groups of .NET objects that can be used by any view that the formatting file defines.</span></span> <span data-ttu-id="07d83-125">Pour plus d’informations sur la création et le référencement des jeux de sélection, consultez [définition de jeux d’objets](./defining-selection-sets.md).</span><span class="sxs-lookup"><span data-stu-id="07d83-125">For more information about creating and referencing selection sets, see [Defining Sets of Objects](./defining-selection-sets.md).</span></span>
 
-<span data-ttu-id="2afbe-125">Pour plus d’informations sur les autres composants d’une vue étendue, consultez [création d’une vue table](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="2afbe-125">For more information about other components of a wide view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
+<span data-ttu-id="07d83-126">Pour plus d’informations sur les autres composants d’une vue étendue, consultez [création d’une vue table](./creating-a-table-view.md).</span><span class="sxs-lookup"><span data-stu-id="07d83-126">For more information about other components of a wide view, see [Creating a Table View](./creating-a-table-view.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="2afbe-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2afbe-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="07d83-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="07d83-127">See Also</span></span>
 
-[<span data-ttu-id="2afbe-127">Création d’une vue de table</span><span class="sxs-lookup"><span data-stu-id="2afbe-127">Creating a Table View</span></span>](./creating-a-table-view.md)
+[<span data-ttu-id="07d83-128">Création d’une vue de table</span><span class="sxs-lookup"><span data-stu-id="07d83-128">Creating a Table View</span></span>](./creating-a-table-view.md)
 
-[<span data-ttu-id="2afbe-128">Définition des conditions d’affichage des données</span><span class="sxs-lookup"><span data-stu-id="2afbe-128">Defining Conditions for When Data Is Displayed</span></span>](./defining-conditions-for-displaying-data.md)
+[<span data-ttu-id="07d83-129">Définition des conditions d’affichage des données</span><span class="sxs-lookup"><span data-stu-id="07d83-129">Defining Conditions for When Data Is Displayed</span></span>](./defining-conditions-for-displaying-data.md)
 
-[<span data-ttu-id="2afbe-129">Élément TypeName pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="2afbe-129">TypeName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)</span></span>](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+[<span data-ttu-id="07d83-130">Élément TypeName pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="07d83-130">TypeName Element for SelectionCondition for EntrySelectedBy for TableRowEntry (Format)</span></span>](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-[<span data-ttu-id="2afbe-130">Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="2afbe-130">SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
+[<span data-ttu-id="07d83-131">Élément SelectionCondition pour EntrySelectedBy pour TableRowEntry (format)</span><span class="sxs-lookup"><span data-stu-id="07d83-131">SelectionCondition Element for EntrySelectedBy for TableRowEntry (Format)</span></span>](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[<span data-ttu-id="2afbe-131">Écriture d’un fichier de mise en forme PowerShell</span><span class="sxs-lookup"><span data-stu-id="2afbe-131">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="07d83-132">Écriture d’un fichier de mise en forme PowerShell</span><span class="sxs-lookup"><span data-stu-id="07d83-132">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
