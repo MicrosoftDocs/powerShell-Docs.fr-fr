@@ -1,30 +1,32 @@
 ---
-title: Création d’un InitialSessionState | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un InitialSessionState
+description: Création d’un InitialSessionState
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779724"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649412"
 ---
-# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="4eddf-102">Création d’un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="4eddf-102">Creating an InitialSessionState</span></span>
+# <a name="creating-an-initialsessionstate"></a><span data-ttu-id="887ca-103">Création d’un InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="887ca-103">Creating an InitialSessionState</span></span>
 
-<span data-ttu-id="4eddf-103">Les commandes PowerShell s’exécutent dans une instance d’exécution.</span><span class="sxs-lookup"><span data-stu-id="4eddf-103">PowerShell commands run in a runspace.</span></span>
-<span data-ttu-id="4eddf-104">Pour héberger PowerShell dans votre application, vous devez créer un objet [System. Management. Automation. instances d’exécution. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .</span><span class="sxs-lookup"><span data-stu-id="4eddf-104">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
-<span data-ttu-id="4eddf-105">Chaque instance d’exécution est associée à un objet [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .</span><span class="sxs-lookup"><span data-stu-id="4eddf-105">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
-<span data-ttu-id="4eddf-106">Le InitialSessionState spécifie les caractéristiques de l’instance d’exécution, telles que les commandes, les variables et les modules disponibles pour cette instance d’exécution.</span><span class="sxs-lookup"><span data-stu-id="4eddf-106">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
+<span data-ttu-id="887ca-104">Les commandes PowerShell s’exécutent dans une instance d’exécution.</span><span class="sxs-lookup"><span data-stu-id="887ca-104">PowerShell commands run in a runspace.</span></span>
+<span data-ttu-id="887ca-105">Pour héberger PowerShell dans votre application, vous devez créer un objet [System. Management. Automation. instances d’exécution. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .</span><span class="sxs-lookup"><span data-stu-id="887ca-105">To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+<span data-ttu-id="887ca-106">Chaque instance d’exécution est associée à un objet [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) .</span><span class="sxs-lookup"><span data-stu-id="887ca-106">Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.</span></span>
+<span data-ttu-id="887ca-107">Le InitialSessionState spécifie les caractéristiques de l’instance d’exécution, telles que les commandes, les variables et les modules disponibles pour cette instance d’exécution.</span><span class="sxs-lookup"><span data-stu-id="887ca-107">The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.</span></span>
 
-## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="4eddf-107">Créer un InitialSessionState par défaut</span><span class="sxs-lookup"><span data-stu-id="4eddf-107">Create a default InitialSessionState</span></span>
+## <a name="create-a-default-initialsessionstate"></a><span data-ttu-id="887ca-108">Créer un InitialSessionState par défaut</span><span class="sxs-lookup"><span data-stu-id="887ca-108">Create a default InitialSessionState</span></span>
 
-<span data-ttu-id="4eddf-108">Les méthodes [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) et [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) de la classe **InitialSessionState** peuvent être utilisées pour créer un objet **InitialSessionState** .</span><span class="sxs-lookup"><span data-stu-id="4eddf-108">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
-<span data-ttu-id="4eddf-109">La méthode **CreateDefault** crée un **InitialSessionState** avec toutes les commandes intégrées chargées, tandis que la méthode **CreateDefault2** charge uniquement les commandes requises pour héberger PowerShell (les commandes du module Microsoft. PowerShell. Core).</span><span class="sxs-lookup"><span data-stu-id="4eddf-109">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
+<span data-ttu-id="887ca-109">Les méthodes [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) et [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) de la classe **InitialSessionState** peuvent être utilisées pour créer un objet **InitialSessionState** .</span><span class="sxs-lookup"><span data-stu-id="887ca-109">The [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault) and [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) methods of the **InitialSessionState** class can be used to create an **InitialSessionState** object.</span></span>
+<span data-ttu-id="887ca-110">La méthode **CreateDefault** crée un **InitialSessionState** avec toutes les commandes intégrées chargées, tandis que la méthode **CreateDefault2** charge uniquement les commandes requises pour héberger PowerShell (les commandes du module Microsoft. PowerShell. Core).</span><span class="sxs-lookup"><span data-stu-id="887ca-110">The **CreateDefault** method creates an **InitialSessionState** with all of the built-in commands loaded, while the **CreateDefault2** method loads only the commands required to host PowerShell (the commands from the Microsoft.PowerShell.Core module).</span></span>
 
-<span data-ttu-id="4eddf-110">Si vous souhaitez limiter davantage les commandes disponibles dans votre application hôte, vous devez créer une instance d’exécution limitée.</span><span class="sxs-lookup"><span data-stu-id="4eddf-110">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
-<span data-ttu-id="4eddf-111">Pour plus d’informations, consultez [création d’une instance d’exécution avec restriction](creating-a-constrained-runspace.md).</span><span class="sxs-lookup"><span data-stu-id="4eddf-111">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
+<span data-ttu-id="887ca-111">Si vous souhaitez limiter davantage les commandes disponibles dans votre application hôte, vous devez créer une instance d’exécution limitée.</span><span class="sxs-lookup"><span data-stu-id="887ca-111">If you want to further limit the commands available in your host application you need to create a constrained runspace.</span></span>
+<span data-ttu-id="887ca-112">Pour plus d’informations, consultez [création d’une instance d’exécution avec restriction](creating-a-constrained-runspace.md).</span><span class="sxs-lookup"><span data-stu-id="887ca-112">For information, see [Creating a constrained runspace](creating-a-constrained-runspace.md).</span></span>
 
-<span data-ttu-id="4eddf-112">Le code suivant montre comment créer un **InitialSessionState**, l’assigner à une instance d’exécution, ajouter des commandes au pipeline dans cette instance d’exécution et appeler les commandes.</span><span class="sxs-lookup"><span data-stu-id="4eddf-112">The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
-<span data-ttu-id="4eddf-113">Pour plus d’informations sur l’ajout et l’appel de commandes, consultez [Ajout et appel de commandes](adding-and-invoking-commands.md).</span><span class="sxs-lookup"><span data-stu-id="4eddf-113">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
+<span data-ttu-id="887ca-113">Le code suivant montre comment créer un **InitialSessionState**, l’assigner à une instance d’exécution, ajouter des commandes au pipeline dans cette instance d’exécution et appeler les commandes.</span><span class="sxs-lookup"><span data-stu-id="887ca-113">The following code shows how to create an **InitialSessionState**, assign it to a runspace, add commands to the pipeline in that runspace, and invoke the commands.</span></span>
+<span data-ttu-id="887ca-114">Pour plus d’informations sur l’ajout et l’appel de commandes, consultez [Ajout et appel de commandes](adding-and-invoking-commands.md).</span><span class="sxs-lookup"><span data-stu-id="887ca-114">For more information about adding and invoking commands, see [Adding and invoking commands](adding-and-invoking-commands.md).</span></span>
 
 ```csharp
 namespace SampleHost
@@ -86,8 +88,8 @@ namespace SampleHost
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4eddf-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4eddf-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="887ca-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="887ca-115">See Also</span></span>
 
-[<span data-ttu-id="4eddf-115">Création d’une instance d’exécution contrainte</span><span class="sxs-lookup"><span data-stu-id="4eddf-115">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
+[<span data-ttu-id="887ca-116">Création d’une instance d’exécution contrainte</span><span class="sxs-lookup"><span data-stu-id="887ca-116">Creating a constrained runspace</span></span>](creating-a-constrained-runspace.md)
 
-[<span data-ttu-id="4eddf-116">Ajout et appel de commandes</span><span class="sxs-lookup"><span data-stu-id="4eddf-116">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)
+[<span data-ttu-id="887ca-117">Ajout et appel de commandes</span><span class="sxs-lookup"><span data-stu-id="887ca-117">Adding and invoking commands</span></span>](adding-and-invoking-commands.md)
