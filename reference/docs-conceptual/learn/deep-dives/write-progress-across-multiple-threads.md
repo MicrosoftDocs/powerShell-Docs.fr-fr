@@ -3,10 +3,10 @@ title: Affichage de la progression lors d’un multi-threading
 description: Comment utiliser Write-Progress pour plusieurs threads avec le paramètre -Parallel de Foreach-Object
 ms.date: 08/02/2020
 ms.openlocfilehash: 909fc1bbdeded8845b1955e3384fb55db7173030
-ms.sourcegitcommit: 640646992955116def23d16dd12c221857d37b68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "89410840"
 ---
 # <a name="writing-progress-across-multiple-threads-with-foreach-parallel"></a>Écriture de la progression pour plusieurs threads avec le paramètre -Parallel de Foreach-Object

@@ -1,26 +1,25 @@
 ---
-title: Création d’une applet de commande sans paramètres | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmers Guide], creating
-- cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’une applet de commande sans paramètre
+description: Création d’une applet de commande sans paramètre
+ms.openlocfilehash: 5df27ac4c1f6dfcc3e7596d93f8db0f97aae71c1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784382"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646543"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Création d’une applet de commande sans paramètre
 
-Cette section décrit comment créer une applet de commande qui récupère des informations à partir de l’ordinateur local sans utiliser de paramètres, puis écrit les informations dans le pipeline. L’applet de commande décrite ici est une applet de commande « obtenir-proc » qui récupère des informations sur les processus de l’ordinateur local, puis affiche ces informations sur la ligne de commande.
+Cette section décrit comment créer une applet de commande qui récupère des informations à partir de l’ordinateur local sans utiliser de paramètres, puis écrit les informations dans le pipeline. L’applet de commande décrite ici est un Get-Proc applet de commande qui récupère des informations sur les processus de l’ordinateur local, puis affiche ces informations sur la ligne de commande.
 
 > [!NOTE]
 > Sachez que lors de l’écriture d’applets de commande, les assemblys de référence de® Windows PowerShell sont téléchargés sur le disque (par défaut, à l’emplacement C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). Ils ne sont pas installés dans le global assembly cache (GAC).
 
 ## <a name="naming-the-cmdlet"></a>Attribution d’un nom à l’applet de commande
 
-Un nom d’applet de commande se compose d’un verbe qui indique l’action prise par l’applet de commande et d’un nom qui indique les éléments sur lesquels l’applet de commande agit. Étant donné que cet exemple d’applet de commande « obtenir-proc » récupère des objets de processus, il utilise le verbe « obtenir », défini par l’énumération [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) , et le nom « proc » pour indiquer que l’applet de commande fonctionne sur les éléments de processus.
+Un nom d’applet de commande se compose d’un verbe qui indique l’action prise par l’applet de commande et d’un nom qui indique les éléments sur lesquels l’applet de commande agit. Comme cet exemple Get-Proc applet de commande récupère des objets de processus, il utilise le verbe « obtenir », défini par l’énumération [System. Management. Automation. Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) , et le nom « proc » pour indiquer que l’applet de commande fonctionne sur les éléments de processus.
 
 Quand vous nommez des applets de commande, n’utilisez pas les caractères suivants : #, () {} [] &-/\ $;: "' <> &#124;  ? @ ` .
 
@@ -34,7 +33,7 @@ Vous devez utiliser un verbe de l’ensemble des noms de verbe d’applet de com
 
 ## <a name="defining-the-cmdlet-class"></a>Définition de la classe cmdlet
 
-Une fois que vous avez choisi un nom d’applet de commande, définissez une classe .NET pour implémenter l’applet de commande. Voici la définition de classe pour cet exemple d’applet de commande-proc :
+Une fois que vous avez choisi un nom d’applet de commande, définissez une classe .NET pour implémenter l’applet de commande. Voici la définition de classe pour cet exemple d’applet de commande Get-Proc :
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -47,12 +46,12 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Notez que, avant la définition de classe, l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , avec la syntaxe `[Cmdlet(verb, noun, ...)]` , est utilisé pour identifier cette classe en tant qu’applet de commande. Il s’agit du seul attribut requis pour toutes les applets de commande et permet au runtime Windows PowerShell de les appeler correctement. Vous pouvez définir des mots clés d’attribut pour déclarer davantage la classe si nécessaire. Sachez que la déclaration d’attribut pour notre exemple de classe GetProcCommand déclare uniquement les noms de substantif et de verbe pour l’applet de commande « obtenir-proc ».
+Notez que, avant la définition de classe, l’attribut [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) , avec la syntaxe `[Cmdlet(verb, noun, ...)]` , est utilisé pour identifier cette classe en tant qu’applet de commande. Il s’agit du seul attribut requis pour toutes les applets de commande et permet au runtime Windows PowerShell de les appeler correctement. Vous pouvez définir des mots clés d’attribut pour déclarer davantage la classe si nécessaire. Sachez que la déclaration d’attribut pour notre exemple de classe GetProcCommand déclare uniquement les noms de substantif et de verbe pour l’applet de commande Get-Proc.
 
 > [!NOTE]
 > Pour toutes les classes d’attributs Windows PowerShell, les mots clés que vous pouvez définir correspondent aux propriétés de la classe d’attributs.
 
-Lorsque vous nommez la classe de l’applet de commande, il est recommandé de refléter le nom de l’applet de commande dans le nom de la classe. Pour ce faire, utilisez la forme « VerbNounCommand » et remplacez « Verb » et « substantif » par le verbe et le substantif utilisés dans le nom de l’applet de commande. Comme indiqué dans la définition de classe précédente, l’applet de commande Sample-proc définit une classe appelée GetProcCommand, qui dérive de la classe de base [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande.
+Lorsque vous nommez la classe de l’applet de commande, il est recommandé de refléter le nom de l’applet de commande dans le nom de la classe. Pour ce faire, utilisez la forme « VerbNounCommand » et remplacez « Verb » et « substantif » par le verbe et le substantif utilisés dans le nom de l’applet de commande. Comme indiqué dans la définition de classe précédente, l’exemple Get-Proc applet de commande définit une classe appelée GetProcCommand, qui dérive de la classe de base [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet) de commande.
 
 > [!IMPORTANT]
 > Si vous souhaitez définir une applet de commande qui accède directement au runtime Windows PowerShell, votre classe .NET doit dériver de la classe de base [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) . Pour plus d’informations sur cette classe, consultez [création d’une applet de commande qui définit des jeux de paramètres](./adding-parameter-sets-to-a-cmdlet.md).
@@ -75,7 +74,7 @@ Si votre applet de commande accepte l’entrée de pipeline, elle doit remplacer
 
 Si votre applet de commande ne prend pas d’entrée de pipeline, elle doit remplacer la méthode [System. Management. Automation. applet de commande. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) . N’oubliez pas que cette méthode est fréquemment utilisée à la place de [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) quand l’applet de commande ne peut pas fonctionner sur un élément à la fois, comme c’est le cas pour une applet de commande de tri.
 
-Étant donné que cet exemple d’applet de commande Receive-proc doit recevoir l’entrée de pipeline, elle remplace la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) et utilise les implémentations par défaut pour [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) et [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). La substitution [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) récupère les processus et les écrit sur la ligne de commande à l’aide de la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
+Comme cet exemple Get-Proc applet de commande doit recevoir l’entrée de pipeline, il remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) et utilise les implémentations par défaut pour [System. Management. Automation. cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) et [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). La substitution [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) récupère les processus et les écrit sur la ligne de commande à l’aide de la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) .
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,7 +135,7 @@ Après l’implémentation d’une applet de commande, vous devez l’inscrire a
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Le code pour notre applet de commande Sample-proc est petit, mais il utilise toujours le runtime Windows PowerShell et un objet .NET existant, ce qui est suffisant pour le rendre utile. Nous allons le tester pour mieux comprendre ce que peut faire et comment sa sortie peut être utilisée. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Le code de notre exemple d’applet de commande Get-Proc est petit, mais il utilise toujours le runtime Windows PowerShell et un objet .NET existant, ce qui est suffisant pour le rendre utile. Nous allons le tester pour mieux comprendre ce que Get-Proc pouvez faire et comment sa sortie peut être utilisée. Pour plus d’informations sur l’utilisation des applets de commande à partir de la ligne de commande, consultez le [prise en main avec Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
 1. Démarrez Windows PowerShell et récupérez les processus en cours d’exécution sur l’ordinateur.
 

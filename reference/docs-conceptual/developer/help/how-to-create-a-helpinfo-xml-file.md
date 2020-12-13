@@ -1,12 +1,14 @@
 ---
-title: Guide pratique pour créer un fichier XML HelpInfo
 ms.date: 09/13/2016
-ms.openlocfilehash: e395746e51309477bbcbff51b4591de3f73ce0db
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Guide pratique pour créer un fichier XML HelpInfo
+description: Guide pratique pour créer un fichier XML HelpInfo
+ms.openlocfilehash: d5a24306aa6488fdefad0b7b1ea9e2978a93a7b5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893303"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647713"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Guide pratique pour créer un fichier XML HelpInfo
 
@@ -20,7 +22,7 @@ Chaque module a un seul fichier XML HelpInfo, même si le module inclut plusieur
 
 Il est essentiel que le fichier XML HelpInfo soit soigneusement géré. Si vous téléchargez de nouveaux fichiers, mais oubliez d’incrémenter les numéros de version, l’aide actualisable ne téléchargera pas les nouveaux fichiers sur les ordinateurs des utilisateurs. Si vous ajoutez des fichiers d’aide pour une nouvelle culture d’interface utilisateur, mais que vous ne mettez pas à jour le fichier XML HelpInfo ou que vous le placez à l’emplacement approprié, l’aide actualisable ne télécharge pas les nouveaux fichiers.
 
-## <a name="in-this-section"></a>Contenu de cette section
+## <a name="in-this-section"></a>Dans cette section
 
 Cette section comprend les rubriques suivantes.
 

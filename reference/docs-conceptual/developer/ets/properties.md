@@ -1,14 +1,16 @@
 ---
-title: Propriétés du système de type étendu
 ms.date: 07/09/2020
-ms.openlocfilehash: c0a994e5b946117dcc1a2d647d07ae62af883861
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Propriétés du système de type étendu
+description: Propriétés du système de type étendu
+ms.openlocfilehash: cccd3c400a8822ee25c44e8e1625e35571420259
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786201"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646141"
 ---
-# <a name="ets-properties"></a>Propriétés de ETS
+# <a name="ets-properties"></a>Propriétés ETS
 
 Les propriétés sont des membres qui peuvent être traités comme une propriété. Pour l’essentiel, ils peuvent apparaître sur le côté gauche d’une expression. Les propriétés disponibles incluent les propriétés alias, code, note et script.
 

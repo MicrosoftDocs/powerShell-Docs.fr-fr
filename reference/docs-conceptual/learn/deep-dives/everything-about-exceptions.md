@@ -4,10 +4,10 @@ description: La gestion des erreurs fait partie intégrante du travail dès lors
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
-ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "90012559"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Tout ce que vous avez toujours voulu savoir sur les exceptions

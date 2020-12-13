@@ -1,12 +1,14 @@
 ---
-title: Didacticiels pour l’écriture d’applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 991cceef2b1d18c0cdaad4f092c4affb5c632b0e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Tutoriels pour l’écriture des applets de commande
+description: Tutoriels pour l’écriture des applets de commande
+ms.openlocfilehash: 7ec20b845f8547d346c3777bd52984337d37b83a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784008"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646381"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>Tutoriels pour l’écriture des applets de commande
 

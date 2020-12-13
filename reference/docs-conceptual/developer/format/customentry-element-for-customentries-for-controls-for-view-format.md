@@ -1,12 +1,14 @@
 ---
-title: Élément CustomEntry pour CustomEntries pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4fc960ab803580f684ce0f224b1db4d7d4af1720
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomEntry, élément pour CustomEntries pour Controls pour View (Format)
+description: CustomEntry, élément pour CustomEntries pour Controls pour View (Format)
+ms.openlocfilehash: a525b198c8f595e04dc0804d36b5533b94f43c6b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785895"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646088"
 ---
 # <a name="customentry-element-for-customentries-for-controls-for-view-format"></a>CustomEntry, élément pour CustomEntries pour Controls pour View (Format)
 

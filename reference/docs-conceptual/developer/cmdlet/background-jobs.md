@@ -1,16 +1,18 @@
 ---
-title: Travaux en arrière-plan | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Travaux en arrière-plan
+description: Travaux en arrière-plan
+ms.openlocfilehash: 5478789a2ee1f2eabc71a46673e3a707643cdba8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774845"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648623"
 ---
 # <a name="background-jobs"></a>Travaux en arrière-plan
 
-Les applets de commande peuvent exécuter leur action en interne ou en tant que*tâche en arrière-plan*Windows PowerShell. Lorsqu’une applet de commande s’exécute en tant que tâche en arrière-plan, le travail est effectué de façon asynchrone dans son propre thread distinct du thread de pipeline que l’applet de commande utilise. Du point de vue de l’utilisateur, lorsqu’une applet de commande s’exécute en tant que tâche en arrière-plan, l’invite de commandes est immédiatement retournée même si la tâche prend beaucoup de temps et que l’utilisateur peut continuer sans interruption pendant l’exécution de la tâche.
+Les applets de commande peuvent exécuter leur action en interne ou en tant que *tâche en arrière-plan* Windows PowerShell. Lorsqu’une applet de commande s’exécute en tant que tâche en arrière-plan, le travail est effectué de façon asynchrone dans son propre thread distinct du thread de pipeline que l’applet de commande utilise. Du point de vue de l’utilisateur, lorsqu’une applet de commande s’exécute en tant que tâche en arrière-plan, l’invite de commandes est immédiatement retournée même si la tâche prend beaucoup de temps et que l’utilisateur peut continuer sans interruption pendant l’exécution de la tâche.
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Travaux en arrière-plan, travaux enfants et référentiel des tâches
 
@@ -40,7 +42,7 @@ Pour écrire une applet de commande qui peut être exécutée en tant que tâche
 
 Pour obtenir un exemple de code, consultez [Comment prendre en charge les travaux](./how-to-support-jobs.md).
 
-## <a name="background-job-related-apis"></a>API relatives aux tâches en arrière-plan
+## <a name="background-job-related-apis"></a>API d' Job-Related d’arrière-plan
 
 Les API suivantes sont fournies par Windows PowerShell pour gérer les travaux en arrière-plan.
 

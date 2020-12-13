@@ -1,16 +1,14 @@
 ---
-title: Déclaration d’attribut ValidateCount | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidateCount
-- ValidateCount attribute, described
-- ValidateCount attribute
-ms.openlocfilehash: c013a354ee339bd14508fe30549673bc79d5c616
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de l’attribut ValidateCount
+description: Déclaration de l’attribut ValidateCount
+ms.openlocfilehash: 6acdd02a10ecc1bc2be0e6be88cf2f42a3673eb8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786320"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646275"
 ---
 # <a name="validatecount-attribute-declaration"></a>Déclaration de l’attribut ValidateCount
 
@@ -24,7 +22,7 @@ L’attribut ValidateCount spécifie le nombre minimal et maximal d’arguments 
 
 #### <a name="parameters"></a>Paramètres
 
-`MinLength`([System. Int32][]) requis. Spécifie le nombre minimal d’arguments.
+`MinLength` ([System. Int32][]) requis. Spécifie le nombre minimal d’arguments.
 
 `MaxLength`([System. Int32][]) requis. Spécifie le nombre maximal d’arguments.
 

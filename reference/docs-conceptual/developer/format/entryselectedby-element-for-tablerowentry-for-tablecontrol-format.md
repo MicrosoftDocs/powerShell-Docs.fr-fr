@@ -1,12 +1,14 @@
 ---
-title: Élément EntrySelectedBy pour TableRowEntry pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 047a10fb6b38dfa8f78a7741fd50b781d4a14b6d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EntrySelectedBy, élément pour TableRowEntry pour TableControl (Format)
+description: EntrySelectedBy, élément pour TableRowEntry pour TableControl (Format)
+ms.openlocfilehash: 1b7fc60b6fa9864b66e9edfebb3e4a86e287f3f8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787697"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645891"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>EntrySelectedBy, élément pour TableRowEntry pour TableControl (Format)
 

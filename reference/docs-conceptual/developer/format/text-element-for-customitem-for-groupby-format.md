@@ -1,12 +1,14 @@
 ---
-title: Élément Text pour CustomItem pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 811dc3a6f83f93513bd8380a7c3b66a813fe7801
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Text, élément pour CustomItem pour GroupBy (Format)
+description: Text, élément pour CustomItem pour GroupBy (Format)
+ms.openlocfilehash: 4c8158c9c8e77044732e473f57291194280f4e79
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783362"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649751"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>Text, élément pour CustomItem pour GroupBy (Format)
 

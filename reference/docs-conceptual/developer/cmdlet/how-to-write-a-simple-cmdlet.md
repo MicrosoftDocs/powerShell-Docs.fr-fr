@@ -1,12 +1,14 @@
 ---
-title: Comment écrire une applet de commande simple | Microsoft Docs
 ms.date: 01/15/2019
-ms.openlocfilehash: 2ff0b47454804c9becd6f03ac521946b9596bb8b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour écrire une applet de commande simple
+description: Guide pratique pour écrire une applet de commande simple
+ms.openlocfilehash: 59dce5d797f80647e0b70a1f80faf67198652082
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784059"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646493"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Comment écrire une applet de commande
 

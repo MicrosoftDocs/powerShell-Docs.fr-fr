@@ -1,12 +1,14 @@
 ---
-title: Définition des jeux de sélection | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Définition de jeux de sélections
+description: Définition de jeux de sélections
+ms.openlocfilehash: d709a368a45623d56fdbf4e98a11a5e5f8a193fa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774301"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648253"
 ---
 # <a name="defining-selection-sets"></a>Définition de jeux de sélections
 

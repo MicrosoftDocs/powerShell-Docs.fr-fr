@@ -1,12 +1,14 @@
 ---
-title: Élément FirstLineIndent pour frame pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: def5b4e9ca98a15edbb36675ca506e886de567dc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: FirstLineIndent, élément pour Frame pour GroupBy (Format)
+description: FirstLineIndent, élément pour Frame pour GroupBy (Format)
+ms.openlocfilehash: 391a6f338e264fd9fdd1948ded74bf022cb114d1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781662"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645794"
 ---
 # <a name="firstlineindent-element-for-frame-for-groupby-format"></a>FirstLineIndent, élément pour Frame pour GroupBy (Format)
 

@@ -1,12 +1,14 @@
 ---
-title: CustomControl, élément de Control pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5aacf824421dfce19f1f495fc0a95e766cdbaf8b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControl, élément pour Control pour Controls (Format)
+description: CustomControl, élément pour Control pour Controls (Format)
+ms.openlocfilehash: 631995c6a50c0f020cb2e991cfbf58a09a75cc72
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786082"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649994"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>CustomControl, élément pour Control pour Controls (Format)
 

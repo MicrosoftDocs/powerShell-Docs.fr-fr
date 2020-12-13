@@ -1,12 +1,14 @@
 ---
-title: Demande de confirmation | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 42ab001e3e8894f2ca17332634214af108fc5918
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Demandes de confirmation
+description: Demandes de confirmation
+ms.openlocfilehash: fd7b9eb9f697e15577d1836b8d8b689f231d33a1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781781"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648484"
 ---
 # <a name="requesting-confirmation"></a>Demandes de confirmation
 

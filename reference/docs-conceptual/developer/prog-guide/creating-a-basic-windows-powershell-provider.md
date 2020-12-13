@@ -1,15 +1,14 @@
 ---
-title: Création d’un fournisseur Windows PowerShell de base | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- base provider [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], base provider
-ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur Windows PowerShell de base
+description: Création d’un fournisseur Windows PowerShell de base
+ms.openlocfilehash: 03b5784fd063b5457fc64d92a32e286e3bf9cce4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787221"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647515"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Création d’un fournisseur Windows PowerShell de base
 
@@ -40,7 +39,7 @@ Vous pouvez définir des mots clés d’attribut pour déclarer davantage la cla
 > [!NOTE]
 > Le nom qualifié complet du fournisseur Windows PowerShell comprend le nom de l’assembly et d’autres attributs déterminés par Windows PowerShell lors de l’inscription du fournisseur.
 
-## <a name="defining-provider-specific-state-information"></a>Définition des informations d’État spécifiques au fournisseur
+## <a name="defining-provider-specific-state-information"></a>Définition des informations d’état de Provider-Specific
 
 La classe de base [System. Management. Automation. Provider. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) et toutes les classes dérivées sont considérées comme sans État, car le runtime Windows PowerShell ne crée des instances de fournisseur que si nécessaire. Par conséquent, si votre fournisseur requiert un contrôle total et une maintenance de l’État pour les données spécifiques au fournisseur, il doit dériver une classe de la classe [System. Management. Automation. providerinfo retourné par](/dotnet/api/System.Management.Automation.ProviderInfo) . Votre classe dérivée doit définir les membres nécessaires pour maintenir l’État afin que les données spécifiques au fournisseur soient accessibles lorsque le runtime Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) pour initialiser le fournisseur.
 

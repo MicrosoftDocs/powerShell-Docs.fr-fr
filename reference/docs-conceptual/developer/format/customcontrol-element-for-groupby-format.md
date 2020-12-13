@@ -1,12 +1,14 @@
 ---
-title: CustomControl, élément de GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b8265e872d34ea5dbcedfaa1668d21df8c3b35eb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomControl, élément pour GroupBy (Format)
+description: CustomControl, élément pour GroupBy (Format)
+ms.openlocfilehash: 633cfcbd10206dc8d7fb4bc1d0092f19aa5bde7c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786065"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646107"
 ---
 # <a name="customcontrol-element-for-groupby-format"></a>CustomControl, élément pour GroupBy (Format)
 

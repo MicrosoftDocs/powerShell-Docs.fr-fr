@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionCondition pour EntrySelectedBy pour table ((format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4a829f9daef22c4b3fd6b21dfb3af2f8539bdeb3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionCondition, élément pour EntrySelectedBy pour TableControl (Format)
+description: SelectionCondition, élément pour EntrySelectedBy pour TableControl (Format)
+ms.openlocfilehash: 22f304615c6433ffb67f3b4046b645d0c37be8a4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780285"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645759"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>SelectionCondition, élément pour EntrySelectedBy pour TableControl (Format)
 

@@ -1,16 +1,14 @@
 ---
-title: Déclaration d’attribut ValidatePattern | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidatePattern
-- ValidatePattern attribute, described
-- ValidatePattern attribute
-ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de l’attribut ValidatePattern
+description: Déclaration de l’attribut ValidatePattern
+ms.openlocfilehash: 364f63d2c52563eaefe64bcbb2bbae511bccb074
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787799"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646164"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Déclaration de l’attribut ValidatePattern
 
@@ -27,7 +25,7 @@ Quand ValidatePattern est appelé dans une applet de commande, le runtime Window
 
 #### <a name="parameters"></a>Paramètres
 
-`RegexString`([System. String](/dotnet/api/System.String)) requis. Spécifie une expression régulière qui valide l’argument du paramètre.
+`RegexString` ([System. String](/dotnet/api/System.String)) requis. Spécifie une expression régulière qui valide l’argument du paramètre.
 
 Options ([System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) paramètre nommé facultatif. Spécifie une combinaison d’opérations de bits d’indicateurs [System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) qui spécifient des options d’expression régulière.
 

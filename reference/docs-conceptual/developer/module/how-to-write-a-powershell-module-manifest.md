@@ -1,12 +1,14 @@
 ---
-title: Comment écrire un manifeste de module PowerShell | Microsoft Docs
 ms.date: 10/16/2019
-ms.openlocfilehash: 734adab5ce26df6e26353de8e0bc9084e0fd3f3b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide pratique pour écrire un manifeste de module PowerShell
+description: Guide pratique pour écrire un manifeste de module PowerShell
+ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784909"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647702"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Comment écrire un manifeste de module PowerShell
 
@@ -20,7 +22,7 @@ Pour les modules simples qui contiennent uniquement un `.psm1` assembly unique o
 
 ### <a name="to-create-and-use-a-module-manifest"></a>Pour créer et utiliser un manifeste de module
 
-1. La meilleure pratique pour créer un manifeste de module consiste à utiliser l’applet [de commande New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) . Vous pouvez utiliser des paramètres pour spécifier une ou plusieurs des valeurs et des clés par défaut du manifeste. La seule exigence consiste à nommer le fichier. `New-ModuleManifest`crée un manifeste de module avec les valeurs spécifiées, et comprend les clés restantes et leurs valeurs par défaut. Si vous avez besoin de créer plusieurs modules, utilisez `New-ModuleManifest` pour créer un modèle de manifeste de module qui peut être modifié pour vos différents modules. Pour obtenir un exemple de manifeste de module par défaut, consultez l' [exemple de manifeste de module](#sample-module-manifest).
+1. La meilleure pratique pour créer un manifeste de module consiste à utiliser l’applet [de commande New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) . Vous pouvez utiliser des paramètres pour spécifier une ou plusieurs des valeurs et des clés par défaut du manifeste. La seule exigence consiste à nommer le fichier. `New-ModuleManifest` crée un manifeste de module avec les valeurs spécifiées, et comprend les clés restantes et leurs valeurs par défaut. Si vous avez besoin de créer plusieurs modules, utilisez `New-ModuleManifest` pour créer un modèle de manifeste de module qui peut être modifié pour vos différents modules. Pour obtenir un exemple de manifeste de module par défaut, consultez l' [exemple de manifeste de module](#sample-module-manifest).
 
    `New-ModuleManifest -Path C:\myModuleName.psd1 -ModuleVersion "2.0" -Author "YourNameHere"`
 
@@ -55,11 +57,11 @@ Le tableau suivant décrit les éléments que vous pouvez inclure dans un manife
 |Élément|Default|Description|
 |-------------|-------------|-----------------|
 |**RootModule**<br /> Entrez : `String`|`<empty string>`|Module de script ou fichier de module binaire associé à ce manifeste. Les versions précédentes de PowerShell appelaient cet élément **ModuleToProcess**.<br /> Les types possibles pour le module racine peuvent être vides, ce qui crée un module de **manifeste** , le nom d’un module de script ( `.psm1` ) ou le nom d’un module binaire ( `.exe` ou `.dll` ). Le fait de placer le nom d’un manifeste de module ( `.psd1` ) ou d’un fichier de script ( `.ps1` ) dans cet élément génère une erreur. <br /> Exemple : `RootModule = 'ScriptModule.psm1'`|
-|**ModuleVersion**<br /> Entrez : `Version`|`'0.0.1'`|Numéro de version de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut. La chaîne doit pouvoir être convertie vers le type `Version` , par exemple `#.#.#.#.#` . `Import-Module`charge le premier module qu’il trouve sur le **$PSModulePath** qui correspond au nom et a au moins une **ModuleVersion**, comme le paramètre **MinimumVersion** . Pour importer une version spécifique, utilisez le `Import-Module` paramètre **RequiredVersion** de l’applet de commande.<br /> Exemple : `ModuleVersion = '1.0'`|
+|**ModuleVersion**<br /> Entrez : `Version`|`'0.0.1'`|Numéro de version de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest`   utilise la valeur par défaut. La chaîne doit pouvoir être convertie vers le type `Version` , par exemple `#.#.#.#.#` . `Import-Module` charge le premier module qu’il trouve sur le **$PSModulePath** qui correspond au nom et a au moins une **ModuleVersion**, comme le paramètre **MinimumVersion** . Pour importer une version spécifique, utilisez le `Import-Module` paramètre **RequiredVersion** de l’applet de commande.<br /> Exemple : `ModuleVersion = '1.0'`|
 |**GUID**<br /> Entrez : `GUID`|`'<GUID>'`|ID utilisé pour identifier de manière unique ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` la valeur est générée automatiquement. Actuellement, vous ne pouvez pas importer un module par **GUID**. <br /> Exemple : `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
-|**Author**<br /> Entrez : `String`|`'<Current user>'`|Auteur de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise l’utilisateur actuel. <br /> Exemple : `Author = 'AuthorNameHere'`|
-|**Prennent**<br /> Entrez : `String`|`'Unknown'`|Société ou fournisseur de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut.<br /> Exemple : `CompanyName = 'Fabrikam'`|
-|**Intellectuelle**<br /> Entrez : `String`|`'(c) <Author>. All rights reserved.'`| Déclaration de droits d’auteur pour ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut avec l’utilisateur actuel en tant que `<Author>` . Pour spécifier un auteur, utilisez le paramètre **auteur** . <br /> Exemple : `Copyright = '2019 AuthorName. All rights reserved.'`|
+|**Auteur**<br /> Entrez : `String`|`'<Current user>'`|Auteur de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise l’utilisateur actuel. <br /> Exemple : `Author = 'AuthorNameHere'`|
+|**CompanyName**<br /> Entrez : `String`|`'Unknown'`|Société ou fournisseur de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut.<br /> Exemple : `CompanyName = 'Fabrikam'`|
+|**Copyright**<br /> Entrez : `String`|`'(c) <Author>. All rights reserved.'`| Déclaration de droits d’auteur pour ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut avec l’utilisateur actuel en tant que `<Author>` . Pour spécifier un auteur, utilisez le paramètre **auteur** . <br /> Exemple : `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Description**<br /> Entrez : `String`|`<empty string>`|Description de la fonctionnalité fournie par ce module.<br /> Exemple : `Description = 'This is the module's description.'`|
 |**PowerShellVersion**<br /> Entrez : `Version`|`<empty string>`|Version minimale du moteur PowerShell requise par ce module. Les valeurs valides sont 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6 et 7.<br /> Exemple : `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> Entrez : `String`|`<empty string>`|Nom de l’hôte PowerShell requis par ce module. Ce nom est fourni par PowerShell. Pour rechercher le nom d’un programme hôte, dans le programme, tapez : `$host.name` .<br /> Exemple : `PowerShellHostName = 'ConsoleHost'`|
@@ -80,7 +82,7 @@ Le tableau suivant décrit les éléments que vous pouvez inclure dans un manife
 |**DscResourcesToExport**<br /> Entrez : `String[]`|`@()`|Spécifie les ressources DSC à exporter à partir de ce module. Les caractères génériques sont autorisés. <br /> Exemple : `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
 |**ModuleList**<br /> Entrez : `Object[]`|`@()`|Spécifie tous les modules qui sont empaquetés avec ce module. Ces modules peuvent être entrés par nom, à l’aide d’une chaîne séparée par des virgules, ou en tant que table de hachage avec des clés **modulename** et **GUID** . La table de hachage peut également avoir une clé **ModuleVersion** facultative. La clé **ModuleList** est conçue pour agir en tant qu’inventaire de module. Ces modules ne sont pas traités automatiquement. <br /> Exemple : `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**FileList**<br /> Entrez : `String[]`|`@()`|Liste de tous les fichiers empaquetés avec ce module. Comme avec **ModuleList**, **filelist** est une liste d’inventaire et n’est pas traité autrement. <br /> Exemple : `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> Entrez : `Object`|`@{...}`|Spécifie les données privées qui doivent être passées au module racine spécifié par la clé **RootModule** (alias : **ModuleToProcess**). **PrivateData** est une table de hachage qui comprend plusieurs éléments **: Tags**, **LicenseUri**, **ProjectURI**, **iconUri**, **ReleaseNotes**, **version préliminaire**, **RequireLicenseAcceptance**et **ExternalModuleDependencies**. |
+|**PrivateData**<br /> Entrez : `Object`|`@{...}`|Spécifie les données privées qui doivent être passées au module racine spécifié par la clé **RootModule** (alias : **ModuleToProcess**). **PrivateData** est une table de hachage qui comprend plusieurs éléments **: Tags**, **LicenseUri**, **ProjectURI**, **iconUri**, **ReleaseNotes**, **version préliminaire**, **RequireLicenseAcceptance** et **ExternalModuleDependencies**. |
 |**Balises** <br /> Entrez : `String[]` |`@()`| Balises aide sur la découverte de modules dans les galeries en ligne. <br /> Exemple : `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> Entrez : `Uri` |`<empty string>`| URL de la licence pour ce module. <br /> Exemple : `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> Entrez : `Uri` |`<empty string>`| URL du site Web principal pour ce projet. <br /> Exemple : `ProjectUri = 'https://www.contoso.com/project'`|

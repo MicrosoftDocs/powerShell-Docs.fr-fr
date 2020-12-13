@@ -1,12 +1,14 @@
 ---
-title: Prise en charge des caractères génériques dans les paramètres des applets de commande
 ms.date: 08/26/2019
-ms.openlocfilehash: 062e3d50dddd0bc84e57f5254a93289acbabe38b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Prise en charge des caractères génériques dans les paramètres des applets de commande
+description: Prise en charge des caractères génériques dans les paramètres des applets de commande
+ms.openlocfilehash: 06693c62cd2613050bdeb9d6b12ad6e9597a9894
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786405"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646397"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Prise en charge des caractères génériques dans les paramètres des applets de commande
 

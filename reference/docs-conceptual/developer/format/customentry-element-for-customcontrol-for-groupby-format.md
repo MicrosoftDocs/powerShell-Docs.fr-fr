@@ -1,12 +1,14 @@
 ---
-title: Élément CustomEntry pour CustomControl pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4df8e5b96868b3814c6d84fa329950bb5345ef6e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomEntry, élément pour CustomControl pour GroupBy (Format)
+description: CustomEntry, élément pour CustomControl pour GroupBy (Format)
+ms.openlocfilehash: 0df2ff9c15308939e6d2552f51e2961bdabc59fb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785912"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646061"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>CustomEntry, élément pour CustomControl pour GroupBy (Format)
 

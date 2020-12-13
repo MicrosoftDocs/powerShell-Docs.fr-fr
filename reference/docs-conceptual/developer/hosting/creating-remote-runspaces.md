@@ -1,12 +1,14 @@
 ---
-title: Création de instances d’exécution distants | Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 2b3c76eeae70de9ef116851313953bba1a1d890f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’instances d’exécution distantes
+description: Création d’instances d’exécution distantes
+ms.openlocfilehash: 4a2af4094ff2503fc12ee460d49565f035f0e4fe
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779588"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649373"
 ---
 # <a name="creating-remote-runspaces"></a>Création d’instances d’exécution distantes
 

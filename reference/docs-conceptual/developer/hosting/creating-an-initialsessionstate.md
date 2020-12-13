@@ -1,12 +1,14 @@
 ---
-title: Création d’un InitialSessionState | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un InitialSessionState
+description: Création d’un InitialSessionState
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779724"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649412"
 ---
 # <a name="creating-an-initialsessionstate"></a>Création d’un InitialSessionState
 

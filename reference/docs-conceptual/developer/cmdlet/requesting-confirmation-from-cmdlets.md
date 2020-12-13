@@ -1,18 +1,14 @@
 ---
-title: Demande de confirmation à partir des applets de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ConfirmImpact [PowerShell Programmer's Guide], described
-- ShouldContinue [PowerShell Programmer's Guide], described
-- user feedback [PowerShell Programmer's Guide], requesting
-- ShouldProcess [PowerShell Programmer's Guide], described
-- ConfirmPreference [PowerShell Programmer's Guide], described
-ms.openlocfilehash: bcc4c766d0012e7173550e3b6cb3ef058baa06bb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Demandes de confirmation des applets de commande
+description: Demandes de confirmation des applets de commande
+ms.openlocfilehash: fd869d50b185cb4d38269640df58ec284a32da50
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781798"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646402"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>Demandes de confirmation des applets de commande
 

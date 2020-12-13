@@ -1,12 +1,14 @@
 ---
-title: Élément ItemSelectionCondition pour ExpressionBinding pour les contrôles pour View (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e8e3ea64fd947fbb2b98c410ac08533f386c9505
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ItemSelectionCondition, élément pour ExpressionBinding pour Controls pour View (Format)
+description: ItemSelectionCondition, élément pour ExpressionBinding pour Controls pour View (Format)
+ms.openlocfilehash: adbe747bdb4f6c1d180e5b630247de0fd3d72b85
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781203"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648057"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format"></a>ItemSelectionCondition, élément pour ExpressionBinding pour Controls pour View (Format)
 

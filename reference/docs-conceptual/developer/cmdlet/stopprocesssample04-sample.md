@@ -1,12 +1,14 @@
 ---
-title: Exemple StopProcessSample04 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple StopProcessSample04
+description: Exemple StopProcessSample04
+ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786422"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650138"
 ---
 # <a name="stopprocesssample04-sample"></a>Exemple StopProcessSample04
 
@@ -60,7 +62,7 @@ Cet exemple illustre ce qui suit.
 
 ## <a name="example"></a>Exemple
 
-Le code suivant illustre une implémentation de l’applet de commande Stop-proc qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.
+Le code suivant illustre une implémentation de l’applet de commande Stop-Proc qui déclare des jeux de paramètres, spécifie le jeu de paramètres par défaut et peut accepter un objet d’entrée.
 
 Cet exemple montre l’objet d’entrée, comment déclarer des jeux de paramètres et comment spécifier le jeu de paramètres par défaut à utiliser.
 

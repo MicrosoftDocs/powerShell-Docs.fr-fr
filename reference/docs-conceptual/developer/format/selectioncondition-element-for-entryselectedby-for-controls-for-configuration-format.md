@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionCondition pour EntrySelectedBy pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 748aa1aa0ba603a44334d9401e9e2c0e68f14e03
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionCondition, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
+description: SelectionCondition, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
+ms.openlocfilehash: ce00cdf868a3075875043aeb59f2cb8a17d049a9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783413"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645777"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format"></a>SelectionCondition, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
 

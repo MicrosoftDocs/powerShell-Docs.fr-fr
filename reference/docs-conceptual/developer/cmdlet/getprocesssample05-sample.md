@@ -1,16 +1,18 @@
 ---
-title: Exemple GetProcessSample05 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple GetProcessSample05
+description: Exemple GetProcessSample05
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784195"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646517"
 ---
 # <a name="getprocesssample05-sample"></a>Exemple GetProcessSample05
 
-Cet exemple montre une version complète de l’applet de commande obtenir-proc.
+Cet exemple montre une version complète de l’applet de commande Get-Proc.
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Comment générer l’exemple à l’aide de Visual Studio.
 

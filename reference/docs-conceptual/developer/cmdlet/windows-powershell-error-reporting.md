@@ -1,12 +1,14 @@
 ---
-title: Rapport d’erreurs Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7f7afcf5186732734976304c8e58e4d940156e1e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Rapport d’erreurs Windows PowerShell
+description: Rapport d’erreurs Windows PowerShell
+ms.openlocfilehash: 438e3d96bf52d8ac1f770c0550ae49b356d616eb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783957"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650121"
 ---
 # <a name="windows-powershell-error-reporting"></a>Rapport d’erreurs Windows PowerShell
 

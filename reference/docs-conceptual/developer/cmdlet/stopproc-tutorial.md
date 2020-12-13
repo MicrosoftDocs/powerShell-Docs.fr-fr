@@ -1,16 +1,18 @@
 ---
-title: Didacticiel StopProc | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e298c729b7ac59141638052d19b95ab77aa25cd6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Tutoriel StopProc
+description: Tutoriel StopProc
+ms.openlocfilehash: 95229ee3c4905d295bd6991fe8ccf8c9840c3cdd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786473"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646427"
 ---
 # <a name="stopproc-tutorial"></a>Tutoriel StopProc
 
-Cette section fournit un didacticiel pour la création de l’applet de commande Stop-proc, qui est très similaire à l’applet de commande [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) fournie par Windows PowerShell. Ce didacticiel fournit des fragments de code qui illustrent la façon dont les applets de commande sont implémentées, ainsi qu’une explication du code.
+Cette section fournit un didacticiel sur la création de l’applet de commande Stop-Proc, qui est très similaire à l’applet de commande [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) fournie par Windows PowerShell. Ce didacticiel fournit des fragments de code qui illustrent la façon dont les applets de commande sont implémentées, ainsi qu’une explication du code.
 
 ## <a name="topics-in-this-tutorial"></a>Rubriques de ce didacticiel
 

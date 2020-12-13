@@ -1,12 +1,14 @@
 ---
-title: Paramètres de sécurité | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 290905b04547af932182005869b18dc1bc210ca4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Paramètres de sécurité
+description: Paramètres de sécurité
+ms.openlocfilehash: 2c73a3372fa719ea436d4a3ae1223d4cbaaf9108
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786507"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650244"
 ---
 # <a name="security-parameters"></a>Paramètres de sécurité
 
@@ -35,7 +37,7 @@ Le tableau suivant répertorie les noms et les fonctionnalités recommandés pou
 |**Privilèges**<br>Type de données : tableau de privilèges|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier les droits nécessaires à l’exécution d’une applet de commande pour une entrée particulière.|
 |**Rôle**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un ensemble d’opérations qui peuvent être effectuées par une entité.|
 |**SaveCred**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre afin que les informations d’identification précédemment enregistrées par l’utilisateur soient utilisées lorsque le paramètre est spécifié.|
-|**Portée**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le groupe d’objets protégés pour l’applet de commande.|
+|**Étendue**<br>Type de données : Chaîne|Implémentez ce paramètre afin que l’utilisateur puisse spécifier le groupe d’objets protégés pour l’applet de commande.|
 |**SID**<br>Type de données : Chaîne|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier un identificateur unique qui représente un principal.|
 |**TPM**<br>Type de données : Paramètre_booléen|Implémentez ce paramètre afin que les niveaux de confiance soient pris en charge lorsque le paramètre est spécifié.|
 |**TrustLevel**<br>Type de données : mot clé|Implémentez ce paramètre pour permettre à l’utilisateur de spécifier le niveau de confiance pris en charge. Par exemple, les valeurs possibles sont Internet, intranet et FullTrust.|

@@ -1,12 +1,14 @@
 ---
-title: Ajout d’un rapport d’erreurs sans fin d’achèvement à votre applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
+description: Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
+ms.openlocfilehash: 883ff2d522266495e409fb0d45f29713baa6f047
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784586"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648672"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Ajout de rapport d’erreurs sans fin d’exécution à votre applet de commande
 
@@ -35,9 +37,9 @@ Public Class GetProcCommand
 
 ## <a name="defining-parameters"></a>Définition des paramètres
 
-Si nécessaire, votre applet de commande doit définir des paramètres pour le traitement de l’entrée. Cette applet de commande obtenir-proc définit un paramètre **Name** comme décrit dans [Ajout de paramètres qui traitent l’entrée de ligne de commande](adding-parameters-that-process-command-line-input.md).
+Si nécessaire, votre applet de commande doit définir des paramètres pour le traitement de l’entrée. Cette applet de commande Get-Proc définit un paramètre **Name** comme décrit dans [Ajout de paramètres qui traitent Command-Line entrée](adding-parameters-that-process-command-line-input.md).
 
-Voici la déclaration de paramètre pour le paramètre **Name** de l’applet de commande « obtenir-proc ».
+Voici la déclaration de paramètre pour le paramètre **Name** de cette applet de commande Get-Proc.
 
 ```csharp
 [Parameter(
@@ -76,7 +78,7 @@ Toutes les applets de commande doivent remplacer au moins l’une des méthodes 
 > [!NOTE]
 > Votre applet de commande doit gérer chaque enregistrement de la manière la plus indépendante possible.
 
-Cette applet de commande obtenir-proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord][] pour gérer le paramètre **Name** de l’entrée fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Les détails de ce remplacement sont fournis lors de [la création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
+Cette applet de commande Get-Proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord][] pour gérer le paramètre **Name** de l’entrée fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Les détails de ce remplacement sont fournis lors de [la création de votre première applet](creating-a-cmdlet-without-parameters.md)de commande.
 
 ### <a name="things-to-remember-when-reporting-errors"></a>Points à retenir lors de la création de rapports d’erreurs
 
@@ -110,7 +112,7 @@ Les exceptions non gérées ne sont pas interceptées par PowerShell dans les co
 
 L’une des méthodes de traitement d’entrée peut signaler une erreur sans fin d’exécution au flux de sortie à l’aide de la méthode [System. Management. Automation. applet de commande. WriteError][] .
 
-Voici un exemple de code de cette applet de commande « obtenir-proc » qui illustre l’appel à [System. Management. Automation. cmdlet. WriteError][] à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord][] . Dans ce cas, l’appel est effectué si l’applet de commande ne parvient pas à trouver un processus pour un identificateur de processus spécifié.
+Voici un exemple de code de cet Get-Proc applet de commande qui illustre l’appel à [System. Management. Automation. cmdlet. WriteError][] à partir de la substitution de la méthode [System. Management. Automation. cmdlet. ProcessRecord][] . Dans ce cas, l’appel est effectué si l’applet de commande ne parvient pas à trouver un processus pour un identificateur de processus spécifié.
 
 ```csharp
 protected override void ProcessRecord()
@@ -172,9 +174,9 @@ Après l’implémentation d’une applet de commande, vous devez l’inscrire a
 
 ## <a name="testing-the-cmdlet"></a>Test de l’applet de commande
 
-Lorsque votre applet de commande a été inscrite auprès de PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple d’applet de commande Sample-proc pour voir s’il signale une erreur :
+Lorsque votre applet de commande a été inscrite auprès de PowerShell, vous pouvez la tester en l’exécutant sur la ligne de commande. Nous allons tester l’exemple de cmdlet Get-Proc pour voir s’il signale une erreur :
 
-- Démarrez PowerShell et utilisez l’applet de commande obtenir-proc pour récupérer les processus nommés « TEST ».
+- Démarrez PowerShell et utilisez l’applet de commande Get-Proc pour récupérer les processus nommés « TEST ».
 
   ```powershell
   get-proc -name test
@@ -192,7 +194,7 @@ Lorsque votre applet de commande a été inscrite auprès de PowerShell, vous po
 
 [Ajout de paramètres qui traitent l’entrée du pipeline](./adding-parameters-that-process-pipeline-input.md)
 
-[Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md)
+[Ajout de paramètres qui traitent Command-Line entrée](./adding-parameters-that-process-command-line-input.md)
 
 [Création de votre première applet de commande](./creating-a-cmdlet-without-parameters.md)
 

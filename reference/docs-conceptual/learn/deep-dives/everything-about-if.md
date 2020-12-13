@@ -4,10 +4,10 @@ description: À l’instar de nombreux autres langages, PowerShell comporte des 
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: b6bafb99bfb8ecd0152bae841e5c58d4c27ccd3e
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "86469750"
 ---
 # <a name="everything-you-wanted-to-know-about-the-if-statement"></a>Tout ce que vous avez toujours voulu savoir sur l’instruction `if`

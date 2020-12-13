@@ -1,14 +1,14 @@
 ---
-title: Ajout de jeux de paramètres à une applet de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- parameter sets [PowerShell Programmer's Guide]
-ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ajout de jeux de paramètres à une applet de commande
+description: Ajout de jeux de paramètres à une applet de commande
+ms.openlocfilehash: dd5ee2a880a4d516ea82e5afe0ced12369197243
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774981"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92648647"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Ajout de jeux de paramètres à une applet de commande
 
@@ -20,7 +20,7 @@ L’applet de commande `Get-EventLog` fournie par Windows PowerShell est un exem
 
 Deux points importants à retenir concernant les jeux de paramètres sont que le runtime Windows PowerShell n’utilise qu’un seul jeu de paramètres pour une entrée particulière, et que chaque jeu de paramètres doit avoir au moins un paramètre unique pour ce jeu de paramètres.
 
-Pour illustrer ce dernier point, cette applet de commande Stop-proc utilise trois jeux de paramètres : `ProcessName` , `ProcessId` et `InputObject` . Chacun de ces jeux de paramètres possède un paramètre qui n’est pas dans les autres jeux de paramètres. Les jeux de paramètres peuvent partager d’autres paramètres, mais l’applet de commande utilise les paramètres uniques `ProcessName` , `ProcessId` et `InputObject` pour identifier le jeu de paramètres que le runtime Windows PowerShell doit utiliser.
+Pour illustrer ce dernier point, cette applet de commande Stop-Proc utilise trois jeux de paramètres : `ProcessName` , `ProcessId` et `InputObject` . Chacun de ces jeux de paramètres possède un paramètre qui n’est pas dans les autres jeux de paramètres. Les jeux de paramètres peuvent partager d’autres paramètres, mais l’applet de commande utilise les paramètres uniques `ProcessName` , `ProcessId` et `InputObject` pour identifier le jeu de paramètres que le runtime Windows PowerShell doit utiliser.
 
 ## <a name="declaring-the-cmdlet-class"></a>Déclaration de la classe d’applet de commande
 
@@ -29,7 +29,7 @@ La première étape de la création des applets de commande consiste toujours à
 > [!NOTE]
 > Pour plus d’informations sur les noms des verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-Le code suivant est la définition de classe pour cette applet de commande Stop-proc.
+Le code suivant est la définition de classe pour cette applet de commande Stop-Proc.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "Proc",
@@ -220,7 +220,7 @@ Après l’implémentation d’une applet de commande, vous devez l’inscrire a
 
 Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell, testez-la en l’exécutant sur la ligne de commande. Voici quelques tests qui montrent comment les `ProcessId` paramètres et `InputObject` peuvent être utilisés pour tester leurs jeux de paramètres afin d’arrêter un processus.
 
-- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le `ProcessId` paramètre défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le `ProcessId` paramètre défini pour arrêter le processus.
+- Avec Windows PowerShell démarré, exécutez l’applet de commande Stop-Proc avec le `ProcessId` paramètre défini pour arrêter un processus en fonction de son identificateur. Dans ce cas, l’applet de commande utilise le `ProcessId` paramètre défini pour arrêter le processus.
 
   ```
   PS> stop-proc -Id 444
@@ -230,7 +230,7 @@ Lorsque votre applet de commande a été inscrite auprès de Windows PowerShell,
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-proc avec le `InputObject` paramètre défini sur arrêter les processus sur l’objet Notepad récupéré par la `Get-Process` commande.
+- Après avoir démarré Windows PowerShell, exécutez l’applet de commande Stop-Proc avec le `InputObject` paramètre défini sur arrêter les processus sur l’objet Notepad récupéré par la `Get-Process` commande.
 
   ```
   PS> get-process notepad | stop-proc

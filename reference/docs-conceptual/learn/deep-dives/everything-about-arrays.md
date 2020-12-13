@@ -4,10 +4,10 @@ description: Les tableaux constituent une fonctionnalité fondamentale de la plu
 ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
-ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "91852559"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>Tout ce que vous avez toujours voulu savoir sur les tableaux

@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSet (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: cf47229993458492c712d28e04913e75d1bde386
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSet, élément (Format)
+description: SelectionSet, élément (Format)
+ms.openlocfilehash: 944aa83569ad8ca789746a71f60e5da5c19fbf01
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783396"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647871"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet, élément (Format)
 

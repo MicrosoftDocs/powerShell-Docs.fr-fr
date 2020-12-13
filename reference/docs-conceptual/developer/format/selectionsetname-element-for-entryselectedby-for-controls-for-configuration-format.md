@@ -1,12 +1,14 @@
 ---
-title: Élément SelectionSetName pour EntrySelectedBy pour les contrôles de configuration (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSetName, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
+description: SelectionSetName, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
+ms.openlocfilehash: b775aa8a3184aa3ebcbda17a8e3191c69d67a700
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787561"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645722"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>SelectionSetName, élément pour EntrySelectedBy pour Controls pour Configuration (Format)
 
@@ -27,7 +29,7 @@ Les sections suivantes décrivent les attributs, les éléments enfants et l’�
 
 ### <a name="attributes"></a>Attributs
 
-Aucun
+None
 
 ### <a name="child-elements"></a>Éléments enfants
 

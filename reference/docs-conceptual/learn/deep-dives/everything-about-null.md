@@ -4,10 +4,10 @@ description: La variable PowerShell $null semble souvent être simple, mais elle
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: e0553a5e17450d8044f548792649369e99903850
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "84149472"
 ---
 # <a name="everything-you-wanted-to-know-about-null"></a>Tout ce que vous avez toujours voulu savoir sur $null

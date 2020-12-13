@@ -1,12 +1,14 @@
 ---
-title: Élément TypeName pour SelectionCondition pour EntrySelectedBy pour WideControl (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 5021f665b994581f9ff982e13af922d7940ebf2b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TypeName, élément pour SelectionCondition pour EntrySelectedBy pour WideControl (Format)
+description: TypeName, élément pour SelectionCondition pour EntrySelectedBy pour WideControl (Format)
+ms.openlocfilehash: af6e4782c345b43e16bce59c333bdaaceba0d845
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783311"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645499"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format"></a>TypeName, élément pour SelectionCondition pour EntrySelectedBy pour WideControl (Format)
 

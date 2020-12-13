@@ -1,12 +1,14 @@
 ---
-title: Jeux de membres du système de type étendu
 ms.date: 07/09/2020
-ms.openlocfilehash: 3f4e44ed7b498bb7c4a71f7b131270ed4f2ef981
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Jeux de membres du système de type étendu
+description: Jeux de membres du système de type étendu
+ms.openlocfilehash: b04d2618dc4bcf302d2e683d50c351ad3aa076ac
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786252"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650084"
 ---
 # <a name="ets-member-sets"></a>Jeux de membres ETS
 
@@ -22,12 +24,12 @@ Les jeux de propriétés peuvent inclure n’importe quel nombre de propriétés
 - Propriété **ReferencedPropertyNames** : obtient les noms des propriétés dans le jeu de propriétés.
 - Propriété **TypeNameOfValue** : obtient une constante d’énumération **PropertySet** qui définit ce jeu comme un jeu de propriétés.
 - Propriété **value** : Obtient ou définit l’objet **PSPropertySet** .
-- `PSPropertySet.Copy`méthode : effectue une copie exacte de l’objet **PSPropertySet** .
-- `PSMemberSet.ToString`méthode : convertit l’objet **PSPropertySet** en chaîne.
+- `PSPropertySet.Copy` méthode : effectue une copie exacte de l’objet **PSPropertySet** .
+- `PSMemberSet.ToString` méthode : convertit l’objet **PSPropertySet** en chaîne.
 
 ## <a name="member-sets"></a>Jeux de membres
 
-Les jeux de membres peuvent inclure n’importe quel nombre de membres étendus de n’importe quel type. Le jeu de membres est créé en appelant la`PSMemberSet(System.String,System.Collections.Generic.IEnumerable{System.Management.Automation.PSMemberInfo})`
+Les jeux de membres peuvent inclure n’importe quel nombre de membres étendus de n’importe quel type. Le jeu de membres est créé en appelant la `PSMemberSet(System.String,System.Collections.Generic.IEnumerable{System.Management.Automation.PSMemberInfo})`
 constructeur avec le nom du jeu de membres et les noms des membres référencés. L’objet **PSPropertySet** créé peut ensuite être utilisé en tant qu’alias qui pointe vers les membres du jeu. La classe [PSMemberSet](/dotnet/api/system.management.automation.psmemberset) a les propriétés et méthodes suivantes.
 
 - Propriété **isInstance** : obtient une valeur **booléenne** qui indique la source du membre.
@@ -37,5 +39,5 @@ constructeur avec le nom du jeu de membres et les noms des membres référencés
 - Propriété **Properties** : obtient les propriétés incluses dans le jeu de membres.
 - Propriété **TypeNameOfValue** : obtient une constante d’énumération **MemberSet** qui définit ce jeu en tant que jeu de membres.
 - Propriété **value** : obtient l’objet **PSMemberSet** .
-- `PSMemberSet.Copy`méthode : effectue une copie exacte de l’objet **PSMemberSet** .
-- `PSMemberSet.ToString`méthode : convertit l’objet **PSMemberSet** en chaîne.
+- `PSMemberSet.Copy` méthode : effectue une copie exacte de l’objet **PSMemberSet** .
+- `PSMemberSet.ToString` méthode : convertit l’objet **PSMemberSet** en chaîne.

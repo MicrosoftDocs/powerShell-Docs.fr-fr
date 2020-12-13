@@ -1,12 +1,14 @@
 ---
-title: Exemple de fichier XML HelpInfo
 ms.date: 09/12/2016
-ms.openlocfilehash: ec9a2a1afed4f22be00900cbc80b580ff99f8f38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.topic: reference
+title: Exemple de fichier XML HelpInfo
+description: Exemple de fichier XML HelpInfo
+ms.openlocfilehash: 321793d61ab5df3cccc7c353b6c93f5a7275b533
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953265"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647775"
 ---
 # <a name="helpinfo-xml-sample-file"></a>Exemple de fichier XML HelpInfo
 

@@ -1,12 +1,14 @@
 ---
-title: Élément CustomItem pour CustomEntry pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e8086c5330b6644f83316ad4ae33c33ba40d9eee
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: CustomItem, élément pour CustomEntry pour GroupBy (Format)
+description: CustomItem, élément pour CustomEntry pour GroupBy (Format)
+ms.openlocfilehash: 5db23ad4dad5bd66ea64b9c6e91b8224a4aa4eca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783719"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645981"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>CustomItem, élément pour CustomEntry pour GroupBy (Format)
 
