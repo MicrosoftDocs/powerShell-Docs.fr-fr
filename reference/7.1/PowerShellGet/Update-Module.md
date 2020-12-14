@@ -7,19 +7,19 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: e00f371b1bd9129d2463bb5a31b106d165c34f4d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d903cf195bf618b461a5424cdbe06633046c5ae5
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202117"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892550"
 ---
 # Update-Module
 
 ## SYNOPSIS
 Télécharge et installe la version la plus récente des modules spécifiés à partir d’une galerie en ligne sur l’ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -57,7 +57,7 @@ Cet exemple met à jour un module spécifique vers la version la plus récente d
 Update-Module -Name SpeculationControl
 ```
 
-`Update-Module` utilise le paramètre **Name** pour mettre à jour un module spécifique, **SpeculationControl** .
+`Update-Module` utilise le paramètre **Name** pour mettre à jour un module spécifique, **SpeculationControl**.
 
 ### Exemple 3 : afficher les Update-Module les exécutions
 
@@ -84,7 +84,7 @@ Dans cet exemple, un module est mis à jour vers une version spécifique. La ver
 Update-Module -Name SpeculationControl -RequiredVersion 1.0.14
 ```
 
-`Update-Module` utilise le paramètre **Name** pour spécifier le module, **SpeculationControl** . Le paramètre **RequiredVersion** spécifie la version, **1.0.14** .
+`Update-Module` utilise le paramètre **Name** pour spécifier le module, **SpeculationControl**. Le paramètre **RequiredVersion** spécifie la version, **1.0.14**.
 
 ### Exemple 5 : mettre à jour un module sans confirmation
 
@@ -94,7 +94,7 @@ Cet exemple ne demande pas de confirmation pour mettre à jour le module vers la
 Update-Module -Name SpeculationControl -Force
 ```
 
-`Update-Module` utilise le paramètre **Name** pour spécifier le module, **SpeculationControl** . Le paramètre **force** met à jour le module sans demander la confirmation de l’utilisateur.
+`Update-Module` utilise le paramètre **Name** pour spécifier le module, **SpeculationControl**. Le paramètre **force** met à jour le module sans demander la confirmation de l’utilisateur.
 
 ## PARAMETERS
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Spécifie la version exacte à laquelle le module installé existant sera mis à jour. La version spécifiée par **RequiredVersion** doit exister dans la galerie en ligne ou une erreur s’affiche. Si plusieurs modules sont mis à jour dans une même commande, vous ne pouvez pas utiliser **RequiredVersion** .
+Spécifie la version exacte à laquelle le module installé existant sera mis à jour. La version spécifiée par **RequiredVersion** doit exister dans la galerie en ligne ou une erreur s’affiche. Si plusieurs modules sont mis à jour dans une même commande, vous ne pouvez pas utiliser **RequiredVersion**.
 
 ```yaml
 Type: System.String
@@ -278,7 +278,7 @@ Accept wildcard characters: False
 
 ### -Étendue
 
-Spécifie l’étendue d’installation du module. Les valeurs acceptables pour ce paramètre sont **ALLUSERS** et **CurrentUser** . Si **scope** n’est pas spécifié, la mise à jour est installée dans l’étendue **CurrentUser** .
+Spécifie l’étendue d’installation du module. Les valeurs acceptables pour ce paramètre sont **ALLUSERS** et **CurrentUser**. Si **scope** n’est pas spécifié, la mise à jour est installée dans l’étendue **CurrentUser** .
 
 L’étendue **ALLUSERS** nécessite des autorisations élevées et installe les modules dans un emplacement accessible à tous les utilisateurs de l’ordinateur :
 
@@ -290,8 +290,8 @@ Le **CurrentUser** ne requiert pas d’autorisations élevées et installe les m
 
 Si aucune **étendue** n’est définie, la valeur par défaut est définie en fonction de la version PowerShellGet.
 
-- Dans PowerShellGet versions 2.0.0 et ultérieures, la valeur par défaut est **CurrentUser** , ce qui ne nécessite pas d’élévation pour l’installation.
-- Dans les versions de PowerShellGet 1. x, la valeur par défaut est **ALLUSERS** , ce qui nécessite une élévation pour l’installation.
+- Dans PowerShellGet versions 2.0.0 et ultérieures, la valeur par défaut est **CurrentUser**, ce qui ne nécessite pas d’élévation pour l’installation.
+- Dans les versions de PowerShellGet 1. x, la valeur par défaut est **ALLUSERS**, ce qui nécessite une élévation pour l’installation.
 
 ```yaml
 Type: System.String
@@ -342,8 +342,15 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## REMARQUES
 
-Pour PowerShell version 6,0 et versions ultérieures, l’étendue d’installation par défaut est toujours **CurrentUser** .
-Les mises à jour de module pour **CurrentUser** , `$home\Documents\PowerShell\Modules` , n’ont pas besoin d’autorisations élevées. Les mises à jour de module pour **ALLUSERS** , `$env:ProgramFiles\PowerShell\Modules` , ont besoin d’autorisations élevées.
+Pour PowerShell version 6,0 et versions ultérieures, l’étendue d’installation par défaut est toujours **CurrentUser**.
+Les mises à jour de module pour **CurrentUser**, `$home\Documents\PowerShell\Modules` , n’ont pas besoin d’autorisations élevées. Les mises à jour de module pour **ALLUSERS**, `$env:ProgramFiles\PowerShell\Modules` , ont besoin d’autorisations élevées.
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 `Update-Module` s’exécute sur les versions PowerShell 3,0 ou ultérieures de PowerShell, sur Windows 7 ou Windows 2008 R2 et versions ultérieures de Windows.
 
@@ -363,5 +370,5 @@ Si `Update-Module` tente de mettre à jour les fichiers binaires qui sont en cou
 
 [Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[Module Uninstall](Uninstall-Module.md)
 

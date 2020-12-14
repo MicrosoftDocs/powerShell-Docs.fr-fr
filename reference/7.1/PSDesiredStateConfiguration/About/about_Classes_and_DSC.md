@@ -6,12 +6,12 @@ ms.date: 1/11/2019
 online version: https://docs.microsoft.com/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos des classes et de DSC
-ms.openlocfilehash: b66129aa8479013e6397c3e60798a5d2b1929f6b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: a838b36f11495ad63676a3bb15741c5d17ee6eba
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207805"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349861"
 ---
 # <a name="about-classes-and-desired-state-configuration"></a>À propos des classes et de la configuration d’état souhaité
 
@@ -188,7 +188,7 @@ class FileResource
         $present = $true
 
         $item = Get-ChildItem -LiteralPath $location -ea Ignore
-        if ($item -eq $null)
+        if ($null -eq $item)
         {
             $present = $false
         }
@@ -231,150 +231,6 @@ class FileResource
         if(Test-Path -LiteralPath $this.Path -PathType Container)
         {
             throw "Path $($this.Path) is a directory path"
-        }
-
-        Write-Verbose -Message "Copying $this.SourcePath to $this.Path"
-
-        #DSC engine catches and reports any error that occurs
-        Copy-Item -Path $this.SourcePath -Destination $this.Path -Force
-    }
-}
-# This module defines a class for a DSC "FileResource" provider.
-
-enum Ensure
-{
-    Absent
-    Present
-}
-
-<# This resource manages the file in a specific path.
-[DscResource()] indicates the class is a DSC resource
-#>
-
-[DscResource()]
-class FileResource{
-
-    <# This is a key property
-        [DscResourceKey()] also means the property is required.
-        It is guaranteed to be set, other properties may not
-        be set if the configuration did not specify values.
-    #>
-    [DscResourceKey()]
-    [string]$Path
-
-    <#
-        [DscResourceMandatory()] means the property is required.
-        It is guaranteed to be set, other properties may not be set
-        if the configuration did not specify values.
-    #>
-    [DscResourceMandatory()]
-    [Ensure] $Ensure
-
-    <#
-        [DscResourceMandatory()] means the property is required.
-    #>
-    [DscResourceMandatory()]
-    [string] $SourcePath
-
-    [DscResource
-
-    <#
-        This method replaces the Set-TargetResource DSC script function.
-        It sets the resource to the desired state.
-    #>
-    [void] Set()
-    {
-        $fileExists = Test-Path -path $this.Path -PathType Leaf
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            if(-not $fileExists)
-            {
-                $this.CopyFile()
-            }
-        }
-        else
-        {
-            if($fileExists)
-            {
-                Write-Verbose -Message "Deleting the file $this.Path"
-                Remove-Item -LiteralPath $this.Path
-            }
-        }
-    }
-
-    <#
-
-        This method replaces the Test-TargetResource function.
-        It should return True or False, showing whether the resource
-        is in a desired state.
-    #>
-
-    [bool] Test()
-    {
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path."
-        }
-
-        $fileExists = Test-Path -path $this.Path -PathType Leaf
-
-        if($this.ensure -eq [Ensure]::Present)
-        {
-            return $fileExists
-        }
-
-        return (-not $fileExists)
-    }
-
-    <#
-        This method replaces the Get-TargetResource function.
-        The implementation should use the keys to find appropriate
-        resources. This method returns an instance of this class with the
-        updated key properties.
-    #>
-
-    [FileResource] Get()
-    {
-        $file = Get-item $this.Path
-        return $this
-    }
-
-    <#
-        Helper method to copy file from source to path.
-        Because this resource provider run under system,
-        Only the Administrators and system have full
-        access to the new created directory and file
-    #>
-    CopyFile()
-    {
-        if(Test-Path -path $this.SourcePath -PathType Container)
-        {
-            throw "SourcePath '$this.SourcePath' is a directory path"
-        }
-
-        if( -not (Test-Path -path $this.SourcePath -PathType Leaf))
-        {
-            throw "SourcePath '$this.SourcePath' is not found."
-        }
-
-        [System.IO.FileInfo]
-        $destFileInfo = new-object System.IO.FileInfo($this.Path)
-
-        if (-not $destFileInfo.Directory.Exists)
-        {
-            $FullName = $destFileInfo.Directory.FullName
-            $Message = "Creating directory $FullName"
-
-            Write-Verbose -Message $Message
-
-            #use CreateDirectory instead of New-Item to avoid lines
-            # to handle the non-terminating error
-            [System.IO.Directory]::CreateDirectory($FullName)
-        }
-
-        if(Test-Path -path $this.Path -PathType Container)
-        {
-            throw "Path '$this.Path' is a directory path"
         }
 
         Write-Verbose -Message "Copying $this.SourcePath to $this.Path"
@@ -463,7 +319,7 @@ Exécutez ce script comme vous le feriez pour n’importe quel script de configu
 
 ### <a name="declare-base-classes-for-powershell-classes"></a>Déclarer des classes de base pour les classes PowerShell
 
-Vous pouvez déclarer une classe PowerShell comme type de base pour une autre classe PowerShell, comme illustré dans l’exemple suivant, dans lequel **fruit** est un type de base pour **Apple** .
+Vous pouvez déclarer une classe PowerShell comme type de base pour une autre classe PowerShell, comme illustré dans l’exemple suivant, dans lequel **fruit** est un type de base pour **Apple**.
 
 ```powershell
 class fruit
@@ -637,7 +493,7 @@ hidden [type] $classmember = <value>
 
 Les membres masqués ne sont pas affichés à l’aide de la saisie semi-automatique par tabulation ou IntelliSense, sauf si la saisie semi-automatique se produit dans la classe qui définit le membre masqué.
 
-Un nouvel attribut, **System. Management. Automation. hiddenattribute,** , a été ajouté, afin que le code C# puisse avoir la même sémantique dans PowerShell.
+Un nouvel attribut, **System. Management. Automation. hiddenattribute,**, a été ajouté, afin que le code C# puisse avoir la même sémantique dans PowerShell.
 
 Pour plus d’informations, consultez [about_Hidden](../../Microsoft.PowerShell.Core/About/about_hidden.md).
 
@@ -663,7 +519,7 @@ Un type est facultatif.
 
 `$s = "hello"`
 
-Tous les membres sont publics. Les propriétés nécessitent un saut de ligne ou un point-virgule. Si aucun type d’objet n’est spécifié, le type de propriété est **Object** .
+Tous les membres sont publics. Les propriétés nécessitent un saut de ligne ou un point-virgule. Si aucun type d’objet n’est spécifié, le type de propriété est **Object**.
 
 ### <a name="constructors-and-instantiation"></a>Constructeurs et instanciation
 
@@ -703,7 +559,7 @@ hashtable new(int capacity, float loadFactor)
 
 ### <a name="methods"></a>Méthodes
 
-Une méthode de classe Windows PowerShell est implémentée sous forme de **ScriptBlock** ne comportant qu’un bloc de fin. Toutes les méthodes sont publiques. L’exemple suivant montre comment définir une méthode nommée **DoSomething** .
+Une méthode de classe Windows PowerShell est implémentée sous forme de **ScriptBlock** ne comportant qu’un bloc de fin. Toutes les méthodes sont publiques. L’exemple suivant montre comment définir une méthode nommée **DoSomething**.
 
 ```powershell
 class MyClass

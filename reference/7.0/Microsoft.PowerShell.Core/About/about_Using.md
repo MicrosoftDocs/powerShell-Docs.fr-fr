@@ -1,17 +1,16 @@
 ---
 description: Vous permet d’indiquer les espaces de noms qui sont utilisés dans la session.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: bfd1208516193adf470a25dbdf3d58563847a26a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 798b7bc9759c7c88eb612d0eb47bdb92c015cc18
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207489"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892019"
 ---
 # <a name="about-using"></a>À propos de l’utilisation de
 
@@ -26,7 +25,7 @@ Les `using` instructions doivent précéder toutes les autres instructions dans 
 
 L' `using` instruction ne doit pas être confondue avec le `using:` modificateur de portée pour les variables. Pour plus d’informations, consultez [about_Remote_Variables](about_Remote_Variables.md).
 
-## <a name="syntax"></a>Syntaxe
+## <a name="namespace-syntax"></a>Syntaxe d’espace de noms
 
 Pour spécifier des espaces de noms .NET à partir desquels résoudre les types :
 
@@ -34,19 +33,41 @@ Pour spécifier des espaces de noms .NET à partir desquels résoudre les types�
 using namespace <.NET-namespace>
 ```
 
+La spécification d’un espace de noms facilite la référence des types par leurs noms courts.
+
+## <a name="module-syntax"></a>Syntaxe de module
+
 Pour charger des classes à partir d’un module PowerShell :
 
 ```
 using module <module-name>
 ```
 
+La valeur de `<module-name>` peut être un nom de module, une spécification de module complète ou un chemin d’accès à un fichier de module.
+
+Lorsque `<module-name>` est un chemin d’accès, le chemin d’accès peut être complet ou relatif. Un chemin d’accès relatif est résolu par rapport au script qui contient l’instruction using.
+
+> [!NOTE]
+> Lorsque le chemin d’accès relatif contient une barre oblique ( `/` ), PowerShell traite le chemin d’accès par rapport à l’emplacement actuel plutôt qu’en fonction de l’emplacement du script. Ce bogue est résolu dans PowerShell 7,1.
+
+Quand `<module-name>` est un nom ou une spécification de module, PowerShell recherche le module spécifié dans le **PSModulePath** .
+
+Une spécification de module est une table de hachage qui contient les clés suivantes.
+
+- `ModuleName` - **Obligatoire** Spécifie le nom du module.
+- `GUID` - **Facultatif** Spécifie le GUID du module.
+- Il est également **nécessaire** de spécifier l’une des trois clés ci-dessous. Ces clés ne peuvent pas être utilisées ensemble.
+  - `ModuleVersion` -Spécifie une version minimale acceptable du module.
+  - `RequiredVersion` -Spécifie une version exacte et obligatoire du module.
+  - `MaximumVersion` -Spécifie la version maximale acceptable du module.
+
+## <a name="assembly-syntax"></a>Syntaxe d’assembly
+
 Pour précharger des types à partir d’un assembly .NET :
 
 ```
 using assembly <.NET-assembly-path>
 ```
-
-La spécification d’un espace de noms facilite la référence des types par leurs noms courts.
 
 Le chargement d’un assembly précharge les types .NET de cet assembly dans un script au moment de l’analyse. Cela vous permet de créer de nouvelles classes PowerShell qui utilisent des types de l’assembly préchargé.
 

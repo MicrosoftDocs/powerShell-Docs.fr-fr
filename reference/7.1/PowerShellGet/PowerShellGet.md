@@ -8,18 +8,25 @@ Module Name: PowerShellGet
 ms.date: 06/09/2017
 schema: 2.0.0
 title: PowerShellGet
-ms.openlocfilehash: 87d4b62b866e0b477668ab4f4a5ec426d9a0df76
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 577dc9a56da98d975b777e6cd48ecdcaafd3128d
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93206477"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892367"
 ---
 # Module PowerShellGet
 
 ## Description
 
 PowerShellGet est un module avec des commandes permettant de détecter, d’installer, de mettre à jour et de publier des artefacts PowerShell tels que des modules, des ressources DSC, des fonctionnalités de rôle et des scripts.
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## Applets de commande PowerShellGet
 
@@ -97,4 +104,3 @@ Met à jour un script.
 
 ### [Update-ScriptFileInfo](Update-ScriptFileInfo.md)
 Met à jour les informations d’un script.
-

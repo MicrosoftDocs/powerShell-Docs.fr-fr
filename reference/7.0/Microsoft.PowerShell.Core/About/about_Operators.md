@@ -6,12 +6,12 @@ ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: 88369b1ccf3157e56dd5266784d8ca16e55b1f8f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483126"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892519"
 ---
 # <a name="about-operators"></a>À propos des opérateurs
 
@@ -89,14 +89,14 @@ Comme dans d’autres langages, `(...)` sert à remplacer la priorité des opér
 
 Toutefois, dans PowerShell, il existe des comportements supplémentaires.
 
-- `(...)` vous permet de laisser la sortie d’une _commande_ participer à une expression. Exemple :
+- `(...)` vous permet de laisser la sortie d’une _commande_ participer à une expression. Par exemple :
 
   ```powershell
   PS> (Get-Item *.txt).Count -gt 10
   True
   ```
 
-- Lorsqu’il est utilisé comme premier segment d’un pipeline, l’encapsulation d’une commande ou d’une expression entre parenthèses provoque invariablement l' _énumération_ du résultat de l’expression. Si les parenthèses encapsulent une _commande_ , elles sont exécutées jusqu’à la fin avec toute la sortie _collectée en mémoire_ avant que les résultats ne soient envoyés via le pipeline.
+- Lorsqu’il est utilisé comme premier segment d’un pipeline, l’encapsulation d’une commande ou d’une expression entre parenthèses provoque invariablement l' _énumération_ du résultat de l’expression. Si les parenthèses encapsulent une _commande_, elles sont exécutées jusqu’à la fin avec toute la sortie _collectée en mémoire_ avant que les résultats ne soient envoyés via le pipeline.
 
 #### <a name="subexpression-operator--"></a>Opérateur de sous-expression `$( )`
 
@@ -542,7 +542,7 @@ ${a}?[0]
 > [!NOTE]
 > Étant donné que PowerShell permet à `?` de faire partie du nom de la variable, la spécification formelle du nom de la variable est requise pour l’utilisation de ces opérateurs. Il est donc nécessaire d’utiliser `{}` autour des noms de variables comme `${a}` ou lorsque `?` fait partie du nom de la variable `${a?}`.
 >
-> La syntaxe des noms de variables de ne `${<name>}` doit pas être confondue avec l’opérateur de sous- `$()` expression. Pour plus d’informations, consultez la section nom de la variable de [about_Variables](about_Variables.md#Variable-names-that-include-special-characters).
+> La syntaxe des noms de variables de ne `${<name>}` doit pas être confondue avec l’opérateur de sous- `$()` expression. Pour plus d’informations, consultez la section nom de la variable de [about_Variables](about_Variables.md#variable-names-that-include-special-characters).
 
 ## <a name="see-also"></a>Voir aussi
 

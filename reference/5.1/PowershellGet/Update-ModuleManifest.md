@@ -7,19 +7,19 @@ ms.date: 07/08/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: 47070823d18f2fd07339d503444e532a0c521e0e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0924366eac2e6ee0e8a250db916d354ee6993cb7
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204369"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892036"
 ---
 # Update-ModuleManifest
 
 ## SYNOPSIS
 Met à jour un fichier manifeste de module.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -61,7 +61,7 @@ $Parms = @{
 Update-ModuleManifest @Parms
 ```
 
-`$Parms` est un se terminant par qui stocke les valeurs de paramètre pour **path** , **Author** , **CompanyName** et **Copyright** . `Update-ModuleManifest` Obtient les valeurs de paramètre à partir de `@Parms` et met à jour le manifeste de module, **TestManifest.psd1** .
+`$Parms` est un se terminant par qui stocke les valeurs de paramètre pour **path**, **Author**, **CompanyName** et **Copyright**. `Update-ModuleManifest` Obtient les valeurs de paramètre à partir de `@Parms` et met à jour le manifeste de module, **TestManifest.psd1**.
 
 ## PARAMETERS
 
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 
 ### -CompatiblePSEditions
 
-Spécifie le **des éditions PS** compatible du module. Pour plus d’informations sur **PSEdition** , consultez [modules avec des éditions PowerShell compatibles](/powershell/scripting/gallery/concepts/module-psedition-support).
+Spécifie le **des éditions PS** compatible du module. Pour plus d’informations sur **PSEdition**, consultez [modules avec des éditions PowerShell compatibles](/powershell/scripting/gallery/concepts/module-psedition-support).
 
 ```yaml
 Type: System.String[]
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 
 ### -HelpInfoUri
 
-Spécifie l’adresse Internet du fichier **XML HelpInfo** du module. Entrez un Uniform Resource Identifier (URI) qui commence par **http** ou **https** .
+Spécifie l’adresse Internet du fichier **XML HelpInfo** du module. Entrez un Uniform Resource Identifier (URI) qui commence par **http** ou **https**.
 
 Le fichier **XML HelpInfo** prend en charge la fonctionnalité d’aide actualisable qui a été introduite dans PowerShell version 3,0. Elle contient des informations sur l’emplacement des fichiers d’aide téléchargeables du module et les numéros de version des fichiers d’aide les plus récents pour chaque paramètre régional pris en charge.
 
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 
 Spécifie un tableau de modules inclus dans le module.
 
-Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion** . La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
+Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion**. La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
 
 Cette clé est conçue pour agir en tant qu'inventaire de module. Les modules répertoriés dans la valeur de cette clé ne sont pas traités automatiquement.
 
@@ -440,7 +440,7 @@ Accept wildcard characters: False
 
 Spécifie les modules de script ( `.psm1` ) et les modules binaires ( `.dll` ) qui sont importés dans l’état de session du module. Les fichiers de la clé **NestedModules** s’exécutent dans l’ordre dans lequel ils sont listés dans la valeur.
 
-Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion** . La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
+Entrez le nom de chaque module sous la forme d'une chaîne ou d'une table de hachage avec les clés **ModuleName** et **ModuleVersion**. La table de hachage peut également avoir une clé **GUID** facultative. Vous pouvez combiner des chaînes et des tables de hachage dans la valeur du paramètre.
 
 ```yaml
 Type: System.Object[]
@@ -707,7 +707,7 @@ Si un module a un fichier manifeste et qu’aucun fichier racine n’a été sp�
 
 Pour exporter des membres à partir de `.psm1` `.dll` fichiers ou dans un module qui a un manifeste, les noms de ces fichiers doivent être spécifiés dans les valeurs des clés **RootModule** ou **NestedModules** dans le manifeste. Dans le cas contraire, leurs membres ne sont pas exportés.
 
-Dans PowerShell 2,0, cette clé était appelée **ModuleToProcess** .
+Dans PowerShell 2,0, cette clé était appelée **ModuleToProcess**.
 
 ```yaml
 Type: System.String
@@ -726,7 +726,7 @@ Accept wildcard characters: False
 Spécifie les fichiers de script ( `.ps1` ) qui s’exécutent dans l’état de session de l’appelant lors de l’importation du module.
 Vous pouvez utiliser ces scripts pour préparer un environnement, tout comme vous pouvez utiliser un script de connexion.
 
-Pour spécifier les scripts qui s'exécutent dans l'état de session du module, utilisez la clé **NestedModules** .
+Pour spécifier les scripts qui s'exécutent dans l'état de session du module, utilisez la clé **NestedModules**.
 
 ```yaml
 Type: System.String[]
@@ -822,5 +822,12 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### System.Object
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES

@@ -7,19 +7,19 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: a299b04c8e041819ef2870abe263fae381b1d5dc
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: 34b0d7833d858a8b71c28d0f872ddb9e4948b76d
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206150"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514981"
 ---
 # Get-Date
 
 ## SYNOPSIS
 Obtient les date et heure actuelles.
 
-## SYNTAX
+## SYNTAXE
 
 ### Date (par défaut)
 
@@ -75,7 +75,7 @@ Tuesday, June 25, 2019 14:53:32
 
 ### Exemple 2 : obtient les éléments de la date et de l’heure actuelles
 
-Cet exemple montre comment utiliser `Get-Date` pour récupérer l’élément de date ou d’heure. Le paramètre utilise les arguments **Date** , **Time** ou **DateTime** .
+Cet exemple montre comment utiliser `Get-Date` pour récupérer l’élément de date ou d’heure. Le paramètre utilise les arguments **Date**, **Time** ou **DateTime**.
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -156,7 +156,7 @@ Le calendrier grégorien contient 365 jours, à l’exception des années bissex
 366
 ```
 
-`Get-Date` utilise trois paramètres pour spécifier la date : **année** , **mois** et **jour** . La commande est entourée de parenthèses afin que le résultat soit évalué par la propriété **DayofYear** .
+`Get-Date` utilise trois paramètres pour spécifier la date : **année**, **mois** et **jour**. La commande est entourée de parenthèses afin que le résultat soit évalué par la propriété **DayofYear** .
 
 ### Exemple 6 : vérifier si une date est ajustée pour l’heure d’été
 
@@ -189,7 +189,7 @@ Wednesday June/26/2019 10:45:26 -07
 Wednesday, June 26, 2019 17:45:26
 ```
 
-`Get-Date` utilise le paramètre **UFormat** avec des spécificateurs de format pour afficher la date et l’heure système actuelles. Le spécificateur de format **% Z** représente l’offset UTC de **-07** .
+`Get-Date` utilise le paramètre **UFormat** avec des spécificateurs de format pour afficher la date et l’heure système actuelles. Le spécificateur de format **% Z** représente l’offset UTC de **-07**.
 
 La `$Time` variable stocke la date et l’heure système actuelles. `$Time` utilise la méthode **ToUniversalTime ()** pour convertir l’heure en fonction du décalage UTC de l’ordinateur.
 
@@ -228,7 +228,7 @@ Wednesday, January 01, 2020 12:00:00 AM
 
 ### Exemple 10 : retourner une valeur de date interprétée comme UTC
 
-Cet exemple montre comment interpréter une valeur de date comme son équivalent UTC. Pour l’exemple, cet ordinateur est défini à l' **heure standard du Pacifique** . Par défaut, `Get-Date` retourne des valeurs pour ce fuseau horaire. Utilisez le paramètre **AsUTC** pour convertir la valeur en heure UTC équivalente.
+Cet exemple montre comment interpréter une valeur de date comme son équivalent UTC. Pour l’exemple, cet ordinateur est défini à l' **heure standard du Pacifique**. Par défaut, `Get-Date` retourne des valeurs pour ce fuseau horaire. Utilisez le paramètre **AsUTC** pour convertir la valeur en heure UTC équivalente.
 
 ```powershell
 PS> Get-TimeZone
@@ -301,7 +301,7 @@ Accept wildcard characters: False
 
 Spécifie le jour du mois qui s'affiche. Entrez une valeur comprise entre 1 et 31.
 
-Si la valeur spécifiée est supérieure au nombre de jours d’un mois, PowerShell ajoute le nombre de jours au mois. Par exemple, `Get-Date -Month 2 -Day 31` affiche le **3 mars** , et non le **31 février** .
+Si la valeur spécifiée est supérieure au nombre de jours d’un mois, PowerShell ajoute le nombre de jours au mois. Par exemple, `Get-Date -Month 2 -Day 31` affiche le **3 mars**, et non le **31 février**.
 
 ```yaml
 Type: System.Int32
@@ -321,9 +321,9 @@ Détermine les éléments de date et d'heure à afficher.
 
 Les valeurs acceptées sont les suivantes :
 
-- **Date** : affiche uniquement la date
-- **Heure** : affiche uniquement l’heure
-- **DateTime** : affiche la date et l’heure
+- **Date**: affiche uniquement la date
+- **Heure**: affiche uniquement l’heure
+- **DateTime**: affiche la date et l’heure
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -349,14 +349,14 @@ Lorsque le paramètre **format** est utilisé, `Get-Date` obtient uniquement les
 
 À compter de PowerShell 5,0, vous pouvez utiliser les formats supplémentaires suivants comme valeurs pour le paramètre **format** .
 
-- **Archivé** . Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en heure locale. Le format est `yyyyMMdd` (respecte la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres et un jour à 2 chiffres). Par exemple :
+- **Archivé**. Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en heure locale. Le format est `yyyyMMdd` (respecte la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres et un jour à 2 chiffres). Par exemple :
   20190627.
 
-- **FileDateUniversal** . Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en temps universel (UTC). Le format est `yyyyMMddZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres et la lettre `Z` comme indicateur UTC). Par exemple : 20190627Z.
+- **FileDateUniversal**. Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en temps universel (UTC). Le format est `yyyyMMddZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres et la lettre `Z` comme indicateur UTC). Par exemple : 20190627Z.
 
-- **FileDateTime** . Représentation conviviale de fichier ou de chemin d’accès de la date et de l’heure en heure locale, au format 24 heures. Le format est `yyyyMMddTHHmmssffff` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur horaire, l’heure à 2 chiffres, la minute à 2 chiffres, la seconde à 2 chiffres et la milliseconde sur 4 chiffres). Par exemple : 20190627T0840107271.
+- **FileDateTime**. Représentation conviviale de fichier ou de chemin d’accès de la date et de l’heure en heure locale, au format 24 heures. Le format est `yyyyMMddTHHmmssffff` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur horaire, l’heure à 2 chiffres, la minute à 2 chiffres, la seconde à 2 chiffres et la milliseconde sur 4 chiffres). Par exemple : 20190627T0840107271.
 
-- **FileDateTimeUniversal** . Représentation conviviale d’un fichier ou d’un chemin d’accès de la date et de l’heure en temps universel (UTC), au format 24 heures. Le format est `yyyyMMddTHHmmssffffZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur d’heure, une heure à 2 chiffres, une minute à 2 chiffres, une seconde à 2 chiffres, une milliseconde à 4 chiffres et la lettre `Z` comme indicateur UTC). Par exemple : 20190627T1540500718Z.
+- **FileDateTimeUniversal**. Représentation conviviale d’un fichier ou d’un chemin d’accès de la date et de l’heure en temps universel (UTC), au format 24 heures. Le format est `yyyyMMddTHHmmssffffZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur d’heure, une heure à 2 chiffres, une minute à 2 chiffres, une seconde à 2 chiffres, une milliseconde à 4 chiffres et la lettre `Z` comme indicateur UTC). Par exemple : 20190627T1540500718Z.
 
 ```yaml
 Type: System.String
@@ -514,7 +514,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### Entrée de pipeline
 
-`Get-Date` accepte l’entrée de pipeline. Par exemple : `Get-ChildItem | Get-Date`.
+`Get-Date` accepte l’entrée de pipeline. Par exemple, `Get-ChildItem | Get-Date`.
 
 ## SORTIES
 
@@ -527,7 +527,7 @@ Lorsqu’un objet **DateTime** est envoyé vers le pipeline à une applet de com
 La méthode `(Get-Date).ToString()` convertit un objet **DateTime** en objet **String** .
 
 Pour afficher les propriétés et les méthodes d’un objet, envoyez l’objet vers le dessous du pipeline `Get-Member` .
-Par exemple : `Get-Date | Get-Member`.
+Par exemple, `Get-Date | Get-Member`.
 
 ## REMARQUES
 
@@ -545,7 +545,7 @@ Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant 
 | `%c` | Date et heure-abrégé                                             | Jeudi Juin 27 08:44:18 2019 |
 | `%D` | Date au format mm/jj/aa                                                 | 06/27/19                 |
 | `%d` | Jour du mois-2 chiffres                                             | 05                       |
-| `%e` | Jour du mois-chiffre précédé d’un espace                            | \<space\>5,5               |
+| `%e` | Jour du mois-précédé d’un espace si seul un chiffre           | \<space\>5,5               |
 | `%F` | Date au format aaaa-mm-jj, égale à% Y-% m-% d (le format de date ISO 8601) | 2019-06-27               |
 | `%G` | Identique à « Y »                                                             |                          |
 | `%g` | Identique à « y »                                                             |                          |

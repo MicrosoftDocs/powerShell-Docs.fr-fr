@@ -1,16 +1,16 @@
 ---
-title: about_Character_Encoding
 description: Décrit comment PowerShell utilise l’encodage de caractères pour l’entrée et la sortie de données de type chaîne.
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 6e2f515f774d7bc333baf6346cd6c8bd517cb6fa
-ms.sourcegitcommit: df80c558e9a4b89c9798f084bd04012ece15155c
+title: about_Character_Encoding
+ms.openlocfilehash: 27a5d818c1ed8e114e15d8a121626fc79101a59f
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "93208862"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349770"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 
@@ -43,7 +43,7 @@ Les applets de commande suivantes ont le paramètre **Encoding** :
 
 ## <a name="the-byte-order-mark"></a>Marque d’ordre d’octet
 
-La marque d’ordre d’octet (BOM) est une _signature Unicode_ dans les premiers octets d’un fichier ou d’un flux de texte qui indique l’encodage Unicode utilisé pour les données. Pour plus d’informations, consultez l’article [marque d’ordre d’octet](https://wikipedia.org/wiki/Byte_order_mark) dans Wikipédia.
+La marque d’ordre d’octet (BOM) est une _signature Unicode_ dans les premiers octets d’un fichier ou d’un flux de texte qui indique l’encodage Unicode utilisé pour les données. Pour plus d’informations, consultez la documentation relative à la [marque d’ordre d’octet](/globalization/encoding/byte-order-mark) .
 
 Dans Windows PowerShell, tout encodage Unicode, à l’exception de `UTF7` , crée toujours une nomenclature. PowerShell Core a pour valeur par défaut `utf8NoBOM` pour toute la sortie de texte.
 
