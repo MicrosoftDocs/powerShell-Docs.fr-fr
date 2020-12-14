@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: cb58276c8582f9cd1f88a114baae2ce5d0039f45
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bb2d077b3584d4501db00a927b83034d37dceaec
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201810"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913357"
 ---
 # Export-Csv
 
 ## SYNOPSIS
 Convertit des objets en une série de chaînes de valeurs séparées par des virgules (CSV) et enregistre les chaînes dans un fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### Délimiteur (par défaut)
 
@@ -272,7 +271,7 @@ Windows PowerShell
 
 Une expression crée le **PSCustomObject** avec les propriétés **Name** et **version** . Les valeurs sont stockées dans la `$Content` variable. La `$Content` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . `Export-Csv` utilise le paramètre **path** et enregistre le fichier ParmFile.csv dans le répertoire actif. Le paramètre **NoTypeInformation** supprime l’en-tête d’informations **#TYPE** de la sortie CSV et n’est pas requis dans PowerShell 6.
 
-Une autre expression crée un **PSCustomObject** avec le **nom** et les propriétés de l' **édition** . Les valeurs sont stockées dans la `$AdditionalContent` variable. La `$AdditionalContent` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . Le paramètre **Append** est utilisé pour ajouter les données au fichier. L’ajout échoue en raison d’une incompatibilité de nom de propriété entre la **version** et l' **édition** .
+Une autre expression crée un **PSCustomObject** avec le **nom** et les propriétés de l' **édition** . Les valeurs sont stockées dans la `$AdditionalContent` variable. La `$AdditionalContent` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . Le paramètre **Append** est utilisé pour ajouter les données au fichier. L’ajout échoue en raison d’une incompatibilité de nom de propriété entre la **version** et l' **édition**.
 
 Le `Export-Csv` paramètre **force** de l’applet de commande est utilisé pour forcer l’exportation à écrire dans le fichier. La propriété **Edition** est ignorée. L' `Import-Csv` applet de commande utilise le paramètre **path** pour afficher le fichier situé dans le répertoire actif.
 
@@ -391,7 +390,7 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 
-Lorsque ce paramètre est utilisé, la première ligne de la sortie CSV contient **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process** .
+Lorsque ce paramètre est utilisé, la première ligne de la sortie CSV contient **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process**.
 
 Ce paramètre a été introduit dans PowerShell 6,0.
 
@@ -425,7 +424,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Spécifie le chemin d'accès au fichier de sortie CSV. Contrairement au paramètre **Path** , la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès comprend des caractères d’échappement, utilisez des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
+Spécifie le chemin d'accès au fichier de sortie CSV. Contrairement au paramètre **Path**, la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès comprend des caractères d’échappement, utilisez des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
 
 ```yaml
 Type: System.String
@@ -537,7 +536,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Spécifie les noms des colonnes qui doivent être entre guillemets. Lorsque ce paramètre est utilisé, seules les colonnes spécifiées sont placées entre guillemets.
+Spécifie les noms des colonnes qui doivent être entre guillemets. Lorsque ce paramètre est utilisé, seules les colonnes spécifiées sont placées entre guillemets. Ce paramètre a été ajouté dans PowerShell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -558,6 +557,8 @@ Spécifie quand les guillemets sont utilisés dans les fichiers CSV. Les valeurs
 - N’effectuez jamais aucune citation
 - Always-tout (comportement par défaut)
 - AsNeeded uniquement les champs de guillemets contenant un caractère délimiteur
+
+Ce paramètre a été ajouté dans PowerShell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -596,7 +597,7 @@ Dans le fichier CSV, chaque objet est représenté par une liste séparée par d
 Les chaînes CSV sont générées comme suit :
 
 - Si **IncludeTypeInformation** est utilisé, la première chaîne contient l’en-tête d’informations **#TYPE** , suivi du nom qualifié complet du type d’objet.
-  Par exemple, **#TYPE System. Diagnostics. Process** .
+  Par exemple, **#TYPE System. Diagnostics. Process**.
 - Si **IncludeTypeInformation** n’est pas utilisé, la première chaîne comprend les en-têtes de colonne. Les en-têtes contiennent les noms de propriété du premier objet sous la forme d’une liste séparée par des virgules.
 - Les chaînes restantes contiennent des listes séparées par des virgules des valeurs de propriété de chaque objet.
 

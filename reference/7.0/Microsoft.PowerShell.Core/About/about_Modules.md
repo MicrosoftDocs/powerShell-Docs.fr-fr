@@ -1,17 +1,16 @@
 ---
 description: Explique comment installer, importer et utiliser des modules PowerShell.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 09/15/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: 79fdfe018539f804933cad2354e11e45f89f724e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ab4e9658ed4820c3ae84ac1cd9a55b59cc8017ab
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207769"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564477"
 ---
 # <a name="about-modules"></a>À propos des modules
 
@@ -20,7 +19,7 @@ Explique comment installer, importer et utiliser des modules PowerShell.
 
 ## <a name="long-description"></a>Description longue
 
-Un module est un package qui contient des commandes PowerShell, telles que des applets de commande, des fournisseurs, des fonctions, des workflows, des variables et des alias.
+Un module est un package qui contient des membres PowerShell, tels que des applets de commande, des fournisseurs, des fonctions, des workflows, des variables et des alias.
 
 Les personnes qui écrivent des commandes peuvent utiliser des modules pour organiser leurs commandes et les partager avec d'autres utilisateurs. Les personnes qui reçoivent des modules peuvent ajouter les commandes dans les modules à leurs sessions PowerShell et les utiliser comme les commandes intégrées.
 
@@ -28,13 +27,13 @@ Cette rubrique explique comment utiliser les modules PowerShell. Pour plus d’i
 
 ## <a name="what-is-a-module"></a>Qu’est-ce qu’un module ?
 
-Un module est un package de commandes. Toutes les applets de commande et tous les fournisseurs de votre session sont ajoutés par un module ou un composant logiciel enfichable.
+Un module est un package qui contient des membres PowerShell, tels que des applets de commande, des fournisseurs, des fonctions, des workflows, des variables et des alias. Les membres de ce package peuvent être implémentés dans un script PowerShell, une DLL compilée ou une combinaison des deux. Ces fichiers sont généralement regroupés dans un seul répertoire. Pour plus d’informations, consultez [comprendre un module Windows PowerShell](/powershell/scripting/developer/module/understanding-a-windows-powershell-module) dans la documentation du kit de développement logiciel (SDK).
 
 ## <a name="module-auto-loading"></a>Chargement automatique des modules
 
 À compter de PowerShell 3,0, PowerShell importe automatiquement les modules la première fois que vous exécutez une commande dans un module installé. Vous pouvez désormais utiliser les commandes d'un module sans même le configurer ni définir de profil. Une fois vos modules installés sur votre ordinateur, vous n'avez pas à vous en occuper.
 
-Vous pouvez aussi trouver plus facilement les commandes contenues dans un module. L' `Get-Command` applet de commande obtient désormais toutes les commandes de tous les modules installés, même si elles n’ont pas encore été dans la session, afin que vous puissiez rechercher une commande et l’utiliser sans l’importer.
+Vous pouvez aussi trouver plus facilement les commandes contenues dans un module. L' `Get-Command` applet de commande obtient désormais toutes les commandes de tous les modules installés, même si elles n’ont pas encore été dans la session. Vous pouvez rechercher une commande et l’utiliser sans importer en premier lieu.
 
 Chacun des exemples suivants provoque l’importation du module CimCmdlets, qui contient `Get-CimInstance` , dans votre session.
 
@@ -279,7 +278,7 @@ $Env:PSModulePath += ":/usr/local/Fabrikam/Modules"
 
 Sur Linux ou MacOS, le signe deux-points ( `:` ) dans la commande sépare le nouveau chemin d’accès du chemin d’accès qui le précède dans la liste.
 
-Lorsque vous ajoutez un chemin d’accès à **PSModulePath** , `Get-Module` les `Import-Module` commandes incluent des modules dans ce chemin d’accès.
+Lorsque vous ajoutez un chemin d’accès à **PSModulePath**, `Get-Module` les `Import-Module` commandes incluent des modules dans ce chemin d’accès.
 
 La valeur que vous définissez affecte uniquement la session active. Pour rendre le changement persistant, ajoutez la commande à votre profil PowerShell ou utilisez l’option système du panneau de configuration pour modifier la valeur de la variable d’environnement **PSModulePath** dans le registre.
 
@@ -307,10 +306,10 @@ Pour détecter les conflits de noms, utilisez le paramètre **All** de l’apple
 
 Pour éviter les conflits de noms, utilisez les paramètres **NoClobber** ou **prefix** de l’applet de commande `Import-Module` . Le paramètre **prefix** ajoute un préfixe aux noms des commandes importées afin qu’elles soient uniques dans la session. Le paramètre **NoClobber** n’importe aucune commande susceptible de masquer ou de remplacer des commandes existantes dans la session.
 
-Vous pouvez également utiliser les paramètres **alias** , **cmdlet** , **Function** et **variable** de `Import-Module` pour sélectionner uniquement les commandes que vous souhaitez importer, et vous pouvez exclure les commandes qui provoquent des conflits de noms dans votre session.
+Vous pouvez également utiliser les paramètres **alias**, **cmdlet**, **Function** et **variable** de `Import-Module` pour sélectionner uniquement les commandes que vous souhaitez importer, et vous pouvez exclure les commandes qui provoquent des conflits de noms dans votre session.
 
 Les auteurs de modules peuvent éviter les conflits de noms à l’aide de la propriété **DefaultCommandPrefix** du manifeste de module pour ajouter un préfixe par défaut à tous les noms de commandes.
-La valeur du paramètre **prefix** est prioritaire sur la valeur de **DefaultCommandPrefix** .
+La valeur du paramètre **prefix** est prioritaire sur la valeur de **DefaultCommandPrefix**.
 
 Même si une commande est masquée, vous pouvez l'exécuter en qualifiant le nom de la commande avec le nom du module ou du composant logiciel enfichable d'où elle provient.
 

@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: 5a76f8ec454ad8144f193d8927f913b89a429fec
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 17c3ef3046ba8f0cca9a85cf41aaf683212a58e9
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203306"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913339"
 ---
 # Export-Csv
 
 ## SYNOPSIS
 Convertit des objets en une série de chaînes de valeurs séparées par des virgules (CSV) et enregistre les chaînes dans un fichier.
 
-## SYNTAX
+## SYNTAXE
 
 ### Délimiteur (par défaut)
 
@@ -271,7 +270,7 @@ Windows PowerShell
 
 Une expression crée le **PSCustomObject** avec les propriétés **Name** et **version** . Les valeurs sont stockées dans la `$Content` variable. La `$Content` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . `Export-Csv` utilise le paramètre **path** et enregistre le fichier ParmFile.csv dans le répertoire actif. Le paramètre **NoTypeInformation** supprime l’en-tête d’informations **#TYPE** de la sortie CSV et n’est pas requis dans PowerShell 6.
 
-Une autre expression crée un **PSCustomObject** avec le **nom** et les propriétés de l' **édition** . Les valeurs sont stockées dans la `$AdditionalContent` variable. La `$AdditionalContent` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . Le paramètre **Append** est utilisé pour ajouter les données au fichier. L’ajout échoue en raison d’une incompatibilité de nom de propriété entre la **version** et l' **édition** .
+Une autre expression crée un **PSCustomObject** avec le **nom** et les propriétés de l' **édition** . Les valeurs sont stockées dans la `$AdditionalContent` variable. La `$AdditionalContent` variable est envoyée dans le pipeline à l’applet de commande `Export-Csv` . Le paramètre **Append** est utilisé pour ajouter les données au fichier. L’ajout échoue en raison d’une incompatibilité de nom de propriété entre la **version** et l' **édition**.
 
 Le `Export-Csv` paramètre **force** de l’applet de commande est utilisé pour forcer l’exportation à écrire dans le fichier. La propriété **Edition** est ignorée. L' `Import-Csv` applet de commande utilise le paramètre **path** pour afficher le fichier situé dans le répertoire actif.
 
@@ -375,7 +374,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Spécifie le chemin d'accès au fichier de sortie CSV. Contrairement au paramètre **Path** , la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès comprend des caractères d’échappement, utilisez des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
+Spécifie le chemin d'accès au fichier de sortie CSV. Contrairement au paramètre **Path**, la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès comprend des caractères d’échappement, utilisez des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
 
 ```yaml
 Type: System.String
@@ -509,7 +508,7 @@ Dans le fichier CSV, chaque objet est représenté par une liste séparée par d
 
 Les chaînes CSV sont générées comme suit :
 
-- Par défaut, la première chaîne contient l’en-tête d’informations **#TYPE** , suivi du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process** .
+- Par défaut, la première chaîne contient l’en-tête d’informations **#TYPE** , suivi du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process**.
 - Si **NoTypeInformation** est utilisé, la première chaîne comprend les en-têtes de colonne. Les en-têtes contiennent les noms de propriété du premier objet sous la forme d’une liste séparée par des virgules.
 - Les chaînes restantes contiennent des listes séparées par des virgules des valeurs de propriété de chaque objet.
 

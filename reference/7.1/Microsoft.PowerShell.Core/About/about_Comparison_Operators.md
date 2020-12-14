@@ -1,17 +1,16 @@
 ---
 description: Décrit les opérateurs qui comparent des valeurs dans PowerShell.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: fe00608edd4cbada275112cb3ce7c20b34f5c5c6
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+ms.openlocfilehash: ea48d5928f71983f6d035f0e5e6074ce36754d80
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93208558"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090509"
 ---
 # <a name="about-comparison-operators"></a>À propos des opérateurs de comparaison
 
@@ -26,7 +25,7 @@ PowerShell comprend les opérateurs de comparaison suivants :
 
 | Type        | Opérateurs    | Description                                 |
 | ----------- | ------------ | --------------------------------------------|
-| Égalité    | -eq          | est égal à                                      |
+| Égalité    | -eq          | equals                                      |
 |             | -ne          | n’est pas égal à                                  |
 |             | -gt          | supérieur à                                |
 |             | -ge          | supérieur ou égal à                       |
@@ -80,13 +79,13 @@ Les exceptions sont les opérateurs de relation contenant-contenu, les opérateu
 > hello
 > ```
 
-### <a name="equality-operators"></a>Opérateurs d'égalité
+## <a name="equality-operators"></a>Opérateurs d'égalité
 
 Les opérateurs d’égalité ( `-eq` , `-ne` ) retournent une valeur true ou les correspondances lorsqu’une ou plusieurs des valeurs d’entrée sont identiques au modèle spécifié. La totalité du modèle doit correspondre à une valeur entière.
 
 Exemple :
 
-#### <a name="-eq"></a>-eq
+### <a name="-eq"></a>-eq
 
 Description : égal à. Contient une valeur identique.
 
@@ -111,7 +110,7 @@ PS> "abc", "def" -eq "abc"
 abc
 ```
 
-#### <a name="-ne"></a>-ne
+### <a name="-ne"></a>-ne
 
 Description : différent de. Contient une valeur différente.
 
@@ -131,7 +130,7 @@ PS> "abc", "def" -ne "abc"
 def
 ```
 
-#### <a name="-gt"></a>-gt
+### <a name="-gt"></a>-gt
 
 Description : supérieur à.
 
@@ -148,7 +147,7 @@ PS> 7, 8, 9 -gt 8
 > [!NOTE]
 > Cela ne doit pas être confondu avec `>` , l’opérateur « supérieur à » dans de nombreux autres langages de programmation. Dans PowerShell, `>` est utilisé pour la redirection. Pour plus d’informations, consultez [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators).
 
-#### <a name="-ge"></a>-ge
+### <a name="-ge"></a>-ge
 
 Description : supérieur ou égal à.
 
@@ -163,7 +162,7 @@ PS> 7, 8, 9 -ge 8
 9
 ```
 
-#### <a name="-lt"></a>-lt
+### <a name="-lt"></a>-lt
 
 Description : inférieur à.
 
@@ -178,7 +177,7 @@ PS> 7, 8, 9 -lt 8
 7
 ```
 
-#### <a name="-le"></a>-le
+### <a name="-le"></a>-le
 
 Description : inférieur ou égal à.
 
@@ -193,7 +192,7 @@ PS> 7, 8, 9 -le 8
 8
 ```
 
-### <a name="matching-operators"></a>Opérateurs correspondants
+## <a name="matching-operators"></a>Opérateurs correspondants
 
 Les opérateurs like ( `-like` et `-notlike` ) recherchent les éléments qui correspondent ou ne correspondent pas à un modèle spécifié à l’aide d’expressions génériques.
 
@@ -215,7 +214,7 @@ La syntaxe est :
 <string[]> -notmatch <regular-expression>
 ```
 
-#### <a name="-like"></a>-like
+### <a name="-like"></a>-like
 
 Description : correspondance à l’aide du caractère générique ( \* ).
 
@@ -229,7 +228,7 @@ PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
-#### <a name="-notlike"></a>-notlike
+### <a name="-notlike"></a>-notlike
 
 Description : ne correspond pas à l’aide du caractère générique ( \* ).
 
@@ -259,7 +258,7 @@ PS> $Matches
 PS>
 ```
 
-En revanche, la commande suivante envoie une chaîne unique à l' `-match` opérateur. L' `-match` opérateur retourne une valeur booléenne et remplit la `$Matches` variable automatique. La `$Matches` variable automatique est une **Hashtable** . Si aucun regroupement ou capture n’est utilisé, une seule clé est remplie.
+En revanche, la commande suivante envoie une chaîne unique à l' `-match` opérateur. L' `-match` opérateur retourne une valeur booléenne et remplit la `$Matches` variable automatique. La `$Matches` variable automatique est une **Hashtable**. Si aucun regroupement ou capture n’est utilisé, une seule clé est remplie.
 La `0` clé représente tout le texte qui a été mis en correspondance. Pour plus d’informations sur le regroupement et la capture à l’aide d’expressions régulières, consultez [about_regular_expressions](about_Regular_Expressions.md).
 
 ```powershell
@@ -287,7 +286,7 @@ Name                           Value
 ```
 
 > [!IMPORTANT]
-> La `0` clé est un **entier** . Vous pouvez utiliser n’importe quelle méthode **Hashtable** pour accéder à la valeur stockée.
+> La `0` clé est un **entier**. Vous pouvez utiliser n’importe quelle méthode **Hashtable** pour accéder à la valeur stockée.
 >
 > ```powershell
 > PS> "Good Dog" -match "Dog"
@@ -322,7 +321,7 @@ Name                           Value
 0                              day
 ```
 
-#### <a name="-notmatch"></a>-notmatch
+### <a name="-notmatch"></a>-notmatch
 
 Description : ne correspond pas à une chaîne. Utilise des expressions régulières. Quand l’entrée est scalaire, elle remplit la `$Matches` variable automatique.
 
@@ -341,13 +340,13 @@ PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-### <a name="containment-operators"></a>Opérateurs de relation contenant-contenu
+## <a name="containment-operators"></a>Opérateurs de relation contenant-contenu
 
 Les opérateurs de relation contenant-contenu ( `-contains` et `-notcontains` ) sont similaires aux opérateurs d’égalité. Toutefois, les opérateurs de relation contenant-contenu retournent toujours une valeur booléenne, même lorsque l’entrée est une collection.
 
 En outre, contrairement aux opérateurs d’égalité, les opérateurs de relation contenant-contenu retournent une valeur dès qu’ils détectent la première correspondance. Les opérateurs d’égalité évaluent toutes les entrées, puis retournent toutes les correspondances dans la collection.
 
-#### <a name="-contains"></a>-contains
+### <a name="-contains"></a>-contains
 
 Description : opérateur de relation contenant-contenu. Indique si une collection de valeurs de référence comprend une seule valeur de test. Retourne toujours une valeur booléenne. Retourne TRUE uniquement lorsque la valeur de test correspond exactement à au moins une des valeurs de référence.
 
@@ -382,7 +381,7 @@ PS> $a, "ghi" -contains $a
 True
 ```
 
-#### <a name="-notcontains"></a>-notcontains
+### <a name="-notcontains"></a>-notcontains
 
 Description : opérateur de relation contenant-contenu. Indique si une collection de valeurs de référence comprend une seule valeur de test. Retourne toujours une valeur booléenne. Retourne la valeur TRUE lorsque la valeur de test n’est pas une correspondance exacte pour au moins une des valeurs de référence.
 
@@ -421,7 +420,7 @@ Tee
 Where
 ```
 
-#### <a name="-in"></a>-in
+### <a name="-in"></a>-in
 
 Description : dans l’opérateur. Indique si une valeur de test apparaît dans une collection de valeurs de référence. Retourne toujours comme valeur booléenne. Retourne TRUE uniquement lorsque la valeur de test correspond exactement à au moins une des valeurs de référence.
 
@@ -458,7 +457,7 @@ PS> $thisComputer -in  $domainServers
 True
 ```
 
-#### <a name="-notin"></a>-NOTIN
+### <a name="-notin"></a>-NOTIN
 
 Description : indique si une valeur de test apparaît dans une collection de valeurs de référence. Retourne toujours une valeur booléenne. Retourne la valeur TRUE lorsque la valeur de test n’est pas une correspondance exacte pour au moins une des valeurs de référence.
 
@@ -497,53 +496,96 @@ Tee
 Where
 ```
 
-### <a name="replacement-operator"></a>Opérateur de remplacement
+## <a name="replacement-operator"></a>Opérateur de remplacement
 
-L' `-replace` opérateur remplace tout ou partie d’une valeur par la valeur spécifiée à l’aide d’expressions régulières. Vous pouvez utiliser l' `-replace` opérateur pour de nombreuses tâches administratives, telles que le changement de nom des fichiers. Par exemple, la commande suivante modifie les extensions de nom de fichier de tous les fichiers. txt en. log :
+L' `-replace` opérateur a la syntaxe suivante :
+
+`<input> -replace <original>, <substitute>`
+
+L' `<original>` espace réservé est une expression régulière qui correspond aux caractères à remplacer. L' `<substitute>` espace réservé est une chaîne littérale qui les remplace.
+
+L’opérateur remplace tout ou partie d’une valeur par la valeur spécifiée à l’aide d’expressions régulières. Vous pouvez utiliser l’opérateur pour de nombreuses tâches administratives, telles que le changement de nom des fichiers. Par exemple, la commande suivante modifie les extensions de nom de fichier de tous les `.txt` fichiers en `.log` :
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-La syntaxe de l' `-replace` opérateur est la suivante, où l' `<original>` espace réservé représente les caractères à remplacer, et l' `<substitute>` espace réservé représente les caractères qui les remplacent :
-
-`<input> <operator> <original>, <substitute>`
+### <a name="case-sensitive-matches"></a>Correspondances respectant la casse
 
 Par défaut, l' `-replace` opérateur ne respecte pas la casse. Pour respecter la casse, utilisez `-creplace` . Pour le rendre explicitement non sensible à la casse, utilisez `-ireplace` .
 
-Penchez-vous sur les exemples suivants :
+Prenons les exemples suivants :
 
 ```powershell
 PS> "book" -replace "B", "C"
-```
-
-```Output
 Cook
 ```
 
 ```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
+PS> "book" -creplace "B", "C"
 book
 ```
 
-Il est également possible d’utiliser des expressions régulières pour remplacer dynamiquement du texte à l’aide de groupes de capture et de substitutions. Pour plus d’informations, consultez [about_regular_expressions](about_Regular_Expressions.md).
+### <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
+
+Il est également possible d’utiliser des expressions régulières pour remplacer dynamiquement du texte à l’aide de groupes de capture et de substitutions. Les groupes de capture peuvent être référencés dans la `<substitute>` chaîne à l’aide du caractère dollar ( `$` ) avant l’identificateur de groupe.
+
+Les groupes de capture peuvent être référencés par **numéro** ou par **nom**
+
+- Par **nombre** : les groupes de capture sont numérotés de gauche à droite.
+
+  ```powershell
+  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  John.D.Smith@contoso.com
+  ```
+
+- Par **nom** , les groupes de capture peuvent également être référencés par nom.
+
+  ```powershell
+  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  FABRIKAM\Administrator
+  ```
+
+> [!WARNING]
+> Étant donné que le `$` caractère est utilisé dans l’extension de chaîne, vous devez utiliser des chaînes littérales ou placer le caractère dans une séquence d’échappement `$` .
+>
+> ```powershell
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> Hello Universe
+> ```
+>
+> En outre, étant donné que le `$` caractère est utilisé dans la substitution, vous devez placer dans une séquence d’échappement toutes les instances de votre chaîne.
+>
+> ```powershell
+> PS> '5.72' -replace '(.+)', '$$$1'
+> $5.72
+> ```
+
+Pour plus d’informations, consultez [about_regular_expressions](about_Regular_Expressions.md) et [substitutions dans les expressions régulières](/dotnet/standard/base-types/substitutions-in-regular-expressions)
+
+### <a name="substituting-in-a-collection"></a>Substitution d’une collection
+
+Quand le `<input>` à l' `-replace` opérateur est une collection, PowerShell applique le remplacement à chaque valeur de la collection. Par exemple :
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
 
 ### <a name="scriptblock-substitutions"></a>Substitutions ScriptBlock
 
-À compter de PowerShell 6, vous pouvez utiliser un argument **scriptblock** pour le texte de *substitution* . Le **scriptblock** s’exécute pour chaque correspondance trouvée dans la chaîne *d’entrée* .
+À compter de PowerShell 6, vous pouvez utiliser un argument **scriptblock** pour le texte de _substitution_ . Le **scriptblock** s’exécute pour chaque correspondance trouvée dans la chaîne _d’entrée_ .
 
-Dans le **scriptblock** , utilisez la `$_` variable automatique pour faire référence à l’objet **System. Text. RegularExpressions. match** actuel. L’objet **match** vous donne accès au texte d’entrée actuel qui est remplacé, ainsi qu’à d’autres informations utiles.
+Dans le **scriptblock**, utilisez la `$_` variable automatique pour faire référence à l’objet **System. Text. RegularExpressions. match** actuel. L’objet **match** vous donne accès au texte d’entrée actuel qui est remplacé, ainsi qu’à d’autres informations utiles.
 
 Cet exemple remplace chaque séquence de trois décimales par l’équivalent du caractère. Le **scriptblock** est exécuté pour chaque ensemble de trois décimales qui doit être remplacé.
 
@@ -552,11 +594,11 @@ PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
 Hello
 ```
 
-### <a name="type-comparison"></a>Comparaison de types
+## <a name="type-comparison"></a>Comparaison de types
 
 Les opérateurs de comparaison de type ( `-is` et `-isnot` ) sont utilisés pour déterminer si un objet est un type spécifique.
 
-#### <a name="-is"></a>-est
+### <a name="-is"></a>-est
 
 Syntaxe :
 
@@ -573,7 +615,7 @@ PS> $a -is $b.GetType()
 False
 ```
 
-#### <a name="-isnot"></a>-IsNot
+### <a name="-isnot"></a>-IsNot
 
 Syntaxe :
 
@@ -590,7 +632,7 @@ PS> $b -isnot [int]
 True
 ```
 
-## <a name="see-also"></a>VOIR AUSSI
+## <a name="see-also"></a>Voir aussi
 
 - [about_Operators](about_Operators.md)
 - [about_Regular_Expressions](about_Regular_Expressions.md)

@@ -1,27 +1,26 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: e4cc40e7a9a5fdcd12b6a787607e4979ddbb3273
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 7ad8dc837bd843c2df48587ad809d9f65a4cf8a7
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204238"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913217"
 ---
 # ConvertTo-Csv
 
 ## SYNOPSIS
 Convertit des objets .NET en une série de chaînes de valeurs séparées par des caractères (CSV).
 
-## SYNTAX
+## SYNTAXE
 
-### Délimiteur
+### Délimiteur (par défaut)
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
@@ -139,7 +138,7 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 
-Lorsque ce paramètre est utilisé, la première ligne de la sortie contient **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process** .
+Lorsque ce paramètre est utilisé, la première ligne de la sortie contient **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process**.
 
 Ce paramètre a été introduit dans PowerShell 6,0.
 
@@ -205,7 +204,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-Spécifie les noms des colonnes qui doivent être entre guillemets. Lorsque ce paramètre est utilisé, seules les colonnes spécifiées sont placées entre guillemets.
+Spécifie les noms des colonnes qui doivent être entre guillemets. Lorsque ce paramètre est utilisé, seules les colonnes spécifiées sont placées entre guillemets. Ce paramètre a été ajouté dans PowerShell 7,0.
 
 ```yaml
 Type: System.String[]
@@ -226,6 +225,8 @@ Spécifie quand les guillemets sont utilisés dans les fichiers CSV. Les valeurs
 - N’effectuez jamais aucune citation
 - Always-tout (comportement par défaut)
 - AsNeeded uniquement les champs de guillemets contenant un caractère délimiteur
+
+Ce paramètre a été ajouté dans PowerShell 7,0.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -261,7 +262,7 @@ Au format CSV, chaque objet est représenté par une liste séparée par des vir
 
 Les chaînes CSV sont générées comme suit :
 
-- Si **IncludeTypeInformation** est utilisé, la première chaîne se compose de **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process** .
+- Si **IncludeTypeInformation** est utilisé, la première chaîne se compose de **#TYPE** suivie du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process**.
 - Si **IncludeTypeInformation** n’est pas utilisé, la première chaîne comprend les en-têtes de colonne. Les en-têtes contiennent les noms de propriété du premier objet sous la forme d’une liste séparée par des virgules.
 - Les chaînes restantes contiennent des listes séparées par des virgules des valeurs de propriété de chaque objet.
 
@@ -273,7 +274,6 @@ Lorsque vous envoyez plusieurs objets à `ConvertTo-CSV` , `ConvertTo-CSV` trie 
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](Export-Csv.md)
+[Export-CSV](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

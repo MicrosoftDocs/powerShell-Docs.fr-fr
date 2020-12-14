@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/09/2019
-online version: https://go.microsoft.com/fwlink/?linkid=526220
+ms.date: 12/03/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: 6fbe7b1e5534b1227bcfd73fd58f3602186ef8c5
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 1ee55dfaf4ecd3e46bedd8f356b1f677180c9c62
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239670"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564552"
 ---
 # Set-Clipboard
 
 ## SYNOPSIS
 Définit le contenu du presse-papiers.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Set-Clipboard -Value <String[]> [-Append] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -38,6 +38,14 @@ L' `Set-Clipboard` applet de commande définit le contenu du presse-papiers.
 
 ```powershell
 Set-Clipboard -Value "This is a test string"
+```
+
+### Exemple 2 : copier le contenu d’un fichier dans le presse-papiers
+
+Cet exemple canalise le contenu d’un fichier dans le presse-papiers. Dans cet exemple, nous obtenons une clé SSH publique pour pouvoir la coller dans une autre application, par exemple GitHub.
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS

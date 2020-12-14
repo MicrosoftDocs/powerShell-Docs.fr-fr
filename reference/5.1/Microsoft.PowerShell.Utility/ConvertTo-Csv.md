@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 1/7/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: 7d399661e4514c0a39ad00601d554c41c2897ff9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: be590368539f396f0aac694e9565674393543f2c
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203354"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913200"
 ---
 # ConvertTo-Csv
 
 ## SYNOPSIS
 Convertit des objets .NET en une série de chaînes de valeurs séparées par des virgules (CSV).
 
-## SYNTAX
+## SYNTAXE
 
 ### Délimiteur (par défaut)
 
@@ -180,7 +179,7 @@ Au format CSV, chaque objet est représenté par une liste séparée par des vir
 
 Les chaînes CSV sont générées comme suit :
 
-- Par défaut, la première chaîne contient l’en-tête d’informations **#TYPE** , suivi du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process** .
+- Par défaut, la première chaîne contient l’en-tête d’informations **#TYPE** , suivi du nom qualifié complet du type d’objet. Par exemple, **#TYPE System. Diagnostics. Process**.
 - Si **NoTypeInformation** est utilisé, la première chaîne comprend les en-têtes de colonne. Les en-têtes contiennent les noms de propriété du premier objet sous la forme d’une liste séparée par des virgules.
 - Les chaînes restantes contiennent des listes séparées par des virgules des valeurs de propriété de chaque objet.
 
@@ -190,6 +189,6 @@ Lorsque vous envoyez plusieurs objets à `ConvertTo-CSV` , `ConvertTo-CSV` trie 
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](Export-Csv.md)
+[Export-CSV](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)

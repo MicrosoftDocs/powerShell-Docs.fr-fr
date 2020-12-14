@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: f3230c247296d5fd907d580e719cbbbc560183a9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c1cf126e41a5e918afffbc41d30f957e650efdf5
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203521"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564500"
 ---
 # Set-Clipboard
 
 ## SYNOPSIS
 Définit l’entrée actuelle du presse-papiers Windows.
 
-## SYNTAX
+## SYNTAXE
 
 ### Chaîne (valeur par défaut)
 
@@ -33,7 +32,7 @@ Set-Clipboard [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 Set-Clipboard [-Value] <String[]> [-Append] [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Chemin d’accès
+### Path
 
 ```
 Set-Clipboard [-Append] -Path <String[]> [-AsHtml] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -59,10 +58,18 @@ Set-Clipboard -Value "This is a test string"
 
 ### Exemple 2 : copier le contenu d’un répertoire dans le presse-papiers
 
-Cette commande copie le contenu du dossier spécifié dans le presse-papiers.
+Cet exemple copie le contenu du dossier spécifié dans le presse-papiers.
 
 ```powershell
 Set-Clipboard -Path "C:\Staging\"
+```
+
+### Exemple 3 : copier le contenu d’un fichier dans le presse-papiers
+
+Cet exemple canalise le contenu d’un fichier dans le presse-papiers. Dans cet exemple, nous obtenons une clé SSH publique pour pouvoir la coller dans une autre application, par exemple GitHub.
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS
@@ -101,7 +108,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Spécifie le chemin d’accès à l’élément copié dans le presse-papiers. Contrairement au paramètre **Path** , la valeur de **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à Windows PowerShell qu’aucun caractère ne doit être interprété en tant que séquence d’échappement.
+Spécifie le chemin d’accès à l’élément copié dans le presse-papiers. Contrairement au paramètre **Path**, la valeur de **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à Windows PowerShell qu’aucun caractère ne doit être interprété en tant que séquence d’échappement.
 
 ```yaml
 Type: System.String[]

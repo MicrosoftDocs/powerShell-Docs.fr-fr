@@ -1,25 +1,24 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Module d’importation
-ms.openlocfilehash: 70453f50e727f89012a3e2077557bff7a81ff000
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d041d63c7af185e62a902ebaa362809cddfb4659
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205129"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564576"
 ---
 # Module d’importation
 
 ## SYNOPSIS
 Ajoute des modules à la session active.
 
-## SYNTAX
+## SYNTAXE
 
 ### Nom (par défaut)
 
@@ -114,13 +113,13 @@ Vous pouvez désactiver l’importation automatique de modules à l’aide de la
 
 Un module est un package qui contient des membres qui peuvent être utilisés dans PowerShell. Les membres incluent des applets de commande, des fournisseurs, des scripts, des fonctions, des variables et d’autres outils et fichiers. Après avoir importé un module, vous pouvez utiliser ses membres dans votre session. Pour plus d’informations sur les modules, consultez [about_Modules](About/about_Modules.md).
 
-Par défaut, `Import-Module` importe tous les membres que le module exporte, mais vous pouvez utiliser les paramètres **alias** , **Function** , **applets** de commande et **variables** pour limiter les membres qui sont importés. Le paramètre **NoClobber** empêche `Import-Module` d’importer des membres qui ont les mêmes noms que les membres de la session active.
+Par défaut, `Import-Module` importe tous les membres que le module exporte, mais vous pouvez utiliser les paramètres **alias**, **Function**, **applets** de commande et **variables** pour limiter les membres qui sont importés. Le paramètre **NoClobber** empêche `Import-Module` d’importer des membres qui ont les mêmes noms que les membres de la session active.
 
 `Import-Module` importe un module uniquement dans la session active. Pour importer le module dans chaque nouvelle session, ajoutez une `Import-Module` commande à votre profil PowerShell. Pour plus d'informations sur les profils, consultez [about_Profiles](About/about_Profiles.md).
 
-Vous pouvez gérer les ordinateurs Windows distants pour lesquels la communication à distance PowerShell est activée en créant une **session PSSession** sur l’ordinateur distant. Utilisez ensuite le paramètre **PSSession** de `Import-Module` pour importer les modules installés sur l’ordinateur distant. Vous pouvez maintenant utiliser les commandes importées dans la session active. Les commandes s’exécutent implicitement sur l’ordinateur distant.
+Vous pouvez gérer les ordinateurs Windows distants pour lesquels la communication à distance PowerShell est activée en créant une **session PSSession** sur l’ordinateur distant. Utilisez ensuite le paramètre **PSSession** de `Import-Module` pour importer les modules installés sur l’ordinateur distant. Lorsque vous utilisez les commandes importées dans la session active, les commandes s’exécutent implicitement sur l’ordinateur distant.
 
-À compter de Windows PowerShell 3,0, vous pouvez utiliser `Import-Module` pour importer des modules Common Information Model (CIM), dans lesquels les applets de commande sont définies dans des fichiers de définition d’applet de commande (CDXML). Cette fonctionnalité vous permet d'utiliser les applets de commande qui sont implémentées dans des assemblys de code non managé, telles que celles écrites en C++.
+À partir de Windows PowerShell 3,0, vous pouvez utiliser `Import-Module` pour importer des modules Common Information Model (CIM). Les modules CIM définissent des applets de commande dans des fichiers CDXML (cmdlet Definition XML). Cette fonctionnalité vous permet d’utiliser des applets de commande qui sont implémentées dans des assemblys de code non managé, telles que celles écrites en C++.
 
 Pour les ordinateurs distants sur lesquels la communication à distance PowerShell n’est pas activée, y compris les ordinateurs qui n’exécutent pas le système d’exploitation Windows, vous pouvez utiliser le paramètre **CIMSession** de `Import-Module` pour importer des modules CIM à partir de l’ordinateur distant. Les commandes importées s’exécutent implicitement sur l’ordinateur distant. Un **CIMSession** est une connexion à Windows Management Instrumentation (WMI) sur l’ordinateur distant.
 
@@ -172,11 +171,11 @@ VERBOSE: Exporting function 'Get-SpecDetails'.
 ```
 
 L’utilisation du paramètre **Verbose** entraîne le `Import-Module` signalement de la progression au cours du chargement du module.
-Sans le paramètre **Verbose** , **PassThru** ou **AsCustomObject** , `Import-Module` ne génère pas de sortie lors de l’importation d’un module.
+Sans le paramètre **Verbose**, **PassThru** ou **AsCustomObject** , `Import-Module` ne génère pas de sortie lors de l’importation d’un module.
 
 ### Exemple 5 : limiter les membres de module importés dans une session
 
-Cet exemple montre comment limiter les membres de module qui sont importés dans la session et l’effet de cette commande sur la session. Le paramètre de **fonction** limite les membres importés à partir du module. Vous pouvez également utiliser les paramètres **alias** , **variable** et **applet** de commande pour restreindre les autres membres qu’un module importe.
+Cet exemple montre comment limiter les membres de module qui sont importés dans la session et l’effet de cette commande sur la session. Le paramètre de **fonction** limite les membres importés à partir du module. Vous pouvez également utiliser les paramètres **alias**, **variable** et **applet** de commande pour restreindre les autres membres qu’un module importe.
 
 L' `Get-Module` applet de commande obtient l’objet qui représente le module **PSDiagnostics** . La propriété **ExportedCmdlets** répertorie toutes les applets de commande exportées par le module, même si elles n’ont pas été importées.
 
@@ -250,7 +249,7 @@ Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 
 ### Exemple 7 : obtenir et utiliser un objet personnalisé
 
-Cet exemple montre comment récupérer et utiliser l’objet personnalisé retourné par **import-module** .
+Cet exemple montre comment récupérer et utiliser l’objet personnalisé retourné par `Import-Module` .
 
 Les objets personnalisés incluent des membres synthétiques représentant chacun des membres de module importés. Par exemple, les applets de commande et les fonctions dans un module sont converties en méthodes de script de l'objet personnalisé.
 
@@ -292,11 +291,11 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-Le module de script **Show-Calendar** est importé à l’aide du paramètre **AsCustomObject** pour demander un objet personnalisé et le paramètre **PassThru** pour retourner l’objet. L’objet personnalisé résultant est enregistré dans la `$a` variable.
+Le `Show-Calendar` module de script est importé à l’aide du paramètre **AsCustomObject** pour demander un objet personnalisé et le paramètre **PassThru** pour retourner l’objet. L’objet personnalisé résultant est enregistré dans la `$a` variable.
 
-La `$a` variable est dirigée vers l' `Get-Member` applet de commande pour afficher les propriétés et les méthodes de l’objet enregistré. La sortie montre une méthode de script **Show-Calendar** .
+La `$a` variable est dirigée vers l' `Get-Member` applet de commande pour afficher les propriétés et les méthodes de l’objet enregistré. La sortie illustre une `Show-Calendar` méthode de script.
 
-Pour appeler la méthode de script **Show-Calendar** , le nom de la méthode doit être placé entre guillemets, car le nom contient un trait d’Union.
+Pour appeler la `Show-Calendar` méthode de script, le nom de la méthode doit être placé entre guillemets, car le nom contient un trait d’Union.
 
 ### Exemple 8 : réimporter un module dans la même session
 
@@ -307,7 +306,7 @@ Import-Module PSDiagnostics
 Import-Module PSDiagnostics -Force -Prefix PS
 ```
 
-La première commande importe le module **PSDiagnostics** . La deuxième commande réimporte le module, cette fois en utilisant le paramètre **Prefix** .
+La première commande importe le module **PSDiagnostics** . La deuxième commande réimporte le module, cette fois en utilisant le paramètre **Prefix**.
 
 Sans le paramètre **force** , la session inclut deux copies de chaque applet de commande **PSDiagnostics** , l’une avec le nom standard et l’autre avec le nom préfixé.
 
@@ -455,7 +454,7 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-`New-PSSession` crée une session à distance ( **PSSession** ) sur l’ordinateur SERVEUR01. La **session PSSession** est enregistrée dans la `$s` variable.
+`New-PSSession` crée une session à distance (**PSSession**) sur l’ordinateur SERVEUR01. La **session PSSession** est enregistrée dans la `$s` variable.
 
 Le `Get-Module` fait d’exécuter avec le paramètre **PSSession** indique que le module **netsecurity** est installé et disponible sur l’ordinateur distant. Cette commande revient à utiliser l' `Invoke-Command` applet de commande pour exécuter la `Get-Module` commande dans la session à distance. Par exemple : (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
 
@@ -524,7 +523,7 @@ Accept wildcard characters: True
 
 Spécifie un tableau d’arguments, ou valeurs de paramètre, qui sont passés à un module de script pendant la `Import-Module` commande. Ce paramètre n’est valide que lorsque vous importez un module de script.
 
-Vous pouvez également faire référence au paramètre **argumentlist** par son alias, **args** . Pour plus d’informations sur le comportement de **argumentlist** , consultez [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Vous pouvez également faire référence au paramètre **argumentlist** par son alias, **args**. Pour plus d’informations sur le comportement de **argumentlist**, consultez [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -745,7 +744,7 @@ Lorsqu’elle est appelée à partir d’un autre module, `Import-Module` l’ap
 > [!TIP]
 > Vous devez éviter `Import-Module` d’appeler à partir d’un module. Au lieu de cela, déclarez le module cible comme un module imbriqué dans le manifeste du module parent. La déclaration des modules imbriqués améliore la détectabilité des dépendances.
 
-Le paramètre **Global** équivaut au paramètre **Scope** avec la valeur **Global** .
+Le paramètre **Global** équivaut au paramètre **Scope** avec la valeur **Global**.
 
 Pour restreindre les commandes qu’un module exporte, utilisez une `Export-ModuleMember` commande dans le module de script.
 
@@ -779,9 +778,9 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Spécifie une version minimale. Cette applet de commande importe uniquement une version du module qui est supérieure ou égale à la valeur spécifiée. Utilisez le nom de paramètre **MinimumVersion** ou son alias, **Version** . Si aucune version n’est qualifiée, `Import-Module` génère une erreur.
+Spécifie une version minimale. Cette applet de commande importe uniquement une version du module qui est supérieure ou égale à la valeur spécifiée. Utilisez le nom de paramètre **MinimumVersion** ou son alias, **Version**. Si aucune version n’est qualifiée, `Import-Module` génère une erreur.
 
-Pour spécifier une version exacte, utilisez le paramètre **RequiredVersion** . Vous pouvez également utiliser les paramètres **module** et **version** du mot clé **#Requires** pour exiger une version spécifique d’un module dans un script.
+Pour spécifier une version exacte, utilisez le paramètre **RequiredVersion**. Vous pouvez également utiliser les paramètres **module** et **version** du mot clé **#Requires** pour exiger une version spécifique d’un module dans un script.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -821,6 +820,9 @@ Si vous omettez un chemin d’accès, `Import-Module` recherche le module dans l
 
 Spécifiez uniquement le nom du module chaque fois que possible. Quand vous spécifiez un nom de fichier, seuls les membres qui sont implémentés dans ce fichier sont importés. Si le module contient d’autres fichiers, ils ne sont pas importés et il se peut que vous ne soyez pas membre important du module.
 
+> [!NOTE]
+> Bien qu’il soit possible d’importer un fichier de script ( `.ps1` ) en tant que module, les fichiers de script ne sont généralement pas structurés comme un fichier de modules de script ( `.psm1` ). L’importation d’un fichier de script ne garantit pas qu’il est utilisable en tant que module. Pour plus d’informations, consultez [about_Modules](about/about_Modules.md).
+
 ```yaml
 Type: System.String[]
 Parameter Sets: Name, PSSession, CimSession, WinCompat
@@ -837,7 +839,7 @@ Accept wildcard characters: True
 
 Empêche l’importation des commandes qui ont les mêmes noms que les commandes existantes dans la session active. Par défaut, `Import-Module` importe toutes les commandes de module exportées.
 
-Les commandes qui ont le même nom peuvent masquer ou remplacer des commandes dans la session. Pour éviter les conflits de nom de commande dans une session, utilisez les paramètres **Prefix** ou **NoClobber** . Pour plus d'informations sur les conflits de nom et la priorité des commandes, consultez « Modules et conflits de noms » dans [about_Modules](about/about_Modules.md) et [about_Command_Precedence](about/about_Command_Precedence.md).
+Les commandes qui ont le même nom peuvent masquer ou remplacer des commandes dans la session. Pour éviter les conflits de nom de commande dans une session, utilisez les paramètres **Prefix** ou **NoClobber**. Pour plus d'informations sur les conflits de nom et la priorité des commandes, consultez « Modules et conflits de noms » dans [about_Modules](about/about_Modules.md) et [about_Command_Precedence](about/about_Command_Precedence.md).
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -893,7 +895,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-Spécifie une session PowerShell managée par l’utilisateur ( **PSSession** ) à partir de laquelle cette applet de commande importe des modules dans la session active. Entrez une variable qui contient une **session PSSession** ou une commande qui obtient une **session PSSession** , telle qu’une `Get-PSSession` commande.
+Spécifie une session PowerShell managée par l’utilisateur (**PSSession**) à partir de laquelle cette applet de commande importe des modules dans la session active. Entrez une variable qui contient une **session PSSession** ou une commande qui obtient une **session PSSession**, telle qu’une `Get-PSSession` commande.
 
 Quand vous importez un module à partir d'une autre session dans la session active, vous pouvez utiliser les applets de commande du module dans la session active, tout comme vous utiliseriez des applets de commande à partir d'un module local. Les commandes qui utilisent les applets de commande distantes s’exécutent dans la session à distance, mais les détails de l’accès distant sont gérés en arrière-plan par PowerShell.
 
@@ -921,7 +923,7 @@ Spécifie une version du module que cette applet de commande importe. Si la vers
 
 Par défaut, `Import-Module` importe le module sans vérifier le numéro de version.
 
-Pour spécifier une version minimale, utilisez le paramètre **MinimumVersion** . Vous pouvez également utiliser les paramètres **module** et **version** du mot clé **#Requires** pour exiger une version spécifique d’un module dans un script.
+Pour spécifier une version minimale, utilisez le paramètre **MinimumVersion**. Vous pouvez également utiliser les paramètres **module** et **version** du mot clé **#Requires** pour exiger une version spécifique d’un module dans un script.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -945,14 +947,14 @@ Spécifie une étendue dans laquelle cette applet de commande importe le module.
 
 Les valeurs valides pour ce paramètre sont :
 
-- **Global** . disponible pour toutes les commandes dans la session. Équivalent au paramètre **Global** .
-- **Local** . Disponible uniquement dans l'étendue actuelle.
+- **Global**. disponible pour toutes les commandes dans la session. Équivalent au paramètre **Global**.
+- **Local**. Disponible uniquement dans l'étendue actuelle.
 
-Par défaut, lorsque l' `Import-Module` applet de commande est appelée à partir de l’invite de commandes, d’un fichier de script ou d’un scriptblock, toutes les commandes sont importées dans l’état de session global. Vous pouvez utiliser le paramètre **-scope** avec la valeur **local** pour importer le contenu du module dans la portée du script ou du scriptblock.
+Par défaut, lorsque l' `Import-Module` applet de commande est appelée à partir de l’invite de commandes, d’un fichier de script ou d’un scriptblock, toutes les commandes sont importées dans l’état de session global. Vous pouvez utiliser le `-Scope Local` paramètre pour importer le contenu d’un module dans la portée du script ou du scriptblock.
 
 Lorsqu’elle est appelée à partir d’un autre module, `Import-Module` l’applet de commande importe les commandes d’un module, y compris les commandes des modules imbriqués, dans l’état de session de l’appelant. La spécification de `-Scope Global` ou `-Global` indique que cette applet de commande importe des modules dans l’état de session global pour qu’ils soient disponibles pour toutes les commandes de la session.
 
-Le paramètre **Global** est équivalent au paramètre **scope** avec la valeur global.
+Le paramètre **Global** équivaut au paramètre **Scope** avec la valeur **Global**.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -1056,19 +1058,17 @@ Par défaut, `Import-Module` ne génère pas de sortie. Si vous spécifiez le pa
 
 - Pour mettre à jour les données de mise en forme pour les commandes qui ont été importées à partir d’un module, utilisez l’applet de commande `Update-FormatData` . `Update-FormatData` met également à jour les données de mise en forme pour les commandes de la session qui ont été importées à partir de modules. Si le fichier de mise en forme d’un module est modifié, vous pouvez exécuter une `Update-FormatData` commande pour mettre à jour les données de mise en forme des commandes importées. Vous n’avez pas besoin de réimporter le module.
 
-- À compter de Windows PowerShell 3,0, les commandes de base qui sont installées avec PowerShell sont empaquetées dans des modules. Dans Windows PowerShell 2,0 et dans les programmes hôtes qui créent des sessions de style plus anciennes dans les versions ultérieures de PowerShell, les commandes de base sont empaquetées dans des composants logiciels enfichables ( **PSSnapins** ). L’exception est **Microsoft. PowerShell. Core** , qui est toujours un composant logiciel enfichable. En outre, les sessions à distance, telles que celles démarrées par l’applet de commande `New-PSSession` , sont des sessions de style plus anciennes qui incluent des composants logiciels enfichables principaux.
+- À compter de Windows PowerShell 3,0, les commandes de base qui sont installées avec PowerShell sont empaquetées dans des modules. Dans Windows PowerShell 2,0 et dans les programmes hôtes qui créent des sessions de style plus anciennes dans les versions ultérieures de PowerShell, les commandes de base sont empaquetées dans des composants logiciels enfichables (**PSSnapins**). L’exception est **Microsoft. PowerShell. Core**, qui est toujours un composant logiciel enfichable. En outre, les sessions à distance, telles que celles démarrées par l’applet de commande `New-PSSession` , sont des sessions de style plus anciennes qui incluent des composants logiciels enfichables principaux.
 
   Pour plus d’informations sur la méthode **CreateDefault2** qui crée des sessions de style plus récentes avec des modules de base, consultez la [méthode CreateDefault2](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
-- `Import-Module` Impossible d’importer les modules PowerShell Core à partir d’une autre session. Les modules PowerShell Core portent des noms qui commencent par `Microsoft.PowerShell` .
+- Dans Windows PowerShell 2,0, certaines des valeurs de propriété de l’objet de module, telles que les valeurs de propriété **ExportedCmdlets** et **NestedModules** , n’ont pas été remplies tant que le module n’a pas été importé.
 
-- Dans Windows PowerShell 2,0, certaines des valeurs de propriété de l’objet de module, telles que les valeurs de propriété **ExportedCmdlets** et **NestedModules** , n’ont pas été remplies tant que le module n’a pas été importé et n’étaient pas disponibles sur l’objet de module retourné par le paramètre **PassThru** . Dans Windows PowerShell 3,0, toutes les valeurs de propriété de module sont remplies.
-
-- Si vous tentez d’importer un module qui contient des assemblys en mode mixte qui ne sont pas compatibles avec Windows PowerShell 3,0, `Import-Module` retourne un message d’erreur semblable à celui-ci.
+- Si vous tentez d’importer un module qui contient des assemblys en mode mixte qui ne sont pas compatibles avec Windows PowerShell 3.0, `Import-Module` retourne un message d’erreur semblable à celui-ci.
 
   > Import-Module : l’assembly en mode mixte est généré avec la version’v 2.0.50727 'du runtime et ne peut pas être chargé dans le runtime 4,0 sans informations de configuration supplémentaires.
 
-  Cette erreur se produit lorsqu’un module conçu pour Windows PowerShell 2,0 contient au moins un assembly de module mixte, autrement dit un assembly qui inclut du code managé et non managé, tel que C++ et C#.
+  Cette erreur se produit lorsqu’un module conçu pour Windows PowerShell 2,0 contient au moins un assembly de module mixte. Assembly de module mixte qui comprend du code managé et non managé, tel que C++ et C#.
 
   Pour importer un module qui contient des assemblys en mode mixte, démarrez Windows PowerShell 2,0 à l’aide de la commande suivante, puis réessayez d’exécuter la `Import-Module` commande.
 
@@ -1087,9 +1087,11 @@ Par défaut, `Import-Module` ne génère pas de sortie. Si vous spécifiez le pa
   > [!NOTE]
   > `Get-Module` affiche tous les modules chargés dans la session active. Cela comprend les modules chargés localement dans une portée descendante. Utilisez `Get-Command -Module modulename` pour voir quels membres sont chargés dans l’étendue actuelle.
 
-  Si le module comprend des définitions de classe et d’énumération, utilisez `using module` au début de votre script. Cela a pour importation les scripts, y compris les définitions de classe et d’énumération. Pour plus d’informations, consultez [about_Using](About/about_Using.md).
+  `Import-Module` ne charge pas les définitions de classe et d’énumération dans le module. Utilisez l' `using module` instruction au début de votre script. Cela importe le module, y compris les définitions de classe et d’énumération. Pour plus d’informations, consultez [about_Using](About/about_Using.md).
 
 ## LIENS CONNEXES
+
+[about_Modules](about/about_Modules.md)
 
 [Export-ModuleMember](Export-ModuleMember.md)
 
@@ -1100,4 +1102,3 @@ Par défaut, `Import-Module` ne génère pas de sortie. Si vous spécifiez le pa
 [Remove-Module](Remove-Module.md)
 
 [about_PowerShell_Editions](About/about_PowerShell_Editions.md)
-
