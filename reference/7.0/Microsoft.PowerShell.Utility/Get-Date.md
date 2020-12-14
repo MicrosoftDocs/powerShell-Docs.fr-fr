@@ -7,21 +7,21 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: ef9059ff2e70aa5da53e0604b48a482a5dd0ef01
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: 4ae3734d0ce41ef2faa7bcf3e07f136b9e9916a2
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206149"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514957"
 ---
-# <span data-ttu-id="69550-103">Get-Date</span><span class="sxs-lookup"><span data-stu-id="69550-103">Get-Date</span></span>
+# <span data-ttu-id="8bf9a-103">Get-Date</span><span class="sxs-lookup"><span data-stu-id="8bf9a-103">Get-Date</span></span>
 
-## <span data-ttu-id="69550-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="69550-104">SYNOPSIS</span></span>
-<span data-ttu-id="69550-105">Obtient les date et heure actuelles.</span><span class="sxs-lookup"><span data-stu-id="69550-105">Gets the current date and time.</span></span>
+## <span data-ttu-id="8bf9a-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="8bf9a-104">SYNOPSIS</span></span>
+<span data-ttu-id="8bf9a-105">Obtient les date et heure actuelles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-105">Gets the current date and time.</span></span>
 
-## <span data-ttu-id="69550-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="69550-106">SYNTAX</span></span>
+## <span data-ttu-id="8bf9a-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="8bf9a-106">SYNTAX</span></span>
 
-### <span data-ttu-id="69550-107">NET (par défaut)</span><span class="sxs-lookup"><span data-stu-id="69550-107">net (Default)</span></span>
+### <span data-ttu-id="8bf9a-107">NET (par défaut)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-107">net (Default)</span></span>
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
@@ -29,7 +29,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  [-Format <String>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="69550-108">UFormat</span><span class="sxs-lookup"><span data-stu-id="69550-108">UFormat</span></span>
+### <span data-ttu-id="8bf9a-108">UFormat</span><span class="sxs-lookup"><span data-stu-id="8bf9a-108">UFormat</span></span>
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
@@ -37,17 +37,17 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  [-UFormat <String>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="69550-109">Description</span><span class="sxs-lookup"><span data-stu-id="69550-109">DESCRIPTION</span></span>
+## <span data-ttu-id="8bf9a-109">Description</span><span class="sxs-lookup"><span data-stu-id="8bf9a-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="69550-110">L' `Get-Date` applet de commande obtient un objet **DateTime** qui représente la date actuelle ou une date que vous spécifiez.</span><span class="sxs-lookup"><span data-stu-id="69550-110">The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.</span></span> <span data-ttu-id="69550-111">`Get-Date` peut mettre en forme la date et l’heure dans plusieurs formats .NET et UNIX.</span><span class="sxs-lookup"><span data-stu-id="69550-111">`Get-Date` can format the date and time in several .NET and UNIX formats.</span></span> <span data-ttu-id="69550-112">Vous pouvez utiliser `Get-Date` pour générer une chaîne de caractères de date ou d’heure, puis envoyer la chaîne à d’autres applets de commande ou programmes.</span><span class="sxs-lookup"><span data-stu-id="69550-112">You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.</span></span>
+<span data-ttu-id="8bf9a-110">L' `Get-Date` applet de commande obtient un objet **DateTime** qui représente la date actuelle ou une date que vous spécifiez.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-110">The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you specify.</span></span> <span data-ttu-id="8bf9a-111">`Get-Date` peut mettre en forme la date et l’heure dans plusieurs formats .NET et UNIX.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-111">`Get-Date` can format the date and time in several .NET and UNIX formats.</span></span> <span data-ttu-id="8bf9a-112">Vous pouvez utiliser `Get-Date` pour générer une chaîne de caractères de date ou d’heure, puis envoyer la chaîne à d’autres applets de commande ou programmes.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-112">You can use `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or programs.</span></span>
 
-<span data-ttu-id="69550-113">`Get-Date` utilise les paramètres de culture de l’ordinateur pour déterminer comment la sortie est mise en forme.</span><span class="sxs-lookup"><span data-stu-id="69550-113">`Get-Date` uses the computer's culture settings to determine how the output is formatted.</span></span> <span data-ttu-id="69550-114">Pour afficher les paramètres de votre ordinateur, utilisez `(Get-Culture).DateTimeFormat` .</span><span class="sxs-lookup"><span data-stu-id="69550-114">To view your computer's settings, use `(Get-Culture).DateTimeFormat`.</span></span>
+<span data-ttu-id="8bf9a-113">`Get-Date` utilise les paramètres de culture de l’ordinateur pour déterminer comment la sortie est mise en forme.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-113">`Get-Date` uses the computer's culture settings to determine how the output is formatted.</span></span> <span data-ttu-id="8bf9a-114">Pour afficher les paramètres de votre ordinateur, utilisez `(Get-Culture).DateTimeFormat` .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-114">To view your computer's settings, use `(Get-Culture).DateTimeFormat`.</span></span>
 
-## <span data-ttu-id="69550-115">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="69550-115">EXAMPLES</span></span>
+## <span data-ttu-id="8bf9a-115">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="8bf9a-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="69550-116">Exemple 1 : récupération de la date et de l’heure actuelles</span><span class="sxs-lookup"><span data-stu-id="69550-116">Example 1: Get the current date and time</span></span>
+### <span data-ttu-id="8bf9a-116">Exemple 1 : récupération de la date et de l’heure actuelles</span><span class="sxs-lookup"><span data-stu-id="8bf9a-116">Example 1: Get the current date and time</span></span>
 
-<span data-ttu-id="69550-117">Dans cet exemple, `Get-Date` affiche la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="69550-117">In this example, `Get-Date` displays the current system date and time.</span></span> <span data-ttu-id="69550-118">La sortie est dans les formats de date longue et d’heure longue.</span><span class="sxs-lookup"><span data-stu-id="69550-118">The output is in the long-date and long-time formats.</span></span>
+<span data-ttu-id="8bf9a-117">Dans cet exemple, `Get-Date` affiche la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-117">In this example, `Get-Date` displays the current system date and time.</span></span> <span data-ttu-id="8bf9a-118">La sortie est dans les formats de date longue et d’heure longue.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-118">The output is in the long-date and long-time formats.</span></span>
 
 ```powershell
 Get-Date
@@ -57,9 +57,9 @@ Get-Date
 Tuesday, June 25, 2019 14:53:32
 ```
 
-### <span data-ttu-id="69550-119">Exemple 2 : obtient les éléments de la date et de l’heure actuelles</span><span class="sxs-lookup"><span data-stu-id="69550-119">Example 2: Get elements of the current date and time</span></span>
+### <span data-ttu-id="8bf9a-119">Exemple 2 : obtient les éléments de la date et de l’heure actuelles</span><span class="sxs-lookup"><span data-stu-id="8bf9a-119">Example 2: Get elements of the current date and time</span></span>
 
-<span data-ttu-id="69550-120">Cet exemple montre comment utiliser `Get-Date` pour récupérer l’élément de date ou d’heure.</span><span class="sxs-lookup"><span data-stu-id="69550-120">This example shows how to use `Get-Date` to get either the date or time element.</span></span> <span data-ttu-id="69550-121">Le paramètre utilise les arguments **Date** , **Time** ou **DateTime** .</span><span class="sxs-lookup"><span data-stu-id="69550-121">The parameter uses the arguments **Date** , **Time** , or **DateTime** .</span></span>
+<span data-ttu-id="8bf9a-120">Cet exemple montre comment utiliser `Get-Date` pour récupérer l’élément de date ou d’heure.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-120">This example shows how to use `Get-Date` to get either the date or time element.</span></span> <span data-ttu-id="8bf9a-121">Le paramètre utilise les arguments **Date**, **Time** ou **DateTime**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-121">The parameter uses the arguments **Date**, **Time**, or **DateTime**.</span></span>
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -69,11 +69,11 @@ Get-Date -DisplayHint Date
 Tuesday, June 25, 2019
 ```
 
-<span data-ttu-id="69550-122">`Get-Date` utilise le paramètre **DisplayHint** avec l’argument **Date** pour récupérer uniquement la date.</span><span class="sxs-lookup"><span data-stu-id="69550-122">`Get-Date` uses the **DisplayHint** parameter with the **Date** argument to get only the date.</span></span>
+<span data-ttu-id="8bf9a-122">`Get-Date` utilise le paramètre **DisplayHint** avec l’argument **Date** pour récupérer uniquement la date.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-122">`Get-Date` uses the **DisplayHint** parameter with the **Date** argument to get only the date.</span></span>
 
-### <span data-ttu-id="69550-123">Exemple 3 : obtenir la date et l’heure avec un spécificateur de format .NET</span><span class="sxs-lookup"><span data-stu-id="69550-123">Example 3: Get the date and time with a .NET format specifier</span></span>
+### <span data-ttu-id="8bf9a-123">Exemple 3 : obtenir la date et l’heure avec un spécificateur de format .NET</span><span class="sxs-lookup"><span data-stu-id="8bf9a-123">Example 3: Get the date and time with a .NET format specifier</span></span>
 
-<span data-ttu-id="69550-124">Dans cet exemple, un spécificateur de format .NET est utilisé pour personnaliser le format de la sortie.</span><span class="sxs-lookup"><span data-stu-id="69550-124">In this example, a .NET format specifier is used to customize the output's format.</span></span> <span data-ttu-id="69550-125">La sortie est un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="69550-125">The output is a **String** object.</span></span>
+<span data-ttu-id="8bf9a-124">Dans cet exemple, un spécificateur de format .NET est utilisé pour personnaliser le format de la sortie.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-124">In this example, a .NET format specifier is used to customize the output's format.</span></span> <span data-ttu-id="8bf9a-125">La sortie est un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-125">The output is a **String** object.</span></span>
 
 ```powershell
 Get-Date -Format "dddd MM/dd/yyyy HH:mm K"
@@ -83,25 +83,25 @@ Get-Date -Format "dddd MM/dd/yyyy HH:mm K"
 Tuesday 06/25/2019 16:17 -07:00
 ```
 
-<span data-ttu-id="69550-126">`Get-Date` utilise le paramètre **format** pour spécifier plusieurs spécificateurs de format.</span><span class="sxs-lookup"><span data-stu-id="69550-126">`Get-Date` uses the **Format** parameter to specify several format specifiers.</span></span>
+<span data-ttu-id="8bf9a-126">`Get-Date` utilise le paramètre **format** pour spécifier plusieurs spécificateurs de format.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-126">`Get-Date` uses the **Format** parameter to specify several format specifiers.</span></span>
 
-<span data-ttu-id="69550-127">Les spécificateurs de format .NET utilisés dans cet exemple sont définis comme suit :</span><span class="sxs-lookup"><span data-stu-id="69550-127">The .NET format specifiers used in this example are defined as follows:</span></span>
+<span data-ttu-id="8bf9a-127">Les spécificateurs de format .NET utilisés dans cet exemple sont définis comme suit :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-127">The .NET format specifiers used in this example are defined as follows:</span></span>
 
-| <span data-ttu-id="69550-128">Spécificateur</span><span class="sxs-lookup"><span data-stu-id="69550-128">Specifier</span></span> | <span data-ttu-id="69550-129">Définition</span><span class="sxs-lookup"><span data-stu-id="69550-129">Definition</span></span> |
+| <span data-ttu-id="8bf9a-128">Spécificateur</span><span class="sxs-lookup"><span data-stu-id="8bf9a-128">Specifier</span></span> | <span data-ttu-id="8bf9a-129">Définition</span><span class="sxs-lookup"><span data-stu-id="8bf9a-129">Definition</span></span> |
 | --- | --- |
-| `dddd` | <span data-ttu-id="69550-130">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="69550-130">Day of the week - full name</span></span> |
-| `MM` | <span data-ttu-id="69550-131">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="69550-131">Month number</span></span> |
-| `dd` | <span data-ttu-id="69550-132">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-132">Day of the month - 2 digits</span></span> |
-| `yyyy` | <span data-ttu-id="69550-133">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-133">Year in 4-digit format</span></span> |
-| `HH:mm` | <span data-ttu-id="69550-134">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="69550-134">Time in 24-hour format -no seconds</span></span> |
-| `K` | <span data-ttu-id="69550-135">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="69550-135">Time zone offset from Universal Time Coordinate (UTC)</span></span> |
+| `dddd` | <span data-ttu-id="8bf9a-130">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="8bf9a-130">Day of the week - full name</span></span> |
+| `MM` | <span data-ttu-id="8bf9a-131">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="8bf9a-131">Month number</span></span> |
+| `dd` | <span data-ttu-id="8bf9a-132">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-132">Day of the month - 2 digits</span></span> |
+| `yyyy` | <span data-ttu-id="8bf9a-133">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-133">Year in 4-digit format</span></span> |
+| `HH:mm` | <span data-ttu-id="8bf9a-134">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="8bf9a-134">Time in 24-hour format -no seconds</span></span> |
+| `K` | <span data-ttu-id="8bf9a-135">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-135">Time zone offset from Universal Time Coordinate (UTC)</span></span> |
 
-<span data-ttu-id="69550-136">Pour plus d’informations sur les spécificateurs de format .NET, consultez [chaînes de format de date et d’heure personnalisées](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span><span class="sxs-lookup"><span data-stu-id="69550-136">For more information about .NET format specifiers, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span></span>
+<span data-ttu-id="8bf9a-136">Pour plus d’informations sur les spécificateurs de format .NET, consultez [chaînes de format de date et d’heure personnalisées](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-136">For more information about .NET format specifiers, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span></span>
 
-### <span data-ttu-id="69550-137">Exemple 4 : obtenir la date et l’heure avec un spécificateur UFormat</span><span class="sxs-lookup"><span data-stu-id="69550-137">Example 4: Get the date and time with a UFormat specifier</span></span>
+### <span data-ttu-id="8bf9a-137">Exemple 4 : obtenir la date et l’heure avec un spécificateur UFormat</span><span class="sxs-lookup"><span data-stu-id="8bf9a-137">Example 4: Get the date and time with a UFormat specifier</span></span>
 
-<span data-ttu-id="69550-138">Dans cet exemple, plusieurs spécificateurs de format **UFormat** sont utilisés pour personnaliser le format de la sortie.</span><span class="sxs-lookup"><span data-stu-id="69550-138">In this example, several **UFormat** format specifiers are used to customize the output's format.</span></span>
-<span data-ttu-id="69550-139">La sortie est un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="69550-139">The output is a **String** object.</span></span>
+<span data-ttu-id="8bf9a-138">Dans cet exemple, plusieurs spécificateurs de format **UFormat** sont utilisés pour personnaliser le format de la sortie.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-138">In this example, several **UFormat** format specifiers are used to customize the output's format.</span></span>
+<span data-ttu-id="8bf9a-139">La sortie est un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-139">The output is a **String** object.</span></span>
 
 ```powershell
 Get-Date -UFormat "%A %m/%d/%Y %R %Z"
@@ -111,26 +111,26 @@ Get-Date -UFormat "%A %m/%d/%Y %R %Z"
 Tuesday 06/25/2019 16:19 -07
 ```
 
-<span data-ttu-id="69550-140">`Get-Date` utilise le paramètre **UFormat** pour spécifier plusieurs spécificateurs de format.</span><span class="sxs-lookup"><span data-stu-id="69550-140">`Get-Date` uses the **UFormat** parameter to specify several format specifiers.</span></span>
+<span data-ttu-id="8bf9a-140">`Get-Date` utilise le paramètre **UFormat** pour spécifier plusieurs spécificateurs de format.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-140">`Get-Date` uses the **UFormat** parameter to specify several format specifiers.</span></span>
 
-<span data-ttu-id="69550-141">Les spécificateurs de format **UFormat** utilisés dans cet exemple sont définis comme suit :</span><span class="sxs-lookup"><span data-stu-id="69550-141">The **UFormat** format specifiers used in this example are defined as follows:</span></span>
+<span data-ttu-id="8bf9a-141">Les spécificateurs de format **UFormat** utilisés dans cet exemple sont définis comme suit :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-141">The **UFormat** format specifiers used in this example are defined as follows:</span></span>
 
-| <span data-ttu-id="69550-142">Spécificateur</span><span class="sxs-lookup"><span data-stu-id="69550-142">Specifier</span></span> | <span data-ttu-id="69550-143">Définition</span><span class="sxs-lookup"><span data-stu-id="69550-143">Definition</span></span> |
+| <span data-ttu-id="8bf9a-142">Spécificateur</span><span class="sxs-lookup"><span data-stu-id="8bf9a-142">Specifier</span></span> | <span data-ttu-id="8bf9a-143">Définition</span><span class="sxs-lookup"><span data-stu-id="8bf9a-143">Definition</span></span> |
 | --- | --- |
-| `%A` | <span data-ttu-id="69550-144">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="69550-144">Day of the week - full name</span></span> |
-| `%m` | <span data-ttu-id="69550-145">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="69550-145">Month number</span></span> |
-| `%d` | <span data-ttu-id="69550-146">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-146">Day of the month - 2 digits</span></span> |
-| `%Y` | <span data-ttu-id="69550-147">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-147">Year in 4-digit format</span></span> |
-| `%R` | <span data-ttu-id="69550-148">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="69550-148">Time in 24-hour format -no seconds</span></span> |
-| `%Z` | <span data-ttu-id="69550-149">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="69550-149">Time zone offset from Universal Time Coordinate (UTC)</span></span> |
+| `%A` | <span data-ttu-id="8bf9a-144">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="8bf9a-144">Day of the week - full name</span></span> |
+| `%m` | <span data-ttu-id="8bf9a-145">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="8bf9a-145">Month number</span></span> |
+| `%d` | <span data-ttu-id="8bf9a-146">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-146">Day of the month - 2 digits</span></span> |
+| `%Y` | <span data-ttu-id="8bf9a-147">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-147">Year in 4-digit format</span></span> |
+| `%R` | <span data-ttu-id="8bf9a-148">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="8bf9a-148">Time in 24-hour format -no seconds</span></span> |
+| `%Z` | <span data-ttu-id="8bf9a-149">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-149">Time zone offset from Universal Time Coordinate (UTC)</span></span> |
 
-<span data-ttu-id="69550-150">Pour obtenir la liste des spécificateurs de format **UFormat** valides, consultez la section [Remarques](#notes) .</span><span class="sxs-lookup"><span data-stu-id="69550-150">For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.</span></span>
+<span data-ttu-id="8bf9a-150">Pour obtenir la liste des spécificateurs de format **UFormat** valides, consultez la section [Remarques](#notes) .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-150">For a list of valid **UFormat** format specifiers, see the [Notes](#notes) section.</span></span>
 
-### <span data-ttu-id="69550-151">Exemple 5 : obtenir le jour d’une date de l’année</span><span class="sxs-lookup"><span data-stu-id="69550-151">Example 5: Get a date's day of the year</span></span>
+### <span data-ttu-id="8bf9a-151">Exemple 5 : obtenir le jour d’une date de l’année</span><span class="sxs-lookup"><span data-stu-id="8bf9a-151">Example 5: Get a date's day of the year</span></span>
 
-<span data-ttu-id="69550-152">Dans cet exemple, une propriété est utilisée pour obtenir le nombre de jours de l’année.</span><span class="sxs-lookup"><span data-stu-id="69550-152">In this example, a property is used to get the numeric day of the year.</span></span>
+<span data-ttu-id="8bf9a-152">Dans cet exemple, une propriété est utilisée pour obtenir le nombre de jours de l’année.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-152">In this example, a property is used to get the numeric day of the year.</span></span>
 
-<span data-ttu-id="69550-153">Le calendrier grégorien contient 365 jours, à l’exception des années bissextiles qui comportent 366 jours.</span><span class="sxs-lookup"><span data-stu-id="69550-153">The Gregorian calendar has 365 days, except for leap years that have 366 days.</span></span> <span data-ttu-id="69550-154">Par exemple, le 31 décembre 2020 est le jour 366.</span><span class="sxs-lookup"><span data-stu-id="69550-154">For example, December 31, 2020 is day 366.</span></span>
+<span data-ttu-id="8bf9a-153">Le calendrier grégorien contient 365 jours, à l’exception des années bissextiles qui comportent 366 jours.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-153">The Gregorian calendar has 365 days, except for leap years that have 366 days.</span></span> <span data-ttu-id="8bf9a-154">Par exemple, le 31 décembre 2020 est le jour 366.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-154">For example, December 31, 2020 is day 366.</span></span>
 
 ```powershell
 (Get-Date -Year 2020 -Month 12 -Day 31).DayOfYear
@@ -140,11 +140,11 @@ Tuesday 06/25/2019 16:19 -07
 366
 ```
 
-<span data-ttu-id="69550-155">`Get-Date` utilise trois paramètres pour spécifier la date : **année** , **mois** et **jour** .</span><span class="sxs-lookup"><span data-stu-id="69550-155">`Get-Date` uses three parameters to specify the date: **Year** , **Month** , and **Day** .</span></span> <span data-ttu-id="69550-156">La commande est entourée de parenthèses afin que le résultat soit évalué par la propriété **DayofYear** .</span><span class="sxs-lookup"><span data-stu-id="69550-156">The command is wrapped with parentheses so that the result is evaluated by the **DayofYear** property.</span></span>
+<span data-ttu-id="8bf9a-155">`Get-Date` utilise trois paramètres pour spécifier la date : **année**, **mois** et **jour**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-155">`Get-Date` uses three parameters to specify the date: **Year**, **Month**, and **Day**.</span></span> <span data-ttu-id="8bf9a-156">La commande est entourée de parenthèses afin que le résultat soit évalué par la propriété **DayofYear** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-156">The command is wrapped with parentheses so that the result is evaluated by the **DayofYear** property.</span></span>
 
-### <span data-ttu-id="69550-157">Exemple 6 : vérifier si une date est ajustée pour l’heure d’été</span><span class="sxs-lookup"><span data-stu-id="69550-157">Example 6: Check if a date is adjusted for daylight savings time</span></span>
+### <span data-ttu-id="8bf9a-157">Exemple 6 : vérifier si une date est ajustée pour l’heure d’été</span><span class="sxs-lookup"><span data-stu-id="8bf9a-157">Example 6: Check if a date is adjusted for daylight savings time</span></span>
 
-<span data-ttu-id="69550-158">Cet exemple utilise une méthode booléenne pour vérifier si une date est ajustée par l’heure d’été.</span><span class="sxs-lookup"><span data-stu-id="69550-158">This example uses a boolean method to verify if a date is adjusted by daylight savings time.</span></span>
+<span data-ttu-id="8bf9a-158">Cet exemple utilise une méthode booléenne pour vérifier si une date est ajustée par l’heure d’été.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-158">This example uses a boolean method to verify if a date is adjusted by daylight savings time.</span></span>
 
 ```powershell
 $DST = Get-Date
@@ -155,11 +155,11 @@ $DST.IsDaylightSavingTime()
 True
 ```
 
-<span data-ttu-id="69550-159">Une variable, `$DST` stocke le résultat de `Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="69550-159">A variable, `$DST` stores the result of `Get-Date`.</span></span> <span data-ttu-id="69550-160">`$DST` utilise la méthode **IsDaylightSavingTime** pour tester si la date est ajustée pour l’heure d’été.</span><span class="sxs-lookup"><span data-stu-id="69550-160">`$DST` uses the **IsDaylightSavingTime** method to test if the date is adjusted for daylight savings time.</span></span>
+<span data-ttu-id="8bf9a-159">Une variable, `$DST` stocke le résultat de `Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-159">A variable, `$DST` stores the result of `Get-Date`.</span></span> <span data-ttu-id="8bf9a-160">`$DST` utilise la méthode **IsDaylightSavingTime** pour tester si la date est ajustée pour l’heure d’été.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-160">`$DST` uses the **IsDaylightSavingTime** method to test if the date is adjusted for daylight savings time.</span></span>
 
-### <span data-ttu-id="69550-161">Exemple 7 : convertir l’heure actuelle en heure UTC</span><span class="sxs-lookup"><span data-stu-id="69550-161">Example 7: Convert the current time to UTC time</span></span>
+### <span data-ttu-id="8bf9a-161">Exemple 7 : convertir l’heure actuelle en heure UTC</span><span class="sxs-lookup"><span data-stu-id="8bf9a-161">Example 7: Convert the current time to UTC time</span></span>
 
-<span data-ttu-id="69550-162">Dans cet exemple, l’heure actuelle est convertie en heure UTC.</span><span class="sxs-lookup"><span data-stu-id="69550-162">In this example, the current time is converted to UTC time.</span></span> <span data-ttu-id="69550-163">L’offset UTC pour les paramètres régionaux du système est utilisé pour convertir l’heure.</span><span class="sxs-lookup"><span data-stu-id="69550-163">The UTC offset for the system's locale is used to convert the time.</span></span> <span data-ttu-id="69550-164">Un tableau de la section [Remarques](#notes) répertorie les spécificateurs de format **UFormat** valides.</span><span class="sxs-lookup"><span data-stu-id="69550-164">A table in the [Notes](#notes) section lists the valid **UFormat** format specifiers.</span></span>
+<span data-ttu-id="8bf9a-162">Dans cet exemple, l’heure actuelle est convertie en heure UTC.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-162">In this example, the current time is converted to UTC time.</span></span> <span data-ttu-id="8bf9a-163">L’offset UTC pour les paramètres régionaux du système est utilisé pour convertir l’heure.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-163">The UTC offset for the system's locale is used to convert the time.</span></span> <span data-ttu-id="8bf9a-164">Un tableau de la section [Remarques](#notes) répertorie les spécificateurs de format **UFormat** valides.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-164">A table in the [Notes](#notes) section lists the valid **UFormat** format specifiers.</span></span>
 
 ```powershell
 Get-Date -UFormat "%A %B/%d/%Y %T %Z"
@@ -173,13 +173,13 @@ Wednesday June/26/2019 10:45:26 -07
 Wednesday, June 26, 2019 17:45:26
 ```
 
-<span data-ttu-id="69550-165">`Get-Date` utilise le paramètre **UFormat** avec des spécificateurs de format pour afficher la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="69550-165">`Get-Date` uses the **UFormat** parameter with format specifiers to display the current system date and time.</span></span> <span data-ttu-id="69550-166">Le spécificateur de format **% Z** représente l’offset UTC de **-07** .</span><span class="sxs-lookup"><span data-stu-id="69550-166">The format specifier **%Z** represents the UTC offset of **-07** .</span></span>
+<span data-ttu-id="8bf9a-165">`Get-Date` utilise le paramètre **UFormat** avec des spécificateurs de format pour afficher la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-165">`Get-Date` uses the **UFormat** parameter with format specifiers to display the current system date and time.</span></span> <span data-ttu-id="8bf9a-166">Le spécificateur de format **% Z** représente l’offset UTC de **-07**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-166">The format specifier **%Z** represents the UTC offset of **-07**.</span></span>
 
-<span data-ttu-id="69550-167">La `$Time` variable stocke la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="69550-167">The `$Time` variable stores the current system date and time.</span></span> <span data-ttu-id="69550-168">`$Time` utilise la méthode **ToUniversalTime ()** pour convertir l’heure en fonction du décalage UTC de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="69550-168">`$Time` uses the **ToUniversalTime()** method to convert the time based on the computer's UTC offset.</span></span>
+<span data-ttu-id="8bf9a-167">La `$Time` variable stocke la date et l’heure système actuelles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-167">The `$Time` variable stores the current system date and time.</span></span> <span data-ttu-id="8bf9a-168">`$Time` utilise la méthode **ToUniversalTime ()** pour convertir l’heure en fonction du décalage UTC de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-168">`$Time` uses the **ToUniversalTime()** method to convert the time based on the computer's UTC offset.</span></span>
 
-### <span data-ttu-id="69550-169">Exemple 8 : créer un horodateur</span><span class="sxs-lookup"><span data-stu-id="69550-169">Example 8: Create a timestamp</span></span>
+### <span data-ttu-id="8bf9a-169">Exemple 8 : créer un horodateur</span><span class="sxs-lookup"><span data-stu-id="8bf9a-169">Example 8: Create a timestamp</span></span>
 
-<span data-ttu-id="69550-170">Dans cet exemple, un spécificateur de format crée un objet de **chaîne** d’horodatage pour un nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="69550-170">In this example, a format specifier creates a timestamp **String** object for a directory name.</span></span> <span data-ttu-id="69550-171">L’horodateur contient la date, l’heure et le décalage UTC.</span><span class="sxs-lookup"><span data-stu-id="69550-171">The timestamp includes the date, time, and UTC offset.</span></span>
+<span data-ttu-id="8bf9a-170">Dans cet exemple, un spécificateur de format crée un objet de **chaîne** d’horodatage pour un nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-170">In this example, a format specifier creates a timestamp **String** object for a directory name.</span></span> <span data-ttu-id="8bf9a-171">L’horodateur contient la date, l’heure et le décalage UTC.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-171">The timestamp includes the date, time, and UTC offset.</span></span>
 
 ```powershell
 $timestamp = Get-Date -Format o | ForEach-Object { $_ -replace ":", "." }
@@ -194,21 +194,21 @@ Mode                LastWriteTime         Length Name
 d-----         6/27/2019    07:59                2019-06-27T07.59.24.4603750-07.00
 ```
 
-<span data-ttu-id="69550-172">La `$timestamp` variable stocke les résultats d’une `Get-Date` commande.</span><span class="sxs-lookup"><span data-stu-id="69550-172">The `$timestamp` variable stores the results of a `Get-Date` command.</span></span> <span data-ttu-id="69550-173">`Get-Date` utilise le paramètre de **format** avec le spécificateur de format en minuscules `o` pour créer un objet de **chaîne** d’horodatage.</span><span class="sxs-lookup"><span data-stu-id="69550-173">`Get-Date` uses the **Format** parameter with the format specifier of lowercase `o` to create a timestamp **String** object.</span></span> <span data-ttu-id="69550-174">L’objet est envoyé dans le pipeline à `ForEach-Object` .</span><span class="sxs-lookup"><span data-stu-id="69550-174">The object is sent down the pipeline to `ForEach-Object`.</span></span> <span data-ttu-id="69550-175">Un **scriptblock** contient la `$_` variable qui représente l’objet de pipeline actuel.</span><span class="sxs-lookup"><span data-stu-id="69550-175">A **ScriptBlock** contains the `$_` variable that represents the current pipeline object.</span></span> <span data-ttu-id="69550-176">La chaîne d’horodatage est délimitée par des signes deux-points qui sont remplacés par des points.</span><span class="sxs-lookup"><span data-stu-id="69550-176">The timestamp string is delimited by colons that are replaced by periods.</span></span>
+<span data-ttu-id="8bf9a-172">La `$timestamp` variable stocke les résultats d’une `Get-Date` commande.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-172">The `$timestamp` variable stores the results of a `Get-Date` command.</span></span> <span data-ttu-id="8bf9a-173">`Get-Date` utilise le paramètre de **format** avec le spécificateur de format en minuscules `o` pour créer un objet de **chaîne** d’horodatage.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-173">`Get-Date` uses the **Format** parameter with the format specifier of lowercase `o` to create a timestamp **String** object.</span></span> <span data-ttu-id="8bf9a-174">L’objet est envoyé dans le pipeline à `ForEach-Object` .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-174">The object is sent down the pipeline to `ForEach-Object`.</span></span> <span data-ttu-id="8bf9a-175">Un **scriptblock** contient la `$_` variable qui représente l’objet de pipeline actuel.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-175">A **ScriptBlock** contains the `$_` variable that represents the current pipeline object.</span></span> <span data-ttu-id="8bf9a-176">La chaîne d’horodatage est délimitée par des signes deux-points qui sont remplacés par des points.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-176">The timestamp string is delimited by colons that are replaced by periods.</span></span>
 
-<span data-ttu-id="69550-177">`New-Item` utilise le paramètre **path** pour spécifier l’emplacement d’un nouveau répertoire.</span><span class="sxs-lookup"><span data-stu-id="69550-177">`New-Item` uses the **Path** parameter to specify the location for a new directory.</span></span> <span data-ttu-id="69550-178">Le chemin d’accès comprend la `$timestamp` variable en tant que nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="69550-178">The path includes the `$timestamp` variable as the directory name.</span></span> <span data-ttu-id="69550-179">Le paramètre de **type** spécifie qu’un répertoire est créé.</span><span class="sxs-lookup"><span data-stu-id="69550-179">The **Type** parameter specifies that a directory is created.</span></span>
+<span data-ttu-id="8bf9a-177">`New-Item` utilise le paramètre **path** pour spécifier l’emplacement d’un nouveau répertoire.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-177">`New-Item` uses the **Path** parameter to specify the location for a new directory.</span></span> <span data-ttu-id="8bf9a-178">Le chemin d’accès comprend la `$timestamp` variable en tant que nom de répertoire.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-178">The path includes the `$timestamp` variable as the directory name.</span></span> <span data-ttu-id="8bf9a-179">Le paramètre de **type** spécifie qu’un répertoire est créé.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-179">The **Type** parameter specifies that a directory is created.</span></span>
 
-## <span data-ttu-id="69550-180">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="69550-180">PARAMETERS</span></span>
+## <span data-ttu-id="8bf9a-180">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="8bf9a-180">PARAMETERS</span></span>
 
-### <span data-ttu-id="69550-181">-Date</span><span class="sxs-lookup"><span data-stu-id="69550-181">-Date</span></span>
+### <span data-ttu-id="8bf9a-181">-Date</span><span class="sxs-lookup"><span data-stu-id="8bf9a-181">-Date</span></span>
 
-<span data-ttu-id="69550-182">Spécifie une date et une heure.</span><span class="sxs-lookup"><span data-stu-id="69550-182">Specifies a date and time.</span></span> <span data-ttu-id="69550-183">L’heure est facultative et, si elle n’est pas spécifiée, retourne 00:00:00.</span><span class="sxs-lookup"><span data-stu-id="69550-183">Time is optional and if not specified, returns 00:00:00.</span></span>
+<span data-ttu-id="8bf9a-182">Spécifie une date et une heure.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-182">Specifies a date and time.</span></span> <span data-ttu-id="8bf9a-183">L’heure est facultative et, si elle n’est pas spécifiée, retourne 00:00:00.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-183">Time is optional and if not specified, returns 00:00:00.</span></span>
 
-<span data-ttu-id="69550-184">Entrez la date et l’heure dans un format standard pour les paramètres régionaux système.</span><span class="sxs-lookup"><span data-stu-id="69550-184">Enter the date and time in a format that is standard for the system locale.</span></span>
+<span data-ttu-id="8bf9a-184">Entrez la date et l’heure dans un format standard pour les paramètres régionaux système.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-184">Enter the date and time in a format that is standard for the system locale.</span></span>
 
-<span data-ttu-id="69550-185">Par exemple, en anglais (États-Unis) :</span><span class="sxs-lookup"><span data-stu-id="69550-185">For example, in US English:</span></span>
+<span data-ttu-id="8bf9a-185">Par exemple, en anglais (États-Unis) :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-185">For example, in US English:</span></span>
 
-<span data-ttu-id="69550-186">`Get-Date -Date "6/25/2019 12:30:22"` retourne mardi 25 juin, 2019 12:30:22</span><span class="sxs-lookup"><span data-stu-id="69550-186">`Get-Date -Date "6/25/2019 12:30:22"` returns Tuesday, June 25, 2019 12:30:22</span></span>
+<span data-ttu-id="8bf9a-186">`Get-Date -Date "6/25/2019 12:30:22"` retourne mardi 25 juin, 2019 12:30:22</span><span class="sxs-lookup"><span data-stu-id="8bf9a-186">`Get-Date -Date "6/25/2019 12:30:22"` returns Tuesday, June 25, 2019 12:30:22</span></span>
 
 ```yaml
 Type: System.DateTime
@@ -222,11 +222,11 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-187">-Jour</span><span class="sxs-lookup"><span data-stu-id="69550-187">-Day</span></span>
+### <span data-ttu-id="8bf9a-187">-Jour</span><span class="sxs-lookup"><span data-stu-id="8bf9a-187">-Day</span></span>
 
-<span data-ttu-id="69550-188">Spécifie le jour du mois qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-188">Specifies the day of the month that is displayed.</span></span> <span data-ttu-id="69550-189">Entrez une valeur comprise entre 1 et 31.</span><span class="sxs-lookup"><span data-stu-id="69550-189">Enter a value from 1 to 31.</span></span>
+<span data-ttu-id="8bf9a-188">Spécifie le jour du mois qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-188">Specifies the day of the month that is displayed.</span></span> <span data-ttu-id="8bf9a-189">Entrez une valeur comprise entre 1 et 31.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-189">Enter a value from 1 to 31.</span></span>
 
-<span data-ttu-id="69550-190">Si la valeur spécifiée est supérieure au nombre de jours d’un mois, PowerShell ajoute le nombre de jours au mois.</span><span class="sxs-lookup"><span data-stu-id="69550-190">If the specified value is greater than the number of days in a month, PowerShell adds the number of days to the month.</span></span> <span data-ttu-id="69550-191">Par exemple, `Get-Date -Month 2 -Day 31` affiche le **3 mars** , et non le **31 février** .</span><span class="sxs-lookup"><span data-stu-id="69550-191">For example, `Get-Date -Month 2 -Day 31` displays **March 3** , not **February 31** .</span></span>
+<span data-ttu-id="8bf9a-190">Si la valeur spécifiée est supérieure au nombre de jours d’un mois, PowerShell ajoute le nombre de jours au mois.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-190">If the specified value is greater than the number of days in a month, PowerShell adds the number of days to the month.</span></span> <span data-ttu-id="8bf9a-191">Par exemple, `Get-Date -Month 2 -Day 31` affiche le **3 mars**, et non le **31 février**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-191">For example, `Get-Date -Month 2 -Day 31` displays **March 3**, not **February 31**.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -240,15 +240,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-192">-DisplayHint</span><span class="sxs-lookup"><span data-stu-id="69550-192">-DisplayHint</span></span>
+### <span data-ttu-id="8bf9a-192">-DisplayHint</span><span class="sxs-lookup"><span data-stu-id="8bf9a-192">-DisplayHint</span></span>
 
-<span data-ttu-id="69550-193">Détermine les éléments de date et d'heure à afficher.</span><span class="sxs-lookup"><span data-stu-id="69550-193">Determines which elements of the date and time are displayed.</span></span>
+<span data-ttu-id="8bf9a-193">Détermine les éléments de date et d'heure à afficher.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-193">Determines which elements of the date and time are displayed.</span></span>
 
-<span data-ttu-id="69550-194">Les valeurs acceptées sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="69550-194">The accepted values are as follows:</span></span>
+<span data-ttu-id="8bf9a-194">Les valeurs acceptées sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-194">The accepted values are as follows:</span></span>
 
-- <span data-ttu-id="69550-195">**Date** : affiche uniquement la date</span><span class="sxs-lookup"><span data-stu-id="69550-195">**Date** : displays only the date</span></span>
-- <span data-ttu-id="69550-196">**Heure** : affiche uniquement l’heure</span><span class="sxs-lookup"><span data-stu-id="69550-196">**Time** : displays only the time</span></span>
-- <span data-ttu-id="69550-197">**DateTime** : affiche la date et l’heure</span><span class="sxs-lookup"><span data-stu-id="69550-197">**DateTime** : displays the date and time</span></span>
+- <span data-ttu-id="8bf9a-195">**Date**: affiche uniquement la date</span><span class="sxs-lookup"><span data-stu-id="8bf9a-195">**Date**: displays only the date</span></span>
+- <span data-ttu-id="8bf9a-196">**Heure**: affiche uniquement l’heure</span><span class="sxs-lookup"><span data-stu-id="8bf9a-196">**Time**: displays only the time</span></span>
+- <span data-ttu-id="8bf9a-197">**DateTime**: affiche la date et l’heure</span><span class="sxs-lookup"><span data-stu-id="8bf9a-197">**DateTime**: displays the date and time</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -263,25 +263,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-198">-Format</span><span class="sxs-lookup"><span data-stu-id="69550-198">-Format</span></span>
+### <span data-ttu-id="8bf9a-198">-Format</span><span class="sxs-lookup"><span data-stu-id="8bf9a-198">-Format</span></span>
 
-<span data-ttu-id="69550-199">Affiche la date et l'heure dans le format Microsoft .NET Framework indiqué par le spécificateur de format.</span><span class="sxs-lookup"><span data-stu-id="69550-199">Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.</span></span>
-<span data-ttu-id="69550-200">Le paramètre **format** génère un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="69550-200">The **Format** parameter outputs a **String** object.</span></span>
+<span data-ttu-id="8bf9a-199">Affiche la date et l'heure dans le format Microsoft .NET Framework indiqué par le spécificateur de format.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-199">Displays the date and time in the Microsoft .NET Framework format indicated by the format specifier.</span></span>
+<span data-ttu-id="8bf9a-200">Le paramètre **format** génère un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-200">The **Format** parameter outputs a **String** object.</span></span>
 
-<span data-ttu-id="69550-201">Pour obtenir la liste des spécificateurs de format .NET disponibles, consultez [chaînes de format de date et d’heure personnalisées](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span><span class="sxs-lookup"><span data-stu-id="69550-201">For a list of available .NET format specifiers, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span></span>
+<span data-ttu-id="8bf9a-201">Pour obtenir la liste des spécificateurs de format .NET disponibles, consultez [chaînes de format de date et d’heure personnalisées](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-201">For a list of available .NET format specifiers, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).</span></span>
 
-<span data-ttu-id="69550-202">Lorsque le paramètre **format** est utilisé, `Get-Date` obtient uniquement les propriétés de l’objet **DateTime** nécessaires à l’affichage de la date.</span><span class="sxs-lookup"><span data-stu-id="69550-202">When the **Format** parameter is used, `Get-Date` only gets the **DateTime** object's properties necessary to display the date.</span></span> <span data-ttu-id="69550-203">Ainsi, certaines propriétés et méthodes des objets **DateTime** ne sont peut-être pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="69550-203">As a result, some of the properties and methods of **DateTime** objects might not be available.</span></span>
+<span data-ttu-id="8bf9a-202">Lorsque le paramètre **format** est utilisé, `Get-Date` obtient uniquement les propriétés de l’objet **DateTime** nécessaires à l’affichage de la date.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-202">When the **Format** parameter is used, `Get-Date` only gets the **DateTime** object's properties necessary to display the date.</span></span> <span data-ttu-id="8bf9a-203">Ainsi, certaines propriétés et méthodes des objets **DateTime** ne sont peut-être pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-203">As a result, some of the properties and methods of **DateTime** objects might not be available.</span></span>
 
-<span data-ttu-id="69550-204">À compter de PowerShell 5,0, vous pouvez utiliser les formats supplémentaires suivants comme valeurs pour le paramètre **format** .</span><span class="sxs-lookup"><span data-stu-id="69550-204">Starting in PowerShell 5.0, you can use the following additional formats as values for the **Format** parameter.</span></span>
+<span data-ttu-id="8bf9a-204">À compter de PowerShell 5,0, vous pouvez utiliser les formats supplémentaires suivants comme valeurs pour le paramètre **format** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-204">Starting in PowerShell 5.0, you can use the following additional formats as values for the **Format** parameter.</span></span>
 
-- <span data-ttu-id="69550-205">**Archivé** .</span><span class="sxs-lookup"><span data-stu-id="69550-205">**FileDate** .</span></span> <span data-ttu-id="69550-206">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en heure locale.</span><span class="sxs-lookup"><span data-stu-id="69550-206">A file or path-friendly representation of the current date in local time.</span></span> <span data-ttu-id="69550-207">Le format est `yyyyMMdd` (respecte la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres et un jour à 2 chiffres).</span><span class="sxs-lookup"><span data-stu-id="69550-207">The format is `yyyyMMdd` (case-sensitive, using a 4-digit year, 2-digit month, and 2-digit day).</span></span> <span data-ttu-id="69550-208">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="69550-208">For example:</span></span>
+- <span data-ttu-id="8bf9a-205">**Archivé**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-205">**FileDate**.</span></span> <span data-ttu-id="8bf9a-206">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en heure locale.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-206">A file or path-friendly representation of the current date in local time.</span></span> <span data-ttu-id="8bf9a-207">Le format est `yyyyMMdd` (respecte la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres et un jour à 2 chiffres).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-207">The format is `yyyyMMdd` (case-sensitive, using a 4-digit year, 2-digit month, and 2-digit day).</span></span> <span data-ttu-id="8bf9a-208">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-208">For example:</span></span>
   20190627.
 
-- <span data-ttu-id="69550-209">**FileDateUniversal** .</span><span class="sxs-lookup"><span data-stu-id="69550-209">**FileDateUniversal** .</span></span> <span data-ttu-id="69550-210">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en temps universel (UTC).</span><span class="sxs-lookup"><span data-stu-id="69550-210">A file or path-friendly representation of the current date in universal time (UTC).</span></span> <span data-ttu-id="69550-211">Le format est `yyyyMMddZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres et la lettre `Z` comme indicateur UTC).</span><span class="sxs-lookup"><span data-stu-id="69550-211">The format is `yyyyMMddZ` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, and the letter `Z` as the UTC indicator).</span></span> <span data-ttu-id="69550-212">Par exemple : 20190627Z.</span><span class="sxs-lookup"><span data-stu-id="69550-212">For example: 20190627Z.</span></span>
+- <span data-ttu-id="8bf9a-209">**FileDateUniversal**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-209">**FileDateUniversal**.</span></span> <span data-ttu-id="8bf9a-210">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date actuelle en temps universel (UTC).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-210">A file or path-friendly representation of the current date in universal time (UTC).</span></span> <span data-ttu-id="8bf9a-211">Le format est `yyyyMMddZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres et la lettre `Z` comme indicateur UTC).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-211">The format is `yyyyMMddZ` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, and the letter `Z` as the UTC indicator).</span></span> <span data-ttu-id="8bf9a-212">Par exemple : 20190627Z.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-212">For example: 20190627Z.</span></span>
 
-- <span data-ttu-id="69550-213">**FileDateTime** .</span><span class="sxs-lookup"><span data-stu-id="69550-213">**FileDateTime** .</span></span> <span data-ttu-id="69550-214">Représentation conviviale de fichier ou de chemin d’accès de la date et de l’heure en heure locale, au format 24 heures.</span><span class="sxs-lookup"><span data-stu-id="69550-214">A file or path-friendly representation of the current date and time in local time, in 24-hour format.</span></span> <span data-ttu-id="69550-215">Le format est `yyyyMMddTHHmmssffff` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur horaire, l’heure à 2 chiffres, la minute à 2 chiffres, la seconde à 2 chiffres et la milliseconde sur 4 chiffres).</span><span class="sxs-lookup"><span data-stu-id="69550-215">The format is `yyyyMMddTHHmmssffff` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter `T` as a time separator, 2-digit hour, 2-digit minute, 2-digit second, and 4-digit millisecond).</span></span> <span data-ttu-id="69550-216">Par exemple : 20190627T0840107271.</span><span class="sxs-lookup"><span data-stu-id="69550-216">For example: 20190627T0840107271.</span></span>
+- <span data-ttu-id="8bf9a-213">**FileDateTime**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-213">**FileDateTime**.</span></span> <span data-ttu-id="8bf9a-214">Représentation conviviale de fichier ou de chemin d’accès de la date et de l’heure en heure locale, au format 24 heures.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-214">A file or path-friendly representation of the current date and time in local time, in 24-hour format.</span></span> <span data-ttu-id="8bf9a-215">Le format est `yyyyMMddTHHmmssffff` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur horaire, l’heure à 2 chiffres, la minute à 2 chiffres, la seconde à 2 chiffres et la milliseconde sur 4 chiffres).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-215">The format is `yyyyMMddTHHmmssffff` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter `T` as a time separator, 2-digit hour, 2-digit minute, 2-digit second, and 4-digit millisecond).</span></span> <span data-ttu-id="8bf9a-216">Par exemple : 20190627T0840107271.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-216">For example: 20190627T0840107271.</span></span>
 
-- <span data-ttu-id="69550-217">**FileDateTimeUniversal** .</span><span class="sxs-lookup"><span data-stu-id="69550-217">**FileDateTimeUniversal** .</span></span> <span data-ttu-id="69550-218">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date et de l’heure en temps universel (UTC), au format 24 heures.</span><span class="sxs-lookup"><span data-stu-id="69550-218">A file or path-friendly representation of the current date and time in universal time (UTC), in 24-hour format.</span></span> <span data-ttu-id="69550-219">Le format est `yyyyMMddTHHmmssffffZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur d’heure, une heure à 2 chiffres, une minute à 2 chiffres, une seconde à 2 chiffres, une milliseconde à 4 chiffres et la lettre `Z` comme indicateur UTC).</span><span class="sxs-lookup"><span data-stu-id="69550-219">The format is `yyyyMMddTHHmmssffffZ` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter `T` as a time separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter `Z` as the UTC indicator).</span></span> <span data-ttu-id="69550-220">Par exemple : 20190627T1540500718Z.</span><span class="sxs-lookup"><span data-stu-id="69550-220">For example: 20190627T1540500718Z.</span></span>
+- <span data-ttu-id="8bf9a-217">**FileDateTimeUniversal**.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-217">**FileDateTimeUniversal**.</span></span> <span data-ttu-id="8bf9a-218">Représentation conviviale d’un fichier ou d’un chemin d’accès de la date et de l’heure en temps universel (UTC), au format 24 heures.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-218">A file or path-friendly representation of the current date and time in universal time (UTC), in 24-hour format.</span></span> <span data-ttu-id="8bf9a-219">Le format est `yyyyMMddTHHmmssffffZ` (respect de la casse, en utilisant une année à 4 chiffres, un mois à 2 chiffres, un jour à 2 chiffres, la lettre `T` comme séparateur d’heure, une heure à 2 chiffres, une minute à 2 chiffres, une seconde à 2 chiffres, une milliseconde à 4 chiffres et la lettre `Z` comme indicateur UTC).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-219">The format is `yyyyMMddTHHmmssffffZ` (case-sensitive, using a 4-digit year, 2-digit month, 2-digit day, the letter `T` as a time separator, 2-digit hour, 2-digit minute, 2-digit second, 4-digit millisecond, and the letter `Z` as the UTC indicator).</span></span> <span data-ttu-id="8bf9a-220">Par exemple : 20190627T1540500718Z.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-220">For example: 20190627T1540500718Z.</span></span>
 
 ```yaml
 Type: System.String
@@ -295,27 +295,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-221">-Heure</span><span class="sxs-lookup"><span data-stu-id="69550-221">-Hour</span></span>
+### <span data-ttu-id="8bf9a-221">-Heure</span><span class="sxs-lookup"><span data-stu-id="8bf9a-221">-Hour</span></span>
 
-<span data-ttu-id="69550-222">Spécifie l'heure qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-222">Specifies the hour that is displayed.</span></span> <span data-ttu-id="69550-223">Entrez une valeur comprise entre 0 et 23.</span><span class="sxs-lookup"><span data-stu-id="69550-223">Enter a value from 0 to 23.</span></span>
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="69550-224">-Milliseconde</span><span class="sxs-lookup"><span data-stu-id="69550-224">-Millisecond</span></span>
-
-<span data-ttu-id="69550-225">Spécifie le nombre de millisecondes dans la date.</span><span class="sxs-lookup"><span data-stu-id="69550-225">Specifies the milliseconds in the date.</span></span> <span data-ttu-id="69550-226">Entrez une valeur comprise entre 0 et 999.</span><span class="sxs-lookup"><span data-stu-id="69550-226">Enter a value from 0 to 999.</span></span>
-
-<span data-ttu-id="69550-227">Ce paramètre a été introduit dans PowerShell 3,0.</span><span class="sxs-lookup"><span data-stu-id="69550-227">This parameter was introduced in PowerShell 3.0.</span></span>
+<span data-ttu-id="8bf9a-222">Spécifie l'heure qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-222">Specifies the hour that is displayed.</span></span> <span data-ttu-id="8bf9a-223">Entrez une valeur comprise entre 0 et 23.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-223">Enter a value from 0 to 23.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -329,25 +311,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-228">-Minute</span><span class="sxs-lookup"><span data-stu-id="69550-228">-Minute</span></span>
+### <span data-ttu-id="8bf9a-224">-Milliseconde</span><span class="sxs-lookup"><span data-stu-id="8bf9a-224">-Millisecond</span></span>
 
-<span data-ttu-id="69550-229">Spécifie le nombre de minutes qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-229">Specifies the minute that is displayed.</span></span> <span data-ttu-id="69550-230">Entrez une valeur comprise entre 0 et 59.</span><span class="sxs-lookup"><span data-stu-id="69550-230">Enter a value from 0 to 59.</span></span>
+<span data-ttu-id="8bf9a-225">Spécifie le nombre de millisecondes dans la date.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-225">Specifies the milliseconds in the date.</span></span> <span data-ttu-id="8bf9a-226">Entrez une valeur comprise entre 0 et 999.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-226">Enter a value from 0 to 999.</span></span>
 
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="69550-231">-Mois</span><span class="sxs-lookup"><span data-stu-id="69550-231">-Month</span></span>
-
-<span data-ttu-id="69550-232">Spécifie le mois qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-232">Specifies the month that is displayed.</span></span> <span data-ttu-id="69550-233">Entrez une valeur comprise entre 1 et 12.</span><span class="sxs-lookup"><span data-stu-id="69550-233">Enter a value from 1 to 12.</span></span>
+<span data-ttu-id="8bf9a-227">Ce paramètre a été introduit dans PowerShell 3,0.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-227">This parameter was introduced in PowerShell 3.0.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -361,9 +329,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-234">-Seconde</span><span class="sxs-lookup"><span data-stu-id="69550-234">-Second</span></span>
+### <span data-ttu-id="8bf9a-228">-Minute</span><span class="sxs-lookup"><span data-stu-id="8bf9a-228">-Minute</span></span>
 
-<span data-ttu-id="69550-235">Spécifie le nombre de secondes qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-235">Specifies the second that is displayed.</span></span> <span data-ttu-id="69550-236">Entrez une valeur comprise entre 0 et 59.</span><span class="sxs-lookup"><span data-stu-id="69550-236">Enter a value from 0 to 59.</span></span>
+<span data-ttu-id="8bf9a-229">Spécifie le nombre de minutes qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-229">Specifies the minute that is displayed.</span></span> <span data-ttu-id="8bf9a-230">Entrez une valeur comprise entre 0 et 59.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-230">Enter a value from 0 to 59.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -377,13 +345,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-237">-UFormat</span><span class="sxs-lookup"><span data-stu-id="69550-237">-UFormat</span></span>
+### <span data-ttu-id="8bf9a-231">-Mois</span><span class="sxs-lookup"><span data-stu-id="8bf9a-231">-Month</span></span>
 
-<span data-ttu-id="69550-238">Affiche la date et l'heure au format UNIX.</span><span class="sxs-lookup"><span data-stu-id="69550-238">Displays the date and time in UNIX format.</span></span> <span data-ttu-id="69550-239">Le paramètre **UFormat** génère un objet String.</span><span class="sxs-lookup"><span data-stu-id="69550-239">The **UFormat** parameter outputs a string object.</span></span>
+<span data-ttu-id="8bf9a-232">Spécifie le mois qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-232">Specifies the month that is displayed.</span></span> <span data-ttu-id="8bf9a-233">Entrez une valeur comprise entre 1 et 12.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-233">Enter a value from 1 to 12.</span></span>
 
-<span data-ttu-id="69550-240">Les spécificateurs **UFormat** sont précédés d’un signe `%` de pourcentage (), par exemple,, `%m` `%d` et `%Y` .</span><span class="sxs-lookup"><span data-stu-id="69550-240">**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`.</span></span> <span data-ttu-id="69550-241">La section [Remarques](#notes) contient un tableau de **spécificateurs UFormat** valides.</span><span class="sxs-lookup"><span data-stu-id="69550-241">The [Notes](#notes) section contains a table of valid **UFormat specifiers** .</span></span>
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
 
-<span data-ttu-id="69550-242">Lorsque le paramètre **UFormat** est utilisé, `Get-Date` obtient uniquement les propriétés de l’objet **DateTime** nécessaires à l’affichage de la date.</span><span class="sxs-lookup"><span data-stu-id="69550-242">When the **UFormat** parameter is used, `Get-Date` only gets the **DateTime** object's properties necessary to display the date.</span></span> <span data-ttu-id="69550-243">Ainsi, certaines propriétés et méthodes des objets **DateTime** ne sont peut-être pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="69550-243">As a result, some of the properties and methods of **DateTime** objects might not be available.</span></span>
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8bf9a-234">-Seconde</span><span class="sxs-lookup"><span data-stu-id="8bf9a-234">-Second</span></span>
+
+<span data-ttu-id="8bf9a-235">Spécifie le nombre de secondes qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-235">Specifies the second that is displayed.</span></span> <span data-ttu-id="8bf9a-236">Entrez une valeur comprise entre 0 et 59.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-236">Enter a value from 0 to 59.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8bf9a-237">-UFormat</span><span class="sxs-lookup"><span data-stu-id="8bf9a-237">-UFormat</span></span>
+
+<span data-ttu-id="8bf9a-238">Affiche la date et l'heure au format UNIX.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-238">Displays the date and time in UNIX format.</span></span> <span data-ttu-id="8bf9a-239">Le paramètre **UFormat** génère un objet String.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-239">The **UFormat** parameter outputs a string object.</span></span>
+
+<span data-ttu-id="8bf9a-240">Les spécificateurs **UFormat** sont précédés d’un signe `%` de pourcentage (), par exemple,, `%m` `%d` et `%Y` .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-240">**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`.</span></span> <span data-ttu-id="8bf9a-241">La section [Remarques](#notes) contient un tableau de **spécificateurs UFormat** valides.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-241">The [Notes](#notes) section contains a table of valid **UFormat specifiers**.</span></span>
+
+<span data-ttu-id="8bf9a-242">Lorsque le paramètre **UFormat** est utilisé, `Get-Date` obtient uniquement les propriétés de l’objet **DateTime** nécessaires à l’affichage de la date.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-242">When the **UFormat** parameter is used, `Get-Date` only gets the **DateTime** object's properties necessary to display the date.</span></span> <span data-ttu-id="8bf9a-243">Ainsi, certaines propriétés et méthodes des objets **DateTime** ne sont peut-être pas disponibles.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-243">As a result, some of the properties and methods of **DateTime** objects might not be available.</span></span>
 
 ```yaml
 Type: System.String
@@ -397,9 +397,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-244">-Année</span><span class="sxs-lookup"><span data-stu-id="69550-244">-Year</span></span>
+### <span data-ttu-id="8bf9a-244">-Année</span><span class="sxs-lookup"><span data-stu-id="8bf9a-244">-Year</span></span>
 
-<span data-ttu-id="69550-245">Spécifie l'année qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="69550-245">Specifies the year that is displayed.</span></span> <span data-ttu-id="69550-246">Entrez une valeur comprise entre 1 et 9999.</span><span class="sxs-lookup"><span data-stu-id="69550-246">Enter a value from 1 to 9999.</span></span>
+<span data-ttu-id="8bf9a-245">Spécifie l'année qui s'affiche.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-245">Specifies the year that is displayed.</span></span> <span data-ttu-id="8bf9a-246">Entrez une valeur comprise entre 1 et 9999.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-246">Enter a value from 1 to 9999.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -413,86 +413,86 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="69550-247">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="69550-247">CommonParameters</span></span>
+### <span data-ttu-id="8bf9a-247">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8bf9a-247">CommonParameters</span></span>
 
-<span data-ttu-id="69550-248">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="69550-248">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="69550-249">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="69550-249">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="8bf9a-248">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-248">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8bf9a-249">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="8bf9a-249">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="69550-250">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="69550-250">INPUTS</span></span>
+## <span data-ttu-id="8bf9a-250">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="8bf9a-250">INPUTS</span></span>
 
-### <span data-ttu-id="69550-251">Entrée de pipeline</span><span class="sxs-lookup"><span data-stu-id="69550-251">Pipeline input</span></span>
+### <span data-ttu-id="8bf9a-251">Entrée de pipeline</span><span class="sxs-lookup"><span data-stu-id="8bf9a-251">Pipeline input</span></span>
 
-<span data-ttu-id="69550-252">`Get-Date` accepte l’entrée de pipeline.</span><span class="sxs-lookup"><span data-stu-id="69550-252">`Get-Date` accepts pipeline input.</span></span> <span data-ttu-id="69550-253">Par exemple : `Get-ChildItem | Get-Date`.</span><span class="sxs-lookup"><span data-stu-id="69550-253">For example, `Get-ChildItem | Get-Date`.</span></span>
+<span data-ttu-id="8bf9a-252">`Get-Date` accepte l’entrée de pipeline.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-252">`Get-Date` accepts pipeline input.</span></span> <span data-ttu-id="8bf9a-253">Par exemple, `Get-ChildItem | Get-Date`.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-253">For example, `Get-ChildItem | Get-Date`.</span></span>
 
-## <span data-ttu-id="69550-254">SORTIES</span><span class="sxs-lookup"><span data-stu-id="69550-254">OUTPUTS</span></span>
+## <span data-ttu-id="8bf9a-254">SORTIES</span><span class="sxs-lookup"><span data-stu-id="8bf9a-254">OUTPUTS</span></span>
 
-### <span data-ttu-id="69550-255">System. DateTime ou System. String</span><span class="sxs-lookup"><span data-stu-id="69550-255">System.DateTime or System.String</span></span>
+### <span data-ttu-id="8bf9a-255">System. DateTime ou System. String</span><span class="sxs-lookup"><span data-stu-id="8bf9a-255">System.DateTime or System.String</span></span>
 
-<span data-ttu-id="69550-256">`Get-Date` retourne un objet **DateTime** sauf lorsque les paramètres **format** et **UFormat** sont utilisés.</span><span class="sxs-lookup"><span data-stu-id="69550-256">`Get-Date` returns a **DateTime** object except when the **Format** and **UFormat** parameters are used.</span></span> <span data-ttu-id="69550-257">Les paramètres **format** ou **UFormat** retournent des objets de **chaîne** .</span><span class="sxs-lookup"><span data-stu-id="69550-257">The **Format** or **UFormat** parameters return **String** objects.</span></span>
+<span data-ttu-id="8bf9a-256">`Get-Date` retourne un objet **DateTime** sauf lorsque les paramètres **format** et **UFormat** sont utilisés.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-256">`Get-Date` returns a **DateTime** object except when the **Format** and **UFormat** parameters are used.</span></span> <span data-ttu-id="8bf9a-257">Les paramètres **format** ou **UFormat** retournent des objets de **chaîne** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-257">The **Format** or **UFormat** parameters return **String** objects.</span></span>
 
-<span data-ttu-id="69550-258">Lorsqu’un objet **DateTime** est envoyé vers le pipeline à une applet de commande, comme `Add-Content` qui attend une entrée de chaîne, PowerShell convertit l’objet en un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="69550-258">When a **DateTime** object is sent down the pipeline to a cmdlet such as `Add-Content` that expects string input, PowerShell converts the object to a **String** object.</span></span>
+<span data-ttu-id="8bf9a-258">Lorsqu’un objet **DateTime** est envoyé vers le pipeline à une applet de commande, comme `Add-Content` qui attend une entrée de chaîne, PowerShell convertit l’objet en un objet **String** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-258">When a **DateTime** object is sent down the pipeline to a cmdlet such as `Add-Content` that expects string input, PowerShell converts the object to a **String** object.</span></span>
 
-<span data-ttu-id="69550-259">La méthode `(Get-Date).ToString()` convertit un objet **DateTime** en objet **String** .</span><span class="sxs-lookup"><span data-stu-id="69550-259">The method `(Get-Date).ToString()` converts a **DateTime** object a **String** object.</span></span>
+<span data-ttu-id="8bf9a-259">La méthode `(Get-Date).ToString()` convertit un objet **DateTime** en objet **String** .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-259">The method `(Get-Date).ToString()` converts a **DateTime** object a **String** object.</span></span>
 
-<span data-ttu-id="69550-260">Pour afficher les propriétés et les méthodes d’un objet, envoyez l’objet vers le dessous du pipeline `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="69550-260">To display an object's properties and methods, send the object down the pipeline to `Get-Member`.</span></span>
-<span data-ttu-id="69550-261">Par exemple : `Get-Date | Get-Member`.</span><span class="sxs-lookup"><span data-stu-id="69550-261">For example, `Get-Date | Get-Member`.</span></span>
+<span data-ttu-id="8bf9a-260">Pour afficher les propriétés et les méthodes d’un objet, envoyez l’objet vers le dessous du pipeline `Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="8bf9a-260">To display an object's properties and methods, send the object down the pipeline to `Get-Member`.</span></span>
+<span data-ttu-id="8bf9a-261">Par exemple, `Get-Date | Get-Member`.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-261">For example, `Get-Date | Get-Member`.</span></span>
 
-## <span data-ttu-id="69550-262">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="69550-262">NOTES</span></span>
+## <span data-ttu-id="8bf9a-262">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="8bf9a-262">NOTES</span></span>
 
-<span data-ttu-id="69550-263">Les objets **DateTime** sont dans des formats de date longue et d’heure longue pour les paramètres régionaux système.</span><span class="sxs-lookup"><span data-stu-id="69550-263">**DateTime** objects are in long-date and long-time formats for the system locale.</span></span>
+<span data-ttu-id="8bf9a-263">Les objets **DateTime** sont dans des formats de date longue et d’heure longue pour les paramètres régionaux système.</span><span class="sxs-lookup"><span data-stu-id="8bf9a-263">**DateTime** objects are in long-date and long-time formats for the system locale.</span></span>
 
-<span data-ttu-id="69550-264">Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="69550-264">The valid **UFormat specifiers** are displayed in the following table:</span></span>
+<span data-ttu-id="8bf9a-264">Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant :</span><span class="sxs-lookup"><span data-stu-id="8bf9a-264">The valid **UFormat specifiers** are displayed in the following table:</span></span>
 
-| <span data-ttu-id="69550-265">Spécificateur de format</span><span class="sxs-lookup"><span data-stu-id="69550-265">Format specifier</span></span> |                                 <span data-ttu-id="69550-266">Signification</span><span class="sxs-lookup"><span data-stu-id="69550-266">Meaning</span></span>                     |         <span data-ttu-id="69550-267">Exemple</span><span class="sxs-lookup"><span data-stu-id="69550-267">Example</span></span>          |
+| <span data-ttu-id="8bf9a-265">Spécificateur de format</span><span class="sxs-lookup"><span data-stu-id="8bf9a-265">Format specifier</span></span> |                                 <span data-ttu-id="8bf9a-266">Signification</span><span class="sxs-lookup"><span data-stu-id="8bf9a-266">Meaning</span></span>                     |         <span data-ttu-id="8bf9a-267">Exemple</span><span class="sxs-lookup"><span data-stu-id="8bf9a-267">Example</span></span>          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
-| `%A` | <span data-ttu-id="69550-268">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="69550-268">Day of the week - full name</span></span>                                             | <span data-ttu-id="69550-269">Lundi</span><span class="sxs-lookup"><span data-stu-id="69550-269">Monday</span></span>                   |
-| `%a` | <span data-ttu-id="69550-270">Jour de la semaine-Nom abrégé</span><span class="sxs-lookup"><span data-stu-id="69550-270">Day of the week - abbreviated name</span></span>                                      | <span data-ttu-id="69550-271">Lun</span><span class="sxs-lookup"><span data-stu-id="69550-271">Mon</span></span>                      |
-| `%B` | <span data-ttu-id="69550-272">Nom du mois-complet</span><span class="sxs-lookup"><span data-stu-id="69550-272">Month name - full</span></span>                                                       | <span data-ttu-id="69550-273">Janvier</span><span class="sxs-lookup"><span data-stu-id="69550-273">January</span></span>                  |
-| `%b` | <span data-ttu-id="69550-274">Nom du mois-abrégé</span><span class="sxs-lookup"><span data-stu-id="69550-274">Month name - abbreviated</span></span>                                                | <span data-ttu-id="69550-275">Jan</span><span class="sxs-lookup"><span data-stu-id="69550-275">Jan</span></span>                      |
-| `%C` | <span data-ttu-id="69550-276">Siècle</span><span class="sxs-lookup"><span data-stu-id="69550-276">Century</span></span>                                                                 | <span data-ttu-id="69550-277">20 pour 2019</span><span class="sxs-lookup"><span data-stu-id="69550-277">20 for 2019</span></span>              |
-| `%c` | <span data-ttu-id="69550-278">Date et heure-abrégé</span><span class="sxs-lookup"><span data-stu-id="69550-278">Date and time - abbreviated</span></span>                                             | <span data-ttu-id="69550-279">Jeudi Juin 27 08:44:18 2019</span><span class="sxs-lookup"><span data-stu-id="69550-279">Thu Jun 27 08:44:18 2019</span></span> |
-| `%D` | <span data-ttu-id="69550-280">Date au format mm/jj/aa</span><span class="sxs-lookup"><span data-stu-id="69550-280">Date in mm/dd/yy format</span></span>                                                 | <span data-ttu-id="69550-281">06/27/19</span><span class="sxs-lookup"><span data-stu-id="69550-281">06/27/19</span></span>                 |
-| `%d` | <span data-ttu-id="69550-282">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-282">Day of the month - 2 digits</span></span>                                             | <span data-ttu-id="69550-283">05</span><span class="sxs-lookup"><span data-stu-id="69550-283">05</span></span>                       |
-| `%e` | <span data-ttu-id="69550-284">Jour du mois-chiffre précédé d’un espace</span><span class="sxs-lookup"><span data-stu-id="69550-284">Day of the month - digit preceded by a space</span></span>                            | <span data-ttu-id="69550-285">\<space\>5,5</span><span class="sxs-lookup"><span data-stu-id="69550-285">\<space\>5</span></span>               |
-| `%F` | <span data-ttu-id="69550-286">Date au format aaaa-mm-jj, égale à% Y-% m-% d (le format de date ISO 8601)</span><span class="sxs-lookup"><span data-stu-id="69550-286">Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format)</span></span> | <span data-ttu-id="69550-287">2019-06-27</span><span class="sxs-lookup"><span data-stu-id="69550-287">2019-06-27</span></span>               |
-| `%G` | <span data-ttu-id="69550-288">Identique à « Y »</span><span class="sxs-lookup"><span data-stu-id="69550-288">Same as 'Y'</span></span>                                                             |                          |
-| `%g` | <span data-ttu-id="69550-289">Identique à « y »</span><span class="sxs-lookup"><span data-stu-id="69550-289">Same as 'y'</span></span>                                                             |                          |
-| `%H` | <span data-ttu-id="69550-290">Heure au format 24 heures</span><span class="sxs-lookup"><span data-stu-id="69550-290">Hour in 24-hour format</span></span>                                                  | <span data-ttu-id="69550-291">17</span><span class="sxs-lookup"><span data-stu-id="69550-291">17</span></span>                       |
-| `%h` | <span data-ttu-id="69550-292">Identique à « b »</span><span class="sxs-lookup"><span data-stu-id="69550-292">Same as 'b'</span></span>                                                             |                          |
-| `%I` | <span data-ttu-id="69550-293">Heure au format 12 heures</span><span class="sxs-lookup"><span data-stu-id="69550-293">Hour in 12-hour format</span></span>                                                  | <span data-ttu-id="69550-294">05</span><span class="sxs-lookup"><span data-stu-id="69550-294">05</span></span>                       |
-| `%j` | <span data-ttu-id="69550-295">Jour de l’année</span><span class="sxs-lookup"><span data-stu-id="69550-295">Day of the year</span></span>                                                         | <span data-ttu-id="69550-296">1-366</span><span class="sxs-lookup"><span data-stu-id="69550-296">1-366</span></span>                    |
-| `%k` | <span data-ttu-id="69550-297">Identique à « H »</span><span class="sxs-lookup"><span data-stu-id="69550-297">Same as 'H'</span></span>                                                             |                          |
-| `%l` | <span data-ttu-id="69550-298">Identique à « I » (I majuscule)</span><span class="sxs-lookup"><span data-stu-id="69550-298">Same as 'I' (Upper-case I)</span></span>                                              | <span data-ttu-id="69550-299">05</span><span class="sxs-lookup"><span data-stu-id="69550-299">05</span></span>                       |
-| `%M` | <span data-ttu-id="69550-300">Minutes</span><span class="sxs-lookup"><span data-stu-id="69550-300">Minutes</span></span>                                                                 | <span data-ttu-id="69550-301">35</span><span class="sxs-lookup"><span data-stu-id="69550-301">35</span></span>                       |
-| `%m` | <span data-ttu-id="69550-302">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="69550-302">Month number</span></span>                                                            | <span data-ttu-id="69550-303">06</span><span class="sxs-lookup"><span data-stu-id="69550-303">06</span></span>                       |
-| `%n` | <span data-ttu-id="69550-304">caractère de saut de ligne</span><span class="sxs-lookup"><span data-stu-id="69550-304">newline character</span></span>                                                       |                          |
-| `%p` | <span data-ttu-id="69550-305">AM ou PM</span><span class="sxs-lookup"><span data-stu-id="69550-305">AM or PM</span></span>                                                                |                          |
-| `%R` | <span data-ttu-id="69550-306">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="69550-306">Time in 24-hour format -no seconds</span></span>                                      | <span data-ttu-id="69550-307">17:45</span><span class="sxs-lookup"><span data-stu-id="69550-307">17:45</span></span>                    |
-| `%r` | <span data-ttu-id="69550-308">Heure au format 12 heures</span><span class="sxs-lookup"><span data-stu-id="69550-308">Time in 12-hour format</span></span>                                                  | <span data-ttu-id="69550-309">09:15:36</span><span class="sxs-lookup"><span data-stu-id="69550-309">09:15:36 AM</span></span>              |
-| `%S` | <span data-ttu-id="69550-310">Secondes</span><span class="sxs-lookup"><span data-stu-id="69550-310">Seconds</span></span>                                                                 | <span data-ttu-id="69550-311">05</span><span class="sxs-lookup"><span data-stu-id="69550-311">05</span></span>                       |
-| `%s` | <span data-ttu-id="69550-312">Secondes écoulées depuis le 1er janvier 1970 00:00:00</span><span class="sxs-lookup"><span data-stu-id="69550-312">Seconds elapsed since January 1, 1970 00:00:00</span></span>                          | <span data-ttu-id="69550-313">1150451174</span><span class="sxs-lookup"><span data-stu-id="69550-313">1150451174</span></span>               |
-| `%t` | <span data-ttu-id="69550-314">Caractère de tabulation horizontale</span><span class="sxs-lookup"><span data-stu-id="69550-314">Horizontal tab character</span></span>                                                |                          |
-| `%T` | <span data-ttu-id="69550-315">Heure au format 24 heures</span><span class="sxs-lookup"><span data-stu-id="69550-315">Time in 24-hour format</span></span>                                                  | <span data-ttu-id="69550-316">17:45:52</span><span class="sxs-lookup"><span data-stu-id="69550-316">17:45:52</span></span>                 |
-| `%U` | <span data-ttu-id="69550-317">Identique à « W »</span><span class="sxs-lookup"><span data-stu-id="69550-317">Same as 'W'</span></span>                                                             |                          |
-| `%u` | <span data-ttu-id="69550-318">Jour de la semaine-numéro</span><span class="sxs-lookup"><span data-stu-id="69550-318">Day of the week - number</span></span>                                                | <span data-ttu-id="69550-319">Dimanche = 0</span><span class="sxs-lookup"><span data-stu-id="69550-319">Sunday = 0</span></span>               |
-| `%V` | <span data-ttu-id="69550-320">Semaine de l’année</span><span class="sxs-lookup"><span data-stu-id="69550-320">Week of the year</span></span>                                                        | <span data-ttu-id="69550-321">01-53</span><span class="sxs-lookup"><span data-stu-id="69550-321">01-53</span></span>                    |
-| `%w` | <span data-ttu-id="69550-322">Identique à « u »</span><span class="sxs-lookup"><span data-stu-id="69550-322">Same as 'u'</span></span>                                                             |                          |
-| `%W` | <span data-ttu-id="69550-323">Semaine de l’année</span><span class="sxs-lookup"><span data-stu-id="69550-323">Week of the year</span></span>                                                        | <span data-ttu-id="69550-324">00-52</span><span class="sxs-lookup"><span data-stu-id="69550-324">00-52</span></span>                    |
-| `%X` | <span data-ttu-id="69550-325">Identique à « t »</span><span class="sxs-lookup"><span data-stu-id="69550-325">Same as 'T'</span></span>                                                             |                          |
-| `%x` | <span data-ttu-id="69550-326">Date au format standard pour les paramètres régionaux</span><span class="sxs-lookup"><span data-stu-id="69550-326">Date in standard format for locale</span></span>                                      | <span data-ttu-id="69550-327">06/27/19 pour l’anglais (États-Unis)</span><span class="sxs-lookup"><span data-stu-id="69550-327">06/27/19 for English-US</span></span>  |
-| `%Y` | <span data-ttu-id="69550-328">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-328">Year in 4-digit format</span></span>                                                  | <span data-ttu-id="69550-329">2019</span><span class="sxs-lookup"><span data-stu-id="69550-329">2019</span></span>                     |
-| `%y` | <span data-ttu-id="69550-330">Année au format à 2 chiffres</span><span class="sxs-lookup"><span data-stu-id="69550-330">Year in 2-digit format</span></span>                                                  | <span data-ttu-id="69550-331">19</span><span class="sxs-lookup"><span data-stu-id="69550-331">19</span></span>                       |
-| `%Z` | <span data-ttu-id="69550-332">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="69550-332">Time zone offset from Universal Time Coordinate (UTC)</span></span>                   | <span data-ttu-id="69550-333">-07</span><span class="sxs-lookup"><span data-stu-id="69550-333">-07</span></span>                      |
+| `%A` | <span data-ttu-id="8bf9a-268">Jour de la semaine-Nom complet</span><span class="sxs-lookup"><span data-stu-id="8bf9a-268">Day of the week - full name</span></span>                                             | <span data-ttu-id="8bf9a-269">Lundi</span><span class="sxs-lookup"><span data-stu-id="8bf9a-269">Monday</span></span>                   |
+| `%a` | <span data-ttu-id="8bf9a-270">Jour de la semaine-Nom abrégé</span><span class="sxs-lookup"><span data-stu-id="8bf9a-270">Day of the week - abbreviated name</span></span>                                      | <span data-ttu-id="8bf9a-271">Lun</span><span class="sxs-lookup"><span data-stu-id="8bf9a-271">Mon</span></span>                      |
+| `%B` | <span data-ttu-id="8bf9a-272">Nom du mois-complet</span><span class="sxs-lookup"><span data-stu-id="8bf9a-272">Month name - full</span></span>                                                       | <span data-ttu-id="8bf9a-273">Janvier</span><span class="sxs-lookup"><span data-stu-id="8bf9a-273">January</span></span>                  |
+| `%b` | <span data-ttu-id="8bf9a-274">Nom du mois-abrégé</span><span class="sxs-lookup"><span data-stu-id="8bf9a-274">Month name - abbreviated</span></span>                                                | <span data-ttu-id="8bf9a-275">Jan</span><span class="sxs-lookup"><span data-stu-id="8bf9a-275">Jan</span></span>                      |
+| `%C` | <span data-ttu-id="8bf9a-276">Siècle</span><span class="sxs-lookup"><span data-stu-id="8bf9a-276">Century</span></span>                                                                 | <span data-ttu-id="8bf9a-277">20 pour 2019</span><span class="sxs-lookup"><span data-stu-id="8bf9a-277">20 for 2019</span></span>              |
+| `%c` | <span data-ttu-id="8bf9a-278">Date et heure-abrégé</span><span class="sxs-lookup"><span data-stu-id="8bf9a-278">Date and time - abbreviated</span></span>                                             | <span data-ttu-id="8bf9a-279">Jeudi Juin 27 08:44:18 2019</span><span class="sxs-lookup"><span data-stu-id="8bf9a-279">Thu Jun 27 08:44:18 2019</span></span> |
+| `%D` | <span data-ttu-id="8bf9a-280">Date au format mm/jj/aa</span><span class="sxs-lookup"><span data-stu-id="8bf9a-280">Date in mm/dd/yy format</span></span>                                                 | <span data-ttu-id="8bf9a-281">06/27/19</span><span class="sxs-lookup"><span data-stu-id="8bf9a-281">06/27/19</span></span>                 |
+| `%d` | <span data-ttu-id="8bf9a-282">Jour du mois-2 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-282">Day of the month - 2 digits</span></span>                                             | <span data-ttu-id="8bf9a-283">05</span><span class="sxs-lookup"><span data-stu-id="8bf9a-283">05</span></span>                       |
+| `%e` | <span data-ttu-id="8bf9a-284">Jour du mois-précédé d’un espace si seul un chiffre</span><span class="sxs-lookup"><span data-stu-id="8bf9a-284">Day of the month - preceded by a space if only a single digit</span></span>           | <span data-ttu-id="8bf9a-285">\<space\>5,5</span><span class="sxs-lookup"><span data-stu-id="8bf9a-285">\<space\>5</span></span>               |
+| `%F` | <span data-ttu-id="8bf9a-286">Date au format aaaa-mm-jj, égale à% Y-% m-% d (le format de date ISO 8601)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-286">Date in YYYY-mm-dd format, equal to %Y-%m-%d (the ISO 8601 date format)</span></span> | <span data-ttu-id="8bf9a-287">2019-06-27</span><span class="sxs-lookup"><span data-stu-id="8bf9a-287">2019-06-27</span></span>               |
+| `%G` | <span data-ttu-id="8bf9a-288">Identique à « Y »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-288">Same as 'Y'</span></span>                                                             |                          |
+| `%g` | <span data-ttu-id="8bf9a-289">Identique à « y »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-289">Same as 'y'</span></span>                                                             |                          |
+| `%H` | <span data-ttu-id="8bf9a-290">Heure au format 24 heures</span><span class="sxs-lookup"><span data-stu-id="8bf9a-290">Hour in 24-hour format</span></span>                                                  | <span data-ttu-id="8bf9a-291">17</span><span class="sxs-lookup"><span data-stu-id="8bf9a-291">17</span></span>                       |
+| `%h` | <span data-ttu-id="8bf9a-292">Identique à « b »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-292">Same as 'b'</span></span>                                                             |                          |
+| `%I` | <span data-ttu-id="8bf9a-293">Heure au format 12 heures</span><span class="sxs-lookup"><span data-stu-id="8bf9a-293">Hour in 12-hour format</span></span>                                                  | <span data-ttu-id="8bf9a-294">05</span><span class="sxs-lookup"><span data-stu-id="8bf9a-294">05</span></span>                       |
+| `%j` | <span data-ttu-id="8bf9a-295">Jour de l’année</span><span class="sxs-lookup"><span data-stu-id="8bf9a-295">Day of the year</span></span>                                                         | <span data-ttu-id="8bf9a-296">1-366</span><span class="sxs-lookup"><span data-stu-id="8bf9a-296">1-366</span></span>                    |
+| `%k` | <span data-ttu-id="8bf9a-297">Identique à « H »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-297">Same as 'H'</span></span>                                                             |                          |
+| `%l` | <span data-ttu-id="8bf9a-298">Identique à « I » (I majuscule)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-298">Same as 'I' (Upper-case I)</span></span>                                              | <span data-ttu-id="8bf9a-299">05</span><span class="sxs-lookup"><span data-stu-id="8bf9a-299">05</span></span>                       |
+| `%M` | <span data-ttu-id="8bf9a-300">Minutes</span><span class="sxs-lookup"><span data-stu-id="8bf9a-300">Minutes</span></span>                                                                 | <span data-ttu-id="8bf9a-301">35</span><span class="sxs-lookup"><span data-stu-id="8bf9a-301">35</span></span>                       |
+| `%m` | <span data-ttu-id="8bf9a-302">Numéro du mois</span><span class="sxs-lookup"><span data-stu-id="8bf9a-302">Month number</span></span>                                                            | <span data-ttu-id="8bf9a-303">06</span><span class="sxs-lookup"><span data-stu-id="8bf9a-303">06</span></span>                       |
+| `%n` | <span data-ttu-id="8bf9a-304">caractère de saut de ligne</span><span class="sxs-lookup"><span data-stu-id="8bf9a-304">newline character</span></span>                                                       |                          |
+| `%p` | <span data-ttu-id="8bf9a-305">AM ou PM</span><span class="sxs-lookup"><span data-stu-id="8bf9a-305">AM or PM</span></span>                                                                |                          |
+| `%R` | <span data-ttu-id="8bf9a-306">Heure au format 24 heures-pas de secondes</span><span class="sxs-lookup"><span data-stu-id="8bf9a-306">Time in 24-hour format -no seconds</span></span>                                      | <span data-ttu-id="8bf9a-307">17:45</span><span class="sxs-lookup"><span data-stu-id="8bf9a-307">17:45</span></span>                    |
+| `%r` | <span data-ttu-id="8bf9a-308">Heure au format 12 heures</span><span class="sxs-lookup"><span data-stu-id="8bf9a-308">Time in 12-hour format</span></span>                                                  | <span data-ttu-id="8bf9a-309">09:15:36</span><span class="sxs-lookup"><span data-stu-id="8bf9a-309">09:15:36 AM</span></span>              |
+| `%S` | <span data-ttu-id="8bf9a-310">Secondes</span><span class="sxs-lookup"><span data-stu-id="8bf9a-310">Seconds</span></span>                                                                 | <span data-ttu-id="8bf9a-311">05</span><span class="sxs-lookup"><span data-stu-id="8bf9a-311">05</span></span>                       |
+| `%s` | <span data-ttu-id="8bf9a-312">Secondes écoulées depuis le 1er janvier 1970 00:00:00</span><span class="sxs-lookup"><span data-stu-id="8bf9a-312">Seconds elapsed since January 1, 1970 00:00:00</span></span>                          | <span data-ttu-id="8bf9a-313">1150451174</span><span class="sxs-lookup"><span data-stu-id="8bf9a-313">1150451174</span></span>               |
+| `%t` | <span data-ttu-id="8bf9a-314">Caractère de tabulation horizontale</span><span class="sxs-lookup"><span data-stu-id="8bf9a-314">Horizontal tab character</span></span>                                                |                          |
+| `%T` | <span data-ttu-id="8bf9a-315">Heure au format 24 heures</span><span class="sxs-lookup"><span data-stu-id="8bf9a-315">Time in 24-hour format</span></span>                                                  | <span data-ttu-id="8bf9a-316">17:45:52</span><span class="sxs-lookup"><span data-stu-id="8bf9a-316">17:45:52</span></span>                 |
+| `%U` | <span data-ttu-id="8bf9a-317">Identique à « W »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-317">Same as 'W'</span></span>                                                             |                          |
+| `%u` | <span data-ttu-id="8bf9a-318">Jour de la semaine-numéro</span><span class="sxs-lookup"><span data-stu-id="8bf9a-318">Day of the week - number</span></span>                                                | <span data-ttu-id="8bf9a-319">Dimanche = 0</span><span class="sxs-lookup"><span data-stu-id="8bf9a-319">Sunday = 0</span></span>               |
+| `%V` | <span data-ttu-id="8bf9a-320">Semaine de l’année</span><span class="sxs-lookup"><span data-stu-id="8bf9a-320">Week of the year</span></span>                                                        | <span data-ttu-id="8bf9a-321">01-53</span><span class="sxs-lookup"><span data-stu-id="8bf9a-321">01-53</span></span>                    |
+| `%w` | <span data-ttu-id="8bf9a-322">Identique à « u »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-322">Same as 'u'</span></span>                                                             |                          |
+| `%W` | <span data-ttu-id="8bf9a-323">Semaine de l’année</span><span class="sxs-lookup"><span data-stu-id="8bf9a-323">Week of the year</span></span>                                                        | <span data-ttu-id="8bf9a-324">00-52</span><span class="sxs-lookup"><span data-stu-id="8bf9a-324">00-52</span></span>                    |
+| `%X` | <span data-ttu-id="8bf9a-325">Identique à « t »</span><span class="sxs-lookup"><span data-stu-id="8bf9a-325">Same as 'T'</span></span>                                                             |                          |
+| `%x` | <span data-ttu-id="8bf9a-326">Date au format standard pour les paramètres régionaux</span><span class="sxs-lookup"><span data-stu-id="8bf9a-326">Date in standard format for locale</span></span>                                      | <span data-ttu-id="8bf9a-327">06/27/19 pour l’anglais (États-Unis)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-327">06/27/19 for English-US</span></span>  |
+| `%Y` | <span data-ttu-id="8bf9a-328">Année au format à 4 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-328">Year in 4-digit format</span></span>                                                  | <span data-ttu-id="8bf9a-329">2019</span><span class="sxs-lookup"><span data-stu-id="8bf9a-329">2019</span></span>                     |
+| `%y` | <span data-ttu-id="8bf9a-330">Année au format à 2 chiffres</span><span class="sxs-lookup"><span data-stu-id="8bf9a-330">Year in 2-digit format</span></span>                                                  | <span data-ttu-id="8bf9a-331">19</span><span class="sxs-lookup"><span data-stu-id="8bf9a-331">19</span></span>                       |
+| `%Z` | <span data-ttu-id="8bf9a-332">Décalage de fuseau horaire par rapport à l’heure UTC (Universal Time Coordinate)</span><span class="sxs-lookup"><span data-stu-id="8bf9a-332">Time zone offset from Universal Time Coordinate (UTC)</span></span>                   | <span data-ttu-id="8bf9a-333">-07</span><span class="sxs-lookup"><span data-stu-id="8bf9a-333">-07</span></span>                      |
 
-## <span data-ttu-id="69550-334">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="69550-334">RELATED LINKS</span></span>
+## <span data-ttu-id="8bf9a-334">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="8bf9a-334">RELATED LINKS</span></span>
 
-[<span data-ttu-id="69550-335">ForEach-Object</span><span class="sxs-lookup"><span data-stu-id="69550-335">ForEach-Object</span></span>](../Microsoft.PowerShell.Core/ForEach-Object.md)
+[<span data-ttu-id="8bf9a-335">ForEach-Object</span><span class="sxs-lookup"><span data-stu-id="8bf9a-335">ForEach-Object</span></span>](../Microsoft.PowerShell.Core/ForEach-Object.md)
 
-[<span data-ttu-id="69550-336">Get-Culture</span><span class="sxs-lookup"><span data-stu-id="69550-336">Get-Culture</span></span>](Get-Culture.md)
+[<span data-ttu-id="8bf9a-336">Get-Culture</span><span class="sxs-lookup"><span data-stu-id="8bf9a-336">Get-Culture</span></span>](Get-Culture.md)
 
-[<span data-ttu-id="69550-337">Get-Member</span><span class="sxs-lookup"><span data-stu-id="69550-337">Get-Member</span></span>](Get-Member.md)
+[<span data-ttu-id="8bf9a-337">Get-Member</span><span class="sxs-lookup"><span data-stu-id="8bf9a-337">Get-Member</span></span>](Get-Member.md)
 
-[<span data-ttu-id="69550-338">New-Item</span><span class="sxs-lookup"><span data-stu-id="69550-338">New-Item</span></span>](../Microsoft.PowerShell.Management/New-Item.md)
+[<span data-ttu-id="8bf9a-338">New-Item</span><span class="sxs-lookup"><span data-stu-id="8bf9a-338">New-Item</span></span>](../Microsoft.PowerShell.Management/New-Item.md)
 
-[<span data-ttu-id="69550-339">New-TimeSpan</span><span class="sxs-lookup"><span data-stu-id="69550-339">New-TimeSpan</span></span>](New-TimeSpan.md)
+[<span data-ttu-id="8bf9a-339">New-TimeSpan</span><span class="sxs-lookup"><span data-stu-id="8bf9a-339">New-TimeSpan</span></span>](New-TimeSpan.md)
 
-[<span data-ttu-id="69550-340">Set-Date</span><span class="sxs-lookup"><span data-stu-id="69550-340">Set-Date</span></span>](Set-Date.md)
+[<span data-ttu-id="8bf9a-340">Set-Date</span><span class="sxs-lookup"><span data-stu-id="8bf9a-340">Set-Date</span></span>](Set-Date.md)
