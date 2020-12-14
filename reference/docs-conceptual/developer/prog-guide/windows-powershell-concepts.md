@@ -1,12 +1,14 @@
 ---
-title: Concepts de Windows PowerShell | Microsoft Docs
-ms.date: 6/12/2019
-ms.openlocfilehash: a31c1df784b7b5f872c4647aece8fafa535db66b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.date: 06/12/2019
+ms.topic: reference
+title: Concepts de Windows PowerShell
+description: Concepts de Windows PowerShell
+ms.openlocfilehash: a9b88a2e575b7ff7c036ce0fcbc035f0b55d0f5f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786949"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355356"
 ---
 # <a name="windows-powershell-concepts"></a>Concepts de Windows PowerShell
 
@@ -22,13 +24,13 @@ Cette section contient des informations conceptuelles qui vous aideront à compr
 |[RuntimeDefinedParameter, classe](/dotnet/api/system.management.automation.runtimedefinedparameter)|Déclarations des paramètres d’exécution.|
 |[Espace de noms System. Management. Automation](/dotnet/api/System.Management.Automation)|Vue d’ensemble des espaces de noms d’API PowerShell.|
 |[Vue d’ensemble du fournisseur Windows PowerShell](../provider/windows-powershell-provider-overview.md)|Vue d’ensemble des fournisseurs PowerShell utilisés pour accéder aux magasins de données.|
-|[Écriture de l’aide pour les applets de commande PowerShell](../help/writing-help-for-windows-powershell-cmdlets.md)|Comment écrire l’aide sur les applets de commande PowerShell.|
+|[Écriture d’une aide pour les applets de commande PowerShell](../help/writing-help-for-windows-powershell-cmdlets.md)|Comment écrire l’aide sur les applets de commande PowerShell.|
 
 ## <a name="see-also"></a>Voir aussi
 
 [Classe PowerShell](/dotnet/api/system.management.automation.powershell)
 
-[Informations de référence sur l’API PowerShell Core](/dotnet/api/?view=pscore-6.2.0)
+[Informations de référence sur l’API PowerShell Core](/dotnet/api/?view=pscore-6.2.0&preserve-view=true)
 
 [Guide de programmation pour Windows PowerShell](windows-powershell-programmer-s-guide.md)
 
@@ -36,6 +38,6 @@ Cette section contient des informations conceptuelles qui vous aideront à compr
 
 [Écriture d’un fournisseur Windows PowerShell](../provider/writing-a-windows-powershell-provider.md)
 
-[Informations de référence sur l’API Windows PowerShell](/dotnet/api/?view=powershellsdk-1.1.0)
+[Informations de référence sur l’API Windows PowerShell](/dotnet/api/?view=powershellsdk-1.1.0&preserve-view=true)
 
 [Référence Windows PowerShell](../windows-powershell-reference.md)

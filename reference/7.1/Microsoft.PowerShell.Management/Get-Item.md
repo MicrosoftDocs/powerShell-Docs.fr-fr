@@ -7,19 +7,19 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 25d07028430d6ad6719136bd484d39e116d81516
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204522"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661356"
 ---
 # Get-Item
 
 ## SYNOPSIS
 Obtient l'élément à l'emplacement spécifié.
 
-## SYNTAX
+## SYNTAXE
 
 ### Chemin d’accès (par défaut)
 
@@ -130,9 +130,9 @@ Dans PowerShell 6,2, une autre vue a été ajoutée pour obtenir les information
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### Exemple 9 : sortie pour la fonctionnalité expérimentale PSUnixFileStat
+### Exemple 9 : sortie pour les systèmes d’exploitation autres que Windows
 
-Dans PowerShell 7 sur les systèmes UNIX, la fonctionnalité expérimentale **PSUnixFileStat** fournit une sortie de type UNIX :
+Dans PowerShell 7,1 sur les systèmes UNIX, l’applet de commande `Get-Item` fournit une sortie de type UNIX :
 
 ```powershell
 PS> Get-Item /Users
@@ -152,6 +152,9 @@ Les nouvelles propriétés qui font désormais partie de la sortie sont les suiv
 - L' **utilisateur** est le propriétaire du fichier
 - Le **groupe** est le propriétaire du groupe
 - **Taille** correspond à la taille du fichier ou du répertoire tel qu’il est représenté sur un système UNIX.
+
+> [!NOTE]
+> Cette fonctionnalité a été déplacée de expérimental vers standard dans PowerShell 7,1.
 
 ## PARAMETERS
 
@@ -194,7 +197,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -243,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -315,7 +318,7 @@ Cette applet de commande n’a pas de paramètre **recurse** , car elle obtient 
 Pour récupérer le contenu d’un élément de manière récursive, utilisez `Get-ChildItem` .
 
 Pour parcourir le registre, utilisez cette applet de commande pour récupérer les clés de Registre et le `Get-ItemProperty` pour accéder aux données et valeurs de registre. Les valeurs de Registre sont considérées comme des propriétés des clés de Registre.
-  
+
 Cette applet de commande est conçue pour utiliser les données exposées par n’importe quel fournisseur. Pour répertorier les fournisseurs disponibles dans votre session, tapez `Get-PsProvider` . Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## LIENS CONNEXES

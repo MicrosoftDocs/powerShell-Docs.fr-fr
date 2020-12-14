@@ -1,19 +1,14 @@
 ---
-title: Ajout de paramètres qui traitent l’entrée de ligne de commande | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], parameters
-- Get-Proc cmdlet [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], command line input
-- command line input [PowerShell Programmer's Guide]
-- parameters [PowerShell Programmer's Guide]
-- cmdlets [PowerShell Programmer's Guide], creating
-ms.openlocfilehash: 6ccc873d9c6b93546b3dae8c0d2e406763fdfb8a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ajout de paramètres qui traitent l’entrée de la ligne de commande
+description: Ajout de paramètres qui traitent l’entrée de la ligne de commande
+ms.openlocfilehash: f20469d366330aa787fbc16e4f0a76e67fc7c6db
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784569"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93354607"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>Ajout de paramètres qui traitent l’entrée de la ligne de commande
 
@@ -40,7 +35,7 @@ Public Class GetProcCommand
 
 Un paramètre d’applet de commande permet à l’utilisateur de fournir une entrée à l’applet de commande. Dans l’exemple suivant, `Get-Proc` et `Get-Member` sont les noms des applets de commande canalisées, et `MemberType` est un paramètre de l’applet de commande `Get-Member` . Le paramètre a l’argument « Property ».
 
-**Bloc de> PS-proc ; `get-member`-MemberType, propriété**
+**Bloc de> PS-proc ; `get-member` -MemberType, propriété**
 
 Pour déclarer des paramètres pour une applet de commande, vous devez d’abord définir les propriétés qui représentent les paramètres. Dans l' `Get-Proc` applet de commande, le seul paramètre est `Name` , qui, dans ce cas, représente le nom de l’objet de processus .NET Framework à récupérer. Par conséquent, la classe d’applet de commande définit une propriété de type chaîne pour accepter un tableau de noms.
 
@@ -89,7 +84,7 @@ Cette applet de commande utilise un tableau de chaînes pour le `Name` paramètr
 
 - Windows PowerShell réserve quelques noms de paramètres pour fournir une expérience utilisateur cohérente. N’utilisez pas ces noms de paramètres : `WhatIf` , `Confirm` , `Verbose` , `Debug` , `Warn` , `ErrorAction` , `ErrorVariable` , `OutVariable` et `OutBuffer` . En outre, les alias suivants pour ces noms de paramètres sont réservés : `vb` , `db` ,,, `ea` `ev` `ov` et `ob` .
 
-- `Name`est un nom de paramètre simple et commun, recommandé pour une utilisation dans vos applets de commande. Il est préférable de choisir un nom de paramètre comme celui-ci plutôt qu’un nom complexe propre à une applet de commande spécifique et difficile à retenir.
+- `Name` est un nom de paramètre simple et commun, recommandé pour une utilisation dans vos applets de commande. Il est préférable de choisir un nom de paramètre comme celui-ci plutôt qu’un nom complexe propre à une applet de commande spécifique et difficile à retenir.
 
 - Les paramètres ne sont pas sensibles à la casse dans Windows PowerShell, bien que l’interpréteur de commandes conserve par défaut la casse. Le respect de la casse des arguments dépend du fonctionnement de l’applet de commande. Les arguments sont passés à un paramètre comme spécifié sur la ligne de commande.
 
@@ -123,7 +118,7 @@ public string[] Name
 
 Si votre applet de commande doit gérer l’entrée de ligne de commande, elle doit remplacer les méthodes de traitement d’entrée appropriées. Les méthodes de traitement d’entrée de base sont introduites lors de la [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
-L' `Get-Proc` applet de commande remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer l' `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé, ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [System. Management. Automation. applet de commande. WriteObject% 28System. Object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection` , est défini sur `true` pour indiquer à l’exécution de Windows PowerShell d’énumérer le tableau de sortie des objets de processus et d’écrire un processus à la fois sur la ligne de commande.
+L' `Get-Proc` applet de commande remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer l' `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé, ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [System. Management. Automation. applet de commande. WriteObject% 28System. Object% 2CSystem. Boolean %29](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection` , est défini sur `true` pour indiquer à l’exécution de Windows PowerShell d’énumérer le tableau de sortie des objets de processus et d’écrire un processus à la fois sur la ligne de commande.
 
 ```csharp
 protected override void ProcessRecord()

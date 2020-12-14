@@ -1,17 +1,14 @@
 ---
-title: Enregistrements d’erreurs Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- error category [PowerShell SDK]
-- error identifier [PowerShell SDK]
-- error records [PowerShell SDK]
-- error category string [PowerShell SDK]
-ms.openlocfilehash: 52243916adf18b4f3a1e00f1fb4199c2619946e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Enregistrements d’erreurs Windows PowerShell
+description: Enregistrements d’erreurs Windows PowerShell
+ms.openlocfilehash: 899acf08508b1469b7ec3985d5665367fc2c1531
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783974"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355593"
 ---
 # <a name="windows-powershell-error-records"></a>Enregistrements d’erreurs Windows PowerShell
 
@@ -25,7 +22,8 @@ Si l’applet de commande n’a pas intercepté d’exception, elle doit créer 
 
 - Identificateur d’erreur qui fournit un indicateur ciblé qui peut être utilisé à des fins de diagnostic et par les scripts Windows PowerShell pour gérer des conditions d’erreur spécifiques avec des gestionnaires d’erreurs spécifiques. Chaque enregistrement d’erreur doit contenir un identificateur d’erreur (voir identificateur d’erreur).
 
-- Catégorie d’erreur qui fournit un indicateur général qui peut être utilisé à des fins de diagnostic. Chaque enregistrement d’erreur doit spécifier une catégorie d’erreur (voir la catégorie d’erreur).
+- Catégorie d’erreur qui fournit un indicateur général qui peut être utilisé à des fins de diagnostic.
+  Chaque enregistrement d’erreur doit spécifier une catégorie d’erreur (voir la catégorie d’erreur).
 
 - Un message d’erreur de remplacement facultatif et une action recommandée (voir le message d’erreur de remplacement).
 
@@ -53,9 +51,10 @@ Utilisez les instructions suivantes pour générer des identificateurs d’erreu
 
 ## <a name="error-category"></a>Catégorie de l'erreur
 
-Lorsque vous créez un enregistrement d’erreur, spécifiez la catégorie de l’erreur à l’aide de l’une des constantes définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Windows PowerShell utilise la catégorie d’erreur pour afficher les informations d’erreur lorsque les utilisateurs définissent la `$ErrorView` variable sur `"CategoryView"` .
+Lorsque vous créez un enregistrement d’erreur, spécifiez la catégorie de l’erreur à l’aide de l’une des constantes définies par l’énumération [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) . Windows PowerShell utilise la catégorie d’erreur pour afficher les informations d’erreur lorsque les utilisateurs définissent la `$ErrorView` variable sur `"CategoryView"` .
 
-Évitez d’utiliser la constante **NotSpecified** [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) . Si vous avez des informations sur l’erreur ou sur l’opération à l’origine de l’erreur, choisissez la catégorie qui décrit le mieux l’erreur ou l’opération, même si la catégorie n’est pas parfaite.
+Évitez d’utiliser la constante NotSpecified [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) 
+  . Si vous avez des informations sur l’erreur ou sur l’opération à l’origine de l’erreur, choisissez la catégorie qui décrit le mieux l’erreur ou l’opération, même si la catégorie n’est pas parfaite.
 
 Les informations affichées par Windows PowerShell sont appelées « chaîne de vue de catégorie » et sont générées à partir des propriétés de la classe [System. Management. Automation. Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) . (Cette classe est accessible via la propriété Error [System. Management. Automation. ErrorRecord. CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) .)
 
@@ -65,9 +64,10 @@ Les informations affichées par Windows PowerShell sont appelées « chaîne de
 
 La liste suivante décrit les informations affichées :
 
-- Category : une constante [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) définie par Windows PowerShell.
+- Category : une constante [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) définie par Windows PowerShell.
 
-- TargetName : par défaut, nom de l’objet que l’applet de commande traitait lorsque l’erreur s’est produite. Ou une autre chaîne définie par l’applet de commande.
+- TargetName : par défaut, nom de l’objet que l’applet de commande traitait lorsque l’erreur s’est produite.
+  Ou une autre chaîne définie par l’applet de commande.
 
 - TargetType : par défaut, le type de l’objet cible. Ou une autre chaîne définie par l’applet de commande.
 
@@ -81,9 +81,9 @@ Lorsque vous développez un enregistrement d’erreur pour une applet de command
 
 Le message de remplacement est fourni par un objet [System. Management. Automation. ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) . Utilisez l’un des constructeurs suivants de cet objet, car ils fournissent des informations de localisation supplémentaires qui peuvent être utilisées par Windows PowerShell.
 
-- [ErrorDetails (cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): utilisez ce constructeur si votre chaîne de modèle est une chaîne de ressource dans le même assembly que celui dans lequel l’applet de commande est implémentée ou si vous souhaitez charger la chaîne de modèle par le biais d’une substitution de la méthode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
+- [ErrorDetails (cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): utilisez ce constructeur si votre chaîne de modèle est une chaîne de ressource dans le même assembly que celui dans lequel l’applet de commande est implémentée ou si vous souhaitez charger la chaîne de modèle par le biais d’une substitution de la méthode [System. Management. Automation. cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) .
 
-- [ErrorDetails (assembly, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): utilisez ce constructeur si la chaîne de modèle se trouve dans un autre assembly et que vous ne la chargez pas par le biais d’une substitution de [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)de commande. GetResourceString.
+- [ErrorDetails (assembly, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): utilisez ce constructeur si la chaîne de modèle se trouve dans un autre assembly et que vous ne la chargez pas par le biais d’une substitution de [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)de commande. GetResourceString.
 
 Le message de remplacement doit respecter les règles de conception de .NET Framework pour l’écriture de messages d’exception avec une petite différence. Les indications stipulent que les messages d’exception doivent être écrits pour les développeurs. Ces messages de remplacement doivent être écrits pour l’utilisateur de l’applet de commande.
 
@@ -103,7 +103,7 @@ Quand une applet de commande utilise [System. Management. Automation. applet de 
 
 [System. Management. Automation. applet de commande. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
+[System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System. Management. Automation. Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

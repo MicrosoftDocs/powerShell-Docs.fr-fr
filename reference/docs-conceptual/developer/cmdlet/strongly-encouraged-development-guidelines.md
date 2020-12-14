@@ -1,12 +1,14 @@
 ---
-title: Instructions de développement vivement encouragées | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 02488fea557b42ed30ea5cfde177b3efe0b3f559
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Instructions dont le suivi est fortement recommandé pour le développement
+description: Instructions dont le suivi est fortement recommandé pour le développement
+ms.openlocfilehash: e12fa0d1adc0d7a0dad938457bdcd289736df97c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787816"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355236"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Instructions dont le suivi est fortement recommandé pour le développement
 
@@ -14,33 +16,12 @@ Cette section décrit les instructions que vous devez suivre lorsque vous écriv
 
 ## <a name="design-guidelines"></a>Recommandations en matière de conception
 
-- [Utiliser un nom spécifique pour un nom d’applet de commande (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
-
-- [Utiliser la casse Pascal pour les noms d’applets de commande (SD02)](./strongly-encouraged-development-guidelines.md#use-pascal-case-for-cmdlet-names-sd02)
-
-- [Recommandations en matière de conception de paramètres (SD03)](./strongly-encouraged-development-guidelines.md#parameter-design-guidelines-sd03)
-
-- [Fournir des commentaires à l’utilisateur (SD04)](./strongly-encouraged-development-guidelines.md#provide-feedback-to-the-user-sd04)
-
-- [Créer un fichier d’aide d’applet de commande (SD05)](./strongly-encouraged-development-guidelines.md#create-a-cmdlet-help-file-sd05)
-
-## <a name="code-guidelines"></a>Instructions de code
-
-- [Paramètres de codage (SC01)](./strongly-encouraged-development-guidelines.md#coding-parameters-sc01)
-
-- [Prendre en charge l’entrée de pipeline bien définie (SC02)](./strongly-encouraged-development-guidelines.md#support-well-defined-pipeline-input-sc02)
-
-- [Écrire des enregistrements uniques dans le pipeline (SC03)](./strongly-encouraged-development-guidelines.md#write-single-records-to-the-pipeline-sc03)
-
-- [Rendre les applets de commande non sensibles à la casse et à la conservation de la casse (SC04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
-
-## <a name="design-guidelines"></a>Recommandations en matière de conception
-
 Les instructions suivantes doivent être suivies lors de la conception des applets de commande pour garantir une expérience utilisateur cohérente entre l’utilisation de vos applets de commande et d’autres applets de commande. Lorsque vous trouvez une instruction de conception qui s’applique à votre situation, veillez à consulter les instructions de code pour obtenir des instructions similaires.
 
 ### <a name="use-a-specific-noun-for-a-cmdlet-name-sd01"></a>Utiliser un nom spécifique pour un nom d’applet de commande (SD01)
 
-Les noms utilisés dans les applets de commande doivent être très spécifiques afin que l’utilisateur puisse découvrir vos applets de commande. Préfixez les noms génériques tels que « Server » avec une version abrégée du nom du produit. Par exemple, si un nom fait référence à un serveur qui exécute une instance de Microsoft SQL Server, utilisez un nom tel que « SQLServer ». La combinaison de noms spécifiques et la liste réduite de verbes approuvés permettent à l’utilisateur de découvrir et d’anticiper rapidement les fonctionnalités tout en évitant la duplication parmi les noms d’applets de commande.
+Les noms utilisés dans les applets de commande doivent être très spécifiques afin que l’utilisateur puisse découvrir vos applets de commande.
+Préfixez les noms génériques tels que « Server » avec une version abrégée du nom du produit. Par exemple, si un nom fait référence à un serveur qui exécute une instance de Microsoft SQL Server, utilisez un nom tel que « SQLServer ». La combinaison de noms spécifiques et la liste réduite de verbes approuvés permettent à l’utilisateur de découvrir et d’anticiper rapidement les fonctionnalités tout en évitant la duplication parmi les noms d’applets de commande.
 
 Pour améliorer l’expérience utilisateur, le nom que vous choisissez pour un nom d’applet de commande doit être singulier. Par exemple, utilisez le nom `Get-Process` au lieu de **« obtenir-Processes »**. Il est préférable de suivre cette règle pour tous les noms d’applet de commande, même lorsqu’une applet de commande est susceptible d’agir sur plus d’un élément.
 
@@ -69,14 +50,14 @@ Les noms de paramètres au pluriel doivent être utilisés uniquement dans les c
 Utilisez la casse Pascal pour les noms de paramètres. En d’autres termes, mettez en majuscule la première lettre de chaque mot dans le nom du paramètre, y compris la première lettre du nom. Par exemple, le nom du paramètre `ErrorAction` utilise la casse correcte. Les noms de paramètres suivants utilisent une casse incorrecte :
 
 - `errorAction`
-
 - `erroraction`
 
 #### <a name="parameters-that-take-a-list-of-options"></a>Paramètres qui acceptent une liste d’options
 
 Il existe deux façons de créer un paramètre dont la valeur peut être sélectionnée à partir d’un ensemble d’options.
 
-- Définissez un type d’énumération (ou utilisez un type d’énumération existant) qui spécifie les valeurs valides. Utilisez ensuite le type d’énumération pour créer un paramètre de ce type.
+- Définissez un type d’énumération (ou utilisez un type d’énumération existant) qui spécifie les valeurs valides.
+  Utilisez ensuite le type d’énumération pour créer un paramètre de ce type.
 
 - Ajoutez l’attribut **ValidateSet** à la déclaration de paramètre. Pour plus d’informations sur cet attribut, consultez [déclaration d’attribut ValidateSet](./validateset-attribute-declaration.md).
 
@@ -84,19 +65,20 @@ Il existe deux façons de créer un paramètre dont la valeur peut être sélect
 
 Pour garantir la cohérence avec d’autres applets de commande, utilisez des types standard pour les paramètres dans la mesure du possible. Pour plus d’informations sur les types qui doivent être utilisés pour des paramètres différents, consultez [noms et types de paramètres d’applet](./standard-cmdlet-parameter-names-and-types.md)de commande standard. Cette rubrique fournit des liens vers plusieurs rubriques qui décrivent les noms et les types de .NET Framework pour les groupes de paramètres standard, tels que les « paramètres d’activité ».
 
-#### <a name="use-strongly-typed-net-framework-types"></a>Utiliser des types de .NET Framework fortement typés
+#### <a name="use-strongly-typed-net-framework-types"></a>Utiliser les types de .NET Framework Strongly-Typed
 
 Les paramètres doivent être définis en tant que types de .NET Framework pour fournir une meilleure validation des paramètres. Par exemple, les paramètres qui sont limités à une valeur d’un ensemble de valeurs doivent être définis en tant que type énumération. Pour prendre en charge une valeur Uniform Resource Identifier (URI), définissez le paramètre en tant que type [System. Uri](/dotnet/api/System.Uri) . Évitez les paramètres de chaîne de base pour toutes les propriétés de texte de forme libre.
 
 #### <a name="use-consistent-parameter-types"></a>Utiliser des types de paramètres cohérents
 
-Lorsque le même paramètre est utilisé par plusieurs applets de commande, utilisez toujours le même type de paramètre.  Par exemple, si le `Process` paramètre est un type [System. Int16](/dotnet/api/System.Int16) pour une applet de commande, ne définissez pas le `Process` paramètre d’une autre applet de commande sur un type [System. Uint16](/dotnet/api/System.UInt16) .
+Lorsque le même paramètre est utilisé par plusieurs applets de commande, utilisez toujours le même type de paramètre. Par exemple, si le `Process` paramètre est un type [System. Int16](/dotnet/api/System.Int16) pour une applet de commande, ne définissez pas le `Process` paramètre d’une autre applet de commande sur un type [System. Uint16](/dotnet/api/System.UInt16) .
 
 #### <a name="parameters-that-take-true-and-false"></a>Paramètres qui prennent la valeur true et false
 
-Si votre paramètre prend uniquement `true` et `false` , définissez le paramètre en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter). Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre est `false` . Ne définissez pas de paramètres booléens.
+Si votre paramètre prend uniquement `true` et `false` , définissez le paramètre en tant que type [System. Management. Automation. Paramètre_Booléen](/dotnet/api/System.Management.Automation.SwitchParameter).
+Un paramètre de commutateur est traité comme `true` lorsqu’il est spécifié dans une commande. Si le paramètre n’est pas inclus dans une commande, Windows PowerShell considère que la valeur du paramètre est `false` . Ne définissez pas de paramètres booléens.
 
-Si votre paramètre doit faire la distinction entre 3 valeurs : $true, $false et "Unspecified", définissez un paramètre de type Nullable \<bool> .  La nécessité d’une troisième valeur « non spécifiée » se produit généralement lorsque l’applet de commande peut modifier une propriété booléenne d’un objet. Dans ce cas, « non spécifié » signifie que vous ne pouvez pas modifier la valeur actuelle de la propriété.
+Si votre paramètre doit faire la distinction entre 3 valeurs : $true, $false et "Unspecified", définissez un paramètre de type Nullable \<bool> . La nécessité d’une troisième valeur « non spécifiée » se produit généralement lorsque l’applet de commande peut modifier une propriété booléenne d’un objet. Dans ce cas, « non spécifié » signifie que vous ne pouvez pas modifier la valeur actuelle de la propriété.
 
 #### <a name="support-arrays-for-parameters"></a>Tableaux de prise en charge pour les paramètres
 
@@ -163,16 +145,14 @@ Définissez un paramètre en déclarant une propriété publique de la classe cm
 
 Le chemin d’accès Windows PowerShell est le mécanisme permettant de normaliser l’accès aux espaces de noms. Lorsque vous attribuez un chemin d’accès Windows PowerShell à un paramètre dans l’applet de commande, l’utilisateur peut définir un « lecteur » personnalisé qui agit comme raccourci vers un chemin d’accès spécifique. Lorsqu’un utilisateur désigne un tel lecteur, les données stockées, telles que les données du Registre, peuvent être utilisées de manière cohérente.
 
-Si votre applet de commande permet à l’utilisateur de spécifier un fichier ou une source de données, il doit définir un paramètre de type [System. String](/dotnet/api/System.String). Si plusieurs lecteurs sont pris en charge, le type doit être un tableau. Le nom du paramètre doit être `Path` , avec un alias `PSPath` . En outre, le `Path` paramètre doit prendre en charge les caractères génériques. Si la prise en charge des caractères génériques n’est pas nécessaire, définissez un `LiteralPath` paramètre.
+Si votre applet de commande permet à l’utilisateur de spécifier un fichier ou une source de données, il doit définir un paramètre de type [System. String](/dotnet/api/System.String). Si plusieurs lecteurs sont pris en charge, le type doit être un tableau. Le nom du paramètre doit être `Path` , avec un alias `PSPath` .
+En outre, le `Path` paramètre doit prendre en charge les caractères génériques. Si la prise en charge des caractères génériques n’est pas nécessaire, définissez un `LiteralPath` paramètre.
 
 Si les données que l’applet de commande lit ou écrit doivent être un fichier, l’applet de commande doit accepter l’entrée de chemin d’accès Windows PowerShell, et l’applet de commande doit utiliser la propriété [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) pour convertir les chemins d’accès Windows PowerShell en chemins d’accès reconnus par le système de fichiers. Les mécanismes spécifiques incluent les méthodes suivantes :
 
 - [System. Management. Automation. PSCmdlet. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PSCmdlet. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PathIntrinsics. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
-
 - [System. Management. Automation. PathIntrinsics. GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
 Si les données que l’applet de commande lit ou écrit ne sont qu’un ensemble de chaînes au lieu d’un fichier, l’applet de commande doit utiliser les informations de contenu du fournisseur ( `Content` membre) pour lire et écrire. Ces informations sont obtenues à partir de la propriété [System. Management. Automation. Provider. CmdletProvider. InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) . Ces mécanismes permettent à d’autres magasins de données de participer à la lecture et à l’écriture de données.
@@ -181,7 +161,8 @@ Si les données que l’applet de commande lit ou écrit ne sont qu’un ensembl
 
 Une applet de commande doit prendre en charge les caractères génériques si possible. La prise en charge des caractères génériques se produit à de nombreux emplacements dans une applet de commande (surtout lorsqu’un paramètre prend une chaîne pour identifier un objet d’un ensemble d’objets). Par exemple, l’applet de commande **Stop-proc** du [didacticiel StopProc](./stopproc-tutorial.md) définit un `Name` paramètre pour gérer les chaînes qui représentent des noms de processus. Ce paramètre prend en charge les caractères génériques afin que l’utilisateur puisse spécifier facilement les processus à arrêter.
 
-Lorsque la prise en charge des caractères génériques est disponible, une opération d’applet de commande produit généralement un tableau. Parfois, il n’est pas judicieux de prendre en charge un tableau, car l’utilisateur ne peut utiliser qu’un seul élément à la fois. Par exemple, l’applet de commande [set-location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) n’a pas besoin de prendre en charge un tableau, car l’utilisateur ne définit qu’un seul emplacement. Dans ce cas, l’applet de commande prend toujours en charge les caractères génériques, mais elle force la résolution sur un emplacement unique.
+Lorsque la prise en charge des caractères génériques est disponible, une opération d’applet de commande produit généralement un tableau.
+Parfois, il n’est pas judicieux de prendre en charge un tableau, car l’utilisateur ne peut utiliser qu’un seul élément à la fois. Par exemple, l’applet de commande [set-location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) n’a pas besoin de prendre en charge un tableau, car l’utilisateur ne définit qu’un seul emplacement. Dans ce cas, l’applet de commande prend toujours en charge les caractères génériques, mais elle force la résolution sur un emplacement unique.
 
 Pour plus d’informations sur les modèles de caractères génériques, consultez [prise en charge des caractères génériques dans les paramètres d’applet de](./supporting-wildcard-characters-in-cmdlet-parameters.md)commande.
 
@@ -203,7 +184,8 @@ Par exemple, vous pouvez ajouter une `Mode` propriété de script au type [Syste
 
 ##### <a name="implement-the-icomparable-interface"></a>Implémenter l’interface IComparable
 
-Implémentez une interface [System. IComparable](/dotnet/api/System.IComparable) sur tous les objets de sortie. Cela permet aux objets de sortie d’être facilement redirigés vers diverses applets de commande de tri et d’analyse.
+Implémentez une interface [System. IComparable](/dotnet/api/System.IComparable) sur tous les objets de sortie.
+Cela permet aux objets de sortie d’être facilement redirigés vers diverses applets de commande de tri et d’analyse.
 
 ##### <a name="update-display-information"></a>Mettre à jour les informations d’affichage
 
@@ -213,7 +195,8 @@ Si l’affichage d’un objet ne fournit pas les résultats attendus, créez un 
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>Implémentez pour le milieu d’un pipeline
 
-Implémentez une applet de commande en supposant qu’elle sera appelée à partir du milieu d’un pipeline (autrement dit, d’autres applets de commande produiront son entrée ou consomment sa sortie). Par exemple, vous pouvez supposer que l' `Get-Process` applet de commande, car elle génère des données, est utilisée uniquement comme première applet de commande dans un pipeline. Toutefois, étant donné que cette applet de commande est conçue pour le milieu d’un pipeline, cette applet de commande autorise les applets de commande ou les données précédentes dans le pipeline à spécifier les processus à récupérer.
+Implémentez une applet de commande en supposant qu’elle sera appelée à partir du milieu d’un pipeline (autrement dit, d’autres applets de commande produiront son entrée ou consomment sa sortie). Par exemple, vous pouvez supposer que l' `Get-Process` applet de commande, car elle génère des données, est utilisée uniquement comme première applet de commande dans un pipeline.
+Toutefois, étant donné que cette applet de commande est conçue pour le milieu d’un pipeline, cette applet de commande autorise les applets de commande ou les données précédentes dans le pipeline à spécifier les processus à récupérer.
 
 #### <a name="support-input-from-the-pipeline"></a>Prendre en charge l’entrée à partir du pipeline
 
@@ -229,9 +212,10 @@ Pour accepter tous les enregistrements de l’applet de commande précédente da
 
 Lorsqu’une applet de commande retourne des objets, l’applet de commande doit écrire les objets immédiatement à mesure qu’ils sont générés. L’applet de commande ne doit pas les conserver pour les mettre en mémoire tampon dans un tableau combiné. Les applets de commande qui reçoivent les objets en entrée sont ensuite en mesure de traiter, d’afficher ou de traiter et d’afficher les objets de sortie sans délai. Une applet de commande qui génère des objets de sortie l’un après l’autre doit appeler la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) . Une applet de commande qui génère des objets de sortie par lots (par exemple, parce qu’une API sous-jacente retourne un tableau d’objets de sortie) doit appeler la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) avec le deuxième paramètre défini sur `true` .
 
-### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Rendre les applets de commande non sensibles à la casse et à la conservation de la casse (SC04)
+### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Créer des applets de commande Case-Insensitive et Case-Preserving (SC04)
 
-Par défaut, Windows PowerShell lui-même ne respecte pas la casse. Toutefois, étant donné qu’il traite de nombreux systèmes préexistants, Windows PowerShell conserve la casse pour faciliter l’exploitation et la compatibilité. En d’autres termes, si un caractère est fourni en majuscules, Windows PowerShell le conserve en majuscules. Pour que les systèmes fonctionnent correctement, une applet de commande doit suivre cette Convention. Si possible, elle doit fonctionner sans respect de la casse. Toutefois, il doit conserver le cas d’origine des applets de commande qui se produisent ultérieurement dans une commande ou dans le pipeline.
+Par défaut, Windows PowerShell lui-même ne respecte pas la casse. Toutefois, étant donné qu’il traite de nombreux systèmes préexistants, Windows PowerShell conserve la casse pour faciliter l’exploitation et la compatibilité.
+En d’autres termes, si un caractère est fourni en majuscules, Windows PowerShell le conserve en majuscules. Pour que les systèmes fonctionnent correctement, une applet de commande doit suivre cette Convention. Si possible, elle doit fonctionner sans respect de la casse. Toutefois, il doit conserver le cas d’origine des applets de commande qui se produisent ultérieurement dans une commande ou dans le pipeline.
 
 ## <a name="see-also"></a>Voir aussi
 

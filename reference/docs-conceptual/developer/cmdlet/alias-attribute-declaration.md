@@ -1,16 +1,14 @@
 ---
-title: Déclaration de l’attribut alias | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Alias attribute
-- attributes, Alias
-- Alias attribute, described
-ms.openlocfilehash: 4c1ff34a244611173ca919a44d6598189b19dc98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Déclaration de l’attribut Alias
+description: Déclaration de l’attribut Alias
+ms.openlocfilehash: f2fe49578da2c795643b1f80fa44deefe1dbff09
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782410"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668301"
 ---
 # <a name="alias-attribute-declaration"></a>Déclaration de l’attribut Alias
 
@@ -24,7 +22,7 @@ L’attribut alias permet à l’utilisateur de spécifier des noms différents 
 
 #### <a name="parameters"></a>Paramètres
 
-`aliasName`(String []) Obligatoire. Spécifie un jeu de noms d’alias séparés par des virgules pour le paramètre d’applet de commande.
+`aliasName` (String []) Obligatoire. Spécifie un jeu de noms d’alias séparés par des virgules pour le paramètre d’applet de commande.
 
 ## <a name="remarks"></a>Notes
 

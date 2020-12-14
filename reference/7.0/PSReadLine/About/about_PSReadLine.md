@@ -6,22 +6,22 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos de PSReadLine
-ms.openlocfilehash: 890f8e92172f2d492b6b817b558d4f25c70e8949
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f5ae99a7c8bdae82372423a3e4d8261d95ab83d5
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206561"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692205"
 ---
 # <a name="psreadline"></a>PSReadLine
 
 ## <a name="about_psreadline"></a>about_PSReadLine
 
-## <a name="short-description"></a>DESCRIPTION COURTE
+## <a name="short-description"></a>Description courte
 
 PSReadLine fournit une expérience d’édition de ligne de commande améliorée dans la console PowerShell.
 
-## <a name="long-description"></a>DESCRIPTION DÉTAILLÉE
+## <a name="long-description"></a>Description longue
 
 PSReadLine 2,0 fournit une expérience d’édition de ligne de commande puissante pour la console PowerShell. Elle offre les possibilités suivantes :
 
@@ -35,10 +35,10 @@ PSReadLine 2,0 fournit une expérience d’édition de ligne de commande puissan
 - Emacs-Yank/Kill-Ring
 - Mouvement « mot » basé sur un jeton PowerShell et Kill
 
-Les fonctions suivantes sont disponibles dans la classe **[Microsoft. PowerShell. PSConsoleReadLine]** .
-
 > [!NOTE]
 > À compter de PowerShell 7,0, PowerShell ignore le chargement automatique de PSReadLine sur Windows si un programme de lecture d’écran est détecté. Actuellement, PSReadLine ne fonctionne pas correctement avec les lecteurs d’écran. Le rendu et la mise en forme par défaut de PowerShell 7,0 sur Windows fonctionnent correctement. Vous pouvez charger le module manuellement, si nécessaire.
+
+Les fonctions suivantes sont disponibles dans la classe **[Microsoft. PowerShell. PSConsoleReadLine]**.
 
 ## <a name="basic-editing-functions"></a>Fonctions d’édition de base
 
@@ -1287,13 +1287,9 @@ Cette méthode d’assistance est utilisée pour les liaisons personnalisées qu
   [ref]$numericArg, 1)
 ```
 
-## <a name="note"></a>REMARQUE
+## <a name="note"></a>Notes
 
-### <a name="powershell-compatibility"></a>COMPATIBILITÉ AVEC POWERSHELL
-
-PSReadLine nécessite PowerShell 3,0, ou une version plus récente, et l’hôte de la console. Il ne fonctionne pas dans PowerShell ISE. Elle fonctionne dans la console de Visual Studio Code.
-
-### <a name="command-history"></a>HISTORIQUE DES COMMANDES
+### <a name="command-history"></a>Historique des commandes
 
 PSReadLine gère un fichier d’historique contenant toutes les commandes et données que vous avez entrées à partir de la ligne de commande. Cela peut contenir des données sensibles, y compris des mots de passe. Par exemple, si vous utilisez l’applet de commande, `ConvertTo-SecureString` le mot de passe est enregistré dans le fichier d’historique sous forme de texte brut. Les fichiers d’historique sont un fichier nommé `$($host.Name)_history.txt` . Sur les systèmes Windows, le fichier d’historique est stocké à l’adresse `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` . Sur les systèmes non-Windows, les fichiers d’historique sont stockés dans `$env:XDG_DATA_HOME/powershell/PSReadLine` ou `$env:HOME/.local/share/powershell/PSReadLine` .
 
@@ -1303,6 +1299,6 @@ PSReadLine gère un fichier d’historique contenant toutes les commandes et don
 
 N’hésitez pas à envoyer une demande de tirage ou à envoyer des commentaires sur la page GitHub.
 
-## <a name="see-also"></a>VOIR AUSSI
+## <a name="see-also"></a>Voir aussi
 
 PSReadLine est fortement influencé par la bibliothèque GNU [ReadLine](https://tiswww.case.edu/php/chet/readline/rltop.html) .

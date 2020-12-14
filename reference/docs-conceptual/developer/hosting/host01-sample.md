@@ -1,22 +1,24 @@
 ---
-title: Exemple host01 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a2ef53d36697d5637dff3de8a286902984f3c5a1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple Host01
+description: Exemple Host01
+ms.openlocfilehash: b4f1a81044a51855ad7decc25e1f5b1215ab0d62
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772246"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355474"
 ---
 # <a name="host01-sample"></a>Exemple Host01
 
 Cet exemple montre comment implémenter une application hôte qui utilise un hôte personnalisé. Dans cet exemple, une instance d’exécution est créée et utilise l’hôte personnalisé, puis l’API [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) est utilisée pour exécuter un script qui appelle « Exit ». L’application hôte analyse ensuite la sortie du script et imprime les résultats.
 
- Cet exemple utilise les fonctionnalités de l’interface utilisateur par défaut fournies par Windows PowerShell. Pour plus d’informations sur l’implémentation des fonctionnalités d’interface utilisateur d’un hôte personnalisé, consultez [exemple Host02](./host02-sample.md).
+Cet exemple utilise les fonctionnalités de l’interface utilisateur par défaut fournies par Windows PowerShell. Pour plus d’informations sur l’implémentation des fonctionnalités d’interface utilisateur d’un hôte personnalisé, consultez [exemple Host02](./host02-sample.md).
 
 ## <a name="requirements"></a>Spécifications
 
- Cet exemple requiert Windows PowerShell 2,0.
+Cet exemple requiert Windows PowerShell 2,0.
 
 ## <a name="demonstrates"></a>Illustre le
 
@@ -28,9 +30,9 @@ Cet exemple montre comment implémenter une application hôte qui utilise un hô
 
 - Vérification que le code de sortie correct a été utilisé dans le processus de sortie.
 
-## <a name="example"></a>Exemple
+## <a name="example-1"></a>Exemple 1
 
- Le code suivant illustre une implémentation d’une application hôte qui utilise une interface hôte personnalisée simple.
+Le code suivant illustre une implémentation d’une application hôte qui utilise une interface hôte personnalisée simple.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -130,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example-2"></a>Exemple 2
 
- Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
+Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

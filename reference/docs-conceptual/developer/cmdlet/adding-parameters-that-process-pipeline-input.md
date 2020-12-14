@@ -1,27 +1,26 @@
 ---
-title: Ajout de paramètres qui traitent l’entrée de pipeline | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- cmdlets [PowerShell Programmer's Guide], pipeline input
-- parameters [PowerShell Programmer's Guide], pipeline input
-ms.openlocfilehash: a678df30a13086b317d5680ee0fbc4d3c3391235
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Ajout de paramètres qui traitent l’entrée du pipeline
+description: Ajout de paramètres qui traitent l’entrée du pipeline
+ms.openlocfilehash: b150d5be93207d9c010a6d2d4de901b4526f1d79
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784552"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668352"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Ajout de paramètres qui traitent l’entrée du pipeline
 
-Une source d’entrée pour une applet de commande est un objet sur le pipeline qui provient d’une applet de commande en amont. Cette section décrit comment ajouter un paramètre à l’applet de commande « obtenir-proc » (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande) afin que l’applet de commande puisse traiter les objets de pipeline.
+Une source d’entrée pour une applet de commande est un objet sur le pipeline qui provient d’une applet de commande en amont. Cette section décrit comment ajouter un paramètre à l’applet de commande Get-Proc (décrit dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande) pour que l’applet de commande puisse traiter les objets de pipeline.
 
-Cette applet de commande Accept-proc utilise un `Name` paramètre qui accepte l’entrée d’un objet pipeline, récupère des informations sur le processus à partir de l’ordinateur local en fonction des noms fournis, puis affiche des informations sur les processus sur la ligne de commande.
+Cette applet de commande Get-Proc utilise un `Name` paramètre qui accepte l’entrée d’un objet pipeline, récupère des informations de processus à partir de l’ordinateur local en fonction des noms fournis, puis affiche des informations sur les processus sur la ligne de commande.
 
 ## <a name="defining-the-cmdlet-class"></a>Définition de la classe cmdlet
 
 La première étape de la création des applets de commande consiste toujours à nommer l’applet de commande et à déclarer la classe .NET qui implémente l’applet de commande. Cette applet de commande récupère les informations de processus, le nom du verbe choisi ici est « obtenir ». (Presque tout type d’applet de commande capable de récupérer des informations peut traiter l’entrée de ligne de commande.) Pour plus d’informations sur les verbes d’applet de commande approuvés, consultez [noms des verbes d’applet](./approved-verbs-for-windows-powershell-commands.md)de commande.
 
-Voici la définition de cette applet de commande « obtenir-proc ». Les détails de cette définition sont donnés dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
+Voici la définition de cette Get-Proc applet de commande. Les détails de cette définition sont donnés dans [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -36,12 +35,12 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>Définition de l’entrée à partir du pipeline
 
-Cette section décrit comment définir une entrée à partir du pipeline pour une applet de commande. Cette applet de commande obtenir-proc définit une propriété qui représente le `Name` paramètre comme décrit dans [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md).
+Cette section décrit comment définir une entrée à partir du pipeline pour une applet de commande. Cette applet de Get-Proc définit une propriété qui représente le `Name` paramètre comme décrit dans [Ajout de paramètres qui traitent l’entrée de ligne de commande](./adding-parameters-that-process-command-line-input.md).
 (Pour obtenir des informations générales sur la déclaration des paramètres, consultez la rubrique.)
 
 Toutefois, lorsqu’une applet de commande doit traiter l’entrée de pipeline, elle doit avoir ses paramètres liés aux valeurs d’entrée par le runtime Windows PowerShell. Pour ce faire, vous devez ajouter le `ValueFromPipeline` mot clé ou ajouter le `ValueFromPipelineByProperty` mot clé à la déclaration de l’attribut [System. Management. Automation. ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute) . Spécifiez le `ValueFromPipeline` mot clé si l’applet de commande accède à l’objet d’entrée complet. Spécifiez `ValueFromPipelineByProperty` si la cmdlet accède uniquement à une propriété de l’objet.
 
-Voici la déclaration de paramètre pour le `Name` paramètre de cette applet de commande Accept-proc qui accepte l’entrée de pipeline.
+Voici la déclaration de paramètre pour le `Name` paramètre de cette Get-Proc applet de commande qui accepte l’entrée de pipeline.
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
@@ -71,7 +70,7 @@ La déclaration précédente affecte au `ValueFromPipeline` mot clé la valeur `
 
 Si votre applet de commande doit gérer l’entrée de pipeline, elle doit remplacer les méthodes de traitement d’entrée appropriées. Les méthodes de traitement d’entrée de base sont introduites lors de la [création de votre première applet](./creating-a-cmdlet-without-parameters.md)de commande.
 
-Cette applet de commande obtenir-proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer l' `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection` , est défini sur `true` pour indiquer au runtime Windows PowerShell d’énumérer le tableau d’objets de processus et d’écrire un processus à la fois sur la ligne de commande.
+Cette applet de commande Get-Proc remplace la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) pour gérer l' `Name` entrée de paramètre fournie par l’utilisateur ou un script. Cette méthode obtient les processus pour chaque nom de processus demandé ou tous les processus si aucun nom n’est fourni. Notez que dans [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord), l’appel à [writeObject (System. Object, System. Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_) est le mécanisme de sortie permettant d’envoyer des objets de sortie au pipeline. Le deuxième paramètre de cet appel, `enumerateCollection` , est défini sur `true` pour indiquer au runtime Windows PowerShell d’énumérer le tableau d’objets de processus et d’écrire un processus à la fois sur la ligne de commande.
 
 ```csharp
 protected override void ProcessRecord()

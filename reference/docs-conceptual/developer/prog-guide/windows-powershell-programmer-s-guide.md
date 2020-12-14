@@ -1,14 +1,14 @@
 ---
-title: Guide des&#39;des programmeurs Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell Programmer's Guide
-ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Guide des&#39;des programmeurs Windows PowerShell
+description: Guide des&#39;des programmeurs Windows PowerShell
+ms.openlocfilehash: 446be2241bb7b05b4bd7ffe8b7797214a7564944
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771564"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355287"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Guide des&#39;des programmeurs Windows PowerShell
 
@@ -62,7 +62,8 @@ Le langage Windows PowerShell fournit des fonctions et des mécanismes de script
 
 ### <a name="extended-type-system-ets"></a>Système de type étendu (ETS)
 
-Windows PowerShell permet d’accéder à différents objets, tels que les objets .NET et XML. Par conséquent, pour présenter une abstraction commune pour tous les types d’objets, l’interpréteur de commandes utilise son système de type étendu (ETS). La plupart des fonctionnalités ETS sont transparentes pour l’utilisateur, mais le script ou le développeur .NET l’utilise pour les besoins suivants :
+Windows PowerShell permet d’accéder à différents objets, tels que les objets .NET et XML.
+Par conséquent, pour présenter une abstraction commune pour tous les types d’objets, l’interpréteur de commandes utilise son système de type étendu (ETS). La plupart des fonctionnalités ETS sont transparentes pour l’utilisateur, mais le script ou le développeur .NET l’utilise pour les besoins suivants :
 
 - Affichage d’un sous-ensemble des membres d’objets spécifiques. Windows PowerShell fournit une vue « adaptée » de plusieurs types d’objets spécifiques.
 
@@ -74,7 +75,7 @@ Windows PowerShell permet d’accéder à différents objets, tels que les objet
 
   À l’aide de ETS, vous pouvez créer de nouveaux « types » flexibles qui sont compatibles avec le langage Windows PowerShell. Si vous êtes un développeur .NET, vous pouvez utiliser des objets à l’aide de la même sémantique que le langage Windows PowerShell s’applique aux scripts, par exemple, pour déterminer si un objet prend la valeur `true` .
 
-  Pour plus d’informations sur ETS et sur la façon dont Windows PowerShell utilise les objets, consultez [concepts relatifs aux objets Windows PowerShell](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
+  Pour plus d’informations sur ETS et sur la façon dont Windows PowerShell utilise les objets, consultez [concepts relatifs aux objets Windows PowerShell](/powershell/scripting/learn/understanding-important-powershell-concepts).
 
 ## <a name="programming-for-windows-powershell"></a>Programmation pour Windows PowerShell
 

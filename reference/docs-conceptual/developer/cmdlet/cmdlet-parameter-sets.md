@@ -1,12 +1,14 @@
 ---
-title: Jeux de paramètres des applets de commande
 ms.date: 09/13/2016
-ms.openlocfilehash: 202cdd354693b9b7edaca5c127ae1f7d88ff4a28
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Jeux de paramètres des applets de commande
+description: Jeux de paramètres des applets de commande
+ms.openlocfilehash: e84af7faf5b7459d8dbe06847526efe804e2c5e1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784416"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668284"
 ---
 # <a name="cmdlet-parameter-sets"></a>Ensembles de paramètres d’applet de commande
 

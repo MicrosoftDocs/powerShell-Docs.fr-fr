@@ -1,16 +1,18 @@
 ---
-title: Exemple de code Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple de code Windows PowerShell
+description: Exemple de code Windows PowerShell
+ms.openlocfilehash: da916fa3557f44ecc9126ecef38235109aa391ec
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786932"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94390131"
 ---
 # <a name="windows-powershell-sample-code"></a>Exemple de code Windows PowerShell
 
-Les exemples de® Windows PowerShell sont disponibles par le biais du SDK Windows. Cette section contient l’exemple de code contenu dans les exemples de SDK Windows.
+&reg;Les exemples Windows PowerShell sont disponibles via le SDK Windows. Cette section contient l’exemple de code contenu dans les exemples de SDK Windows.
 
 > [!NOTE]
 > Lorsque le SDK Windows est installé, un répertoire d' **exemples** est créé dans lequel tous les exemples Windows PowerShell sont disponibles. Le répertoire d’installation par défaut est **C:\Program Files\Microsoft SDKs\Windows\v6.0**. Démarrez Windows PowerShell et tapez **« CD Samples\SysMgmt\PowerShell »** pour rechercher le répertoire d’exemples Windows PowerShell. Dans ce document, le répertoire des exemples Windows PowerShell est appelé **\<PowerShell Samples>** .
@@ -26,7 +28,7 @@ Les exemples de® Windows PowerShell sont disponibles par le biais du SDK Window
 | [Exemple de code AccessDbProviderSample05](./accessdbprovidersample05-code-sample.md) | Il s’agit du fournisseur décrit dans [création d’un fournisseur de navigation Windows PowerShell](./creating-a-windows-powershell-navigation-provider.md).                                                                                                                                                  |
 | [Exemple de code AccessDbProviderSample06](./accessdbprovidersample06-code-sample.md) | Il s’agit du fournisseur décrit dans [création d’un fournisseur de contenu Windows PowerShell](./creating-a-windows-powershell-content-provider.md).                                                                                                                                                        |
 | [Exemples de code GetProc01](./getproc01-code-samples.md)                             | Il s’agit de l' `Get-Process` exemple d’applet de commande de base décrit dans [création de votre première applet](../cmdlet/creating-a-cmdlet-without-parameters.md)de commande.                                                                                                                                                     |
-| [Exemples de code GetProc02](./getproc02-code-samples.md)                             | Il s’agit de l' `Get-Process` exemple d’applet de commande décrit dans [Ajout de paramètres qui traitent l’entrée de ligne de commande](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
+| [Exemples de code GetProc02](./getproc02-code-samples.md)                             | Il s’agit de l' `Get-Process` exemple d’applet de commande décrit dans [Ajout de paramètres qui traitent Command-Line entrée](../cmdlet/adding-parameters-that-process-command-line-input.md).                                                                                                                       |
 | [Exemples de code GetProc03](./getproc03-code-samples.md)                             | Il s’agit de l' `Get-Process` exemple d’applet de commande décrit dans [Ajout de paramètres qui traitent l’entrée de pipeline](../cmdlet/adding-parameters-that-process-pipeline-input.md).                                                                                                                               |
 | [Exemples de code GetProc04](./getproc04-code-samples.md)                             | Il s’agit de l' `Get-Process` exemple d’applet de commande décrit dans [Ajout de rapports d’erreurs de non-terminaison à votre applet de](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)commande.                                                                                                                |
 | [Exemples de code GetProc05](./getproc05-code-samples.md)                             | Cette `Get-Process` applet de commande est similaire à l’applet de commande décrite dans [Ajout d’un rapport d’erreurs de non-terminaison à votre applet de](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)commande.                                                                                                     |
@@ -36,11 +38,11 @@ Les exemples de® Windows PowerShell sont disponibles par le biais du SDK Window
 | [Exemples de code Runspace02](./runspace02-code-samples.md)                           | Cet exemple utilise la classe [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) pour exécuter l’applet de commande de `Get-Process` façon synchrone.                                                                                                            |
 | [Exemples de code RunSpace03](./runspace03-code-samples.md)                           | Voici les exemples de code pour l’instance d’exécution décrite dans « création d’une application console qui exécute un script spécifié ».                                                                                                                                                                         |
 | [Exemples de code RunSpace04](./runspace04-code-samples.md)                           | Il s’agit d’un exemple de code pour une instance d’exécution qui utilise la classe [System. Management. Automation. Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) pour exécuter un script qui génère une erreur avec fin d’exécution.                                                                         |
-| [Exemple de code RunSpace05](./runspace05-code-sample.md)                             | Voici le code source de l’exemple Runspace05 décrit dans [configuration d’une instance d’exécution à l’aide de RunspaceConfiguration](https://msdn.microsoft.com/42681d19-2d05-4975-befd-afb1990e79b2).                                                                                                           |
-| [Exemple de code RunSpace06](./runspace06-code-sample.md)                             | Voici le code source de l’exemple Runspace06 décrit dans [configuration d’une instance d’exécution à l’aide d’un composant logiciel enfichable Windows PowerShell](https://msdn.microsoft.com/a7289ee8-9732-49ee-91c7-d533e9538b83).                                                                                                    |
-| [Exemple de code RunSpace07](./runspace07-code-sample.md)                             | Voici le code source de l’exemple Runspace07 décrit dans [création d’une application console qui ajoute des commandes à un pipeline](https://msdn.microsoft.com/01eb7808-e97b-4905-80be-9e2fa38c262e).                                                                                              |
-| [Exemple de code RunSpace08](./runspace08-code-sample.md)                             | Voici le code source de l’exemple Runspace08 décrit dans [création d’une application console qui ajoute des paramètres à une commande](https://msdn.microsoft.com/848b2b46-60f1-4a86-b448-cfc7c0cccfba).                                                                                             |
-| [Exemple de code RunSpace09](./runspace09-code-sample.md)                             | Voici le code source de l’exemple Runspace09 décrit dans [création d’une application console qui appelle un pipeline de manière asynchrone](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47).                                                                                        |
+| [Exemple de code RunSpace05](./runspace05-code-sample.md)                             |                                                                                                            |
+| [Exemple de code RunSpace06](./runspace06-code-sample.md)                             |                                                                                                     |
+| [Exemple de code RunSpace07](./runspace07-code-sample.md)                             |                                                                                               |
+| [Exemple de code RunSpace08](./runspace08-code-sample.md)                             |                                                                                              |
+| [Exemple de code RunSpace09](./runspace09-code-sample.md)                             |                                                                                       |
 | [Exemple de code RunSpace10](./runspace10-code-sample.md)                             | Il s’agit du code source de l’exemple Runspace10, qui ajoute une applet de commande à [System. Management. Automation. instances d’exécution. Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) , puis utilise les informations de configuration modifiées pour créer l’instance d’exécution. |
 
 ## <a name="see-also"></a>Voir aussi

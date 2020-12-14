@@ -1,12 +1,14 @@
 ---
-title: Vue d’ensemble du fournisseur Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Vue d’ensemble du fournisseur Windows PowerShell
+description: Vue d’ensemble du fournisseur Windows PowerShell
+ms.openlocfilehash: 2f1c5f5991a64fb2b85ece7feba915164ebd34ee
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778234"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355508"
 ---
 # <a name="windows-powershell-provider-overview"></a>Vue d’ensemble du fournisseur Windows PowerShell
 
@@ -20,7 +22,8 @@ Lorsque vous écrivez un fournisseur, vous pouvez spécifier les lecteurs de lec
 
 ## <a name="type-of-providers"></a>Type de fournisseurs
 
-Il existe plusieurs types de fournisseurs, chacun d’eux offrant un niveau de fonctionnalité différent. Un fournisseur est implémenté en tant que classe qui dérive de l’un des descendants de la classe [System. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** . Pour plus d’informations sur les différents types de fournisseurs, consultez [types](./provider-types.md)de fournisseurs.
+Il existe plusieurs types de fournisseurs, chacun d’eux offrant un niveau de fonctionnalité différent. Un fournisseur est implémenté en tant que classe qui dérive de l’un des descendants de la classe [System. Management. Automation. SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory) 
+ **CmdletProvider** . Pour plus d’informations sur les différents types de fournisseurs, consultez [types](./provider-types.md)de fournisseurs.
 
 ## <a name="provider-cmdlets"></a>Applets de commande de fournisseur
 
@@ -56,7 +59,9 @@ Les fournisseurs peuvent définir des paramètres dynamiques qui sont ajoutés �
 
 ## <a name="provider-capabilities"></a>Fonctionnalités du fournisseur
 
-L’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) définit un certain nombre de fonctionnalités que les fournisseurs peuvent prendre en charge. Celles-ci incluent la possibilité d’utiliser des caractères génériques, de filtrer les éléments et de prendre en charge les transactions. Pour spécifier des fonctionnalités pour un fournisseur, ajoutez une liste de valeurs de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , associée à une `OR` opération logique, en tant que la propriété [System. Management. Automation. Provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (le deuxième paramètre de l’attribut) de l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) pour votre classe de fournisseur. Par exemple, l’attribut suivant spécifie que le fournisseur prend en charge les fonctionnalités de **transactions** [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** et [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) .
+L’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) définit un certain nombre de fonctionnalités que les fournisseurs peuvent prendre en charge. Celles-ci incluent la possibilité d’utiliser des caractères génériques, de filtrer les éléments et de prendre en charge les transactions. Pour spécifier des fonctionnalités pour un fournisseur, ajoutez une liste de valeurs de l’énumération [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) , associée à une `OR` opération logique, en tant que la propriété [System. Management. Automation. Provider. Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) (le deuxième paramètre de l’attribut) de l’attribut [System. Management. Automation. Provider. Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) pour votre classe de fournisseur. Par exemple, l’attribut suivant spécifie que le fournisseur prend en charge les fonctionnalités de transactions [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+ **ShouldProcess** et [System. Management. Automation. Provider. Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) 
+  .
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -65,9 +70,11 @@ L’énumération [System. Management. Automation. Provider. Providercapabilitie
 
 ## <a name="provider-cmdlet-help"></a>Aide sur l’applet de commande Provider
 
-Lors de l’écriture d’un fournisseur, vous pouvez implémenter votre propre aide pour les applets de commande de fournisseur que vous prenez en charge. Cela comprend une rubrique d’aide unique pour chaque applet de commande de fournisseur ou plusieurs versions d’une rubrique d’aide dans les cas où l’applet de commande du fournisseur agit différemment en fonction de l’utilisation de paramètres dynamiques. Pour prendre en charge l’aide spécifique à l’applet de commande du fournisseur, votre fournisseur doit implémenter l’interface [System. Management. Automation. Provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) .
+Lors de l’écriture d’un fournisseur, vous pouvez implémenter votre propre aide pour les applets de commande de fournisseur que vous prenez en charge.
+Cela comprend une rubrique d’aide unique pour chaque applet de commande de fournisseur ou plusieurs versions d’une rubrique d’aide dans les cas où l’applet de commande du fournisseur agit différemment en fonction de l’utilisation de paramètres dynamiques. Pour prendre en charge l’aide spécifique à l’applet de commande du fournisseur, votre fournisseur doit implémenter l’interface [System. Management. Automation. Provider. Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp) .
 
-Le moteur Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) pour afficher la rubrique d’aide de vos applets de commande de fournisseur. Le moteur fournit le nom de l’applet de commande que l’utilisateur a spécifiée lors de l’exécution `Get-Help` de l’applet de commande et le chemin d’accès actuel de l’utilisateur. Le chemin d’accès actuel est requis si votre fournisseur implémente des versions différentes de la même applet de commande de fournisseur pour des lecteurs différents. La méthode doit retourner une chaîne qui contient le code XML de l’aide de l’applet de commande.
+Le moteur Windows PowerShell appelle la méthode [System. Management. Automation. Provider. Icmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml) pour afficher la rubrique d’aide de vos applets de commande de fournisseur. Le moteur fournit le nom de l’applet de commande que l’utilisateur a spécifiée lors de l’exécution `Get-Help` de l’applet de commande et le chemin d’accès actuel de l’utilisateur.
+Le chemin d’accès actuel est requis si votre fournisseur implémente des versions différentes de la même applet de commande de fournisseur pour des lecteurs différents. La méthode doit retourner une chaîne qui contient le code XML de l’aide de l’applet de commande.
 
 Le contenu du fichier d’aide est écrit à l’aide de PSMAML XML. Il s’agit du même schéma XML qui est utilisé pour écrire le contenu de l’aide pour les applets de commande autonomes. Ajoutez le contenu de l’aide de votre applet de commande personnalisée au fichier d’aide de votre fournisseur sous l' `CmdletHelpPaths` élément. L’exemple suivant montre l' `command` élément d’une applet de commande de fournisseur unique et indique comment vous spécifiez le nom de l’applet de commande du fournisseur que votre fournisseur. prend en charge
 

@@ -1,14 +1,14 @@
 ---
-title: Informations de référence sur Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- Windows PowerShell SDK
-ms.openlocfilehash: 1c1a3a4de2df2043fe12cad6a69b7bc36ab9d3d7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Informations de référence sur Windows PowerShell
+description: Informations de référence sur Windows PowerShell
+ms.openlocfilehash: 9c1547ac5ec5134c99aa9213e6aaca1af8d5b3e9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786677"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94390233"
 ---
 # <a name="windows-powershell-reference"></a>Informations de référence sur Windows PowerShell
 
@@ -30,7 +30,7 @@ En plus du kit de développement logiciel (SDK) Windows PowerShell, les ressourc
 
 [Écriture d’une applet de commande Windows PowerShell](./cmdlet/writing-a-windows-powershell-cmdlet.md) Fournit des informations et des exemples de code pour les responsables de programme qui conçoivent des applets de commande et pour les développeurs qui implémentent du code d’applet de commande.
 
-[Blog de l’équipe Windows PowerShell](https://blogs.msdn.microsoft.com/PowerShell/) La meilleure ressource pour l’apprentissage et la collaboration avec d’autres utilisateurs de Windows PowerShell. Lisez le blog de l’équipe Windows PowerShell, puis joignez le Forum des utilisateurs Windows PowerShell (Microsoft. public. Windows. PowerShell).
+[Blog de l’équipe Windows PowerShell](https://devblogs.microsoft.com/powershell/) La meilleure ressource pour l’apprentissage et la collaboration avec d’autres utilisateurs de Windows PowerShell. Lisez le blog de l’équipe Windows PowerShell, puis joignez le Forum des utilisateurs Windows PowerShell (Microsoft. public. Windows. PowerShell).
 Utilisez Windows Live Search pour rechercher d’autres blogs et ressources Windows PowerShell. Ensuite, à mesure que vous développez votre expertise, participez librement à vos idées.
 
 [Explorateur de modules PowerShell](/powershell/module/) Fournit les dernières versions des rubriques d’aide de la ligne de commande.

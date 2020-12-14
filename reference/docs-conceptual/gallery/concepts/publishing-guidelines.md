@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 description: Cet article décrit les étapes recommandées pour s’assurer que les packages publiés dans PowerShell Gallery sont largement adoptés et fournissent une valeur élevée aux utilisateurs.
 title: Instructions et bonnes pratiques de publication PowerShell Gallery
-ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656142"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391168"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Instructions et bonnes pratiques de publication PowerShell Gallery
 
@@ -41,7 +41,7 @@ Chacun de ces points est brièvement présenté dans les sections ci-dessous.
 
 ## <a name="use-psscriptanalyzer"></a>Utiliser PSScriptAnalyzer
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) est un outil d’analyse de code statique gratuit qui fonctionne sur le code PowerShell. **PSScriptAnalyzer** identifie les problèmes les plus courants dans le code PowerShell et fournit souvent une recommandation pour résoudre le problème. Cet outil est facile à utiliser et classe les problèmes en erreurs (graves, à corriger), avertissements (à examiner et à corriger) et informations (à examiner pour définir de bonnes pratiques). Tous les packages publiés sur PowerShell Gallery sont analysés avec **PSScriptAnalyzer** , et toutes les erreurs sont renvoyées au propriétaire, qui devra les corriger.
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) est un outil d’analyse de code statique gratuit qui fonctionne sur le code PowerShell. **PSScriptAnalyzer** identifie les problèmes les plus courants dans le code PowerShell et fournit souvent une recommandation pour résoudre le problème. Cet outil est facile à utiliser et classe les problèmes en erreurs (graves, à corriger), avertissements (à examiner et à corriger) et informations (à examiner pour définir de bonnes pratiques). Tous les packages publiés sur PowerShell Gallery sont analysés avec **PSScriptAnalyzer**, et toutes les erreurs sont renvoyées au propriétaire, qui devra les corriger.
 
 La meilleure pratique consiste à exécuter `Invoke-ScriptAnalyzer` avec `-Recurse` et un avertissement `-Severity`.
 
@@ -71,7 +71,7 @@ Vous trouverez de bons exemples dans le [module PSDscResource](https://www.power
 
 ## <a name="manage-dependencies"></a>Gérer les dépendances
 
-Il est important de spécifier les modules dont dépend votre module dans le manifeste de module. Cela permet à l’utilisateur final de ne pas avoir à se soucier de l’installation des versions appropriées des modules sur lesquels le vôtre a une dépendance. Pour spécifier des modules dépendants, vous devez utiliser le champ de module requis dans le manifeste de module. Cela a pour effet de charger tous les modules listés dans l’environnement global avant d’importer votre module, sauf s’ils ont déjà été chargés. Par exemple, certains modules peuvent déjà être chargés par un module différent. Il est également possible de spécifier une version spécifique à charger à l’aide du champ **RequiredVersion** plutôt que du champ **ModuleVersion**. Lors de l’utilisation de **ModuleVersion** , la dernière version disponible est chargée au minimum la version spécifiée. Lorsque vous n’utilisez pas le champ **RequiredVersion** pour spécifier une version spécifique, il est important de surveiller les mises à jour de version du module requis. Il est particulièrement important de tenir compte de toutes les modifications avec rupture susceptibles d’avoir une incidence sur l’expérience utilisateur avec votre module.
+Il est important de spécifier les modules dont dépend votre module dans le manifeste de module. Cela permet à l’utilisateur final de ne pas avoir à se soucier de l’installation des versions appropriées des modules sur lesquels le vôtre a une dépendance. Pour spécifier des modules dépendants, vous devez utiliser le champ de module requis dans le manifeste de module. Cela a pour effet de charger tous les modules listés dans l’environnement global avant d’importer votre module, sauf s’ils ont déjà été chargés. Par exemple, certains modules peuvent déjà être chargés par un module différent. Il est également possible de spécifier une version spécifique à charger à l’aide du champ **RequiredVersion** plutôt que du champ **ModuleVersion**. Lors de l’utilisation de **ModuleVersion**, la dernière version disponible est chargée au minimum la version spécifiée. Lorsque vous n’utilisez pas le champ **RequiredVersion** pour spécifier une version spécifique, il est important de surveiller les mises à jour de version du module requis. Il est particulièrement important de tenir compte de toutes les modifications avec rupture susceptibles d’avoir une incidence sur l’expérience utilisateur avec votre module.
 
 ```powershell
 Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
@@ -188,11 +188,11 @@ Comme PowerShell a été créé avant la publication de SemVer, il prend en char
 PowerShell Gallery n’est pas conçu pour être une cible servant à tester le processus de publication. La meilleure façon de tester le processus de publication de bout en bout dans PowerShell Gallery consiste à configurer et à utiliser votre propre dépôt local. Vous pouvez effectuer ces opérations de différentes manières, notamment :
 
 - Configurez une instance locale de PowerShell Gallery avec le [projet PS Private Gallery](https://github.com/PowerShell/PSPrivateGallery) dans GitHub. Ce projet en préversion vous permet de configurer une instance de PowerShell Gallery que vous pouvez contrôler, puis de l’utiliser pour vos tests.
-- Configurez un [dépôt Nuget interne](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/).
+- Configurez un [dépôt Nuget interne](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/).
   Cette configuration demande plus de travail mais a l’avantage de valider quelques éléments requis supplémentaires, notamment la validation de l’utilisation d’une clé API et la présence ou non de dépendances dans la cible lors de la publication.
 - Configurez un partage de fichiers en tant que **dépôt** de test. Cette configuration est facile, mais comme il s’agit d’un partage de fichiers, les validations indiquées ci-dessus n’existent pas. Un avantage potentiel ici est que le partage de fichiers ne vérifie pas la clé API obligatoire, donc vous pouvez utiliser la même clé pour publier dans PowerShell Gallery.
 
-Avec l’une de ces solutions, utilisez `Register-PSRepository` pour définir un nouveau **dépôt** , que vous utilisez dans le paramètre `-Repository` pour `Publish-Module`.
+Avec l’une de ces solutions, utilisez `Register-PSRepository` pour définir un nouveau **dépôt**, que vous utilisez dans le paramètre `-Repository` pour `Publish-Module`.
 
 Autre point sur la publication de test : il n’est pas possible de supprimer les packages publiés sur PowerShell Gallery sans l’aide de l’équipe des opérations, qui doit confirmer que rien ne dépend du package en question. Pour cette raison, nous ne prenons pas en charge PowerShell Gallery comme cible de test. Nous contacterons un éditeur qui assure cette prise en charge.
 

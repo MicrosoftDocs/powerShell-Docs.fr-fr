@@ -1,12 +1,14 @@
 ---
-title: Exemple Host04 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a34c8424fd661b9c41e6233c4d8d48177a9cfb4e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Exemple Host04
+description: Exemple Host04
+ms.openlocfilehash: a768258d58d39d0067c5a2a9c40d74e32bf64943
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783277"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355423"
 ---
 # <a name="host04-sample"></a>Exemple Host04
 
@@ -14,29 +16,26 @@ Cet exemple montre comment créer une application hôte basée sur une console i
 
 ## <a name="requirements"></a>Spécifications
 
- Cet exemple requiert Windows PowerShell 2,0.
+Cet exemple requiert Windows PowerShell 2,0.
 
 ## <a name="demonstrates"></a>Illustre le
 
-- Création d’un hôte personnalisé dont les classes dérivent de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de la classe System. Management. Automation. [host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) et de la classe [System. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
+- Création d’un hôte personnalisé dont les classes dérivent de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) , de la classe System. Management. Automation. [host. PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) et de la classe [System. Management. Automation. Host. PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) .
 
 - Génération d’une application console qui utilise ces classes hôtes pour créer un interpréteur de commandes Windows PowerShell interactif.
 
 - Création d’une `$profile` variable et chargement des profils suivants.
 
   - utilisateur actuel, hôte actuel
-
   - utilisateur actuel, tous les ordinateurs hôtes
-
   - tous les utilisateurs, hôte actuel
-
   - tous les utilisateurs, tous les ordinateurs hôtes
 
-- Implémentez l’interface [System. Management. Automation. Host. Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
+- Implémentez l’interface [System. Management. Automation. Host. IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) .
 
-## <a name="example"></a>Exemple
+## <a name="example-1"></a>Exemple 1
 
- Cet exemple permet à l’utilisateur d’entrer des commandes sur une ligne de commande, de traiter ces commandes, puis d’imprimer les résultats.
+Cet exemple permet à l’utilisateur d’entrer des commandes sur une ligne de commande, de traiter ces commandes, puis d’imprimer les résultats.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -373,9 +372,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example-2"></a>Exemple 2
 
- Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
+Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -555,9 +554,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example-3"></a>Exemple 3
 
- Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) qui est utilisée par cette application hôte.
+Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) qui est utilisée par cette application hôte.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1073,9 +1072,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example-4"></a>Exemple 4
 
- Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
+Le code suivant correspond à l’implémentation de la classe [System. Management. Automation. Host. Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) qui est utilisée par cette application hôte. Les éléments qui ne sont pas implémentés lèvent une exception ou ne retournent rien.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host

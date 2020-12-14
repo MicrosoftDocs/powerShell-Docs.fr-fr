@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: c29a938fc73b8b69ea1bbf96f12f5d42d16f79bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0bcd46e49559ad625621a7ff81162af695f6f93c
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205117"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661322"
 ---
 # Get-ChildItem
 
@@ -20,7 +20,7 @@ ms.locfileid: "93205117"
 
 Obtient les éléments et les éléments enfants dans un ou plusieurs emplacements spécifiés
 
-## SYNTAX
+## SYNTAXE
 
 ### Items (valeur par défaut)
 
@@ -72,7 +72,7 @@ d-----        2/15/2019     08:29                Logs
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-Par défaut `Get-ChildItem` répertorie le mode ( **attributs** ), **LastWriteTime** , la taille de fichier ( **longueur** ) et le **nom** de l’élément. Les lettres de la propriété **mode** peuvent être interprétées comme suit :
+Par défaut `Get-ChildItem` répertorie le mode (**attributs**), **LastWriteTime**, la taille de fichier (**longueur**) et le **nom** de l’élément. Les lettres de la propriété **mode** peuvent être interprétées comme suit :
 
 - `l` lien
 - `d` Directory
@@ -143,7 +143,7 @@ Mode                LastWriteTime         Length Name
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier `C:\Test\*.txt` . **Path** utilise le `*` caractère générique astérisque () pour spécifier tous les fichiers avec l’extension de nom de fichier `.txt` . Le paramètre **recurse** recherche dans le répertoire du **chemin d’accès** ses sous-répertoires, comme indiqué dans les en-têtes **Directory :** . Le paramètre **force** affiche les fichiers masqués, tels que, `hiddenfile.txt` qui ont le mode **h** .
+L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier `C:\Test\*.txt` . **Path** utilise le `*` caractère générique astérisque () pour spécifier tous les fichiers avec l’extension de nom de fichier `.txt` . Le paramètre **recurse** recherche dans le répertoire du **chemin d’accès** ses sous-répertoires, comme indiqué dans les en-têtes **Directory :** . Le paramètre **force** affiche les fichiers masqués, tels que, `hiddenfile.txt` qui ont le mode **h**.
 
 ### Exemple 4 : récupérer des éléments enfants à l’aide du paramètre include
 
@@ -173,17 +173,17 @@ Mode                LastWriteTime         Length Name
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier le répertoire **C:\test** . Le paramètre **path** contient un caractère générique d’astérisque ( `*` ) de fin pour spécifier le contenu du répertoire.
-Le paramètre **include** utilise un `*` caractère générique astérisque () pour spécifier tous les fichiers portant l’extension de nom de fichier **. txt** .
+L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier le répertoire **C:\test**. Le paramètre **path** contient un caractère générique d’astérisque ( `*` ) de fin pour spécifier le contenu du répertoire.
+Le paramètre **include** utilise un `*` caractère générique astérisque () pour spécifier tous les fichiers portant l’extension de nom de fichier **. txt**.
 
-Lorsque le paramètre **include** est utilisé, le paramètre **path** a besoin d’un caractère générique astérisque ( `*` ) de fin pour spécifier le contenu du répertoire. Par exemple : `-Path C:\Test\*`.
+Lorsque le paramètre **include** est utilisé, le paramètre **path** a besoin d’un caractère générique astérisque ( `*` ) de fin pour spécifier le contenu du répertoire. Par exemple, `-Path C:\Test\*`.
 
 - Si le paramètre **recurse** est ajouté à la commande, l’astérisque ( `*` ) de fin dans le paramètre **path** est facultatif. Le paramètre **recurse** obtient les éléments du répertoire du **chemin d’accès** et de ses sous-répertoires. Par exemple : `-Path C:\Test\ -Recurse -Include *.txt`
-- Si un astérisque () de fin `*` n’est pas inclus dans le paramètre **path** , la commande ne retourne aucune sortie et retourne à l’invite PowerShell. Par exemple : `-Path C:\Test\`.
+- Si un astérisque () de fin `*` n’est pas inclus dans le paramètre **path** , la commande ne retourne aucune sortie et retourne à l’invite PowerShell. Par exemple, `-Path C:\Test\`.
 
 ### Exemple 5 : récupérer des éléments enfants à l’aide du paramètre Exclude
 
-La sortie de l’exemple affiche le contenu du répertoire **C:\Test\Logs** . La sortie est une référence pour les autres commandes qui utilisent les paramètres **Exclude** et **recurse** .
+La sortie de l’exemple affiche le contenu du répertoire **C:\Test\Logs**. La sortie est une référence pour les autres commandes qui utilisent les paramètres **Exclude** et **recurse** .
 
 ```powershell
 Get-ChildItem -Path C:\Test\Logs
@@ -219,7 +219,7 @@ d-----        2/15/2019     13:21                Backup
 L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier le répertoire `C:\Test\Logs` .
 Le paramètre **Exclude** utilise le `*` caractère générique astérisque () pour spécifier tous les fichiers ou répertoires qui commencent par **un** ou **un** sont exclus de la sortie.
 
-Lorsque le paramètre **Exclude** est utilisé, un astérisque ( `*` ) de fin dans le paramètre **path** est facultatif. Par exemple, `-Path C:\Test\Logs` ou `-Path C:\Test\Logs\*`.
+Lorsque le paramètre **Exclude** est utilisé, un astérisque ( `*` ) de fin dans le paramètre **path** est facultatif.  Par exemple, `-Path C:\Test\Logs` ou `-Path C:\Test\Logs\*`.
 
 - Si un astérisque () de fin `*` n’est pas inclus dans le paramètre **path** , le contenu du paramètre **path** est affiché. Les noms de fichiers ou de sous-répertoires qui correspondent à la valeur du paramètre **Exclude** sont des exceptions.
 - Si un astérisque () de fin `*` est inclus dans le paramètre **path** , la commande parcourt les sous-répertoires du paramètre **path** . Les noms de fichiers ou de sous-répertoires qui correspondent à la valeur du paramètre **Exclude** sont des exceptions.
@@ -307,7 +307,7 @@ d-----        2/14/2019     10:22                SubDir_Level3
 -a----        2/13/2019     08:55             26 file.txt
 ```
 
-L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier **C:\Parent** . Le paramètre **Depth** spécifie deux niveaux de récursivité. `Get-ChildItem` affiche le contenu du répertoire spécifié par le paramètre **path** et les deux niveaux des sous-répertoires.
+L' `Get-ChildItem` applet de commande utilise le paramètre **path** pour spécifier **C:\Parent**. Le paramètre **Depth** spécifie deux niveaux de récursivité. `Get-ChildItem` affiche le contenu du répertoire spécifié par le paramètre **path** et les deux niveaux des sous-répertoires.
 
 ### Exemple 9 : obtention d’informations sur les liens physiques
 
@@ -317,9 +317,9 @@ Dans PowerShell 6,2, une autre vue a été ajoutée pour obtenir des information
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### Exemple 9 : sortie pour la fonctionnalité expérimentale PSUnixFileStat
+### Exemple 9 : sortie pour les systèmes d’exploitation autres que Windows
 
-Dans PowerShell 7 sur les systèmes UNIX, la fonctionnalité expérimentale **PSUnixFileStat** fournit une sortie de type UNIX :
+Dans PowerShell 7,1 sur les systèmes UNIX, le `Get-ChildItem` fournit une sortie de type UNIX :
 
 ```powershell
 PS> Get-ChildItem /etc/r*
@@ -349,6 +349,9 @@ Les nouvelles propriétés qui font désormais partie de la sortie sont les suiv
 - Le **groupe** est le propriétaire du groupe
 - **Taille** correspond à la taille du fichier ou du répertoire tel qu’il est représenté sur un système UNIX.
 
+> [!NOTE]
+> Cette fonctionnalité a été déplacée de expérimental vers standard dans PowerShell 7,1.
+
 ## Paramètres
 
 ### -Attributs
@@ -359,7 +362,7 @@ Par exemple, pour obtenir les fichiers non-système (pas les répertoires) qui s
 
 `Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
-Pour rechercher des fichiers et des dossiers avec des attributs couramment utilisés, utilisez le paramètre **attributes** . Ou, le **répertoire** de paramètres, **file** , **Hidden** , **ReadOnly** et **System** .
+Pour rechercher des fichiers et des dossiers avec des attributs couramment utilisés, utilisez le paramètre **attributes** . Ou, le **répertoire** de paramètres, **file**, **Hidden**, **ReadOnly** et **System**.
 
 Le paramètre **attributes** prend en charge les propriétés suivantes :
 
@@ -417,7 +420,7 @@ Ce paramètre a été ajouté dans PowerShell 5,0 et vous permet de contrôler l
 Par exemple, `Depth 2` comprend le répertoire du paramètre **path** , le premier niveau de sous-répertoires et le second niveau de sous-répertoires. Par défaut, les noms de répertoires et les noms de fichiers sont inclus dans la sortie.
 
 > [!NOTE]
-> Sur un ordinateur Windows à partir de PowerShell ou **cmd.exe** , vous pouvez afficher une vue graphique d’une structure de répertoires à l’aide de la commande **Tree.com** .
+> Sur un ordinateur Windows à partir de PowerShell ou **cmd.exe**, vous pouvez afficher une vue graphique d’une structure de répertoires à l’aide de la commande **Tree.com** .
 
 ```yaml
 Type: System.UInt32
@@ -433,7 +436,7 @@ Accept wildcard characters: False
 
 ### -Répertoire
 
-Pour obtenir la liste des répertoires, utilisez le paramètre **Directory** ou le paramètre **attributes** avec la propriété **Directory** . Vous pouvez utiliser le paramètre **recurse** avec le **répertoire** .
+Pour obtenir la liste des répertoires, utilisez le paramètre **Directory** ou le paramètre **attributes** avec la propriété **Directory** . Vous pouvez utiliser le paramètre **recurse** avec le **répertoire**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -450,9 +453,9 @@ Accept wildcard characters: False
 ### -Exclude
 
 Spécifie, sous la forme d’un tableau de chaînes, une propriété ou une propriété que cette applet de commande exclut de l’opération.
-La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` ou `A*` . Les caractères génériques sont acceptés.
+La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` ou `A*` . Les caractères génériques sont acceptés.
 
-Un astérisque ( `*` ) de fin dans le paramètre **path** est facultatif. Par exemple, `-Path C:\Test\Logs` ou `-Path C:\Test\Logs\*`. Si un astérisque () de fin `*` est inclus, la commande parcourt les sous-répertoires du paramètre **path** . Sans l’astérisque ( `*` ), le contenu du paramètre **path** est affiché. Plus de détails sont inclus dans l’exemple 5 et la section Remarques.
+Un astérisque ( `*` ) de fin dans le paramètre **path** est facultatif.  Par exemple, `-Path C:\Test\Logs` ou `-Path C:\Test\Logs\*`. Si un astérisque () de fin `*` est inclus, la commande parcourt les sous-répertoires du paramètre **path** . Sans l’astérisque ( `*` ), le contenu du paramètre **path** est affiché. Plus de détails sont inclus dans l’exemple 5 et la section Remarques.
 
 ```yaml
 Type: System.String[]
@@ -468,7 +471,7 @@ Accept wildcard characters: True
 
 ### -File
 
-Pour obtenir la liste des fichiers, utilisez le paramètre **file** . Vous pouvez utiliser le paramètre **recurse** avec le **fichier** .
+Pour obtenir la liste des fichiers, utilisez le paramètre **file** . Vous pouvez utiliser le paramètre **recurse** avec le **fichier**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -550,7 +553,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -685,7 +688,7 @@ Si vous utilisez le paramètre **Name** , `Get-ChildItem` retourne les noms d’
 ## REMARQUES
 
 - `Get-ChildItem` peut être exécuté à l’aide de l’un des alias intégrés, `ls` , `dir` et `gci` . Pour plus d’informations, consultez [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-- `Get-ChildItem` n’obtient pas les éléments masqués par défaut. Pour obtenir des éléments cachés, utilisez le paramètre **Force** .
+- `Get-ChildItem` n’obtient pas les éléments masqués par défaut. Pour obtenir des éléments cachés, utilisez le paramètre **Force**.
 - L' `Get-ChildItem` applet de commande est conçue pour utiliser les données exposées par n’importe quel fournisseur. Pour répertorier les fournisseurs disponibles dans votre session, tapez `Get-PSProvider` .
   Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 

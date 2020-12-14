@@ -1,15 +1,14 @@
 ---
-title: Création d’un fournisseur de propriétés Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- property providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], property provider
-ms.openlocfilehash: e8ef92629fe036154cdd2f0facbe0cbe8add7533
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur de propriété Windows PowerShell
+description: Création d’un fournisseur de propriété Windows PowerShell
+ms.openlocfilehash: 5370624afa784598ca784b201f7e7345eb958ff9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778938"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94390913"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Création d’un fournisseur de propriété Windows PowerShell
 
@@ -52,7 +51,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Par défaut, les substitutions de cette méthode ne doivent pas récupérer un lecteur pour les objets qui sont masqués à l’utilisateur, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ait la valeur `true` . Une erreur doit être écrite si le chemin d’accès représente un élément masqué de l’utilisateur et que [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) a la valeur `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande
+## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Get-ItemProperty
 
 L' `Get-ItemProperty` applet de commande peut nécessiter des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de propriétés Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Ipropertycmdletprovider. Getpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) . Le `path` paramètre indique un chemin d’accès interne au fournisseur complet, tandis que le `providerSpecificPickList` paramètre spécifie les propriétés spécifiques au fournisseur entrées sur la ligne de commande. Ce paramètre peut être `null` ou vide si les propriétés sont dirigées vers l’applet de commande. Dans ce cas, cette méthode retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande.
 
@@ -121,7 +120,7 @@ Voici l’implémentation par défaut de [System. Management. Automation. Provid
 
 ## <a name="building-the-windows-powershell-provider"></a>Génération du fournisseur Windows PowerShell
 
-Découvrez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Découvrez [comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85)).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -129,6 +128,6 @@ Découvrez [comment inscrire des applets de commande, des fournisseurs et des ap
 
 [Concevoir votre fournisseur Windows PowerShell](./designing-your-windows-powershell-provider.md)
 
-[Extension des types d’objets et de la mise en forme](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extension des types d’objets et de la mise en forme](/previous-versions//ms714665(v=vs.85))
 
-[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Comment inscrire des applets de commande, des fournisseurs et des applications hôtes](/previous-versions//ms714644(v=vs.85))

@@ -1,12 +1,14 @@
 ---
-title: Écriture d’un fournisseur de conteneurs | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: da91f18226d6e6c236c6a6e469db0f692af48abf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Écriture d’un fournisseur de conteneur
+description: Écriture d’un fournisseur de conteneur
+ms.openlocfilehash: 17ec3e11258ee77a8e569df1af3a0e9bcd9798b6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786796"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93354930"
 ---
 # <a name="writing-a-container-provider"></a>Écriture d’un fournisseur de conteneur
 
@@ -18,7 +20,7 @@ Pour plus d’informations sur les fournisseurs Windows PowerShell, consultez [v
 
 ## <a name="implementing-container-methods"></a>Implémentation des méthodes de conteneur
 
-La classe [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implémente les méthodes qui prennent en charge les conteneurs, et créent, copient et suppriment des éléments. Pour obtenir la liste complète de ces méthodes, consultez [System. Management. Automation. Provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods).
+La classe [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) implémente les méthodes qui prennent en charge les conteneurs, et créent, copient et suppriment des éléments. Pour obtenir la liste complète de ces méthodes, consultez [System. Management. Automation. Provider. ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider#methods).
 
 > [!NOTE]
 > Cette rubrique est basée sur les informations contenues dans le Guide de [démarrage rapide du fournisseur Windows PowerShell](./windows-powershell-provider-quickstart.md). Cette rubrique ne couvre pas les concepts de base de la configuration d’un projet de fournisseur, ou la manière d’implémenter les méthodes héritées de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) qui créent et suppriment des lecteurs. Cette rubrique ne couvre pas non plus comment implémenter des méthodes exposées par la classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) . Pour obtenir un exemple qui montre comment implémenter des applets de commande d’élément, consultez [écriture d’un fournisseur d’éléments](./writing-an-item-provider.md).
@@ -531,7 +533,8 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Un fournisseur réel réel peut déplacer des éléments d’un chemin d’accès à un autre dans le lecteur. Pour obtenir un exemple de fournisseur qui prend en charge le déplacement d’éléments, consultez [écriture d’un fournisseur de navigation](./writing-a-navigation-provider.md).
+Un fournisseur réel réel peut déplacer des éléments d’un chemin d’accès à un autre dans le lecteur.
+Pour obtenir un exemple de fournisseur qui prend en charge le déplacement d’éléments, consultez [écriture d’un fournisseur de navigation](./writing-a-navigation-provider.md).
 
 ## <a name="see-also"></a>Voir aussi
 

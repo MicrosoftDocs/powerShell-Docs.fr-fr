@@ -2,16 +2,16 @@
 description: FileSystem
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Fournisseur FileSystem
-ms.openlocfilehash: fb4135663d368867661e87327aa52a9213757d08
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: a1ea71d8ce402c71ae872260e8a38b03de89cf1d
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391474"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661407"
 ---
 # <a name="filesystem-provider"></a>Fournisseur FileSystem
 
@@ -25,7 +25,7 @@ FileSystem
 
 ## <a name="capabilities"></a>Fonctions
 
-**Filtre** , **ShouldProcess**
+**Filtre**, **ShouldProcess**
 
 ## <a name="short-description"></a>Description courte
 
@@ -35,12 +35,12 @@ Fournit l'accès aux fichiers et aux répertoires.
 
 Le fournisseur **FileSystem** de PowerShell vous permet d’acquérir, d’ajouter, de modifier, d’effacer et de supprimer des fichiers et des répertoires dans PowerShell.
 
-Les lecteurs de **système de fichiers** sont un espace de noms hiérarchique contenant les répertoires et les fichiers sur votre ordinateur. Un lecteur de **système de fichiers** peut être un lecteur logique ou physiques, un répertoire ou un partage réseau mappé.
+Les lecteurs de **système de fichiers** sont un espace de noms hiérarchique contenant les répertoires et les fichiers sur votre ordinateur. Un lecteur de **système de fichiers** peut être un lecteur logique ou physique, un répertoire ou un partage réseau mappé.
 
 Un lecteur appelé `TEMP:` est mappé au chemin d’accès du répertoire temporaire de l’utilisateur.
 
 >[!NOTE]
-> Le contenu du lecteur TEMP : n’est pas automatiquement supprimé par PowerShell et revient à l’utilisateur ou au système d’exploitation à gérer.
+> Le contenu du lecteur TEMP : n’est pas automatiquement supprimé par PowerShell et revient à l’utilisateur ou au système d’exploitation à gérer. Cette fonctionnalité a été déplacée en dehors des fonctionnalités expérimentales de PowerShell version 7,0
 
 Le fournisseur **FileSystem** prend en charge les applets de commande suivantes, qui sont traitées dans cet article.
 
@@ -65,11 +65,11 @@ Le fournisseur **FileSystem** prend en charge les applets de commande suivantes,
 
 ## <a name="types-exposed-by-this-provider"></a>Types exposés par ce fournisseur
 
-Les fichiers sont des instances de la classe [System. IO. FileInfo](/dotnet/api/system.io.fileinfo) .  Les répertoires sont des instances de la classe [System. IO. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
+Les fichiers sont des instances de la classe [System. IO. FileInfo](/dotnet/api/system.io.fileinfo) . Les répertoires sont des instances de la classe [System. IO. DirectoryInfo](/dotnet/api/system.io.directoryinfo) .
 
 ## <a name="navigating-the-filesystem-drives"></a>Navigation dans les lecteurs de système de fichiers
 
-Le fournisseur **FileSystem** expose ses magasins de données en mappant les lecteurs logiques de l’ordinateur en tant que lecteurs PowerShell. Pour utiliser un lecteur de **système de fichiers** , vous pouvez modifier votre emplacement sur un lecteur autorités le nom de lecteur suivi d’un signe deux-points ( `:` ).
+Le fournisseur **FileSystem** expose ses magasins de données en mappant les lecteurs logiques de l’ordinateur en tant que lecteurs PowerShell. Pour utiliser un lecteur de **système de fichiers** , vous pouvez modifier votre emplacement sur un lecteur à l’aide du nom de lecteur suivi d’un signe deux-points ( `:` ).
 
 ```powershell
 Set-Location C:
@@ -340,18 +340,18 @@ Les paramètres dynamiques sont des paramètres d’applet de commande qui sont 
 
 Spécifie l'encodage du fichier. La valeur par défaut est ASCII.
 
-- **ASCII** : utilise l’encodage pour le jeu de caractères ASCII (7 bits).
-- **BigEndianUnicode** : encode au format UTF-16 à l’aide de l’ordre des octets de poids fort (Big-endian).
-- **String** : utilise le type d’encodage pour une chaîne.
-- **Unicode** : encode au format UTF-16 à l’aide de l’ordre d’octet avec primauté des octets de poids faible (Little-endian).
-- **UTF7** : encode au format UTF-7.
-- **UTF8** : encode au format UTF-8.
-- **UTF8BOM** : encode au format UTF-8 avec marque d’ordre d’octet (BOM)
-- **UF8NOBOM** : encode au format UTF-8 sans marque d’ordre d’octet (BOM)
-- **UTF32** : encode au format UTF-32.
-- **Default** : encode dans la page de codes installée par défaut.
-- **OEM** : utilise l’encodage par défaut pour les programmes MS-DOS et console.
-- **Inconnu** : le type d’encodage est inconnu ou non valide. Les données peuvent être traitées sous forme binaire.
+- **ASCII**: utilise l’encodage pour le jeu de caractères ASCII (7 bits).
+- **BigEndianUnicode**: encode au format UTF-16 à l’aide de l’ordre des octets de poids fort (Big-endian).
+- **String**: utilise le type d’encodage pour une chaîne.
+- **Unicode**: encode au format UTF-16 à l’aide de l’ordre d’octet avec primauté des octets de poids faible (Little-endian).
+- **UTF7**: encode au format UTF-7.
+- **UTF8**: encode au format UTF-8.
+- **UTF8BOM**: encode au format UTF-8 avec marque d’ordre d’octet (BOM)
+- **UF8NOBOM**: encode au format UTF-8 sans marque d’ordre d’octet (BOM)
+- **UTF32**: encode au format UTF-32.
+- **Default**: encode dans la page de codes installée par défaut.
+- **OEM**: utilise l’encodage par défaut pour les programmes MS-DOS et console.
+- **Inconnu**: le type d’encodage est inconnu ou non valide. Les données peuvent être traitées sous forme binaire.
 
 #### <a name="cmdlets-supported"></a>Applets de commande prises en charge
 
@@ -488,7 +488,7 @@ Pour récupérer uniquement les fichiers et dossiers système, utilisez le `-Sys
 
 ### <a name="newerthan-systemdatetime"></a>NewerThan \<System.DateTime\>
 
-Retourne `$True` lorsque la `LastWriteTime` valeur d’un fichier est supérieure à la date spécifiée. Sinon, il retourne `$False`.
+Retourne `$True` lorsque la `LastWriteTime` valeur d’un fichier est supérieure à la date spécifiée. Sinon, `$False`est retourné.
 
 Entrez un objet [DateTime](/dotnet/api/system.datetime) , tel que celui retourné par l’applet de commande [obtenir-date](xref:Microsoft.PowerShell.Utility.Get-Date) , ou une chaîne qui peut être convertie en un objet [DateTime](/dotnet/api/system.datetime) , tel que `"August 10, 2011 2:00 PM"` .
 
@@ -498,7 +498,7 @@ Entrez un objet [DateTime](/dotnet/api/system.datetime) , tel que celui retourn�
 
 ### <a name="olderthan-systemdatetime"></a>OlderThan \<System.DateTime\>
 
-Retourne `$True` lorsque la `LastWriteTime` valeur d’un fichier est inférieure à la date spécifiée. Sinon, il retourne `$False`.
+Retourne `$True` lorsque la `LastWriteTime` valeur d’un fichier est inférieure à la date spécifiée. Sinon, `$False`est retourné.
 
 Entrez un objet [DateTime](/dotnet/api/system.datetime) , tel que celui retourné par l’applet de commande [obtenir-date](xref:Microsoft.PowerShell.Utility.Get-Date) , ou une chaîne qui peut être convertie en un objet [DateTime](/dotnet/api/system.datetime) , tel que `"August 10, 2011 2:00 PM"` .
 

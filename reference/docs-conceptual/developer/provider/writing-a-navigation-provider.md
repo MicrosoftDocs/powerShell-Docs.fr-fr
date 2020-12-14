@@ -1,12 +1,14 @@
 ---
-title: Écriture d’un fournisseur de navigation | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2fd27314a2b8547a15dd1bb72aa8f970d40b18cc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Écriture d’un fournisseur de navigation
+description: Écriture d’un fournisseur de navigation
+ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786779"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355219"
 ---
 # <a name="writing-a-navigation-provider"></a>Écriture d’un fournisseur de navigation
 
@@ -18,7 +20,7 @@ Pour plus d’informations sur les fournisseurs Windows PowerShell, consultez [v
 
 ## <a name="implementing-navigation-methods"></a>Implémentation des méthodes de navigation
 
-La classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implémente les méthodes qui prennent en charge les conteneurs imbriqués, les chemins d’accès relatifs et les éléments de déplacement. Pour obtenir la liste complète de ces méthodes, consultez [méthodes NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
+La classe [System. Management. Automation. Provider. Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) implémente les méthodes qui prennent en charge les conteneurs imbriqués, les chemins d’accès relatifs et les éléments de déplacement. Pour obtenir la liste complète de ces méthodes, consultez [méthodes NavigationCmdletProvider](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods).
 
 > [!NOTE]
 > Cette rubrique est basée sur les informations contenues dans le Guide de [démarrage rapide du fournisseur Windows PowerShell](./windows-powershell-provider-quickstart.md). Cette rubrique ne couvre pas les concepts de base de la configuration d’un projet de fournisseur, ou la manière d’implémenter les méthodes héritées de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) qui créent et suppriment des lecteurs. Cette rubrique ne couvre pas non plus comment implémenter des méthodes exposées par les classes [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) ou [System. Management. Automation. Provider. Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) . Pour obtenir un exemple qui montre comment implémenter des applets de commande d’élément, consultez [écriture d’un fournisseur d’éléments](./writing-an-item-provider.md). Pour obtenir un exemple qui montre comment implémenter des applets de commande de conteneur, consultez [écriture d’un fournisseur de conteneurs](./writing-a-container-provider.md).

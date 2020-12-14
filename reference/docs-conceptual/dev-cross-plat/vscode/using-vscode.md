@@ -2,12 +2,12 @@
 title: Utilisation de Visual Studio Code pour le développement PowerShell
 description: Utilisation de Visual Studio Code pour le développement PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 8a4ceb3da669716915449af2d211aaf2ae61bb4f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782529"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390308"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Utilisation de Visual Studio Code pour le développement PowerShell
 
@@ -317,7 +317,7 @@ Si vous êtes intéressé à contribuer, les demandes de tirage (Pull requests) 
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [Problèmes GitHub]:          https://github.com/PowerShell/vscode-powershell/issues

@@ -1,12 +1,14 @@
 ---
-title: Écriture d’un fournisseur d’éléments | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1df30e7af1b534756f797b9b5d4e29b689cbc782
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Écriture d’un fournisseur d’éléments
+description: Écriture d’un fournisseur d’éléments
+ms.openlocfilehash: f70c6ee50277988c4e3b7c255dc4548bc30319dd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786762"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355202"
 ---
 # <a name="writing-an-item-provider"></a>Écriture d’un fournisseur d’éléments
 
@@ -18,7 +20,13 @@ Pour plus d’informations sur les fournisseurs Windows PowerShell, consultez [v
 
 ## <a name="implementing-item-methods"></a>Implémentation de méthodes d’élément
 
-La classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) expose plusieurs méthodes qui peuvent être utilisées pour accéder aux éléments d’un magasin de données et les manipuler. Pour obtenir la liste complète de ces méthodes, consultez [méthodes ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods). Dans cet exemple, nous allons implémenter quatre de ces méthodes. [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) obtient un élément à un chemin d’accès spécifié. [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) définit la valeur de l’élément spécifié. [System. Management. Automation. Provider. Itemcmdletprovider. itemExists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) vérifie si un élément existe dans le chemin d’accès spécifié. [System. Management. Automation. Provider. Itemcmdletprovider. IsValidPath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) vérifie un chemin d’accès pour voir s’il est mappé à un emplacement dans le magasin de données.
+La classe [System. Management. Automation. Provider. Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) expose plusieurs méthodes qui peuvent être utilisées pour accéder aux éléments d’un magasin de données et les manipuler.
+Pour obtenir la liste complète de ces méthodes, consultez [méthodes ItemCmdletProvider](/dotnet/api/system.management.automation.provider.itemcmdletprovider#methods).
+Dans cet exemple, nous allons implémenter quatre de ces méthodes.
+[System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) obtient un élément à un chemin d’accès spécifié.
+[System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) définit la valeur de l’élément spécifié.
+[System. Management. Automation. Provider. Itemcmdletprovider. itemExists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) vérifie si un élément existe dans le chemin d’accès spécifié.
+[System. Management. Automation. Provider. Itemcmdletprovider. IsValidPath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) vérifie un chemin d’accès pour voir s’il est mappé à un emplacement dans le magasin de données.
 
 > [!NOTE]
 > Cette rubrique est basée sur les informations contenues dans le Guide de [démarrage rapide du fournisseur Windows PowerShell](./windows-powershell-provider-quickstart.md). Cette rubrique ne couvre pas les concepts de base de la configuration d’un projet de fournisseur, ou la manière d’implémenter les méthodes héritées de la classe [System. Management. Automation. Provider. Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) qui créent et suppriment des lecteurs.
@@ -80,7 +88,7 @@ protected override void GetItem(string path)
 
 La méthode [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) est appelée par les appels du moteur PowerShell lorsqu’un utilisateur appelle l’applet de [commande Microsoft. PowerShell. Commands. SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand) . Elle définit la valeur de l’élément au niveau du chemin d’accès spécifié.
 
-Dans l’exemple de base de données Access, il est judicieux de définir la valeur d’un élément uniquement si cet élément est une ligne, de sorte que la méthode lève l' [exception NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8) lorsque l’élément n’est pas une ligne.
+Dans l’exemple de base de données Access, il est judicieux de définir la valeur d’un élément uniquement si cet élément est une ligne, de sorte que la méthode lève l' [exception NotSupportedException](/dotnet/api/system.notsupportedexception) lorsque l’élément n’est pas une ligne.
 
 ```csharp
 protected override void SetItem(string path, object values)

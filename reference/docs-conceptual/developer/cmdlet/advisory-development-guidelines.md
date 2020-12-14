@@ -1,12 +1,14 @@
 ---
-title: Conseils pour le développement d’avis | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: dc8ef586954106f6d7fbce550dc22cd935018936
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Instructions dont le suivi est conseillé pour le développement
+description: Instructions dont le suivi est conseillé pour le développement
+ms.openlocfilehash: 1ac18925bbc2506e6a03810d24f58c2f3113fd55
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782427"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668318"
 ---
 # <a name="advisory-development-guidelines"></a>Instructions dont le suivi est conseillé pour le développement
 
@@ -18,7 +20,7 @@ Les instructions suivantes doivent être prises en compte lors de la conception 
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>Prendre en charge un paramètre InputObject (AD01)
 
-Étant donné que Windows PowerShell fonctionne directement avec les objets Microsoft .NET Framework, un objet .NET Framework est souvent disponible et correspond exactement au type dont l’utilisateur a besoin pour effectuer une opération particulière. `InputObject`nom standard d’un paramètre qui prend ce type d’objet comme entrée. Par exemple, l’applet de commande **Stop-proc** du [didacticiel StopProc](./stopproc-tutorial.md) définit un `InputObject` paramètre de type process qui prend en charge l’entrée du pipeline. L’utilisateur peut obtenir un ensemble d’objets de processus, les manipuler pour sélectionner les objets exacts à arrêter, puis les transmettre directement à l’applet de commande **Stop-proc** .
+Étant donné que Windows PowerShell fonctionne directement avec les objets Microsoft .NET Framework, un objet .NET Framework est souvent disponible et correspond exactement au type dont l’utilisateur a besoin pour effectuer une opération particulière. `InputObject` nom standard d’un paramètre qui prend ce type d’objet comme entrée. Par exemple, l’applet de commande **Stop-proc** du [didacticiel StopProc](./stopproc-tutorial.md) définit un `InputObject` paramètre de type process qui prend en charge l’entrée du pipeline. L’utilisateur peut obtenir un ensemble d’objets de processus, les manipuler pour sélectionner les objets exacts à arrêter, puis les transmettre directement à l’applet de commande **Stop-proc** .
 
 ### <a name="support-the-force-parameter-ad02"></a>Prendre en charge le paramètre Force (AD02)
 
@@ -66,7 +68,7 @@ Remplacez la méthode [System. Management. Automation. applet de commande. StopP
 
 Si votre applet de commande a des objets qui ne sont pas supprimés (écrits dans le pipeline) par la méthode [System. Management. Automation. applet de commande. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , votre applet de commande peut nécessiter une suppression d’objet supplémentaire. Par exemple, si votre applet de commande ouvre un descripteur de fichier dans sa méthode [System. Management. Automation. applet de commande. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) et que le handle est ouvert pour une utilisation par la méthode [System. Management. Automation. cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) , ce descripteur doit être fermé à la fin du traitement.
 
-Le runtime Windows PowerShell n’appelle pas toujours la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) de commande. EndProcessing. Par exemple, la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) peut ne pas être appelée si l’applet de commande est annulée au milieu de l’opération ou si une erreur d’arrêt se produit dans une partie de l’applet de commande. Par conséquent, la classe .NET Framework pour une applet de commande qui requiert le nettoyage d’objets doit implémenter le modèle d’interface [System. IDisposable](/dotnet/api/System.IDisposable) complet, y compris le finaliseur, afin que le runtime Windows PowerShell puisse appeler à la fois les méthodes [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et [System. IDisposable. dispose *](/dotnet/api/System.IDisposable.Dispose) à la fin du traitement.
+Le runtime Windows PowerShell n’appelle pas toujours la méthode  [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) de commande. EndProcessing. Par exemple, la méthode [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) peut ne pas être appelée si l’applet de commande est annulée au milieu de l’opération ou si une erreur d’arrêt se produit dans une partie de l’applet de commande. Par conséquent, la classe .NET Framework pour une applet de commande qui requiert le nettoyage d’objets doit implémenter le modèle d’interface  [System. IDisposable](/dotnet/api/System.IDisposable) complet, y compris le finaliseur, afin que le runtime Windows PowerShell puisse appeler à la fois les méthodes [System. Management. Automation. cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) et [System. IDisposable. dispose *](/dotnet/api/System.IDisposable.Dispose) à la fin du traitement.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Utiliser des types de paramètres compatibles avec la sérialisation (AC05)
 

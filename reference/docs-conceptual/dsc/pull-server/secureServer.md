@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 description: Ce document fournit les meilleures pratiques pour aider les ingénieurs qui déploient le serveur collecteur DSC.
 keywords: dsc,powershell,configuration,installation
 title: Bonnes pratiques pour le serveur collecteur
-ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664319"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389383"
 ---
 # <a name="pull-server-best-practices"></a>Bonnes pratiques pour le serveur collecteur
 
 S’applique à : Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Le serveur collecteur (fonctionnalité Windows *Service DSC* ) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
+> Le serveur collecteur (fonctionnalité Windows *Service DSC*) est un composant pris en charge de Windows Server. Toutefois, nous ne prévoyons pas de proposer de nouvelles fonctionnalités. Il est recommandé de commencer la transition des clients gérés vers [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) (qui comprend d’autres fonctionnalités que le serveur collecteur de Windows Server) ou l’une des solutions de la Communauté répertoriées [ici](pullserver.md#community-solutions-for-pull-service).
 
 Résumé : Ce document vise à fournir une procédure et une extensibilité pour aider les ingénieurs qui préparent la solution. Les informations qu’il contient indiquent les bonnes pratiques identifiées par les clients puis validées par l’équipe du produit qui garantit que les recommandations sont innovantes et considérées comme stables.
 
@@ -72,7 +72,7 @@ Les [nouvelles versions de WMF 5.0](https://www.microsoft.com/download/details.
 
 ### <a name="dsc-resource"></a>Ressource DSC
 
-Un déploiement de serveur collecteur peut être simplifié en configurant le service à l’aide d’un script de configuration DSC. Ce document présente des scripts de configuration qui peuvent être utilisés pour déployer un nœud de serveur prêt pour la production. Pour utiliser des scripts de configuration, un module DSC est obligatoire mais il n’est pas inclus dans Windows Server. Ce module obligatoire, appelé **xPSDesiredStateConfiguration** , inclut la ressource DSC **xDscWebService**. Vous pouvez télécharger le module xPSDesiredStateConfiguration [ici](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d).
+Un déploiement de serveur collecteur peut être simplifié en configurant le service à l’aide d’un script de configuration DSC. Ce document présente des scripts de configuration qui peuvent être utilisés pour déployer un nœud de serveur prêt pour la production. Pour utiliser des scripts de configuration, un module DSC est obligatoire mais il n’est pas inclus dans Windows Server. Ce module obligatoire, appelé **xPSDesiredStateConfiguration**, inclut la ressource DSC **xDscWebService**. Vous pouvez télécharger le module xPSDesiredStateConfiguration [ici](https://github.com/dsccommunity/xPSDesiredStateConfiguration).
 
 Utilisez l’applet de commande `Install-Module` à partir du module **PowerShellGet**.
 
@@ -206,7 +206,7 @@ Le rôle d’un serveur collecteur est de fournir un mécanisme centralisé pour
 
 #### <a name="guids"></a>Guids
 
-Il convient d’apporter une attention supplémentaire à la planification des **Guids** de configuration lors de l’examen détaillé du déploiement d’un serveur Pull. Il n’existe aucune exigence spécifique concernant la façon de gérer les **Guids** , et il est probable que le processus sera propre à chaque environnement. Le processus peut aller du simple au complexe : un fichier CSV stocké de manière centralisée, une table SQL simple, une base de données de gestion des configurations (CMDB) ou une solution complexe nécessitant l’intégration à un autre outil ou une autre solution logicielle. Il existe deux approches générales :
+Il convient d’apporter une attention supplémentaire à la planification des **Guids** de configuration lors de l’examen détaillé du déploiement d’un serveur Pull. Il n’existe aucune exigence spécifique concernant la façon de gérer les **Guids**, et il est probable que le processus sera propre à chaque environnement. Le processus peut aller du simple au complexe : un fichier CSV stocké de manière centralisée, une table SQL simple, une base de données de gestion des configurations (CMDB) ou une solution complexe nécessitant l’intégration à un autre outil ou une autre solution logicielle. Il existe deux approches générales :
 
 - **Affectation de Guids par serveur** : fournit un moyen de garantir que chaque configuration de serveur est contrôlée individuellement. Cette approche fournit un niveau de précision autour des mises à jour et peut fonctionner correctement dans les environnements comportant peu de serveurs.
 - **Affectation de Guids par rôle serveur** : tous les serveurs qui exécutent la même fonction, tels que les serveurs web, utilisent le même GUID pour référencer les données de configuration nécessaires. Sachez que si de nombreux serveurs partagent le même GUID, tous sont mis à jour simultanément quand la configuration change.

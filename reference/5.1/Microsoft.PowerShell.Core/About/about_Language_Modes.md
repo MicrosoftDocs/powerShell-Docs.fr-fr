@@ -6,12 +6,12 @@ ms.date: 09/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
-ms.openlocfilehash: a75afd5149f3d290a8ec377417d4920b0ad6b526
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 91e3021c854945d86822c5d8219542eff7118aa7
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207633"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625650"
 ---
 # <a name="about-language-modes"></a>À propos des modes de langage
 
@@ -193,13 +193,6 @@ Quand vous exécutez la `$ExecutionContext.SessionState.LanguageMode` commande d
 Quand vous exécutez la `$ExecutionContext.SessionState.LanguageMode` commande dans une session nolanguage, PowerShell retourne le message d’erreur ScriptsNotAllowed.
 
 - ScriptsNotAllowed : la syntaxe n’est pas prise en charge par cette instance d’exécution. Cela peut être dû au fait qu’il n’est pas en mode sans langage.
-
-## <a name="keywords"></a>MOT
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
 
 ## <a name="see-also"></a>VOIR AUSSI
 

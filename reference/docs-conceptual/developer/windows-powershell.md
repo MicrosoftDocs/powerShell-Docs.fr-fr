@@ -1,25 +1,27 @@
 ---
-title: Windows PowerShell SDK
 ms.date: 09/13/2016
-ms.openlocfilehash: 0501f511499bc5de35fad5d7798f0d16e2d3b36b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell SDK
+description: Windows PowerShell SDK
+ms.openlocfilehash: 751ccb02741db0ea63df1768dec4a19c5fa9ce92
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786660"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94390199"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
 Mise à jour : 8 juillet 2013
 
-Windows PowerShell® est un interpréteur de ligne de commande et un langage de script basé sur les tâches, conçu spécialement pour l’administration du système. Basé sur le .NET Framework, Windows PowerShell® aide les professionnels de l’informatique et les utilisateurs avancés à contrôler et à automatiser l’administration du système d’exploitation Windows et des applications qui s’exécutent sur Windows.
+Windows PowerShell &reg; est un interpréteur de ligne de commande basé sur des tâches et un langage de script conçu spécialement pour l’administration du système. Basé sur le .NET Framework, Windows PowerShell &reg; aide les professionnels de l’informatique et les utilisateurs avancés à contrôler et à automatiser l’administration du système d’exploitation Windows et des applications qui s’exécutent sur Windows.
 
 Les documents publiés ici sont écrits principalement pour les développeurs d’applets de commande, de fournisseurs et d’applications hôtes qui requièrent des informations de référence sur les API fournies par Windows PowerShell.
 Toutefois, les administrateurs système peuvent également trouver les informations fournies par ces documents utiles.
 
 Pour obtenir les informations de base nécessaires pour commencer à utiliser Windows PowerShell, consultez Prise en main avec Windows PowerShell.
 
-## <a name="windows-powershell-documents-on-msdn"></a>Documents Windows PowerShell sur MSDN
+## <a name="windows-powershell-documents"></a>Documents Windows PowerShell
 
 - [Installation du kit de développement logiciel (SDK) Windows PowerShell](./installing-the-windows-powershell-sdk.md) Fournit des informations sur l’installation du kit de développement logiciel (SDK) Windows PowerShell.
 
