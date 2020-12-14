@@ -1,12 +1,14 @@
 ---
-title: PropertyName, élément de SelectionCondition pour GroupBy (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8ada9a8ca7fbfdba5b2fea1881b2670c56a71d4f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName, élément pour SelectionCondition pour GroupBy (Format)
+description: PropertyName, élément pour SelectionCondition pour GroupBy (Format)
+ms.openlocfilehash: b89fead6185c88ca03956dc265135833696b91d7
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773077"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665666"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-groupby-format"></a>PropertyName, élément pour SelectionCondition pour GroupBy (Format)
 

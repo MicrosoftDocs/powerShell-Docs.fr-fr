@@ -1,12 +1,14 @@
 ---
-title: Création d’un fournisseur de conteneur Windows PowerShell
 ms.date: 09/13/2016
-ms.openlocfilehash: a5bcba425909eb98c010a1ea010cb02b995771f3
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur de conteneur Windows PowerShell
+description: Création d’un fournisseur de conteneur Windows PowerShell
+ms.openlocfilehash: 999bd69e3c16bfc0a74519986654ec15bbc0da6d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787204"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645359"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Création d’un fournisseur de conteneur Windows PowerShell
 
@@ -122,7 +124,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) est chargée d’empêcher une récurrence infinie lorsqu’il y a des liens circulaires, et ainsi de suite. Une exception d’arrêt appropriée doit être levée pour refléter une telle condition.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Get-ChildItem
 
 Parfois `Get-ChildItem` , l’applet de commande qui appelle [System. Management. Automation. Provider. Containercmdletprovider. GetChildItems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) nécessite des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Get-ChildItem` applet de commande.
 
@@ -197,7 +199,7 @@ Les conditions suivantes peuvent s’appliquer à votre implémentation de [Syst
 
 - Votre implémentation de [System. Management. Automation. Provider. Containercmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) est chargée d’empêcher une récurrence infinie lorsqu’il y a des liens circulaires, et ainsi de suite. Une exception d’arrêt appropriée doit être levée pour refléter une telle condition.
 
-## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Attachement de paramètres dynamiques à l’applet de commande (Name) de l’applet de commande
+## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>Attachement de paramètres dynamiques à l’applet de commande Get-ChildItem (nom)
 
 Parfois, l’applet de commande `Get-ChildItem` (avec le `Name` paramètre) requiert des paramètres supplémentaires qui sont spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de conteneurs Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Containercmdletprovider. Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Get-ChildItem` applet de commande.
 

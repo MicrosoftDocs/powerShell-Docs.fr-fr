@@ -1,12 +1,14 @@
 ---
-title: Prise en charge de l’aide en ligne
 ms.date: 09/13/2016
-ms.openlocfilehash: b2d8eae2137e0e564a9baf271962b8669dd5eac5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: Prise en charge de l’aide en ligne
+description: Prise en charge de l’aide en ligne
+ms.openlocfilehash: 0164b5e6c6c8d66a6ab2467a8adfb7efffe0fe17
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892861"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645425"
 ---
 # <a name="supporting-online-help"></a>Prise en charge de l’aide en ligne
 
@@ -18,7 +20,7 @@ L’aide en ligne a toujours été une partie essentielle de PowerShell. Bien qu
 
 Avec l’avènement de l’aide actualisable dans PowerShell 3,0, l’aide en ligne joue toujours un rôle vital. En plus de l’expérience utilisateur flexible, l’aide en ligne fournit de l’aide aux utilisateurs qui ne peuvent pas ou ne peuvent pas utiliser l’aide actualisable pour télécharger des rubriques d’aide.
 
-## <a name="how-get-help--online-works"></a>Comment obtenir-Help-Online fonctionne
+## <a name="how-get-help--online-works"></a>Fonctionnement de Get-Help-Online
 
 Pour aider les utilisateurs à trouver les rubriques d’aide en ligne pour les commandes, la `Get-Help` commande dispose d’un paramètre en ligne qui ouvre la version en ligne de la rubrique d’aide pour une commande dans le navigateur Internet par défaut de l’utilisateur.
 
@@ -34,7 +36,7 @@ Pour implémenter `Get-Help -Online` , l' `Get-Help` applet de commande recherch
 
 - Propriété **HelpUri** de toute commande. La propriété **HelpUri** est accessible même lorsque la rubrique d’aide de la commande n’est pas installée sur l’ordinateur de l’utilisateur. Cette fonctionnalité a été introduite dans PowerShell 3,0.
 
-  `Get-Help`recherche un URI dans la première entrée de la section **liens connexes** avant d’obtenir la valeur de la propriété **HelpUri** . Si la valeur de la propriété est incorrecte ou a changé, vous pouvez la remplacer en entrant une valeur différente dans le premier lien associé. Toutefois, le premier lien associé fonctionne uniquement lorsque les rubriques d’aide sont installées sur l’ordinateur de l’utilisateur.
+  `Get-Help` recherche un URI dans la première entrée de la section **liens connexes** avant d’obtenir la valeur de la propriété **HelpUri** . Si la valeur de la propriété est incorrecte ou a changé, vous pouvez la remplacer en entrant une valeur différente dans le premier lien associé. Toutefois, le premier lien associé fonctionne uniquement lorsque les rubriques d’aide sont installées sur l’ordinateur de l’utilisateur.
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Ajout d’un URI au premier lien associé d’une rubrique d’aide sur une commande
 

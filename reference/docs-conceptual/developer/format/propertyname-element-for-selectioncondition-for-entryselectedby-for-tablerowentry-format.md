@@ -1,12 +1,14 @@
 ---
-title: PropertyName, élément de SelectionCondition pour EntrySelectedBy pour TableRowEntry (format) | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bec8377fb13b8f288196a809e7aa4e7f46c66e31
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (Format)
+description: PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (Format)
+ms.openlocfilehash: dcb59fc438ae217870566f09204fb16b8f031614
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785538"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665785"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format"></a>PropertyName, élément pour SelectionCondition pour EntrySelectedBy pour TableRowEntry (Format)
 

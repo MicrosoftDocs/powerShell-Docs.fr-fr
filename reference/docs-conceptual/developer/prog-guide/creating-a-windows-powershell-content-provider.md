@@ -1,12 +1,14 @@
 ---
-title: Création d’un fournisseur de contenu Windows PowerShell
 ms.date: 09/13/2016
-ms.openlocfilehash: b4bc0c8d1f8ef9f85bd711fdc2770b54418bbf4a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur de contenu Windows PowerShell
+description: Création d’un fournisseur de contenu Windows PowerShell
+ms.openlocfilehash: 7890f0ab8d1cc7f29bdc077b342bae950cfa7827
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779066"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645347"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Création d’un fournisseur de contenu Windows PowerShell
 
@@ -90,7 +92,7 @@ Les conditions suivantes peuvent s’appliquer à une implémentation de [System
 
 - Par défaut, les substitutions de cette méthode ne doivent pas récupérer un lecteur pour les objets qui sont masqués à l’utilisateur, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ait la valeur `true` . Une erreur doit être écrite si le chemin d’accès représente un élément masqué de l’utilisateur et que [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) a la valeur `false` .
 
-## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande d’extraction de contenu
+## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Get-Content
 
 L' `Get-Content` applet de commande peut nécessiter des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur de contenu Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Icontentcmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l’applet de commande.
 

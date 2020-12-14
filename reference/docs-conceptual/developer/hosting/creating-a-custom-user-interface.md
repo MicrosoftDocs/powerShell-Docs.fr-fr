@@ -1,12 +1,14 @@
 ---
-title: Création d’une interface utilisateur personnalisée | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ebbaba4231b54d42cdcdef07a3ff665bd207d696
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’une interface utilisateur personnalisée
+description: Création d’une interface utilisateur personnalisée
+ms.openlocfilehash: 411165f868cd524c0cef0ba9cce3188c60a7dbdf
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779775"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645399"
 ---
 # <a name="creating-a-custom-user-interface"></a>Création d’une interface utilisateur personnalisée
 

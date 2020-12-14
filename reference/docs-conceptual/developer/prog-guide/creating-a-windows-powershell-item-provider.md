@@ -1,15 +1,14 @@
 ---
-title: Création d’un fournisseur d’éléments Windows PowerShell | Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- item providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], item provider
-ms.openlocfilehash: b00af7d6fbb75b08027dc18ee6647472d23b83b7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Création d’un fournisseur d’élément Windows PowerShell
+description: Création d’un fournisseur d’élément Windows PowerShell
+ms.openlocfilehash: f98ea90bf9ce7222076a91fb26dc42977c70bff2
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779044"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92645184"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Création d’un fournisseur d’élément Windows PowerShell
 
@@ -87,7 +86,7 @@ Les conditions suivantes peuvent s’appliquer à une implémentation de [System
 
 - Par défaut, les substitutions de cette méthode ne doivent pas récupérer les objets qui sont généralement masqués par l’utilisateur, à moins que la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ait la valeur `true` . Par exemple, la méthode [System. Management. Automation. Provider. Itemcmdletprovider. GetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) pour le fournisseur FileSystem vérifie la propriété [System. Management. Automation. Provider. Cmdletprovider. force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) avant de tenter d’appeler [System. Management. Automation. Provider. Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) pour les fichiers système ou masqués.
 
-## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande
+## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Attachement de paramètres dynamiques à l’applet de commande Get-Item
 
 Parfois, l’applet de commande `Get-Item` requiert des paramètres supplémentaires spécifiés de manière dynamique au moment de l’exécution. Pour fournir ces paramètres dynamiques, le fournisseur d’éléments Windows PowerShell doit implémenter la méthode [System. Management. Automation. Provider. Itemcmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) . Cette méthode récupère les paramètres dynamiques pour l’élément au chemin d’accès indiqué et retourne un objet qui a des propriétés et des champs avec des attributs d’analyse similaires à une classe d’applet de commande ou à un objet [System. Management. Automation. RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) . Le runtime Windows PowerShell utilise l’objet retourné pour ajouter les paramètres à l' `Get-Item` applet de commande.
 
@@ -99,7 +98,7 @@ Ce fournisseur n’implémente pas cette méthode. Toutefois, le code suivant es
 
 Pour définir un élément, le fournisseur d’éléments Windows PowerShell doit substituer la méthode [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) pour prendre en charge les appels de l’applet de commande `Set-Item` . Cette méthode définit la valeur de l’élément au niveau du chemin d’accès spécifié.
 
-Ce fournisseur ne fournit pas de remplacement pour la méthode [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) . Toutefois, l’implémentation par défaut de cette méthode est la suivante.
+Ce fournisseur ne fournit pas de remplacement pour la méthode  [System. Management. Automation. Provider. Itemcmdletprovider. SetItem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) . Toutefois, l’implémentation par défaut de cette méthode est la suivante.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
 

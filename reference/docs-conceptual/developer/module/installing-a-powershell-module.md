@@ -4,10 +4,10 @@ ms.topic: reference
 title: Installation d’un module PowerShell
 description: Installation d’un module PowerShell
 ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92645334"
 ---
 # <a name="installing-a-powershell-module"></a>Installation d’un module PowerShell
@@ -35,14 +35,14 @@ Par défaut, la valeur de la variable d’environnement **PSModulePath** contien
 
 - `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
-  Pour récupérer la valeur de la variable d’environnement **PSModulePath** , utilisez l’une des commandes suivantes.
+  Pour récupérer la valeur de la variable d’environnement **PSModulePath**, utilisez l’une des commandes suivantes.
 
   ```powershell
   $Env:PSModulePath
   [Environment]::GetEnvironmentVariable("PSModulePath")
   ```
 
-  Pour ajouter un chemin de module à la valeur de la variable d’environnement **PSModulePath** , suivez le format de commande ci-dessous. Ce format utilise la méthode **SetEnvironmentVariable** de la classe **System.Environment** pour appliquer une modification indépendante de la session à la variable d’environnement **PSModulePath** .
+  Pour ajouter un chemin de module à la valeur de la variable d’environnement **PSModulePath**, suivez le format de commande ci-dessous. Ce format utilise la méthode **SetEnvironmentVariable** de la classe **System.Environment** pour appliquer une modification indépendante de la session à la variable d’environnement **PSModulePath**.
 
   ```powershell
   #Save the current value in the $p variable.
@@ -57,7 +57,7 @@ Par défaut, la valeur de la variable d’environnement **PSModulePath** contien
   ```
 
   > [!IMPORTANT]
-  > Une fois que vous avez ajouté le chemin à **PSModulePath** , diffusez un message d’environnement au sujet de cette modification pour permettre à d’autres applications (notamment l’interpréteur de commandes) de la récupérer. Pour diffuser la modification, faites en sorte que le code d’installation de votre produit envoie un message **WM_SETTINGCHANGE** avec `lParam` défini sur la chaîne « Environment ». Veillez à envoyer le message une fois que le code d’installation de votre module a mis à jour **PSModulePath** .
+  > Une fois que vous avez ajouté le chemin à **PSModulePath**, diffusez un message d’environnement au sujet de cette modification pour permettre à d’autres applications (notamment l’interpréteur de commandes) de la récupérer. Pour diffuser la modification, faites en sorte que le code d’installation de votre produit envoie un message **WM_SETTINGCHANGE** avec `lParam` défini sur la chaîne « Environment ». Veillez à envoyer le message une fois que le code d’installation de votre module a mis à jour **PSModulePath**.
 
 ### <a name="use-the-correct-module-directory-name"></a>Choix du nom de répertoire du module
 
@@ -80,7 +80,7 @@ C:\Program Files
 
 ### <a name="effect-of-incorrect-installation"></a>Effet d’une installation incorrecte
 
-Si le module n’est pas bien formé et que son emplacement n’est pas inclus dans la valeur de la variable d’environnement **PSModulePath** , les fonctionnalités de découverte de base de Windows PowerShell, et notamment les suivantes, ne fonctionnent pas.
+Si le module n’est pas bien formé et que son emplacement n’est pas inclus dans la valeur de la variable d’environnement **PSModulePath**, les fonctionnalités de découverte de base de Windows PowerShell, et notamment les suivantes, ne fonctionnent pas.
 
 - La fonctionnalité de chargement automatique de module ne peut pas importer le module automatiquement.
 
@@ -88,7 +88,7 @@ Si le module n’est pas bien formé et que son emplacement n’est pas inclus d
 
 - La cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) ne trouve pas le module. Pour importer le module, vous devez indique le chemin complet du fichier de module racine ou du fichier manifeste du module.
 
-  Les fonctionnalités supplémentaires, et notamment les suivantes, ne fonctionnent pas tant que le module n’est pas importé dans la session. Dans les modules bien formés présents dans la variable d’environnement **PSModulePath** , elles fonctionnent même si le module n’est pas importé dans la session.
+  Les fonctionnalités supplémentaires, et notamment les suivantes, ne fonctionnent pas tant que le module n’est pas importé dans la session. Dans les modules bien formés présents dans la variable d’environnement **PSModulePath**, elles fonctionnent même si le module n’est pas importé dans la session.
 
 - La cmdlet [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) ne trouve pas de commandes dans le module.
 
@@ -197,7 +197,7 @@ Fabrikam Manager
       Fabrikam.dll (module assembly)
 ```
 
-Le programme d’installation ajoute les deux chemins de module à la valeur de la variable d’environnement **PSModulePath** .
+Le programme d’installation ajoute les deux chemins de module à la valeur de la variable d’environnement **PSModulePath**.
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
@@ -223,7 +223,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 Pour éviter les conflits de noms, les auteurs de modules peuvent utiliser la clé **DefaultCommandPrefix** dans le manifeste de module afin de spécifier un préfixe substantif pour toutes les commandes exportées à partir du module.
 
-Les utilisateurs peuvent se servir du paramètre **Prefix** de la cmdlet `Import-Module` pour utiliser un autre préfixe. La valeur du paramètre **Prefix** est prioritaire sur la valeur de la clé **DefaultCommandPrefix** .
+Les utilisateurs peuvent se servir du paramètre **Prefix** de la cmdlet `Import-Module` pour utiliser un autre préfixe. La valeur du paramètre **Prefix** est prioritaire sur la valeur de la clé **DefaultCommandPrefix**.
 
 ## <a name="see-also"></a>Voir aussi
 
