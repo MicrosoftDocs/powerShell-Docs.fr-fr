@@ -7,19 +7,19 @@ ms.date: 06/04/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-dscresource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-DscResource
-ms.openlocfilehash: 9d62706d5788f1ae2c97da4bf1f6143eed2ad8f9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 39896c4f48d6cd8809d4a680e776d36deb65b0d8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202894"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889859"
 ---
 # Find-DscResource
 
 ## SYNOPSIS
 Recherche les ressources de configuration d’état souhaité (DSC).
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -93,7 +93,7 @@ Plusieurs ressources du même module peuvent être envoyées vers le pipeline ve
 Find-DscResource -Name xWebsite | Install-Module
 ```
 
-`Find-DscResource` utilise le paramètre **Name** pour rechercher la ressource nommée **xWebsite** . L’objet est envoyé dans le pipeline à l’applet de commande `Install-Module` . `Install-Module` installe le module **xWebAdministration** pour la ressource.
+`Find-DscResource` utilise le paramètre **Name** pour rechercher la ressource nommée **xWebsite**. L’objet est envoyé dans le pipeline à l’applet de commande `Install-Module` . `Install-Module` installe le module **xWebAdministration** pour la ressource.
 
 ### Exemple 4 : Rechercher toutes les ressources DSC dans un module
 
@@ -116,7 +116,7 @@ xIisLogging                         2.6.0.0    xWebAdministration      PSGallery
 
 ### Exemple 5 : Rechercher une ressource DSC par balise et version requise
 
-Les ressources DSC peuvent être localisées à l’aide des paramètres **tag** et **RequiredVersion** . **Tag** affiche la version actuelle de chaque ressource contenant la balise spécifiée dans le référentiel.
+Les ressources DSC peuvent être localisées à l’aide des paramètres **tag** et **RequiredVersion**. **Tag** affiche la version actuelle de chaque ressource contenant la balise spécifiée dans le référentiel.
 **RequiredVersion** a besoin du paramètre **modulename** et le paramètre **Name** est facultatif. Les paramètres **Name** et **modulename** limitent la sortie. Utilisez le paramètre **AllVersions** pour afficher les versions disponibles d’une ressource DSC.
 
 ```powershell
@@ -134,7 +134,7 @@ xIisMimeTypeMapping     1.20.0.0   xWebAdministration     PSGallery
 
 ### Exemple 6 : Rechercher une ressource à l’aide d’un filtre
 
-`Find-DscResource` recherche toutes les ressources et utilise le paramètre **Filter** pour spécifier les résultats par **domaine** . Le paramètre de **filtre** recherche la valeur de filtre dans la description ou le nom de module de l’objet. Utilisez l' `Select-Object` applet de commande pour afficher les propriétés d’un objet.
+`Find-DscResource` recherche toutes les ressources et utilise le paramètre **Filter** pour spécifier les résultats par **domaine**. Le paramètre de **filtre** recherche la valeur de filtre dans la description ou le nom de module de l’objet. Utilisez l' `Select-Object` applet de commande pour afficher les propriétés d’un objet.
 
 ```powershell
 Find-DscResource -Filter Domain
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Le paramètre **AllVersions** affiche chacune des versions disponibles d’une ressource DSC. Vous ne pouvez pas utiliser le paramètre **AllVersions** avec les paramètres **MinimumVersion** , **MaximumVersion** ou **RequiredVersion** .
+Le paramètre **AllVersions** affiche chacune des versions disponibles d’une ressource DSC. Vous ne pouvez pas utiliser le paramètre **AllVersions** avec les paramètres **MinimumVersion**, **MaximumVersion** ou **RequiredVersion** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -359,6 +359,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## REMARQUES
 
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
+
 ## LIENS CONNEXES
 
 [Get-InstalledModule](Get-InstalledModule.md)
@@ -369,4 +376,4 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[Module Uninstall](Uninstall-Module.md)

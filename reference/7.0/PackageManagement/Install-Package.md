@@ -7,19 +7,19 @@ ms.date: 05/23/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Package
-ms.openlocfilehash: 506775bf4ef58244a04cb13c1cab926d112111bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9778263a0a9d5db6924579c863419e87bb27ef71
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204930"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890264"
 ---
 # Install-Package
 
 ## SYNOPSIS
 Installe un ou plusieurs packages logiciels.
 
-## SYNTAX
+## SYNTAXE
 
 ### PackageBySearch (par défaut)
 
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 
 ### -Credential
 
-Spécifie un compte d’utilisateur qui a l’autorisation d’accéder à l’ordinateur et d’exécuter des commandes. Tapez un nom d’utilisateur, tel que **User01** , **Domaine01\Utilisateur01** , ou entrez un objet **PSCredential** , généré par l’applet de commande `Get-Credential` . Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
+Spécifie un compte d’utilisateur qui a l’autorisation d’accéder à l’ordinateur et d’exécuter des commandes. Tapez un nom d’utilisateur, tel que **User01**, **Domaine01\Utilisateur01**, ou entrez un objet **PSCredential** , généré par l’applet de commande `Get-Credential` . Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
 
 Lorsque le paramètre **Credential** n’est pas spécifié, `Install-Package` utilise l’utilisateur actuel.
 
@@ -812,6 +812,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ## REMARQUES
 
 L’inclusion d’un fournisseur de package dans une commande peut rendre des paramètres dynamiques disponibles pour une applet de commande. Les paramètres dynamiques sont spécifiques à un fournisseur de packages. L' `Get-Help` applet de commande répertorie les jeux de paramètres d’une applet de commande et comprend le jeu de paramètres du fournisseur. Par exemple, `Install-Package` a le paramètre **PowerShellGet** défini qui inclut `-NoPathUpdate` , `AllowClobber` et `SkipPublisherCheck` .
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

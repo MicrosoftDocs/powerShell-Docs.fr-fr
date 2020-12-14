@@ -7,19 +7,19 @@ ms.date: 05/22/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
-ms.openlocfilehash: 89525867f9c3377cc0129daefd3f54f2a10d5d82
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d635a1f037194380c143190e48d654e828f88bc8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202726"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890162"
 ---
 # Get-Package
 
 ## SYNOPSIS
-Retourne une liste de tous les packages logiciels qui ont été installés avec **PackageManagement** .
+Retourne une liste de tous les packages logiciels qui ont été installés avec **PackageManagement**.
 
-## SYNTAX
+## SYNTAXE
 
 ### NuGet
 
@@ -42,7 +42,7 @@ Get-Package [[-Name] <String[]>] [-RequiredVersion <String>] [-MinimumVersion <S
 
 ## Description
 
-L' `Get-Package` applet de commande renvoie la liste de tous les packages logiciels sur l’ordinateur local qui ont été installés avec **PackageManagement** . Vous pouvez exécuter `Get-Package` sur des ordinateurs distants en l’exécutant dans le cadre d’une `Invoke-Command` commande ou d’un `Enter-PSSession` script.
+L' `Get-Package` applet de commande renvoie la liste de tous les packages logiciels sur l’ordinateur local qui ont été installés avec **PackageManagement**. Vous pouvez exécuter `Get-Package` sur des ordinateurs distants en l’exécutant dans le cadre d’une `Invoke-Command` commande ou d’un `Enter-PSSession` script.
 
 ## EXEMPLES
 
@@ -68,7 +68,7 @@ Cette commande obtient la liste des packages qui ont été installés par **Pack
 PS> Invoke-Command -ComputerName Server01 -Credential CONTOSO\TestUser -ScriptBlock {Get-Package}
 ```
 
-`Invoke-Command` utilise le paramètre **ComputerName** pour spécifier un ordinateur distant, **SERVEUR01** . Le paramètre **Credential** spécifie un domaine et un nom d’utilisateur disposant des autorisations nécessaires pour exécuter des commandes sur l’ordinateur. Le paramètre **scriptblock** exécute l' `Get-Package` applet de commande sur l’ordinateur distant.
+`Invoke-Command` utilise le paramètre **ComputerName** pour spécifier un ordinateur distant, **SERVEUR01**. Le paramètre **Credential** spécifie un domaine et un nom d’utilisateur disposant des autorisations nécessaires pour exécuter des commandes sur l’ordinateur. Le paramètre **scriptblock** exécute l' `Get-Package` applet de commande sur l’ordinateur distant.
 
 ### Exemple 3 : obtenir des packages pour un fournisseur spécifié
 
@@ -87,7 +87,7 @@ posh-git              0.7.3        https://www.powershellgallery.com/api/v2   Po
 PowerShellGet         2.0.1        https://www.powershellgallery.com/api/v2   PowerShellGet
 ```
 
-`Get-Package` utilise le paramètre **providerName** pour spécifier un fournisseur spécifique, **PowerShellGet** .
+`Get-Package` utilise le paramètre **providerName** pour spécifier un fournisseur spécifique, **PowerShellGet**.
 Le paramètre **All-versions** affiche chaque version installée.
 
 ### Exemple 4 : obtenir une version exacte d’un package spécifique
@@ -104,7 +104,7 @@ Name                  Version      Source                                     Pr
 PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   PowerShellGet
 ```
 
-`Get-Package` utilise le paramètre **Name** pour spécifier le nom du package, **PackageManagement** . Le paramètre **providerName** spécifie le fournisseur, **PowerShellGet** . Le paramètre **Required-version** spécifie une version installée.
+`Get-Package` utilise le paramètre **Name** pour spécifier le nom du package, **PackageManagement**. Le paramètre **providerName** spécifie le fournisseur, **PowerShellGet**. Le paramètre **Required-version** spécifie une version installée.
 
 ### Exemple 5 : désinstaller un package
 
@@ -114,7 +114,7 @@ Cet exemple obtient des informations sur le package, puis désinstalle le packag
 Get-Package -Name posh-git -RequiredVersion 0.7.3 | Uninstall-Package
 ```
 
-`Get-Package` utilise le paramètre **Name** pour spécifier le nom du package, **Posh-git** . Le paramètre **RequiredVersion** est une version spécifique du package. L’objet est envoyé dans le pipeline à l’applet de commande `Uninstall-Package` . `Uninstall-Package` supprime le package.
+`Get-Package` utilise le paramètre **Name** pour spécifier le nom du package, **Posh-git**. Le paramètre **RequiredVersion** est une version spécifique du package. L’objet est envoyé dans le pipeline à l’applet de commande `Uninstall-Package` . `Uninstall-Package` supprime le package.
 
 ## PARAMETERS
 
@@ -440,6 +440,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 L’inclusion d’un fournisseur de package dans une commande peut rendre des paramètres dynamiques disponibles pour une applet de commande. Les paramètres dynamiques sont spécifiques à un fournisseur de packages. L' `Get-Help` applet de commande répertorie les jeux de paramètres d’une applet de commande et comprend le jeu de paramètres du fournisseur. Par exemple, `Get-Package` a le paramètre **PowerShellGet** défini qui inclut `-NoPathUpdate` , `AllowClobber` et `SkipPublisherCheck` .
 
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
+
 ## LIENS CONNEXES
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
@@ -461,4 +468,3 @@ L’inclusion d’un fournisseur de package dans une commande peut rendre des pa
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
-

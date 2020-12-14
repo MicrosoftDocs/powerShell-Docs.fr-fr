@@ -7,19 +7,19 @@ ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
-ms.openlocfilehash: 0e6dfd00da246b5632474c45d3794d796715240c
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: a9172c1462f7812cf15f8d1156585be702866d27
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93205821"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891207"
 ---
 # Install-Module
 
 ## SYNOPSIS
 Télécharge un ou plusieurs modules à partir d’un référentiel et les installe sur l’ordinateur local.
 
-## SYNTAX
+## SYNTAXE
 
 ### NameParameterSet (par défaut)
 
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-Spécifie la version maximale d’un module unique à installer. La version installée doit être inférieure ou égale à **MaximumVersion** . Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **MaximumVersion** . **MaximumVersion** et **RequiredVersion** ne peuvent pas être utilisés dans la même `Install-Module` commande.
+Spécifie la version maximale d’un module unique à installer. La version installée doit être inférieure ou égale à **MaximumVersion**. Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **MaximumVersion**. **MaximumVersion** et **RequiredVersion** ne peuvent pas être utilisés dans la même `Install-Module` commande.
 
 ```yaml
 Type: System.String
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-Spécifie la version minimale d’un module unique à installer. La version installée doit être supérieure ou égale à **MinimumVersion** . Si une version plus récente du module est disponible, la version la plus récente est installée. Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **MinimumVersion** .
+Spécifie la version minimale d’un module unique à installer. La version installée doit être supérieure ou égale à **MinimumVersion**. Si une version plus récente du module est disponible, la version la plus récente est installée. Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **MinimumVersion**.
 **MinimumVersion** et **RequiredVersion** ne peuvent pas être utilisés dans la même `Install-Module` commande.
 
 ```yaml
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** .
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -330,7 +330,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Spécifie la version exacte d’un module unique à installer. S’il n’existe aucune correspondance dans le référentiel pour la version spécifiée, une erreur s’affiche. Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **RequiredVersion** . **RequiredVersion** ne peut pas être utilisé dans la même `Install-Module` commande que **MinimumVersion** ou **MaximumVersion** .
+Spécifie la version exacte d’un module unique à installer. S’il n’existe aucune correspondance dans le référentiel pour la version spécifiée, une erreur s’affiche. Si vous souhaitez installer plusieurs modules, vous ne pouvez pas utiliser **RequiredVersion**. **RequiredVersion** ne peut pas être utilisé dans la même `Install-Module` commande que **MinimumVersion** ou **MaximumVersion**.
 
 ```yaml
 Type: System.String
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 
 ### -Étendue
 
-Spécifie l’étendue d’installation du module. Les valeurs acceptables pour ce paramètre sont **ALLUSERS** et **CurrentUser** .
+Spécifie l’étendue d’installation du module. Les valeurs acceptables pour ce paramètre sont **ALLUSERS** et **CurrentUser**.
 
 L’étendue **ALLUSERS** installe les modules dans un emplacement accessible à tous les utilisateurs de l’ordinateur :
 
@@ -358,8 +358,8 @@ Le **CurrentUser** installe les modules dans un emplacement accessible uniquemen
 
 Si aucune **étendue** n’est définie, la valeur par défaut est définie en fonction de la version PowerShellGet.
 
-- Dans PowerShellGet versions 2.0.0 et ultérieures, la valeur par défaut est **CurrentUser** , ce qui ne nécessite pas d’élévation pour l’installation.
-- Dans les versions de PowerShellGet 1. x, la valeur par défaut est **ALLUSERS** , ce qui nécessite une élévation pour l’installation.
+- Dans PowerShellGet versions 2.0.0 et ultérieures, la valeur par défaut est **CurrentUser**, ce qui ne nécessite pas d’élévation pour l’installation.
+- Dans les versions de PowerShellGet 1. x, la valeur par défaut est **ALLUSERS**, ce qui nécessite une élévation pour l’installation.
 
 ```yaml
 Type: System.String
@@ -436,11 +436,18 @@ Lors de l’utilisation du paramètre **PassThru** , `Install-Module` génère u
 
 `Install-Module` s’exécute sur PowerShell 5,0 ou versions ultérieures, sur Windows 7 ou Windows 2008 R2 et versions ultérieures de Windows.
 
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
+
 En guise de meilleure pratique de sécurité, évaluez le code d’un module avant d’exécuter des applets de commande ou des fonctions pour la première fois. Pour empêcher l’exécution de modules contenant du code malveillant, les modules installés ne sont pas automatiquement importés après l’installation.
 
 Si le nom de module spécifié par le paramètre **Name** n’existe pas dans le référentiel, `Install-Module` retourne une erreur.
 
-Pour installer plusieurs modules, utilisez le paramètre **Name** et spécifiez un tableau de noms de module séparés par des virgules. Si vous spécifiez plusieurs noms de module, vous ne pouvez pas utiliser **MinimumVersion** , **MaximumVersion** ou **RequiredVersion** . `Find-Module` crée les objets **PSRepositoryItemInfo** qui peuvent être envoyés vers le dessous du pipeline `Install-Module` . Le pipeline est une autre façon de spécifier plusieurs modules à installer dans une seule commande.
+Pour installer plusieurs modules, utilisez le paramètre **Name** et spécifiez un tableau de noms de module séparés par des virgules. Si vous spécifiez plusieurs noms de module, vous ne pouvez pas utiliser **MinimumVersion**, **MaximumVersion** ou **RequiredVersion**. `Find-Module` crée les objets **PSRepositoryItemInfo** qui peuvent être envoyés vers le dessous du pipeline `Install-Module` . Le pipeline est une autre façon de spécifier plusieurs modules à installer dans une seule commande.
 
 Par défaut, les modules de l’étendue de **ALLUSERS** sont installés dans `$env:ProgramFiles\PowerShell\Modules` . La valeur par défaut empêche toute confusion quand vous installez les ressources DSC (Desired State Configuration) PowerShell.
 

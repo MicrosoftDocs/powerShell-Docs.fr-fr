@@ -7,19 +7,19 @@ ms.date: 07/02/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Script
-ms.openlocfilehash: 72c27ddbcdce935bdad3e424ebdf834b9a82a69c
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 240bd1be4cd4a54fc667fade257e07d29434274d
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201266"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891454"
 ---
 # Save-Script
 
 ## SYNOPSIS
 Enregistre un script.
 
-## SYNTAX
+## SYNTAXE
 
 ### NameAndPathParameterSet (par défaut)
 
@@ -357,6 +357,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### System.Object
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

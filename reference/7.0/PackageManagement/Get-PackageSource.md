@@ -7,19 +7,19 @@ ms.date: 03/29/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packagesource?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PackageSource
-ms.openlocfilehash: 6fb64b7e95f1f8ddfff6f1be9e880045271706fc
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e1e4814d0128cc1f170bee26425c540c007dbdd4
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201513"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890489"
 ---
 # Get-PackageSource
 
 ## SYNOPSIS
 Obtient une liste des sources de packages qui sont inscrites pour un fournisseur de package.
 
-## SYNTAX
+## SYNTAXE
 
 ### NuGet
 
@@ -38,7 +38,7 @@ Get-PackageSource [[-Name] <String>] [-Location <String>] [-Force] [-ForceBootst
 
 ## Description
 
-L' `Get-PackageSource` applet de commande obtient une liste des sources de packages qui sont inscrites auprès de **PackageManagement** sur l’ordinateur local. Si vous spécifiez un fournisseur de packages, `Get-PackageSource` obtient uniquement les sources associées au fournisseur spécifié. Dans le cas contraire, la commande retourne toutes les sources de package inscrites avec **PackageManagement** .
+L' `Get-PackageSource` applet de commande obtient une liste des sources de packages qui sont inscrites auprès de **PackageManagement** sur l’ordinateur local. Si vous spécifiez un fournisseur de packages, `Get-PackageSource` obtient uniquement les sources associées au fournisseur spécifié. Dans le cas contraire, la commande retourne toutes les sources de package inscrites avec **PackageManagement**.
 
 ## EXEMPLES
 
@@ -90,7 +90,7 @@ LocalPackages        NuGet            False      C:\LocalPkg\
 MyNuget              NuGet            False      https://www.nuget.org/api/v2
 ```
 
-`Get-PackageProvider` utilise le paramètre **Name** pour spécifier le nom du fournisseur, **NuGet** . L’objet est envoyé dans le pipeline à `Get-PackageSource` .
+`Get-PackageProvider` utilise le paramètre **Name** pour spécifier le nom du fournisseur, **NuGet**. L’objet est envoyé dans le pipeline à `Get-PackageSource` .
 
 ## PARAMETERS
 
@@ -285,6 +285,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 Spécifie une ou plusieurs sources de package.
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

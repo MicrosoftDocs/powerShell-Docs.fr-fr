@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
-ms.openlocfilehash: d68745e467e211279272c30ffd0388d48f1daf11
-ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
+ms.openlocfilehash: f9cf0854ed8e2dc4725ce8592a9b9cf86063beb5
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94524669"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890060"
 ---
 # Install-PackageProvider
 
@@ -92,7 +92,7 @@ Cette commande installe un fournisseur de package pour `$env:LOCALAPPDATA\Packag
 Install-PackageProvider -Name GistProvider -Verbose -Scope CurrentUser
 ```
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -AllVersions
 
@@ -354,6 +354,13 @@ Vous pouvez diriger un objet **SoftwareIdentity** vers cette applet de commande.
 ## SORTIES
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

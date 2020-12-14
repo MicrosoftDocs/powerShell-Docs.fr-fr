@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: dd4e8169310f23182697ba6bf4263d916f747b84
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c8191f8b5bbf6337fdc11dc3d15774991029151b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201837"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891190"
 ---
 # Install-Script
 
 ## SYNOPSIS
 Installe un script.
 
-## SYNTAX
+## SYNTAXE
 
 ### NameParameterSet (par défaut)
 
@@ -42,7 +42,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
 
 L' `Install-Script` applet de commande acquiert une charge utile de script à partir d’un référentiel, vérifie que la charge utile est un script PowerShell valide et copie le fichier de script vers un emplacement d’installation spécifié.
 
-Les référentiels par défaut `Install-Script` fonctionnent sur peuvent être configurés par le biais des `Register-PSRepository` applets de commande,, `Set-PSRepository` `Unregister-PSRepository` et `Get-PSRepository` . En cas de fonctionnement sur plusieurs dépôts, `Install-Script` installe le premier script qui correspond aux critères de recherche spécifiés ( **Name** , **MinimumVersion** ou **MaximumVersion** ) à partir du premier référentiel sans aucune erreur.
+Les référentiels par défaut `Install-Script` fonctionnent sur peuvent être configurés par le biais des `Register-PSRepository` applets de commande,, `Set-PSRepository` `Unregister-PSRepository` et `Get-PSRepository` . En cas de fonctionnement sur plusieurs dépôts, `Install-Script` installe le premier script qui correspond aux critères de recherche spécifiés (**Name**, **MinimumVersion** ou **MaximumVersion**) à partir du premier référentiel sans aucune erreur.
 
 ## EXEMPLES
 
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** .
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -499,6 +499,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### System.Object
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

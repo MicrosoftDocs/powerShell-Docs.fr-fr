@@ -7,19 +7,19 @@ ms.date: 10/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: 50f873e6691ead7c220b6250458f4fdf8a90af22
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 602d160a4cc7fd4e8a806d2c3d2772ee5053535d
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203905"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889689"
 ---
 # Publish-Module
 
 ## SYNOPSIS
 Publie un module spécifié à partir de l’ordinateur local sur une galerie en ligne.
 
-## SYNTAX
+## SYNTAXE
 
 ### ModuleNameParameterSet (par défaut)
 
@@ -46,7 +46,7 @@ L' `Publish-Module` applet de commande publie un module dans une galerie en lign
 
 Lorsque vous spécifiez un module par son nom, `Publish-Module` publie le premier module qui serait trouvé en exécutant `Get-Module -ListAvailable <Name>` . Si vous spécifiez une version minimale d’un module à publier, `Publish-Module` publie le premier module avec une version qui est supérieure ou égale à la version minimale que vous avez spécifiée.
 
-La publication d’un module nécessite des métadonnées affichées dans la page de la galerie pour le module. Les métadonnées requises incluent le nom du module, la version, la description et l’auteur. Bien que la plupart des métadonnées proviennent du manifeste de module, certaines métadonnées doivent être spécifiées dans des `Publish-Module` paramètres tels que **tag** , **ReleaseNote** , **iconUri** , **ProjectUri** et **LicenseUri** , car ces paramètres correspondent aux champs d’une galerie NuGet.
+La publication d’un module nécessite des métadonnées affichées dans la page de la galerie pour le module. Les métadonnées requises incluent le nom du module, la version, la description et l’auteur. Bien que la plupart des métadonnées proviennent du manifeste de module, certaines métadonnées doivent être spécifiées dans des `Publish-Module` paramètres tels que **tag**, **ReleaseNote**, **iconUri**, **ProjectUri** et **LicenseUri**, car ces paramètres correspondent aux champs d’une galerie NuGet.
 
 ## EXEMPLES
 
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 
 ### -Référentiel
 
-Spécifie le nom convivial d’un référentiel qui a été enregistré en exécutant `Register-PSRepository` . Le référentiel doit avoir un **PublishLocation** , qui est un URI NuGet valide.
+Spécifie le nom convivial d’un référentiel qui a été enregistré en exécutant `Register-PSRepository` . Le référentiel doit avoir un **PublishLocation**, qui est un URI NuGet valide.
 Le **PublishLocation** peut être défini en exécutant `Set-PSRepository` .
 
 ```yaml
@@ -378,7 +378,14 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 `Publish-Module` s’exécute sur les versions PowerShell 3,0 ou ultérieures de PowerShell, sur Windows 7 ou Windows 2008 R2 et versions ultérieures de Windows.
 
-La publication d’un module nécessite des métadonnées affichées dans la page de la galerie pour le module. Les métadonnées requises incluent le nom du module, la version, la description et l’auteur. La plupart des métadonnées proviennent du manifeste de module, mais certaines métadonnées peuvent être spécifiées dans des `Publish-Module` paramètres, tels que **tag** , **ReleaseNote** , **iconUri** , **ProjectUri** et **LicenseUri** . Pour plus d’informations, consultez [valeurs de manifeste du package qui ont un impact sur l’interface utilisateur PowerShell Gallery](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
+
+La publication d’un module nécessite des métadonnées affichées dans la page de la galerie pour le module. Les métadonnées requises incluent le nom du module, la version, la description et l’auteur. La plupart des métadonnées proviennent du manifeste de module, mais certaines métadonnées peuvent être spécifiées dans des `Publish-Module` paramètres, tels que **tag**, **ReleaseNote**, **iconUri**, **ProjectUri** et **LicenseUri**. Pour plus d’informations, consultez [valeurs de manifeste du package qui ont un impact sur l’interface utilisateur PowerShell Gallery](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui).
 
 ## LIENS CONNEXES
 

@@ -7,19 +7,19 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Package
-ms.openlocfilehash: 9bbcda92b98410835a2380296a06fd053c01b52c
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 83336a97f13dc100943c3d0008ee97d28873adfb
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201745"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890298"
 ---
 # Find-Package
 
 ## SYNOPSIS
 Recherche les packages de logiciels dans les sources de package disponibles.
 
-## SYNTAX
+## SYNTAXE
 
 ### NuGet
 
@@ -85,7 +85,7 @@ Name         Version   Source    Summary
 NuGet.Core   2.14.0    MyNuGet   NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core** . Le paramètre **source** spécifie de rechercher le package dans **MyNuGet** .
+`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core**. Le paramètre **source** spécifie de rechercher le package dans **MyNuGet**.
 
 ### Exemple 3 : Rechercher toutes les versions d’un package
 
@@ -106,7 +106,7 @@ NuGet.Core    1.1.229.159      MyNuGet      NuGet.Core is the core framework ass
 Nuget.Core    1.0.1120.104     MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` utilise le paramètre **Name** pour spécifier le package **NuGet. Core** . Le paramètre **providerName** spécifie la recherche du package dans **MyNuGet** . **AllVersions** spécifie que toutes les versions disponibles sont retournées.
+`Find-Package` utilise le paramètre **Name** pour spécifier le package **NuGet. Core**. Le paramètre **providerName** spécifie la recherche du package dans **MyNuGet**. **AllVersions** spécifie que toutes les versions disponibles sont retournées.
 
 ### Exemple 4 : Rechercher un package avec un nom et une version spécifiques
 
@@ -122,7 +122,7 @@ Name          Version          Source       Summary
 NuGet.Core    2.9.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core** . Le paramètre **providerName** spécifie la recherche du package dans **NuGet** . **RequiredVersion** spécifie que seule la version **2.9.0** est retournée.
+`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core**. Le paramètre **providerName** spécifie la recherche du package dans **NuGet**. **RequiredVersion** spécifie que seule la version **2.9.0** est retournée.
 
 ### Exemple 5 : Rechercher des packages dans une plage de versions
 
@@ -141,13 +141,13 @@ NuGet.Core    2.8.0            MyNuGet      NuGet.Core is the core framework ass
 NuGet.Core    2.7.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core** . Le paramètre **providerName** spécifie la recherche du package dans **NuGet** . **MinimumVersion** spécifie la version la plus basse **2.7.0** . **MaximumVersion** spécifie la version la plus récente **2.9.0** .
+`Find-Package` utilise le paramètre **Name** pour spécifier le nom du package **NuGet. Core**. Le paramètre **providerName** spécifie la recherche du package dans **NuGet**. **MinimumVersion** spécifie la version la plus basse **2.7.0**. **MaximumVersion** spécifie la version la plus récente **2.9.0**.
 **AllVersions** détermine que la plage est retournée comme spécifié par les valeurs minimale et maximale.
 
 ### Exemple 6 : Rechercher un package à partir d’un système de fichiers
 
 Cette commande recherche les packages dont l’extension de fichier `.nupkg` est stockée sur l’ordinateur local.
-Les fichiers sont des packages téléchargés à partir d’une galerie telle que **NuGet** .
+Les fichiers sont des packages téléchargés à partir d’une galerie telle que **NuGet**.
 
 ```
 PS> Find-Package -Source C:\LocalPkg
@@ -511,7 +511,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** .
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -676,7 +676,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### Aucun
+### None
 
 `Find-Package` n’accepte pas d’entrée du pipeline.
 
@@ -687,6 +687,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 `Find-Package` génère un objet **SoftwareIdentity** .
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

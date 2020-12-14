@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-packageprovider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-PackageProvider
-ms.openlocfilehash: 96e8829b6939c40c85fb924ae65d73f48d2e475b
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: ac6acb8017ca992f10f377cf921f59c7b99bea4a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201525"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890608"
 ---
 # Find-PackageProvider
 
 ## SYNOPSIS
 Retourne une liste de Package Management fournisseurs de packages disponibles pour l’installation.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Find-PackageProvider [[-Name] <String[]>] [-AllVersions] [-Source <String[]>] [-IncludeDependencies]
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** .
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -275,9 +275,16 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### Microsoft. PackageManagement. Packaging. SoftwareIdentity
 
 Cette applet de commande retourne un objet **SoftwareIdentity** .
-Un objet **SoftwareIdentity** peut être transmis à **install-PackageProvider** pour installer les résultats de **Find-PackageProvider** .
+Un objet **SoftwareIdentity** peut être transmis à **install-PackageProvider** pour installer les résultats de **Find-PackageProvider**.
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

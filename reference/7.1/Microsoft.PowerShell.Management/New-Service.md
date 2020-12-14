@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 39c03ec53056c5ec8e2d68f9b71a17a6f4a8ea8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347429"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890414"
 ---
 # New-Service
 
@@ -27,7 +27,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
  [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 L' `New-Service` applet de commande crée une entrée pour un service Windows dans le registre et dans la base de données du service. Un nouveau service nécessite un fichier exécutable qui s’exécute pendant le service.
 
@@ -38,7 +38,7 @@ Les paramètres de cette applet de commande vous permettent de définir le nom d
 ### Exemple 1 : créer un service
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 Cette commande crée un service nommé TestService.
@@ -48,7 +48,7 @@ Cette commande crée un service nommé TestService.
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +83,7 @@ Cet exemple ajoute l' **SecurityDescriptor** du service en cours de création.
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -95,11 +95,17 @@ New-Service @params
 
 Le **SecurityDescriptor** est stocké dans la `$SDDLToSet` variable. Le paramètre **SecurityDescriptorSddl** utilise `$SDDL` pour définir la valeur **SecurityDescriptor** du nouveau service.
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -BinaryPathName
 
 Spécifie le chemin d’accès du fichier exécutable pour le service. Ce paramètre est obligatoire.
+
+Chemin d’accès complet au fichier binaire du service. Si le chemin d’accès contient un espace, il doit être placé entre guillemets pour qu’il soit correctement interprété. Par exemple, `d:\my share\myservice.exe` doit être spécifié comme `'"d:\my share\myservice.exe"'` .
+
+Le chemin d’accès peut également inclure des arguments pour un service à démarrage automatique. Par exemple, `'"d:\myshare\myservice.exe arg1 arg2"'`. Ces arguments sont passés au point d’entrée du service.
+
+Pour plus d’informations, consultez le paramètre **lpBinaryPathName** de l’API [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) .
 
 ```yaml
 Type: System.String
@@ -117,7 +123,7 @@ Accept wildcard characters: False
 
 Spécifie le compte utilisé par le service comme [compte d’ouverture de session du service](/windows/desktop/ad/about-service-logon-accounts).
 
-Tapez un nom d’utilisateur, tel que **User01** ou **Domaine01\Utilisateur01** , ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential` . Si vous tapez un nom d’utilisateur, cette applet de commande vous invite à entrer un mot de passe.
+Tapez un nom d’utilisateur, tel que **User01** ou **Domaine01\Utilisateur01**, ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential` . Si vous tapez un nom d’utilisateur, cette applet de commande vous invite à entrer un mot de passe.
 
 Les informations d’identification sont stockées dans un objet [PSCredential](/dotnet/api/system.management.automation.pscredential) et le mot de passe est stocké en tant que [SecureString](/dotnet/api/system.security.securestring).
 
@@ -280,7 +286,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### Aucun
+### None
 
 Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 

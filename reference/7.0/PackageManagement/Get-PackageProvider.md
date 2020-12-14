@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packageprovider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PackageProvider
-ms.openlocfilehash: 43f70d400cc2d9b81e2bf59a6d2b3bb986737c69
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: d62144be2b3d498e794dbde425313ee0f619efca
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201514"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890540"
 ---
 # Get-PackageProvider
 
 ## SYNOPSIS
 Retourne une liste des fournisseurs de packages qui sont connectés à Package Management.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Get-PackageProvider [[-Name] <String[]>] [-ListAvailable] [-Force] [-ForceBootstrap] [<CommonParameters>]
@@ -62,7 +62,7 @@ Cette commande installe automatiquement le fournisseur de Chocolate si le fourni
 ### -Force
 
 Indique que cette applet de commande force toutes les autres actions avec cette applet de commande qui peuvent être forcées.
-Dans la méthode **PackageProvider** , cela signifie que le paramètre *force* agit de la même manière que le paramètre *ForceBootstrap* .
+Dans la méthode **PackageProvider**, cela signifie que le paramètre *force* agit de la même manière que le paramètre *ForceBootstrap* .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -142,6 +142,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ### PackageProvider []
 
 ## REMARQUES
+
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 

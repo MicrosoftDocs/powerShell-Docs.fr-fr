@@ -7,19 +7,19 @@ ms.date: 03/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
-ms.openlocfilehash: 8b17019932df5b2cad68a9ea382387451d1b22e1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b30e233eb9c4f4f9191ac6470f2821536dda6dc3
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202890"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94889825"
 ---
 # Find-Module
 
 ## SYNOPSIS
 Recherche les modules dans un référentiel qui correspondent aux critères spécifiés.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -39,7 +39,7 @@ L' `Find-Module` applet de commande recherche les modules dans un référentiel 
 La première fois `Find-Module` que vous tentez d’utiliser un référentiel, vous pouvez être invité à installer les mises à jour.
 Si la source du référentiel n’est pas inscrite auprès de l’applet de commande `Register-PSRepository` , une erreur est retournée.
 
-`Find-Module` retourne la version la plus récente d’un module si aucun paramètre n’est utilisé pour limiter la version. Pour obtenir la liste des versions d’un module dans un référentiel, utilisez le paramètre **AllVersions** .
+`Find-Module` retourne la version la plus récente d’un module si aucun paramètre n’est utilisé pour limiter la version. Pour obtenir la liste des versions d’un module dans un référentiel, utilisez le paramètre **AllVersions**.
 
 Si le paramètre **MinimumVersion** est spécifié, `Find-Module` retourne la version du module qui est supérieure ou égale à la valeur minimale. Si une version plus récente est disponible dans le référentiel, la version la plus récente est retournée.
 
@@ -85,7 +85,7 @@ Version   Name                            Repository    Description
 4.0       PowerShellISEModule             PSGallery     a module that adds capability to the ISE
 ```
 
-L' `Find-Module` applet de commande utilise le paramètre **Name** avec le `*` caractère générique astérisque () pour rechercher tous les modules qui contiennent **PowerShell** .
+L' `Find-Module` applet de commande utilise le paramètre **Name** avec le `*` caractère générique astérisque () pour rechercher tous les modules qui contiennent **PowerShell**.
 
 ### Exemple 3 : Rechercher un module par version minimale
 
@@ -101,7 +101,7 @@ Version   Name             Repository     Description
 2.1.0     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
 ```
 
-L' `Find-Module` applet de commande utilise le paramètre **Name** pour spécifier le module **PowerShellGet** . **MinimumVersion** spécifie la version **1.6.5** . `Find-Module` retourne la version PowerShellGet **2.1.0** , car elle dépasse la version minimale et est la version la plus récente.
+L' `Find-Module` applet de commande utilise le paramètre **Name** pour spécifier le module **PowerShellGet** . **MinimumVersion** spécifie la version **1.6.5**. `Find-Module` retourne la version PowerShellGet **2.1.0** , car elle dépasse la version minimale et est la version la plus récente.
 
 ### Exemple 4 : Rechercher un module par version spécifique
 
@@ -117,7 +117,7 @@ Version   Name             Repository     Description
 1.6.5     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
 ```
 
-L' `Find-Module` applet de commande utilise le paramètre **Name** pour spécifier le module **PowerShellGet** . Le paramètre **RequiredVersion** spécifie la version **1.6.5** .
+L' `Find-Module` applet de commande utilise le paramètre **Name** pour spécifier le module **PowerShellGet** . Le paramètre **RequiredVersion** spécifie la version **1.6.5**.
 
 ### Exemple 5 : Rechercher un module dans un référentiel spécifique
 
@@ -151,9 +151,9 @@ PSGallery     2.0.0.0   ContosoServer    Cmdlets and DSC resources for managing 
 MySource      1.2.0.0   ContosoClient    Cmdlets and DSC resources for managing Contoso Client...
 ```
 
-L' `Register-PSRepository` applet de commande inscrit un nouveau référentiel. Le paramètre **Name** attribue le nom **MySource** . Le paramètre **SourceLocation** spécifie l’adresse du dépôt.
+L' `Register-PSRepository` applet de commande inscrit un nouveau référentiel. Le paramètre **Name** attribue le nom **MySource**. Le paramètre **SourceLocation** spécifie l’adresse du dépôt.
 
-L' `Find-Module` applet de commande utilise le paramètre **Name** avec le `*` caractère générique astérisque () pour spécifier le module **contoso** . Le paramètre de **dépôt** spécifie de rechercher deux dépôts, **PSGallery** et **MySource** .
+L' `Find-Module` applet de commande utilise le paramètre **Name** avec le `*` caractère générique astérisque () pour spécifier le module **contoso** . Le paramètre de **dépôt** spécifie de rechercher deux dépôts, **PSGallery** et **MySource**.
 
 ### Exemple 7 : Rechercher un module qui contient une ressource DSC
 
@@ -174,8 +174,8 @@ Version     Name                            Repository    Description
 3.1.0.0     xPowerShellExecutionPolicy      PSGallery     This DSC resource can change the user...
 ```
 
-L' `Find-Module` applet de commande utilise le paramètre de **référentiel** pour effectuer une recherche dans le référentiel, **PSGallery** .
-Le paramètre **includes** spécifie **DscResource** , qui est une fonctionnalité que le paramètre peut rechercher dans le référentiel.
+L' `Find-Module` applet de commande utilise le paramètre de **référentiel** pour effectuer une recherche dans le référentiel, **PSGallery**.
+Le paramètre **includes** spécifie **DscResource**, qui est une fonctionnalité que le paramètre peut rechercher dans le référentiel.
 
 ### Exemple 8 : Rechercher un module à l’aide d’un filtre
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-Spécifie d’inclure toutes les versions d’un module dans les résultats. Vous ne pouvez pas utiliser le paramètre **AllVersions** avec les paramètres **MinimumVersion** , **MaximumVersion** ou **RequiredVersion** .
+Spécifie d’inclure toutes les versions d’un module dans les résultats. Vous ne pouvez pas utiliser le paramètre **AllVersions** avec les paramètres **MinimumVersion**, **MaximumVersion** ou **RequiredVersion** .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 
 ### -Comprend
 
-Retourne uniquement les modules qui incluent des genres spécifiques de fonctionnalités PowerShell. Par exemple, vous souhaiterez peut-être Rechercher uniquement les modules qui incluent **DSCResource** . Les valeurs acceptables pour ce paramètre sont les suivantes :
+Retourne uniquement les modules qui incluent des genres spécifiques de fonctionnalités PowerShell. Par exemple, vous souhaiterez peut-être Rechercher uniquement les modules qui incluent **DSCResource**. Les valeurs acceptables pour ce paramètre sont les suivantes :
 
 - Applet de commande
 - DscResource
@@ -399,7 +399,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** .
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -431,7 +431,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-Spécifie le numéro de version exact du module à inclure dans les résultats. **RequiredVersion** ne peut pas être utilisé dans la même commande que **MinimumVersion** ou **MaximumVersion** .
+Spécifie le numéro de version exact du module à inclure dans les résultats. **RequiredVersion** ne peut pas être utilisé dans la même commande que **MinimumVersion** ou **MaximumVersion**.
 
 ```yaml
 Type: System.String
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 
 ### -Tag
 
-Spécifie un tableau de balises. Exemples de balises : **DesiredStateConfiguration** , **DSC** , **DSCResourceKit** ou **PSModule** .
+Spécifie un tableau de balises. Exemples de balises : **DesiredStateConfiguration**, **DSC**, **DSCResourceKit** ou **PSModule**.
 
 ```yaml
 Type: System.String[]
@@ -491,7 +491,12 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## REMARQUES
 
-Cette applet de commande s’exécute sur les versions PowerShell 5,0 ou ultérieures de Windows PowerShell, sur Windows 7, ou Windows 2008 R2 et versions ultérieures de Windows.
+> [!IMPORTANT]
+> Depuis le 2020 avril, le PowerShell Gallery ne prend plus en charge les versions 1,0 et 1,1 du protocole TLS (Transport Layer Security). Si vous n’utilisez pas TLS 1,2 ou une version ultérieure, vous recevrez une erreur lors de la tentative d’accès au PowerShell Gallery. Utilisez la commande suivante pour vous assurer que vous utilisez TLS 1,2 :
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> Pour plus d’informations, consultez l' [annonce](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) dans le blog PowerShell.
 
 ## LIENS CONNEXES
 
