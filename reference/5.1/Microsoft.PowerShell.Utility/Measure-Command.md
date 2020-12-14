@@ -3,52 +3,52 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2020
+ms.date: 12/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
-ms.openlocfilehash: f0a45a4b7360c0870cbcd0702066380df4c21b80
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4fb4553a75bf6cd5e458cc7d87c37e9a13ce0ea2
+ms.sourcegitcommit: 165d10405d9db3a68c417a239d3181378fd02b9b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203206"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935933"
 ---
-# <span data-ttu-id="ab2fe-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="ab2fe-103">Measure-Command</span></span>
+# <span data-ttu-id="c0652-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="c0652-103">Measure-Command</span></span>
 
-## <span data-ttu-id="ab2fe-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ab2fe-104">SYNOPSIS</span></span>
-<span data-ttu-id="ab2fe-105">Mesure le temps nécessaire pour exécuter des applets de commande et des blocs de script.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
+## <span data-ttu-id="c0652-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c0652-104">SYNOPSIS</span></span>
+<span data-ttu-id="c0652-105">Mesure le temps nécessaire pour exécuter des applets de commande et des blocs de script.</span><span class="sxs-lookup"><span data-stu-id="c0652-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
 
-## <span data-ttu-id="ab2fe-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ab2fe-106">SYNTAX</span></span>
+## <span data-ttu-id="c0652-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="c0652-106">SYNTAX</span></span>
 
 ```
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ab2fe-107">Description</span><span class="sxs-lookup"><span data-stu-id="ab2fe-107">DESCRIPTION</span></span>
+## <span data-ttu-id="c0652-107">Description</span><span class="sxs-lookup"><span data-stu-id="c0652-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="ab2fe-108">L' `Measure-Command` applet de commande exécute un bloc de script ou une applet de commande en interne, le temps d’exécution de l’opération et retourne la durée d’exécution.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
+<span data-ttu-id="c0652-108">L' `Measure-Command` applet de commande exécute un bloc de script ou une applet de commande en interne, le temps d’exécution de l’opération et retourne la durée d’exécution.</span><span class="sxs-lookup"><span data-stu-id="c0652-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ab2fe-109">Les blocs de script s’exécutent `Measure-Command` dans l’étendue actuelle, et non dans une portée enfant.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
+> <span data-ttu-id="c0652-109">Les blocs de script s’exécutent `Measure-Command` dans l’étendue actuelle, et non dans une portée enfant.</span><span class="sxs-lookup"><span data-stu-id="c0652-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
 
-## <span data-ttu-id="ab2fe-110">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="ab2fe-110">EXAMPLES</span></span>
+## <span data-ttu-id="c0652-110">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="c0652-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="ab2fe-111">Exemple 1 : mesurer une commande</span><span class="sxs-lookup"><span data-stu-id="ab2fe-111">Example 1: Measure a command</span></span>
+### <span data-ttu-id="c0652-111">Exemple 1 : mesurer une commande</span><span class="sxs-lookup"><span data-stu-id="c0652-111">Example 1: Measure a command</span></span>
 
-<span data-ttu-id="ab2fe-112">Cet exemple mesure le temps nécessaire à l’exécution d’une `Get-EventLog` commande qui obtient les événements dans le journal des événements Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
+<span data-ttu-id="c0652-112">Cet exemple mesure le temps nécessaire à l’exécution d’une `Get-EventLog` commande qui obtient les événements dans le journal des événements Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c0652-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
 
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
-### <span data-ttu-id="ab2fe-113">Exemple 2 : Comparaison de deux sorties à partir de Measure-Command</span><span class="sxs-lookup"><span data-stu-id="ab2fe-113">Example 2: Compare two outputs from Measure-Command</span></span>
+### <span data-ttu-id="c0652-113">Exemple 2 : Comparaison de deux sorties à partir de Measure-Command</span><span class="sxs-lookup"><span data-stu-id="c0652-113">Example 2: Compare two outputs from Measure-Command</span></span>
 
-<span data-ttu-id="ab2fe-114">La première commande mesure le temps nécessaire pour traiter une `Get-ChildItem` commande récursive qui utilise le paramètre **path** pour obtenir uniquement les `.txt` fichiers du `C:\Windows` répertoire et de ses sous-répertoires.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
+<span data-ttu-id="c0652-114">La première commande mesure le temps nécessaire pour traiter une `Get-ChildItem` commande récursive qui utilise le paramètre **path** pour obtenir uniquement les `.txt` fichiers du `C:\Windows` répertoire et de ses sous-répertoires.</span><span class="sxs-lookup"><span data-stu-id="c0652-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
 
-<span data-ttu-id="ab2fe-115">La deuxième commande mesure le temps nécessaire pour traiter une `Get-ChildItem` commande récursive qui utilise le paramètre spécifique au fournisseur.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
+<span data-ttu-id="c0652-115">La deuxième commande mesure le temps nécessaire pour traiter une `Get-ChildItem` commande récursive qui utilise le paramètre spécifique au fournisseur.</span><span class="sxs-lookup"><span data-stu-id="c0652-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
 
-<span data-ttu-id="ab2fe-116">Ces commandes montrent la valeur de l’utilisation d’un filtre spécifique au fournisseur dans les commandes PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
+<span data-ttu-id="c0652-116">Ces commandes montrent la valeur de l’utilisation d’un filtre spécifique au fournisseur dans les commandes PowerShell.</span><span class="sxs-lookup"><span data-stu-id="c0652-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
 
 ```powershell
 Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
@@ -86,14 +86,14 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-### <span data-ttu-id="ab2fe-117">Exemple 3 : entrée de canalisation dans Measure-Command</span><span class="sxs-lookup"><span data-stu-id="ab2fe-117">Example 3: Piping input to Measure-Command</span></span>
+### <span data-ttu-id="c0652-117">Exemple 3 : entrée de canalisation dans Measure-Command</span><span class="sxs-lookup"><span data-stu-id="c0652-117">Example 3: Piping input to Measure-Command</span></span>
 
-<span data-ttu-id="ab2fe-118">Les objets qui sont dirigés vers `Measure-Command` sont disponibles pour le bloc de script qui est passé au paramètre d' **expression** .</span><span class="sxs-lookup"><span data-stu-id="ab2fe-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="ab2fe-119">Le bloc de script est exécuté une fois pour chaque objet sur le pipeline.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-119">The script block is executed once for each object on the pipeline.</span></span>
+<span data-ttu-id="c0652-118">Les objets qui sont dirigés vers `Measure-Command` sont disponibles pour le bloc de script qui est passé au paramètre d' **expression** .</span><span class="sxs-lookup"><span data-stu-id="c0652-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="c0652-119">Le bloc de script est exécuté une fois pour chaque objet sur le pipeline.</span><span class="sxs-lookup"><span data-stu-id="c0652-119">The script block is executed once for each object on the pipeline.</span></span>
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
 # Note that no output is displayed.
-10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_ i++) {$i} }
+10, 20, 50 | Measure-Command -Expression { for ($i=0; $i -lt $_; $i++) {$i} }
 ```
 
 ```Output
@@ -110,9 +110,9 @@ TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
 
-### <span data-ttu-id="ab2fe-120">Exemple 4 : affichage de la sortie de la commande mesurée</span><span class="sxs-lookup"><span data-stu-id="ab2fe-120">Example 4: Displaying output of measured command</span></span>
+### <span data-ttu-id="c0652-120">Exemple 4 : affichage de la sortie de la commande mesurée</span><span class="sxs-lookup"><span data-stu-id="c0652-120">Example 4: Displaying output of measured command</span></span>
 
-<span data-ttu-id="ab2fe-121">Pour afficher la sortie de l’expression dans, `Measure-Command` vous pouvez utiliser un canal vers `Out-Default` .</span><span class="sxs-lookup"><span data-stu-id="ab2fe-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
+<span data-ttu-id="c0652-121">Pour afficher la sortie de l’expression dans, `Measure-Command` vous pouvez utiliser un canal vers `Out-Default` .</span><span class="sxs-lookup"><span data-stu-id="c0652-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
 
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
@@ -139,9 +139,9 @@ TotalSeconds      : 0.0113745
 TotalMilliseconds : 11.3745
 ```
 
-### <span data-ttu-id="ab2fe-122">Exemple 5 : mesure de l’exécution dans une étendue enfant</span><span class="sxs-lookup"><span data-stu-id="ab2fe-122">Example 5: Measuring execution in a child scope</span></span>
+### <span data-ttu-id="c0652-122">Exemple 5 : mesure de l’exécution dans une étendue enfant</span><span class="sxs-lookup"><span data-stu-id="c0652-122">Example 5: Measuring execution in a child scope</span></span>
 
-<span data-ttu-id="ab2fe-123">`Measure-Command` exécute le bloc de script dans l’étendue actuelle, afin que le bloc de script puisse modifier les valeurs dans l’étendue actuelle.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="ab2fe-124">Pour éviter toute modification de l’étendue actuelle, vous devez encapsuler le bloc de script entre accolades ( `{}` ) et utiliser l’opérateur d’appel ( `&` ) pour exécuter le bloc dans une portée enfant.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
+<span data-ttu-id="c0652-123">`Measure-Command` exécute le bloc de script dans l’étendue actuelle, afin que le bloc de script puisse modifier les valeurs dans l’étendue actuelle.</span><span class="sxs-lookup"><span data-stu-id="c0652-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="c0652-124">Pour éviter toute modification de l’étendue actuelle, vous devez encapsuler le bloc de script entre accolades ( `{}` ) et utiliser l’opérateur d’appel ( `&` ) pour exécuter le bloc dans une portée enfant.</span><span class="sxs-lookup"><span data-stu-id="c0652-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
 
 ```powershell
 $foo = 'Value 1'
@@ -156,13 +156,13 @@ Value 2
 Value 2
 ```
 
-<span data-ttu-id="ab2fe-125">Pour plus d’informations sur l’opérateur d’appel, consultez [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span><span class="sxs-lookup"><span data-stu-id="ab2fe-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
+<span data-ttu-id="c0652-125">Pour plus d’informations sur l’opérateur d’appel, consultez [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span><span class="sxs-lookup"><span data-stu-id="c0652-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
 
-## <span data-ttu-id="ab2fe-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ab2fe-126">PARAMETERS</span></span>
+## <span data-ttu-id="c0652-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c0652-126">PARAMETERS</span></span>
 
-### <span data-ttu-id="ab2fe-127">-Expression</span><span class="sxs-lookup"><span data-stu-id="ab2fe-127">-Expression</span></span>
+### <span data-ttu-id="c0652-127">-Expression</span><span class="sxs-lookup"><span data-stu-id="c0652-127">-Expression</span></span>
 
-<span data-ttu-id="ab2fe-128">Spécifie l'expression à chronométrer.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="ab2fe-129">Mettez l’expression entre accolades ( `{}` ).</span><span class="sxs-lookup"><span data-stu-id="ab2fe-129">Enclose the expression in braces (`{}`).</span></span>
+<span data-ttu-id="c0652-128">Spécifie l'expression à chronométrer.</span><span class="sxs-lookup"><span data-stu-id="c0652-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="c0652-129">Mettez l’expression entre accolades ( `{}` ).</span><span class="sxs-lookup"><span data-stu-id="c0652-129">Enclose the expression in braces (`{}`).</span></span>
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -176,9 +176,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab2fe-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="ab2fe-130">-InputObject</span></span>
+### <span data-ttu-id="c0652-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="c0652-130">-InputObject</span></span>
 
-<span data-ttu-id="ab2fe-131">Les objets liés au paramètre **InputObject** sont des entrées facultatives pour le bloc de script passé au paramètre **expression** .</span><span class="sxs-lookup"><span data-stu-id="ab2fe-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="ab2fe-132">Dans le bloc de script, `$_` peut être utilisé pour référencer l’objet actuel dans le pipeline.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
+<span data-ttu-id="c0652-131">Les objets liés au paramètre **InputObject** sont des entrées facultatives pour le bloc de script passé au paramètre **expression** .</span><span class="sxs-lookup"><span data-stu-id="c0652-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="c0652-132">Dans le bloc de script, `$_` peut être utilisé pour référencer l’objet actuel dans le pipeline.</span><span class="sxs-lookup"><span data-stu-id="c0652-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -192,26 +192,26 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab2fe-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ab2fe-133">CommonParameters</span></span>
+### <span data-ttu-id="c0652-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c0652-133">CommonParameters</span></span>
 
-<span data-ttu-id="ab2fe-134">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ab2fe-135">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ab2fe-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="c0652-134">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c0652-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c0652-135">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="c0652-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ab2fe-136">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="ab2fe-136">INPUTS</span></span>
+## <span data-ttu-id="c0652-136">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="c0652-136">INPUTS</span></span>
 
-### <span data-ttu-id="ab2fe-137">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="ab2fe-137">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="c0652-137">System. Management. Automation. PSObject</span><span class="sxs-lookup"><span data-stu-id="c0652-137">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="ab2fe-138">Vous pouvez diriger un objet vers `Measure-Command` .</span><span class="sxs-lookup"><span data-stu-id="ab2fe-138">You can pipe an object to `Measure-Command`.</span></span>
+<span data-ttu-id="c0652-138">Vous pouvez diriger un objet vers `Measure-Command` .</span><span class="sxs-lookup"><span data-stu-id="c0652-138">You can pipe an object to `Measure-Command`.</span></span>
 
-## <span data-ttu-id="ab2fe-139">SORTIES</span><span class="sxs-lookup"><span data-stu-id="ab2fe-139">OUTPUTS</span></span>
+## <span data-ttu-id="c0652-139">SORTIES</span><span class="sxs-lookup"><span data-stu-id="c0652-139">OUTPUTS</span></span>
 
-### <span data-ttu-id="ab2fe-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="ab2fe-140">System.TimeSpan</span></span>
+### <span data-ttu-id="c0652-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="c0652-140">System.TimeSpan</span></span>
 
-<span data-ttu-id="ab2fe-141">`Measure-Command` retourne un objet d’intervalle de temps qui représente le résultat.</span><span class="sxs-lookup"><span data-stu-id="ab2fe-141">`Measure-Command` returns a time span object that represents the result.</span></span>
+<span data-ttu-id="c0652-141">`Measure-Command` retourne un objet d’intervalle de temps qui représente le résultat.</span><span class="sxs-lookup"><span data-stu-id="c0652-141">`Measure-Command` returns a time span object that represents the result.</span></span>
 
-## <span data-ttu-id="ab2fe-142">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="ab2fe-142">NOTES</span></span>
+## <span data-ttu-id="c0652-142">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="c0652-142">NOTES</span></span>
 
-## <span data-ttu-id="ab2fe-143">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="ab2fe-143">RELATED LINKS</span></span>
+## <span data-ttu-id="c0652-143">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="c0652-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ab2fe-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="ab2fe-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
+[<span data-ttu-id="c0652-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="c0652-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[<span data-ttu-id="ab2fe-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="ab2fe-145">Trace-Command</span></span>](Trace-Command.md)
+[<span data-ttu-id="c0652-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="c0652-145">Trace-Command</span></span>](Trace-Command.md)
