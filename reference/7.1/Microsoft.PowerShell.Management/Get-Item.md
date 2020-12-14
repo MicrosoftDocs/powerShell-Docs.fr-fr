@@ -7,45 +7,45 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 25d07028430d6ad6719136bd484d39e116d81516
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204522"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661356"
 ---
-# <span data-ttu-id="3913c-103">Get-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-103">Get-Item</span></span>
+# <span data-ttu-id="08477-103">Get-Item</span><span class="sxs-lookup"><span data-stu-id="08477-103">Get-Item</span></span>
 
-## <span data-ttu-id="3913c-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="3913c-104">SYNOPSIS</span></span>
-<span data-ttu-id="3913c-105">Obtient l'élément à l'emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="3913c-105">Gets the item at the specified location.</span></span>
+## <span data-ttu-id="08477-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="08477-104">SYNOPSIS</span></span>
+<span data-ttu-id="08477-105">Obtient l'élément à l'emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="08477-105">Gets the item at the specified location.</span></span>
 
-## <span data-ttu-id="3913c-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3913c-106">SYNTAX</span></span>
+## <span data-ttu-id="08477-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="08477-106">SYNTAX</span></span>
 
-### <span data-ttu-id="3913c-107">Chemin d’accès (par défaut)</span><span class="sxs-lookup"><span data-stu-id="3913c-107">Path (Default)</span></span>
+### <span data-ttu-id="08477-107">Chemin d’accès (par défaut)</span><span class="sxs-lookup"><span data-stu-id="08477-107">Path (Default)</span></span>
 
 ```
 Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
  [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="3913c-108">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="3913c-108">LiteralPath</span></span>
+### <span data-ttu-id="08477-108">LiteralPath</span><span class="sxs-lookup"><span data-stu-id="08477-108">LiteralPath</span></span>
 
 ```
 Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Force] [-Credential <PSCredential>] [-Stream <String[]>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="3913c-109">Description</span><span class="sxs-lookup"><span data-stu-id="3913c-109">DESCRIPTION</span></span>
+## <span data-ttu-id="08477-109">Description</span><span class="sxs-lookup"><span data-stu-id="08477-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="3913c-110">L' `Get-Item` applet de commande obtient l’élément à l’emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="3913c-110">The `Get-Item` cmdlet gets the item at the specified location.</span></span> <span data-ttu-id="3913c-111">Elle n’obtient pas le contenu de l’élément à l’emplacement, sauf si vous utilisez un caractère générique ( `*` ) pour demander tout le contenu de l’élément.</span><span class="sxs-lookup"><span data-stu-id="3913c-111">It doesn't get the contents of the item at the location unless you use a wildcard character (`*`) to request all the contents of the item.</span></span>
+<span data-ttu-id="08477-110">L' `Get-Item` applet de commande obtient l’élément à l’emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="08477-110">The `Get-Item` cmdlet gets the item at the specified location.</span></span> <span data-ttu-id="08477-111">Elle n’obtient pas le contenu de l’élément à l’emplacement, sauf si vous utilisez un caractère générique ( `*` ) pour demander tout le contenu de l’élément.</span><span class="sxs-lookup"><span data-stu-id="08477-111">It doesn't get the contents of the item at the location unless you use a wildcard character (`*`) to request all the contents of the item.</span></span>
 
-<span data-ttu-id="3913c-112">Cette applet de commande est utilisée par les fournisseurs PowerShell pour parcourir différents types de magasins de données.</span><span class="sxs-lookup"><span data-stu-id="3913c-112">This cmdlet is used by PowerShell providers to navigate through different types of data stores.</span></span>
+<span data-ttu-id="08477-112">Cette applet de commande est utilisée par les fournisseurs PowerShell pour parcourir différents types de magasins de données.</span><span class="sxs-lookup"><span data-stu-id="08477-112">This cmdlet is used by PowerShell providers to navigate through different types of data stores.</span></span>
 
-## <span data-ttu-id="3913c-113">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="3913c-113">EXAMPLES</span></span>
+## <span data-ttu-id="08477-113">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="08477-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="3913c-114">Exemple 1 : récupérer le répertoire actif</span><span class="sxs-lookup"><span data-stu-id="3913c-114">Example 1: Get the current directory</span></span>
+### <span data-ttu-id="08477-114">Exemple 1 : récupérer le répertoire actif</span><span class="sxs-lookup"><span data-stu-id="08477-114">Example 1: Get the current directory</span></span>
 
-<span data-ttu-id="3913c-115">Cet exemple obtient le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="3913c-115">This example gets the current directory.</span></span> <span data-ttu-id="3913c-116">Le point ('. ') représente l’élément à l’emplacement actuel (et non son contenu).</span><span class="sxs-lookup"><span data-stu-id="3913c-116">The dot ('.') represents the item at the current location (not its contents).</span></span>
+<span data-ttu-id="08477-115">Cet exemple obtient le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="08477-115">This example gets the current directory.</span></span> <span data-ttu-id="08477-116">Le point ('. ') représente l’élément à l’emplacement actuel (et non son contenu).</span><span class="sxs-lookup"><span data-stu-id="08477-116">The dot ('.') represents the item at the current location (not its contents).</span></span>
 
 ```powershell
 Get-Item .
@@ -59,9 +59,9 @@ Mode                LastWriteTime     Length Name
 d----         7/26/2006  10:01 AM            ps-test
 ```
 
-### <span data-ttu-id="3913c-117">Exemple 2 : récupération de tous les éléments dans le répertoire actif</span><span class="sxs-lookup"><span data-stu-id="3913c-117">Example 2: Get all the items in the current directory</span></span>
+### <span data-ttu-id="08477-117">Exemple 2 : récupération de tous les éléments dans le répertoire actif</span><span class="sxs-lookup"><span data-stu-id="08477-117">Example 2: Get all the items in the current directory</span></span>
 
-<span data-ttu-id="3913c-118">Cet exemple obtient tous les éléments du répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="3913c-118">This example gets all the items in the current directory.</span></span> <span data-ttu-id="3913c-119">Le caractère générique ( `*` ) représente tout le contenu de l’élément actuel.</span><span class="sxs-lookup"><span data-stu-id="3913c-119">The wildcard character (`*`) represents all the contents of the current item.</span></span>
+<span data-ttu-id="08477-118">Cet exemple obtient tous les éléments du répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="08477-118">This example gets all the items in the current directory.</span></span> <span data-ttu-id="08477-119">Le caractère générique ( `*` ) représente tout le contenu de l’élément actuel.</span><span class="sxs-lookup"><span data-stu-id="08477-119">The wildcard character (`*`) represents all the contents of the current item.</span></span>
 
 ```powershell
 Get-Item *
@@ -80,59 +80,59 @@ d----         7/26/2006   9:26 AM            Recs
 -a---         7/14/2006  10:47 AM         30 test.txt
 ```
 
-### <span data-ttu-id="3913c-120">Exemple 3 : obtenir le répertoire actif d’un lecteur</span><span class="sxs-lookup"><span data-stu-id="3913c-120">Example 3: Get the current directory of a drive</span></span>
+### <span data-ttu-id="08477-120">Exemple 3 : obtenir le répertoire actif d’un lecteur</span><span class="sxs-lookup"><span data-stu-id="08477-120">Example 3: Get the current directory of a drive</span></span>
 
-<span data-ttu-id="3913c-121">Cet exemple obtient le répertoire actif du `C:` lecteur.</span><span class="sxs-lookup"><span data-stu-id="3913c-121">This example gets the current directory of the `C:` drive.</span></span> <span data-ttu-id="3913c-122">L’objet récupéré représente uniquement le répertoire, pas son contenu.</span><span class="sxs-lookup"><span data-stu-id="3913c-122">The object that is retrieved represents only the directory, not its contents.</span></span>
+<span data-ttu-id="08477-121">Cet exemple obtient le répertoire actif du `C:` lecteur.</span><span class="sxs-lookup"><span data-stu-id="08477-121">This example gets the current directory of the `C:` drive.</span></span> <span data-ttu-id="08477-122">L’objet récupéré représente uniquement le répertoire, pas son contenu.</span><span class="sxs-lookup"><span data-stu-id="08477-122">The object that is retrieved represents only the directory, not its contents.</span></span>
 
 ```powershell
 Get-Item C:\
 ```
 
-### <span data-ttu-id="3913c-123">Exemple 4 : récupérer des éléments dans le lecteur spécifié</span><span class="sxs-lookup"><span data-stu-id="3913c-123">Example 4: Get items in the specified drive</span></span>
+### <span data-ttu-id="08477-123">Exemple 4 : récupérer des éléments dans le lecteur spécifié</span><span class="sxs-lookup"><span data-stu-id="08477-123">Example 4: Get items in the specified drive</span></span>
 
-<span data-ttu-id="3913c-124">Cet exemple obtient les éléments du `C:` lecteur.</span><span class="sxs-lookup"><span data-stu-id="3913c-124">This example gets the items in the `C:` drive.</span></span> <span data-ttu-id="3913c-125">Le caractère générique ( `*` ) représente tous les éléments dans le conteneur, et pas seulement le conteneur.</span><span class="sxs-lookup"><span data-stu-id="3913c-125">The wildcard character (`*`) represents all the items in the container, not just the container.</span></span>
+<span data-ttu-id="08477-124">Cet exemple obtient les éléments du `C:` lecteur.</span><span class="sxs-lookup"><span data-stu-id="08477-124">This example gets the items in the `C:` drive.</span></span> <span data-ttu-id="08477-125">Le caractère générique ( `*` ) représente tous les éléments dans le conteneur, et pas seulement le conteneur.</span><span class="sxs-lookup"><span data-stu-id="08477-125">The wildcard character (`*`) represents all the items in the container, not just the container.</span></span>
 
 ```powershell
 Get-Item C:\*
 ```
 
-<span data-ttu-id="3913c-126">Dans PowerShell, utilisez un seul astérisque ( `*` ) pour obtenir le contenu, plutôt que le traditionnel `*.*` .</span><span class="sxs-lookup"><span data-stu-id="3913c-126">In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`.</span></span> <span data-ttu-id="3913c-127">Le format est interprété littéralement. par conséquent, n' `*.*` extrayez pas les répertoires ou les noms de fichiers sans point.</span><span class="sxs-lookup"><span data-stu-id="3913c-127">The format is interpreted literally, so `*.*` wouldn't retrieve directories or filenames without a dot.</span></span>
+<span data-ttu-id="08477-126">Dans PowerShell, utilisez un seul astérisque ( `*` ) pour obtenir le contenu, plutôt que le traditionnel `*.*` .</span><span class="sxs-lookup"><span data-stu-id="08477-126">In PowerShell, use a single asterisk (`*`) to get contents, instead of the traditional `*.*`.</span></span> <span data-ttu-id="08477-127">Le format est interprété littéralement. par conséquent, n' `*.*` extrayez pas les répertoires ou les noms de fichiers sans point.</span><span class="sxs-lookup"><span data-stu-id="08477-127">The format is interpreted literally, so `*.*` wouldn't retrieve directories or filenames without a dot.</span></span>
 
-### <span data-ttu-id="3913c-128">Exemple 5 : obtenir une propriété dans le répertoire spécifié</span><span class="sxs-lookup"><span data-stu-id="3913c-128">Example 5: Get a property in the specified directory</span></span>
+### <span data-ttu-id="08477-128">Exemple 5 : obtenir une propriété dans le répertoire spécifié</span><span class="sxs-lookup"><span data-stu-id="08477-128">Example 5: Get a property in the specified directory</span></span>
 
-<span data-ttu-id="3913c-129">Cet exemple obtient la propriété **LastAccessTime** du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="3913c-129">This example gets the **LastAccessTime** property of the `C:\Windows` directory.</span></span> <span data-ttu-id="3913c-130">**LastAccessTime** n’est qu’une des propriétés des répertoires du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="3913c-130">**LastAccessTime** is just one property of file system directories.</span></span> <span data-ttu-id="3913c-131">Pour afficher toutes les propriétés d’un répertoire, tapez `(Get-Item <directory-name>) | Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="3913c-131">To see all the properties of a directory, type `(Get-Item <directory-name>) | Get-Member`.</span></span>
+<span data-ttu-id="08477-129">Cet exemple obtient la propriété **LastAccessTime** du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="08477-129">This example gets the **LastAccessTime** property of the `C:\Windows` directory.</span></span> <span data-ttu-id="08477-130">**LastAccessTime** n’est qu’une des propriétés des répertoires du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="08477-130">**LastAccessTime** is just one property of file system directories.</span></span> <span data-ttu-id="08477-131">Pour afficher toutes les propriétés d’un répertoire, tapez `(Get-Item <directory-name>) | Get-Member` .</span><span class="sxs-lookup"><span data-stu-id="08477-131">To see all the properties of a directory, type `(Get-Item <directory-name>) | Get-Member`.</span></span>
 
 ```powershell
 (Get-Item C:\Windows).LastAccessTime
 ```
 
-### <span data-ttu-id="3913c-132">Exemple 6 : afficher le contenu d’une clé de Registre</span><span class="sxs-lookup"><span data-stu-id="3913c-132">Example 6: Show the contents of a registry key</span></span>
+### <span data-ttu-id="08477-132">Exemple 6 : afficher le contenu d’une clé de Registre</span><span class="sxs-lookup"><span data-stu-id="08477-132">Example 6: Show the contents of a registry key</span></span>
 
-<span data-ttu-id="3913c-133">Cet exemple montre le contenu de la clé de Registre **Microsoft. PowerShell** .</span><span class="sxs-lookup"><span data-stu-id="3913c-133">This example shows the contents of the **Microsoft.PowerShell** registry key.</span></span> <span data-ttu-id="3913c-134">Vous pouvez utiliser cette applet de commande avec le fournisseur de Registre PowerShell pour récupérer les clés et les sous-clés de Registre, mais vous devez utiliser l' `Get-ItemProperty` applet de commande pour récupérer les valeurs et les données du Registre.</span><span class="sxs-lookup"><span data-stu-id="3913c-134">You can use this cmdlet with the PowerShell Registry provider to get registry keys and subkeys, but you must use the `Get-ItemProperty` cmdlet to get the registry values and data.</span></span>
+<span data-ttu-id="08477-133">Cet exemple montre le contenu de la clé de Registre **Microsoft. PowerShell** .</span><span class="sxs-lookup"><span data-stu-id="08477-133">This example shows the contents of the **Microsoft.PowerShell** registry key.</span></span> <span data-ttu-id="08477-134">Vous pouvez utiliser cette applet de commande avec le fournisseur de Registre PowerShell pour récupérer les clés et les sous-clés de Registre, mais vous devez utiliser l' `Get-ItemProperty` applet de commande pour récupérer les valeurs et les données du Registre.</span><span class="sxs-lookup"><span data-stu-id="08477-134">You can use this cmdlet with the PowerShell Registry provider to get registry keys and subkeys, but you must use the `Get-ItemProperty` cmdlet to get the registry values and data.</span></span>
 
 ```powershell
 Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
 ```
 
-### <span data-ttu-id="3913c-135">Exemple 7 : obtenir des éléments dans un répertoire qui ont une exclusion</span><span class="sxs-lookup"><span data-stu-id="3913c-135">Example 7: Get items in a directory that have an exclusion</span></span>
+### <span data-ttu-id="08477-135">Exemple 7 : obtenir des éléments dans un répertoire qui ont une exclusion</span><span class="sxs-lookup"><span data-stu-id="08477-135">Example 7: Get items in a directory that have an exclusion</span></span>
 
-<span data-ttu-id="3913c-136">Cet exemple obtient les éléments du répertoire Windows dont les noms incluent un point ( `.` ), mais ne commencent pas par `w*` . Cet exemple fonctionne uniquement lorsque le chemin d’accès contient un caractère générique ( `*` ) pour spécifier le contenu de l’élément.</span><span class="sxs-lookup"><span data-stu-id="3913c-136">This example gets items in the Windows directory with names that include a dot (`.`), but don't begin with `w*`.This example works only when the path includes a wildcard character (`*`) to specify the contents of the item.</span></span>
+<span data-ttu-id="08477-136">Cet exemple obtient les éléments du répertoire Windows dont les noms incluent un point ( `.` ), mais ne commencent pas par `w*` . Cet exemple fonctionne uniquement lorsque le chemin d’accès contient un caractère générique ( `*` ) pour spécifier le contenu de l’élément.</span><span class="sxs-lookup"><span data-stu-id="08477-136">This example gets items in the Windows directory with names that include a dot (`.`), but don't begin with `w*`.This example works only when the path includes a wildcard character (`*`) to specify the contents of the item.</span></span>
 
 ```powershell
 Get-Item C:\Windows\*.* -Exclude "w*"
 ```
 
-### <span data-ttu-id="3913c-137">Exemple 8 : obtention d’informations hardlink</span><span class="sxs-lookup"><span data-stu-id="3913c-137">Example 8: Getting hardlink information</span></span>
+### <span data-ttu-id="08477-137">Exemple 8 : obtention d’informations hardlink</span><span class="sxs-lookup"><span data-stu-id="08477-137">Example 8: Getting hardlink information</span></span>
 
-<span data-ttu-id="3913c-138">Dans PowerShell 6,2, une autre vue a été ajoutée pour obtenir les informations de liaison permanente.</span><span class="sxs-lookup"><span data-stu-id="3913c-138">In PowerShell 6.2, an alternate view was added to get hardlink information.</span></span> <span data-ttu-id="3913c-139">Pour récupérer les informations hardlink, dirigez la sortie vers `Format-Table -View childrenWithHardlink`</span><span class="sxs-lookup"><span data-stu-id="3913c-139">To get the hardlink information, pipe the output to `Format-Table -View childrenWithHardlink`</span></span>
+<span data-ttu-id="08477-138">Dans PowerShell 6,2, une autre vue a été ajoutée pour obtenir les informations de liaison permanente.</span><span class="sxs-lookup"><span data-stu-id="08477-138">In PowerShell 6.2, an alternate view was added to get hardlink information.</span></span> <span data-ttu-id="08477-139">Pour récupérer les informations hardlink, dirigez la sortie vers `Format-Table -View childrenWithHardlink`</span><span class="sxs-lookup"><span data-stu-id="08477-139">To get the hardlink information, pipe the output to `Format-Table -View childrenWithHardlink`</span></span>
 
 ```powershell
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### <span data-ttu-id="3913c-140">Exemple 9 : sortie pour la fonctionnalité expérimentale PSUnixFileStat</span><span class="sxs-lookup"><span data-stu-id="3913c-140">Example 9: Output for experimental feature PSUnixFileStat</span></span>
+### <span data-ttu-id="08477-140">Exemple 9 : sortie pour les systèmes d’exploitation autres que Windows</span><span class="sxs-lookup"><span data-stu-id="08477-140">Example 9: Output for Non-Windows Operating Systems</span></span>
 
-<span data-ttu-id="3913c-141">Dans PowerShell 7 sur les systèmes UNIX, la fonctionnalité expérimentale **PSUnixFileStat** fournit une sortie de type UNIX :</span><span class="sxs-lookup"><span data-stu-id="3913c-141">In PowerShell 7 on Unix systems, the experimental feature **PSUnixFileStat** provides Unix-like output:</span></span>
+<span data-ttu-id="08477-141">Dans PowerShell 7,1 sur les systèmes UNIX, l’applet de commande `Get-Item` fournit une sortie de type UNIX :</span><span class="sxs-lookup"><span data-stu-id="08477-141">In PowerShell 7.1 on Unix systems, the `Get-Item` cmdlet provides Unix-like output:</span></span>
 
 ```powershell
 PS> Get-Item /Users
@@ -146,21 +146,24 @@ UnixMode    User  Group   LastWriteTime      Size  Name
 drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 ```
 
-<span data-ttu-id="3913c-142">Les nouvelles propriétés qui font désormais partie de la sortie sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="3913c-142">The new properties that are now part of the output are:</span></span>
+<span data-ttu-id="08477-142">Les nouvelles propriétés qui font désormais partie de la sortie sont les suivantes :</span><span class="sxs-lookup"><span data-stu-id="08477-142">The new properties that are now part of the output are:</span></span>
 
-- <span data-ttu-id="3913c-143">**UnixMode** est l’autorisation de fichier représentée sur un système UNIX</span><span class="sxs-lookup"><span data-stu-id="3913c-143">**UnixMode** is the file permissions as represented on a Unix system</span></span>
-- <span data-ttu-id="3913c-144">L' **utilisateur** est le propriétaire du fichier</span><span class="sxs-lookup"><span data-stu-id="3913c-144">**User** is the file owner</span></span>
-- <span data-ttu-id="3913c-145">Le **groupe** est le propriétaire du groupe</span><span class="sxs-lookup"><span data-stu-id="3913c-145">**Group** is the group owner</span></span>
-- <span data-ttu-id="3913c-146">**Taille** correspond à la taille du fichier ou du répertoire tel qu’il est représenté sur un système UNIX.</span><span class="sxs-lookup"><span data-stu-id="3913c-146">**Size** is the size of the file or directory as represented on a Unix system</span></span>
+- <span data-ttu-id="08477-143">**UnixMode** est l’autorisation de fichier représentée sur un système UNIX</span><span class="sxs-lookup"><span data-stu-id="08477-143">**UnixMode** is the file permissions as represented on a Unix system</span></span>
+- <span data-ttu-id="08477-144">L' **utilisateur** est le propriétaire du fichier</span><span class="sxs-lookup"><span data-stu-id="08477-144">**User** is the file owner</span></span>
+- <span data-ttu-id="08477-145">Le **groupe** est le propriétaire du groupe</span><span class="sxs-lookup"><span data-stu-id="08477-145">**Group** is the group owner</span></span>
+- <span data-ttu-id="08477-146">**Taille** correspond à la taille du fichier ou du répertoire tel qu’il est représenté sur un système UNIX.</span><span class="sxs-lookup"><span data-stu-id="08477-146">**Size** is the size of the file or directory as represented on a Unix system</span></span>
 
-## <span data-ttu-id="3913c-147">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="3913c-147">PARAMETERS</span></span>
+> [!NOTE]
+> <span data-ttu-id="08477-147">Cette fonctionnalité a été déplacée de expérimental vers standard dans PowerShell 7,1.</span><span class="sxs-lookup"><span data-stu-id="08477-147">This feature was moved from experimental to mainstream in PowerShell 7.1.</span></span>
 
-### <span data-ttu-id="3913c-148">-Stream</span><span class="sxs-lookup"><span data-stu-id="3913c-148">-Stream</span></span>
+## <span data-ttu-id="08477-148">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="08477-148">PARAMETERS</span></span>
 
-<span data-ttu-id="3913c-149">Obtient le flux de fichiers NTFS alternatif spécifié du fichier.</span><span class="sxs-lookup"><span data-stu-id="3913c-149">Gets the specified alternate NTFS file stream from the file.</span></span> <span data-ttu-id="3913c-150">Entrez le nom du flux.</span><span class="sxs-lookup"><span data-stu-id="3913c-150">Enter the stream name.</span></span> <span data-ttu-id="3913c-151">Les caractères génériques sont pris en charge.</span><span class="sxs-lookup"><span data-stu-id="3913c-151">Wildcards are supported.</span></span> <span data-ttu-id="3913c-152">Pour récupérer tous les flux, utilisez un astérisque ( `*` ).</span><span class="sxs-lookup"><span data-stu-id="3913c-152">To get all streams, use an asterisk (`*`).</span></span> <span data-ttu-id="3913c-153">Ce paramètre n’est pas valide sur les dossiers.</span><span class="sxs-lookup"><span data-stu-id="3913c-153">This parameter isn't valid on folders.</span></span>
+### <span data-ttu-id="08477-149">-Stream</span><span class="sxs-lookup"><span data-stu-id="08477-149">-Stream</span></span>
 
-<span data-ttu-id="3913c-154">**Stream** est un paramètre dynamique que le fournisseur **FileSystem** ajoute à l' `Get-Item` applet de commande.</span><span class="sxs-lookup"><span data-stu-id="3913c-154">**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.</span></span>
-<span data-ttu-id="3913c-155">Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="3913c-155">This parameter works only in file system drives.</span></span>
+<span data-ttu-id="08477-150">Obtient le flux de fichiers NTFS alternatif spécifié du fichier.</span><span class="sxs-lookup"><span data-stu-id="08477-150">Gets the specified alternate NTFS file stream from the file.</span></span> <span data-ttu-id="08477-151">Entrez le nom du flux.</span><span class="sxs-lookup"><span data-stu-id="08477-151">Enter the stream name.</span></span> <span data-ttu-id="08477-152">Les caractères génériques sont pris en charge.</span><span class="sxs-lookup"><span data-stu-id="08477-152">Wildcards are supported.</span></span> <span data-ttu-id="08477-153">Pour récupérer tous les flux, utilisez un astérisque ( `*` ).</span><span class="sxs-lookup"><span data-stu-id="08477-153">To get all streams, use an asterisk (`*`).</span></span> <span data-ttu-id="08477-154">Ce paramètre n’est pas valide sur les dossiers.</span><span class="sxs-lookup"><span data-stu-id="08477-154">This parameter isn't valid on folders.</span></span>
+
+<span data-ttu-id="08477-155">**Stream** est un paramètre dynamique que le fournisseur **FileSystem** ajoute à l' `Get-Item` applet de commande.</span><span class="sxs-lookup"><span data-stu-id="08477-155">**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.</span></span>
+<span data-ttu-id="08477-156">Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers.</span><span class="sxs-lookup"><span data-stu-id="08477-156">This parameter works only in file system drives.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -174,11 +177,11 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3913c-156">-Credential</span><span class="sxs-lookup"><span data-stu-id="3913c-156">-Credential</span></span>
+### <span data-ttu-id="08477-157">-Credential</span><span class="sxs-lookup"><span data-stu-id="08477-157">-Credential</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3913c-157">Ce paramètre n’est pas pris en charge par les fournisseurs installés avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="3913c-157">This parameter isn't supported by any providers installed with PowerShell.</span></span>
-> <span data-ttu-id="3913c-158">Pour emprunter l’identité d’un autre utilisateur ou élever vos informations d’identification lors de l’exécution de cette applet de commande, utilisez [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span><span class="sxs-lookup"><span data-stu-id="3913c-158">To impersonate another user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span></span>
+> <span data-ttu-id="08477-158">Ce paramètre n’est pas pris en charge par les fournisseurs installés avec PowerShell.</span><span class="sxs-lookup"><span data-stu-id="08477-158">This parameter isn't supported by any providers installed with PowerShell.</span></span>
+> <span data-ttu-id="08477-159">Pour emprunter l’identité d’un autre utilisateur ou élever vos informations d’identification lors de l’exécution de cette applet de commande, utilisez [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span><span class="sxs-lookup"><span data-stu-id="08477-159">To impersonate another user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -192,9 +195,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3913c-159">-Exclude</span><span class="sxs-lookup"><span data-stu-id="3913c-159">-Exclude</span></span>
+### <span data-ttu-id="08477-160">-Exclude</span><span class="sxs-lookup"><span data-stu-id="08477-160">-Exclude</span></span>
 
-<span data-ttu-id="3913c-160">Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération.</span><span class="sxs-lookup"><span data-stu-id="3913c-160">Specifies, as a string array, an item or items that this cmdlet excludes in the operation.</span></span> <span data-ttu-id="3913c-161">La valeur de ce paramètre qualifie le paramètre **Path** .</span><span class="sxs-lookup"><span data-stu-id="3913c-161">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="3913c-162">Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="3913c-162">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="3913c-163">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="3913c-163">Wildcard characters are permitted.</span></span> <span data-ttu-id="3913c-164">Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="3913c-164">The **Exclude** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
+<span data-ttu-id="08477-161">Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération.</span><span class="sxs-lookup"><span data-stu-id="08477-161">Specifies, as a string array, an item or items that this cmdlet excludes in the operation.</span></span> <span data-ttu-id="08477-162">La valeur de ce paramètre qualifie le paramètre **Path**.</span><span class="sxs-lookup"><span data-stu-id="08477-162">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="08477-163">Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="08477-163">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="08477-164">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="08477-164">Wildcard characters are permitted.</span></span> <span data-ttu-id="08477-165">Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="08477-165">The **Exclude** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -208,9 +211,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3913c-165">-Filter</span><span class="sxs-lookup"><span data-stu-id="3913c-165">-Filter</span></span>
+### <span data-ttu-id="08477-166">-Filter</span><span class="sxs-lookup"><span data-stu-id="08477-166">-Filter</span></span>
 
-<span data-ttu-id="3913c-166">Spécifie un filtre pour qualifier le paramètre **path** .</span><span class="sxs-lookup"><span data-stu-id="3913c-166">Specifies a filter to qualify the **Path** parameter.</span></span> <span data-ttu-id="3913c-167">Le fournisseur [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) est le seul fournisseur PowerShell installé qui prend en charge les filtres.</span><span class="sxs-lookup"><span data-stu-id="3913c-167">The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only installed PowerShell provider that supports filters.</span></span> <span data-ttu-id="3913c-168">Les filtres sont plus efficaces que les autres paramètres.</span><span class="sxs-lookup"><span data-stu-id="3913c-168">Filters are more efficient than other parameters.</span></span> <span data-ttu-id="3913c-169">Le fournisseur applique le filtre lorsque l’applet de commande obtient les objets au lieu d’avoir PowerShell de filtrer les objets une fois qu’ils sont récupérés.</span><span class="sxs-lookup"><span data-stu-id="3913c-169">The provider applies filter when the cmdlet gets the objects rather than having PowerShell filter the objects after they're retrieved.</span></span> <span data-ttu-id="3913c-170">La chaîne de filtrage est transmise à l’API .NET pour énumérer les fichiers.</span><span class="sxs-lookup"><span data-stu-id="3913c-170">The filter string is passed to the .NET API to enumerate files.</span></span> <span data-ttu-id="3913c-171">L’API prend en charge uniquement les `*` `?` caractères génériques et.</span><span class="sxs-lookup"><span data-stu-id="3913c-171">The API only supports `*` and `?` wildcards.</span></span>
+<span data-ttu-id="08477-167">Spécifie un filtre pour qualifier le paramètre **path** .</span><span class="sxs-lookup"><span data-stu-id="08477-167">Specifies a filter to qualify the **Path** parameter.</span></span> <span data-ttu-id="08477-168">Le fournisseur [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) est le seul fournisseur PowerShell installé qui prend en charge les filtres.</span><span class="sxs-lookup"><span data-stu-id="08477-168">The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only installed PowerShell provider that supports filters.</span></span> <span data-ttu-id="08477-169">Les filtres sont plus efficaces que les autres paramètres.</span><span class="sxs-lookup"><span data-stu-id="08477-169">Filters are more efficient than other parameters.</span></span> <span data-ttu-id="08477-170">Le fournisseur applique le filtre lorsque l’applet de commande obtient les objets au lieu d’avoir PowerShell de filtrer les objets une fois qu’ils sont récupérés.</span><span class="sxs-lookup"><span data-stu-id="08477-170">The provider applies filter when the cmdlet gets the objects rather than having PowerShell filter the objects after they're retrieved.</span></span> <span data-ttu-id="08477-171">La chaîne de filtrage est transmise à l’API .NET pour énumérer les fichiers.</span><span class="sxs-lookup"><span data-stu-id="08477-171">The filter string is passed to the .NET API to enumerate files.</span></span> <span data-ttu-id="08477-172">L’API prend en charge uniquement les `*` `?` caractères génériques et.</span><span class="sxs-lookup"><span data-stu-id="08477-172">The API only supports `*` and `?` wildcards.</span></span>
 
 ```yaml
 Type: System.String
@@ -224,10 +227,10 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3913c-172">-Force</span><span class="sxs-lookup"><span data-stu-id="3913c-172">-Force</span></span>
+### <span data-ttu-id="08477-173">-Force</span><span class="sxs-lookup"><span data-stu-id="08477-173">-Force</span></span>
 
-<span data-ttu-id="3913c-173">Indique que cette applet de commande obtient des éléments qui ne sont pas accessibles autrement, tels que des éléments masqués.</span><span class="sxs-lookup"><span data-stu-id="3913c-173">Indicates that this cmdlet gets items that can't otherwise be accessed, such as hidden items.</span></span>
-<span data-ttu-id="3913c-174">L'implémentation est différente d'un fournisseur à l'autre.</span><span class="sxs-lookup"><span data-stu-id="3913c-174">Implementation varies from provider to provider.</span></span> <span data-ttu-id="3913c-175">Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span><span class="sxs-lookup"><span data-stu-id="3913c-175">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span> <span data-ttu-id="3913c-176">Même en utilisant le paramètre **force** , l’applet de commande ne peut pas remplacer les restrictions de sécurité.</span><span class="sxs-lookup"><span data-stu-id="3913c-176">Even using the **Force** parameter, the cmdlet can't override security restrictions.</span></span>
+<span data-ttu-id="08477-174">Indique que cette applet de commande obtient des éléments qui ne sont pas accessibles autrement, tels que des éléments masqués.</span><span class="sxs-lookup"><span data-stu-id="08477-174">Indicates that this cmdlet gets items that can't otherwise be accessed, such as hidden items.</span></span>
+<span data-ttu-id="08477-175">L'implémentation est différente d'un fournisseur à l'autre.</span><span class="sxs-lookup"><span data-stu-id="08477-175">Implementation varies from provider to provider.</span></span> <span data-ttu-id="08477-176">Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span><span class="sxs-lookup"><span data-stu-id="08477-176">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span> <span data-ttu-id="08477-177">Même en utilisant le paramètre **force** , l’applet de commande ne peut pas remplacer les restrictions de sécurité.</span><span class="sxs-lookup"><span data-stu-id="08477-177">Even using the **Force** parameter, the cmdlet can't override security restrictions.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -241,9 +244,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3913c-177">-Include</span><span class="sxs-lookup"><span data-stu-id="3913c-177">-Include</span></span>
+### <span data-ttu-id="08477-178">-Include</span><span class="sxs-lookup"><span data-stu-id="08477-178">-Include</span></span>
 
-<span data-ttu-id="3913c-178">Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération.</span><span class="sxs-lookup"><span data-stu-id="3913c-178">Specifies, as a string array, an item or items that this cmdlet includes in the operation.</span></span> <span data-ttu-id="3913c-179">La valeur de ce paramètre qualifie le paramètre **Path** .</span><span class="sxs-lookup"><span data-stu-id="3913c-179">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="3913c-180">Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="3913c-180">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="3913c-181">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="3913c-181">Wildcard characters are permitted.</span></span> <span data-ttu-id="3913c-182">Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="3913c-182">The **Include** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
+<span data-ttu-id="08477-179">Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération.</span><span class="sxs-lookup"><span data-stu-id="08477-179">Specifies, as a string array, an item or items that this cmdlet includes in the operation.</span></span> <span data-ttu-id="08477-180">La valeur de ce paramètre qualifie le paramètre **Path**.</span><span class="sxs-lookup"><span data-stu-id="08477-180">The value of this parameter qualifies the **Path** parameter.</span></span> <span data-ttu-id="08477-181">Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .</span><span class="sxs-lookup"><span data-stu-id="08477-181">Enter a path element or pattern, such as `*.txt`.</span></span> <span data-ttu-id="08477-182">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="08477-182">Wildcard characters are permitted.</span></span> <span data-ttu-id="08477-183">Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.</span><span class="sxs-lookup"><span data-stu-id="08477-183">The **Include** parameter is effective only when the command includes the contents of an item, such as `C:\Windows\*`, where the wildcard character specifies the contents of the `C:\Windows` directory.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -257,11 +260,11 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3913c-183">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="3913c-183">-LiteralPath</span></span>
+### <span data-ttu-id="08477-184">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="08477-184">-LiteralPath</span></span>
 
-<span data-ttu-id="3913c-184">Spécifie un chemin d’accès à un ou plusieurs emplacements.</span><span class="sxs-lookup"><span data-stu-id="3913c-184">Specifies a path to one or more locations.</span></span> <span data-ttu-id="3913c-185">La valeur de **LiteralPath** est utilisée exactement telle qu’elle est tapée.</span><span class="sxs-lookup"><span data-stu-id="3913c-185">The value of **LiteralPath** is used exactly as it's typed.</span></span> <span data-ttu-id="3913c-186">Aucun caractère n’est interprété en tant que caractère générique.</span><span class="sxs-lookup"><span data-stu-id="3913c-186">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="3913c-187">Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples.</span><span class="sxs-lookup"><span data-stu-id="3913c-187">If the path includes escape characters, enclose it in single quotation marks.</span></span> <span data-ttu-id="3913c-188">Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.</span><span class="sxs-lookup"><span data-stu-id="3913c-188">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+<span data-ttu-id="08477-185">Spécifie un chemin d’accès à un ou plusieurs emplacements.</span><span class="sxs-lookup"><span data-stu-id="08477-185">Specifies a path to one or more locations.</span></span> <span data-ttu-id="08477-186">La valeur de **LiteralPath** est utilisée exactement telle qu’elle est tapée.</span><span class="sxs-lookup"><span data-stu-id="08477-186">The value of **LiteralPath** is used exactly as it's typed.</span></span> <span data-ttu-id="08477-187">Aucun caractère n’est interprété en tant que caractère générique.</span><span class="sxs-lookup"><span data-stu-id="08477-187">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="08477-188">Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples.</span><span class="sxs-lookup"><span data-stu-id="08477-188">If the path includes escape characters, enclose it in single quotation marks.</span></span> <span data-ttu-id="08477-189">Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.</span><span class="sxs-lookup"><span data-stu-id="08477-189">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
 
-<span data-ttu-id="3913c-189">Pour plus d’informations, consultez [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span><span class="sxs-lookup"><span data-stu-id="3913c-189">For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span></span>
+<span data-ttu-id="08477-190">Pour plus d’informations, consultez [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span><span class="sxs-lookup"><span data-stu-id="08477-190">For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).</span></span>
 
 ```yaml
 Type: System.String[]
@@ -275,11 +278,11 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="3913c-190">-Path</span><span class="sxs-lookup"><span data-stu-id="3913c-190">-Path</span></span>
+### <span data-ttu-id="08477-191">-Path</span><span class="sxs-lookup"><span data-stu-id="08477-191">-Path</span></span>
 
-<span data-ttu-id="3913c-191">Spécifie le chemin d’accès à un élément.</span><span class="sxs-lookup"><span data-stu-id="3913c-191">Specifies the path to an item.</span></span> <span data-ttu-id="3913c-192">Cette applet de commande obtient l’élément à l’emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="3913c-192">This cmdlet gets the item at the specified location.</span></span> <span data-ttu-id="3913c-193">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="3913c-193">Wildcard characters are permitted.</span></span> <span data-ttu-id="3913c-194">Ce paramètre est obligatoire, mais le **chemin d’accès** au nom de paramètre est facultatif.</span><span class="sxs-lookup"><span data-stu-id="3913c-194">This parameter is required, but the parameter name **Path** is optional.</span></span>
+<span data-ttu-id="08477-192">Spécifie le chemin d’accès à un élément.</span><span class="sxs-lookup"><span data-stu-id="08477-192">Specifies the path to an item.</span></span> <span data-ttu-id="08477-193">Cette applet de commande obtient l’élément à l’emplacement spécifié.</span><span class="sxs-lookup"><span data-stu-id="08477-193">This cmdlet gets the item at the specified location.</span></span> <span data-ttu-id="08477-194">Les caractères génériques sont autorisés.</span><span class="sxs-lookup"><span data-stu-id="08477-194">Wildcard characters are permitted.</span></span> <span data-ttu-id="08477-195">Ce paramètre est obligatoire, mais le **chemin d’accès** au nom de paramètre est facultatif.</span><span class="sxs-lookup"><span data-stu-id="08477-195">This parameter is required, but the parameter name **Path** is optional.</span></span>
 
-<span data-ttu-id="3913c-195">Utilisez un point ( `.` ) pour spécifier l’emplacement actuel.</span><span class="sxs-lookup"><span data-stu-id="3913c-195">Use a dot (`.`) to specify the current location.</span></span> <span data-ttu-id="3913c-196">Utilisez le caractère générique ( `*` ) pour spécifier tous les éléments à l’emplacement actuel.</span><span class="sxs-lookup"><span data-stu-id="3913c-196">Use the wildcard character (`*`) to specify all the items in the current location.</span></span>
+<span data-ttu-id="08477-196">Utilisez un point ( `.` ) pour spécifier l’emplacement actuel.</span><span class="sxs-lookup"><span data-stu-id="08477-196">Use a dot (`.`) to specify the current location.</span></span> <span data-ttu-id="08477-197">Utilisez le caractère générique ( `*` ) pour spécifier tous les éléments à l’emplacement actuel.</span><span class="sxs-lookup"><span data-stu-id="08477-197">Use the wildcard character (`*`) to specify all the items in the current location.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -293,54 +296,54 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="3913c-197">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3913c-197">CommonParameters</span></span>
+### <span data-ttu-id="08477-198">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="08477-198">CommonParameters</span></span>
 
-<span data-ttu-id="3913c-198">Cette applet de commande prend en charge les paramètres communs : `-Debug` , `-ErrorAction` ,, `-ErrorVariable` `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` et `-WarningVariable` .</span><span class="sxs-lookup"><span data-stu-id="3913c-198">This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.</span></span> <span data-ttu-id="3913c-199">Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span><span class="sxs-lookup"><span data-stu-id="3913c-199">For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span></span>
+<span data-ttu-id="08477-199">Cette applet de commande prend en charge les paramètres communs : `-Debug` , `-ErrorAction` ,, `-ErrorVariable` `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` et `-WarningVariable` .</span><span class="sxs-lookup"><span data-stu-id="08477-199">This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`.</span></span> <span data-ttu-id="08477-200">Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span><span class="sxs-lookup"><span data-stu-id="08477-200">For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).</span></span>
 
-## <span data-ttu-id="3913c-200">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="3913c-200">INPUTS</span></span>
+## <span data-ttu-id="08477-201">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="08477-201">INPUTS</span></span>
 
-### <span data-ttu-id="3913c-201">System.String</span><span class="sxs-lookup"><span data-stu-id="3913c-201">System.String</span></span>
+### <span data-ttu-id="08477-202">System.String</span><span class="sxs-lookup"><span data-stu-id="08477-202">System.String</span></span>
 
-<span data-ttu-id="3913c-202">Vous pouvez diriger une chaîne qui contient un chemin d’accès vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="3913c-202">You can pipe a string that contains a path to this cmdlet.</span></span>
+<span data-ttu-id="08477-203">Vous pouvez diriger une chaîne qui contient un chemin d’accès vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="08477-203">You can pipe a string that contains a path to this cmdlet.</span></span>
 
-## <span data-ttu-id="3913c-203">SORTIES</span><span class="sxs-lookup"><span data-stu-id="3913c-203">OUTPUTS</span></span>
+## <span data-ttu-id="08477-204">SORTIES</span><span class="sxs-lookup"><span data-stu-id="08477-204">OUTPUTS</span></span>
 
-### <span data-ttu-id="3913c-204">System.Object</span><span class="sxs-lookup"><span data-stu-id="3913c-204">System.Object</span></span>
+### <span data-ttu-id="08477-205">System.Object</span><span class="sxs-lookup"><span data-stu-id="08477-205">System.Object</span></span>
 
-<span data-ttu-id="3913c-205">Cette applet de commande retourne les objets qu’elle obtient.</span><span class="sxs-lookup"><span data-stu-id="3913c-205">This cmdlet returns the objects that it gets.</span></span> <span data-ttu-id="3913c-206">Le type est déterminé par le type d’objets dans le chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="3913c-206">The type is determined by the type of objects in the path.</span></span>
+<span data-ttu-id="08477-206">Cette applet de commande retourne les objets qu’elle obtient.</span><span class="sxs-lookup"><span data-stu-id="08477-206">This cmdlet returns the objects that it gets.</span></span> <span data-ttu-id="08477-207">Le type est déterminé par le type d’objets dans le chemin d’accès.</span><span class="sxs-lookup"><span data-stu-id="08477-207">The type is determined by the type of objects in the path.</span></span>
 
-## <span data-ttu-id="3913c-207">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="3913c-207">NOTES</span></span>
+## <span data-ttu-id="08477-208">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="08477-208">NOTES</span></span>
 
-<span data-ttu-id="3913c-208">Cette applet de commande n’a pas de paramètre **recurse** , car elle obtient uniquement un élément, et non son contenu.</span><span class="sxs-lookup"><span data-stu-id="3913c-208">This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.</span></span>
-<span data-ttu-id="3913c-209">Pour récupérer le contenu d’un élément de manière récursive, utilisez `Get-ChildItem` .</span><span class="sxs-lookup"><span data-stu-id="3913c-209">To get the contents of an item recursively, use `Get-ChildItem`.</span></span>
+<span data-ttu-id="08477-209">Cette applet de commande n’a pas de paramètre **recurse** , car elle obtient uniquement un élément, et non son contenu.</span><span class="sxs-lookup"><span data-stu-id="08477-209">This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.</span></span>
+<span data-ttu-id="08477-210">Pour récupérer le contenu d’un élément de manière récursive, utilisez `Get-ChildItem` .</span><span class="sxs-lookup"><span data-stu-id="08477-210">To get the contents of an item recursively, use `Get-ChildItem`.</span></span>
 
-<span data-ttu-id="3913c-210">Pour parcourir le registre, utilisez cette applet de commande pour récupérer les clés de Registre et le `Get-ItemProperty` pour accéder aux données et valeurs de registre.</span><span class="sxs-lookup"><span data-stu-id="3913c-210">To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty` to get registry values and data.</span></span> <span data-ttu-id="3913c-211">Les valeurs de Registre sont considérées comme des propriétés des clés de Registre.</span><span class="sxs-lookup"><span data-stu-id="3913c-211">The registry values are considered to be properties of the registry key.</span></span>
-  
-<span data-ttu-id="3913c-212">Cette applet de commande est conçue pour utiliser les données exposées par n’importe quel fournisseur.</span><span class="sxs-lookup"><span data-stu-id="3913c-212">This cmdlet is designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="3913c-213">Pour répertorier les fournisseurs disponibles dans votre session, tapez `Get-PsProvider` .</span><span class="sxs-lookup"><span data-stu-id="3913c-213">To list the providers available in your session, type `Get-PsProvider`.</span></span> <span data-ttu-id="3913c-214">Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span><span class="sxs-lookup"><span data-stu-id="3913c-214">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span>
+<span data-ttu-id="08477-211">Pour parcourir le registre, utilisez cette applet de commande pour récupérer les clés de Registre et le `Get-ItemProperty` pour accéder aux données et valeurs de registre.</span><span class="sxs-lookup"><span data-stu-id="08477-211">To navigate through the registry, use this cmdlet to get registry keys and the `Get-ItemProperty` to get registry values and data.</span></span> <span data-ttu-id="08477-212">Les valeurs de Registre sont considérées comme des propriétés des clés de Registre.</span><span class="sxs-lookup"><span data-stu-id="08477-212">The registry values are considered to be properties of the registry key.</span></span>
 
-## <span data-ttu-id="3913c-215">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="3913c-215">RELATED LINKS</span></span>
+<span data-ttu-id="08477-213">Cette applet de commande est conçue pour utiliser les données exposées par n’importe quel fournisseur.</span><span class="sxs-lookup"><span data-stu-id="08477-213">This cmdlet is designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="08477-214">Pour répertorier les fournisseurs disponibles dans votre session, tapez `Get-PsProvider` .</span><span class="sxs-lookup"><span data-stu-id="08477-214">To list the providers available in your session, type `Get-PsProvider`.</span></span> <span data-ttu-id="08477-215">Pour plus d'informations, consultez [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span><span class="sxs-lookup"><span data-stu-id="08477-215">For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).</span></span>
 
-[<span data-ttu-id="3913c-216">Clear-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-216">Clear-Item</span></span>](Clear-Item.md)
+## <span data-ttu-id="08477-216">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="08477-216">RELATED LINKS</span></span>
 
-[<span data-ttu-id="3913c-217">Copy-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-217">Copy-Item</span></span>](Copy-Item.md)
+[<span data-ttu-id="08477-217">Clear-Item</span><span class="sxs-lookup"><span data-stu-id="08477-217">Clear-Item</span></span>](Clear-Item.md)
 
-[<span data-ttu-id="3913c-218">Invoke-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-218">Invoke-Item</span></span>](Invoke-Item.md)
+[<span data-ttu-id="08477-218">Copy-Item</span><span class="sxs-lookup"><span data-stu-id="08477-218">Copy-Item</span></span>](Copy-Item.md)
 
-[<span data-ttu-id="3913c-219">Move-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-219">Move-Item</span></span>](Move-Item.md)
+[<span data-ttu-id="08477-219">Invoke-Item</span><span class="sxs-lookup"><span data-stu-id="08477-219">Invoke-Item</span></span>](Invoke-Item.md)
 
-[<span data-ttu-id="3913c-220">New-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-220">New-Item</span></span>](New-Item.md)
+[<span data-ttu-id="08477-220">Move-Item</span><span class="sxs-lookup"><span data-stu-id="08477-220">Move-Item</span></span>](Move-Item.md)
 
-[<span data-ttu-id="3913c-221">Remove-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-221">Remove-Item</span></span>](Remove-Item.md)
+[<span data-ttu-id="08477-221">New-Item</span><span class="sxs-lookup"><span data-stu-id="08477-221">New-Item</span></span>](New-Item.md)
 
-[<span data-ttu-id="3913c-222">Rename-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-222">Rename-Item</span></span>](Rename-Item.md)
+[<span data-ttu-id="08477-222">Remove-Item</span><span class="sxs-lookup"><span data-stu-id="08477-222">Remove-Item</span></span>](Remove-Item.md)
 
-[<span data-ttu-id="3913c-223">Set-Item</span><span class="sxs-lookup"><span data-stu-id="3913c-223">Set-Item</span></span>](Set-Item.md)
+[<span data-ttu-id="08477-223">Rename-Item</span><span class="sxs-lookup"><span data-stu-id="08477-223">Rename-Item</span></span>](Rename-Item.md)
 
-[<span data-ttu-id="3913c-224">Get-ChildItem</span><span class="sxs-lookup"><span data-stu-id="3913c-224">Get-ChildItem</span></span>](Get-ChildItem.md)
+[<span data-ttu-id="08477-224">Set-Item</span><span class="sxs-lookup"><span data-stu-id="08477-224">Set-Item</span></span>](Set-Item.md)
 
-[<span data-ttu-id="3913c-225">Get-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="3913c-225">Get-ItemProperty</span></span>](Get-ItemProperty.md)
+[<span data-ttu-id="08477-225">Get-ChildItem</span><span class="sxs-lookup"><span data-stu-id="08477-225">Get-ChildItem</span></span>](Get-ChildItem.md)
 
-[<span data-ttu-id="3913c-226">Get-PSProvider</span><span class="sxs-lookup"><span data-stu-id="3913c-226">Get-PSProvider</span></span>](Get-PSProvider.md)
+[<span data-ttu-id="08477-226">Get-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="08477-226">Get-ItemProperty</span></span>](Get-ItemProperty.md)
 
-[<span data-ttu-id="3913c-227">about_Providers</span><span class="sxs-lookup"><span data-stu-id="3913c-227">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
+[<span data-ttu-id="08477-227">Get-PSProvider</span><span class="sxs-lookup"><span data-stu-id="08477-227">Get-PSProvider</span></span>](Get-PSProvider.md)
+
+[<span data-ttu-id="08477-228">about_Providers</span><span class="sxs-lookup"><span data-stu-id="08477-228">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
