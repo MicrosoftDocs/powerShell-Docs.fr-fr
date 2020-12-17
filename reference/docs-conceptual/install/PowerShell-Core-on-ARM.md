@@ -1,22 +1,44 @@
 ---
-title: Installation de PowerShell Core sous ARM
-description: Installation de PowerShell Core sur les systèmes ARM
-ms.date: 10/30/2020
-ms.openlocfilehash: 843c90c1a00ba96eedbb7f86ce89f372c51f6880
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+title: Installation de PowerShell Core sur Arm
+description: Installation de PowerShell Core sur les systèmes Arm
+ms.date: 11/11/2020
+ms.openlocfilehash: 85a2cccb18341ffee8c81430bc8490e5d3e97b41
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142767"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892070"
 ---
-# <a name="powershell-core-on-arm"></a><span data-ttu-id="ab353-103">PowerShell Core sur ARM</span><span class="sxs-lookup"><span data-stu-id="ab353-103">PowerShell Core on ARM</span></span>
+# <a name="powershell-core-on-arm"></a><span data-ttu-id="c6525-103">PowerShell Core sur Arm</span><span class="sxs-lookup"><span data-stu-id="c6525-103">PowerShell Core on Arm</span></span>
 
-<span data-ttu-id="ab353-104">La prise en charge de PowerShell sur ARM est basée sur la [stratégie de cycle de vie du système d’exploitation .NET Core pris en charge](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).</span><span class="sxs-lookup"><span data-stu-id="ab353-104">Support of PowerShell on ARM is based on the [.NET Core Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md).</span></span>
-<span data-ttu-id="ab353-105">PowerShell est pris en charge sur la plateforme prise en charge dans le cadre de cette stratégie.</span><span class="sxs-lookup"><span data-stu-id="ab353-105">PowerShell is supported on the platform supported under this policy.</span></span>
+<span data-ttu-id="c6525-104">La prise en charge de PowerShell sur Arm est basée sur les **stratégies de cycle de vie du système d’exploitation .NET Core pris en charge**.</span><span class="sxs-lookup"><span data-stu-id="c6525-104">Support of PowerShell on Arm is based on the **.NET Core Supported OS Lifecycle Policies**.</span></span>
 
-<span data-ttu-id="ab353-106">Pour obtenir des instructions d’installation, consultez les articles suivants :</span><span class="sxs-lookup"><span data-stu-id="ab353-106">For installation instructions, see the following articles:</span></span>
+<span data-ttu-id="c6525-105">PowerShell 7.1 repose sur la [stratégie de cycle de vie du système d’exploitation .NET Core 3.1 pris en charge](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) et gère les plateformes suivantes :</span><span class="sxs-lookup"><span data-stu-id="c6525-105">PowerShell 7.1 is based on the [.NET Core 3.1 Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md) and supports the following platforms:</span></span>
 
-- [<span data-ttu-id="ab353-107">Windows 10 sur ARM</span><span class="sxs-lookup"><span data-stu-id="ab353-107">Windows 10 on ARM</span></span>](installing-powershell-core-on-windows.md#installing-the-zip-package)
-- [<span data-ttu-id="ab353-108">Windows 10 IoT Entreprise</span><span class="sxs-lookup"><span data-stu-id="ab353-108">Windows 10 IoT Enterprise</span></span>](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
-- [<span data-ttu-id="ab353-109">Windows 10 IoT Standard</span><span class="sxs-lookup"><span data-stu-id="ab353-109">Windows 10 IoT Core</span></span>](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
-- [<span data-ttu-id="ab353-110">Raspbian</span><span class="sxs-lookup"><span data-stu-id="ab353-110">Raspbian</span></span>](installing-powershell-core-on-linux.md#raspbian)
+|         <span data-ttu-id="c6525-106">Système d''exploitation</span><span class="sxs-lookup"><span data-stu-id="c6525-106">OS</span></span>          |          <span data-ttu-id="c6525-107">Version</span><span class="sxs-lookup"><span data-stu-id="c6525-107">Version</span></span>           | <span data-ttu-id="c6525-108">Architectures</span><span class="sxs-lookup"><span data-stu-id="c6525-108">Architectures</span></span> |          <span data-ttu-id="c6525-109">Cycle de vie</span><span class="sxs-lookup"><span data-stu-id="c6525-109">Lifecycle</span></span>           |
+| ------------------- | -------------------------- | ------------- | ---------------------------- |
+| <span data-ttu-id="c6525-110">Windows Nano Server</span><span class="sxs-lookup"><span data-stu-id="c6525-110">Windows Nano Server</span></span> | <span data-ttu-id="c6525-111">Version 1803</span><span class="sxs-lookup"><span data-stu-id="c6525-111">Version 1803+</span></span>              | <span data-ttu-id="c6525-112">Arm32</span><span class="sxs-lookup"><span data-stu-id="c6525-112">Arm32</span></span>         | <span data-ttu-id="c6525-113">[Windows][Windows-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-113">[Windows][Windows-lifecycle]</span></span> |
+| <span data-ttu-id="c6525-114">Alpine Linux</span><span class="sxs-lookup"><span data-stu-id="c6525-114">Alpine Linux</span></span>        | <span data-ttu-id="c6525-115">3.10+</span><span class="sxs-lookup"><span data-stu-id="c6525-115">3.10+</span></span>                      | <span data-ttu-id="c6525-116">Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-116">Arm64</span></span>         | <span data-ttu-id="c6525-117">[Alpine][Alpine-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-117">[Alpine][Alpine-lifecycle]</span></span>   |
+| <span data-ttu-id="c6525-118">Debian</span><span class="sxs-lookup"><span data-stu-id="c6525-118">Debian</span></span>              | <span data-ttu-id="c6525-119">9+</span><span class="sxs-lookup"><span data-stu-id="c6525-119">9+</span></span>                         | <span data-ttu-id="c6525-120">Arm32, Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-120">Arm32, Arm64</span></span>  | <span data-ttu-id="c6525-121">[Debian][Debian-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-121">[Debian][Debian-lifecycle]</span></span>   |
+| <span data-ttu-id="c6525-122">Ubuntu</span><span class="sxs-lookup"><span data-stu-id="c6525-122">Ubuntu</span></span>              | <span data-ttu-id="c6525-123">20.10, 20.04, 18.04, 16.04</span><span class="sxs-lookup"><span data-stu-id="c6525-123">20.10, 20.04, 18.04, 16.04</span></span> | <span data-ttu-id="c6525-124">Arm32, Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-124">Arm32, Arm64</span></span>  | <span data-ttu-id="c6525-125">[Ubuntu][Ubuntu-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-125">[Ubuntu][Ubuntu-lifecycle]</span></span>   |
+
+<span data-ttu-id="c6525-126">PowerShell 7.0 repose sur la [stratégie de cycle de vie du système d’exploitation .NET Core 5.0 pris en charge](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) et gère les plateformes suivantes :</span><span class="sxs-lookup"><span data-stu-id="c6525-126">PowerShell 7.0 is based on the [.NET Core 5.0 Supported OS Lifecycle Policy](https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md) and supports the following platforms:</span></span>
+
+|        <span data-ttu-id="c6525-127">Système d''exploitation</span><span class="sxs-lookup"><span data-stu-id="c6525-127">OS</span></span>         |          <span data-ttu-id="c6525-128">Version</span><span class="sxs-lookup"><span data-stu-id="c6525-128">Version</span></span>           | <span data-ttu-id="c6525-129">Architectures</span><span class="sxs-lookup"><span data-stu-id="c6525-129">Architectures</span></span> |          <span data-ttu-id="c6525-130">Cycle de vie</span><span class="sxs-lookup"><span data-stu-id="c6525-130">Lifecycle</span></span>           |
+| ----------------- | -------------------------- | ------------- | ---------------------------- |
+| <span data-ttu-id="c6525-131">Client Windows 10</span><span class="sxs-lookup"><span data-stu-id="c6525-131">Windows 10 Client</span></span> | <span data-ttu-id="c6525-132">Version 1607+</span><span class="sxs-lookup"><span data-stu-id="c6525-132">Version 1607+</span></span>              | <span data-ttu-id="c6525-133">Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-133">Arm64</span></span>         | <span data-ttu-id="c6525-134">[Windows][Windows-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-134">[Windows][Windows-lifecycle]</span></span> |
+| <span data-ttu-id="c6525-135">Alpine Linux</span><span class="sxs-lookup"><span data-stu-id="c6525-135">Alpine Linux</span></span>      | <span data-ttu-id="c6525-136">3.11+</span><span class="sxs-lookup"><span data-stu-id="c6525-136">3.11+</span></span>                      | <span data-ttu-id="c6525-137">Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-137">Arm64</span></span>         | <span data-ttu-id="c6525-138">[Alpine][Alpine-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-138">[Alpine][Alpine-lifecycle]</span></span>   |
+| <span data-ttu-id="c6525-139">Debian</span><span class="sxs-lookup"><span data-stu-id="c6525-139">Debian</span></span>            | <span data-ttu-id="c6525-140">9+</span><span class="sxs-lookup"><span data-stu-id="c6525-140">9+</span></span>                         | <span data-ttu-id="c6525-141">Arm32, Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-141">Arm32, Arm64</span></span>  | <span data-ttu-id="c6525-142">[Debian][Debian-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-142">[Debian][Debian-lifecycle]</span></span>   |
+| <span data-ttu-id="c6525-143">Ubuntu</span><span class="sxs-lookup"><span data-stu-id="c6525-143">Ubuntu</span></span>            | <span data-ttu-id="c6525-144">20.10, 20.04, 18.04, 16.04</span><span class="sxs-lookup"><span data-stu-id="c6525-144">20.10, 20.04, 18.04, 16.04</span></span> | <span data-ttu-id="c6525-145">Arm32, Arm64</span><span class="sxs-lookup"><span data-stu-id="c6525-145">Arm32, Arm64</span></span>  | <span data-ttu-id="c6525-146">[Ubuntu][Ubuntu-lifecycle]</span><span class="sxs-lookup"><span data-stu-id="c6525-146">[Ubuntu][Ubuntu-lifecycle]</span></span>   |
+
+[Windows-lifecycle]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
+[Alpine-lifecycle]: https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases
+[Debian-lifecycle]: https://wiki.debian.org/DebianReleases
+[Ubuntu-lifecycle]: https://wiki.ubuntu.com/Releases
+
+<span data-ttu-id="c6525-147">Pour obtenir des instructions d’installation, consultez les articles suivants :</span><span class="sxs-lookup"><span data-stu-id="c6525-147">For installation instructions, see the following articles:</span></span>
+
+- [<span data-ttu-id="c6525-148">Windows 10 sur Arm</span><span class="sxs-lookup"><span data-stu-id="c6525-148">Windows 10 on Arm</span></span>](installing-powershell-core-on-windows.md#installing-the-zip-package)
+- [<span data-ttu-id="c6525-149">Windows 10 IoT Entreprise</span><span class="sxs-lookup"><span data-stu-id="c6525-149">Windows 10 IoT Enterprise</span></span>](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-enterprise)
+- [<span data-ttu-id="c6525-150">Windows 10 IoT Standard</span><span class="sxs-lookup"><span data-stu-id="c6525-150">Windows 10 IoT Core</span></span>](installing-powershell-core-on-windows.md#deploying-on-windows-10-iot-core)
+- [<span data-ttu-id="c6525-151">Raspbian</span><span class="sxs-lookup"><span data-stu-id="c6525-151">Raspbian</span></span>](installing-powershell-core-on-linux.md#raspbian)
