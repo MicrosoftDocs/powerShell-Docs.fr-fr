@@ -2,12 +2,12 @@
 title: Compatibilité des modules PowerShell 7
 ms.date: 02/03/2020
 description: Cet article liste l’état de PowerShell 7 avec les modules PowerShell publiés pour d’autres produits Microsoft.
-ms.openlocfilehash: f845b33881c93fa076d97adf101f4f3e006df73b
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 718ba0f502a23bc2c2a9268d65d3b8129de0af49
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501624"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661373"
 ---
 # <a name="powershell-7-module-compatibility"></a>Compatibilité des modules PowerShell 7
 
@@ -25,7 +25,7 @@ Sur Windows Server, utilisez le nom de la fonctionnalité avec la cmdlet [Instal
 Install-WindowsFeature -Name ActiveDirectory
 ```
 
-Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fonctionnalités Windows facultatives** ou **fonctionnalités Windows** . Les commandes suivantes doivent être exécutées **en tant qu’administrateur** dans une session avec élévation de privilèges.
+Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fonctionnalités Windows facultatives** ou **fonctionnalités Windows**. Les commandes suivantes doivent être exécutées **en tant qu’administrateur** dans une session avec élévation de privilèges.
 
 - Pour les fonctionnalités Windows facultatives
 
@@ -75,7 +75,7 @@ Sur Windows 10, les modules de gestion Windows sont accessibles en tant que **fo
 | AppBackgroundTask                  | Compatible nativement                  | Windows 10 1903 (et versions ultérieures)                   |
 | AppLocker                          | Non testé avec la couche de compatibilité    |                                    |
 | AppvClient                         | Non testé avec la couche de compatibilité    |                                    |
-| Appx                               | Compatible nativement                  | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures) |
+| Appx                               | Compatible nativement**                | Windows Server 1809 (et versions ultérieures)<br>Windows 10 1809 (et versions ultérieures)<br>** Doit utiliser la couche de compatibilité avec PowerShell 7.1 |
 | AssignedAccess                     | Compatible nativement                  | Windows 10 1809 (et versions ultérieures)                   |
 | BestPractices                      | Non pris en charge par la couche de compatibilité |                                    |
 | BitLocker                          | Compatible nativement                  | Windows Server 1809 (et versions ultérieures) avec BitLocker<br>Windows 10 1809 (et versions ultérieures) |

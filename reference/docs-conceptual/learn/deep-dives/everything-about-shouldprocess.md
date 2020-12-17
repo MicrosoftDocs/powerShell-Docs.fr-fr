@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur ShouldProcess
 description: ShouldProcess est une fonctionnalité importante qui est souvent négligée. Les paramètres WhatIf et Confirm facilitent l’ajout à vos fonctions.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
-ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
+ms.openlocfilehash: 4f11ad84f5c89423fe56cfe438ed3cb1587ce59e
+ms.sourcegitcommit: be1df0bf757d734975a9aa021727608a396059ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86469733"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96616044"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>Tout ce que vous avez toujours voulu savoir sur ShouldProcess
 
@@ -128,7 +128,7 @@ Il existe a un danger ici de croire que tout ce que vous appelez hérite des val
 function Test-ShouldProcess {
     [CmdletBinding(SupportsShouldProcess)]
     param()
-    Remove-Item .\myfile1.txt -WhatIf:$WhatIf
+    Remove-Item .\myfile1.txt -WhatIf:$WhatIfPreference
 }
 ```
 
@@ -228,7 +228,7 @@ J’ai tendance à utiliser le scénario avec deux paramètres.
 
 ### <a name="shouldprocessreason"></a>ShouldProcessReason
 
-Il existe une quatrième surcharge qui est plus avancée que les autres. Elle vous permet d’obtenir la raison pour laquelle `ShouldProcess` a été exécuté. Je l’ajoute ici pour des raisons d’exhaustivité, car nous pouvons simplement vérifier si `$WhatIf` est `$true` à la place.
+Il existe une quatrième surcharge qui est plus avancée que les autres. Elle vous permet d’obtenir la raison pour laquelle `ShouldProcess` a été exécuté. Je l’ajoute ici pour des raisons d’exhaustivité, car nous pouvons simplement vérifier si `$WhatIfPreference` est `$true` à la place.
 
 ```powershell
 $reason = ''
@@ -428,7 +428,7 @@ Si vous vous souvenez de la section `ConfirmImpact`, ils doivent en fait l’app
 Test-ShouldProcess -Confirm:$false
 ```
 
-Tout le monde ne réalise pas que cela doit être fait et que `-Confirm:$false` ne supprime pas `ShouldContinue`.
+Tout le monde ne réalise pas que cela doit être fait et que `-Force` ne supprime pas `ShouldContinue`.
 Nous devons donc implémenter `-Force` pour le bien de nos utilisateurs. Jetez un coup d’œil à cet exemple complet ici :
 
 ```powershell
@@ -441,7 +441,7 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
-    if ($Force -and -not $Confirm){
+    if ($Force){
         $ConfirmPreference = 'None'
     }
 
@@ -451,7 +451,7 @@ function Test-ShouldProcess {
 }
 ```
 
-Nous ajoutons notre propre commutateur `-Force` en tant que paramètre et utilisons le paramètre automatique `$Confirm` qui est disponible lors de l’ajout de `SupportsShouldProcess` dans `CmdletBinding`.
+Nous ajoutons notre propre commutateur `-Force` en tant que paramètre. Le paramètre `-Confirm` est automatiquement ajouté lors de l’utilisation de `SupportsShouldProcess` dans `CmdletBinding`.
 
 ```powershell
 [CmdletBinding(
@@ -466,15 +466,15 @@ param(
 Pleins feux sur la logique `-Force` ici :
 
 ```powershell
-if ($Force -and -not $Confirm){
+if ($Force){
     $ConfirmPreference = 'None'
 }
 ```
 
-Si l’utilisateur spécifie `-Force`, nous voulons supprimer l’invite de confirmation, sauf s’il spécifie également `-Confirm`. Cela permet à un utilisateur de forcer une modification, tout en confirmant la modification. Ensuite, nous définissons `$ConfirmPreference` dans l’étendue locale où notre appel à `ShouldProcess` le détecte.
+Si l’utilisateur spécifie `-Force`, nous voulons supprimer l’invite de confirmation, sauf s’il spécifie également `-Confirm`. Cela permet à un utilisateur de forcer une modification, tout en confirmant la modification. Ensuite, nous définissons `$ConfirmPreference` dans l’étendue locale. À présent, l’utilisation du paramètre `-Force` attribue temporairement la valeur None à `$ConfirmPreference`, ce qui désactive l’invite de confirmation.
 
 ```powershell
-if ($PSCmdlet.ShouldProcess('TARGET')){
+if ($Force -or $PSCmdlet.ShouldProcess('TARGET')){
         Write-Output "Some Action"
     }
 ```

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Utilisation du développement par tabulation
 description: Explique comment utiliser la fonctionnalité de développement par tabulation dans PowerShell.
-ms.openlocfilehash: d3408aac8cc9325666082577a7b00bc3362bfca3
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 658cdf5ddf78bbd6dd431c2170cd5ff643e6bf95
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500043"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661339"
 ---
 # <a name="using-tab-expansion"></a>Utilisation du développement par tabulation
 
@@ -20,6 +20,9 @@ Les interpréteurs de ligne de commande offrent souvent une manière de complét
 Pour renseigner automatiquement un nom de fichier ou un chemin d’accès à partir des choix disponibles, tapez une partie du nom, puis appuyez sur la touche <kbd>Tab</kbd>. PowerShell développe automatiquement le nom sur la base de la première correspondance trouvée. Des appuis répétés sur la touche <kbd>Tab</kbd> permettent de passer en revue tous les choix disponibles.
 
 Le développement par tabulation des noms d’applet de commande est légèrement différent. Pour développer par tabulation un nom d’applet de commande, tapez la première partie entière du nom (verbe) et le trait d’union qui suit. Vous pouvez entrer davantage de caractères du nom pour une correspondance partielle. Par exemple, si vous tapez `get-co`, puis appuyez sur la touche <kbd>Tab</kbd>, PowerShell développe automatiquement le nom de l’applet de commande `Get-Command` (notez qu’il modifie également la casse des lettres pour leur attribuer leur format standard). Si vous appuyez de nouveau sur la touche <kbd>Tab</kbd>, PowerShell remplace ce nom par le seul autre nom d’applet de commande correspondant, `Get-Content`.
+
+> [!NOTE]
+> À partir de PowerShell 7.0, la touche <kbd>Tab</kbd> développera également les applets de commande et les fonctions abrégées. Par exemple, `i-psdf<tab>` retourne `Import-PowerShellDataFile`.
 
 Vous pouvez utiliser le développement par tabulation à plusieurs reprises sur la même ligne. Par exemple, vous pouvez l’utiliser sur le nom de l’applet de commande `Get-Content` en entrant ce qui suit :
 

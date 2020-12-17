@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: Prendre en main PowerShell Gallery
 description: Cet article explique comment prendre en main PowerShell Gallery et les applets de commande PowerShellGet
-ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661422"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913274"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Bien démarrer avec PowerShell Gallery
 
@@ -69,7 +69,7 @@ Par défaut, [Install-Module][] et [Install-Script][] installent la dernière ve
 
 ### <a name="deploy"></a>Déployer
 
-Pour déployer un package de PowerShell Gallery sur Azure Automation, cliquez sur **Azure Automation** , puis sur **Déployer sur Azure Automation** sur la page de détails du package. Le Portail de gestion Azure s’affiche : connectez-vous à l’aide de vos informations d’identification de compte Azure. Sachez que le déploiement de packages comportant des dépendances a pour effet de déployer toutes les dépendances sur Azure Automation. Pour désactiver le bouton « Déployer sur Azure Automation », ajoutez la balise **AzureAutomationNotSupported** aux métadonnées du package.
+Pour déployer un package de PowerShell Gallery sur Azure Automation, cliquez sur **Azure Automation**, puis sur **Déployer sur Azure Automation** sur la page de détails du package. Le Portail de gestion Azure s’affiche : connectez-vous à l’aide de vos informations d’identification de compte Azure. Sachez que le déploiement de packages comportant des dépendances a pour effet de déployer toutes les dépendances sur Azure Automation. Pour désactiver le bouton « Déployer sur Azure Automation », ajoutez la balise **AzureAutomationNotSupported** aux métadonnées du package.
 
 Pour plus d’informations sur Azure Automation, consultez la documentation [Azure Automation](/azure/automation).
 
@@ -89,11 +89,15 @@ De même, pour connaître les scripts que vous avez installés à partir de Powe
 
 PowerShell Gallery utilise les noms d’hôte suivants.
 
-- `psg-prod-eastus.azureedge.net` - nom d’hôte CDN
+- `psg-prod-eastus.azureedge.net` - nom d'hôte CDN
+- `az818661.vo.msecnd.net` - nom d'hôte CDN
 - `devopsgallerystorage.blob.core.windows.net` - nom d’hôte du compte de stockage
 - `*.powershellgallery.com` - site web
+- `go.microsoft.com` - service de redirection
 
 Ces noms d’hôte doivent être ajoutés aux listes d’autorisation qui contrôlent l’accès à partir de votre réseau.
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

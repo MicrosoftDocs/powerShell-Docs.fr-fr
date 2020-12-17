@@ -3,19 +3,20 @@ ms.date: 07/29/2020
 keywords: powershell,applet de commande
 title: Guide pratique pour utiliser la documentation PowerShell
 description: Cet article explique comment utiliser les fonctionnalités de ce site, notamment le filtrage des recherches et la sélection de version.
-ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7e036fce0abb12f6c1ab4c0092784321a41a916
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501114"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810298"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>Guide pratique pour utiliser la documentation PowerShell
 
 Bienvenue dans la documentation en ligne de PowerShell. Ce site contient des informations de référence sur les applets de commande des versions suivantes de PowerShell :
 
-- PowerShell 7
-- PowerShell 6
+- PowerShell 7.2 (préversion)
+- PowerShell 7.1 (actuel)
+- PowerShell 7.0 (LTS)
 - PowerShell 5.1
 
 ## <a name="finding-articles-and-selecting-a-version"></a>Recherche d’articles et sélection de version
@@ -51,5 +52,6 @@ Ce site contient la documentation pour les rubriques suivantes :
 - PowerShell 3.0
 - PowerShell 4.0
 - PowerShell 5.0
+- PowerShell 6
 - Flux de travail PowerShell
 - Accès web PowerShell

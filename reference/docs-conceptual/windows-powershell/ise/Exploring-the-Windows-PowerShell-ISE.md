@@ -2,14 +2,14 @@
 ms.date: 01/02/2020
 title: Découverte de Windows PowerShell ISE
 description: Cet article offre une vue d’ensemble des fonctionnalités de l’environnement Windows PowerShell ISE
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296364"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090444"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Découverte de Windows PowerShell ISE
 
@@ -17,7 +17,7 @@ Vous pouvez utiliser l’environnement d’écriture de scripts intégré (ISE) 
 
 ## <a name="menu-bar"></a>Barre de menus
 
-La barre de menus contient les menus **Fichier** , **Modifier** , **Affichage** , **Outils** , **Débogage** , **Modules complémentaires** et **Aide**. Les boutons dans les menus permettent d’effectuer des tâches liées à l’écriture et à l’exécution de scripts, ainsi qu’à l’exécution de commandes dans Windows PowerShell ISE. En outre, il est possible de placer un [outil complémentaire](object-model/The-ISEAddOnTool-Object.md) sur la barre de menus en exécutant des scripts qui utilisent la [Hiérarchie du modèle objet ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
+La barre de menus contient les menus **Fichier**, **Modifier**, **Affichage**, **Outils**, **Débogage**, **Modules complémentaires** et **Aide**. Les boutons dans les menus permettent d’effectuer des tâches liées à l’écriture et à l’exécution de scripts, ainsi qu’à l’exécution de commandes dans Windows PowerShell ISE. En outre, il est possible de placer un [outil complémentaire](object-model/The-ISEAddOnTool-Object.md) sur la barre de menus en exécutant des scripts qui utilisent la [Hiérarchie du modèle objet ISE](object-model/The-ISE-Object-Model-Hierarchy.md).
 
 ## <a name="windows-powershell-tabs"></a>Onglets Windows PowerShell
 
@@ -79,7 +79,8 @@ Augmente ou diminue la taille du texte à l’écran.
 
 ## <a name="help"></a>Aide
 
-L’aide sur Windows PowerShell ISE est disponible sur le web dans la bibliothèque TechNet. Vous pouvez ouvrir l’aide en cliquant sur **Aide Windows PowerShell ISE** dans le menu **Aide** ou en appuyant sur la touche <kbd>F1</kbd> n’importe où, sauf quand le curseur est positionné sur un nom de cmdlet dans le volet Script ou Console. À partir du menu **Aide** vous pouvez également exécuter la cmdlet `Update-Help` et afficher la fenêtre Commande qui vous aide à construire des commandes en affichant tous les paramètres disponibles pour une cmdlet et en vous permettant d’entrer les paramètres dans un formulaire simple d’utilisation.
+L’aide sur Windows PowerShell ISE est disponible sur le site docs.microsoft.com. Vous pouvez ouvrir l’aide en cliquant sur **Aide Windows PowerShell ISE** dans le menu **Aide** ou en appuyant sur la touche <kbd>F1</kbd> n’importe où, sauf quand le curseur est positionné sur un nom de cmdlet dans le volet Script ou Console.
+À partir du menu **Aide** vous pouvez également exécuter la cmdlet `Update-Help` et afficher la fenêtre Commande qui vous aide à construire des commandes en affichant tous les paramètres disponibles pour une cmdlet et en vous permettant d’entrer les paramètres dans un formulaire simple d’utilisation.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,13 +1,13 @@
 ---
 title: Installation de PowerShell sur Windows
 description: Informations sur l’installation de PowerShell sur Windows
-ms.date: 10/30/2020
-ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.date: 11/11/2020
+ms.openlocfilehash: 039db904a315bd3ad3f4e1358d414c98c3a84be5
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296380"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661424"
 ---
 # <a name="installing-powershell-on-windows"></a>Installation de PowerShell sur Windows
 
@@ -30,8 +30,8 @@ Pour installer PowerShell sur Windows, téléchargez le [dernier][] package d’
 
 Le fichier MSI ressemble à `PowerShell-<version>-win-<os-arch>.msi`. Par exemple :
 
-- `PowerShell-7.0.3-win-x64.msi`
-- `PowerShell-7.0.3-win-x86.msi`
+- `PowerShell-7.1.0-win-x64.msi`
+- `PowerShell-7.1.0-win-x86.msi`
 
 Une fois téléchargé, double-cliquez sur le programme d’installation et suivez les invites.
 
@@ -41,13 +41,14 @@ Le programme d’installation crée un raccourci dans le menu Démarrer de Windo
 - Vous pouvez lancer PowerShell via le menu Démarrer ou `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7 s’installe dans un nouveau répertoire et s’exécute côte à côte avec Windows PowerShell 5.1. Pour PowerShell Core 6.x, PowerShell 7 est une mise à niveau sur place qui supprime PowerShell Core 6.x.
+> PowerShell 7.1 s’installe dans un nouveau répertoire et s’exécute côte à côte avec Windows PowerShell 5.1.
+> PowerShell 7.1 est une mise à niveau sur place qui remplace PowerShell 6.x. ou PowerShell 7.0.
 >
-> - PowerShell 7 est installé sur `$env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.1 est installé sur `$env:ProgramFiles\PowerShell\7`
 > - Le dossier `$env:ProgramFiles\PowerShell\7` est ajouté à `$env:PATH`
 > - Le dossier `$env:ProgramFiles\PowerShell\6` est supprimé
 >
-> Si vous devez exécuter PowerShell 6 côte à côte avec PowerShell 7, réinstallez PowerShell 6 suivant la méthode [d’installation ZIP](#zip).
+> Si vous devez exécuter PowerShell 7.1 côte à côte avec d’autres versions, utilisez la méthode [d’installation ZIP](#zip) pour installer l’autre version dans un dossier différent.
 
 ### <a name="administrative-install-from-the-command-line"></a>Installation administrative à partir de la ligne de commande
 
@@ -60,7 +61,7 @@ Les packages MSI peuvent être installés à partir de la ligne de commande, ce 
 L’exemple suivant montre comment installer PowerShell sans assistance avec toutes les options d’installation activées.
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 Pour obtenir une liste complète des options de ligne de commande pour `Msiexec.exe`, consultez [Options de ligne de commande](/windows/desktop/Msi/command-line-options).
@@ -78,29 +79,14 @@ Pour obtenir une liste complète des options de ligne de commande pour `Msiexec.
 
 Cela peut être utilisé par les administrateurs et les développeurs pour trouver le chemin de PowerShell. Les valeurs de `<GUID>` sont les mêmes pour toutes les mises en production de préversions et de versions mineures. Les valeurs de `<GUID>` sont modifiées pour chaque version majeure.
 
-## <a name="installing-the-msix-package"></a><a id="msix" />Installation du package MSIX
-
-> [!NOTE]
-> Le package MSIX n’est pas officiellement pris en charge pour le moment. Nous continuons à créer le package à des fins de test interne uniquement.
-
-Pour installer manuellement le package MSIX sur un client Windows 10, téléchargez le package MSIX à partir de notre page [releases][releases] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
-
-Le fichier MSIX se présente ainsi : `PowerShell-<version>-win-<os-arch>.msix`.
-
-Pour installer le package, vous devez utiliser la cmdlet `Add-AppxPackage`.
-
-```powershell
-Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
-```
-
 ## <a name="installing-the-zip-package"></a><a id="zip" />Installation du package ZIP
 
 Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Téléchargez l’une des archives ZIP suivantes à partir de la page [releases][releases].
 
-- PowerShell-7.0.3-win-x64.zip
-- PowerShell-7.0.3-win-x86.zip
-- PowerShell-7.0.3-win-arm64.zip
-- PowerShell-7.0.3-win-arm32.zip
+- PowerShell-7.1.0-win-x64.zip
+- PowerShell-7.1.0-win-x86.zip
+- PowerShell-7.1.0-win-arm64.zip
+- PowerShell-7.1.0-win-arm32.zip
 
 Selon la façon dont vous téléchargez le fichier, vous devrez peut-être débloquer le fichier avec l’applet de commande `Unblock-File`. Décompressez le contenu à l’emplacement de votre choix et exécutez `pwsh.exe` à partir de celui-ci. Contrairement à l’installation des packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
 
@@ -154,7 +140,7 @@ Windows 10 IoT Entreprise contient Windows PowerShell, que l’on peut utiliser
 
 ## <a name="deploying-on-windows-10-iot-core"></a>Déploiement sur Windows 10 IoT Core
 
-Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité _IOT_POWERSHELL_ , que nous pouvons utiliser pour déployer PowerShell 7. Les étapes définies ci-dessus pour Windows 10 IoT Entreprise peuvent également être suivies pour IoT Core.
+Windows 10 IoT Core ajoute Windows PowerShell lorsque vous incluez la fonctionnalité _IOT_POWERSHELL_, que nous pouvons utiliser pour déployer PowerShell 7. Les étapes définies ci-dessus pour Windows 10 IoT Entreprise peuvent également être suivies pour IoT Core.
 
 Pour ajouter la dernière version de PowerShell dans l’image d’expédition, utilisez la commande [Import-PSCoreRelease][] pour inclure le package dans la zone de travail et ajouter la fonctionnalité _OPENSRC_POWERSHELL_ à votre image.
 
@@ -239,7 +225,7 @@ Les commandes suivantes peuvent être utilisées pour installer PowerShell à l�
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.0.3
+   PowerShell         Microsoft.PowerShell         7.1.0
    PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
    ```
 
@@ -249,6 +235,39 @@ Les commandes suivantes peuvent être utilisées pour installer PowerShell à l�
    winget install --name PowerShell --exact
    winget install --name PowerShell-Preview --exact
    ```
+
+## <a name="installing-from-the-microsoft-store"></a><a id="msix" />Installation à partir de Microsoft Store
+
+PowerShell 7.1 a été publié sur le Microsoft Store. Vous trouverez la version PowerShell sur le site Web du [Microsoft Store](https://www.microsoft.com/store/apps/9MZ1SNWT0N5D) ou dans l’application Store de Windows.
+
+Avantages du package Microsoft Store :
+
+- Mises à jour automatiques intégrées à Windows 10
+- S’intègre à d’autres mécanismes de distribution de logiciels comme Intune et SCCM
+
+Limites :
+
+Les packages MSIX s’exécutent dans un bac à sable d’application qui virtualise l’accès à certains emplacements du système de fichiers et du Registre.
+
+- Toutes les modifications du Registre sous HKEY_CURRENT_USER sont copiées lors de l’écriture dans un emplacement privé, par utilisateur et par application. Par conséquent, ces valeurs ne sont pas disponibles pour d’autres applications.
+- Les paramètres de configuration au niveau du système, stockés dans `$PSHOME`, ne peuvent pas être modifiés. Cela comprend la configuration WSMAN. Cette stratégie empêche les sessions à distance de se connecter aux installations basées sur le magasin de PowerShell. Les configurations au niveau de l’utilisateur et l’accès à distance SSH sont pris en charge.
+
+Pour plus d’informations, consultez [Comprendre la façon dont les applications de bureau empaquetées s’exécutent sur Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+
+### <a name="using-the-msix-package"></a>Utilisation du package MSIX
+
+> [!NOTE]
+> Les préversions de PowerShell incluent un package MSIX. Le package MSIX n’est pas officiellement pris en charge. Le package est conçu à des fins de test pendant la période de préversion.
+
+Pour installer manuellement le package MSIX sur un client Windows 10, téléchargez le package MSIX à partir de notre page [releases][releases] GitHub. Faites défiler jusqu'à la section **Ressources** de la version que vous souhaitez installer. Il est possible que la section Ressources soit réduite et que vous deviez cliquer dessus pour la développer.
+
+Le fichier MSIX se présente ainsi : `PowerShell-<version>-win-<os-arch>.msix`.
+
+Pour installer le package, vous devez utiliser la cmdlet `Add-AppxPackage`.
+
+```powershell
+Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
+```
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>Comment créer un point de terminaison de communication à distance
 

@@ -3,12 +3,12 @@ ms.date: 07/06/2020
 keywords: dsc,powershell,configuration,installation
 title: Sécurisation du fichier MOF
 description: Cet article décrit comment s’assurer que le nœud cible a chiffré le fichier MOF.
-ms.openlocfilehash: e8b495a5c3c18dca5cde29cbbcf7d3f3cdab8f48
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: ca94a901468626e5644880574457d899a012d311
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662788"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090345"
 ---
 # <a name="securing-the-mof-file"></a>Sécurisation du fichier MOF
 
@@ -25,10 +25,10 @@ DSC gère la configuration des nœuds de serveur en appliquant les informations 
 
 Afin de chiffrer correctement les informations d’identification utilisées pour sécuriser une configuration DSC, assurez-vous d’avoir les éléments suivants :
 
-- **Un moyen d’émettre et de distribuer des certificats**. Cette rubrique et ses exemples supposent que vous utilisez une autorité de certification Active Directory. Pour plus d’informations sur les services de certificats Active Directory, consultez [Vue d’ensemble des services de certificats Active Directory](https://technet.microsoft.com/library/hh831740.aspx) et [Services de certificat Active Directory](https://technet.microsoft.com/windowsserver/dd448615.aspx).
+- **Un moyen d’émettre et de distribuer des certificats**. Cette rubrique et ses exemples supposent que vous utilisez une autorité de certification Active Directory. Pour plus d'informations sur les services de certificats Active Directory, consultez [Vue d'ensemble des services de certificats Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)).
 - **Un accès d’administrateur à un ou plusieurs nœuds cibles**.
-- **Chaque nœud cible dispose d’un certificat de chiffrement compatible enregistré dans son magasin personnel**. Dans Windows PowerShell, le chemin du magasin est Cert:\LocalMachine\My. Les exemples de cette rubrique utilisent le modèle « Authentification de station de travail », qui est disponible (avec d’autres modèles de certificat) dans la page [Modèles de certificat par défaut](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).
-- Si vous comptez exécuter cette configuration sur un ordinateur autre que le nœud cible, **exportez la clé publique du certificat** , puis importez-la sur l’ordinateur à partir duquel vous allez exécuter la configuration. Assurez-vous d’exporter uniquement la clé **publique** et sécurisez la clé privée.
+- **Chaque nœud cible dispose d’un certificat de chiffrement compatible enregistré dans son magasin personnel**. Dans Windows PowerShell, le chemin du magasin est Cert:\LocalMachine\My. Les exemples de cette rubrique utilisent le modèle « Authentification de station de travail », qui est disponible (avec d’autres modèles de certificat) dans la page [Modèles de certificat par défaut](/previous-versions/windows/it-pro/windows-server-2003/cc740061(v=ws.10)).
+- Si vous comptez exécuter cette configuration sur un ordinateur autre que le nœud cible, **exportez la clé publique du certificat**, puis importez-la sur l’ordinateur à partir duquel vous allez exécuter la configuration. Assurez-vous d’exporter uniquement la clé **publique** et sécurisez la clé privée.
 
 > [!NOTE]
 > Les ressources de script présentent des limitations en matière de chiffrement. Pour plus d’informations, consultez [Ressource de script](../reference/resources/windows/scriptResource.md#known-limitations).
@@ -44,12 +44,12 @@ Afin de chiffrer correctement les informations d’identification utilisées pou
 
 ## <a name="certificate-requirements"></a>Conditions requises des certificats
 
-Pour activer le chiffrement des informations d’identification, un certificat de clé publique doit être disponible sur le _nœud cible_ , qui est **approuvé** par l’ordinateur utilisé pour créer la configuration DSC. Pour pouvoir être utilisé, ce certificat de clé publique doit répondre à des exigences spécifiques pour le chiffrement des informations d’identification DSC :
+Pour activer le chiffrement des informations d’identification, un certificat de clé publique doit être disponible sur le _nœud cible_, qui est **approuvé** par l’ordinateur utilisé pour créer la configuration DSC. Pour pouvoir être utilisé, ce certificat de clé publique doit répondre à des exigences spécifiques pour le chiffrement des informations d’identification DSC :
 
-1. **Utilisation de la clé**  :
+1. **Utilisation de la clé** :
    - Doit contenir : « KeyEncipherment » et « DataEncipherment ».
    - Ne peut _pas_ contenir : 'Signature numérique'.
-1. **Utilisation améliorée de la clé**  :
+1. **Utilisation améliorée de la clé** :
    - Doit contenir : Chiffrement de document (1.3.6.1.4.1.311.80.1).
    - Ne peut _pas_ contenir : Authentification de client (1.3.6.1.5.5.7.3.2) et authentification de serveur (1.3.6.1.5.5.7.3.1).
 1. La clé privée du certificat est disponible sur le *Nœud cible_.
@@ -71,9 +71,9 @@ La première méthode est recommandée, car la clé privée utilisée pour déch
 
 ### <a name="creating-the-certificate-on-the-target-node"></a>Création du certificat sur le nœud cible
 
-La clé privée doit être gardée secrète, car elle est utilisée pour déchiffrer le fichier MOF sur le **nœud cible**. Le moyen le plus simple pour ce faire consiste à créer le certificat de clé privée sur le **nœud cible** , puis à copier le **certificat de clé publique** sur l’ordinateur utilisé pour créer la configuration DSC dans un fichier MOF. L’exemple suivant :
+La clé privée doit être gardée secrète, car elle est utilisée pour déchiffrer le fichier MOF sur le **nœud cible**. Le moyen le plus simple pour ce faire consiste à créer le certificat de clé privée sur le **nœud cible**, puis à copier le **certificat de clé publique** sur l’ordinateur utilisé pour créer la configuration DSC dans un fichier MOF. L’exemple suivant :
 
-1. crée un certificat sur le **nœud cible**  ;
+1. crée un certificat sur le **nœud cible** ;
 1. exporte le certificat de clé publique sur le **nœud cible**.
 1. importe le certificat de clé publique dans le magasin de certificats **my** sur le **nœud de création**.
 
@@ -93,7 +93,7 @@ Une fois exporté, le fichier `DscPublicKey.cer` doit être copié vers le **nœ
 > Nœud cible : Windows Server 2012 R2/Windows 8.1 et versions antérieures
 
 > [!WARNING]
-> Étant donné que l’applet de commande `New-SelfSignedCertificate` sur les systèmes d’exploitation Windows antérieurs à Windows 10 et Windows Server 2016 ne prend pas en charge le paramètre **Type** , une autre méthode de création de ce certificat est nécessaire sur ces systèmes d’exploitation. Dans ce cas, vous pouvez utiliser `makecert.exe` ou `certutil.exe` pour créer le certificat. Une autre méthode consiste à [télécharger le script New-SelfSignedCertificateEx.ps1 à partir du centre de scripts Microsoft](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) et à l’utiliser pour créer le certificat à la place :
+> Étant donné que l’applet de commande `New-SelfSignedCertificate` sur les systèmes d’exploitation Windows antérieurs à Windows 10 et Windows Server 2016 ne prend pas en charge le paramètre **Type**, une autre méthode de création de ce certificat est nécessaire sur ces systèmes d’exploitation. Dans ce cas, vous pouvez utiliser `makecert.exe` ou `certutil.exe` pour créer le certificat. Cet exemple utilise une autre méthode pour créer le certificat, consistant à télécharger le script [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) à partir du centre de scripts Microsoft. Une version mise à jour de ce script est disponible dans le module [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) de PowerShell Gallery.
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -130,11 +130,11 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>Création du certificat sur le nœud de création
 
-Vous pouvez également créer le certificat de chiffrement sur le **nœud de création** , l’exporter avec la **clé privée** sous la forme d’un fichier PFX, puis l’importer sur le **nœud cible**. Il s’agit de la méthode actuelle pour implémenter le chiffrement des informations d’identification DSC sur _Nano Server_. Même si le fichier PFX est sécurisé avec un mot de passe, il doit être conservé en lieu sûr pendant le transit. L’exemple suivant :
+Vous pouvez également créer le certificat de chiffrement sur le **nœud de création**, l’exporter avec la **clé privée** sous la forme d’un fichier PFX, puis l’importer sur le **nœud cible**. Il s’agit de la méthode actuelle pour implémenter le chiffrement des informations d’identification DSC sur _Nano Server_. Même si le fichier PFX est sécurisé avec un mot de passe, il doit être conservé en lieu sûr pendant le transit. L’exemple suivant :
 
 1. crée un certificat sur le **nœud de création**.
 1. exporte le certificat, avec la clé privée, sur le **nœud de création**.
-1. supprime la clé privée du **nœud de création** , mais conserve le certificat de clé publique dans le magasin **my**  ;
+1. supprime la clé privée du **nœud de création**, mais conserve le certificat de clé publique dans le magasin **my** ;
 1. importe le certificat de clé privée dans le magasin de certificats racines My(Personal) sur le **nœud cible**.
    - Il doit être ajouté au magasin racine pour être approuvé par le **nœud cible**.
 
@@ -159,7 +159,7 @@ Une fois exporté, le fichier `DscPrivateKey.pfx` doit être copié vers le **n�
 > Nœud cible : Windows Server 2012 R2/Windows 8.1 et versions antérieures
 
 > [!WARNING]
-> Étant donné que l’applet de commande `New-SelfSignedCertificate` sur les systèmes d’exploitation Windows antérieurs à Windows 10 et Windows Server 2016 ne prend pas en charge le paramètre **Type** , une autre méthode de création de ce certificat est nécessaire sur ces systèmes d’exploitation. Dans ce cas, vous pouvez utiliser `makecert.exe` ou `certutil.exe` pour créer le certificat. Une autre méthode consiste à [télécharger le script New-SelfSignedCertificateEx.ps1 à partir du centre de scripts Microsoft](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) et à l’utiliser pour créer le certificat à la place :
+> Étant donné que l’applet de commande `New-SelfSignedCertificate` sur les systèmes d’exploitation Windows antérieurs à Windows 10 et Windows Server 2016 ne prend pas en charge le paramètre **Type**, une autre méthode de création de ce certificat est nécessaire sur ces systèmes d’exploitation. Dans ce cas, vous pouvez utiliser `makecert.exe` ou `certutil.exe` pour créer le certificat. Une autre méthode consiste à [télécharger le script New-SelfSignedCertificateEx.ps1 à partir du centre de scripts Microsoft](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) et à l’utiliser pour créer le certificat à la place :
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session

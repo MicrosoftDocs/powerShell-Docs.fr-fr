@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/20/2020
 keywords: dsc,powershell,configuration,installation
 title: Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 description: Cette rubrique explique comment prendre en main la fonctionnalité DSC (Desired State Configuration) PowerShell pour Linux.
-ms.openlocfilehash: 826707654a297306c39d4dfcfd3941f56b7cf91d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: df9cab07284a7d6fa199f5524a8719ea490192d0
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92651121"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514998"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Prendre en main la fonctionnalité DSC (Desired State Configuration) pour Linux
 
@@ -24,7 +24,7 @@ Les versions suivantes du système d’exploitation Linux sont prises en charge 
 - Oracle Linux 5, 6 et 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 et 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 et 12 (x86/x64)
-- Ubuntu Server 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS, 14.04 LTS, 16.04 LTS, 18.04 (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>Installation de DSC pour Linux
 
@@ -45,7 +45,7 @@ Exécutez la commande suivante pour installer OMI sur un système CentOS 7 x64
 
 ### <a name="installing-dsc"></a>Installation de DSC
 
-DSC pour Linux est disponible en téléchargement à partir du référentiel [PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294) dans le référentiel.
+DSC pour Linux est disponible en téléchargement à partir du référentiel [PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-926) dans le référentiel.
 
 Pour installer DSC, installez le package approprié pour le système Linux (.rpm ou .deb), la version d’OpenSSL (ssl_098 ou ssl_100) et l’architecture (x64/x86) que vous utilisez. Les packages RPM sont conçus pour les systèmes CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server et Oracle Linux. Les packages DEB sont conçus pour les systèmes Debian GNU/Linux et Ubuntu Server. Les packages ssl_098 et les packages ssl_100 sont conçus pour les ordinateurs avec OpenSSL 0.9.8 et les ordinateurs avec OpenSSL 1.0, respectivement.
 

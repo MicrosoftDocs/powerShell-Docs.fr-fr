@@ -2,16 +2,16 @@
 ms.date: 12/31/2019
 title: Objet ISEFile
 description: Un objet ISEFile représente un fichier dans Windows PowerShell ISE.
-ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b5ea70219787f254fe85d728518cbc4746c00250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662132"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391491"
 ---
 # <a name="the-isefile-object"></a>Objet ISEFile
 
-Un objet **ISEFile** représente un fichier dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell&reg;. Il s’agit d’une instance de la classe **Microsoft.PowerShell.Host.ISE.ISEFile**. Cette rubrique répertorie les méthodes et propriétés membres de cet objet. Le `$psISE.CurrentFile` et les fichiers de le regroupement de fichiers dans un onglet PowerShell sont tous des instances de la classe \*\***Microsoft.PowerShell.Host.ISE.ISEFile**.
+Un objet **ISEFile** représente un fichier dans l’environnement d’écriture de scripts intégré (ISE) de Windows PowerShell. Il s’agit d’une instance de la classe **Microsoft.PowerShell.Host.ISE.ISEFile**. Cette rubrique répertorie les méthodes et propriétés membres de cet objet. Le `$psISE.CurrentFile` et les fichiers de le regroupement de fichiers dans un onglet PowerShell sont tous des instances de la classe \*\***Microsoft.PowerShell.Host.ISE.ISEFile**.
 
 ## <a name="methods"></a>Méthodes
 
@@ -21,11 +21,11 @@ Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
 Enregistre le fichier sur le disque.
 
-**\[saveEncoding\]** (facultatif) [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) Paramètre facultatif d’encodage de caractères à utiliser pour le fichier enregistré. La valeur par défaut est **UTF8**.
+`[saveEncoding]` - (facultatif) [System.Text.Encoding](/dotnet/api/system.text.encoding) Paramètre facultatif d’encodage de caractères à utiliser pour le fichier enregistré. La valeur par défaut est **UTF8**.
 
 ### <a name="exceptions"></a>Exceptions
 
-- **System.IO.IOException**  : le fichier n’a pas pu être enregistré.
+- **System.IO.IOException** : le fichier n’a pas pu être enregistré.
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -45,15 +45,15 @@ Prise en charge dans Windows PowerShell ISE 2.0 et versions ultérieures.
 
 Enregistre le fichier avec le nom de fichier et l’encodage spécifiés.
 
-**filename**  : chaîne Nom à utiliser pour enregistrer le fichier.
+**filename** : chaîne Nom à utiliser pour enregistrer le fichier.
 
-**\[saveEncoding\]** (facultatif) [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) Paramètre facultatif d’encodage de caractères à utiliser pour le fichier enregistré. La valeur par défaut est **UTF8**.
+`[saveEncoding]` - (facultatif) [System.Text.Encoding](/dotnet/api/system.text.encoding) Paramètre facultatif d’encodage de caractères à utiliser pour le fichier enregistré. La valeur par défaut est **UTF8**.
 
 ### <a name="exceptions"></a>Exceptions
 
-- **System.ArgumentNullException**  : le paramètre **filename** est Null.
-- **System.ArgumentException**  : le paramètre **filename** est vide.
-- **System.IO.IOException**  : le fichier n’a pas pu être enregistré.
+- **System.ArgumentNullException** : le paramètre **filename** est Null.
+- **System.ArgumentException** : le paramètre **filename** est vide.
+- **System.IO.IOException** : le fichier n’a pas pu être enregistré.
 
 ```powershell
 # Save the file with a full path and name.

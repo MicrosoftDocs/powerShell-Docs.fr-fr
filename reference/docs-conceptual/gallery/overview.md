@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: PowerShell Gallery
 description: PowerShell Gallery est le référentiel central pour les modules PowerShell, les scripts et les ressources DSC.
-ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f1ce6a8e2d5d72ac14cf3e4854626ef612d27891
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662108"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470313"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell Gallery
 
@@ -28,7 +28,7 @@ Pour plus d’informations sur l’utilisation des commandes PowerShellGet avec 
 
 Le module **PowerShellGet** nécessite **PowerShell 3.0 ou ultérieur**.
 
-**PowerShellGet** nécessite .NET Framework 4.5 ou ultérieur. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** nécessite .NET Framework 4.5 ou ultérieur. Pour plus d'informations, voir [Installation de .NET Framework pour les développeurs](/dotnet/framework/install/guide-for-developers).
 
 Dans la mesure où **PowerShell Core** est multiplateforme et qu’il fonctionne sous Windows, Linux et macOS, **PowerShellGet** est également disponible sur ces systèmes. Pour obtenir une liste complète des systèmes pris en charge par **PowerShell Core** consultez [Installation de PowerShell](/powershell/scripting/install/installing-powershell).
 
@@ -37,4 +37,8 @@ Pour plus d’informations, voir la documentation des modules.
 
 ## <a name="got-a-question-have-feedback"></a>Vous avez une question ? Vous voulez donner votre avis ?
 
-Des informations supplémentaires relatives à PowerShell Gallery et PowerShellGet sont disponibles dans la page [Getting Started](getting-started.md). Envoyez vos commentaires et signalez les problèmes à l’aide de [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
+Des informations supplémentaires relatives à PowerShell Gallery et PowerShellGet sont disponibles dans la page [Getting Started](getting-started.md).
+
+Pour afficher l’état actuel des services PowerShell Gallery, consultez la page [État de PowerShell Gallery](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) sur GitHub.
+
+Envoyez vos commentaires et signalez les problèmes à l’aide du [référentiel GitHub](https://github.com/PowerShell/PowerShellGallery/issues).

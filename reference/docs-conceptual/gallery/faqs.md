@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: FAQ PowerShell Gallery
 description: Questions fréquentes sur PowerShell Gallery
-ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 52c89d570041e1fce3466f574af7de25f05ec4c5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654159"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389890"
 ---
 # <a name="frequently-asked-questions-about-the-powershell-gallery"></a>Questions fréquentes sur PowerShell Gallery
 
@@ -17,14 +17,14 @@ Un module PowerShell est un package réutilisable contenant des fonctionnalités
 
 ## <a name="what-is-a-powershell-script"></a>Qu’est-ce qu’un script PowerShell ?
 
-Un script PowerShell est une série de commandes qui sont stockées dans un fichier .ps1 pour permettre la réutilisation et le partage. Les workflows PowerShell sont également des scripts PowerShell, qui présentent une série de tâches et donnent le séquencement de ces tâches. Pour plus d’informations, visitez le site [Présentation du workflow Windows PowerShell](https://technet.microsoft.com/library/jj134242.aspx).
+Un script PowerShell est une série de commandes qui sont stockées dans un fichier .ps1 pour permettre la réutilisation et le partage. Les workflows PowerShell sont également des scripts PowerShell, qui présentent une série de tâches et donnent le séquencement de ces tâches. Pour plus d’informations, visitez le site [Présentation du workflow Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11)).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>En quoi les scripts PowerShell sont-ils différents des modules PowerShell ?
 
 Les modules conviennent généralement mieux pour le partage, mais nous allons permettre le partage de scripts pour que vous puissiez facilement fournir des workflows et des scripts à la communauté. Pour plus d’informations, voir les blogs suivants :
 
-- [Don't Write Scripts, Write PowerShell Modules](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [Understanding PowerShell Modules](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Don't Write Scripts, Write PowerShell Modules](https://devblogs.microsoft.com/scripting/dont-write-scripts-write-powershell-modules/)
+- [Understanding PowerShell Modules](https://devblogs.microsoft.com/scripting/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Comment puis-je publier dans PowerShell Gallery ?
 
@@ -64,7 +64,7 @@ Tout type de module PowerShell (modules de script, modules binaires ou modules d
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>Comment créer un manifeste de module correctement mis en forme ?
 
-La façon la plus simple de créer un manifeste de module consiste à exécuter l’applet de commande [New-ModuleManifest][]. Dans PowerShell 5.0 ou version ultérieure, New-ModuleManifest génère un manifeste de module correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri** , **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le manifeste généré comme un exemple de mise en forme correcte.
+La façon la plus simple de créer un manifeste de module consiste à exécuter l’applet de commande [New-ModuleManifest][]. Dans PowerShell 5.0 ou version ultérieure, New-ModuleManifest génère un manifeste de module correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri**, **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le manifeste généré comme un exemple de mise en forme correcte.
 
 Pour vérifier que tous les champs de métadonnées obligatoires ont été correctement remplis, utilisez l’applet de commande [Test-ModuleManifest][].
 
@@ -93,7 +93,7 @@ Ainsi, par exemple, quand vous recherchez PowerShellVersion:"2.0", seuls les ré
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>Comment créer un fichier de script correctement mis en forme ?
 
-La façon la plus simple de créer un fichier de script correctement mis en forme consiste à exécuter l’applet de commande [New-ScriptFileInfo][]. Dans PowerShell 5.0, New-ScriptFileInfo génère un fichier de script correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri** , **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le fichier de script généré comme un exemple de mise en forme correcte.
+La façon la plus simple de créer un fichier de script correctement mis en forme consiste à exécuter l’applet de commande [New-ScriptFileInfo][]. Dans PowerShell 5.0, New-ScriptFileInfo génère un fichier de script correctement mis en forme avec des champs vides pour les métadonnées utiles comme **ProjectUri**, **LicenseUri** et **Tags**. Il suffit de remplir les champs vides ou d’utiliser le fichier de script généré comme un exemple de mise en forme correcte.
 
 Pour vérifier que tous les champs de métadonnées obligatoires ont été correctement remplis, utilisez l’applet de commande [Test-ScriptFileInfo][].
 
@@ -156,7 +156,7 @@ Par conséquent, **PowerShellGet** nécessite l’un des systèmes d’exploitat
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** nécessite également .NET Framework 4.5 ou ultérieur. Vous pouvez installer .NET Framework 4.5 ou ultérieur à partir [d’ici](https://msdn.microsoft.com/library/5a4x27ek.aspx).
+**PowerShellGet** nécessite également .NET Framework 4.5 ou ultérieur. Pour plus d'informations, voir [Installation de .NET Framework pour les développeurs](/dotnet/framework/install/guide-for-developers).
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Est-il possible de réserver les noms des packages qui doivent être publiés à l’avenir ?
 

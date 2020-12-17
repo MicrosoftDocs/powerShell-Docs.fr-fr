@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,applet de commande
 title: Sélection d'éléments dans une zone de liste
 description: Cet article explique comment créer un contrôle de zone de liste à l’aide des fonctionnalités de création de formulaires .NET Framework dans Windows PowerShell.
-ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: d6f881f0b92f294da105ae7df5e25e8c20ce5094
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501046"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391236"
 ---
 # <a name="selecting-items-from-a-list-box"></a>Sélection d'éléments dans une zone de liste
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms** . Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form** . Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
+Le script commence par charger deux classes .NET Framework : **System.Drawing** et **System.Windows.Forms**. Démarrez ensuite une nouvelle instance de la classe .NET Framework **System.Windows.Forms.Form**. Celle-ci affiche une fenêtre ou un formulaire vide où vous pouvez commencer à ajouter des contrôles.
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -89,7 +89,7 @@ Après avoir créé une instance de la classe Form, affectez des valeurs à troi
 - **Size.** Il s'agit de la taille du formulaire en pixels. Le script précédent crée un formulaire de 300 pixels de largeur par 200 pixels de hauteur.
 
 - **StartingPosition.** Cette propriété facultative a la valeur **CenterScreen** dans le script précédent.
-  Si vous n’ajoutez pas cette propriété, Windows sélectionne un emplacement lors de l’ouverture du formulaire. Si vous affectez à **StartingPosition** la valeur **CenterScreen** , le formulaire s’affichera automatiquement au milieu de l’écran à chaque chargement.
+  Si vous n’ajoutez pas cette propriété, Windows sélectionne un emplacement lors de l’ouverture du formulaire. Si vous affectez à **StartingPosition** la valeur **CenterScreen**, le formulaire s’affichera automatiquement au milieu de l’écran à chaque chargement.
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -97,7 +97,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK** . Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
+Ensuite, créez un bouton **OK** dans votre formulaire. Spécifiez la taille et le comportement du bouton **OK**. Dans cet exemple, le bouton se trouve à 120 pixels du bord supérieur du formulaire et à 75 pixels du bord gauche. Le bouton mesure 23 pixels de haut et 75 pixels de long. Le script utilise des types Windows Forms prédéfinis pour déterminer le comportement du bouton.
 
 ```powershell
 $okButton = New-Object System.Windows.Forms.Button
@@ -109,7 +109,7 @@ $form.AcceptButton = $okButton
 $form.Controls.Add($okButton)
 ```
 
-De la même façon, créez un bouton **Annuler** . Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
+De la même façon, créez un bouton **Annuler**. Le bouton **Annuler** se trouve à 120 pixels du bord supérieur de la fenêtre, mais à 150 pixels du bord gauche.
 
 ```powershell
 $cancelButton = New-Object System.Windows.Forms.Button
@@ -131,7 +131,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans le texte de l’étiquette. Hormis les zones de liste, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](/dotnet/api/system.windows.forms) sur MSDN.
+Ajoutez le contrôle (dans ce cas, une zone de liste) qui permet aux utilisateurs de fournir les informations que vous avez décrites dans le texte de l’étiquette. Hormis les zones de liste, vous pouvez appliquer de nombreux autres contrôles. Pour plus de contrôles, voir [Espace de noms System.Windows.Forms](/dotnet/api/system.windows.forms).
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -143,7 +143,7 @@ $listBox.Height = 80
 Dans la section suivante, spécifiez les valeurs présentées aux utilisateurs dans la zone de liste.
 
 > [!NOTE]
-> La zone de liste créée par ce script n'autorise qu'une seule sélection. Pour créer un contrôle de zone de liste autorisant plusieurs sélections, spécifiez une valeur pour la propriété **SelectionMode** , comme suit : `$listBox.SelectionMode = 'MultiExtended'`. Pour plus d’informations, voir [Zones de liste à sélection multiple](Multiple-selection-List-Boxes.md).
+> La zone de liste créée par ce script n'autorise qu'une seule sélection. Pour créer un contrôle de zone de liste autorisant plusieurs sélections, spécifiez une valeur pour la propriété **SelectionMode**, comme suit : `$listBox.SelectionMode = 'MultiExtended'`. Pour plus d’informations, voir [Zones de liste à sélection multiple](Multiple-selection-List-Boxes.md).
 
 ```powershell
 [void] $listBox.Items.Add('atl-dc-001')
@@ -168,7 +168,7 @@ Ajoutez la ligne de code suivante pour afficher le formulaire dans Windows.
 $result = $form.ShowDialog()
 ```
 
-Enfin, le code à l'intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur sélectionne une option dans la zone de liste, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée** .
+Enfin, le code à l'intérieur du bloc **If** indique à Windows comment traiter le formulaire quand un utilisateur sélectionne une option dans la zone de liste, puis clique sur le bouton **OK** ou appuie sur la touche **Entrée**.
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -181,4 +181,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Voir aussi
 
 - [GitHub: Dave Wyatt’s WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Astuce Windows PowerShell de la semaine : sélection d’éléments dans une zone de liste](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
+- [Astuce Windows PowerShell de la semaine : Sélection d’éléments dans une zone de liste](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

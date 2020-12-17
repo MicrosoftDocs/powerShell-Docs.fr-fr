@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d94024926a8ff8c33df08b4a8b58e9f8b0430f9b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 61a70db9ae7a38d6731f1cefb011072c12d1e39a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239880"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514914"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Code de conduite Microsoft Open Source
 
@@ -34,9 +34,9 @@ La liste suivante décrit les principaux dossiers de ce dépôt.
 - `assets` - contient les fichiers téléchargeables liés dans la documentation
 - `reference` - contient la documentation publiée sur [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/). Cela comprend à la fois les informations de référence et le contenu conceptuel.
   - `5.1` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 5.1
-  - `6` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 6
   - `7.0` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 7.0
   - `7.1` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 7.1
+  - `7.2` - contient les informations de référence sur les applets de commande et les rubriques relatives à PowerShell 7.2 (préversion)
   - `bread` - contient la table des matières à explorer à l’aide de la barre de navigation
   - `docs-conceptual` - contient les articles conceptuels qui sont publiés sur le site Docs. En général, la structure de dossiers reflète la table des matières.
   - `mapping` - contient la configuration de mappage de version utilisée par le système de génération

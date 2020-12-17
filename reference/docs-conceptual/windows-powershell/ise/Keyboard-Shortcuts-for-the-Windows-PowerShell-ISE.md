@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Raccourcis clavier pour Windows PowerShell ISE
 description: Cet article représente une liste des raccourcis clavier utilisés dans PowerShell ISE.
-ms.openlocfilehash: b7749f49d3ac2923b097e2ab94488263436980bd
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: d4e78c5e8e8e172ef3cdd30b0099d56ce6b6b01e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92663466"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391202"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
@@ -19,7 +19,7 @@ Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suiva
 
 |              Action              |       Raccourcis clavier       |                                                                                                                                                 Utiliser dans                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Aide**                         | <kbd>F1</kbd>                  | Volet Script **Important :** vous pouvez spécifier que l’aide <kbd>F1</kbd> provient de la Bibliothèque TechNet sur le web ou de l’aide téléchargée (voir `Update-Help`). Pour opérer votre choix, cliquez sur **Outils** , **Options** , sur l’onglet **Paramètres généraux** , puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.** |
+| **Aide**                         | <kbd>F1</kbd>                  | Volet Script **Important :** vous pouvez spécifier que l’aide <kbd>F1</kbd> provient du site docs.microsoft.com ou de l’aide téléchargée (voir `Update-Help`). Pour opérer votre choix, cliquez sur **Outils**, **Options**, sur l’onglet **Paramètres généraux**, puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.** |
 | **Copy**                         | <kbd>CTRL</kbd>+<kbd>C</kbd>   | Volets Script, Commande et Sortie                                                                                                                                                                                                                                                                 |
 | **Couper**                          | <kbd>CTRL</kbd>+<kbd>X</kbd>   | Volets Script et Commande                                                                                                                                                                                                                                                                              |
 | **Développer ou réduire le plan** | <kbd>CTRL</kbd>+<kbd>M</kbd>   | Volet Script                                                                                                                                                                                                                                                                                            |
@@ -115,7 +115,7 @@ Pour démarrer la console Windows PowerShell (PowerShell.exe) ou pour quitter Wi
 |                        Action                        |               Raccourci clavier               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Quitter**                                             | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Start PowerShell.exe** (Console Windows PowerShell) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>P</kbd> |
+| **Start PowerShell.exe**(Console Windows PowerShell) | <kbd>CTRL</kbd>+<kbd>MAJ</kbd>+<kbd>P</kbd> |
 
 ## <a name="see-also"></a>Voir aussi
 
