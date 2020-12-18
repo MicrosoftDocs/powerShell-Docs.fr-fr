@@ -4,10 +4,10 @@ description: Les tables de hachage sont très importantes dans PowerShell, c’e
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/17/2020
 ms.locfileid: "93354420"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
@@ -23,7 +23,7 @@ J’aimerais vous présenter tout d’abord le concept de **table de hachage** c
 
 ## <a name="what-is-an-array"></a>Qu’est-ce qu’un tableau ?
 
-Avant de passer à la définition d’une **table de hachage** , examinons d’abord les [tableaux][]. Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.
+Avant de passer à la définition d’une **table de hachage**, examinons d’abord les [tableaux][]. Dans le cadre de cette discussion, un tableau est une liste ou une collection de valeurs ou d’objets.
 
 ```powershell
 $array = @(1,2,3,5,7,11)
