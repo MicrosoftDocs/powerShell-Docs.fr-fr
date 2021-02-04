@@ -1,17 +1,16 @@
 ---
 description: Décrit les variables qui stockent des informations d’État pour PowerShell. Ces variables sont créées et gérées par PowerShell.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 08/14/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: d56e844bd10dfffabb1d2cfd75bcfe113724a334
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 82fc08a49b58b9518cfa50be916cf2889b5007d2
+ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207697"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97577222"
 ---
 # <a name="about-automatic-variables"></a>À propos des variables automatiques
 
@@ -33,7 +32,7 @@ Contient le dernier jeton de la dernière ligne reçue par la session.
 
 Contient l’état d’exécution de la dernière commande. Elle contient la **valeur true** si la dernière commande a réussi et **false** si elle a échoué.
 
-Pour les applets de commande et les fonctions avancées qui sont exécutées à plusieurs étapes dans un pipeline, par exemple dans les `process` `end` blocs et, l’appel de `this.WriteError()` ou, respectivement, `$PSCmdlet.WriteError()` à n’importe quel point, est défini `$?` sur **false** , comme c’est le cas `this.ThrowTerminatingError()` et `$PSCmdlet.ThrowTerminatingError()` .
+Pour les applets de commande et les fonctions avancées qui sont exécutées à plusieurs étapes dans un pipeline, par exemple dans les `process` `end` blocs et, l’appel de `this.WriteError()` ou, respectivement, `$PSCmdlet.WriteError()` à n’importe quel point, est défini `$?` sur **false**, comme c’est le cas `this.ThrowTerminatingError()` et `$PSCmdlet.ThrowTerminatingError()` .
 
 L' `Write-Error` applet de commande affecte toujours la `$?` **valeur false** immédiatement après son exécution, mais elle n’a pas la valeur `$?` **false** pour une fonction qui l’appelle :
 
@@ -53,7 +52,7 @@ Dans ce dernier cas, `$PSCmdlet.WriteError()` doit être utilisé à la place.
 Pour les commandes natives (exécutables), a la valeur `$?` **true** lorsque a la valeur `$LASTEXITCODE` 0, et la valeur **false** lorsque `$LASTEXITCODE` est une autre valeur.
 
 > [!NOTE]
-> Jusqu’à PowerShell 7, contenant une instruction dans les parenthèses, la syntaxe de sous-expression `(...)` ou l’expression de tableau est `$(...)` `@(...)` toujours réinitialisée `$?` à **true** , de sorte que `(Write-Error)` affiche la `$?` **valeur true** .
+> Jusqu’à PowerShell 7, contenant une instruction dans les parenthèses, la syntaxe de sous-expression `(...)` ou l’expression de tableau est `$(...)` `@(...)` toujours réinitialisée `$?` à **true**, de sorte que `(Write-Error)` affiche la `$?` **valeur true**.
 > Cela a été modifié dans PowerShell 7, afin de `$?` refléter toujours la réussite réelle de la dernière commande exécutée dans ces expressions.
 
 ### <a name=""></a>$^
@@ -82,7 +81,7 @@ Lorsque vous utilisez l' `Export-Console` applet de commande sans paramètres, e
 Contient un tableau d’objets d’erreur qui représentent les erreurs les plus récentes.
 L’erreur la plus récente est le premier objet d’erreur dans le tableau `$Error[0]` .
 
-Pour éviter qu’une erreur ne soit ajoutée au `$Error` tableau, utilisez le paramètre commun **ErrorAction** avec la valeur **ignore** . Pour plus d’informations, consultez [about_CommonParameters](about_CommonParameters.md).
+Pour éviter qu’une erreur ne soit ajoutée au `$Error` tableau, utilisez le paramètre commun **ErrorAction** avec la valeur **ignore**. Pour plus d’informations, consultez [about_CommonParameters](about_CommonParameters.md).
 
 ### <a name="event"></a>$Event
 
@@ -103,7 +102,7 @@ Contient un objet **EngineIntrinsics** qui représente le contexte d’exécutio
 
 ### <a name="false"></a>$false
 
-Contient la **valeur false** . Vous pouvez utiliser cette variable pour représenter la **valeur false** dans les commandes et les scripts au lieu d’utiliser la chaîne « false ». La chaîne peut être interprétée comme **true** si elle est convertie en une chaîne non vide ou en un entier différent de zéro.
+Contient la **valeur false**. Vous pouvez utiliser cette variable pour représenter la **valeur false** dans les commandes et les scripts au lieu d’utiliser la chaîne « false ». La chaîne peut être interprétée comme **true** si elle est convertie en une chaîne non vide ou en un entier différent de zéro.
 
 ### <a name="foreach"></a>$foreach
 
@@ -138,6 +137,11 @@ Contient un énumérateur qui énumère toutes les entrées passées à une fonc
 
 Les énumérateurs contiennent des propriétés et des méthodes que vous pouvez utiliser pour récupérer des valeurs de boucle et modifier l’itération de boucle actuelle. Pour plus d’informations, consultez [utilisation d’énumérateurs](#using-enumerators).
 
+La `$input` variable est également disponible pour la commande spécifiée par le `-Command` paramètre de `pwsh` lorsqu’elle est appelée à partir de la ligne de commande. L’exemple suivant est exécuté à partir de l’interface de commande Windows.
+
+```CMD
+echo Hello | powershell -Command """$input World!"""
+```
 
 ### <a name="lastexitcode"></a>$LastExitCode
 
@@ -252,7 +256,7 @@ Ou vous pouvez l’utiliser dans une commande pour créer un profil :
 New-Item -ItemType file -Path $PROFILE -Force
 ```
 
-Vous pouvez l’utiliser dans une commande pour ouvrir le profil dans **notepad.exe** :
+Vous pouvez l’utiliser dans une commande pour ouvrir le profil dans **notepad.exe**:
 
 ```powershell
 notepad.exe $PROFILE
@@ -262,7 +266,7 @@ notepad.exe $PROFILE
 
 Contient un dictionnaire des paramètres qui sont passés à un script ou une fonction et leurs valeurs actuelles. Cette variable a une valeur uniquement dans une portée où les paramètres sont déclarés, comme un script ou une fonction. Vous pouvez l’utiliser pour afficher ou modifier les valeurs actuelles des paramètres ou pour passer des valeurs de paramètres à un autre script ou à une autre fonction.
 
-Dans cet exemple, la fonction **Test2** passe `$PSBoundParameters` à la fonction **Test1** . Les `$PSBoundParameters` sont affichés dans le format de la **clé** et de la **valeur** .
+Dans cet exemple, la fonction **Test2** passe `$PSBoundParameters` à la fonction **Test1** . Les `$PSBoundParameters` sont affichés dans le format de la **clé** et de la **valeur**.
 
 ```powershell
 function Test1 {
@@ -313,7 +317,7 @@ Lors du débogage, cette variable contient des informations sur l’environnemen
 
 ### <a name="pshome"></a>$PSHOME
 
-Contient le chemin d’accès complet du répertoire d’installation de PowerShell, en général, `$env:windir\System32\PowerShell\v1.0` dans les systèmes Windows. Vous pouvez utiliser cette variable dans les chemins d’accès des fichiers PowerShell. Par exemple, la commande suivante recherche dans les rubriques d’aide conceptuelle le mot **variable** :
+Contient le chemin d’accès complet du répertoire d’installation de PowerShell, en général, `$env:windir\System32\PowerShell\v1.0` dans les systèmes Windows. Vous pouvez utiliser cette variable dans les chemins d’accès des fichiers PowerShell. Par exemple, la commande suivante recherche dans les rubriques d’aide conceptuelle le mot **variable**:
 
 ```powershell
 Select-String -Pattern Variable -Path $pshome\*.txt
@@ -334,7 +338,7 @@ Dans PowerShell 2,0, cette variable est valide uniquement dans les modules de sc
 
 Contient des informations sur l’utilisateur qui a démarré la session PSSession, y compris l’identité de l’utilisateur et le fuseau horaire de l’ordinateur d’origine. Cette variable est disponible uniquement dans sessions PSSession.
 
-La `$PSSenderInfo` variable inclut une propriété configurable par l’utilisateur, **ApplicationArguments** , qui, par défaut, contient uniquement le `$PSVersionTable` de la session d’origine. Pour ajouter des données à la propriété **ApplicationArguments** , utilisez le paramètre **ApplicationArguments** de l’applet de commande `New-PSSessionOption` .
+La `$PSSenderInfo` variable inclut une propriété configurable par l’utilisateur, **ApplicationArguments**, qui, par défaut, contient uniquement le `$PSVersionTable` de la session d’origine. Pour ajouter des données à la propriété **ApplicationArguments** , utilisez le paramètre **ApplicationArguments** de l’applet de commande `New-PSSessionOption` .
 
 ### <a name="psuiculture"></a>$PSUICulture
 
@@ -392,7 +396,7 @@ Dans une classe personnalisée, la `$this` variable fait référence à l’obje
 
 ### <a name="true"></a>$true
 
-Contient la **valeur true** . Vous pouvez utiliser cette variable pour représenter la **valeur true** dans les commandes et les scripts.
+Contient la **valeur true**. Vous pouvez utiliser cette variable pour représenter la **valeur true** dans les commandes et les scripts.
 
 ## <a name="using-enumerators"></a>Utilisation d’énumérateurs
 
@@ -542,7 +546,7 @@ After MoveNext:
 
 À l’aide de la propriété **Current** , la valeur de pipeline actuelle est accessible plusieurs fois sans utiliser la méthode **Reset** . Le bloc Process n’appelle pas automatiquement la méthode **MoveNext** .
 
-La propriété **actuelle** ne sera jamais remplie, sauf si vous appelez explicitement **MoveNext** . La propriété **actuelle** est accessible plusieurs fois dans le bloc de processus sans effacer sa valeur.
+La propriété **actuelle** ne sera jamais remplie, sauf si vous appelez explicitement **MoveNext**. La propriété **actuelle** est accessible plusieurs fois dans le bloc de processus sans effacer sa valeur.
 
 ```powershell
 function Current

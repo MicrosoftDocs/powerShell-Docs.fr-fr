@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/19/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 3ae91d03e6882eeaf6743d11cfeed5d0ed1aae0c
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: ef44fefe68ef9674eb14ce494341bf04f477d55a
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206121"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693004"
 ---
 # Add-Content
 
 ## SYNOPSIS
 Ajoute le contenu aux éléments spécifiés (ajout de mots à un fichier, par exemple).
 
-## SYNTAX
+## SYNTAXE
 
 ### Chemin d’accès (par défaut)
 
@@ -117,7 +116,7 @@ Get-Content -Path .\NewFile.txt
 
 ### Exemple 6 : ajouter du contenu à un fichier en lecture seule
 
-Cette commande ajoute une valeur au fichier même si l’attribut de fichier **IsReadOnly** a la valeur **true** .
+Cette commande ajoute une valeur au fichier même si l’attribut de fichier **IsReadOnly** a la valeur **true**.
 Les étapes de création d’un fichier en lecture seule sont incluses dans l’exemple.
 
 ```powershell
@@ -212,7 +211,7 @@ Les valeurs acceptables pour ce paramètre sont les suivantes :
 À partir de PowerShell 6,2, le paramètre **Encoding** autorise également les ID numériques des pages de codes inscrites (comme `-Encoding 1251` ) ou les noms de chaîne des pages de codes inscrites (comme `-Encoding "windows-1251"` ). Pour plus d’informations, consultez la documentation .NET pour [Encoding. CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
 > [!NOTE]
-> **UTF-7** * n’est plus recommandé d’utiliser. Dans PowerShell 7,1, un avertissement est écrit si vous spécifiez `utf7` pour le paramètre **Encoding** .
+> **UTF-7** _ n’est plus recommandé pour l’utilisation de. Dans PowerShell 7,1, un avertissement est écrit si vous spécifiez `utf7` pour le paramètre _ *Encoding**.
 
 ```yaml
 Type: System.Text.Encoding
@@ -229,7 +228,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -278,7 +277,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -366,11 +365,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Ce paramètre est uniquement disponible sur Windows.
+
 Spécifie un flux de données alternatif pour le contenu. Si le flux n’existe pas, cette applet de commande le crée. Les caractères génériques ne sont pas pris en charge.
 
 **Stream** est un paramètre dynamique que le fournisseur FileSystem ajoute à `Add-Content` . Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers.
 
-Vous pouvez utiliser l' `Add-Content` applet de commande pour modifier le contenu du flux de données de remplacement de la **zone. identifier** . Toutefois, nous vous déconseillons d’éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d’Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
+Vous pouvez utiliser l' `Add-Content` applet de commande pour modifier le contenu de tout autre flux de données, tel que `Zone.Identifier` . Toutefois, nous vous déconseillons d’éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d’Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
 
 Ce paramètre a été introduit dans PowerShell 3,0.
 
@@ -388,7 +390,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-Spécifie le contenu à ajouter. Tapez une chaîne entre guillemets, telle que **ces données sont destinées à un usage interne uniquement** , ou spécifiez un objet qui contient du contenu, tel que l’objet **DateTime** `Get-Date` généré par.
+Spécifie le contenu à ajouter. Tapez une chaîne entre guillemets, telle que **ces données sont destinées à un usage interne uniquement**, ou spécifiez un objet qui contient du contenu, tel que l’objet **DateTime** `Get-Date` généré par.
 
 Vous ne pouvez pas spécifier le contenu d’un fichier en tapant son chemin d’accès, car il s’agit simplement d’une chaîne.
 Vous pouvez utiliser une `Get-Content` commande pour obtenir le contenu et le passer au paramètre **value** .
@@ -438,6 +440,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
@@ -473,4 +476,3 @@ Quand vous utilisez le paramètre **PassThru** , `Add-Content` génère un objet
 [New-Item](New-Item.md)
 
 [Set-Content](Set-Content.md)
-

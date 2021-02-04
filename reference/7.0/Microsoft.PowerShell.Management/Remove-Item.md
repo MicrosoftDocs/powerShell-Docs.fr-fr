@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/07/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
-ms.openlocfilehash: ddb3f8d1889887e01db8663e21cdb0323e6d4084
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 9b8d81c84a5dab8fa5f5e216c8c4eb5b5f6022b7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201189"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692847"
 ---
 # Remove-Item
 
 ## SYNOPSIS
 Supprime les éléments spécifiés.
 
-## SYNTAX
+## SYNTAXE
 
 ### Chemin d’accès (par défaut)
 
@@ -63,13 +62,13 @@ Elle utilise le caractère générique ( `*` ) pour spécifier le contenu du dos
 
 ### Exemple 3 : supprimer les fichiers masqués et en lecture seule
 
-Cette commande supprime un fichier qui est à la fois *masqué* et *en lecture seule* .
+Cette commande supprime un fichier qui est à la fois *masqué* et *en lecture seule*.
 
 ```powershell
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
-Elle utilise le paramètre **path** pour spécifier le fichier. Elle utilise le paramètre **force** pour la supprimer. Sans **force** , vous ne pouvez pas supprimer les fichiers _cachés_ ou _en lecture seule_ .
+Elle utilise le paramètre **path** pour spécifier le fichier. Elle utilise le paramètre **force** pour la supprimer. Sans **force**, vous ne pouvez pas supprimer les fichiers _cachés_ ou _en lecture seule_ .
 
 ### Exemple 4 : supprimer des fichiers dans des sous-dossiers de manière récursive
 
@@ -85,7 +84,7 @@ Dans la `Get-ChildItem` commande, **path** a la valeur ( `*` ), qui représente 
 
 ### Exemple 5 : supprimer les sous-clés de manière récursive
 
-Cette commande supprime la clé de Registre « OldApp » et toutes ses sous-clés et valeurs. Elle utilise `Remove-Item` pour supprimer la clé. Le chemin d’accès est spécifié, mais le nom de paramètre facultatif ( **path** ) est omis.
+Cette commande supprime la clé de Registre « OldApp » et toutes ses sous-clés et valeurs. Elle utilise `Remove-Item` pour supprimer la clé. Le chemin d’accès est spécifié, mais le nom de paramètre facultatif (**path**) est omis.
 
 Le paramètre **recurse** supprime tout le contenu de la clé « OldApp » de manière récursive. Si la clé contient des sous-clés et que vous omettez le paramètre **recurse** , vous êtes invité à confirmer que vous souhaitez supprimer le contenu de la clé.
 
@@ -174,7 +173,7 @@ At line:1 char:1
 
 ```
 
-Le **Stream** paramètre Stream `Get-Item` obtient le flux de **zone. identificateur** du `Copy-Script.ps1` fichier. `Remove-Item` utilise le paramètre **Stream** pour supprimer le flux de **zone. identifier** du fichier. Enfin, l' `Get-Item` applet de commande indique que le flux de **zone. identifier** a été supprimé.
+Le  paramètre Stream `Get-Item` obtient le `Zone.Identifier` flux du `Copy-Script.ps1` fichier. `Remove-Item` utilise le paramètre **Stream** pour supprimer le `Zone.Identifier` flux du fichier. Enfin, l' `Get-Item` applet de commande indique que le `Zone.Identifier` flux a été supprimé.
 
 ## PARAMETERS
 
@@ -198,7 +197,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -214,8 +213,7 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Spécifie un filtre pour qualifier le paramètre **path** . Le fournisseur [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) est le seul fournisseur PowerShell installé qui prend en charge l’utilisation de filtres. Vous trouverez la syntaxe de la langue du filtre de **système de fichiers** dans [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lorsque l’applet de commande obtient les objets au lieu de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
+Spécifie un filtre pour qualifier le paramètre **path** . Le fournisseur [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) est le seul fournisseur PowerShell installé qui prend en charge l’utilisation de filtres. Vous trouverez la syntaxe de la langue du filtre de **système de fichiers** dans [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lorsque l’applet de commande obtient les objets au lieu de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
 
 ```yaml
 Type: System.String
@@ -248,7 +246,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -317,10 +315,14 @@ Accept wildcard characters: False
 
 ### -Stream
 
+> [!NOTE]
+> Ce paramètre est uniquement disponible sur Windows.
+
 Le paramètre **Stream** est un paramètre dynamique que le fournisseur FileSystem ajoute à `Remove-Item` .
 Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers.
 
-Vous pouvez utiliser `Remove-Item` pour supprimer un flux de données de remplacement. Elle ne constitue cependant pas un moyen recommandé pour éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d'Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
+Vous pouvez utiliser `Remove-Item` pour supprimer un autre flux de données, tel que `Zone.Identifier` .
+Elle ne constitue cependant pas un moyen recommandé pour éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d'Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -373,7 +375,8 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Cette applet de commande prend en charge les paramètres communs : `-Debug` , `-ErrorAction` ,, `-ErrorVariable` `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` et `-WarningVariable` . Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 
 ## ENTRÉES
 

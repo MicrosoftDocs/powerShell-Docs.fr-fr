@@ -7,19 +7,19 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
-ms.openlocfilehash: 969cb181758dc1ac40b9d8fca2c22fa97f87c693
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cbd1229721650823d9780517934c40a2287f4227
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203514"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692661"
 ---
 # Set-ItemProperty
 
 ## SYNOPSIS
 Crée ou modifie la valeur d'une propriété d'un élément.
 
-## SYNTAX
+## SYNTAXE
 
 ### propertyValuePathSet (par défaut)
 
@@ -64,7 +64,7 @@ Par exemple, vous pouvez ajouter une nouvelle entrée de Registre à une clé, p
 
 ### Exemple 1 : définir une propriété d’un fichier
 
-Cette commande affecte la valeur « true » à la propriété **IsReadOnly** du fichier « final.doc ». Elle utilise **path** pour spécifier le fichier, **Name** pour spécifier le nom de la propriété et la **valeur** pazrameter pour spécifier la nouvelle valeur.
+Cette commande affecte la valeur « true » à la propriété **IsReadOnly** du fichier « final.doc ». Elle utilise **path** pour spécifier le fichier, **Name** pour spécifier le nom de la propriété et le paramètre **value** pour spécifier la nouvelle valeur.
 
 Le fichier est un objet **System. IO. FileInfo** et **IsReadOnly** est simplement l’une de ses propriétés.
 Pour afficher toutes les propriétés, tapez `Get-Item C:\GroupFiles\final.doc | Get-Member -MemberType Property` .
@@ -147,7 +147,7 @@ Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
 Spécifie un compte d’utilisateur qui a l’autorisation d’exécuter cette action.
 La valeur par défaut est l’utilisateur actuel.
 
-Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential`.
+Tapez un nom d’utilisateur, tel que « User01 » ou « Domain01\User01 », ou entrez un objet **PSCredential**, tel que celui généré par l’applet de commande `Get-Credential`.
 Si vous tapez un nom d’utilisateur, vous êtes invité à entrer un mot de passe.
 
 > [!NOTE]
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 ### -Exclude
 
 Spécifie les éléments sur lesquels l’applet de commande n’agit pas, et comprend tous les autres.
-La valeur de ce paramètre qualifie le paramètre **Path** .
+La valeur de ce paramètre qualifie le paramètre **Path**.
 Entrez un élément ou un modèle de chemin d'accès, tel que « *.txt ».
 Les caractères génériques sont autorisés.
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ### -Filter
 
 Spécifie un filtre dans le format ou la langue du fournisseur.
-La valeur de ce paramètre qualifie le paramètre **Path** .
+La valeur de ce paramètre qualifie le paramètre **Path**.
 
 La syntaxe du filtre, notamment l’utilisation de caractères génériques, dépend du fournisseur.
 Les filtres sont plus efficaces que les autres paramètres, car le fournisseur les applique lorsque l’applet de commande obtient les objets au lieu de faire en sorte que PowerShell filtre les objets une fois qu’ils ont été récupérés.
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ### -Include
 
 Spécifie uniquement les éléments sur lesquels l’applet de commande agit, ce qui exclut tous les autres.
-La valeur de ce paramètre qualifie le paramètre **Path** .
+La valeur de ce paramètre qualifie le paramètre **Path**.
 Entrez un élément ou un modèle de chemin d'accès, tel que « *.txt ».
 Les caractères génériques sont autorisés.
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Spécifie le chemin d’accès de la propriété de l’élément.
-Contrairement au paramètre **Path** , la valeur du paramètre **LiteralPath** est utilisée exactement telle que vous la tapez.
+Contrairement au paramètre **Path**, la valeur du paramètre **LiteralPath** est utilisée exactement telle que vous la tapez.
 Aucun caractère n’est interprété en tant que caractère générique.
 Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples.
 Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
@@ -336,14 +336,14 @@ Ce paramètre fonctionne uniquement dans les lecteurs de registre.
 Spécifie le type de propriété que cette applet de commande ajoute.
 Les valeurs valides pour ce paramètre sont :
 
-- **String** : spécifie une chaîne terminée par le caractère null. Équivalent à **REG_SZ** .
-- **ExpandString** : spécifie une chaîne terminée par le caractère null qui contient des références non développées à des variables d’environnement qui sont développées lorsque la valeur est récupérée. Équivalent à **REG_EXPAND_SZ** .
-- **Binary** : spécifie des données binaires sous n’importe quelle forme. Équivalent à **REG_BINARY** .
-- **DWORD** : spécifie un nombre binaire de 32 bits. Équivalent à **REG_DWORD** .
-- **MultiString** : spécifie un tableau de chaînes terminées par le caractère null qui se sont terminées par deux caractères null.
-  Équivalent à **REG_MULTI_SZ** .
-- **QWord** : spécifie un nombre binaire de 64 bits. Équivalent à **REG_QWORD** .
-- **Inconnu** : indique un type de données de Registre non pris en charge, tel que **REG_RESOURCE_LIST** .
+- **String**: spécifie une chaîne terminée par le caractère null. Équivalent à **REG_SZ**.
+- **ExpandString**: spécifie une chaîne terminée par le caractère null qui contient des références non développées à des variables d’environnement qui sont développées lorsque la valeur est récupérée. Équivalent à **REG_EXPAND_SZ**.
+- **Binary**: spécifie des données binaires sous n’importe quelle forme. Équivalent à **REG_BINARY**.
+- **DWORD**: spécifie un nombre binaire de 32 bits. Équivalent à **REG_DWORD**.
+- **MultiString**: spécifie un tableau de chaînes terminées par le caractère null qui se sont terminées par deux caractères null.
+  Équivalent à **REG_MULTI_SZ**.
+- **QWord**: spécifie un nombre binaire de 64 bits. Équivalent à **REG_QWORD**.
+- **Inconnu**: indique un type de données de Registre non pris en charge, tel que **REG_RESOURCE_LIST**.
 
 ```yaml
 Type: RegistryValueKind

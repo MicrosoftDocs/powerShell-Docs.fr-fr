@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 3219656c5c20372ac7fe999f4aafffa23b81be1a
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 2c3b9938e778888c277403ab9bb6923caa24c68c
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347021"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490599"
 ---
 # Test-FileCatalog
 
@@ -28,7 +28,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 `Test-FileCatalog` valide l’authenticité des fichiers en comparant les hachages de fichier d’un fichier catalogue (. cat) avec les hachages des fichiers réels sur le disque. Si elle détecte des incompatibilités, elle retourne l’État ValidationFailed. Les utilisateurs peuvent récupérer toutes ces informations à l’aide du paramètre -Detailed. Il affiche également l’état de signature du catalogue dans la propriété signature, ce qui revient à appeler `Get-AuthenticodeSignature` l’applet de commande sur le fichier catalogue. Les utilisateurs peuvent également ignorer des fichiers lors de la validation à l’aide du paramètre -FilesToSkip.
 
@@ -51,7 +51,7 @@ Valid
 ### Exemple 2 : valider un catalogue de fichiers avec une sortie détaillée
 
 ```powershell
-Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+Test-FileCatalog -Detailed -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
 ```
 
 ```Output
@@ -66,7 +66,7 @@ PathItems     : {[Microsoft.PowerShell.Utility.psd1,
 Signature     : System.Management.Automation.Signature
 ```
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -CatalogFilePath
 

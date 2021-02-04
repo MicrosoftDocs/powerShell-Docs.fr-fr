@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 6e4c8c3783af1fda68c6a0c067b79e8d22943c1a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 8eada7e85b6f970a5ba4c6e1714ee598cf768706
+ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207549"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97804144"
 ---
 # <a name="about-signing"></a>À propos de la signature
 
@@ -22,7 +22,7 @@ Explique comment signer des scripts afin qu’ils soient conformes aux stratégi
 
 La stratégie d’exécution restreinte ne permet pas l’exécution de scripts. Les stratégies d’exécution **AllSigned** et **RemoteSigned** empêchent PowerShell d’exécuter des scripts qui n’ont pas de signature numérique.
 
-Cette rubrique explique comment exécuter des scripts sélectionnés qui ne sont pas signés, même si la stratégie d’exécution est **RemoteSigned** , et comment signer des scripts pour votre propre usage.
+Cette rubrique explique comment exécuter des scripts sélectionnés qui ne sont pas signés, même si la stratégie d’exécution est **RemoteSigned**, et comment signer des scripts pour votre propre usage.
 
 Pour plus d’informations sur les stratégies d’exécution de PowerShell, consultez [about_Execution_Policies](about_Execution_Policies.md).
 
@@ -38,7 +38,7 @@ Pour trouver la stratégie d’exécution effective sur votre ordinateur, tapez�
 Get-ExecutionPolicy
 ```
 
-Pour exécuter des scripts non signés que vous écrivez sur votre ordinateur local et des scripts signés d’autres utilisateurs, démarrez PowerShell avec l’option Exécuter en tant qu’administrateur, puis utilisez la commande suivante pour modifier la stratégie d’exécution sur l’ordinateur en **RemoteSigned** :
+Pour exécuter des scripts non signés que vous écrivez sur votre ordinateur local et des scripts signés d’autres utilisateurs, démarrez PowerShell avec l’option Exécuter en tant qu’administrateur, puis utilisez la commande suivante pour modifier la stratégie d’exécution sur l’ordinateur en **RemoteSigned**:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -48,7 +48,7 @@ Pour plus d’informations, consultez la rubrique d’aide de l’applet de comm
 
 ## <a name="running-unsigned-scripts-using-the-remotesigned-execution-policy"></a>Exécution de scripts non signés à l’aide de la stratégie d’exécution RemoteSigned
 
-Si votre stratégie d’exécution de PowerShell est **RemoteSigned** , PowerShell n’exécutera pas les scripts non signés téléchargés à partir d’Internet, y compris les scripts non signés que vous recevez par courrier électronique et les programmes de messagerie instantanée.
+Si votre stratégie d’exécution de PowerShell est **RemoteSigned**, PowerShell n’exécutera pas les scripts non signés téléchargés à partir d’Internet, y compris les scripts non signés que vous recevez par courrier électronique et les programmes de messagerie instantanée.
 
 Si vous essayez d’exécuter un script téléchargé, PowerShell affiche le message d’erreur suivant :
 
@@ -104,7 +104,7 @@ Si vous créez un certificat auto-signé, veillez à activer la protection renfo
 
 ## <a name="create-a-self-signed-certificate"></a>Créer un certificat auto-signé
 
-Pour créer un certificat auto-signé dans, utilisez l' `New-SelfSignedCertificate` applet de commande dans le module PKI. Ce module est introduit dans PowerShell 3,0 et est inclus dans Windows 8 et Windows Server 2012. Pour plus d’informations, consultez la rubrique d’aide de l’applet de commande `New-SelfSignedCertificate` .
+Pour créer un certificat auto-signé, utilisez l' `New-SelfSignedCertificate` applet de commande dans le module PKI. Ce module est introduit dans PowerShell 3,0 et est inclus dans Windows 8 et Windows Server 2012. Pour plus d’informations, consultez la rubrique d’aide de l’applet de commande `New-SelfSignedCertificate` .
 
 Pour créer un certificat auto-signé dans des versions antérieures de Windows, utilisez l’outil de création de certificat `MakeCert.exe` . Cet outil est inclus dans le kit de développement logiciel (SDK) Microsoft .NET (versions 1,1 et ultérieures) et dans le Microsoft Windows SDK.
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 10/16/2019
+ms.date: 01/04/2021
 ms.topic: reference
 title: Guide pratique pour écrire un manifeste de module PowerShell
 description: Guide pratique pour écrire un manifeste de module PowerShell
-ms.openlocfilehash: 42db71968ccac1cc3c1c05c5be2e72327e5e28d9
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8c644391008cb97c1206f985f0f5eca9d7dfcc9e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92647702"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879369"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Comment écrire un manifeste de module PowerShell
 
@@ -63,7 +63,7 @@ Le tableau suivant décrit les éléments que vous pouvez inclure dans un manife
 |**CompanyName**<br /> Entrez : `String`|`'Unknown'`|Société ou fournisseur de ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut.<br /> Exemple : `CompanyName = 'Fabrikam'`|
 |**Copyright**<br /> Entrez : `String`|`'(c) <Author>. All rights reserved.'`| Déclaration de droits d’auteur pour ce module. Si une valeur n’est pas spécifiée, `New-ModuleManifest` utilise la valeur par défaut avec l’utilisateur actuel en tant que `<Author>` . Pour spécifier un auteur, utilisez le paramètre **auteur** . <br /> Exemple : `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**Description**<br /> Entrez : `String`|`<empty string>`|Description de la fonctionnalité fournie par ce module.<br /> Exemple : `Description = 'This is the module's description.'`|
-|**PowerShellVersion**<br /> Entrez : `Version`|`<empty string>`|Version minimale du moteur PowerShell requise par ce module. Les valeurs valides sont 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6 et 7.<br /> Exemple : `PowerShellVersion = '5.0'`|
+|**PowerShellVersion**<br /> Entrez : `Version`|`<empty string>`|Version minimale du moteur PowerShell requise par ce module. Les valeurs valides sont 1,0, 2,0, 3,0, 4,0, 5,0, 5,1, 6,0, 6,1, 6,2, 7,0 et 7,1.<br /> Exemple : `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> Entrez : `String`|`<empty string>`|Nom de l’hôte PowerShell requis par ce module. Ce nom est fourni par PowerShell. Pour rechercher le nom d’un programme hôte, dans le programme, tapez : `$host.name` .<br /> Exemple : `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> Entrez : `Version`|`<empty string>`|Version minimale de l’hôte PowerShell requis par ce module.<br /> Exemple : `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> Entrez : `Version`|`<empty string>`|Version minimale de Microsoft .NET Framework requise par ce module. Ce composant requis est valide uniquement pour l’édition PowerShell Desktop, par exemple PowerShell 5,1.<br /> Exemple : `DotNetFrameworkVersion = '3.5'`|

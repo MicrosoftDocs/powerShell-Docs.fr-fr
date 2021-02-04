@@ -6,12 +6,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
-ms.openlocfilehash: d45339bae42b1131e1dfb9618413a34e250a578e
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 5f70f2cdcc96090317a604f82788d1095e0b3c4d
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208070"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879301"
 ---
 # <a name="about-data-sections"></a>À propos des sections de données
 
@@ -72,7 +72,7 @@ Le `-SupportedCommand` paramètre vous permet d’indiquer qu’une applet de co
 
 La valeur de `-SupportedCommand` est une liste séparée par des virgules d’un ou plusieurs noms d’applet de commande ou de fonction.
 
-Par exemple, la section de données suivante comprend une applet de commande écrite par l’utilisateur, `Format-XML` , qui met en forme les données d’un fichier XML :
+Par exemple, la section de données suivante comprend une applet de commande écrite par l’utilisateur, `Format-Xml` , qui met en forme les données d’un fichier XML :
 
 ```powershell
 DATA -supportedCommand Format-Xml

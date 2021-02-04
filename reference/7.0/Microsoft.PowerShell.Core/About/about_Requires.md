@@ -1,17 +1,16 @@
 ---
 description: Empêche un script de s’exécuter sans les éléments requis.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: c6b10137ca58da93caff365a50b125929fd4d11a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 73c225f493fb671b34925d0127cc0d5cff0ab33e
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208158"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490582"
 ---
 # <a name="about-requires"></a>À propos de requires
 
@@ -25,7 +24,6 @@ L' `#Requires` instruction empêche l’exécution d’un script, sauf si la ver
 ### <a name="syntax"></a>Syntaxe
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -57,6 +55,9 @@ Vous pouvez penser que le code ci-dessus ne doit pas s’exécuter parce que le 
 ### <a name="parameters"></a>Paramètres
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>-Assembly \<Assembly path> |\<.NET assembly specification>
+
+> [!IMPORTANT]
+> La `-Assembly` syntaxe est déconseillée. Elle n’a aucune fonction. La syntaxe a été ajoutée dans PowerShell 5,1, mais le code de prise en charge n’a jamais été implémenté. La syntaxe est toujours acceptée pour la compatibilité descendante.
 
 Spécifie le chemin d’accès au fichier DLL de l’assembly ou un nom d’assembly .NET. Le paramètre **assembly** a été introduit dans PowerShell 5,0. Pour plus d’informations sur les assemblys .NET, consultez [noms d’assembly](/dotnet/standard/assembly/names).
 
@@ -119,7 +120,7 @@ Exiger que `AzureRM.Netcore` (version `0.12.0` ou ultérieure) soit installé.
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; ModuleVersion="0.12.0" }
 ```
 
-Exiger que `AzureRM.Netcore` ( **seule** version `0.12.0` ) soit installé.
+Exiger que `AzureRM.Netcore` (**seule** version `0.12.0` ) soit installé.
 
 ```powershell
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12.0" }
@@ -151,7 +152,7 @@ ModuleType Version Name            PSEdition ExportedCommands
 Script     0.12.0  AzureRM.Netcore Core
 ```
 
-L’exemple suivant échoue car **0,12** ne correspond pas exactement à **0.12.0** .
+L’exemple suivant échoue car **0,12** ne correspond pas exactement à **0.12.0**.
 
 ```powershell
 #Requires -Modules @{ ModuleName="AzureRM.Netcore"; RequiredVersion="0.12" }

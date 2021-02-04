@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
-ms.openlocfilehash: 1409522cffc2dde2cc5002049126bcfaa30ce846
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 48f15f9d7018c2e58584bff80f81132fe08fea1e
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201470"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692736"
 ---
 # Get-Content
 
 ## SYNOPSIS
 Obtient le contenu de l'élément à l'emplacement spécifié.
 
-## SYNTAX
+## SYNTAXE
 
 ### Chemin d’accès (par défaut)
 
@@ -180,7 +179,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 Le paramètre **Stream** est un paramètre dynamique du [fournisseur FileSystem](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-Par défaut `Get-Content` , récupère uniquement les données du flux principal ou `$DATA` . Les **flux** peuvent être utilisés pour stocker des données masquées telles que des attributs, des paramètres de sécurité ou d’autres données.
+Par défaut `Get-Content` , récupère uniquement les données de la valeur par défaut ou du `:$DATA` flux. Les **flux** peuvent être utilisés pour stocker des données masquées telles que des attributs, des paramètres de sécurité ou d’autres données. Ils peuvent également être stockés dans des répertoires sans être des éléments enfants.
 
 ### Exemple 6 : récupérer du contenu brut
 
@@ -219,7 +218,7 @@ Get-Member -InputObject $bytearray
 ```
 
 ```Output
-TypeName: System.Byte[]
+   TypeName: System.Byte[]
 
 Name           MemberType            Definition
 ----           ----------            ----------
@@ -289,7 +288,7 @@ Accept wildcard characters: False
 
 Spécifie le nombre de lignes à partir du début d’un fichier ou d’un autre élément. La valeur par défaut est -1 (toutes les lignes).
 
-Vous pouvez utiliser le nom du paramètre **totalCount** ou ses alias, **First** ou **Head** .
+Vous pouvez utiliser le nom du paramètre **totalCount** ou ses alias, **First** ou **Head**.
 
 ```yaml
 Type: System.Int64
@@ -305,7 +304,7 @@ Accept wildcard characters: False
 
 ### -Fin
 
-Spécifie le nombre de lignes à partir de la fin d’un fichier ou d’un autre élément. Vous pouvez utiliser le nom du paramètre de **fin** ou son alias, **Last** . Ce paramètre a été introduit dans PowerShell 3,0.
+Spécifie le nombre de lignes à partir de la fin d’un fichier ou d’un autre élément. Vous pouvez utiliser le nom du paramètre de **fin** ou son alias, **Last**. Ce paramètre a été introduit dans PowerShell 3,0.
 
 ```yaml
 Type: System.Int32
@@ -338,7 +337,7 @@ Accept wildcard characters: True
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -355,7 +354,7 @@ Accept wildcard characters: True
 ### -Exclude
 
 Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération.
-La valeur de ce paramètre qualifie le paramètre **Path** .
+La valeur de ce paramètre qualifie le paramètre **Path**.
 
 Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` .
 Les caractères génériques sont autorisés.
@@ -433,9 +432,9 @@ Accept wildcard characters: False
 
 ### -Wait
 
-Conserve le fichier ouvert une fois que toutes les lignes existantes ont été générées. En attente, `Get-Content` vérifie le fichier une fois par seconde et génère de nouvelles lignes le cas échéant. Vous pouvez interrompre l' **attente** en appuyant sur **Ctrl + C** . L’attente se termine également si le fichier est supprimé, auquel cas une erreur sans fin d’achèvement est signalée.
+Conserve le fichier ouvert une fois que toutes les lignes existantes ont été générées. En attente, `Get-Content` vérifie le fichier une fois par seconde et génère de nouvelles lignes le cas échéant. Vous pouvez interrompre l' **attente** en appuyant sur **Ctrl + C**. L’attente se termine également si le fichier est supprimé, auquel cas une erreur sans fin d’achèvement est signalée.
 
-**Wait** est un paramètre dynamique que le fournisseur FileSystem ajoute à l' `Get-Content` applet de commande. Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers. **Wait** ne peut pas être combiné avec **RAW** .
+**Wait** est un paramètre dynamique que le fournisseur FileSystem ajoute à l' `Get-Content` applet de commande. Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers. **Wait** ne peut pas être combiné avec **RAW**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -504,6 +503,9 @@ Accept wildcard characters: False
 ```
 
 ### -Stream
+
+> [!NOTE]
+> Ce paramètre est uniquement disponible sur Windows.
 
 Obtient le contenu du flux de fichiers NTFS alternatif spécifié du fichier. Entrez le nom du flux.
 Les caractères génériques ne sont pas pris en charge.

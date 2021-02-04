@@ -7,12 +7,12 @@ ms.date: 5/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
-ms.openlocfilehash: 0e0b5fcd99372d699bd6250383adc85b3a5f8847
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c81c50152209a922c486005b5919ac4a1e7295a2
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201566"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490313"
 ---
 # Register-ArgumentCompleter
 
@@ -20,7 +20,7 @@ ms.locfileid: "93201566"
 
 Inscrit un finaliseur d’argument personnalisé.
 
-## SYNTAX
+## SYNTAXE
 
 ### NativeSet
 
@@ -61,9 +61,9 @@ Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBl
 
 La première commande crée un bloc de script qui prend les paramètres requis qui sont transmis quand l’utilisateur appuie sur la touche <kbd>Tab</kbd>. Pour plus d’informations, consultez la description du paramètre **scriptblock** .
 
-Dans le bloc de script, les valeurs disponibles pour **ID** sont extraites à l’aide de l’applet de commande `Get-TimeZone` . La propriété **ID** de chaque fuseau horaire est dirigée vers l' `Where-Object` applet de commande. L' `Where-Object` applet de commande filtre tous les ID qui ne commencent pas par la valeur fournie par `$wordToComplete` , qui représente le texte que l’utilisateur a tapé avant d’appuyer sur la touche <kbd>Tab</kbd>. Les ID filtrés sont dirigés vers l’applet de commande `For-EachObject` qui englobe chaque valeur entre guillemets, si la valeur contient des espaces.
+Dans le bloc de script, les valeurs disponibles pour **ID** sont extraites à l’aide de l’applet de commande `Get-TimeZone` . La propriété **ID** de chaque fuseau horaire est dirigée vers l' `Where-Object` applet de commande. L' `Where-Object` applet de commande filtre tous les ID qui ne commencent pas par la valeur fournie par `$wordToComplete` , qui représente le texte que l’utilisateur a tapé avant d’appuyer sur la touche <kbd>Tab</kbd>. Les ID filtrés sont dirigés vers l’applet de commande `ForEach-Object` qui englobe chaque valeur entre guillemets, si la valeur contient des espaces.
 
-La deuxième commande inscrit l’argument completer en passant le scriptblock, l’ID **ParameterName** **Id** et le **CommandName** `Set-TimeZone` .
+La deuxième commande inscrit l’argument completer en passant le scriptblock, l’ID **ParameterName**  et le **CommandName** `Set-TimeZone` .
 
 ### Exemple 2 : ajouter des détails à vos valeurs de saisie semi-automatique par tabulation
 
@@ -91,7 +91,7 @@ L’objet **CompletionResult** vous permet de fournir des détails supplémentai
 
 - **completionText** (String) : texte à utiliser comme résultat de la saisie semi-automatique. Il s’agit de la valeur envoyée à la commande.
 - **listItemText** (String) : texte à afficher dans une liste, par exemple lorsque l’utilisateur appuie sur <kbd>CTRL</kbd> + <kbd>Space</kbd>. Cela est utilisé pour l’affichage uniquement et n’est pas passé à la commande quand elle est sélectionnée.
-- **ResultType** ( [CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) : type de résultat de la saisie semi-automatique.
+- **ResultType** ([CompletionResultType](/dotnet/api/system.management.automation.completionresulttype)) : type de résultat de la saisie semi-automatique.
 - **info-bulle** (String) : texte de l’info-bulle contenant les détails à afficher à propos de l’objet.
   Cela est visible lorsque l’utilisateur sélectionne un élément après avoir appuyé sur <kbd>CTRL</kbd> + <kbd>Space</kbd>.
 

@@ -1,17 +1,16 @@
 ---
 description: Empêche un script de s’exécuter sans les éléments requis.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 07/01/2019
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Requires
-ms.openlocfilehash: d499499c58f22bff10d712d33fc3a021e4fa6bbb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f8ff922fcf8deb710008bbd9bab619f137d6c831
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207577"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490701"
 ---
 # <a name="about-requires"></a>À propos de requires
 
@@ -25,7 +24,6 @@ L' `#Requires` instruction empêche l’exécution d’un script, sauf si la ver
 ### <a name="syntax"></a>Syntaxe
 
 ```
-#Requires -Assembly { <Path to .dll> | <.NET assembly specification> }
 #Requires -Version <N>[.<n>]
 #Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
@@ -45,7 +43,7 @@ Le fait de placer une `#Requires` instruction à l’intérieur d’une fonction
 > [!WARNING]
 > Bien qu’une `#Requires` instruction puisse apparaître sur n’importe quelle ligne d’un script, sa position dans un script n’affecte pas la séquence de son application. L’état global `#Requires` que l’instruction présente doit être respecté avant l’exécution du script.
 
-Exemple :
+Exemple :
 
 ```powershell
 Get-Module AzureRM.Netcore | Remove-Module
@@ -57,6 +55,9 @@ Vous pouvez penser que le code ci-dessus ne doit pas s’exécuter parce que le 
 ### <a name="parameters"></a>Paramètres
 
 #### <a name="-assembly-assembly-path--net-assembly-specification"></a>-Assembly \<Assembly path> |\<.NET assembly specification>
+
+> [!IMPORTANT]
+> La `-Assembly` syntaxe est déconseillée. Elle n’a aucune fonction. La syntaxe a été ajoutée dans PowerShell 5,1, mais le code de prise en charge n’a jamais été implémenté. La syntaxe est toujours acceptée pour la compatibilité descendante.
 
 Spécifie le chemin d’accès au fichier DLL de l’assembly ou un nom d’assembly .NET. Le paramètre **assembly** a été introduit dans PowerShell 5,0. Pour plus d’informations sur les assemblys .NET, consultez [noms d’assembly](/dotnet/standard/assembly/names).
 
@@ -119,7 +120,7 @@ Exiger que `Hyper-V` (version `1.1` ou ultérieure) soit installé.
 #Requires -Modules @{ ModuleName="Hyper-V"; ModuleVersion="1.1" }
 ```
 
-Requiert que `Hyper-V` ( **seule** version `1.1` ) soit installé.
+Requiert que `Hyper-V` (**seule** version `1.1` ) soit installé.
 
 ```powershell
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="1.1" }
@@ -149,7 +150,7 @@ ModuleType Version    Name     ExportedCommands
 Binary     2.0.0.0    hyper-v  {Add-VMAssignableDevice, ...}
 ```
 
-L’exemple suivant échoue car **2.0.0** ne correspond pas exactement à **2.0.0.0** .
+L’exemple suivant échoue car **2.0.0** ne correspond pas exactement à **2.0.0.0**.
 
 ```powershell
 #Requires -Modules @{ ModuleName="Hyper-V"; RequiredVersion="2.0.0" }

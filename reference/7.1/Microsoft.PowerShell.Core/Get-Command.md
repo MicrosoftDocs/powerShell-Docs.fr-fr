@@ -7,19 +7,19 @@ ms.date: 05/20/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
-ms.openlocfilehash: 60b6d2e380685650a86f74056a992afb4051ddc1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5f2752f53fb5f74b6436548c3bd4fa731d2b02d5
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205150"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879233"
 ---
 # Get-Command
 
 ## SYNOPSIS
 Obtient toutes les commandes.
 
-## SYNTAX
+## SYNTAXE
 
 ### CmdletSet (par défaut)
 
@@ -42,7 +42,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>]
 
 ## Description
 
-L' `Get-Command` applet de commande obtient toutes les commandes qui sont installées sur l’ordinateur, y compris les applets de commande, les alias, les fonctions, les filtres, les scripts et les applications. `Get-Command` Obtient les commandes des modules PowerShell et des commandes qui ont été importées à partir d’autres sessions. Pour obtenir uniquement les commandes qui ont été importées dans la session active, utilisez le paramètre **ListImported** .
+L' `Get-Command` applet de commande obtient toutes les commandes qui sont installées sur l’ordinateur, y compris les applets de commande, les alias, les fonctions, les filtres, les scripts et les applications. `Get-Command` Obtient les commandes des modules PowerShell et des commandes qui ont été importées à partir d’autres sessions. Pour obtenir uniquement les commandes qui ont été importées dans la session active, utilisez le paramètre **ListImported**.
 
 Sans paramètres, `Get-Command` obtient toutes les applets de commande, fonctions et alias installés sur l’ordinateur. `Get-Command *` Obtient tous les types de commandes, y compris tous les fichiers non-PowerShell dans la variable d’environnement PATH ( `$env:Path` ), qu’elle répertorie dans le type de commande de l’application.
 
@@ -88,7 +88,7 @@ Get-Command -Module Microsoft.PowerShell.Security, Microsoft.PowerShell.Utility
 
 ### Exemple 5 : obtenir des informations sur une applet de commande
 
-Cette commande obtient des informations sur l’applet de commande `Get-AppLockerPolicy` . Elle importe également le module **AppLocker** , qui ajoute toutes les commandes du module **AppLocker** à la session active.
+Cette commande obtient des informations sur l’applet de commande `Get-AppLockerPolicy` . Elle importe également le module **AppLocker**, qui ajoute toutes les commandes du module **AppLocker** à la session active.
 
 ```powershell
 Get-Command Get-AppLockerPolicy
@@ -105,7 +105,7 @@ Cette commande utilise les paramètres **argumentlist** et **Syntax** pour récu
 Get-Command  -Name Get-Childitem -Args Cert: -Syntax
 ```
 
-Lorsque vous comparez la syntaxe affichée dans la sortie avec la syntaxe qui s’affiche lorsque vous omettez le paramètre **args** ( **argumentlist** ), vous constatez que le **fournisseur de certificats** ajoute un paramètre dynamique, **CodeSigningCert** , à l’applet de commande `Get-ChildItem` .
+Lorsque vous comparez la syntaxe affichée dans la sortie avec la syntaxe qui s’affiche lorsque vous omettez le paramètre **args** (**argumentlist**), vous constatez que le **fournisseur de certificats** ajoute un paramètre dynamique, **CodeSigningCert**, à l’applet de commande `Get-ChildItem` .
 
 Pour plus d’informations sur le fournisseur de certificats, consultez [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
@@ -142,7 +142,7 @@ Elle retourne un objet **ApplicationInfo** (System.Management.Automation.Applica
 
 ### Exemple 9 : obtenir des applets de commande à l’aide d’un nom et d’un type de paramètre
 
-Cette commande obtient les applets de commande qui ont un paramètre dont le nom comprend auth et dont le type est **AuthenticationMechanism** .
+Cette commande obtient les applets de commande qui ont un paramètre dont le nom comprend auth et dont le type est **AuthenticationMechanism**.
 
 ```powershell
 Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
@@ -150,14 +150,14 @@ Get-Command -ParameterName *Auth* -ParameterType AuthenticationMechanism
 
 Vous pouvez vous servir d'une commande similaire à celle-ci pour rechercher les applets de commande qui vous permettent de spécifier la méthode utilisée pour authentifier l'utilisateur.
 
-Le paramètre **ParameterType** distingue les paramètres qui acceptent une valeur **AuthenticationMechanism** par rapport à ceux qui acceptent un paramètre **AuthenticationLevel** , même quand ils ont des noms similaires.
+Le paramètre **ParameterType** distingue les paramètres qui acceptent une valeur **AuthenticationMechanism** par rapport à ceux qui acceptent un paramètre **AuthenticationLevel**, même quand ils ont des noms similaires.
 
 ### Exemple 10 : recevoir un alias
 
 Cet exemple montre comment utiliser l' `Get-Command` applet de commande avec un alias.
 
 ```powershell
-Get-Command Name dir
+Get-Command -Name dir
 ```
 
 ```Output
@@ -300,11 +300,11 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Spécifie un tableau d’arguments. Cette applet de commande obtient des informations sur une applet de commande ou une fonction quand elle est utilisée avec les paramètres spécifiés (« arguments »). L'alias d' **ArgumentList** est **Args** .
+Spécifie un tableau d’arguments. Cette applet de commande obtient des informations sur une applet de commande ou une fonction quand elle est utilisée avec les paramètres spécifiés (« arguments »). L'alias d'**ArgumentList** est **Args**.
 
 Pour détecter les paramètres dynamiques disponibles uniquement quand certains autres paramètres sont utilisés, affectez la valeur de **argumentlist** aux paramètres qui déclenchent les paramètres dynamiques.
 
-Pour détecter les paramètres dynamiques qu’un fournisseur ajoute à une applet de commande, définissez la valeur du paramètre **argumentlist** sur un chemin d’accès dans le lecteur du fournisseur, par exemple WSMan :, HKLM : ou CERT :. Lorsque la commande est une applet de commande du fournisseur PowerShell, entrez un seul chemin d’accès dans chaque commande. Les applets de commande du fournisseur retournent uniquement les paramètres dynamiques du premier chemin d’accès de la valeur **argumentlist** . Pour plus d’informations sur les applets de commande du fournisseur, consultez [about_Providers](About/about_Providers.md).
+Pour détecter les paramètres dynamiques qu’un fournisseur ajoute à une applet de commande, définissez la valeur du paramètre **argumentlist** sur un chemin d’accès dans le lecteur du fournisseur, par exemple WSMan :, HKLM : ou CERT :. Lorsque la commande est une applet de commande du fournisseur PowerShell, entrez un seul chemin d’accès dans chaque commande. Les applets de commande du fournisseur retournent uniquement les paramètres dynamiques du premier chemin d’accès de la valeur **argumentlist**. Pour plus d’informations sur les applets de commande du fournisseur, consultez [about_Providers](About/about_Providers.md).
 
 ```yaml
 Type: System.Object[]
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 
 ### -CommandType
 
-Spécifie les types de commandes que cette applet de commande obtient. Entrez un ou plusieurs types de commande. Utilisez **CommandType** ou son alias, **Type** . Par défaut, `Get-Command` obtient toutes les applets de commande, fonctions et alias.
+Spécifie les types de commandes que cette applet de commande obtient. Entrez un ou plusieurs types de commande. Utilisez **CommandType** ou son alias, **Type**. Par défaut, `Get-Command` obtient toutes les applets de commande, fonctions et alias.
 
 Les valeurs valides pour ce paramètre sont :
 
@@ -412,7 +412,7 @@ Accept wildcard characters: True
 
 Spécifie un tableau de noms. Cette applet de commande obtient uniquement les commandes qui portent le nom spécifié. Entrez un nom ou un modèle de nom. Les caractères génériques sont autorisés.
 
-Pour obtenir les commandes qui ont le même nom, utilisez le paramètre **All** . Lorsque deux commandes portent le même nom, par défaut, `Get-Command` obtient la commande qui s’exécute lorsque vous tapez le nom de la commande.
+Pour obtenir les commandes qui ont le même nom, utilisez le paramètre **All**. Lorsque deux commandes portent le même nom, par défaut, `Get-Command` obtient la commande qui s’exécute lorsque vous tapez le nom de la commande.
 
 ```yaml
 Type: System.String[]

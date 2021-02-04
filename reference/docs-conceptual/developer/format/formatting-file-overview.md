@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Vue d’ensemble des fichiers de mise en forme
 description: Vue d’ensemble des fichiers de mise en forme
-ms.openlocfilehash: b86119c304c895ec08ac67de693b3a052bc7a2a0
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 769a86d274ef3b35a322d76e2f03cb551d9204a1
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92667825"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879134"
 ---
 # <a name="formatting-file-overview"></a>Vue d’ensemble des fichiers de mise en forme
 
@@ -142,7 +142,7 @@ L’exemple suivant montre les balises XML utilisées pour définir une vue de t
           </TableColumnItems>
         </TableRowEntry>
       </TableRowEntries>
-    </TableControl)
+    </TableControl>
   </View>
 </ViewDefinitions>
 

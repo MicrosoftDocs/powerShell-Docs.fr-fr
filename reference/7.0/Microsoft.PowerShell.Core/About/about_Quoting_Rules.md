@@ -1,34 +1,33 @@
 ---
 description: Décrit les règles d’utilisation des guillemets simples et doubles dans PowerShell.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 10/05/2020
+ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
-ms.openlocfilehash: 8e30640c74976ac79634f5f7f648aafc16977f31
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 27d5909c1381c0d221690b353a308680643ecad5
+ms.sourcegitcommit: 9a86cac80402d8193147058d4ba50e07b26059dd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207821"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490752"
 ---
 # <a name="about-quoting-rules"></a>À propos des règles de Quotation
 
-## <a name="short-description"></a>DESCRIPTION COURTE
+## <a name="short-description"></a>Description courte
 Décrit les règles d’utilisation des guillemets simples et doubles dans PowerShell.
 
-## <a name="long-description"></a>DESCRIPTION DÉTAILLÉE
+## <a name="long-description"></a>Description longue
 
 Des guillemets sont utilisés pour spécifier une chaîne littérale. Vous pouvez placer une chaîne entre guillemets simples ( `'` ) ou guillemets doubles ( `"` ).
 
-Des guillemets sont également utilisés pour créer une chaîne ici-. Une chaîne ici est une chaîne entre guillemets simples ou entre guillemets, dans laquelle les guillemets sont interprétés littéralement. Une chaîne ici peut s’étendre sur plusieurs lignes. Toutes les lignes d’une chaîne ici sont interprétées comme des chaînes, même si elles ne sont pas placées entre guillemets.
+Des guillemets sont également utilisés pour créer une _chaîne ici-_. Une chaîne ici est une chaîne entre guillemets simples ou entre guillemets, dans laquelle les guillemets sont interprétés littéralement. Une chaîne ici peut s’étendre sur plusieurs lignes. Toutes les lignes d’une chaîne ici sont interprétées comme des chaînes, même si elles ne sont pas placées entre guillemets.
 
 Dans les commandes des ordinateurs distants, les guillemets définissent les parties de la commande qui sont exécutées sur l’ordinateur distant. Dans une session à distance, les guillemets déterminent également si les variables d’une commande sont d’abord interprétées sur l’ordinateur local ou sur l’ordinateur distant.
 
-### <a name="single-and-double-quoted-strings"></a>CHAÎNES ENTRE GUILLEMETS SIMPLES ET DOUBLES
+## <a name="single-and-double-quoted-strings"></a>Chaînes entre guillemets simples et doubles
 
-Lorsque vous placez une chaîne entre guillemets doubles (une chaîne entre guillemets doubles), les noms de variables précédés d’un signe dollar ( `$` ) sont remplacés par la valeur de la variable avant que la chaîne soit transmise à la commande pour traitement.
+Une chaîne placée entre guillemets doubles est une chaîne _pouvant être développée_ . Les noms de variables précédés d’un signe dollar ( `$` ) sont remplacés par la valeur de la variable avant que la chaîne soit transmise à la commande à des fins de traitement.
 
 Par exemple :
 
@@ -55,7 +54,8 @@ La sortie de cette commande est la suivante :
 The value of 5 is 5.
 ```
 
-Lorsque vous placez une chaîne entre des guillemets simples (une chaîne entre guillemets simples), la chaîne est transmise à la commande exactement telle que vous la tapez. Aucune substitution n’est effectuée. Par exemple :
+Une chaîne placée entre guillemets simples est une chaîne _textuelle_ . La chaîne est passée à la commande exactement telle que vous la tapez. Aucune substitution n’est effectuée.
+Par exemple :
 
 ```powershell
 $i = 5
@@ -82,7 +82,7 @@ The value of $(2+3) is 5.
 
 Pour empêcher la substitution d’une valeur de variable dans une chaîne entre guillemets doubles, utilisez le caractère de soulignement ( `` ` `` ) (ASCII 96), qui est le caractère d’échappement PowerShell.
 
-Dans l’exemple suivant, le caractère de soulignement qui précède la première variable $i empêche PowerShell de remplacer le nom de la variable par sa valeur.
+Dans l’exemple suivant, le caractère d’impulsion qui précède la première `$i` variable empêche PowerShell de remplacer le nom de la variable par sa valeur.
 Par exemple :
 
 ```powershell
@@ -155,7 +155,7 @@ Use a quotation mark (`") to begin a string.
 
 Étant donné que le contenu des chaînes entre guillemets simples est interprété littéralement, vous êtes considéré comme un caractère littéral et affiché dans la sortie.
 
-### <a name="here-strings"></a>ICI-CHAÎNES
+## <a name="here-strings"></a>Ici-chaînes
 
 Les règles de quotation pour les chaînes ici sont légèrement différentes.
 
@@ -275,9 +275,9 @@ xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
 ```
 
 Ici-les chaînes sont également un format pratique pour l’entrée de l’applet de commande `ConvertFrom-StringData` , qui convertit les chaînes ici en tables de hachage.
-Pour plus d'informations, consultez `ConvertFrom-StringData`.
+Pour plus d’informations, consultez `ConvertFrom-StringData`.
 
-## <a name="see-also"></a>VOIR AUSSI
+## <a name="see-also"></a>Voir aussi
 
 [about_Special_Characters](about_Special_Characters.md)
 

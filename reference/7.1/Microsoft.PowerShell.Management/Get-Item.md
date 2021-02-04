@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/27/2020
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
-ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
+ms.openlocfilehash: d034baf42f064149696f54a198dc97d7ee4e8fe7
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94661356"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693083"
 ---
 # Get-Item
 
@@ -159,6 +159,9 @@ Les nouvelles propriétés qui font désormais partie de la sortie sont les suiv
 ## PARAMETERS
 
 ### -Stream
+
+> [!NOTE]
+> Ce paramètre est uniquement disponible sur Windows.
 
 Obtient le flux de fichiers NTFS alternatif spécifié du fichier. Entrez le nom du flux. Les caractères génériques sont pris en charge. Pour récupérer tous les flux, utilisez un astérisque ( `*` ). Ce paramètre n’est pas valide sur les dossiers.
 

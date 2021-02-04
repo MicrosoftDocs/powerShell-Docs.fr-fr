@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 5/14/2019
+ms.date: 12/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
-ms.openlocfilehash: 86702f16683c6710b498a23c072ea9d862868694
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: e31e792a60cd09d35ecc67263f107584857efe7d
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201865"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693039"
 ---
 # Add-Content
 
 ## SYNOPSIS
 Ajoute le contenu aux éléments spécifiés (ajout de mots à un fichier, par exemple).
 
-## SYNTAX
+## SYNTAXE
 
 ### Chemin d’accès (par défaut)
 
@@ -117,7 +116,7 @@ Get-Content -Path .\NewFile.txt
 
 ### Exemple 6 : ajouter du contenu à un fichier en lecture seule
 
-Cette commande ajoute une valeur au fichier même si l’attribut de fichier **IsReadOnly** a la valeur **true** .
+Cette commande ajoute une valeur au fichier même si l’attribut de fichier **IsReadOnly** a la valeur **true**.
 Les étapes de création d’un fichier en lecture seule sont incluses dans l’exemple.
 
 ```powershell
@@ -225,7 +224,7 @@ Accept wildcard characters: False
 
 ### -Exclude
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande exclut dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `*.txt` . Les caractères génériques sont autorisés. Le paramètre **Exclude** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -274,7 +273,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path** . Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
+Spécifie, sous la forme d’un tableau de chaînes, un ou des éléments que cette applet de commande comprend dans l’opération. La valeur de ce paramètre qualifie le paramètre **Path**. Entrez un élément ou un modèle de chemin d’accès, tel que `"*.txt"` . Les caractères génériques sont autorisés. Le paramètre **include** est effectif uniquement lorsque la commande inclut le contenu d’un élément, tel que `C:\Windows\*` , où le caractère générique spécifie le contenu du `C:\Windows` répertoire.
 
 ```yaml
 Type: System.String[]
@@ -362,11 +361,14 @@ Accept wildcard characters: True
 
 ### -Stream
 
+> [!NOTE]
+> Ce paramètre est uniquement disponible sur Windows.
+
 Spécifie un flux de données alternatif pour le contenu. Si le flux n’existe pas, cette applet de commande le crée. Les caractères génériques ne sont pas pris en charge.
 
 **Stream** est un paramètre dynamique que le fournisseur FileSystem ajoute à `Add-Content` . Ce paramètre fonctionne uniquement dans les lecteurs du système de fichiers.
 
-Vous pouvez utiliser l' `Add-Content` applet de commande pour modifier le contenu du flux de données de remplacement de la **zone. identifier** . Toutefois, nous vous déconseillons d’éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d’Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
+Vous pouvez utiliser l' `Add-Content` applet de commande pour modifier le contenu de tout autre flux de données, tel que `Zone.Identifier` . Toutefois, nous vous déconseillons d’éliminer les contrôles de sécurité qui bloquent les fichiers téléchargés à partir d’Internet. Si vous vérifiez qu’un fichier téléchargé est sûr, utilisez l' `Unblock-File` applet de commande.
 
 Ce paramètre a été introduit dans PowerShell 3,0.
 
@@ -384,7 +386,7 @@ Accept wildcard characters: False
 
 ### -Value
 
-Spécifie le contenu à ajouter. Tapez une chaîne entre guillemets, telle que **ces données sont destinées à un usage interne uniquement** , ou spécifiez un objet qui contient du contenu, tel que l’objet **DateTime** `Get-Date` généré par.
+Spécifie le contenu à ajouter. Tapez une chaîne entre guillemets, telle que **ces données sont destinées à un usage interne uniquement**, ou spécifiez un objet qui contient du contenu, tel que l’objet **DateTime** `Get-Date` généré par.
 
 Vous ne pouvez pas spécifier le contenu d’un fichier en tapant son chemin d’accès, car il s’agit simplement d’une chaîne.
 Vous pouvez utiliser une `Get-Content` commande pour obtenir le contenu et le passer au paramètre **value** .
@@ -435,7 +437,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-Cette applet de commande prend en charge les paramètres communs : `-Debug` , `-ErrorAction` ,, `-ErrorVariable` `-InformationAction` , `-InformationVariable` , `-OutVariable` , `-OutBuffer` , `-PipelineVariable` , `-Verbose` , `-WarningAction` et `-WarningVariable` . Pour plus d’informations, consultez [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## ENTRÉES
 

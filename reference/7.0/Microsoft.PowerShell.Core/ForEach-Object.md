@@ -7,12 +7,12 @@ ms.date: 09/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 8257f1fba2d4367e61121d4876a51197f710da41
-ms.sourcegitcommit: e0f9fe6335be1e0f94bedaa0e8baec2acaeaa076
+ms.openlocfilehash: c54efeb79f4129b55e078a1ccf9d46afc2e754ab
+ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "93206229"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725168"
 ---
 # ForEach-Object
 
@@ -48,7 +48,7 @@ L' `ForEach-Object` applet de commande effectue une opération sur chaque élém
 
 À compter de Windows PowerShell 3,0, il existe deux façons de construire une `ForEach-Object` commande.
 
-- **Bloc de script** . Vous pouvez utiliser un bloc de script pour spécifier l'opération. Dans le bloc de script, utilisez la `$_` variable pour représenter l’objet actuel. Le bloc de script est la valeur du paramètre **Process** . Le bloc de script peut contenir n’importe quel script PowerShell.
+- **Bloc de script**. Vous pouvez utiliser un bloc de script pour spécifier l'opération. Dans le bloc de script, utilisez la `$_` variable pour représenter l’objet actuel. Le bloc de script est la valeur du paramètre **Process**. Le bloc de script peut contenir n’importe quel script PowerShell.
 
   Par exemple, la commande suivante obtient la valeur de la propriété **ProcessName** de chaque processus sur l'ordinateur.
 
@@ -59,13 +59,13 @@ L' `ForEach-Object` applet de commande effectue une opération sur chaque élém
   > [!NOTE]
   > Les blocs de script s’exécutent dans la portée de l’appelant. Par conséquent, les blocs ont accès aux variables dans cette portée et peuvent créer de nouvelles variables qui persistent dans cette portée une fois l’applet de commande terminée.
 
-- **Instruction Operation** . Vous pouvez également écrire une instruction d’opération, qui est bien plus similaire à un langage naturel. Vous pouvez utiliser l'instruction d'opération pour spécifier une valeur de propriété ou appeler une méthode. Les instructions d'opération ont été introduites dans Windows PowerShell 3.0.
+- **Instruction Operation**. Vous pouvez également écrire une instruction d’opération, qui est bien plus similaire à un langage naturel. Vous pouvez utiliser l'instruction d'opération pour spécifier une valeur de propriété ou appeler une méthode. Les instructions d'opération ont été introduites dans Windows PowerShell 3.0.
 
   Par exemple, la commande suivante obtient également la valeur de la propriété **ProcessName** de chaque processus sur l'ordinateur.
 
   `Get-Process | ForEach-Object ProcessName`
 
-- **Bloc de script en cours d’exécution parallèle** . À partir de PowerShell 7,0, un troisième jeu de paramètres est disponible qui exécute chaque bloc de script en parallèle. Le paramètre **ThrottleLimit** limite le nombre de scripts parallèles en cours d’exécution à la fois. Comme précédemment, utilisez la `$_` variable pour représenter l’objet d’entrée actuel dans le bloc de script. Utilisez le `$using:` mot clé pour passer des références de variable au script en cours d’exécution.
+- **Bloc de script en cours d’exécution parallèle**. À partir de PowerShell 7,0, un troisième jeu de paramètres est disponible qui exécute chaque bloc de script en parallèle. Le paramètre **ThrottleLimit** limite le nombre de scripts parallèles en cours d’exécution à la fois. Comme précédemment, utilisez la `$_` variable pour représenter l’objet d’entrée actuel dans le bloc de script. Utilisez le `$using:` mot clé pour passer des références de variable au script en cours d’exécution.
 
   Dans PowerShell 7, une nouvelle instance d’exécution est créée pour chaque itération de boucle afin de garantir un isolement maximal.
   Il peut s’agir d’un impact important sur les performances et les ressources si le travail que vous effectuez est faible par rapport à la création de nouveaux instances d’exécution ou si un grand nombre d’itérations effectuent un travail important.
@@ -206,7 +206,7 @@ process
 
 ### Exemple 9 : utilisation de ForEach-Object avec plus de deux blocs de script
 
-Dans cet exemple, nous passons deux blocs de script positionnels. Tous les blocs de script sont liés au paramètre **Process** . Toutefois, elles sont traitées comme si elles avaient été passées aux paramètres **Begin** , **Process** et **end** .
+Dans cet exemple, nous passons deux blocs de script positionnels. Tous les blocs de script sont liés au paramètre **Process** . Toutefois, elles sont traitées comme si elles avaient été passées aux paramètres **Begin**, **Process** et **end** .
 
 ```powershell
 1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
@@ -315,7 +315,7 @@ Output: 10
 ```
 
 la `$job` variable reçoit l’objet de traitement qui collecte les données de sortie et surveille l’état d’exécution.
-L’objet de traitement est dirigé vers `Receive-Job` avec le paramètre de commutateur **Wait** . Et cela diffuse la sortie vers la console, tout comme si `ForEach-Object -Parallel` a été exécuté sans **AsJob** .
+L’objet de traitement est dirigé vers `Receive-Job` avec le paramètre de commutateur **Wait** . Et cela diffuse la sortie vers la console, tout comme si `ForEach-Object -Parallel` a été exécuté sans **AsJob**.
 
 ### Exemple 14 : utilisation de références de variable thread-safe
 
@@ -337,7 +337,7 @@ $threadSafeDictionary["pwsh"]
      82    82.87     130.85      15.55    2808   2 pwsh
 ```
 
-Une seule instance d’un objet **ConcurrentDictionary** est passée à chaque bloc de script pour collecter les objets. Étant donné que le **ConcurrentDictionary** est thread-safe, il peut être modifié en toute sécurité par chaque script parallèle. Un objet non thread-safe, tel que **System. Collections. Generic. dictionary** , ne peut pas être utilisé en toute sécurité ici.
+Une seule instance d’un objet **ConcurrentDictionary** est passée à chaque bloc de script pour collecter les objets. Étant donné que le **ConcurrentDictionary** est thread-safe, il peut être modifié en toute sécurité par chaque script parallèle. Un objet non thread-safe, tel que **System. Collections. Generic. dictionary**, ne peut pas être utilisé en toute sécurité ici.
 
 > [!NOTE]
 > Cet exemple est une utilisation très inefficace du paramètre **Parallel** . Le script ajoute simplement l’objet d’entrée à un objet de dictionnaire simultané. Il est trivial et ne justifie pas la surcharge liée à l’appel de chaque script dans un thread séparé. `ForEach-Object`L’exécution normale sans le commutateur **parallèle** est beaucoup plus efficace et plus rapide. Cet exemple est uniquement destiné à illustrer l’utilisation de variables thread-safe.
@@ -387,7 +387,7 @@ Output: 5
 
 ### -ArgumentList
 
-Spécifie un tableau d’arguments pour un appel de méthode. Pour plus d’informations sur le comportement de **argumentlist** , consultez [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Spécifie un tableau d’arguments pour un appel de méthode. Pour plus d’informations sur le comportement de **argumentlist**, consultez [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 Ce paramètre a été introduit dans Windows PowerShell 3.0.
 
@@ -531,7 +531,7 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-Spécifie le nombre de blocs de script en parallèle. Les objets d’entrée sont bloqués jusqu’à ce que le nombre de blocs de script en cours se situe en dessous du **ThrottleLimit** . La valeur par défaut est `5`.
+Spécifie le nombre de blocs de script en parallèle. Les objets d’entrée sont bloqués jusqu’à ce que le nombre de blocs de script en cours se situe en dessous du **ThrottleLimit**. La valeur par défaut est `5`.
 
 Ce paramètre a été introduit dans PowerShell 7,0.
 
@@ -542,7 +542,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 5
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -631,7 +631,7 @@ Vous pouvez diriger n’importe quel objet vers cette applet de commande.
 
 Cette applet de commande retourne les objets qui sont déterminés par l’entrée.
 
-## Notes
+## Remarques
 
 - L' `ForEach-Object` applet de commande fonctionne très bien comme l’instruction **foreach** , sauf que vous ne pouvez pas diriger d’entrée vers une instruction **foreach** . Pour plus d’informations sur l’instruction **foreach** , consultez [about_Foreach](./About/about_Foreach.md).
 

@@ -7,19 +7,19 @@ ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 8177b1ed45f6d6cdabf13670e36be4fcbb55a77b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 9bb687aa7f497dbf2c07633abddf4e1a17a9622e
+ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239950"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97879199"
 ---
 # New-ModuleManifest
 
 ## SYNOPSIS
 Crée un manifeste de module.
 
-## SYNTAX
+## SYNTAXE
 
 ### Tous
 
@@ -47,7 +47,7 @@ Les auteurs de modules peuvent utiliser cette applet de commande afin de créer 
 
 `New-ModuleManifest` crée un manifeste qui contient toutes les clés de manifeste couramment utilisées, vous pouvez donc utiliser la sortie par défaut comme modèle de manifeste. Pour ajouter ou modifier des valeurs, ou pour ajouter des clés de module que cette applet de commande n’ajoute pas, ouvrez le fichier résultant dans un éditeur de texte.
 
-Chaque paramètre, à l’exception de **path** et **PassThru** , crée une clé de manifeste de module et sa valeur.
+Chaque paramètre, à l’exception de **path** et **PassThru**, crée une clé de manifeste de module et sa valeur.
 Dans un manifeste de module, seule la clé **ModuleVersion** est obligatoire. À moins qu’il ne soit spécifié dans la description du paramètre, si vous omettez un paramètre de la commande, `New-ModuleManifest` crée une chaîne de commentaire pour la valeur associée qui n’a aucun effet.
 
 Dans PowerShell 2,0, `New-ModuleManifest` vous invite à entrer les valeurs des paramètres couramment utilisés qui ne sont pas spécifiés dans la commande, en plus des valeurs de paramètre requises. À compter de PowerShell 3,0, `New-ModuleManifest` invites lorsque les valeurs de paramètres requises ne sont pas spécifiées.
@@ -225,7 +225,7 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-Cet exemple montre comment utiliser les formats de table de hachage et de chaîne du paramètre **ModuleList** , **RequiredModules** et **NestedModules** . Vous pouvez combiner des chaînes et des tables de hachage dans la même valeur de paramètre.
+Cet exemple montre comment utiliser les formats de table de hachage et de chaîne du paramètre **ModuleList**, **RequiredModules** et **NestedModules** . Vous pouvez combiner des chaînes et des tables de hachage dans la même valeur de paramètre.
 
 ### Exemple 4 : créer un manifeste qui prend en charge l’aide actualisable
 
@@ -780,7 +780,7 @@ Accept wildcard characters: False
 
 ### -PowerShellVersion
 
-Spécifie la version minimale de PowerShell qui fonctionne avec ce module. Par exemple, vous pouvez entrer 1,0, 2,0 ou 3,0 comme valeur du paramètre.
+Spécifie la version minimale de PowerShell qui fonctionne avec ce module. Par exemple, vous pouvez entrer 1,0, 2,0 ou 3,0 comme valeur du paramètre. Elle doit être au format X. X. Par exemple, si vous envoyez `5` , PowerShell génère une erreur.
 
 ```yaml
 Type: System.Version
@@ -880,7 +880,7 @@ Accept wildcard characters: False
 Spécifie les fichiers d’assembly ( `.dll` ) dont le module a besoin. Entrez les noms de fichiers d'assembly.
 PowerShell charge les assemblys spécifiés avant de mettre à jour des types ou des formats, d’importer des modules imbriqués ou d’importer le fichier de module spécifié dans la valeur de la clé **RootModule** .
 
-Utilisez ce paramètre pour répertorier tous les assemblys dont le module a besoin, y compris les assemblys qui doivent être chargés pour mettre à jour les fichiers de mise en forme ou de type répertoriés dans les clés **FormatsToProcess** ou **TypesToProcess** , même si ces assemblys sont également répertoriés en tant que modules binaires dans la clé **NestedModules**.
+Utilisez ce paramètre pour répertorier tous les assemblys dont le module a besoin, y compris les assemblys qui doivent être chargés pour mettre à jour les fichiers de mise en forme ou de type répertoriés dans les clés **FormatsToProcess** ou **TypesToProcess**, même si ces assemblys sont également répertoriés en tant que modules binaires dans la clé **NestedModules**.
 
 ```yaml
 Type: System.String[]

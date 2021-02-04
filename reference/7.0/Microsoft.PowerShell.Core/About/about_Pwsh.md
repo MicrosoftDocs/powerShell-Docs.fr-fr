@@ -1,16 +1,15 @@
 ---
 description: Explique comment utiliser l' `pwsh` interface de ligne de commande. Affiche les paramètres de ligne de commande et décrit la syntaxe.
-keywords: powershell,applet de commande
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 2aa1c4ec033b8e7294c269b53c4fe20205a47d7f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 25ccb20a4c19a9519bf9d2a518ef6187c2327323
+ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207826"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97692693"
 ---
 # <a name="about-pwsh"></a>À propos de pwsh
 
@@ -69,7 +68,7 @@ Les paramètres passés au script sont passés comme chaînes littérales (aprè
 
 En revanche, `pwsh -File .\test.ps1 -TestParam $env:windir` l’exécution de dans `cmd.exe` entraîne la réception par le script de la chaîne littérale `$env:windir` , car elle n’a aucune signification particulière pour l’interpréteur de commandes actuel `cmd.exe` . Le `$env:windir` style de référence de variable d’environnement _peut_ être utilisé dans un paramètre de **commande** , car il est interprété comme du code PowerShell.
 
-De même, si vous souhaitez exécuter la même commande à partir d’un _script de commandes_ , vous devez utiliser à la `%~dp0` place de `.\` ou `$PSScriptRoot` pour représenter le répertoire d’exécution actuel : `pwsh -File %~dp0test.ps1 -TestParam %windir%` . Si vous l’utilisez à la place `.\test.ps1` , PowerShell lèvera une erreur, car il ne peut pas trouver le chemin d’accès littéral `.\test.ps1`
+De même, si vous souhaitez exécuter la même commande à partir d’un _script de commandes_, vous devez utiliser à la `%~dp0` place de `.\` ou `$PSScriptRoot` pour représenter le répertoire d’exécution actuel : `pwsh -File %~dp0test.ps1 -TestParam %windir%` . Si vous l’utilisez à la place `.\test.ps1` , PowerShell lèvera une erreur, car il ne peut pas trouver le chemin d’accès littéral `.\test.ps1`
 
 Lorsque le fichier de script se termine par une `exit` commande, le code de sortie du processus est défini sur l’argument numérique utilisé avec la `exit` commande. Avec un arrêt normal, le code de sortie est toujours `0` .
 
@@ -128,7 +127,7 @@ De même, la valeur 1 est retournée quand une erreur de fin de script (arrêt d
 
 Spécifie un point de terminaison de configuration dans lequel PowerShell est exécuté. Il peut s’agir de n’importe quel point de terminaison enregistré sur l’ordinateur local, y compris les points de terminaison de communication à distance PowerShell par défaut ou un point de terminaison personnalisé avec des fonctionnalités de rôle d’utilisateur spécifiques.
 
-Exemple : `pwsh -ConfigurationName AdminRoles`
+Exemple : `pwsh -ConfigurationName AdminRoles`
 
 ### <a name="-custompipename"></a>-CustomPipeName
 
@@ -147,7 +146,7 @@ Enter-PSHostProcess -CustomPipeName mydebugpipe
 
 ### <a name="-encodedcommand---e---ec"></a>-EncodedCommand | -e | -EC
 
-Accepte une version de chaîne encodée en base64 d’une commande. Utilisez ce paramètre pour envoyer des commandes à PowerShell qui nécessitent un guillemet imbriqué complexe. La représentation base64 doit être une chaîne encodée en UTF-16.
+Accepte une version de chaîne encodée en base64 d’une commande. Utilisez ce paramètre pour envoyer des commandes à PowerShell qui nécessitent un guillemet imbriqué complexe. La représentation base64 doit être une chaîne encodée en UTF-16LE.
 
 Par exemple :
 
@@ -204,7 +203,7 @@ Démarrez PowerShell à l’aide d’un cloisonnement multithread. Ce commutateu
 
 Ne quitte pas après l’exécution de commandes de démarrage.
 
-Exemple : `pwsh -NoExit -Command Get-Date`
+Exemple : `pwsh -NoExit -Command Get-Date`
 
 ### <a name="-nologo---nol"></a>-Nologo | -nol
 
@@ -222,7 +221,7 @@ Ne charge pas les profils PowerShell.
 
 Détermine la mise en forme de la sortie de PowerShell. Les valeurs valides sont « Text » (chaînes de texte) ou « XML » (format CLIXML sérialisé).
 
-Exemple : `pwsh -o XML -c Get-Date`
+Exemple : `pwsh -o XML -c Get-Date`
 
 Quand elle est appelée avec une session PowerShell, vous pouvez obtenir des objets désérialisés en tant que chaînes de sortie plutôt que des chaînes brutes. En cas d’appel à partir d’autres shells, la sortie est une chaîne de données mise en forme en tant que texte CLIXML.
 
@@ -232,7 +231,7 @@ Remplace le `powershell.config.json` fichier de paramètres à l’ensemble du s
 
 Notez que ces paramètres ne sont pas utilisés par le point de terminaison spécifié par l' `-ConfigurationName` argument.
 
-Exemple : `pwsh -SettingsFile c:\myproject\powershell.config.json`
+Exemple : `pwsh -SettingsFile c:\myproject\powershell.config.json`
 
 ### <a name="-sshservermode---sshs"></a>-SSHServerMode | -sshs
 
