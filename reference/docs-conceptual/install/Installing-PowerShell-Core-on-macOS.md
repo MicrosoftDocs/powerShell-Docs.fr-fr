@@ -1,13 +1,13 @@
 ---
 title: Installation de PowerShell sur macOS
 description: Informations sur l’installation de PowerShell sur macOS
-ms.date: 11/11/2020
-ms.openlocfilehash: 1ce96e993d8fc87edd93fca840ede250d5632577
-ms.sourcegitcommit: 3ab2951a5460a39ca5fb3d25ffcb1d8868f4e011
+ms.date: 02/02/2021
+ms.openlocfilehash: 8132d88f4104696c5580a44b26247a24643f1b5b
+ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535098"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536540"
 ---
 # <a name="installing-powershell-on-macos"></a>Installation de PowerShell sur macOS
 
@@ -112,12 +112,12 @@ brew upgrade powershell
 
 ## <a name="installation-via-direct-download"></a>Installation par téléchargement direct
 
-Téléchargez le package PKG `powershell-7.1.0-osx-x64.pkg` à partir de la page de [versions][] sur votre ordinateur macOS.
+Téléchargez le package PKG `powershell-7.1.1-osx-x64.pkg` à partir de la page de [versions][] sur votre ordinateur macOS.
 
 Vous pouvez double-cliquer sur le fichier et suivre les invites ou l’installer à partir du terminal :
 
 ```sh
-sudo installer -pkg powershell-7.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-7.1.1-osx-x64.pkg -target /
 ```
 
 Installez [OpenSSL](#installing-dependencies). OpenSSL est nécessaire pour les opérations de CIM et de communication à distance PowerShell.
@@ -144,19 +144,19 @@ Installez [OpenSSL](#installing-dependencies). OpenSSL est nécessaire pour les 
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.0/powershell-7.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.1.1/powershell-7.1.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.1.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.1.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.1.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.1.1/pwsh /usr/local/bin/pwsh
 ```
 
 ## <a name="installing-dependencies"></a>Installer les dépendances
@@ -204,7 +204,7 @@ Pour supprimer les chemins d’accès PowerShell supplémentaires, reportez-vous
 
 ## <a name="paths"></a>Chemins
 
-- `$PSHOME` est `/usr/local/microsoft/powershell/7.1.0/`
+- `$PSHOME` est `/usr/local/microsoft/powershell/7.1.1/`
 - Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`
 - Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`
 - Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`
@@ -216,7 +216,7 @@ Les profils respectent la configuration par hôte de PowerShell. Donc, le profil
 
 PowerShell respecte la [spécification de répertoire de base XDG][xdg-bds] sur macOS.
 
-Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`. `$PSHOME` est donc `/usr/local/microsoft/powershell/7.1.0/` ; le lien symbolique se trouve à l’emplacement `/usr/local/bin/pwsh`.
+Étant donné que macOS est une dérivation de BSD, le préfixe `/usr/local` est utilisé au lieu de `/opt`. `$PSHOME` est donc `/usr/local/microsoft/powershell/7.1.1/` ; le lien symbolique se trouve à l’emplacement `/usr/local/bin/pwsh`.
 
 ## <a name="installation-support"></a>Prise en charge de l’installation
 
@@ -232,5 +232,5 @@ Microsoft prend en charge les méthodes d’installation mentionnées dans ce do
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[versions]: https://github.com/PowerShell/PowerShell/releases/latest
+[versions]: https://aka.ms/powershell-release?tag=stable
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
