@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: bb7f169e0c01c73bb4e834375f341bf795e37ce7
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95514933"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584665"
 ---
 # Get-Date
 
@@ -421,7 +421,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### Entrée de pipeline
 
-`Get-Date` accepte l’entrée de pipeline. Par exemple, `Get-ChildItem | Get-Date`.
+`Get-Date` accepte l’entrée de pipeline. Par exemple : `Get-ChildItem | Get-Date`.
 
 ## SORTIES
 
@@ -434,7 +434,7 @@ Lorsqu’un objet **DateTime** est envoyé vers le pipeline à une applet de com
 La méthode `(Get-Date).ToString()` convertit un objet **DateTime** en objet **String** .
 
 Pour afficher les propriétés et les méthodes d’un objet, envoyez l’objet vers le dessous du pipeline `Get-Member` .
-Par exemple, `Get-Date | Get-Member`.
+Par exemple : `Get-Date | Get-Member`.
 
 ## REMARQUES
 
@@ -461,7 +461,7 @@ Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant 
 | `%H` | Heure au format 24 heures                                                  | 17                       |
 | `%h` | Identique à « b »                                                             |                          |
 | `%I` | Heure au format 12 heures                                                  | 05                       |
-| `%j` | Jour de l’année                                                         | 1-366                    |
+| `%j` | Jour de l’année (n’inclut pas `0` de correction de début dans PowerShell 6 +) | 1-366                    |
 | `%k` | Identique à « H »                                                             |                          |
 | `%l` | Identique à « I » (I majuscule)                                              | 05                       |
 | `%M` | Minutes                                                                 | 35                       |

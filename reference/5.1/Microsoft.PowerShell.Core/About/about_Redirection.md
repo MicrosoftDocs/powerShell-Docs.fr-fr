@@ -1,17 +1,16 @@
 ---
 description: Explique comment rediriger la sortie de PowerShell vers des fichiers texte.
-keywords: PowerShell, applet de commande
 Locale: en-US
 ms.date: 10/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Redirection
-ms.openlocfilehash: 59151c31857f12e3a78fd6d292a6a952c312c850
-ms.sourcegitcommit: 16883bb67e34b3915798070f60f974bf85160bd3
+ms.openlocfilehash: 2f2081bbfcc2cfc97eaa5a3c2c527cdd9cd61d2c
+ms.sourcegitcommit: b9826dcf402db8a2b6d3eab37edb82c6af113343
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93208445"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98040878"
 ---
 # <a name="about-redirection"></a>À propos de la redirection
 
@@ -92,7 +91,7 @@ Cet exemple montre comment combiner des opérateurs de redirection pour obtenir 
    Write-Warning "hello"
    Write-Error "hello"
    Write-Output "hi"
-} 3>&1 2>&1 > P:\Temp\redirection.log
+} 3>&1 2>&1 > C:\Temp\redirection.log
 ```
 
 - `3>&1` redirige le flux d' **Avertissement** vers le flux de **réussite** .
@@ -184,11 +183,11 @@ Ignore
 Inquire
 ```
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
 Les opérateurs de redirection qui n’ajoutent pas de données ( `>` et `n>` ) remplacent le contenu actuel du fichier spécifié sans avertissement.
 
-Toutefois, si le fichier est un fichier système, masqué et en lecture seule, la redirection **échoue** . Les opérateurs de redirection d’ajout ( `>>` et `n>>` ) n’écrivent pas dans un fichier en lecture seule, mais ils ajoutent du contenu à un fichier système ou masqué.
+Toutefois, si le fichier est un fichier système, masqué et en lecture seule, la redirection **échoue**. Les opérateurs de redirection d’ajout ( `>>` et `n>>` ) n’écrivent pas dans un fichier en lecture seule, mais ils ajoutent du contenu à un fichier système ou masqué.
 
 Pour forcer la redirection du contenu vers un fichier système, masqué ou en lecture seule, utilisez l' `Out-File` applet de commande avec son `Force` paramètre.
 
@@ -196,7 +195,7 @@ Lorsque vous écrivez dans des fichiers, les opérateurs de redirection utilisen
 
 ### <a name="potential-confusion-with-comparison-operators"></a>Confusion potentielle avec les opérateurs de comparaison
 
-L' `>` opérateur ne doit pas être confondu avec l’opérateur de comparaison [supérieur](about_Comparison_Operators.md#-gt) à (souvent désigné comme `>` dans d’autres langages de programmation).
+L' `>` opérateur ne doit pas être confondu avec l’opérateur de comparaison [supérieur](about_Comparison_Operators.md#-gt--ge--lt-and--le) à (souvent désigné comme `>` dans d’autres langages de programmation).
 
 Selon les objets comparés, la sortie à l’aide de `>` peut sembler correcte (car 36 n’est pas supérieur à 42).
 
@@ -226,18 +225,18 @@ At line:1 char:8
 + if (36 < 42) { "true" } else { "false" }
 +        ~
 The '<' operator is reserved for future use.
-+ CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-+ FullyQualifiedErrorId : RedirectionNotSupported
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : RedirectionNotSupported
 ```
 
-Si la comparaison numérique est l’opération requise, elle `-lt` `-gt` doit être utilisée. Voir : [ `-gt` opérateur de comparaison](about_Comparison_Operators.md#-gt)
+Si la comparaison numérique est l’opération requise, elle `-lt` `-gt` doit être utilisée. Pour plus d’informations, consultez l' `-gt` opérateur dans [about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
 - [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
 - [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [Écriture-erreur](xref:Microsoft.PowerShell.Utility.Write-Error)
+- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 - [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
 - [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
 - [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)

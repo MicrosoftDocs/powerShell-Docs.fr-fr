@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
-ms.openlocfilehash: c954ee6e783b7926dbcd05a3e08b6b9b5cf9bc25
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 4b5894822f4436f127ed4789fd8008a0e7f2f2df
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207322"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584646"
 ---
 # <a name="about-environment-variables"></a>À propos des variables d’environnement
 
@@ -68,7 +68,7 @@ Par exemple, pour ajouter `;c:\temp` à la valeur de la `Path` variable d’envi
 $Env:Path += ";c:\temp"
 ```
 
-Sur Linux ou MacOS, le signe deux-points ( `:` ) dans la commande sépare le nouveau chemin d’accès du chemin d’accès qui le précède dans la liste.
+Sur Linux ou macOS, le signe deux-points ( `:` ) dans la commande sépare le nouveau chemin d’accès du chemin d’accès qui le précède dans la liste.
 
 ```powershell
 $Env:PATH += ":/usr/local/temp"
@@ -232,7 +232,7 @@ PS Env:\> Get-ChildItem ComputerName
 
 ### <a name="saving-changes-to-environment-variables"></a>Enregistrement des modifications apportées aux variables d’environnement
 
-Pour apporter une modification permanente à une variable d’environnement sur Windows, utilisez le panneau de configuration système. Sélectionnez **paramètres système avancés** . Sous l’onglet **avancé** , cliquez sur **variable d’environnement...** . Vous pouvez ajouter ou modifier des variables d’environnement existantes dans les étendues **utilisateur** et **système** (ordinateur). Windows écrit ces valeurs dans le registre afin qu’elles soient conservées entre les sessions et les redémarrages du système.
+Pour apporter une modification permanente à une variable d’environnement sur Windows, utilisez le panneau de configuration système. Sélectionnez **paramètres système avancés**. Sous l’onglet **avancé** , cliquez sur **variable d’environnement...**. Vous pouvez ajouter ou modifier des variables d’environnement existantes dans les étendues **utilisateur** et **système** (ordinateur). Windows écrit ces valeurs dans le registre afin qu’elles soient conservées entre les sessions et les redémarrages du système.
 
 Vous pouvez également ajouter ou modifier des variables d’environnement dans votre profil PowerShell. Cette méthode fonctionne pour n’importe quelle version de PowerShell sur n’importe quelle plateforme prise en charge.
 

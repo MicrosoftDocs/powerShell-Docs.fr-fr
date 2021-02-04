@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 051f02b00144805569d5130686a51a0f42b64b00
+ms.sourcegitcommit: f5986121386c81acddcf324eb0526d7d092bcc8f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94388244"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98584628"
 ---
 # Write-EventLog
 
@@ -26,7 +26,8 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
  [-EventId] <Int32> [-Message] <String> [-RawData <Byte[]>] [-ComputerName <String>] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
+
 L' `Write-EventLog` applet de commande écrit un événement dans un journal des événements.
 
 Pour écrire un événement dans un journal des événements, le journal des événements doit exister sur l'ordinateur et la source du journal des événements doit être inscrite.
@@ -51,7 +52,7 @@ PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "My
 
 Cette commande écrit un événement à partir de la source MyApp dans le journal des événements Application sur l'ordinateur distant Server01.
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -Catégorie
 
@@ -196,16 +197,18 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 ## ENTRÉES
 
 ### Aucun
+
 Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ## SORTIES
 
 ### System. Diagnostics. EventLogEntry
+
 Cette applet de commande retourne des objets qui représentent les événements dans les journaux.
 
 ## REMARQUES
 
-Pour utiliser `Write-EventLog` , démarrez Windows PowerShell à l’aide de l’option Exécuter en tant qu’administrateur.
+Pour certains journaux des événements Windows, l’écriture d’événements nécessite des droits d’administrateur. Vous devez démarrer PowerShell à l’aide de l’option **exécuter en tant qu’administrateur** .
 
 ## LIENS CONNEXES
 

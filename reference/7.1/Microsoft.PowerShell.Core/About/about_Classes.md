@@ -1,17 +1,16 @@
 ---
 description: Décrit comment vous pouvez utiliser des classes pour créer vos propres types personnalisés.
-keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 09/16/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos des classes
-ms.openlocfilehash: 99b72762469032cc24f21d957600b67d0a0db292
-ms.sourcegitcommit: 16d62a98449e3ddaf8d7c65bc1848ede1fd8a3e7
+ms.openlocfilehash: 0f4eb5c67b09cb3ce21f818582fbce3a8c629eec
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "93206274"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620212"
 ---
 # <a name="about-classes"></a>À propos des classes
 
@@ -22,7 +21,7 @@ Décrit comment vous pouvez utiliser des classes pour créer vos propres types p
 
 PowerShell 5,0 ajoute une syntaxe formelle pour définir des classes et d’autres types définis par l’utilisateur. L’ajout de classes permet aux développeurs et aux professionnels de l’informatique d’adopter PowerShell pour un plus grand nombre de cas d’utilisation. Il simplifie le développement des artefacts PowerShell et accélère la couverture des surfaces de gestion.
 
-Une déclaration de classe est un plan utilisé pour créer des instances d’objets au moment de l’exécution. Lorsque vous définissez une classe, le nom de la classe est le nom du type. Par exemple, si vous déclarez une classe nommée **Device** et que vous initialisez une variable `$dev` sur une nouvelle instance de **Device** , `$dev` est un objet ou une instance de type **Device** . Chaque instance de l' **appareil** peut avoir des valeurs différentes dans ses propriétés.
+Une déclaration de classe est un plan utilisé pour créer des instances d’objets au moment de l’exécution. Lorsque vous définissez une classe, le nom de la classe est le nom du type. Par exemple, si vous déclarez une classe nommée **Device** et que vous initialisez une variable `$dev` sur une nouvelle instance de **Device**, `$dev` est un objet ou une instance de type **Device**. Chaque instance de l' **appareil** peut avoir des valeurs différentes dans ses propriétés.
 
 ## <a name="supported-scenarios"></a>Scénarios pris en charge
 
@@ -768,9 +767,19 @@ class MyComparableBar : bar, System.IComparable
 
 `Import-Module` et l' `#requires` instruction importent uniquement les fonctions de module, les alias et les variables, comme défini par le module. Les classes ne sont pas importées. L' `using module` instruction importe les classes définies dans le module. Si le module n’est pas chargé dans la session active, l' `using` instruction échoue. Pour plus d’informations sur l' `using` instruction, consultez [about_Using](about_Using.md).
 
+L' `using module` instruction importe des classes à partir du module racine ( `ModuleToProcess` ) d’un module de script ou d’un module binaire. Elle n’importe pas régulièrement les classes définies dans les modules imbriqués ou les classes définies dans les scripts qui sont insérés dans le module. Les classes que vous souhaitez mettre à la disposition des utilisateurs en dehors du module doivent être définies dans le module racine.
+
+## <a name="loading-newly-changed-code-during-development"></a>Chargement du code récemment modifié pendant le développement
+
+Lors du développement d’un module de script, il est courant d’apporter des modifications au code, puis de charger la nouvelle version du module en utilisant `Import-Module` avec le paramètre **force** . Cela ne fonctionne que pour les modifications apportées aux fonctions du module racine uniquement. `Import-Module` ne recharge pas les modules imbriqués. En outre, il n’existe aucun moyen de charger les classes mises à jour.
+
+Pour vous assurer que vous exécutez la version la plus récente, vous devez décharger le module à l’aide de l’applet de commande `Remove-Module` . `Remove-Module` supprime le module racine, tous les modules imbriqués et toutes les classes définies dans les modules. Vous pouvez ensuite recharger le module et les classes à l’aide `Import-Module` de et de l' `using module` instruction.
+
+Une autre pratique courante de développement consiste à séparer votre code dans des fichiers différents. Si vous avez une fonction dans un fichier qui utilise des classes définies dans un autre module, vous devez utiliser l' `using module` instruction pour vous assurer que les fonctions ont les définitions de classe qui sont nécessaires.
+
 ## <a name="the-psreference-type-is-not-supported-with-class-members"></a>Le type PSReference n’est pas pris en charge avec les membres de classe
 
-L’utilisation de la `[ref]` conversion de type avec un membre de classe échoue en silence. Les API qui utilisent `[ref]` des paramètres ne peuvent pas être utilisées avec des membres de classe. **PSReference** a été conçu pour prendre en charge les objets com. Les objets COM ont des cas où vous devez passer une valeur par référence.
+L’utilisation de la `[ref]` conversion de type avec un membre de classe échoue en silence. Les API qui utilisent `[ref]` des paramètres ne peuvent pas être utilisées avec des membres de classe. La classe **PSReference** a été conçue pour prendre en charge les objets com. Les objets COM ont des cas où vous devez passer une valeur par référence.
 
 Pour plus d’informations sur le `[ref]` type, consultez [PSReference, classe](/dotnet/api/system.management.automation.psreference).
 

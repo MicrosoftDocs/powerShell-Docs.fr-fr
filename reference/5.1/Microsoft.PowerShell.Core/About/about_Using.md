@@ -1,16 +1,16 @@
 ---
 description: Vous permet d’indiquer les espaces de noms qui sont utilisés dans la session.
 Locale: en-US
-ms.date: 11/18/2020
+ms.date: 01/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
-ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
+ms.openlocfilehash: 2a02ff32b110d369c080dde695a8fc2369b1a5e2
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94891344"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98619888"
 ---
 # <a name="about-using"></a>À propos de l’utilisation de
 
@@ -21,7 +21,9 @@ Vous permet d’indiquer les espaces de noms qui sont utilisés dans la session.
 
 L' `using` instruction vous permet de spécifier les espaces de noms qui sont utilisés dans la session. L’ajout d’espaces de noms simplifie l’utilisation des classes et membres .NET et vous permet d’importer des classes à partir de modules de script et d’assemblys.
 
-Les `using` instructions doivent précéder toutes les autres instructions dans un script.
+Les `using` instructions doivent précéder toutes les autres instructions dans un script ou un module. Aucune instruction sans commentaire ne peut le précéder, y compris les paramètres.
+
+L' `using` instruction ne doit pas contenir de variables.
 
 L' `using` instruction ne doit pas être confondue avec le `using:` modificateur de portée pour les variables. Pour plus d’informations, consultez [about_Remote_Variables](about_Remote_Variables.md).
 
@@ -57,6 +59,12 @@ Une spécification de module est une table de hachage qui contient les clés sui
   - `ModuleVersion` -Spécifie une version minimale acceptable du module.
   - `RequiredVersion` -Spécifie une version exacte et obligatoire du module.
   - `MaximumVersion` -Spécifie la version maximale acceptable du module.
+
+L' `using module` instruction importe des classes à partir du module racine ( `ModuleToProcess` ) d’un module de script ou d’un module binaire. Elle n’importe pas régulièrement les classes définies dans les modules imbriqués ou les classes définies dans les scripts qui sont insérés dans le module. Les classes que vous souhaitez mettre à la disposition des utilisateurs en dehors du module doivent être définies dans le module racine.
+
+Lors du développement d’un module de script, il est courant d’apporter des modifications au code, puis de charger la nouvelle version du module en utilisant `Import-Module` avec le paramètre **force** . Cela ne fonctionne que pour les modifications apportées aux fonctions du module racine uniquement. `Import-Module` ne recharge pas les modules imbriqués. En outre, il n’existe aucun moyen de charger les classes mises à jour.
+
+Pour vous assurer que vous exécutez la version la plus récente, vous devez décharger le module à l’aide de l’applet de commande `Remove-Module` . `Remove-Module` supprime le module racine, tous les modules imbriqués et toutes les classes définies dans les modules. Vous pouvez ensuite recharger le module et les classes à l’aide `Import-Module` de et de l' `using module` instruction.
 
 ## <a name="assembly-syntax"></a>Syntaxe d’assembly
 
