@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
-ms.openlocfilehash: 25da6262e93be3e3749aabaf4950e2fbcd91ff5c
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: f3545065d4879830a5051ef687f210c7fbd1251e
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93205901"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860658"
 ---
 # Invoke-WebRequest
 
 ## SYNOPSIS
 Obtient le contenu d'une page web sur Internet.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-WebSession <WebRequestSession>] [-SessionVariable <String>]
@@ -122,7 +121,7 @@ Lorsque `Invoke-WebRequest` rencontre un message http sans succès (404, 500, et
 ```powershell
 try
 {
-    $response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost" -ErrorAction Stop
+    $Response = Invoke-WebRequest -Uri "www.microsoft.com/unkownhost"
     # This will only execute if the Invoke-WebRequest is successful.
     $StatusCode = $Response.StatusCode
 }
@@ -137,7 +136,7 @@ $StatusCode
 404
 ```
 
-La première commande appelle `Invoke-WebRequest` avec un **ErrorAction** **Stop** , qui force `Invoke-WebRequest` à lever une erreur d’arrêt sur les demandes ayant échoué. L’erreur de fin est interceptée par le `catch` bloc qui récupère le **statusCode** de l’objet **exception** .
+L’erreur de fin est interceptée par le `catch` bloc, qui récupère le **statusCode** de l’objet **exception** .
 
 ## PARAMETERS
 
@@ -233,7 +232,7 @@ Accept wildcard characters: False
 
 Spécifie un compte d'utilisateur qui a l'autorisation d'envoyer la demande. La valeur par défaut est l’utilisateur actuel.
 
-Tapez un nom d’utilisateur, tel que **User01** ou **Domaine01\Utilisateur01** , ou entrez un objet **PSCredential** généré par l’applet de commande `Get-Credential` .
+Tapez un nom d’utilisateur, tel que **User01** ou **Domaine01\Utilisateur01**, ou entrez un objet **PSCredential** généré par l’applet de commande `Get-Credential` .
 
 Les informations d’identification sont stockées dans un objet [PSCredential](/dotnet/api/system.management.automation.pscredential) et le mot de passe est stocké en tant que [SecureString](/dotnet/api/system.security.securestring).
 
@@ -254,7 +253,7 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-Indique que l’applet de commande définit la valeur **KeepAlive** dans l’en-tête http sur **false** . Par défaut, **KeepAlive** a la **valeur true** . **KeepAlive** établit une connexion permanente au serveur pour faciliter les demandes suivantes.
+Indique que l’applet de commande définit la valeur **KeepAlive** dans l’en-tête http sur **false**. Par défaut, **KeepAlive** a la **valeur true**. **KeepAlive** établit une connexion permanente au serveur pour faciliter les demandes suivantes.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,7 +327,7 @@ Spécifie la méthode utilisée pour la demande web. Les valeurs valides pour ce
 - DELETE
 - Obtenir
 - Head
-- Fusionner
+- Fusionner (Merge)
 - Options
 - Correctif
 - Publier
@@ -353,7 +352,7 @@ Accept wildcard characters: False
 Spécifie le fichier de sortie pour lequel cette applet de commande enregistre le corps de la réponse. Entrez un chemin d'accès et un nom de fichier.
 Si vous omettez le chemin d'accès, la valeur par défaut est l'emplacement actuel.
 
-Par défaut, `Invoke-WebRequest` retourne les résultats au pipeline. Pour envoyer les résultats à un fichier et au pipeline, utilisez le paramètre **Passthru** .
+Par défaut, `Invoke-WebRequest` retourne les résultats au pipeline. Pour envoyer les résultats à un fichier et au pipeline, utilisez le paramètre **Passthru**.
 
 ```yaml
 Type: System.String
@@ -402,7 +401,7 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy** . La valeur par défaut est l’utilisateur actuel.
+Spécifie un compte d'utilisateur qui a l'autorisation d'utiliser le serveur proxy spécifié par le paramètre **Proxy**. La valeur par défaut est l’utilisateur actuel.
 
 Tapez un nom d’utilisateur, tel que `User01` ou `Domain01\User01` , ou entrez un objet **PSCredential** , tel que celui généré par l’applet de commande `Get-Credential` .
 
@@ -447,7 +446,7 @@ Lorsque vous spécifiez une variable de session, `Invoke-WebRequest` crée un ob
 
 Contrairement à une session à distance, la session de demande web n'est pas une connexion persistante. Il s'agit d'un objet qui contient des informations sur la connexion et la demande, notamment les cookies, les informations d'identification, la valeur maximale de la redirection et la chaîne d'agent utilisateur. Vous pouvez l'utiliser pour partager l'état et les données entre les demandes web.
 
-Pour utiliser la session de demande web dans les demandes web suivantes, spécifiez la variable de session dans la valeur du paramètre **WebSession** . PowerShell utilise les données de l’objet session de demande Web lors de l’établissement de la nouvelle connexion. Pour remplacer une valeur dans la session de demande web, utilisez un paramètre d'applet de commande, comme **UserAgent** ou **Credential** . Les valeurs de paramètre sont prioritaires sur les valeurs de la session de demande web.
+Pour utiliser la session de demande web dans les demandes web suivantes, spécifiez la variable de session dans la valeur du paramètre **WebSession**. PowerShell utilise les données de l’objet session de demande Web lors de l’établissement de la nouvelle connexion. Pour remplacer une valeur dans la session de demande web, utilisez un paramètre d'applet de commande, comme **UserAgent** ou **Credential**. Les valeurs de paramètre sont prioritaires sur les valeurs de la session de demande web.
 
 Vous ne pouvez pas utiliser les paramètres **SessionVariable** et **websession** dans la même commande.
 
@@ -576,11 +575,11 @@ Accept wildcard characters: False
 
 Spécifie une session de demande web. Entrez le nom de la variable, y compris le signe dollar ( `$` ).
 
-Pour remplacer une valeur dans la session de demande web, utilisez un paramètre d'applet de commande, comme **UserAgent** ou **Credential** . Les valeurs de paramètre sont prioritaires sur les valeurs de la session de demande web.
+Pour remplacer une valeur dans la session de demande web, utilisez un paramètre d'applet de commande, comme **UserAgent** ou **Credential**. Les valeurs de paramètre sont prioritaires sur les valeurs de la session de demande web.
 
 Contrairement à une session à distance, la session de demande web n'est pas une connexion persistante. Il s'agit d'un objet qui contient des informations sur la connexion et la demande, notamment les cookies, les informations d'identification, la valeur maximale de la redirection et la chaîne d'agent utilisateur. Vous pouvez l'utiliser pour partager l'état et les données entre les demandes web.
 
-Pour créer une session de demande Web, entrez un nom de variable (sans signe dollar) dans la valeur du paramètre **SessionVariable** d’une `Invoke-WebRequest` commande. `Invoke-WebRequest` crée la session et l’enregistre dans la variable. Dans les commandes suivantes, utilisez la variable comme valeur du paramètre **WebSession** .
+Pour créer une session de demande Web, entrez un nom de variable (sans signe dollar) dans la valeur du paramètre **SessionVariable** d’une `Invoke-WebRequest` commande. `Invoke-WebRequest` crée la session et l’enregistre dans la variable. Dans les commandes suivantes, utilisez la variable comme valeur du paramètre **WebSession**.
 
 Vous ne pouvez pas utiliser les paramètres **SessionVariable** et **websession** dans la même commande.
 

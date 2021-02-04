@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 06/09/2017
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
-ms.openlocfilehash: 395488731d2d30a16db986ccb91af3b1891daa24
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 32d8893190489be0a102b2db4dee3482133a4243
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204922"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860839"
 ---
 # Start-Transcript
 
-## SYNOPSIS
+## Synopsis
 Crée un enregistrement de tout ou partie d’une session PowerShell dans un fichier texte.
 
-## SYNTAX
+## Syntaxe
 
 ### ByPath (par défaut)
 
@@ -50,7 +50,9 @@ L' `Start-Transcript` applet de commande crée un enregistrement de tout ou part
 Les fichiers créés par l’applet de commande `Start-Transcript` incluent des caractères aléatoires dans les noms pour éviter les remplacements ou les doublons potentiels lorsque deux transcriptions ou plus sont démarrées simultanément.
 Cela empêche également la découverte non autorisée des transcriptions stockées dans un partage de fichiers centralisé.
 
-## EXEMPLES
+Lors de l’utilisation du paramètre **Append** , si le fichier cible n’a pas de marque d’ordre d’octet (BOM) `Start-Transcript` par défaut pour `ASCII` l’encodage dans le fichier cible. Ce comportement peut entraîner un encodage incorrect des caractères mulitbyte dans la transcription.
+
+## Exemples
 
 ### Exemple 1 : démarrer un fichier de transcription avec les paramètres par défaut
 
@@ -68,7 +70,7 @@ Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 
 Cette commande démarre une transcription dans le `Transcript0.txt` fichier dans `C:\transcripts` . Étant donné que le paramètre **NoClobber** est utilisé, la commande empêche tout remplacement des fichiers existants. Si le `Transcript0.txt` fichier existe déjà, la commande échoue.
 
-## PARAMETERS
+## Paramètres
 
 ### -Append
 
@@ -136,7 +138,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Spécifie un emplacement pour le fichier de transcription. Contrairement au paramètre **Path** , la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
+Spécifie un emplacement pour le fichier de transcription. Contrairement au paramètre **Path**, la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
 
 ```yaml
 Type: System.String
@@ -239,25 +241,24 @@ Accept wildcard characters: False
 
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## ENTRÉES
+## Entrées
 
-### Aucun
+### None
 
 Vous ne pouvez pas rediriger des objets vers cette applet de commande.
 
-## SORTIES
+## Sorties
 
 ### System.String
 
 Cette applet de commande retourne une chaîne qui contient un message de confirmation et le chemin d’accès au fichier de sortie.
 
-## REMARQUES
+## Remarques
 
 Pour arrêter une transcription, utilisez l' `Stop-Transcript` applet de commande.
 
 Pour enregistrer une session entière, ajoutez la `Start-Transcript` commande à votre profil. Pour plus d’informations, consultez [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
-## LIENS CONNEXES
+## Liens associés
 
 [Stop-Transcript](Stop-Transcript.md)
-

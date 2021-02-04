@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Variable
-ms.openlocfilehash: c175fce3df41a3860a54ccb13a280955dce4a55c
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: c90a2f49c95333e45893e186d6e1f1da4b3fe41a
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239890"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771833"
 ---
 # Set-Variable
 
 ## SYNOPSIS
 Définit la valeur d'une variable. Crée la variable si celle avec le nom demandé n'existe pas.
 
-## SYNTAX
+## SYNTAXE
 
 ```
 Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
@@ -53,13 +53,13 @@ desc                           A description
 Cet exemple crée une variable globale en lecture seule qui contient tous les processus sur le système, puis affiche toutes les propriétés de la variable.
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
 La commande utilise l' `Set-Variable` applet de commande pour créer la variable. Elle utilise le paramètre **PassThru** pour créer un objet représentant la nouvelle variable, et elle utilise l’opérateur de pipeline ( `|` ) pour passer l’objet à l’applet de commande `Format-List` . Elle utilise le paramètre **Property** de `Format-List` avec la valeur All ( `*` ) pour afficher toutes les propriétés de la variable nouvellement créée.
 
-La valeur, `(Get-Process)` , est placée entre parenthèses pour s’assurer qu’elle est exécutée avant d’être stockée dans la variable. Sinon, la variable contient les mots « **obtien-process** ».
+La valeur, `(Get-Process)` , est placée entre parenthèses pour s’assurer qu’elle est exécutée avant d’être stockée dans la variable. Sinon, la variable contient les mots «**obtien-process**».
 
 ### Exemple 3 : comprendre les variables publiques et les variables privées
 
@@ -232,7 +232,7 @@ Spécifie l’étendue de la variable. Les valeurs acceptables pour ce paramètr
 - Global
 - Local
 - Script
-- Privées
+- Blockchain privée
 - Nombre relatif à la portée actuelle (0 jusqu’au nombre d’étendues, où 0 est la portée actuelle et 1 est son parent).
 
 Local est la valeur par défaut.

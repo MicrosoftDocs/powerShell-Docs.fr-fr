@@ -2,16 +2,16 @@
 description: Décrit les paramètres qui peuvent être utilisés avec n’importe quelle applet de commande.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 11/26/2019
+ms.date: 01/26/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters
-ms.openlocfilehash: 949fabca6052a75d2cc4f8cf71e0a88b170a3b36
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 0b303590aab756aaa7dd55683e114a20c2b2a12c
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207446"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860808"
 ---
 # <a name="about-commonparameters"></a>À propos de Paramètres_courants
 
@@ -48,7 +48,7 @@ La liste suivante affiche les paramètres communs. Leurs alias sont répertorié
 Les paramètres d' **action** sont des valeurs de type **PréférenceAction** .
 **PréférenceAction** est une énumération avec les valeurs suivantes :
 
-| Nom             | Valeur |
+| Nom             | Value |
 |------------------|-------|
 | Interrompre          | 5     |
 | Ignorer           | 4     |
@@ -83,13 +83,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-Par défaut, les messages de débogage ne s’affichent pas, car la valeur de la `$DebugPreference` variable est **SilentlyContinue** .
+Par défaut, les messages de débogage ne s’affichent pas, car la valeur de la `$DebugPreference` variable est **SilentlyContinue**.
 
-En mode interactif, le paramètre de **débogage** remplace la valeur de la `$DebugPreference` variable pour la commande actuelle, en affectant à la valeur `$DebugPreference` **inquire** .
+En mode interactif, le paramètre de **débogage** remplace la valeur de la `$DebugPreference` variable pour la commande actuelle, en affectant à la valeur `$DebugPreference` **inquire**.
 
-En mode non interactif, le paramètre de **débogage** remplace la valeur de la `$DebugPreference` variable pour la commande actuelle, en affectant la valeur `$DebugPreference` à **continue** .
+En mode non interactif, le paramètre de **débogage** remplace la valeur de la `$DebugPreference` variable pour la commande actuelle, en affectant la valeur `$DebugPreference` à **continue**.
 
-`-Debug:$true` a le même effet que `-Debug` . Utilisez `-Debug:$false` pour supprimer l’affichage des messages de débogage lorsque `$DebugPreference` n’est pas **SilentlyContinue** , qui est la valeur par défaut.
+`-Debug:$true` a le même effet que `-Debug` . Utilisez `-Debug:$false` pour supprimer l’affichage des messages de débogage lorsque `$DebugPreference` n’est pas **SilentlyContinue**, qui est la valeur par défaut.
 
 #### <a name="erroraction"></a>ErrorAction
 
@@ -108,13 +108,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-Le paramètre **ErrorAction** remplace la valeur de la `$ErrorActionPreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$ErrorActionPreference` variable est **continue** , les messages d’erreur s’affichent et l’exécution se poursuit, sauf si vous utilisez le paramètre **ErrorAction** .
+Le paramètre **ErrorAction** remplace la valeur de la `$ErrorActionPreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$ErrorActionPreference` variable est **continue**, les messages d’erreur s’affichent et l’exécution se poursuit, sauf si vous utilisez le paramètre **ErrorAction** .
 
 Le paramètre **ErrorAction** n’a aucun effet sur les erreurs de fin (telles que les données manquantes, les paramètres qui ne sont pas valides ou les autorisations insuffisantes) qui empêchent une commande de se terminer correctement.
 
 `-ErrorAction:Continue` Affichez le message d’erreur et poursuivez l’exécution de la commande. `Continue` est la valeur par défaut.
 
-`-ErrorAction:Ignore` supprime le message d’erreur et poursuit l’exécution de la commande. Contrairement à **SilentlyContinue** , **ignore** n’ajoute pas le message d’erreur à la `$Error` variable automatique. La valeur **ignorée** est introduite dans PowerShell 3,0.
+`-ErrorAction:Ignore` supprime le message d’erreur et poursuit l’exécution de la commande. Contrairement à **SilentlyContinue**, **ignore** n’ajoute pas le message d’erreur à la `$Error` variable automatique. La valeur **ignorée** est introduite dans PowerShell 3,0.
 
 `-ErrorAction:Inquire` affiche le message d’erreur et vous invite à confirmer avant de poursuivre l’exécution. Cette valeur est rarement utilisée.
 
@@ -169,7 +169,7 @@ Vous pouvez utiliser ce paramètre pour créer une variable qui contient uniquem
 
 #### <a name="informationaction"></a>InformationAction
 
-Introduit dans PowerShell 5,0. Dans la commande ou le script dans lequel elle est utilisée, le paramètre commun **InformationAction** remplace la valeur de la `$InformationPreference` variable de préférence, qui est définie par défaut sur **SilentlyContinue** . Lorsque vous utilisez `Write-Information` dans un script avec **InformationAction** , les `Write-Information` valeurs sont affichées en fonction de la valeur du paramètre **InformationAction** . Pour plus d’informations sur `$InformationPreference` , consultez [about_Preference_Variables](./about_Preference_Variables.md).
+Introduit dans PowerShell 5,0. Dans la commande ou le script dans lequel elle est utilisée, le paramètre commun **InformationAction** remplace la valeur de la `$InformationPreference` variable de préférence, qui est définie par défaut sur **SilentlyContinue**. Lorsque vous utilisez `Write-Information` dans un script avec **InformationAction**, les `Write-Information` valeurs sont affichées en fonction de la valeur du paramètre **InformationAction** . Pour plus d’informations sur `$InformationPreference` , consultez [about_Preference_Variables](./about_Preference_Variables.md).
 
 ```yaml
 Type: ActionPreference
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 
 `-InformationAction:Stop` arrête une commande ou un script à une occurrence de la `Write-Information` commande.
 
-`-InformationAction:Ignore` supprime le message d’information et poursuit l’exécution de la commande. Contrairement à **SilentlyContinue** , **ignore** complètement le message d’information ; elle n’ajoute pas le message d’information au flux d’informations.
+`-InformationAction:Ignore` supprime le message d’information et poursuit l’exécution de la commande. Contrairement à **SilentlyContinue**, **ignore** complètement le message d’information ; elle n’ajoute pas le message d’information au flux d’informations.
 
 `-InformationAction:Inquire` affiche le message d’information que vous spécifiez dans une `Write-Information` commande, puis vous demande si vous souhaitez continuer.
 
@@ -295,6 +295,10 @@ $out
 
 **PipelineVariable** stocke la valeur de l’élément de pipeline actuel sous la forme d’une variable, pour toute commande nommée à travers le pipeline.
 
+>[!NOTE]
+> Les fonctions avancées peuvent comporter jusqu’à trois blocs de script : `begin` , `process` et `end` . Lors de l’utilisation du paramètre **PipelineVariable** avec des fonctions avancées, seules les valeurs du premier bloc de script défini sont affectées à la variable lors de l’exécution de la fonction. Pour plus d’informations, consultez [fonctions avancées](./about_functions_advanced.md).
+> PowerShell 7,2 corrige ce comportement.
+
 ```yaml
 Type: String
 Aliases: pv
@@ -308,11 +312,11 @@ Accept wildcard characters: False
 
 Les valeurs valides sont les chaînes, les mêmes que pour les noms de variable.
 
-Voici un exemple de fonctionnement de **PipelineVariable** . Dans cet exemple, le paramètre **PipelineVariable** est ajouté à une `Foreach-Object` commande pour stocker les résultats de la commande dans les variables. Une plage de nombres, de 1 à 10, est dirigée vers la première `Foreach-Object` commande, dont les résultats sont stockés dans une variable nommée **Left** .
+Voici un exemple de fonctionnement de **PipelineVariable** . Dans cet exemple, le paramètre **PipelineVariable** est ajouté à une `Foreach-Object` commande pour stocker les résultats de la commande dans les variables. Une plage de nombres, de 1 à 10, est dirigée vers la première `Foreach-Object` commande, dont les résultats sont stockés dans une variable nommée **Left**.
 
-Les résultats de la première `Foreach-Object` commande sont dirigés vers une deuxième `Foreach-Object` commande, qui filtre les objets retournés par la première `Foreach-Object` commande. Les résultats de la deuxième commande sont stockés dans une variable nommée **Right** .
+Les résultats de la première `Foreach-Object` commande sont dirigés vers une deuxième `Foreach-Object` commande, qui filtre les objets retournés par la première `Foreach-Object` commande. Les résultats de la deuxième commande sont stockés dans une variable nommée **Right**.
 
-Dans la troisième `Foreach-Object` commande, les résultats des deux premières `Foreach-Object` commandes dirigées, représentées par les variables **Left** et **Right** , sont traités à l’aide d’un opérateur de multiplication. La commande indique que les objets stockés dans les variables de **gauche** et de **droite** doivent être multipliés, et spécifie que les résultats doivent être affichés sous la forme « membre de la plage de gauche * membre de la plage droite = produit ».
+Dans la troisième `Foreach-Object` commande, les résultats des deux premières `Foreach-Object` commandes dirigées, représentées par les variables **Left** et **Right**, sont traités à l’aide d’un opérateur de multiplication. La commande indique que les objets stockés dans les variables de **gauche** et de **droite** doivent être multipliés, et spécifie que les résultats doivent être affichés sous la forme « membre de la plage de gauche * membre de la plage droite = produit ».
 
 ```powershell
 1..10 | Foreach-Object -PipelineVariable Left -Process { $_ } |
@@ -344,7 +348,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-Le paramètre **Verbose** remplace la valeur de la `$VerbosePreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$VerbosePreference` variable est **SilentlyContinue** , les messages détaillés ne sont pas affichés par défaut.
+Le paramètre **Verbose** remplace la valeur de la `$VerbosePreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$VerbosePreference` variable est **SilentlyContinue**, les messages détaillés ne sont pas affichés par défaut.
 
 `-Verbose:$true` a le même effet que `-Verbose`
 
@@ -366,7 +370,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-Le paramètre **WarningAction** remplace la valeur de la `$WarningPreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$WarningPreference` variable est **continue** , les avertissements sont affichés et l’exécution se poursuit, sauf si vous utilisez le paramètre **WarningAction** .
+Le paramètre **WarningAction** remplace la valeur de la `$WarningPreference` variable pour la commande actuelle. Étant donné que la valeur par défaut de la `$WarningPreference` variable est **continue**, les avertissements sont affichés et l’exécution se poursuit, sauf si vous utilisez le paramètre **WarningAction** .
 
 `-WarningAction:Continue` affiche les messages d’avertissement et poursuit l’exécution de la commande. `Continue` est la valeur par défaut.
 
@@ -557,6 +561,6 @@ about_Common_Parameters
 
 [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
 
-[Écriture-erreur](xref:Microsoft.PowerShell.Utility.Write-Error)
+[Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
 
 [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)

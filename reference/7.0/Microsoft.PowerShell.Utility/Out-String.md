@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/29/2020
+ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
-ms.openlocfilehash: a64b11206a0755cedabad2894ecc330fac95a8d5
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: 719c65903592d7cec94621bbb293f09b82a0d934
+ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "93206354"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620195"
 ---
 # Out-String
 
-## SYNOPSIS
+## Synopsis
 Génère des objets d’entrée sous forme de chaînes.
 
-## SYNTAX
+## Syntaxe
 
 ### NoNewLineFormatting (par défaut)
 
@@ -37,7 +37,7 @@ Out-String [-Stream] [-Width <Int32>] [-InputObject <PSObject>] [<CommonParamete
 
 L' `Out-String` applet de commande convertit les objets d’entrée en chaînes. Par défaut, `Out-String` accumule les chaînes et les retourne sous la forme d’une chaîne unique, mais vous pouvez utiliser le paramètre **Stream** pour demander `Out-String` à de retourner une ligne à la fois ou créer et tableau de chaînes. Cette applet de commande vous permet de rechercher et de manipuler la sortie de chaîne comme vous le feriez dans des interpréteurs de commandes traditionnels quand la manipulation des objets est moins pratique.
 
-## EXEMPLES
+## Exemples
 
 ### Exemple 1 : récupérer la culture actuelle et convertir les données en chaînes
 
@@ -84,7 +84,7 @@ La `$C` variable stocke un **Selected.SysTEM. Objet Globalization. CultureInfo**
 
 ### Exemple 2 : utilisation d’objets
 
-Cet exemple illustre la différence entre l'utilisation d'objets et l'utilisation de chaînes. La commande affiche un alias qui comprend le texte **GCM** , l’alias de `Get-Command` .
+Cet exemple illustre la différence entre l'utilisation d'objets et l'utilisation de chaînes. La commande affiche un alias qui comprend le texte **GCM**, l’alias de `Get-Command` .
 
 ```powershell
 Get-Alias | Out-String -Stream | Select-String -Pattern "gcm"
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-Indique que l’applet de commande envoie une chaîne distincte pour chaque ligne d’un objet d’entrée. Par défaut, les chaînes de chaque objet sont accumulées et envoyées sous la forme d'une chaîne unique.
+Par défaut, `Out-String` génère une chaîne unique mise en forme comme vous le verrez dans la console, y compris les en-têtes vides ou les nouvelles lignes de fin. Le paramètre **Stream** permet `Out-String` à de sortir chaque ligne un par un. La seule exception à cela est que les chaînes multilignes. Dans ce cas, `Out-String` continue à générer la chaîne sous la forme d’une chaîne unique, multiligne.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

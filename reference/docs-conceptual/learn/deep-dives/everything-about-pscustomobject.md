@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 description: PSCustomObject est un moyen simple de créer des données structurées.
 ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 8086541bf93b4d3f878c9a3f7ca4300dc452a80b
+ms.sourcegitcommit: 08c63095f54916013634d6703f2523779815f4b6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "91772318"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99424469"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>Tout ce que vous avez toujours voulu savoir sur PSCustomObject
 
@@ -74,7 +74,7 @@ Cette façon de faire est un peu lente, mais elle peut être votre meilleure opt
 Je trouve que la meilleure façon d’enregistrer une table de hachage dans un fichier est de l’enregistrer au format JSON. Vous pouvez la réimporter dans un `[PSCustomObject]`
 
 ```powershell
-$myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
+$myObject | ConvertTo-Json -depth 1 | Set-Content -Path $Path
 $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
@@ -87,7 +87,7 @@ Je présente d’autres moyens d’enregistrer des objets dans un fichier dans m
 Vous pouvez toujours ajouter de nouvelles propriétés à votre `PSCustomObject` avec `Add-Member`.
 
 ```powershell
-$myObject | Add-Member -MemberType NoteProperty -Name `ID` -Value 'KevinMarquette'
+$myObject | Add-Member -MemberType NoteProperty -Name 'ID' -Value 'KevinMarquette'
 
 $myObject.ID
 ```
