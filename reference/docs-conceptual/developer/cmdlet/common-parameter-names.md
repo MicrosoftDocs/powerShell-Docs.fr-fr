@@ -3,23 +3,30 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Noms de paramètres courants
 description: Noms de paramètres courants
-ms.openlocfilehash: cf39dd3b04660076718336857d79d55c3784ccd1
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 506aab290abdb97a6e26c340ac4bd0051244f54b
+ms.sourcegitcommit: 11880ca974fe2df308191c9f6dcdfe0b89c2dc67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92668216"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98860877"
 ---
 # <a name="common-parameter-names"></a>Noms de paramètres courants
 
-Les paramètres décrits dans cette rubrique sont appelés *paramètres communs*. Ils sont ajoutés aux applets de commande par le runtime Windows PowerShell et ne peuvent pas être déclarés par l’applet de commande.
+Les paramètres décrits dans cette rubrique sont appelés **paramètres communs**. Ils sont ajoutés aux applets de commande par le runtime Windows PowerShell et ne peuvent pas être déclarés par l’applet de commande.
 
 > [!NOTE]
 > Ces paramètres sont également ajoutés aux applets de commande du fournisseur et aux fonctions qui sont décorées avec l' `CmdletBinding` attribut.
 
 ## <a name="general-common-parameters"></a>Paramètres communs généraux
 
-Les paramètres suivants sont ajoutés à toutes les applets de commande et sont accessibles chaque fois que l’applet de commande est exécutée. Ces paramètres sont définis par la classe [System. Management. Automation. Internal. paramètres_courants](/dotnet/api/System.Management.Automation.Internal.CommonParameters) .
+Les paramètres suivants sont ajoutés à toutes les applets de commande et sont accessibles chaque fois que l’applet de commande est exécutée.
+Ces paramètres sont définis par la classe [System. Management. Automation. Internal. paramètres_courants](/dotnet/api/System.Management.Automation.Internal.CommonParameters) .
+
+### <a name="confirm-alias-cf"></a>Confirmer (alias : CF)
+
+Type de données : Paramètre_booléen
+
+Ce paramètre spécifie si l’applet de commande affiche une invite demandant si l’utilisateur est sûr qu’il souhaite continuer.
 
 ### <a name="debug-alias-db"></a>Débogage (alias : DB)
 
@@ -37,13 +44,7 @@ Ce paramètre spécifie l’action qui doit être exécutée lorsqu’une erreur
 
 Type de données : Chaîne
 
-Ce paramètre spécifie la variable dans laquelle placer les objets lorsqu’une erreur se produit. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
-
-### <a name="outvariable-alias-ov"></a>Dévariable (alias : OV)
-
-Type de données : Chaîne
-
-Ce paramètre spécifie la variable dans laquelle placer tous les objets de sortie générés par l’applet de commande. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
+Ce paramètre spécifie la variable dans laquelle placer les objets lorsqu’une erreur se produit. Pour ajouter à cette variable, utilisez +_varname_ plutôt que d’effacer et de définir la variable.
 
 ### <a name="outbuffer-alias-ob"></a>Buffer (alias : OB)
 
@@ -51,7 +52,20 @@ Type de données : Int32
 
 Ce paramètre définit le nombre d’objets à stocker dans la mémoire tampon de sortie avant que tous les objets ne soient passés dans le pipeline. Par défaut, les objets sont passés immédiatement en dessous du pipeline.
 
-### <a name="verbose-alias-vb"></a>Verbose (alias : VB)
+### <a name="outvariable-alias-ov"></a>Dévariable (alias : OV)
+
+Type de données : Chaîne
+
+Ce paramètre spécifie la variable dans laquelle placer tous les objets de sortie générés par l’applet de commande.
+Pour ajouter à cette variable, utilisez +_varname_ plutôt que d’effacer et de définir la variable.
+
+### <a name="pipelinevariable-alias-pv"></a>PipelineVariable (alias : PV)
+
+Type de données : Chaîne
+
+Ce paramètre stocke la valeur de l’élément de pipeline actuel en tant que variable pour toute commande nommée à mesure qu’il traverse le pipeline.
+
+## <a name="verbose-alias-vb"></a>Verbose (alias : VB)
 
 Type de données : Paramètre_booléen
 
@@ -67,17 +81,12 @@ Ce paramètre spécifie l’action qui doit être effectuée lorsque l’applet 
 
 Type de données : Chaîne
 
-Ce paramètre spécifie la variable dans laquelle les messages d’avertissement peuvent être enregistrés. Pour ajouter à cette variable, utilisez +*varname* plutôt que d’effacer et de définir la variable.
+Ce paramètre spécifie la variable dans laquelle les messages d’avertissement peuvent être enregistrés. Pour ajouter à cette variable, utilisez +_varname_ plutôt que d’effacer et de définir la variable.
 
 ## <a name="risk-mitigation-parameters"></a>Paramètres Risk-Mitigation
 
-Les paramètres suivants sont ajoutés aux applets de commande qui demandent une confirmation avant d’exécuter leur action. Pour plus d’informations sur les demandes de confirmation, consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md). Ces paramètres sont définis par la classe [System. Management. Automation. Internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
-
-### <a name="confirm-alias-cf"></a>Confirmer (alias : CF)
-
-Type de données : Paramètre_booléen
-
-Ce paramètre spécifie si l’applet de commande affiche une invite demandant si l’utilisateur est sûr qu’il souhaite continuer.
+Les paramètres suivants sont ajoutés aux applets de commande qui demandent une confirmation avant d’exécuter leur action. Pour plus d’informations sur les demandes de confirmation, consultez [demande de confirmation](./requesting-confirmation-from-cmdlets.md).
+Ces paramètres sont définis par la classe [System. Management. Automation. Internal. Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) .
 
 ### <a name="whatif-alias-wi"></a>WhatIf (alias : Wi)
 
@@ -87,7 +96,7 @@ Ce paramètre spécifie si l’applet de commande écrit un message qui décrit 
 
 ## <a name="transaction-parameters"></a>Paramètres de transaction
 
-Le paramètre suivant est ajouté aux applets de commande qui prennent en charge les transactions. Ces paramètres sont définis par la classe [System. Management. Automation. Internal. Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) .
+Le paramètre suivant est ajouté aux applets de commande qui prennent en charge les transactions. Ces paramètres sont définis par la classe [System. Management. Automation. Internal. Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) . La prise en charge des transactions a été introduite dans PowerShell 3,0 et supprimée dans PowerShell 6,0.
 
 ### <a name="usetransaction-alias-usetx"></a>UseTransaction (alias : UseTX)
 

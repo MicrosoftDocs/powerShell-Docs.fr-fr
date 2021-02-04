@@ -1,14 +1,14 @@
 ---
-ms.date: 09/20/2019
+ms.date: 01/06/2021
 ms.topic: reference
 title: Ressource Service dans DSC
 description: Ressource Service dans DSC
-ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: bb151e11475c6e67f1fcb2d73336ff2e34b749b8
+ms.sourcegitcommit: afefb3636362857036648c2fe80215bc4e81f5ac
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142622"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97957034"
 ---
 # <a name="dsc-service-resource"></a>Ressource Service dans DSC
 
@@ -27,7 +27,7 @@ Service [string] #ResourceName
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ State = [string] { Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
     [ DisplayName = [string] ]
@@ -43,10 +43,10 @@ Service [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |Nom |Indique le nom du service Notez qu’il peut être différent du nom d’affichage. Vous pouvez obtenir une liste des services et leur état actuel avec l’applet de commande `Get-Service`. |
-|BuiltInAccount |Indique le compte de connexion à utiliser pour le service. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService** , **LocalSystem** et **NetworkService** . |
+|BuiltInAccount |Indique le compte de connexion à utiliser pour le service. Sont autorisées pour cette propriété les valeurs suivantes : **LocalService**, **LocalSystem** et **NetworkService**. |
 |Informations d'identification |Indique les informations d’identification pour le compte sous lequel s’exécute le service. Cette propriété et la propriété **BuiltinAccount** ne peuvent pas être utilisées ensemble. |
-|StartupType |Indique le type de démarrage du service. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic** , **Disabled** et **Manual** . |
-|State |Indique l’état que vous voulez assurer pour le service. Les valeurs sont : **Running** ou **Stopped** . |
+|StartupType |Indique le type de démarrage du service. Sont autorisées pour cette propriété les valeurs suivantes : **Automatic**, **Disabled** et **Manual**. |
+|State |Indique l’état que vous voulez assurer pour le service. Les valeurs sont : **Running** ou **Stopped**. |
 |Les dépendances | Tableau des noms des dépendances que le service doit avoir. |
 |Description |Indique la description du service cible. |
 |DisplayName |Indique le nom complet du service cible. |
@@ -57,7 +57,7 @@ Service [string] #ResourceName
 |Propriété |Description |
 |---|---|
 |DependsOn |Indique que la configuration d’une autre ressource doit être exécutée avant celle de cette ressource. Par exemple, si vous voulez exécuter en premier le bloc de script de configuration de ressource ayant l’ID ResourceName et le type ResourceType, utilisez la syntaxe suivante pour cette propriété : `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Indique si le service cible existe sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que le service cible n’existe pas. Définissez-la sur **Present** pour être assuré que le service cible n’existe pas. La valeur par défaut est **Present** . |
+|Ensure |Indique si le service cible existe sur le système. Affectez la valeur **Absent** à cette propriété pour vous assurer que le service cible n’existe pas. Définissez-la sur **Present** pour être assuré que le service cible n’existe pas. La valeur par défaut est **Present**. |
 |PsDscRunAsCredential |Définit les informations d’identification pour l’exécution de l’ensemble de la ressource. |
 
 > [!NOTE]

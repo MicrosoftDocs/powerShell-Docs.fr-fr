@@ -5,12 +5,12 @@ ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 51dfd85044d240f1d1429580d6eeb98c662d62c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: fc0b84829a96fc6ba2cafa0c24a7585cc9944fe8
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208077"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97614048"
 ---
 # <a name="about-continue"></a>À propos de continue
 
@@ -105,7 +105,7 @@ Si la dernière instruction exécutée dans le corps d’une `trap` instruction 
 
 Quand `continue` est utilisé en dehors d’une construction qui le prend directement en charge (boucles, `switch` , `trap` ), PowerShell recherche _la pile des appels_ pour une construction englobante. S’il ne trouve pas de construction englobante, l’instance d’exécution actuelle est arrêtée en mode silencieux.
 
-Cela signifie que les fonctions et les scripts qui utilisent par inadvertance un `continue` en dehors d’une construction englobante qui la prend en charge peuvent arrêter par inadvertance leurs _appelants_ .
+Cela signifie que les fonctions et les scripts qui utilisent par inadvertance un `continue` en dehors d’une construction englobante qui la prend en charge peuvent arrêter par inadvertance leurs _appelants_.
 
 L’utilisation `continue` de l’intérieur d’un pipeline, tel qu’un `ForEach-Object` bloc de script, non seulement quitte le pipeline, mais il peut mettre fin à la totalité de l’instance d’exécution.
 

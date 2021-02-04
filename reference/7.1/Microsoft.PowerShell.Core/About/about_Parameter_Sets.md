@@ -1,13 +1,13 @@
 ---
 description: Décrit comment définir et utiliser des jeux de paramètres dans les fonctions avancées.
 title: about_Parameter_Sets
-ms.date: 02/11/2020
-ms.openlocfilehash: e6f7d006551bdeee11b68951f96f3fa2251e73e3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.date: 01/05/2021
+ms.openlocfilehash: 876f6336dd344412b514ea22d413a97a98c9cd02
+ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208274"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97917835"
 ---
 # <a name="about-parameter-sets"></a>À propos des jeux de paramètres
 
@@ -22,7 +22,7 @@ PowerShell utilise des jeux de paramètres pour vous permettre d’écrire une f
 
 Les exigences suivantes s’appliquent à tous les jeux de paramètres.
 
-- Chaque jeu de paramètres doit avoir au moins un paramètre unique. Si possible, définissez ce paramètre sur un paramètre obligatoire.
+- Chaque jeu de paramètres doit avoir une combinaison unique de paramètres. Si possible, au moins l’un des paramètres uniques doit être un paramètre obligatoire.
 
 - Un jeu de paramètres qui contient plusieurs paramètres positionnels doit définir des positions uniques pour chaque paramètre. Deux paramètres positionnels ne peuvent pas spécifier la même position.
 
