@@ -3,12 +3,12 @@ ms.date: 07/23/2020
 keywords: dsc,powershell,configuration,installation
 title: Ressources DSC
 description: Les ressources DSC fournissent les éléments de base d’une configuration DSC. Une ressource expose les propriétés qui peuvent être configurées (schéma) et contient les fonctions de script PowerShell utilisées par le Gestionnaire de configuration local (LCM) pour appliquer la configuration.
-ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 33268c68638bb581e0b2235a53aee9d186dff6be
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92658448"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771796"
 ---
 # <a name="dsc-resources"></a>Ressources DSC
 
@@ -118,7 +118,7 @@ Configuration TestConfig
 
 ## <a name="types-of-resources"></a>Types de ressources
 
-Windows est fourni avec des ressources intégrées et Linux possède des ressources propres au système d’exploitation. Il existe des ressources pour les [dépendances entre les nœuds](../configurations/crossNodeDependencies.md), des ressources de gestion des packages, ainsi que des ressources [appartenant à la communauté et gérées par la communauté](https://github.com/dsccommunity). Vous pouvez suivre les étapes ci-dessus pour déterminer la syntaxe de ces ressources et savoir comment les utiliser. Les pages qui utilisent ces ressources ont été archivées sous **Référence**.
+Windows est fourni avec des ressources intégrées et Linux possède des ressources propres au système d’exploitation. Il existe des ressources pour les [dépendances inter-nœuds](../configurations/crossNodeDependencies.md), des ressources de gestion des packages, ainsi que des [ressources détenues et gérées par la communauté](https://github.com/dsccommunity). Vous pouvez suivre les étapes ci-dessus pour déterminer la syntaxe de ces ressources et savoir comment les utiliser. Les pages qui utilisent ces ressources ont été archivées sous **Référence**.
 
 ### <a name="windows-built-in-resources"></a>Ressources intégrées Windows
 

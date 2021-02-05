@@ -1,13 +1,13 @@
 ---
-ms.date: 12/01/2020
+ms.date: 01/25/2021
 title: Résolution des problèmes des applets de commande
 description: Cet article fournit des informations et les étapes pour résoudre les erreurs à l’aide de PowerShell Gallery
-ms.openlocfilehash: 980da8ea7b8a09513f33a9939d512c437b755d8d
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: 8139147683b655b5f8532c3068387db6df12a98f
+ms.sourcegitcommit: 0f003644684422e425a59b7361121e05ac772e15
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96913316"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98771806"
 ---
 # <a name="troubleshooting-cmdlets"></a>Résolution des problèmes des applets de commande
 
@@ -30,6 +30,7 @@ Les cmdlets d’installation et de mise à jour nécessitent un accès à Intern
 - `devopsgallerystorage.blob.core.windows.net` - nom d’hôte du compte de stockage
 - `*.powershellgallery.com` - site web
 - `go.microsoft.com` - service de redirection
+- `onegetcdn.azureedge.net` - amorcer le fournisseur NuGet dans `PowerShellGet/PackageManagement`
 
 > [!NOTE]
 > Les applets de commande qui interagissent avec PowerShell Gallery peuvent échouer avec des erreurs inattendues en cas d’arrêt des services PowerShell Gallery. Pour afficher l’état actuel de PowerShell Gallery, consultez la page [État de PowerShell Gallery](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) sur GitHub.
