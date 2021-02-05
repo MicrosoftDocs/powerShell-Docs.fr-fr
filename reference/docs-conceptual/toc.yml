@@ -570,14 +570,10 @@
       href: community/hall-of-fame.md
     - name: Nouveautés dans la documentation
       items:
-        - name: 2020-T4
-          href: community/2020-Q4.md
-        - name: 2020-T3
-          href: community/2020-Q3.md
-        - name: 2020-T2
-          href: community/2020-Q2.md
-        - name: 2020-T1
-          href: community/2020-Q1.md
+        - name: Mises à jour 2021
+          href: community/2021-updates.md
+        - name: Mises à jour 2020
+          href: community/2020-updates.md
     - name: Guide du contributeur
       items:
         - name: Vue d’ensemble
@@ -775,7 +771,7 @@
         - name: Conformité RGPD
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: FAQ sur la galerie
-      href: gallery/faqs.md
+      href: gallery/faqs.yml
 - name: Création de scripts et développement
   items:
     - name: Visual Studio Code
