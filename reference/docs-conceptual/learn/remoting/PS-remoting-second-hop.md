@@ -4,20 +4,20 @@ keywords: powershell,applet de commande
 title: Effectuer le deuxième saut dans la communication à distance PowerShell
 description: Cet article explique les différentes méthodes de configuration de l’authentification de second saut pour l’accès distant à PowerShell, y compris les implications et les recommandations relatives à la sécurité.
 ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501369"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Effectuer le deuxième saut dans la communication à distance PowerShell
 
 Le « problème du deuxième saut » fait référence à une situation de ce type :
 
-1. Vous êtes connecté à _ServerA_ .
-2. À partir de _ServerA_ , vous démarrez une session PowerShell à distance pour vous connecter à _ServerB_ .
-3. Une commande exécutée sur _ServerB_ via votre session de communication à distance PowerShell tente d’accéder à une ressource sur _ServerC_ .
-4. L’accès à la ressource sur _ServerC_ est refusé, car les informations d’identification utilisées pour créer la session de communication à distance PowerShell ne sont pas transmises de _ServerB_ à _ServerC_ .
+1. Vous êtes connecté à _ServerA_.
+2. À partir de _ServerA_, vous démarrez une session PowerShell à distance pour vous connecter à _ServerB_.
+3. Une commande exécutée sur _ServerB_ via votre session de communication à distance PowerShell tente d’accéder à une ressource sur _ServerC_.
+4. L’accès à la ressource sur _ServerC_ est refusé, car les informations d’identification utilisées pour créer la session de communication à distance PowerShell ne sont pas transmises de _ServerB_ à _ServerC_.
 
 Il existe plusieurs moyens de résoudre ce problème. Le tableau suivant répertorie les méthodes par ordre de préférence.
 
@@ -34,7 +34,7 @@ Il existe plusieurs moyens de résoudre ce problème. Le tableau suivant répert
 ## <a name="credssp"></a>CredSSP
 
 Vous pouvez utiliser le [protocole CredSSP (Credential Security Support Provider)][credssp] pour l’authentification.
-Le protocole CredSSP mettant en cache les informations d’identification sur le serveur distant ( _ServerB_ ), son utilisation vous expose à des risques de vol de ces informations. Si l’ordinateur distant est compromis, la personne malveillante a accès aux informations d’identification de l’utilisateur. CredSSP est désactivé par défaut sur les ordinateurs clients et serveurs. Vous devez activer CredSSP uniquement dans les environnements les plus approuvés, Par exemple un administrateur de domaine qui se connecte à un contrôleur de domaine, car le contrôleur de domaine est hautement approuvé.
+Le protocole CredSSP mettant en cache les informations d’identification sur le serveur distant (_ServerB_), son utilisation vous expose à des risques de vol de ces informations. Si l’ordinateur distant est compromis, la personne malveillante a accès aux informations d’identification de l’utilisateur. CredSSP est désactivé par défaut sur les ordinateurs clients et serveurs. Vous devez activer CredSSP uniquement dans les environnements les plus approuvés, Par exemple un administrateur de domaine qui se connecte à un contrôleur de domaine, car le contrôleur de domaine est hautement approuvé.
 
 Pour plus d’informations sur les questions de sécurité lors de l’utilisation de CredSSP pour la communication à distance PowerShell, voir [Accidental Sabotage: Beware of CredSSP][beware].
 
@@ -65,7 +65,7 @@ Vous pouvez utiliser la délégation contrainte héritée (non basée sur les re
 
 - Ne prend pas en charge le deuxième saut pour WinRM.
 - Nécessite un accès Administrateur de domaine pour la configuration.
-- Doit être configuré sur l’objet Active Directory du serveur distant ( _ServerB_ ).
+- Doit être configuré sur l’objet Active Directory du serveur distant (_ServerB_).
 - Limité à un serveur. Ne peut pas traverser des domaines ou des forêts.
 - Requiert des droits pour mettre à jour les objets et le nom des principaux du service (SPN).
 - _ServerB_ peut acquérir un ticket Kerberos pour _ServerC_ au nom de l’utilisateur sans intervention de l’utilisateur.
@@ -95,7 +95,7 @@ La délégation Kerberos contrainte basée sur les ressources (introduite dans W
 
 ### <a name="example"></a>Exemple
 
-Examinons un exemple PowerShell qui configure la délégation contrainte basée sur les ressources sur _ServerC_ de façon à autoriser les informations d’identification déléguées à partir d’un _ServerB_ . Cet exemple suppose que tous les serveurs exécutent Windows Server 2012 ou une version ultérieure, et qu’il existe au moins un contrôleur de domaine Windows Server 2012 sur chacun des domaines auquel appartient chaque serveur.
+Examinons un exemple PowerShell qui configure la délégation contrainte basée sur les ressources sur _ServerC_ de façon à autoriser les informations d’identification déléguées à partir d’un _ServerB_. Cet exemple suppose que tous les serveurs exécutent Windows Server 2012 ou une version ultérieure, et qu’il existe au moins un contrôleur de domaine Windows Server 2012 sur chacun des domaines auquel appartient chaque serveur.
 
 Pour pouvoir configurer la délégation contrainte, vous devez ajouter la fonctionnalité `RSAT-AD-PowerShell` afin d’installer le module Active Directory PowerShell, puis importer ce module dans votre session :
 
@@ -105,7 +105,7 @@ Import-Module ActiveDirectory
 Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 ```
 
-Plusieurs applets de commande disponibles ont désormais un paramètre  **PrincipalsAllowedToDelegateToAccount** :
+Plusieurs applets de commande disponibles ont désormais un paramètre **PrincipalsAllowedToDelegateToAccount** :
 
 ```Output
 CommandType Name                 ModuleName
@@ -118,7 +118,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-Le paramètre **PrincipalsAllowedToDelegateToAccount** définit l’attribut d’objet Active Directory **msDS-AllowedToActOnBehalfOfOtherIdentity** contenant une liste de contrôle d’accès (ACL) qui spécifie quels comptes ont l’autorisation de déléguer les informations d’identification au compte associé (dans notre exemple, il s’agira du compte d’ordinateur de _ServerA_ ).
+Le paramètre **PrincipalsAllowedToDelegateToAccount** définit l’attribut d’objet Active Directory **msDS-AllowedToActOnBehalfOfOtherIdentity** contenant une liste de contrôle d’accès (ACL) qui spécifie quels comptes ont l’autorisation de déléguer les informations d’identification au compte associé (dans notre exemple, il s’agira du compte d’ordinateur de _ServerA_).
 
 Nous allons maintenant définir les variables que nous utiliserons pour représenter les serveurs :
 
@@ -141,7 +141,7 @@ StartName
 NT AUTHORITY\NetworkService
 ```
 
-Pour que _ServerC_ autorise la délégation à partir d’une session de communication à distance PowerShell sur _ServerB_ , nous devons définir le paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_ sur l’objet d’ordinateur de _ServerB_ :
+Pour que _ServerC_ autorise la délégation à partir d’une session de communication à distance PowerShell sur _ServerB_, nous devons définir le paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_ sur l’objet d’ordinateur de _ServerB_ :
 
 ```powershell
 # Grant resource-based Kerberos constrained delegation
@@ -155,7 +155,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Le [Centre de distribution de clés (KDC)](/windows/win32/secauthn/key-distribution-center) Kerberos met en cache les tentatives d’accès refusées (cache négatif) pendant 15 minutes. Si _ServerB_ a précédemment essayé d’accéder à _ServerC_ , vous devez effacer le cache sur _ServerB_ en appelant la commande suivante :
+Le [Centre de distribution de clés (KDC)](/windows/win32/secauthn/key-distribution-center) Kerberos met en cache les tentatives d’accès refusées (cache négatif) pendant 15 minutes. Si _ServerB_ a précédemment essayé d’accéder à _ServerC_, vous devez effacer le cache sur _ServerB_ en appelant la commande suivante :
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -179,10 +179,10 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-Dans cet exemple, la variable `$using` est utilisée pour rendre la variable `$ServerC` visible pour _ServerB_ .
+Dans cet exemple, la variable `$using` est utilisée pour rendre la variable `$ServerC` visible pour _ServerB_.
 Pour plus d’informations sur la variable `$using`, consultez [about_Remote_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables).
 
-Pour permettre à plusieurs serveurs de déléguer les informations d’identification à _ServerC_ , donnez comme valeur un tableau au paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_  :
+Pour permettre à plusieurs serveurs de déléguer les informations d’identification à _ServerC_, donnez comme valeur un tableau au paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_ :
 
 ```powershell
 # Set up variables for each server
@@ -205,7 +205,7 @@ $ServerC = Get-ADComputer -Identity ServerC
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $ServerB
 ```
 
-Pour supprimer la possibilité de déléguer les informations d’identification à ServerC, donnez comme valeur `$null` au paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_  :
+Pour supprimer la possibilité de déléguer les informations d’identification à ServerC, donnez comme valeur `$null` au paramètre **PrincipalsAllowedToDelegateToAccount** sur _ServerC_ :
 
 ```powershell
 Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
@@ -241,11 +241,11 @@ Pour plus d’informations sur JEA, consultez [Juste assez d’administration](/
 **Inconvénients**
 
 - Nécessite WMF 5.0 ou une version ultérieure.
-- Requiert la configuration de chaque serveur intermédiaire ( _ServerB_ ).
+- Requiert la configuration de chaque serveur intermédiaire (_ServerB_).
 
 ## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration avec la commande RunAs
 
-Vous pouvez créer une configuration de session sur _ServerB_ et définir son paramètre **RunAsCredential** .
+Vous pouvez créer une configuration de session sur _ServerB_ et définir son paramètre **RunAsCredential**.
 
 Pour plus d’informations sur l’utilisation de **PSSessionConfiguration** et de **RunAs** afin de résoudre le problème du deuxième saut, consultez [Autre solution de communication à distance PowerShell sur plusieurs sauts][pssessionconfig].
 
@@ -255,7 +255,7 @@ Pour plus d’informations sur l’utilisation de **PSSessionConfiguration** et 
 
 **Inconvénients**
 
-- Nécessite la configuration de **PSSessionConfiguration** et de **RunAs** sur chaque serveur intermédiaire ( _ServerB_ ).
+- Nécessite la configuration de **PSSessionConfiguration** et de **RunAs** sur chaque serveur intermédiaire (_ServerB_).
 - Nécessite la maintenance des mots de passe lorsqu’un compte de domaine **RunAs** est utilisé
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Transmettre des informations d’identification à l’intérieur d’un bloc de script Invoke-Command
@@ -274,7 +274,7 @@ Vous pouvez transmettre des informations d’identification à l’intérieur du
 
 ### <a name="example"></a>Exemple
 
-L’exemple suivant montre comment transmettre des informations d’identification dans un bloc de script **Invoke-Command**  :
+L’exemple suivant montre comment transmettre des informations d’identification dans un bloc de script **Invoke-Command** :
 
 ```powershell
 # This works without delegation, passing fresh creds

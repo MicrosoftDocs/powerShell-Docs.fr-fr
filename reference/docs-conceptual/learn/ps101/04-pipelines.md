@@ -2,15 +2,14 @@
 title: Éléments à une ligne et pipeline
 description: Un one-liner PowerShell est un pipeline continu, contenant plusieurs commandes, qui permet d’accomplir une tâche unique.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: b8fd45e5e5dc408754ebac015757ef4241428978
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
-ms.translationtype: HT
+ms.openlocfilehash: 1483ec6b76d17c3dd081356ecff85a929fc43e2c
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633343"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99598549"
 ---
 # <a name="chapter-4---one-liners-and-the-pipeline"></a>Chapitre 4 : One-liners et pipeline
 
@@ -23,7 +22,7 @@ Comme dans les chapitres précédents, assurez-vous de suivre ce chapitre sur vo
 
 ## <a name="one-liners"></a>One-liners
 
-Un one-liner PowerShell est un pipeline continu, mais pas obligatoirement une commande sur une seule ligne physique. Les commandes sur une seule ligne physique ne sont pas toutes des one-liners.
+Un pipeline One-doublure PowerShell est un pipeline continu et pas nécessairement une commande qui se trouve sur une seule ligne physique. Les commandes sur une seule ligne physique ne sont pas toutes des one-liners.
 
 Par exemple, bien que la commande ci-dessous soit sur plusieurs lignes physiques, c’est un one-liner PowerShell, car il s’agit d’un pipeline continu. J’aurais pu l’écrire sur une seule ligne physique, mais j’ai choisi d’insérer un saut de ligne après le symbole de barre verticale. Le symbole de barre verticale est l’un des caractères où un saut de ligne naturel est autorisé dans PowerShell.
 

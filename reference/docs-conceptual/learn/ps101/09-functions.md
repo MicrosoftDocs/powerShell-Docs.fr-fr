@@ -2,15 +2,14 @@
 title: Fonctions
 description: Les fonctions PowerShell vous permettent de créer des outils réutilisables dans des scripts.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
-ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
-ms.translationtype: HT
+ms.openlocfilehash: e4734b556a78f67c54152dad93eada536dd1c928
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94589126"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99598337"
 ---
 # <a name="chapter-9---functions"></a>Chapitre 9 : Fonctions
 
@@ -285,6 +284,8 @@ Machine                     0
 ```
 
 Je vous recommande aussi d’utiliser la même casse dans vos noms de paramètres que les applets de commande par défaut. Par exemple, utilisez `ComputerName`, pas `computername`. Ainsi, vos fonctions auront l’apparence des applets de commande par défaut. Les personnes qui sont déjà familiarisées avec PowerShell ne seront pas dépaysées.
+
+L' `param` instruction vous permet de définir un ou plusieurs paramètres. Les définitions des paramètres sont séparées par une virgule ( `,` ). Pour plus d’informations, consultez [about_Functions_Advanced_Parameters][].
 
 ## <a name="advanced-functions"></a>Fonctions avancées
 

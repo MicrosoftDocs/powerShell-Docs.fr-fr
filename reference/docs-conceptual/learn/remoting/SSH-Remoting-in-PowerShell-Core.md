@@ -3,10 +3,10 @@ title: Accès distant à PowerShell via SSH
 ms.date: 10/19/2020
 description: Explique comment configurer le protocole SSH pour l’accès distant à PowerShell.
 ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501335"
 ---
 # <a name="powershell-remoting-over-ssh"></a>Accès distant à PowerShell via SSH
@@ -25,17 +25,17 @@ Les cmdlets `New-PSSession``Enter-PSSession` et `Invoke-Command` ont maintenant 
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Pour créer une session distante, vous devez spécifier l’ordinateur cible avec le paramètre **HostName** , et indiquer le nom d’utilisateur avec **UserName** . Lors de l’exécution des cmdlets de manière interactive, vous êtes invité à entrer un mot de passe. Vous pouvez également utiliser l’authentification par clé SSH à l’aide d’un fichier de clé privée avec le paramètre **KeyFilePath** . La création de clés pour l’authentification SSH varie selon la plateforme.
+Pour créer une session distante, vous devez spécifier l’ordinateur cible avec le paramètre **HostName**, et indiquer le nom d’utilisateur avec **UserName**. Lors de l’exécution des cmdlets de manière interactive, vous êtes invité à entrer un mot de passe. Vous pouvez également utiliser l’authentification par clé SSH à l’aide d’un fichier de clé privée avec le paramètre **KeyFilePath**. La création de clés pour l’authentification SSH varie selon la plateforme.
 
 ## <a name="general-setup-information"></a>Informations générales sur l’installation
 
-PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous les ordinateurs. Installez le client SSH (`ssh.exe`) et le serveur (`sshd.exe`) pour pouvoir communiquer à distance vers et à partir des ordinateurs. OpenSSH pour Windows est désormais disponible dans Windows 10 build 1809 et Windows Server 2019. Pour plus d’informations, consultez [Gérer Windows avec OpenSSH](/windows-server/administration/openssh/openssh_overview). Pour Linux, installez la version de SSH (avec le serveur sshd) qui correspond à votre plateforme. Vous devez aussi installer PowerShell à partir de GitHub pour obtenir la fonctionnalité de communication à distance SSH. Le serveur SSH doit être configuré pour créer un sous-système SSH destiné à héberger un processus PowerShell sur l’ordinateur distant. Par ailleurs, vous devez activer l’authentification par **mot de passe** ou **clé** .
+PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous les ordinateurs. Installez le client SSH (`ssh.exe`) et le serveur (`sshd.exe`) pour pouvoir communiquer à distance vers et à partir des ordinateurs. OpenSSH pour Windows est désormais disponible dans Windows 10 build 1809 et Windows Server 2019. Pour plus d’informations, consultez [Gérer Windows avec OpenSSH](/windows-server/administration/openssh/openssh_overview). Pour Linux, installez la version de SSH (avec le serveur sshd) qui correspond à votre plateforme. Vous devez aussi installer PowerShell à partir de GitHub pour obtenir la fonctionnalité de communication à distance SSH. Le serveur SSH doit être configuré pour créer un sous-système SSH destiné à héberger un processus PowerShell sur l’ordinateur distant. Par ailleurs, vous devez activer l’authentification par **mot de passe** ou **clé**.
 
 ## <a name="set-up-on-a-windows-computer"></a>Installation sur un ordinateur Windows
 
 1. Installez la version la plus récente de PowerShell. Pour plus d’informations, consultez [Installation de PowerShell Core sur Windows](../../install/installing-powershell-core-on-windows.md#msi).
 
-   Vous pouvez vérifier que PowerShell prend bien en charge la communication à distance SSH en listant les jeux de paramètres `New-PSSession`. Vous noterez la présence de noms de jeux de paramètres commençant par **SSH** . Ces jeux de paramètres comportent des paramètres **SSH** .
+   Vous pouvez vérifier que PowerShell prend bien en charge la communication à distance SSH en listant les jeux de paramètres `New-PSSession`. Vous noterez la présence de noms de jeux de paramètres commençant par **SSH**. Ces jeux de paramètres comportent des paramètres **SSH**.
 
    ```powershell
    (Get-Command New-PSSession).ParameterSets.Name
@@ -93,7 +93,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
 
    Pour plus d’informations, consultez [Gestion des clés OpenSSH](/windows-server/administration/openssh/openssh_keymanagement).
 
-1. Redémarrez le service **sshd** .
+1. Redémarrez le service **sshd**.
 
    ```powershell
    Restart-Service sshd
@@ -142,7 +142,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    PubkeyAuthentication yes
    ```
 
-1. Redémarrez le service **ssh** .
+1. Redémarrez le service **ssh**.
 
    ```bash
    sudo service ssh restart
@@ -161,7 +161,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
 
 1. Modifiez le fichier `sshd_config` à l’emplacement `/private/etc/ssh/sshd_config`.
 
-   Utilisez un éditeur de texte tel que **nano**  :
+   Utilisez un éditeur de texte tel que **nano** :
 
    ```bash
    sudo nano /private/etc/ssh/sshd_config
@@ -188,7 +188,7 @@ PowerShell 6 ou version ultérieure et SSH doivent être installés sur tous le
    PubkeyAuthentication yes
    ```
 
-1. Redémarrez le service **sshd** .
+1. Redémarrez le service **sshd**.
 
    ```bash
    sudo launchctl stop com.openssh.sshd

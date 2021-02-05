@@ -2,15 +2,14 @@
 title: Découverte des objets, propriétés et méthodes
 description: Vous n’avez pas besoin d’être développeur pour comprendre et utiliser les objets, les propriétés et les méthodes.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 5ab972755afeba0d94bf6c2debaf84ec84cd9244
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: f226221da7dd3b663f54cf23439dd7f945ed3a2a
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438070"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99595704"
 ---
 # <a name="chapter-3---discovering-objects-properties-and-methods"></a>Chapitre 3 - Découverte des objets, propriétés et méthodes
 
@@ -171,7 +170,7 @@ CanShutdown         : True
 CanStop             : True
 ```
 
-Dans l’exemple précédent, `Can*` a été utilisé comme l’une des valeurs du paramètre **Property** pour retourner toutes les propriétés qui commencent par `Can`. Il s’agissait notamment de **CanPauseAndContinue**, **CanShutdown**et **CanStop**.
+Dans l’exemple précédent, `Can*` a été utilisé comme l’une des valeurs du paramètre **Property** pour retourner toutes les propriétés qui commencent par `Can`. Il s’agissait notamment de **CanPauseAndContinue**, **CanShutdown** et **CanStop**.
 
 ### <a name="methods"></a>Méthodes
 
@@ -698,7 +697,7 @@ Dans ce chapitre, vous avez vu comment déterminer le type d’objet produit par
 - [about_Objects][]
 - [about_Properties][]
 - [about_Methods][]
-- [Vous n’avez pas d’applet de commande PowerShell pour démarrer ou arrêter quelque chose ? N’oubliez pas les méthodes des applets de commande Get][use-methods]
+- [Aucune applet de commande PowerShell pour démarrer ou arrêter un événement ? N’oubliez pas de vérifier les méthodes sur les applets de commande obtenir][use-methods]
 
 <!-- link references -->
 [RSAT pour Windows]: https://support.microsoft.com/help/2693643

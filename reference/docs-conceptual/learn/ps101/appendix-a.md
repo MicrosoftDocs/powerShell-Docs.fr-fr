@@ -2,15 +2,14 @@
 title: Annexe A - Syntaxe de l’aide
 description: Cet article explique comment lire et comprendre la syntaxe d’une applet de commande telle que présentée par Get-Help.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8e28f66c02370b098f63a0396ef8a724cf3a1bd
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
-ms.translationtype: HT
+ms.openlocfilehash: b8fe218f2a9af1ad1ee6b88740414ecede0194bd
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437980"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99596715"
 ---
 # <a name="appendix-a---help-syntax"></a>Annexe A - Syntaxe de l’aide
 

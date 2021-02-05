@@ -4,10 +4,10 @@ keywords: jea,powershell,security
 title: Capacités de rôle JEA
 description: Une capacité de rôle est un fichier de données PowerShell avec l’extension .psrc qui liste toutes les applets de commande, toutes les fonctions, tous les fournisseurs et tous les programmes externes qui sont disponibles pour les utilisateurs qui se connectent.
 ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92499992"
 ---
 # <a name="jea-role-capabilities"></a>Capacités de rôle JEA
@@ -76,7 +76,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 > Vous ne devez pas les lister explicitement dans le champ Paramètres.
 
 Le tableau ci-dessous décrit les différentes façons de personnaliser une fonction ou une applet de commande visible.
-Vous pouvez associer les méthodes suivantes comme vous le souhaitez dans le champ **VisibleCmdlets** .
+Vous pouvez associer les méthodes suivantes comme vous le souhaitez dans le champ **VisibleCmdlets**.
 
 |                                           Exemple                                           |                                                             Cas d’utilisation                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,13 +93,13 @@ Vous pouvez associer les méthodes suivantes comme vous le souhaitez dans le cha
 
 Vous ne pouvez pas appliquer à la fois un **ValidatePattern** et un **ValidateSet** à la même applet de commande ou la même fonction.
 
-Si vous le faites, le **ValidatePattern** l’emporte sur le **ValidateSet** .
+Si vous le faites, le **ValidatePattern** l’emporte sur le **ValidateSet**.
 
-Pour plus d’informations sur **ValidatePattern** , consultez [ce billet *Hey, Scripting Guy!* ](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) et le contenu de référence de [Expressions régulières PowerShell](/powershell/module/microsoft.powershell.core/about/about_regular_expressions).
+Pour plus d’informations sur **ValidatePattern**, consultez [ce billet *Hey, Scripting Guy!*](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/) et le contenu de référence de [Expressions régulières PowerShell](/powershell/module/microsoft.powershell.core/about/about_regular_expressions).
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Autoriser des commandes externes et des scripts PowerShell
 
-Pour permettre aux utilisateurs de lancer des exécutables et des scripts PowerShell (.ps1) dans une session JEA, vous devez ajouter le chemin complet de chaque programme dans le champ **VisibleExternalCommands** .
+Pour permettre aux utilisateurs de lancer des exécutables et des scripts PowerShell (.ps1) dans une session JEA, vous devez ajouter le chemin complet de chaque programme dans le champ **VisibleExternalCommands**.
 
 ```powershell
 VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
@@ -154,9 +154,9 @@ Les fonctions définies dans les fichiers de capacités de rôle sont toujours s
 
 Par défaut, `Select-Object` est une applet de commande contrainte dans toutes les sessions JEA, qui ne vous permet pas la sélection de propriétés arbitraires sur des objets. Pour utiliser `Select-Object` sans contraintes dans les fonctions, vous devez demander explicitement l’implémentation complète en spécifiant le nom du module complet. Une applet de commande contrainte dans une session JEA a les mêmes contraintes que quand elle est appelée à partir d’une fonction. Pour plus d’informations, consultez [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence).
 
-Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus pratique de les placer dans un module de script PowerShell. Vous rendez ces fonctions visibles dans la session JEA en utilisant le champ **VisibleFunctions** , comme avec des modules intégrés et de tiers.
+Si vous écrivez de nombreuses fonctions personnalisées, il peut être plus pratique de les placer dans un module de script PowerShell. Vous rendez ces fonctions visibles dans la session JEA en utilisant le champ **VisibleFunctions**, comme avec des modules intégrés et de tiers.
 
-Pour que la complétion avec la touche TAB fonctionne correctement dans les sessions JEA, vous devez inclure la fonction intégrée `tabexpansion2` dans la liste **VisibleFunctions** .
+Pour que la complétion avec la touche TAB fonctionne correctement dans les sessions JEA, vous devez inclure la fonction intégrée `tabexpansion2` dans la liste **VisibleFunctions**.
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Rendre les fonctionnalités de rôle disponibles pour une configuration
 

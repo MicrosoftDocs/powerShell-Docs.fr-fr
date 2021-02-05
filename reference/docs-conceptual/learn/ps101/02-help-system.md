@@ -2,15 +2,14 @@
 title: Système d’aide
 description: La maîtrise du système d’aide est la clé d’une utilisation optimale de PowerShell.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
-ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
-ms.translationtype: HT
+ms.openlocfilehash: cfb12f57b7bb6c514f4e19a93dfe9c77245bd977
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143312"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99596096"
 ---
 # <a name="chapter-2---the-help-system"></a>Chapitre 2 – Le système d’aide
 
@@ -194,7 +193,7 @@ Get-Help -Name Get-Command -Parameter Noun
 Get-Help -Name Get-Command -ShowWindow
 ```
 
-En général, j’utilise `help <command name>` avec le paramètre **Full** ou **Online**. Si je suis intéressé uniquement par les exemples, j’utilise le paramètre **Examples**  ; si je suis intéressé uniquement par un paramètre spécifique, j’utilise le paramètre **Parameter**. Le paramètre **ShowWindow** ouvre la rubrique d’aide dans une fenêtre de recherche distincte qui peut être affichée sur un autre écran, le cas échéant. J’ai évité le paramètre **ShowWindow** , car un bogue connu l’empêche d’afficher l’intégralité de la rubrique d’aide.
+En général, j’utilise `help <command name>` avec le paramètre **Full** ou **Online**. Si je suis intéressé uniquement par les exemples, j’utilise le paramètre **Examples** ; si je suis intéressé uniquement par un paramètre spécifique, j’utilise le paramètre **Parameter**. Le paramètre **ShowWindow** ouvre la rubrique d’aide dans une fenêtre de recherche distincte qui peut être affichée sur un autre écran, le cas échéant. J’ai évité le paramètre **ShowWindow**, car un bogue connu l’empêche d’afficher l’intégralité de la rubrique d’aide.
 
 Si vous souhaitez afficher l’aide dans une fenêtre distincte, il est préférable d’utiliser le paramètre **Online** ou **Full** et de canaliser les résultats vers `Out-GridView`, comme dans l’exemple suivant.
 
@@ -434,7 +433,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 Notez que dans l’exemple précédent où `Get-Command` est exécuté, le paramètre **Noun** est utilisé et `Process` est spécifié comme valeur du paramètre **Noun**. Et si vous n’aviez pas su utiliser l’applet de commande `Get-Command` ? Vous auriez pu utiliser `Get-Help` pour afficher la rubrique d’aide pour `Get-Command`.
 
-Les paramètres **Name** , **Noun** et **Verb** acceptent les caractères génériques. Dans l’exemple suivant, des caractères génériques sont utilisés avec le paramètre **Name**  :
+Les paramètres **Name**, **Noun** et **Verb** acceptent les caractères génériques. Dans l’exemple suivant, des caractères génériques sont utilisés avec le paramètre **Name** :
 
 ```Output
 Get-Command -Name *service*
@@ -463,7 +462,7 @@ Application     TieringEngineService.exe                           10.0.14... C:
 
 Je ne suis pas très favorable à l’utilisation de caractères génériques avec le paramètre **Name** de `Get-Command`, car celui-ci retourne aussi les fichiers exécutables qui ne sont pas des commandes PowerShell natives.
 
-Si vous envisagez d’utiliser des caractères génériques avec le paramètre **Name** , je vous recommande de limiter les résultats avec le paramètre **CommandType**.
+Si vous envisagez d’utiliser des caractères génériques avec le paramètre **Name**, je vous recommande de limiter les résultats avec le paramètre **CommandType**.
 
 ```powershell
 Get-Command -Name *service* -CommandType Cmdlet, Function, Alias
@@ -485,10 +484,8 @@ Update-Help
 
 ```Output
 Update-Help : Failed to update Help for the module(s) 'BitsTransfer' with UI culture(s)
-{en-US} : The value of the HelpInfoUri key in the module manifest must resolve to a
-container or root URL on a website where the help files are stored. The HelpInfoUri
-'https://technet.microsoft.com/en-us/library/dd819413.aspx' does not resolve to a
-container.
+{en-US} : Unable to retrieve the HelpInfo XML file for UI culture en-US. Make sure the HelpInfoUri
+property in the module manifest is valid or check your network connection and then try the command again.
 At line:1 char:1
 + Update-Help
 +
