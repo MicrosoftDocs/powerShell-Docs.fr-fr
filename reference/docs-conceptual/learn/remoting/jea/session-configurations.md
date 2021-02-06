@@ -4,10 +4,10 @@ keywords: jea,powershell,security
 title: Configuration de session JEA
 description: Les configurations de session définissent qui peut utiliser le point de terminaison JEA et à quels rôles il a accès.
 ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501556"
 ---
 # <a name="jea-session-configurations"></a>Configuration de session JEA
@@ -57,7 +57,7 @@ Vous définissez quelle identité JEA utilise dans le fichier de configuration d
 #### <a name="local-virtual-account"></a>Compte virtuel local
 
 Les comptes virtuels locaux sont pratiques quand tous les rôles définis pour le point de terminaison JEA sont utilisés pour gérer la machine locale et qu’un compte d’administrateur local est suffisant pour exécuter les commandes avec succès.
-Les comptes virtuels sont des comptes temporaires propres à un utilisateur spécifique, qui ne durent que le temps de sa session PowerShell. Sur une station de travail ou un serveur membre, les comptes virtuels appartiennent au groupe **Administrateurs** de l’ordinateur local. Sur un contrôleur de domaine Active Directory, les comptes virtuels appartiennent au groupe **Administrateurs du domaine** .
+Les comptes virtuels sont des comptes temporaires propres à un utilisateur spécifique, qui ne durent que le temps de sa session PowerShell. Sur une station de travail ou un serveur membre, les comptes virtuels appartiennent au groupe **Administrateurs** de l’ordinateur local. Sur un contrôleur de domaine Active Directory, les comptes virtuels appartiennent au groupe **Administrateurs du domaine**.
 
 ```powershell
 # Setting the session to use a virtual account
@@ -108,7 +108,7 @@ Pour configurer la transcription automatique dans le fichier de configuration de
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-Les transcriptions sont écrites dans le dossier par le compte **Système local** , qui nécessite un accès en lecture et en écriture au répertoire. Les utilisateurs standard ne doivent pas avoir accès au dossier. Limitez le nombre d’administrateurs de sécurité qui ont un accès permettant d’auditer les transcriptions.
+Les transcriptions sont écrites dans le dossier par le compte **Système local**, qui nécessite un accès en lecture et en écriture au répertoire. Les utilisateurs standard ne doivent pas avoir accès au dossier. Limitez le nombre d’administrateurs de sécurité qui ont un accès permettant d’auditer les transcriptions.
 
 ### <a name="user-drive"></a>Lecteur utilisateur
 
@@ -118,7 +118,7 @@ Si vos utilisateurs connectés ont besoin de copier des fichiers vers ou depuis 
 MountUserDrive = $true
 ```
 
-Par défaut, le lecteur utilisateur vous permet de stocker 50 Mo de données maximum par utilisateur. Vous pouvez limiter la quantité de données qu’un utilisateur peut consommer avec le champ *UserDriveMaximumSize* .
+Par défaut, le lecteur utilisateur vous permet de stocker 50 Mo de données maximum par utilisateur. Vous pouvez limiter la quantité de données qu’un utilisateur peut consommer avec le champ *UserDriveMaximumSize*.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -135,7 +135,7 @@ Pour plus d’informations sur PSDrives, consultez [Gestion des disques PowerShe
 
 ### <a name="role-definitions"></a>Définitions de rôles
 
-Les définitions de rôles d’un fichier de configuration de session définissent le mappage des **utilisateurs** aux **rôles** . Chaque utilisateur ou groupe de ce champ reçoit l’autorisation d’accès au point de terminaison JEA lors de son inscription.
+Les définitions de rôles d’un fichier de configuration de session définissent le mappage des **utilisateurs** aux **rôles**. Chaque utilisateur ou groupe de ce champ reçoit l’autorisation d’accès au point de terminaison JEA lors de son inscription.
 Chaque utilisateur ou groupe ne peut être inclus qu’une seule fois en tant que clé de la table de hachage, mais plusieurs rôles peuvent lui être affectés. Le nom de la capacité du rôle doit être le même que celui du fichier des capacités des rôles, sans l’extension `.psrc`.
 
 ```powershell

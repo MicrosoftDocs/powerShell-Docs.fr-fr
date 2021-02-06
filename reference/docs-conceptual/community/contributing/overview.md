@@ -1,20 +1,20 @@
 ---
 title: Contribution à la documentation de PowerShell
 description: Cet article décrit les étapes requises pour contribuer à la documentation PowerShell.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
-ms.translationtype: HT
+ms.openlocfilehash: 9fbdafa023eac80340437f30d2d6925a1a4ed3cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93354401"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99596095"
 ---
 # <a name="contributing-to-powershell-documentation"></a>Contribution à la documentation de PowerShell
 
 Nous vous remercions de contribuer à la documentation de PowerShell !
 
-Le Guide du contributeur est un ensemble d’articles qui expliquent les outils et les processus que nous utilisons pour créer la documentation de Microsoft. Certains de ces guides comportent des informations communes à tous les ensembles de documentation publiés sur [docs.microsoft.com][docs]. D’autres sont propres à la rédaction de la documentation de PowerShell.
+Le Guide du contributeur est un ensemble d’articles décrivant les outils et les processus que nous utilisons pour créer une documentation chez Microsoft. Certains de ces guides comportent des informations communes à tous les ensembles de documentation publiés sur [docs.microsoft.com][docs]. D’autres sont propres à la rédaction de la documentation de PowerShell.
 
 Les articles communs sont disponibles dans notre [Guide du contributeur][contribute] centralisé. Les guides propres à PowerShell sont disponibles ici.
 
@@ -24,11 +24,12 @@ Il existe deux manières d’apporter sa contribution. Les deux nous sont utiles
 
 - Les [problèmes][file-an-issue] nous aident à identifier les points problématiques et les lacunes de notre documentation. Certains sont difficiles à résoudre et demandent davantage d’investigation et de recherches. Le processus nous permet d’échanger au sujet du problème et d’y apporter une solution satisfaisante.
 
-- Envoyer de nouveaux contenus ou des modifications d’articles existants dans la documentation représente un processus plus complexe. Ci-dessous sont détaillés les outils, les processus et les normes à suivre.
+- L' [envoi d’une requête de tirage](pull-requests.md) pour ajouter ou modifier du contenu est un processus plus complexe.
+  Ci-dessous sont détaillés les outils, les processus et les normes à suivre.
 
 ## <a name="prepare-to-make-a-contribution"></a>Préparation de la contribution
 
-Vous devez avoir un compte GitHub. Référez-vous à la liste de contrôle ci-dessous pour connaître les outils et comprendre les processus que nous suivons pour effectuer des contributions.
+Vous devez avoir un compte GitHub. Utilisez la liste de vérification suivante pour installer et configurer les outils dont vous avez besoin pour effectuer des contributions.
 
 1. [Inscrivez-vous à GitHub](/contribute/get-started-setup-github).
 1. [Installez les outils Git et Markdown](/contribute/get-started-setup-tools).
@@ -66,7 +67,6 @@ Consultez les documents suivants :
 - [Bien démarrer avec la rédaction de la documentation](get-started-writing.md)
 - [Envoi d’une demande de tirage](pull-requests.md)
 - [Guide de style PowerShell-Docs](powershell-style-guide.md)
-- [Informations de référence sur la modification des cmdlets](editing-cmdlet-ref.md)
 
 Ressources supplémentaires
 

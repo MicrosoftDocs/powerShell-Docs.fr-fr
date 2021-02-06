@@ -4,10 +4,10 @@ keywords: jea,powershell,security
 title: Considérations de sécurité JEA
 description: Comme JEA les autorise à exécuter des commandes d’administration sans disposer d’un accès d’administration complet, vous pouvez supprimer ces utilisateurs de groupes de sécurité disposant de privilèges élevés.
 ms.openlocfilehash: f65f9d6c6620261de0a9c8de7812637565ca1806
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "92501573"
 ---
 # <a name="jea-security-considerations"></a>Considérations de sécurité JEA
@@ -18,7 +18,7 @@ JEA vous aide à améliorer votre sécurité en réduisant le nombre d’adminis
 
 Chaque point de terminaison JEA a un compte **d’identification** désigné. Il s’agit du compte sous lequel les actions de l’utilisateur connecté sont exécutées. Ce compte est configurable dans le [fichier de configuration de session](session-configurations.md), et le compte que vous choisissez a une incidence considérable sur la sécurité de votre point de terminaison.
 
-Les **comptes virtuels** sont la méthode recommandée pour la configuration du compte **d’identification** . Les comptes virtuels sont des comptes locaux à usage unique temporaires, qui sont créés pour l’utilisateur qui se connecte à utiliser pendant la durée de sa session JEA. Dès que la session est terminée, le compte virtuel est détruit et ne peut plus être utilisé. L’utilisateur connecté ne connaît pas les informations d’identification pour le compte virtuel. Le compte virtuel ne peut pas être utilisé pour accéder au système par d’autres moyens, comme Bureau à distance ou un point de terminaison PowerShell sans contrainte.
+Les **comptes virtuels** sont la méthode recommandée pour la configuration du compte **d’identification**. Les comptes virtuels sont des comptes locaux à usage unique temporaires, qui sont créés pour l’utilisateur qui se connecte à utiliser pendant la durée de sa session JEA. Dès que la session est terminée, le compte virtuel est détruit et ne peut plus être utilisé. L’utilisateur connecté ne connaît pas les informations d’identification pour le compte virtuel. Le compte virtuel ne peut pas être utilisé pour accéder au système par d’autres moyens, comme Bureau à distance ou un point de terminaison PowerShell sans contrainte.
 
 Par défaut, les comptes virtuels appartiennent au groupe **Administrateurs** local sur la machine. Ainsi, ils disposent des droits complets pour gérer n’importe quel élément sur le système, mais pas de droits pour gérer les ressources sur le réseau.
 Lors de l’authentification auprès d’autres machines, le contexte de l’utilisateur est celui du compte d’ordinateur local, et non pas celui du compte virtuel.
@@ -32,10 +32,10 @@ Le tableau suivant récapitule les options de configuration possibles et les aut
 
 |        Type d’ordinateur         | Configuration du groupe du compte virtuel |                   Contexte de l’utilisateur local                    | Contexte de l’utilisateur réseau |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Contrôleur de domaine            | Default                             | Utilisateur de domaine, membre de « *DOMAIN* \Domain Admins »         | Compte d'ordinateur     |
-| Contrôleur de domaine            | Groupes de domaine A et B               | Utilisateur de domaine, membre de « *DOMAIN* \A », « *DOMAIN* \B »       | Compte d'ordinateur     |
-| Serveur membre ou station de travail | Default                             | Utilisateur local, membre de « *BUILTIN* \Administrators »        | Compte d'ordinateur     |
-| Serveur membre ou station de travail | Groupes locaux C et D                | Utilisateur local, le membre de« *COMPUTER* \C » et « *COMPUTER* \D » | Compte d'ordinateur     |
+| Contrôleur de domaine            | Default                             | Utilisateur de domaine, membre de « *DOMAIN*\Domain Admins »         | Compte d'ordinateur     |
+| Contrôleur de domaine            | Groupes de domaine A et B               | Utilisateur de domaine, membre de « *DOMAIN*\A », « *DOMAIN*\B »       | Compte d'ordinateur     |
+| Serveur membre ou station de travail | Default                             | Utilisateur local, membre de « *BUILTIN*\Administrators »        | Compte d'ordinateur     |
+| Serveur membre ou station de travail | Groupes locaux C et D                | Utilisateur local, le membre de« *COMPUTER*\C » et « *COMPUTER*\D » | Compte d'ordinateur     |
 
 Quand vous examinez les événements d’audit de sécurité et les journaux des événements d’applications, vous voyez que chaque session d’utilisateur JEA a un compte virtuel unique. Ce compte unique vous permet de retracer les actions de l’utilisateur dans un point de terminaison JEA jusqu’à l’utilisateur d’origine qui a exécuté la commande. Les noms de compte virtuel sont au format `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>`. Par exemple, si l’utilisateur **Alice** dans le domaine **Contoso** redémarre un service dans un point de terminaison JEA, le nom d’utilisateur associé à des événements du Gestionnaire de contrôle des services est `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.
 
@@ -43,7 +43,7 @@ Les **comptes de service gérés de groupe (GMSA)** sont pratiques quand un serv
 
 Quand un point de terminaison JEA est configuré pour utiliser un compte GMSA, les actions de tous les utilisateurs JEA paraissent provenir du même compte GMSA. La seule manière de retracer des actions jusqu’à un utilisateur spécifique est d’identifier le jeu de commandes exécuté dans une transcription de session PowerShell.
 
-Des **informations d’identification directes** sont utilisées quand vous ne spécifiez pas de compte **d’identification** . PowerShell utilise les informations d’identification de l’utilisateur connecté pour exécuter des commandes sur le serveur distant. Ceci vous oblige à accorder à l’utilisateur connecté un accès direct à des groupes d’administration privilégiés. Cette configuration n’est **pas** recommandée pour JEA. Si l’utilisateur connecté a déjà des privilèges d’administrateur, il peut éviter JEA et gérer le système par d’autres moyens sans contraintes. Pour plus d’informations, consultez la section ci-dessous sur la façon dont [JEA ne protège pas contre les administrateurs](#jea-doesnt-protect-against-admins).
+Des **informations d’identification directes** sont utilisées quand vous ne spécifiez pas de compte **d’identification**. PowerShell utilise les informations d’identification de l’utilisateur connecté pour exécuter des commandes sur le serveur distant. Ceci vous oblige à accorder à l’utilisateur connecté un accès direct à des groupes d’administration privilégiés. Cette configuration n’est **pas** recommandée pour JEA. Si l’utilisateur connecté a déjà des privilèges d’administrateur, il peut éviter JEA et gérer le système par d’autres moyens sans contraintes. Pour plus d’informations, consultez la section ci-dessous sur la façon dont [JEA ne protège pas contre les administrateurs](#jea-doesnt-protect-against-admins).
 
 Les **comptes d’identification standard** vous permettent de spécifier un compte d’utilisateur sous lequel l’ensemble de la session PowerShell s’exécute. Les configurations de session utilisant des comptes **d’identification** (avec le paramètre `-RunAsCredential`) n’ont pas connaissance de JEA. Les définitions de rôles ne fonctionnent plus comme attendu. Chaque utilisateur autorisé à accéder au point de terminaison reçoit le même rôle.
 
@@ -91,7 +91,7 @@ Par exemple, examinez l’entrée de fonctionnalités de rôle suivante :
 }
 ```
 
-Cette capacité de rôle permet aux utilisateurs d’exécuter toutes les applets de commande PowerShell avec le nom **Process** à partir du module **Microsoft.PowerShell.Management** . Les utilisateurs peuvent avoir besoin d’accéder à des applets de commande comme `Get-Process` pour voir quelles applications s’exécutent sur le système, et `Stop-Process` pour mettre fin aux applications qui ne répondent pas. Toutefois, cette entrée autorise également `Start-Process`, qui peut être utilisé pour lancer un programme arbitraire avec des autorisations d’administrateur complètes. Le programme n’a pas besoin d’être installé localement sur le système. Un utilisateur connecté peut démarrer un programme à partir d’un partage de fichiers, qui donne à l’utilisateur des privilèges d’administrateur local, exécute des programmes malveillants, etc.
+Cette capacité de rôle permet aux utilisateurs d’exécuter toutes les applets de commande PowerShell avec le nom **Process** à partir du module **Microsoft.PowerShell.Management**. Les utilisateurs peuvent avoir besoin d’accéder à des applets de commande comme `Get-Process` pour voir quelles applications s’exécutent sur le système, et `Stop-Process` pour mettre fin aux applications qui ne répondent pas. Toutefois, cette entrée autorise également `Start-Process`, qui peut être utilisé pour lancer un programme arbitraire avec des autorisations d’administrateur complètes. Le programme n’a pas besoin d’être installé localement sur le système. Un utilisateur connecté peut démarrer un programme à partir d’un partage de fichiers, qui donne à l’utilisateur des privilèges d’administrateur local, exécute des programmes malveillants, etc.
 
 Une version plus sécurisée de cette même fonctionnalité de rôle ressemblerait à la version suivante :
 
@@ -105,6 +105,6 @@ Une version plus sécurisée de cette même fonctionnalité de rôle ressemblera
 
 ## <a name="jea-doesnt-protect-against-admins"></a>JEA ne protège pas contre les administrateurs
 
-Un des principes fondamentaux de JEA est de permettre à des utilisateurs non administrateurs d’effectuer certaines tâches d’administration. JEA ne protège pas contre les utilisateurs qui ont déjà des privilèges d’administrateur. Les utilisateurs qui appartiennent au groupe **Admins du domaine** , au groupe **Administrateurs** local ou à d’autres groupes disposant de privilèges élevés peuvent contourner les protections de JEA par d’autres moyens. Par exemple, ils pourraient se connecter avec RDP, utiliser des consoles MMC distantes ou se connecter à des points de terminaison PowerShell sans contraintes. De même, les administrateurs locaux sur un système peuvent modifier les configurations de JEA pour autoriser d’autres utilisateurs ou modifier une capacité de rôle de façon à agrandir l’étendue de ce qu’un utilisateur peut faire dans sa session JEA. Il est important d’évaluer les autorisations étendues de vos utilisateurs JEA pour voir s’ils peuvent obtenir un accès privilégié au système d’une autre manière.
+Un des principes fondamentaux de JEA est de permettre à des utilisateurs non administrateurs d’effectuer certaines tâches d’administration. JEA ne protège pas contre les utilisateurs qui ont déjà des privilèges d’administrateur. Les utilisateurs qui appartiennent au groupe **Admins du domaine**, au groupe **Administrateurs** local ou à d’autres groupes disposant de privilèges élevés peuvent contourner les protections de JEA par d’autres moyens. Par exemple, ils pourraient se connecter avec RDP, utiliser des consoles MMC distantes ou se connecter à des points de terminaison PowerShell sans contraintes. De même, les administrateurs locaux sur un système peuvent modifier les configurations de JEA pour autoriser d’autres utilisateurs ou modifier une capacité de rôle de façon à agrandir l’étendue de ce qu’un utilisateur peut faire dans sa session JEA. Il est important d’évaluer les autorisations étendues de vos utilisateurs JEA pour voir s’ils peuvent obtenir un accès privilégié au système d’une autre manière.
 
 Une pratique courante consiste à utiliser JEA pour une maintenance régulière quotidienne, et à avoir une solution de gestion des accès privilégiés juste-à-temps qui permet aux utilisateurs de devenir temporairement des administrateurs locaux en cas d’urgence. Ainsi, les utilisateurs ne sont pas des administrateurs de manière permanente sur le système, mais ils peuvent obtenir ces droits si et seulement si un workflow documente leur utilisation de ces autorisations.
