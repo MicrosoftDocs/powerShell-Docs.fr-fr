@@ -1,22 +1,22 @@
 ---
 title: Processus de gestion des demandes de tirage
 description: Cet article explique comment l’équipe PowerShell-Docs gère les demandes de tirage (pull request).
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
-ms.translationtype: HT
+ms.openlocfilehash: 7050db6ad30963d0a75b2a083daace494d703027
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158171"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99597519"
 ---
 # <a name="managing-pull-requests"></a>Gestion des demandes de tirage
 
-Cet article explique comment nous gérons les demandes de tirage (pull request) dans le dépôt PowerShell-Docs. Cet article est conçu pour servir d’aide-mémoire aux membres de l’équipe PowerShell-Docs. Il est publié ici dans un souci de transparence des processus pour nos contributeurs publics.
+Cet article explique comment nous gérons les demandes de tirage (pull request) dans le dépôt PowerShell-Docs. Cet article est conçu pour servir d’aide-mémoire aux membres de l’équipe PowerShell-Docs. Il est publié ici pour assurer la transparence des processus pour nos contributeurs publics.
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-- La personne qui soumet la demande de tirage ne doit pas fusionner la demande de tirage sans évaluation par les pairs.
+- La personne qui soumet la demande de tirage ne doit pas fusionner la demande de tirage sans passer par une revue d’homologue.
 - Affectez le réviseur lors de l’envoi de la demande de tirage. Le fait d’anticiper l’affectation permet au réviseur d’envoyer plus rapidement ses remarques éditoriales.
 - Utilisez les commentaires pour décrire la nature de la modification ou le type de révision demandé. Veillez à utiliser une @mention pour faire référence au réviseur. Par exemple, s’il s’agit d’une modification mineure et que vous n’avez pas besoin d’une révision technique complète, expliquez-le en commentaire.
 
@@ -43,7 +43,7 @@ Pour une liste plus complète, consultez la [liste de vérification éditoriale]
 - Examiner le rendu de la préversion.
 - Vérifier les métadonnées (ms.date, suppression de ms.assetid, vérification des champs obligatoires).
 - Valider l’exactitude du Markdown.
-  - Voir le guide de style pour la mise en forme des contenus spécifiques.
+  - Voir le Guide de style pour les règles de mise en forme propres au contenu
 - Réorganiser les exemples :
   - phrase(s) d’introduction ;
   - code et sortie ;
@@ -60,7 +60,7 @@ Pour une liste plus complète, consultez la [liste de vérification éditoriale]
 
 ## <a name="branch-merge-process"></a>Processus de fusion des branches
 
-La branche intermédiaire est la seule branche qui sera fusionnée dans live. Les branches à courte durée de vie (branches de travail) doivent faire l’objet d’une fusion Squash.
+La `staging` branche est la seule branche dans laquelle est fusionnée `live` . Les branches à courte durée de vie (branches de travail) doivent faire l’objet d’une fusion Squash.
 
 | *Fusion à partir de/vers*  | *release-branch* | *staging*        | *live*      |
 | ---------------- |:----------------:|:----------------:|:-----------:|
@@ -97,9 +97,9 @@ Lors de la fusion d’une demande de tirage, le début (HEAD) de la branche cibl
 
 ## <a name="publishing-to-live"></a>Publier sur live
 
-Régulièrement, les modifications accumulées dans la branche `staging` doivent être publiées sur le site web en ligne. Cela implique de fusionner la branche `staging` dans la branche `live`.
+Régulièrement, les modifications accumulées dans la branche `staging` doivent être publiées sur le site web en ligne.
 
-- La branche `staging` doit être fusionnée dans `live` au moins une fois par semaine.
+- La `staging` branche est fusionnée à `live` chaque jour de la semaine dans 3pm PST.
 - La branche `staging` doit être fusionnée dans `live` après toute modification significative :
   - modification d’au moins 50 fichiers ;
   - après la fusion d’une branche de version ;
