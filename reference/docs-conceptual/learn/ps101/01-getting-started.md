@@ -2,15 +2,14 @@
 title: Prise en main de PowerShell
 description: Où trouver et comment lancer PowerShell pour les nouveaux utilisateurs.
 ms.date: 06/02/2020
-ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
-ms.translationtype: HT
+ms.openlocfilehash: 8b9fee222347970df4e35f9ba0841232952a292d
+ms.sourcegitcommit: df5e6f032ee2d4b556d50406832732d2f7dc2502
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786745"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "99603875"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>Chapitre 1 - Bien démarrer avec PowerShell
 
