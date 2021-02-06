@@ -1,14 +1,14 @@
 ---
 title: Guide pratique pour entrer un problème PowerShell-Docs
 description: Cet article explique comment envoyer des commentaires sur la documentation de PowerShell.
-ms.date: 03/05/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
-ms.translationtype: HT
+ms.openlocfilehash: a044f77d3529817ec063d4a26fc9d10cdfe873aa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060294"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "99596294"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>Guide pratique pour entrer un problème PowerShell-Docs
 
@@ -21,10 +21,11 @@ Il existe deux façons de créer un problème :
 
 Pour une description complète des contrôles de commentaires, consultez le blog de l’équipe Docs annonçant cette [fonctionnalité][feedback].
 
-En bas de la plupart des pages `docs.microsoft.com` figurent deux boutons de commentaires. L’un est un lien vers les commentaires sur les produits et l’autre vers les commentaires sur la documentation. Un compte GitHub est nécessaire pour envoyer des commentaires sur la documentation. En cliquant sur le bouton, vous vous authentifiez sur GitHub, puis vous accédez à un formulaire simple pour entrer vos commentaires. Lorsque vous envoyez le formulaire, le contrôle de commentaires crée un nouveau problème GitHub et le lie à l’article actuel.
+En bas de la plupart des pages `docs.microsoft.com` figurent deux boutons de commentaires. L’un est un lien vers les commentaires sur les produits et l’autre vers les commentaires sur la documentation. Un compte GitHub est nécessaire pour envoyer des commentaires sur la documentation. Le fait de cliquer sur le bouton vous amène dans GitHub et présente un modèle d’émission prérempli.
+Entrez vos commentaires et envoyez le formulaire.
 
 > [!NOTE]
-> Ce n’est pas un canal de support, mais un moyen de clarifier des questions sur la documentation ou de signaler des erreurs et des omissions. Si vous avez besoin d’un support technique, consultez les [Ressources de la communauté](../community-support.md).
+> Ce n’est pas un canal de support, Il s’agit d’un moyen de clarifier des questions sur la documentation ou de signaler des erreurs et des omissions. Si vous avez besoin d’un support technique, consultez les [Ressources de la communauté](../community-support.md).
 
 ## <a name="filing-issues-on-github"></a>Entrer des problèmes sur GitHub
 
