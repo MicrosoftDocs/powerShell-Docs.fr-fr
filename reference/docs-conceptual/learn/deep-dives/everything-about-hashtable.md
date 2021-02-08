@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
+ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
+ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "93354420"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "97980499"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 
@@ -925,8 +925,7 @@ Vous pouvez constater que même si j’ai cloné la table de hachage, la référ
 
 ### <a name="deep-copies"></a>Copies complètes
 
-Au moment de rédiger cet article, je ne connaissais aucune solution efficace d’effectuer une copie complète d’une table de hachage (et de la conserver en tant que telle). Et ces informations devaient être écrites noir sur blanc.
-Voici une méthode rapide pour cela.
+Il existe deux façons d’effectuer une copie complète d’une table de hachage (et de la conserver en tant que telle). Voici une fonction qui utilise PowerShell pour créer de manière récursive une copie complète :
 
 ```powershell
 function Get-DeepClone
@@ -952,6 +951,21 @@ function Get-DeepClone
 ```
 
 Elle ne gère aucun un autre type de référence ou tableau, mais il s’agit d’un bon point de départ.
+
+Une autre méthode consiste à utiliser .Net pour la désérialiser avec **CliXml** comme dans cette fonction :
+
+```powershell
+function Get-DeepClone
+{
+    param(
+        $InputObject
+    )
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
+}
+```
+
+Pour les tables de hachage extrêmement grandes, la fonction de désérialisation est plus rapide parce qu’elle effectue un scale-out. Toutefois, vous devez tenir compte de certains éléments quand vous utilisez cette méthode. Dans la mesure où elle utilise **CliXml**, elle sollicite la mémoire de manière intensive. Donc, si vous clonez d’énormes tables de hachage, cela peut poser problème. Il faut également savoir que **CliXml** a une limite de profondeur de 48. Cela signifie que si vous avez une table de hachage avec 48 couches de tables de hachage imbriquées, le clonage échoue et aucune table de hachage n’est générée.
 
 ## <a name="anything-else"></a>Autre chose ?
 
