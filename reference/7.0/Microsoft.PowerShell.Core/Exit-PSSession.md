@@ -3,50 +3,49 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSSession
-ms.openlocfilehash: fb6c0f930536e7a32d83c9f390a0e351a6952550
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 7947855afa08bc3301d02e64fcb2ad8bb6b59db7
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93200938"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975122"
 ---
-# <span data-ttu-id="b2890-103">Exit-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-103">Exit-PSSession</span></span>
+# <span data-ttu-id="07480-103">Exit-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-103">Exit-PSSession</span></span>
 
-## <span data-ttu-id="b2890-104">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b2890-104">SYNOPSIS</span></span>
-<span data-ttu-id="b2890-105">Termine une session interactive avec un ordinateur distant.</span><span class="sxs-lookup"><span data-stu-id="b2890-105">Ends an interactive session with a remote computer.</span></span>
+## <span data-ttu-id="07480-104">Synopsis</span><span class="sxs-lookup"><span data-stu-id="07480-104">Synopsis</span></span>
+<span data-ttu-id="07480-105">Termine une session interactive avec un ordinateur distant.</span><span class="sxs-lookup"><span data-stu-id="07480-105">Ends an interactive session with a remote computer.</span></span>
 
-## <span data-ttu-id="b2890-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="b2890-106">SYNTAX</span></span>
+## <span data-ttu-id="07480-106">SYNTAXE</span><span class="sxs-lookup"><span data-stu-id="07480-106">SYNTAX</span></span>
 
 ```
 Exit-PSSession [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b2890-107">Description</span><span class="sxs-lookup"><span data-stu-id="b2890-107">DESCRIPTION</span></span>
+## <span data-ttu-id="07480-107">Description</span><span class="sxs-lookup"><span data-stu-id="07480-107">Description</span></span>
 
-<span data-ttu-id="b2890-108">L’applet de commande **Exit-PSSession** met fin aux sessions interactives que vous avez démarrées à l’aide de l’applet de commande Enter-PSSession.</span><span class="sxs-lookup"><span data-stu-id="b2890-108">The **Exit-PSSession** cmdlet ends interactive sessions that you started by using the Enter-PSSession cmdlet.</span></span>
+<span data-ttu-id="07480-108">L' `Exit-PSSession` applet de commande met fin aux sessions interactives que vous avez démarrées à l’aide de la `Enter-PSSession` cmdlet.</span><span class="sxs-lookup"><span data-stu-id="07480-108">The `Exit-PSSession` cmdlet ends interactive sessions that you started by using the `Enter-PSSession` cmdlet.</span></span>
 
-<span data-ttu-id="b2890-109">Vous pouvez également utiliser le mot clé **Exit** pour mettre fin à une session interactive.</span><span class="sxs-lookup"><span data-stu-id="b2890-109">You can also use the **Exit** keyword to end an interactive session.</span></span>
-<span data-ttu-id="b2890-110">L’effet est identique à celui de **Exit-PSSession** .</span><span class="sxs-lookup"><span data-stu-id="b2890-110">The effect is the same as using **Exit-PSSession** .</span></span>
+<span data-ttu-id="07480-109">Vous pouvez également utiliser le `exit` mot clé pour mettre fin à une session interactive.</span><span class="sxs-lookup"><span data-stu-id="07480-109">You can also use the `exit` keyword to end an interactive session.</span></span> <span data-ttu-id="07480-110">L’effet est le même que pour l’utilisation de `Exit-PSSession` .</span><span class="sxs-lookup"><span data-stu-id="07480-110">The effect is the same as using `Exit-PSSession`.</span></span>
 
-## <span data-ttu-id="b2890-111">EXEMPLES</span><span class="sxs-lookup"><span data-stu-id="b2890-111">EXAMPLES</span></span>
+## <span data-ttu-id="07480-111">Exemples</span><span class="sxs-lookup"><span data-stu-id="07480-111">Examples</span></span>
 
-### <span data-ttu-id="b2890-112">Exemple 1 : Démarrer et arrêter une session interactive</span><span class="sxs-lookup"><span data-stu-id="b2890-112">Example 1: Start and stop an interactive session</span></span>
+### <span data-ttu-id="07480-112">Exemple 1 : Démarrer et arrêter une session interactive</span><span class="sxs-lookup"><span data-stu-id="07480-112">Example 1: Start and stop an interactive session</span></span>
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> Exit-PSSession
 PS>
 ```
 
-<span data-ttu-id="b2890-113">Ces commandes démarrent, puis arrêtent une session interactive avec l'ordinateur distant Server01.</span><span class="sxs-lookup"><span data-stu-id="b2890-113">These commands start and then stop an interactive session with the Server01 remote computer.</span></span>
+<span data-ttu-id="07480-113">Ces commandes démarrent, puis arrêtent une session interactive avec l'ordinateur distant Server01.</span><span class="sxs-lookup"><span data-stu-id="07480-113">These commands start and then stop an interactive session with the Server01 remote computer.</span></span>
 
-### <span data-ttu-id="b2890-114">Exemple 2 : Démarrer et arrêter une session interactive à l’aide d’un objet PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-114">Example 2: Start and stop an interactive session by using a PSSession object</span></span>
+### <span data-ttu-id="07480-114">Exemple 2 : Démarrer et arrêter une session interactive à l’aide d’un objet PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-114">Example 2: Start and stop an interactive session by using a PSSession object</span></span>
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01
 PS> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
@@ -56,70 +55,64 @@ Id Name            ComputerName    State    ConfigurationName
 1  Session1        Server01        Opened   Microsoft.PowerShell
 ```
 
-<span data-ttu-id="b2890-115">Ces commandes démarrent et arrêtent une session interactive avec l’ordinateur SERVEUR01 qui utilise une session PowerShell ( **PSSession** ).</span><span class="sxs-lookup"><span data-stu-id="b2890-115">These commands start and stop an interactive session with the Server01 computer that uses a PowerShell session ( **PSSession** ).</span></span>
+<span data-ttu-id="07480-115">Ces commandes démarrent et arrêtent une session interactive avec l’ordinateur SERVEUR01 qui utilise une session PowerShell (**PSSession**).</span><span class="sxs-lookup"><span data-stu-id="07480-115">These commands start and stop an interactive session with the Server01 computer that uses a PowerShell session (**PSSession**).</span></span>
 
-<span data-ttu-id="b2890-116">Étant donné que la session interactive a été démarrée à l’aide d’une session PowerShell, la session **PSSession** est toujours disponible quand la session interactive se termine.</span><span class="sxs-lookup"><span data-stu-id="b2890-116">Because the interactive session was started by using a PowerShell session, the **PSSession** is still available when the interactive session ends.</span></span>
-<span data-ttu-id="b2890-117">Si vous utilisez le paramètre *ComputerName* , **Enter-PSSession** crée une session temporaire qu’elle ferme quand la session interactive se termine.</span><span class="sxs-lookup"><span data-stu-id="b2890-117">If you use the *ComputerName* parameter, **Enter-PSSession** creates a temporary session that it closes when the interactive session ends.</span></span>
+<span data-ttu-id="07480-116">Étant donné que la session interactive a été démarrée à l’aide d’une session PowerShell, la session **PSSession** est toujours disponible quand la session interactive se termine.</span><span class="sxs-lookup"><span data-stu-id="07480-116">Because the interactive session was started by using a PowerShell session, the **PSSession** is still available when the interactive session ends.</span></span> <span data-ttu-id="07480-117">Si vous utilisez le paramètre _ComputerName_ , `Enter-PSSession` crée une session temporaire qu’elle ferme quand la session interactive se termine.</span><span class="sxs-lookup"><span data-stu-id="07480-117">If you use the _ComputerName_ parameter, `Enter-PSSession` creates a temporary session that it closes when the interactive session ends.</span></span>
 
-<span data-ttu-id="b2890-118">La première commande utilise l’applet de commande New-PSSession pour créer une **session PSSession** sur l’ordinateur SERVEUR01.</span><span class="sxs-lookup"><span data-stu-id="b2890-118">The first command uses the New-PSSession cmdlet to create a **PSSession** on the Server01 computer.</span></span>
-<span data-ttu-id="b2890-119">La commande enregistre la **session PSSession** dans la variable $s.</span><span class="sxs-lookup"><span data-stu-id="b2890-119">The command saves the **PSSession** in the $s variable.</span></span>
+<span data-ttu-id="07480-118">La première commande utilise l' `New-PSSession` applet de commande pour créer une **session PSSession** sur l’ordinateur SERVEUR01.</span><span class="sxs-lookup"><span data-stu-id="07480-118">The first command uses the `New-PSSession` cmdlet to create a **PSSession** on the Server01 computer.</span></span> <span data-ttu-id="07480-119">La commande enregistre la **session PSSession** dans la `$s` variable.</span><span class="sxs-lookup"><span data-stu-id="07480-119">The command saves the **PSSession** in the `$s` variable.</span></span>
 
-<span data-ttu-id="b2890-120">La deuxième commande utilise **Enter-PSSession** pour démarrer une session interactive à l’aide de la session **PSSession** dans $s.</span><span class="sxs-lookup"><span data-stu-id="b2890-120">The second command uses **Enter-PSSession** to start an interactive session using the **PSSession** in $s.</span></span>
+<span data-ttu-id="07480-120">La deuxième commande utilise `Enter-PSSession` pour démarrer une session interactive à l’aide de la session **PSSession** dans `$s` .</span><span class="sxs-lookup"><span data-stu-id="07480-120">The second command uses `Enter-PSSession` to start an interactive session using the **PSSession** in `$s`.</span></span>
 
-<span data-ttu-id="b2890-121">La troisième commande utilise **Exit-PSSession** pour arrêter la session interactive.</span><span class="sxs-lookup"><span data-stu-id="b2890-121">The third command uses **Exit-PSSession** to stop the interactive session.</span></span>
+<span data-ttu-id="07480-121">La troisième commande utilise `Exit-PSSession` pour arrêter la session interactive.</span><span class="sxs-lookup"><span data-stu-id="07480-121">The third command uses `Exit-PSSession` to stop the interactive session.</span></span>
 
-<span data-ttu-id="b2890-122">La dernière commande affiche la **session PSSession** dans la variable $s.</span><span class="sxs-lookup"><span data-stu-id="b2890-122">The final command displays the **PSSession** in the $s variable.</span></span>
-<span data-ttu-id="b2890-123">La propriété **State** indique que la **session PSSession** est toujours ouverte et utilisable.</span><span class="sxs-lookup"><span data-stu-id="b2890-123">The **State** property shows the **PSSession** is still open and available for use.</span></span>
+<span data-ttu-id="07480-122">La dernière commande affiche la **session PSSession** dans la `$s` variable.</span><span class="sxs-lookup"><span data-stu-id="07480-122">The final command displays the **PSSession** in the `$s` variable.</span></span> <span data-ttu-id="07480-123">La propriété **State** indique que la **session PSSession** est toujours ouverte et utilisable.</span><span class="sxs-lookup"><span data-stu-id="07480-123">The **State** property shows the **PSSession** is still open and available for use.</span></span>
 
-### <span data-ttu-id="b2890-124">Exemple 3 : utiliser le mot clé Exit pour arrêter une session</span><span class="sxs-lookup"><span data-stu-id="b2890-124">Example 3: Use the Exit keyword to stop a session</span></span>
+### <span data-ttu-id="07480-124">Exemple 3 : utiliser le mot clé Exit pour arrêter une session</span><span class="sxs-lookup"><span data-stu-id="07480-124">Example 3: Use the Exit keyword to stop a session</span></span>
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> exit
 PS>
 ```
 
-<span data-ttu-id="b2890-125">Cet exemple utilise le mot clé **Exit** pour arrêter une session interactive démarrée à l’aide de **Enter-PSSession** .</span><span class="sxs-lookup"><span data-stu-id="b2890-125">This example uses the **Exit** keyword to stop an interactive session started by using **Enter-PSSession** .</span></span>
-<span data-ttu-id="b2890-126">Le mot clé **Exit** a le même effet que l’utilisation **de Exit-PSSession** .</span><span class="sxs-lookup"><span data-stu-id="b2890-126">The **Exit** keyword has the same effect as using **Exit-PSSession** .</span></span>
+<span data-ttu-id="07480-125">Cet exemple utilise le `exit` mot clé pour arrêter une session interactive démarrée à l’aide de `Enter-PSSession` .</span><span class="sxs-lookup"><span data-stu-id="07480-125">This example uses the `exit` keyword to stop an interactive session started by using `Enter-PSSession`.</span></span> <span data-ttu-id="07480-126">Le `exit` mot clé a le même effet que l’utilisation de `Exit-PSSession` .</span><span class="sxs-lookup"><span data-stu-id="07480-126">The `exit` keyword has the same effect as using `Exit-PSSession`.</span></span>
 
-## <span data-ttu-id="b2890-127">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b2890-127">PARAMETERS</span></span>
+## <span data-ttu-id="07480-127">Paramètres</span><span class="sxs-lookup"><span data-stu-id="07480-127">Parameters</span></span>
 
-### <span data-ttu-id="b2890-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b2890-128">CommonParameters</span></span>
+### <span data-ttu-id="07480-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="07480-128">CommonParameters</span></span>
 
-<span data-ttu-id="b2890-129">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b2890-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b2890-130">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="b2890-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="07480-129">Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="07480-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="07480-130">Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="07480-130">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b2890-131">ENTRÉES</span><span class="sxs-lookup"><span data-stu-id="b2890-131">INPUTS</span></span>
+## <span data-ttu-id="07480-131">Entrées</span><span class="sxs-lookup"><span data-stu-id="07480-131">Inputs</span></span>
 
-### <span data-ttu-id="b2890-132">Aucun</span><span class="sxs-lookup"><span data-stu-id="b2890-132">None</span></span>
+### <span data-ttu-id="07480-132">None</span><span class="sxs-lookup"><span data-stu-id="07480-132">None</span></span>
 
-<span data-ttu-id="b2890-133">Vous ne pouvez pas rediriger des objets vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="b2890-133">You cannot pipe objects to this cmdlet.</span></span>
+<span data-ttu-id="07480-133">Vous ne pouvez pas rediriger des objets vers cette applet de commande.</span><span class="sxs-lookup"><span data-stu-id="07480-133">You cannot pipe objects to this cmdlet.</span></span>
 
-## <span data-ttu-id="b2890-134">SORTIES</span><span class="sxs-lookup"><span data-stu-id="b2890-134">OUTPUTS</span></span>
+## <span data-ttu-id="07480-134">Sorties</span><span class="sxs-lookup"><span data-stu-id="07480-134">Outputs</span></span>
 
-### <span data-ttu-id="b2890-135">Aucun</span><span class="sxs-lookup"><span data-stu-id="b2890-135">None</span></span>
+### <span data-ttu-id="07480-135">None</span><span class="sxs-lookup"><span data-stu-id="07480-135">None</span></span>
 
-<span data-ttu-id="b2890-136">Cette applet de commande ne retourne aucune sortie.</span><span class="sxs-lookup"><span data-stu-id="b2890-136">This cmdlet does not return any output.</span></span>
+<span data-ttu-id="07480-136">Cette applet de commande ne retourne aucune sortie.</span><span class="sxs-lookup"><span data-stu-id="07480-136">This cmdlet does not return any output.</span></span>
 
-## <span data-ttu-id="b2890-137">REMARQUES</span><span class="sxs-lookup"><span data-stu-id="b2890-137">NOTES</span></span>
+## <span data-ttu-id="07480-137">Notes</span><span class="sxs-lookup"><span data-stu-id="07480-137">Notes</span></span>
 
-* <span data-ttu-id="b2890-138">Cette applet de commande accepte uniquement les paramètres communs.</span><span class="sxs-lookup"><span data-stu-id="b2890-138">This cmdlet takes only the common parameters.</span></span>
+<span data-ttu-id="07480-138">Cette applet de commande accepte uniquement les paramètres communs.</span><span class="sxs-lookup"><span data-stu-id="07480-138">This cmdlet takes only the common parameters.</span></span>
 
-*
+## <span data-ttu-id="07480-139">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="07480-139">RELATED LINKS</span></span>
 
-## <span data-ttu-id="b2890-139">LIENS CONNEXES</span><span class="sxs-lookup"><span data-stu-id="b2890-139">RELATED LINKS</span></span>
+[<span data-ttu-id="07480-140">Connect-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-140">Connect-PSSession</span></span>](Connect-PSSession.md)
 
-[<span data-ttu-id="b2890-140">Connect-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-140">Connect-PSSession</span></span>](Connect-PSSession.md)
+[<span data-ttu-id="07480-141">Disconnect-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-141">Disconnect-PSSession</span></span>](Disconnect-PSSession.md)
 
-[<span data-ttu-id="b2890-141">Disconnect-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-141">Disconnect-PSSession</span></span>](Disconnect-PSSession.md)
+[<span data-ttu-id="07480-142">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-142">Enter-PSSession</span></span>](Enter-PSSession.md)
 
-[<span data-ttu-id="b2890-142">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-142">Enter-PSSession</span></span>](Enter-PSSession.md)
+[<span data-ttu-id="07480-143">Get-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-143">Get-PSSession</span></span>](Get-PSSession.md)
 
-[<span data-ttu-id="b2890-143">Get-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-143">Get-PSSession</span></span>](Get-PSSession.md)
+[<span data-ttu-id="07480-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="07480-144">Invoke-Command</span></span>](Invoke-Command.md)
 
-[<span data-ttu-id="b2890-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="b2890-144">Invoke-Command</span></span>](Invoke-Command.md)
+[<span data-ttu-id="07480-145">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-145">New-PSSession</span></span>](New-PSSession.md)
 
-[<span data-ttu-id="b2890-145">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-145">New-PSSession</span></span>](New-PSSession.md)
+[<span data-ttu-id="07480-146">Receive-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-146">Receive-PSSession</span></span>](Receive-PSSession.md)
 
-[<span data-ttu-id="b2890-146">Receive-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-146">Receive-PSSession</span></span>](Receive-PSSession.md)
-
-[<span data-ttu-id="b2890-147">Remove-PSSession</span><span class="sxs-lookup"><span data-stu-id="b2890-147">Remove-PSSession</span></span>](Remove-PSSession.md)
+[<span data-ttu-id="07480-147">Remove-PSSession</span><span class="sxs-lookup"><span data-stu-id="07480-147">Remove-PSSession</span></span>](Remove-PSSession.md)
