@@ -5,12 +5,12 @@ ms.date: 12/14/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: 60ad0e40f7e392bf240ee76a5902123c45a282fd
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8a2410dd2adcc1679ab203293b4c4e712b960278
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97577239"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975139"
 ---
 # <a name="about-automatic-variables"></a>À propos des variables automatiques
 
@@ -67,7 +67,7 @@ Comme pour `$PSItem`. Contient l’objet actuel dans l’objet de pipeline. Vous
 
 Contient un tableau de valeurs pour les paramètres non déclarés passés à une fonction, à un script ou à un bloc de script. Lorsque vous créez une fonction, vous pouvez déclarer les paramètres à l’aide du `param` mot clé ou en ajoutant une liste de paramètres séparés par des virgules entre parenthèses après le nom de la fonction.
 
-Dans une action d’événement, la `$Args` variable contient des objets qui représentent les arguments d’événement de l’événement en cours de traitement. Cette variable est remplie uniquement dans le `Action` bloc d’une commande d’inscription d’événement.
+Dans une action d’événement, la `$args` variable contient des objets qui représentent les arguments d’événement de l’événement en cours de traitement. Cette variable est remplie uniquement dans le `Action` bloc d’une commande d’inscription d’événement.
 La valeur de cette variable peut également être trouvée dans la propriété **SourceArgs** de l’objet **PSEventArgs** `Get-Event` retourné par.
 
 ### <a name="consolefilename"></a>$ConsoleFileName

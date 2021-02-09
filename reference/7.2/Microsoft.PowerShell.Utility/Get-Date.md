@@ -6,12 +6,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 8c0a1b7a14f5dfa071a85808f5d7dfba4d06048e
-ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
+ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "99598771"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975054"
 ---
 # Get-Date
 
@@ -215,7 +215,7 @@ La `$timestamp` variable stocke les résultats d’une `Get-Date` commande. `Get
 
 ### Exemple 9 : convertir un horodateur UNIX
 
-Cet exemple convertit une heure UNIX (représentée par le nombre de secondes depuis 1970-01-01 0:00:00) en DateTime.
+Cet exemple convertit une heure UNIX (représentée par le nombre de secondes depuis le 01-01-1970 0:00:00) en DateHeure.
 
 ```powershell
 Get-Date -UnixTimeSeconds 1577836800
@@ -513,7 +513,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ### Entrée de pipeline
 
-`Get-Date` accepte l’entrée de pipeline. Par exemple, `Get-ChildItem | Get-Date`.
+`Get-Date` accepte l’entrée de pipeline. Par exemple : `Get-ChildItem | Get-Date`.
 
 ## SORTIES
 
@@ -526,7 +526,7 @@ Lorsqu’un objet **DateTime** est envoyé vers le pipeline à une applet de com
 La méthode `(Get-Date).ToString()` convertit un objet **DateTime** en objet **String** .
 
 Pour afficher les propriétés et les méthodes d’un objet, envoyez l’objet vers le dessous du pipeline `Get-Member` .
-Par exemple, `Get-Date | Get-Member`.
+Par exemple : `Get-Date | Get-Member`.
 
 ## REMARQUES
 
@@ -565,9 +565,9 @@ Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant 
 | `%t` | Caractère de tabulation horizontale                                                |                          |
 | `%T` | Heure au format 24 heures                                                  | 17:45:52                 |
 | `%U` | Identique à « W »                                                             |                          |
-| `%u` | Jour de la semaine-numéro                                                | Dimanche = 0               |
+| `%u` | Nombre de jours de la semaine (1-7)                                           | Lundi = 1, dimanche = 7   |
 | `%V` | Semaine de l’année                                                        | 01-53                    |
-| `%w` | Identique à « u »                                                             |                          |
+| `%w` | Nombre de jours de la semaine (0-6)                                           | Dimanche = 0, samedi = 6 |
 | `%W` | Semaine de l’année                                                        | 00-52                    |
 | `%X` | Identique à « t »                                                             |                          |
 | `%x` | Date au format standard pour les paramètres régionaux                                      | 06/27/19 pour l’anglais (États-Unis)  |
