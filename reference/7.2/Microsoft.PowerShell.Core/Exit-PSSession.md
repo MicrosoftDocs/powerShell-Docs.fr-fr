@@ -2,20 +2,20 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSSession
-ms.openlocfilehash: b76f7dc87105318285c930b6cd2ae4ae10c2b0e7
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b1827929c53560cb261cd7b3ba1e5bd407c25700
+ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99603473"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99975088"
 ---
 # Exit-PSSession
 
-## SYNOPSIS
+## Synopsis
 Termine une session interactive avec un ordinateur distant.
 
 ## SYNTAXE
@@ -26,17 +26,16 @@ Exit-PSSession [<CommonParameters>]
 
 ## Description
 
-L’applet de commande **Exit-PSSession** met fin aux sessions interactives que vous avez démarrées à l’aide de l’applet de commande Enter-PSSession.
+L' `Exit-PSSession` applet de commande met fin aux sessions interactives que vous avez démarrées à l’aide de la `Enter-PSSession` cmdlet.
 
-Vous pouvez également utiliser le mot clé **Exit** pour mettre fin à une session interactive.
-L’effet est identique à celui de **Exit-PSSession**.
+Vous pouvez également utiliser le `exit` mot clé pour mettre fin à une session interactive. L’effet est le même que pour l’utilisation de `Exit-PSSession` .
 
-## EXEMPLES
+## Exemples
 
 ### Exemple 1 : Démarrer et arrêter une session interactive
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> Exit-PSSession
 PS>
 ```
@@ -45,7 +44,7 @@ Ces commandes démarrent, puis arrêtent une session interactive avec l'ordinate
 
 ### Exemple 2 : Démarrer et arrêter une session interactive à l’aide d’un objet PSSession
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01
 PS> Enter-PSSession -Session $s
 Server01\PS> Exit-PSSession
@@ -57,53 +56,47 @@ Id Name            ComputerName    State    ConfigurationName
 
 Ces commandes démarrent et arrêtent une session interactive avec l’ordinateur SERVEUR01 qui utilise une session PowerShell (**PSSession**).
 
-Étant donné que la session interactive a été démarrée à l’aide d’une session PowerShell, la session **PSSession** est toujours disponible quand la session interactive se termine.
-Si vous utilisez le paramètre *ComputerName* , **Enter-PSSession** crée une session temporaire qu’elle ferme quand la session interactive se termine.
+Étant donné que la session interactive a été démarrée à l’aide d’une session PowerShell, la session **PSSession** est toujours disponible quand la session interactive se termine. Si vous utilisez le paramètre _ComputerName_ , `Enter-PSSession` crée une session temporaire qu’elle ferme quand la session interactive se termine.
 
-La première commande utilise l’applet de commande New-PSSession pour créer une **session PSSession** sur l’ordinateur SERVEUR01.
-La commande enregistre la **session PSSession** dans la variable $s.
+La première commande utilise l' `New-PSSession` applet de commande pour créer une **session PSSession** sur l’ordinateur SERVEUR01. La commande enregistre la **session PSSession** dans la `$s` variable.
 
-La deuxième commande utilise **Enter-PSSession** pour démarrer une session interactive à l’aide de la session **PSSession** dans $s.
+La deuxième commande utilise `Enter-PSSession` pour démarrer une session interactive à l’aide de la session **PSSession** dans `$s` .
 
-La troisième commande utilise **Exit-PSSession** pour arrêter la session interactive.
+La troisième commande utilise `Exit-PSSession` pour arrêter la session interactive.
 
-La dernière commande affiche la **session PSSession** dans la variable $s.
-La propriété **State** indique que la **session PSSession** est toujours ouverte et utilisable.
+La dernière commande affiche la **session PSSession** dans la `$s` variable. La propriété **State** indique que la **session PSSession** est toujours ouverte et utilisable.
 
 ### Exemple 3 : utiliser le mot clé Exit pour arrêter une session
 
-```
-PS> Enter-PSSession -computername Server01
+```powershell
+PS> Enter-PSSession -ComputerName Server01
 Server01\PS> exit
 PS>
 ```
 
-Cet exemple utilise le mot clé **Exit** pour arrêter une session interactive démarrée à l’aide de **Enter-PSSession**.
-Le mot clé **Exit** a le même effet que l’utilisation **de Exit-PSSession**.
+Cet exemple utilise le `exit` mot clé pour arrêter une session interactive démarrée à l’aide de `Enter-PSSession` . Le `exit` mot clé a le même effet que l’utilisation de `Exit-PSSession` .
 
-## PARAMETERS
+## Paramètres
 
 ### CommonParameters
 
 Cette applet de commande prend en charge les paramètres courants : -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction et -WarningVariable. Pour plus d’informations, consultez [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-## ENTRÉES
+## Entrées
 
 ### None
 
 Vous ne pouvez pas rediriger des objets vers cette applet de commande.
 
-## SORTIES
+## Sorties
 
 ### None
 
 Cette applet de commande ne retourne aucune sortie.
 
-## REMARQUES
+## Notes
 
-* Cette applet de commande accepte uniquement les paramètres communs.
-
-*
+Cette applet de commande accepte uniquement les paramètres communs.
 
 ## LIENS CONNEXES
 
@@ -122,4 +115,3 @@ Cette applet de commande ne retourne aucune sortie.
 [Receive-PSSession](Receive-PSSession.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-
