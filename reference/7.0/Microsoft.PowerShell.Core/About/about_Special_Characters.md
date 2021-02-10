@@ -2,16 +2,16 @@
 description: Décrit les séquences de caractères spéciaux qui contrôlent la façon dont PowerShell interprète les caractères suivants dans la séquence.
 keywords: powershell,applet de commande
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: 5da2cf411519f2bd51296cd4311a607198a5ca6d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 291bdead4a2fffab5c76b87ceab0e09dd0527cb3
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206577"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100765"
 ---
 # <a name="about-special-characters"></a>À propos des caractères spéciaux
 
@@ -21,9 +21,9 @@ Décrit les séquences de caractères spéciaux qui contrôlent la façon dont P
 
 ## <a name="long-description"></a>Description longue
 
-PowerShell prend en charge un ensemble de séquences de caractères spéciaux utilisés pour représenter des caractères qui ne font pas partie du jeu de caractères standard. Les séquences sont communément appelées _séquences d’échappement_ .
+PowerShell prend en charge un ensemble de séquences de caractères spéciaux utilisés pour représenter des caractères qui ne font pas partie du jeu de caractères standard. Les séquences sont communément appelées _séquences d’échappement_.
 
-Les séquences d’échappement commencent par le caractère « accent grave » (ASCII 96) et respectent la casse. Le caractère d’échappement est également appelé _caractère d’échappement_ .
+Les séquences d’échappement commencent par le caractère « accent grave » (ASCII 96) et respectent la casse. Le caractère d’échappement est également appelé _caractère d’échappement_.
 
 Les séquences d’échappement sont interprétées uniquement lorsqu’elles sont contenues dans des chaînes entre guillemets ( `"` ).
 
@@ -69,7 +69,7 @@ for ($i = 0; $i -le 1; $i++){"`a"}
 Le `` `b `` caractère retour arrière () déplace le curseur d’un caractère vers l’arrière, mais il ne supprime aucun caractère.
 
 L’exemple écrit le mot **sauvegarde** , puis replace le curseur à deux reprises.
-Ensuite, à la nouvelle position, écrit un espace suivi du mot **out** .
+Ensuite, à la nouvelle position, écrit un espace suivi du mot **out**.
 
 ```powershell
 "backup`b`b out"
@@ -158,13 +158,28 @@ Cet exemple génère le symbole de **flèche vers le bas** (&#x2195;).
 
 ## <a name="vertical-tab-v"></a>Tabulation verticale ('v)
 
-Le caractère de tabulation horizontale ( `` `v `` ) passe au taquet de tabulation vertical suivant et écrit la sortie restante à ce stade. Cela n’a aucun effet dans la console Windows par défaut.
+Le caractère de tabulation verticale ( `` `v `` ) passe au taquet de tabulation vertical suivant et écrit la sortie restante à ce stade. Le rendu de la tabulation verticale est dépendant du périphérique et du terminal.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-L’exemple suivant illustre la sortie que vous obtiendriez sur une imprimante ou dans un autre hôte de console.
+Les exemples suivants illustrent la sortie rendue de l’onglet vertical dans certains environnements courants.
+
+L’application hôte de la console Windows interprète ( `` `v `` ) comme un caractère spécial sans ajout d’espacement supplémentaire.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+Le [terminal Windows](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) affiche le caractère de tabulation verticale sous la forme d’un retour chariot et d’un saut de ligne. Le reste de la sortie est imprimé au début de la ligne suivante.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+Sur les imprimantes ou dans une console Unix, le caractère de tabulation verticale passe à la ligne suivante et écrit la sortie restante à ce stade.
 
 ```Output
 There is a vertical tab
@@ -207,6 +222,6 @@ $args = C:\Users\username|--%|$HOME
 
 Pour plus d’informations sur le jeton d’analyse d’arrêt, consultez [about_Parsing](about_Parsing.md).
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 [about_Quoting_Rules](about_Quoting_Rules.md)

@@ -1,16 +1,16 @@
 ---
 description: Décrit les séquences de caractères spéciaux qui contrôlent la façon dont PowerShell interprète les caractères suivants dans la séquence.
 Locale: en-US
-ms.date: 04/04/2020
+ms.date: 02/08/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Special_Characters
-ms.openlocfilehash: c642bc69d9e67bd945e5687d7f7c35e039062194
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b21ec1eb5ed0da52cf5eff01eaf3c220d117cf55
+ms.sourcegitcommit: 364c3fe46b2069b810107d840be59fe519ea7b4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598166"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100100714"
 ---
 # <a name="about-special-characters"></a>À propos des caractères spéciaux
 
@@ -157,13 +157,28 @@ Cet exemple génère le symbole de **flèche vers le bas** (&#x2195;).
 
 ## <a name="vertical-tab-v"></a>Tabulation verticale ('v)
 
-Le caractère de tabulation horizontale ( `` `v `` ) passe au taquet de tabulation vertical suivant et écrit la sortie restante à ce stade. Cela n’a aucun effet dans la console Windows par défaut.
+Le caractère de tabulation verticale ( `` `v `` ) passe au taquet de tabulation vertical suivant et écrit la sortie restante à ce stade. Le rendu de la tabulation verticale est dépendant du périphérique et du terminal.
 
 ```powershell
 Write-Host "There is a vertical tab`vbetween the words."
 ```
 
-L’exemple suivant illustre la sortie que vous obtiendriez sur une imprimante ou dans un autre hôte de console.
+Les exemples suivants illustrent la sortie rendue de l’onglet vertical dans certains environnements courants.
+
+L’application hôte de la console Windows interprète ( `` `v `` ) comme un caractère spécial sans ajout d’espacement supplémentaire.
+
+```Output
+There is a vertical tab♂between the words.
+```
+
+Le [terminal Windows](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) affiche le caractère de tabulation verticale sous la forme d’un retour chariot et d’un saut de ligne. Le reste de la sortie est imprimé au début de la ligne suivante.
+
+```Output
+There is a vertical tab
+between the words.
+```
+
+Sur les imprimantes ou dans une console Unix, le caractère de tabulation verticale passe à la ligne suivante et écrit la sortie restante à ce stade.
 
 ```Output
 There is a vertical tab
@@ -206,7 +221,7 @@ $args = C:\Users\username|--%|$HOME
 
 Pour plus d’informations sur le jeton d’analyse d’arrêt, consultez [about_Parsing](about_Parsing.md).
 
-## <a name="see-also"></a>Voir aussi
+## <a name="see-also"></a>Voir également
 
 [about_Quoting_Rules](about_Quoting_Rules.md)
 
