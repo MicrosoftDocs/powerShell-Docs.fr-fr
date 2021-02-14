@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos de PSReadLine
-ms.openlocfilehash: 4836abfec465ba7cdfb6800c1e60104fba19ce08
-ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
+ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "99595473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500210"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -918,19 +918,39 @@ Met fin au groupe d’édition actuel, si nécessaire, et appelle TabCompletePre
 
 - Mode d’insertion VI : `<Shift+Tab>`
 
-## <a name="miscellaneous-functions"></a>Fonctions diverses
+## <a name="prediction-functions"></a>Fonctions de prédiction
 
 ### <a name="acceptnextsuggestionword"></a>AcceptNextSuggestionWord
 
-Accepter le mot suivant de la suggestion inline ou sélectionnée.
+Si vous utilisez `InlineView` comme style de vue pour la prédiction, acceptez le mot suivant de la suggestion en ligne.
 
 - La fonction est indépendante.
 
 ### <a name="acceptsuggestion"></a>AcceptSuggestion
 
-Acceptez la suggestion en ligne ou la suggestion sélectionnée.
+Si vous utilisez `InlineView` comme style de vue pour la prédiction, acceptez la suggestion en ligne actuelle.
 
 - La fonction est indépendante.
+
+### <a name="nextsuggestion"></a>NextSuggestion
+
+Lorsque `ListView` vous utilisez comme style de vue pour la prédiction, accédez à la suggestion suivante dans la liste.
+
+- La fonction est indépendante.
+
+### <a name="previoussuggestion"></a>PreviousSuggestion
+
+Lorsque `ListView` vous utilisez comme style de vue pour la prédiction, accédez à la suggestion précédente dans la liste.
+
+- La fonction est indépendante.
+
+### <a name="switchpredictionview"></a>SwitchPredictionView
+
+Changez le style d’affichage pour la prédiction entre `InlineView` et `ListView` .
+
+- Cmd `<F2>`
+
+## <a name="miscellaneous-functions"></a>Fonctions diverses
 
 ### <a name="capturescreen"></a>CaptureScreen
 
@@ -1007,6 +1027,15 @@ Insérez la clé.
 
 - La fonction est indépendante.
 
+### <a name="showcommandhelp"></a>ShowCommandHelp
+
+Fournit une vue d’ensemble de l’aide de l’applet de commande sur une autre mémoire tampon d’écran à l’aide d’un radiomessagerie de **Microsoft. PowerShell. téléavertisseur**.
+
+- Cmd `<F1>`
+- Emacs- `<F1>`
+- Mode d’insertion VI : `<F1>`
+- Mode de commande VI : `<F1>`
+
 ### <a name="showkeybindings"></a>ShowKeyBindings
 
 Affiche toutes les clés liées.
@@ -1014,6 +1043,15 @@ Affiche toutes les clés liées.
 - Cmd `<Ctrl+Alt+?>`
 - Emacs- `<Ctrl+Alt+?>`
 - Mode d’insertion VI : `<Ctrl+Alt+?>`
+
+### <a name="showparameterhelp"></a>ShowParameterHelp
+
+Fournit une aide dynamique pour les paramètres en l’affiche sous la ligne de commande actuelle, comme `MenuComplete` .
+
+- Cmd `<Alt+h>`
+- Emacs- `<Alt+h>`
+- Mode d’insertion VI : `<Alt+h>`
+- Mode de commande VI : `<Alt+h>`
 
 ### <a name="vicommandmode"></a>ViCommandMode
 
@@ -1392,7 +1430,7 @@ Cette méthode d’assistance est utilisée pour les liaisons personnalisées qu
   [ref]$numericArg, 1)
 ```
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
 ### <a name="command-history"></a>Historique des commandes
 

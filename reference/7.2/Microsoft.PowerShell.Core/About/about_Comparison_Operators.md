@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 2bd2aa825d09078f37dba1f99fa64584dacd324d
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: 2ccd631083ddc06d25f2c3b4733223cca2e89d44
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "99603903"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500244"
 ---
 # <a name="about-comparison-operators"></a>À propos des opérateurs de comparaison
 
@@ -66,7 +66,7 @@ Il existe quelques exceptions :
 - L' `-replace` opérateur retourne le résultat de remplacement
 - Les `-match` `-notmatch` opérateurs et remplissent également la `$Matches` variable automatique.
 
-## <a name="equality-operators"></a>Opérateurs d'égalité
+## <a name="equality-operators"></a>Opérateurs d’égalité
 
 ### <a name="-eq-and--ne"></a>-eq et -ne
 
@@ -414,7 +414,7 @@ Il est également possible d’utiliser des expressions régulières pour rempla
 Dans l’exemple suivant, l' `-replace` opérateur accepte un nom d’utilisateur sous la forme `DomainName\Username` et convertit le `Username@DomainName` format :
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - Dans PowerShell, entre guillemets doubles, il désigne les variables et agit comme un opérateur de sous-expression.
 > - Dans les chaînes de recherche Regex, elle désigne la fin de la ligne
-> - Dans les chaînes de substitution Regex, il désigne les groupes capturés comme tels, veillez à placer vos expressions régulières entre des guillemets simples ou à insérer un `` ` `` caractère de soulignement () avant.
+> - Dans les chaînes de substitution Regex, il désigne les groupes capturés. Veillez à placer vos expressions régulières entre des guillemets simples ou insérer un caractère de `` ` `` soulignement () avant.
 
 Par exemple :
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` dans Regex, il désigne un littéral `$` . This `$$` dans la chaîne de substitution pour inclure un littéral littéral `$` dans le de remplacement résultant. Par exemple :
+`$$` dans Regex, il désigne un littéral `$` . This `$$` dans la chaîne de substitution pour inclure un littéral `$` dans le de remplacement résultant. Par exemple :
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72

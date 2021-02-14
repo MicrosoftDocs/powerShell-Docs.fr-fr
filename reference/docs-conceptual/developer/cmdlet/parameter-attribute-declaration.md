@@ -3,12 +3,12 @@ ms.date: 09/13/2016
 ms.topic: reference
 title: Déclaration de l’attribut Parameter
 description: Déclaration de l’attribut Parameter
-ms.openlocfilehash: bab48a94cb4b1e8501fb79c2f3ef71393fa2ee68
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 24a49406b1493a7f8c23bca798ddb3e73a901111
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92650356"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500227"
 ---
 # <a name="parameter-attribute-declaration"></a>Déclaration de l’attribut Parameter
 
@@ -59,7 +59,7 @@ L’attribut de paramètre identifie une propriété publique de la classe d’a
 
   - Aucun jeu de paramètres ne doit contenir plus d’un paramètre positionnel avec la même position.
 
-  - Un seul paramètre dans un jeu de paramètres doit être déclaré `ValueFromPipeline = true` . Plusieurs paramètres peuvent être définis `ValueFromPipelineByPropertyName = true` .
+  - Un seul paramètre dans un jeu de paramètres doit être déclaré `ValueFromPipeline = true` .
 
   - Plusieurs paramètres peuvent être définis `ValueFromPipelineByPropertyName = true` .
 

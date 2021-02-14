@@ -5,12 +5,12 @@ ms.date: 01/20/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 0ef3c68d73ae3e1d2040b3654e4f8ba45565717a
-ms.sourcegitcommit: 94d597c4fb38793bc49ca7610e2c9973b1e577c2
+ms.openlocfilehash: aa2d2d09fe0eb35c42c5ee84083c8ee29354cf8f
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98619905"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500174"
 ---
 # <a name="about-comparison-operators"></a>À propos des opérateurs de comparaison
 
@@ -66,13 +66,13 @@ Il existe quelques exceptions :
 - L' `-replace` opérateur retourne le résultat de remplacement
 - Les `-match` `-notmatch` opérateurs et remplissent également la `$Matches` variable automatique.
 
-## <a name="equality-operators"></a>Opérateurs d'égalité
+## <a name="equality-operators"></a>Opérateurs d’égalité
 
 ### <a name="-eq-and--ne"></a>-eq et -ne
 
 Lorsque la partie gauche est scalaire, `-eq` retourne **true** si le côté droit est une correspondance exacte ; sinon, `-eq` retourne **false**. `-ne` fait l’inverse ; elle retourne **false** lorsque les deux côtés correspondent ; Sinon, `-ne` retourne la valeur true.
 
-Exemple :
+Exemple :
 
 ```powershell
 2 -eq 2                 # Output: True
@@ -86,7 +86,7 @@ Exemple :
 
 Lorsque la partie gauche est une collection, `-eq` retourne les membres qui correspondent à la partie droite, tout en `-ne` les filtrant.
 
-Exemple :
+Exemple :
 
 ```powershell
 1,2,3 -eq 2             # Output: 2
@@ -94,7 +94,7 @@ Exemple :
 "abc", "def" -ne "abc"  # Output: def
 ```
 
-Ces opérateurs traitent tous les éléments de la collection. Exemple :
+Ces opérateurs traitent tous les éléments de la collection. Exemple :
 
 ```powershell
 "zzz", "def", "zzz" -eq "zzz"
@@ -199,7 +199,7 @@ Dans les exemples suivants, toutes les instructions retournent la valeur true.
 
 Lorsque la partie gauche est une collection, ces opérateurs comparent chaque membre de la collection avec le côté droit. En fonction de leur logique, ils conservent ou ignorent le membre.
 
-Exemple :
+Exemple :
 
 ```powershell
 $a=5, 6, 7, 8, 9
@@ -292,7 +292,7 @@ Lorsque l’entrée de ces opérateurs est une valeur scalaire, ils retournent u
 
 `-like` et `-notlike` se comportent de la même façon `-eq` que et `-ne` , mais le côté droit peut être une chaîne contenant des [caractères génériques](about_Wildcards.md).
 
-Exemple :
+Exemple :
 
 ```powershell
 "PowerShell" -like    "*shell"           # Output: True
@@ -342,7 +342,7 @@ Exemples de collection :
 
 `-match` et `-notmatch` prennent en charge les groupes de capture Regex. Chaque fois qu’ils s’exécutent, ils remplacent la `$Matches` variable automatique. Lorsque `<input>` est une collection `$Matches` , la variable est `$null` . `$Matches` est une **Hashtable** qui a toujours une clé nommée « 0 », qui stocke la correspondance entière. Si l’expression régulière contient des groupes de capture, le `$Matches` contient des clés supplémentaires pour chaque groupe.
 
-Exemple :
+Exemple :
 
 ```powershell
 $string = 'The last logged on user was CONTOSO\jsmith'
@@ -414,7 +414,7 @@ Il est également possible d’utiliser des expressions régulières pour rempla
 Dans l’exemple suivant, l' `-replace` opérateur accepte un nom d’utilisateur sous la forme `DomainName\Username` et convertit le `Username@DomainName` format :
 
 ```powershell
-$SearchExp = '^(?<Username>[\w-.]+)\\(?<DomainName>[\w-.]+)$'
+$SearchExp = '^(?<DomainName>[\w-.]+)\\(?<Username>[\w-.]+)$'
 $ReplaceExp = '${Username}@${DomainName}'
 
 'Contoso.local\John.Doe' -replace $SearchExp,$ReplaceExp
@@ -429,7 +429,7 @@ John.Doe@Contoso.local
 >
 > - Dans PowerShell, entre guillemets doubles, il désigne les variables et agit comme un opérateur de sous-expression.
 > - Dans les chaînes de recherche Regex, elle désigne la fin de la ligne
-> - Dans les chaînes de substitution Regex, il désigne les groupes capturés comme tels, veillez à placer vos expressions régulières entre des guillemets simples ou à insérer un `` ` `` caractère de soulignement () avant.
+> - Dans les chaînes de substitution Regex, il désigne les groupes capturés. Veillez à placer vos expressions régulières entre des guillemets simples ou insérer un caractère de `` ` `` soulignement () avant.
 
 Par exemple :
 
@@ -443,7 +443,7 @@ $1 = 'Goodbye'
 # Output: Hello Universe
 ```
 
-`$$` dans Regex, il désigne un littéral `$` . This `$$` dans la chaîne de substitution pour inclure un littéral littéral `$` dans le de remplacement résultant. Par exemple :
+`$$` dans Regex, il désigne un littéral `$` . This `$$` dans la chaîne de substitution pour inclure un littéral `$` dans le de remplacement résultant. Par exemple :
 
 ```powershell
 '5.72' -replace '(.+)', '$ $1' # Output: $ 5.72
@@ -572,7 +572,7 @@ Syntaxe :
 <object> -isnot <type-reference>
 ```
 
-Exemple :
+Exemple :
 
 ```powershell
 $a = 1
