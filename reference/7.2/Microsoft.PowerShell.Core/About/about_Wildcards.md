@@ -1,16 +1,16 @@
 ---
 description: Décrit comment utiliser des caractères génériques dans PowerShell.
 Locale: en-US
-ms.date: 03/28/2019
+ms.date: 02/13/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
-ms.openlocfilehash: b5f13fdbfbc24e19e5ad0b1cd6ecc1b99f68914f
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 40620e54bb889d683192b346f3ba1c139895e4d0
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598777"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529972"
 ---
 # <a name="about-wildcards"></a>À propos des caractères génériques
 
@@ -20,13 +20,17 @@ Décrit comment utiliser des caractères génériques dans PowerShell.
 
 ## <a name="long-description"></a>DESCRIPTION DÉTAILLÉE
 
-Les caractères génériques représentent un ou plusieurs caractères. Vous pouvez les utiliser pour créer des séquences de mots dans des commandes. Par exemple, pour obtenir tous les fichiers du `C:\Techdocs` répertoire avec une `.ppt` extension de nom de fichier, tapez :
+Les caractères génériques représentent un ou plusieurs caractères. Vous pouvez les utiliser pour créer des séquences de mots dans des commandes. Les expressions génériques sont utilisées avec l' `-like` opérateur ou avec n’importe quel paramètre qui accepte les caractères génériques.
+
+Par exemple, pour faire correspondre tous les fichiers du `C:\Techdocs` répertoire avec une `.ppt` extension de nom de fichier, tapez :
 
 ```powershell
 Get-ChildItem C:\Techdocs\*.ppt
 ```
 
 Dans ce cas, le `*` caractère générique astérisque () représente tous les caractères qui apparaissent avant l' `.ppt` extension de nom de fichier.
+
+Les expressions génériques sont plus simples que les expressions régulières. Pour plus d’informations, consultez [about_regular_expressions](./about_Regular_Expressions.md).
 
 PowerShell prend en charge les caractères génériques suivants :
 

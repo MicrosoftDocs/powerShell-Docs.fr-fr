@@ -7,19 +7,19 @@ ms.date: 08/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
-ms.openlocfilehash: 27a1d2994dee46b9e5bfd54132ff4a665330c2b4
-ms.sourcegitcommit: 9a6b6714ded4edb5119f1b82a253608018ea6b98
+ms.openlocfilehash: 1eade078765f93713da1f665e3ad6f062a1826d9
+ms.sourcegitcommit: 9777152e026c47ba8d319593051416054cb62246
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "93205994"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100529938"
 ---
 # ConvertTo-Html
 
 ## SYNOPSIS
 Convertit les objets .NET en code HTML qui peut être affiché dans un navigateur web.
 
-## SYNTAX
+## SYNTAXE
 
 ### Page (par défaut)
 
@@ -69,7 +69,7 @@ La commande utilise l' `Get-Alias` applet de commande pour récupérer les alias
 ### Exemple 3 : créer une page Web pour afficher les événements PowerShell
 
 ```powershell
-`Get-EventLog` -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
+Get-EventLog -LogName "Windows PowerShell" | ConvertTo-Html | Out-File pslog.htm
 ```
 
 Cette commande crée une page HTML appelée `pslog.htm` qui affiche les événements dans le journal des événements Windows PowerShell sur l’ordinateur local.
@@ -153,7 +153,7 @@ Cette commande utilise la `Get-EventLog` cmdlet pour récupérer des événement
 
 Elle utilise un opérateur de pipeline ( `|` ) pour envoyer les événements à l’applet de commande `ConvertTo-Html` , qui convertit les événements au format html.
 
-La `ConvertTo-Html` commande utilise le paramètre **Property** pour sélectionner uniquement les propriétés **ID** , **Level** et **Task** de l’événement.
+La `ConvertTo-Html` commande utilise le paramètre **Property** pour sélectionner uniquement les propriétés **ID**, **Level** et **Task** de l’événement.
 
 ### Exemple 9 : créer une page Web pour afficher les services spécifiés
 
@@ -170,7 +170,7 @@ Get-Service A* |
 Invoke-Item Services.htm
 ```
 
-Cette commande crée et ouvre une page Web qui affiche les services sur l’ordinateur qui commencent par. Elle utilise le **titre** , le **corps** , le **prétexte** et les paramètres **PostContent** de `ConvertTo-Html` pour personnaliser la sortie.
+Cette commande crée et ouvre une page Web qui affiche les services sur l’ordinateur qui commencent par. Elle utilise le **titre**, le **corps**, le **prétexte** et les paramètres **PostContent** de `ConvertTo-Html` pour personnaliser la sortie.
 
 La première partie de la commande utilise l' `Get-Service` applet de commande pour obtenir les services sur l’ordinateur qui commencent par. La commande utilise un opérateur de pipeline ( `|` ) pour envoyer les résultats à l’applet de commande `ConvertTo-Html` . La commande utilise également l' `Out-File` applet de commande pour envoyer la sortie vers le fichier Services.htm.
 
@@ -201,7 +201,7 @@ Cette commande définit le DOCTYPE du HTML retourné sur la DTD transitoire XHTM
 
 ### -As
 
-Détermine si l'objet est dans un format de table ou de liste. Les valeurs valides sont **table** et **List** . La valeur par défaut est **table** .
+Détermine si l'objet est dans un format de table ou de liste. Les valeurs valides sont **table** et **List**. La valeur par défaut est **table**.
 
 La valeur de **table** génère une table HTML qui ressemble au format de table PowerShell. La ligne d'en-tête affiche les noms des propriétés. Chaque ligne de la table représente un objet et affiche les valeurs de l'objet pour chaque propriété.
 
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 
 ### -Head
 
-Spécifie le contenu de la balise `<HEAD>`. La valeur par défaut est `<title\>HTML TABLE</title>`. Si vous utilisez le paramètre **Head** , le paramètre **title** est ignoré.
+Spécifie le contenu de la balise `<HEAD>`. Par défaut, il s’agit de `<title\>HTML TABLE</title>`. Si vous utilisez le paramètre **Head** , le paramètre **title** est ignoré.
 
 ```yaml
 Type: System.String[]
@@ -412,7 +412,7 @@ Accept wildcard characters: False
 
 ### -Transitionnel
 
-Change la Déclaration **DOCTYPE** en **DTD transitoire XHTML** , le **DOCTYPE** par défaut est **xhtml strict DTD** .
+Change la Déclaration **DOCTYPE** en **DTD transitoire XHTML**, le **DOCTYPE** par défaut est **xhtml strict DTD**.
 
 Ce paramètre a été introduit dans PowerShell 6,0.
 
