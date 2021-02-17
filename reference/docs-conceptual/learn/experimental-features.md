@@ -2,12 +2,12 @@
 ms.date: 12/14/2020
 title: Utilisation des fonctionnalités expérimentales dans PowerShell
 description: Répertorie les fonctionnalités expérimentales actuellement disponibles et leur mode d’utilisation.
-ms.openlocfilehash: be02829c27ff5d8babaf173d2ee7ebbfc7614773
-ms.sourcegitcommit: 04faa7dc1122bce839295d4891bd8b2f0ecb06ef
+ms.openlocfilehash: 556ae8d877b670b119b7b5b958a52488aad16241
+ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97879352"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100500121"
 ---
 # <a name="using-experimental-features-in-powershell"></a>Utilisation des fonctionnalités expérimentales dans PowerShell
 
@@ -38,6 +38,7 @@ Cet article décrit les fonctionnalités expérimentales disponibles et leur mod
 | PSCultureInvariantReplaceOperator                          |         |         | &check; | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; | &check; |
 | PSSubsystemPluginModel                                     |         |         | &check; | &check; |
+| PSAnsiProgress                                             |         |         |         | &check; |
 | PSAnsiRendering                                            |         |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
@@ -116,6 +117,24 @@ Avec l’accès à `$PSStyle`, cela introduit des changements dans le moteur Pow
 - La méthode `StringDecorated Substring(int contentLength)` retourne une sous-chaîne commençant à l’index 0 jusqu’à la longueur du contenu qui ne fait pas partie des séquences d’échappement ANSI. C’est nécessaire pour que la mise en forme de la table tronque les chaînes et conserve les séquences d’échappement ANSI qui n’occupent pas un espace de caractère imprimable.
 - La méthode `string ToString()` reste la même et retourne la version en texte clair de la chaîne.
 - La méthode `string ToString(bool Ansi)` retourne la chaîne incorporée ANSI brute si le paramètre `Ansi` a la valeur true. Dans le cas contraire, une version en texte en clair avec des séquences d’échappement ANSI supprimées est retournée.
+
+## <a name="psansiprogress"></a>PSAnsiProgress
+
+Cette expérience a été ajoutée dans PowerShell 7.2. La fonctionnalité ajoute le membre `$PSStyle.Progress` et vous permet de contrôler le rendu de la barre d’affichage de la progression.
+
+- `$PSStyle.Progress.Style` – Chaîne ANSI définissant le style de rendu.
+- `$PSStyle.Progress.MaxWidth` – Définit la largeur maximale de l’affichage. Défini sur `0` pour la largeur de la console.
+  La valeur par défaut est `120`
+- `$PSStyle.Progress.View` – Énumération avec les valeurs `Minimal` et `Classic`. `Classic` est le rendu existant sans modification. `Minimal` est le rendu minimal à une seule ligne. `Minimal` est la valeur par défaut.
+
+L’exemple suivant met à jour le style de rendu pour obtenir une barre de progression minimale.
+
+```powershell
+$PSStyle.Progress.View.Minimal
+```
+
+> [!NOTE]
+> La fonctionnalité expérimentale **PSAnsiRendering** doit être activée pour que vous puissiez utiliser cette fonctionnalité.
 
 ## <a name="pscommandnotfoundsuggestion"></a>PSCommandNotFoundSuggestion
 

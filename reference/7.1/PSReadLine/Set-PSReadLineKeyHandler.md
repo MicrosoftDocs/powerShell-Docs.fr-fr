@@ -3,23 +3,23 @@ external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 97d342d9f5d7227fb831794055c2cfa75b8cf765
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: a6b3d437917e26909f5dd116f3d0afa944f4138d
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208789"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563335"
 ---
 # Set-PSReadLineKeyHandler
 
 ## SYNOPSIS
 Lie des clés à des fonctions de gestionnaire de clés définies par l’utilisateur ou PSReadLine.
 
-## SYNTAX
+## SYNTAXE
 
 ### ScriptBlock
 
@@ -84,6 +84,9 @@ Accept wildcard characters: False
 Clé ou séquence de clés à lier à une fonction ou à un bloc de script. Utilisez une chaîne unique pour spécifier une seule liaison. Si la liaison est une séquence de clés, séparez les clés par une virgule, comme dans l’exemple suivant :
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> À partir de PSReadLine 2.0.0, le paramètre **corde** respecte la **casse**. Cela signifie `Ctrl+X` qu' `Ctrl+x` elle créera des liaisons différentes.
 
 Ce paramètre accepte un tableau de chaînes. Chaque chaîne est une liaison distincte, et non une séquence de clés pour une seule liaison.
 
@@ -174,13 +177,13 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### Aucun
+### None
 
 Vous ne pouvez pas rediriger des objets vers cette applet de commande.
 
 ## SORTIES
 
-### Aucun
+### None
 
 Cette applet de commande ne génère aucune sortie.
 

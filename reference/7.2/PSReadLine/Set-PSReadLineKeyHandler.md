@@ -2,16 +2,16 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/07/2018
+ms.date: 02/16/2021
 online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
-ms.openlocfilehash: 0ec3466aaaf6ed1ac78b62d88a5a6cce99153673
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 86386cb8d97e16ebdd869e2ec554fc947d788f67
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597757"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563288"
 ---
 # Set-PSReadLineKeyHandler
 
@@ -83,6 +83,9 @@ Accept wildcard characters: False
 Clé ou séquence de clés à lier à une fonction ou à un bloc de script. Utilisez une chaîne unique pour spécifier une seule liaison. Si la liaison est une séquence de clés, séparez les clés par une virgule, comme dans l’exemple suivant :
 
 `Ctrl+X,Ctrl+L`
+
+> [!NOTE]
+> À partir de PSReadLine 2.0.0, le paramètre **corde** respecte la **casse**. Cela signifie `Ctrl+X` qu' `Ctrl+x` elle créera des liaisons différentes.
 
 Ce paramètre accepte un tableau de chaînes. Chaque chaîne est une liaison distincte, et non une séquence de clés pour une seule liaison.
 
