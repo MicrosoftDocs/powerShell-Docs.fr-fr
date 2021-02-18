@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur Windows
 description: Informations sur l’installation de PowerShell sur Windows
 ms.date: 02/02/2021
-ms.openlocfilehash: befc5ff156cb7c3843d89e394e903778682ba28e
-ms.sourcegitcommit: 40b6d8e9b6d791ac69e2ff85224e900b21552bc1
+ms.openlocfilehash: 12dedfed8349d243d3f2988fd7cb69c4cfc276bb
+ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99536489"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100563263"
 ---
 # <a name="installing-powershell-on-windows"></a>Installation de PowerShell sur Windows
 
@@ -30,8 +30,8 @@ Pour installer PowerShell sur Windows, téléchargez le [dernier][] package d’
 
 Le fichier MSI ressemble à `PowerShell-<version>-win-<os-arch>.msi`. Par exemple :
 
-- `PowerShell-7.1.1-win-x64.msi`
-- `PowerShell-7.1.1-win-x86.msi`
+- `PowerShell-7.1.2-win-x64.msi`
+- `PowerShell-7.1.2-win-x86.msi`
 
 Une fois téléchargé, double-cliquez sur le programme d’installation et suivez les invites.
 
@@ -62,7 +62,7 @@ Les packages MSI peuvent être installés à partir de la ligne de commande, ce 
 L’exemple suivant montre comment installer PowerShell sans assistance avec toutes les options d’installation activées.
 
 ```powershell
-msiexec.exe /package PowerShell-7.1.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.1.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 Pour obtenir une liste complète des options de ligne de commande pour `Msiexec.exe`, consultez [Options de ligne de commande](/windows/desktop/Msi/command-line-options).
@@ -84,10 +84,10 @@ Cela peut être utilisé par les administrateurs et les développeurs pour trouv
 
 Les archives ZIP binaires PowerShell sont fournies afin de permettre des scénarios de déploiement avancés. Téléchargez l’une des archives ZIP suivantes à partir de la page [releases][releases].
 
-- PowerShell-7.1.1-win-x64.zip
-- PowerShell-7.1.1-win-x86.zip
-- PowerShell-7.1.1-win-arm64.zip
-- PowerShell-7.1.1-win-arm32.zip
+- PowerShell-7.1.2-win-x64.zip
+- PowerShell-7.1.2-win-x86.zip
+- PowerShell-7.1.2-win-arm64.zip
+- PowerShell-7.1.2-win-arm32.zip
 
 Selon la façon dont vous téléchargez le fichier, vous devrez peut-être débloquer le fichier avec l’applet de commande `Unblock-File`. Décompressez le contenu à l’emplacement de votre choix et exécutez `pwsh.exe` à partir de celui-ci. Contrairement à l’installation des packages MSI, l’installation de l’archive ZIP ne vérifie pas les prérequis. Pour que la communication à distance via WSMan fonctionne correctement, vérifiez que vous respectez bien les [prérequis](#prerequisites).
 
@@ -226,8 +226,8 @@ Les commandes suivantes peuvent être utilisées pour installer PowerShell à l�
    ```Output
    Name               Id                           Version
    ---------------------------------------------------------------
-   PowerShell         Microsoft.PowerShell         7.1.1
-   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.1-preview.5
+   PowerShell         Microsoft.PowerShell         7.1.2
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.2-preview.5
    ```
 
 1. Installer une version de PowerShell à l’aide du paramètre `--exact`
