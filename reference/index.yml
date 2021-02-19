@@ -9,12 +9,12 @@ metadata:
   author: sdwheeler
   ms.author: sewhee
   ms.date: 09/04/2019
-  ms.openlocfilehash: 14d9c28093ec91351048819e719ab80d5dd9c501
-  ms.sourcegitcommit: a073c7db07d765ab45f52345ab98c7660582bc98
+  ms.openlocfilehash: f469ddb8179b1b2c937478e776fb0383c22357e1
+  ms.sourcegitcommit: 14f45157bb60db7ef4c321c1a525c836698cafa9
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87377513"
+  ms.lasthandoff: 02/18/2021
+  ms.locfileid: "101101285"
 highlightedContent:
   items:
   - title: Vue d’ensemble
@@ -139,18 +139,18 @@ additionalContent:
   - title: Équipe PowerShell
     summary: Communiquer avec l’équipe PowerShell
     items:
-    - title: Blog officiel de PowerShell
+    - title: Blog de l’équipe PowerShell
       summary: Actualités et annonces officielles
       url: https://devblogs.microsoft.com/powershell/
+    - title: Blog de la communauté PowerShell
+      summary: Blog permettant à la communauté de découvrir PowerShell et de partager des insights
+      url: https://devblogs.microsoft.com/powershell-community/
     - title: Équipe PowerShell sur Twitter
       summary: Actualités PowerShell en 280 caractères
       url: https://twitter.com/PowerShell_Team
-    - title: UserVoice PowerShell
-      summary: Emplacement pour les bogues dans Windows PowerShell
-      url: https://windowsserver.uservoice.com/forums/301869-powershell
     - title: Problèmes GitHub
       summary: Emplacement pour les bogues dans la version actuelle
       url: https://github.com/powershell/powershell/issues
-    - title: Hey, Scripting Guy! Blog
-      summary: Emplacement pour découvrir PowerShell et partager des expériences d’automatisation
-      url: https://devblogs.microsoft.com/scripting/
+    - title: UserVoice PowerShell
+      summary: Emplacement pour les bogues dans Windows PowerShell
+      url: https://windowsserver.uservoice.com/forums/301869-powershell
