@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Raccourcis clavier pour Windows PowerShell ISE
 description: Cet article représente une liste des raccourcis clavier utilisés dans PowerShell ISE.
-ms.openlocfilehash: 690997524ab90d7581bb03c802f189d1a4b79d3f
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 6a55bb2e6046fbda1c8b7b83345138f294009ac8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500191"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685942"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Raccourcis clavier pour Windows PowerShell ISE
 
@@ -20,6 +20,7 @@ Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suiva
 |              Action              |              Raccourcis clavier               |                                                                                                                                           Utiliser dans                                                                                                                                           |
 | -------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Aide**                         | <kbd>F1</kbd>                                 | Volet Script **Important :** vous pouvez spécifier que l’aide <kbd>F1</kbd> provient du site docs.microsoft.com ou de l’aide téléchargée (voir `Update-Help`). Pour opérer votre choix, cliquez sur **Outils**, **Options**, sur l’onglet **Paramètres généraux**, puis activez ou désactivez l’option **Utiliser le contenu de l’aide locale au lieu du contenu en ligne.** |
+| **Sélectionner tout**                   | <kbd>CTRL</kbd>+<kbd>A</kbd>                  | Volet Script                                                                                                                                                                                                                                                                                |
 | **Copy**                         | <kbd>CTRL</kbd>+<kbd>C</kbd>                  | Volets Script, Commande et Sortie                                                                                                                                                                                                                                                     |
 | **Couper**                          | <kbd>CTRL</kbd>+<kbd>X</kbd>                  | Volets Script et Commande                                                                                                                                                                                                                                                                  |
 | **Développer ou réduire le plan** | <kbd>CTRL</kbd>+<kbd>M</kbd>                  | Volet Script                                                                                                                                                                                                                                                                                |
@@ -36,6 +37,9 @@ Lorsque vous éditez un texte, vous pouvez utiliser les raccourcis clavier suiva
 | **Sélectionner tout**                   | <kbd>CTRL</kbd>+<kbd>A</kbd>                  | Volets Script, Commande et Sortie                                                                                                                                                                                                                                                     |
 | **Afficher les extraits de code**                | <kbd>CTRL</kbd>+<kbd>J</kbd>                  | Volets Script et Commande                                                                                                                                                                                                                                                                  |
 | **Annuler**                         | <kbd>CTRL</kbd>+<kbd>Z</kbd>                  | Volets Script et Commande                                                                                                                                                                                                                                                                  |
+| **Afficher l’aide IntelliSense**       | <kbd>CTRL</kbd>+<kbd>Espace</kbd>              | Volet Script                                                                                                                                                                                                                                                                                |
+| **Supprimer le mot à gauche**          | <kbd>CTRL</kbd>+<kbd>Retour arrière</kbd>          | Volet Script                                                                                                                                                                                                                                                                                |
+| **Supprimer le mot à droite**         | <kbd>CTRL</kbd>+<kbd>Supprimer</kbd>             | Volet Script                                                                                                                                                                                                                                                                                |
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Raccourcis clavier pour exécuter les scripts
 

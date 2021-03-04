@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les exceptions
 description: La gestion des erreurs fait partie intégrante du travail dès lors qu’il s’agit d’écrire du code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 589e5d1decff7aa49ce36e10908e4464a768758d
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "90012559"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685508"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Tout ce que vous avez toujours voulu savoir sur les exceptions
 
@@ -76,7 +76,7 @@ At line:1 char:1
 
 #### <a name="write-error--erroraction-stop"></a>Write-Error -ErrorAction Stop
 
-Comme nous l’avons vu, `Write-Error` ne génère pas d’erreur bloquante par défaut. Si l’on spécifie `-ErrorAction Stop` en revanche, `Write-Error` déclenche une erreur bloquante qui peut être gérée à l’aide d’un `catch`.
+Comme nous l’avons vu, `Write-Error` ne génère pas d’erreur bloquante par défaut. Si vous spécifiez `-ErrorAction Stop` en revanche, `Write-Error` déclenche une erreur bloquante qui peut être gérée avec un `catch`.
 
 ```powershell
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
