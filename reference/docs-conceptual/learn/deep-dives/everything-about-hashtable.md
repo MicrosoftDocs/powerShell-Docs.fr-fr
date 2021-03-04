@@ -3,12 +3,12 @@ title: Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 description: Les tables de hachage sont très importantes dans PowerShell, c’est pourquoi il est judicieux de parfaitement les maîtriser.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e386e2aa2f7b85bee4bf622fd9251ef7642cf16a
-ms.sourcegitcommit: 57e577097085dc621bd797ef4a7e2854ea7d4e29
+ms.openlocfilehash: a471c0fe2c48820d6c1d152e2850b1e431d28f23
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "97980499"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686065"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Tout ce que vous avez toujours voulu savoir sur les tables de hachage
 
@@ -360,7 +360,7 @@ $property = @{
 
 ```powershell
 $drives = Get-PSDrive | Where Used
-$drives | Select-Object -Properties name, $property
+$drives | Select-Object -Property name, $property
 
 Name     totalSpaceGB
 ----     ------------
@@ -370,7 +370,7 @@ C    238.472652435303
 Je l’ai placé dans une variable, mais il peut être facilement défini en ligne et vous pouvez raccourcir `name` en `n` et `expression` en `e` à cette étape.
 
 ```powershell
-$drives | Select-Object -properties name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
 ```
 
 Personnellement, je trouve ces commandes un peut trop longues et sources de comportements erronés sur lesquels je ne m’étendrai pas. Je préfère créer une table de hachage ou `pscustomobject` avec tous les champs et propriétés souhaités, au lieu d’utiliser cette approche dans les scripts. Mais il existe beaucoup de codes capables de le faire, et je tenais à vous en informer. Je parlerai de la création d’un objet `pscustomobject` un peu plus tard.

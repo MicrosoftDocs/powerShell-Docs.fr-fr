@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scheduled_Jobs_Troubleshooting
-ms.openlocfilehash: 924205edb9d44724cfef201d84baa304ecde67ad
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: aac2133cee4abdd7e50e7b433104b9578d74b0a8
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207246"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685875"
 ---
 # <a name="about-scheduled-jobs-troubleshooting"></a>À propos de la résolution des problèmes de tâches planifiées
 
@@ -56,7 +56,7 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 50     ProcessJob   PSScheduledJob  Completed     False           localhost
 ```
 
-L' `Get-Job` applet de commande envoie les objets **ProcessJob** vers le dessous du pipeline. L' `Format-Table` applet de commande affiche le **nom** , l' **ID** et les propriétés **PSBeginTime** d’une instance de tâche planifiée dans une table.
+L' `Get-Job` applet de commande envoie les objets **ProcessJob** vers le dessous du pipeline. L' `Format-Table` applet de commande affiche le **nom**, l' **ID** et les propriétés **PSBeginTime** d’une instance de tâche planifiée dans une table.
 
 ```powershell
 Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
@@ -149,7 +149,7 @@ Import-Module PSScheduledJob
 
 Si `Receive-Job` ne retourne pas de résultats d’instance de travail, cela peut être dû au fait qu’une `Receive-Job` commande a été exécutée pour cette instance de tâche dans la session active sans le paramètre **Keep** .
 
-Lorsque vous utilisez `Receive-Job` sans le paramètre **Keep** , `Receive-Job` retourne les résultats de la tâche et définit la propriété **HasMoreData** de l’instance de tâche sur **false** . La valeur **false** signifie que `Receive-Job` a retourné les résultats de la tâche et que l’instance n’a plus de résultats à retourner. Ce paramètre est approprié pour les travaux en arrière-plan standard, mais pas pour les instances de tâches planifiées, qui sont enregistrées sur le disque.
+Lorsque vous utilisez `Receive-Job` sans le paramètre **Keep** , `Receive-Job` retourne les résultats de la tâche et définit la propriété **HasMoreData** de l’instance de tâche sur **false**. La valeur **false** signifie que `Receive-Job` a retourné les résultats de la tâche et que l’instance n’a plus de résultats à retourner. Ce paramètre est approprié pour les travaux en arrière-plan standard, mais pas pour les instances de tâches planifiées, qui sont enregistrées sur le disque.
 
 Pour réafficher les résultats de l’instance de tâche, démarrez une nouvelle session PowerShell en tapant `PowerShell` . Importez le module **PSScheduledJob** , puis réessayez d' `Receive-Job` exécuter la commande.
 
@@ -273,7 +273,7 @@ En outre, les travaux en arrière-plan et leurs résultats sont spécifiques à 
 
 Les tâches planifiées ne s’exécutent pas automatiquement si le travail est déclenché ou si la tâche planifiée est désactivée.
 
-Utilisez l' `Get-ScheduledJob` applet de commande pour récupérer la tâche planifiée. Vérifiez que la valeur de la propriété **Enabled** de la tâche planifiée est **true** .
+Utilisez l' `Get-ScheduledJob` applet de commande pour récupérer la tâche planifiée. Vérifiez que la valeur de la propriété **Enabled** de la tâche planifiée est **true**.
 
 ```powershell
 Get-ScheduledJob ProcessJob
@@ -294,7 +294,7 @@ True
 ```
 
 Utilisez l' `Get-JobTrigger` applet de commande pour récupérer les déclencheurs de la tâche planifiée.
-Vérifiez que la valeur de la propriété **Enabled** du déclencheur de tâche est **true** .
+Vérifiez que la valeur de la propriété **Enabled** du déclencheur de tâche est **true**.
 
 ```powershell
 Get-ScheduledJob ProcessJob | Get-JobTrigger
@@ -332,7 +332,7 @@ Par exemple, une tâche planifiée qui requiert que l’ordinateur soit inactif 
 Utilisez l' `Get-ScheduledJobOption` applet de commande pour examiner les options de tâche et leurs valeurs.
 
 ```powershell
-Get-ScheduledJob -Name ProcessJob
+Get-ScheduledJobOption -Name ProcessJob
 ```
 
 ```Output

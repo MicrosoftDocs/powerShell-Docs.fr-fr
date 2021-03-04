@@ -6,12 +6,12 @@ ms.date: 07/31/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
-ms.openlocfilehash: 202af7ea491b8fa020ab2ff7ae6b1cc697829b6b
-ms.sourcegitcommit: 021ea294327dec542ec040619dac0d2171397a90
+ms.openlocfilehash: e6b9ac8b096ff2607dc6b68512a998ac00bd1796
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97804127"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685695"
 ---
 # <a name="about-signing"></a>À propos de la signature
 

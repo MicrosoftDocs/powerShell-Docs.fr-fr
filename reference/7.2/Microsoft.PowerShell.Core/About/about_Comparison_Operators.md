@@ -1,16 +1,16 @@
 ---
 description: Décrit les opérateurs qui comparent des valeurs dans PowerShell.
 Locale: en-US
-ms.date: 01/20/2021
+ms.date: 02/19/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 2ccd631083ddc06d25f2c3b4733223cca2e89d44
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: 73a83e1cd93c3467857d5eded8ad6c384e548937
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500244"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685305"
 ---
 # <a name="about-comparison-operators"></a>À propos des opérateurs de comparaison
 
@@ -158,7 +158,7 @@ $null -ne $a
 ```
 
 ```output
-False
+True
 ```
 
 Les éléments suivants, cependant, décodent tous les éléments null de `$a` :

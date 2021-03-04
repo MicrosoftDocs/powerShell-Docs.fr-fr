@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: 1b1824db5c5c20698d551a6277890ce6c82c4e11
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: c8b674a895bb323b734f018e5e8654cfec4d0045
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725185"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685581"
 ---
 # ForEach-Object
 
@@ -383,6 +383,44 @@ Output: 5
 
 `Output: 3` n’est jamais écrit, car le scriptblock parallèle de cette itération a été arrêté.
 
+### Exemple 17 : passage de variables dans le script parallèle imbriqué ScriptBlockSet
+
+Vous pouvez créer une variable en dehors d’un `Foreach-Object -Parallel` scriptblock délimité et l’utiliser à l’intérieur du scriptblock avec le `$using` mot clé.
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+Le scriptblock imbriqué ne peut pas accéder à la `$test2` variable et une erreur est générée.
+
 ## Paramètres
 
 ### -ArgumentList
@@ -590,7 +628,7 @@ Provoque l’exécution de l’appel parallèle en tant que tâche PowerShell. U
 Ce paramètre a été introduit dans PowerShell 7,0.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ParallelParameterSet
 Aliases:
 
@@ -606,7 +644,7 @@ Accept wildcard characters: False
 Vous demande une confirmation avant d’exécuter l’applet de commande.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -622,7 +660,7 @@ Accept wildcard characters: False
 Montre ce qui se passe en cas d’exécution de l’applet de commande. L’applet de commande n’est pas exécutée.
 
 ```yaml
-Type: SwitchParameter
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -649,7 +687,7 @@ Vous pouvez diriger n’importe quel objet vers cette applet de commande.
 
 Cette applet de commande retourne les objets qui sont déterminés par l’entrée.
 
-## Remarques
+## Notes
 
 - L' `ForEach-Object` applet de commande fonctionne très bien comme l’instruction **foreach** , sauf que vous ne pouvez pas diriger d’entrée vers une instruction **foreach** . Pour plus d’informations sur l’instruction **foreach** , consultez [about_Foreach](./About/about_Foreach.md).
 

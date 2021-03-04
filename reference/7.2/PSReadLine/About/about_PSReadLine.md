@@ -5,12 +5,12 @@ ms.date: 11/23/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: À propos de PSReadLine
-ms.openlocfilehash: b0c5950b2af6a866d0ffcfdd6ce7ad92a1763778
-ms.sourcegitcommit: 77f6225ab0c8ea9faa1fe46b2ea15c178ec170e3
+ms.openlocfilehash: ddc88dda3514e4279b6d91b023e26da88f645af7
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100500210"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685219"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -114,13 +114,19 @@ Supprimez le caractère avant le curseur.
 - Mode d’insertion VI : `<Backspace>`
 - Mode de commande VI : `<X>` , `<d,h>`
 
+### <a name="backwarddeleteinput"></a>BackwardDeleteInput
+
+Comme BackwardKillInput-supprime le texte du point jusqu’au début de l’entrée, mais ne place pas le texte supprimé dans l’anneau d’arrêt.
+
+- Cmd `<Ctrl+Home>`
+- Mode d’insertion VI : `<Ctrl+u>` , `<Ctrl+Home>`
+- Mode de commande VI : `<Ctrl+u>` , `<Ctrl+Home>`
+
 ### <a name="backwarddeleteline"></a>BackwardDeleteLine
 
 Comme BackwardKillLine-supprime le texte du point jusqu’au début de la ligne, mais ne place pas le texte supprimé dans l’anneau d’arrêt.
 
-- Cmd `<Ctrl+Home>`
-- Mode d’insertion VI : `<Ctrl+u>` , `<Ctrl+Home>`
-- Mode de commande VI : `<Ctrl+u>` , `<Ctrl+Home>` , `<d,0>`
+- Mode de commande VI : `<d,0>`
 
 ### <a name="backwarddeleteword"></a>BackwardDeleteWord
 
@@ -128,11 +134,17 @@ Supprime le mot précédent.
 
 - Mode de commande VI : `<Ctrl+w>` , `<d,b>`
 
-### <a name="backwardkillline"></a>BackwardKillLine
+### <a name="backwardkillinput"></a>BackwardKillInput
 
-Effacez l’entrée à partir du début de l’entrée jusqu’au curseur. Le texte effacé est placé dans le Kill-Ring.
+Effacez le texte du début de l’entrée jusqu’au curseur. Le texte effacé est placé dans le Kill-Ring.
 
 - Emacs- `<Ctrl+u>` , `<Ctrl+x,Backspace>`
+
+### <a name="backwardkillline"></a>BackwardKillLine
+
+Efface le texte du début de la ligne logique actuelle jusqu’au curseur. Le texte effacé est placé dans le Kill-Ring.
+
+- La fonction est indépendante.
 
 ### <a name="backwardkillword"></a>BackwardKillWord
 
@@ -243,13 +255,19 @@ Supprimer le mot suivant.
 
 - Mode de commande VI : `<d,w>`
 
-### <a name="forwarddeleteline"></a>ForwardDeleteLine
+### <a name="forwarddeleteinput"></a>ForwardDeleteInput
 
-Comme ForwardKillLine-supprime le texte du point jusqu’à la fin de la ligne, mais ne place pas le texte supprimé dans l’anneau Kill.
+Comme KillLine-supprime le texte du point jusqu’à la fin de l’entrée, mais ne place pas le texte supprimé dans l’anneau de suppression.
 
 - Cmd `<Ctrl+End>`
 - Mode d’insertion VI : `<Ctrl+End>`
 - Mode de commande VI : `<Ctrl+End>`
+
+### <a name="forwarddeleteline"></a>ForwardDeleteLine
+
+Supprime le texte du point jusqu’à la fin de la ligne logique actuelle, mais ne place pas le texte supprimé dans l’anneau d’arrêt.
+
+- La fonction est indépendante
 
 ### <a name="insertlineabove"></a>InsertLineAbove
 
@@ -1029,7 +1047,9 @@ Insérez la clé.
 
 ### <a name="showcommandhelp"></a>ShowCommandHelp
 
-Fournit une vue d’ensemble de l’aide de l’applet de commande sur une autre mémoire tampon d’écran à l’aide d’un radiomessagerie de **Microsoft. PowerShell. téléavertisseur**.
+Fournit une vue d’ensemble de l’aide sur les applets de commande. Lorsque le curseur se trouve à la fin d’un paramètre complètement développé, le fait d’appuyer sur la `<F1>` touche positionne l’affichage de l’aide à l’emplacement de ce paramètre.
+
+L’aide est affichée sur une mémoire tampon d’écran de remplacement à l’aide d’un radiomessagerie de **Microsoft. PowerShell. radiomessagerie**. Lorsque vous quittez le pagineur, vous revenez à la position initiale du curseur sur l’écran d’origine. Ce récepteur de radiomessagerie fonctionne uniquement dans les applications terminal modernes telles que [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 
 - Cmd `<F1>`
 - Emacs- `<F1>`
@@ -1046,7 +1066,7 @@ Affiche toutes les clés liées.
 
 ### <a name="showparameterhelp"></a>ShowParameterHelp
 
-Fournit une aide dynamique pour les paramètres en l’affiche sous la ligne de commande actuelle, comme `MenuComplete` .
+Fournit une aide dynamique pour les paramètres en l’affiche sous la ligne de commande actuelle, comme `MenuComplete` . Lorsque vous appuyez sur la touche, le curseur doit se trouver à la fin du nom de paramètre entièrement développé `<Alt+h>` .
 
 - Cmd `<Alt+h>`
 - Emacs- `<Alt+h>`
@@ -1125,6 +1145,15 @@ Ajustez la sélection actuelle pour inclure le mot précédent.
 
 - Cmd `<Shift+Ctrl+LeftArrow>`
 - Emacs- `<Alt+B>`
+
+### <a name="selectcommandargument"></a>SelectCommandArgument
+
+Effectuez une sélection visuelle des arguments de commande. La sélection des arguments est limitée au sein d’un bloc de script. En fonction de la position du curseur, il effectue une recherche à partir du bloc de script le plus profond dans le bloc de script le plus élevé et s’arrête lorsqu’il trouve des arguments dans une portée de bloc de script.
+
+Cette fonction honore DigitArgument. Elle traite les valeurs d’argument positives ou négatives comme des décalages vers l’avant ou vers l’arrière à partir de l’argument actuellement sélectionné, ou à partir de la position actuelle du curseur quand aucun argument n’est sélectionné.
+
+- Cmd `<Alt+a>`
+- Emacs- `<Alt+a>`
 
 ### <a name="selectforwardchar"></a>SelectForwardChar
 
@@ -1430,7 +1459,7 @@ Cette méthode d’assistance est utilisée pour les liaisons personnalisées qu
   [ref]$numericArg, 1)
 ```
 
-## <a name="notes"></a>Remarques
+## <a name="notes"></a>Notes
 
 ### <a name="command-history"></a>Historique des commandes
 

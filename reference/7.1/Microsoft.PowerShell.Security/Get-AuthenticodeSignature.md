@@ -7,19 +7,19 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 44608ba9fa2324f9d6d381801876c831ed8b3db8
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: b1b470fb1dd23cd404b7f5fea4981b39f206ae87
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347293"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685332"
 ---
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
 Obtient des informations sur la signature Authenticode d’un fichier.
 
-## SYNTAXE
+## SYNTAX
 
 ### ByPath (par défaut)
 
@@ -39,9 +39,11 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
-L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets. Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
+L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets.
+Si le fichier est signé avec une signature signée et que le catalogue Windows est signé, la signature du catalogue Windows est utilisée.
+Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
 
 ## EXEMPLES
 
@@ -83,7 +85,7 @@ Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePa
 
 Cette commande obtient des informations sur la signature Authenticode pour le contenu d’un fichier. Dans cet exemple, l’extension de fichier est spécifiée en même temps que le contenu du fichier.
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -Contenu
 
@@ -119,7 +121,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Spécifie le chemin d'accès au fichier à examiner. Contrairement à **FilePath** , la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès contient un caractère d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell de ne pas interpréter les caractères comme des caractères d’échappement.
+Spécifie le chemin d'accès au fichier à examiner. Contrairement à **FilePath**, la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès contient un caractère d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell de ne pas interpréter les caractères comme des caractères d’échappement.
 
 ```yaml
 Type: System.String[]

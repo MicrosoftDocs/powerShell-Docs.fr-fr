@@ -1,21 +1,21 @@
 ---
 title: Tout ce que vous avez toujours voulu savoir sur l’instruction switch
 description: L’instruction switch dans PowerShell offre des fonctionnalités qui n’existent pas dans d’autres langages.
-ms.date: 05/23/2020
+ms.date: 03/01/2021
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c2e77aa5fb36d04fec1bc86f751291205120c729
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.openlocfilehash: f6baa624285557452a2b95150b2c4de1ab274f27
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93355117"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686000"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>Tout ce que vous avez toujours voulu savoir sur l’instruction switch
 
 À l’instar de nombreux autres langages, PowerShell a des commandes pour contrôler le flux d’exécution dans vos scripts. [switch][] est une de ces instructions et, dans PowerShell, elle offre des fonctionnalités qui n’existent pas dans d’autres langages. Aujourd’hui, nous nous intéressons à l’utilisation de l’instruction `switch` de PowerShell.
 
 > [!NOTE]
-> La [Version d’origine][] de cet article est parue sur le blog écrit par [@KevinMarquette][]. L’équipe PowerShell remercie Kevin d’avoir partagé ce contenu avec nous. Consultez son blog sur [PowerShellExplained.com][].
+> La [Version d’origine][] de cet article est parue sur le blog écrit par [@KevinMarquette][]. L’équipe PowerShell remercie Kevin d’avoir partagé ce contenu. Consultez son blog à l’adresse [PowerShellExplained.com][].
 
 ## <a name="the-if-statement"></a>Instruction `if`
 
@@ -169,7 +169,7 @@ Vous pouvez utiliser `$PSItem` ou `$_` pour référencer l’élément actif qui
 
 ## <a name="parameters"></a>Paramètres
 
-Une fonctionnalité unique de l'instruction `switch` de PowerShell est qu’elle a plusieurs [paramètres de commutateur][] qui modifient son fonctionnement.
+Une fonctionnalité unique de l'instruction `switch` de PowerShell est qu’elle a plusieurs paramètres de commutateur qui modifient son fonctionnement.
 
 ### <a name="-casesensitive"></a>-CaseSensitive
 
@@ -738,6 +738,5 @@ L’instruction switch est simple en apparence, mais elle offre des fonctionnali
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
-[Paramètres de commutateur]: https://www.powershellmagazine.com/2013/12/20/using-powershell-switch-vs-boolean-parameters-in-sma-runbooks/
 [Les nombreuses façons d’utiliser les expressions régulières]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [Tables de hachage]: everything-about-hashtable.md

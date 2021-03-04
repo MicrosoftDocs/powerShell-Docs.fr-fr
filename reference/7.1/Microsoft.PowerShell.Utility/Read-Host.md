@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: b76fc092046a29dcad52f755794fd55dd84ac675
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 1c799a5b0f9041d285ce0e83a98582d6888c607e
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "93205249"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685295"
 ---
 # Read-Host
 
@@ -36,6 +36,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## Description
 
 L' `Read-Host` applet de commande lit une ligne d’entrée à partir de la console. Vous pouvez l'utiliser pour inviter un utilisateur à saisir une entrée. Comme vous pouvez enregistrer l'entrée sous la forme d'une chaîne sécurisée, vous pouvez utiliser cette applet de commande pour inviter les utilisateurs à entrer des données de sécurité, telles que des mots de passe, ainsi que des données partagées.
+
+> [!NOTE]
+> `Read-Host` a une limite de 1022 caractères qu’il peut accepter comme entrée d’un utilisateur.
 
 ## EXEMPLES
 
@@ -67,7 +70,7 @@ $pwd_string = Read-Host "Enter a Password" -MaskInput
 
 ### -AsSecureString
 
-Indique que l’applet de commande affiche des astérisques ( `*` ) à la place des caractères que l’utilisateur tape comme entrée. Lorsque vous utilisez ce paramètre, la sortie de l' `Read-Host` applet de commande est un objet **SecureString** ( **System. Security. SecureString** ).
+Indique que l’applet de commande affiche des astérisques ( `*` ) à la place des caractères que l’utilisateur tape comme entrée. Lorsque vous utilisez ce paramètre, la sortie de l' `Read-Host` applet de commande est un objet **SecureString** (**System. Security. SecureString**).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -84,7 +87,7 @@ Accept wildcard characters: False
 ### -MaskInput
 
 Indique que l’applet de commande affiche des astérisques ( `*` ) à la place des caractères que l’utilisateur tape comme entrée. Lorsque vous utilisez ce paramètre, la sortie de l' `Read-Host` applet de commande est un objet **String** .
-Cela vous permet de demander en toute sécurité un mot de passe qui est retourné sous forme de texte brut au lieu de **SecureString** .
+Cela vous permet de demander en toute sécurité un mot de passe qui est retourné sous forme de texte brut au lieu de **SecureString**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -100,10 +103,7 @@ Accept wildcard characters: False
 
 ### -Invite
 
-Spécifie le texte de l'invite.
-Tapez une chaîne.
-Si la chaîne inclut des espaces, mettez-la entre guillemets.
-PowerShell ajoute un signe deux-points ( `:` ) au texte que vous entrez.
+Spécifie le texte de l'invite. Tapez une chaîne. Si la chaîne inclut des espaces, mettez-la entre guillemets. PowerShell ajoute un signe deux-points ( `:` ) au texte que vous entrez.
 
 ```yaml
 Type: System.Object
@@ -131,7 +131,7 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ### System. String ou System. Security. SecureString
 
-Si le paramètre **AsSecureString** est utilisé, `Read-Host` retourne une **SecureString** . Sinon, une chaîne est retournée.
+Si le paramètre **AsSecureString** est utilisé, `Read-Host` retourne une **SecureString**. Sinon, une chaîne est retournée.
 
 ## REMARQUES
 

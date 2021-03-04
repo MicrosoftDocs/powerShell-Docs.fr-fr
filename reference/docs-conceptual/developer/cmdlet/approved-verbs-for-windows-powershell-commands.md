@@ -1,14 +1,14 @@
 ---
-ms.date: 09/07/2018
+ms.date: 03/01/2021
 ms.topic: reference
 title: Verbes approuvés pour les commandes PowerShell
 description: Verbes approuvés pour les commandes PowerShell
-ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 277472f141eb1ef2b7b0f19801c622a899e93665
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "93355100"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101686078"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Verbes approuvés pour les commandes PowerShell
 
@@ -57,7 +57,7 @@ Utilisez le verbe `Get` pour obtenir des informations sur une ressource (par exe
 
 ### <a name="invoke-vs-start"></a>Invoke vs. Start
 
-Utilisez le verbe `Invoke` pour effectuer des opérations synchrones, comme exécuter une commande et attendre qu’elle se termine. Utilisez le verbe `Start` pour commencer des opérations asynchrones, par exemple démarrer un processus autonome.
+Utilisez le verbe `Invoke` pour effectuer des opérations synchrones, comme exécuter une commande et attendre qu’elle se termine. Utilisez le `Start` verbe pour démarrer des opérations asynchrones, telles que le démarrage d’un processus autonome.
 
 ### <a name="ping-vs-test"></a>Ping vs. Test
 

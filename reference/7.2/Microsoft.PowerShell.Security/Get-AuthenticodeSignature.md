@@ -6,19 +6,19 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 16c61b1fd442eb68c458c3b524a8fc55d5eedcb6
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: de039877825a15f0ddf48ba7095b9cce710ec22b
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597169"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685562"
 ---
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
 Obtient des informations sur la signature Authenticode d’un fichier.
 
-## SYNTAXE
+## SYNTAX
 
 ### ByPath (par défaut)
 
@@ -40,7 +40,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 
 ## Description
 
-L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets. Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
+L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets.
+Si le fichier est signé avec une signature signée et que le catalogue Windows est signé, la signature du catalogue Windows est utilisée.
+Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
 
 ## EXEMPLES
 

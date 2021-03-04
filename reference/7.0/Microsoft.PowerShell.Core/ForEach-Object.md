@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/08/2020
+ms.date: 02/18/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
-ms.openlocfilehash: c54efeb79f4129b55e078a1ccf9d46afc2e754ab
-ms.sourcegitcommit: fb9bafd041e3615b9dc9fb77c9245581b705cd02
+ms.openlocfilehash: 584ca877cedfe1494f8386af75f9f1911a5b8f15
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725168"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685638"
 ---
 # ForEach-Object
 
@@ -383,6 +383,44 @@ Output: 5
 
 `Output: 3` n’est jamais écrit, car le scriptblock parallèle de cette itération a été arrêté.
 
+### Exemple 17 : passage de variables dans le script parallèle imbriqué ScriptBlockSet
+
+Vous pouvez créer une variable en dehors d’un `Foreach-Object -Parallel` scriptblock délimité et l’utiliser à l’intérieur du scriptblock avec le `$using` mot clé.
+
+```powershell
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+}
+```
+
+```Output
+TestA
+TestA
+```
+
+```powershell
+# You CANNOT create a variable inside a scoped scriptblock
+# to be used in a nested foreach parallel scriptblock.
+$test1 = 'TestA'
+1..2 | Foreach-Object -Parallel {
+    $using:test1
+    $test2 = 'TestB'
+    1..2 | Foreach-Object -Parallel {
+        $using:test2
+    }
+}
+```
+
+```Output
+Line |
+   2 |  1..2 | Foreach-Object -Parallel {
+     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+```
+
+Le scriptblock imbriqué ne peut pas accéder à la `$test2` variable et une erreur est générée.
+
 ## Paramètres
 
 ### -ArgumentList
@@ -631,7 +669,7 @@ Vous pouvez diriger n’importe quel objet vers cette applet de commande.
 
 Cette applet de commande retourne les objets qui sont déterminés par l’entrée.
 
-## Remarques
+## Notes
 
 - L' `ForEach-Object` applet de commande fonctionne très bien comme l’instruction **foreach** , sauf que vous ne pouvez pas diriger d’entrée vers une instruction **foreach** . Pour plus d’informations sur l’instruction **foreach** , consultez [about_Foreach](./About/about_Foreach.md).
 

@@ -2,23 +2,23 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/04/2020
+ms.date: 03/02/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
-ms.openlocfilehash: 2efe75730ef7d35618dc0d1fbf7a8d6f8a5db5ae
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 5563413400abd28ce376265970631ad1206ca518
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597545"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685261"
 ---
 # Read-Host
 
 ## SYNOPSIS
 Lit une ligne d'entrée de la console.
 
-## SYNTAXE
+## SYNTAX
 
 ### AsString (par défaut)
 
@@ -35,6 +35,9 @@ Read-Host [[-Prompt] <Object>] [-AsSecureString] [<CommonParameters>]
 ## Description
 
 L' `Read-Host` applet de commande lit une ligne d’entrée à partir de la console. Vous pouvez l'utiliser pour inviter un utilisateur à saisir une entrée. Comme vous pouvez enregistrer l'entrée sous la forme d'une chaîne sécurisée, vous pouvez utiliser cette applet de commande pour inviter les utilisateurs à entrer des données de sécurité, telles que des mots de passe, ainsi que des données partagées.
+
+> [!NOTE]
+> `Read-Host` a une limite de 1022 caractères qu’il peut accepter comme entrée d’un utilisateur.
 
 ## EXEMPLES
 
@@ -99,10 +102,7 @@ Accept wildcard characters: False
 
 ### -Invite
 
-Spécifie le texte de l'invite.
-Tapez une chaîne.
-Si la chaîne inclut des espaces, mettez-la entre guillemets.
-PowerShell ajoute un signe deux-points ( `:` ) au texte que vous entrez.
+Spécifie le texte de l'invite. Tapez une chaîne. Si la chaîne inclut des espaces, mettez-la entre guillemets. PowerShell ajoute un signe deux-points ( `:` ) au texte que vous entrez.
 
 ```yaml
 Type: System.Object
@@ -122,7 +122,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### None
+### Aucun
 
 Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 

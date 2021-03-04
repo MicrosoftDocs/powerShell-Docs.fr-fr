@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 910897ae1e41b2e4bd082977ac2904388f924769
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cf19973acf799b25b8b598fad70f84943f958e1d
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203425"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685889"
 ---
 # Get-AuthenticodeSignature
 
@@ -41,7 +41,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 
 ## Description
 
-L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets. Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
+L' `Get-AuthenticodeSignature` applet de commande obtient des informations sur la signature Authenticode pour un fichier ou un contenu de fichier sous la forme d’un tableau d’octets.
+Si le fichier est signé avec une signature signée et que le catalogue Windows est signé, la signature du catalogue Windows est utilisée.
+Si le fichier n'est pas signé, les informations sont récupérées, mais les champs sont vides.
 
 ## EXEMPLES
 
@@ -119,7 +121,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Spécifie le chemin d'accès au fichier à examiner. Contrairement à **FilePath** , la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès contient un caractère d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell de ne pas interpréter les caractères comme des caractères d’échappement.
+Spécifie le chemin d'accès au fichier à examiner. Contrairement à **FilePath**, la valeur du paramètre **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n’est interprété en tant que caractère générique. Si le chemin d’accès contient un caractère d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell de ne pas interpréter les caractères comme des caractères d’échappement.
 
 ```yaml
 Type: System.String[]

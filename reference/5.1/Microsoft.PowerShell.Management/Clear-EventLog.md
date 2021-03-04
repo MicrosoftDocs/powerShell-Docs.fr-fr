@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
-ms.openlocfilehash: 695a13d4fbbf60caadeed994c1aa9c36432be917
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: af1c808b22a812700857e756136fd570fa0acc35
+ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204069"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685906"
 ---
 # Clear-EventLog
 
@@ -27,11 +27,9 @@ Clear-EventLog [-LogName] <String[]> [[-ComputerName] <String[]>] [-WhatIf] [-Co
 
 ## Description
 
-L' `Clear-EventLog` applet de commande supprime toutes les entrées des journaux des événements spécifiés sur l’ordinateur local ou sur des ordinateurs distants.
-Pour utiliser `Clear-EventLog` , vous devez être membre du groupe Administrateurs sur l’ordinateur concerné.
+L' `Clear-EventLog` applet de commande supprime toutes les entrées des journaux des événements spécifiés sur l’ordinateur local ou sur des ordinateurs distants. Pour utiliser `Clear-EventLog` , vous devez être membre du groupe Administrateurs sur l’ordinateur concerné.
 
-Les applets de commande qui contiennent le nom **EventLog** (les applets de commande EventLog) fonctionnent uniquement sur les journaux des événements classiques.
-Pour récupérer des événements à partir des journaux qui utilisent la technologie du journal des événements Windows dans Windows Vista et les versions ultérieures de Windows, utilisez l’applet de commande Get-WinEvent.
+Les applets de commande qui contiennent le nom **EventLog** (les applets de commande EventLog) fonctionnent uniquement sur les journaux des événements classiques. Pour récupérer des événements à partir des journaux qui utilisent la technologie du journal des événements Windows dans Windows Vista et les versions ultérieures de Windows, utilisez l’applet de commande Get-WinEvent.
 
 ## EXEMPLES
 
@@ -96,14 +94,11 @@ Notez que quelques entrées ont été ajoutées au journal système et au journa
 
 ### -ComputerName
 
-Spécifie un ordinateur distant.
-La valeur par défaut est l'ordinateur local.
+Spécifie un ordinateur distant. La valeur par défaut est l'ordinateur local.
 
-Tapez le nom NetBIOS, une adresse IP ou le nom de domaine complet d'un ordinateur distant.
-Pour spécifier l'ordinateur local, tapez le nom de l'ordinateur, un point (.) ou « localhost ».
+Tapez le nom NetBIOS, une adresse IP ou le nom de domaine complet d'un ordinateur distant. Pour spécifier l'ordinateur local, tapez le nom de l'ordinateur, un point (.) ou « localhost ».
 
-Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell.
-Vous pouvez utiliser le paramètre **ComputerName** de `Get-EventLog` même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
+Ce paramètre ne s'appuie pas sur la communication à distance Windows PowerShell. Vous pouvez utiliser le paramètre **ComputerName** de `Get-EventLog` même si votre ordinateur n’est pas configuré pour exécuter des commandes distantes.
 
 ```yaml
 Type: System.String[]
@@ -119,10 +114,10 @@ Accept wildcard characters: False
 
 ### -LogName
 
-Spécifie les journaux des événements.
-Entrez le nom du journal (la valeur de la propriété log et non le et non LogDisplayName) d’un ou plusieurs journaux des événements, séparés par des virgules.
-Les caractères génériques ne sont pas autorisés.
-Ce paramètre est obligatoire.
+Spécifie les journaux des événements. Entrez le nom du journal (la valeur de la propriété **log** n’est pas **et non LogDisplayName**) d’un ou plusieurs journaux des événements, séparés par des virgules. Les caractères génériques ne sont pas autorisés. Ce paramètre est obligatoire.
+
+> [!IMPORTANT]
+> Ce paramètre est supposé accepter les valeurs du pipeline par nom de propriété. Toutefois, il existe un bogue qui empêche cela de fonctionner. Vous devez passer une valeur directement à l’aide du paramètre.
 
 ```yaml
 Type: System.String[]
