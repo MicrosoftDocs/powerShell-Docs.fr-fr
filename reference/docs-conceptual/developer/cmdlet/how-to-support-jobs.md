@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/09/2021
 ms.topic: reference
 title: Guide pratique pour prendre en charge les travaux
 description: Guide pratique pour prendre en charge les travaux
-ms.openlocfilehash: d755093e941aa660032f8d283cb43ba5eeec8c4b
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1528f5d934605caa4009688845a6caa7b95b86a3
+ms.sourcegitcommit: e679533f966f4e97cddae24531a22436da13610c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92666975"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102532116"
 ---
 # <a name="how-to-support-jobs"></a>Guide pratique pour prendre en charge les travaux
 
@@ -32,7 +32,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06AsJobParam](msh_samplesGetProc06#GetProc06AsJobParam)]  -->
 
-2. Créez un objet qui dérive de la classe [System. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Cet objet peut être un objet de traitement personnalisé ou l’un des objets de traitement fournis par Windows PowerShell, tel qu’un objet [System. Management. Automation. PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) .
+1. Créez un objet qui dérive de la classe [System. Management. Automation. job](/dotnet/api/System.Management.Automation.Job) . Cet objet peut être un objet de traitement personnalisé ou l’un des objets de traitement fournis par Windows PowerShell, tel qu’un objet [System. Management. Automation. PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) .
 
     L’exemple suivant montre un objet de traitement personnalisé.
 
@@ -42,7 +42,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction pour détecter si l’applet de commande doit s’exécuter en tant que tâche. Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.
+1. Dans une méthode de traitement des enregistrements, ajoutez une `if` instruction pour détecter si l’applet de commande doit s’exécuter en tant que tâche. Le code suivant utilise la méthode [System. Management. Automation. applet](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) de commande. ProcessRecord.
 
     ```csharp
     protected override void ProcessRecord()
@@ -69,7 +69,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06ProcessRecord](msh_samplesGetProc06#GetProc06ProcessRecord)]  -->
 
-4. Pour les objets de travail personnalisés, implémentez la classe Job.
+1. Pour les objets de travail personnalisés, implémentez la classe Job.
 
     ```csharp
     private class SampleJob : Job
@@ -126,7 +126,7 @@ Cet exemple montre comment prendre en charge des travaux lorsque vous écrivez d
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. Si l’applet de commande effectue le travail, appelez la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour retourner un objet processus au pipeline. Si le travail est effectué en tant que tâche, ajoutez la tâche enfant à la tâche.
+1. Si l’applet de commande effectue le travail, appelez la méthode [System. Management. Automation. cmdlet. WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) pour retourner un objet processus au pipeline. Si le travail est effectué en tant que tâche, ajoutez la tâche enfant à la tâche.
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -209,6 +209,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// Specify the AsJob parameter. This parameter indicates
     /// whether the cmdlet should retrieve the processes internally
     /// or return a Job object that retrieves the processes.
+    /// </summary>
     [Parameter()]
     public SwitchParameter AsJob
     {
