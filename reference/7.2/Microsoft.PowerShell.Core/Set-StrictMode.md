@@ -2,23 +2,23 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: 58261830ca65da295aeb85cda22d0a78762e2502
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 007c2cd044ac91a29b40f5a49e84482d7523d3ca
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598800"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771458"
 ---
 # Set-StrictMode
 
 ## SYNOPSIS
 Établit et applique des règles de codage dans les expressions, les scripts et les blocs de script.
 
-## SYNTAXE
+## SYNTAX
 
 ### Version (par défaut)
 
@@ -202,7 +202,7 @@ Les valeurs effectives pour ce paramètre sont les suivantes :
   - Interdit les références aux propriétés inexistantes d’un objet.
   - Interdit les appels de fonction qui utilisent la syntaxe pour appeler des méthodes.
   - Interdit les index hors limites ou les index de tableau insolubles.
-- Latest
+- Plus récent
   - Sélectionne la dernière version disponible. La dernière version est la plus stricte. Utilisez cette valeur pour vous assurer que les scripts utilisent la version disponible la plus stricte, même quand de nouvelles versions sont ajoutées à PowerShell.
 
 > [!CAUTION]
@@ -226,17 +226,19 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### None
+### Aucun
 
 Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 
 ## SORTIES
 
-### None
+### Aucun
 
 Cette applet de commande ne retourne aucune sortie.
 
 ## REMARQUES
+
+Tandis que le `Set-StrictMode` paramètre de **version** accepte des valeurs supérieures à `3.0` , aucune règle supplémentaire n’est actuellement définie pour tout ce qui est supérieur à `3.0` .
 
 `Set-StrictMode` est effectif uniquement dans l’étendue dans laquelle il est défini et dans ses étendues enfants. Pour plus d’informations sur les étendues dans PowerShell, consultez [about_Scopes](about/about_Scopes.md).
 

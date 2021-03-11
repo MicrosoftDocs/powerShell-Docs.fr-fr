@@ -3,23 +3,23 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/09/2020
+ms.date: 03/10/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
-ms.openlocfilehash: aea54dfa2ade8a9b7b67ca82fb0d6365e6eea3c4
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: bada911409d227a56ba53d44b0a64bcdf73c8959
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391338"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771441"
 ---
 # Set-StrictMode
 
 ## SYNOPSIS
 Établit et applique des règles de codage dans les expressions, les scripts et les blocs de script.
 
-## SYNTAXE
+## SYNTAX
 
 ### Version (par défaut)
 
@@ -33,7 +33,7 @@ Set-StrictMode -Version <Version> [<CommonParameters>]
 Set-StrictMode [-Off] [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 L' `Set-StrictMode` applet de commande configure le mode strict pour l’étendue actuelle et toutes les étendues enfants, puis l’active et la désactive. Lorsque le mode strict est activé, PowerShell génère une erreur de fin lorsque le contenu d’une expression, d’un script ou d’un bloc de script enfreint les règles de codage de base recommandées.
 
@@ -139,7 +139,7 @@ Sans la version 2,0, la référence à la propriété **Month** inexistante d’
 
 ### Exemple 3 : activer le mode strict en tant que version 3,0
 
-Si le mode strict est défini sur **off** , les index non valides ou hors limites renvoient des valeurs NULL.
+Si le mode strict est défini sur **off**, les index non valides ou hors limites renvoient des valeurs NULL.
 
 ```powershell
 # Strict mode is off by default.
@@ -168,7 +168,7 @@ InvalidArgument: Cannot convert value "abc" to type "System.Int32". Error: "Inpu
 
 Si le mode strict est défini sur la version 3 ou une version ultérieure, les index non valides ou hors limites génèrent des erreurs.
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -Désactivé
 
@@ -203,7 +203,7 @@ Les valeurs effectives pour ce paramètre sont les suivantes :
   - Interdit les références aux propriétés inexistantes d’un objet.
   - Interdit les appels de fonction qui utilisent la syntaxe pour appeler des méthodes.
   - Interdit les index hors limites ou les index de tableau insolubles.
-- Latest
+- Plus récent
   - Sélectionne la dernière version disponible. La dernière version est la plus stricte. Utilisez cette valeur pour vous assurer que les scripts utilisent la version disponible la plus stricte, même quand de nouvelles versions sont ajoutées à PowerShell.
 
 > [!CAUTION]
@@ -238,6 +238,8 @@ Vous ne pouvez pas diriger d'entrée vers cette applet de commande.
 Cette applet de commande ne retourne aucune sortie.
 
 ## REMARQUES
+
+Tandis que le `Set-StrictMode` paramètre de **version** accepte des valeurs supérieures à `3.0` , aucune règle supplémentaire n’est actuellement définie pour tout ce qui est supérieur à `3.0` .
 
 `Set-StrictMode` est effectif uniquement dans l’étendue dans laquelle il est défini et dans ses étendues enfants. Pour plus d’informations sur les étendues dans PowerShell, consultez [about_Scopes](about/about_Scopes.md).
 

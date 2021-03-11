@@ -6,19 +6,19 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: 6f5c76faafa2c68a6d9dfc604238c514489aa717
-ms.sourcegitcommit: 3a1d80e27438976101f216b8c3d623c61b868db8
+ms.openlocfilehash: bb3c3686310440d9f75d36ca1c83fb60066f5d6a
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99975054"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771494"
 ---
 # Get-Date
 
 ## SYNOPSIS
 Obtient les date et heure actuelles.
 
-## SYNTAXE
+## SYNTAX
 
 ### Date (par défaut)
 
@@ -546,8 +546,8 @@ Les **spécificateurs UFormat** valides sont affichés dans le tableau suivant 
 | `%d` | Jour du mois-2 chiffres                                             | 05                       |
 | `%e` | Jour du mois-précédé d’un espace si seul un chiffre           | \<space\>5,5               |
 | `%F` | Date au format aaaa-mm-jj, égale à% Y-% m-% d (le format de date ISO 8601) | 2019-06-27               |
-| `%G` | Identique à « Y »                                                             |                          |
-| `%g` | Identique à « y »                                                             |                          |
+| `%G` | Date ISO semaine année (année contenant le jeudi de la semaine)               |                          |
+| `%g` | Identique à « G »-2 chiffres                                                  |                          |
 | `%H` | Heure au format 24 heures                                                  | 17                       |
 | `%h` | Identique à « b »                                                             |                          |
 | `%I` | Heure au format 12 heures                                                  | 05                       |
