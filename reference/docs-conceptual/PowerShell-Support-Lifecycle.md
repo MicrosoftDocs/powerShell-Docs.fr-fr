@@ -2,12 +2,12 @@
 title: Cycle de vie de support de PowerShell Core
 description: Détaille les stratégies régissant le support pour PowerShell
 ms.date: 11/11/2020
-ms.openlocfilehash: 0803dda070c66b4c1d803171ecdb7029a096517b
-ms.sourcegitcommit: 4879b9cdfa3f03b04a07b84442dc1ca9ae0f6b46
+ms.openlocfilehash: a11c4df1f105364307b8a99ffe9b0cc7e9c29122
+ms.sourcegitcommit: 925819a5ad5799650c14944bd3e50fb309a7e6c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98105177"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102771475"
 ---
 # <a name="powershell-support-lifecycle"></a>Cycle de vie du support de PowerShell
 
@@ -131,11 +131,15 @@ Les [fonctionnalités expérimentales][] sont limitées au [support de la commun
 PowerShell suit les [critères de maintenance de la sécurité de Microsoft pour Windows][].
 Le tableau ci-dessous présente les fonctionnalités qui respectent les critères de maintenance et celles qui ne le font pas.
 
-| Fonctionnalité                          | Type             |
-|----------------------------------|------------------|
-| Stratégie d’exécution                 | Défense en profondeur |
-| Verrouillage du système - avec AppLocker | Défense en profondeur |
-| Verrouillage du système - avec WDAC      | Fonctionnalité de sécurité |
+|                  Fonctionnalité                   |       Type       |
+| ------------------------------------------ | ---------------- |
+| Stratégie d’exécution                           | Défense en profondeur |
+| Verrouillage du système - avec AppLocker           | Défense en profondeur |
+| Mode de langage contraint – avec AppLocker | Défense en profondeur |
+| Verrouillage du système - avec WDAC                | Fonctionnalité de sécurité |
+| Mode de langage contraint – avec WDAC      | Fonctionnalité de sécurité |
+
+Pour plus d’informations sur AppLocker et Windows Defender Application Control (WDAC), consultez [Contrôle d’application pour Windows](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control).
 
 ## <a name="release-history"></a>Historique des mises en production
 
