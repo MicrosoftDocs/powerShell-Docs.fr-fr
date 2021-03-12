@@ -1,22 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/30/2020
-online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.x.0&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Get-MarkdownOption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 775b11db79b9ca8290864b757e5cd1a0615f89e4
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+title: Get-MarkdownOption
+ms.openlocfilehash: 0da0c869216fd2a044fe03faad25e3de6f3fb8fd
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598756"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195703"
 ---
 # Get-MarkdownOption
 
 ## SYNOPSIS
 Retourne les couleurs et les styles actuels utilisés pour le rendu du contenu de la démarque dans la console.
 
-## SYNTAXE
+## SYNTAX
 
 ```
 Get-MarkdownOption [<CommonParameters>]
@@ -61,7 +63,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### None
+### Aucun
 
 ## SORTIES
 

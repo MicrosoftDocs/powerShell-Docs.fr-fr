@@ -1,15 +1,16 @@
 ---
 description: Décrit comment créer et utiliser un profil PowerShell.
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 3c739d6fd65714d5b6ef0f45990b614486d4e5ff
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 7604b8058a731939524769b6e1469b072a7eb2fe
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99598342"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196178"
 ---
 # <a name="about-profiles"></a>À propos des profils
 

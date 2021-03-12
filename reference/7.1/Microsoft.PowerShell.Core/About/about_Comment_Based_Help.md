@@ -1,16 +1,16 @@
 ---
 description: Décrit comment écrire des rubriques d’aide basées sur des commentaires pour des fonctions et des scripts.
-keywords: powershell,applet de commande
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 386ed8e1c28904c484261aa91d11ce028632cd16
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 6dfc735e02e7155d70d5db05753c4abfc54149f8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94391270"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195927"
 ---
 # <a name="about-comment-based-help"></a>À propos de l’aide basée sur les commentaires
 
@@ -21,7 +21,7 @@ Décrit comment écrire des rubriques d’aide basées sur des commentaires pour
 
 Vous pouvez écrire des rubriques d’aide basées sur des commentaires pour les fonctions et les scripts en utilisant des mots clés de commentaires d’aide spéciaux.
 
-L’applet de commande [obtenir-Help](xref:Microsoft.PowerShell.Core.Get-Help) affiche une aide basée sur des commentaires dans le même format que celui dans lequel elle affiche les rubriques d’aide sur les applets de commande générées à partir de fichiers XML. Les utilisateurs peuvent utiliser tous les paramètres de `Get-Help` , tels que **detailed** , **Full** , **examples** et **Online** , pour afficher le contenu de l’aide basée sur les commentaires.
+L’applet de commande [obtenir-Help](xref:Microsoft.PowerShell.Core.Get-Help) affiche une aide basée sur des commentaires dans le même format que celui dans lequel elle affiche les rubriques d’aide sur les applets de commande générées à partir de fichiers XML. Les utilisateurs peuvent utiliser tous les paramètres de `Get-Help` , tels que **detailed**, **Full**, **examples** et **Online**, pour afficher le contenu de l’aide basée sur les commentaires.
 
 Vous pouvez également écrire des fichiers d’aide XML pour des fonctions et des scripts. Pour permettre `Get-Help` à l’applet de commande de trouver le fichier d’aide XML pour une fonction ou un script, utilisez le `.ExternalHelp` mot clé. Sans ce mot clé, `Get-Help` les rubriques d’aide XML pour les fonctions ou les scripts ne sont pas disponibles.
 
@@ -307,11 +307,11 @@ Les **paramètres communs** sont ajoutés à la liste de syntaxe et de paramètr
 
 ### <a name="parameter-attribute-table"></a>Table d’attributs de paramètre
 
-`Get-Help` génère la table d’attributs de paramètres qui apparaît lorsque vous utilisez le paramètre **complet** ou le paramètre de **paramètre** de `Get-Help` . La valeur des attributs **requis** , de **position** et de valeur **par défaut** est extraite de la syntaxe de la fonction ou du script.
+`Get-Help` génère la table d’attributs de paramètres qui apparaît lorsque vous utilisez le paramètre **complet** ou le paramètre de **paramètre** de `Get-Help` . La valeur des attributs **requis**, de **position** et de valeur **par défaut** est extraite de la syntaxe de la fonction ou du script.
 
 Les valeurs par défaut et une valeur pour **accepter les caractères génériques** n’apparaissent pas dans la table attribut de paramètre, même lorsqu’elles sont définies dans la fonction ou le script. Pour aider les utilisateurs, fournissez ces informations dans la description du paramètre.
 
-### <a name="remarks"></a>Remarques
+### <a name="remarks"></a>Notes
 
 La section **Notes** de la rubrique d’aide est générée automatiquement à partir du nom de la fonction ou du script. Vous ne pouvez pas modifier ou affecter son contenu.
 

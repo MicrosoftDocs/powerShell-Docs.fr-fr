@@ -2,15 +2,14 @@
 description: Fournit des informations sur les travaux basés sur des threads PowerShell. Un travail de thread est un type de tâche en arrière-plan qui exécute une commande ou une expression dans un thread distinct au sein du processus de session actuel.
 Locale: en-US
 ms.date: 11/11/2020
-online version: 1.0.0
 schema: 2.0.0
 title: about_Thread_Jobs
-ms.openlocfilehash: 88880a6c58ddc02d7b35a44af7169f6c5af19a10
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 67f3fc585a8c2d1c3ca98c7336a7e367ed6c66c7
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99603486"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195873"
 ---
 # <a name="about-thread-jobs"></a>À propos des travaux de thread
 

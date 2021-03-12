@@ -8,18 +8,18 @@ Module Name: PSReadLine
 ms.date: 02/10/2020
 schema: 2.0.0
 title: PSReadLine
-ms.openlocfilehash: a404461e2b92f269d581b18c3ebe7643aa86c3a4
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+ms.openlocfilehash: 3adfa4be7aae03120d2334a57c39d7e6351bcb16
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "93206482"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196206"
 ---
 # Module PSReadLine
 
 ## Description
 
-Le module PSReadLine contient des applets de commande qui vous permettent de personnaliser l’environnement d’édition de ligne de commande dans PowerShell. Ces articles documentent PSReadLine v 2.0. Cette version est fournie dans PowerShell V6 et la mise à jour 2018 de Windows 10 octobre (Build 1809).
+Le module PSReadLine contient des applets de commande qui vous permettent de personnaliser l’environnement d’édition de ligne de commande dans PowerShell. PowerShell 7,1 fourni avec PSReadLine v 2.1. Ces articles documentent PSReadLine v 2.1.
 
 > [!NOTE]
 > À compter de PowerShell 7,0, PowerShell ignore le chargement automatique de PSReadLine sur Windows si un programme de lecture d’écran est détecté. Actuellement, PSReadLine ne fonctionne pas correctement avec les lecteurs d’écran. Le rendu et la mise en forme par défaut de PowerShell 7,0 sur Windows fonctionnent correctement. Vous pouvez charger le module manuellement, si nécessaire.
@@ -45,5 +45,5 @@ Supprime une combinaison de touches.
 Lie des clés à des fonctions de gestionnaire de clés définies par l’utilisateur ou PSReadLine.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
-Personnalise le comportement de la modification de la ligne de commande dans **PSReadLine** .
+Personnalise le comportement de la modification de la ligne de commande dans **PSReadLine**.
 

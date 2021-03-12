@@ -1,23 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 12/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
-ms.openlocfilehash: f737c8025f9fda3611a44177bd19e928f596d0aa
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 96f4385c899a50a361fb6df55b40d1ce77225a5b
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597747"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196296"
 ---
 # Join-String
 
 ## SYNOPSIS
 Combine des objets du pipeline en une chaîne unique.
 
-## SYNTAXE
+## SYNTAX
 
 ### Valeur par défaut (par défaut)
 

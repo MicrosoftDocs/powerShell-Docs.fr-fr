@@ -4,22 +4,22 @@ keywords: powershell,applet de commande
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.x&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
-ms.openlocfilehash: 394e8c1b18d7ba0f4b65e1681faffe795592b97d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 4c66b1785da53b3bf351e4377fef0e99076e3fcf
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347667"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194645"
 ---
 # Unprotect-CmsMessage
 
 ## SYNOPSIS
 Déchiffre le contenu qui a été chiffré à l’aide du format de syntaxe de message de chiffrement.
 
-## SYNTAXE
+## SYNTAX
 
 ### ByWinEvent (par défaut)
 
@@ -47,7 +47,7 @@ Unprotect-CmsMessage [-LiteralPath] <String> [-IncludeContext] [[-To] <CmsMessag
  [<CommonParameters>]
 ```
 
-## DESCRIPTION
+## Description
 
 L' `Unprotect-CmsMessage` applet de commande déchiffre le contenu qui a été chiffré à l’aide du format CMS (Cryptographic Message Syntax).
 
@@ -78,7 +78,7 @@ Unprotect-CmsMessage -LiteralPath @parameters
 Try the new Break All command
 ```
 
-## PARAMÈTRES
+## PARAMETERS
 
 ### -Contenu
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Spécifie le chemin d’accès au contenu chiffré que vous souhaitez déchiffrer. Contrairement au paramètre **Path** , la valeur de **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n'est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
+Spécifie le chemin d’accès au contenu chiffré que vous souhaitez déchiffrer. Contrairement au paramètre **Path**, la valeur de **LiteralPath** est utilisée exactement telle qu'elle est tapée. Aucun caractère n'est interprété en tant que caractère générique. Si le chemin d’accès inclut des caractères d’échappement, mettez-le entre des guillemets simples. Les guillemets simples indiquent à PowerShell qu’il n’est pas possible d’interpréter les caractères comme des séquences d’échappement.
 
 ```yaml
 Type: System.String

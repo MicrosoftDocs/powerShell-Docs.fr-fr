@@ -1,15 +1,16 @@
 ---
 description: Décrit comment écrire des rubriques d’aide basées sur des commentaires pour des fonctions et des scripts.
+Locale: en-US
 ms.date: 06/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comment_Based_Help
-ms.openlocfilehash: 055f2358a8e9d3868c9fd1024be1f6adf5520356
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: b676870c5d8879700b84339f9f0b74a18b079692
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99599147"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195709"
 ---
 # <a name="about-comment-based-help"></a>À propos de l’aide basée sur les commentaires
 
@@ -310,7 +311,7 @@ Les **paramètres communs** sont ajoutés à la liste de syntaxe et de paramètr
 
 Les valeurs par défaut et une valeur pour **accepter les caractères génériques** n’apparaissent pas dans la table attribut de paramètre, même lorsqu’elles sont définies dans la fonction ou le script. Pour aider les utilisateurs, fournissez ces informations dans la description du paramètre.
 
-### <a name="remarks"></a>Remarques
+### <a name="remarks"></a>Notes
 
 La section **Notes** de la rubrique d’aide est générée automatiquement à partir du nom de la fonction ou du script. Vous ne pouvez pas modifier ou affecter son contenu.
 

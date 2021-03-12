@@ -2,17 +2,17 @@
 external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,applet de commande
 Locale: en-US
-Module Name: ''
+Module Name: Microsoft.PowerShell.Core
 ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
-ms.openlocfilehash: 452e0e66cf6db746469247bf68552960517f6c32
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 7f1481c34c22d3fdface82828b6c3afbbbd6fce0
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93200962"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193884"
 ---
 # Clear-Host
 
@@ -93,7 +93,7 @@ Vous ne pouvez pas diriger d’entrée vers `Clear-Host` .
 
 ## REMARQUES
 
-`Clear-Host` est une fonction simple, et non une fonction avancée. Par conséquent, vous ne pouvez pas utiliser de paramètres communs, tels que **Debug** , dans une `Clear-Host` commande.
+`Clear-Host` est une fonction simple, et non une fonction avancée. Par conséquent, vous ne pouvez pas utiliser de paramètres communs, tels que **Debug**, dans une `Clear-Host` commande.
 
 ## LIENS CONNEXES
 

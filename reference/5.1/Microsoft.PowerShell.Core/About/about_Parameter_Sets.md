@@ -1,13 +1,14 @@
 ---
 description: Décrit comment définir et utiliser des jeux de paramètres dans les fonctions avancées.
 title: about_Parameter_Sets
+Locale: en-US
 ms.date: 01/05/2021
-ms.openlocfilehash: 8f3a33345a8e2fa19810c8ebd527d9a7dca7dec5
-ms.sourcegitcommit: eb7ad1850550032880f5529b4e4281514cba1673
+ms.openlocfilehash: 6163fd7e3e2d4493dc6f751599ac500fa4524f9e
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97917857"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194194"
 ---
 # <a name="about-parameter-sets"></a>À propos des jeux de paramètres
 

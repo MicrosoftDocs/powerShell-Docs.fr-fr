@@ -1,15 +1,16 @@
 ---
 description: Explique comment utiliser l' `pwsh` interface de ligne de commande. Affiche les paramètres de ligne de commande et décrit la syntaxe.
+Locale: en-US
 ms.date: 10/05/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pwsh
-ms.openlocfilehash: 25ccb20a4c19a9519bf9d2a518ef6187c2327323
-ms.sourcegitcommit: bf07cffb2a66dec94bf3576e197090f958701f18
+ms.openlocfilehash: 8acd83c23c1611b4bbad39b8778a3c5da7ab5eec
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97692693"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103194833"
 ---
 # <a name="about-pwsh"></a>À propos de pwsh
 

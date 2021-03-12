@@ -1,16 +1,16 @@
 ---
 description: Décrit comment l' `continue` instruction retourne immédiatement le déroulement du programme au début d’une boucle de programme, d’une `switch` instruction ou d’une `trap` instruction.
-keywords: powershell,applet de commande
+Locale: en-US
 ms.date: 06/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Continue
-ms.openlocfilehash: 96758fb110ec1496ebbc073cdacfd3dcc15ae486
-ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
+ms.openlocfilehash: 8b499169929b35fcb4b0b09c5040780a5f3781cf
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614079"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193869"
 ---
 # <a name="about-continue"></a>À propos de continue
 

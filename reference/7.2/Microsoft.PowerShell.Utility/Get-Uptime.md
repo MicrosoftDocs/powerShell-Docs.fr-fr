@@ -1,23 +1,24 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uptime?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Uptime
-ms.openlocfilehash: 0b71d59175ed56e7aad6a24035d1eff5503e4d88
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 99f9372ddd1a58b0c374e915eec436cda817bb67
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99595907"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103196044"
 ---
 # Get-Uptime
 
 ## SYNOPSIS
 Obtient le **TimeSpan** depuis le dernier démarrage.
 
-## SYNTAXE
+## SYNTAX
 
 ### TimeSpan (valeur par défaut)
 
@@ -93,7 +94,7 @@ Cette applet de commande prend en charge les paramètres courants : -Debug, -Er
 
 ## ENTRÉES
 
-### None
+### Aucun
 
 ## SORTIES
 
