@@ -1,15 +1,16 @@
 ---
 description: Décrit les diagrammes de syntaxe utilisés dans PowerShell.
+Locale: en-US
 ms.date: 06/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Syntax
-ms.openlocfilehash: 8182cc856de0813f0828400bcef7170a6e165c51
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 05677d5633c56efd4b7c44c16f9c4e34a222e8b0
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597531"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195196"
 ---
 # <a name="about-command-syntax"></a>À propos de la syntaxe de commande
 

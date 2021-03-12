@@ -1,15 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
+Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 10/15/2020
-online version: ''
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssubsystem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 34998e7c4a6876821df949019970dc1d87297397
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+title: Get-PSSubsystem
+ms.openlocfilehash: 1e08715562ab5a5b52193dacdd2c48cacb4540e8
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93208550"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195530"
 ---
 # Get-PSSubsystem
 
@@ -41,11 +43,11 @@ Get-PSSubsystem -SubsystemType <Type> [<CommonParameters>]
 Récupère des informations sur les sous-systèmes enregistrés dans PowerShell.
 
 > [!NOTE]
-> Il s’agit d’une fonctionnalité expérimentale. Cette applet de commande est disponible uniquement lorsque la `PSSubsystemPluginModel` fonctionnalité est activée. Pour plus d’informations, consultez [utilisation des fonctionnalités expérimentales](/powershell/scripting/learn/experimental-features).
+> Il s’agit d’une fonctionnalité expérimentale. Cette applet de commande est disponible uniquement lorsque la `PSSubsystemPluginModel` fonctionnalité est activée. Pour plus d’informations, consultez [Utilisation des fonctionnalités expérimentales](/powershell/scripting/learn/experimental-features).
 
 La fonctionnalité permet de diviser les composants de `System.Management.Automation.dll` en sous-systèmes individuels qui résident dans leur propre assembly. Cette division réduit l’encombrement de disque du moteur PowerShell principal et permet à ces composants de devenir des fonctionnalités facultatives pour une installation PowerShell minimale.
 
-Actuellement, seul le sous-système **CommandPredictor** est pris en charge. Ce sous-système est utilisé avec le module PSReadLine pour fournir des plug-ins de prédiction personnalisés. À l’avenir, **Job** , **CommandCompleter** , **Remoting** et d’autres composants pourraient être divisés en assemblys de sous-système en dehors de `System.Management.Automation.dll`.
+Actuellement, seul le sous-système **CommandPredictor** est pris en charge. Ce sous-système est utilisé avec le module PSReadLine pour fournir des plug-ins de prédiction personnalisés. À l’avenir, **Job**, **CommandCompleter**, **Remoting** et d’autres composants pourraient être divisés en assemblys de sous-système en dehors de `System.Management.Automation.dll`.
 
 ## EXEMPLES
 

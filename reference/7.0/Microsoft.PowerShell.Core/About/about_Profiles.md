@@ -1,16 +1,16 @@
 ---
 description: Décrit comment créer et utiliser un profil PowerShell.
-keywords: powershell,applet de commande
+Locale: en-US
 ms.date: 11/30/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Profiles
-ms.openlocfilehash: 3fb6a67e160281f60f20c187bf37c6920a506705
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3fe32a83ad1a63d64d293559c79f1465828d0a0a
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206617"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195015"
 ---
 # <a name="about-profiles"></a>À propos des profils
 
@@ -206,7 +206,7 @@ Pour plus d’informations sur l’invite de PowerShell, consultez [about_Prompt
 
 ## <a name="the-noprofile-parameter"></a>Paramètre noprofile
 
-Pour démarrer PowerShell sans profils, utilisez le paramètre **noprofile** de **PowerShell.exe** , le programme qui démarre PowerShell.
+Pour démarrer PowerShell sans profils, utilisez le paramètre **noprofile** de **PowerShell.exe**, le programme qui démarre PowerShell.
 
 Pour commencer, ouvrez un programme capable de Démarrer PowerShell, tel que Cmd.exe ou PowerShell lui-même. Vous pouvez également utiliser la boîte de dialogue Exécuter dans Windows.
 

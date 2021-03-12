@@ -1,16 +1,16 @@
 ---
 description: Décrit comment PowerShell détermine la commande à exécuter.
-keywords: powershell,applet de commande
+Locale: en-US
 ms.date: 02/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Command_Precedence
-ms.openlocfilehash: 19545a8e456d83e447873535746cdf4efccd80bb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ee5d2dfcd8e7353950bec27a320bf3e0f76281c7
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206661"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195065"
 ---
 # <a name="about-command-precedence"></a>À propos de la priorité des commandes
 
@@ -45,7 +45,7 @@ Par exemple, pour exécuter le fichier FindDocs.ps1 dans le répertoire actif, t
 
 ### <a name="using-wildcards-in-execution"></a>Utilisation de caractères génériques dans l’exécution
 
-Vous pouvez utiliser des caractères génériques dans l’exécution de la commande. L’utilisation de caractères génériques est également appelée *globbing* .
+Vous pouvez utiliser des caractères génériques dans l’exécution de la commande. L’utilisation de caractères génériques est également appelée *globbing*.
 
 PowerShell exécute un fichier avec une correspondance de caractère générique, avant qu’un littéral ne corresponde.
 
@@ -165,7 +165,7 @@ Vous pouvez exécuter des commandes particulières en spécifiant des propriét�
 
 #### <a name="qualified-names"></a>Noms qualifiés
 
-L’utilisation du nom qualifié du module d’une applet de commande vous permet d’exécuter des commandes masquées par un élément portant le même nom. Par exemple, vous pouvez exécuter l' `Get-Date` applet de commande en la qualifiant avec son nom de module **Microsoft. PowerShell. Utility** .
+L’utilisation du nom qualifié du module d’une applet de commande vous permet d’exécuter des commandes masquées par un élément portant le même nom. Par exemple, vous pouvez exécuter l' `Get-Date` applet de commande en la qualifiant avec son nom de module **Microsoft. PowerShell. Utility**.
 
 Utilisez cette méthode préférée lorsque vous écrivez des scripts que vous envisagez de distribuer. Vous ne pouvez pas prédire les commandes qui peuvent être présentes dans la session dans laquelle le script s’exécute.
 
