@@ -1,16 +1,16 @@
 ---
-description: Fichiers de configuration pour PowerShell Core, remplaçant la configuration du Registre.
+description: Fichiers de configuration pour PowerShell, remplaçant la configuration du Registre.
 Locale: en-US
-ms.date: 11/02/2018
+ms.date: 03/12/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
-ms.openlocfilehash: 7190484832958e778a21e6d2cc91771587bffdbf
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: e6688e91f0cf14ae54a0585ae199f098e98e1146
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99597561"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412962"
 ---
 # <a name="about-powershell-config"></a>À propos de la configuration de PowerShell
 
@@ -22,11 +22,7 @@ Fichiers de configuration pour PowerShell Core, remplaçant la configuration du 
 Le `powershell.config.json` fichier contient des paramètres de configuration pour PowerShell Core. PowerShell charge cette configuration au démarrage. Les paramètres peuvent également être modifiés au moment de l’exécution. Auparavant, ces paramètres étaient stockés dans le Registre Windows pour PowerShell, mais ils sont maintenant contenus dans un fichier pour permettre la configuration sur macOS et Linux.
 
 > [!WARNING]
-> Si le `powershell.config.json` fichier contient un code JSON non valide, impossible de démarrer une session interactive.
-> Si cela se produit, vous devez corriger le fichier de configuration.
-
-> [!NOTE]
-> Les clés non reconnues ou les valeurs non valides dans le fichier de configuration seront ignorées en mode silencieux.
+> Les clés non reconnues ou les valeurs non valides dans le fichier de configuration sont ignorées en mode silencieux. Si le `powershell.config.json` fichier contient un JSON non valide, PowerShell ne peut pas démarrer une session interactive. Si cela se produit, vous devez corriger le fichier de configuration.
 
 ### <a name="allusers-shared-configuration"></a>Configuration de AllUsers (partagée)
 
@@ -60,9 +56,7 @@ Pour les configurations CurrentUser, définit la stratégie d’exécution **Cur
 
 Où :
 
-- `<shell-id>` fait référence à l’ID de l’hôte PowerShell actuel.
-  Pour PowerShell Core normal, il s’agit de `Microsoft.PowerShell` .
-  Dans une session PowerShell, vous pouvez la découvrir avec `$ShellId` .
+- `<shell-id>` fait référence à l’ID de l’hôte PowerShell actuel. Pour PowerShell Core normal, il s’agit de `Microsoft.PowerShell` . Dans une session PowerShell, vous pouvez la découvrir avec `$ShellId` .
 - `<execution-policy>` fait référence à un nom de stratégie d’exécution valide.
 
 L’exemple suivant définit la stratégie d’exécution de PowerShell sur `RemoteSigned` .
@@ -77,13 +71,12 @@ Dans Windows, les clés de Registre équivalentes se trouvent dans `\SOFTWARE\Mi
 
 ### <a name="psmodulepath"></a>PSModulePath
 
-Remplace un composant PSModulePath pour cette session PowerShell. Si la configuration est pour l’utilisateur actuel, définit le chemin d’accès du module CurrentUser. Si la configuration est pour tous les utilisateurs, définit le chemin d’accès du module AllUser.
+Remplace les `PSModulePath` paramètres de cette session PowerShell. Si la configuration est pour l’utilisateur actuel, définit le chemin d’accès du module **CurrentUser** . Si la configuration est pour tous les utilisateurs, définit le chemin d’accès du module **ALLUSERS** .
 
 > [!WARNING]
-> La configuration d’un chemin d’accès au module AllUsers ou CurrentUser ici ne modifie pas l’emplacement d’installation d’étendue pour les modules PowerShellGet tels que [install-module](/powershell/module/powershellget/install-module).
-> Ces applets de commande utilisent toujours les chemins de module *par défaut* .
+> La configuration d’un chemin de module **ALLUSERS** ou **CurrentUser** ici ne change pas l’emplacement d’installation d’étendue pour les applets de commande PowerShellGet comme [install-module](/powershell/module/powershellget/install-module). Ces applets de commande utilisent toujours les chemins de module _par défaut_ .
 
-Si aucune valeur n’est définie, la valeur par défaut du composant de chemin d’accès au module respectif sera utilisée. Pour plus d’informations sur ces valeurs par défaut, consultez [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath) .
+Si aucune valeur n’est définie, PowerShell utilise la valeur par défaut pour le paramètre de chemin d’accès du module respectif. Pour plus d’informations sur ces valeurs par défaut, consultez [about_Modules](./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath).
 
 Ce paramètre permet d’utiliser les variables d’environnement en les incorporant entre des `%` caractères, comme `"%HOME%\Documents\PowerShell\Modules"` , de la même façon que cmd le permet. Cette syntaxe s’applique également à Linux et macOS. Consultez les exemples ci-dessous.
 
@@ -95,7 +88,7 @@ Où :
 
 - `<ps-module-path>` est le chemin d’accès absolu d’un répertoire de module. Pour toutes les configurations utilisateur, il s’agit du répertoire du module partagé AllUsers. Pour les configurations utilisateur actuelles, il s’agit du répertoire du module CurrentUser.
 
-Cet exemple illustre une configuration PSModulePath pour un environnement Windows :
+Cet exemple illustre une `PSModulePath` configuration pour un environnement Windows :
 
 ```json
 {
@@ -103,7 +96,7 @@ Cet exemple illustre une configuration PSModulePath pour un environnement Window
 }
 ```
 
-Cet exemple montre une configuration PSModulePath pour un environnement macOS ou Linux :
+Cet exemple illustre une `PSModulePath` configuration pour un environnement MacOS ou Linux :
 
 ```json
 {
@@ -111,7 +104,7 @@ Cet exemple montre une configuration PSModulePath pour un environnement macOS ou
 }
 ```
 
-Cet exemple illustre l’incorporation d’une variable d’environnement dans une configuration PSModulePath. Notez que l’utilisation de la `HOME` variable d’environnement et du `/` séparateur de répertoires fonctionne sur Windows, MacOS et Linux.
+Cet exemple illustre l’incorporation d’une variable d’environnement dans une `PSModulePath` Configuration. Notez que l’utilisation de la `HOME` variable d’environnement et du `/` séparateur de répertoires fonctionne sur Windows, MacOS et Linux.
 
 ```json
 {
@@ -119,7 +112,7 @@ Cet exemple illustre l’incorporation d’une variable d’environnement dans u
 }
 ```
 
-Cet exemple illustre l’incorporation d’une variable d’environnement dans une configuration PSModulePath qui fonctionne uniquement sur macOS et Linux :
+Cet exemple illustre l’incorporation d’une variable d’environnement dans une `PSModulePath` configuration qui fonctionne uniquement sur MacOS et Linux :
 
 ```json
 {
@@ -128,14 +121,12 @@ Cet exemple illustre l’incorporation d’une variable d’environnement dans u
 ```
 
 > [!NOTE]
-> Les variables PowerShell ne peuvent pas être incorporées dans les configurations PSModulePath.
-> Les configurations PSModulePath sur Linux et macOS respectent la casse. Une configuration PSModulePath doit utiliser des séparateurs de répertoire valides pour la plateforme. Sur macOS et Linux, cela signifie `/` . Sur Windows, `/` et `\` fonctionnent.
+> Les variables PowerShell ne peuvent pas être incorporées dans des `PSModulePath` configurations.
+> `PSModulePath` les configurations sur Linux et macOS respectent la casse. Une `PSModulePath` configuration doit utiliser des séparateurs de répertoire valides pour la plateforme. Sur macOS et Linux, cela signifie `/` . Sur Windows, `/` et `\` fonctionnent.
 
 ### <a name="experimentalfeatures"></a>ExperimentalFeatures
 
-Noms des fonctionnalités expérimentales à activer dans PowerShell.
-Par défaut, aucune fonctionnalité expérimentale n’est activée.
-La valeur par défaut est un tableau vide.
+Noms des fonctionnalités expérimentales à activer dans PowerShell. Par défaut, aucune fonctionnalité expérimentale n’est activée. La valeur par défaut est un tableau vide.
 
 ```Schema
 "ExperimentalFeatures": ["<experimental-feature-name>", ...]
@@ -156,7 +147,7 @@ L’exemple suivant active les fonctionnalités expérimentales **PSImplicitRemo
 }
 ```
 
-Pour plus d’informations sur les fonctionnalités expérimentales, consultez la [RFC 29 de PowerShell][RFC0029].
+Pour plus d’informations sur les fonctionnalités expérimentales, consultez [utilisation des fonctionnalités expérimentales](/powershell/scripting/learn/experimental-features).
 
 ## <a name="non-windows-logging-configuration"></a>Configuration de la journalisation non-Windows
 
@@ -278,8 +269,7 @@ Où :
   - ManagedPlugin-plug-in WSMan
 
 > [!NOTE]
-> Il est généralement recommandé de conserver cette valeur non définie, sauf si vous essayez de diagnostiquer un comportement spécifique dans une partie connue de PowerShell.
-> La modification de cette valeur réduit uniquement la quantité d’informations journalisées.
+> Il est généralement recommandé de conserver cette valeur non définie, sauf si vous essayez de diagnostiquer un comportement spécifique dans une partie connue de PowerShell. La modification de cette valeur réduit uniquement la quantité d’informations journalisées.
 
 Cet exemple limite la journalisation aux opérations d’instance d’exécution, à la logique de pipeline et à l’utilisation des applets de commande. Tous les autres enregistrements sont omis.
 
@@ -349,6 +339,3 @@ Cette configuration définit un certain nombre d’options qui fonctionnent uniq
 [À propos des stratégies d’exécution](./about_Execution_Policies.md)
 
 [À propos des variables automatiques](./about_Automatic_Variables.md)
-
-[RFC0029]: https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md
-

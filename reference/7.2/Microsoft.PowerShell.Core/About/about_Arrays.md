@@ -5,12 +5,12 @@ ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 2e7cf9c8f7d4e6f1d5bc66310f56d3de9461e592
-ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
+ms.openlocfilehash: 4ec216a502f0031bc35cc7b04aacf5d262fd696d
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "99595511"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412843"
 ---
 # <a name="about-arrays"></a>À propos des tableaux
 
@@ -320,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Rank
 
-Retourne le nombre de dimensions du tableau. La plupart des tableaux dans PowerShell ont une seule dimension, uniquement. Même lorsque vous pensez que vous créez un tableau multidimensionnel ; comme dans l’exemple suivant :
+Retourne le nombre de dimensions du tableau. La plupart des tableaux dans PowerShell ont une seule dimension, uniquement. Même si vous pensez que vous créez un tableau multidimensionnel comme dans l’exemple suivant :
 
 ```powershell
 $a = @(
@@ -329,28 +329,77 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+Dans cet exemple, vous créez un tableau unidimensionnel qui contient d’autres tableaux. On parle également de tableau en _escalier_. La propriété **Rank** a prouvé qu’il s’agit d’un unidimensionnel. Pour accéder aux éléments d’un tableau en escalier, les index doivent être séparés par des crochets ( `[]` ).
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-L’exemple suivant montre comment créer un tableau véritablement multidimensionnel à l’aide du .NET Framework.
+Les tableaux multidimensionnels sont stockés dans l' [ordre ligne-principal](https://wikipedia.org/wiki/Row-_and_column-major_order). L’exemple suivant montre comment créer un tableau véritablement multidimensionnel.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+Pour accéder aux éléments d’un tableau multidimensionnel, séparez les index à l’aide d’une virgule () à l' `,` intérieur d’un seul jeu de crochets ( `[]` ).
+
+Certaines opérations sur un tableau multidimensionnel, telles que la réplication et la concaténation, requièrent que ce tableau soit aplati. L’aplatissement transforme le tableau en un tableau unidimensionnel de type sans contrainte. Le tableau résultant prend tous les éléments dans l’ordre ligne-principal. Prenons l’exemple suivant :
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+La sortie montre qu' `$c` il s’agit d’un tableau unidimensionnel contenant les éléments de `$a` et `$b` dans l’ordre ligne-principal.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Méthodes de tableaux
 
-### <a name="clear"></a>Clear
+### <a name="clear"></a>Effacer
 
 Affecte à toutes les valeurs d’élément la _valeur par défaut_ du type d’élément du tableau.
 La méthode Clear () ne réinitialise pas la taille du tableau.
@@ -574,7 +623,7 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-#### <a name="until"></a>Until
+#### <a name="until"></a>Obtention
 
 Le `Until` mode inverse le `SkipUntil` mode.  Elle retourne **tous les** éléments d’une collection jusqu’à ce qu’un élément passe l’expression de bloc de script. Une fois qu’un élément a _réussi_ l’expression scriptblock, la `Where` méthode arrête le traitement des éléments.
 

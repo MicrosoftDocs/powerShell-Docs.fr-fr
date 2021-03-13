@@ -1,17 +1,16 @@
 ---
 description: Décrit les tableaux, qui sont des structures de données conçues pour stocker des collections d’éléments.
-keywords: powershell,applet de commande
 Locale: en-US
 ms.date: 08/26/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
-ms.openlocfilehash: 96e3798d4ff0a737421bb6211b809b192afa96f0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 15ab7bb28fc9dd9262ba71b5cc1347a609837d9c
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207762"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412978"
 ---
 # <a name="about-arrays"></a>À propos des tableaux
 
@@ -52,13 +51,13 @@ $C = 5..8
 
 En conséquence, `$C` contient quatre valeurs : 5, 6, 7 et 8.
 
-Quand aucun type de données n’est spécifié, PowerShell crée chaque tableau en tant que tableau d’objets ( **System. Object []** ). Pour déterminer le type de données d’un tableau, utilisez la méthode **GetType ()** . Par exemple, pour déterminer le type de données du `$A` tableau, tapez :
+Quand aucun type de données n’est spécifié, PowerShell crée chaque tableau en tant que tableau d’objets (**System. Object []**). Pour déterminer le type de données d’un tableau, utilisez la méthode **GetType ()** . Par exemple, pour déterminer le type de données du `$A` tableau, tapez :
 
 ```powershell
 $A.GetType()
 ```
 
-Pour créer un tableau fortement typé, autrement dit un tableau qui peut contenir uniquement des valeurs d’un type particulier, effectuez un cast de la variable en type tableau, tel que **String []** , **long []** ou **Int32 []** . Pour effectuer un cast d’un tableau, faites précéder le nom de la variable d’un type de tableau entre crochets. Par exemple, pour créer un tableau d’entiers 32 bits nommé `$ia` contenant quatre entiers (1500, 2230, 3350 et 4000), tapez :
+Pour créer un tableau fortement typé, autrement dit un tableau qui peut contenir uniquement des valeurs d’un type particulier, effectuez un cast de la variable en type tableau, tel que **String []**, **long []** ou **Int32 []**. Pour effectuer un cast d’un tableau, faites précéder le nom de la variable d’un type de tableau entre crochets. Par exemple, pour créer un tableau d’entiers 32 bits nommé `$ia` contenant quatre entiers (1500, 2230, 3350 et 4000), tapez :
 
 ```powershell
 [int32[]]$ia = 1500,2230,3350,4000
@@ -321,7 +320,7 @@ $a.Length
 
 ### <a name="rank"></a>Rank
 
-Retourne le nombre de dimensions du tableau. La plupart des tableaux dans PowerShell ont une seule dimension, uniquement. Même lorsque vous pensez que vous créez un tableau multidimensionnel ; comme dans l’exemple suivant :
+Retourne le nombre de dimensions du tableau. La plupart des tableaux dans PowerShell ont une seule dimension, uniquement. Même si vous pensez que vous créez un tableau multidimensionnel comme dans l’exemple suivant :
 
 ```powershell
 $a = @(
@@ -330,23 +329,72 @@ $a = @(
   @(Get-Process)
 )
 
-[int]$r = $a.Rank
-"`$a rank: $r"
+"`$a rank: $($a.Rank)"
+"`$a length: $($a.Length)"
+"`$a length: $($a.Length)"
+"Process `$a[2][1]: $($a[2][1].ProcessName)"
 ```
+
+Dans cet exemple, vous créez un tableau unidimensionnel qui contient d’autres tableaux. On parle également de tableau en _escalier_. La propriété **Rank** a prouvé qu’il s’agit d’un unidimensionnel. Pour accéder aux éléments d’un tableau en escalier, les index doivent être séparés par des crochets ( `[]` ).
 
 ```Output
 $a rank: 1
+$a length: 3
+$a[2] length: 348
+Process $a[2][1]: AcroRd32
 ```
 
-L’exemple suivant montre comment créer un tableau véritablement multidimensionnel à l’aide du .NET Framework.
+Les tableaux multidimensionnels sont stockés dans l' [ordre ligne-principal](https://wikipedia.org/wiki/Row-_and_column-major_order). L’exemple suivant montre comment créer un tableau véritablement multidimensionnel.
 
 ```powershell
-[int[,]]$rank2 = [int[,]]::new(5,5)
+[string[,]]$rank2 = [string[,]]::New(3,2)
 $rank2.rank
+$rank2.Length
+$rank2[0,0] = 'a'
+$rank2[0,1] = 'b'
+$rank2[1,0] = 'c'
+$rank2[1,1] = 'd'
+$rank2[2,0] = 'e'
+$rank2[2,1] = 'f'
+$rank2[1,1]
 ```
 
 ```Output
 2
+6
+d
+```
+
+Pour accéder aux éléments d’un tableau multidimensionnel, séparez les index à l’aide d’une virgule () à l' `,` intérieur d’un seul jeu de crochets ( `[]` ).
+
+Certaines opérations sur un tableau multidimensionnel, telles que la réplication et la concaténation, requièrent que ce tableau soit aplati. L’aplatissement transforme le tableau en un tableau unidimensionnel de type sans contrainte. Le tableau résultant prend tous les éléments dans l’ordre ligne-principal. Prenons l’exemple suivant :
+
+```powershell
+$a = "red",$true
+$b = (New-Object 'int[,]' 2,2)
+$b[0,0] = 10
+$b[0,1] = 20
+$b[1,0] = 30
+$b[1,1] = 40
+$c = $a + $b
+$a.GetType().Name
+$b.GetType().Name
+$c.GetType().Name
+$c
+```
+
+La sortie montre qu' `$c` il s’agit d’un tableau unidimensionnel contenant les éléments de `$a` et `$b` dans l’ordre ligne-principal.
+
+```output
+Object[]
+Int32[,]
+Object[]
+red
+True
+10
+20
+30
+40
 ```
 
 ## <a name="methods-of-arrays"></a>Méthodes de tableaux
@@ -425,7 +473,7 @@ $a.ForEach({ $_ * $_})
 
 Tout comme le `-ArgumentList` paramètre de `ForEach-Object` , le `arguments` paramètre permet de passer un tableau d’arguments à un bloc de script configuré pour les accepter.
 
-Pour plus d’informations sur le comportement de **argumentlist** , consultez [about_Splatting](about_Splatting.md#splatting-with-arrays).
+Pour plus d’informations sur le comportement de **argumentlist**, consultez [about_Splatting](about_Splatting.md#splatting-with-arrays).
 
 #### <a name="foreachtype-converttotype"></a>ForEach (type convertToType)
 
@@ -480,7 +528,7 @@ Tout comme le `-ArgumentList` paramètre de `ForEach-Object` , le `arguments` pa
 > [!NOTE]
 > À partir de Windows PowerShell 3,0, la récupération des propriétés et l’exécution de méthodes pour chaque élément d’une collection peut également être accomplie à l’aide de « méthodes des objets scalaires et des collections ». vous pouvez en savoir plus à ce sujet [about_methods](about_methods.md).
 
-### <a name="where"></a>Où
+### <a name="where"></a>Where
 
 Permet de filtrer ou de sélectionner les éléments du tableau. Le script doit avoir une valeur autre que : zéro (0), une chaîne vide `$false` ou `$null` pour l’élément à afficher après `Where`
 
@@ -559,7 +607,7 @@ $logs.Where({$_.CreationTime -gt $h}, 'Last', 5)
 
 #### <a name="skipuntil"></a>Ignorer jusqu’à
 
-Le `SkipUntil` mode ignore tous les objets d’une collection jusqu’à ce qu’un objet passe le filtre d’expression de bloc de script. Elle retourne ensuite **tous les** éléments de collection restants sans les tester. _Un seul élément de passage est testé_ .
+Le `SkipUntil` mode ignore tous les objets d’une collection jusqu’à ce qu’un objet passe le filtre d’expression de bloc de script. Elle retourne ensuite **tous les** éléments de collection restants sans les tester. _Un seul élément de passage est testé_.
 
 Cela signifie que la collection retournée contient à la fois des éléments de _réussite_ et de _non-passage_ qui n’ont pas été testés.
 
@@ -575,7 +623,7 @@ $computers.Where({ Test-Connection $_ }, 'SkipUntil', 1)
 localhost
 ```
 
-#### <a name="until"></a>Until
+#### <a name="until"></a>Obtention
 
 Le `Until` mode inverse le `SkipUntil` mode.  Elle retourne **tous les** éléments d’une collection jusqu’à ce qu’un élément passe l’expression de bloc de script. Une fois qu’un élément a _réussi_ l’expression scriptblock, la `Where` méthode arrête le traitement des éléments.
 
@@ -606,9 +654,9 @@ Le nombre d’éléments retournés peut être limité en passant une valeur à 
 > [!NOTE]
 > `Until`Et `SkipUntil` fonctionnent sous le principe de ne pas tester un lot d’éléments.
 >
-> `Until` retourne les éléments **avant** la première _passe_ .
+> `Until` retourne les éléments **avant** la première _passe_.
 >
-> `SkipUntil` retourne tous les éléments **après** la première _passe_ , y compris le premier élément passant.
+> `SkipUntil` retourne tous les éléments **après** la première _passe_, y compris le premier élément passant.
 
 #### <a name="split"></a>Split
 

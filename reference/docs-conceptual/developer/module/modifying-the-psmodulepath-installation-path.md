@@ -1,14 +1,14 @@
 ---
-ms.date: 09/13/2016
+ms.date: 03/12/2021
 ms.topic: reference
 title: Modification du chemin d’Installation de PSModulePath
 description: Modification du chemin d’Installation de PSModulePath
-ms.openlocfilehash: b802492bf9b49e8165e296817e3f80b9ae8265a6
-ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.openlocfilehash: 1bea1e8ed20f55352cc9b4270e95cf7f0f7e2faa
+ms.sourcegitcommit: 2560a122fe3a85ea762c3af6f1cba9e237512b2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "92661940"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103412884"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>Modification du chemin d’Installation de PSModulePath
 
@@ -47,9 +47,12 @@ Pour ajouter des chemins d’accès à cette variable, utilisez l’une des mét
 
   ```
 
+Vous pouvez également définir les `PSModulePath` valeurs dans le `powershell.config.json` fichier de configuration. Pour plus d’informations, consultez [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config#psmodulepath).
+
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>Pour supprimer des emplacements du PSModulePath
 
-Vous pouvez supprimer les chemins d’accès de la variable à l’aide de méthodes similaires : par exemple, `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` supprime le chemin d’accès **c:\ModulePath** de la session active.
+Vous pouvez supprimer les chemins d’accès de la variable à l’aide de méthodes similaires : par exemple, `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"`
+supprimera le chemin d’accès **c:\ModulePath** de la session active.
 
 ## <a name="see-also"></a>Voir aussi
 
