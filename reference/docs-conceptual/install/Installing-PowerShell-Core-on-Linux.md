@@ -2,12 +2,12 @@
 title: Installation de PowerShell sur Linux
 description: Informations sur l’installation de PowerShell sur différentes distributions Linux
 ms.date: 02/02/2021
-ms.openlocfilehash: 1e7fabdc94ba70a91eb5c6425893bc5af640e584
-ms.sourcegitcommit: 4f1c2fe700b8a0544c59e371eb7cfbc6d852b185
+ms.openlocfilehash: ab075a3570695f5a58b7e7fbf968243a4ff45929
+ms.sourcegitcommit: 71173a89c4f05b5283ccd1e885a780773c13fa47
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100563307"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103195264"
 ---
 # <a name="installing-powershell-on-linux"></a>Installation de PowerShell sur Linux
 
@@ -711,6 +711,15 @@ pwsh
 apt -y remove powershell
 ```
 
+## <a name="support-for-arm-processors"></a>Prise en charge des processeurs ARM
+
+PowerShell peut être installé sur certaines distributions Linux. Il dépend de la prise en charge .NET d’ARM. Il est pris en charge sur les distributions suivantes :
+
+- Alpine Linux v3.11 et versions ultérieures : .NET prend en charge ARM64, mais il n’existe pour l’instant aucun package installable pour PowerShell.
+- Raspbian : consultez ci-dessous les instructions d’installation.
+- Debian v9 et versions ultérieures : prend en charge ARM32 et ARM64 suivant la méthode d’installation [Archive binaire](#binary-archives).
+- Ubuntu 20,10, 20,04, 18,04, 16,04 : prend en charge ARM32 et ARM64 suivant la méthode d’installation [Archive binaire](#binary-archives).
+
 ## <a name="raspbian"></a>Raspbian
 
 > [!NOTE]
@@ -821,6 +830,12 @@ Pour déployer les fichiers binaires PowerShell sur les distributions Linux qui 
 
 ### <a name="installation---binary-archives"></a>Installation - Archives binaires
 
+L’exemple suivant illustre les étapes d’installation de l’archive binaire x64. Vous devez choisir l’archive binaire correspondant au type de processeur de votre plateforme.
+
+- powershell-7.1.2-linux-arm32.tar.gz
+- powershell-7.1.2-linux-arm64.tar.gz
+- powershell-7.1.2-linux-x64.tar.gz
+
 #### <a name="linux"></a>Linux
 
 ```sh
@@ -849,12 +864,12 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>Chemins
 
 - `$PSHOME` est `/opt/microsoft/powershell/7/`
-- Les profils utilisateur sont lus à partir de `~/.config/powershell/profile.ps1`
-- Les profils par défaut sont lus à partir de `$PSHOME/profile.ps1`
-- Les modules utilisateur sont lus à partir de `~/.local/share/powershell/Modules`
-- Les modules partagés sont lus à partir de `/usr/local/share/powershell/Modules`
-- Les modules par défaut sont lus à partir de `$PSHOME/Modules`
-- L’historique PSReadLine est enregistré dans`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- Les profils utilisateur sont lus dans `~/.config/powershell/profile.ps1`
+- Les profils par défaut sont lus dans `$PSHOME/profile.ps1`
+- Les modules utilisateur sont lus dans `~/.local/share/powershell/Modules`
+- Les modules partagés sont lus dans `/usr/local/share/powershell/Modules`
+- Les modules par défaut sont lus dans `$PSHOME/Modules`
+- L’historique PSReadLine est enregistré dans `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Les profils respectant la configuration par hôte de PowerShell, les profils spécifiques à l’hôte par défaut existent sur `Microsoft.PowerShell_profile.ps1` aux mêmes emplacements.
 
