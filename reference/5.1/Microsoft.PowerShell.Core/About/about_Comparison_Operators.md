@@ -1,16 +1,16 @@
 ---
 description: Décrit les opérateurs qui comparent des valeurs dans PowerShell.
 Locale: en-US
-ms.date: 02/19/2021
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: 97875bb9c194cfef3d823b681973bd556d4195d3
-ms.sourcegitcommit: 1dfd5554b70c7e8f4e3df19e29c384a9c0a4b227
+ms.openlocfilehash: ec8ce1a241676911795e76f0934d40fd8ad18bd8
+ms.sourcegitcommit: 080c8b05a1242348c365fe1684457e873325f11e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "101685916"
+ms.lasthandoff: 03/15/2021
+ms.locfileid: "103483400"
 ---
 # <a name="about-comparison-operators"></a>À propos des opérateurs de comparaison
 
@@ -64,7 +64,7 @@ Il existe quelques exceptions :
 
 - Les opérateurs de relation contenant-contenu et type retournent toujours une valeur **booléenne**
 - L' `-replace` opérateur retourne le résultat de remplacement
-- Les `-match` `-notmatch` opérateurs et remplissent également la `$Matches` variable automatique.
+- Les `-match` `-notmatch` opérateurs et remplissent également la `$Matches` variable automatique, sauf si la partie gauche de l’expression est une collection.
 
 ## <a name="equality-operators"></a>Opérateurs d’égalité
 
@@ -322,7 +322,7 @@ Exemples scalaires :
 'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
-Si l’entrée est une collection, les opérateurs retournent les membres correspondants de cette collection.
+Si l’entrée est une collection, les opérateurs retournent les membres correspondants de cette collection et la `$Matches` variable automatique est `$null` .
 
 Exemples de collection :
 
