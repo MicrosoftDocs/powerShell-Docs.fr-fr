@@ -1,16 +1,16 @@
 ---
 description: Décrit les variables qui stockent des informations d’État pour PowerShell. Ces variables sont créées et gérées par PowerShell.
 Locale: en-US
-ms.date: 12/14/2020
+ms.date: 03/15/2021
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
-ms.openlocfilehash: a8959129cc72968ed6e7fcde3587de0d57dbc0e9
-ms.sourcegitcommit: 1628fd2a1f50aec2f31ffb1c451a3ce77c08983c
+ms.openlocfilehash: 8ba4dbc65283c3e229e40c5a634d8e79347bc15b
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "99597989"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575778"
 ---
 # <a name="about-automatic-variables"></a>À propos des variables automatiques
 
@@ -416,7 +416,10 @@ Contient une table de hachage en lecture seule qui affiche des détails sur la v
 
 ### <a name="pwd"></a>$PWD
 
-Contient un objet de chemin d’accès qui représente le chemin d’accès complet du répertoire actif.
+Contient un objet de chemin d’accès qui représente le chemin d’accès complet de l’emplacement du répertoire actif pour l’instance d’exécution PowerShell en cours.
+
+> [!NOTE]
+> PowerShell prend en charge plusieurs instances d’exécution par processus. Chaque instance d’exécution a son propre _répertoire actif_. Ce n’est pas le même que le répertoire actif du processus : `[System.Environment]::CurrentDirectory` .
 
 ### <a name="sender"></a>$Sender
 

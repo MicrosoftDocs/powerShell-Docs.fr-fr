@@ -1,17 +1,16 @@
 ---
 description: Décrit comment utiliser des méthodes pour effectuer des actions sur des objets dans PowerShell.
-keywords: powershell,applet de commande
 Locale: en-US
 ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 5ab106a029eca4f4db45b1466cfaffb16aad5530
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: b099dcecd3dbd713a7ade3d17194f27324fe2b3c
+ms.sourcegitcommit: 15f759ca68d17acecab46b52250298d4f2037c4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390930"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103575591"
 ---
 # <a name="about-methods"></a>À propos des méthodes
 
@@ -79,7 +78,7 @@ Comme indiqué dans les exemples précédents, vous pouvez appeler une méthode 
 
 À compter de PowerShell 4,0, l’appel de méthode à l’aide de noms de méthodes dynamiques est pris en charge.
 
-### <a name="learning-about-methods"></a>En savoir plus sur les méthodes
+## <a name="learning-about-methods"></a>En savoir plus sur les méthodes
 
 Pour rechercher les définitions des méthodes d’un objet, accédez à la rubrique d’aide relative au type d’objet et recherchez sa page de méthodes. Par exemple, la page suivante décrit les méthodes de traitement des objets [System. Diagnostics. Process](/dotnet/api/system.diagnostics.process#methods).
 
@@ -111,7 +110,7 @@ L’exemple suivant utilise la deuxième `CopyTo` méthode pour copier le `Final
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
 ```
 
-### <a name="methods-of-scalar-objects-and-collections"></a>Méthodes d’objets scalaires et de collections
+## <a name="methods-of-scalar-objects-and-collections"></a>Méthodes d’objets scalaires et de collections
 
 Les méthodes d’un objet (« scalaire ») d’un type particulier sont souvent différentes des méthodes d’une collection d’objets du même type.
 
@@ -173,7 +172,7 @@ $p | ForEach-Object {$_.Kill()}
 
 Vous pouvez en savoir plus sur ces méthodes dans [about_arrays](about_arrays.md)
 
-### <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>Appel d’une méthode spécifique quand plusieurs surcharges existent
+## <a name="calling-a-specific-method-when-multiple-overloads-exist"></a>Appel d’une méthode spécifique quand plusieurs surcharges existent
 
 Considérez le scénario suivant lors de l’appel de méthodes .NET. Si une méthode prend un objet mais a une surcharge via une interface qui prend un type plus spécifique, PowerShell choisit la méthode qui accepte l’objet, sauf si vous effectuez un cast explicite vers cette interface.
 
@@ -220,6 +219,12 @@ Dans cet exemple, nous castons la méthode en interface **IFoo** pour sélection
 int: 1
 ```
 
+## <a name="using-net-methods-that-take-filesystem-paths"></a>Utilisation des méthodes .NET qui prennent des chemins d’accès de système de fichiers
+
+PowerShell prend en charge plusieurs instances d’exécution par processus. Chaque instance d’exécution a son propre _répertoire actif_. Ce n’est pas le même que le répertoire de travail du processus en cours : `[System.Environment]::CurrentDirectory` .
+
+Les méthodes .NET utilisent le répertoire de travail du processus. Les applets de commande PowerShell utilisent l’emplacement d’instance d’exécution. En outre, les méthodes .NET fonctionnent uniquement avec les chemins d’accès de système de fichiers natifs, pas les objets de chemin d’accès PowerShell. Pour utiliser des chemins d’accès PowerShell avec des méthodes .NET, vous devez résoudre le chemin d’accès à un chemin d’accès natif du système de fichiers avant de le passer à la méthode .NET.
+
 ## <a name="see-also"></a>Voir aussi
 
 [about_Objects](about_Objects.md)
@@ -227,4 +232,3 @@ int: 1
 [about_Properties](about_Properties.md)
 
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-
